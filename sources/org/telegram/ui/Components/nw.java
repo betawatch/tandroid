@@ -1,38 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class nw extends ev {
-    public final /* synthetic */ TLRPC.StickerSet R1;
-    public final /* synthetic */ ty S1;
+public final class nw extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ qy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(ty tyVar, org.telegram.ui.ActionBar.g2 g2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
-        super(g2Var, context, h6Var, arrayList);
-        this.S1 = tyVar;
-        this.R1 = stickerSet;
+    public /* synthetic */ nw(qy qyVar, boolean z10, int i7) {
+        this.a = i7;
+        this.c = qyVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.ev
-    public final void L0(boolean z10) {
-        ty tyVar = this.S1;
-        ArrayList arrayList = tyVar.q1;
-        TLRPC.StickerSet stickerSet = this.R1;
-        if (!z10) {
-            arrayList.remove(Long.valueOf(stickerSet.id));
-        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
-            arrayList.add(Long.valueOf(stickerSet.id));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.E.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        tyVar.U();
-    }
-
-    @Override // org.telegram.ui.Components.ev, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
-    public final void dismiss() {
-        this.S1.x2 = false;
-        super.dismiss();
     }
 }

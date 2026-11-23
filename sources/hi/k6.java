@@ -1,52 +1,82 @@
 package hi;
 
-import android.os.Bundle;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.p10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class k6 extends m6 {
-    public final /* synthetic */ TLRPC.User b;
+public final /* synthetic */ class k6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(String str, TLRPC.User user) {
-        super(str);
-        this.b = user;
+    public /* synthetic */ k6(n6 n6Var, int i7) {
+        this.a = i7;
+        this.b = n6Var;
     }
 
-    @Override // hi.m6
-    public final String a() {
-        return hd.N0(2131743301, null);
-    }
-
-    @Override // hi.m6
-    public final String b() {
-        return p10.q(this.b);
-    }
-
-    @Override // hi.m6
-    public final void c(org.telegram.ui.ActionBar.g2 g2Var) {
-        TLRPC.User user = this.b;
-        if (user.id != k10.i(k10.t0).e()) {
-            g2Var.presentFragment(ProfileActivity.D4(user.id));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                n6 n6Var = this.b;
+                n6Var.s0 = false;
+                n6Var.A0 = false;
+                n6Var.w0 = SystemClock.elapsedRealtime();
+                n6Var.v0 = true;
+                n6Var.x0 = false;
+                n6Var.K.c(false);
+                n6Var.L.c(false);
+                n6Var.M.c(false);
+                ((ka) n6Var.a).e(true);
+                break;
+            case 1:
+                long currentTimeMillis = System.currentTimeMillis();
+                n6 n6Var2 = this.b;
+                n6Var2.R = currentTimeMillis;
+                n6Var2.S = 0L;
+                n6Var2.s0 = true;
+                ((ka) n6Var2.a).a.K0.a(0L, true);
+                break;
+            case 2:
+                n6 n6Var3 = this.b;
+                if (!n6Var3.s0 && !n6Var3.b()) {
+                    if (!nb.c(((ka) n6Var3.a).a)) {
+                        n6Var3.x0 = false;
+                        n6Var3.K.c(false);
+                        n6Var3.L.c(false);
+                        n6Var3.M.c(false);
+                        break;
+                    } else {
+                        n6Var3.A0 = true;
+                        n6Var3.B0 = true;
+                        ((ka) n6Var3.a).f(new k6(n6Var3, 4), true);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                n6 n6Var4 = this.b;
+                if (!n6Var4.s0 && !n6Var4.b()) {
+                    qa qaVar = ((ka) n6Var4.a).a.C0;
+                    if (qaVar != null) {
+                        qaVar.toggleDual();
+                    }
+                    n6Var4.d(360.0f);
+                    n6Var4.x0 = false;
+                    n6Var4.K.c(false);
+                    n6Var4.L.c(false);
+                    n6Var4.M.c(false);
+                    break;
+                }
+                break;
+            default:
+                long currentTimeMillis2 = System.currentTimeMillis();
+                n6 n6Var5 = this.b;
+                n6Var5.R = currentTimeMillis2;
+                n6Var5.s0 = true;
+                l6 l6Var = n6Var5.a;
+                n6Var5.S = 0L;
+                ((ka) l6Var).a.K0.a(0L, true);
+                break;
         }
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", user.id);
-        bundle.putBoolean("my_profile", true);
-        g2Var.presentFragment(new ProfileActivity(bundle, null));
-    }
-
-    @Override // hi.m6
-    public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        TLRPC.User user = this.b;
-        b9Var.r(user);
-        imageReceiver.i0(user, b9Var, null);
     }
 }

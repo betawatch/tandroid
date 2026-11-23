@@ -2,37 +2,47 @@ package fi;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.az;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.jw;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.iw;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.yy;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.ri;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class o2 implements si {
+public final class o2 implements ri {
     public final /* synthetic */ z3 a;
 
     public o2(z3 z3Var) {
         this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.si
-    public final void K0() {
+    @Override // org.telegram.ui.Components.ri
+    public final void B0() {
         this.a.L1.U();
     }
 
-    @Override // org.telegram.ui.Components.si
+    @Override // org.telegram.ui.Components.ri
+    public final void S(fh fhVar) {
+        ks.f(this.a.m2).d(fhVar);
+    }
+
+    @Override // org.telegram.ui.Components.ri
+    public final boolean T() {
+        return this.a.L0();
+    }
+
+    @Override // org.telegram.ui.Components.ri
     public final /* synthetic */ boolean V1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.si
-    public final void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.Components.ri
+    public final void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
         org.telegram.messenger.c accountInstance;
         z3 z3Var = this.a;
         TL_stories.StoryItem storyItem = z3Var.y1.a;
@@ -42,19 +52,9 @@ public final class o2 implements si {
         accountInstance = z3Var.getAccountInstance();
         CharSequence charSequence2 = charSequence != null ? charSequence : null;
         long j11 = z3Var.l1;
-        org.telegram.messenger.q5 q5Var = az.J;
-        new Thread(new jw(null, arrayList, j11, accountInstance, charSequence2, false, null, null, null, null, z10, i7, i10, storyItem, null, j3, z11, j10, null)).start();
+        org.telegram.messenger.q5 q5Var = zy.J;
+        new Thread(new iw(null, arrayList, j11, accountInstance, charSequence2, false, null, null, null, null, z10, i7, i10, storyItem, null, j3, z11, j10, null)).start();
         z3Var.i0(j10 <= 0);
-    }
-
-    @Override // org.telegram.ui.Components.si
-    public final void f0(gh ghVar) {
-        ls.f(this.a.m2).d(ghVar);
-    }
-
-    @Override // org.telegram.ui.Components.si
-    public final boolean g0() {
-        return this.a.L0();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -65,7 +65,7 @@ public final class o2 implements si {
     /* JADX WARN: Type inference failed for: r7v1 */
     /* JADX WARN: Type inference failed for: r7v2, types: [int] */
     /* JADX WARN: Type inference failed for: r7v3 */
-    @Override // org.telegram.ui.Components.si
+    @Override // org.telegram.ui.Components.ri
     public final void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
         TL_stories.StoryItem storyItem;
         org.telegram.messenger.c accountInstance;
@@ -102,34 +102,34 @@ public final class o2 implements si {
             for (int i14 = r72; i14 < min; i14++) {
                 int i15 = i13 + i14;
                 if (i15 < selectedPhotosOrder.size()) {
-                    ff ffVar = (ff) selectedPhotos.get(selectedPhotosOrder.get(i15));
-                    zy zyVar = new zy();
-                    boolean z16 = ffVar.b;
-                    if (z16 || (str = ffVar.h) == null) {
-                        String str2 = ffVar.I;
+                    ef efVar = (ef) selectedPhotos.get(selectedPhotosOrder.get(i15));
+                    yy yyVar = new yy();
+                    boolean z16 = efVar.b;
+                    if (z16 || (str = efVar.h) == null) {
+                        String str2 = efVar.I;
                         if (str2 != null) {
-                            zyVar.c = str2;
+                            yyVar.c = str2;
                         }
                     } else {
-                        zyVar.c = str;
+                        yyVar.c = str;
                     }
-                    zyVar.e = ffVar.c;
-                    zyVar.f = ffVar.g;
-                    zyVar.o = z16;
-                    CharSequence charSequence = ffVar.a;
-                    zyVar.d = charSequence != null ? charSequence.toString() : null;
-                    zyVar.i = ffVar.n;
-                    zyVar.j = ffVar.r;
-                    zyVar.h = ffVar.x;
-                    zyVar.k = ffVar.s;
-                    zyVar.r = ffVar.L;
-                    zyVar.t = az.h(ffVar.a);
-                    zyVar.u = ffVar.M;
-                    arrayList.add(zyVar);
-                    ffVar.e();
+                    yyVar.e = efVar.c;
+                    yyVar.f = efVar.g;
+                    yyVar.o = z16;
+                    CharSequence charSequence = efVar.a;
+                    yyVar.d = charSequence != null ? charSequence.toString() : null;
+                    yyVar.i = efVar.n;
+                    yyVar.j = efVar.r;
+                    yyVar.h = efVar.x;
+                    yyVar.k = efVar.s;
+                    yyVar.r = efVar.L;
+                    yyVar.t = zy.h(efVar.a);
+                    yyVar.u = efVar.M;
+                    arrayList.add(yyVar);
+                    efVar.e();
                 }
             }
-            boolean z17 = i12 == 0 ? ((zy) arrayList.get(r72)).t : r72;
+            boolean z17 = i12 == 0 ? ((yy) arrayList.get(r72)).t : r72;
             HashMap<Object, Object> hashMap = selectedPhotos;
             accountInstance = z3Var.getAccountInstance();
             ArrayList<Object> arrayList2 = selectedPhotosOrder;
@@ -142,7 +142,7 @@ public final class o2 implements si {
                 z14 = 4;
                 r12 = i16;
             }
-            az.X(accountInstance, arrayList, j11, null, null, storyItem, null, r12, z10, null, null, z11, i10, i11, z17, null, null, 0L, false, 0L, z3Var.L1.getSendMonoForumPeerId(), z3Var.L1.getSendMessageSuggestionParams(), null, false);
+            zy.X(accountInstance, arrayList, j11, null, null, storyItem, null, r12, z10, null, null, z11, i10, i11, z17, null, null, 0L, false, 0L, z3Var.L1.getSendMonoForumPeerId(), z3Var.L1.getSendMessageSuggestionParams(), null, false);
             i12++;
             z15 = true;
             selectedPhotos = hashMap;
@@ -155,15 +155,15 @@ public final class o2 implements si {
         z3Var.i0(j10 <= 0 ? z18 : z19);
     }
 
-    @Override // org.telegram.ui.Components.si
-    public final /* synthetic */ void v0() {
+    @Override // org.telegram.ui.Components.ri
+    public final /* synthetic */ void l0() {
     }
 
-    @Override // org.telegram.ui.Components.si
-    public final /* synthetic */ void R0(Object obj) {
+    @Override // org.telegram.ui.Components.ri
+    public final /* synthetic */ void O0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.si
+    @Override // org.telegram.ui.Components.ri
     public final /* synthetic */ void h1(TLRPC.User user) {
     }
 }

@@ -2,156 +2,115 @@ package org.telegram.ui.Components;
 
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.os.Bundle;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.accessibility.AccessibilityNodeProvider;
-import android.widget.Button;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.ui.ProfileActivity;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class pf0 extends AccessibilityNodeProvider {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class pf0 {
+    public int a;
+    public final lc b;
+    public final c6 e;
+    public Drawable i;
+    public Drawable j;
+    public nh0 k;
+    public wy0 l;
+    public n80 r;
+    public boolean s;
+    public boolean t;
+    public int u;
+    public long w;
+    public int x;
+    public final /* synthetic */ sf0 y;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public final RectF f = new RectF();
+    public final RectF g = new RectF();
+    public final Rect h = new Rect();
+    public float m = 1.0f;
+    public boolean n = false;
+    public boolean o = false;
+    public boolean p = false;
+    public final float q = 1.0f;
+    public int v = 0;
 
-    public pf0(org.telegram.ui.Cells.c5 c5Var) {
-        this.b = c5Var;
+    public pf0(sf0 sf0Var) {
+        this.y = sf0Var;
+        this.b = new lc(sf0Var);
+        this.e = new c6(sf0Var, 0L, 250L, kr.f);
     }
 
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i7) {
-        qf0 qf0Var;
-        switch (this.a) {
-            case 0:
-                int[] iArr = {0, 0};
-                tf0 tf0Var = (tf0) this.b;
-                ArrayList arrayList = tf0Var.a;
-                tf0Var.getLocationOnScreen(iArr);
-                if (i7 == -1) {
-                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(tf0Var);
-                    tf0Var.onInitializeAccessibilityNodeInfo(obtain);
-                    obtain.setEnabled(true);
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        obtain.addChild(tf0Var, ((qf0) arrayList.get(i10)).a);
-                    }
-                    return obtain;
-                }
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= arrayList.size()) {
-                        qf0Var = null;
-                    } else if (((qf0) arrayList.get(i11)).a == i7) {
-                        qf0Var = (qf0) arrayList.get(i11);
-                    } else {
-                        i11++;
-                    }
-                }
-                if (qf0Var != null) {
-                    RectF rectF = qf0Var.d;
-                    if (!rectF.isEmpty()) {
-                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
-                        obtain2.setSource(tf0Var, i7);
-                        obtain2.setParent(tf0Var);
-                        obtain2.setPackageName(tf0Var.getContext().getPackageName());
-                        obtain2.addAction(16);
-                        obtain2.addAction(64);
-                        obtain2.setClickable(true);
-                        obtain2.setFocusable(true);
-                        obtain2.setEnabled(true);
-                        obtain2.setVisibleToUser(true);
-                        obtain2.setClassName(Button.class.getName());
-                        obtain2.setText(qf0Var.l.j());
-                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-                        obtain2.setBoundsInParent(rect);
-                        rect.offset(iArr[0], iArr[1]);
-                        obtain2.setBoundsInScreen(rect);
-                        return obtain2;
-                    }
-                }
-                return null;
-            default:
-                s0.c t6 = ((org.telegram.ui.Cells.c5) this.b).t(i7);
-                if (t6 == null) {
-                    return null;
-                }
-                return t6.a;
+    public final void a() {
+        float e10 = this.e.e(false, 1.0f);
+        if (e10 == 1.0f) {
+            this.n = false;
+            if (this.o) {
+                this.p = true;
+                return;
+            }
+            return;
+        }
+        RectF rectF = this.g;
+        float f10 = rectF.left;
+        RectF rectF2 = this.f;
+        float T1 = org.telegram.messenger.g0.T1(f10, rectF2.left, e10);
+        RectF rectF3 = this.d;
+        rectF3.left = T1;
+        rectF3.right = org.telegram.messenger.g0.T1(rectF.right, rectF2.right, e10);
+    }
+
+    public final float b() {
+        boolean z10 = this.o;
+        c6 c6Var = this.e;
+        if (z10) {
+            return 1.0f - c6Var.e(false, 1.0f);
+        }
+        if (this.n) {
+            return c6Var.e(false, 1.0f);
+        }
+        return 1.0f;
+    }
+
+    public final void c(String str) {
+        wy0 wy0Var = new wy0(str, 11.0f, org.telegram.messenger.g0.o());
+        wy0Var.m(3);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        wy0Var.a();
+        this.l = wy0Var;
+    }
+
+    public final void d(int i7, int i10, int i11) {
+        sf0 sf0Var = this.y;
+        if (i7 != 0) {
+            nh0 nh0Var = new nh0(i7, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.g0.L(56.0f), false, null);
+            nh0Var.R(sf0Var);
+            nh0Var.start();
+            this.k = nh0Var;
+        } else {
+            this.k = null;
+        }
+        this.i = i10 != 0 ? sf0Var.getResources().getDrawable(i10).mutate() : null;
+        this.j = i11 != 0 ? sf0Var.getResources().getDrawable(i11).mutate() : null;
+        nh0 nh0Var2 = this.k;
+        Rect rect = this.h;
+        if (nh0Var2 != null) {
+            nh0Var2.setBounds(rect);
+        }
+        Drawable drawable = this.i;
+        if (drawable != null) {
+            drawable.setBounds(rect);
+        }
+        Drawable drawable2 = this.j;
+        if (drawable2 != null) {
+            drawable2.setBounds(rect);
         }
     }
 
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public List findAccessibilityNodeInfosByText(String str, int i7) {
-        switch (this.a) {
-            case 1:
-                ((org.telegram.ui.Cells.c5) this.b).getClass();
-                return null;
-            default:
-                return super.findAccessibilityNodeInfosByText(str, i7);
-        }
-    }
-
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public AccessibilityNodeInfo findFocus(int i7) {
-        switch (this.a) {
-            case 1:
-                s0.c w10 = ((org.telegram.ui.Cells.c5) this.b).w(i7);
-                if (w10 == null) {
-                    return null;
-                }
-                return w10.a;
-            default:
-                return super.findFocus(i7);
-        }
-    }
-
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public final boolean performAction(int i7, int i10, Bundle bundle) {
-        qf0 qf0Var;
-        switch (this.a) {
-            case 0:
-                tf0 tf0Var = (tf0) this.b;
-                ArrayList arrayList = tf0Var.a;
-                if (i7 == -1) {
-                    return tf0Var.performAccessibilityAction(i10, bundle);
-                }
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= arrayList.size()) {
-                        qf0Var = null;
-                    } else if (((qf0) arrayList.get(i11)).a == i7) {
-                        qf0Var = (qf0) arrayList.get(i11);
-                    } else {
-                        i11++;
-                    }
-                }
-                if (qf0Var != null) {
-                    if (i10 == 64) {
-                        if (((AccessibilityManager) tf0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
-                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
-                            obtain.setPackageName(tf0Var.getContext().getPackageName());
-                            obtain.setSource(tf0Var, i7);
-                            if (tf0Var.getParent() != null) {
-                                tf0Var.getParent().requestSendAccessibilityEvent(tf0Var, obtain);
-                            }
-                        }
-                    } else if (i10 == 16) {
-                        sf0 sf0Var = tf0Var.y;
-                        if (sf0Var != null) {
-                            ProfileActivity.l0(((org.telegram.ui.tt0) sf0Var).b, i7, 0.0f, 0.0f);
-                        }
-                    }
-                    return true;
-                }
-                return false;
-            default:
-                return ((org.telegram.ui.Cells.c5) this.b).z(i7, i10, bundle);
-        }
-    }
-
-    public pf0(tf0 tf0Var) {
-        this.b = tf0Var;
+    public pf0(sf0 sf0Var, qf0 qf0Var) {
+        this.y = sf0Var;
+        this.b = new lc(sf0Var);
+        this.e = new c6(sf0Var, 0L, 250L, kr.f);
+        d(0, qf0Var.b, qf0Var.c);
+        c(org.telegram.messenger.gd.N0(qf0Var.a, null));
     }
 }

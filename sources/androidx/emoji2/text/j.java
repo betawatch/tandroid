@@ -2,14 +2,14 @@ package androidx.emoji2.text;
 
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import c8.tb;
-import com.google.android.gms.common.api.internal.l0;
+import c8.ub;
+import com.google.android.gms.common.api.internal.k0;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Cells.l7;
+import org.telegram.ui.Cells.k7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final class j implements Runnable {
                     break;
                 }
             case 1:
-                ((l0) this.c).b(this.b);
+                ((k0) this.c).b(this.b);
                 break;
             case 2:
-                ((j6.w) this.c).H.b(this.b);
+                ((j6.x) this.c).H.b(this.b);
                 break;
             case 3:
                 break;
@@ -66,19 +66,19 @@ public final class j implements Runnable {
                 }
                 break;
             default:
-                l7 l7Var = (l7) this.c;
-                if (l7Var.a && l7Var.getParent() != null && this.b == l7Var.c) {
-                    l7Var.a = false;
+                k7 k7Var = (k7) this.c;
+                if (k7Var.a && k7Var.getParent() != null && this.b == k7Var.c) {
+                    k7Var.a = false;
                     try {
-                        l7Var.performHapticFeedback(0);
+                        k7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i10 = l7Var.h;
+                    int i10 = k7Var.h;
                     if (i10 >= 0) {
-                        l7Var.y.a(((CharSequence) l7Var.F.get(i10)).toString(), true);
+                        k7Var.y.a(((CharSequence) k7Var.F.get(i10)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    l7Var.onTouchEvent(obtain2);
+                    k7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -100,7 +100,7 @@ public final class j implements Runnable {
 
     public j(List list, int i7, Throwable th2) {
         this.a = 0;
-        tb.a(list, "initCallbacks cannot be null");
+        ub.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i7;
     }

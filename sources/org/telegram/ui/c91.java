@@ -1,52 +1,25 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c91 extends v4.u0 {
-    public int a;
-    public int b;
-    public final /* synthetic */ y91 c;
+public final class c91 implements View.OnClickListener {
+    public final /* synthetic */ w91 a;
 
-    public c91(y91 y91Var) {
-        this.c = y91Var;
+    public c91(w91 w91Var) {
+        this.a = w91Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0039  */
-    @Override // v4.u0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        boolean z10;
-        boolean z11;
-        y91 y91Var = this.c;
-        int L0 = y91Var.G.L0();
-        if (L0 != -1) {
-            v4.f1 K = recyclerView.K(L0);
-            int top = K != null ? K.a.getTop() : 0;
-            int i11 = this.a;
-            if (i11 == L0) {
-                int i12 = this.b;
-                int i13 = i12 - top;
-                z10 = top < i12;
-                if (Math.abs(i13) <= 1) {
-                    z11 = false;
-                    if (z11) {
-                        y91Var.K0(z10 || !y91Var.L, true);
-                    }
-                    this.a = L0;
-                    this.b = top;
-                }
-            } else {
-                z10 = L0 > i11;
-            }
-            z11 = true;
-            if (z11) {
-            }
-            this.a = L0;
-            this.b = top;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        w91 w91Var = this.a;
+        if (w91Var.N == 1) {
+            org.telegram.ui.Components.b5.g0(w91Var, -w91Var.a, null, w91Var.g(), null, false, w91Var.K, new na(this, 4), w91Var.getResourceProvider());
+            return;
         }
+        w91Var.getMessagesController().m(w91Var.a, w91Var.getUserConfig().f(), 0, null, w91Var, false, new w81(w91Var, 2), new x81(w91Var), null);
+        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.L4, new Object[0]);
+        w91Var.S0(false);
     }
 }

@@ -1,93 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.MediaController;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p7 extends rh0 {
-    public final /* synthetic */ f8 E;
-    public float r;
-    public float s;
-    public boolean w;
-    public final j6.o x;
-    public final /* synthetic */ float y;
+public final class p7 extends zc {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.messenger.fs c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(f8 f8Var, Context context, float f10) {
+    public /* synthetic */ p7(org.telegram.messenger.fs fsVar, Context context, int i7) {
         super(context);
-        this.E = f8Var;
-        this.y = f10;
-        this.x = new j6.o(this, 27);
+        this.b = i7;
+        this.c = fsVar;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
-    
-        if (r5 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        f8 f8Var = this.E;
-        p7 p7Var = f8Var.F1;
-        if (f8Var.N1.x || f8Var.B2 == -1) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        j6.o oVar = this.x;
-        if (action == 0) {
-            this.w = false;
-            this.r = rawX;
-            this.s = rawY;
-            org.telegram.messenger.g0.h3(oVar, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
-            }
-            setPressed(true);
-            return true;
-        }
-        if (action != 1) {
-            if (action == 2) {
-                float f10 = rawX - this.r;
-                float f11 = rawY - this.s;
-                float f12 = (f11 * f11) + (f10 * f10);
-                float f13 = this.y;
-                if (f12 > f13 * f13 && !this.w) {
-                    org.telegram.messenger.g0.r(oVar);
-                    setPressed(false);
+    @Override // org.telegram.ui.Components.zc
+    public final void c(boolean z10) {
+        switch (this.b) {
+            case 0:
+                e8 e8Var = (e8) this.c;
+                e8Var.updateColors();
+                org.telegram.ui.xq xqVar = e8Var.I1;
+                if (xqVar != null) {
+                    xqVar.a(d1.f.u());
+                    break;
                 }
-            }
-            return true;
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                org.telegram.ui.ActionBar.y0 y0Var = photoViewer.G0;
+                if (y0Var != null) {
+                    y0Var.f(z10);
+                    photoViewer.G0.setSelectorColor(z10 ? 259241196 : 268435455);
+                }
+                h61 h61Var = photoViewer.G2;
+                if (h61Var != null) {
+                    h61Var.t0(d1.f.u() || photoViewer.r);
+                }
+                org.telegram.ui.xq xqVar2 = photoViewer.x0;
+                if (xqVar2 != null) {
+                    xqVar2.a(d1.f.u());
+                    break;
+                }
+                break;
         }
-        if (!this.w && motionEvent.getAction() == 1 && isPressed()) {
-            MediaController.B().U(false);
-            p7Var.setProgress(0.0f);
-            p7Var.d();
-        }
-        org.telegram.messenger.g0.r(oVar);
-        if (f8Var.D2 > 0) {
-            MediaController.B().m0(true, 1.0f);
-            if (MediaController.B().H()) {
-                f8Var.F2 = 0L;
-                f8Var.I2.run();
-            }
-        }
-        f8Var.B2 = 0;
-        setPressed(false);
-        f8Var.D2 = 0;
-        f8Var.C2 = -1.0f;
-        return true;
     }
 }

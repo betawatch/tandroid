@@ -2,13 +2,13 @@ package fi;
 
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.ra;
+import org.telegram.ui.Cells.sa;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class n9 {
     public static final n9[] f = new n9[4];
@@ -31,17 +31,17 @@ public final class n9 {
         arrayList.clear();
         for (int i7 = 0; i7 < ek0Var.getChildCount(); i7++) {
             View childAt = ek0Var.getChildAt(i7);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.u2 ? ((org.telegram.ui.Cells.u2) childAt).getDialogId() : childAt instanceof ra ? ((ra) childAt).getDialogId() : 0L;
+            long dialogId = childAt instanceof org.telegram.ui.Cells.u2 ? ((org.telegram.ui.Cells.u2) childAt).getDialogId() : childAt instanceof sa ? ((sa) childAt).getDialogId() : 0L;
             int i10 = this.a;
             LongSparseLongArray longSparseLongArray = this.b;
             if (dialogId > 0) {
-                TLRPC.User c22 = np.u1(i10).c2(Long.valueOf(dialogId));
+                TLRPC.User c22 = mp.u1(i10).c2(Long.valueOf(dialogId));
                 if (c22 != null && !c22.bot && !c22.self && !c22.contact && (userStatus = c22.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
                     longSparseLongArray.put(dialogId, currentTimeMillis);
                     arrayList.add(Long.valueOf(dialogId));
                 }
             } else {
-                TLRPC.Chat O0 = np.u1(i10).O0(Long.valueOf(-dialogId));
+                TLRPC.Chat O0 = mp.u1(i10).O0(Long.valueOf(-dialogId));
                 if (org.telegram.messenger.v3.T(O0) && !org.telegram.messenger.v3.p0(O0) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
                     longSparseLongArray.put(dialogId, currentTimeMillis);
                     arrayList.add(Long.valueOf(dialogId));

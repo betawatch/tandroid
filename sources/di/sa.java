@@ -4,26 +4,26 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.TextView;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.yb0;
+import org.telegram.ui.Components.vb0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class sa implements TextWatcher {
     public boolean a;
     public int b = 2;
     public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ yb0 d;
+    public final /* synthetic */ vb0 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ hi.e h;
     public final /* synthetic */ TextView n;
 
-    public sa(EditTextBoldCursor editTextBoldCursor, yb0 yb0Var, long j3, boolean z10, hi.e eVar, TextView textView) {
+    public sa(EditTextBoldCursor editTextBoldCursor, vb0 vb0Var, long j3, boolean z10, hi.e eVar, TextView textView) {
         this.c = editTextBoldCursor;
-        this.d = yb0Var;
+        this.d = vb0Var;
         this.e = j3;
         this.f = z10;
         this.h = eVar;
@@ -39,7 +39,7 @@ public final class sa implements TextWatcher {
     */
     public final void afterTextChanged(Editable editable) {
         long j3;
-        yb0 yb0Var = this.d;
+        vb0 vb0Var = this.d;
         EditTextBoldCursor editTextBoldCursor = this.c;
         if (this.a) {
             return;
@@ -47,14 +47,14 @@ public final class sa implements TextWatcher {
         try {
             j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
             try {
-                if (j3 > np.u1(k10.t0).V5) {
+                if (j3 > mp.u1(i10.t0).V5) {
                     this.a = true;
-                    j3 = np.u1(k10.t0).V5;
+                    j3 = mp.u1(i10.t0).V5;
                     editTextBoldCursor.setText(Long.toString(j3));
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i7 = -this.b;
                     this.b = i7;
-                    org.telegram.messenger.g0.E3(i7, yb0Var, null);
+                    org.telegram.messenger.g0.E3(i7, vb0Var, null);
                 }
             } catch (Exception unused) {
                 this.a = true;
@@ -64,7 +64,7 @@ public final class sa implements TextWatcher {
                 this.a = false;
                 if (!this.f) {
                 }
-                yb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                vb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
                 TextView textView = this.n;
                 if (j3 != 0) {
                 }
@@ -76,14 +76,14 @@ public final class sa implements TextWatcher {
         if (!this.f) {
             this.h.setEnabled(j3 > 0);
         }
-        yb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        vb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
         TextView textView2 = this.n;
         if (j3 != 0) {
             textView2.animate().alpha(0.0f).start();
             textView2.setText("");
         } else {
             textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * np.u1(k10.t0).f6), "USD"));
+            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * mp.u1(i10.t0).f6), "USD"));
         }
     }
 

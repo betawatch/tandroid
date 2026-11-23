@@ -1,366 +1,325 @@
 package v4;
 
-import android.opengl.EGL14;
-import android.opengl.EGLDisplay;
-import android.opengl.EGLSurface;
-import android.opengl.GLES20;
-import android.os.SystemClock;
-import android.os.Trace;
-import android.view.Choreographer;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import c8.nd;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.a8;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b50;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.Components.rh;
-import org.telegram.ui.Wallet.l7;
-import org.telegram.ui.Wallet.m7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class p {
+    public static final c5.b a = new c5.b(8);
 
-    public /* synthetic */ p(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:105:0x03af A[Catch: all -> 0x01f8, TRY_LEAVE, TryCatch #5 {all -> 0x01f8, blocks: (B:233:0x01b9, B:235:0x01bf, B:237:0x01c7, B:240:0x01dd, B:241:0x01d6, B:139:0x0212, B:143:0x021d, B:145:0x0233, B:149:0x0238, B:150:0x023f, B:153:0x024c, B:157:0x0251, B:158:0x0258, B:165:0x0285, B:171:0x0299, B:173:0x029d, B:175:0x02b6, B:179:0x02bb, B:180:0x02c0, B:181:0x02c1, B:184:0x02c9, B:186:0x02cd, B:188:0x02d1, B:190:0x02d5, B:192:0x02db, B:103:0x03a8, B:105:0x03af), top: B:66:0x012e }] */
-    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x03d1  */
-    /* JADX WARN: Type inference failed for: r4v10, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r4v26 */
-    /* JADX WARN: Type inference failed for: r4v36 */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0189, code lost:
+    
+        r0 = r25 + 2;
+        r17 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0164, code lost:
+    
+        r25 = r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x013f, code lost:
+    
+        r10 = r22[(r18 + r5) - 1];
+        r11 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x018e, code lost:
+    
+        r8 = r8 + 1;
+        r0 = r19;
+        r10 = r20;
+        r5 = r21;
+        r2 = r22;
+        r11 = r24;
+        r17 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0099, code lost:
+    
+        if (r5[r20 - 1] < r21[r20 + 1]) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0111, code lost:
+    
+        r22 = r2;
+        r21 = r5;
+        r20 = r10;
+        r24 = r11;
+        r0 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x011b, code lost:
+    
+        if (r0 > r8) goto L115;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x011d, code lost:
+    
+        r5 = r0 + r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0121, code lost:
+    
+        if (r5 == (r8 + r14)) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0125, code lost:
+    
+        if (r5 == (r6 + r14)) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x0127, code lost:
+    
+        r10 = r18 + r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0131, code lost:
+    
+        if (r22[r10 - 1] >= r22[r10 + 1]) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0134, code lost:
+    
+        r10 = r22[(r18 + r5) + 1] - 1;
+        r11 = r17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0146, code lost:
+    
+        r16 = r10 - r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x0148, code lost:
+    
+        if (r10 <= 0) goto L120;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x014a, code lost:
+    
+        if (r16 <= 0) goto L122;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x014c, code lost:
+    
+        r25 = r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x015a, code lost:
+    
+        if (r27.b((r20 + r10) - 1, (r12 + r16) - 1) == false) goto L121;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x015c, code lost:
+    
+        r10 = r10 - 1;
+        r16 = r16 - 1;
+        r0 = r25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0166, code lost:
+    
+        r0 = r18 + r5;
+        r22[r0] = r10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x016a, code lost:
+    
+        if (r19 != 0) goto L116;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x016c, code lost:
+    
+        if (r5 < r6) goto L117;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x016e, code lost:
+    
+        if (r5 > r8) goto L118;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0170, code lost:
+    
+        r0 = r21[r0];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0172, code lost:
+    
+        if (r0 < r10) goto L119;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0174, code lost:
+    
+        r6 = new v4.o();
+        r6.a = r10;
+        r6.b = r10 - r5;
+        r6.c = r0 - r10;
+        r6.d = r11;
+        r6.e = r17;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00d0 A[LOOP:3: B:20:0x00be->B:24:0x00d0, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00d9 A[EDGE_INSN: B:25:0x00d9->B:26:0x00d9 BREAK  A[LOOP:3: B:20:0x00be->B:24:0x00d0], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        boolean z10;
+    public static p4.c c(p pVar, boolean z10) {
+        int i7;
+        int[] iArr;
+        int[] iArr2;
+        o oVar;
+        int i10;
         boolean z11;
-        vg.p pVar;
-        long cameraFlipElapsedMs;
-        switch (this.a) {
-            case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                if (recyclerView.getAdapter() != null) {
-                    recyclerView.getAdapter().f();
-                    return;
-                }
-                return;
-            case 1:
-                vg.e eVar = ((vg.d) this.b).d;
-                eVar.s = false;
-                eVar.w = null;
-                Choreographer.getInstance().removeFrameCallback(eVar);
-                eVar.G = 0L;
-                l7 l7Var = (l7) eVar;
-                m7 m7Var = l7Var.M;
-                if (m7Var.d == l7Var) {
-                    m7.c(m7Var);
-                    return;
-                }
-                return;
-            case 2:
-                vg.o oVar = (vg.o) this.b;
-                vg.q[] qVarArr = oVar.g;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int e10 = pVar.e();
+        int d = pVar.d();
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        n nVar = new n();
+        int i16 = 0;
+        nVar.a = 0;
+        nVar.b = e10;
+        nVar.c = 0;
+        nVar.d = d;
+        arrayList2.add(nVar);
+        int abs = Math.abs(e10 - d) + e10 + d;
+        int i17 = abs * 2;
+        int[] iArr3 = new int[i17];
+        int[] iArr4 = new int[i17];
+        ArrayList arrayList3 = new ArrayList();
+        while (!arrayList2.isEmpty()) {
+            n nVar2 = (n) p5.c.g(1, arrayList2);
+            int i18 = nVar2.a;
+            int i19 = nVar2.b;
+            int i20 = nVar2.c;
+            int i21 = i19 - i18;
+            int i22 = nVar2.d - i20;
+            if (i21 >= 1 && i22 >= 1) {
+                int i23 = i21 - i22;
+                int i24 = ((i21 + i22) + 1) / 2;
                 boolean z12 = true;
-                ?? r42 = 1;
-                boolean z13 = true;
-                int i7 = 0;
-                try {
-                    try {
-                    } catch (Throwable th2) {
-                        th = th2;
-                    }
-                } catch (RuntimeException e10) {
-                    e = e10;
-                    z10 = false;
-                } catch (Throwable th3) {
-                    th = th3;
-                    z12 = false;
-                }
-                if (qVarArr.length != 0) {
-                    if (oVar.n == null) {
-                        try {
-                            oVar.a();
-                        } catch (RuntimeException e11) {
-                            e = e11;
-                            z11 = true;
-                            z13 = false;
-                            a8.g(e, z11);
-                            while (r5 < r0) {
-                            }
-                            oVar.h.set(false);
-                            if (!z13) {
-                            }
-                            Trace.endSection();
-                            return;
-                        } catch (Throwable th4) {
-                            th = th4;
-                            z12 = false;
-                            oVar.h.set(false);
-                            if (z12) {
-                                Trace.endSection();
-                            }
-                            throw th;
+                int i25 = (abs - i24) - 1;
+                i7 = abs;
+                int i26 = abs + i24 + 1;
+                Arrays.fill(iArr3, i25, i26, i16);
+                Arrays.fill(iArr4, i25 + i23, i26 + i23, i21);
+                int i27 = i23 % 2 != 0 ? 1 : i16;
+                int i28 = i16;
+                while (i28 <= i24) {
+                    int i29 = -i28;
+                    int i30 = i27;
+                    int i31 = i29;
+                    while (true) {
+                        if (i31 > i28) {
+                            break;
                         }
-                    }
-                    long uptimeMillis = SystemClock.uptimeMillis();
-                    int length = qVarArr.length;
-                    vg.p pVar2 = null;
-                    int i10 = 0;
-                    boolean z14 = false;
-                    boolean z15 = false;
-                    while (i10 < length) {
-                        vg.q qVar = qVarArr[i10];
-                        vg.p pVar3 = qVar.e;
-                        if (qVar.c && pVar3 != null) {
-                            boolean z16 = pVar3.c;
-                            z15 |= z16;
-                            if (!z16) {
-                                pVar2 = pVar3;
+                        if (i31 != i29) {
+                            if (i31 != i28) {
+                                int i32 = i7 + i31;
+                                iArr = iArr4;
+                                iArr2 = iArr3;
+                            } else {
+                                iArr = iArr4;
+                                iArr2 = iArr3;
                             }
-                        }
-                        i10++;
-                        z14 |= (!qVar.c || qVar.d || pVar3 == null) ? false : true;
-                    }
-                    if (!z14) {
-                        if (uptimeMillis - oVar.q < (z15 ? 16 : 33)) {
-                        }
-                    }
-                    Trace.beginSection(z15 ? "WalletTextures.dragBatch" : "WalletTextures.idleBatch");
-                    try {
-                        float min = oVar.q == 0 ? 0.0f : Math.min(0.1f, (uptimeMillis - r9) / 1000.0f);
-                        oVar.q = uptimeMillis;
-                        EGLDisplay eGLDisplay = oVar.j;
-                        EGLSurface eGLSurface = oVar.l;
-                        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, oVar.k);
-                        if (pVar2 != null) {
-                            try {
-                                long j3 = oVar.r;
-                                if (j3 == 0 || uptimeMillis - j3 >= 33) {
-                                    vg.a aVar = oVar.n;
-                                    int i11 = oVar.c;
-                                    aVar.c(i11, i11, pVar2.a, pVar2.b, 0.0f, j3 == 0 ? 0.0f : (uptimeMillis - j3) / 1000.0f, 1.0f, 0.0f, true);
-                                    oVar.r = uptimeMillis;
-                                    oVar.s++;
+                            i10 = iArr2[(i7 + i31) - 1] + 1;
+                            z11 = z12;
+                            i11 = i18;
+                            i12 = i10 - i31;
+                            while (i10 < i21 && i12 < i22) {
+                                i15 = i12;
+                                i13 = i21;
+                                if (pVar.b(i11 + i10, i20 + i15)) {
+                                    break;
                                 }
-                            } catch (RuntimeException e12) {
-                                e = e12;
-                                z11 = true;
-                                a8.g(e, z11);
-                                for (vg.q qVar2 : qVarArr) {
-                                    qVar2.a.post(new p(qVar2, 3));
-                                }
-                                oVar.h.set(false);
-                                if (!z13) {
-                                    return;
-                                }
-                                Trace.endSection();
-                                return;
+                                i10++;
+                                i12 = i15 + 1;
+                                i21 = i13;
+                            }
+                            i13 = i21;
+                            int i33 = i7 + i31;
+                            iArr2[i33] = i10;
+                            if (i30 == 0 && i31 >= (i23 - i28) + 1 && i31 <= (i23 + i28) - 1 && i10 >= (i14 = iArr[i33])) {
+                                oVar = new o();
+                                oVar.a = i14;
+                                oVar.b = i14 - i31;
+                                oVar.c = i10 - i14;
+                                oVar.d = z11;
+                                oVar.e = false;
+                                break;
+                            }
+                            i31 += 2;
+                            i18 = i11;
+                            iArr3 = iArr2;
+                            iArr4 = iArr;
+                            i21 = i13;
+                        } else {
+                            iArr = iArr4;
+                            iArr2 = iArr3;
+                        }
+                        i10 = iArr2[i7 + i31 + 1];
+                        z11 = false;
+                        i11 = i18;
+                        i12 = i10 - i31;
+                        while (i10 < i21) {
+                            i15 = i12;
+                            i13 = i21;
+                            if (pVar.b(i11 + i10, i20 + i15)) {
                             }
                         }
-                        int length2 = qVarArr.length;
-                        int i12 = 0;
-                        boolean z17 = false;
-                        boolean z18 = false;
-                        while (i12 < length2) {
-                            vg.q qVar3 = qVarArr[i12];
-                            if (qVar3.c && ((pVar = qVar3.e) != null || !qVar3.i)) {
-                                if (qVar3.h == EGL14.EGL_NO_SURFACE) {
-                                    EGLSurface eglCreateWindowSurface = EGL14.eglCreateWindowSurface(oVar.j, oVar.m, qVar3.b, new int[]{12344}, i7);
-                                    qVar3.h = eglCreateWindowSurface;
-                                    if (eglCreateWindowSurface == EGL14.EGL_NO_SURFACE) {
-                                        if (qVar3.c) {
-                                            throw new IllegalStateException("Wallet EGL window failed");
-                                        }
-                                    }
-                                }
-                                EGLDisplay eGLDisplay2 = oVar.j;
-                                EGLSurface eGLSurface2 = qVar3.h;
-                                if (EGL14.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, oVar.k)) {
-                                    EGL14.eglSwapInterval(oVar.j, i7);
-                                    if (EGL14.eglQuerySurface(oVar.j, qVar3.h, 12375, oVar.i, i7) && EGL14.eglQuerySurface(oVar.j, qVar3.h, 12374, oVar.i, r42)) {
-                                        int i13 = qVar3.f;
-                                        int[] iArr = oVar.i;
-                                        int i14 = iArr[i7];
-                                        int i15 = (i13 == i14 && qVar3.g == iArr[r42]) ? i7 : r42;
-                                        qVar3.f = i14;
-                                        qVar3.g = iArr[r42];
-                                        if (pVar == null) {
-                                            if (!qVar3.i) {
-                                                GLES20.glBindFramebuffer(36160, i7);
-                                                GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                                                GLES20.glClear(TLObject.FLAG_14);
-                                                if (!EGL14.eglSwapBuffers(oVar.j, qVar3.h) && qVar3.c) {
-                                                    throw new IllegalStateException("Wallet EGL swap failed");
-                                                }
-                                                qVar3.i = r42;
-                                            }
-                                        } else if (i15 != 0 || pVar.c || qVar3.j || qVar3.i || qVar3.k != oVar.s || qVar3.l != 1.0f) {
-                                            vg.a aVar2 = oVar.n;
-                                            if (pVar.c) {
-                                                if (pVar.d) {
-                                                    vg.a aVar3 = oVar.o;
-                                                    int i16 = oVar.d;
-                                                    aVar3.c(i16, i16, pVar.a, pVar.b, 0.0f, z17 ? 0.0f : min, 1.0f, 0.0f, true);
-                                                    aVar2 = aVar3;
-                                                    z17 = true;
-                                                } else {
-                                                    if (oVar.p == null) {
-                                                        vg.a aVar4 = new vg.a(oVar.a, 2);
-                                                        aVar4.C = oVar.e;
-                                                        oVar.p = aVar4;
-                                                    }
-                                                    vg.a aVar5 = oVar.p;
-                                                    int i17 = oVar.c;
-                                                    aVar5.c(i17, i17, pVar.a, pVar.b, 0.0f, z18 ? 0.0f : min, 1.0f, 0.0f, true);
-                                                    aVar2 = aVar5;
-                                                    z18 = true;
-                                                }
-                                            }
-                                            aVar2.d(1.0f, 0.0f, qVar3.f, qVar3.g);
-                                            if (!EGL14.eglSwapBuffers(oVar.j, qVar3.h) && qVar3.c) {
-                                                throw new IllegalStateException("Wallet EGL swap failed");
-                                            }
-                                            qVar3.i = false;
-                                            qVar3.k = oVar.s;
-                                            qVar3.l = 1.0f;
-                                            qVar3.j = pVar.c;
-                                            qVar3.d = true;
-                                        }
-                                    } else if (qVar3.c) {
-                                        throw new IllegalStateException("Wallet EGL surface size failed");
-                                    }
-                                    i12++;
-                                    r42 = 1;
-                                    i7 = 0;
-                                } else if (qVar3.c) {
-                                    throw new IllegalStateException("Wallet EGL makeCurrent failed");
-                                }
-                            }
-                            i12++;
-                            r42 = 1;
-                            i7 = 0;
+                        i13 = i21;
+                        int i332 = i7 + i31;
+                        iArr2[i332] = i10;
+                        if (i30 == 0) {
                         }
-                        oVar.h.set(false);
-                    } catch (RuntimeException e13) {
-                        e = e13;
-                        z10 = true;
-                        z11 = true;
-                        z13 = z10;
-                        a8.g(e, z11);
-                        while (r5 < r0) {
-                        }
-                        oVar.h.set(false);
-                        if (!z13) {
-                        }
-                        Trace.endSection();
-                        return;
-                    } catch (Throwable th5) {
-                        th = th5;
-                        z12 = true;
-                        oVar.h.set(false);
-                        if (z12) {
-                        }
-                        throw th;
-                    }
-                    Trace.endSection();
-                    return;
-                }
-                oVar.h.set(false);
-                return;
-            case 3:
-                vg.q qVar4 = (vg.q) this.b;
-                vg.r rVar = qVar4.a;
-                if (rVar.e == qVar4) {
-                    rVar.n = false;
-                    rVar.a();
-                    return;
-                }
-                return;
-            case 4:
-                ((vh.g) this.b).Z1.O(true);
-                return;
-            case 5:
-                ((wg.y) this.b).a(null);
-                return;
-            case 6:
-                ((rh) this.b).a(Collections.EMPTY_LIST);
-                return;
-            case 7:
-                ((wg.v) this.b).a(null);
-                return;
-            case 8:
-                wg.b0 b0Var = (wg.b0) this.b;
-                b0Var.getClass();
-                wg.c0 c0Var = b0Var.r;
-                ug.h1 h1Var = new ug.h1(c0Var.s1, c0Var.a, null, null, null, c0Var.J0);
-                h1Var.F2 = true;
-                h1Var.Y1 = true;
-                c0Var.s1.showDialog(h1Var);
-                return;
-            case 9:
-                ((FrameLayout) this.b).invalidate();
-                return;
-            case 10:
-                wi.h hVar = (wi.h) ((og.b) this.b).b;
-                hVar.h.invalidate();
-                hVar.i.requestLayout();
-                return;
-            case 11:
-                l2.i iVar = (l2.i) this.b;
-                ArrayList arrayList = (ArrayList) iVar.c;
-                for (int i18 = 0; i18 < arrayList.size(); i18++) {
-                    wi.n nVar = (wi.n) arrayList.get(i18);
-                    wi.h hVar2 = nVar.e;
-                    if (hVar2 != null) {
-                        if (nVar.c == 1 && hVar2.g && !hVar2.K) {
-                            if ((hVar2.b.p() && nd.a(hVar2.c)) != hVar2.f) {
-                                hVar2.l();
-                                hVar2.a();
-                            }
-                        }
+                        i31 += 2;
+                        i18 = i11;
+                        iArr3 = iArr2;
+                        iArr4 = iArr;
+                        i21 = i13;
                     }
                 }
-                iVar.f();
-                return;
-            case 12:
-                ((wi.l) this.b).U();
-                return;
-            case 13:
-                wi.n nVar2 = (wi.n) this.b;
-                if (nVar2.c == 1) {
-                    nVar2.a.Z();
-                    return;
+                throw new IllegalStateException("DiffUtil hit an unexpected case while trying to calculate the optimal path. Please make sure your data is not changing during the diff calculation.");
+            }
+            i7 = abs;
+            iArr = iArr4;
+            iArr2 = iArr3;
+            oVar = null;
+            if (oVar != null) {
+                if (oVar.c > 0) {
+                    arrayList.add(oVar);
                 }
-                return;
-            case 14:
-                xi.c cVar = (xi.c) this.b;
-                org.telegram.messenger.g0.h3(new xi.b(cVar.a, cVar.b, 1), 500L);
-                return;
-            case 15:
-                zh.k kVar = (zh.k) this.b;
-                kVar.f();
-                kVar.e(true);
-                return;
-            default:
-                b50 b50Var = (b50) ((qf) this.b).b;
-                b50Var.r0 = true;
-                StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = b50Var.getCameraFlipElapsedMs();
-                sb2.append(cameraFlipElapsedMs);
-                a8.b(sb2.toString());
-                b50Var.w(true);
-                b50.n(b50Var);
-                return;
+                oVar.a += nVar2.a;
+                oVar.b += nVar2.c;
+                n nVar3 = arrayList3.isEmpty() ? new n() : (n) p5.c.g(1, arrayList3);
+                nVar3.a = nVar2.a;
+                nVar3.c = nVar2.c;
+                if (oVar.e) {
+                    nVar3.b = oVar.a;
+                    nVar3.d = oVar.b;
+                } else if (oVar.d) {
+                    nVar3.b = oVar.a - 1;
+                    nVar3.d = oVar.b;
+                } else {
+                    nVar3.b = oVar.a;
+                    nVar3.d = oVar.b - 1;
+                }
+                arrayList2.add(nVar3);
+                if (!oVar.e) {
+                    int i34 = oVar.a;
+                    int i35 = oVar.c;
+                    nVar2.a = i34 + i35;
+                    nVar2.c = oVar.b + i35;
+                } else if (oVar.d) {
+                    int i36 = oVar.a;
+                    int i37 = oVar.c;
+                    nVar2.a = i36 + i37 + 1;
+                    nVar2.c = oVar.b + i37;
+                } else {
+                    int i38 = oVar.a;
+                    int i39 = oVar.c;
+                    nVar2.a = i38 + i39;
+                    nVar2.c = oVar.b + i39 + 1;
+                }
+                arrayList2.add(nVar2);
+            } else {
+                arrayList3.add(nVar2);
+            }
+            abs = i7;
+            iArr3 = iArr2;
+            iArr4 = iArr;
+            i16 = 0;
         }
+        int[] iArr5 = iArr3;
+        Collections.sort(arrayList, a);
+        return new p4.c(pVar, arrayList, iArr5, iArr4, z10);
     }
+
+    public abstract boolean a(int i7, int i10);
+
+    public abstract boolean b(int i7, int i10);
+
+    public abstract int d();
+
+    public abstract int e();
 }

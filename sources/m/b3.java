@@ -7,11 +7,10 @@ import android.util.SparseArray;
 import android.view.View;
 import fi.q5;
 import java.util.ArrayList;
-import org.telegram.messenger.gj;
-import org.telegram.ui.Wallet.u4;
+import org.telegram.messenger.fj;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b3 implements m9.t {
     public boolean a;
@@ -19,9 +18,9 @@ public final class b3 implements m9.t {
     public Object c;
     public Object d;
 
-    public b3(org.telegram.ui.Wallet.m mVar, org.telegram.ui.Wallet.u uVar) {
+    public b3(org.telegram.ui.Wallet.m mVar, org.telegram.ui.Wallet.v vVar) {
         this.c = mVar;
-        this.d = uVar;
+        this.d = vVar;
     }
 
     public boolean a(int i7) {
@@ -32,12 +31,12 @@ public final class b3 implements m9.t {
         if (i10 < 0 || i10 >= bnVar.M6.size()) {
             return false;
         }
-        gj gjVar = (gj) bnVar.M6.get(i10);
-        if (gjVar.U != 0) {
+        fj fjVar = (fj) bnVar.M6.get(i10);
+        if (fjVar.U != 0) {
             return false;
         }
-        if (z10 || sparseArray.get(gjVar.e1(), null) != null) {
-            return z10 && sparseArray.get(gjVar.e1(), null) != null;
+        if (z10 || sparseArray.get(fjVar.e1(), null) != null) {
+            return z10 && sparseArray.get(fjVar.e1(), null) != null;
         }
         return true;
     }
@@ -83,9 +82,9 @@ public final class b3 implements m9.t {
         if (i10 < 0 || i10 >= arrayList.size()) {
             return;
         }
-        gj gjVar = (gj) arrayList.get(i10);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(gjVar.e1()) < 0 && sparseArrayArr[1].indexOfKey(gjVar.e1()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(gjVar.e1()) >= 0 || sparseArrayArr[1].indexOfKey(gjVar.e1()) >= 0) && gjVar.U == 0) {
+        fj fjVar = (fj) arrayList.get(i10);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(fjVar.e1()) < 0 && sparseArrayArr[1].indexOfKey(fjVar.e1()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(fjVar.e1()) >= 0 || sparseArrayArr[1].indexOfKey(fjVar.e1()) >= 0) && fjVar.U == 0) {
                 if (z10) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
@@ -97,7 +96,7 @@ public final class b3 implements m9.t {
                                 return;
                             }
                         }
-                        bnVar.K6(gjVar, false, true);
+                        bnVar.K6(fjVar, false, true);
                         bnVar.Lc();
                         bnVar.Gd(false);
                     }
@@ -106,7 +105,7 @@ public final class b3 implements m9.t {
                 K = bnVar.A0.K(i7);
                 if (K != null) {
                 }
-                bnVar.K6(gjVar, false, true);
+                bnVar.K6(fjVar, false, true);
                 bnVar.Lc();
                 bnVar.Gd(false);
             }
@@ -116,10 +115,10 @@ public final class b3 implements m9.t {
     @Override // m9.t
     public void onSuccess(Object obj) {
         p4.w wVar = (p4.w) obj;
-        p4.e0 e0Var = ((p4.n0) this.d).h;
-        Handler handler = e0Var.l;
+        p4.d0 d0Var = ((p4.n0) this.d).h;
+        Handler handler = d0Var.l;
         p4.v vVar = (p4.v) this.c;
-        h2.l0.W(handler, new u4(e0Var, vVar, new q5(this, wVar, this.a, this.b, vVar, 4)));
+        h2.l0.W(handler, new org.telegram.ui.web.t1(d0Var, vVar, new q5(this, wVar, this.a, this.b, vVar, 4)));
     }
 
     public b3() {

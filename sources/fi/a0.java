@@ -3,9 +3,9 @@ package fi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.fc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,16 +26,16 @@ public final /* synthetic */ class a0 implements Runnable {
                     a2Var.V = true;
                     TL_phone.getGroupCallStars getgroupcallstars = new TL_phone.getGroupCallStars();
                     getgroupcallstars.call = a2Var.P;
-                    ConnectionsManager.getInstance(a2Var.O).sendRequestTyped(getgroupcallstars, new d3.b(1), new bi.o6(7, a2Var, getgroupcallstars));
+                    ConnectionsManager.getInstance(a2Var.O).sendRequestTyped(getgroupcallstars, new d3.b(1), new bi.r6(7, a2Var, getgroupcallstars));
                     break;
                 }
                 break;
             case 1:
                 a2 a2Var2 = this.b;
                 org.telegram.messenger.g0.r(a2Var2.e0);
-                gc gcVar = a2Var2.a0;
-                if (gcVar != null) {
-                    gcVar.b();
+                fc fcVar = a2Var2.a0;
+                if (fcVar != null) {
+                    fcVar.b();
                     a2Var2.a0 = null;
                 }
                 long j3 = a2Var2.S;

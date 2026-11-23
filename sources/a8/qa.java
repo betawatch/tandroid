@@ -17,11 +17,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -68,13 +68,13 @@ public final /* synthetic */ class qa implements Runnable {
         synchronized (ua.class) {
             a0Var = ua.k;
             if (a0Var == null) {
-                n0.c a10 = c8.z9.a(Resources.getSystem().getConfiguration());
+                n0.c a10 = c8.aa.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i10 = 0;
                 int i11 = 0;
                 while (i10 < a10.a.size()) {
                     Locale locale = a10.a.get(i10);
-                    k8.a aVar = pb.c.a;
+                    jb.m mVar = pb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i12 = i11 + 1;
@@ -125,8 +125,8 @@ public final /* synthetic */ class qa implements Runnable {
         c8.fb fbVar = (c8.fb) this.e;
         String str2 = (String) this.b;
         ga.d dVar = (ga.d) xaVar.c;
-        dVar.c = fbVar;
-        ue ueVar = (ue) dVar.b;
+        dVar.b = fbVar;
+        ue ueVar = (ue) dVar.a;
         if (ueVar != null) {
             str = ueVar.d;
             int i7 = c8.k4.a;
@@ -140,13 +140,13 @@ public final /* synthetic */ class qa implements Runnable {
         synchronized (uf.class) {
             mVar = uf.k;
             if (mVar == null) {
-                n0.c a10 = c8.z9.a(Resources.getSystem().getConfiguration());
+                n0.c a10 = c8.aa.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i10 = 0;
                 int i11 = 0;
                 while (i10 < a10.a.size()) {
                     Locale locale = a10.a.get(i10);
-                    k8.a aVar = pb.c.a;
+                    jb.m mVar2 = pb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i12 = i11 + 1;
@@ -193,7 +193,7 @@ public final /* synthetic */ class qa implements Runnable {
         int i7;
         Task task;
         String str;
-        y7.m9 m9Var;
+        y7.n9 n9Var;
         f6.r rVar = null;
         int i10 = 0;
         switch (this.a) {
@@ -253,7 +253,7 @@ public final /* synthetic */ class qa implements Runnable {
                             m10.c();
                             com.google.android.gms.internal.cast.k1.v((com.google.android.gms.internal.cast.k1) m10.b, i11);
                             b10.e((com.google.android.gms.internal.cast.k1) m10.a());
-                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ls.G3);
+                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ks.G3);
                             break;
                         default:
                             xa xaVar = new xa(10, 4);
@@ -287,11 +287,11 @@ public final /* synthetic */ class qa implements Runnable {
                     if (rVar != null) {
                         a10.g.setResult(rVar);
                     } else {
-                        a10.g.setException(new j6.k());
+                        a10.g.setException(new j6.l());
                     }
                     task = a10.g.getTask();
                 } else {
-                    task = Tasks.forException(new j6.k());
+                    task = Tasks.forException(new j6.l());
                 }
                 task.addOnSuccessListener(new com.google.android.gms.internal.cast.q(sVar)).addOnFailureListener(new com.google.android.gms.internal.cast.q(sVar));
                 com.google.android.gms.internal.cast.y yVar = sVar.c;
@@ -301,7 +301,7 @@ public final /* synthetic */ class qa implements Runnable {
                 yVar.postDelayed(rVar2, 10000L);
                 return;
             case 3:
-                l.e eVar = (l.e) ((hi.t5) this.b).b;
+                l.e eVar = (l.e) ((hi.u0) this.b).b;
                 l.m mVar = (l.m) this.d;
                 l.d dVar = (l.d) this.c;
                 if (dVar != null) {
@@ -315,43 +315,43 @@ public final /* synthetic */ class qa implements Runnable {
                 }
                 return;
             case 4:
-                r0.q0.h((View) this.c, (r0.v0) this.d, (k8.a) this.e);
+                r0.q0.h((View) this.c, (r0.v0) this.d, (jb.m) this.e);
                 ((ValueAnimator) this.b).start();
                 return;
             case 5:
-                ((jn) this.c).F((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
+                ((nd0) this.c).q((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
                 return;
             case 6:
-                ((jn) this.c).F((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
+                ((nd0) this.c).q((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
                 return;
             default:
-                y7.d9 d9Var = (y7.d9) this.c;
+                y7.e9 e9Var = (y7.e9) this.c;
                 xa xaVar2 = (xa) this.d;
-                y7.l6 l6Var = (y7.l6) this.e;
+                y7.m6 m6Var = (y7.m6) this.e;
                 String str2 = (String) this.b;
                 xi.e eVar2 = (xi.e) xaVar2.c;
-                eVar2.b = l6Var;
-                y7.h8 h8Var = (y7.h8) eVar2.a;
-                if (h8Var != null) {
-                    str = h8Var.d;
-                    int i12 = y7.h7.a;
+                eVar2.b = m6Var;
+                y7.i8 i8Var = (y7.i8) eVar2.a;
+                if (i8Var != null) {
+                    str = i8Var.d;
+                    int i12 = y7.i7.a;
                     if (str != null) {
                         break;
                     }
                 }
                 str = "NA";
                 u9 u9Var = new u9();
-                u9Var.a = d9Var.a;
-                u9Var.b = d9Var.b;
-                synchronized (y7.d9.class) {
-                    m9Var = y7.d9.j;
-                    if (m9Var == null) {
-                        n0.c a12 = c8.z9.a(Resources.getSystem().getConfiguration());
+                u9Var.a = e9Var.a;
+                u9Var.b = e9Var.b;
+                synchronized (y7.e9.class) {
+                    n9Var = y7.e9.j;
+                    if (n9Var == null) {
+                        n0.c a12 = c8.aa.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i13 = 0;
                         while (i10 < a12.a.size()) {
                             Locale locale = a12.a.get(i10);
-                            k8.a aVar2 = pb.c.a;
+                            jb.m mVar2 = pb.c.a;
                             String languageTag = locale.toLanguageTag();
                             languageTag.getClass();
                             int i14 = i13 + 1;
@@ -371,20 +371,20 @@ public final /* synthetic */ class qa implements Runnable {
                             i10++;
                             i13 = i14;
                         }
-                        y7.i9 i9Var = y7.k9.b;
-                        m9Var = i13 == 0 ? y7.m9.e : new y7.m9(i13, objArr);
-                        y7.d9.j = m9Var;
+                        y7.j9 j9Var = y7.l9.b;
+                        n9Var = i13 == 0 ? y7.n9.e : new y7.n9(i13, objArr);
+                        y7.e9.j = n9Var;
                     }
                 }
-                u9Var.k = m9Var;
+                u9Var.k = n9Var;
                 u9Var.g = Boolean.TRUE;
                 u9Var.d = str;
                 u9Var.c = str2;
-                u9Var.e = d9Var.f.isSuccessful() ? (String) d9Var.f.getResult() : d9Var.d.a();
+                u9Var.e = e9Var.f.isSuccessful() ? (String) e9Var.f.getResult() : e9Var.d.a();
                 u9Var.i = 10;
-                u9Var.j = Integer.valueOf(d9Var.h);
+                u9Var.j = Integer.valueOf(e9Var.h);
                 xaVar2.d = u9Var;
-                d9Var.c.a(xaVar2);
+                e9Var.c.a(xaVar2);
                 return;
         }
     }

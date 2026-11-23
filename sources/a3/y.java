@@ -1,26 +1,26 @@
 package a3;
 
-import a8.la;
+import a8.ma;
 import e2.s1;
 import j$.util.Objects;
-import l2.m1;
+import l2.n1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y {
     public final int a;
-    public final m1[] b;
+    public final n1[] b;
     public final u[] c;
     public final s1 d;
     public final Object e;
 
-    public y(m1[] m1VarArr, u[] uVarArr, s1 s1Var, Object obj) {
-        la.f(m1VarArr.length == uVarArr.length);
-        this.b = m1VarArr;
+    public y(n1[] n1VarArr, u[] uVarArr, s1 s1Var, Object obj) {
+        ma.f(n1VarArr.length == uVarArr.length);
+        this.b = n1VarArr;
         this.c = (u[]) uVarArr.clone();
         this.d = s1Var;
         this.e = obj;
-        this.a = m1VarArr.length;
+        this.a = n1VarArr.length;
     }
 
     public final boolean a(y yVar, int i7) {

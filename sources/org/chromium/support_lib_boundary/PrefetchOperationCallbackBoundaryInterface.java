@@ -3,11 +3,11 @@ package org.chromium.support_lib_boundary;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public interface PrefetchOperationCallbackBoundaryInterface {
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PrefetchExceptionTypeBoundaryInterface {
         public static final int DUPLICATE = 2;

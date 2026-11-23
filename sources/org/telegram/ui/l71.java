@@ -1,49 +1,144 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class l71 extends oq0 {
-    public final /* synthetic */ org.telegram.messenger.ff a;
-    public final /* synthetic */ m71 b;
+public final class l71 extends org.telegram.ui.Components.p9 {
+    public Drawable H;
+    public final boolean I;
+    public float J;
+    public float K;
+    public final /* synthetic */ v71 L;
 
-    public l71(m71 m71Var, org.telegram.messenger.ff ffVar) {
-        this.b = m71Var;
-        this.a = ffVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l71(v71 v71Var, Activity activity) {
+        super(activity);
+        this.L = v71Var;
+        this.I = true;
     }
 
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
-        x71 x71Var = this.b.a;
-        org.telegram.messenger.ff ffVar = this.a;
-        if (ffVar.h != null) {
-            File file = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
-            Point c12 = org.telegram.messenger.g0.c1();
-            Bitmap K = org.telegram.messenger.fc.K(ffVar.h, null, (float) c12.x, (float) c12.y, true);
-            try {
-                K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e10) {
-                e10.printStackTrace();
+    @Override // android.view.View
+    public Drawable getBackground() {
+        return this.H;
+    }
+
+    @Override // org.telegram.ui.Components.p9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        this.J = 0.0f;
+        this.K = 0.0f;
+        boolean z10 = this.I;
+        v71 v71Var = this.L;
+        if (z10) {
+            Drawable drawable = this.H;
+            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.za0)) {
+                drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                this.H.draw(canvas);
+            } else if (drawable instanceof BitmapDrawable) {
+                if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
+                    canvas.save();
+                    float f10 = 2.0f / org.telegram.messenger.g0.p;
+                    canvas.scale(f10, f10);
+                    this.H.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f10), (int) Math.ceil(getMeasuredHeight() / f10));
+                    this.H.draw(canvas);
+                    canvas.restore();
+                } else {
+                    int measuredHeight = getMeasuredHeight();
+                    float max = Math.max(getMeasuredWidth() / this.H.getIntrinsicWidth(), measuredHeight / this.H.getIntrinsicHeight());
+                    int ceil = (int) Math.ceil(this.H.getIntrinsicWidth() * max * v71Var.A1);
+                    int ceil2 = (int) Math.ceil(this.H.getIntrinsicHeight() * max * v71Var.A1);
+                    int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                    int i7 = (measuredHeight - ceil2) / 2;
+                    this.K = i7;
+                    this.H.setBounds(measuredWidth, i7, ceil + measuredWidth, ceil2 + i7);
+                    this.H.draw(canvas);
+                }
             }
-            File file2 = new File(ffVar.h);
-            x71Var.D1 = new sc1(file2, file2, "");
-            x71Var.E1 = K;
-            x71Var.d2 = 0;
-            x71Var.z0.requestLayout();
-            x71Var.g1(false);
-            x71Var.y1 = null;
-            x71Var.n1();
+        }
+        if (v71Var.c2) {
+            if (!v71Var.c.isFinished() && v71Var.c.computeScrollOffset()) {
+                if (v71Var.c.getStartX() < v71Var.Y1 && v71Var.c.getStartX() > 0) {
+                    v71Var.Z1 = v71Var.c.getCurrX();
+                }
+                v71Var.a1();
+                invalidate();
+            }
+            canvas.save();
+            float f11 = -v71Var.Z1;
+            this.J = f11;
+            canvas.translate(f11, 0.0f);
+            super.onDraw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
+        }
+        if (v71Var.O1) {
+            float f12 = v71Var.p1;
+            if (f12 > 0.0f) {
+                canvas.drawColor(i0.a.o(-16777216, (int) (f12 * 255.0f * v71Var.q1)));
+            }
         }
     }
 
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final boolean z() {
-        return false;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        v71 v71Var = this.L;
+        org.telegram.ui.Components.n71 n71Var = v71Var.x1;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        n71Var.getClass();
+        float a10 = org.telegram.ui.Components.n71.a(measuredWidth, measuredHeight);
+        v71Var.A1 = a10;
+        if (v71Var.G1) {
+            setScaleX(a10);
+            setScaleY(v71Var.A1);
+        }
+        if (v71Var.b == 2) {
+            getMeasuredWidth();
+            getMeasuredHeight();
+        }
+        int measuredWidth2 = getMeasuredWidth() + (getMeasuredHeight() << 16);
+        if (v71Var.d2 != measuredWidth2) {
+            v71Var.c2 = false;
+            if (v71Var.E1 != null) {
+                int measuredHeight2 = (int) ((getMeasuredHeight() / v71Var.E1.getHeight()) * r1.getWidth());
+                if (measuredHeight2 - getMeasuredWidth() > 100) {
+                    v71Var.c2 = true;
+                    v71Var.b2 = (int) ((v71Var.E1.getHeight() / getMeasuredHeight()) * getMeasuredWidth());
+                    float measuredWidth3 = (measuredHeight2 - getMeasuredWidth()) / 2.0f;
+                    v71Var.Z1 = measuredWidth3;
+                    v71Var.a2 = measuredWidth3;
+                    v71Var.Y1 = measuredWidth3 * 2.0f;
+                    u(measuredHeight2, getMeasuredHeight());
+                    this.w = true;
+                    v71Var.a1();
+                }
+            }
+            if (!v71Var.c2) {
+                u(-1, -1);
+                this.w = false;
+            }
+        }
+        v71Var.d2 = measuredWidth2;
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+        this.H = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p9, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.H == drawable || super.verifyDrawable(drawable);
     }
 }

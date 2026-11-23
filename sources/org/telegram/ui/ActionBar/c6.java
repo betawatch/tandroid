@@ -1,27 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public enum c6 {
-    h(m6.rg, m6.sg, m6.tg, m6.Gg, m6.Hg, m6.Ig),
-    n(m6.ug, m6.vg, m6.wg, m6.Jg, m6.Kg, m6.Lg),
-    r(m6.xg, m6.yg, m6.zg, m6.Mg, m6.Ng, m6.Og),
-    s(m6.Ag, m6.Bg, m6.Cg, m6.Pg, m6.Qg, m6.Rg),
-    w(m6.Dg, m6.Eg, m6.Fg, m6.Sg, m6.Tg, m6.Ug);
+public interface c6 {
+    void addColorKeys(HashSet hashSet);
 
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-
-    c6(int i7, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-    }
+    void updateColors();
 }

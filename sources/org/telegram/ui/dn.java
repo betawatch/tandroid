@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class dn extends FrameLayout {
     public final cn a;
@@ -45,7 +45,7 @@ public abstract class dn extends FrameLayout {
                 bjVar.setPadding(0, i7, 0, 0);
             }
             cnVar.Sa();
-            addView(this.c, c8.ma.c(-1.0f, -1));
+            addView(this.c, c8.na.c(-1.0f, -1));
             if (this.e) {
                 cnVar.onResume();
             }

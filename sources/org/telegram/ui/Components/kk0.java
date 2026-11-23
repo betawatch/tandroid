@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.app.Activity;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class kk0 extends yb {
+public final class kk0 extends xb {
     public final lk0 c;
 
     public kk0(Activity activity, String str) {
@@ -18,7 +18,7 @@ public final class kk0 extends yb {
         imageView.setImageDrawable(lk0Var);
     }
 
-    @Override // org.telegram.ui.Components.lb
+    @Override // org.telegram.ui.Components.kb
     public final void onEnterTransitionEnd() {
         super.onEnterTransitionEnd();
         lk0 lk0Var = this.c;
@@ -27,7 +27,7 @@ public final class kk0 extends yb {
         lk0Var.invalidateSelf();
     }
 
-    @Override // org.telegram.ui.Components.lb
+    @Override // org.telegram.ui.Components.kb
     public final void onExitTransitionEnd() {
         super.onExitTransitionEnd();
         lk0 lk0Var = this.c;

@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.b6 {
+public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.c6 {
     public float a;
 
     public float getProgress() {
@@ -43,13 +43,13 @@ public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionB
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.m6.v0(0);
+        org.telegram.ui.ActionBar.n6.v0(0);
         throw null;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

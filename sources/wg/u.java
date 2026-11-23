@@ -1,70 +1,62 @@
 package wg;
 
-import android.view.View;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.v3;
-import org.telegram.ui.Components.a5;
-import org.telegram.ui.Components.gu0;
-import org.telegram.ui.Components.o6;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.w10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements a5, gu0, yg.f, yg.k {
-    public final /* synthetic */ a0 a;
+public final /* synthetic */ class u implements w10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z b;
 
-    public /* synthetic */ u(a0 a0Var) {
-        this.a = a0Var;
+    public /* synthetic */ u(z zVar, int i7) {
+        this.a = i7;
+        this.b = zVar;
     }
 
-    @Override // org.telegram.ui.Components.a5
-    public void O(int i7, int i10, boolean z10) {
-        a0 a0Var = this.a;
-        a0Var.i2 = i7 * 1000;
-        a0Var.l1(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public void k(int i7) {
-        a0 a0Var = this.a;
-        int i10 = a0Var.d2;
-        int i11 = yg.d.w;
-        if (i10 == 2) {
-            a0Var.j2 = i7;
-        } else {
-            a0Var.k2 = i7;
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                z zVar = this.b;
+                zVar.dismiss();
+                org.telegram.messenger.g0.h3(new s(zVar, 2), 220L);
+                break;
+            case 1:
+                z zVar2 = this.b;
+                zVar2.m2.b(false);
+                h.j(zVar2.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 2:
+                z zVar3 = this.b;
+                zVar3.j2 = zVar3.U1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
+                zVar3.l1(true, true);
+                zVar3.k1(true);
+                break;
+            case 3:
+                z zVar4 = this.b;
+                zVar4.dismiss();
+                org.telegram.messenger.g0.h3(new s(zVar4, 1), 220L);
+                break;
+            case 4:
+                z zVar5 = this.b;
+                zVar5.m2.b(false);
+                h.j(zVar5.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 5:
+                z zVar6 = this.b;
+                ArrayList arrayList = zVar6.b2;
+                arrayList.clear();
+                arrayList.addAll((List) obj);
+                zVar6.l1(true, true);
+                break;
+            default:
+                z zVar7 = this.b;
+                zVar7.m2.b(false);
+                h.j(zVar7.getContext(), (TLRPC.TL_error) obj);
+                break;
         }
-        a0Var.m2.a.c(a0Var.g1(), true);
-        if (a0Var.d2 == 3) {
-            a0Var.l1(true, true);
-        } else {
-            a0Var.l1(false, false);
-        }
-        xg.b bVar = a0Var.c2;
-        int g12 = a0Var.g1();
-        for (int i12 = 0; i12 < bVar.f.getChildCount(); i12++) {
-            View childAt = bVar.f.getChildAt(i12);
-            if (childAt instanceof yg.x) {
-                o6 o6Var = ((yg.x) childAt).r;
-                String G = g12 <= 0 ? "" : hd.G(g12, "BoostingBoostsCountTitle", Integer.valueOf(g12));
-                o6Var.a();
-                o6Var.c(G, true, true);
-            }
-            if (childAt instanceof yg.g) {
-                yg.g gVar = (yg.g) childAt;
-                int F = bVar.F(gVar.getChat());
-                boolean V = v3.V(gVar.x);
-                if (gVar.y) {
-                    gVar.setSubtitle(F >= 1 ? hd.G(F, V ? "Subscribers" : "Members", new Object[0]) : hd.N0(V ? 2131751378 : 2131754876, null));
-                } else {
-                    gVar.setSubtitle(hd.G(g12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
-                }
-            }
-        }
-        bVar.g(8);
-        bVar.k(bVar.e.size() - 12, 12);
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public /* synthetic */ void o() {
     }
 }

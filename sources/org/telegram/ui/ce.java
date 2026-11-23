@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ce implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar2.G5 = 0;
                                 if (tLObject2 == null && bnVar2.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar2.getParentActivity(), bnVar2.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131751259, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar2.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar2.a0;
                                     if (rjVar != null) {
-                                        rjVar.E1(null, null, false);
+                                        rjVar.F1(null, null, false);
                                         bnVar2.D9(true);
                                         break;
                                     }
@@ -61,8 +61,8 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.lc.a(bnVar3)) {
-                                            org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(bnVar3);
+                                        if (org.telegram.ui.Components.kc.a(bnVar3)) {
+                                            org.telegram.ui.Components.kc b02 = org.telegram.ui.Components.kc.b0(bnVar3);
                                             if (!bnVar3.fa() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z10 = true;
                                             }
@@ -98,13 +98,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131751259, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.E1(null, null, false);
+                                        rjVar.F1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }
@@ -117,8 +117,8 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.lc.a(bnVar3)) {
-                                            org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(bnVar3);
+                                        if (org.telegram.ui.Components.kc.a(bnVar3)) {
+                                            org.telegram.ui.Components.kc b02 = org.telegram.ui.Components.kc.b0(bnVar3);
                                             if (!bnVar3.fa() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z10 = true;
                                             }
@@ -154,13 +154,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131751259, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.E1(null, null, false);
+                                        rjVar.F1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }
@@ -173,8 +173,8 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.lc.a(bnVar32)) {
-                                            org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(bnVar32);
+                                        if (org.telegram.ui.Components.kc.a(bnVar32)) {
+                                            org.telegram.ui.Components.kc b02 = org.telegram.ui.Components.kc.b0(bnVar32);
                                             if (!bnVar32.fa() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z10 = true;
                                             }
@@ -210,13 +210,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131751259, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.E1(null, null, false);
+                                        rjVar.F1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }
@@ -229,8 +229,8 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.lc.a(bnVar32)) {
-                                            org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(bnVar32);
+                                        if (org.telegram.ui.Components.kc.a(bnVar32)) {
+                                            org.telegram.ui.Components.kc b02 = org.telegram.ui.Components.kc.b0(bnVar32);
                                             if (!bnVar32.fa() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z10 = true;
                                             }

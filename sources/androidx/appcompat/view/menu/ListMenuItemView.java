@@ -26,7 +26,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
     public final Drawable E;
@@ -353,16 +353,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i7) {
         super(context, attributeSet);
-        h6.m D = h6.m.D(getContext(), attributeSet, a.r, i7);
-        this.s = D.t(5);
-        TypedArray typedArray = (TypedArray) D.c;
+        h6.m E = h6.m.E(getContext(), attributeSet, a.r, i7);
+        this.s = E.z(5);
+        TypedArray typedArray = (TypedArray) E.c;
         this.w = typedArray.getResourceId(1, -1);
         this.y = typedArray.getBoolean(7, false);
         this.x = context;
-        this.E = D.t(8);
+        this.E = E.z(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.F = obtainStyledAttributes.hasValue(0);
-        D.G();
+        E.G();
         obtainStyledAttributes.recycle();
     }
 }

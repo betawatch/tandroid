@@ -1,30 +1,31 @@
 package c4;
 
-import a8.la;
-import c8.k1;
+import a8.ma;
+import c8.l1;
 import e2.s0;
 import e2.t;
 import e2.u;
-import f3.i0;
+import f3.j0;
 import f3.p;
 import f3.q;
 import f3.s;
-import f3.y;
+import f3.z;
 import h2.l0;
 import h2.x;
 import h9.g0;
-import h9.t1;
+import h9.i0;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements f3.o {
     public final m a;
     public final u b;
     public final ArrayList c;
-    public i0 f;
+    public j0 f;
     public int g;
     public int h;
     public long[] i;
@@ -39,7 +40,7 @@ public final class h implements f3.o {
             t a10 = uVar.a();
             a10.r = s0.n("application/x-media3-cues");
             a10.j = uVar.s;
-            a10.P = mVar.y();
+            a10.P = mVar.N();
             uVar2 = new u(a10);
         } else {
             uVar2 = null;
@@ -58,14 +59,14 @@ public final class h implements f3.o {
 
     @Override // f3.o
     public final void c(q qVar) {
-        la.p(this.h == 0);
-        i0 d2 = qVar.d2(0, 3);
+        ma.p(this.h == 0);
+        j0 d2 = qVar.d2(0, 3);
         this.f = d2;
         u uVar = this.b;
         if (uVar != null) {
             d2.g(uVar);
-            qVar.d1();
-            qVar.j(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
+            qVar.Z0();
+            qVar.h(new z(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
     }
@@ -73,7 +74,7 @@ public final class h implements f3.o {
     @Override // f3.o
     public final void d(long j3, long j10) {
         int i7 = this.h;
-        la.p((i7 == 0 || i7 == 5) ? false : true);
+        ma.p((i7 == 0 || i7 == 5) ? false : true);
         this.j = j10;
         if (this.h == 2) {
             this.h = 1;
@@ -85,8 +86,8 @@ public final class h implements f3.o {
 
     @Override // f3.o
     public final List e() {
-        g0 g0Var = h9.i0.b;
-        return t1.e;
+        g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0077, code lost:
@@ -111,7 +112,7 @@ public final class h implements f3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.v(r20.e, 0, r20.g, r2, new a1.c(r20, 17));
+        r20.a.E(r20.e, 0, r20.g, r2, new a1.c(r20, 17));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = r22;
@@ -152,9 +153,9 @@ public final class h implements f3.o {
     public final int f(p pVar, s sVar) {
         int i7;
         int i10 = this.h;
-        la.p((i10 == 0 || i10 == 5) ? false : true);
+        ma.p((i10 == 0 || i10 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? k1.b(pVar.getLength()) : 1024;
+            int b10 = pVar.getLength() != -1 ? l1.b(pVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -184,7 +185,7 @@ public final class h implements f3.o {
             i7 = 0;
         }
         if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? k1.b(pVar.getLength()) : 1024) == -1) {
+            if (pVar.skip(pVar.getLength() != -1 ? l1.b(pVar.getLength()) : 1024) == -1) {
                 long j3 = this.j;
                 for (int f10 = j3 == -9223372036854775807L ? i7 : l0.f(this.i, j3, true); f10 < arrayList.size(); f10++) {
                     g((g) arrayList.get(f10));

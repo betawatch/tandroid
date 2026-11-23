@@ -1,8 +1,8 @@
 package h2;
 
-import a8.la;
+import a8.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y {
     public static final y c = new y(-1, -1);
@@ -16,7 +16,7 @@ public final class y {
     }
 
     public y(int i7, int i10) {
-        la.f((i7 == -1 || i7 >= 0) && (i10 == -1 || i10 >= 0));
+        ma.f((i7 == -1 || i7 >= 0) && (i10 == -1 || i10 >= 0));
         this.a = i7;
         this.b = i10;
     }

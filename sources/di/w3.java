@@ -1,11 +1,11 @@
 package di;
 
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                 f6Var2.q3 = false;
                                 TLObject tLObject2 = tLObject;
                                 if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.gc Z = f6Var2.k().Z(tL_error);
+                                    org.telegram.ui.Components.fc Z = f6Var2.k().Z(tL_error);
                                     Z.t = true;
                                     Z.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    np.u1(f6Var2.a).f4(paymentForm.users, false);
+                                    mp.u1(f6Var2.a).f4(paymentForm.users, false);
                                     f6Var2.r3 = paymentForm;
                                     org.telegram.messenger.g0.r(k1Var);
                                     org.telegram.messenger.g0.g3(k1Var);
@@ -49,13 +49,13 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                 f6Var3.q3 = false;
                                 TLObject tLObject3 = tLObject;
                                 if (!(tLObject3 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.gc Z2 = f6Var3.k().Z(tL_error);
+                                    org.telegram.ui.Components.fc Z2 = f6Var3.k().Z(tL_error);
                                     Z2.t = true;
                                     Z2.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
-                                    np.u1(f6Var3.a).f4(paymentForm2.users, false);
+                                    mp.u1(f6Var3.a).f4(paymentForm2.users, false);
                                     f6Var3.r3 = paymentForm2;
                                     f6Var3.n2();
                                     break;
@@ -77,13 +77,13 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                 f6Var22.q3 = false;
                                 TLObject tLObject2 = tLObject;
                                 if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.gc Z = f6Var22.k().Z(tL_error);
+                                    org.telegram.ui.Components.fc Z = f6Var22.k().Z(tL_error);
                                     Z.t = true;
                                     Z.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    np.u1(f6Var22.a).f4(paymentForm.users, false);
+                                    mp.u1(f6Var22.a).f4(paymentForm.users, false);
                                     f6Var22.r3 = paymentForm;
                                     org.telegram.messenger.g0.r(k1Var);
                                     org.telegram.messenger.g0.g3(k1Var);
@@ -94,13 +94,13 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                 f6Var3.q3 = false;
                                 TLObject tLObject3 = tLObject;
                                 if (!(tLObject3 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.gc Z2 = f6Var3.k().Z(tL_error);
+                                    org.telegram.ui.Components.fc Z2 = f6Var3.k().Z(tL_error);
                                     Z2.t = true;
                                     Z2.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
-                                    np.u1(f6Var3.a).f4(paymentForm2.users, false);
+                                    mp.u1(f6Var3.a).f4(paymentForm2.users, false);
                                     f6Var3.r3 = paymentForm2;
                                     f6Var3.n2();
                                     break;

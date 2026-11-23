@@ -1,6 +1,6 @@
 package i3;
 
-import f3.d0;
+import f3.e0;
 import f3.l;
 import f3.o;
 import f3.p;
@@ -9,26 +9,26 @@ import f3.s;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
     public final x b;
-    public final d0 c;
+    public final e0 c;
 
     public a(int i7) {
         this.a = i7;
         switch (i7) {
             case 1:
                 this.b = new x(4);
-                this.c = new d0(-1, -1, "image/webp");
+                this.c = new e0(-1, -1, "image/webp");
                 break;
             default:
                 this.b = new x(4);
-                this.c = new d0(-1, -1, "image/avif");
+                this.c = new e0(-1, -1, "image/avif");
                 break;
         }
     }
@@ -44,13 +44,13 @@ public final class a implements o {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.x(4, false);
+                lVar.t(4, false);
                 x xVar = this.b;
                 xVar.K(4);
-                lVar.g(xVar.a, 0, 4, false);
+                lVar.k(xVar.a, 0, 4, false);
                 if (xVar.C() == 1718909296) {
                     xVar.K(4);
-                    lVar.g(xVar.a, 0, 4, false);
+                    lVar.k(xVar.a, 0, 4, false);
                     if (xVar.C() == 1635150182) {
                     }
                 }
@@ -59,11 +59,11 @@ public final class a implements o {
                 x xVar2 = this.b;
                 xVar2.K(4);
                 l lVar2 = (l) pVar;
-                lVar2.g(xVar2.a, 0, 4, false);
+                lVar2.k(xVar2.a, 0, 4, false);
                 if (xVar2.C() == 1380533830) {
-                    lVar2.x(4, false);
+                    lVar2.t(4, false);
                     xVar2.K(4);
-                    lVar2.g(xVar2.a, 0, 4, false);
+                    lVar2.k(xVar2.a, 0, 4, false);
                     if (xVar2.C() == 1464156752) {
                     }
                 }
@@ -102,7 +102,7 @@ public final class a implements o {
         switch (this.a) {
         }
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o

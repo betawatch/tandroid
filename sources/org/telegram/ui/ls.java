@@ -3,30 +3,30 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public interface ls {
-    boolean A();
+    void A(TLRPC.Document document);
 
-    void B(TLRPC.Document document);
+    boolean B();
 
-    boolean C();
+    boolean C(TLRPC.Document document);
 
-    boolean D(TLRPC.Document document);
+    org.telegram.ui.Components.x60 D(ai.h0 h0Var);
 
-    org.telegram.ui.Components.a70 E(ai.l0 l0Var);
+    void E(TLRPC.Document document);
 
-    void F(TLRPC.Document document);
+    String F(boolean z10);
 
-    String G(boolean z10);
+    void G(TLRPC.Document document);
 
-    void H(TLRPC.Document document);
+    boolean H();
 
     boolean I();
 
-    boolean J();
+    void J();
 
-    void K();
+    void K(CharSequence charSequence, String str, org.telegram.ui.Components.ph phVar);
 
     void L();
 
@@ -56,7 +56,7 @@ public interface ls {
 
     boolean h();
 
-    void i(org.telegram.messenger.ty tyVar);
+    void i(org.telegram.messenger.sy syVar);
 
     boolean j();
 
@@ -88,7 +88,7 @@ public interface ls {
 
     void x(String str);
 
-    void y(CharSequence charSequence, String str, org.telegram.ui.Components.rh rhVar);
+    org.telegram.messenger.fj y();
 
-    org.telegram.messenger.gj z();
+    boolean z();
 }

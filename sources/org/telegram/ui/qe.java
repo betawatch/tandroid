@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements org.telegram.messenger.q10 {
+public final /* synthetic */ class qe implements org.telegram.messenger.o10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.ActionBar.g2 b;
 
@@ -11,7 +11,7 @@ public final /* synthetic */ class qe implements org.telegram.messenger.q10 {
         this.b = g2Var;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.o10
     public final Object run() {
         org.telegram.ui.ActionBar.g2 g2Var;
         switch (this.a) {
@@ -20,19 +20,19 @@ public final /* synthetic */ class qe implements org.telegram.messenger.q10 {
                 break;
             case 1:
                 bn bnVar = (bn) this.b;
-                if (org.telegram.messenger.qc.e(65536) && org.telegram.ui.Components.oz0.c()) {
-                    org.telegram.ui.Components.oz0 oz0Var = bnVar.y0;
-                    if (oz0Var == null || oz0Var.e) {
-                        if (bnVar.getParentActivity() != null && org.telegram.ui.Components.oz0.c() && bnVar.A0 != null && bnVar.m1 != null) {
-                            org.telegram.ui.Components.oz0 oz0Var2 = bnVar.y0;
-                            if (oz0Var2 != null) {
-                                org.telegram.messenger.g0.E2(oz0Var2);
+                if (org.telegram.messenger.pc.e(65536) && org.telegram.ui.Components.nz0.c()) {
+                    org.telegram.ui.Components.nz0 nz0Var = bnVar.y0;
+                    if (nz0Var == null || nz0Var.e) {
+                        if (bnVar.getParentActivity() != null && org.telegram.ui.Components.nz0.c() && bnVar.A0 != null && bnVar.m1 != null) {
+                            org.telegram.ui.Components.nz0 nz0Var2 = bnVar.y0;
+                            if (nz0Var2 != null) {
+                                org.telegram.messenger.g0.E2(nz0Var2);
                             }
-                            org.telegram.ui.Components.oz0 oz0Var3 = new org.telegram.ui.Components.oz0(bnVar.getParentActivity(), new u8(16, bnVar, r2));
-                            bnVar.y0 = oz0Var3;
-                            org.telegram.ui.Components.oz0[] oz0VarArr = {oz0Var3};
+                            org.telegram.ui.Components.nz0 nz0Var3 = new org.telegram.ui.Components.nz0(bnVar.getParentActivity(), new u5(18, bnVar, r2));
+                            bnVar.y0 = nz0Var3;
+                            org.telegram.ui.Components.nz0[] nz0VarArr = {nz0Var3};
                             pl plVar = bnVar.m1;
-                            plVar.addView(oz0Var3, plVar.indexOfChild(bnVar.A0) + 1, c8.ma.c(-1.0f, -1));
+                            plVar.addView(nz0Var3, plVar.indexOfChild(bnVar.A0) + 1, c8.na.c(-1.0f, -1));
                         }
                     }
                     return bnVar.y0;
@@ -40,7 +40,7 @@ public final /* synthetic */ class qe implements org.telegram.messenger.q10 {
                 return null;
             case 2:
                 ((bn) this.b).getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.oz0.c() && org.telegram.messenger.qc.e(65536));
+                return Boolean.valueOf(org.telegram.ui.Components.nz0.c() && org.telegram.messenger.pc.e(65536));
             default:
                 g2Var = (ProfileActivity) this.b;
                 break;

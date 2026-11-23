@@ -8,7 +8,7 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.XMLReader;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n implements Html.TagHandler, ContentHandler {
     public final pb.b a;
@@ -47,7 +47,7 @@ public final class n implements Html.TagHandler, ContentHandler {
         }
         Editable editable = this.c;
         this.a.getClass();
-        pb.b.G0(false, str2, editable, null);
+        pb.b.y0(false, str2, editable, null);
     }
 
     @Override // org.xml.sax.ContentHandler
@@ -94,9 +94,9 @@ public final class n implements Html.TagHandler, ContentHandler {
     public final void startElement(String str, String str2, String str3, Attributes attributes) {
         Editable editable = this.c;
         this.a.getClass();
-        boolean G0 = pb.b.G0(true, str2, editable, attributes);
-        this.d.addLast(Boolean.valueOf(G0));
-        if (G0) {
+        boolean y02 = pb.b.y0(true, str2, editable, attributes);
+        this.d.addLast(Boolean.valueOf(y02));
+        if (y02) {
             return;
         }
         this.b.startElement(str, str2, str3, attributes);

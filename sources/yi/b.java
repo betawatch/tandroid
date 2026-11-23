@@ -3,7 +3,7 @@ package yi;
 import android.os.SystemClock;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class b {
     public static final AtomicLong d = new AtomicLong(1);
@@ -16,10 +16,10 @@ public final class b {
     }
 
     public final void a(String str, Throwable th2) {
-        this.c.F("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str, th2);
+        this.c.B("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str, th2);
     }
 
     public final void b(String str) {
-        this.c.D0("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str);
+        this.c.u0("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str);
     }
 }

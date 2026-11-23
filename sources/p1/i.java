@@ -1,6 +1,7 @@
 package p1;
 
-import c8.ub;
+import c8.vb;
+import c8.z;
 import gd.k;
 import hd.r;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import rd.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements q {
     public /* synthetic */ o1.f a;
@@ -27,7 +28,7 @@ public final class i extends kd.j implements q {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         jd.a aVar = jd.a.a;
-        b7.h.b(obj);
+        z.b(obj);
         o1.f fVar = this.a;
         q1.b bVar = this.b;
         Set keySet = bVar.a().keySet();
@@ -83,9 +84,9 @@ public final class i extends kd.j implements q {
                 kotlin.jvm.internal.j.e(name, "name");
                 bVar2.e(new q1.e(name), value2);
             } else if (value2 instanceof String) {
-                bVar2.e(ub.a(name), value2);
+                bVar2.e(vb.a(name), value2);
             } else if (value2 instanceof Set) {
-                bVar2.e(ub.b(name), (Set) value2);
+                bVar2.e(vb.b(name), (Set) value2);
             }
         }
         return new q1.b(new LinkedHashMap(bVar2.a()), true);

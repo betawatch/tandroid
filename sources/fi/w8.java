@@ -10,7 +10,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class w8 implements s3 {
     public final /* synthetic */ h6 a;
@@ -64,9 +64,9 @@ public final class w8 implements s3 {
         f9 f9Var = this.d;
         ArrayList arrayList = f9Var.M0;
         if (f9Var.H0 || f9Var.V < 0.9f) {
-            hi.q3 q3Var = f9Var.E0;
-            if (q3Var != null) {
-                q3Var.b(0L, null);
+            hi.z3 z3Var = f9Var.E0;
+            if (z3Var != null) {
+                z3Var.b(0L, null);
             }
             c1 c1Var = f9Var.B0;
             if (c1Var != null) {
@@ -87,9 +87,9 @@ public final class w8 implements s3 {
         boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
         if (!equals || (e9Var = f9Var.A0) == null) {
             f9Var.F0 = uri;
-            hi.q3 q3Var2 = f9Var.E0;
-            if (q3Var2 != null) {
-                q3Var2.b(0L, null);
+            hi.z3 z3Var2 = f9Var.E0;
+            if (z3Var2 != null) {
+                z3Var2.b(0L, null);
             }
             c1 c1Var2 = f9Var.B0;
             if (c1Var2 != null) {
@@ -147,9 +147,9 @@ public final class w8 implements s3 {
                 y3Var3.b = null;
                 TLRPC.Document document2 = e9Var5.document;
                 if (document2 != null) {
-                    org.telegram.messenger.s8.J.put(Long.valueOf(document2.id), 3);
+                    org.telegram.messenger.r8.J.put(Long.valueOf(document2.id), 3);
                 } else {
-                    ConcurrentHashMap concurrentHashMap = org.telegram.messenger.s8.I;
+                    ConcurrentHashMap concurrentHashMap = org.telegram.messenger.r8.I;
                 }
                 org.telegram.messenger.w7.G(f9Var.h).h(3, f9Var.A0.document, null, null, null, null);
                 if (j3 == 0) {
@@ -228,9 +228,9 @@ public final class w8 implements s3 {
 
     public final void i(boolean z10, boolean z11) {
         f9 f9Var = this.d;
-        hi.q3 q3Var = f9Var.E0;
-        if (q3Var != null) {
-            q3Var.setVisibility(z10 ? 0 : 8);
+        hi.z3 z3Var = f9Var.E0;
+        if (z3Var != null) {
+            z3Var.setVisibility(z10 ? 0 : 8);
         }
         SurfaceView surfaceView = f9Var.D0;
         if (surfaceView != null) {
@@ -254,7 +254,7 @@ public final class w8 implements s3 {
             }
             arrayList.remove(indexOf);
             if (f9Var.o0.E(true)) {
-                f9Var.o0.H0 = new ai.j1(this, arrayList, indexOf, 11);
+                f9Var.o0.H0 = new ai.e1(this, arrayList, indexOf, 11);
                 return;
             } else {
                 f9Var.u(false);

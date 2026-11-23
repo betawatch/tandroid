@@ -1,6 +1,6 @@
 package com.google.mlkit.vision.segmentation.subject.internal;
 
-import a8.d8;
+import a8.e8;
 import ac.b;
 import ac.c;
 import com.google.firebase.components.ComponentRegistrar;
@@ -11,7 +11,7 @@ import pb.g;
 import u9.a;
 import u9.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class SubjectSegmentationRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -27,7 +27,7 @@ public class SubjectSegmentationRegistrar implements ComponentRegistrar {
         a b11 = a11.b();
         c8.g gVar = c8.i.b;
         Object[] objArr = {b10, b11};
-        d8.a(2, objArr);
+        e8.a(2, objArr);
         return c8.i.m(2, objArr);
     }
 }

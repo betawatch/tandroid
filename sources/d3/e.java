@@ -1,13 +1,13 @@
 package d3;
 
-import a8.la;
+import a8.ma;
 import android.view.Surface;
 import e2.x1;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements k0 {
     public final x a;
@@ -156,7 +156,7 @@ public final class e implements k0 {
         sVar.c++;
         d0Var.h = j3;
         d0Var.j = -9223372036854775807L;
-        this.i.execute(new ca.r(this, 6));
+        this.i.execute(new ca.r(this, 5));
         return true;
     }
 
@@ -183,7 +183,7 @@ public final class e implements k0 {
         d0Var.j = -9223372036854775807L;
         h2.j0 j0Var2 = d0Var.e;
         if (j0Var2.p() > 0) {
-            la.f(j0Var2.p() > 0);
+            ma.f(j0Var2.p() > 0);
             while (j0Var2.p() > 1) {
                 j0Var2.i();
             }
@@ -192,7 +192,7 @@ public final class e implements k0 {
             d0Var.l = ((Long) i7).longValue();
         }
         if (j0Var.p() > 0) {
-            la.f(j0Var.p() > 0);
+            ma.f(j0Var.p() > 0);
             while (j0Var.p() > 1) {
                 j0Var.i();
             }
@@ -212,7 +212,7 @@ public final class e implements k0 {
     public final void q(long j3, long j10) {
         try {
             this.c.a(j3, j10);
-        } catch (l2.l e10) {
+        } catch (l2.m e10) {
             throw new j0(e10, this.f);
         }
     }
@@ -234,7 +234,7 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final void u(e2.u uVar, long j3, int i7, List list) {
-        la.p(list.isEmpty());
+        ma.p(list.isEmpty());
         int i10 = uVar.z;
         int i11 = uVar.A;
         e2.u uVar2 = this.f;

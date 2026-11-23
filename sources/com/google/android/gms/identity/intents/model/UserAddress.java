@@ -2,12 +2,12 @@ package com.google.android.gms.identity.intents.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import f7.t0;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class UserAddress extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<UserAddress> CREATOR = new t0(26);
@@ -29,24 +29,24 @@ public final class UserAddress extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.l(parcel, 3, this.b);
-        bc.l(parcel, 4, this.c);
-        bc.l(parcel, 5, this.d);
-        bc.l(parcel, 6, this.e);
-        bc.l(parcel, 7, this.f);
-        bc.l(parcel, 8, this.h);
-        bc.l(parcel, 9, this.n);
-        bc.l(parcel, 10, this.r);
-        bc.l(parcel, 11, this.s);
-        bc.l(parcel, 12, this.w);
-        bc.l(parcel, 13, this.x);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.l(parcel, 3, this.b);
+        cc.l(parcel, 4, this.c);
+        cc.l(parcel, 5, this.d);
+        cc.l(parcel, 6, this.e);
+        cc.l(parcel, 7, this.f);
+        cc.l(parcel, 8, this.h);
+        cc.l(parcel, 9, this.n);
+        cc.l(parcel, 10, this.r);
+        cc.l(parcel, 11, this.s);
+        cc.l(parcel, 12, this.w);
+        cc.l(parcel, 13, this.x);
         boolean z10 = this.y;
-        bc.q(parcel, 14, 4);
+        cc.q(parcel, 14, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        bc.l(parcel, 15, this.E);
-        bc.l(parcel, 16, this.F);
-        bc.s(parcel, r10);
+        cc.l(parcel, 15, this.E);
+        cc.l(parcel, 16, this.F);
+        cc.s(parcel, r10);
     }
 }

@@ -1,112 +1,95 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.Spanned;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class pu0 extends Drawable implements Drawable.Callback {
-    public final n6 a;
-    public final Paint b;
+public final class pu0 extends CharacterStyle {
+    public final Paint a;
+    public final Path b;
 
     public pu0() {
-        n6 n6Var = new n6(false, true, true);
-        this.a = n6Var;
-        n6Var.setCallback(this);
-        n6Var.n(0.3f, 165L, nr.h);
-        n6Var.b = 1;
-        n6Var.x(org.telegram.messenger.g0.o());
-        n6Var.w(org.telegram.messenger.g0.L(10.0f));
-        Paint.Style style = Paint.Style.FILL_AND_STROKE;
-        TextPaint textPaint = n6Var.a;
-        textPaint.setStyle(style);
-        textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
         Paint paint = new Paint(1);
-        this.b = paint;
+        this.a = paint;
+        this.b = new Path();
         paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
-    public static String a(float f10) {
-        Math.abs(f10 - 0.25f);
-        float round = Math.round(f10 * 10.0f) / 10.0f;
-        long j3 = (long) round;
-        if (round == j3) {
-            return a8.p0.o(j3, "");
-        }
-        return "" + round;
-    }
-
-    public final void b(boolean z10, float f10) {
-        String str = a(f10) + "X";
-        n6 n6Var = this.a;
-        if (z10 && TextUtils.equals(n6Var.i, str)) {
+    public static void a(Canvas canvas, Layout layout) {
+        CharSequence text;
+        Layout layout2 = layout;
+        if (layout2 == null || (text = layout2.getText()) == null || !(text instanceof Spanned)) {
             return;
         }
-        n6Var.a();
-        n6Var.t(str, z10, true);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        n6 n6Var = this.a;
-        Paint paint = this.b;
-        if (paint != null) {
-            paint.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(((org.telegram.messenger.g0.L(24.0f) - n6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - n6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((n6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + n6Var.e) / 2.0f);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(3.0f), paint);
+        Spanned spanned = (Spanned) text;
+        pu0[] pu0VarArr = (pu0[]) spanned.getSpans(0, spanned.length(), pu0.class);
+        if (pu0VarArr == null || pu0VarArr.length == 0) {
+            return;
         }
-        n6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        n6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - n6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + n6Var.e) / 2.0f));
-        n6Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.a.C = i7;
-        Paint paint = this.b;
-        if (paint != null) {
-            paint.setAlpha(i7);
+        int i7 = 0;
+        while (i7 < pu0VarArr.length) {
+            pu0 pu0Var = pu0VarArr[i7];
+            int spanStart = spanned.getSpanStart(pu0Var);
+            int spanEnd = spanned.getSpanEnd(pu0Var);
+            int lineForOffset = layout2.getLineForOffset(spanStart);
+            int lineForOffset2 = layout2.getLineForOffset(spanEnd);
+            int i10 = lineForOffset;
+            while (i10 <= lineForOffset2) {
+                float lineBottom = layout2.getLineBottom(i10) - org.telegram.messenger.g0.L(1.0f);
+                float primaryHorizontal = layout2.getPrimaryHorizontal(i10 == lineForOffset ? spanStart : layout2.getLineStart(i10));
+                float primaryHorizontal2 = layout2.getPrimaryHorizontal(i10 == lineForOffset2 ? spanEnd : layout2.getLineEnd(i10) - 1);
+                pu0Var.getClass();
+                float L = org.telegram.messenger.g0.L(1.33f);
+                float L2 = org.telegram.messenger.g0.L(10.0f);
+                float L3 = org.telegram.messenger.g0.L(2.0f);
+                Paint paint = pu0Var.a;
+                Spanned spanned2 = spanned;
+                pu0[] pu0VarArr2 = pu0VarArr;
+                int i11 = i7;
+                paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Fi, false));
+                paint.setStrokeWidth(L);
+                Path path = pu0Var.b;
+                path.rewind();
+                path.moveTo(primaryHorizontal, lineBottom);
+                float f10 = primaryHorizontal;
+                while (f10 < primaryHorizontal2) {
+                    float f11 = f10;
+                    float f12 = L2;
+                    path.quadTo((L2 / 4.0f) + f10, lineBottom - L3, (L2 / 2.0f) + f11, lineBottom);
+                    float f13 = f11 + f12;
+                    path.quadTo(((f12 * 3.0f) / 4.0f) + f11, lineBottom + L3, f13, lineBottom);
+                    f10 = f13;
+                    L2 = f12;
+                }
+                if (f10 > primaryHorizontal2) {
+                    canvas.save();
+                    float f14 = L / 2.0f;
+                    canvas.clipRect(primaryHorizontal - f14, (lineBottom - L3) - f14, primaryHorizontal2 + f14, lineBottom + L3 + f14);
+                    canvas.drawPath(path, paint);
+                    canvas.restore();
+                } else {
+                    canvas.drawPath(path, paint);
+                }
+                i10++;
+                layout2 = layout;
+                spanned = spanned2;
+                pu0VarArr = pu0VarArr2;
+                i7 = i11;
+            }
+            i7++;
+            layout2 = layout;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
     }
 }

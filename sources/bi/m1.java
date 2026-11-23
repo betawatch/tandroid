@@ -6,7 +6,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public final l1 a;
@@ -16,7 +16,7 @@ public final class m1 extends View {
         l1 l1Var = new l1();
         this.a = l1Var;
         l1Var.r = this;
-        l1Var.d.H0(this);
+        l1Var.d.I0(this);
     }
 
     public l1 getDrawable() {
@@ -30,15 +30,15 @@ public final class m1 extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.d.P();
+        this.a.d.Q();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         l1 l1Var = this.a;
-        l1Var.d.R();
-        org.telegram.ui.Components.y5.release((View) null, l1Var.q);
+        l1Var.d.S();
+        org.telegram.ui.Components.x5.release((View) null, l1Var.q);
         l1Var.q = null;
     }
 

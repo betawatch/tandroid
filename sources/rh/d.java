@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
-import c8.dd;
+import c8.ed;
 import com.google.android.gms.common.api.q;
 import java.util.Iterator;
 import java.util.List;
@@ -22,7 +22,7 @@ import r0.q0;
 import r0.t0;
 import r0.v0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d extends q {
     public static final RectF e;
@@ -79,7 +79,7 @@ public final class d extends q {
         if (i7 == 0) {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((c) it.next()).O();
+                ((c) it.next()).Q();
             }
         }
     }
@@ -91,7 +91,7 @@ public final class d extends q {
         while (it.hasNext()) {
             i7 |= ((v0) it.next()).a.c();
         }
-        if (dd.a(i7, 8)) {
+        if (ed.a(i7, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 c cVar = (c) it2.next();

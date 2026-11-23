@@ -1,34 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class at implements bt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class at extends v4.m0 {
+    public final zs[] a = new zs[4];
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ at(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    @Override // v4.m0
+    public final EdgeEffect a(RecyclerView recyclerView, int i7) {
+        zs zsVar = new zs(recyclerView, i7, new xs(this, 0));
+        this.a[i7] = zsVar;
+        return zsVar;
     }
 
-    @Override // org.telegram.ui.Components.bt
-    public final void a(int i7, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((dt) this.b).b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((bt) obj).a(i7, z10);
-                }
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
+    public final float b(int i7) {
+        zs zsVar = this.a[i7];
+        if (Build.VERSION.SDK_INT < 31 || zsVar == null || zsVar.isFinished()) {
+            return 0.0f;
         }
+        return zsVar.getDistance();
     }
 }

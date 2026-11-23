@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h {
     public static final Charset b = Charset.forName("UTF-8");
@@ -63,7 +63,7 @@ public final class h {
         JSONArray jSONArray = new JSONArray();
         for (int i7 = 0; i7 < list.size(); i7++) {
             try {
-                jSONArray.put(new JSONObject(p.a.v(list.get(i7))));
+                jSONArray.put(new JSONObject(p.a.F(list.get(i7))));
             } catch (JSONException e10) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e10);
             }

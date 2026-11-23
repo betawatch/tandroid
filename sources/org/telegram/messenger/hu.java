@@ -3,45 +3,45 @@ package org.telegram.messenger;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class hu extends au {
+public final class hu extends zt {
     public final Paint X;
 
-    public hu(fv fvVar, Rect rect, int i7) {
-        super(fvVar, rect, i7);
+    public hu(ev evVar, Rect rect, int i7) {
+        super(evVar, rect, i7);
         this.X = new Paint(1);
     }
 
-    @Override // org.telegram.messenger.au
+    @Override // org.telegram.messenger.zt
     public final int I() {
         Rect rect = this.b;
-        return f3.C(6.0f, rect.top, 1) + rect.bottom;
+        return g0.L(12.0f) + rect.top + rect.bottom;
     }
 
-    @Override // org.telegram.messenger.au
+    @Override // org.telegram.messenger.zt
     public final int K() {
-        Rect rect = this.b;
-        return g0.L(32.0f) + rect.left + rect.right;
+        return g0.L(32.0f);
     }
 
-    @Override // org.telegram.messenger.au
+    @Override // org.telegram.messenger.zt
     public final void W(Canvas canvas) {
-        fv fvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.m6.w0(fvVar.E() ? org.telegram.ui.ActionBar.m6.xl : org.telegram.ui.ActionBar.m6.wl, fvVar.D);
+        ev evVar = this.a;
+        int i7 = evVar.C;
+        int i10 = evVar.S;
+        int i11 = i7 + i10 + evVar.T;
+        Rect rect = this.b;
+        int i12 = rect.left;
+        int i13 = ((i11 - i12) - rect.right) / 2;
+        float f10 = (((r1 - i13) / 2.0f) - i10) + i12;
+        float L = (g0.L(12.0f) - g0.L(1.0f)) / 2.0f;
+        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.nl : org.telegram.ui.ActionBar.n6.ml, evVar.D);
         Paint paint = this.X;
         paint.setColor(w02);
-        float f10 = -fvVar.S;
-        int i7 = fvVar.C + fvVar.T;
-        Rect rect = this.b;
-        float f11 = (i7 - rect.left) - rect.right;
-        if (fvVar.s) {
-            r2 = g0.T1(this.S ? 1.0f : 0.0f, this.R ? 1.0f : 0.0f, fvVar.t);
-        } else if (this.R) {
-            r2 = 1.0f;
-        }
-        float T1 = g0.T1((-1.0f) - (this.M != null ? r0.b.bottom : 0), g0.L(6.0f), r2);
-        canvas.drawRect(f10, T1, f11, T1 + 1.0f, paint);
+        RectF rectF = g0.P;
+        rectF.set(f10, L, i13 + f10, g0.L(1.0f) + L);
+        canvas.drawRoundRect(rectF, g0.L(0.5f), g0.L(0.5f), paint);
     }
 }

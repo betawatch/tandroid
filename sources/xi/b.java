@@ -1,10 +1,9 @@
 package xi;
 
-import kg.x1;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -45,8 +44,8 @@ public final /* synthetic */ class b implements Runnable {
                         b bVar2 = new b(eVar2, dVar4, 2);
                         eVar2.d = bVar2;
                         g0.h3(bVar2, 20000L);
-                        x1 x1Var = dVar4.a;
-                        ((ConnectionsManager) x1Var.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
+                        org.telegram.tgnet.g gVar = dVar4.a;
+                        ((ConnectionsManager) gVar.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
                         break;
                     } else {
                         eVar2.m(dVar4);

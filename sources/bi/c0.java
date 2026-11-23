@@ -1,17 +1,17 @@
 package bi;
 
 import android.text.style.ClickableSpan;
-import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.k80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hi.l3 b;
+    public final /* synthetic */ hi.u3 b;
 
-    public /* synthetic */ c0(hi.l3 l3Var, int i7) {
+    public /* synthetic */ c0(hi.u3 u3Var, int i7) {
         this.a = i7;
-        this.b = l3Var;
+        this.b = u3Var;
     }
 
     @Override // java.lang.Runnable
@@ -35,8 +35,8 @@ public final /* synthetic */ class c0 implements Runnable {
         }
     }
 
-    public /* synthetic */ c0(hi.l3 l3Var, n80 n80Var, ClickableSpan clickableSpan) {
+    public /* synthetic */ c0(hi.u3 u3Var, k80 k80Var, ClickableSpan clickableSpan) {
         this.a = 4;
-        this.b = l3Var;
+        this.b = u3Var;
     }
 }

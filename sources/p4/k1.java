@@ -1,65 +1,35 @@
 package p4;
 
-import a8.la;
-import android.os.Bundle;
-import android.text.TextUtils;
-import h9.t1;
 import j$.util.Objects;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k1 {
-    public static final t1 d = h9.i0.u(40010);
-    public static final t1 e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+    public static final String b;
+    public final h9.t0 a;
 
     static {
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        h9.o.e(7, objArr);
-        e = h9.i0.o(7, objArr);
+        new k1(new HashSet());
         String str = h2.l0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
+        b = Integer.toString(0, 36);
     }
 
-    public k1(int i7) {
-        la.e("commandCode shouldn't be COMMAND_CODE_CUSTOM", i7 != 0);
-        this.a = i7;
-        this.b = "";
-        this.c = Bundle.EMPTY;
-    }
-
-    public final Bundle a() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(f, this.a);
-        bundle.putString(g, this.b);
-        bundle.putBundle(h, this.c);
-        return bundle;
+    public k1(HashSet hashSet) {
+        this.a = h9.t0.q(hashSet);
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof k1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        k1 k1Var = (k1) obj;
-        return this.a == k1Var.a && TextUtils.equals(this.b, k1Var.b);
+        if (obj instanceof k1) {
+            return this.a.equals(((k1) obj).a);
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
-    }
-
-    public k1(String str, Bundle bundle) {
-        this.a = 0;
-        str.getClass();
-        this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
+        return Objects.hash(this.a);
     }
 }

@@ -2,26 +2,26 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vd implements org.telegram.messenger.v10 {
+public final /* synthetic */ class vd implements org.telegram.messenger.t10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
 
-    public /* synthetic */ vd(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+    public /* synthetic */ vd(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
         this.a = i7;
         this.b = chatActivityEnterView;
         this.c = j3;
-        this.d = h6Var;
+        this.d = i6Var;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.t10
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         int i7 = this.a;
         int i10 = 0;
-        org.telegram.ui.ActionBar.h6 h6Var = this.d;
+        org.telegram.ui.ActionBar.i6 i6Var = this.d;
         long j3 = this.c;
         switch (i7) {
             case 0:
@@ -30,12 +30,12 @@ public final /* synthetic */ class vd implements org.telegram.messenger.v10 {
                 Boolean bool = (Boolean) obj4;
                 int i11 = ChatActivityEnterView.s7;
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.t1((TL_iv.RichMessage) obj);
+                chatActivityEnterView.u1((TL_iv.RichMessage) obj);
                 if (!chatActivityEnterView.c() || num.intValue() != 0) {
-                    chatActivityEnterView.w1(bool.booleanValue(), num.intValue(), num2.intValue(), 0L, true);
+                    chatActivityEnterView.x1(bool.booleanValue(), num.intValue(), num2.intValue(), 0L, true);
                     break;
                 } else {
-                    c5.J(chatActivityEnterView.E3, j3, new je(chatActivityEnterView, i10), h6Var);
+                    b5.J(chatActivityEnterView.E3, j3, new ke(chatActivityEnterView, i10), i6Var);
                     break;
                 }
                 break;
@@ -47,10 +47,10 @@ public final /* synthetic */ class vd implements org.telegram.messenger.v10 {
                 chatActivityEnterView2.F0.setText((CharSequence) obj);
                 if (chatActivityEnterView2.P2 == null) {
                     if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
-                        chatActivityEnterView2.w1(bool2.booleanValue(), num3.intValue(), num4.intValue(), 0L, true);
+                        chatActivityEnterView2.x1(bool2.booleanValue(), num3.intValue(), num4.intValue(), 0L, true);
                         break;
                     } else {
-                        c5.J(chatActivityEnterView2.E3, j3, new ke(chatActivityEnterView2, 0), h6Var);
+                        b5.J(chatActivityEnterView2.E3, j3, new le(chatActivityEnterView2, 0), i6Var);
                         break;
                     }
                 } else {

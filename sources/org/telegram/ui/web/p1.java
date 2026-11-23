@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements ValueCallback {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class p1 implements ValueCallback {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ p1(v1 v1Var, WebView webView, File file, o1 o1Var, int i7) {
+    public /* synthetic */ p1(w1 w1Var, WebView webView, File file, o1 o1Var, int i7) {
         this.a = i7;
-        this.b = v1Var;
+        this.b = w1Var;
         this.c = webView;
         this.d = file;
         this.e = o1Var;
@@ -29,22 +29,22 @@ public final /* synthetic */ class p1 implements ValueCallback {
         int i7 = 1;
         switch (this.a) {
             case 0:
-                v1 v1Var = (v1) this.b;
+                w1 w1Var = (w1) this.b;
                 WebView webView = this.c;
                 File file = (File) this.d;
-                webView.saveWebArchive(file.getAbsolutePath(), false, new p1(v1Var, webView, file, (o1) this.e, 1));
+                webView.saveWebArchive(file.getAbsolutePath(), false, new p1(w1Var, webView, file, (o1) this.e, 1));
                 return;
             case 1:
-                v1 v1Var2 = (v1) this.b;
+                w1 w1Var2 = (w1) this.b;
                 WebView webView2 = this.c;
                 File file2 = (File) this.d;
                 o1 o1Var = (o1) this.e;
                 webView2.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "false"), new d0(i7));
                 try {
                     xi.e eVar = new xi.e(file2);
-                    v1Var2.b = eVar;
+                    w1Var2.b = eVar;
                     if (!((ArrayList) eVar.b).isEmpty()) {
-                        o1Var.a(((b1) ((ArrayList) v1Var2.b.b).get(0)).a());
+                        o1Var.a(((b1) ((ArrayList) w1Var2.b.b).get(0)).a());
                         return;
                     }
                 } catch (Exception e10) {

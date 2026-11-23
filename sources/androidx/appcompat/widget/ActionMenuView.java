@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import h9.g1;
+import j6.r;
 import l.j;
 import l.k;
 import l.m;
@@ -27,7 +27,7 @@ import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ActionMenuView extends w1 implements j, z {
     public k G;
@@ -35,7 +35,7 @@ public class ActionMenuView extends w1 implements j, z {
     public int I;
     public boolean J;
     public h K;
-    public g1 L;
+    public r L;
     public boolean M;
     public int N;
     public final int O;
@@ -124,7 +124,7 @@ public class ActionMenuView extends w1 implements j, z {
             Context context = getContext();
             k kVar = new k(context);
             this.G = kVar;
-            kVar.e = new g1(this, 10);
+            kVar.e = new r(this, 6);
             h hVar = new h(context);
             this.K = hVar;
             hVar.x = true;
@@ -177,9 +177,9 @@ public class ActionMenuView extends w1 implements j, z {
         super.onConfigurationChanged(configuration);
         h hVar = this.K;
         if (hVar != null) {
-            hVar.e();
+            hVar.d();
             if (this.K.g()) {
-                this.K.f();
+                this.K.e();
                 this.K.l();
             }
         }
@@ -190,7 +190,7 @@ public class ActionMenuView extends w1 implements j, z {
         super.onDetachedFromWindow();
         h hVar = this.K;
         if (hVar != null) {
-            hVar.f();
+            hVar.e();
             m.d dVar = hVar.K;
             if (dVar == null || !dVar.b()) {
                 return;

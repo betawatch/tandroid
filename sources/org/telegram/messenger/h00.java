@@ -1,46 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h00 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a10 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ gj d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ y00 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ h00(a10 a10Var, String str, gj gjVar, long j3, int i7, int i10) {
-        this.a = i10;
-        this.b = a10Var;
-        this.c = str;
-        this.d = gjVar;
-        this.e = j3;
-        this.f = i7;
+    public /* synthetic */ h00(y00 y00Var, long j3, int i7) {
+        this.a = i7;
+        this.b = y00Var;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        long j3 = this.c;
+        y00 y00Var = this.b;
+        switch (i7) {
             case 0:
-                a10 a10Var = this.b;
-                gj gjVar = this.d;
-                long j3 = this.e;
-                int i7 = this.f;
-                c6.d(this.c, new k00(a10Var, gjVar, j3, i7), new k00(a10Var, gjVar, j3, i7), false);
+                ks.f(y00Var.currentAccount).k(ks.O1, Long.valueOf(j3));
                 break;
             default:
-                a10 a10Var2 = this.b;
-                a10Var2.getClass();
-                String str = this.c;
-                if (str == null) {
-                    str = "und";
+                ArrayList arrayList = (ArrayList) y00Var.n.S.f(j3);
+                if (arrayList != null) {
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        fj fjVar = (fj) arrayList.get(i10);
+                        if (fjVar == null || fjVar.k == null) {
+                            arrayList2.add(null);
+                        } else {
+                            arrayList2.add(y00Var.getMessagesStorage().e0(fjVar.e1(), fj.B0(fjVar.k)));
+                        }
+                    }
+                    g0.g3(new yf(y00Var, arrayList2, arrayList, 5));
+                    break;
                 }
-                gj gjVar2 = this.d;
-                gjVar2.k.originalLanguage = str;
-                a10Var2.getMessagesStorage().X1(this.e, gjVar2.k);
-                a10Var2.w.remove(Integer.valueOf(this.f));
-                a10Var2.f(gjVar2);
                 break;
         }
     }

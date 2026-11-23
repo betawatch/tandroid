@@ -6,6 +6,7 @@ import e2.q0;
 import e2.s0;
 import e2.t;
 import e2.t0;
+import f3.j0;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -13,13 +14,13 @@ import f3.s;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import z3.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -39,11 +40,11 @@ public final class b implements o {
         f3.l lVar = (f3.l) pVar;
         x xVar = this.a;
         xVar.K(2);
-        lVar.g(xVar.a, 0, 2, false);
+        lVar.k(xVar.a, 0, 2, false);
         if (xVar.H() == 65496) {
             while (true) {
                 xVar.K(2);
-                lVar.g(xVar.a, 0, 2, false);
+                lVar.k(xVar.a, 0, 2, false);
                 int H = xVar.H();
                 this.d = H;
                 if (H == 65498) {
@@ -56,10 +57,10 @@ public final class b implements o {
                     break;
                 }
                 if (this.d != 65505) {
-                    lVar.x(H2, false);
+                    lVar.t(H2, false);
                 } else {
                     xVar.K(H2);
-                    lVar.g(xVar.a, 0, H2, false);
+                    lVar.k(xVar.a, 0, H2, false);
                     if (Objects.equals(xVar.v(), "http://ns.adobe.com/xap/1.0/") && (v = xVar.v()) != null) {
                         for (int i7 = 0; i7 < 4; i7++) {
                             if (v.contains(d.a[i7] + "=\"1\"")) {
@@ -93,7 +94,7 @@ public final class b implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:53:0x018c  */
@@ -104,7 +105,7 @@ public final class b implements o {
     public final int f(p pVar, s sVar) {
         String v;
         va vaVar;
-        t1 t1Var;
+        s1 s1Var;
         int i7;
         o3.b bVar;
         long j3;
@@ -134,7 +135,7 @@ public final class b implements o {
             xVar.K(2);
             pVar.b(0, 2, xVar.a);
             this.e = xVar.H() - 2;
-            pVar.r(2);
+            pVar.q(2);
             this.c = 2;
             return 0;
         }
@@ -164,11 +165,11 @@ public final class b implements o {
                 sVar.a = j12;
                 return 1;
             }
-            if (!pVar.g(xVar.a, 0, 1, true)) {
+            if (!pVar.k(xVar.a, 0, 1, true)) {
                 g();
                 return 0;
             }
-            pVar.n();
+            pVar.o();
             if (this.j == null) {
                 this.j = new l(k.i, 8);
             }
@@ -187,7 +188,7 @@ public final class b implements o {
             bVar2.getClass();
             q qVar2 = this.b;
             qVar2.getClass();
-            f3.i0 d2 = qVar2.d2(1024, 4);
+            j0 d2 = qVar2.d2(1024, 4);
             t tVar = new t();
             tVar.q = s0.n("image/jpeg");
             tVar.k = new q0(bVar2);
@@ -207,14 +208,14 @@ public final class b implements o {
                         h2.a.l("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
                         vaVar = null;
                     }
-                    if (vaVar != null && (i7 = (t1Var = (t1) vaVar.c).d) >= 2) {
+                    if (vaVar != null && (i7 = (s1Var = (s1) vaVar.c).d) >= 2) {
                         int i11 = i7 - 1;
                         long j14 = -1;
                         long j15 = -1;
                         long j16 = -1;
                         long j17 = -1;
                         while (i11 >= 0) {
-                            c cVar = (c) t1Var.get(i11);
+                            c cVar = (c) s1Var.get(i11);
                             String str = cVar.a;
                             boolean z10 = str.equals("video/mp4") || str.equals("video/quicktime");
                             if (i11 == 0) {
@@ -254,7 +255,7 @@ public final class b implements o {
                 }
             }
         } else {
-            pVar.r(this.e);
+            pVar.q(this.e);
         }
         this.c = 0;
         return 0;
@@ -263,8 +264,8 @@ public final class b implements o {
     public final void g() {
         q qVar = this.b;
         qVar.getClass();
-        qVar.d1();
-        this.b.j(new f3.t(-9223372036854775807L));
+        qVar.Z0();
+        this.b.h(new f3.t(-9223372036854775807L));
         this.c = 6;
     }
 

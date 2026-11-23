@@ -1,74 +1,33 @@
 package v9;
 
-import java.util.ArrayDeque;
-import java.util.concurrent.Executor;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.logging.Logger;
-import o5.o;
-import pb.l;
-import q6.m;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class i implements Executor {
-    public static final Logger f = Logger.getLogger(i.class.getName());
-    public final Executor a;
-    public final ArrayDeque b = new ArrayDeque();
-    public int c = 1;
-    public long d = 0;
-    public final l e = new l(this);
+public final class i extends c0.h implements ScheduledFuture {
+    public final ScheduledFuture n;
 
-    public i(Executor executor) {
-        m.h(executor);
-        this.a = executor;
+    public i(h hVar) {
+        this.n = hVar.c(new nd0(this, 24));
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        m.h(runnable);
-        synchronized (this.b) {
-            int i7 = this.c;
-            if (i7 != 4 && i7 != 3) {
-                long j3 = this.d;
-                o oVar = new o(1, runnable);
-                this.b.add(oVar);
-                this.c = 2;
-                try {
-                    this.a.execute(this.e);
-                    if (this.c != 2) {
-                        return;
-                    }
-                    synchronized (this.b) {
-                        try {
-                            if (this.d == j3 && this.c == 2) {
-                                this.c = 3;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                } catch (Error | RuntimeException e10) {
-                    synchronized (this.b) {
-                        try {
-                            int i10 = this.c;
-                            boolean z10 = true;
-                            if ((i10 != 1 && i10 != 2) || !this.b.removeLastOccurrence(oVar)) {
-                                z10 = false;
-                            }
-                            if (!(e10 instanceof RejectedExecutionException) || z10) {
-                                throw e10;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                }
-            }
-            this.b.add(runnable);
-        }
+    @Override // java.lang.Comparable
+    public final int compareTo(Delayed delayed) {
+        return this.n.compareTo(delayed);
     }
 
-    public final String toString() {
-        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.a + "}";
+    @Override // c0.h
+    public final void d() {
+        ScheduledFuture scheduledFuture = this.n;
+        Object obj = this.a;
+        scheduledFuture.cancel((obj instanceof c0.a) && ((c0.a) obj).a);
+    }
+
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.n.getDelay(timeUnit);
     }
 }

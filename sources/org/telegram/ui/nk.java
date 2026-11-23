@@ -5,16 +5,16 @@ import android.content.Context;
 import android.text.style.CharacterStyle;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class nk extends UndoView {
     public final /* synthetic */ int k0 = 1;
     public final /* synthetic */ Object l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(b20 b20Var, Context context) {
+    public nk(a20 a20Var, Context context) {
         super(context);
-        this.l0 = b20Var;
+        this.l0 = a20Var;
     }
 
     @Override // org.telegram.ui.Components.UndoView
@@ -31,7 +31,7 @@ public final class nk extends UndoView {
         switch (this.k0) {
             case 1:
                 super.invalidate();
-                ((b20) this.l0).invalidate();
+                ((a20) this.l0).invalidate();
                 break;
             default:
                 super.invalidate();
@@ -55,8 +55,8 @@ public final class nk extends UndoView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(bn bnVar, Activity activity, bn bnVar2, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(activity, bnVar2, true, h6Var);
+    public nk(bn bnVar, Activity activity, bn bnVar2, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(activity, bnVar2, true, i6Var);
         this.l0 = bnVar;
     }
 }

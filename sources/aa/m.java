@@ -6,11 +6,11 @@ import j$.util.Objects;
 import j$.util.function.Predicate$-CC;
 import java.io.File;
 import java.util.function.Predicate;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements Predicate {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class m implements Predicate {
             case 5:
                 return ((String) obj) != null;
             case 6:
-                return !gj.c3(((gj) obj).k);
+                return !fj.c3(((fj) obj).k);
             default:
                 return Objects.nonNull((TLObject) obj);
         }

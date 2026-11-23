@@ -1,16 +1,23 @@
 package c8;
 
-import java.nio.ByteBuffer;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class da {
-    public e2.q0 a(o3.a aVar) {
-        ByteBuffer byteBuffer = aVar.c;
-        byteBuffer.getClass();
-        a8.la.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
-        return b(aVar, byteBuffer);
+    public static j2.m a(p2.m mVar, String str, p2.j jVar, int i7) {
+        Map map = Collections.EMPTY_MAP;
+        Uri g10 = h2.e.g(str, jVar.c);
+        long j3 = jVar.a;
+        long j10 = jVar.b;
+        String b10 = mVar.b();
+        if (b10 == null) {
+            b10 = h2.e.g(((p2.b) mVar.b.get(0)).a, jVar.c).toString();
+        }
+        String str2 = b10;
+        a8.ma.k(g10, "The uri must be set.");
+        return new j2.m(g10, 1, null, h9.x1.h, j3, j10, str2, i7);
     }
-
-    public abstract e2.q0 b(o3.a aVar, ByteBuffer byteBuffer);
 }

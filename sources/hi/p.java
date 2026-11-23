@@ -1,45 +1,37 @@
 package hi;
 
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.w10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p implements Runnable {
+public final /* synthetic */ class p implements w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ia b;
+    public final /* synthetic */ db b;
 
-    public /* synthetic */ p(ia iaVar, int i7) {
+    public /* synthetic */ p(db dbVar, int i7) {
         this.a = i7;
-        this.b = iaVar;
+        this.b = dbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        Integer num = (Integer) obj;
         switch (this.a) {
             case 0:
-                this.b.n();
-                break;
-            case 1:
-                ia iaVar = this.b;
-                iaVar.K0 = false;
-                iaVar.L0 = TLObject.FLAG_31;
-                iaVar.invalidate();
-                iaVar.S0.setVisibility(0);
-                iaVar.T0.setVisibility(0);
+                int intValue = num.intValue();
+                db dbVar = this.b;
+                dbVar.setPeriod(intValue);
+                w10 w10Var = dbVar.B1;
+                if (w10Var != null) {
+                    w10Var.a(num);
+                    break;
+                }
                 break;
             default:
-                sa saVar = this.b.S1;
-                ga gaVar = saVar.Y0;
-                if (gaVar != null) {
-                    gaVar.P = false;
-                    gaVar.c();
-                    ga gaVar2 = saVar.Y0;
-                    gaVar2.m(0L);
-                    cb cbVar = gaVar2.G;
-                    if (cbVar != null) {
-                        cbVar.setProgress(0L);
-                        break;
-                    }
+                w10 w10Var2 = this.b.C1;
+                if (w10Var2 != null) {
+                    w10Var2.a(num);
+                    break;
                 }
                 break;
         }

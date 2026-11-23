@@ -1,35 +1,11 @@
 package s2;
 
-import j$.util.Objects;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class v {
-    public final e2.u a;
-    public final String b;
-    public final String c;
+public interface v {
+    void a();
 
-    public v(e2.u uVar, String str, String str2) {
-        e2.t a10 = uVar.a();
-        a10.a = null;
-        a10.k = null;
-        this.a = new e2.u(a10);
-        this.b = str;
-        this.c = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        return Objects.equals(this.a, vVar.a) && Objects.equals(this.b, vVar.b) && Objects.equals(this.c, vVar.c);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c);
-    }
+    boolean b(Uri uri, b3.j jVar, boolean z10);
 }

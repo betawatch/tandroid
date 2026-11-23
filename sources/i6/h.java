@@ -1,740 +1,303 @@
 package i6;
 
-import a8.r7;
-import a8.sa;
-import ab.w;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.MediaMetadata;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.Parcel;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v4.media.session.a0;
-import android.support.v4.media.session.d0;
-import android.support.v4.media.session.u;
-import android.text.TextUtils;
-import android.util.Log;
-import com.google.android.gms.cast.CastDevice;
-import com.google.android.gms.cast.MediaInfo;
-import com.google.android.gms.cast.framework.ReconnectionService;
+import android.support.v4.media.session.s;
+import android.view.KeyEvent;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.p;
-import com.google.android.gms.internal.cast.y;
-import f6.l;
-import f6.o;
-import f6.q;
-import g6.c0;
-import hi.t5;
-import hi.w4;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.beta.R;
+import f6.p;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MusicPlayerService;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+import org.telegram.ui.Components.e8;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class h {
-    public static final j6.b v = new j6.b("MediaSessionManager", null);
-    public final Context a;
-    public final g6.b b;
-    public final p c;
-    public final g6.g d;
-    public final h6.f e;
-    public final ComponentName f;
-    public final ComponentName g;
-    public final r7 h;
-    public final r7 i;
-    public final f j;
-    public final y k;
-    public final sa l;
-    public final c0 m;
-    public h6.h n;
-    public CastDevice o;
-    public a0 p;
-    public boolean q;
-    public PlaybackStateCompat.CustomAction r;
-    public PlaybackStateCompat.CustomAction s;
-    public PlaybackStateCompat.CustomAction t;
-    public PlaybackStateCompat.CustomAction u;
+public final class h extends s {
+    public final /* synthetic */ int g;
+    public final /* synthetic */ Object h;
 
-    public h(Context context, g6.b bVar, p pVar) {
-        h6.f fVar;
-        this.a = context;
-        this.b = bVar;
-        this.c = pVar;
-        j6.b bVar2 = g6.a.l;
-        m.e("Must be called from the main thread.");
-        g6.a aVar = g6.a.n;
-        f fVar2 = null;
-        this.d = aVar != null ? aVar.b() : null;
-        h6.a aVar2 = bVar.f;
-        this.e = aVar2 == null ? null : aVar2.d;
-        int i7 = 2;
-        this.m = new c0(this, i7);
-        String str = aVar2 == null ? null : aVar2.b;
-        this.f = !TextUtils.isEmpty(str) ? new ComponentName(context, str) : null;
-        String str2 = aVar2 == null ? null : aVar2.a;
-        this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
-        r7 r7Var = new r7(context);
-        this.h = r7Var;
-        r7Var.f = new w4(this, 3);
-        r7 r7Var2 = new r7(context);
-        this.i = r7Var2;
-        r7Var2.f = new t5(this, i7);
-        this.k = new y(Looper.getMainLooper(), 0);
-        j6.b bVar3 = f.u;
-        h6.a aVar3 = bVar.f;
-        if (aVar3 != null && (fVar = aVar3.d) != null) {
-            h6.p pVar2 = fVar.W;
-            if (pVar2 != null) {
-                ArrayList a10 = i.a(pVar2);
-                int[] b10 = i.b(pVar2);
-                int size = a10 == null ? 0 : a10.size();
-                if (a10 == null || a10.isEmpty()) {
-                    Log.e(bVar3.a, bVar3.d(h6.e.class.getSimpleName().concat(" doesn't provide any action."), new Object[0]));
-                } else if (a10.size() > 5) {
-                    Log.e(bVar3.a, bVar3.d(h6.e.class.getSimpleName().concat(" provides more than 5 actions."), new Object[0]));
-                } else if (b10 == null || (b10.length) == 0) {
-                    Log.e(bVar3.a, bVar3.d(h6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
-                } else {
-                    for (int i10 : b10) {
-                        if (i10 < 0 || i10 >= size) {
-                            Log.e(bVar3.a, bVar3.d(h6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
-                            break;
-                        }
-                    }
-                }
-            }
-            fVar2 = new f(context);
-        }
-        this.j = fVar2;
-        this.l = new sa(this, 29);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h(Object obj, int i7) {
+        super(0);
+        this.g = i7;
+        this.h = obj;
     }
 
-    public final void a(h6.h hVar, CastDevice castDevice) {
-        ComponentName componentName;
-        g6.b bVar = this.b;
-        h6.a aVar = bVar == null ? null : bVar.f;
-        int i7 = 0;
-        if (this.q || bVar == null || aVar == null || this.e == null || hVar == null || castDevice == null || (componentName = this.g) == null) {
-            v.b("skip attaching media session", new Object[0]);
-            return;
-        }
-        this.n = hVar;
-        hVar.p(this.m);
-        this.o = castDevice;
-        Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
-        intent.setComponent(componentName);
-        Context context = this.a;
-        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 67108864);
-        if (aVar.f) {
-            a0 a0Var = new a0(context, "CastMediaSession", componentName, broadcast);
-            this.p = a0Var;
-            j(0, null);
-            CastDevice castDevice2 = this.o;
-            if (castDevice2 != null && !TextUtils.isEmpty(castDevice2.d)) {
-                Bundle bundle = new Bundle();
-                String string = context.getResources().getString(R.string.cast_casting_to_device, this.o.d);
-                a0.f fVar = MediaMetadataCompat.d;
-                if (fVar.containsKey("android.media.metadata.ALBUM_ARTIST") && ((Integer) fVar.get("android.media.metadata.ALBUM_ARTIST")).intValue() != 1) {
-                    throw new IllegalArgumentException("The android.media.metadata.ALBUM_ARTIST key cannot be used to put a String");
-                }
-                bundle.putCharSequence("android.media.metadata.ALBUM_ARTIST", string);
-                a0Var.t(new MediaMetadataCompat(bundle));
-            }
-            a0Var.s(new g(this, i7), null);
-            a0Var.r(true);
-            this.c.m1(a0Var);
-        }
-        this.q = true;
-        b();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00a8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b() {
-        MediaInfo d;
-        l lVar;
-        boolean z10;
-        boolean z11;
-        gf.d dVar;
-        Uri uri;
-        wf.b bVar;
-        o c10;
-        MediaInfo mediaInfo;
-        h6.h hVar = this.n;
-        if (hVar == null) {
-            return;
-        }
-        int s5 = hVar.s();
-        MediaInfo d2 = hVar.d();
-        if (hVar.k() && (c10 = hVar.c()) != null && (mediaInfo = c10.a) != null) {
-            d2 = mediaInfo;
-        }
-        j(s5, d2);
-        if (!hVar.h()) {
-            h();
-            i();
-            return;
-        }
-        if (s5 != 0) {
-            f fVar = this.j;
-            if (fVar != null) {
-                v.b("Update media notification.", new Object[0]);
-                CastDevice castDevice = this.o;
-                h6.h hVar2 = this.n;
-                a0 a0Var = this.p;
-                if (castDevice != null && hVar2 != null && a0Var != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
-                    List list = lVar.a;
-                    q e10 = hVar2.e();
-                    if (e10 != null) {
-                        int i7 = e10.G;
-                        if (i7 == 1 || i7 == 2 || i7 == 3) {
-                            z10 = true;
-                            z11 = z10;
-                            boolean z12 = hVar2.f() == 2;
-                            int i10 = d.b;
-                            l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                            String string = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                            String str = castDevice.d;
-                            gf.d dVar2 = new gf.d(z12, i10, string, str, ((u) a0Var.b).c, z10, z11);
-                            boolean z13 = z12;
-                            boolean z14 = z10;
-                            boolean z15 = z11;
-                            dVar = fVar.k;
-                            if (dVar != null || z13 != dVar.a || i10 != dVar.b || !j6.a.d(string, (String) dVar.f) || !j6.a.d(str, (String) dVar.g) || z14 != dVar.c || z15 != dVar.d) {
-                                fVar.k = dVar2;
-                                fVar.b();
-                            }
-                            wf.b bVar2 = new wf.b((list != null || list.isEmpty()) ? null : (p6.a) list.get(0));
-                            uri = (Uri) bVar2.b;
-                            bVar = fVar.l;
-                            if (bVar != null || !j6.a.d(uri, (Uri) bVar.b)) {
-                                r7 r7Var = fVar.i;
-                                r7Var.f = new q4.q(26, fVar, bVar2);
-                                r7Var.M(uri);
-                            }
-                        } else {
-                            Integer num = (Integer) e10.O.get(e10.c);
-                            if (num != null) {
-                                boolean z16 = num.intValue() > 0;
-                                z10 = num.intValue() < e10.H.size() + (-1);
-                                z11 = z16;
-                                if (hVar2.f() == 2) {
-                                }
-                                int i102 = d.b;
-                                l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                                String string2 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                                String str2 = castDevice.d;
-                                gf.d dVar22 = new gf.d(z12, i102, string2, str2, ((u) a0Var.b).c, z10, z11);
-                                boolean z132 = z12;
-                                boolean z142 = z10;
-                                boolean z152 = z11;
-                                dVar = fVar.k;
-                                if (dVar != null) {
-                                }
-                                fVar.k = dVar22;
-                                fVar.b();
-                                wf.b bVar22 = new wf.b((list != null || list.isEmpty()) ? null : (p6.a) list.get(0));
-                                uri = (Uri) bVar22.b;
-                                bVar = fVar.l;
-                                if (bVar != null) {
-                                }
-                                r7 r7Var2 = fVar.i;
-                                r7Var2.f = new q4.q(26, fVar, bVar22);
-                                r7Var2.M(uri);
-                            }
-                        }
-                    }
-                    z10 = false;
-                    z11 = z10;
-                    if (hVar2.f() == 2) {
-                    }
-                    int i1022 = d.b;
-                    l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                    String string22 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                    String str22 = castDevice.d;
-                    gf.d dVar222 = new gf.d(z12, i1022, string22, str22, ((u) a0Var.b).c, z10, z11);
-                    boolean z1322 = z12;
-                    boolean z1422 = z10;
-                    boolean z1522 = z11;
-                    dVar = fVar.k;
-                    if (dVar != null) {
-                    }
-                    fVar.k = dVar222;
-                    fVar.b();
-                    wf.b bVar222 = new wf.b((list != null || list.isEmpty()) ? null : (p6.a) list.get(0));
-                    uri = (Uri) bVar222.b;
-                    bVar = fVar.l;
-                    if (bVar != null) {
-                    }
-                    r7 r7Var22 = fVar.i;
-                    r7Var22.f = new q4.q(26, fVar, bVar222);
-                    r7Var22.M(uri);
-                }
-            }
-            if (hVar.k()) {
-                return;
-            }
-            g(true);
-        }
-    }
-
-    public final long c(String str, int i7, Bundle bundle) {
-        long j3;
-        int hashCode = str.hashCode();
-        if (hashCode != -945151566) {
-            if (hashCode != -945080078) {
-                if (hashCode == 235550565 && str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK)) {
-                    if (i7 == 3) {
-                        j3 = 514;
-                        i7 = 3;
-                    } else {
-                        j3 = 512;
-                    }
-                    if (i7 != 2) {
-                        return j3;
-                    }
-                    return 516L;
-                }
-            } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
-                h6.h hVar = this.n;
-                if (hVar != null && hVar.h()) {
-                    q e10 = hVar.e();
-                    m.h(e10);
-                    if ((128 & e10.n) != 0 || e10.G != 0) {
-                        return 16L;
-                    }
-                    Integer num = (Integer) e10.O.get(e10.c);
-                    if (num != null && num.intValue() > 0) {
-                        return 16L;
-                    }
-                }
-                bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
-                return 0L;
-            }
-        } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-            h6.h hVar2 = this.n;
-            if (hVar2 != null && hVar2.h()) {
-                q e11 = hVar2.e();
-                m.h(e11);
-                if ((64 & e11.n) != 0 || e11.G != 0) {
-                    return 32L;
-                }
-                Integer num2 = (Integer) e11.O.get(e11.c);
-                if (num2 != null && num2.intValue() < e11.H.size() - 1) {
-                    return 32L;
-                }
-            }
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
-        }
-        return 0L;
-    }
-
-    public final Uri d(l lVar) {
-        h6.a aVar = this.b.f;
-        if (aVar != null) {
-            aVar.b();
-        }
-        List list = lVar.a;
-        p6.a aVar2 = (list == null || list.isEmpty()) ? null : (p6.a) lVar.a.get(0);
-        if (aVar2 == null) {
-            return null;
-        }
-        return aVar2.b;
-    }
-
-    public final void e(int i7, Bitmap bitmap) {
-        MediaMetadata metadata;
-        a0 a0Var = this.p;
-        if (a0Var == null) {
-            return;
-        }
-        if (bitmap == null) {
-            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
-            bitmap.eraseColor(0);
-        }
-        a0 a0Var2 = this.p;
-        MediaMetadataCompat mediaMetadataCompat = null;
-        if (a0Var2 != null && (metadata = ((android.support.v4.media.session.h) ((wf.b) a0Var2.c).b).a.getMetadata()) != null) {
-            a0.f fVar = MediaMetadataCompat.d;
-            Parcel obtain = Parcel.obtain();
-            metadata.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            MediaMetadataCompat createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
-            obtain.recycle();
-            createFromParcel.b = metadata;
-            mediaMetadataCompat = createFromParcel;
-        }
-        w wVar = mediaMetadataCompat == null ? new w() : new w(mediaMetadataCompat);
-        wVar.h(i7 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        a0Var.t(new MediaMetadataCompat(wVar.a));
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void f(d0 d0Var, String str, h6.d dVar) {
-        int hashCode = str.hashCode();
-        Context context = this.a;
-        PlaybackStateCompat.CustomAction customAction = null;
-        h6.f fVar = this.e;
-        switch (hashCode) {
-            case -1699820260:
-                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
-                    if (this.s == null && fVar != null) {
-                        long j3 = fVar.c;
-                        j6.b bVar = i.a;
-                        int i7 = fVar.S;
-                        if (j3 == 10000) {
-                            i7 = fVar.T;
-                        } else if (j3 == 30000) {
-                            i7 = fVar.U;
-                        }
-                        int i10 = fVar.E;
-                        if (j3 == 10000) {
-                            i10 = fVar.F;
-                        } else if (j3 == 30000) {
-                            i10 = fVar.G;
-                        }
-                        String string = context.getResources().getString(i7);
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_REWIND)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i10 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.s = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_REWIND, string, i10, null);
-                    }
-                    customAction = this.s;
-                    if (customAction != null) {
-                        d0Var.a(customAction);
-                        return;
-                    }
-                    return;
-                }
-                if (dVar != null) {
-                    String str2 = dVar.c;
-                    int i11 = dVar.b;
-                    if (TextUtils.isEmpty(str)) {
-                        throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                    }
-                    if (TextUtils.isEmpty(str2)) {
-                        throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                    }
-                    if (i11 == 0) {
-                        throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                    }
-                    customAction = new PlaybackStateCompat.CustomAction(str, str2, i11, null);
-                }
-                if (customAction != null) {
-                }
-            case -668151673:
-                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    if (this.t == null && fVar != null) {
-                        String string2 = context.getResources().getString(fVar.V);
-                        int i12 = fVar.H;
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string2)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i12 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.t = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_STOP_CASTING, string2, i12, null);
-                    }
-                    customAction = this.t;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-            case -124479363:
-                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    if (this.u == null && fVar != null) {
-                        String string3 = context.getResources().getString(fVar.V);
-                        int i13 = fVar.H;
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string3)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i13 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.u = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_DISCONNECT, string3, i13, null);
-                    }
-                    customAction = this.u;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-            case 1362116196:
-                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
-                    if (this.r == null && fVar != null) {
-                        long j10 = fVar.c;
-                        j6.b bVar2 = i.a;
-                        int i14 = fVar.P;
-                        if (j10 == 10000) {
-                            i14 = fVar.Q;
-                        } else if (j10 == 30000) {
-                            i14 = fVar.R;
-                        }
-                        int i15 = fVar.w;
-                        if (j10 == 10000) {
-                            i15 = fVar.x;
-                        } else if (j10 == 30000) {
-                            i15 = fVar.y;
-                        }
-                        String string4 = context.getResources().getString(i14);
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_FORWARD)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string4)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i15 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.r = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_FORWARD, string4, i15, null);
-                    }
-                    customAction = this.r;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
+    @Override // android.support.v4.media.session.s
+    public final void G(long j3) {
+        int i7 = this.g;
+        Object obj = this.h;
+        switch (i7) {
+            case 0:
+                i.v.b("onSeekTo %d", Long.valueOf(j3));
+                h6.h hVar = ((i) obj).n;
+                if (hVar != null) {
+                    hVar.q(new p(j3));
+                    break;
                 }
                 break;
             default:
-                if (dVar != null) {
-                }
-                if (customAction != null) {
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    MediaController.B().i0(fjVar, (j3 / 1000) / ((float) fjVar.L0()));
+                    boolean z10 = MusicPlayerService.s;
+                    ((MusicPlayerService) obj).f(j3);
+                    break;
                 }
                 break;
         }
     }
 
-    public final void g(boolean z10) {
-        if (this.b.h) {
-            y yVar = this.k;
-            sa saVar = this.l;
-            if (saVar != null) {
-                yVar.removeCallbacks(saVar);
-            }
-            Context context = this.a;
-            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
-            intent.setPackage(context.getPackageName());
-            try {
-                context.startService(intent);
-            } catch (IllegalStateException unused) {
-                if (z10) {
-                    yVar.postDelayed(saVar, 1000L);
+    @Override // android.support.v4.media.session.s
+    public void M(int i7) {
+        switch (this.g) {
+            case 1:
+                MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
+                bz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
+                MusicPlayerService.g();
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    musicPlayerService.a(fjVar, false);
+                    break;
                 }
-            }
+                break;
+            default:
+                super.M(i7);
+                break;
         }
     }
 
-    public final void h() {
-        f fVar = this.j;
-        if (fVar != null) {
-            v.b("Stopping media notification.", new Object[0]);
-            r7 r7Var = fVar.i;
-            r7Var.N();
-            r7Var.f = null;
-            NotificationManager notificationManager = fVar.b;
-            if (notificationManager != null) {
-                notificationManager.cancel("castMediaNotification", 1);
-            }
+    @Override // android.support.v4.media.session.s
+    public void P(int i7) {
+        switch (this.g) {
+            case 1:
+                MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
+                if (i7 == 1 || i7 == 2) {
+                    if (!bz.N0) {
+                        MediaController.B().l0(2);
+                    }
+                } else if (bz.N0) {
+                    MediaController.B().l0(0);
+                }
+                a0 a0Var = MusicPlayerService.w;
+                if (a0Var != null) {
+                    a0Var.x(bz.N0 ? 1 : 0);
+                }
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    musicPlayerService.a(fjVar, false);
+                    break;
+                }
+                break;
+            default:
+                super.P(i7);
+                break;
         }
     }
 
-    public final void i() {
-        if (this.b.h) {
-            this.k.removeCallbacks(this.l);
-            Context context = this.a;
-            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
-            intent.setPackage(context.getPackageName());
-            context.stopService(intent);
+    @Override // android.support.v4.media.session.s
+    public final void S() {
+        switch (this.g) {
+            case 0:
+                i.v.b("onSkipToNext", new Object[0]);
+                h6.h hVar = ((i) this.h).n;
+                if (hVar != null) {
+                    m.e("Must be called from the main thread.");
+                    if (!hVar.w()) {
+                        h6.h.t();
+                        break;
+                    } else {
+                        h6.h.x(new h6.i(hVar, 2));
+                        break;
+                    }
+                }
+                break;
+            default:
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null && fjVar.I3()) {
+                    MediaController.B().U(false);
+                    break;
+                }
+                break;
         }
     }
 
-    public final void j(int i7, MediaInfo mediaInfo) {
-        PlaybackStateCompat b10;
-        a0 a0Var;
-        l lVar;
-        MediaMetadata metadata;
-        MediaMetadataCompat createFromParcel;
-        Bitmap bitmap;
-        PendingIntent activity;
-        int i10;
-        a0 a0Var2 = this.p;
-        if (a0Var2 == null) {
-            return;
+    @Override // android.support.v4.media.session.s
+    public final void V() {
+        switch (this.g) {
+            case 0:
+                i.v.b("onSkipToPrevious", new Object[0]);
+                h6.h hVar = ((i) this.h).n;
+                if (hVar != null) {
+                    m.e("Must be called from the main thread.");
+                    if (!hVar.w()) {
+                        h6.h.t();
+                        break;
+                    } else {
+                        h6.h.x(new h6.i(hVar, 1));
+                        break;
+                    }
+                }
+                break;
+            default:
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null && fjVar.I3()) {
+                    MediaController.B().V();
+                    break;
+                }
+                break;
         }
-        u uVar = (u) a0Var2.b;
-        Bundle bundle = new Bundle();
-        d0 d0Var = new d0();
-        h6.h hVar = this.n;
-        h6.f fVar = this.e;
-        if (hVar == null || this.j == null) {
-            b10 = d0Var.b();
-        } else {
-            d0Var.c(i7, (hVar.s() == 0 || hVar.j()) ? 0L : hVar.a(), 1.0f);
-            if (i7 == 0) {
-                b10 = d0Var.b();
-            } else {
-                h6.p pVar = fVar != null ? fVar.W : null;
-                h6.h hVar2 = this.n;
-                long j3 = (hVar2 == null || hVar2.j() || this.n.n()) ? 0L : 256L;
-                if (pVar != null) {
-                    ArrayList a10 = i.a(pVar);
-                    if (a10 != null) {
-                        int size = a10.size();
-                        int i11 = 0;
-                        while (i11 < size) {
-                            Object obj = a10.get(i11);
-                            i11++;
-                            ArrayList arrayList = a10;
-                            h6.d dVar = (h6.d) obj;
-                            int i12 = size;
-                            String str = dVar.a;
-                            if (TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                                j3 = c(str, i7, bundle) | j3;
-                            } else {
-                                f(d0Var, str, dVar);
+    }
+
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    @Override // android.support.v4.media.session.s
+    public final void f(String str) {
+        int i7 = this.g;
+        Object obj = this.h;
+        switch (i7) {
+            case 0:
+                i iVar = (i) obj;
+                i.v.b("onCustomAction with action = %s", str);
+                switch (str.hashCode()) {
+                    case -1699820260:
+                        if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
+                            long j3 = -iVar.e.c;
+                            h6.h hVar = iVar.n;
+                            if (hVar != null) {
+                                long min = Math.min(hVar.g(), Math.max(0L, hVar.a() + j3));
+                                h6.h hVar2 = iVar.n;
+                                if (hVar2 != null) {
+                                    hVar2.q(new p(min));
+                                    break;
+                                }
                             }
-                            size = i12;
-                            a10 = arrayList;
                         }
+                        break;
+                    case -668151673:
+                        if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
+                            g6.g gVar = iVar.d;
+                            if (gVar != null) {
+                                gVar.b(true);
+                                break;
+                            }
+                        }
+                        break;
+                    case -124479363:
+                        if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
+                            g6.g gVar2 = iVar.d;
+                            if (gVar2 != null) {
+                                gVar2.b(false);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1362116196:
+                        if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
+                            long j10 = iVar.e.c;
+                            h6.h hVar3 = iVar.n;
+                            if (hVar3 != null) {
+                                long min2 = Math.min(hVar3.g(), Math.max(0L, hVar3.a() + j10));
+                                h6.h hVar4 = iVar.n;
+                                if (hVar4 != null) {
+                                    hVar4.q(new p(min2));
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+                Intent intent = new Intent(str);
+                intent.setComponent(iVar.g);
+                iVar.a.sendBroadcast(intent);
+                break;
+            default:
+                MusicPlayerService musicPlayerService = (MusicPlayerService) obj;
+                if ("org.telegram.android.musicplayer.repeat".equals(str)) {
+                    bz.E((bz.S0 + 1) % 3);
+                    MusicPlayerService.g();
+                    e8 e8Var = e8.T2;
+                    if (e8Var != null) {
+                        e8Var.d1();
                     }
-                } else if (fVar != null) {
-                    ArrayList arrayList2 = fVar.a;
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (i13 < size2) {
-                        Object obj2 = arrayList2.get(i13);
-                        i13++;
-                        ArrayList arrayList3 = arrayList2;
-                        String str2 = (String) obj2;
-                        if (TextUtils.equals(str2, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                            i10 = size2;
-                            j3 = c(str2, i7, bundle) | j3;
-                        } else {
-                            i10 = size2;
-                            f(d0Var, str2, null);
-                        }
-                        size2 = i10;
-                        arrayList2 = arrayList3;
+                } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
+                    if (bz.N0) {
+                        MediaController.B().l0(0);
+                    } else {
+                        MediaController.B().l0(2);
+                    }
+                    a0 a0Var = MusicPlayerService.w;
+                    if (a0Var != null) {
+                        a0Var.x(bz.N0 ? 1 : 0);
+                    }
+                    e8 e8Var2 = e8.T2;
+                    if (e8Var2 != null) {
+                        e8Var2.d1();
                     }
                 }
-                d0Var.e = j3;
-                b10 = d0Var.b();
-            }
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    boolean z10 = MusicPlayerService.s;
+                    musicPlayerService.a(fjVar, false);
+                    break;
+                }
+                break;
         }
-        a0Var2.u(b10);
-        if (fVar != null && fVar.X) {
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public boolean i(Intent intent) {
+        h6.h hVar;
+        switch (this.g) {
+            case 0:
+                i.v.b("onMediaButtonEvent", new Object[0]);
+                KeyEvent keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT");
+                if (keyEvent == null) {
+                    return true;
+                }
+                if ((keyEvent.getKeyCode() != 127 && keyEvent.getKeyCode() != 126) || (hVar = ((i) this.h).n) == null) {
+                    return true;
+                }
+                hVar.r();
+                return true;
+            default:
+                return super.i(intent);
         }
-        if (fVar != null && fVar.Y) {
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void k() {
+        switch (this.g) {
+            case 0:
+                i.v.b("onPause", new Object[0]);
+                h6.h hVar = ((i) this.h).n;
+                if (hVar != null) {
+                    hVar.r();
+                    break;
+                }
+                break;
+            default:
+                MediaController.B().R(MediaController.B().v0, true);
+                break;
         }
-        if (bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS") || bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT")) {
-            uVar.a.setExtras(bundle);
-        }
-        if (i7 == 0) {
-            a0Var2.t(new MediaMetadataCompat(new Bundle()));
-            return;
-        }
-        if (this.n != null) {
-            ComponentName componentName = this.f;
-            if (componentName == null) {
-                activity = null;
-            } else {
-                Intent intent = new Intent();
-                intent.setComponent(componentName);
-                activity = PendingIntent.getActivity(this.a, 0, intent, 201326592);
-            }
-            if (activity != null) {
-                uVar.a.setSessionActivity(activity);
-            }
-        }
-        h6.h hVar3 = this.n;
-        if (hVar3 == null || (a0Var = this.p) == null || mediaInfo == null || (lVar = mediaInfo.d) == null) {
-            return;
-        }
-        Bundle bundle2 = lVar.b;
-        long j10 = hVar3.j() ? 0L : mediaInfo.e;
-        l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-        String string = bundle2.getString("com.google.android.gms.cast.metadata.TITLE");
-        l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
-        String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
-        a0 a0Var3 = this.p;
-        if (a0Var3 == null || (metadata = ((android.support.v4.media.session.h) ((wf.b) a0Var3.c).b).a.getMetadata()) == null) {
-            createFromParcel = null;
-        } else {
-            a0.f fVar2 = MediaMetadataCompat.d;
-            Parcel obtain = Parcel.obtain();
-            metadata.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
-            obtain.recycle();
-            createFromParcel.b = metadata;
-        }
-        w wVar = createFromParcel == null ? new w() : new w(createFromParcel);
-        wVar.i(j10);
-        if (string != null) {
-            wVar.j("android.media.metadata.TITLE", string);
-            wVar.j("android.media.metadata.DISPLAY_TITLE", string);
-        }
-        if (string2 != null) {
-            wVar.j("android.media.metadata.DISPLAY_SUBTITLE", string2);
-        }
-        a0Var.t(new MediaMetadataCompat(wVar.a));
-        Uri d = d(lVar);
-        if (d != null) {
-            this.h.M(d);
-            bitmap = null;
-        } else {
-            bitmap = null;
-            e(0, null);
-        }
-        Uri d2 = d(lVar);
-        if (d2 != null) {
-            this.i.M(d2);
-        } else {
-            e(3, bitmap);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void n() {
+        switch (this.g) {
+            case 0:
+                i.v.b("onPlay", new Object[0]);
+                h6.h hVar = ((i) this.h).n;
+                if (hVar != null) {
+                    hVar.r();
+                    break;
+                }
+                break;
+            default:
+                MediaController.B().S(MediaController.B().v0);
+                break;
         }
     }
 }

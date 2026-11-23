@@ -3,7 +3,7 @@ package d1;
 import kotlin.jvm.internal.j;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 v0.g gVar = this.b.f;
                 if (gVar != null) {
-                    gVar.a(new y0.a(new x0.a(4), this.c.getMessage()));
+                    gVar.T(new y0.a(new x0.a(4), this.c.getMessage()));
                     return;
                 } else {
                     j.h("callback");
@@ -35,7 +35,7 @@ public final /* synthetic */ class b implements Runnable {
                     throw null;
                 }
                 String message = this.c.getMessage();
-                gVar2.a((message == null || message.length() <= 0) ? new y0.a(new x0.a(4), "Unknown error") : new y0.a(new x0.a(4), message));
+                gVar2.T((message == null || message.length() <= 0) ? new y0.a(new x0.a(4), "Unknown error") : new y0.a(new x0.a(4), message));
                 return;
         }
     }

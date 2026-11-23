@@ -5,26 +5,26 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class lk0 extends Drawable {
-    public final nv e;
-    public final nv f;
+    public final kv e;
+    public final kv f;
     public float h;
     public float i;
     public final Rect a = new Rect();
-    public final nr b = zs.b;
+    public final kr b = ws.b;
     public final int c = org.telegram.messenger.g0.L(24.0f);
     public final int d = org.telegram.messenger.g0.L(24.0f);
     public long g = -1;
 
     public lk0() {
-        nv nvVar = new nv(1, (byte) 0);
-        this.e = nvVar;
-        nvVar.c.setColor(-2130706433);
-        nv nvVar2 = new nv(1, (byte) 0);
-        this.f = nvVar2;
-        nvVar2.c.setColor(-2130706433);
+        kv kvVar = new kv(1, (byte) 0);
+        this.e = kvVar;
+        kvVar.c.setColor(-2130706433);
+        kv kvVar2 = new kv(1, (byte) 0);
+        this.f = kvVar2;
+        kvVar2.c.setColor(-2130706433);
     }
 
     public final void a(Canvas canvas, float f10) {
@@ -37,9 +37,9 @@ public final class lk0 extends Drawable {
         rect.bottom = L2;
         rect.right = bounds.right - rect.left;
         rect.top = L2 - ((int) (org.telegram.messenger.g0.L(4.0f) * this.i));
-        nv nvVar = this.f;
-        nvVar.setBounds(rect);
-        nvVar.draw(canvas);
+        kv kvVar = this.f;
+        kvVar.setBounds(rect);
+        kvVar.draw(canvas);
         int L3 = org.telegram.messenger.g0.L(12.0f);
         rect.right = L3;
         rect.left = L3;
@@ -47,10 +47,10 @@ public final class lk0 extends Drawable {
         rect.bottom = L4;
         rect.top = L4;
         rect.inset(-org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 10, 11)), -org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 2, 3)));
-        nv nvVar2 = this.e;
-        nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, 128, org.telegram.messenger.ls.e4));
-        nvVar2.draw(canvas);
+        kv kvVar2 = this.e;
+        kvVar2.setBounds(rect);
+        kvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, 128, org.telegram.messenger.ks.e4));
+        kvVar2.draw(canvas);
     }
 
     public final void b(Canvas canvas, float f10) {
@@ -64,19 +64,19 @@ public final class lk0 extends Drawable {
         rect.right = bounds.right - rect.left;
         rect.top = L2 - ((int) (org.telegram.messenger.g0.L(4.0f) * this.i));
         rect.offset(0, org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 0, -8)));
-        nv nvVar = this.f;
-        nvVar.setBounds(rect);
-        nvVar.draw(canvas);
+        kv kvVar = this.f;
+        kvVar.setBounds(rect);
+        kvVar.draw(canvas);
         rect.left = (int) (org.telegram.messenger.g0.N(org.telegram.messenger.g0.W1(interpolation, 1, 2)) * this.h);
         int N = (int) (org.telegram.messenger.g0.N(org.telegram.messenger.g0.W1(interpolation, 5, 6)) * this.i);
         rect.top = N;
         rect.right = bounds.right - rect.left;
         rect.bottom = N + ((int) (org.telegram.messenger.g0.N(org.telegram.messenger.g0.W1(interpolation, 6, 4)) * this.i));
         rect.offset(0, org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 0, 8)));
-        nv nvVar2 = this.e;
-        nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.ls.e4);
-        nvVar2.draw(canvas);
+        kv kvVar2 = this.e;
+        kvVar2.setBounds(rect);
+        kvVar2.setAlpha(org.telegram.messenger.ks.e4);
+        kvVar2.draw(canvas);
     }
 
     public final void c(Canvas canvas, float f10) {
@@ -90,19 +90,19 @@ public final class lk0 extends Drawable {
         rect.right = bounds.right - rect.left;
         rect.top = L2 - ((int) (org.telegram.messenger.g0.L(4.0f) * this.i));
         rect.offset(0, org.telegram.messenger.g0.L(-8.0f));
-        nv nvVar = this.f;
-        nvVar.setBounds(rect);
-        nvVar.draw(canvas);
+        kv kvVar = this.f;
+        kvVar.setBounds(rect);
+        kvVar.draw(canvas);
         rect.left = (int) (org.telegram.messenger.g0.N(2.0f) * this.h);
         int N = (int) (org.telegram.messenger.g0.N(6.0f) * this.i);
         rect.top = N;
         rect.right = bounds.right - rect.left;
         rect.bottom = N + ((int) (org.telegram.messenger.g0.N(4.0f) * this.i));
         rect.offset(0, org.telegram.messenger.g0.L(8.0f));
-        nv nvVar2 = this.e;
-        nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, org.telegram.messenger.ls.e4, 128));
-        nvVar2.draw(canvas);
+        kv kvVar2 = this.e;
+        kvVar2.setBounds(rect);
+        kvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, org.telegram.messenger.ks.e4, 128));
+        kvVar2.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable

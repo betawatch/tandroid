@@ -5,9 +5,8 @@ import android.os.Looper;
 import com.google.android.gms.common.api.Scope;
 import java.util.Iterator;
 import java.util.Set;
-import m.o3;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h extends d implements com.google.android.gms.common.api.c {
     public final Set E;
@@ -16,8 +15,8 @@ public abstract class h extends d implements com.google.android.gms.common.api.c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public h(Context context, Looper looper, int i7, o3 o3Var, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i10) {
-        super(context, looper, r5, i7, new n(kVar), new n(lVar), (String) o3Var.e);
+    public h(Context context, Looper looper, int i7, ga.d dVar, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i10) {
+        super(context, looper, r5, i7, new n(kVar), new n(lVar), (String) dVar.e);
         synchronized (l0.g) {
             try {
                 if (l0.h == null) {
@@ -31,7 +30,7 @@ public abstract class h extends d implements com.google.android.gms.common.api.c
         Object obj = n6.d.d;
         m.h(kVar);
         m.h(lVar);
-        Set set = (Set) o3Var.b;
+        Set set = (Set) dVar.c;
         Iterator it = set.iterator();
         while (it.hasNext()) {
             if (!set.contains((Scope) it.next())) {

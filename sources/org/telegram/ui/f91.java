@@ -1,87 +1,24 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class f91 implements org.telegram.ui.Components.qo {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ y91 b;
+public final class f91 extends org.telegram.ui.Components.i60 {
+    public final /* synthetic */ long v2;
+    public final /* synthetic */ h91 w2;
 
-    public f91(y91 y91Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = y91Var;
-        this.a = tL_forumTopic;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f91(h91 h91Var, Context context, int i7, a0.h hVar, long j3, org.telegram.ui.ActionBar.g2 g2Var, long j10) {
+        super(context, i7, hVar, j3, g2Var, null);
+        this.w2 = h91Var;
+        this.v2 = j10;
     }
 
-    @Override // org.telegram.ui.Components.qo
-    public final void B(int i7) {
-        y91 y91Var = this.b;
-        long j3 = y91Var.a;
-        y91Var.finishPreviewFragment();
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        if (i7 != 0) {
-            y91Var.getNotificationsController().H(-j3, i7, tL_forumTopic.id);
-            if (org.telegram.ui.Components.lc.a(y91Var)) {
-                org.telegram.ui.Components.lc.z(y91Var, 5, i7, y91Var.getResourceProvider()).j();
-                return;
-            }
-            return;
-        }
-        if (y91Var.getMessagesController().u2(-j3, tL_forumTopic.id, null)) {
-            y91Var.getNotificationsController().G(-j3, tL_forumTopic.id, false);
-        }
-        if (org.telegram.ui.Components.lc.a(y91Var)) {
-            org.telegram.ui.Components.lc.z(y91Var, 4, i7, y91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qo
-    public final void dismiss() {
-        this.b.finishPreviewFragment();
-    }
-
-    @Override // org.telegram.ui.Components.qo
-    public final void s() {
-        y91 y91Var = this.b;
-        y91Var.finishPreviewFragment();
-        org.telegram.messenger.np messagesController = y91Var.getMessagesController();
-        long j3 = y91Var.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        boolean u22 = messagesController.u2(-j3, tL_forumTopic.id, null);
-        y91Var.getNotificationsController().G(-j3, tL_forumTopic.id, !u22);
-        if (org.telegram.ui.Components.lc.a(y91Var)) {
-            org.telegram.ui.Components.lc.z(y91Var, !u22 ? 3 : 4, !u22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, y91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qo
-    public final void u() {
-        this.b.finishPreviewFragment();
-        org.telegram.messenger.g0.h3(new mz0(13, this, this.a), 500L);
-    }
-
-    @Override // org.telegram.ui.Components.qo
-    public final void w() {
-        int i7;
-        y91 y91Var = this.b;
-        i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-        SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(i7).g7;
-        StringBuilder sb2 = new StringBuilder("sound_enabled_");
-        long j3 = y91Var.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        sb2.append(org.telegram.messenger.ys.v(-j3, tL_forumTopic.id, false));
-        boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
-        boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.ys.v(-j3, tL_forumTopic.id, false), z11).apply();
-        y91Var.finishPreviewFragment();
-        if (org.telegram.ui.Components.lc.a(y91Var)) {
-            org.telegram.ui.Components.lc.S(z10 ? 1 : 0, y91Var, y91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qo
-    public final /* synthetic */ void p() {
+    @Override // org.telegram.ui.Components.i60
+    public final boolean S0() {
+        TLRPC.Chat O0 = this.w2.b.getMessagesController().O0(Long.valueOf(this.v2));
+        return O0 != null && org.telegram.messenger.v3.y(3, O0);
     }
 }

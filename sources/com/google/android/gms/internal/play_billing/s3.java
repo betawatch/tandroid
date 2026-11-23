@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.i9;
-import a8.n9;
+import a8.j9;
+import a8.o9;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class s3 extends i9 {
+public final class s3 extends j9 {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -21,28 +21,28 @@ public final class s3 extends i9 {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // a8.i9
+    @Override // a8.j9
     public final void a(f4 f4Var, f4 f4Var2) {
         this.b.lazySet(f4Var, f4Var2);
     }
 
-    @Override // a8.i9
+    @Override // a8.j9
     public final void b(f4 f4Var, Thread thread) {
         this.a.lazySet(f4Var, thread);
     }
 
-    @Override // a8.i9
+    @Override // a8.j9
     public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
-        return n9.a(this.d, g4Var, v2Var, v2Var2);
+        return o9.a(this.d, g4Var, v2Var, v2Var2);
     }
 
-    @Override // a8.i9
+    @Override // a8.j9
     public final boolean d(g4 g4Var, Object obj, Object obj2) {
-        return n9.a(this.e, g4Var, obj, obj2);
+        return o9.a(this.e, g4Var, obj, obj2);
     }
 
-    @Override // a8.i9
+    @Override // a8.j9
     public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
-        return n9.a(this.c, g4Var, f4Var, f4Var2);
+        return o9.a(this.c, g4Var, f4Var, f4Var2);
     }
 }

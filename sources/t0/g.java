@@ -4,7 +4,7 @@ import android.content.ClipDescription;
 import android.net.Uri;
 import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g implements h {
     public final InputContentInfo a;
@@ -14,7 +14,7 @@ public final class g implements h {
     }
 
     @Override // t0.h
-    public final Uri c() {
+    public final Uri b() {
         return this.a.getContentUri();
     }
 
@@ -29,17 +29,17 @@ public final class g implements h {
     }
 
     @Override // t0.h
-    public final Object g() {
-        return this.a;
-    }
-
-    @Override // t0.h
     public final ClipDescription getDescription() {
         return this.a.getDescription();
     }
 
     @Override // t0.h
-    public final void i() {
+    public final Object h() {
+        return this.a;
+    }
+
+    @Override // t0.h
+    public final void k() {
         this.a.releasePermission();
     }
 

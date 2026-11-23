@@ -1,12 +1,12 @@
 package x2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r1 {
     public static final r1 d = new r1(new e2.m1[0]);
     public static final String e;
     public final int a;
-    public final h9.t1 b;
+    public final h9.s1 b;
     public int c;
 
     static {
@@ -15,7 +15,7 @@ public final class r1 {
     }
 
     public r1(e2.m1... m1VarArr) {
-        h9.t1 r10 = h9.i0.r(m1VarArr);
+        h9.s1 r10 = h9.i0.r(m1VarArr);
         this.b = r10;
         this.a = m1VarArr.length;
         int i7 = 0;

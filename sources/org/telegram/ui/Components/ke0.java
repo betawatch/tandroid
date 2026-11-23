@@ -1,72 +1,237 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ke0 {
-    public final /* synthetic */ org.telegram.ui.dq0 a;
+public abstract class ke0 extends FrameLayout {
+    public TLRPC.WebPage E;
+    public float F;
+    public boolean G;
+    public boolean H;
+    public int I;
+    public int J;
+    public float K;
+    public boolean L;
+    public eb0 M;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public cu f;
+    public bi.o3 h;
+    public RadialProgressView n;
+    public View r;
+    public String s;
+    public ArrayList w;
+    public String x;
+    public boolean y;
 
-    public ke0(org.telegram.ui.dq0 dq0Var) {
-        this.a = dq0Var;
-    }
-
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        org.telegram.messenger.g0.g3(new org.telegram.ui.ii(this, Integer.parseInt(str), 14));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        org.telegram.messenger.g0.g3(new ie0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f10) {
-        this.a.K = f10;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i7) {
-        this.a.J = i7 * 1000;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i7) {
-        org.telegram.ui.dq0 dq0Var = this.a;
-        dq0Var.I = i7 * 1000;
-        String str = dq0Var.s;
-        if (str != null) {
-            le0.a(dq0Var, str);
-            dq0Var.s = null;
+    public static void a(org.telegram.ui.dq0 dq0Var, String str) {
+        int videoDuration = dq0Var.getVideoDuration() / 1000;
+        ArrayList arrayList = dq0Var.w;
+        arrayList.clear();
+        if (videoDuration <= 15) {
+            return;
+        }
+        String[] split = str.split("\\|");
+        String s5 = a8.p0.s(new StringBuilder(), split[0].split("\\$")[0], "2/");
+        String str2 = split[0].split("\\$N")[1];
+        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+        for (int i7 = 0; i7 < ceil; i7++) {
+            Locale locale = Locale.ROOT;
+            arrayList.add(s5 + "M" + i7 + str2 + "&sigh=" + str3);
         }
     }
 
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.dq0 dq0Var = this.a;
-        boolean z10 = dq0Var.H;
-        boolean z11 = false;
-        int i7 = 1;
-        dq0Var.H = parseInt == 1 || parseInt == 3;
-        dq0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i7 = 2;
-                }
-            }
-            i7 = 3;
+    public final void b(boolean z10) {
+        eb0 eb0Var = this.M;
+        if (!z10 && this.H) {
+            org.telegram.messenger.g0.h3(eb0Var, 500L);
         } else {
-            i7 = 4;
+            if (!z10 || this.H) {
+                return;
+            }
+            org.telegram.messenger.g0.r(eb0Var);
         }
-        if (i7 == 3 && dq0Var.h.getVisibility() != 4) {
-            org.telegram.messenger.g0.h3(new ie0(this, 1), 300L);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String c(int i7) {
+        float f10;
+        int i10;
+        ArrayList arrayList = this.w;
+        int videoDuration = getVideoDuration() / 1000;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i10 = ((int) (i7 / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i10 = ((int) (i7 / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i10 = ((int) (i7 / 5.0f)) / 25;
+            } else {
+                f10 = i7 / 10.0f;
+            }
+            if (i10 >= arrayList.size()) {
+                return (String) arrayList.get(i10);
+            }
+            return null;
         }
-        org.telegram.messenger.g0.g3(new di.x7(this, z11, i7, 4));
+        f10 = i7;
+        i10 = (int) (f10 / 25.0f);
+        if (i10 >= arrayList.size()) {
+        }
+    }
+
+    public final boolean d() {
+        return this.y;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.L) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final boolean e() {
+        if (this.n.getVisibility() != 0) {
+            wi.n c10 = l2.j.d().c();
+            if (c10 != null) {
+                c10.b();
+                org.telegram.messenger.g0.h3(new ge0(this, 0), 300L);
+                return true;
+            }
+            this.h.setVisibility(0);
+            PhotoViewer photoViewer = this.b;
+            if (photoViewer.E != null && photoViewer.g0 != null) {
+                photoViewer.U0();
+                photoViewer.V8.g(photoViewer.E, null, true);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void f() {
+        if (this.H && this.y) {
+            h("pauseVideo();");
+            this.H = false;
+            b(true);
+        }
+    }
+
+    public final void g() {
+        if (this.H || !this.y) {
+            return;
+        }
+        h("playVideo();");
+        this.H = true;
+        b(false);
+    }
+
+    public float getBufferedPosition() {
+        return this.K;
+    }
+
+    public int getCurrentPosition() {
+        return this.J;
+    }
+
+    public int getEmbedHeight() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_height;
+        }
+        return 0;
+    }
+
+    public int getEmbedWidth() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_width;
+        }
+        return 0;
+    }
+
+    public int getVideoDuration() {
+        return this.I;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j3) {
+        boolean z10 = this.H;
+        this.J = (int) j3;
+        if (z10) {
+            f();
+        }
+        if (z10) {
+            org.telegram.messenger.g0.h3(new bi.e4(this, j3, 24), 100L);
+            return;
+        }
+        h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        cu cuVar = this.f;
+        if (cuVar.getParent() == this) {
+            TLRPC.WebPage webPage = this.E;
+            int i11 = webPage.embed_width;
+            if (i11 == 0) {
+                i11 = 100;
+            }
+            int i12 = webPage.embed_height;
+            int i13 = i12 != 0 ? i12 : 100;
+            int size = View.MeasureSpec.getSize(i7);
+            int size2 = View.MeasureSpec.getSize(i10);
+            float f10 = i11;
+            float f11 = i13;
+            float min = Math.min(size / f10, size2 / f11);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) cuVar.getLayoutParams();
+            int i14 = (int) (f10 * min);
+            layoutParams.width = i14;
+            int i15 = (int) (f11 * min);
+            layoutParams.height = i15;
+            layoutParams.topMargin = (size2 - i15) / 2;
+            layoutParams.leftMargin = (size - i14) / 2;
+        }
+        super.onMeasure(i7, i10);
+    }
+
+    public void setPlaybackSpeed(float f10) {
+        this.F = f10;
+        if (this.n.getVisibility() == 0) {
+            this.G = true;
+        } else if (this.y) {
+            h("setPlaybackSpeed(" + f10 + ");");
+        }
+    }
+
+    public void setTouchDisabled(boolean z10) {
+        this.L = z10;
     }
 }

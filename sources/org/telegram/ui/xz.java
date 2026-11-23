@@ -1,175 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.text.SpannableStringBuilder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xz extends org.telegram.ui.Components.zj0 {
-    public final Context r;
-    public final int s;
-    public final /* synthetic */ c00 w;
+public final class xz implements org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ yz a;
 
-    public xz(c00 c00Var, Context context, int i7) {
-        this.w = c00Var;
-        this.r = context;
-        this.s = i7;
+    public xz(yz yzVar) {
+        this.a = yzVar;
     }
 
-    @Override // org.telegram.ui.Components.kj0
-    public final String F(int i7) {
-        return null;
+    @Override // org.telegram.ui.Cells.j7
+    public final void a(String str, boolean z10) {
+        b00 b00Var = this.a.w;
+        if (!z10) {
+            SpannableStringBuilder[] spannableStringBuilderArr = b00.t0;
+            b00Var.g(str);
+            return;
+        }
+        org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.m10.j(b00Var.L, false, 1, null);
+        j3.P = str;
+        j3.Q = false;
+        CharSequence[] charSequenceArr = {org.telegram.messenger.gd.N0(2131747623, null), org.telegram.messenger.gd.N0(2131751755, null)};
+        og.j jVar = new og.j(7, this, str);
+        j3.M = charSequenceArr;
+        j3.L = jVar;
+        b00Var.M.showDialog(j3);
     }
 
-    @Override // org.telegram.ui.Components.kj0
-    public final void G(org.telegram.ui.Components.ek0 ek0Var, float f10, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
+    @Override // org.telegram.ui.Cells.j7
+    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.fj fjVar) {
+        b00 b00Var = this.a.w;
+        SpannableStringBuilder[] spannableStringBuilderArr = b00.t0;
+        org.telegram.ui.Components.gu.O0(b00Var.M, fjVar, b00Var.h0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
     }
 
-    @Override // org.telegram.ui.Components.zj0
-    public final int M(int i7) {
-        c00 c00Var = this.w;
-        if (i7 < c00Var.n.size()) {
-            return ((ArrayList) c00Var.r.get(c00Var.n.get(i7))).size() + (i7 == 0 ? 0 : 1);
-        }
-        return 1;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final Object O(int i7, int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final int P(int i7, int i10) {
-        if (i7 >= this.w.n.size()) {
-            return 2;
-        }
-        if (i7 != 0 && i10 == 0) {
-            return 0;
-        }
-        int i11 = this.s;
-        return (i11 == 2 || i11 == 4) ? 3 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final int R() {
-        c00 c00Var = this.w;
-        int i7 = 0;
-        if (c00Var.n.isEmpty()) {
-            return 0;
-        }
-        int size = c00Var.n.size();
-        if (!c00Var.n.isEmpty() && !c00Var.O) {
-            i7 = 1;
-        }
-        return size + i7;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final View T(int i7, View view) {
-        if (view == null) {
-            view = new org.telegram.ui.Cells.y3(this.r, null);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.e7, false) & (-218103809));
-        }
-        if (i7 == 0) {
-            view.setAlpha(0.0f);
-            return view;
-        }
-        if (i7 < this.w.n.size()) {
-            view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) ((ArrayList) r1.r.get((String) r1.n.get(i7))).get(0)).k.date, false));
-        }
-        return view;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final boolean V(int i7, int i10, v4.f1 f1Var) {
-        return i7 == 0 || i10 != 0;
-    }
-
-    @Override // org.telegram.ui.Components.zj0
-    public final void W(int i7, int i10, v4.f1 f1Var) {
-        boolean z10;
-        c00 c00Var = this.w;
-        ArrayList arrayList = c00Var.n;
-        int i11 = f1Var.f;
-        View view = f1Var.a;
-        if (i11 != 2) {
-            ArrayList arrayList2 = (ArrayList) c00Var.r.get((String) arrayList.get(i7));
-            int i12 = f1Var.f;
-            boolean z11 = false;
-            if (i12 == 0) {
-                ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) arrayList2.get(0)).k.date, false));
-                return;
-            }
-            boolean z12 = true;
-            if (i12 != 1) {
-                if (i12 != 3) {
-                    return;
-                }
-                if (i7 != 0) {
-                    i10--;
-                }
-                org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;
-                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList2.get(i10);
-                boolean z13 = h7Var.getMessage() != null && h7Var.getMessage().e1() == gjVar.e1();
-                if (i10 != arrayList2.size() - 1 || (i7 == arrayList.size() - 1 && c00Var.N)) {
-                    z11 = true;
-                }
-                h7Var.f(gjVar, z11);
-                h7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, h7Var, gjVar, z13, 3));
-                return;
-            }
-            if (i7 != 0) {
-                i10--;
-            }
-            org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
-            org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) arrayList2.get(i10);
-            if (i7Var.getMessage() == null || i7Var.getMessage().e1() != gjVar2.e1()) {
-                z10 = false;
-            } else {
-                z10 = false;
-                z11 = true;
-            }
-            if (i10 == arrayList2.size() - 1 && (i7 != arrayList.size() - 1 || !c00Var.N)) {
-                z12 = z10;
-            }
-            i7Var.c(gjVar2, z12);
-            i7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, i7Var, gjVar2, z11, 2));
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        FrameLayout frameLayout;
-        FrameLayout frameLayout2;
-        Context context = this.r;
-        if (i7 == 0) {
-            frameLayout = new org.telegram.ui.Cells.y3(context, null);
-        } else if (i7 == 1) {
-            frameLayout = new org.telegram.ui.Cells.i7(2, context, null);
-        } else {
-            if (i7 != 2) {
-                frameLayout2 = new org.telegram.ui.Components.fs0(this, context);
-                return i5.c.q(frameLayout2, frameLayout2, -1, -2);
-            }
-            org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(context, null);
-            int i10 = this.s;
-            if (i10 == 2 || i10 == 4) {
-                yzVar.setViewType(4);
-            } else {
-                yzVar.setViewType(3);
-            }
-            yzVar.setIsSingleCell(true);
-            frameLayout = yzVar;
-        }
-        frameLayout2 = frameLayout;
-        return i5.c.q(frameLayout2, frameLayout2, -1, -2);
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d() {
+        return !this.a.w.p0.i0();
     }
 }

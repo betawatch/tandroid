@@ -1,66 +1,38 @@
 package l2;
 
-import android.media.MediaFormat;
-import j$.util.DesugarCollections;
-import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
-    public static final c b = new c(new HashMap());
-    public final Map a;
+    public final HashMap a;
 
-    public c(HashMap hashMap) {
-        this.a = DesugarCollections.unmodifiableMap(hashMap);
+    public c(int i7) {
+        switch (i7) {
+            case 1:
+                this.a = new HashMap();
+                break;
+            default:
+                this.a = new HashMap();
+                break;
+        }
     }
 
-    public static b9.g0 a(MediaFormat mediaFormat, Set set) {
-        b9.g0 g0Var = new b9.g0(1);
-        Iterator it = set.iterator();
+    public void a(Runnable runnable) {
+        Runnable runnable2 = (Runnable) this.a.remove(runnable);
+        if (runnable2 != null) {
+            org.telegram.messenger.g0.r(runnable2);
+        }
+    }
+
+    public void b() {
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext()) {
-            String str = (String) it.next();
-            if (mediaFormat.containsKey(str)) {
-                int valueTypeForKey = mediaFormat.getValueTypeForKey(str);
-                HashMap hashMap = g0Var.a;
-                if (valueTypeForKey == 1) {
-                    hashMap.put(str, Integer.valueOf(mediaFormat.getInteger(str)));
-                } else if (valueTypeForKey == 2) {
-                    hashMap.put(str, Long.valueOf(mediaFormat.getLong(str)));
-                } else if (valueTypeForKey == 3) {
-                    hashMap.put(str, Float.valueOf(mediaFormat.getFloat(str)));
-                } else if (valueTypeForKey == 4) {
-                    hashMap.put(str, mediaFormat.getString(str));
-                } else if (valueTypeForKey == 5) {
-                    ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
-                    if (byteBuffer == null) {
-                        hashMap.put(str, null);
-                    } else {
-                        ByteBuffer allocate = ByteBuffer.allocate(byteBuffer.remaining());
-                        allocate.put(byteBuffer.duplicate());
-                        allocate.flip();
-                        hashMap.put(str, allocate);
-                    }
-                }
-            }
+            org.telegram.messenger.g0.r((Runnable) ((Map.Entry) it.next()).getValue());
         }
-        return g0Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof c) {
-            return this.a.equals(((c) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+        hashMap.clear();
     }
 }

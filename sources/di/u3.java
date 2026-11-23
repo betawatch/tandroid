@@ -1,10 +1,10 @@
 package di;
 
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u3 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class u3 implements Runnable {
                 t1Var.dismiss();
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
-                    org.telegram.ui.Components.gc Q = org.telegram.ui.Components.lc.b0(T).Q(R.raw.error, 36, hd.N0(2131748359, null));
+                    org.telegram.ui.Components.fc Q = org.telegram.ui.Components.kc.b0(T).Q(R.raw.error, 36, gd.N0(2131748359, null));
                     Q.t = true;
                     Q.j();
                     break;

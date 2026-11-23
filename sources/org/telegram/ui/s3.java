@@ -9,14 +9,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class s3 extends org.telegram.ui.Components.du0 implements org.telegram.ui.ActionBar.d2, org.telegram.ui.ActionBar.k3 {
+public final class s3 extends org.telegram.ui.Components.cu0 implements org.telegram.ui.ActionBar.d2, org.telegram.ui.ActionBar.k3 {
     public final Paint g0;
     public final Paint h0;
     public final Paint i0;
     public final Paint j0;
-    public final org.telegram.ui.Components.d6 k0;
+    public final org.telegram.ui.Components.c6 k0;
     public boolean l0;
     public final Path m0;
     public final RectF n0;
@@ -34,7 +34,7 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
         this.i0 = new Paint(1);
         this.j0 = new Paint(1);
         new Paint(1);
-        this.k0 = new org.telegram.ui.Components.d6(this, 0L, 420L, org.telegram.ui.Components.nr.h);
+        this.k0 = new org.telegram.ui.Components.c6(this, 0L, 420L, org.telegram.ui.Components.kr.h);
         this.m0 = new Path();
         this.n0 = new RectF();
         new RectF();
@@ -46,7 +46,7 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1 */
     /* JADX WARN: Type inference failed for: r20v3 */
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         int i7;
@@ -89,7 +89,7 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
             i7 = 0;
             z10 = z11;
             f10 = 0.0f;
-            paint2.setShadowLayer(org.telegram.messenger.g0.L(18.0f), 0.0f, -org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.r1(min * 0.26f, -16777216));
+            paint2.setShadowLayer(org.telegram.messenger.g0.L(18.0f), 0.0f, -org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.n6.r1(min * 0.26f, -16777216));
             canvas.drawRoundRect(rectF, L2, L2, paint2);
         } else {
             z10 = z11;
@@ -127,7 +127,7 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
         }
         canvas.translate(0.0f, max);
         if (d < 1.0f) {
-            int f13 = i0.a.f(d, org.telegram.ui.ActionBar.m6.r1(0.15f, org.telegram.messenger.g0.B(t3Var.v()) < 0.721f ? -1 : -16777216), -16777216);
+            int f13 = i0.a.f(d, org.telegram.ui.ActionBar.n6.r1(0.15f, org.telegram.messenger.g0.B(t3Var.v()) < 0.721f ? -1 : -16777216), -16777216);
             Paint paint4 = this.j0;
             paint4.setColor(f13);
             paint4.setAlpha((int) (paint4.getAlpha() * f12));
@@ -183,9 +183,9 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
             }
         }
         if (f10 != 0.0f || f11 != 0.0f) {
-            org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
-            org.telegram.messenger.g0.r(j9Var.f0);
-            j9Var.z = false;
+            org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
+            org.telegram.messenger.g0.r(i9Var.f0);
+            i9Var.z = false;
         }
         this.q0 = true;
         return onNestedPreFling;
@@ -207,9 +207,9 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
         if (i7 == 0 && i10 == 0) {
             return;
         }
-        org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
-        org.telegram.messenger.g0.r(j9Var.f0);
-        j9Var.z = false;
+        org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
+        org.telegram.messenger.g0.r(i9Var.f0);
+        i9Var.z = false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -254,7 +254,7 @@ public final class s3 extends org.telegram.ui.Components.du0 implements org.tele
         paint.setAlpha((int) ((1.0f - t3Var.J) * min * 96.0f));
         canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
         float W1 = org.telegram.messenger.g0.W1(f10, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(18.0f));
-        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
+        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false);
         Paint paint2 = this.i0;
         paint2.setColor(x02);
         Path path = this.p0;

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class tm extends org.telegram.ui.ActionBar.m0 {
     public float a;
@@ -71,7 +71,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
             bnVar.C3 = false;
             bnVar.k0.Q("", true);
         }
-        bnVar.k0.setSearchFieldHint(org.telegram.messenger.hd.N0(bnVar.ea() ? 2131745672 : 2131745640, null));
+        bnVar.k0.setSearchFieldHint(org.telegram.messenger.gd.N0(bnVar.ea() ? 2131745672 : 2131745640, null));
         bnVar.h3.setVisibility(0);
         ImageView imageView2 = bnVar.i3;
         if (imageView2 != null) {
@@ -85,7 +85,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
     public final void h() {
         int i7;
         int i10;
-        org.telegram.messenger.gj gjVar;
+        org.telegram.messenger.fj fjVar;
         TLRPC.Chat chat;
         bn bnVar = this.b;
         bnVar.H3 = false;
@@ -109,7 +109,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         bnVar.D3 = null;
         bnVar.E3 = null;
         bnVar.J3 = null;
-        bnVar.k0.setSearchFieldHint(org.telegram.messenger.hd.N0(bnVar.ea() ? 2131745672 : 2131745640, null));
+        bnVar.k0.setSearchFieldHint(org.telegram.messenger.gd.N0(bnVar.ea() ? 2131745672 : 2131745640, null));
         bnVar.k0.setSearchFieldCaption(null);
         bnVar.hd.a(false, true);
         bnVar.id.a(false, true);
@@ -177,21 +177,21 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
             }
         }
         int i11 = bnVar.g4;
-        if (i11 == 3 || i11 == 8 || ((bnVar.s4 == 0 && !org.telegram.messenger.p10.A(bnVar.f)) || ((gjVar = bnVar.m4) != null && gjVar.M1() < 10))) {
+        if (i11 == 3 || i11 == 8 || ((bnVar.s4 == 0 && !org.telegram.messenger.n10.A(bnVar.f)) || ((fjVar = bnVar.m4) != null && fjVar.M1() < 10))) {
             bnVar.k0.setVisibility(8);
         }
         bnVar.r0 = false;
         bnVar.Dd();
-        org.telegram.messenger.si mediaDataController = bnVar.getMediaDataController();
+        org.telegram.messenger.ri mediaDataController = bnVar.getMediaDataController();
         mediaDataController.Z0.clear();
         mediaDataController.a1.clear();
         mediaDataController.b1.clear();
         if (bnVar.d4 == 3) {
             i10 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-            org.telegram.messenger.na.a(i10).b(3).a();
+            org.telegram.messenger.ma.a(i10).b(3).a();
         } else {
             i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-            org.telegram.messenger.na a10 = org.telegram.messenger.na.a(i7);
+            org.telegram.messenger.ma a10 = org.telegram.messenger.ma.a(i7);
             a10.b.a();
             a10.c.a();
         }
@@ -205,7 +205,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         bnVar.Gd(false);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 0.0f);
         ofFloat.addUpdateListener(new sm(this, 2));
-        ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.kr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         bnVar.gd.a(false, true);
@@ -234,7 +234,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         bnVar.H3 = true;
         bnVar.dd();
         bnVar.qd();
-        if (((bnVar.s4 != 0 && bnVar.g4 != 3) || org.telegram.messenger.p10.A(bnVar.f)) && !bnVar.Kc) {
+        if (((bnVar.s4 != 0 && bnVar.g4 != 3) || org.telegram.messenger.n10.A(bnVar.f)) && !bnVar.Kc) {
             bnVar.Oa(null);
         }
         if (bnVar.k5) {
@@ -244,19 +244,19 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
                 i7 = ((org.telegram.ui.ActionBar.g2) bnVar).classGuid;
                 org.telegram.messenger.g0.Z2(parentActivity, i7);
             }
-            org.telegram.messenger.g0.h3(new bh(this, 10), 500L);
-            hi.l3 l3Var = bnVar.v2;
-            if (l3Var != null) {
-                l3Var.f(true);
+            org.telegram.messenger.g0.h3(new ch(this, 10), 500L);
+            hi.u3 u3Var = bnVar.v2;
+            if (u3Var != null) {
+                u3Var.f(true);
             }
-            hi.l3 l3Var2 = bnVar.x2;
-            if (l3Var2 != null) {
-                l3Var2.f(true);
+            hi.u3 u3Var2 = bnVar.x2;
+            if (u3Var2 != null) {
+                u3Var2.f(true);
             }
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 1.0f);
         ofFloat.addUpdateListener(new sm(this, 1));
-        ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.kr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         bk bkVar = bnVar.D1;
@@ -293,7 +293,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         int i10;
         int i11;
         int i12;
-        org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.i6 i6Var;
         bn bnVar = this.b;
         boolean z10 = false;
         bnVar.nd(0, 0, -1);
@@ -314,15 +314,15 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
             bnVar.d8();
             if (bnVar.I3.contains("@")) {
                 String str = bnVar.I3;
-                h6Var = ((org.telegram.ui.ActionBar.g2) bnVar).resourceProvider;
-                bnVar.presentFragment(new org.telegram.ui.Components.f30(str, h6Var));
+                i6Var = ((org.telegram.ui.ActionBar.g2) bnVar).resourceProvider;
+                bnVar.presentFragment(new org.telegram.ui.Components.c30(str, i6Var));
                 return;
             }
             if (bnVar.J3 == null) {
                 bnVar.J3 = bnVar.I3;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 1.0f);
                 ofFloat.addUpdateListener(new sm(this, 0));
-                ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+                ofFloat.setInterpolator(org.telegram.ui.Components.kr.h);
                 ofFloat.setDuration(320L);
                 ofFloat.start();
                 bk bkVar = bnVar.D1;
@@ -336,15 +336,15 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
             bnVar.J3 = bnVar.I3;
             bnVar.g7(true);
             i10 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-            org.telegram.messenger.na.a(i10).c(bnVar.J3);
+            org.telegram.messenger.ma.a(i10).c(bnVar.J3);
             bnVar.I1.f.O(true);
             View currentView = bnVar.F1.getCurrentView();
             if (bnVar.d4 == 3) {
                 i12 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                org.telegram.messenger.na.a(i12).b(3).a();
+                org.telegram.messenger.ma.a(i12).b(3).a();
             } else {
                 i11 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                org.telegram.messenger.na a10 = org.telegram.messenger.na.a(i11);
+                org.telegram.messenger.ma a10 = org.telegram.messenger.ma.a(i11);
                 a10.b.a();
                 a10.c.a();
             }
@@ -360,7 +360,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         if (ojVar3 != null) {
             ojVar3.b(z10);
         }
-        org.telegram.messenger.si mediaDataController = bnVar.getMediaDataController();
+        org.telegram.messenger.ri mediaDataController = bnVar.getMediaDataController();
         String str2 = bnVar.I3;
         long j3 = bnVar.l6;
         long j10 = bnVar.d7;
@@ -378,7 +378,7 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
         bnVar.c8();
         if (bnVar.C3) {
             bnVar.X1.getAdapter().U("@" + editText.getText().toString(), 0, bnVar.M6, true, true);
-        } else if (bnVar.D3 == null && bnVar.E3 == null && bnVar.i3 != null && TextUtils.equals(editText.getText(), org.telegram.messenger.hd.N0(2131745570, null))) {
+        } else if (bnVar.D3 == null && bnVar.E3 == null && bnVar.i3 != null && TextUtils.equals(editText.getText(), org.telegram.messenger.gd.N0(2131745570, null))) {
             bnVar.i3.callOnClick();
         }
         if (bnVar.J3 != null) {
@@ -388,9 +388,9 @@ public final class tm extends org.telegram.ui.ActionBar.m0 {
                     bnVar.d8();
                 }
                 aVar.a(z10, true);
-                hi.i1 i1Var = bnVar.F1;
-                if (i1Var != null) {
-                    i1Var.A(0);
+                hi.q1 q1Var = bnVar.F1;
+                if (q1Var != null) {
+                    q1Var.C(0);
                 }
                 if (z10) {
                     bnVar.sc(true);

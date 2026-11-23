@@ -1,84 +1,44 @@
 package b9;
 
-import android.content.Context;
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.tasks.Task;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.cc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class k0 extends com.google.android.gms.common.api.j {
-    public static int l = 1;
+public final class k0 extends r6.a {
+    public static final Parcelable.Creator<k0> CREATOR = new c(27);
+    public final int a;
+    public final String b;
+    public final byte[] c;
+    public final String d;
 
-    public k0(Context context, com.google.android.gms.common.api.i iVar) {
-        super(context, a9.c.a, a9.b.a, iVar);
+    public k0(int i7, String str, String str2, byte[] bArr) {
+        this.a = i7;
+        this.b = str;
+        this.c = bArr;
+        this.d = str2;
     }
 
-    public Intent f() {
-        int h = h();
-        int i7 = h - 1;
-        if (h == 0) {
-            throw null;
-        }
-        com.google.android.gms.common.api.b bVar = this.e;
-        Context context = this.a;
-        if (i7 == 2) {
-            d6.h.a.a("getFallbackSignInIntent()", new Object[0]);
-            Intent a10 = d6.h.a(context, (GoogleSignInOptions) bVar);
-            a10.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
-            return a10;
-        }
-        if (i7 == 3) {
-            return d6.h.a(context, (GoogleSignInOptions) bVar);
-        }
-        d6.h.a.a("getNoImplementationSignInIntent()", new Object[0]);
-        Intent a11 = d6.h.a(context, (GoogleSignInOptions) bVar);
-        a11.setAction("com.google.android.gms.auth.NO_IMPL");
-        return a11;
+    public final String toString() {
+        byte[] bArr = this.c;
+        String obj = (bArr == null ? "null" : Integer.valueOf(bArr.length)).toString();
+        StringBuilder sb2 = new StringBuilder("MessageEventParcelable[");
+        sb2.append(this.a);
+        sb2.append(",");
+        sb2.append(this.b);
+        sb2.append(", size=");
+        return a8.p0.s(sb2, obj, "]");
     }
 
-    public Task g() {
-        BasePendingResult basePendingResult;
-        boolean z10 = h() == 3;
-        d6.h.a.a("Signing out", new Object[0]);
-        d6.h.b(this.a);
-        com.google.android.gms.common.api.internal.p0 p0Var = this.i;
-        if (z10) {
-            BasePendingResult sVar = new com.google.android.gms.common.api.internal.s(p0Var, 0);
-            sVar.a(Status.e);
-            basePendingResult = sVar;
-        } else {
-            d6.g gVar = new d6.g(p0Var, 0);
-            p0Var.b.d(1, gVar);
-            basePendingResult = gVar;
-        }
-        return q6.m.n(basePendingResult, new qb.a(22));
-    }
-
-    public synchronized int h() {
-        int i7;
-        try {
-            i7 = l;
-            if (i7 == 1) {
-                Context context = this.a;
-                n6.d dVar = n6.d.e;
-                int d = dVar.d(context, 12451000);
-                if (d == 0) {
-                    i7 = 4;
-                    l = 4;
-                } else if (dVar.b(d, context, null) != null || b7.f.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
-                    i7 = 2;
-                    l = 2;
-                } else {
-                    i7 = 3;
-                    l = 3;
-                }
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return i7;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        cc.l(parcel, 3, this.b);
+        cc.c(parcel, 4, this.c);
+        cc.l(parcel, 5, this.d);
+        cc.s(parcel, r10);
     }
 }

@@ -1,8 +1,8 @@
 package oi;
 
-import org.telegram.ui.eg0;
+import org.telegram.ui.dg0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class g1 implements Runnable {
             case 5:
                 b2 b2Var4 = this.b;
                 b2Var4.x0(2147483646, 0, true);
-                eg0 eg0Var = b2Var4.P0;
-                if (eg0Var != null) {
-                    eg0Var.h(false);
+                dg0 dg0Var = b2Var4.P0;
+                if (dg0Var != null) {
+                    dg0Var.h(false);
                     b2Var4.P0 = null;
                     break;
                 }
@@ -56,9 +56,9 @@ public final /* synthetic */ class g1 implements Runnable {
             default:
                 b2 b2Var5 = this.b;
                 b2Var5.x0(0, 0, false);
-                eg0 eg0Var2 = b2Var5.P0;
-                if (eg0Var2 != null) {
-                    eg0Var2.h(true);
+                dg0 dg0Var2 = b2Var5.P0;
+                if (dg0Var2 != null) {
+                    dg0Var2.h(true);
                     b2Var5.P0 = null;
                     break;
                 }

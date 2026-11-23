@@ -12,22 +12,22 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.Executor;
+import org.telegram.messenger.ni;
 import org.telegram.messenger.oi;
-import org.telegram.messenger.pi;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.q20;
-import org.telegram.ui.Components.rb0;
-import org.telegram.ui.Components.tb0;
+import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.qb0;
+import org.telegram.ui.Components.xz;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cv0;
+import org.telegram.ui.bv0;
 import org.telegram.ui.ld0;
-import org.telegram.ui.s11;
+import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFailureListener, fi.z8, org.telegram.ui.ActionBar.q1, rb0, f5.n, pi {
+public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFailureListener, fi.z8, org.telegram.ui.ActionBar.q1, ob0, f5.n, oi {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -44,30 +44,25 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
 
     @Override // org.telegram.messenger.q1
     public void a(f5.f fVar, List list) {
-        org.telegram.messenger.g0.g3(new m6((y8) this.a, list, (bi.e8) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
+        org.telegram.messenger.g0.g3(new m6((y8) this.a, list, (bi.h8) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
     }
 
-    @Override // f5.n
-    public void b(f5.f fVar, List list) {
-        org.telegram.messenger.g0.g3(new m6((ld0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (q20) this.e, 8));
-    }
-
-    @Override // org.telegram.messenger.pi
-    public void e(String str, ArrayList arrayList) {
+    @Override // org.telegram.messenger.oi
+    public void c(String str, ArrayList arrayList) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        s11 s11Var = (s11) this.a;
+        q11 q11Var = (q11) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        s11Var.getClass();
+        q11Var.getClass();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             try {
-                if (((oi) arrayList.get(i7)).a.startsWith("animated_")) {
-                    linkedHashSet.add(Long.valueOf(Long.parseLong(((oi) arrayList.get(i7)).a.substring(9))));
+                if (((ni) arrayList.get(i7)).a.startsWith("animated_")) {
+                    linkedHashSet.add(Long.valueOf(Long.parseLong(((ni) arrayList.get(i7)).a.substring(9))));
                 } else {
-                    int i10 = s11Var.a0;
-                    if ((i10 == 1 || i10 == 11 || i10 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((oi) arrayList.get(i7)).a)) != null) {
+                    int i10 = q11Var.a0;
+                    if ((i10 == 1 || i10 == 11 || i10 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((ni) arrayList.get(i7)).a)) != null) {
                         arrayList2.add(ch.p0.c(tL_availableReaction));
                     }
                 }
@@ -77,26 +72,26 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
         runnable.run();
     }
 
+    @Override // f5.n
+    public void e(f5.f fVar, List list) {
+        org.telegram.messenger.g0.g3(new m6((ld0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (xz) this.e, 8));
+    }
+
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.a;
         boolean[] zArr = (boolean[]) this.b;
         org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
-        y10 y10Var = (y10) this.d;
+        w10 w10Var = (w10) this.d;
         org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.e;
         zArr[0] = true;
         f3Var.h(f3Var.x, e3Var, true);
-        y10Var.a(Boolean.TRUE);
+        w10Var.a(Boolean.TRUE);
         t1VarArr[0].dismiss();
     }
 
-    @Override // org.telegram.ui.Components.rb0
-    public void n(tb0 tb0Var, int i7) {
-        org.telegram.ui.Components.c5.c((hi.e) this.a, (tb0) this.b, (tb0) this.c, (tb0) this.d, (tb0) this.e);
-    }
-
     @Override // fi.z8
-    public void o(float f10, Canvas canvas, RectF rectF, boolean z10) {
+    public void n(float f10, Canvas canvas, RectF rectF, boolean z10) {
         d6.i iVar = (d6.i) this.a;
         RectF rectF2 = (RectF) this.b;
         fi.b4 b4Var = (fi.b4) this.c;
@@ -116,11 +111,16 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        cv0 cv0Var = (cv0) iVar.b;
+        bv0 bv0Var = (bv0) iVar.b;
         int i7 = ProfileStoriesView.t0;
-        cv0Var.a(canvas, b4Var, b4Var2);
+        bv0Var.a(canvas, b4Var, b4Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
+    }
+
+    @Override // org.telegram.ui.Components.ob0
+    public void o(qb0 qb0Var, int i7) {
+        org.telegram.ui.Components.b5.c((hi.e) this.a, (qb0) this.b, (qb0) this.c, (qb0) this.d, (qb0) this.e);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

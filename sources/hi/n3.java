@@ -1,39 +1,25 @@
 package hi;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class n3 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ o3 c;
+public final /* synthetic */ class n3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q3 b;
 
-    public n3(o3 o3Var, boolean z10, View view) {
-        this.c = o3Var;
-        this.a = z10;
-        this.b = view;
+    public /* synthetic */ n3(q3 q3Var, int i7) {
+        this.a = i7;
+        this.b = q3Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        boolean z10 = this.a;
-        o3 o3Var = this.c;
-        if (z10) {
-            o3Var.b = view.getRootView();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            default:
+                super/*org.telegram.ui.ActionBar.w2*/.dismiss();
+                break;
         }
-        View view2 = this.b;
-        view2.getViewTreeObserver().addOnGlobalLayoutListener(o3Var.j);
-        view2.addOnLayoutChangeListener(o3Var.i);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        View view2 = this.b;
-        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
-        o3 o3Var = this.c;
-        viewTreeObserver.removeOnGlobalLayoutListener(o3Var.j);
-        view2.removeOnLayoutChangeListener(o3Var.i);
     }
 }

@@ -4,15 +4,15 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.util.SparseIntArray;
 import android.widget.ImageView;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class p1 {
     public final SparseIntArray a = new SparseIntArray();
     public final SparseIntArray b = new SparseIntArray();
-    public final int[] c = {m6.G6, m6.u8, m6.G8, m6.E8, m6.F8, m6.I5, m6.zj};
+    public final int[] c = {n6.G6, n6.u8, n6.G8, n6.E8, n6.F8, n6.I5, n6.zj};
     public float d;
 
     public final int a(int i7) {
@@ -21,25 +21,25 @@ public final class p1 {
 
     public final void b(org.telegram.ui.ActionBar.k kVar, float f10) {
         this.d = f10;
-        int i7 = m6.G6;
+        int i7 = n6.G6;
         kVar.setTitleColor(a(i7));
-        kVar.setSubtitleColor(m6.r1(0.45f, a(i7)));
-        kVar.G(a(i7), false);
+        kVar.setSubtitleColor(n6.r1(0.45f, a(i7)));
+        kVar.F(a(i7), false);
         ImageView imageView = kVar.e;
         if (imageView != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(a(i7), PorterDuff.Mode.SRC_IN));
         }
-        kVar.F(a(m6.u8), false);
+        kVar.E(a(n6.u8), false);
     }
 
-    public final void c(SparseIntArray sparseIntArray, int i7, h6 h6Var) {
+    public final void c(SparseIntArray sparseIntArray, int i7, i6 i6Var) {
         int i10;
         int[] iArr = this.c;
         int i11 = 0;
         if (i7 == 0) {
             while (i11 < iArr.length) {
                 int i12 = iArr[i11];
-                sparseIntArray.put(i12, m6.w0(i12, h6Var));
+                sparseIntArray.put(i12, n6.w0(i12, i6Var));
                 i11++;
             }
             return;
@@ -48,11 +48,11 @@ public final class p1 {
         int o4 = i0.a.o(i13, 60);
         while (i11 < iArr.length) {
             int i14 = iArr[i11];
-            if (i14 == m6.G8 || i14 == m6.E8 || i14 == m6.F8 || i14 == (i10 = m6.I5)) {
-                sparseIntArray.put(i14, m6.w0(i14, h6Var));
-            } else if (i14 == m6.zj) {
+            if (i14 == n6.G8 || i14 == n6.E8 || i14 == n6.F8 || i14 == (i10 = n6.I5)) {
+                sparseIntArray.put(i14, n6.w0(i14, i6Var));
+            } else if (i14 == n6.zj) {
                 sparseIntArray.put(i14, i0.a.f(0.5f, i7, i13));
-            } else if (i14 == m6.u8 || i14 == i10) {
+            } else if (i14 == n6.u8 || i14 == i10) {
                 sparseIntArray.put(i14, o4);
             } else {
                 sparseIntArray.put(i14, i13);

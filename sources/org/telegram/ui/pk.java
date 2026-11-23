@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class pk extends org.telegram.ui.ActionBar.m5 {
+public final class pk extends org.telegram.ui.ActionBar.n5 {
     public final /* synthetic */ int N0;
     public final Object O0;
 
@@ -18,14 +18,14 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         this.O0 = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.m5
+    @Override // org.telegram.ui.ActionBar.n5
     public boolean k(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.m5 m5Var;
+        org.telegram.ui.ActionBar.n5 n5Var;
         switch (this.N0) {
             case 1:
                 AtomicReference atomicReference = (AtomicReference) this.O0;
-                if (atomicReference != null && (m5Var = (org.telegram.ui.ActionBar.m5) atomicReference.get()) != null) {
-                    m5Var.k(charSequence);
+                if (atomicReference != null && (n5Var = (org.telegram.ui.ActionBar.n5) atomicReference.get()) != null) {
+                    n5Var.k(charSequence);
                 }
                 return l(charSequence, false);
             default:
@@ -33,12 +33,12 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
     public void onAttachedToWindow() {
         switch (this.N0) {
             case 2:
                 super.onAttachedToWindow();
-                ((jm0) this.O0).s.a();
+                ((hm0) this.O0).s.a();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -46,12 +46,12 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
     public void onDetachedFromWindow() {
         switch (this.N0) {
             case 2:
                 super.onDetachedFromWindow();
-                ((jm0) this.O0).s.b();
+                ((hm0) this.O0).s.b();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -59,7 +59,7 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.N0) {
             case 3:
@@ -76,7 +76,7 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.N0) {
             case 3:
@@ -108,13 +108,13 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5
+    @Override // org.telegram.ui.ActionBar.n5
     public void setTextColor(int i7) {
         switch (this.N0) {
             case 3:
                 ProfileActivity profileActivity = (ProfileActivity) this.O0;
                 profileActivity.J5 = i7;
-                super.setTextColor(i0.a.f(profileActivity.G5, i7, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, profileActivity.A0)));
+                super.setTextColor(i0.a.f(profileActivity.G5, i7, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, profileActivity.A0)));
                 break;
             default:
                 super.setTextColor(i7);
@@ -124,7 +124,7 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
 
     @Override // android.view.View
     public void setTranslationY(float f10) {
-        org.telegram.ui.ActionBar.m5 m5Var;
+        org.telegram.ui.ActionBar.n5 n5Var;
         switch (this.N0) {
             case 0:
                 super.setTranslationY(f10);
@@ -141,8 +141,8 @@ public final class pk extends org.telegram.ui.ActionBar.m5 {
                 break;
             case 1:
                 AtomicReference atomicReference = (AtomicReference) this.O0;
-                if (atomicReference != null && (m5Var = (org.telegram.ui.ActionBar.m5) atomicReference.get()) != null) {
-                    m5Var.setTranslationY(f10);
+                if (atomicReference != null && (n5Var = (org.telegram.ui.ActionBar.n5) atomicReference.get()) != null) {
+                    n5Var.setTranslationY(f10);
                 }
                 super.setTranslationY(f10);
                 break;

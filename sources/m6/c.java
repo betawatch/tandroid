@@ -18,7 +18,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public static int h;
@@ -121,7 +121,7 @@ public final class c {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            taskCompletionSource.getTask().addOnCompleteListener(d.b, new h6.m(this, c10, this.d.schedule(new j6.o(taskCompletionSource, 3), 30L, TimeUnit.SECONDS), false, 14));
+            taskCompletionSource.getTask().addOnCompleteListener(d.b, new h6.m(this, c10, this.d.schedule(new i6.g(taskCompletionSource, 4), 30L, TimeUnit.SECONDS), false, 15));
             return taskCompletionSource.getTask();
         }
         if (this.c.h() == 2) {
@@ -134,7 +134,7 @@ public final class c {
         } else {
             this.b.startService(intent);
         }
-        taskCompletionSource.getTask().addOnCompleteListener(d.b, new h6.m(this, c10, this.d.schedule(new j6.o(taskCompletionSource, 3), 30L, TimeUnit.SECONDS), false, 14));
+        taskCompletionSource.getTask().addOnCompleteListener(d.b, new h6.m(this, c10, this.d.schedule(new i6.g(taskCompletionSource, 4), 30L, TimeUnit.SECONDS), false, 15));
         return taskCompletionSource.getTask();
     }
 }

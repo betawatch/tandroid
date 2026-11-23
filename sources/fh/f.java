@@ -1,16 +1,16 @@
 package fh;
 
-import a8.n7;
+import a8.q7;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import c8.l9;
-import org.telegram.messenger.o10;
+import c8.m9;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class f {
     public int d;
@@ -52,7 +52,7 @@ public final class f {
         float f12;
         float f13;
         float[] fArr2 = this.b;
-        this.l = n7.a(fArr2);
+        this.l = q7.a(fArr2);
         Rect rect = this.a;
         Rect rect2 = this.m;
         rect2.set(rect);
@@ -99,7 +99,7 @@ public final class f {
             float min = Math.min(this.q, f19);
             float f20 = this.r;
             Math.sqrt(0.5d);
-            float b10 = o10.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
+            float b10 = m10.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
             this.u = b10;
             int i14 = this.n;
             if (i14 != 0) {
@@ -123,7 +123,7 @@ public final class f {
             float f22 = f15 + b10;
             float f23 = f11 - f16;
             float f24 = f23 - b10;
-            float a10 = f22 <= f24 ? l9.a(f21, f22, f24) : f11 / f10;
+            float a10 = f22 <= f24 ? m9.a(f21, f22, f24) : f11 / f10;
             this.t = a10;
             this.v = a10 - f15;
             this.w = f23 - a10;
@@ -208,7 +208,7 @@ public final class f {
         Rect rect = this.m;
         float f10 = rect.top;
         float[] fArr = this.b;
-        float a10 = l9.a((fArr[0] * 2.0f) + f10, f10, rect.bottom);
+        float a10 = m9.a((fArr[0] * 2.0f) + f10, f10, rect.bottom);
         canvas.save();
         Rect rect2 = this.a;
         canvas.clipRect(rect2.left, rect2.top, rect2.right, a10);

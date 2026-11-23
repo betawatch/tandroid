@@ -6,28 +6,28 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class w implements g0 {
-    public final i0 a;
+public final class w implements f0 {
+    public final h0 a;
 
-    public w(i0 i0Var) {
-        this.a = i0Var;
+    public w(h0 h0Var) {
+        this.a = h0Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.android.gms.common.api.internal.g0
+    @Override // com.google.android.gms.common.api.internal.f0
     public final d b(d dVar) {
-        i0 i0Var = this.a;
+        h0 h0Var = this.a;
         try {
-            f0 f0Var = i0Var.o;
-            a1 a1Var = f0Var.N;
-            ((Set) a1Var.a).add(dVar);
-            dVar.g.set((z0) a1Var.b);
+            e0 e0Var = h0Var.o;
+            z0 z0Var = e0Var.N;
+            ((Set) z0Var.a).add(dVar);
+            dVar.g.set((y0) z0Var.b);
             com.google.android.gms.common.api.d dVar2 = dVar.o;
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) f0Var.F.get(dVar2);
+            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) e0Var.F.get(dVar2);
             q6.m.i(cVar, "Appropriate Api was not requested.");
-            if (!((q6.d) cVar).s() && i0Var.i.containsKey(dVar2)) {
+            if (!((q6.d) cVar).s() && h0Var.i.containsKey(dVar2)) {
                 dVar.o(new Status(17, null, null, null));
                 return dVar;
             }
@@ -42,40 +42,40 @@ public final class w implements g0 {
             return dVar;
         } catch (DeadObjectException unused) {
             v vVar = new v(this, this);
-            e0 e0Var = i0Var.e;
-            e0Var.sendMessage(e0Var.obtainMessage(1, vVar));
+            d0 d0Var = h0Var.e;
+            d0Var.sendMessage(d0Var.obtainMessage(1, vVar));
             return dVar;
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final void s(int i7) {
-        i0 i0Var = this.a;
-        i0Var.h();
-        i0Var.p.j(i7);
+    @Override // com.google.android.gms.common.api.internal.f0
+    public final void o(int i7) {
+        h0 h0Var = this.a;
+        h0Var.h();
+        h0Var.p.j(i7);
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final boolean t() {
-        i0 i0Var = this.a;
-        i0Var.o.getClass();
-        i0Var.h();
+    @Override // com.google.android.gms.common.api.internal.f0
+    public final boolean p() {
+        h0 h0Var = this.a;
+        h0Var.o.getClass();
+        h0Var.h();
         return true;
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
+    @Override // com.google.android.gms.common.api.internal.f0
     public final void a() {
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final void u() {
+    @Override // com.google.android.gms.common.api.internal.f0
+    public final void s() {
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final void e(Bundle bundle) {
+    @Override // com.google.android.gms.common.api.internal.f0
+    public final void c(Bundle bundle) {
     }
 
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final void l(n6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    @Override // com.google.android.gms.common.api.internal.f0
+    public final void j(n6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

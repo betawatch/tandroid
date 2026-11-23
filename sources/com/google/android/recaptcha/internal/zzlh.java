@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import gd.k;
 import id.c;
 import jd.a;
@@ -9,7 +9,7 @@ import rd.p;
 import zd.b0;
 import zd.t;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzlh extends j implements p {
     Object zza;
@@ -50,7 +50,7 @@ final class zzlh extends j implements p {
             ((t) this.zzc.zzz()).Q(e10);
         }
         if (i7 == 0) {
-            h.b(obj);
+            z.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzib zzp = zzly.zzp(this.zzc);
             zzxn zzxnVar = this.zzd;
@@ -65,7 +65,7 @@ final class zzlh extends j implements p {
         }
         if (i7 != 1) {
             zzhkVar3 = (zzhk) this.zze;
-            h.b(obj);
+            z.b(obj);
             zzly zzlyVar = this.zzc;
             zzD = zzlyVar.zzD();
             b0.q(zzD.zzb(), new zzlg(zzlyVar, zzhkVar3, (String) obj, null));
@@ -73,7 +73,7 @@ final class zzlh extends j implements p {
         }
         zzhk zzhkVar4 = (zzhk) this.zza;
         zzhk zzhkVar5 = (zzhk) this.zze;
-        h.b(obj);
+        z.b(obj);
         zzhkVar2 = zzhkVar4;
         zzhkVar = zzhkVar5;
         this.zze = zzhkVar;

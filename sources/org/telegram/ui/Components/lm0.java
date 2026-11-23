@@ -1,24 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lm0 extends i30 {
-    public final /* synthetic */ org.telegram.ui.kw f0;
+public final class lm0 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.jw b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lm0(org.telegram.ui.kw kwVar, ek0 ek0Var, Context context, int i7) {
-        super(ek0Var, context, i7);
-        this.f0 = kwVar;
+    public /* synthetic */ lm0(org.telegram.ui.jw jwVar, int i7) {
+        this.a = i7;
+        this.b = jwVar;
     }
 
-    @Override // org.telegram.ui.Components.c51
-    public final void O(boolean z10) {
-        super.O(z10);
-        hm0 hm0Var = this.f0.v0;
-        hm0Var.e(false, z10);
-        hm0Var.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
-        hm0Var.e.setVisibility(8);
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.R();
+                break;
+            default:
+                this.b.R();
+                break;
+        }
     }
 }

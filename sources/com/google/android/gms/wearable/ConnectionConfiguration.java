@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.List;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new w.a(8);
@@ -60,31 +60,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.l(parcel, 3, this.b);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.l(parcel, 3, this.b);
         int i10 = this.c;
-        bc.q(parcel, 4, 4);
+        cc.q(parcel, 4, 4);
         parcel.writeInt(i10);
         int i11 = this.d;
-        bc.q(parcel, 5, 4);
+        cc.q(parcel, 5, 4);
         parcel.writeInt(i11);
         boolean z10 = this.e;
-        bc.q(parcel, 6, 4);
+        cc.q(parcel, 6, 4);
         parcel.writeInt(z10 ? 1 : 0);
         boolean z11 = this.f;
-        bc.q(parcel, 7, 4);
+        cc.q(parcel, 7, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        bc.l(parcel, 8, this.h);
+        cc.l(parcel, 8, this.h);
         boolean z12 = this.n;
-        bc.q(parcel, 9, 4);
+        cc.q(parcel, 9, 4);
         parcel.writeInt(z12 ? 1 : 0);
-        bc.l(parcel, 10, this.r);
-        bc.l(parcel, 11, this.s);
+        cc.l(parcel, 10, this.r);
+        cc.l(parcel, 11, this.s);
         int i12 = this.w;
-        bc.q(parcel, 12, 4);
+        cc.q(parcel, 12, 4);
         parcel.writeInt(i12);
-        bc.n(parcel, 13, this.x);
-        bc.s(parcel, r10);
+        cc.n(parcel, 13, this.x);
+        cc.s(parcel, r10);
     }
 }

@@ -1,39 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class f6 extends n41 {
-    public static final /* synthetic */ int b = 0;
+public final class f6 extends CharacterStyle implements UpdateAppearance {
+    public int a;
 
-    static {
-        n41.h(new f6());
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        ((g6) view).a(o41Var.k, o41Var.m, o41Var.n);
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new g6(context, h6Var);
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final boolean g() {
-        return true;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(this.a);
     }
 }

@@ -1,73 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ak extends ek0 {
-    public final /* synthetic */ int f3;
-    public final Paint g3;
-    public final /* synthetic */ mk h3;
+public final class ak extends v4.d0 {
+    public final /* synthetic */ kg.d0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ak(mk mkVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.f3 = i7;
-        switch (i7) {
-            case 1:
-                this.h3 = mkVar;
-                super(context, h6Var);
-                this.g3 = new Paint();
-                break;
-            default:
-                this.h3 = mkVar;
-                this.g3 = new Paint();
-                break;
-        }
+    public ak(kg.d0 d0Var, Context context) {
+        super(context);
+        this.r = d0Var;
     }
 
-    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.f3) {
-            case 0:
-                if (this.h3.n == 2 && getChildCount() > 0) {
-                    float f10 = 2.1474836E9f;
-                    for (int i7 = 0; i7 < getChildCount(); i7++) {
-                        if (getChildAt(i7).getY() < f10) {
-                            f10 = getChildAt(i7).getY();
-                        }
-                    }
-                    this.g3.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                if (this.h3.n == 1 && getChildCount() > 0) {
-                    float f11 = 2.1474836E9f;
-                    for (int i10 = 0; i10 < getChildCount(); i10++) {
-                        if (getChildAt(i10).getY() < f11) {
-                            f11 = getChildAt(i10).getY();
-                        }
-                    }
-                    this.g3.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
-        }
+    @Override // v4.d0
+    public final int k(int i7, View view) {
+        return org.telegram.messenger.f3.B(56.0f, ((kk) this.r.V).r.getPaddingTop() - org.telegram.messenger.g0.m, super.k(i7, view));
     }
 
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.f3) {
-            case 0:
-                if (this.h3.n == 0) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // v4.d0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

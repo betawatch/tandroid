@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d7 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,16 +44,16 @@ public final /* synthetic */ class d7 implements Runnable {
                 if (this.c) {
                     int i7 = i7Var3.b1;
                     if (i7 == 50331648) {
-                        dz.e(i7Var3.R).i(t0.f(), 3, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 3, 1);
                     } else if (i7 == 33554432) {
-                        dz.e(i7Var3.R).i(t0.f(), 2, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 2, 1);
                     } else if (i7 == 16777216) {
-                        dz.e(i7Var3.R).i(t0.f(), 4, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 4, 1);
                     } else if (i7 == 67108864) {
                         if (str == null || !(str.toLowerCase().endsWith("mp3") || str.toLowerCase().endsWith("m4a"))) {
-                            dz.e(i7Var3.R).i(t0.f(), 5, 1);
+                            cz.e(i7Var3.R).i(t0.f(), 5, 1);
                         } else {
-                            dz.e(i7Var3.R).i(t0.f(), 7, 1);
+                            cz.e(i7Var3.R).i(t0.f(), 7, 1);
                         }
                     }
                 }

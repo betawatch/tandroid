@@ -1,6 +1,6 @@
 package h9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q0 extends t0 {
     public final /* synthetic */ int d;
@@ -11,20 +11,20 @@ public final class q0 extends t0 {
         this.e = r0Var;
     }
 
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         switch (this.d) {
             case 0:
-                if (!(obj instanceof p1)) {
+                if (!(obj instanceof o1)) {
                     return false;
                 }
-                p1 p1Var = (p1) obj;
-                if (p1Var.a() <= 0) {
+                o1 o1Var = (o1) obj;
+                if (o1Var.a() <= 0) {
                     return false;
                 }
-                return ((z1) this.e).e.b(p1Var.a) == p1Var.a();
+                return ((y1) this.e).e.b(o1Var.a) == o1Var.a();
             default:
-                return ((z1) this.e).contains(obj);
+                return ((y1) this.e).contains(obj);
         }
     }
 
@@ -56,7 +56,7 @@ public final class q0 extends t0 {
 
     @Override // h9.d0
     /* renamed from: n */
-    public final h2 iterator() {
+    public final g2 iterator() {
         return f().listIterator(0);
     }
 
@@ -71,7 +71,7 @@ public final class q0 extends t0 {
             case 0:
                 return this.e.o().size();
             default:
-                return ((z1) this.e).e.c;
+                return ((y1) this.e).e.c;
         }
     }
 }

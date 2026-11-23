@@ -11,9 +11,9 @@ import android.support.v4.media.session.w;
 import android.widget.FrameLayout;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d {
     public static final ColorMatrixColorFilter v = new ColorMatrixColorFilter(new ColorMatrix());
@@ -124,8 +124,8 @@ public final class d {
                     beginRecording.scale(f10, f10);
                     beginRecording.drawRenderNode(bVar2.e);
                     beginRecording.restore();
-                    beginRecording.drawRect(bVar2.a, m6.Jm);
-                    beginRecording.drawRect(rectF2, m6.Im);
+                    beginRecording.drawRect(bVar2.a, n6.Jm);
+                    beginRecording.drawRect(rectF2, n6.Im);
                 }
                 this.e.endRecording();
                 return;

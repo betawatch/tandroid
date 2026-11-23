@@ -1,46 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xg extends HashMap {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class xg {
+    public static final xg a;
+    public static final xg b;
+    public static final xg c;
+    public static final xg d;
+    public static final xg e;
+    public static final xg f;
+    public static final /* synthetic */ xg[] h;
 
-    public /* synthetic */ xg(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    static {
+        xg xgVar = new xg("VOICE", 0);
+        a = xgVar;
+        xg xgVar2 = new xg("VIDEO", 1);
+        b = xgVar2;
+        xg xgVar3 = new xg("STICKER", 2);
+        c = xgVar3;
+        xg xgVar4 = new xg("KEYBOARD", 3);
+        d = xgVar4;
+        xg xgVar5 = new xg("SMILE", 4);
+        e = xgVar5;
+        xg xgVar6 = new xg("GIF", 5);
+        f = xgVar6;
+        h = new xg[]{xgVar, xgVar2, xgVar3, xgVar4, xgVar5, xgVar6};
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public Object get(Object obj) {
-        switch (this.a) {
-            case 0:
-                int i7 = ((ah) this.b).w;
-                oh0 oh0Var = (oh0) super.get(obj);
-                if (oh0Var != null) {
-                    return oh0Var;
-                }
-                zg zgVar = (zg) obj;
-                oh0 oh0Var2 = new oh0(zgVar.c, org.telegram.messenger.g0.L(i7), org.telegram.messenger.g0.L(i7));
-                put(zgVar, oh0Var2);
-                return oh0Var2;
-            default:
-                return super.get(obj);
-        }
+    public static xg valueOf(String str) {
+        return (xg) Enum.valueOf(xg.class, str);
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public Object put(Object obj, Object obj2) {
-        switch (this.a) {
-            case 1:
-                String str = (String) obj;
-                String str2 = (String) obj2;
-                ((yc.g) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
-                return (String) super.put(str, str2);
-            default:
-                return super.put(obj, obj2);
-        }
+    public static xg[] values() {
+        return (xg[]) h.clone();
     }
 }

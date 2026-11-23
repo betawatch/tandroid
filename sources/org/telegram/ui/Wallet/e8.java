@@ -1,179 +1,67 @@
 package org.telegram.ui.Wallet;
 
 import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.w60;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class e8 extends bi.g3 {
-    public boolean A0;
-    public ValueAnimator B0;
-    public TL_wallet.nftItem x0;
-    public r8 y0;
-    public float z0;
+public final class e8 extends m41 {
+    public static final /* synthetic */ int b = 0;
 
-    @Override // bi.g3
-    public final void b(w60 w60Var, Canvas canvas, float f10, float f11, float f12) {
-        if (this.z0 == 1.0f) {
-            super.b(w60Var, canvas, f10, f11, f12);
-            return;
-        }
-        canvas.save();
-        float f13 = this.z0;
-        canvas.scale(f13, f13, f10 / 2.0f, f11 / 2.0f);
-        super.b(w60Var, canvas, f10, f11, f12);
-        canvas.restore();
+    static {
+        m41.h(new e8());
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.z0 == 1.0f) {
-            super.draw(canvas);
-            return;
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
+        f8 f8Var = (f8) view;
+        s8 s8Var = f8Var.y0;
+        if (s8Var != null) {
+            s8Var.h.remove(f8Var);
         }
-        canvas.save();
-        float f10 = this.z0;
-        canvas.scale(f10, f10, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        r8 r8Var;
-        float f10;
-        int i7;
-        float f11;
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        FrameLayout frameLayout = this.d;
-        if (view == frameLayout && (r8Var = this.y0) != null) {
-            RectF rectF = r8Var.I;
-            Paint paint = r8Var.y;
-            q8 q8Var = r8Var.l1;
-            if (this == r8Var.m1 && q8Var != null && q8Var.v != null) {
-                paint.setShader(null);
-                paint.setColorFilter(null);
-                float l10 = Utilities.l(r8Var.q1.a);
-                float[] D = r8Var.D(r8Var.o1 % 2.0f);
-                float f12 = D[0] * l10;
-                float f13 = D[1] * l10;
-                float f14 = D[2] * l10;
-                int left = frameLayout.getLeft();
-                org.telegram.ui.Components.q9 q9Var = this.E;
-                float left2 = q9Var.getLeft() + left + (q9Var.getWidth() / 2.0f);
-                float height = (q9Var.getHeight() / 2.0f) + q9Var.getTop() + frameLayout.getTop();
-                float C = com.google.android.gms.internal.vision.e2.C(f14, 0.025f, (0.07f * f13) + 1.0f, (q9Var.getWidth() * ls.L4) / 268.0f);
-                if (f13 > 0.01f && q8Var.w != null) {
-                    float f15 = ((176.0f * C) / 128.0f) / 2.0f;
-                    float L = (org.telegram.messenger.g0.L(2.0f) * f13) + height;
-                    rectF.set(left2 - f15, L - f15, left2 + f15, L + f15);
-                    paint.setColor(-16777216);
-                    paint.setAlpha((int) (60.0f * f13));
-                    canvas.drawBitmap(q8Var.w, (Rect) null, rectF, paint);
-                    paint.setColor(-1);
-                }
-                float l11 = q8Var.u == null ? 0.0f : Utilities.l(1.4f * f13);
-                float L2 = height - (org.telegram.messenger.g0.L(5.0f) * f13);
-                float f16 = f13 * (-5.0f);
-                if (l11 < 0.99f) {
-                    paint.setAlpha(ls.e4);
-                    f11 = L2;
-                    f10 = C;
-                    i7 = 255;
-                    r8Var.r(canvas, q8Var.v, left2, f11, f10, f12, 1.0f, f16, 0.24f, 0.97f);
-                } else {
-                    f10 = C;
-                    i7 = 255;
-                    f11 = L2;
-                }
-                if (l11 > 0.01f) {
-                    paint.setAlpha((int) (255.0f * l11));
-                    r8Var.r(canvas, q8Var.u, left2, f11, f10, f12, 1.0f, f16, 0.24f, 0.97f);
-                }
-                paint.setAlpha(i7);
-            }
-        }
-        return drawChild;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        if (isPressed() == this.A0) {
-            return;
-        }
-        boolean isPressed = isPressed();
-        this.A0 = isPressed;
-        m(isPressed ? 0.96f : 1.0f, isPressed ? 80L : 350L, isPressed ? null : new OvershootInterpolator(1.5f));
-    }
-
-    public final void m(float f10, long j3, OvershootInterpolator overshootInterpolator) {
-        ValueAnimator valueAnimator = this.B0;
+        ValueAnimator valueAnimator = f8Var.B0;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.z0, f10);
-        this.B0 = ofFloat;
-        ofFloat.addUpdateListener(new z3(this, 5));
-        if (overshootInterpolator != null) {
-            this.B0.setInterpolator(overshootInterpolator);
-        }
-        this.B0.setDuration(j3);
-        this.B0.start();
-    }
-
-    public final void n(float f10) {
-        this.z0 = f10;
-        invalidate();
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
+        f8Var.z0 = 1.0f;
+        f8Var.E.setAlpha(1.0f);
+        f8Var.x0 = (TL_wallet.nftItem) n41Var.H;
+        f8Var.y0 = (s8) n41Var.I;
+        TL_stars.SavedStarGift savedStarGift = new TL_stars.SavedStarGift();
+        savedStarGift.gift = f8Var.x0.gift;
+        f8Var.k(false, true, 0.0f);
+        f8Var.i(savedStarGift, true, false);
+        s8 s8Var2 = f8Var.y0;
+        if (s8Var2 != null) {
+            s8Var2.i(f8Var);
         }
     }
 
-    public final void o() {
-        ValueAnimator valueAnimator = this.B0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (this.z0 == 1.0f) {
-            return;
-        }
-        setScaleX(getScaleX() * this.z0);
-        setScaleY(getScaleY() * this.z0);
-        n(1.0f);
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        f8 f8Var = new f8(i7, context, i6Var);
+        f8Var.z0 = 1.0f;
+        f8Var.setStateListAnimator(null);
+        f8Var.setWillNotDraw(false);
+        return f8Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        r8 r8Var = this.y0;
-        if (r8Var != null) {
-            r8Var.i(this);
-        }
+    @Override // org.telegram.ui.Components.m41
+    public final boolean e(n41 n41Var, n41 n41Var2) {
+        return TextUtils.equals(((TL_wallet.nftItem) n41Var.H).address, ((TL_wallet.nftItem) n41Var2.H).address);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        r8 r8Var = this.y0;
-        if (r8Var != null) {
-            r8Var.h.remove(this);
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        hi.q2.W = getMeasuredHeight();
+    @Override // org.telegram.ui.Components.m41
+    public final boolean f() {
+        return true;
     }
 }

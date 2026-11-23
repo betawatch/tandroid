@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends kd.j implements rd.p {
     public Iterator a;
@@ -52,7 +52,7 @@ public final class f extends kd.j implements rd.p {
         jd.a aVar = jd.a.a;
         int i7 = this.d;
         if (i7 == 0) {
-            b7.h.b(obj);
+            c8.z.b(obj);
             obj = this.e;
             it = this.f.iterator();
             list = this.h;
@@ -61,7 +61,7 @@ public final class f extends kd.j implements rd.p {
             o1.d dVar2 = this.b;
             it2 = this.a;
             List list2 = (List) this.e;
-            b7.h.b(obj);
+            c8.z.b(obj);
             dVar = dVar2;
             list = list2;
             if (!((Boolean) obj).booleanValue()) {
@@ -85,7 +85,7 @@ public final class f extends kd.j implements rd.p {
             }
             it = this.a;
             list = (List) this.e;
-            b7.h.b(obj);
+            c8.z.b(obj);
         }
         if (!it.hasNext()) {
             o1.d dVar3 = (o1.d) it.next();

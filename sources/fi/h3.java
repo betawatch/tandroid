@@ -3,17 +3,17 @@ package fi;
 import android.text.TextUtils;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.a10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.si;
-import org.telegram.messenger.tn;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.sn;
 import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.w00;
 import org.telegram.messenger.y00;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.b31;
+import org.telegram.ui.Components.a31;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                 z3 z3Var5 = this.b.x;
                 x3 x3Var = z3Var5.y1;
                 x3Var.a.translated = false;
-                c7 c7Var = np.u1(z3Var5.m2).R1().k;
+                c7 c7Var = mp.u1(z3Var5.m2).R1().k;
                 TL_stories.StoryItem storyItem = x3Var.a;
                 c7Var.k(storyItem.dialogId, storyItem);
                 z3Var5.n0();
@@ -91,32 +91,32 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                     f9Var.Z0 = true;
                     f9Var.V();
                 }
-                c7 c7Var2 = np.u1(z3Var6.m2).R1().k;
+                c7 c7Var2 = mp.u1(z3Var6.m2).R1().k;
                 TL_stories.StoryItem storyItem2 = x3Var2.a;
                 c7Var2.k(storyItem2.dialogId, storyItem2);
                 long currentTimeMillis = System.currentTimeMillis();
                 l3 l3Var = new l3(r3Var6, 1);
-                a10 a10Var = np.u1(z3Var6.m2).v7;
+                y00 y00Var = mp.u1(z3Var6.m2).v7;
                 TL_stories.StoryItem storyItem3 = x3Var2.a;
-                bi.c4 c4Var = new bi.c4(l3Var, currentTimeMillis, 5);
-                HashSet hashSet = a10Var.K;
+                bi.e4 e4Var = new bi.e4(l3Var, currentTimeMillis, 5);
+                HashSet hashSet = y00Var.K;
                 if (storyItem3 != null) {
-                    y00 y00Var = new y00();
-                    String N0 = b31.N0();
+                    w00 w00Var = new w00();
+                    String N0 = a31.N0();
                     if (storyItem3.translatedText != null && TextUtils.equals(storyItem3.translatedLng, N0)) {
-                        c4Var.run();
-                    } else if (hashSet.contains(y00Var)) {
-                        c4Var.run();
+                        e4Var.run();
+                    } else if (hashSet.contains(w00Var)) {
+                        e4Var.run();
                     } else {
-                        hashSet.add(y00Var);
+                        hashSet.add(w00Var);
                         TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
                         tL_messages_translateText.flags |= 2;
                         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
                         tL_textWithEntities.text = storyItem3.caption;
                         tL_textWithEntities.entities = storyItem3.entities;
                         tL_messages_translateText.text.add(tL_textWithEntities);
-                        tL_messages_translateText.to_lang = a10.D(N0);
-                        a10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new tn(a10Var, storyItem3, N0, y00Var, c4Var, tL_textWithEntities, 1));
+                        tL_messages_translateText.to_lang = y00.D(N0);
+                        y00Var.getConnectionsManager().sendRequest(tL_messages_translateText, new sn(y00Var, storyItem3, N0, w00Var, e4Var, tL_textWithEntities, 1));
                     }
                 }
                 z3Var6.d1(false);
@@ -200,7 +200,7 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                 break;
             case 14:
                 z3 z3Var12 = this.b.x;
-                si.d0(z3Var12.m2).S1(z3Var12.l1);
+                ri.d0(z3Var12.m2).S1(z3Var12.l1);
                 z3Var12.C1.l0(z3Var12.l1, true, false);
                 r3 r3Var14 = z3Var12.d1;
                 if (r3Var14 != null) {

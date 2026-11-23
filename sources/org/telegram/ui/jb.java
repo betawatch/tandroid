@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class jb extends org.telegram.ui.Components.du0 {
+public abstract class jb extends org.telegram.ui.Components.cu0 {
     public final /* synthetic */ lb g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -64,7 +64,7 @@ public abstract class jb extends org.telegram.ui.Components.du0 {
                     lbVar.w.drawChild(canvas, childAt, uptimeMillis);
                     canvas.save();
                     canvas.translate(childAt.getX(), childAt.getY());
-                    ((org.telegram.ui.Cells.v0) childAt).I(canvas);
+                    ((org.telegram.ui.Cells.v0) childAt).L(canvas);
                     canvas.restore();
                 } else {
                     lbVar.w.drawChild(canvas, childAt, uptimeMillis);

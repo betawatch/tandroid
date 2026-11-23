@@ -1,38 +1,39 @@
 package vh;
 
 import android.app.Activity;
+import ki.n2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.y;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.o41;
+import org.telegram.ui.Components.ra;
+import org.telegram.ui.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class h extends sa {
-    public c51 T1;
-    public final o41 U1;
+public final class h extends ra {
+    public b51 T1;
+    public final n41 U1;
     public boolean V1;
     public int W1;
 
-    public h(Activity activity, h6 h6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
-        super(activity, null, true, false, 2, h6Var);
-        v0(m6.w0(m6.a7, h6Var));
+    public h(Activity activity, i6 i6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
+        super(activity, null, true, false, 2, i6Var);
+        v0(n6.w0(n6.a7, i6Var));
         this.x = true;
         this.n = false;
         this.G1 = false;
         this.F1 = g0.L(12.0f);
-        this.U1 = org.telegram.ui.c51.i0(tL_statsPollStats.votes_graph, hd.N0(2131746925, null), 2, false);
+        this.U1 = org.telegram.ui.b51.i0(tL_statsPollStats.votes_graph, gd.N0(2131746925, null), 2, false);
         ek0 ek0Var = this.o1;
         int i7 = this.u0;
         ek0Var.setPadding(i7, 0, i7, g0.n);
@@ -44,31 +45,31 @@ public final class h extends sa {
         this.T1.O(false);
     }
 
-    public static int e1(int i7, long j3, int i10, li.d dVar) {
+    public static int e1(int i7, long j3, int i10, n2 n2Var) {
         TL_stats.TL_statsGetPollStats tL_statsGetPollStats = new TL_stats.TL_statsGetPollStats();
-        tL_statsGetPollStats.peer = np.u1(i7).l1(j3);
+        tL_statsGetPollStats.peer = mp.u1(i7).l1(j3);
         tL_statsGetPollStats.msg_id = i10;
-        return ConnectionsManager.getInstance(i7).sendRequestTyped(tL_statsGetPollStats, new d3.b(1), new org.telegram.ui.web.b(dVar, 4));
+        return ConnectionsManager.getInstance(i7).sendRequestTyped(tL_statsGetPollStats, new d3.b(1), new org.telegram.ui.web.b(n2Var, 4));
     }
 
-    @Override // org.telegram.ui.Components.sa
+    @Override // org.telegram.ui.Components.ra
     public final dk0 M0(ek0 ek0Var) {
-        c51 c51Var = new c51(ek0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 3), this.J0);
-        this.T1 = c51Var;
-        c51Var.r = false;
-        return c51Var;
+        b51 b51Var = new b51(ek0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 3), this.J0);
+        this.T1 = b51Var;
+        b51Var.r = false;
+        return b51Var;
     }
 
-    @Override // org.telegram.ui.Components.sa
+    @Override // org.telegram.ui.Components.ra
     public final CharSequence P0() {
-        return hd.N0(2131746926, null);
+        return gd.N0(2131746926, null);
     }
 
     @Override // org.telegram.ui.ActionBar.w2
     public final void s0() {
         super.s0();
         try {
-            int w02 = m6.w0(m6.a7, this.J0);
+            int w02 = n6.w0(n6.a7, this.J0);
             if (this.V1 && w02 == this.W1) {
                 return;
             }

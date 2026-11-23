@@ -9,14 +9,14 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 import ug.a1;
 import ug.z0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
     public static e j;
@@ -81,9 +81,9 @@ public final class e {
     }
 
     public void b() {
-        int i7 = m6.z9;
-        if (m6.x0(null, i7, false) != this.a) {
-            this.a = m6.x0(null, i7, false);
+        int i7 = n6.z9;
+        if (n6.x0(null, i7, false) != this.a) {
+            this.a = n6.x0(null, i7, false);
             ((Drawable) this.f).setColorFilter(new PorterDuffColorFilter(this.a, PorterDuff.Mode.MULTIPLY));
         }
         this.g = a((z0) this.g);
@@ -91,13 +91,13 @@ public final class e {
     }
 
     public Paint e() {
-        if (!np.u1(k10.t0).K3()) {
+        if (!mp.u1(i10.t0).K3()) {
             return (Paint) this.c;
         }
         if (((Paint) this.d) == null) {
             this.d = new Paint(1);
         }
-        ((Paint) this.d).setColor(m6.x0(null, m6.Fi, false));
+        ((Paint) this.d).setColor(n6.x0(null, n6.Fi, false));
         return (Paint) this.d;
     }
 
@@ -106,9 +106,9 @@ public final class e {
     }
 
     public e() {
-        a1 a1Var = new a1(m6.Ck, m6.Dk, m6.Ek, m6.Fk, null);
+        a1 a1Var = new a1(n6.Ck, n6.Dk, n6.Ek, n6.Fk, null);
         this.b = a1Var;
-        a1 a1Var2 = new a1(m6.Wk, m6.Xk, -1, -1, null);
+        a1 a1Var2 = new a1(n6.Wk, n6.Xk, -1, -1, null);
         this.c = a1Var.f;
         this.f = t0.b.getDrawable(R.drawable.msg_premium_liststar).mutate();
         this.g = c(t0.b.getDrawable(R.drawable.msg_settings_premium), a1Var);

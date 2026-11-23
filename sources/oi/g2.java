@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class g2 {
-    public final h9.g1 a;
+    public final j6.r a;
     public boolean e;
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
@@ -23,8 +23,8 @@ public final class g2 {
     public final c2 g = new c2(this, 0);
     public f2 d = b();
 
-    public g2(h9.g1 g1Var) {
-        this.a = g1Var;
+    public g2(j6.r rVar) {
+        this.a = rVar;
     }
 
     public static void e(TL_iv.PageBlock pageBlock) {
@@ -203,8 +203,8 @@ public final class g2 {
             }
         }
         d2 d2Var = f2Var.b;
-        h9.g1 g1Var = this.a;
-        t3 t3Var = (t3) g1Var.b;
+        j6.r rVar = this.a;
+        t3 t3Var = (t3) rVar.b;
         t3Var.v3.f(false);
         ArrayList arrayList3 = t3Var.t3;
         arrayList3.clear();
@@ -212,11 +212,11 @@ public final class g2 {
         t3Var.v4();
         t3Var.g3.O(false);
         if (d2Var.a >= 0) {
-            t3Var.post(new t(3, t3Var, d2Var));
+            t3Var.post(new n2.c0(5, t3Var, d2Var));
         }
         t3Var.p3.onContentChanged();
         this.f = false;
-        ((t3) g1Var.b).p3.j1();
+        ((t3) rVar.b).p3.s0();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -242,8 +242,8 @@ public final class g2 {
     public final f2 b() {
         d2 d2Var;
         j0 j0Var;
-        h9.g1 g1Var = this.a;
-        ArrayList arrayList = ((t3) g1Var.b).t3;
+        j6.r rVar = this.a;
+        ArrayList arrayList = ((t3) rVar.b).t3;
         HashMap hashMap = new HashMap();
         f2 f2Var = this.d;
         if (f2Var != null) {
@@ -280,7 +280,7 @@ public final class g2 {
             }
             e2VarArr[i7] = new e2(aVar.a, byteArray, aVar.c, aVar.d, aVar.e, aVar.f, aVar.i, aVar.g, aVar.h != null ? new ArrayList(aVar.h) : null, new ArrayList(arrayList2));
         }
-        View findFocus = ((t3) g1Var.b).findFocus();
+        View findFocus = ((t3) rVar.b).findFocus();
         if (findFocus instanceof f1) {
             ?? r12 = (f1) findFocus;
             int selectionStart = r12.getSelectionStart();
@@ -356,7 +356,7 @@ public final class g2 {
         }
         this.c.clear();
         this.d = b10;
-        ((t3) this.a.b).p3.j1();
+        ((t3) this.a.b).p3.s0();
     }
 
     public final void d() {
@@ -381,7 +381,7 @@ public final class g2 {
         c2 c2Var = this.g;
         org.telegram.messenger.g0.r(c2Var);
         org.telegram.messenger.g0.h3(c2Var, 800L);
-        ((t3) this.a.b).p3.j1();
+        ((t3) this.a.b).p3.s0();
     }
 
     public final void h() {
@@ -411,7 +411,7 @@ public final class g2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((t3) this.a.b).p3.j1();
+        ((t3) this.a.b).p3.s0();
     }
 
     public final void k() {

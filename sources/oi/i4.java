@@ -5,21 +5,21 @@ import android.graphics.Paint;
 import android.text.Editable;
 import android.text.style.ReplacementSpan;
 import android.view.View;
-import org.telegram.messenger.du;
-import org.telegram.messenger.fv;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.cu;
+import org.telegram.messenger.ev;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i4 extends ReplacementSpan {
     public final TL_iv.textButton a;
-    public du b;
+    public cu b;
     public View c;
-    public int d = k10.t0;
-    public h6 e;
+    public int d = i10.t0;
+    public i6 e;
 
     public i4(TL_iv.textButton textbutton) {
         this.a = textbutton;
@@ -29,28 +29,30 @@ public final class i4 extends ReplacementSpan {
         return (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile);
     }
 
-    public final void a(int i7, View view, h6 h6Var) {
+    public final void a(int i7, View view, i6 i6Var) {
         View view2;
-        du duVar = this.b;
-        if (duVar != null && (view2 = this.c) != null) {
-            duVar.b(view2);
+        cu cuVar = this.b;
+        if (cuVar != null && (view2 = this.c) != null) {
+            cuVar.h = null;
+            cuVar.a.a.f(view2);
         }
         this.c = view;
         this.d = i7;
-        this.e = h6Var;
+        this.e = i6Var;
         this.b = null;
         b();
     }
 
-    public final du b() {
+    public final cu b() {
         if (this.b == null) {
             int i7 = this.d;
             int L = org.telegram.messenger.g0.L(240.0f);
-            du duVar = new du(new fv(i7, L, this.e), L, this.a, Boolean.FALSE);
-            this.b = duVar;
+            cu cuVar = new cu(new ev(i7, L, this.e), L, this.a, Boolean.FALSE);
+            this.b = cuVar;
             View view = this.c;
             if (view != null) {
-                duVar.a(view);
+                cuVar.h = view;
+                cuVar.a.a(view);
             }
         }
         return this.b;

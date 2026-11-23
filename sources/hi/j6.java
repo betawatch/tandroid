@@ -1,42 +1,65 @@
 package hi;
 
-import org.telegram.messenger.y10;
+import android.content.Context;
+import android.graphics.Bitmap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j6 implements y10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n6 b;
+public final class j6 {
+    public final n9 c;
+    public h6 d;
+    public CameraView f;
+    public Bitmap g;
+    public final AtomicReference a = new AtomicReference();
+    public final AtomicBoolean b = new AtomicBoolean(false);
+    public final g6 h = new g6(this, 0);
+    public final String e = mp.u1(i10.t0).X2;
 
-    public /* synthetic */ j6(n6 n6Var, int i7) {
-        this.a = i7;
-        this.b = n6Var;
+    public j6(Context context, n9 n9Var) {
+        this.c = n9Var;
+        Utilities.e.c(new c(10, this, context));
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                m6 m6Var = (m6) obj;
-                n6 n6Var = this.b;
-                n6Var.I = null;
-                n6Var.F = m6Var;
-                n6Var.E = m6Var != null;
-                n6Var.a();
-                n6Var.invalidate();
-                r8 r8Var = n6Var.b;
-                if (r8Var != null) {
-                    r8Var.run();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
-                m6 m6Var2 = this.b.F;
-                if (m6Var2 != null || g2Var == null) {
-                    m6Var2.c(g2Var);
-                    break;
-                }
+    public final void a(CameraView cameraView) {
+        this.f = cameraView;
+        if (this.a.get() == null || this.b.get()) {
+            return;
+        }
+        Utilities.e.a(this.h);
+        Utilities.e.d(this.h, b());
+    }
+
+    public final long b() {
+        if (this.d == null) {
+            return 750L;
+        }
+        int o4 = bz.o();
+        if (o4 != 1) {
+            return o4 != 2 ? 800L : 80L;
+        }
+        return 400L;
+    }
+
+    public final void c(boolean z10) {
+        if (this.b.getAndSet(z10) == z10) {
+            return;
+        }
+        if (!z10) {
+            Utilities.e.a(this.h);
+            Utilities.e.d(this.h, b());
+            return;
+        }
+        Utilities.e.a(this.h);
+        if (this.d != null) {
+            this.d = null;
+            org.telegram.messenger.g0.g3(new g6(this, 1));
         }
     }
 }

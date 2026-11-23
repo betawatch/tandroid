@@ -1,18 +1,12 @@
 package c8;
 
+import android.content.res.Configuration;
 import android.os.Build;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class aa {
-    public static boolean a(int i7) {
-        if (i7 == 8 || i7 == 7) {
-            return true;
-        }
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 31 || !(i7 == 26 || i7 == 27)) {
-            return i10 >= 33 && i7 == 30;
-        }
-        return true;
+    public static n0.c a(Configuration configuration) {
+        return Build.VERSION.SDK_INT >= 24 ? new n0.c(new n0.f(androidx.emoji2.text.x.f(configuration))) : n0.c.a(configuration.locale);
     }
 }

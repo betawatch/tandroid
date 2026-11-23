@@ -1,15 +1,15 @@
 package p4;
 
-import c8.t9;
+import c8.u9;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.car.app.utils.b {
+public final /* synthetic */ class r0 implements h2.j, b1, a1, q2.l, androidx.car.app.utils.b {
     public final /* synthetic */ int a;
 
     public /* synthetic */ r0(int i7) {
@@ -46,33 +46,33 @@ public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.ca
         }
     }
 
-    @Override // p4.b1
-    public void a(i1 i1Var, v vVar, List list) {
+    @Override // p4.a1
+    public void a(h1 h1Var, v vVar, List list) {
         switch (this.a) {
             case 9:
-                i1Var.x0(list);
+                h1Var.y0(list);
                 break;
             default:
-                i1Var.x0(list);
+                h1Var.y0(list);
                 break;
         }
     }
 
     @Override // h2.j
     public void accept(Object obj) {
-        i1 i1Var = (i1) obj;
+        h1 h1Var = (h1) obj;
         switch (this.a) {
             case 0:
-                i1Var.C0();
+                h1Var.D0();
                 break;
             case 1:
-                i1Var.L0();
+                h1Var.M0();
                 break;
             case 2:
-                i1Var.U();
+                h1Var.V();
                 break;
             case 3:
-                i1Var.E();
+                h1Var.F();
                 break;
             case 4:
             case 7:
@@ -81,28 +81,28 @@ public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.ca
             case 11:
             case 15:
             default:
-                i1Var.v();
+                h1Var.w();
                 break;
             case 5:
-                i1Var.J0();
+                h1Var.K0();
                 break;
             case 6:
-                i1Var.H0();
+                h1Var.I0();
                 break;
             case 8:
-                i1Var.L();
+                h1Var.M();
                 break;
             case 12:
-                i1Var.stop();
+                h1Var.stop();
                 break;
             case 13:
-                i1Var.c0();
+                h1Var.d0();
                 break;
             case 14:
-                i1Var.G();
+                h1Var.H();
                 break;
             case 16:
-                i1Var.a();
+                h1Var.a();
                 break;
         }
     }
@@ -112,34 +112,34 @@ public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.ca
         throw null;
     }
 
-    @Override // p4.c1
-    public Object k(e0 e0Var, v vVar, int i7) {
+    @Override // p4.b1
+    public Object j(d0 d0Var, v vVar, int i7) {
         switch (this.a) {
             case 4:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             case 7:
-                w7.s sVar = e0Var.e;
-                e0Var.s(vVar);
+                w7.s sVar = d0Var.e;
+                d0Var.s(vVar);
                 sVar.getClass();
-                return t9.b(new o1(-6));
+                return u9.b(new n1(-6));
             case 11:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             case 15:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             case 17:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             case 19:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             default:
-                w7.s sVar2 = e0Var.e;
-                e0Var.s(vVar);
+                w7.s sVar2 = d0Var.e;
+                d0Var.s(vVar);
                 sVar2.getClass();
-                return t9.b(new o1(-6));
+                return u9.b(new n1(-6));
         }
     }
 

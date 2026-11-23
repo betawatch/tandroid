@@ -1,8 +1,8 @@
 package a5;
 
-import c8.l0;
+import c8.m0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class m extends l {
     public i0.d[] a;
@@ -23,8 +23,8 @@ public abstract class m extends l {
     }
 
     public void setPathData(i0.d[] dVarArr) {
-        if (!l0.a(this.a, dVarArr)) {
-            this.a = l0.e(dVarArr);
+        if (!m0.a(this.a, dVarArr)) {
+            this.a = m0.e(dVarArr);
             return;
         }
         i0.d[] dVarArr2 = this.a;
@@ -45,6 +45,6 @@ public abstract class m extends l {
         this.a = null;
         this.c = 0;
         this.b = mVar.b;
-        this.a = l0.e(mVar.a);
+        this.a = m0.e(mVar.a);
     }
 }

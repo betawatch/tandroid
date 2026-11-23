@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.ActionBar.i5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements Iterable {
     public final d a;
@@ -23,13 +23,13 @@ public final class h implements Iterable {
         if (interpolator == null || j3 <= 0) {
             this.c = null;
         } else {
-            this.c = new c(0, new c5(this), interpolator, j3);
+            this.c = new c(0, new i5(this), interpolator, j3);
         }
     }
 
     public final void f(float f10) {
         g gVar = this.d;
-        boolean z10 = gVar.a.D(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
+        boolean z10 = gVar.a.H(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i7 = 0;
@@ -45,7 +45,7 @@ public final class h implements Iterable {
             z10 = z11 || z10;
         }
         if (z10) {
-            this.a.m1();
+            this.a.y1();
             if (f10 == 1.0f) {
                 l(true);
             }
@@ -166,9 +166,9 @@ public final class h implements Iterable {
             k();
             kVar3.c = f18;
         }
-        if (dVar.C()) {
+        if (dVar.G()) {
             k();
-            dVar.H();
+            dVar.K();
         }
     }
 
@@ -212,7 +212,7 @@ public final class h implements Iterable {
         gVar.f.c(z10);
         gVar.g.c(z10);
         gVar.c.c(z10);
-        gVar.a.x(z10);
+        gVar.a.E(z10);
     }
 
     public final void m(List list, boolean z10) {
@@ -256,7 +256,7 @@ public final class h implements Iterable {
             }
             g.a(gVar, size2, false);
             j(false);
-            this.a.m1();
+            this.a.y1();
             return;
         }
         if (list != null && !list.isEmpty()) {

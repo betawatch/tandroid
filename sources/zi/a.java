@@ -1,9 +1,9 @@
 package zi;
 
 import android.os.Handler;
-import org.telegram.ui.jw0;
+import org.telegram.ui.ao0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class a implements Runnable {
                 tVar.s0 = y10;
                 Handler handler = tVar.u;
                 if (tVar.r0 && handler != null) {
-                    handler.post(new jw0(tVar, y10, 17));
+                    handler.post(new ao0(tVar, y10, 19));
                 }
                 kVar.j.b("display rotation applied: degrees=" + y10);
                 return;

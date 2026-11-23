@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements Runnable {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class od implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.eg0 eg0Var;
+        org.telegram.ui.dg0 dg0Var;
         int i7 = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
         boolean z10 = this.c;
@@ -42,13 +42,13 @@ public final /* synthetic */ class od implements Runnable {
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 td tdVar = chatActivityEnterView2.f6;
                 chatActivityEnterView2.N0 = System.currentTimeMillis();
-                boolean w12 = chatActivityEnterView2.w1(false, 0, 0, 0L, true);
-                if (!z10 && (eg0Var = chatActivityEnterView2.M0) != null) {
-                    eg0Var.h(!w12);
+                boolean x12 = chatActivityEnterView2.x1(false, 0, 0, 0L, true);
+                if (!z10 && (dg0Var = chatActivityEnterView2.M0) != null) {
+                    dg0Var.h(!x12);
                     chatActivityEnterView2.M0 = null;
                     break;
                 } else {
-                    chatActivityEnterView2.e6 = !w12;
+                    chatActivityEnterView2.e6 = !x12;
                     org.telegram.messenger.g0.r(tdVar);
                     org.telegram.messenger.g0.h3(tdVar, 500L);
                     break;

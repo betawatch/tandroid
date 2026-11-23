@@ -1,6 +1,6 @@
 package p4;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
-import h9.t1;
+import h9.s1;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r {
     public static final AtomicReference n = new AtomicReference(null);
@@ -24,9 +24,9 @@ public final class r {
     public final Bundle f;
     public h2.d g;
     public final boolean h;
-    public final t1 i;
-    public final t1 j;
-    public final t1 k;
+    public final s1 i;
+    public final s1 j;
+    public final s1 k;
     public final boolean l;
     public boolean m;
 
@@ -36,25 +36,25 @@ public final class r {
         applicationContext.getClass();
         this.a = applicationContext;
         this.b = c1Var;
-        la.f(c1Var.P());
+        ma.f(c1Var.Q());
         this.c = "";
         this.d = sVar;
         this.e = new Bundle();
         this.f = new Bundle();
         h9.g0 g0Var = h9.i0.b;
-        t1 t1Var = t1.e;
-        this.i = t1Var;
-        this.j = t1Var;
+        s1 s1Var = s1.e;
+        this.i = s1Var;
+        this.j = s1Var;
         this.h = true;
         this.l = true;
-        this.k = t1Var;
+        this.k = s1Var;
     }
 
     public final x a() {
-        la.p(!this.m);
+        ma.p(!this.m);
         this.m = true;
         Object obj = x.b;
-        int intValue = ((Integer) e0.C.get()).intValue();
+        int intValue = ((Integer) d0.C.get()).intValue();
         int i7 = Build.VERSION.SDK_INT;
         Context context = this.a;
         if (i7 < 27) {
@@ -88,9 +88,9 @@ public final class r {
                 atomicReference.set(aVar2);
                 aVar = aVar2;
             }
-            this.g = new ji.l(20, dVar2, aVar);
+            this.g = new j6.k(dVar2, aVar, false, 21);
         }
-        this.g = new k8.a(this.g);
+        this.g = new jb.m(this.g);
         return new x(this.a, this.c, this.b, this.i, this.j, this.k, this.d, this.e, this.f, this.g, this.h, this.l);
     }
 }

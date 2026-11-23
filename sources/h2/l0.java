@@ -1,7 +1,7 @@
 package h2;
 
-import a8.ja;
-import a8.la;
+import a8.bb;
+import a8.ka;
 import a8.ma;
 import a8.p0;
 import android.app.UiModeManager;
@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import c8.u0;
 import c8.v0;
 import c8.w0;
+import c8.x0;
 import com.google.android.gms.internal.vision.e2;
 import di.a8;
 import e2.c1;
@@ -49,12 +50,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public static final String a;
@@ -84,7 +85,7 @@ public abstract class l0 {
         i = new String[]{"i-lux", "lb", "i-hak", "zh-hak", "i-navajo", "nv", "no-bok", "no-nob", "no-nyn", "no-nno", "zh-guoyu", "zh-cmn", "zh-hakka", "zh-hak", "zh-min-nan", "zh-nan", "zh-xiang", "zh-hsn"};
         j = new int[]{0, 79764919, 159529838, 222504665, 319059676, 398814059, 445009330, 507990021, 638119352, 583659535, 797628118, 726387553, 890018660, 835552979, 1015980042, 944750013, 1276238704, 1221641927, 1167319070, 1095957929, 1595256236, 1540665371, 1452775106, 1381403509, 1780037320, 1859660671, 1671105958, 1733955601, 2031960084, 2111593891, 1889500026, 1952343757, -1742489888, -1662866601, -1851683442, -1788833735, -1960329156, -1880695413, -2103051438, -2040207643, -1104454824, -1159051537, -1213636554, -1284997759, -1389417084, -1444007885, -1532160278, -1603531939, -734892656, -789352409, -575645954, -646886583, -952755380, -1007220997, -827056094, -898286187, -231047128, -151282273, -71779514, -8804623, -515967244, -436212925, -390279782, -327299027, 881225847, 809987520, 1023691545, 969234094, 662832811, 591600412, 771767749, 717299826, 311336399, 374308984, 453813921, 533576470, 25881363, 88864420, 134795389, 214552010, 2023205639, 2086057648, 1897238633, 1976864222, 1804852699, 1867694188, 1645340341, 1724971778, 1587496639, 1516133128, 1461550545, 1406951526, 1302016099, 1230646740, 1142491917, 1087903418, -1398421865, -1469785312, -1524105735, -1578704818, -1079922613, -1151291908, -1239184603, -1293773166, -1968362705, -1905510760, -2094067647, -2014441994, -1716953613, -1654112188, -1876203875, -1796572374, -525066777, -462094256, -382327159, -302564546, -206542021, -143559028, -97365931, -17609246, -960696225, -1031934488, -817968335, -872425850, -709327229, -780559564, -600130067, -654598054, 1762451694, 1842216281, 1619975040, 1682949687, 2047383090, 2127137669, 1938468188, 2001449195, 1325665622, 1271206113, 1183200824, 1111960463, 1543535498, 1489069629, 1434599652, 1363369299, 622672798, 568075817, 748617968, 677256519, 907627842, 853037301, 1067152940, 995781531, 51762726, 131386257, 177728840, 240578815, 269590778, 349224269, 429104020, 491947555, -248556018, -168932423, -122852000, -60002089, -500490030, -420856475, -341238852, -278395381, -685261898, -739858943, -559578920, -630940305, -1004286614, -1058877219, -845023740, -916395085, -1119974018, -1174433591, -1262701040, -1333941337, -1371866206, -1426332139, -1481064244, -1552294533, -1690935098, -1611170447, -1833673816, -1770699233, -2009983462, -1930228819, -2119160460, -2056179517, 1569362073, 1498123566, 1409854455, 1355396672, 1317987909, 1246755826, 1192025387, 1137557660, 2072149281, 2135122070, 1912620623, 1992383480, 1753615357, 1816598090, 1627664531, 1707420964, 295390185, 358241886, 404320391, 483945776, 43990325, 106832002, 186451547, 266083308, 932423249, 861060070, 1041341759, 986742920, 613929101, 542559546, 756411363, 701822548, -978770311, -1050133554, -869589737, -924188512, -693284699, -764654318, -550540341, -605129092, -475935807, -413084042, -366743377, -287118056, -257573603, -194731862, -114850189, -35218492, -1984365303, -1921392450, -2143631769, -2063868976, -1698919467, -1635936670, -1824608069, -1744851700, -1347415887, -1418654458, -1506661409, -1561119128, -1129027987, -1200260134, -1254728445, -1309196108};
         k = new int[]{0, 4129, 8258, 12387, 16516, 20645, 24774, 28903, 33032, 37161, 41290, 45419, 49548, 53677, 57806, 61935};
-        l = new int[]{0, 7, 14, 9, 28, 27, 18, 21, 56, 63, 54, 49, 36, 35, 42, 45, ls.x1, ls.E1, ls.K1, ls.F1, ls.t1, ls.s1, 98, 101, 72, 79, 70, 65, 84, 83, 90, 93, ls.B3, ls.H3, ls.N3, ls.J3, ls.b4, ls.a4, ls.R3, ls.U3, ls.t3, ls.A3, ls.r3, ls.n3, ls.a3, ls.Z2, ls.g3, ls.j3, ls.a2, ls.h2, ls.o2, ls.j2, ls.W1, ls.V1, ls.O1, 133, ls.y2, ls.F2, ls.w2, ls.r2, ls.K2, ls.J2, ls.Q2, ls.T2, ls.d3, ls.W2, ls.f3, ls.k3, ls.w3, ls.x3, ls.q3, 210, ls.e4, ls.X3, ls.Q3, ls.V3, ls.E3, ls.F3, ls.M3, 234, ls.N2, ls.G2, ls.P2, ls.U2, ls.B2, ls.C2, ls.v2, ls.s2, ls.Z1, ls.S1, ls.N1, 134, ls.d2, ls.e2, ls.n2, ls.k2, 39, 32, 41, 46, 59, 60, 53, 50, 31, 24, 17, 22, 3, 4, 13, 10, 87, 80, 89, 94, 75, 76, 69, 66, ls.w1, ls.p1, 97, ls.n1, ls.A1, ls.B1, ls.J1, ls.G1, ls.T1, ls.Y1, ls.R1, 128, ls.f2, ls.c2, ls.l2, ls.m2, ls.H2, ls.M2, ls.V2, ls.O2, ls.D2, ls.A2, ls.t2, ls.u2, ls.Y3, ls.d4, ls.W3, ls.P3, 229, ls.D3, ls.L3, 236, ls.X2, ls.c3, ls.l3, ls.e3, ls.y3, ls.v3, ls.o3, ls.p3, ls.q1, ls.v1, ls.o1, 96, ls.C1, ls.z1, ls.H1, ls.I1, 81, 86, 95, 88, 77, 74, 67, 68, 25, 30, 23, 16, 5, 2, 11, 12, 33, 38, 47, 40, 61, 58, 51, 52, 78, 73, 64, 71, 82, 85, 92, 91, ls.D1, ls.y1, 120, ls.L1, ls.r1, ls.u1, 100, 99, 62, 57, 48, 55, 34, 37, 44, 43, 6, 1, 8, 15, 26, 29, 20, 19, ls.E2, ls.z2, ls.q2, ls.x2, ls.I2, ls.L2, ls.S2, ls.R2, ls.g2, ls.b2, ls.i2, ls.p2, ls.U1, ls.X1, ls.Q1, ls.P1, ls.z3, ls.u3, ls.m3, ls.s3, ls.Y2, ls.b3, ls.i3, 203, ls.G3, ls.C3, ls.I3, ls.O3, ls.Z3, ls.c4, ls.T3, ls.S3};
+        l = new int[]{0, 7, 14, 9, 28, 27, 18, 21, 56, 63, 54, 49, 36, 35, 42, 45, ks.x1, ks.E1, ks.K1, ks.F1, ks.t1, ks.s1, 98, 101, 72, 79, 70, 65, 84, 83, 90, 93, ks.B3, ks.H3, ks.N3, ks.J3, ks.b4, ks.a4, ks.R3, ks.U3, ks.t3, ks.A3, ks.r3, ks.n3, ks.a3, ks.Z2, ks.g3, ks.j3, ks.a2, ks.h2, ks.o2, ks.j2, ks.W1, ks.V1, ks.O1, 133, ks.y2, ks.F2, ks.w2, ks.r2, ks.K2, ks.J2, ks.Q2, ks.T2, ks.d3, ks.W2, ks.f3, ks.k3, ks.w3, ks.x3, ks.q3, 210, ks.e4, ks.X3, ks.Q3, ks.V3, ks.E3, ks.F3, ks.M3, 234, ks.N2, ks.G2, ks.P2, ks.U2, ks.B2, ks.C2, ks.v2, ks.s2, ks.Z1, ks.S1, ks.N1, 134, ks.d2, ks.e2, ks.n2, ks.k2, 39, 32, 41, 46, 59, 60, 53, 50, 31, 24, 17, 22, 3, 4, 13, 10, 87, 80, 89, 94, 75, 76, 69, 66, ks.w1, ks.p1, 97, ks.n1, ks.A1, ks.B1, ks.J1, ks.G1, ks.T1, ks.Y1, ks.R1, 128, ks.f2, ks.c2, ks.l2, ks.m2, ks.H2, ks.M2, ks.V2, ks.O2, ks.D2, ks.A2, ks.t2, ks.u2, ks.Y3, ks.d4, ks.W3, ks.P3, 229, ks.D3, ks.L3, 236, ks.X2, ks.c3, ks.l3, ks.e3, ks.y3, ks.v3, ks.o3, ks.p3, ks.q1, ks.v1, ks.o1, 96, ks.C1, ks.z1, ks.H1, ks.I1, 81, 86, 95, 88, 77, 74, 67, 68, 25, 30, 23, 16, 5, 2, 11, 12, 33, 38, 47, 40, 61, 58, 51, 52, 78, 73, 64, 71, 82, 85, 92, 91, ks.D1, ks.y1, 120, ks.L1, ks.r1, ks.u1, 100, 99, 62, 57, 48, 55, 34, 37, 44, 43, 6, 1, 8, 15, 26, 29, 20, 19, ks.E2, ks.z2, ks.q2, ks.x2, ks.I2, ks.L2, ks.S2, ks.R2, ks.g2, ks.b2, ks.i2, ks.p2, ks.U1, ks.X1, ks.Q1, ks.P1, ks.z3, ks.u3, ks.m3, ks.s3, ks.Y2, ks.b3, ks.i3, 203, ks.G3, ks.C3, ks.I3, ks.O3, ks.Z3, ks.c4, ks.T3, ks.S3};
     }
 
     public static int A(String str) {
@@ -202,11 +203,11 @@ public abstract class l0 {
             return false;
         }
         int i7 = c1Var.i();
-        if (i7 != 1 || !c1Var.p0(2)) {
-            if (i7 == 4 && c1Var.p0(4)) {
-                c1Var.G();
+        if (i7 != 1 || !c1Var.q0(2)) {
+            if (i7 == 4 && c1Var.q0(4)) {
+                c1Var.H();
             }
-            if (c1Var.p0(1)) {
+            if (c1Var.q0(1)) {
                 return z10;
             }
             c1Var.f();
@@ -214,7 +215,7 @@ public abstract class l0 {
         }
         c1Var.a();
         z10 = true;
-        if (c1Var.p0(1)) {
+        if (c1Var.q0(1)) {
         }
     }
 
@@ -233,12 +234,12 @@ public abstract class l0 {
         int i7;
         if (str == null) {
             String scheme = uri.getScheme();
-            if (scheme == null || (!ja.a("rtsp", scheme) && !ja.a("rtspt", scheme))) {
+            if (scheme == null || (!ka.a("rtsp", scheme) && !ka.a("rtspt", scheme))) {
                 String lastPathSegment = uri.getLastPathSegment();
                 if (lastPathSegment != null) {
                     int lastIndexOf = lastPathSegment.lastIndexOf(46);
                     if (lastIndexOf >= 0) {
-                        String c10 = ja.c(lastPathSegment.substring(lastIndexOf + 1));
+                        String c10 = ka.c(lastPathSegment.substring(lastIndexOf + 1));
                         c10.getClass();
                         switch (c10) {
                             case "ism":
@@ -365,11 +366,11 @@ public abstract class l0 {
         }
         if (i7 == 30) {
             String str = Build.MODEL;
-            if (ja.a(str, "moto g(20)") || ja.a(str, "rmx3231")) {
+            if (ka.a(str, "moto g(20)") || ka.a(str, "rmx3231")) {
                 return true;
             }
         }
-        return i7 == 34 && ja.a(Build.MODEL, "sm-x200");
+        return i7 == 34 && ka.a(Build.MODEL, "sm-x200");
     }
 
     public static boolean O(int i7) {
@@ -439,7 +440,7 @@ public abstract class l0 {
         if (!replace.isEmpty() && !replace.equals("und")) {
             str = replace;
         }
-        String c10 = ja.c(str);
+        String c10 = ka.c(str);
         int i7 = 0;
         String str2 = c10.split("-", 2)[0];
         if (g == null) {
@@ -484,7 +485,7 @@ public abstract class l0 {
     }
 
     public static Object[] U(int i7, Object[] objArr) {
-        la.f(i7 <= objArr.length);
+        ma.f(i7 <= objArr.length);
         return Arrays.copyOf(objArr, i7);
     }
 
@@ -541,17 +542,17 @@ public abstract class l0 {
         RoundingMode roundingMode = RoundingMode.DOWN;
         int i7 = 0;
         if (j3 >= 1000000 && j3 % 1000000 == 0) {
-            long b10 = v0.b(j3, 1000000L, RoundingMode.UNNECESSARY);
+            long b10 = w0.b(j3, 1000000L, RoundingMode.UNNECESSARY);
             while (i7 < jArr.length) {
-                jArr[i7] = v0.b(jArr[i7], b10, roundingMode);
+                jArr[i7] = w0.b(jArr[i7], b10, roundingMode);
                 i7++;
             }
             return;
         }
         if (j3 < 1000000 && 1000000 % j3 == 0) {
-            long b11 = v0.b(1000000L, j3, RoundingMode.UNNECESSARY);
+            long b11 = w0.b(1000000L, j3, RoundingMode.UNNECESSARY);
             while (i7 < jArr.length) {
-                jArr[i7] = v0.d(jArr[i7], b11);
+                jArr[i7] = w0.d(jArr[i7], b11);
                 i7++;
             }
             return;
@@ -561,14 +562,14 @@ public abstract class l0 {
             long j11 = jArr[i10];
             if (j11 != 0) {
                 if (j3 >= j11 && j3 % j11 == 0) {
-                    jArr[i10] = v0.b(1000000L, v0.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
+                    jArr[i10] = w0.b(1000000L, w0.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
                 } else if (j3 >= j11 || j11 % j3 != 0) {
                     j10 = j3;
                     jArr[i10] = b0(j11, 1000000L, j10, roundingMode);
                     i10++;
                     j3 = j10;
                 } else {
-                    jArr[i10] = v0.d(1000000L, v0.b(j11, j3, RoundingMode.UNNECESSARY));
+                    jArr[i10] = w0.d(1000000L, w0.b(j11, j3, RoundingMode.UNNECESSARY));
                 }
             }
             j10 = j3;
@@ -590,7 +591,7 @@ public abstract class l0 {
         if (j3 == 0 || j10 == 0) {
             return 0L;
         }
-        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? b0(j3, j10, j11, roundingMode) : v0.d(j10, v0.b(j3, j11, RoundingMode.UNNECESSARY)) : v0.b(j10, v0.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : v0.d(j3, v0.b(j10, j11, RoundingMode.UNNECESSARY)) : v0.b(j3, v0.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
+        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? b0(j3, j10, j11, roundingMode) : w0.d(j10, w0.b(j3, j11, RoundingMode.UNNECESSARY)) : w0.b(j10, w0.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : w0.d(j3, w0.b(j10, j11, RoundingMode.UNNECESSARY)) : w0.b(j3, w0.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
     }
 
     public static int b(long[] jArr, long j3, boolean z10) {
@@ -625,20 +626,20 @@ public abstract class l0 {
     public static long b0(long j3, long j10, long j11, RoundingMode roundingMode) {
         double d2;
         long j12;
-        long d10 = v0.d(j3, j10);
+        long d10 = w0.d(j3, j10);
         if (d10 != Long.MAX_VALUE && d10 != Long.MIN_VALUE) {
-            return v0.b(d10, j11, roundingMode);
+            return w0.b(d10, j11, roundingMode);
         }
-        long c10 = v0.c(Math.abs(j10), Math.abs(j11));
+        long c10 = w0.c(Math.abs(j10), Math.abs(j11));
         RoundingMode roundingMode2 = RoundingMode.UNNECESSARY;
-        long b10 = v0.b(j10, c10, roundingMode2);
-        long b11 = v0.b(j11, c10, roundingMode2);
-        long c11 = v0.c(Math.abs(j3), Math.abs(b11));
-        long b12 = v0.b(j3, c11, roundingMode2);
-        long b13 = v0.b(b11, c11, roundingMode2);
-        long d11 = v0.d(b12, b10);
+        long b10 = w0.b(j10, c10, roundingMode2);
+        long b11 = w0.b(j11, c10, roundingMode2);
+        long c11 = w0.c(Math.abs(j3), Math.abs(b11));
+        long b12 = w0.b(j3, c11, roundingMode2);
+        long b13 = w0.b(b11, c11, roundingMode2);
+        long d11 = w0.d(b12, b10);
         if (d11 != Long.MAX_VALUE && d11 != Long.MIN_VALUE) {
-            return v0.b(d11, b13, roundingMode);
+            return w0.b(d11, b13, roundingMode);
         }
         double d12 = b12 * (b10 / b13);
         if (d12 > 9.223372036854776E18d) {
@@ -648,12 +649,12 @@ public abstract class l0 {
             return Long.MIN_VALUE;
         }
         int i7 = j9.c.a;
-        if (!c8.t0.b(d12)) {
+        if (!u0.b(d12)) {
             throw new ArithmeticException("input is infinite or NaN");
         }
         switch (j9.b.a[roundingMode.ordinal()]) {
             case 1:
-                w0.b(j9.c.a(d12));
+                x0.b(j9.c.a(d12));
                 d2 = d12;
                 if (!((-9.223372036854776E18d) - d2 >= 1.0d) || !(d2 < 9.223372036854776E18d)) {
                     return (long) d2;
@@ -739,7 +740,7 @@ public abstract class l0 {
     }
 
     public static boolean c0(c1 c1Var, boolean z10) {
-        return c1Var == null || !c1Var.u() || c1Var.i() == 1 || c1Var.i() == 4 || !(!z10 || c1Var.w0() == 0 || c1Var.w0() == 4);
+        return c1Var == null || !c1Var.v() || c1Var.i() == 1 || c1Var.i() == 4 || !(!z10 || c1Var.x0() == 0 || c1Var.x0() == 4);
     }
 
     public static int d(List list, Long l10, boolean z10) {
@@ -818,7 +819,7 @@ public abstract class l0 {
                 if (i7 >= length) {
                     break;
                 }
-                if (ja.b(cArr[i7])) {
+                if (ka.b(cArr[i7])) {
                     int length2 = cArr.length;
                     int i10 = 0;
                     while (true) {
@@ -833,11 +834,11 @@ public abstract class l0 {
                         }
                         i10++;
                     }
-                    la.o("Cannot call lowerCase() on a mixed-case alphabet", !z10);
+                    ma.o("Cannot call lowerCase() on a mixed-case alphabet", !z10);
                     char[] cArr2 = new char[cArr.length];
                     for (int i11 = 0; i11 < cArr.length; i11++) {
                         char c11 = cArr[i11];
-                        if (ja.b(c11)) {
+                        if (ka.b(c11)) {
                             c11 = (char) (c11 ^ ' ');
                         }
                         cArr2[i11] = c11;
@@ -857,7 +858,7 @@ public abstract class l0 {
                                     char c12 = (char) i12;
                                     char c13 = (char) i13;
                                     if (!(b11 == -1)) {
-                                        throw new IllegalStateException(ma.a("Can't ignoreCase() since '%s' and '%s' encode different values", Character.valueOf(c12), Character.valueOf(c13)));
+                                        throw new IllegalStateException(bb.a("Can't ignoreCase() since '%s' and '%s' encode different values", Character.valueOf(c12), Character.valueOf(c13)));
                                     }
                                     copyOf[i13] = b10;
                                 }
@@ -874,12 +875,12 @@ public abstract class l0 {
             bVar.c = dVar;
         }
         int length3 = bArr.length;
-        la.n(0, length3, bArr.length);
+        ma.n(0, length3, bArr.length);
         i9.a aVar3 = dVar.a;
         int i14 = aVar3.e;
         int i15 = aVar3.f;
         RoundingMode roundingMode = RoundingMode.CEILING;
-        StringBuilder sb2 = new StringBuilder(u0.b(length3, i15) * i14);
+        StringBuilder sb2 = new StringBuilder(v0.b(length3, i15) * i14);
         try {
             dVar.b(sb2, bArr, length3);
             return sb2.toString();
@@ -981,7 +982,7 @@ public abstract class l0 {
 
     public static int p(int i7, int i10, int i11, byte[] bArr) {
         while (i7 < i10) {
-            i11 = j[((i11 >>> 24) ^ (bArr[i7] & 255)) & ls.e4] ^ (i11 << 8);
+            i11 = j[((i11 >>> 24) ^ (bArr[i7] & 255)) & ks.e4] ^ (i11 << 8);
             i7++;
         }
         return i11;
@@ -1036,8 +1037,8 @@ public abstract class l0 {
             case 21:
             case 22:
                 return 31;
-            case ls.T /* 30 */:
-            case ls.U /* 31 */:
+            case ks.T /* 30 */:
+            case ks.U /* 31 */:
                 return 34;
         }
     }

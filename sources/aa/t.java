@@ -9,8 +9,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t {
     public final Context a;
@@ -25,10 +26,10 @@ public final class t {
     public final w9.a j;
     public final j k;
     public final x9.a l;
-    public final v4.f0 m;
+    public final nd0 m;
     public final ba.e n;
 
-    public t(o9.g gVar, a0 a0Var, x9.a aVar, w wVar, w9.a aVar2, w9.a aVar3, ga.d dVar, j jVar, v4.f0 f0Var, ba.e eVar) {
+    public t(o9.g gVar, a0 a0Var, x9.a aVar, w wVar, w9.a aVar2, w9.a aVar3, ga.d dVar, j jVar, nd0 nd0Var, ba.e eVar) {
         this.b = wVar;
         gVar.a();
         this.a = gVar.a;
@@ -38,7 +39,7 @@ public final class t {
         this.j = aVar3;
         this.h = dVar;
         this.k = jVar;
-        this.m = f0Var;
+        this.m = nd0Var;
         this.n = eVar;
         System.currentTimeMillis();
         this.c = new q4.q(4);
@@ -100,7 +101,7 @@ public final class t {
             ga.d dVar = (ga.d) bVar.c;
             String str = (String) bVar.b;
             dVar.getClass();
-            if (new File((File) dVar.d, str).delete()) {
+            if (new File((File) dVar.c, str).delete()) {
                 return;
             }
             Log.w("FirebaseCrashlytics", "Initialization marker file was not properly removed.", null);

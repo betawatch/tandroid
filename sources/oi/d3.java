@@ -1,11 +1,11 @@
 package oi;
 
 import android.view.View;
-import hi.s6;
+import hi.c7;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d3 implements x5 {
     public final /* synthetic */ t3 a;
@@ -52,17 +52,17 @@ public final class d3 implements x5 {
         }
         switch (i7) {
             case 1:
-                r3Var.D(3);
+                r3Var.r(3);
                 break;
             case 2:
-                r3Var.D(6);
+                r3Var.r(6);
                 break;
             case 3:
-                o.Z(t3Var.getContext(), "", new s6(t3Var, 18), t3Var.o3);
+                p.Z(t3Var.getContext(), "", new c7(t3Var, 18), t3Var.o3);
                 break;
             case 4:
             case 5:
-                r3Var.D(1);
+                r3Var.r(1);
                 break;
             case 6:
                 t3Var.w3();

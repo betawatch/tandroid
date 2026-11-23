@@ -1,12 +1,13 @@
 package q1;
 
+import c8.z;
 import gd.k;
 import java.util.LinkedHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends j implements p {
     public final /* synthetic */ int a;
@@ -64,7 +65,7 @@ public final class c extends j implements p {
                 jd.a aVar = jd.a.a;
                 int i7 = this.b;
                 if (i7 == 0) {
-                    b7.h.b(obj);
+                    z.b(obj);
                     b bVar = (b) this.c;
                     this.b = 1;
                     obj = this.d.invoke(bVar, this);
@@ -75,7 +76,7 @@ public final class c extends j implements p {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    z.b(obj);
                 }
                 b bVar2 = (b) obj;
                 kotlin.jvm.internal.j.c(bVar2, "null cannot be cast to non-null type androidx.datastore.preferences.core.MutablePreferences");
@@ -89,10 +90,10 @@ public final class c extends j implements p {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     b bVar3 = (b) this.c;
-                    b7.h.b(obj);
+                    z.b(obj);
                     return bVar3;
                 }
-                b7.h.b(obj);
+                z.b(obj);
                 b bVar4 = new b(new LinkedHashMap(((b) this.c).a()), false);
                 this.c = bVar4;
                 this.b = 1;

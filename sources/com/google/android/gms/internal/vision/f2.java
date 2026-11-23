@@ -7,11 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.logging.Level;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f2 implements o2 {
     public static final int[] n = new int[0];
@@ -381,7 +381,7 @@ public final class f2 implements o2 {
                 i24 = i73;
             }
             int i77 = charAt23;
-            int i78 = charAt24 & ls.e4;
+            int i78 = charAt24 & ks.e4;
             int i79 = i11;
             if ((charAt24 & 1024) != 0) {
                 iArr[i67] = i68;
@@ -938,10 +938,10 @@ public final class f2 implements o2 {
                 case 29:
                     p2.E(i10, (List) y2.l(obj, z10 & 1048575), y1Var, false);
                     break;
-                case ls.T /* 30 */:
+                case ks.T /* 30 */:
                     p2.I(i10, (List) y2.l(obj, z10 & 1048575), y1Var, false);
                     break;
-                case ls.U /* 31 */:
+                case ks.U /* 31 */:
                     p2.H(i10, (List) y2.l(obj, z10 & 1048575), y1Var, false);
                     break;
                 case 32:
@@ -1008,7 +1008,7 @@ public final class f2 implements o2 {
                         throw new NoSuchMethodError();
                     }
                     break;
-                case ls.o0 /* 51 */:
+                case ks.o0 /* 51 */:
                     if (q(i10, i7, obj)) {
                         double doubleValue = ((Double) y2.l(obj, z10 & 1048575)).doubleValue();
                         r0Var.getClass();
@@ -1019,7 +1019,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.p0 /* 52 */:
+                case ks.p0 /* 52 */:
                     if (q(i10, i7, obj)) {
                         float floatValue = ((Float) y2.l(obj, z10 & 1048575)).floatValue();
                         r0Var.getClass();
@@ -1030,7 +1030,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.q0 /* 53 */:
+                case ks.q0 /* 53 */:
                     if (q(i10, i7, obj)) {
                         long B = B(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1039,7 +1039,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.r0 /* 54 */:
+                case ks.r0 /* 54 */:
                     if (q(i10, i7, obj)) {
                         long B2 = B(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1048,7 +1048,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.s0 /* 55 */:
+                case ks.s0 /* 55 */:
                     if (q(i10, i7, obj)) {
                         int A = A(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1057,7 +1057,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.t0 /* 56 */:
+                case ks.t0 /* 56 */:
                     if (q(i10, i7, obj)) {
                         long B3 = B(obj, z10 & 1048575);
                         r0Var.D(i10, 1);
@@ -1066,7 +1066,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.u0 /* 57 */:
+                case ks.u0 /* 57 */:
                     if (q(i10, i7, obj)) {
                         int A2 = A(obj, z10 & 1048575);
                         r0Var.D(i10, 5);
@@ -1075,7 +1075,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     if (q(i10, i7, obj)) {
                         boolean booleanValue = ((Boolean) y2.l(obj, z10 & 1048575)).booleanValue();
                         r0Var.D(i10, 0);
@@ -1084,28 +1084,28 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     if (q(i10, i7, obj)) {
                         n(i10, y2.l(obj, z10 & 1048575), y1Var);
                         break;
                     } else {
                         break;
                     }
-                case ls.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     if (q(i10, i7, obj)) {
                         y1Var.b(i10, y2.l(obj, z10 & 1048575), l(i7));
                         break;
                     } else {
                         break;
                     }
-                case ls.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     if (q(i10, i7, obj)) {
                         y1Var.a(i10, (q0) y2.l(obj, z10 & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case ls.z0 /* 62 */:
+                case ks.z0 /* 62 */:
                     if (q(i10, i7, obj)) {
                         int A3 = A(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1114,7 +1114,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.A0 /* 63 */:
+                case ks.A0 /* 63 */:
                     if (q(i10, i7, obj)) {
                         int A4 = A(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1141,7 +1141,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.D0 /* 66 */:
+                case ks.D0 /* 66 */:
                     if (q(i10, i7, obj)) {
                         int A6 = A(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1150,7 +1150,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.E0 /* 67 */:
+                case ks.E0 /* 67 */:
                     if (q(i10, i7, obj)) {
                         long B5 = B(obj, z10 & 1048575);
                         r0Var.D(i10, 0);
@@ -1159,7 +1159,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     if (q(i10, i7, obj)) {
                         y1Var.c(i10, y2.l(obj, z10 & 1048575), l(i7));
                         break;
@@ -1312,8 +1312,8 @@ public final class f2 implements o2 {
                 case 27:
                 case 28:
                 case 29:
-                case ls.T /* 30 */:
-                case ls.U /* 31 */:
+                case ks.T /* 30 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -1341,7 +1341,7 @@ public final class f2 implements o2 {
                     a10 = y2.l(f1Var, j3).hashCode();
                     i11 = a10 + i7;
                     break;
-                case ls.o0 /* 51 */:
+                case ks.o0 /* 51 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = j1.a(Double.doubleToLongBits(((Double) y2.l(f1Var, j3)).doubleValue()));
@@ -1350,7 +1350,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.p0 /* 52 */:
+                case ks.p0 /* 52 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = Float.floatToIntBits(((Float) y2.l(f1Var, j3)).floatValue());
@@ -1359,7 +1359,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.q0 /* 53 */:
+                case ks.q0 /* 53 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = j1.a(B(f1Var, j3));
@@ -1368,7 +1368,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.r0 /* 54 */:
+                case ks.r0 /* 54 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = j1.a(B(f1Var, j3));
@@ -1377,7 +1377,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.s0 /* 55 */:
+                case ks.s0 /* 55 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = A(f1Var, j3);
@@ -1386,7 +1386,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.t0 /* 56 */:
+                case ks.t0 /* 56 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = j1.a(B(f1Var, j3));
@@ -1395,7 +1395,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.u0 /* 57 */:
+                case ks.u0 /* 57 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = A(f1Var, j3);
@@ -1404,7 +1404,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     if (q(i13, i12, f1Var)) {
                         i10 = i11 * 53;
                         boolean booleanValue = ((Boolean) y2.l(f1Var, j3)).booleanValue();
@@ -1413,7 +1413,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = ((String) y2.l(f1Var, j3)).hashCode();
@@ -1422,7 +1422,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = y2.l(f1Var, j3).hashCode();
@@ -1431,7 +1431,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = y2.l(f1Var, j3).hashCode();
@@ -1440,7 +1440,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.z0 /* 62 */:
+                case ks.z0 /* 62 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = A(f1Var, j3);
@@ -1449,7 +1449,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.A0 /* 63 */:
+                case ks.A0 /* 63 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = A(f1Var, j3);
@@ -1476,7 +1476,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.D0 /* 66 */:
+                case ks.D0 /* 66 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = A(f1Var, j3);
@@ -1485,7 +1485,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.E0 /* 67 */:
+                case ks.E0 /* 67 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = j1.a(B(f1Var, j3));
@@ -1494,7 +1494,7 @@ public final class f2 implements o2 {
                     } else {
                         break;
                     }
-                case ls.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     if (q(i13, i12, f1Var)) {
                         i7 = i11 * 53;
                         a10 = y2.l(f1Var, j3).hashCode();
@@ -1694,8 +1694,8 @@ public final class f2 implements o2 {
                 case 27:
                 case 28:
                 case 29:
-                case ls.T /* 30 */:
-                case ls.U /* 31 */:
+                case ks.T /* 30 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -1723,38 +1723,38 @@ public final class f2 implements o2 {
                     this.m.getClass();
                     y2.d(f1Var, j3, b2.a(l10, l11));
                     break;
-                case ls.o0 /* 51 */:
-                case ls.p0 /* 52 */:
-                case ls.q0 /* 53 */:
-                case ls.r0 /* 54 */:
-                case ls.s0 /* 55 */:
-                case ls.t0 /* 56 */:
-                case ls.u0 /* 57 */:
-                case ls.v0 /* 58 */:
-                case ls.w0 /* 59 */:
+                case ks.o0 /* 51 */:
+                case ks.p0 /* 52 */:
+                case ks.q0 /* 53 */:
+                case ks.r0 /* 54 */:
+                case ks.s0 /* 55 */:
+                case ks.t0 /* 56 */:
+                case ks.u0 /* 57 */:
+                case ks.v0 /* 58 */:
+                case ks.w0 /* 59 */:
                     if (q(i10, i7, f1Var2)) {
                         y2.d(f1Var, j3, y2.l(f1Var2, j3));
                         y2.c(iArr[i7 + 2] & 1048575, f1Var, i10);
                         break;
                     }
                     break;
-                case ls.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     v(i7, f1Var, f1Var2);
                     break;
-                case ls.y0 /* 61 */:
-                case ls.z0 /* 62 */:
-                case ls.A0 /* 63 */:
+                case ks.y0 /* 61 */:
+                case ks.z0 /* 62 */:
+                case ks.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ls.D0 /* 66 */:
-                case ls.E0 /* 67 */:
+                case ks.D0 /* 66 */:
+                case ks.E0 /* 67 */:
                     if (q(i10, i7, f1Var2)) {
                         y2.d(f1Var, j3, y2.l(f1Var2, j3));
                         y2.c(iArr[i7 + 2] & 1048575, f1Var, i10);
                         break;
                     }
                     break;
-                case ls.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     v(i7, f1Var, f1Var2);
                     break;
             }
@@ -2503,8 +2503,8 @@ public final class f2 implements o2 {
                     case 27:
                     case 28:
                     case 29:
-                    case ls.T /* 30 */:
-                    case ls.U /* 31 */:
+                    case ks.T /* 30 */:
+                    case ks.U /* 31 */:
                     case 32:
                     case 33:
                     case 34:
@@ -2528,24 +2528,24 @@ public final class f2 implements o2 {
                     case 50:
                         z10 = p2.i(y2.l(f1Var, j3), y2.l(f1Var2, j3));
                         break;
-                    case ls.o0 /* 51 */:
-                    case ls.p0 /* 52 */:
-                    case ls.q0 /* 53 */:
-                    case ls.r0 /* 54 */:
-                    case ls.s0 /* 55 */:
-                    case ls.t0 /* 56 */:
-                    case ls.u0 /* 57 */:
-                    case ls.v0 /* 58 */:
-                    case ls.w0 /* 59 */:
-                    case ls.x0 /* 60 */:
-                    case ls.y0 /* 61 */:
-                    case ls.z0 /* 62 */:
-                    case ls.A0 /* 63 */:
+                    case ks.o0 /* 51 */:
+                    case ks.p0 /* 52 */:
+                    case ks.q0 /* 53 */:
+                    case ks.r0 /* 54 */:
+                    case ks.s0 /* 55 */:
+                    case ks.t0 /* 56 */:
+                    case ks.u0 /* 57 */:
+                    case ks.v0 /* 58 */:
+                    case ks.w0 /* 59 */:
+                    case ks.x0 /* 60 */:
+                    case ks.y0 /* 61 */:
+                    case ks.z0 /* 62 */:
+                    case ks.A0 /* 63 */:
                     case 64:
                     case 65:
-                    case ls.D0 /* 66 */:
-                    case ls.E0 /* 67 */:
-                    case ls.F0 /* 68 */:
+                    case ks.D0 /* 66 */:
+                    case ks.E0 /* 67 */:
+                    case ks.F0 /* 68 */:
                         long j10 = iArr[i7 + 2] & 1048575;
                         x2 x2Var15 = y2.c;
                         if (x2Var15.k(f1Var, j10) == x2Var15.k(f1Var2, j10)) {
@@ -2575,7 +2575,7 @@ public final class f2 implements o2 {
         Unsafe unsafe = o;
         long j10 = this.a[i16 + 2] & 1048575;
         switch (i15) {
-            case ls.o0 /* 51 */:
+            case ks.o0 /* 51 */:
                 i17 = i7;
                 if (i13 != 1) {
                     return i17;
@@ -2584,7 +2584,7 @@ public final class f2 implements o2 {
                 t6 = i17 + 8;
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.p0 /* 52 */:
+            case ks.p0 /* 52 */:
                 i18 = i7;
                 if (i13 != 5) {
                     return i18;
@@ -2593,8 +2593,8 @@ public final class f2 implements o2 {
                 t6 = i18 + 4;
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.q0 /* 53 */:
-            case ls.r0 /* 54 */:
+            case ks.q0 /* 53 */:
+            case ks.r0 /* 54 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2602,8 +2602,8 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, Long.valueOf(lVar.b));
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.s0 /* 55 */:
-            case ls.z0 /* 62 */:
+            case ks.s0 /* 55 */:
+            case ks.z0 /* 62 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2611,7 +2611,7 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, Integer.valueOf(lVar.a));
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.t0 /* 56 */:
+            case ks.t0 /* 56 */:
             case 65:
                 i17 = i7;
                 if (i13 != 1) {
@@ -2621,7 +2621,7 @@ public final class f2 implements o2 {
                 t6 = i17 + 8;
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.u0 /* 57 */:
+            case ks.u0 /* 57 */:
             case 64:
                 i18 = i7;
                 if (i13 != 5) {
@@ -2631,7 +2631,7 @@ public final class f2 implements o2 {
                 t6 = i18 + 4;
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.v0 /* 58 */:
+            case ks.v0 /* 58 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2639,7 +2639,7 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, Boolean.valueOf(lVar.b != 0));
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.w0 /* 59 */:
+            case ks.w0 /* 59 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -2658,7 +2658,7 @@ public final class f2 implements o2 {
                 }
                 unsafe.putInt(obj, j10, i12);
                 return j11;
-            case ls.x0 /* 60 */:
+            case ks.x0 /* 60 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -2671,7 +2671,7 @@ public final class f2 implements o2 {
                 }
                 unsafe.putInt(obj, j10, i12);
                 return g10;
-            case ls.y0 /* 61 */:
+            case ks.y0 /* 61 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -2679,7 +2679,7 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, lVar.c);
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.A0 /* 63 */:
+            case ks.A0 /* 63 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2694,7 +2694,7 @@ public final class f2 implements o2 {
                 t6 = j12;
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.D0 /* 66 */:
+            case ks.D0 /* 66 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2702,7 +2702,7 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, Integer.valueOf(e1.y(lVar.a)));
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.E0 /* 67 */:
+            case ks.E0 /* 67 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -2711,7 +2711,7 @@ public final class f2 implements o2 {
                 unsafe.putObject(obj, j3, Long.valueOf((-(j13 & 1)) ^ (j13 >>> 1)));
                 unsafe.putInt(obj, j10, i12);
                 return t6;
-            case ls.F0 /* 68 */:
+            case ks.F0 /* 68 */:
                 if (i13 == 3) {
                     t6 = e1.f(l(i16), bArr, i7, i10, (i11 & (-8)) | 4, lVar);
                     object = unsafe.getInt(obj, j10) == i12 ? unsafe.getObject(obj, j3) : null;
@@ -2842,7 +2842,7 @@ public final class f2 implements o2 {
                 }
                 throw n1.a();
             case 24:
-            case ls.U /* 31 */:
+            case ks.U /* 31 */:
             case 41:
             case 45:
                 if (i13 == 2) {
@@ -3008,7 +3008,7 @@ public final class f2 implements o2 {
                     return j23;
                 }
                 return i7;
-            case ls.T /* 30 */:
+            case ks.T /* 30 */:
             case 44:
                 if (i13 != 2) {
                     if (i13 == 0) {
@@ -4501,11 +4501,11 @@ public final class f2 implements o2 {
                     i11 = i19;
                     p2.E(iArr[i11], (List) unsafe.getObject(obj, j3), y1Var, false);
                     break;
-                case ls.T /* 30 */:
+                case ks.T /* 30 */:
                     i11 = i19;
                     p2.I(iArr[i11], (List) unsafe.getObject(obj, j3), y1Var, false);
                     continue;
-                case ls.U /* 31 */:
+                case ks.U /* 31 */:
                     i11 = i19;
                     p2.H(iArr[i11], (List) unsafe.getObject(obj, j3), y1Var, false);
                     continue;
@@ -4592,7 +4592,7 @@ public final class f2 implements o2 {
                         throw new NoSuchMethodError();
                     }
                     break;
-                case ls.o0 /* 51 */:
+                case ks.o0 /* 51 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         double doubleValue = ((Double) y2.l(obj, j3)).doubleValue();
@@ -4604,7 +4604,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.p0 /* 52 */:
+                case ks.p0 /* 52 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         float floatValue = ((Float) y2.l(obj, j3)).floatValue();
@@ -4616,7 +4616,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.q0 /* 53 */:
+                case ks.q0 /* 53 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         long B = B(obj, j3);
@@ -4626,7 +4626,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.r0 /* 54 */:
+                case ks.r0 /* 54 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         long B2 = B(obj, j3);
@@ -4636,7 +4636,7 @@ public final class f2 implements o2 {
                     } else {
                         continue;
                     }
-                case ls.s0 /* 55 */:
+                case ks.s0 /* 55 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         int A = A(obj, j3);
@@ -4645,7 +4645,7 @@ public final class f2 implements o2 {
                         r0Var19.C(A);
                     }
                     break;
-                case ls.t0 /* 56 */:
+                case ks.t0 /* 56 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         long B3 = B(obj, j3);
@@ -4655,7 +4655,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.u0 /* 57 */:
+                case ks.u0 /* 57 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         int A2 = A(obj, j3);
@@ -4665,7 +4665,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         boolean booleanValue = ((Boolean) y2.l(obj, j3)).booleanValue();
@@ -4675,28 +4675,28 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         n(i15, unsafe.getObject(obj, j3), y1Var);
                         break;
                     }
                     break;
-                case ls.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         y1Var.b(i15, unsafe.getObject(obj, j3), l(i11));
                         break;
                     }
                     break;
-                case ls.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         y1Var.a(i15, (q0) unsafe.getObject(obj, j3));
                         break;
                     }
                     break;
-                case ls.z0 /* 62 */:
+                case ks.z0 /* 62 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         int A3 = A(obj, j3);
@@ -4706,7 +4706,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.A0 /* 63 */:
+                case ks.A0 /* 63 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         int A4 = A(obj, j3);
@@ -4735,7 +4735,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.D0 /* 66 */:
+                case ks.D0 /* 66 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         int A6 = A(obj, j3);
@@ -4745,7 +4745,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.E0 /* 67 */:
+                case ks.E0 /* 67 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         long B5 = B(obj, j3);
@@ -4755,7 +4755,7 @@ public final class f2 implements o2 {
                         break;
                     }
                     break;
-                case ls.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     i11 = i19;
                     if (q(i15, i11, obj)) {
                         y1Var.c(i15, unsafe.getObject(obj, j3), l(i11));
@@ -5068,7 +5068,7 @@ public final class f2 implements o2 {
                         }
                         N = 0;
                         i17 += N;
-                    case ls.T /* 30 */:
+                    case ks.T /* 30 */:
                         List list6 = (List) y2.l(obj, j3);
                         Class cls6 = p2.a;
                         int size5 = list6.size();
@@ -5079,7 +5079,7 @@ public final class f2 implements o2 {
                         }
                         N = 0;
                         i17 += N;
-                    case ls.U /* 31 */:
+                    case ks.U /* 31 */:
                         N = p2.z(i20, (List) y2.l(obj, j3));
                         i17 += N;
                         break;
@@ -5244,21 +5244,21 @@ public final class f2 implements o2 {
                         b2Var.getClass();
                         b2.b(l13, t10);
                         break;
-                    case ls.o0 /* 51 */:
+                    case ks.o0 /* 51 */:
                         if (q(i20, i16, obj)) {
                             i17 = a8.p0.D(i20 << 3, 8, i17);
                             break;
                         } else {
                             break;
                         }
-                    case ls.p0 /* 52 */:
+                    case ks.p0 /* 52 */:
                         if (q(i20, i16, obj)) {
                             i17 = a8.p0.D(i20 << 3, 4, i17);
                             break;
                         } else {
                             break;
                         }
-                    case ls.q0 /* 53 */:
+                    case ks.q0 /* 53 */:
                         if (q(i20, i16, obj)) {
                             long B = B(obj, j3);
                             T3 = r0.T(i20 << 3);
@@ -5268,7 +5268,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.r0 /* 54 */:
+                    case ks.r0 /* 54 */:
                         if (q(i20, i16, obj)) {
                             N = r0.N(i20, B(obj, j3));
                             i17 += N;
@@ -5276,7 +5276,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.s0 /* 55 */:
+                    case ks.s0 /* 55 */:
                         if (q(i20, i16, obj)) {
                             int A4 = A(obj, j3);
                             T3 = r0.T(i20 << 3);
@@ -5286,7 +5286,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.t0 /* 56 */:
+                    case ks.t0 /* 56 */:
                         if (q(i20, i16, obj)) {
                             N = r0.R(i20);
                             i17 += N;
@@ -5294,7 +5294,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.u0 /* 57 */:
+                    case ks.u0 /* 57 */:
                         if (q(i20, i16, obj)) {
                             N = r0.V(i20);
                             i17 += N;
@@ -5302,14 +5302,14 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.v0 /* 58 */:
+                    case ks.v0 /* 58 */:
                         if (q(i20, i16, obj)) {
                             i17 = a8.p0.D(i20 << 3, 1, i17);
                             break;
                         } else {
                             break;
                         }
-                    case ls.w0 /* 59 */:
+                    case ks.w0 /* 59 */:
                         if (q(i20, i16, obj)) {
                             Object l14 = y2.l(obj, j3);
                             if (l14 instanceof q0) {
@@ -5325,7 +5325,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.x0 /* 60 */:
+                    case ks.x0 /* 60 */:
                         if (q(i20, i16, obj)) {
                             N = p2.a(i20, y2.l(obj, j3), l(i16));
                             i17 += N;
@@ -5333,7 +5333,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.y0 /* 61 */:
+                    case ks.y0 /* 61 */:
                         if (q(i20, i16, obj)) {
                             N = r0.J(i20, (q0) y2.l(obj, j3));
                             i17 += N;
@@ -5341,7 +5341,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.z0 /* 62 */:
+                    case ks.z0 /* 62 */:
                         if (q(i20, i16, obj)) {
                             N = r0.S(i20, A(obj, j3));
                             i17 += N;
@@ -5349,7 +5349,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.A0 /* 63 */:
+                    case ks.A0 /* 63 */:
                         if (q(i20, i16, obj)) {
                             int A5 = A(obj, j3);
                             T3 = r0.T(i20 << 3);
@@ -5373,7 +5373,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.D0 /* 66 */:
+                    case ks.D0 /* 66 */:
                         if (q(i20, i16, obj)) {
                             N = r0.U(i20, A(obj, j3));
                             i17 += N;
@@ -5381,7 +5381,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.E0 /* 67 */:
+                    case ks.E0 /* 67 */:
                         if (q(i20, i16, obj)) {
                             N = r0.Q(i20, B(obj, j3));
                             i17 += N;
@@ -5389,7 +5389,7 @@ public final class f2 implements o2 {
                         } else {
                             break;
                         }
-                    case ls.F0 /* 68 */:
+                    case ks.F0 /* 68 */:
                         if (q(i20, i16, obj)) {
                             N = r0.I(i20, (l0) y2.l(obj, j3), l(i16));
                             i17 += N;
@@ -5738,7 +5738,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     i10 = 1;
                     c11 = '\b';
-                case ls.T /* 30 */:
+                case ks.T /* 30 */:
                     List list16 = (List) unsafe2.getObject(obj, j10);
                     Class cls16 = p2.a;
                     int size14 = list16.size();
@@ -5755,7 +5755,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     i10 = 1;
                     c11 = '\b';
-                case ls.U /* 31 */:
+                case ks.U /* 31 */:
                     J = p2.z(i28, (List) unsafe2.getObject(obj, j10));
                     i26 += J;
                     c10 = 4;
@@ -5958,7 +5958,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.o0 /* 51 */:
+                case ks.o0 /* 51 */:
                     if (q(i28, i25, obj)) {
                         c12 = '\b';
                         i26 = a8.p0.D(i28 << 3, 8, i26);
@@ -5971,7 +5971,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.p0 /* 52 */:
+                case ks.p0 /* 52 */:
                     if (q(i28, i25, obj)) {
                         c10 = 4;
                         i26 = a8.p0.D(i28 << 3, 4, i26);
@@ -5982,7 +5982,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     i10 = 1;
                     c11 = '\b';
-                case ls.q0 /* 53 */:
+                case ks.q0 /* 53 */:
                     if (q(i28, i25, obj)) {
                         J = r0.O(B(obj, j10)) + r0.T(i28 << 3);
                         i26 += J;
@@ -5991,7 +5991,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.r0 /* 54 */:
+                case ks.r0 /* 54 */:
                     if (q(i28, i25, obj)) {
                         J = r0.N(i28, B(obj, j10));
                         i26 += J;
@@ -6000,7 +6000,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.s0 /* 55 */:
+                case ks.s0 /* 55 */:
                     if (q(i28, i25, obj)) {
                         int A9 = A(obj, j10);
                         T = r0.T(i28 << 3);
@@ -6012,7 +6012,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.t0 /* 56 */:
+                case ks.t0 /* 56 */:
                     if (q(i28, i25, obj)) {
                         J = r0.R(i28);
                         i26 += J;
@@ -6021,7 +6021,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.u0 /* 57 */:
+                case ks.u0 /* 57 */:
                     if (q(i28, i25, obj)) {
                         J = r0.V(i28);
                         i26 += J;
@@ -6030,7 +6030,7 @@ public final class f2 implements o2 {
                     i10 = 1;
                     c11 = '\b';
                     break;
-                case ls.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     if (q(i28, i25, obj)) {
                         i26 = a8.p0.D(i28 << 3, i30, i26);
                         i10 = i30;
@@ -6041,7 +6041,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     i10 = 1;
                     c11 = '\b';
-                case ls.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     if (q(i28, i25, obj)) {
                         Object object3 = unsafe2.getObject(obj, j10);
                         if (object3 instanceof q0) {
@@ -6058,7 +6058,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     if (q(i28, i25, obj)) {
                         J2 = p2.a(i28, unsafe2.getObject(obj, j10), l(i25));
                         i26 += J2;
@@ -6067,7 +6067,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     if (q(i28, i25, obj)) {
                         J2 = r0.J(i28, (q0) unsafe2.getObject(obj, j10));
                         i26 += J2;
@@ -6076,7 +6076,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.z0 /* 62 */:
+                case ks.z0 /* 62 */:
                     if (q(i28, i25, obj)) {
                         J2 = r0.S(i28, A(obj, j10));
                         i26 += J2;
@@ -6085,7 +6085,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.A0 /* 63 */:
+                case ks.A0 /* 63 */:
                     if (q(i28, i25, obj)) {
                         int A10 = A(obj, j10);
                         T2 = r0.T(i28 << 3);
@@ -6120,7 +6120,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.D0 /* 66 */:
+                case ks.D0 /* 66 */:
                     if (q(i28, i25, obj)) {
                         J2 = r0.U(i28, A(obj, j10));
                         i26 += J2;
@@ -6129,7 +6129,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.E0 /* 67 */:
+                case ks.E0 /* 67 */:
                     if (q(i28, i25, obj)) {
                         J2 = r0.Q(i28, B(obj, j10));
                         i26 += J2;
@@ -6138,7 +6138,7 @@ public final class f2 implements o2 {
                     c10 = 4;
                     c11 = '\b';
                     break;
-                case ls.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     if (q(i28, i25, obj)) {
                         J2 = r0.I(i28, (l0) unsafe2.getObject(obj, j10), l(i25));
                         i26 += J2;

@@ -1,79 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.l0, sj0 {
+public final /* synthetic */ class y6 implements org.telegram.messenger.p10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f8 b;
+    public final /* synthetic */ e8 b;
 
-    public /* synthetic */ y6(f8 f8Var, int i7) {
+    public /* synthetic */ y6(e8 e8Var, int i7) {
         this.a = i7;
-        this.b = f8Var;
+        this.b = e8Var;
     }
 
-    @Override // org.telegram.ui.Components.sj0
-    public boolean c(int i7, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.w;
-        f8 f8Var = this.b;
-        if (!z10) {
-            f8Var.getClass();
-            return false;
-        }
-        if (f8Var.P0()) {
-            return false;
-        }
-        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
-        f8Var.Y0(wVar, wVar.getMessageObject());
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
+    @Override // org.telegram.messenger.p10
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                f8 f8Var = this.b;
-                f8Var.getClass();
-                if (i7 >= 0) {
-                    float[] fArr = f8.U2;
-                    if (i7 < 6) {
-                        MediaController.B().m0(true, fArr[i7]);
-                        f8Var.b1(true);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                f8 f8Var2 = this.b;
-                if (i7 == 1 || i7 == 2) {
-                    boolean z10 = org.telegram.messenger.cz.O0;
-                    if ((z10 && i7 == 1) || (org.telegram.messenger.cz.N0 && i7 == 2)) {
-                        MediaController.B().l0(0);
-                    } else {
-                        MediaController.B().l0(i7);
-                    }
-                    f8Var2.u1.f();
-                    if (z10 != org.telegram.messenger.cz.O0) {
-                        f8Var2.s1.C0();
-                        f8Var2.T0(false);
-                    }
-                } else if (i7 == 4) {
-                    if (org.telegram.messenger.cz.S0 == 1) {
-                        org.telegram.messenger.cz.E(0);
-                    } else {
-                        org.telegram.messenger.cz.E(1);
-                    }
-                } else if (org.telegram.messenger.cz.S0 == 2) {
-                    org.telegram.messenger.cz.E(0);
-                } else {
-                    org.telegram.messenger.cz.E(2);
-                }
-                f8Var2.d1();
+                boolean z10 = !((Boolean) obj2).booleanValue();
+                e8 e8Var = this.b;
+                e8Var.S1 = z10;
+                MediaController B = MediaController.B();
+                org.telegram.ui.ActionBar.u0 u0Var = e8Var.R1;
+                float floatValue = ((Float) obj).floatValue();
+                u0Var.getClass();
+                B.m0(true, (floatValue * 2.8f) + 0.2f);
                 break;
             default:
-                this.b.Q0(i7);
+                this.b.c2.setBackground(new BitmapDrawable((Bitmap) obj));
                 break;
         }
     }

@@ -1,68 +1,56 @@
 package org.telegram.ui.Components;
 
+import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yd implements org.telegram.messenger.y10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ String g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
-    public final /* synthetic */ Object j;
+public final /* synthetic */ class yd implements z4, org.telegram.messenger.nc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.messenger.fs c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ yd(ig igVar, Object obj, org.telegram.messenger.ff ffVar, boolean z10, int i7, int i10, boolean z11, String str, Object obj2) {
-        this.h = igVar;
-        this.b = obj;
-        this.i = ffVar;
-        this.c = z10;
-        this.d = i7;
-        this.e = i10;
-        this.f = z11;
-        this.g = str;
-        this.j = obj2;
+    public /* synthetic */ yd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10) {
+        this.c = chatActivityEnterView;
+        this.d = document;
+        this.a = str;
+        this.e = obj;
+        this.f = bjVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        Object obj2 = this.i;
-        Object obj3 = this.h;
-        switch (i7) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                int i10 = ChatActivityEnterView.s7;
-                jd jdVar = new jd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (org.telegram.messenger.cj) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.V1(jdVar)) {
-                    jdVar.run();
-                    break;
-                }
-                break;
-            default:
-                ig igVar = (ig) obj3;
-                jd jdVar2 = new jd(igVar, this.b, (org.telegram.messenger.ff) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!igVar.a.V1(jdVar2)) {
-                    jdVar2.run();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.z4
+    public void I(int i7, int i10, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+        TLRPC.Document document = (TLRPC.Document) this.d;
+        org.telegram.messenger.bj bjVar = (org.telegram.messenger.bj) this.f;
+        int i11 = ChatActivityEnterView.s7;
+        chatActivityEnterView.d(document, this.a, this.e, bjVar, this.b, z10, i7, i10);
     }
 
-    public /* synthetic */ yd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, org.telegram.messenger.cj cjVar, boolean z10, int i7, int i10, Object obj, boolean z11) {
-        this.h = chatActivityEnterView;
-        this.i = document;
-        this.g = str;
-        this.j = cjVar;
-        this.c = z10;
-        this.d = i7;
-        this.e = i10;
-        this.b = obj;
-        this.f = z11;
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        String[] strArr = (String[]) this.d;
+        boolean[] zArr = (boolean[]) this.e;
+        bi.i5 i5Var = (bi.i5) this.f;
+        RectF rectF = ProfileActivity.Z6;
+        strArr[0] = str;
+        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.ry0.d0().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || org.telegram.messenger.v3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        i5Var.run();
+    }
+
+    public /* synthetic */ yd(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, bi.i5 i5Var) {
+        this.c = profileActivity;
+        this.d = strArr;
+        this.e = zArr;
+        this.a = str;
+        this.b = z10;
+        this.f = i5Var;
     }
 }

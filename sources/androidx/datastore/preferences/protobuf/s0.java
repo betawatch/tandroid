@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-import a8.r6;
+import a8.s6;
 import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final char[] a;
@@ -68,13 +68,13 @@ public abstract class s0 {
         if (obj instanceof String) {
             sb2.append(": \"");
             h hVar = h.c;
-            sb2.append(r6.a(new h(((String) obj).getBytes(c0.a))));
+            sb2.append(s6.a(new h(((String) obj).getBytes(c0.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof h) {
             sb2.append(": \"");
-            sb2.append(r6.a((h) obj));
+            sb2.append(s6.a((h) obj));
             sb2.append('\"');
             return;
         }

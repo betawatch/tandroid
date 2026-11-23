@@ -1,73 +1,78 @@
 package ai;
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import org.telegram.ui.Dictation.DictationLid;
+import android.graphics.LinearGradient;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class a2 implements Runnable {
+public final class a2 extends CharacterStyle implements UpdateAppearance {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
+    public final Object b;
 
-    public /* synthetic */ a2(f2 f2Var, int i7) {
+    public /* synthetic */ a2(Object obj, int i7) {
         this.a = i7;
-        this.b = f2Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        z zVar;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        float z10;
+        float z11;
         switch (this.a) {
             case 0:
-                f2 f2Var = this.b;
-                if (!f2Var.j && !f2Var.i) {
-                    f2Var.f.postDelayed(this, 700L);
-                    if (!f2Var.E && DictationLid.f()) {
-                        int c10 = f2Var.u.c();
-                        if (c10 - f2Var.H >= 16000) {
-                            f2Var.H = c10;
-                            f2Var.E = true;
-                            byte[] b10 = f2Var.u.b(0, c10);
-                            DictationLid.a.execute(new a1.e(16, b10, new y1(0, this, b10)));
-                            break;
-                        }
-                    }
+                b2 b2Var = (b2) this.b;
+                LinearGradient linearGradient = b2Var.k;
+                if (linearGradient != null && b2Var.m > 0.0f) {
+                    textPaint.setShader(linearGradient);
+                    textPaint.setColor(-1);
+                    break;
                 }
                 break;
             case 1:
-                f2 f2Var2 = this.b;
-                if (!f2Var2.j) {
-                    f2Var2.f.postDelayed(this, 700L);
-                    if (!f2Var2.W && !f2Var2.i && (zVar = f2Var2.u) != null) {
-                        int i7 = f2Var2.Y;
-                        int c11 = zVar.c();
-                        if (c11 - f2Var2.Z >= 16000) {
-                            f2Var2.Z = c11;
-                            f2Var2.W = true;
-                            int max = Math.max(f2Var2.X, c11 - 960000);
-                            if (!DictationLid.f() || !DictationLid.e(f2Var2.q) || f2Var2.s >= 3) {
-                                DictationLid.a.execute(new a1.e(16, f2Var2.u.b(max, c11), new b2(this, i7, 0)));
-                                break;
-                            } else {
-                                DictationLid.j(2000, new v1(this, i7, 1), TextUtils.join(",", f2Var2.q), f2Var2.u.b(max, c11));
-                                break;
-                            }
-                        }
-                    }
+                long j3 = ji.e.y3;
+                ji.c cVar = (ji.c) this.b;
+                float f10 = (j3 - cVar.c) / 360.0f;
+                if (f10 <= 0.0f) {
+                    z10 = cVar.d;
+                } else if (f10 >= 1.0f) {
+                    z10 = 1.0f;
+                } else {
+                    float f11 = cVar.d;
+                    z10 = com.google.android.gms.internal.vision.e2.z(1.0f, (float) Math.pow(1.0f - f10, 3.0d), 1.0f - f11, f11);
+                }
+                float max = Math.max(0.0f, Math.min(1.0f, (((ji.e.y3 - cVar.c) / 1500.0f) - 0.2f) / 0.8f));
+                float C = com.google.android.gms.internal.vision.e2.C(max, 2.0f, 3.0f, max * max);
+                int alpha = textPaint.getAlpha();
+                textPaint.setColor(i0.a.f(C, ji.e.z3, ji.e.A3));
+                textPaint.setAlpha((int) (alpha * z10));
+                float f12 = ji.e.B3;
+                if (f12 > 0.0f && C < 1.0f) {
+                    textPaint.setShadowLayer(f12, 0.0f, 0.0f, n6.r1((1.0f - C) * 0.55f * z10, ji.e.z3));
+                    break;
                 }
                 break;
             default:
-                f2 f2Var3 = this.b;
-                if (!f2Var3.j) {
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    double d = elapsedRealtime - f2Var3.h0;
-                    float sin = (((float) Math.sin(d / 90.0d)) * 0.03f) + 0.04f;
-                    if (elapsedRealtime < f2Var3.f0) {
-                        sin = (((float) Math.random()) * 0.12f) + (((float) Math.sin(d / 61.0d)) * 0.28f * ((float) Math.sin((d / 173.0d) + 1.3d))) + 0.45f;
-                    }
-                    f2Var3.d.h(Math.max(0.0f, Math.min(1.0f, sin)));
-                    f2Var3.f.postDelayed(this, 50L);
+                long j10 = ji.q.b2;
+                ji.p pVar = (ji.p) this.b;
+                float f13 = (j10 - pVar.c) / 360.0f;
+                if (f13 <= 0.0f) {
+                    z11 = pVar.d;
+                } else if (f13 >= 1.0f) {
+                    z11 = 1.0f;
+                } else {
+                    float f14 = pVar.d;
+                    z11 = com.google.android.gms.internal.vision.e2.z(1.0f, (float) Math.pow(1.0f - f13, 3.0d), 1.0f - f14, f14);
+                }
+                float b10 = ji.q.b((((ji.q.b2 - pVar.c) / 1900.0f) - 0.2f) / 0.8f);
+                float C2 = com.google.android.gms.internal.vision.e2.C(b10, 2.0f, 3.0f, b10 * b10);
+                int alpha2 = textPaint.getAlpha();
+                textPaint.setColor(i0.a.f(C2, ji.q.X1, ji.q.Y1));
+                textPaint.setAlpha((int) (alpha2 * z11));
+                if (C2 < 1.0f) {
+                    textPaint.setShadowLayer(ji.q.Z1, 0.0f, 0.0f, n6.r1((1.0f - C2) * 0.55f * z11, ji.q.X1));
                     break;
                 }
                 break;

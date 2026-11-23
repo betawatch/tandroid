@@ -2,7 +2,7 @@ package u5;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a {
     public final x5.a a;
@@ -14,10 +14,10 @@ public final class a {
     }
 
     public final long a(l5.d dVar, long j3, int i7) {
-        long r10 = j3 - this.a.r();
+        long o4 = j3 - this.a.o();
         b bVar = (b) this.b.get(dVar);
         long j10 = bVar.a;
-        return Math.min(Math.max((long) (Math.pow(3.0d, i7 - 1) * j10 * Math.max(1.0d, Math.log(10000.0d) / Math.log((j10 > 1 ? j10 : 2L) * r12))), r10), bVar.b);
+        return Math.min(Math.max((long) (Math.pow(3.0d, i7 - 1) * j10 * Math.max(1.0d, Math.log(10000.0d) / Math.log((j10 > 1 ? j10 : 2L) * r12))), o4), bVar.b);
     }
 
     public final boolean equals(Object obj) {

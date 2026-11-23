@@ -1,250 +1,236 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.content.SharedPreferences;
+import android.util.Base64;
+import android.util.SparseIntArray;
+import android.view.View;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class h10 {
-    public final int a;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public boolean g;
-    public final ArrayList b = new ArrayList();
-    public final b10 f = new b10(this, 0);
+public final /* synthetic */ class h10 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public h10(int i7) {
+    public /* synthetic */ h10(int i7, Object obj, boolean z10) {
         this.a = i7;
-        if (this.c || this.d) {
-            return;
-        }
-        this.d = true;
-        ur.a0(i7).a.c(new b10(this, 1));
+        this.c = obj;
+        this.b = z10;
     }
 
-    public final void a() {
-        this.b.clear();
-        d();
-        ls.f(this.a).k(ls.f3, new Object[0]);
-        e();
-    }
-
-    public final void b(TL_update.TL_updateNewAuthorization tL_updateNewAuthorization) {
-        ArrayList arrayList;
-        int i7 = 0;
-        while (true) {
-            arrayList = this.b;
-            if (i7 >= arrayList.size()) {
-                break;
-            }
-            g10 g10Var = (g10) arrayList.get(i7);
-            if (g10Var != null && !g10Var.a && g10Var.b == tL_updateNewAuthorization.hash) {
-                arrayList.remove(i7);
-                i7--;
-            }
-            i7++;
-        }
-        if (tL_updateNewAuthorization.unconfirmed) {
-            arrayList.add(new g10(this, tL_updateNewAuthorization));
-        }
-        ls.f(this.a).k(ls.f3, new Object[0]);
-        e();
-        d();
-    }
-
-    public final void c(TL_update.TL_updateNewBotConnection tL_updateNewBotConnection) {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i7 >= arrayList.size()) {
-                arrayList.add(new g10(this, tL_updateNewBotConnection));
-                ls.f(this.a).k(ls.f3, new Object[0]);
-                e();
-                d();
-                return;
-            }
-            g10 g10Var = (g10) arrayList.get(i7);
-            if (g10Var != null && g10Var.a && g10Var.c == tL_updateNewBotConnection.bot_id) {
-                arrayList.remove(i7);
-                i7--;
-            }
-            i7++;
-        }
-    }
-
-    public final void d() {
-        if (this.g) {
-            return;
-        }
-        if (this.d) {
-            this.e = true;
-        } else {
-            this.g = true;
-            ur.a0(this.a).a.c(new b10(this, 2));
-        }
-    }
-
-    public final void e() {
-        b10 b10Var = this.f;
-        g0.r(b10Var);
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int size = arrayList.size();
-        int i7 = 0;
-        long j3 = Long.MAX_VALUE;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            h10 h10Var = ((g10) obj).i;
-            j3 = Math.min(j3, (ConnectionsManager.getInstance(h10Var.a).getCurrentTime() + np.u1(h10Var.a).q4) - r8.d);
-        }
-        if (j3 == Long.MAX_VALUE) {
-            return;
-        }
-        g0.h3(b10Var, Math.max(0L, j3 * 1000));
-    }
-
-    public final void f(final boolean z10, ArrayList arrayList, y10 y10Var) {
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        final boolean[] zArr = new boolean[arrayList2.size()];
-        y10[] y10VarArr = new y10[arrayList2.size()];
-        for (final int i7 = 0; i7 < arrayList2.size(); i7++) {
-            final g10 g10Var = (g10) arrayList2.get(i7);
-            y10VarArr[i7] = new y10() { // from class: org.telegram.messenger.c10
-                @Override // org.telegram.messenger.y10
-                public final void a(Object obj) {
-                    final d10 d10Var = new d10(i7, (Runnable) obj, zArr);
-                    boolean z11 = z10;
-                    final g10 g10Var2 = g10Var;
-                    if (z11) {
-                        h10 h10Var = g10Var2.i;
-                        if (g10Var2.a) {
-                            TL_account.confirmBotConnection confirmbotconnection = new TL_account.confirmBotConnection();
-                            confirmbotconnection.bot_id = np.u1(h10Var.a).q1(g10Var2.c);
-                            ConnectionsManager.getInstance(h10Var.a).sendRequestTyped(confirmbotconnection, new z3(7, g10Var2, d10Var));
-                            return;
-                        } else {
-                            TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
-                            changeauthorizationsettings.hash = g10Var2.b;
-                            changeauthorizationsettings.confirmed = true;
-                            final int i10 = 2;
-                            ConnectionsManager.getInstance(h10Var.a).sendRequest(changeauthorizationsettings, new RequestDelegate() { // from class: org.telegram.messenger.e10
-                                @Override // org.telegram.tgnet.RequestDelegate
-                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    switch (i10) {
-                                        case 0:
-                                            g10 g10Var3 = g10Var2;
-                                            g10Var3.getClass();
-                                            g0.g3(new f10(g10Var3, tLObject, d10Var, tL_error));
-                                            break;
-                                        case 1:
-                                            g10 g10Var4 = g10Var2;
-                                            g10Var4.getClass();
-                                            g0.g3(new f10(g10Var4, d10Var, tLObject, tL_error, 2));
-                                            break;
-                                        default:
-                                            g10 g10Var5 = g10Var2;
-                                            g10Var5.getClass();
-                                            g0.g3(new f10(g10Var5, d10Var, tLObject, tL_error, 0));
-                                            break;
-                                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                i10 i10Var = (i10) this.c;
+                boolean z10 = this.b;
+                if (i10Var.b) {
+                    synchronized (i10Var.a) {
+                        try {
+                            try {
+                                SharedPreferences.Editor edit = i10Var.k().edit();
+                                if (i10Var.currentAccount == 0) {
+                                    edit.putInt("selectedAccount", i10.t0);
                                 }
-                            });
-                            return;
+                                edit.putBoolean("registeredForPush", i10Var.d);
+                                edit.putInt("lastSendMessageId", i10Var.e);
+                                edit.putInt("contactsSavedCount", i10Var.h);
+                                edit.putInt("lastBroadcastId", i10Var.f);
+                                edit.putInt("lastContactsSyncTime", i10Var.r);
+                                edit.putInt("lastHintsSyncTime", i10Var.s);
+                                edit.putBoolean("draftsLoaded", i10Var.w);
+                                edit.putBoolean("unreadDialogsLoaded", i10Var.x);
+                                edit.putInt("ratingLoadTime", i10Var.E);
+                                edit.putInt("botRatingLoadTime", i10Var.F);
+                                edit.putInt("botGuestRatingLoadTime", i10Var.G);
+                                edit.putInt("webappRatingLoadTime", i10Var.H);
+                                edit.putBoolean("contactsReimported", i10Var.I);
+                                edit.putInt("loginTime", i10Var.Z);
+                                edit.putBoolean("syncContacts", i10Var.V);
+                                edit.putBoolean("showCallsTab", i10Var.X);
+                                edit.putBoolean("suggestContacts", i10Var.W);
+                                edit.putBoolean("hasSecureData", i10Var.Y);
+                                edit.putBoolean("notificationsSettingsLoaded4", i10Var.T);
+                                edit.putBoolean("notificationsSignUpSettingsLoaded", i10Var.U);
+                                edit.putLong("autoDownloadConfigLoadTime", i10Var.b0);
+                                edit.putBoolean("hasValidDialogLoadIds", i10Var.J);
+                                edit.putInt("sharingMyLocationUntil", i10Var.R);
+                                edit.putInt("lastMyLocationShareTime", i10Var.S);
+                                edit.putBoolean("filtersLoaded", i10Var.Q);
+                                edit.putString("premiumGiftsStickerPack", i10Var.c0);
+                                edit.putLong("lastUpdatedPremiumGiftsStickerPack", i10Var.g0);
+                                edit.putString("genericAnimationsStickerPack", i10Var.e0);
+                                edit.putLong("lastUpdatedGenericAnimations", i10Var.i0);
+                                edit.putInt("6migrateOffsetId", i10Var.K);
+                                if (i10Var.K != -1) {
+                                    edit.putInt("6migrateOffsetDate", i10Var.L);
+                                    edit.putLong("6migrateOffsetUserId", i10Var.M);
+                                    edit.putLong("6migrateOffsetChatId", i10Var.N);
+                                    edit.putLong("6migrateOffsetChannelId", i10Var.O);
+                                    edit.putLong("6migrateOffsetAccess", i10Var.P);
+                                }
+                                TLRPC.TL_help_termsOfService tL_help_termsOfService = i10Var.a0;
+                                if (tL_help_termsOfService != null) {
+                                    try {
+                                        SerializedData serializedData = new SerializedData(tL_help_termsOfService.getObjectSize());
+                                        i10Var.a0.serializeToStream(serializedData);
+                                        edit.putString("terms", Base64.encodeToString(serializedData.toByteArray(), 0));
+                                        serializedData.cleanup();
+                                    } catch (Exception unused) {
+                                    }
+                                } else {
+                                    edit.remove("terms");
+                                }
+                                bz.y();
+                                if (i10Var.y != null) {
+                                    SerializedData serializedData2 = new SerializedData();
+                                    i10Var.y.serializeToStream(serializedData2);
+                                    edit.putString("tmpPassword", Base64.encodeToString(serializedData2.toByteArray(), 0));
+                                    serializedData2.cleanup();
+                                } else {
+                                    edit.remove("tmpPassword");
+                                }
+                                if (i10Var.c == null) {
+                                    edit.remove("user");
+                                } else if (z10) {
+                                    SerializedData serializedData3 = new SerializedData();
+                                    i10Var.c.serializeToStream(serializedData3);
+                                    edit.putString("user", Base64.encodeToString(serializedData3.toByteArray(), 0));
+                                    serializedData3.cleanup();
+                                }
+                                edit.apply();
+                            } catch (Throwable th2) {
+                                throw th2;
+                            }
+                        } catch (Exception e10) {
+                            a8.g(e10, true);
                         }
                     }
-                    h10 h10Var2 = g10Var2.i;
-                    if (!g10Var2.a) {
-                        TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-                        resetauthorization.hash = g10Var2.b;
-                        final int i11 = 1;
-                        ConnectionsManager.getInstance(h10Var2.a).sendRequest(resetauthorization, new RequestDelegate() { // from class: org.telegram.messenger.e10
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                switch (i11) {
-                                    case 0:
-                                        g10 g10Var3 = g10Var2;
-                                        g10Var3.getClass();
-                                        g0.g3(new f10(g10Var3, tLObject, d10Var, tL_error));
-                                        break;
-                                    case 1:
-                                        g10 g10Var4 = g10Var2;
-                                        g10Var4.getClass();
-                                        g0.g3(new f10(g10Var4, d10Var, tLObject, tL_error, 2));
-                                        break;
-                                    default:
-                                        g10 g10Var5 = g10Var2;
-                                        g10Var5.getClass();
-                                        g0.g3(new f10(g10Var5, d10Var, tLObject, tL_error, 0));
-                                        break;
-                                }
-                            }
-                        });
+                    return;
+                }
+                return;
+            case 1:
+                w7 w7Var = (w7) this.c;
+                boolean z11 = this.b;
+                Iterator it = w7Var.h.entrySet().iterator();
+                while (it.hasNext()) {
+                    x8 x8Var = (x8) ((Map.Entry) it.next()).getValue();
+                    if (x8Var.m == 1) {
+                        Utilities.d.c(new h10(2, x8Var, z11));
+                        g0.g3(new t8(x8Var, 2));
+                    }
+                }
+                Iterator it2 = w7Var.n.entrySet().iterator();
+                while (it2.hasNext()) {
+                    x8 x8Var2 = (x8) ((Map.Entry) it2.next()).getValue();
+                    if (x8Var2.m == 1) {
+                        Utilities.d.c(new h10(2, x8Var2, z11));
+                        g0.g3(new t8(x8Var2, 2));
+                    }
+                }
+                return;
+            case 2:
+                x8 x8Var3 = (x8) this.c;
+                boolean z12 = this.b;
+                SparseIntArray sparseIntArray = x8Var3.p;
+                if (x8Var3.i == z12) {
+                    return;
+                }
+                x8Var3.i = z12;
+                if (s2.a) {
+                    a8.b("network changed to slow = " + x8Var3.i);
+                }
+                int i7 = 0;
+                while (true) {
+                    if (i7 >= sparseIntArray.size()) {
+                        sparseIntArray.clear();
+                        x8Var3.b();
+                        x8Var3.b = false;
+                        x8Var3.c = false;
+                        x8Var3.k = 0;
+                        x8Var3.r = 0;
+                        x8Var3.v = 0L;
+                        x8Var3.w = 0L;
+                        x8Var3.x = 0;
+                        x8Var3.y = null;
+                        x8Var3.z = null;
+                        x8Var3.A = null;
+                        x8Var3.K = 0;
+                        Arrays.fill(x8Var3.g, 0);
+                        x8Var3.N = 0;
+                        x8Var3.P = false;
+                        x8Var3.Q.clear();
+                        x8Var3.d++;
+                        int i10 = x8Var3.i ? 1 : 8;
+                        for (int i11 = 0; i11 < i10; i11++) {
+                            x8Var3.d();
+                        }
                         return;
                     }
-                    TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
-                    updateconnectedbot.deleted = true;
-                    updateconnectedbot.bot = np.u1(h10Var2.a).q1(g10Var2.c);
-                    updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-                    final int i12 = 0;
-                    ConnectionsManager.getInstance(h10Var2.a).sendRequest(updateconnectedbot, new RequestDelegate() { // from class: org.telegram.messenger.e10
-                        @Override // org.telegram.tgnet.RequestDelegate
-                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            switch (i12) {
-                                case 0:
-                                    g10 g10Var3 = g10Var2;
-                                    g10Var3.getClass();
-                                    g0.g3(new f10(g10Var3, tLObject, d10Var, tL_error));
-                                    break;
-                                case 1:
-                                    g10 g10Var4 = g10Var2;
-                                    g10Var4.getClass();
-                                    g0.g3(new f10(g10Var4, d10Var, tLObject, tL_error, 2));
-                                    break;
-                                default:
-                                    g10 g10Var5 = g10Var2;
-                                    g10Var5.getClass();
-                                    g0.g3(new f10(g10Var5, d10Var, tLObject, tL_error, 0));
-                                    break;
-                            }
-                        }
-                    });
+                    ConnectionsManager.getInstance(x8Var3.a).cancelRequest(sparseIntArray.valueAt(i7), true);
+                    i7++;
                 }
-            };
-        }
-        Utilities.B(new jn(this, zArr, arrayList2, y10Var, z10, 6), y10VarArr);
-        if (z10) {
-            HashSet hashSet = new HashSet();
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                hashSet.add(Long.valueOf(((g10) arrayList2.get(i10)).b));
-            }
-            int i11 = 0;
-            while (true) {
-                ArrayList arrayList3 = this.b;
-                if (i11 >= arrayList3.size()) {
-                    break;
+            case 3:
+                qd qdVar = (qd) this.c;
+                boolean z13 = this.b;
+                if (!z13) {
+                    qdVar.L = Boolean.FALSE;
                 }
-                if (hashSet.contains(Long.valueOf(((g10) arrayList3.get(i11)).b))) {
-                    arrayList3.remove(i11);
-                    i11--;
+                if (qdVar.b.isEmpty()) {
+                    return;
                 }
-                i11++;
-            }
-            if (hashSet.isEmpty()) {
+                if (!z13) {
+                    qdVar.p();
+                    return;
+                }
+                try {
+                    ((h6.m) t0.j()).getLastLocation(new kd(qdVar, 0));
+                    ((h6.m) t0.j()).requestLocationUpdates(qdVar.O, qdVar.r);
+                    return;
+                } catch (Throwable th3) {
+                    a8.g(th3, true);
+                    return;
+                }
+            case 4:
+                mp mpVar = (mp) this.c;
+                boolean z14 = this.b;
+                mpVar.R0 = null;
+                mpVar.S0.clear();
+                mpVar.getNotificationCenter().k(ks.O2, new Object[0]);
+                if (z14) {
+                    mpVar.getNotificationCenter().k(3, new Object[0]);
+                    return;
+                }
                 return;
-            }
-            d();
-            ls.f(this.a).k(ls.f3, new Object[0]);
-            e();
+            default:
+                zt ztVar = (zt) this.c;
+                ev evVar = ztVar.a;
+                boolean z15 = !this.b;
+                TLObject tLObject = ztVar.H;
+                if (tLObject instanceof TL_iv.PageListItem) {
+                    ((TL_iv.PageListItem) tLObject).checked = z15;
+                } else if (tLObject instanceof TL_iv.PageListOrderedItem) {
+                    ((TL_iv.PageListOrderedItem) tLObject).checked = z15;
+                }
+                View view = evVar.Q;
+                if (view != null) {
+                    ztVar.r.a = view;
+                }
+                ztVar.r.f(-1, z15, true);
+                View view2 = evVar.Q;
+                if (view2 != null) {
+                    view2.invalidate();
+                    return;
+                }
+                return;
         }
     }
 }

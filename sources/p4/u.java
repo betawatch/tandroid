@@ -1,11 +1,11 @@
 package p4;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public interface u {
-    void a(int i7, g1 g1Var, e2.y0 y0Var, boolean z10, boolean z11);
+    void a(int i7, f1 f1Var, e2.y0 y0Var, boolean z10, boolean z11);
 
-    void b(int i7, n1 n1Var, boolean z10, boolean z11, int i10);
+    void b(int i7, m1 m1Var, boolean z10, boolean z11, int i10);
 
     void c(int i7);
 
@@ -13,11 +13,11 @@ public interface u {
 
     void e(int i7, e2.y0 y0Var);
 
-    void f(int i7, o1 o1Var);
+    void f(int i7, n1 n1Var);
 
     void g();
 
     void i(int i7, o oVar);
 
-    void j(int i7, k1 k1Var);
+    void j(int i7, j1 j1Var);
 }

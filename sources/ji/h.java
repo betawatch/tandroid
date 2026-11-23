@@ -1,64 +1,108 @@
 package ji;
 
-import ai.a3;
+import ai.v;
+import ai.w1;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
-import java.util.Locale;
-import org.telegram.ui.bn;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.vr;
+import org.telegram.messenger.w10;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
+public final /* synthetic */ class h implements w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+    public final /* synthetic */ n b;
 
-    public /* synthetic */ h(o oVar, int i7) {
+    public /* synthetic */ h(n nVar, int i7) {
         this.a = i7;
-        this.b = oVar;
+        this.b = nVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        q qVar;
+        int G0;
+        int i7 = 0;
         switch (this.a) {
             case 0:
-                o oVar = this.b;
-                if (oVar.c == 2) {
-                    if (oVar.y != 0) {
-                        StringBuilder sb2 = new StringBuilder("self-check ok: chunks=");
-                        sb2.append(oVar.y);
-                        sb2.append(" in=");
-                        sb2.append(oVar.w);
-                        sb2.append("B out=");
-                        sb2.append(oVar.x);
-                        sb2.append("B (ratio ");
-                        sb2.append(oVar.x > 0 ? String.format(Locale.US, "%.2f", Double.valueOf(oVar.w / oVar.x)) : "-");
-                        sb2.append(", expect 3.00 at 48 kHz) source=");
-                        int i7 = oVar.F;
-                        p5.c.t(sb2, i7 == 1 ? "MediaController" : i7 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
-                        break;
-                    } else {
-                        Log.w("VoiceLive", "SELF-CHECK FAILED: no PCM from the recorder tap 1.5 s after lock (neither MediaController nor AudioCapture fed it)");
+                n nVar = this.b;
+                String str = (String) obj;
+                if (nVar.c == 3 && (qVar = nVar.h) != null) {
+                    qVar.setBusy(false);
+                    if (str != null && !str.trim().isEmpty()) {
+                        nVar.n = str;
+                        nVar.h.r(str);
                         break;
                     }
                 }
                 break;
-            case 1:
-                o oVar2 = this.b;
-                if (oVar2.c == 2) {
-                    oVar2.t();
-                    break;
-                }
-                break;
-            case 2:
-                o oVar3 = this.b;
-                oVar3.s();
-                bn bnVar = oVar3.b.a.F3;
-                if (bnVar != null) {
-                    bnVar.presentFragment(new a3());
-                    break;
-                }
-                break;
             default:
-                this.b.m("field send preview");
+                n nVar2 = this.b;
+                if (!nVar2.n.trim().isEmpty()) {
+                    qf qfVar = nVar2.b;
+                    String trim = nVar2.n.trim();
+                    if (!trim.isEmpty() && nVar2.h != null) {
+                        g0.r(nVar2.k0);
+                        g0.r(nVar2.j0);
+                        Drawable drawable = null;
+                        if (vr.k == nVar2) {
+                            vr.k = null;
+                        }
+                        w1 w1Var = nVar2.f;
+                        if (w1Var != null) {
+                            w1Var.c();
+                            nVar2.f = null;
+                        }
+                        v vVar = nVar2.d;
+                        if (vVar != null) {
+                            vVar.d();
+                            nVar2.d = null;
+                        }
+                        nVar2.e = null;
+                        nVar2.c = 3;
+                        Log.d("VoiceLive", "review: voice paused, restyling " + trim.length() + " chars");
+                        nVar2.h.setListening(false);
+                        qfVar.e();
+                        if (nVar2.H == null) {
+                            nVar2.H = trim;
+                        }
+                        boolean z10 = obj instanceof ai.c;
+                        nVar2.h.setStyleLabel(z10 ? ((ai.c) obj).a() : null);
+                        q qVar2 = nVar2.h;
+                        ChatActivityEnterView chatActivityEnterView = qfVar.a;
+                        if (z10) {
+                            ai.c cVar = (ai.c) obj;
+                            long j3 = cVar.b;
+                            if (j3 != 0) {
+                                drawable = o5.m(chatActivityEnterView.R, j3, null, 2);
+                            } else if (cVar.d) {
+                                drawable = new v2(chatActivityEnterView.getContext());
+                                if (n6.I.q()) {
+                                    G0 = -1;
+                                } else {
+                                    int i10 = n6.G6;
+                                    int i11 = ChatActivityEnterView.s7;
+                                    G0 = chatActivityEnterView.G0(i10);
+                                }
+                                drawable.setColorFilter(new PorterDuffColorFilter(G0, PorterDuff.Mode.SRC_IN));
+                            }
+                        }
+                        qVar2.setStyleIcon(drawable);
+                        nVar2.h.setReview(true);
+                        nVar2.h.setBusy(true);
+                        qfVar.f(obj, nVar2.H, new h(nVar2, i7));
+                        g0.h3(nVar2.I, 400L);
+                        break;
+                    }
+                }
                 break;
         }
     }

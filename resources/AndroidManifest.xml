@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="73489"
+    android:versionCode="73519"
     android:versionName="13.3.2"
     android:installLocation="auto"
     android:compileSdkVersion="36"
@@ -130,9 +130,6 @@
         <intent>
             <action android:name="android.intent.action.VIEW"/>
             <data android:scheme="ton"/>
-        </intent>
-        <intent>
-            <action android:name="android.speech.RecognitionService"/>
         </intent>
         <package android:name="com.google.android.gms.policy_cast_dynamite"/>
         <intent>

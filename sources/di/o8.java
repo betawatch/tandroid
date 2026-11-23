@@ -1,21 +1,21 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zv0;
+import org.telegram.ui.Components.yv0;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ff0;
-import org.telegram.ui.ow;
-import org.telegram.ui.te0;
+import org.telegram.ui.ef0;
+import org.telegram.ui.nw;
+import org.telegram.ui.se0;
 import org.telegram.ui.xd;
-import org.telegram.ui.yn;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class o8 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new aa.c0((p8) this.c, (int[]) this.d, tLObject, this.b, 1));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new aa.c0((hi.r1) this.c, tLObject, (String) this.d, this.b, 3));
+                org.telegram.messenger.g0.g3(new aa.c0((hi.z1) this.c, tLObject, (String) this.d, this.b, 3));
                 break;
             case 2:
                 jg.z1 z1Var = (jg.z1) this.c;
@@ -49,16 +49,16 @@ public final /* synthetic */ class o8 implements RequestDelegate {
                 if (tL_error == null) {
                     TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject;
                     z1Var.n = str.toLowerCase();
-                    np.u1(i7).f4(tL_channels_channelParticipants.users, false);
-                    np.u1(i7).Z3(tL_channels_channelParticipants.chats, false);
+                    mp.u1(i7).f4(tL_channels_channelParticipants.users, false);
+                    mp.u1(i7).Z3(tL_channels_channelParticipants.chats, false);
                     arrayList.clear();
                     hVar.b();
                     arrayList.addAll(tL_channels_channelParticipants.participants);
-                    long e10 = k10.i(i7).e();
+                    long e10 = i10.i(i7).e();
                     int size = tL_channels_channelParticipants.participants.size();
                     for (int i10 = 0; i10 < size; i10++) {
                         TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        long B1 = gj.B1(channelParticipant.peer);
+                        long B1 = fj.B1(channelParticipant.peer);
                         if (this.b || B1 != e10) {
                             hVar.k(channelParticipant, B1);
                         } else {
@@ -69,19 +69,19 @@ public final /* synthetic */ class o8 implements RequestDelegate {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new ai.i((xd) this.c, tL_error, tLObject, (TwoStepVerificationActivity) this.d, this.b, 6));
+                org.telegram.messenger.g0.g3(new ai.e((xd) this.c, tL_error, tLObject, (TwoStepVerificationActivity) this.d, this.b, 6));
                 break;
             case 4:
-                org.telegram.messenger.g0.g3(new yn((zv0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.t1) this.d));
+                org.telegram.messenger.g0.g3(new xn((yv0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.t1) this.d));
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new ai.i((ow) this.c, tL_error, tLObject, (String) this.d, this.b));
+                org.telegram.messenger.g0.g3(new ai.e((nw) this.c, tL_error, tLObject, (String) this.d, this.b));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new yn(this.c, tLObject, this.d, this.b, 8));
+                org.telegram.messenger.g0.g3(new xn(this.c, tLObject, this.d, this.b, 8));
                 break;
             case 7:
-                ff0 ff0Var = (ff0) this.c;
+                ef0 ef0Var = (ef0) this.c;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.d;
                 if (tL_error == null) {
                     TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
@@ -89,16 +89,16 @@ public final /* synthetic */ class o8 implements RequestDelegate {
                         for (int i11 = 0; i11 < tL_messages_exportedChatInvites.invites.size(); i11++) {
                             if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i11)).link.equals(tL_chatInviteExported2.link)) {
                                 tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i11);
-                                org.telegram.messenger.g0.g3(new te0(ff0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                                org.telegram.messenger.g0.g3(new se0(ef0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
                                 break;
                             }
                         }
                     }
                 }
                 tL_chatInviteExported = null;
-                org.telegram.messenger.g0.g3(new te0(ff0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                org.telegram.messenger.g0.g3(new se0(ef0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
             default:
-                org.telegram.messenger.g0.g3(new ai.i(this.c, (TLObject) tL_error, this.b, tLObject, (String) this.d, 14));
+                org.telegram.messenger.g0.g3(new ai.e(this.c, (TLObject) tL_error, this.b, tLObject, (String) this.d, 14));
                 break;
         }
     }

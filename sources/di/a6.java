@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a6 extends a5.h {
     public final View c;
@@ -46,7 +46,7 @@ public final class a6 extends a5.h {
         paint2.setAlpha((int) (alpha * this.h));
         paint2.setStrokeWidth(org.telegram.messenger.g0.N(1.33f));
         canvas.save();
-        o10.k(org.telegram.ui.Cells.c0.e(1.166f, 2.0f, org.telegram.messenger.g0.N(2.16f) * 3.0f), 2.0f, getBounds().centerY(), getBounds().centerX(), canvas);
+        m10.k(org.telegram.ui.Cells.c0.e(1.166f, 2.0f, org.telegram.messenger.g0.N(2.16f) * 3.0f), 2.0f, getBounds().centerY(), getBounds().centerX(), canvas);
         int i7 = 0;
         while (i7 < 4) {
             float f10 = i7 == 0 ? 1.0f - currentTimeMillis : i7 == 3 ? currentTimeMillis : 1.0f;

@@ -4,11 +4,11 @@ import a8.xa;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class e3 {
     public boolean A;
@@ -23,7 +23,7 @@ public class e3 {
     public org.telegram.ui.g4 J;
     public ki.v0 K;
     public boolean L;
-    public ki.e4 a;
+    public ki.f4 a;
     public org.telegram.ui.web.s0 b;
     public org.telegram.ui.k3 c;
     public Object d;
@@ -68,9 +68,9 @@ public class e3 {
 
     public String b() {
         if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? hd.N0(2131742660, null) : this.E;
+            return TextUtils.isEmpty(this.E) ? gd.N0(2131742655, null) : this.E;
         }
-        ki.e4 e4Var = this.a;
-        return e4Var == null ? "" : e4Var.g == 6 ? e4Var.e : p10.q(np.u1(e4Var.a).c2(Long.valueOf(this.a.c)));
+        ki.f4 f4Var = this.a;
+        return f4Var == null ? "" : f4Var.g == 6 ? f4Var.e : n10.q(mp.u1(f4Var.a).c2(Long.valueOf(this.a.c)));
     }
 }

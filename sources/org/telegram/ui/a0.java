@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,27 +22,27 @@ public final /* synthetic */ class a0 implements Runnable {
                 ((g4) this.c).i0.N.c(true, this.b);
                 break;
             case 1:
-                org.telegram.ui.Components.za zaVar = (org.telegram.ui.Components.za) this.c;
-                if (zaVar.a.getTranslationX() == this.b) {
-                    zaVar.E.b();
+                org.telegram.ui.Components.ya yaVar = (org.telegram.ui.Components.ya) this.c;
+                if (yaVar.a.getTranslationX() == this.b) {
+                    yaVar.E.b();
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.voip.z0 z0Var = (org.telegram.ui.Components.voip.z0) this.c;
-                bc1 bc1Var = z0Var.c;
+                org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
+                zb1 zb1Var = a1Var.c;
                 if (this.b > 0.0f) {
-                    int i7 = bc1Var.x;
+                    int i7 = zb1Var.x;
                     if (i7 < 2) {
-                        bc1Var.c(i7 + 1, true);
+                        zb1Var.c(i7 + 1, true);
                     }
                 } else {
-                    int i10 = bc1Var.x;
+                    int i10 = zb1Var.x;
                     if (i10 > 0) {
-                        bc1Var.c(i10 - 1, true);
+                        zb1Var.c(i10 - 1, true);
                     }
                 }
-                z0Var.b = false;
+                a1Var.b = false;
                 break;
             default:
                 ((HttpGetFileTask) this.c).lambda$doInBackground$0(this.b);

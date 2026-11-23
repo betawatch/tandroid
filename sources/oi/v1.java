@@ -5,25 +5,26 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class v1 extends HorizontalScrollView {
-    public final h6.m a;
-    public final org.telegram.ui.Components.d6 b;
-    public final org.telegram.ui.Components.d6 c;
+    public final i61 a;
+    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.c6 c;
     public final /* synthetic */ b2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v1(b2 b2Var, Context context) {
         super(context);
         this.d = b2Var;
-        this.a = new h6.m(29);
-        nr nrVar = nr.h;
-        this.b = new org.telegram.ui.Components.d6(this, 300L, nrVar);
-        this.c = new org.telegram.ui.Components.d6(this, 300L, nrVar);
+        this.a = new i61(1);
+        kr krVar = kr.h;
+        this.b = new org.telegram.ui.Components.c6(this, 300L, krVar);
+        this.c = new org.telegram.ui.Components.c6(this, 300L, krVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -33,23 +34,23 @@ public final class v1 extends HorizontalScrollView {
         float d2 = this.c.d(canScrollHorizontally(1));
         if (d > 0.0f || d2 > 0.0f) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ls.e4, 31);
+            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ks.e4, 31);
         } else {
             canvas2 = canvas;
         }
         super.dispatchDraw(canvas2);
         if (d > 0.0f || d2 > 0.0f) {
             canvas2.save();
-            h6.m mVar = this.a;
+            i61 i61Var = this.a;
             if (d > 0.0f) {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(getScrollX(), 0.0f, org.telegram.messenger.g0.L(48.0f) + getScrollX(), getHeight());
-                mVar.n(canvas2, rectF, 0, d);
+                i61Var.u(canvas2, rectF, 0, d);
             }
             if (d2 > 0.0f) {
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 rectF2.set((getWidth() + getScrollX()) - org.telegram.messenger.g0.L(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                mVar.n(canvas2, rectF2, 2, d2);
+                i61Var.u(canvas2, rectF2, 2, d2);
             }
             canvas2.restore();
         }

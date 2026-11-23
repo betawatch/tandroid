@@ -1,102 +1,185 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.SpannableString;
+import android.graphics.Color;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class k80 extends org.telegram.ui.ActionBar.m5 {
-    public final org.telegram.ui.ActionBar.h6 N0;
-    public final n2.o0 O0;
-    public n80 P0;
+public final class k80 {
+    public static final ArrayList s = new ArrayList();
+    public int a;
+    public int b;
+    public Paint c;
+    public Paint d;
+    public int e;
+    public int f;
+    public final CharacterStyle i;
+    public final float j;
+    public final float k;
+    public Rect m;
+    public float n;
+    public final long q;
+    public final ArrayList g = new ArrayList();
+    public int h = 0;
+    public final Path l = new Path();
+    public long o = -1;
+    public long p = -1;
+    public final boolean r = !org.telegram.messenger.pc.e(360928);
 
-    public k80(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.O0 = new n2.o0(this);
-        this.N0 = h6Var;
+    public k80(CharacterStyle characterStyle, org.telegram.ui.ActionBar.i6 i6Var, float f10, float f11, int i7) {
+        this.i = characterStyle;
+        d(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Ce, i6Var));
+        this.j = f10;
+        this.k = f11;
+        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getLayoutX(), getLayoutY());
-        if (this.O0.h(canvas)) {
-            invalidate();
+    /* JADX WARN: Multi-variable type inference failed */
+    public final boolean a(Canvas canvas) {
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        float f10;
+        boolean z13 = this.r;
+        int L = z13 ? 0 : org.telegram.messenger.g0.L(4.0f);
+        boolean z14 = this.a != L;
+        if (this.c == null) {
+            Paint paint = new Paint(1);
+            this.c = paint;
+            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            this.c.setColor(this.b);
+            this.e = Color.alpha(this.b);
         }
-        canvas.restore();
+        if (this.d == null) {
+            Paint paint2 = new Paint(1);
+            this.d = paint2;
+            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
+            this.d.setColor(this.b);
+            this.f = Color.alpha(this.b);
+        }
+        if (z14) {
+            this.a = L;
+            if (L <= 0) {
+                this.c.setPathEffect(null);
+                this.d.setPathEffect(null);
+            } else {
+                this.c.setPathEffect(new CornerPathEffect(this.a));
+                this.d.setPathEffect(new CornerPathEffect(this.a));
+            }
+        }
+        Rect rect = this.m;
+        float f11 = this.k;
+        float f12 = this.j;
+        ArrayList arrayList = this.g;
+        if (rect != null || this.h <= 0) {
+            z10 = 0;
+            z11 = z13;
+            z12 = true;
+            f10 = f12;
+        } else {
+            e80 e80Var = (e80) arrayList.get(0);
+            RectF rectF = org.telegram.messenger.g0.P;
+            e80Var.computeBounds(rectF, false);
+            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            for (int i7 = 1; i7 < this.h; i7++) {
+                e80 e80Var2 = (e80) arrayList.get(i7);
+                RectF rectF2 = org.telegram.messenger.g0.P;
+                e80Var2.computeBounds(rectF2, false);
+                Rect rect2 = this.m;
+                rect2.left = Math.min(rect2.left, (int) rectF2.left);
+                Rect rect3 = this.m;
+                rect3.top = Math.min(rect3.top, (int) rectF2.top);
+                Rect rect4 = this.m;
+                rect4.right = Math.max(rect4.right, (int) rectF2.right);
+                Rect rect5 = this.m;
+                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
+            }
+            z10 = 0;
+            z11 = z13;
+            z12 = true;
+            f10 = f12;
+            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d)), Math.max(Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d))));
+        }
+        if (z11) {
+            for (int i10 = z10; i10 < this.h; i10++) {
+                canvas.drawPath((Path) arrayList.get(i10), this.d);
+            }
+            return z10;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (this.o < 0) {
+            this.o = elapsedRealtime;
+        }
+        float interpolation = kr.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
+        float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
+        this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
+        this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
+        for (int i11 = z10; i11 < this.h; i11++) {
+            ((e80) arrayList.get(i11)).a();
+            canvas.drawPath((Path) arrayList.get(i11), this.c);
+        }
+        this.d.setAlpha((int) (this.f * 0.8f * min));
+        this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
+        if (interpolation < 1.0f) {
+            float f13 = interpolation * this.n;
+            canvas.save();
+            Path path = this.l;
+            path.reset();
+            path.addCircle(f10, f11, f13, Path.Direction.CW);
+            canvas.clipPath(path);
+            for (int i12 = z10; i12 < this.h; i12++) {
+                canvas.drawPath((Path) arrayList.get(i12), this.d);
+            }
+            canvas.restore();
+        } else {
+            for (int i13 = z10; i13 < this.h; i13++) {
+                canvas.drawPath((Path) arrayList.get(i13), this.d);
+            }
+        }
+        return (interpolation < 1.0f || this.p >= 0) ? z12 : z10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
-    @Override // org.telegram.ui.ActionBar.m5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ClickableSpan clickableSpan;
-        CharacterStyle characterStyle;
-        n2.o0 o0Var = this.O0;
-        if (o0Var != null) {
-            Layout layout = getLayout();
-            int x10 = (int) motionEvent.getX();
-            int y10 = (int) motionEvent.getY();
-            Layout layout2 = getLayout();
-            if (layout2 != null) {
-                int layoutX = (int) (x10 - getLayoutX());
-                int layoutY = (int) (y10 - getLayoutY());
-                int lineForVertical = layout2.getLineForVertical(layoutY);
-                float f10 = layoutX;
-                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f10);
-                float lineLeft = layout2.getLineLeft(lineForVertical);
-                if (lineLeft <= f10 && layout2.getLineWidth(lineForVertical) + lineLeft >= f10 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                    if (clickableSpanArr.length != 0 && !org.telegram.messenger.g0.C1()) {
-                        clickableSpan = clickableSpanArr[0];
-                        if (clickableSpan == null && motionEvent.getAction() == 0) {
-                            n80 n80Var = new n80(clickableSpan, this.N0, motionEvent.getX(), motionEvent.getY(), 0);
-                            this.P0 = n80Var;
-                            o0Var.b(n80Var, null);
-                            SpannableString spannableString = new SpannableString(layout.getText());
-                            int spanStart = spannableString.getSpanStart(this.P0.i);
-                            int spanEnd = spannableString.getSpanEnd(this.P0.i);
-                            h80 b10 = this.P0.b();
-                            b10.d(layout, spanStart, 0.0f);
-                            layout.getSelectionPath(spanStart, spanEnd, b10);
-                            return true;
-                        }
-                        if (motionEvent.getAction() == 1) {
-                            o0Var.f(true);
-                            n80 n80Var2 = this.P0;
-                            if (n80Var2 != null && (characterStyle = n80Var2.i) == clickableSpan) {
-                                if (characterStyle instanceof ClickableSpan) {
-                                    ((ClickableSpan) characterStyle).onClick(this);
-                                }
-                                this.P0 = null;
-                                return true;
-                            }
-                            this.P0 = null;
-                        }
-                        if (motionEvent.getAction() == 3) {
-                            o0Var.f(true);
-                            this.P0 = null;
-                        }
-                    }
-                }
-            }
-            clickableSpan = null;
-            if (clickableSpan == null) {
-            }
-            if (motionEvent.getAction() == 1) {
-            }
-            if (motionEvent.getAction() == 3) {
-            }
+    public final e80 b() {
+        ArrayList arrayList = s;
+        e80 e80Var = !arrayList.isEmpty() ? (e80) arrayList.remove(0) : new e80(0);
+        e80Var.c = !this.r;
+        e80Var.reset();
+        ArrayList arrayList2 = this.g;
+        arrayList2.add(e80Var);
+        this.h = arrayList2.size();
+        return e80Var;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.g;
+        if (arrayList.isEmpty()) {
+            return;
         }
-        return this.P0 != null || super.onTouchEvent(motionEvent);
+        s.addAll(arrayList);
+        arrayList.clear();
+        this.h = 0;
+    }
+
+    public final void d(int i7) {
+        this.b = i7;
+        Paint paint = this.c;
+        if (paint != null) {
+            paint.setColor(i7);
+            this.e = Color.alpha(i7);
+        }
+        Paint paint2 = this.d;
+        if (paint2 != null) {
+            paint2.setColor(i7);
+            this.f = Color.alpha(i7);
+        }
     }
 }

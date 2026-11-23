@@ -1,22 +1,22 @@
 package og;
 
 import android.view.ViewTreeObserver;
-import org.telegram.messenger.xe;
+import org.telegram.messenger.we;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xe b;
+    public final /* synthetic */ we b;
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
     public final /* synthetic */ o e;
 
-    public /* synthetic */ k(o oVar, xe xeVar, int i7, int i10, int i11) {
+    public /* synthetic */ k(o oVar, we weVar, int i7, int i10, int i11) {
         this.a = i11;
         this.e = oVar;
-        this.b = xeVar;
+        this.b = weVar;
         this.c = i7;
         this.d = i10;
     }
@@ -32,19 +32,19 @@ public final class k implements ViewTreeObserver.OnPreDrawListener {
                 o oVar = this.e;
                 oVar.l(false);
                 CropAreaView cropAreaView = oVar.a;
-                xe xeVar = this.b;
-                if (xeVar != null) {
-                    float f14 = xeVar.v;
+                we weVar = this.b;
+                if (weVar != null) {
+                    float f14 = weVar.v;
                     if (f14 > 1.0E-4f) {
                         cropAreaView.setLockedAspectRatio(f14);
                         n nVar = oVar.N;
                         if (nVar != null) {
-                            nVar.w(true);
+                            nVar.R(true);
                         }
                     }
-                    oVar.setFreeform(xeVar.u);
+                    oVar.setFreeform(weVar.u);
                     float aspectRatio = cropAreaView.getAspectRatio();
-                    int i7 = xeVar.k;
+                    int i7 = weVar.k;
                     int i10 = this.c;
                     int i11 = this.d;
                     if (i7 == 90 || i7 == 270) {
@@ -66,21 +66,21 @@ public final class k implements ViewTreeObserver.OnPreDrawListener {
                         cropAreaView.setActualRect(cropAreaView.getLockAspectRatio());
                     }
                     m.d(oVar.M, i7);
-                    cropAreaView.setActualRect((aspectRatio * xeVar.e) / xeVar.f);
+                    cropAreaView.setActualRect((aspectRatio * weVar.e) / weVar.f);
                     m mVar3 = oVar.M;
-                    mVar3.j = xeVar.l;
-                    m.e(mVar3, xeVar.d);
+                    mVar3.j = weVar.l;
+                    m.e(mVar3, weVar.d);
                     m mVar4 = oVar.M;
-                    float f15 = xeVar.a * i10;
+                    float f15 = weVar.a * i10;
                     float f16 = mVar4.f;
-                    m.f(mVar4, f15 * f16, xeVar.b * i11 * f16);
+                    m.f(mVar4, f15 * f16, weVar.b * i11 * f16);
                     float max = Math.max(cropAreaView.getCropWidth() / f10, cropAreaView.getCropHeight() / f11);
                     m mVar5 = oVar.M;
-                    m.g(mVar5, xeVar.c * (max / mVar5.f), 0.0f, 0.0f);
+                    m.g(mVar5, weVar.c * (max / mVar5.f), 0.0f, 0.0f);
                     oVar.r(false);
                     n nVar2 = oVar.N;
                     if (nVar2 != null) {
-                        nVar2.D(false);
+                        nVar2.q0(false);
                     }
                 }
                 cropAreaView.getViewTreeObserver().removeOnPreDrawListener(this);
@@ -89,19 +89,19 @@ public final class k implements ViewTreeObserver.OnPreDrawListener {
                 o oVar2 = this.e;
                 oVar2.l(false);
                 CropAreaView cropAreaView2 = oVar2.a;
-                xe xeVar2 = this.b;
-                if (xeVar2 != null) {
-                    float f17 = xeVar2.v;
+                we weVar2 = this.b;
+                if (weVar2 != null) {
+                    float f17 = weVar2.v;
                     if (f17 > 1.0E-4f) {
                         cropAreaView2.setLockedAspectRatio(f17);
                         n nVar3 = oVar2.N;
                         if (nVar3 != null) {
-                            nVar3.w(true);
+                            nVar3.R(true);
                         }
                     }
-                    oVar2.setFreeform(xeVar2.u);
+                    oVar2.setFreeform(weVar2.u);
                     float aspectRatio2 = cropAreaView2.getAspectRatio();
-                    int i12 = xeVar2.k;
+                    int i12 = weVar2.k;
                     int i13 = this.c;
                     int i14 = this.d;
                     if (i12 == 90 || i12 == 270) {
@@ -123,21 +123,21 @@ public final class k implements ViewTreeObserver.OnPreDrawListener {
                         cropAreaView2.setActualRect(cropAreaView2.getLockAspectRatio());
                     }
                     m.d(oVar2.M, i12);
-                    cropAreaView2.setActualRect((aspectRatio2 * xeVar2.e) / xeVar2.f);
+                    cropAreaView2.setActualRect((aspectRatio2 * weVar2.e) / weVar2.f);
                     m mVar8 = oVar2.M;
-                    mVar8.j = xeVar2.l;
-                    m.e(mVar8, xeVar2.d);
+                    mVar8.j = weVar2.l;
+                    m.e(mVar8, weVar2.d);
                     m mVar9 = oVar2.M;
-                    float f18 = xeVar2.a * i13;
+                    float f18 = weVar2.a * i13;
                     float f19 = mVar9.f;
-                    m.f(mVar9, f18 * f19, xeVar2.b * i14 * f19);
+                    m.f(mVar9, f18 * f19, weVar2.b * i14 * f19);
                     float max2 = Math.max(cropAreaView2.getCropWidth() / f12, cropAreaView2.getCropHeight() / f13);
                     m mVar10 = oVar2.M;
-                    m.g(mVar10, xeVar2.c * (max2 / mVar10.f), 0.0f, 0.0f);
+                    m.g(mVar10, weVar2.c * (max2 / mVar10.f), 0.0f, 0.0f);
                     oVar2.r(false);
                     n nVar4 = oVar2.N;
                     if (nVar4 != null) {
-                        nVar4.D(false);
+                        nVar4.q0(false);
                     }
                 }
                 cropAreaView2.getViewTreeObserver().removeOnPreDrawListener(this);

@@ -8,12 +8,12 @@ import android.widget.FrameLayout;
 import jh.k;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g1;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.ActionBar.y0;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
@@ -22,10 +22,10 @@ import org.telegram.ui.af;
 import org.telegram.ui.bn;
 import org.telegram.ui.d0;
 import org.telegram.ui.ee;
-import org.telegram.ui.mu0;
+import org.telegram.ui.lu0;
 import org.telegram.ui.pl;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -65,17 +65,17 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     Activity parentActivity = bnVar.getParentActivity();
                     r4 parentLayout = bnVar.getParentLayout();
                     pl plVar = bnVar.m1;
-                    h6 resourceProvider = bnVar.getResourceProvider();
+                    i6 resourceProvider = bnVar.getResourceProvider();
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(parentActivity, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(g0.L(200.0f));
                     y0 y0Var = new y0(0, parentActivity, resourceProvider, true, true);
                     y0Var.setMinimumWidth(g0.L(200.0f));
-                    y0Var.j(!z10 ? hd.N0(2131746176, null) : z10 ? hd.N0(2131746178, null) : hd.N0(2131746177, null), R.drawable.msg_seen, null);
-                    y0Var.setOnClickListener(new mu0(1, afVar));
+                    y0Var.j(!z10 ? gd.N0(2131746176, null) : z10 ? gd.N0(2131746178, null) : gd.N0(2131746177, null), R.drawable.msg_seen, null);
+                    y0Var.setOnClickListener(new lu0(1, afVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var);
                     g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                     g1Var.e = true;
-                    g1Var.c = ls.x3;
+                    g1Var.c = ks.x3;
                     g1Var.setOutsideTouchable(true);
                     g1Var.setClippingEnabled(true);
                     g1Var.setAnimationStyle(R.style.PopupContextAnimation);
@@ -106,7 +106,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 return false;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) frameLayout;
-                return (scrollSlidingTextTabStrip.o0 || (jl0Var = scrollSlidingTextTabStrip.b) == null || !jl0Var.h1(i10, view)) ? false : true;
+                return (scrollSlidingTextTabStrip.o0 || (jl0Var = scrollSlidingTextTabStrip.b) == null || !jl0Var.Y0(i10, view)) ? false : true;
         }
     }
 }

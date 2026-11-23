@@ -8,9 +8,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class z1 extends Drawable {
     public final Context a;
@@ -23,7 +23,7 @@ public final class z1 extends Drawable {
 
     public z1(Context context, int i7) {
         Drawable g10 = i5.c.g(context, i7);
-        this.d = m6.d6;
+        this.d = n6.d6;
         this.g = true;
         this.a = context;
         this.b = g10;
@@ -48,7 +48,7 @@ public final class z1 extends Drawable {
         if (this.g) {
             int L = org.telegram.messenger.g0.L(9.0f) + centerX;
             int L2 = org.telegram.messenger.g0.L(9.0f) + centerY;
-            int x02 = m6.x0(null, this.d, false);
+            int x02 = n6.x0(null, this.d, false);
             Drawable drawable2 = this.c;
             Context context = this.a;
             if (drawable2 == null) {

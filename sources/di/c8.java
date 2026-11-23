@@ -1,12 +1,12 @@
 package di;
 
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,15 +38,15 @@ public final /* synthetic */ class c8 implements Runnable {
                     long j3 = this.b;
                     long j10 = this.d;
                     if (j3 == 0) {
-                        TLRPC.UserFull d2 = np.u1(i10).d2(j10);
+                        TLRPC.UserFull d2 = mp.u1(i10).d2(j10);
                         if (d2 != null && (peerSettings = d2.settings) != null) {
                             peerSettings.flags &= -16385;
                             peerSettings.charge_paid_message_stars = 0L;
                         }
-                        np.u1(i10).g7.edit().putLong(a8.p0.o(j10, "dialog_bar_paying_"), 0L).apply();
-                        np.u1(i10).g3(np.u1(i10).c2(Long.valueOf(j10)), np.u1(i10).O0(Long.valueOf(-j10)), true);
+                        mp.u1(i10).g7.edit().putLong(a8.p0.o(j10, "dialog_bar_paying_"), 0L).apply();
+                        mp.u1(i10).g3(mp.u1(i10).c2(Long.valueOf(j10)), mp.u1(i10).O0(Long.valueOf(-j10)), true);
                         org.telegram.messenger.i5.r(i10).D(true);
-                        ls.f(i10).k(ls.Q3, Long.valueOf(j10));
+                        ks.f(i10).k(ks.Q3, Long.valueOf(j10));
                         break;
                     } else {
                         y8Var.Z(-j3, j10, this.c);
@@ -55,13 +55,13 @@ public final /* synthetic */ class c8 implements Runnable {
                 }
                 break;
             default:
-                ((ur) obj).getMessagesController().I3(this.b, this.c, (TLRPC.InputPeer) tLObject, this.d);
+                ((tr) obj).getMessagesController().I3(this.b, this.c, (TLRPC.InputPeer) tLObject, this.d);
                 break;
         }
     }
 
-    public /* synthetic */ c8(ur urVar, long j3, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
-        this.e = urVar;
+    public /* synthetic */ c8(tr trVar, long j3, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
+        this.e = trVar;
         this.b = j3;
         this.c = z10;
         this.f = inputPeer;

@@ -7,9 +7,9 @@ import android.view.ScaleGestureDetector;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c {
     public final ScaleGestureDetector a;
@@ -39,13 +39,13 @@ public final class c {
         float y12;
         n nVar;
         this.a.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & ls.e4;
+        int action = motionEvent.getAction() & ks.e4;
         if (action == 0) {
             this.i = motionEvent.getPointerId(0);
             this.k = SystemClock.elapsedRealtime();
         } else if (action == 1 || action == 3) {
             if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (nVar = this.b.N) != null) {
-                nVar.G();
+                nVar.v0();
             }
             this.i = -1;
         } else if (action == 6) {

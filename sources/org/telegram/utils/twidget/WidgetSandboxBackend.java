@@ -29,15 +29,15 @@ import java.util.zip.Inflater;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.cz;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.zy;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements g1, h {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -697,7 +697,7 @@ final class WidgetSandboxBackend implements g1, h {
         if (f10 <= 0.0f || f10 > 10000.0f) {
             f10 = 16.0f;
         }
-        Paint paint = new Paint(ls.N1);
+        Paint paint = new Paint(ks.N1);
         paint.setTextSize(f10);
         paint.setTypeface(typeface(str, i7, z10));
         String featureSettings = featureSettings(str2);
@@ -1300,7 +1300,7 @@ final class WidgetSandboxBackend implements g1, h {
                         if (str2.length() > 80) {
                             str2 = str2.substring(0, 80) + "…";
                         }
-                        lc.b0(T).Q(R.raw.copy, 36, hd.a0(null, null, 2131742600, str2)).j();
+                        kc.b0(T).Q(R.raw.copy, 36, gd.a0(null, null, 2131742595, str2)).j();
                     }
                 });
                 return;
@@ -1319,7 +1319,7 @@ final class WidgetSandboxBackend implements g1, h {
             if (i7 != 16 && i7 != 17 && i7 != 9) {
                 if (i7 == 3) {
                     JSONObject jSONObject5 = new JSONObject(text);
-                    p1Var.a.post(new cz(p1Var, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), 2));
+                    p1Var.a.post(new zy(p1Var, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), 2));
                     return;
                 }
                 if (i7 == 4) {

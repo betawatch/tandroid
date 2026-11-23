@@ -1,6 +1,6 @@
 package d3;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
@@ -8,12 +8,12 @@ import android.os.Trace;
 import android.util.Pair;
 import android.view.Surface;
 import h2.l0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o implements k0 {
     public h9.i0 a;
@@ -28,7 +28,7 @@ public final class o implements k0 {
         this.g = tVar;
         l0.N(context);
         h9.g0 g0Var = h9.i0.b;
-        this.a = t1.e;
+        this.a = s1.e;
         this.d = -9223372036854775807L;
         this.f = t.q;
     }
@@ -40,7 +40,7 @@ public final class o implements k0 {
 
     @Override // d3.k0
     public final Surface b() {
-        la.p(false);
+        ma.p(false);
         throw null;
     }
 
@@ -97,7 +97,7 @@ public final class o implements k0 {
     public final boolean j(e2.u uVar) {
         t tVar = this.g;
         boolean z10 = true;
-        la.p(tVar.n == 0);
+        ma.p(tVar.n == 0);
         e2.m mVar = uVar.I;
         if (mVar == null || !mVar.d()) {
             mVar = e2.m.h;
@@ -174,7 +174,7 @@ public final class o implements k0 {
     @Override // d3.k0
     public final boolean n(long j3, i iVar) {
         int i7;
-        la.p(false);
+        ma.p(false);
         long j10 = j3 + this.c;
         t tVar = this.g;
         y yVar = tVar.i;
@@ -187,7 +187,7 @@ public final class o implements k0 {
                 u2.l lVar2 = iVar.a;
                 int i10 = iVar.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar2.e(i10);
+                lVar2.i(i10);
                 Trace.endSection();
                 lVar.R0(0, 1);
                 return true;
@@ -218,7 +218,7 @@ public final class o implements k0 {
             tVar.o = -9223372036854775807L;
             h2.i0 i0Var = tVar.k;
             i0Var.getClass();
-            i0Var.d(new ca.r(tVar, 7));
+            i0Var.d(new ca.r(tVar, 6));
         }
     }
 
@@ -276,7 +276,7 @@ public final class o implements k0 {
 
     @Override // d3.k0
     public final void u(e2.u uVar, long j3, int i7, List list) {
-        la.p(false);
+        ma.p(false);
         this.a = h9.i0.q(list);
         this.b = uVar;
         e2.t a10 = uVar.a();

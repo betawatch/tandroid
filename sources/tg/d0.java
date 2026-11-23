@@ -1,123 +1,34 @@
 package tg;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.Cells.c5;
+import android.graphics.PointF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.xt0;
+import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class d0 extends d {
-    public final Paint h;
-    public long n;
-    public float r;
-    public float s;
-    public final /* synthetic */ vp0 w;
+public final class d0 extends j2 {
+    public final /* synthetic */ l0 A0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(vp0 vp0Var, Context context, c5 c5Var) {
-        super(context, c5Var);
-        this.w = vp0Var;
-        Paint paint = new Paint();
-        this.h = paint;
-        setWillNotDraw(false);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
+    public d0(l0 l0Var, Context context, PointF pointF, float f10, float f11, xt0 xt0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f10, f11, xt0Var, document, obj);
+        this.A0 = l0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0070  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int i7;
-        int i10;
-        float f10;
-        Canvas canvas2;
-        float f11;
-        super.onDraw(canvas);
-        long min = Math.min(16L, System.currentTimeMillis() - this.n);
-        this.n = System.currentTimeMillis();
-        vp0 vp0Var = this.w;
-        j jVar = vp0Var.C0;
-        if (jVar == null || jVar.r || !jVar.n) {
-            i7 = 0;
-            i10 = 0;
-        } else {
-            i7 = jVar.getStickyX();
-            i10 = vp0Var.C0.getStickyY();
+    @Override // tg.j2
+    public final void q(nh0 nh0Var) {
+        PhotoViewer photoViewer = ((vp0) this.A0).d2;
+        h61 h61Var = photoViewer.G2;
+        if (h61Var == null) {
+            return;
         }
-        if (i7 != 0) {
-            float f12 = this.r;
-            if (f12 != 1.0f) {
-                this.r = org.telegram.ui.Cells.c0.f(min, 150.0f, f12, 1.0f);
-                invalidate();
-                if (i10 != 0) {
-                    float f13 = this.s;
-                    if (f13 != 1.0f) {
-                        this.s = org.telegram.ui.Cells.c0.f(min, 150.0f, f13, 1.0f);
-                        invalidate();
-                        f10 = this.s;
-                        Paint paint = this.h;
-                        if (f10 != 0.0f) {
-                            paint.setAlpha((int) (f10 * 255.0f));
-                            float measuredHeight = getMeasuredHeight() / 2.0f;
-                            canvas2 = canvas;
-                            canvas2.drawLine(0.0f, measuredHeight, getMeasuredWidth(), measuredHeight, paint);
-                        } else {
-                            canvas2 = canvas;
-                        }
-                        f11 = this.r;
-                        if (f11 != 0.0f) {
-                            paint.setAlpha((int) (f11 * 255.0f));
-                            float measuredWidth = getMeasuredWidth() / 2.0f;
-                            canvas2.drawLine(measuredWidth, 0.0f, measuredWidth, getMeasuredHeight(), paint);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                if (i10 == 0) {
-                    float f14 = this.s;
-                    if (f14 != 0.0f) {
-                        this.s = org.telegram.ui.Cells.c0.B(min, 150.0f, f14, 0.0f);
-                        invalidate();
-                    }
-                }
-                f10 = this.s;
-                Paint paint2 = this.h;
-                if (f10 != 0.0f) {
-                }
-                f11 = this.r;
-                if (f11 != 0.0f) {
-                }
-            }
-        }
-        if (i7 == 0) {
-            float f15 = this.r;
-            if (f15 != 0.0f) {
-                this.r = org.telegram.ui.Cells.c0.B(min, 150.0f, f15, 0.0f);
-                invalidate();
-            }
-        }
-        if (i10 != 0) {
-        }
-        if (i10 == 0) {
-        }
-        f10 = this.s;
-        Paint paint22 = this.h;
-        if (f10 != 0.0f) {
-        }
-        f11 = this.r;
-        if (f11 != 0.0f) {
-        }
+        long S = h61Var.S();
+        long j3 = photoViewer.s8;
+        nh0Var.U(S - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

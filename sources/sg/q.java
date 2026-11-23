@@ -10,18 +10,18 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import c8.ma;
+import c8.na;
 import com.google.android.gms.internal.vision.e2;
 import di.za;
-import hi.o4;
+import hi.z4;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.jg0;
+import org.telegram.ui.ig0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class q extends w2 {
     public static final /* synthetic */ int u1 = 0;
@@ -34,8 +34,8 @@ public final class q extends w2 {
     public androidx.activity.n s1;
     public boolean t1;
 
-    public q(Context context, h6 h6Var) {
-        super(1, context, h6Var, true);
+    public q(Context context, i6 i6Var) {
+        super(1, context, i6Var, true);
         this.p1 = new Path();
         P(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -49,13 +49,13 @@ public final class q extends w2 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(m6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new jg0(25, this, context));
+        imageView.setBackground(n6.h0(1090519039, 1, -1));
+        imageView.setOnClickListener(new ig0(25, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(m6.h0(1090519039, 1, -1));
-        imageView2.setOnClickListener(new o4(this, 28));
+        imageView2.setBackground(n6.h0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new z4(this, 28));
         k kVar = new k(this, context);
         this.o1 = kVar;
         kVar.c = Color.alpha(-65536) / 255.0f;
@@ -69,18 +69,18 @@ public final class q extends w2 {
         zaVar.c = new n(this, context);
         zaVar.d = new p(this, context);
         l lVar = new l(context, this.J0);
-        lVar.setAdapter(new li.x(zaVar, 4));
-        zaVar.addView(lVar, ma.l(1.0f, -1, 0));
-        zaVar.addView(kVar, ma.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        lVar.setAdapter(new li.w(zaVar, 4));
+        zaVar.addView(lVar, na.l(1.0f, -1, 0));
+        zaVar.addView(kVar, na.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, ma.o(28, 28));
-        linearLayout2.addView(lVar.i(8, false), ma.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, ma.o(28, 28));
-        zaVar.addView(linearLayout2, ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout2.addView(imageView, na.o(28, 28));
+        linearLayout2.addView(lVar.k(8, false), na.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, na.o(28, 28));
+        zaVar.addView(linearLayout2, na.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         this.m1 = zaVar;
-        linearLayout.addView(zaVar, ma.o(-1, 0));
+        linearLayout.addView(zaVar, na.o(-1, 0));
         j jVar = new j(this, context, linearLayout);
         jVar.addView(linearLayout);
         this.O = jVar;

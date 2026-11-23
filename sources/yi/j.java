@@ -1,39 +1,40 @@
 package yi;
 
 import a8.p0;
-import ai.g0;
-import ai.z0;
+import ai.c0;
+import ai.v0;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
+import b7.l;
 import fi.y3;
 import h2.z;
+import j6.k;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicLong;
-import ji.l;
-import l2.f0;
+import jb.m;
+import l2.g0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.le;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
 import wg.p;
-import wg.q;
 import yi.g;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class j {
     public static final sa.d H = new sa.d(29);
     public static final AtomicLong I = new AtomicLong(1);
-    public f0 A;
+    public g0 A;
     public byte[] B;
     public ac.e C;
     public final d D;
@@ -43,8 +44,8 @@ public final class j {
     public final long c;
     public final g d;
     public final boolean e;
-    public final l f;
-    public final k8.a g;
+    public final k f;
+    public final m g;
     public final b h;
     public org.telegram.utils.recorder.audio.d n;
     public long o;
@@ -59,8 +60,8 @@ public final class j {
     public boolean y;
     public volatile h z;
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new z0(9));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new z0(10));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new v0(9));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new v0(10));
     public final Object l = new Object();
     public final ArrayList m = new ArrayList();
     public int G = 1;
@@ -81,8 +82,8 @@ public final class j {
         g gVar = (g) y3Var.d;
         this.d = gVar;
         this.e = y3Var.a;
-        this.f = (l) y3Var.e;
-        this.g = (k8.a) y3Var.f;
+        this.f = (k) y3Var.e;
+        this.g = (m) y3Var.f;
         b bVar = new b((f) y3Var.g);
         this.h = bVar;
         final int i7 = 0;
@@ -95,7 +96,7 @@ public final class j {
 
             @Override // java.lang.Runnable
             public final void run() {
-                f0 f0Var;
+                g0 g0Var;
                 switch (i7) {
                     case 0:
                         j jVar = this.b;
@@ -109,15 +110,15 @@ public final class j {
                         break;
                     default:
                         j jVar2 = this.b;
-                        if (jVar2.G == 5 && (f0Var = jVar2.A) != null && jVar2.u) {
-                            long l10 = f0Var.l();
+                        if (jVar2.G == 5 && (g0Var = jVar2.A) != null && jVar2.u) {
+                            long n10 = g0Var.n();
                             long j3 = jVar2.r;
-                            if (l10 < j3 || l10 >= jVar2.s) {
+                            if (n10 < j3 || n10 >= jVar2.s) {
                                 jVar2.A.Z0(5, j3);
                             }
-                            l lVar = jVar2.f;
+                            k kVar = jVar2.f;
                             jVar2.j();
-                            lVar.getClass();
+                            kVar.getClass();
                             jVar2.i.postDelayed(jVar2.E, 32L);
                             break;
                         }
@@ -135,7 +136,7 @@ public final class j {
 
             @Override // java.lang.Runnable
             public final void run() {
-                f0 f0Var;
+                g0 g0Var;
                 switch (i10) {
                     case 0:
                         j jVar = this.b;
@@ -149,15 +150,15 @@ public final class j {
                         break;
                     default:
                         j jVar2 = this.b;
-                        if (jVar2.G == 5 && (f0Var = jVar2.A) != null && jVar2.u) {
-                            long l10 = f0Var.l();
+                        if (jVar2.G == 5 && (g0Var = jVar2.A) != null && jVar2.u) {
+                            long n10 = g0Var.n();
                             long j3 = jVar2.r;
-                            if (l10 < j3 || l10 >= jVar2.s) {
+                            if (n10 < j3 || n10 >= jVar2.s) {
                                 jVar2.A.Z0(5, j3);
                             }
-                            l lVar = jVar2.f;
+                            k kVar = jVar2.f;
                             jVar2.j();
-                            lVar.getClass();
+                            kVar.getClass();
                             jVar2.i.postDelayed(jVar2.E, 32L);
                             break;
                         }
@@ -225,11 +226,11 @@ public final class j {
         }
         this.x = true;
         ac.e eVar = this.C;
-        q qVar = new q(21, this, eVar == null ? null : (File) eVar.b);
+        v9.b bVar = new v9.b(25, this, eVar == null ? null : (File) eVar.b);
         try {
-            this.j.execute(qVar);
+            this.j.execute(bVar);
         } catch (RejectedExecutionException unused) {
-            qVar.run();
+            bVar.run();
         }
     }
 
@@ -240,7 +241,7 @@ public final class j {
         h hVar = new h(j3, f10);
         synchronized (this.l) {
             this.z = hVar;
-            this.k.execute(new p(this, hVar, f10, 6));
+            this.k.execute(new p(this, hVar, f10, 7));
         }
         b bVar = this.h;
         StringBuilder t6 = p0.t(j3, "output generation started: id=", ", file=");
@@ -249,8 +250,8 @@ public final class j {
         return hVar;
     }
 
-    public final b7.l e() {
-        return new b7.l(this.G);
+    public final l e() {
+        return new l(this.G);
     }
 
     public final File f() {
@@ -277,10 +278,10 @@ public final class j {
         if (hVar != null) {
             this.k.execute(new c(this, hVar, exc));
         }
-        MediaController mediaController = ((le) this.f.b).a;
+        MediaController mediaController = ((ke) this.f.b).a;
         String[] strArr = MediaController.W1;
         a8.e("AudioRecorderV2 failed", exc);
-        ls.f(mediaController.i1).k(ls.m2, Integer.valueOf(mediaController.h1));
+        ks.f(mediaController.i1).k(ks.m2, Integer.valueOf(mediaController.h1));
         mediaController.x(false);
         org.telegram.utils.recorder.audio.d dVar = this.n;
         if (dVar != null) {
@@ -342,11 +343,11 @@ public final class j {
                             }
                             jVar2.h.b("final trim completed: source=" + hVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j11 + ".." + j12 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             jVar2.a(hVar3, file.length());
-                            handler.post(new g0(jVar2, j12, j11, 4));
+                            handler.post(new c0(jVar2, j12, j11, 4));
                         } catch (Throwable th2) {
                             th = th2;
                             jVar = absolutePath2;
-                            handler.post(new q(20, jVar, th));
+                            handler.post(new v9.b(24, jVar, th));
                         }
                     } catch (Throwable th3) {
                         th = th3;
@@ -372,8 +373,8 @@ public final class j {
             return;
         }
         this.h.b("recording rejected as too short: durationMs=" + j3);
-        MediaController mediaController = ((le) this.f.b).a;
-        ls.f(mediaController.i1).k(ls.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
+        MediaController mediaController = ((ke) this.f.b).a;
+        ks.f(mediaController.i1).k(ks.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
         mediaController.x(false);
         k(2);
         s(10);
@@ -416,11 +417,11 @@ public final class j {
     }
 
     public final void m() {
-        b7.l e10 = e();
-        l lVar = this.f;
-        MediaController mediaController = ((le) lVar.b).a;
+        l e10 = e();
+        k kVar = this.f;
+        MediaController mediaController = ((ke) kVar.b).a;
         int i7 = e10.a;
-        e0.g gVar = (e0.g) lVar.c;
+        e0.g gVar = (e0.g) kVar.c;
         int i10 = gVar.a;
         gVar.a = i7;
         if (i7 == 3) {
@@ -429,11 +430,11 @@ public final class j {
                 System.currentTimeMillis();
                 String[] strArr = MediaController.W1;
                 if (!mediaController.J1) {
-                    ls.f(mediaController.i1).k(ls.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
+                    ks.f(mediaController.i1).k(ks.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
                 }
             } else if (!z10 && i10 == 6) {
                 mediaController.Y(true);
-                ls.f(mediaController.i1).k(ls.p2, new Object[0]);
+                ks.f(mediaController.i1).k(ks.p2, new Object[0]);
             }
             if (gVar.b) {
                 if (i7 == 3 || i7 == 5) {
@@ -475,9 +476,9 @@ public final class j {
     public final void p() {
         this.i.removeCallbacks(this.E);
         this.u = false;
-        f0 f0Var = this.A;
-        if (f0Var != null) {
-            f0Var.h0(this.F);
+        g0 g0Var = this.A;
+        if (g0Var != null) {
+            g0Var.i0(this.F);
             this.A.X0();
             this.A = null;
         }

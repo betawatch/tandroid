@@ -5,7 +5,7 @@ import java.util.Collections;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class gq implements kq {
     public final /* synthetic */ rq a;
@@ -26,7 +26,7 @@ public final class gq implements kq {
         a0.h hVar = rqVar.K;
         TLRPC.User c22 = rqVar.getMessagesController().c2(Long.valueOf(j3));
         if (c22 != null) {
-            org.telegram.messenger.g0.h3(new eh(16, this, c22), 200L);
+            org.telegram.messenger.g0.h3(new ah(18, this, c22), 200L);
         }
         if (hVar.f(j3) == null) {
             lq B0 = rqVar.B0();
@@ -35,7 +35,7 @@ public final class gq implements kq {
             tL_channelParticipantAdmin.peer = tL_peerUser;
             tL_peerUser.user_id = c22.id;
             tL_channelParticipantAdmin.date = rqVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantAdmin.promoted_by = org.telegram.messenger.k10.i(rqVar.getAccountInstance().a).n;
+            tL_channelParticipantAdmin.promoted_by = org.telegram.messenger.i10.i(rqVar.getAccountInstance().a).n;
             arrayList.add(tL_channelParticipantAdmin);
             hVar.k(tL_channelParticipantAdmin, c22.id);
             Collections.sort(arrayList, new pe(3));

@@ -5,10 +5,10 @@ import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import c8.ma;
-import org.telegram.messenger.hd;
+import c8.na;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public final TextView a;
@@ -27,7 +27,7 @@ public final class n extends FrameLayout {
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        addView(textView, ma.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
+        addView(textView, na.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextColor(-1);
@@ -35,12 +35,12 @@ public final class n extends FrameLayout {
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setGravity(17);
         textView2.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-        textView2.setText(hd.N0(2131743631, null));
+        textView2.setText(gd.N0(2131743629, null));
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(620756991);
         gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(13.0f));
         textView2.setBackground(gradientDrawable);
         textView2.setOnClickListener(new ah.d(this, 9));
-        addView(textView2, ma.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
+        addView(textView2, na.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
     }
 }

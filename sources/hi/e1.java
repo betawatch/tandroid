@@ -1,58 +1,101 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.y10;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e1 implements y10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i2 b;
+public final class e1 extends View {
+    public final Paint a;
+    public final TextPaint b;
+    public final StaticLayout c;
+    public final float d;
+    public final float e;
+    public final Path f;
+    public w h;
+    public boolean n;
+    public final org.telegram.ui.Components.c6 r;
 
-    public /* synthetic */ e1(i2 i2Var, int i7) {
-        this.a = i7;
-        this.b = i2Var;
+    public e1(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        this.f = new Path();
+        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this);
+        this.r = c6Var;
+        paint.setColor(-869783512);
+        paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(6.0f)));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setColor(-1);
+        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(gd.O0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.c = staticLayout;
+        this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
+        this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
+        c6Var.e(true, 0.0f);
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        i2 i2Var = this.b;
-        Integer num = (Integer) obj;
-        switch (i7) {
-            case 0:
-                org.telegram.ui.ActionBar.m2 m2Var = i2Var.c;
-                boolean z10 = i2Var.v1;
-                boolean z11 = i2Var.d;
-                if (z10 != z11) {
-                    i2Var.v1 = z11;
-                    m2Var.clearAnimation();
-                    float f10 = 0.0f;
-                    if (i2Var.d) {
-                        int i10 = org.telegram.messenger.g0.q.y;
-                        int i11 = i2Var.f;
-                        f10 = Math.min(0.0f, Math.max(((i10 - i11) * 0.3f) - i2Var.y1, (-i11) / 3.0f));
-                    }
-                    m2Var.animate().translationY(f10).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.i1.w).start();
-                    break;
-                }
-                break;
-            case 1:
-                i1 i1Var = i2Var.q1;
-                ValueAnimator valueAnimator = i1Var.T;
-                if ((valueAnimator == null || !valueAnimator.isRunning()) && i1Var.getCurrentPosition() != num.intValue()) {
-                    i1Var.A(num.intValue());
-                    h2 h2Var = i2Var.r1;
-                    h2Var.G = num.intValue();
-                    h2Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                int intValue = num.intValue();
-                int i12 = i2.C1;
-                i2Var.N0(intValue);
-                break;
+    public final void a(boolean z10) {
+        w wVar;
+        if (!z10 && (wVar = this.h) != null) {
+            org.telegram.messenger.g0.r(wVar);
+            this.h = null;
         }
+        this.n = z10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = this.r.d(this.n);
+        if (d <= 0.0f) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(0.0f, (this.n ? kr.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
+        float interpolation = kr.h.getInterpolation(d);
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        float L = org.telegram.messenger.g0.L(22.0f) + this.d;
+        float min = (measuredWidth / 2.0f) - Math.min(org.telegram.messenger.g0.L(135.0f), 0.35f * measuredWidth);
+        float max = Math.max(org.telegram.messenger.g0.L(8.0f), min - (L / 2.0f));
+        Path path = this.f;
+        path.rewind();
+        path.moveTo(max, 0.0f);
+        float f10 = L + max;
+        path.lineTo(f10, 0.0f);
+        path.lineTo(f10, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(org.telegram.messenger.g0.L(7.0f) + min, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(org.telegram.messenger.g0.L(1.0f) + min, measuredHeight - org.telegram.messenger.g0.L(12.0f));
+        path.lineTo(min - org.telegram.messenger.g0.L(1.0f), measuredHeight - org.telegram.messenger.g0.L(12.0f));
+        path.lineTo(min - org.telegram.messenger.g0.L(7.0f), measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(max, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.close();
+        Paint paint = this.a;
+        paint.setAlpha((int) (204.0f * interpolation));
+        canvas.drawPath(path, paint);
+        canvas.save();
+        StaticLayout staticLayout = this.c;
+        canvas.translate((max + org.telegram.messenger.g0.L(11.0f)) - this.e, ((measuredHeight - org.telegram.messenger.g0.L(18.0f)) - staticLayout.getHeight()) / 2.0f);
+        this.b.setAlpha((int) (interpolation * 255.0f));
+        staticLayout.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(50.0f));
     }
 }

@@ -3,20 +3,20 @@ package fi;
 import j$.util.DesugarArrays;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.vk;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.uk;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class t {
     public static int[] a() {
-        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, ls.D4, 10, -2013375, -1482439, -7666429, 500, 900, ls.e3, 7, -1214690, -1214690, -6606592, ls.Z3, 600, ls.g2, 4, -1926647, -1926647, -6668800, 100, ls.X4, ls.v1, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, ks.D4, 10, -2013375, -1482439, -7666429, 500, 900, ks.e3, 7, -1214690, -1214690, -6606592, ks.Z3, 600, ks.g2, 4, -1926647, -1926647, -6668800, 100, ks.X4, ks.v1, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
     }
 
     public static int b(int i7, int i10, int i11) {
-        int[] iArr = np.u1(i7).a7;
+        int[] iArr = mp.u1(i7).a7;
         for (int i12 = 0; i12 < iArr.length / 7; i12++) {
             int i13 = i12 * 7;
             if (i10 >= iArr[i13]) {
@@ -180,6 +180,6 @@ public abstract class t {
     }
 
     public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new vk(1)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new uk(1)).collect(Collectors.joining(","));
     }
 }

@@ -1,7 +1,7 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
 import a8.d7;
+import a8.e7;
 import android.R;
 import android.app.Activity;
 import android.content.Context;
@@ -25,11 +25,11 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
-import c8.j9;
+import c8.l9;
 import java.util.Iterator;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -64,8 +64,8 @@ public class MediaRouteButton extends View {
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i7) {
         super(r7 != 0 ? new ContextThemeWrapper(r0, r7) : r0, attributeSet, i7);
         Drawable.ConstantState constantState;
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, c7.e(context));
-        int g10 = c7.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, d7.e(context));
+        int g10 = d7.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
         this.mSelector = s4.r.c;
         this.mDialogFactory = v.a;
         Context context2 = getContext();
@@ -75,7 +75,7 @@ public class MediaRouteButton extends View {
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = c8.z.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = c8.a0.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = s4.x.d(context2);
@@ -239,7 +239,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        j9.a(this, string);
+        l9.a(this, string);
     }
 
     @Override // android.view.View
@@ -498,7 +498,7 @@ public class MediaRouteButton extends View {
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0092, code lost:
     
-        if (a8.d7.a(r3) != false) goto L35;
+        if (a8.e7.a(r3) != false) goto L35;
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00fa A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00a2  */
@@ -539,7 +539,7 @@ public class MediaRouteButton extends View {
                                             break;
                                         }
                                         ActivityInfo activityInfo = it.next().activityInfo;
-                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & ls.N1) != 0) {
+                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & ks.N1) != 0) {
                                             context.startActivity(putExtra);
                                             z10 = true;
                                             break;
@@ -567,7 +567,7 @@ public class MediaRouteButton extends View {
                     while (true) {
                         if (it2.hasNext()) {
                             ActivityInfo activityInfo2 = it2.next().activityInfo;
-                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & ls.N1) != 0) {
+                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & ks.N1) != 0) {
                                 context.sendBroadcast(putExtra2);
                                 break;
                             }
@@ -581,7 +581,7 @@ public class MediaRouteButton extends View {
                     }
                 } else {
                     if (i7 == 30) {
-                        a10 = d7.a(context);
+                        a10 = e7.a(context);
                         if (!a10) {
                         }
                         z11 = true;

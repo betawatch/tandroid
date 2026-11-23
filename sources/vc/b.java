@@ -1,8 +1,8 @@
 package vc;
 
 import a8.xa;
-import c8.bd;
-import c8.rd;
+import c8.dd;
+import c8.sd;
 import ee.t;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,12 +22,12 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -117,13 +117,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static md0 c(HashMap hashMap, t tVar) {
+    public static i61 c(HashMap hashMap, t tVar) {
         String str;
         int i7;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        md0 md0Var = null;
+        i61 i61Var = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -163,10 +163,10 @@ public abstract class b {
             g(i7, str2, str3);
             throw null;
         }
-        md0Var = bd.a(str2);
+        i61Var = dd.a(str2);
         if (bool.booleanValue()) {
         }
-        return md0Var;
+        return i61Var;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -275,12 +275,12 @@ public abstract class b {
         String str3;
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            rd.a(jSONObject.optString("charge"));
-            rd.a(jSONObject.optString("code"));
-            rd.a(jSONObject.optString("decline_code"));
-            str3 = rd.a(jSONObject.optString("message"));
-            rd.a(jSONObject.optString("param"));
-            rd.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
+            sd.a(jSONObject.optString("charge"));
+            sd.a(jSONObject.optString("code"));
+            sd.a(jSONObject.optString("decline_code"));
+            str3 = sd.a(jSONObject.optString("message"));
+            sd.a(jSONObject.optString("param"));
+            sd.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
         } catch (JSONException unused) {
             str3 = "An improperly formatted error response was found.";
         }

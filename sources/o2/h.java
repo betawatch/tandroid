@@ -1,6 +1,6 @@
 package o2;
 
-import a8.la;
+import a8.ma;
 import a8.xa;
 import android.net.Uri;
 import android.os.Handler;
@@ -10,12 +10,11 @@ import android.util.SparseArray;
 import b3.q;
 import b3.r;
 import b3.s;
-import c8.v0;
+import c8.w0;
 import e2.f0;
 import e2.g0;
 import e2.l0;
 import e2.m0;
-import h9.g1;
 import j$.util.Objects;
 import j2.b0;
 import j2.c0;
@@ -30,7 +29,7 @@ import java.util.Map;
 import x2.e0;
 import x2.u;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h extends x2.a {
     public b3.p A;
@@ -60,7 +59,7 @@ public final class h extends x2.a {
     public final long p;
     public final xa q;
     public final r r;
-    public final g1 s;
+    public final j6.r s;
     public final Object t;
     public final SparseArray u;
     public final c v;
@@ -100,7 +99,7 @@ public final class h extends x2.a {
         this.x = new f(this);
         this.M = -9223372036854775807L;
         this.K = -9223372036854775807L;
-        this.s = new g1(this, 16);
+        this.s = new j6.r(this, 12);
         this.y = new d(this);
         final int i7 = 0;
         this.v = new Runnable(this) { // from class: o2.c
@@ -171,7 +170,7 @@ public final class h extends x2.a {
         j2.h hVar = this.z;
         Uri parse = Uri.parse(aVar.c);
         Map map = Collections.EMPTY_MAP;
-        la.k(parse, "The uri must be set.");
+        ma.k(parse, "The uri must be set.");
         this.A.f(new s(hVar, new j2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, rVar), new f(this), 1);
     }
 
@@ -194,11 +193,11 @@ public final class h extends x2.a {
         }
         this.H = false;
         Map map = Collections.EMPTY_MAP;
-        la.k(uri, "The uri must be set.");
+        ma.k(uri, "The uri must be set.");
         s sVar = new s(this.z, new j2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
-        g1 g1Var = this.s;
+        j6.r rVar = this.s;
         this.m.getClass();
-        this.A.f(sVar, g1Var, 3);
+        this.A.f(sVar, rVar, 3);
     }
 
     @Override // x2.a
@@ -324,7 +323,7 @@ public final class h extends x2.a {
         if (pVar == null) {
             pVar = new b3.p("SntpClient");
         }
-        pVar.f(new qb.a(5), new d6.i(dVar, 5), 1);
+        pVar.f(new qb.a(5), new d6.i(dVar, 6), 1);
     }
 
     public final void x(s sVar, long j3, long j10) {
@@ -333,7 +332,7 @@ public final class h extends x2.a {
         b0 b0Var = sVar.d;
         u uVar = new u(mVar, b0Var.c, b0Var.d, j3, j10, b0Var.b);
         this.m.getClass();
-        this.q.o(uVar, sVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.n(uVar, sVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void y(IOException iOException) {
@@ -377,7 +376,7 @@ public final class h extends x2.a {
         long j17;
         float f11;
         boolean z13;
-        i c10;
+        i d;
         long j18;
         SparseArray sparseArray;
         int i10;
@@ -419,7 +418,7 @@ public final class h extends x2.a {
                         try {
                             lVar.k = cVar3;
                             lVar.l = i12;
-                            long d = cVar3.d(i12);
+                            long d2 = cVar3.d(i12);
                             try {
                                 ArrayList a10 = lVar.a();
                                 sparseArray2 = sparseArray3;
@@ -428,7 +427,7 @@ public final class h extends x2.a {
                                 while (i15 < jVarArr.length) {
                                     try {
                                         j[] jVarArr2 = jVarArr;
-                                        jVarArr2[i15] = jVarArr2[i15].a(d, (p2.m) a10.get(lVar.j.i(i15)));
+                                        jVarArr2[i15] = jVarArr2[i15].a(d2, (p2.m) a10.get(lVar.j.i(i15)));
                                         i15++;
                                         jVarArr = jVarArr2;
                                     } catch (x2.b e10) {
@@ -455,7 +454,7 @@ public final class h extends x2.a {
                     }
                     sparseArray = sparseArray3;
                     z14 = true;
-                    bVar.H.c0(bVar);
+                    bVar.H.i2(bVar);
                 } else {
                     sparseArray = sparseArray3;
                     z14 = true;
@@ -467,7 +466,7 @@ public final class h extends x2.a {
                         if (it2.hasNext()) {
                             p2.g gVar = (p2.g) it2.next();
                             if (gVar.a().equals(mVar.e.a())) {
-                                mVar.b(gVar, (cVar3.d && i12 == cVar3.m.size() + (-1)) ? z14 : false);
+                                mVar.c(gVar, (cVar3.d && i12 == cVar3.m.size() + (-1)) ? z14 : false);
                             }
                         }
                     }
@@ -484,9 +483,9 @@ public final class h extends x2.a {
         p2.h b10 = this.G.b(0);
         int size = this.G.m.size() - 1;
         p2.h b11 = this.G.b(size);
-        long d2 = this.G.d(size);
+        long d10 = this.G.d(size);
         long S = h2.l0.S(h2.l0.C(this.K));
-        long d10 = this.G.d(0);
+        long d11 = this.G.d(0);
         long j20 = b10.b;
         List list = b10.c;
         long S2 = h2.l0.S(j20);
@@ -504,9 +503,9 @@ public final class h extends x2.a {
             int i18 = aVar.b;
             boolean z16 = (i18 == i16 || i18 == 2) ? false : true;
             if ((!v || !z16) && !list2.isEmpty()) {
-                i c11 = ((p2.m) list2.get(0)).c();
-                if (c11 != null && c11.z(d10, S) != 0) {
-                    S2 = Math.max(S2, c11.a(c11.h(d10, S)) + S2);
+                i d12 = ((p2.m) list2.get(0)).d();
+                if (d12 != null && d12.z(d11, S) != 0) {
+                    S2 = Math.max(S2, d12.a(d12.e(d11, S)) + S2);
                 }
             }
             i17++;
@@ -534,14 +533,14 @@ public final class h extends x2.a {
             if (i20 != 1 && i20 != 2) {
                 z13 = true;
                 if ((v10 || !z13) && !list4.isEmpty()) {
-                    c10 = ((p2.m) list4.get(0)).c();
-                    if (c10 != null) {
-                        j11 = j23 + d2;
+                    d = ((p2.m) list4.get(0)).d();
+                    if (d != null) {
+                        j11 = j23 + d10;
                         hVar2 = this;
                         j10 = S2;
                         break;
                     }
-                    long z17 = c10.z(d2, S);
+                    long z17 = d.z(d10, S);
                     if (z17 == j3) {
                         hVar2 = this;
                         j10 = S2;
@@ -549,8 +548,8 @@ public final class h extends x2.a {
                         break;
                     } else {
                         j18 = S2;
-                        long h = (c10.h(d2, S) + z17) - 1;
-                        j22 = Math.min(j22, c10.e(h, d2) + c10.a(h) + j23);
+                        long e13 = (d.e(d10, S) + z17) - 1;
+                        j22 = Math.min(j22, d.c(e13, d10) + d.a(e13) + j23);
                     }
                 } else {
                     j18 = S2;
@@ -562,14 +561,14 @@ public final class h extends x2.a {
             z13 = false;
             if (v10) {
             }
-            c10 = ((p2.m) list4.get(0)).c();
-            if (c10 != null) {
+            d = ((p2.m) list4.get(0)).d();
+            if (d != null) {
             }
         }
         if (hVar2.G.d) {
             for (int i21 = 0; i21 < list3.size(); i21++) {
-                i c12 = ((p2.m) ((p2.a) list3.get(i21)).c.get(0)).c();
-                if (c12 != null && !c12.t()) {
+                i d13 = ((p2.m) ((p2.a) list3.get(i21)).c.get(0)).d();
+                if (d13 != null && !d13.r()) {
                 }
             }
             z11 = true;
@@ -580,7 +579,7 @@ public final class h extends x2.a {
                     long j25 = j11 - j12;
                     cVar = hVar2.G;
                     if (cVar.d) {
-                        la.p(cVar.a != -9223372036854775807L);
+                        ma.p(cVar.a != -9223372036854775807L);
                         long S4 = (S - h2.l0.S(hVar2.G.a)) - j12;
                         f0 f0Var2 = hVar2.i().c;
                         long h02 = h2.l0.h0(S4);
@@ -722,7 +721,7 @@ public final class h extends x2.a {
                         long j37 = b12.b;
                         List list5 = b12.c;
                         long S7 = h2.l0.S(j37);
-                        long d11 = cVar6.d(size2);
+                        long d14 = cVar6.d(size2);
                         long S8 = h2.l0.S(C);
                         long S9 = h2.l0.S(cVar6.a);
                         long S10 = h2.l0.S(cVar6.e);
@@ -736,17 +735,17 @@ public final class h extends x2.a {
                                 i7 = i22;
                             } else {
                                 i7 = i22;
-                                i c13 = ((p2.m) list6.get(0)).c();
-                                if (c13 != null) {
-                                    long i23 = (c13.i(d11, S8) + (S9 + S7)) - S8;
-                                    if (i23 > j3 && (i23 < S10 - 100000 || (i23 > S10 && i23 < S10 + 100000))) {
-                                        S10 = i23;
+                                i d15 = ((p2.m) list6.get(0)).d();
+                                if (d15 != null) {
+                                    long f14 = (d15.f(d14, S8) + (S9 + S7)) - S8;
+                                    if (f14 > j3 && (f14 < S10 - 100000 || (f14 > S10 && f14 < S10 + 100000))) {
+                                        S10 = f14;
                                     }
                                 }
                             }
                             i22 = i7 + 1;
                         }
-                        handler.postDelayed(cVar2, v0.b(S10, 1000L, RoundingMode.CEILING));
+                        handler.postDelayed(cVar2, w0.b(S10, 1000L, RoundingMode.CEILING));
                     }
                     if (hVar2.H) {
                         hVar2.C();

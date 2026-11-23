@@ -1,63 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.messenger.y10 e;
-    public final /* synthetic */ long f;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ n1(int i7, long j3, long j10, org.telegram.messenger.y10 y10Var, long j11, int i10) {
-        this.a = i10;
-        this.b = i7;
-        this.c = j3;
-        this.d = j10;
-        this.e = y10Var;
-        this.f = j11;
+    public /* synthetic */ n1(int i7, ArrayList arrayList) {
+        this.a = i7;
+        this.b = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        org.telegram.ui.ActionBar.g2 Q;
         switch (this.a) {
             case 0:
-                int i7 = this.b;
-                long j3 = di.y8.y(i7, false).p().amount;
-                long j10 = this.c;
-                org.telegram.messenger.y10 y10Var = this.e;
-                long j11 = this.f;
-                if (j3 >= j10) {
-                    y10Var.a(Long.valueOf(j11));
+                if (this.b != null && (Q = LaunchActivity.Q()) != null) {
+                    org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                    e2Var.a = true;
+                    Q.showAsSheet(new PrivacyControlActivity(11, false), e2Var);
                     break;
-                } else {
-                    Activity u02 = org.telegram.messenger.g0.u0();
-                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
-                    org.telegram.ui.ActionBar.h6 bVar = (PhotoViewer.p1().P1() || (T != null && T.hasShownSheet())) ? new fi.b() : T != null ? T.getResourceProvider() : null;
-                    if (u02 != null) {
-                        long j12 = this.d;
-                        new di.fb(u02, bVar, j10, 13, org.telegram.messenger.n5.s(i7, j12), new org.telegram.ui.a6(1, j11, y10Var), j12).show();
-                        break;
-                    }
                 }
                 break;
             default:
-                int i10 = this.b;
-                n1 n1Var = new n1(i10, this.c, this.d, this.e, this.f, 0);
-                if (!di.y8.y(i10, false).e) {
-                    di.y8 y10 = di.y8.y(i10, false);
-                    y10.e = false;
-                    y10.q(n1Var, false, true);
-                    y10.e = true;
-                    break;
-                } else {
-                    n1Var.run();
-                    break;
+                int i7 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i7 >= arrayList.size()) {
+                        break;
+                    } else {
+                        ((View) arrayList.get(i7)).setVisibility(8);
+                        if (arrayList.get(i7) instanceof org.telegram.ui.Cells.r1) {
+                            ((org.telegram.ui.Cells.r1) arrayList.get(i7)).l3(false, false);
+                            ((org.telegram.ui.Cells.r1) arrayList.get(i7)).n3(false, false, false);
+                        }
+                        i7++;
+                    }
                 }
         }
     }

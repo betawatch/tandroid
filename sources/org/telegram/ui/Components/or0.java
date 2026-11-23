@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class or0 extends ap0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 V2;
+public final class or0 extends ct0 {
+    public final /* synthetic */ it0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public or0(Context context, String str, String str2, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g2 g2Var) {
-        super(context, null, str, false, str2, false, h6Var);
-        this.V2 = g2Var;
+    public or0(it0 it0Var, Context context) {
+        super(it0Var, context);
+        this.h = it0Var;
     }
 
-    @Override // org.telegram.ui.Components.ap0
-    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        org.telegram.messenger.g0.h3(new org.telegram.ui.f0(this.V2, hVar, i7, 20), 100L);
+    @Override // v4.i0
+    public final void f() {
+        super.f();
+        it0 it0Var = this.h;
+        ds0 g02 = it0Var.g0(0);
+        if (g02 == null || g02.n.getVisibility() != 0) {
+            return;
+        }
+        it0Var.L.f();
     }
 }

@@ -22,20 +22,20 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,10 +74,10 @@ public final /* synthetic */ class l4 implements Runnable {
                 b5.b(b5Var);
                 return;
             case 1:
-                y10 y10Var = (y10) this.b;
+                w10 w10Var = (w10) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                if (y10Var != null) {
-                    y10Var.a(Boolean.valueOf(tL_error == null));
+                if (w10Var != null) {
+                    w10Var.a(Boolean.valueOf(tL_error == null));
                     return;
                 }
                 return;
@@ -90,8 +90,8 @@ public final /* synthetic */ class l4 implements Runnable {
                 b6Var.I = 0;
                 if (tLObject instanceof TL_stories.TL_foundStories) {
                     TL_stories.TL_foundStories tL_foundStories = (TL_stories.TL_foundStories) tLObject;
-                    np.u1(i12).f4(tL_foundStories.users, false);
-                    np.u1(i12).Z3(tL_foundStories.chats, false);
+                    mp.u1(i12).f4(tL_foundStories.users, false);
+                    mp.u1(i12).Z3(tL_foundStories.chats, false);
                     ArrayList<TL_stories.TL_foundStory> arrayList2 = tL_foundStories.stories;
                     int size = arrayList2.size();
                     int i13 = 0;
@@ -101,12 +101,12 @@ public final /* synthetic */ class l4 implements Runnable {
                         TL_stories.TL_foundStory tL_foundStory2 = tL_foundStory;
                         tL_foundStory2.storyItem.dialogId = org.telegram.messenger.n5.o(tL_foundStory2.peer);
                         tL_foundStory2.storyItem.messageId = arrayList.size();
-                        gj gjVar = new gj(i12, tL_foundStory2.storyItem);
-                        gjVar.r0(false);
+                        fj fjVar = new fj(i12, tL_foundStory2.storyItem);
+                        fjVar.r0(false);
                         ArrayList arrayList3 = new ArrayList();
                         arrayList3.add(Integer.valueOf(arrayList.size()));
                         b6Var.F.add(arrayList3);
-                        arrayList.add(gjVar);
+                        arrayList.add(fjVar);
                     }
                     b6Var.J = Math.max(arrayList.size(), tL_foundStories.count);
                     if (tL_foundStories.stories.isEmpty()) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 d6Var.d = true;
                 d6Var.e = false;
                 d6Var.d();
-                ls.f(d6Var.a).k(ls.l3, Long.valueOf(d6Var.b), d6Var);
+                ks.f(d6Var.a).k(ks.l3, Long.valueOf(d6Var.b), d6Var);
                 return;
             case 4:
                 d6 d6Var2 = (d6) this.b;
@@ -144,7 +144,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         arrayList6.addAll(arrayList5);
                         d6Var2.f = true;
                         d6Var2.e = false;
-                        ls.f(d6Var2.a).k(ls.l3, Long.valueOf(d6Var2.b), d6Var2);
+                        ks.f(d6Var2.a).k(ks.l3, Long.valueOf(d6Var2.b), d6Var2);
                         return;
                     }
                     return;
@@ -169,28 +169,28 @@ public final /* synthetic */ class l4 implements Runnable {
                 return;
             case 5:
                 h6 h6Var = (h6) this.b;
-                y10 y10Var2 = (y10) this.c;
+                w10 w10Var2 = (w10) this.c;
                 h6Var.getClass();
-                y10Var2.a(h6Var);
+                w10Var2.a(h6Var);
                 return;
             case 6:
-                np.u1(((o6) this.b).N.a).R1().c0((TL_stories.TL_updateStory) this.c);
+                mp.u1(((o6) this.b).N.a).R1().c0((TL_stories.TL_updateStory) this.c);
                 return;
             case 7:
                 o6 o6Var = (o6) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                hi.c7 c7Var = o6Var.c;
-                c7Var.w = true;
+                hi.x7 x7Var = o6Var.c;
+                x7Var.w = true;
                 p6 p6Var = o6Var.N;
                 if (p6Var.n(tL_error2)) {
-                    c7Var.x = null;
+                    x7Var.x = null;
                 } else {
-                    c7Var.x = tL_error2;
+                    x7Var.x = tL_error2;
                 }
                 o6Var.d = true;
                 o6Var.J = true;
                 o6Var.I = true;
-                p6Var.w.d(c7Var);
+                p6Var.w.d(x7Var);
                 return;
             case 8:
                 o6 o6Var2 = (o6) this.b;
@@ -201,17 +201,17 @@ public final /* synthetic */ class l4 implements Runnable {
                 c7.a((c7) this.b, (p5) this.c);
                 return;
             case 10:
-                c7 c7Var2 = (c7) this.b;
+                c7 c7Var = (c7) this.b;
                 TL_stories.TL_updateStory tL_updateStory = (TL_stories.TL_updateStory) this.c;
-                ur urVar = c7Var2.b;
-                SQLiteDatabase sQLiteDatabase = urVar.b;
+                tr trVar = c7Var.b;
+                SQLiteDatabase sQLiteDatabase = trVar.b;
                 try {
                     long o4 = org.telegram.messenger.n5.o(tL_updateStory.peer);
                     TL_stories.StoryItem storyItem = tL_updateStory.story;
                     int i15 = storyItem.id;
                     if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
                         if (storyItem instanceof TL_stories.TL_storyItem) {
-                            c7Var2.l(o4, storyItem);
+                            c7Var.l(o4, storyItem);
                             Locale locale = Locale.US;
                             SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT story_id FROM stories WHERE dialog_id = " + o4 + " AND story_id = " + i15, new Object[0]);
                             boolean next = queryFinalized.next();
@@ -272,17 +272,17 @@ public final /* synthetic */ class l4 implements Runnable {
                     sQLiteDatabase.executeFast("UPDATE stories_counter SET count = " + (r8 + i7) + " WHERE dialog_id = " + o4).stepThis().dispose();
                     return;
                 } catch (Throwable th2) {
-                    urVar.o(th2, true);
+                    trVar.o(th2, true);
                     return;
                 }
             case 11:
                 ((c7) this.b).j((ArrayList) this.c);
                 return;
             case 12:
-                c7 c7Var3 = (c7) this.b;
+                c7 c7Var2 = (c7) this.b;
                 p5 p5Var = (p5) this.c;
-                ur urVar2 = c7Var3.b;
-                SQLiteDatabase sQLiteDatabase2 = urVar2.b;
+                tr trVar2 = c7Var2.b;
+                SQLiteDatabase sQLiteDatabase2 = trVar2.b;
                 LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                 try {
                     SQLiteCursor queryFinalized4 = sQLiteDatabase2.queryFinalized("SELECT dialog_id, max_read FROM stories_counter", new Object[0]);
@@ -290,7 +290,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         longSparseIntArray.put(queryFinalized4.longValue(0), queryFinalized4.intValue(1));
                     }
                 } catch (Exception e10) {
-                    urVar2.o(e10, true);
+                    trVar2.o(e10, true);
                 }
                 org.telegram.messenger.g0.g3(new l4(14, p5Var, longSparseIntArray));
                 return;
@@ -315,7 +315,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 ((l4) f7Var2.d).run();
                 d7 d7Var = (d7) f7Var2.e;
                 if (d7Var != null) {
-                    d7Var.R();
+                    d7Var.S();
                     return;
                 }
                 return;
@@ -327,9 +327,9 @@ public final /* synthetic */ class l4 implements Runnable {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
                 }
-                mc mcVar = e7Var.H;
-                if (mcVar != null) {
-                    mcVar.c(false);
+                lc lcVar = e7Var.H;
+                if (lcVar != null) {
+                    lcVar.c(false);
                 }
                 ViewParent parent = view.getParent();
                 if (parent instanceof ViewGroup) {
@@ -340,26 +340,26 @@ public final /* synthetic */ class l4 implements Runnable {
                 return;
             case 18:
                 v7 v7Var = (v7) this.b;
-                n80 n80Var = (n80) this.c;
-                n80 n80Var2 = v7Var.a;
-                if (n80Var != n80Var2 || n80Var2 == null) {
+                k80 k80Var = (k80) this.c;
+                k80 k80Var2 = v7Var.a;
+                if (k80Var != k80Var2 || k80Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = n80Var2.i;
+                CharacterStyle characterStyle = k80Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     w7 w7Var = v7Var.v;
-                    n2.o0 o0Var = v7Var.c;
-                    Objects.requireNonNull(o0Var);
-                    w7Var.K.H((URLSpan) characterStyle, w7Var, new f2.a(o0Var, 18));
+                    n2.p0 p0Var = v7Var.c;
+                    Objects.requireNonNull(p0Var);
+                    w7Var.K.H((URLSpan) characterStyle, w7Var, new f2.a(p0Var, 17));
                     v7Var.a = null;
                     return;
                 }
                 return;
             case 19:
                 j8 j8Var = (j8) this.b;
-                hi.l3 l3Var = (hi.l3) this.c;
-                j8Var.d.removeView(l3Var);
-                if (l3Var == j8Var.c) {
+                hi.u3 u3Var = (hi.u3) this.c;
+                j8Var.d.removeView(u3Var);
+                if (u3Var == j8Var.c) {
                     j8Var.b = null;
                     j8Var.invalidate();
                     j8Var.b(false);
@@ -399,7 +399,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 return;
             case 23:
                 h2.c cVar = (h2.c) this.b;
-                Object apply = ((l2.t) this.c).apply(cVar.f);
+                Object apply = ((l2.u) this.c).apply(cVar.f);
                 cVar.f = apply;
                 h2.b bVar = new h2.b(cVar, apply, c10 == true ? 1 : 0);
                 h2.i0 i0Var = (h2.i0) cVar.c;
@@ -500,9 +500,9 @@ public final /* synthetic */ class l4 implements Runnable {
                 }
                 return;
             case 27:
-                h2.o0 o0Var2 = (h2.o0) this.b;
+                h2.o0 o0Var = (h2.o0) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-                wf.b bVar2 = (wf.b) o0Var2.d;
+                wf.b bVar2 = (wf.b) o0Var.d;
                 bVar2.getClass();
                 if (atomicBoolean.get()) {
                     new Thread(new l4(28, bVar2, atomicBoolean), "ExoPlayer:WakeLockManager").start();
@@ -522,7 +522,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 ha.b bVar4 = (ha.b) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
                 try {
-                    o5.s.a().d.c(bVar4.h.a.b(l5.d.c), 1);
+                    o5.t.a().d.c(bVar4.h.a.b(l5.d.c), 1);
                 } catch (Exception unused3) {
                 }
                 countDownLatch.countDown();

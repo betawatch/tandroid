@@ -4,19 +4,19 @@ import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import e2.t;
 import e2.u;
-import f3.h0;
 import f3.i0;
+import f3.j0;
 import h2.x;
 import j$.util.Objects;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class n implements i0 {
+public final class n implements j0 {
     public static final u f;
     public static final u g;
-    public final i0 a;
+    public final j0 a;
     public final u b;
     public u c;
     public byte[] d;
@@ -31,8 +31,8 @@ public final class n implements i0 {
         g = new u(tVar2);
     }
 
-    public n(i0 i0Var, int i7) {
-        this.a = i0Var;
+    public n(j0 j0Var, int i7) {
+        this.a = j0Var;
         if (i7 == 1) {
             this.b = f;
         } else {
@@ -45,7 +45,7 @@ public final class n implements i0 {
         this.e = 0;
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final void a(x xVar, int i7, int i10) {
         int i11 = this.e + i7;
         byte[] bArr = this.d;
@@ -56,13 +56,13 @@ public final class n implements i0 {
         this.e += i7;
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final /* synthetic */ void b(int i7, x xVar) {
         e2.a(this, xVar, i7);
     }
 
-    @Override // f3.i0
-    public final void c(long j3, int i7, int i10, int i11, h0 h0Var) {
+    @Override // f3.j0
+    public final void c(long j3, int i7, int i10, int i11, i0 i0Var) {
         this.c.getClass();
         int i12 = this.e - i11;
         x xVar = new x(Arrays.copyOfRange(this.d, i12 - i10, i12));
@@ -89,17 +89,17 @@ public final class n implements i0 {
             xVar = new x(c11);
         }
         int a11 = xVar.a();
-        i0 i0Var = this.a;
-        i0Var.b(a11, xVar);
-        i0Var.c(j3, i7, a11, 0, h0Var);
+        j0 j0Var = this.a;
+        j0Var.b(a11, xVar);
+        j0Var.c(j3, i7, a11, 0, i0Var);
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final int e(e2.n nVar, int i7, boolean z10) {
         return f(nVar, i7, z10);
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final int f(e2.n nVar, int i7, boolean z10) {
         int i10 = this.e + i7;
         byte[] bArr = this.d;
@@ -117,13 +117,13 @@ public final class n implements i0 {
         throw new EOFException();
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final void g(u uVar) {
         this.c = uVar;
         this.a.g(this.b);
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final /* synthetic */ void d(long j3) {
     }
 }

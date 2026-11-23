@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-import ai.u2;
+import ai.l2;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -8,26 +8,26 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import hi.sa;
+import hi.nb;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.en0;
-import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.dn0;
+import org.telegram.ui.Components.hu0;
 import org.telegram.ui.Components.yk0;
-import org.telegram.ui.as0;
 import org.telegram.ui.bn;
+import org.telegram.ui.d20;
 import org.telegram.ui.de0;
-import org.telegram.ui.e20;
-import org.telegram.ui.f40;
-import org.telegram.ui.i81;
+import org.telegram.ui.e40;
+import org.telegram.ui.g81;
+import org.telegram.ui.qz0;
 import org.telegram.ui.rn;
 import org.telegram.ui.sz0;
 import org.telegram.ui.t3;
-import org.telegram.ui.uz0;
-import tg.l2;
+import org.telegram.ui.zr0;
+import tg.o2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class g extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator anim) {
-        sz0 sz0Var;
+        qz0 qz0Var;
         switch (this.a) {
             case 0:
                 kotlin.jvm.internal.j.e(anim, "anim");
@@ -88,7 +88,7 @@ public final class g extends AnimatorListenerAdapter {
                 ((Runnable) this.c).run();
                 return;
             case 4:
-                ((sa) this.d).m0();
+                ((nb) this.d).m0();
                 if (this.b) {
                     return;
                 }
@@ -151,77 +151,77 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 9:
-                org.telegram.ui.Components.voip.y yVar = (org.telegram.ui.Components.voip.y) this.d;
-                org.telegram.ui.Components.voip.y yVar2 = (org.telegram.ui.Components.voip.y) this.c;
-                yVar2.setScaleX(1.0f);
-                yVar2.setScaleY(1.0f);
-                yVar2.setAlpha(1.0f);
+                org.telegram.ui.Components.voip.z zVar = (org.telegram.ui.Components.voip.z) this.d;
+                org.telegram.ui.Components.voip.z zVar2 = (org.telegram.ui.Components.voip.z) this.c;
+                zVar2.setScaleX(1.0f);
+                zVar2.setScaleY(1.0f);
+                zVar2.setAlpha(1.0f);
                 if (this.b) {
-                    yVar.y.removeView(yVar2);
-                    yVar.e();
+                    zVar.y.removeView(zVar2);
+                    zVar.e();
                 }
-                yVar2.setVisibility(8);
+                zVar2.setVisibility(8);
                 return;
             case 10:
-                f40 f40Var = (f40) this.d;
-                e20 e20Var = f40Var.B4;
-                org.telegram.ui.Components.voip.y yVar3 = (org.telegram.ui.Components.voip.y) this.c;
-                if (yVar3 != null) {
-                    yVar3.f = false;
+                e40 e40Var = (e40) this.d;
+                d20 d20Var = e40Var.B4;
+                org.telegram.ui.Components.voip.z zVar3 = (org.telegram.ui.Components.voip.z) this.c;
+                if (zVar3 != null) {
+                    zVar3.f = false;
                 }
-                ls.f(f40Var.o1.a).j(f40Var.c5);
-                f40Var.b5 = false;
+                ks.f(e40Var.o1.a).j(e40Var.c5);
+                e40Var.b5 = false;
                 boolean z10 = this.b;
                 float f11 = z10 ? 1.0f : 0.0f;
-                f40Var.c4 = f11;
-                f40Var.Z3.n = f11;
+                e40Var.c4 = f11;
+                e40Var.Z3.n = f11;
                 if (z10) {
-                    e20Var.setAlpha(1.0f);
-                    e20Var.setScaleX(1.0f);
-                    e20Var.setScaleY(1.0f);
-                    e20Var.setTranslationX(0.0f);
-                    e20Var.setTranslationY(0.0f);
+                    d20Var.setAlpha(1.0f);
+                    d20Var.setScaleX(1.0f);
+                    d20Var.setScaleY(1.0f);
+                    d20Var.setTranslationX(0.0f);
+                    d20Var.setTranslationY(0.0f);
                 } else {
-                    f40Var.V4.setAlpha(0);
-                    f40Var.e1();
-                    if (f40Var.d4.getParent() != null) {
-                        f40Var.b.removeView(f40Var.d4);
+                    e40Var.V4.setAlpha(0);
+                    e40Var.e1();
+                    if (e40Var.d4.getParent() != null) {
+                        e40Var.b.removeView(e40Var.d4);
                     }
-                    f40Var.d4 = null;
-                    e20Var.setVisibility(8);
-                    f40Var.e4 = false;
-                    f40Var.T1.X = true;
-                    f40Var.a4.setVisibility(8);
-                    if (f40Var.n2) {
-                        f40Var.n2 = false;
-                        f40Var.R0(true);
+                    e40Var.d4 = null;
+                    d20Var.setVisibility(8);
+                    e40Var.e4 = false;
+                    e40Var.T1.X = true;
+                    e40Var.a4.setVisibility(8);
+                    if (e40Var.n2) {
+                        e40Var.n2 = false;
+                        e40Var.R0(true);
                     }
-                    org.telegram.ui.Components.voip.y yVar4 = f40Var.Y4;
-                    if (yVar4 != null) {
-                        yVar4.a.setRoundCorners(0.0f);
+                    org.telegram.ui.Components.voip.z zVar4 = e40Var.Y4;
+                    if (zVar4 != null) {
+                        zVar4.a.setRoundCorners(0.0f);
                     }
                 }
-                f40Var.V0();
-                f40Var.b.invalidate();
-                f40Var.m1.invalidate();
-                f40Var.L1.invalidate();
+                e40Var.V0();
+                e40Var.b.invalidate();
+                e40Var.m1.invalidate();
+                e40Var.L1.invalidate();
                 return;
             case 11:
-                iu0 iu0Var = (iu0) this.c;
+                hu0 hu0Var = (hu0) this.c;
                 de0 de0Var = (de0) this.d;
                 if (de0Var.K == 0 && this.b) {
                     de0Var.N1(true, true);
                 }
-                iu0Var.setVisibility(8);
-                iu0Var.g();
-                iu0Var.setX(0.0f);
+                hu0Var.setVisibility(8);
+                hu0Var.g();
+                hu0Var.setX(0.0f);
                 return;
             case 12:
-                as0 as0Var = (as0) this.d;
-                as0Var.E = this.b ? 1.0f : 0.0f;
-                as0Var.c.invalidate();
-                as0Var.d.invalidate();
-                as0Var.e();
+                zr0 zr0Var = (zr0) this.d;
+                zr0Var.E = this.b ? 1.0f : 0.0f;
+                zr0Var.c.invalidate();
+                zr0Var.d.invalidate();
+                zr0Var.e();
                 Runnable runnable3 = (Runnable) this.c;
                 if (runnable3 != null) {
                     runnable3.run();
@@ -229,21 +229,21 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 13:
-                uz0 uz0Var = (uz0) this.d;
-                uz0Var.s = this.b ? 1.0f : 0.0f;
-                uz0Var.b.invalidate();
-                uz0Var.c.invalidate();
-                uz0Var.e();
-                TextView textView = uz0Var.E;
+                sz0 sz0Var = (sz0) this.d;
+                sz0Var.s = this.b ? 1.0f : 0.0f;
+                sz0Var.b.invalidate();
+                sz0Var.c.invalidate();
+                sz0Var.e();
+                TextView textView = sz0Var.E;
                 if (textView != null) {
-                    textView.setAlpha(uz0Var.s);
+                    textView.setAlpha(sz0Var.s);
                 }
-                if (uz0Var.T) {
-                    uz0Var.O.invalidate();
+                if (sz0Var.T) {
+                    sz0Var.O.invalidate();
                 }
-                if (!uz0Var.T && (sz0Var = uz0Var.O) != null && sz0Var.getSeekBarWaveform() != null) {
-                    en0 seekBarWaveform = uz0Var.O.getSeekBarWaveform();
-                    seekBarWaveform.L = uz0Var.s;
+                if (!sz0Var.T && (qz0Var = sz0Var.O) != null && qz0Var.getSeekBarWaveform() != null) {
+                    dn0 seekBarWaveform = sz0Var.O.getSeekBarWaveform();
+                    seekBarWaveform.L = sz0Var.s;
                     r1 r1Var2 = seekBarWaveform.n;
                     if (r1Var2 != null) {
                         r1Var2.invalidate();
@@ -256,11 +256,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 14:
-                i81 i81Var = (i81) this.d;
-                i81Var.y = this.b ? 1.0f : 0.0f;
-                i81Var.b.invalidate();
-                i81Var.c.invalidate();
-                i81Var.e();
+                g81 g81Var = (g81) this.d;
+                g81Var.y = this.b ? 1.0f : 0.0f;
+                g81Var.b.invalidate();
+                g81Var.c.invalidate();
+                g81Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();
@@ -268,14 +268,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             default:
-                l2 l2Var = (l2) this.d;
-                u2 u2Var = l2Var.c;
+                o2 o2Var = (o2) this.d;
+                l2 l2Var = o2Var.c;
                 float f12 = this.b ? 1.0f : 0.0f;
-                l2Var.E = f12;
-                u2Var.setAlpha(f12);
-                u2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
-                u2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
-                l2Var.b.invalidate();
+                o2Var.E = f12;
+                l2Var.setAlpha(f12);
+                l2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, o2Var.E));
+                l2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, o2Var.E));
+                o2Var.b.invalidate();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {
                     org.telegram.messenger.g0.g3(runnable6);

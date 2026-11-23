@@ -4,11 +4,11 @@ import a8.xa;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.wc1;
+import org.telegram.ui.Components.rm;
+import org.telegram.ui.uc1;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j implements k0, q2.k {
     public final Object a;
@@ -27,9 +27,9 @@ public final class j implements k0, q2.k {
     public final void A(int i7, g0 g0Var, u uVar, c0 c0Var) {
         if (a(i7, g0Var)) {
             xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
+            c0 b10 = b(c0Var, g0Var);
             xaVar.getClass();
-            xaVar.i(new i0(xaVar, uVar, d, 1));
+            xaVar.g(new i0(xaVar, uVar, b10, 1));
         }
     }
 
@@ -37,10 +37,10 @@ public final class j implements k0, q2.k {
     public final void C(int i7, g0 g0Var, c0 c0Var) {
         if (a(i7, g0Var)) {
             xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
+            c0 b10 = b(c0Var, g0Var);
             g0 g0Var2 = (g0) xaVar.c;
             g0Var2.getClass();
-            xaVar.i(new tm(xaVar, g0Var2, d, 17));
+            xaVar.g(new rm(xaVar, g0Var2, b10, 17));
         }
     }
 
@@ -48,9 +48,9 @@ public final class j implements k0, q2.k {
     public final void G(int i7, g0 g0Var, u uVar, c0 c0Var) {
         if (a(i7, g0Var)) {
             xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
+            c0 b10 = b(c0Var, g0Var);
             xaVar.getClass();
-            xaVar.i(new i0(xaVar, uVar, d, 0));
+            xaVar.g(new i0(xaVar, uVar, b10, 0));
         }
     }
 
@@ -58,9 +58,9 @@ public final class j implements k0, q2.k {
     public final void I(int i7, g0 g0Var, u uVar, c0 c0Var, int i10) {
         if (a(i7, g0Var)) {
             xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
+            c0 b10 = b(c0Var, g0Var);
             xaVar.getClass();
-            xaVar.i(new bg.g0(xaVar, uVar, d, i10, 11));
+            xaVar.g(new bg.g0(xaVar, uVar, b10, i10, 11));
         }
     }
 
@@ -103,24 +103,7 @@ public final class j implements k0, q2.k {
         return true;
     }
 
-    @Override // x2.k0
-    public final void b(int i7, g0 g0Var, c0 c0Var) {
-        if (a(i7, g0Var)) {
-            xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
-            xaVar.getClass();
-            xaVar.i(new wc1(27, xaVar, d));
-        }
-    }
-
-    @Override // q2.k
-    public final void c(int i7, g0 g0Var, nb.a aVar) {
-        if (a(i7, g0Var)) {
-            this.c.a(aVar);
-        }
-    }
-
-    public final c0 d(c0 c0Var, g0 g0Var) {
+    public final c0 b(c0 c0Var, g0 g0Var) {
         long j3 = c0Var.f;
         l lVar = this.d;
         Object obj = this.a;
@@ -131,12 +114,29 @@ public final class j implements k0, q2.k {
     }
 
     @Override // x2.k0
+    public final void i(int i7, g0 g0Var, c0 c0Var) {
+        if (a(i7, g0Var)) {
+            xa xaVar = this.b;
+            c0 b10 = b(c0Var, g0Var);
+            xaVar.getClass();
+            xaVar.g(new uc1(27, xaVar, b10));
+        }
+    }
+
+    @Override // q2.k
+    public final void l(int i7, g0 g0Var, nb.a aVar) {
+        if (a(i7, g0Var)) {
+            this.c.a(aVar);
+        }
+    }
+
+    @Override // x2.k0
     public final void r(int i7, g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10) {
         if (a(i7, g0Var)) {
             xa xaVar = this.b;
-            c0 d = d(c0Var, g0Var);
+            c0 b10 = b(c0Var, g0Var);
             xaVar.getClass();
-            xaVar.i(new zl(xaVar, uVar, d, iOException, z10));
+            xaVar.g(new zl(xaVar, uVar, b10, iOException, z10));
         }
     }
 

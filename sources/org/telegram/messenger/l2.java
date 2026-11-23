@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l2 extends c1 {
     public static volatile l2[] b = new l2[4];
@@ -42,19 +42,19 @@ public final class l2 extends c1 {
 
     public final void a(long j3, long j10, TLRPC.JoinChatBotResult joinChatBotResult) {
         this.a.get(j10, 0L);
-        getNotificationCenter().k(ls.T5, new k2(j3, joinChatBotResult));
-        HashSet hashSet = ki.s2.b1;
+        getNotificationCenter().k(ks.T5, new k2(j3, joinChatBotResult));
+        HashSet hashSet = ki.t2.b1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                ki.s2 s2Var = (ki.s2) it.next();
-                ki.e4 e4Var = s2Var.x0;
-                if (e4Var != null && e4Var.g == 5) {
-                    long j11 = e4Var.b;
+                ki.t2 t2Var = (ki.t2) it.next();
+                ki.f4 f4Var = t2Var.x0;
+                if (f4Var != null && f4Var.g == 5) {
+                    long j11 = f4Var.b;
                     if (j11 == j3 || j11 == 0) {
-                        TLObject tLObject = e4Var.q;
+                        TLObject tLObject = f4Var.q;
                         if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j10) {
-                            s2Var.o(false);
+                            t2Var.o(false);
                             return;
                         }
                     }
@@ -74,7 +74,7 @@ public final class l2 extends c1 {
                 c(j3, j10, j11, true);
                 return;
             } else {
-                org.telegram.ui.Components.c5.n(Q, c22, new Runnable() { // from class: org.telegram.messenger.i2
+                org.telegram.ui.Components.b5.n(Q, c22, new Runnable() { // from class: org.telegram.messenger.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         long j12 = j11;
@@ -90,13 +90,13 @@ public final class l2 extends c1 {
         }
         this.a.put(j11, j10);
         org.telegram.ui.ActionBar.g2 Q2 = LaunchActivity.Q();
-        ki.e4 b10 = ki.e4.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        ki.f4 b10 = ki.f4.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b10.d = j11;
-        ki.s2 s2Var = new ki.s2(LaunchActivity.H1, null);
-        s2Var.B(false);
-        s2Var.C0 = true;
-        s2Var.m0 = LaunchActivity.H1;
-        s2Var.x(Q2, b10);
-        s2Var.show();
+        ki.t2 t2Var = new ki.t2(LaunchActivity.H1, null);
+        t2Var.B(false);
+        t2Var.C0 = true;
+        t2Var.m0 = LaunchActivity.H1;
+        t2Var.x(Q2, b10);
+        t2Var.show();
     }
 }

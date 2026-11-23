@@ -1,104 +1,59 @@
 package hi;
 
-import android.graphics.Rect;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.WeakHashMap;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public class o3 {
-    public final View a;
-    public View b;
-    public final y10 c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final Rect h = new Rect();
-    public final bi.s1 i;
-    public final m3 j;
-    public int k;
-    public int l;
+public final /* synthetic */ class o3 implements r1.c {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v1, types: [android.view.ViewTreeObserver$OnGlobalLayoutListener, hi.m3] */
-    public o3(View view, boolean z10, y10 y10Var) {
-        bi.s1 s1Var = new bi.s1(this, 1);
-        this.i = s1Var;
-        ?? r12 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: hi.m3
-            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-            public final void onGlobalLayout() {
-                o3.this.d();
-            }
-        };
-        this.j = r12;
-        this.a = view;
-        this.c = y10Var;
-        this.b = view;
-        if (view.isAttachedToWindow()) {
-            view.getViewTreeObserver().addOnGlobalLayoutListener(r12);
-            view.addOnLayoutChangeListener(s1Var);
-        }
-        view.addOnAttachStateChangeListener(new n3(this, z10, view));
+    public /* synthetic */ o3(float f10, View view, Runnable runnable) {
+        this.b = runnable;
+        this.d = view;
+        this.c = f10;
     }
 
-    public final void a() {
-        if (this.e) {
-            if (this.l < org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.n) {
-                return;
-            } else {
-                this.e = false;
-            }
-        }
-        y10 y10Var = this.c;
-        if (y10Var != null) {
-            y10Var.a(Integer.valueOf(this.l));
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+        int i7 = this.a;
+        float f12 = this.c;
+        KeyEvent.Callback callback = this.d;
+        Runnable runnable = this.b;
+        switch (i7) {
+            case 0:
+                q3 q3Var = (q3) callback;
+                p3 p3Var = q3Var.m1;
+                if (!z10) {
+                    p3Var.setTranslationY(f12);
+                    p3Var.L = false;
+                    q3Var.o1 = null;
+                    q3Var.p1 = null;
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view = (View) callback;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                view.setTranslationX(f12);
+                view.setTag(R.id.spring_tag, null);
+                view.setTag(R.id.spring_was_translation_x_tag, null);
+                break;
         }
     }
 
-    public void b(boolean z10) {
-        this.d = z10;
-        d();
-    }
-
-    public final boolean c() {
-        return this.l > org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.n || this.e;
-    }
-
-    public final void d() {
-        if (this.d) {
-            return;
-        }
-        boolean z10 = this.f;
-        View view = this.a;
-        if (z10) {
-            View view2 = this.b;
-            if (view2 != null) {
-                view = view2;
-            }
-            WeakHashMap weakHashMap = r0.i0.a;
-            r0.l1 a10 = r0.b0.a(view);
-            this.l = a10 != null ? a10.a.f(8).d : 0;
-        } else {
-            Rect rect = this.h;
-            view.getWindowVisibleDisplayFrame(rect);
-            View view3 = this.b;
-            if (view3 != null) {
-                view = view3;
-            }
-            this.l = view.getHeight() - rect.bottom;
-        }
-        if (this.g) {
-            this.l = Math.max(0, this.l - org.telegram.messenger.g0.n);
-        }
-        int i7 = this.k;
-        int i10 = this.l;
-        boolean z11 = i7 != i10;
-        this.k = i10;
-        if (z11) {
-            a();
-        }
+    public /* synthetic */ o3(q3 q3Var, float f10, Runnable runnable) {
+        this.d = q3Var;
+        this.c = f10;
+        this.b = runnable;
     }
 }

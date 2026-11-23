@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y implements e0, d0 {
     public final g0 a;
@@ -17,6 +17,13 @@ public final class y implements e0, d0 {
         this.b = j3;
     }
 
+    @Override // x2.d0
+    public final void V(e0 e0Var) {
+        d0 d0Var = this.f;
+        String str = h2.l0.a;
+        d0Var.V(this);
+    }
+
     public final void a(g0 g0Var) {
         long j3 = this.h;
         if (j3 == -9223372036854775807L) {
@@ -27,45 +34,31 @@ public final class y implements e0, d0 {
         e0 c10 = aVar.c(g0Var, this.c, j3);
         this.e = c10;
         if (this.f != null) {
-            c10.t(this, j3);
+            c10.s(this, j3);
         }
     }
 
     @Override // x2.e0
-    public final long b(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
+    public final long c(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
         long j10 = this.h;
         long j11 = (j10 == -9223372036854775807L || j3 != this.b) ? j3 : j10;
         this.h = -9223372036854775807L;
         e0 e0Var = this.e;
         String str = h2.l0.a;
-        return e0Var.b(uVarArr, zArr, d1VarArr, zArr2, j11);
+        return e0Var.c(uVarArr, zArr, d1VarArr, zArr2, j11);
     }
 
     @Override // x2.f1
-    public final boolean c(l2.s0 s0Var) {
+    public final boolean d(l2.t0 t0Var) {
         e0 e0Var = this.e;
-        return e0Var != null && e0Var.c(s0Var);
-    }
-
-    @Override // x2.e1
-    public final void c0(f1 f1Var) {
-        d0 d0Var = this.f;
-        String str = h2.l0.a;
-        d0Var.c0(this);
+        return e0Var != null && e0Var.d(t0Var);
     }
 
     @Override // x2.f1
-    public final long e() {
+    public final long f() {
         e0 e0Var = this.e;
         String str = h2.l0.a;
-        return e0Var.e();
-    }
-
-    @Override // x2.e0
-    public final long f(long j3, l2.p1 p1Var) {
-        e0 e0Var = this.e;
-        String str = h2.l0.a;
-        return e0Var.f(j3, p1Var);
+        return e0Var.f();
     }
 
     @Override // x2.f1
@@ -75,10 +68,24 @@ public final class y implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final void i() {
+    public final long i(long j3, l2.q1 q1Var) {
+        e0 e0Var = this.e;
+        String str = h2.l0.a;
+        return e0Var.i(j3, q1Var);
+    }
+
+    @Override // x2.e1
+    public final void i2(f1 f1Var) {
+        d0 d0Var = this.f;
+        String str = h2.l0.a;
+        d0Var.i2(this);
+    }
+
+    @Override // x2.e0
+    public final void j() {
         e0 e0Var = this.e;
         if (e0Var != null) {
-            e0Var.i();
+            e0Var.j();
             return;
         }
         a aVar = this.d;
@@ -88,17 +95,10 @@ public final class y implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final long k(long j3) {
+    public final long l(long j3) {
         e0 e0Var = this.e;
         String str = h2.l0.a;
-        return e0Var.k(j3);
-    }
-
-    @Override // x2.d0
-    public final void m(e0 e0Var) {
-        d0 d0Var = this.f;
-        String str = h2.l0.a;
-        d0Var.m(this);
+        return e0Var.l(j3);
     }
 
     @Override // x2.e0
@@ -109,10 +109,10 @@ public final class y implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final long o() {
+    public final long p() {
         e0 e0Var = this.e;
         String str = h2.l0.a;
-        return e0Var.o();
+        return e0Var.p();
     }
 
     @Override // x2.e0
@@ -130,7 +130,7 @@ public final class y implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final void t(d0 d0Var, long j3) {
+    public final void s(d0 d0Var, long j3) {
         this.f = d0Var;
         e0 e0Var = this.e;
         if (e0Var != null) {
@@ -138,7 +138,7 @@ public final class y implements e0, d0 {
             if (j10 == -9223372036854775807L) {
                 j10 = this.b;
             }
-            e0Var.t(this, j10);
+            e0Var.s(this, j10);
         }
     }
 

@@ -5,8 +5,8 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
-import c8.bc;
-import c8.c1;
+import c8.cc;
+import c8.d1;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q extends r6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -704,7 +704,7 @@ public final class q extends r6.a {
                                         i21 = i20;
                                         mVar = null;
                                     }
-                                    Integer a16 = c1.a(jSONObject5.optString("repeatMode"));
+                                    Integer a16 = d1.a(jSONObject5.optString("repeatMode"));
                                     int intValue = a16 != null ? a16.intValue() : 0;
                                     JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                     if (optJSONArray3 != null) {
@@ -857,7 +857,7 @@ public final class q extends r6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a17 = c1.a(jSONObject2.getString("repeatMode"));
+                Integer a17 = d1.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a17 == null ? this.G : a17.intValue();
                 if (this.G != intValue2) {
                     this.G = intValue2;
@@ -891,9 +891,9 @@ public final class q extends r6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o C = new ob.c(mediaInfo).C();
-                                C.b(jSONObject6);
-                                arrayList7.add(C);
+                                o v = new ob.c(mediaInfo).v();
+                                v.b(jSONObject6);
+                                arrayList7.add(v);
                             }
                             i12 = i40;
                             i39++;
@@ -1104,54 +1104,54 @@ public final class q extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.F;
         this.E = jSONObject == null ? null : jSONObject.toString();
-        int r10 = bc.r(parcel, 20293);
-        bc.k(parcel, 2, this.a, i7);
+        int r10 = cc.r(parcel, 20293);
+        cc.k(parcel, 2, this.a, i7);
         long j3 = this.b;
-        bc.q(parcel, 3, 8);
+        cc.q(parcel, 3, 8);
         parcel.writeLong(j3);
         int i10 = this.c;
-        bc.q(parcel, 4, 4);
+        cc.q(parcel, 4, 4);
         parcel.writeInt(i10);
         double d = this.d;
-        bc.q(parcel, 5, 8);
+        cc.q(parcel, 5, 8);
         parcel.writeDouble(d);
         int i11 = this.e;
-        bc.q(parcel, 6, 4);
+        cc.q(parcel, 6, 4);
         parcel.writeInt(i11);
         int i12 = this.f;
-        bc.q(parcel, 7, 4);
+        cc.q(parcel, 7, 4);
         parcel.writeInt(i12);
         long j10 = this.h;
-        bc.q(parcel, 8, 8);
+        cc.q(parcel, 8, 8);
         parcel.writeLong(j10);
         long j11 = this.n;
-        bc.q(parcel, 9, 8);
+        cc.q(parcel, 9, 8);
         parcel.writeLong(j11);
         double d2 = this.r;
-        bc.q(parcel, 10, 8);
+        cc.q(parcel, 10, 8);
         parcel.writeDouble(d2);
         boolean z10 = this.s;
-        bc.q(parcel, 11, 4);
+        cc.q(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        bc.j(parcel, 12, this.w);
+        cc.j(parcel, 12, this.w);
         int i13 = this.x;
-        bc.q(parcel, 13, 4);
+        cc.q(parcel, 13, 4);
         parcel.writeInt(i13);
         int i14 = this.y;
-        bc.q(parcel, 14, 4);
+        cc.q(parcel, 14, 4);
         parcel.writeInt(i14);
-        bc.l(parcel, 15, this.E);
+        cc.l(parcel, 15, this.E);
         int i15 = this.G;
-        bc.q(parcel, 16, 4);
+        cc.q(parcel, 16, 4);
         parcel.writeInt(i15);
-        bc.p(parcel, 17, this.H);
+        cc.p(parcel, 17, this.H);
         boolean z11 = this.I;
-        bc.q(parcel, 18, 4);
+        cc.q(parcel, 18, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        bc.k(parcel, 19, this.J, i7);
-        bc.k(parcel, 20, this.K, i7);
-        bc.k(parcel, 21, this.L, i7);
-        bc.k(parcel, 22, this.M, i7);
-        bc.s(parcel, r10);
+        cc.k(parcel, 19, this.J, i7);
+        cc.k(parcel, 20, this.K, i7);
+        cc.k(parcel, 21, this.L, i7);
+        cc.k(parcel, 22, this.M, i7);
+        cc.s(parcel, r10);
     }
 }

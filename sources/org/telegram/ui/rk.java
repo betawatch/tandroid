@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class rk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.gc gcVar;
+        org.telegram.ui.Components.fc fcVar;
         int i7;
         int i10;
         int i11;
@@ -48,15 +48,15 @@ public final /* synthetic */ class rk implements Runnable {
                 bn bnVar = ((sk) obj2).b;
                 if (this.d) {
                     i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                    org.telegram.messenger.np.u1(i7).g7.edit().remove("pin_" + bnVar.l6).commit();
+                    org.telegram.messenger.mp.u1(i7).g7.edit().remove("pin_" + bnVar.l6).commit();
                     bnVar.gd(0, true);
-                    gcVar = null;
+                    fcVar = null;
                 } else {
-                    gcVar = null;
+                    fcVar = null;
                     bnVar.getNotificationCenter().k(56, Long.valueOf(bnVar.l6), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i14), Boolean.valueOf(bnVar.g5));
                 }
                 if (i13 == bnVar.R3) {
-                    bnVar.P3 = gcVar;
+                    bnVar.P3 = fcVar;
                     break;
                 }
                 break;
@@ -97,7 +97,7 @@ public final /* synthetic */ class rk implements Runnable {
                     }
                     canvas.rotate(i14);
                     float f11 = -i15;
-                    org.telegram.messenger.o10.k(round2, 2.0f, f11, f11 - (round / 2.0f), canvas);
+                    org.telegram.messenger.m10.k(round2, 2.0f, f11, f11 - (round / 2.0f), canvas);
                     try {
                         canvas.drawBitmap(bitmap, rect, rect3, (Paint) null);
                     } catch (Exception unused) {
@@ -112,7 +112,7 @@ public final /* synthetic */ class rk implements Runnable {
                         canvas.drawRect(f12, f10, f14, f13, paint);
                         canvas.drawRect(0.0f, f13, f14, i18 + i15, paint);
                     }
-                    org.telegram.messenger.g0.g3(new ai.i(cVar, str, createBitmap, this.d, bitmap));
+                    org.telegram.messenger.g0.g3(new ai.e(cVar, str, createBitmap, this.d, bitmap));
                     break;
                 }
                 break;

@@ -4,37 +4,37 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import com.google.android.gms.internal.vision.e2;
 import di.v6;
-import hi.d7;
+import hi.y7;
 import j$.time.DayOfWeek;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Cells.j5;
-import org.telegram.ui.Cells.n8;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Cells.i5;
+import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e1 extends g2 implements gs {
-    public h51 a;
+public final class e1 extends g2 implements fs {
+    public g51 a;
     public c5 b;
     public boolean c;
     public boolean d;
@@ -52,14 +52,14 @@ public final class e1 extends g2 implements gs {
     public static void Z(e1 e1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
             e1Var.b.b(false);
-            lc.e0(tL_error);
+            kc.e0(tL_error);
         } else {
             if (tLObject instanceof TLRPC.TL_boolFalse) {
                 if (e1Var.getParentActivity() == null) {
                     return;
                 }
                 e1Var.b.b(false);
-                f3.o(null, 2131743634, lc.b0(e1Var), null);
+                f3.o(null, 2131743632, kc.b0(e1Var), null);
                 return;
             }
             if (e1Var.isFinished || e1Var.finishing) {
@@ -70,17 +70,17 @@ public final class e1 extends g2 implements gs {
     }
 
     public static void a0(e1 e1Var, ArrayList arrayList) {
-        String N0 = hd.N0(2131752752, null);
-        String N02 = hd.N0(2131752737, null);
-        o41 o41Var = new o41(2);
-        o41Var.m = N0;
-        o41Var.p = N02;
-        o41Var.k = R.raw.biz_clock;
-        arrayList.add(o41Var);
-        o41 i7 = o41.i(-1, hd.N0(2131752717, null));
+        String N0 = gd.N0(2131752752, null);
+        String N02 = gd.N0(2131752737, null);
+        n41 n41Var = new n41(2);
+        n41Var.m = N0;
+        n41Var.p = N02;
+        n41Var.k = R.raw.biz_clock;
+        arrayList.add(n41Var);
+        n41 i7 = n41.i(-1, gd.N0(2131752717, null));
         i7.L(e1Var.d);
         arrayList.add(i7);
-        arrayList.add(o41.B(-100, null));
+        arrayList.add(n41.B(-100, null));
         if (!e1Var.d) {
             return;
         }
@@ -89,23 +89,23 @@ public final class e1 extends g2 implements gs {
         while (true) {
             ArrayList[] arrayListArr = e1Var.f;
             if (i10 >= arrayListArr.length) {
-                arrayList.add(o41.B(-101, null));
-                arrayList.add(o41.f(hd.N0(2131752716, null), z1.b(e1Var.currentAccount).d(e1Var.n, false), -2));
-                arrayList.add(o41.B(-102, null));
+                arrayList.add(n41.B(-101, null));
+                arrayList.add(n41.f(gd.N0(2131752716, null), z1.b(e1Var.currentAccount).d(e1Var.n, false), -2));
+                arrayList.add(n41.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
                 arrayListArr[i10] = new ArrayList();
             }
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, gd.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(e1Var.f[i10]);
-            o41 o41Var2 = new o41(5);
-            o41Var2.d = i10;
-            o41Var2.m = str;
-            o41Var2.n = f02;
-            o41Var2.L(!e1Var.f[i10].isEmpty());
-            arrayList.add(o41Var2);
+            n41 n41Var2 = new n41(5);
+            n41Var2.d = i10;
+            n41Var2.m = str;
+            n41Var2.n = f02;
+            n41Var2.L(!e1Var.f[i10].isEmpty());
+            arrayList.add(n41Var2);
             i10++;
         }
     }
@@ -113,7 +113,7 @@ public final class e1 extends g2 implements gs {
     public static /* synthetic */ void b0(e1 e1Var, View view, String str) {
         z1 b10 = z1.b(e1Var.currentAccount);
         e1Var.n = str;
-        ((n8) view).w(b10.d(str, false), true);
+        ((m8) view).w(b10.d(str, false), true);
         e1Var.d0(true);
     }
 
@@ -172,10 +172,10 @@ public final class e1 extends g2 implements gs {
 
     public static String f0(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
-            return hd.N0(2131752743, null);
+            return gd.N0(2131752743, null);
         }
         if (h0(arrayList)) {
-            return hd.N0(2131752742, null);
+            return gd.N0(2131752742, null);
         }
         String str = "";
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -214,18 +214,18 @@ public final class e1 extends g2 implements gs {
         ArrayList[] e02 = e0(tL_businessWorkHours.weekly_open);
         StringBuilder sb2 = new StringBuilder();
         if (user != null) {
-            sb2.append(hd.a0(null, null, 2131752747, p10.q(user)));
+            sb2.append(gd.a0(null, null, 2131752747, n10.q(user)));
             sb2.append("\n");
         }
         for (int i10 = 0; i10 < 7; i10++) {
             ArrayList arrayList = e02[i10];
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, gd.E0().y);
             sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
             sb2.append(": ");
             if (h0(arrayList)) {
-                sb2.append(hd.N0(2131752729, null));
+                sb2.append(gd.N0(2131752729, null));
             } else if (arrayList.isEmpty()) {
-                sb2.append(hd.N0(2131752733, null));
+                sb2.append(gd.N0(2131752733, null));
             } else {
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     if (i11 > 0) {
@@ -242,7 +242,7 @@ public final class e1 extends g2 implements gs {
         TLRPC.TL_timezone a10 = z1.b(i7).a(tL_businessWorkHours.timezone_id);
         if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a10 == null ? 0 : a10.utc_offset)) / 60 != 0 && a10 != null) {
             z1.b(i7);
-            sb2.append(hd.a0(null, null, 2131752748, z1.e(a10, true)));
+            sb2.append(gd.a0(null, null, 2131752748, z1.e(a10, true)));
         }
         return sb2.toString();
     }
@@ -261,8 +261,8 @@ public final class e1 extends g2 implements gs {
             this.f[i10].remove(d1Var);
         }
         View B1 = this.a.B1(i10);
-        if (B1 instanceof j5) {
-            ((j5) B1).setValue(f0(this.f[i10]));
+        if (B1 instanceof i5) {
+            ((i5) B1).setValue(f0(this.f[i10]));
         } else {
             this.a.g3.O(true);
         }
@@ -272,18 +272,18 @@ public final class e1 extends g2 implements gs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.N0(2131752752, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 11));
-        this.b = this.simpleActionBar.s(hd.N0(2131745750, null));
+        this.simpleActionBar.setTitle(gd.N0(2131752752, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.w1(this, 11));
+        this.b = this.simpleActionBar.s(gd.N0(2131745750, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        h51 h51Var = new h51(this, new d7(this, 13), new v6(this, 27), null);
-        this.a = h51Var;
-        h51Var.r1();
-        h51 h51Var2 = this.a;
-        h51Var2.g3.r = false;
-        h51Var2.setSectionsDrawBackground(true);
-        frameLayout.addView(this.a, ma.c(-1.0f, -1));
+        g51 g51Var = new g51(this, new y7(this, 13), new v6(this, 29), null);
+        this.a = g51Var;
+        g51Var.r1();
+        g51 g51Var2 = this.a;
+        g51Var2.g3.r = false;
+        g51Var2.setSectionsDrawBackground(true);
+        frameLayout.addView(this.a, na.c(-1.0f, -1));
         j0();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -296,22 +296,22 @@ public final class e1 extends g2 implements gs {
         this.b.a(g0(), z10);
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        c51 c51Var;
-        if (i7 == ls.E0) {
+        b51 b51Var;
+        if (i7 == ks.E0) {
             j0();
             return;
         }
-        if (i7 == ls.t3) {
+        if (i7 == ks.t3) {
             if (this.e == null) {
                 this.n = z1.b(this.currentAccount).c();
             }
-            h51 h51Var = this.a;
-            if (h51Var == null || (c51Var = h51Var.g3) == null) {
+            g51 g51Var = this.a;
+            if (g51Var == null || (b51Var = g51Var.g3) == null) {
                 return;
             }
-            c51Var.O(true);
+            b51Var.O(true);
         }
     }
 
@@ -398,7 +398,7 @@ public final class e1 extends g2 implements gs {
             d2.flags2 &= -2;
             d2.business_work_hours = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new ai.g1(this, 20));
+        getConnectionsManager().sendRequest(updatebusinessworkhours, new ai.b1(this, 20));
         getMessagesStorage().j2(d2, false);
     }
 
@@ -408,7 +408,7 @@ public final class e1 extends g2 implements gs {
     }
 
     public final void j0() {
-        c51 c51Var;
+        b51 b51Var;
         if (this.c) {
             return;
         }
@@ -445,9 +445,9 @@ public final class e1 extends g2 implements gs {
             this.e = e0(tL_businessWorkHours.weekly_open);
             this.f = e0(d2.business_work_hours.weekly_open);
         }
-        h51 h51Var = this.a;
-        if (h51Var != null && (c51Var = h51Var.g3) != null) {
-            c51Var.O(true);
+        g51 g51Var = this.a;
+        if (g51Var != null && (b51Var = g51Var.g3) != null) {
+            b51Var.O(true);
         }
         d0(false);
         this.c = true;
@@ -457,13 +457,13 @@ public final class e1 extends g2 implements gs {
     public final boolean onFragmentCreate() {
         z1.b(this.currentAccount).g();
         this.n = z1.b(this.currentAccount).c();
-        getNotificationCenter().c(this, ls.E0);
+        getNotificationCenter().c(this, ks.E0);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ls.E0);
+        getNotificationCenter().n(this, ks.E0);
         super.onFragmentDestroy();
         i0();
     }

@@ -1,15 +1,34 @@
 package hi;
 
-import android.content.Context;
+import org.telegram.messenger.w10;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class ca extends l0 {
-    public final /* synthetic */ sa F;
+public final /* synthetic */ class ca implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w10 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ca(sa saVar, Context context, ga gaVar) {
-        super(context, gaVar);
-        this.F = saVar;
+    public /* synthetic */ ca(w10 w10Var, int i7) {
+        this.a = i7;
+        this.b = w10Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(LaunchActivity.T());
+                break;
+            case 1:
+                org.telegram.messenger.g0.g3(new ca(this.b, 3));
+                break;
+            case 2:
+                this.b.a(null);
+                break;
+            default:
+                this.b.a(null);
+                break;
+        }
     }
 }

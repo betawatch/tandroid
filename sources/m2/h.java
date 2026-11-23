@@ -1,13 +1,13 @@
 package m2;
 
-import a8.la;
+import a8.ma;
 import android.content.ClipData;
 import android.media.metrics.LogSessionId;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContentInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements r0.d, r0.f {
     public final /* synthetic */ int a = 0;
@@ -53,7 +53,7 @@ public final class h implements r0.d, r0.f {
         LogSessionId logSessionId2;
         LogSessionId logSessionId3 = (LogSessionId) this.b;
         logSessionId2 = LogSessionId.LOG_SESSION_ID_NONE;
-        la.p(logSessionId3.equals(logSessionId2));
+        ma.p(logSessionId3.equals(logSessionId2));
         this.b = logSessionId;
     }
 

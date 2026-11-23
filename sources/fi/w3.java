@@ -8,10 +8,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.oh0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.nh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class w3 {
     public final Paint a;
@@ -33,8 +33,8 @@ public final class w3 {
     public final Drawable q;
     public final Drawable r;
     public final Drawable s;
-    public final oh0 t;
-    public final oh0 u;
+    public final nh0 t;
+    public final nh0 u;
 
     public w3(Context context) {
         new RectF();
@@ -49,18 +49,18 @@ public final class w3 {
         this.q = context.getDrawable(R.drawable.media_more);
         this.r = context.getDrawable(R.drawable.menu_stream_pip);
         this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new oh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        oh0 oh0Var = new oh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        this.t = oh0Var;
-        oh0Var.N(20, false, true);
-        oh0Var.stop();
+        this.u = new nh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        nh0 nh0Var = new nh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        this.t = nh0Var;
+        nh0Var.N(20, false, true);
+        nh0Var.stop();
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setColor(1442840575);
         Paint paint2 = new Paint(1);
         this.b = paint2;
         paint2.setColor(-1);
-        int o4 = i0.a.o(-16777216, ls.n1);
+        int o4 = i0.a.o(-16777216, ks.n1);
         this.d = context.getDrawable(R.drawable.shadow_story_top);
         this.e = context.getDrawable(R.drawable.shadow_story_bottom);
         Paint paint3 = new Paint();
@@ -70,25 +70,25 @@ public final class w3 {
     }
 
     public final void a(boolean z10, boolean z11) {
-        oh0 oh0Var = this.u;
+        nh0 nh0Var = this.u;
         if (!z11) {
-            oh0Var.N(z10 ? 20 : 0, false, false);
-            oh0Var.P(z10 ? 20 : 0);
+            nh0Var.N(z10 ? 20 : 0, false, false);
+            nh0Var.P(z10 ? 20 : 0);
             return;
         }
         if (z10) {
-            if (oh0Var.b0 > 20) {
-                oh0Var.N(0, false, false);
+            if (nh0Var.b0 > 20) {
+                nh0Var.N(0, false, false);
             }
-            oh0Var.P(20);
-            oh0Var.start();
+            nh0Var.P(20);
+            nh0Var.start();
             return;
         }
-        int i7 = oh0Var.b0;
+        int i7 = nh0Var.b0;
         if (i7 == 0 || i7 >= 43) {
             return;
         }
-        oh0Var.P(43);
-        oh0Var.start();
+        nh0Var.P(43);
+        nh0Var.start();
     }
 }

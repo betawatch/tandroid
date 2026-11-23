@@ -2,13 +2,13 @@ package com.google.android.gms.auth.api.signin.internal;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class SignInConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInConfiguration> CREATOR = new w.a(27);
@@ -50,9 +50,9 @@ public final class SignInConfiguration extends a implements ReflectedParcelable 
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.k(parcel, 5, this.b, i7);
-        bc.s(parcel, r10);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.k(parcel, 5, this.b, i7);
+        cc.s(parcel, r10);
     }
 }

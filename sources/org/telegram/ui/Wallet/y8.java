@@ -1,83 +1,78 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.r10;
-import org.telegram.ui.Components.lc;
+import android.text.TextUtils;
+import java.nio.charset.StandardCharsets;
+import org.telegram.ui.Components.d51;
+import org.telegram.ui.a31;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y8 implements r10 {
+public final /* synthetic */ class y8 implements org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d9 b;
-    public final /* synthetic */ vf.b c;
-    public final /* synthetic */ u0 d;
+    public final /* synthetic */ d51 b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ y8(d9 d9Var, vf.b bVar, u0 u0Var, int i7) {
+    public /* synthetic */ y8(d51 d51Var, Object obj, Object obj2, int i7) {
         this.a = i7;
-        this.b = d9Var;
-        this.c = bVar;
-        this.d = u0Var;
+        this.b = d51Var;
+        this.d = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.r10
-    public final void a(Object obj, Object obj2) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
-                r0 r0Var = (r0) obj;
-                String str = (String) obj2;
-                this.c.c(false);
-                d9 d9Var = this.b;
-                if (r0Var != null) {
-                    l9 l9Var = new l9();
-                    l9Var.h = true;
-                    ArrayList arrayList = l9Var.a;
-                    arrayList.clear();
-                    if (!r0Var.d()) {
-                        arrayList.addAll(r0Var.f());
-                    }
-                    l9Var.a0();
-                    l9Var.f = new u4(12, d9Var, this.d);
-                    d9Var.presentFragment(l9Var);
-                    break;
-                } else {
-                    lc b02 = lc.b0(d9Var);
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    b02.f0(str, false);
-                    break;
+                e9 e9Var = (e9) this.b;
+                Boolean bool = (Boolean) this.d;
+                v0 v0Var = (v0) this.c;
+                if (!bool.booleanValue()) {
+                    v0Var.c.C();
                 }
+                o3.a(v0Var.a, new ci.y(11), null, null, null, new fi.b0(6, v0Var, new a31(15, e9Var, (e9Var.getParentLayout() == null || e9Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.g2) e9Var.getParentLayout().getFragmentStack().get(e9Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new m.b3(null, null));
+                break;
+            case 1:
+                e9 e9Var2 = (e9) this.b;
+                v0 v0Var2 = (v0) this.c;
+                p0 p0Var = (p0) this.d;
+                vf.b h = t1Var.h(i7, true, true);
+                h.d();
+                a9 a9Var = new a9(e9Var2, h, 0);
+                v0.P("disable backup: getting phrase...");
+                v0Var2.F(false, true, false, new j((Object) v0Var2, (Object) a9Var, (Object) p0Var, 6));
+                break;
             default:
-                o0 o0Var = (o0) obj;
-                String str2 = (String) obj2;
-                this.c.c(false);
-                d9 d9Var2 = this.b;
-                if (o0Var != null) {
-                    if (!d9Var2.f) {
-                        d9Var2.e.add(o0Var);
-                        l9 l9Var2 = new l9();
-                        r0 r0Var2 = o0Var.b;
-                        ArrayList arrayList2 = l9Var2.a;
-                        arrayList2.clear();
-                        if (!r0Var2.d()) {
-                            arrayList2.addAll(r0Var2.f());
-                        }
-                        l9Var2.a0();
-                        l9Var2.f = new p(d9Var2, this.d, o0Var);
-                        d9Var2.presentFragment(l9Var2);
-                        break;
+                ea eaVar = (ea) this.b;
+                kg.z0 z0Var = (kg.z0) this.d;
+                org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) this.c;
+                if (z0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
+                    String trim = z0Var.getText().toString().trim();
+                    eaVar.h0 = TextUtils.isEmpty(trim) ? null : trim;
+                    eaVar.i0 = !d2Var.b();
+                    if (TextUtils.isEmpty(eaVar.h0)) {
+                        eaVar.Q.setVisibility(8);
                     } else {
-                        o0Var.close();
-                        break;
+                        eaVar.Q.setText(eaVar.h0);
+                        eaVar.Q.setVisibility(0);
                     }
+                    eaVar.E0();
+                    t1Var.dismiss();
+                    eaVar.t0();
+                    break;
                 } else {
-                    lc b03 = lc.b0(d9Var2);
-                    if (str2 == null) {
-                        str2 = "NULL_ERROR";
-                    }
-                    b03.f0(str2, false);
+                    int i10 = -eaVar.p0;
+                    eaVar.p0 = i10;
+                    org.telegram.messenger.g0.E3(i10, z0Var, null);
                     break;
                 }
         }
+    }
+
+    public /* synthetic */ y8(e9 e9Var, v0 v0Var, p0 p0Var) {
+        this.a = 1;
+        this.b = e9Var;
+        this.c = v0Var;
+        this.d = p0Var;
     }
 }

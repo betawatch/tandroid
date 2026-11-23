@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final class v implements Runnable {
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    v4.j jVar = (v4.j) obj;
-                    kVar.T(jVar.a, jVar, this.b);
+                    v4.k kVar2 = (v4.k) obj;
+                    kVar.T(kVar2.a, kVar2, this.b);
                 }
                 arrayList.clear();
                 kVar.u.remove(arrayList);
@@ -58,7 +58,7 @@ public final class v implements Runnable {
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
                             yc.i iVar = (yc.i) this.d;
-                            iVar.c.F(new yc.a(iVar, inputStream, accept));
+                            iVar.c.D(new yc.a(iVar, inputStream, accept));
                         } catch (IOException e10) {
                             yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e10);
                         }

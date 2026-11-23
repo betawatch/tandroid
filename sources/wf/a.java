@@ -7,16 +7,15 @@ import f6.k;
 import h6.g;
 import h6.h;
 import h6.j;
-import oi.z3;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends g {
     public final h a;
     public final g6.g b;
     public final g6.c c;
-    public z3 d;
+    public f d;
     public int e;
     public int f;
     public int g;
@@ -95,8 +94,8 @@ public final class a extends g {
             return;
         }
         String i7 = d.i();
-        e j3 = this.g < this.d.a.size() ? this.d.j(this.g) : d.l;
-        MediaInfo mediaInfo = new MediaInfo(d.j(i7, j3.d) + ("?index=" + this.g + "&attempt=" + this.h), 1, j3.a, j3.b, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
+        e g10 = this.g < this.d.a.size() ? this.d.g(this.g) : d.l;
+        MediaInfo mediaInfo = new MediaInfo(d.j(i7, g10.d) + ("?index=" + this.g + "&attempt=" + this.h), 1, g10.a, g10.b, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
         Boolean bool = Boolean.TRUE;
         if (Double.compare(1.0d, 2.0d) > 0 || Double.compare(1.0d, 0.5d) < 0) {
             throw new IllegalArgumentException("playbackRate must be between PLAYBACK_RATE_MIN and PLAYBACK_RATE_MAX");

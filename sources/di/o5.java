@@ -3,7 +3,7 @@ package di;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o5 {
     public final z5 a;
@@ -31,7 +31,7 @@ public final class o5 {
 
     public o5(z5 z5Var) {
         this.a = z5Var;
-        z5Var.c.addOnAttachStateChangeListener(new bi.v2(this, 4));
+        z5Var.c.addOnAttachStateChangeListener(new bi.x2(this, 4));
     }
 
     public final void a() {

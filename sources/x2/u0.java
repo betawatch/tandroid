@@ -2,7 +2,7 @@ package x2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u0 implements d1 {
     public final int a;
@@ -37,19 +37,34 @@ public final class u0 implements d1 {
     }
 
     @Override // x2.d1
+    public final int b(jb.m mVar, k2.h hVar, int i7) {
+        w0 w0Var = this.b;
+        if (w0Var.E()) {
+            return -3;
+        }
+        int i10 = this.a;
+        w0Var.z(i10);
+        int F = w0Var.M[i10].F(mVar, hVar, i7, w0Var.h0);
+        if (F == -3) {
+            w0Var.A(i10);
+        }
+        return F;
+    }
+
+    @Override // x2.d1
     public final boolean h() {
         w0 w0Var = this.b;
         return !w0Var.E() && w0Var.M[this.a].A(w0Var.h0);
     }
 
     @Override // x2.d1
-    public final int j(long j3) {
+    public final int o(long j3) {
         w0 w0Var = this.b;
         if (w0Var.E()) {
             return 0;
         }
         int i7 = this.a;
-        w0Var.y(i7);
+        w0Var.z(i7);
         c1 c1Var = w0Var.M[i7];
         int x10 = c1Var.x(j3, w0Var.h0);
         c1Var.L(x10);
@@ -57,20 +72,5 @@ public final class u0 implements d1 {
             w0Var.A(i7);
         }
         return x10;
-    }
-
-    @Override // x2.d1
-    public final int m(k8.a aVar, k2.h hVar, int i7) {
-        w0 w0Var = this.b;
-        if (w0Var.E()) {
-            return -3;
-        }
-        int i10 = this.a;
-        w0Var.y(i10);
-        int F = w0Var.M[i10].F(aVar, hVar, i7, w0Var.h0);
-        if (F == -3) {
-            w0Var.A(i10);
-        }
-        return F;
     }
 }

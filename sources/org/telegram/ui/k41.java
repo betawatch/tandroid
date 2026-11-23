@@ -1,67 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.Window;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class k41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m41 b;
+public final class k41 {
+    public final org.telegram.ui.Components.uz a;
+    public ng.f b;
+    public final int c;
+    public final /* synthetic */ l41 d;
 
-    public /* synthetic */ k41(m41 m41Var, int i7) {
-        this.a = i7;
-        this.b = m41Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                m41 m41Var = this.b;
-                m41Var.b.setVisibility(4);
-                lg.g gVar = m41Var.b;
-                gVar.K = false;
-                lg.g gVar2 = m41Var.c;
-                gVar2.K = true;
-                gVar.z0 = 0;
-                gVar2.z0 = 0;
-                Window window = m41Var.a;
-                if (window != null) {
-                    window.clearFlags(16);
-                    break;
-                }
-                break;
-            case 1:
-                m41 m41Var2 = this.b;
-                lg.g gVar3 = m41Var2.c;
-                gVar3.setVisibility(4);
-                lg.g gVar4 = m41Var2.b;
-                gVar4.z0 = 0;
-                gVar3.z0 = 0;
-                gVar4.K = true;
-                gVar3.K = false;
-                if (gVar4 instanceof lg.q) {
-                    gVar4.v0 = false;
-                    gVar4.d();
-                } else {
-                    gVar4.v0 = true;
-                    gVar4.x((gVar4.H0 * gVar4.h0.k) - lg.g.l1);
-                    gVar4.c(true);
-                    gVar4.invalidate();
-                }
-                Window window2 = m41Var2.a;
-                if (window2 != null) {
-                    window2.clearFlags(16);
-                    break;
-                }
-                break;
-            default:
-                m41 m41Var3 = this.b;
-                m41Var3.b.z0 = 0;
-                m41Var3.e.setVisibility(8);
-                break;
-        }
+    public k41(l41 l41Var, int i7) {
+        this.d = l41Var;
+        this.c = i7;
+        org.telegram.ui.Components.uz uzVar = new org.telegram.ui.Components.uz(l41Var.getContext());
+        uzVar.c = true;
+        TextPaint textPaint = new TextPaint(1);
+        uzVar.e = textPaint;
+        uzVar.f = new Paint(1);
+        Paint paint = new Paint(1);
+        uzVar.h = paint;
+        Paint paint2 = new Paint(1);
+        uzVar.n = paint2;
+        uzVar.x = org.telegram.messenger.g0.L(35.0f);
+        uzVar.y = org.telegram.messenger.g0.L(22.0f);
+        uzVar.E = org.telegram.messenger.g0.L(8.0f);
+        uzVar.F = org.telegram.messenger.g0.L(3.5f);
+        uzVar.G = new RectF();
+        uzVar.H = 0.0f;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.5f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        this.a = uzVar;
+        uzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        l41Var.h.addView(uzVar);
+        l41Var.n.add(this);
     }
 }

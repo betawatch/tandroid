@@ -1,37 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class f71 extends c8.ia {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.gs b;
+public final class f71 implements n71 {
+    public boolean a;
+    public final /* synthetic */ bn b;
 
-    public /* synthetic */ f71(org.telegram.messenger.gs gsVar, int i7) {
-        this.a = i7;
-        this.b = gsVar;
+    public f71(bn bnVar, boolean z10) {
+        this.b = bnVar;
+        this.a = z10;
     }
 
-    @Override // c8.ia
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((hc1) this.b).w.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.n71
+    public final boolean O0() {
+        return true;
     }
 
-    @Override // c8.ia
-    public void b(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                Point point = org.telegram.messenger.g0.q;
-                if ((point.x <= point.y) == (i7 <= i10)) {
-                    ((x71) this.b).z0.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.n71
+    public final boolean b() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.n71
+    public final void b1(boolean z10) {
+        boolean z11 = !this.a;
+        this.a = z11;
+        zm zmVar = this.b.Ba;
+        zmVar.r(zmVar.f, zmVar.g, z10, Boolean.valueOf(z11), false);
     }
 }

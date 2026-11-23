@@ -1,6 +1,6 @@
 package hb;
 
-import b7.h;
+import c8.z;
 import hd.r;
 import id.i;
 import j$.util.DesugarCollections;
@@ -11,7 +11,7 @@ import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -51,7 +51,7 @@ public final class c {
                 jd.a aVar = jd.a.a;
                 i7 = bVar.n;
                 if (i7 != 0) {
-                    h.b(obj);
+                    z.b(obj);
                     Map dependencies = b;
                     j.d(dependencies, "dependencies");
                     linkedHashMap = new LinkedHashMap(r.b(dependencies.size()));
@@ -67,7 +67,7 @@ public final class c {
                     d subscriberName = bVar.c;
                     it = bVar.b;
                     Map map = bVar.a;
-                    h.b(obj);
+                    z.b(obj);
                     j.e(subscriberName, "subscriberName");
                     aa.j jVar = a(subscriberName).b;
                     if (jVar == null) {

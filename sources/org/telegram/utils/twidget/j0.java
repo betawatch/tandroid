@@ -5,13 +5,13 @@ import android.text.TextUtils;
 import di.j9;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,11 +49,11 @@ public final /* synthetic */ class j0 implements Runnable {
                     return;
                 }
                 TLRPC.TL_messages_getWidgetPublicData tL_messages_getWidgetPublicData = new TLRPC.TL_messages_getWidgetPublicData();
-                tL_messages_getWidgetPublicData.peer = np.u1(k0Var.b).l1(k0Var.c);
+                tL_messages_getWidgetPublicData.peer = mp.u1(k0Var.b).l1(k0Var.c);
                 tL_messages_getWidgetPublicData.msg_id = k0Var.d;
                 tL_messages_getWidgetPublicData.hash = m0Var.c;
-                m0Var.e = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getWidgetPublicData, new d3.b(1), new r10() { // from class: org.telegram.utils.twidget.h0
-                    @Override // org.telegram.messenger.r10
+                m0Var.e = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getWidgetPublicData, new d3.b(1), new p10() { // from class: org.telegram.utils.twidget.h0
+                    @Override // org.telegram.messenger.p10
                     public final void a(Object obj, Object obj2) {
                         TLRPC.messages_WidgetPublicData messages_widgetpublicdata = (TLRPC.messages_WidgetPublicData) obj;
                         m0 m0Var2 = m0.this;
@@ -85,7 +85,7 @@ public final /* synthetic */ class j0 implements Runnable {
                                         if (tL_messageMediaWidget != null) {
                                             tL_messageMediaWidget.public_data_hash = j10;
                                         }
-                                        ur a02 = ur.a0(i10);
+                                        tr a02 = tr.a0(i10);
                                         a02.a.c(new j9(a02, k0Var3.d, k0Var3.c, str == null ? "" : str, j10, (String) null));
                                         str = str;
                                     }

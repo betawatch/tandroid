@@ -1,83 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class v5 extends rg.b {
-    public final /* synthetic */ x5 d;
+public final /* synthetic */ class v5 implements c60 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y5 b;
+    public final /* synthetic */ org.telegram.messenger.t2 c;
 
-    public v5(x5 x5Var) {
-        this.d = x5Var;
+    public /* synthetic */ v5(y5 y5Var, org.telegram.messenger.t2 t2Var, int i7) {
+        this.a = i7;
+        this.b = y5Var;
+        this.c = t2Var;
     }
 
-    @Override // org.telegram.ui.Components.dk0
-    public final boolean D(v4.f1 f1Var) {
-        int i7 = f1Var.f;
-        return i7 == 1 || i7 == 2 || i7 == 4;
-    }
-
-    @Override // v4.i0
-    public final int b() {
-        return this.d.c.size();
-    }
-
-    @Override // v4.i0
-    public final int d(int i7) {
-        return ((w5) this.d.c.get(i7)).a;
-    }
-
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
-        x5 x5Var = this.d;
-        ArrayList arrayList = x5Var.c;
-        if (((w5) arrayList.get(i7)).a == 2) {
-            org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) f1Var.a;
-            org.telegram.messenger.t2 t2Var = ((w5) arrayList.get(i7)).c;
-            TLObject g22 = x5Var.getMessagesController().g2(t2Var.a);
-            String str = null;
-            if (g22 instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) g22;
-                str = user.self ? org.telegram.messenger.hd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
-            } else if (g22 instanceof TLRPC.Chat) {
-                str = ((TLRPC.Chat) g22).title;
-            }
-            raVar.setSelfAsSavedMessages(true);
-            raVar.d(g22, str, org.telegram.messenger.v2.f(t2Var.b), i7 == arrayList.size() - 1 || ((w5) arrayList.get(i7 + 1)).a == 2);
+    @Override // org.telegram.ui.c60
+    public final void a(int i7) {
+        switch (this.a) {
+            case 0:
+                y5 y5Var = this.b;
+                org.telegram.messenger.t2 t2Var = this.c;
+                if (i7 == 4) {
+                    y5Var.d.remove(t2Var);
+                    y5Var.Z();
+                } else {
+                    t2Var.b = i7;
+                    org.telegram.messenger.g0.Z3(y5Var.b);
+                }
+                y5Var.getMessagesController().u7.h(y5Var.e, y5Var.d);
+                break;
+            default:
+                this.c.b = i7;
+                y5 y5Var2 = this.b;
+                y5Var2.getMessagesController().u7.h(y5Var2.e, y5Var2.d);
+                org.telegram.messenger.g0.Z3(y5Var2.b);
+                break;
         }
-    }
-
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View view;
-        View view2 = null;
-        if (i7 != 1) {
-            if (i7 == 2) {
-                View raVar = new org.telegram.ui.Cells.ra(4, 0, viewGroup.getContext(), null, false, false);
-                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, raVar, null);
-                view2 = raVar;
-            } else if (i7 == 3) {
-                view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c0) null);
-            } else if (i7 == 4) {
-                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                n8Var.k(org.telegram.messenger.hd.N0(2131747721, null), false);
-                n8Var.g(-1, org.telegram.ui.ActionBar.m6.p7);
-                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var, null);
-                view = n8Var;
-            }
-            return i5.c.q(view2, view2, -1, -2);
-        }
-        org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-        n8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131747729, null), true);
-        n8Var2.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var2, null);
-        view = n8Var2;
-        view2 = view;
-        return i5.c.q(view2, view2, -1, -2);
     }
 }

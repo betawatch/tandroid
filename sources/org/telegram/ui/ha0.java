@@ -1,48 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ha0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ qa0 a;
+public final class ha0 extends jg.r0 {
+    public boolean e0;
+    public final /* synthetic */ pa0 f0;
 
-    public ha0(qa0 qa0Var) {
-        this.a = qa0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ha0(pa0 pa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
+        super(context, i7, j3, false, i6Var, false, z10, z11);
+        this.f0 = pa0Var;
+        this.e0 = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        qa0 qa0Var = this.a;
-        if (i7 == -1) {
-            qa0Var.finishFragment();
-            return;
-        }
-        if (i7 != 1) {
-            if (i7 == 5) {
-                qa0Var.C0(false);
-                return;
+    @Override // jg.r0
+    public final void J() {
+        this.f0.B0(null);
+    }
+
+    @Override // jg.r0
+    public final void N(ArrayList arrayList) {
+        int i7;
+        pa0 pa0Var = this.f0;
+        org.telegram.messenger.fj fjVar = pa0Var.J0;
+        if (fjVar != null && fjVar.C3()) {
+            if (arrayList != null) {
+                i7 = 0;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    la0 la0Var = (la0) arrayList.get(i10);
+                    if (la0Var != null && !org.telegram.messenger.n10.C(la0Var.c)) {
+                        i7++;
+                    }
+                }
+            } else {
+                i7 = 0;
             }
-            if (i7 == 6) {
-                qa0Var.B0(null);
-                return;
+            if (this.e0 && i7 == 1) {
+                pa0Var.q0 = ((la0) arrayList.get(0)).a;
             }
-            if ((i7 == 2 || i7 == 3 || i7 == 4) && qa0Var.F != null) {
-                qa0Var.D0();
-                qa0Var.F.j(i7 != 3 ? i7 == 4 ? 2 : 0 : 1);
-                return;
-            }
-            return;
+            this.e0 = false;
+            pa0Var.W.setVisibility(i7 != 1 ? 8 : 0);
         }
-        try {
-            TLRPC.GeoPoint geoPoint = qa0Var.J0.k.media.geo;
-            double d = geoPoint.lat;
-            double d2 = geoPoint._long;
-            qa0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+        super.N(arrayList);
     }
 }

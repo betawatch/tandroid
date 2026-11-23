@@ -1,11 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public final class y9 {
-    public final /* synthetic */ qa a;
+import android.os.Bundle;
 
-    public y9(qa qaVar) {
-        this.a = qaVar;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final class y9 implements com.google.android.gms.common.api.k {
+    public final /* synthetic */ na a;
+
+    public y9(na naVar) {
+        this.a = naVar;
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        qd qdVar = (qd) this.a;
+        qdVar.M = true;
+        try {
+            ((h6.m) t0.j()).checkLocationSettings(qdVar.O, new kd(qdVar, 1));
+        } catch (Throwable th2) {
+            a8.g(th2, true);
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i7) {
+        this.a.getClass();
     }
 }

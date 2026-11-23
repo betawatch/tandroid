@@ -3,22 +3,22 @@ package fi;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.az;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.si;
-import org.telegram.messenger.y10;
-import org.telegram.messenger.yy;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.xy;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.kc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w2 implements y10 {
+public final /* synthetic */ class w2 implements w10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -32,12 +32,12 @@ public final /* synthetic */ class w2 implements y10 {
         this.e = view;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         int i7;
         ch.l0 l0Var;
         TLRPC.Document e10;
-        lc lcVar;
+        kc kcVar;
         int i10;
         int i11;
         int i12 = this.a;
@@ -72,14 +72,14 @@ public final /* synthetic */ class w2 implements y10 {
                 l0Var.s = true;
                 l0Var.y = System.currentTimeMillis();
                 if (p0Var.f != null) {
-                    e10 = si.d0(z3Var.m2).V(p0Var.f);
-                    yy a10 = yy.a(z3Var.l1, p0Var.f);
+                    e10 = ri.d0(z3Var.m2).V(p0Var.f);
+                    xy a10 = xy.a(z3Var.l1, p0Var.f);
                     a10.H = x3Var.a;
                     a10.Q = l10.longValue();
-                    az.C(z3Var.m2).r0(a10);
+                    zy.C(z3Var.m2).r0(a10);
                 } else {
-                    e10 = org.telegram.ui.Components.p5.e(z3Var.m2, p0Var.g);
-                    String V = gj.V(e10, null, null);
+                    e10 = org.telegram.ui.Components.o5.e(z3Var.m2, p0Var.g);
+                    String V = fj.V(e10, null, null);
                     if (V == null) {
                         if (z3Var.P1.getReactionsWindow() != null) {
                             z3Var.P1.getReactionsWindow().e();
@@ -87,7 +87,7 @@ public final /* synthetic */ class w2 implements y10 {
                         z3Var.q0();
                         break;
                     } else {
-                        yy a11 = yy.a(z3Var.l1, V);
+                        xy a11 = xy.a(z3Var.l1, V);
                         a11.w = new ArrayList();
                         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
                         tL_messageEntityCustomEmoji.document_id = p0Var.g;
@@ -96,11 +96,11 @@ public final /* synthetic */ class w2 implements y10 {
                         a11.w.add(tL_messageEntityCustomEmoji);
                         a11.H = x3Var.a;
                         a11.Q = l10.longValue();
-                        az.C(z3Var.m2).r0(a11);
+                        zy.C(z3Var.m2).r0(a11);
                     }
                 }
                 if (l10.longValue() <= 0) {
-                    gc r10 = new lc(z3Var.M0, z3Var.l0).r(e10, hd.N0(2131746193, null), hd.N0(2131743307, null), new f2.a(x2Var, 7));
+                    fc r10 = new kc(z3Var.M0, z3Var.l0).r(e10, gd.N0(2131746193, null), gd.N0(2131743302, null), new f2.a(x2Var, 6));
                     r10.j = 5000;
                     r10.j();
                 }
@@ -111,7 +111,7 @@ public final /* synthetic */ class w2 implements y10 {
                 break;
             case 1:
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
                 z3 z3Var2 = ((r3) obj4).x;
                 c3 c3Var = z3Var2.M0;
                 if (((Boolean) obj).booleanValue()) {
@@ -119,42 +119,42 @@ public final /* synthetic */ class w2 implements y10 {
                     boolean z11 = z3Var2.m1;
                     i10 = R.raw.chats_archived;
                     if (z11) {
-                        lc lcVar2 = new lc(c3Var, h6Var);
+                        kc kcVar2 = new kc(c3Var, i6Var);
                         if (z10) {
                             i10 = R.raw.contact_check;
                         }
-                        lcVar2.Q(i10, 36, hd.N0(z10 ? 2131744339 : 2131744484, null)).j();
+                        kcVar2.Q(i10, 36, gd.N0(z10 ? 2131744338 : 2131744486, null)).j();
                         break;
                     } else if (z10) {
-                        new lc(c3Var, h6Var).I(R.raw.contact_check, hd.N0(2131744341, null), hd.N0(2131744340, null)).j();
+                        new kc(c3Var, i6Var).I(R.raw.contact_check, gd.N0(2131744340, null), gd.N0(2131744339, null)).j();
                         break;
                     } else {
-                        lcVar = new lc(c3Var, h6Var);
-                        i11 = 2131744211;
+                        kcVar = new kc(c3Var, i6Var);
+                        i11 = 2131744210;
                     }
                 } else {
-                    lcVar = new lc(c3Var, h6Var);
+                    kcVar = new kc(c3Var, i6Var);
                     i10 = R.raw.error;
-                    i11 = 2131743634;
+                    i11 = 2131743632;
                 }
-                org.telegram.messenger.f3.n(null, i11, lcVar, i10, 36);
+                org.telegram.messenger.f3.n(null, i11, kcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 int i13 = ChatActivityEnterView.s7;
                 ((org.telegram.ui.ActionBar.t1) obj3).dismiss();
-                bi.n3 n3Var = new bi.n3(chatActivityEnterView.getContext(), chatActivityEnterView.R, ((TLRPC.User) obj2).id, wg.s.c(wg.s.b(1, (List) obj)), null);
-                n3Var.g1(z10);
-                n3Var.show();
+                bi.p3 p3Var = new bi.p3(chatActivityEnterView.getContext(), chatActivityEnterView.R, ((TLRPC.User) obj2).id, wg.r.c(wg.r.b(1, (List) obj)), null);
+                p3Var.g1(z10);
+                p3Var.show();
                 break;
         }
     }
 
-    public /* synthetic */ w2(r3 r3Var, TL_stories.StoryItem storyItem, boolean z10, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ w2(r3 r3Var, TL_stories.StoryItem storyItem, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
         this.c = r3Var;
         this.d = storyItem;
         this.b = z10;
-        this.e = h6Var;
+        this.e = i6Var;
     }
 
     public /* synthetic */ w2(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.t1 t1Var, TLRPC.User user, boolean z10) {

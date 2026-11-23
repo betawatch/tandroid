@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class x50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -99,9 +99,9 @@ public final class x50 extends org.telegram.ui.Components.dk0 {
             }
             r4Var.a(f5Var, charSequence);
             boolean containsKey = a60Var.E.containsKey(f5Var.b);
-            org.telegram.ui.Components.op opVar = r4Var.e;
-            if (opVar != null) {
-                opVar.a(containsKey, false);
+            org.telegram.ui.Components.lp lpVar = r4Var.e;
+            if (lpVar != null) {
+                lpVar.a(containsKey, false);
             }
         }
     }
@@ -111,13 +111,13 @@ public final class x50 extends org.telegram.ui.Components.dk0 {
         View view;
         Context context = this.c;
         if (i7 == 1) {
-            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
-            int i10 = org.telegram.ui.ActionBar.m6.G6;
-            n8Var.g(i10, i10);
-            n8Var.u(org.telegram.messenger.hd.N0(2131745231, null), "", false, R.drawable.msg_shareout, false);
-            view = n8Var;
+            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(context);
+            int i10 = org.telegram.ui.ActionBar.n6.G6;
+            m8Var.g(i10, i10);
+            m8Var.u(org.telegram.messenger.gd.N0(2131745231, null), "", false, R.drawable.msg_shareout, false);
+            view = m8Var;
         } else {
-            view = i7 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.r4(context, true);
+            view = i7 == 2 ? new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.r4(context, true);
         }
         return new org.telegram.ui.Components.mj0(view);
     }

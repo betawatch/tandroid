@@ -5,34 +5,33 @@ import android.graphics.PorterDuff;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
-import c8.ma;
+import c8.na;
 import fi.u3;
 import java.util.Date;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class r extends yg.c implements b6 {
+public final class r extends yg.c implements c6 {
     public final ImageView E;
     public boolean F;
     public final ImageView G;
@@ -40,42 +39,42 @@ public final class r extends yg.c implements b6 {
     public TLRPC.User I;
     public TLRPC.Chat J;
     public TL_stories.TL_myBoost K;
-    public final av0 L;
+    public final zu0 L;
     public int M;
     public final boolean[] s;
-    public final op w;
+    public final lp w;
     public final ImageView x;
     public boolean y;
 
-    public r(Context context, boolean z10, boolean z11, h6 h6Var, boolean z12) {
-        super(context, h6Var);
+    public r(Context context, boolean z10, boolean z11, i6 i6Var, boolean z12) {
+        super(context, i6Var);
         this.s = new boolean[1];
         this.H = true;
-        this.L = new av0(this);
+        this.L = new zu0(this);
         this.d.setTypeface(g0.o());
         this.f.setVisibility(8);
         if (z11) {
-            op opVar = new op(21, context, h6Var);
-            this.w = opVar;
-            opVar.b(m6.B5, m6.h5, m6.k7);
-            opVar.setDrawUnchecked(false);
-            opVar.setDrawBackgroundAsArc(3);
-            boolean z13 = hd.a0;
-            addView(opVar, ma.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
+            lp lpVar = new lp(21, context, i6Var);
+            this.w = lpVar;
+            lpVar.b(n6.B5, n6.h5, n6.k7);
+            lpVar.setDrawUnchecked(false);
+            lpVar.setDrawBackgroundAsArc(3);
+            boolean z13 = gd.a0;
+            addView(lpVar, na.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
-            op opVar2 = new op(21, context, h6Var);
-            this.w = opVar2;
+            lp lpVar2 = new lp(21, context, i6Var);
+            this.w = lpVar2;
             if (z12) {
-                opVar2.b(m6.i7, m6.j7, m6.C5);
+                lpVar2.b(n6.i7, n6.j7, n6.C5);
             } else {
-                opVar2.b(m6.B5, m6.j7, m6.C5);
+                lpVar2.b(n6.B5, n6.j7, n6.C5);
             }
-            opVar2.setDrawUnchecked(true);
-            opVar2.setDrawBackgroundAsArc(10);
-            addView(opVar2);
-            opVar2.a(false, false);
-            opVar2.setLayoutParams(ma.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            lpVar2.setDrawUnchecked(true);
+            lpVar2.setDrawBackgroundAsArc(10);
+            addView(lpVar2);
+            lpVar2.a(false, false);
+            lpVar2.setLayoutParams(na.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.w = null;
@@ -85,25 +84,25 @@ public final class r extends yg.c implements b6 {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.ic_ab_other);
-        int i7 = m6.rd;
+        int i7 = n6.rd;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        t6.s(imageView, i7, h6Var, mode);
-        addView(imageView, ma.d(32, 32.0f, (hd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        u6.s(imageView, i7, i6Var, mode);
+        addView(imageView, na.d(32, 32.0f, (gd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.E = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_phone);
-        int i10 = m6.Fi;
-        t6.s(imageView2, i10, h6Var, mode);
-        boolean z14 = hd.a0;
-        addView(imageView2, ma.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
+        int i10 = n6.Fi;
+        u6.s(imageView2, i10, i6Var, mode);
+        boolean z14 = gd.a0;
+        addView(imageView2, na.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
         this.G = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
-        t6.s(imageView3, i10, h6Var, mode);
-        addView(imageView3, ma.d(32, 32.0f, (hd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        u6.s(imageView3, i10, i6Var, mode);
+        addView(imageView3, na.d(32, 32.0f, (gd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -123,22 +122,22 @@ public final class r extends yg.c implements b6 {
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.z9));
+        hashSet.add(Integer.valueOf(n6.z9));
     }
 
     @Override // yg.c
     public final boolean b() {
-        op opVar = this.w;
-        return opVar != null && opVar.getDrawUnchecked();
+        lp lpVar = this.w;
+        return lpVar != null && lpVar.getDrawUnchecked();
     }
 
     @Override // yg.c
     public final void c(boolean z10, boolean z11) {
-        op opVar = this.w;
-        if (opVar != null && opVar.getVisibility() == 0) {
-            opVar.a(z10, z11);
+        lp lpVar = this.w;
+        if (lpVar != null && lpVar.getVisibility() == 0) {
+            lpVar.a(z10, z11);
         }
     }
 
@@ -239,12 +238,12 @@ public final class r extends yg.c implements b6 {
         this.x.setVisibility(8);
         this.J = chat;
         this.I = null;
-        b9 b9Var = this.b;
-        b9Var.q(chat);
+        a9 a9Var = this.b;
+        a9Var.q(chat);
         int L = g0.L(v3.c0(chat) ? 12.0f : 20.0f);
-        q9 q9Var = this.c;
-        q9Var.setRoundRadius(L);
-        q9Var.f(chat, b9Var);
+        p9 p9Var = this.c;
+        p9Var.setRoundRadius(L);
+        p9Var.f(chat, a9Var);
         String str = chat.title;
         u3 u3Var = this.d;
         u3Var.k(str);
@@ -254,26 +253,26 @@ public final class r extends yg.c implements b6 {
         }
         boolean V = v3.V(chat);
         if (i7 >= 1) {
-            N0 = hd.G(i7, V ? "Subscribers" : "Members", new Object[0]);
+            N0 = gd.G(i7, V ? "Subscribers" : "Members", new Object[0]);
         } else {
-            N0 = hd.N0(V ? 2131751378 : 2131754876, null);
+            N0 = gd.N0(V ? 2131751378 : 2131754876, null);
         }
         setSubtitle(N0);
-        t6.X(this.e, m6.r5, this.a);
+        u6.X(this.e, n6.r5, this.a);
         i(false, i7 > 200 ? 0.3f : 1.0f);
     }
 
     public final void i(boolean z10, float f10) {
-        op opVar = this.w;
-        if (opVar == null) {
+        lp lpVar = this.w;
+        if (lpVar == null) {
             return;
         }
         if (!z10) {
-            opVar.animate().cancel();
-            opVar.setAlpha(f10);
-        } else if (Math.abs(opVar.getAlpha() - f10) > 0.1d) {
-            opVar.animate().cancel();
-            opVar.animate().alpha(f10).start();
+            lpVar.animate().cancel();
+            lpVar.setAlpha(f10);
+        } else if (Math.abs(lpVar.getAlpha() - f10) > 0.1d) {
+            lpVar.animate().cancel();
+            lpVar.animate().alpha(f10).start();
         }
     }
 
@@ -292,31 +291,31 @@ public final class r extends yg.c implements b6 {
     public void setBoost(TL_stories.TL_myBoost tL_myBoost) {
         this.x.setVisibility(8);
         this.K = tL_myBoost;
-        TLRPC.Chat O0 = np.u1(k10.t0).O0(Long.valueOf(-n5.o(tL_myBoost.peer)));
+        TLRPC.Chat O0 = mp.u1(i10.t0).O0(Long.valueOf(-n5.o(tL_myBoost.peer)));
         this.J = O0;
-        b9 b9Var = this.b;
-        b9Var.q(O0);
+        a9 a9Var = this.b;
+        a9Var.q(O0);
         int L = g0.L(20.0f);
-        q9 q9Var = this.c;
-        q9Var.setRoundRadius(L);
-        q9Var.f(this.J, b9Var);
+        p9 p9Var = this.c;
+        p9Var.setRoundRadius(L);
+        p9Var.f(this.J, a9Var);
         String str = this.J.title;
         u3 u3Var = this.d;
         u3Var.k(str);
-        int i7 = m6.r5;
-        h6 h6Var = this.a;
-        m5 m5Var = this.e;
-        t6.X(m5Var, i7, h6Var);
-        setSubtitle(hd.a0(null, null, 2131753658, hd.E0().o0().format(new Date(tL_myBoost.expires * 1000))));
+        int i7 = n6.r5;
+        i6 i6Var = this.a;
+        org.telegram.ui.ActionBar.n5 n5Var = this.e;
+        u6.X(n5Var, i7, i6Var);
+        setSubtitle(gd.a0(null, null, 2131753658, gd.E0().o0().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
             u3Var.setAlpha(1.0f);
-            m5Var.setAlpha(1.0f);
+            n5Var.setAlpha(1.0f);
             i(false, 1.0f);
         } else {
-            setSubtitle(hd.a0(null, null, 2131753591, f((i10 * 1000) - System.currentTimeMillis())));
+            setSubtitle(gd.a0(null, null, 2131753591, f((i10 * 1000) - System.currentTimeMillis())));
             u3Var.setAlpha(0.65f);
-            m5Var.setAlpha(0.65f);
+            n5Var.setAlpha(0.65f);
             i(false, 0.3f);
         }
     }
@@ -335,46 +334,46 @@ public final class r extends yg.c implements b6 {
         this.x.setVisibility(8);
         this.I = user;
         this.J = null;
-        b9 b9Var = this.b;
-        b9Var.r(user);
+        a9 a9Var = this.b;
+        a9Var.r(user);
         int L = g0.L(20.0f);
-        q9 q9Var = this.c;
-        q9Var.setRoundRadius(L);
-        q9Var.f(user, b9Var);
-        String q10 = p10.q(user);
+        p9 p9Var = this.c;
+        p9Var.setRoundRadius(L);
+        p9Var.f(user, a9Var);
+        String q10 = n10.q(user);
         u3 u3Var = this.d;
         u3Var.k(q10);
         boolean[] zArr = this.s;
         zArr[0] = false;
-        if (p10.u(user)) {
+        if (n10.u(user)) {
             int i7 = user.bot_active_users;
             if (i7 > 0) {
-                setSubtitle(hd.H(',', "BotUsers", i7));
+                setSubtitle(gd.H(',', "BotUsers", i7));
             } else {
-                setSubtitle(hd.N0(2131753153, null));
+                setSubtitle(gd.N0(2131753153, null));
             }
         } else {
-            setSubtitle(hd.d0(k10.t0, user, zArr, null));
+            setSubtitle(gd.d0(i10.t0, user, zArr, null));
         }
-        t6.X(this.e, zArr[0] ? m6.n5 : m6.r5, this.a);
-        op opVar = this.w;
-        if (opVar != null) {
-            opVar.setAlpha(1.0f);
+        u6.X(this.e, zArr[0] ? n6.n5 : n6.r5, this.a);
+        lp lpVar = this.w;
+        if (lpVar != null) {
+            lpVar.setAlpha(1.0f);
         }
-        int x02 = m6.x0(null, m6.z9, false);
+        int x02 = n6.x0(null, n6.z9, false);
         this.M = x02;
         u3Var.i(this.L.a(user, x02, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        av0 av0Var;
+        zu0 zu0Var;
         u3 u3Var;
         int x02;
         try {
-            if (this.I != null && (av0Var = this.L) != null && (u3Var = this.d) != null && (x02 = m6.x0(null, m6.z9, false)) != this.M) {
+            if (this.I != null && (zu0Var = this.L) != null && (u3Var = this.d) != null && (x02 = n6.x0(null, n6.z9, false)) != this.M) {
                 this.M = x02;
-                av0Var.a(this.I, x02, false);
+                zu0Var.a(this.I, x02, false);
                 u3Var.invalidate();
             }
         } catch (Exception e10) {

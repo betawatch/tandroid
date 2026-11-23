@@ -1,6 +1,6 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o0 {
     public static final o0 L = new o0(new n0());
@@ -158,7 +158,7 @@ public final class o0 {
                         case 17:
                         case 18:
                         case 19:
-                        case ls.U /* 31 */:
+                        case ks.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -169,7 +169,7 @@ public final class o0 {
                         case 27:
                         case 28:
                         case 29:
-                        case ls.T /* 30 */:
+                        case ks.T /* 30 */:
                         default:
                             i7 = 0;
                             break;
@@ -315,7 +315,7 @@ public final class o0 {
         if (bundle.containsKey(str5)) {
             long j3 = bundle.getLong(str5);
             Long valueOf2 = Long.valueOf(j3);
-            la.f(j3 >= 0);
+            ma.f(j3 >= 0);
             n0Var.h = valueOf2;
         }
         String str6 = X;

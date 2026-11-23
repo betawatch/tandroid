@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class ng implements View.OnLayoutChangeListener {
     public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                view.post((ai.b) this.b);
+                view.post((bi.s1) this.b);
                 break;
             default:
-                ((o31) this.b).p0();
+                ((n31) this.b).p0();
                 break;
         }
     }

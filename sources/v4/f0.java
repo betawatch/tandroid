@@ -1,216 +1,244 @@
 package v4;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
+import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import org.telegram.ui.Components.z51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class f0 implements k1, z51, com.google.android.gms.common.api.internal.q, z2.d {
-    public Object a;
+public final class f0 extends androidx.emoji2.text.g {
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ f0(Object obj) {
-        this.a = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f0(c0 c0Var, int i7) {
+        super(c0Var);
+        this.d = i7;
     }
 
-    @Override // v4.k1
-    public int R() {
-        p0 p0Var = (p0) this.a;
-        return p0Var.n - p0Var.C();
+    @Override // androidx.emoji2.text.g
+    public final int a(View view) {
+        int y10;
+        int i7;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                y10 = p0.y(view);
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                y10 = p0.v(view);
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
+                break;
+        }
+        return y10 + i7;
     }
 
-    @Override // v4.k1
-    public int a(View view) {
-        return p0.z(view) - ((ViewGroup.MarginLayoutParams) ((q0) view.getLayoutParams())).topMargin;
+    @Override // androidx.emoji2.text.g
+    public final int b(View view) {
+        int measuredWidth;
+        int i7;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect = ((q0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredWidth() + rect.left + rect.right + ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect2 = ((q0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredHeight() + rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
+                break;
+        }
+        return measuredWidth + i7;
     }
 
-    @Override // com.google.android.gms.common.api.internal.q
-    public void accept(Object obj, Object obj2) {
-        y8.j jVar = (y8.j) this.a;
-        h8.b bVar = (h8.b) obj;
-        Bundle B = bVar.B();
-        B.putBoolean("com.google.android.gms.wallet.EXTRA_USING_AUTO_RESOLVABLE_RESULT", true);
-        h8.a aVar = new h8.a(0, (TaskCompletionSource) obj2);
-        try {
-            h8.i iVar = (h8.i) bVar.n();
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.gms.wallet.internal.IOwService");
-            int i7 = h8.c.a;
-            obtain.writeInt(1);
-            jVar.writeToParcel(obtain, 0);
-            obtain.writeInt(1);
-            B.writeToParcel(obtain, 0);
-            obtain.writeStrongBinder(aVar);
-            try {
-                iVar.a.transact(19, obtain, null, 1);
-            } finally {
-                obtain.recycle();
-            }
-        } catch (RemoteException e10) {
-            Log.e("WalletClientImpl", "RemoteException getting payment data", e10);
-            Bundle bundle = Bundle.EMPTY;
-            aVar.d0(Status.h, null);
+    @Override // androidx.emoji2.text.g
+    public final int c(View view) {
+        int measuredHeight;
+        int i7;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect = ((q0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredHeight() + rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) q0Var).topMargin;
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect2 = ((q0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredWidth() + rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) q0Var2).leftMargin;
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var2).rightMargin;
+                break;
+        }
+        return measuredHeight + i7;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int d(View view) {
+        int x10;
+        int i7;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                x10 = p0.x(view);
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                x10 = p0.z(view);
+                i7 = ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
+                break;
+        }
+        return x10 - i7;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int e() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).m;
+            default:
+                return ((c0) this.b).n;
         }
     }
 
-    public void b(a aVar) {
-        RecyclerView recyclerView = (RecyclerView) this.a;
-        int i7 = aVar.a;
-        if (i7 == 1) {
-            recyclerView.y.V(recyclerView, aVar.b, aVar.d);
-            return;
+    @Override // androidx.emoji2.text.g
+    public final int f() {
+        int i7;
+        int E;
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                i7 = c0Var.m;
+                E = c0Var.E();
+                break;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                i7 = c0Var2.n;
+                E = c0Var2.C();
+                break;
         }
-        if (i7 == 2) {
-            recyclerView.y.Y(recyclerView, aVar.b, aVar.d);
-        } else if (i7 == 4) {
-            recyclerView.y.a0(recyclerView, aVar.b, aVar.d, aVar.c);
-        } else {
-            if (i7 != 8) {
-                return;
-            }
-            recyclerView.y.X(recyclerView, aVar.b, aVar.d);
+        return i7 - E;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int g() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).E();
+            default:
+                return ((c0) this.b).C();
         }
     }
 
-    public void c(int i7, int i10, Object obj) {
-        int i11;
-        int i12;
-        RecyclerView recyclerView = (RecyclerView) this.a;
-        int z10 = recyclerView.e.z();
-        int i13 = i10 + i7;
-        for (int i14 = 0; i14 < z10; i14++) {
-            View y10 = recyclerView.e.y(i14);
-            f1 U = RecyclerView.U(y10);
-            if (U != null && !U.r() && (i12 = U.c) >= i7 && i12 < i13) {
-                U.a(2);
-                if (obj == null) {
-                    U.a(1024);
-                } else if ((1024 & U.l) == 0) {
-                    if (U.m == null) {
-                        ArrayList arrayList = new ArrayList();
-                        U.m = arrayList;
-                        U.n = DesugarCollections.unmodifiableList(arrayList);
+    @Override // androidx.emoji2.text.g
+    public final int h() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).k;
+            default:
+                return ((c0) this.b).l;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int i() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).l;
+            default:
+                return ((c0) this.b).k;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int j() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).D();
+            default:
+                return ((c0) this.b).J();
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int k() {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                return (c0Var.m - c0Var.D()) - c0Var.E();
+            default:
+                return ((c0) this.b).K();
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int l(View view) {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                Rect rect = (Rect) this.c;
+                c0Var.L(view, rect);
+                return rect.right;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                Rect rect2 = (Rect) this.c;
+                c0Var2.L(view, rect2);
+                return rect2.bottom;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int m(View view) {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                Rect rect = (Rect) this.c;
+                c0Var.L(view, rect);
+                return rect.left;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                Rect rect2 = (Rect) this.c;
+                c0Var2.L(view, rect2);
+                return rect2.top;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final void n(int i7) {
+        switch (this.d) {
+            case 0:
+                RecyclerView recyclerView = ((c0) this.b).b;
+                if (recyclerView != null) {
+                    int z10 = recyclerView.e.z();
+                    for (int i10 = 0; i10 < z10; i10++) {
+                        recyclerView.e.y(i10).offsetLeftAndRight(i7);
                     }
-                    U.m.add(obj);
+                    break;
                 }
-                ((q0) y10.getLayoutParams()).c = true;
-            }
-        }
-        x0 x0Var = recyclerView.b;
-        ArrayList arrayList2 = (ArrayList) x0Var.e;
-        for (int size = arrayList2.size() - 1; size >= 0; size--) {
-            f1 f1Var = (f1) arrayList2.get(size);
-            if (f1Var != null && (i11 = f1Var.c) >= i7 && i11 < i13) {
-                f1Var.a(2);
-                x0Var.f(size);
-            }
-        }
-        recyclerView.z0 = true;
-    }
-
-    public void d(int i7, int i10) {
-        RecyclerView recyclerView = (RecyclerView) this.a;
-        int z10 = recyclerView.e.z();
-        for (int i11 = 0; i11 < z10; i11++) {
-            f1 U = RecyclerView.U(recyclerView.e.y(i11));
-            if (U != null && !U.r() && U.c >= i7) {
-                U.n(i10, false);
-                recyclerView.v0.f = true;
-            }
-        }
-        ArrayList arrayList = (ArrayList) recyclerView.b.e;
-        int size = arrayList.size();
-        for (int i12 = 0; i12 < size; i12++) {
-            f1 f1Var = (f1) arrayList.get(i12);
-            if (f1Var != null && f1Var.c >= i7) {
-                f1Var.n(i10, true);
-            }
-        }
-        recyclerView.requestLayout();
-        recyclerView.y0 = true;
-    }
-
-    @Override // v4.k1
-    public View d0(int i7) {
-        return ((p0) this.a).q(i7);
-    }
-
-    public void e(int i7, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        RecyclerView recyclerView = (RecyclerView) this.a;
-        int z10 = recyclerView.e.z();
-        int i18 = -1;
-        if (i7 < i10) {
-            i12 = i7;
-            i11 = i10;
-            i13 = -1;
-        } else {
-            i11 = i7;
-            i12 = i10;
-            i13 = 1;
-        }
-        for (int i19 = 0; i19 < z10; i19++) {
-            f1 U = RecyclerView.U(recyclerView.e.y(i19));
-            if (U != null && (i17 = U.c) >= i12 && i17 <= i11) {
-                if (i17 == i7) {
-                    U.n(i10 - i7, false);
-                } else {
-                    U.n(i13, false);
+                break;
+            default:
+                RecyclerView recyclerView2 = ((c0) this.b).b;
+                if (recyclerView2 != null) {
+                    int z11 = recyclerView2.e.z();
+                    for (int i11 = 0; i11 < z11; i11++) {
+                        recyclerView2.e.y(i11).offsetTopAndBottom(i7);
+                    }
+                    break;
                 }
-                recyclerView.v0.f = true;
-            }
+                break;
         }
-        ArrayList arrayList = (ArrayList) recyclerView.b.e;
-        if (i7 < i10) {
-            i15 = i7;
-            i14 = i10;
-        } else {
-            i14 = i7;
-            i15 = i10;
-            i18 = 1;
-        }
-        int size = arrayList.size();
-        for (int i20 = 0; i20 < size; i20++) {
-            f1 f1Var = (f1) arrayList.get(i20);
-            if (f1Var != null && (i16 = f1Var.c) >= i15 && i16 <= i14) {
-                if (i16 == i7) {
-                    f1Var.n(i10 - i7, false);
-                } else {
-                    f1Var.n(i18, false);
-                }
-            }
-        }
-        recyclerView.requestLayout();
-        recyclerView.y0 = true;
-    }
-
-    @Override // v4.k1
-    public int f0(View view) {
-        return p0.v(view) + ((ViewGroup.MarginLayoutParams) ((q0) view.getLayoutParams())).bottomMargin;
-    }
-
-    @Override // org.telegram.ui.Components.z51
-    public void invalidate() {
-        ((wi.h) this.a).m.invalidate();
-    }
-
-    @Override // v4.k1
-    public int z() {
-        return ((p0) this.a).G();
     }
 }

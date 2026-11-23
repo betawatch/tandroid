@@ -1,14 +1,14 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements y10 {
+public final /* synthetic */ class r1 implements w10 {
     public final /* synthetic */ f6 a;
     public final /* synthetic */ bi.k1 b;
     public final /* synthetic */ cg.b c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class r1 implements y10 {
         this.g = z10;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
         final f6 f6Var = this.a;
@@ -35,22 +35,22 @@ public final /* synthetic */ class r1 implements y10 {
         final bi.k1 k1Var = this.b;
         if (k1Var != null && k1Var.G1) {
             k1Var.G1 = false;
-            k1Var.C1.g(false);
+            k1Var.C1.h(false);
         }
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
         f5 f5Var = new f5(this.c, tL_payments_paymentFormStarGift);
         Context context = f6Var.getContext();
-        org.telegram.ui.ActionBar.h6 h6Var = f6Var.J0;
+        org.telegram.ui.ActionBar.i6 i6Var = f6Var.J0;
         int i7 = f6Var.a;
         String E1 = f6Var.E1();
         final TL_stars.TL_starGiftUnique tL_starGiftUnique = this.d;
         final long j3 = this.e;
         final TLRPC.TL_textWithEntities tL_textWithEntities = this.f;
         final boolean z10 = this.g;
-        h5 h5Var = new h5(context, h6Var, tL_starGiftUnique, f5Var, i7, j3, E1, false, new r10() { // from class: di.m2
-            @Override // org.telegram.messenger.r10
+        h5 h5Var = new h5(context, i6Var, tL_starGiftUnique, f5Var, i7, j3, E1, false, new p10() { // from class: di.m2
+            @Override // org.telegram.messenger.p10
             public final void a(Object obj2, Object obj3) {
                 f5 f5Var2 = (f5) obj2;
                 vf.b bVar = (vf.b) obj3;

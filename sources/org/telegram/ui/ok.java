@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ok extends FrameLayout {
     public float a;
@@ -28,8 +28,8 @@ public final class ok extends FrameLayout {
             canvas.save();
             canvas.clipRect(0, 0, getMeasuredWidth(), org.telegram.messenger.g0.L(48.0f));
         }
-        org.telegram.ui.ActionBar.m5[] m5VarArr = bnVar.S2;
-        if (view != m5VarArr[0] && view != m5VarArr[1]) {
+        org.telegram.ui.ActionBar.n5[] n5VarArr = bnVar.S2;
+        if (view != n5VarArr[0] && view != n5VarArr[1]) {
             boolean drawChild = super.drawChild(canvas, view, j3);
             if (view == bnVar.O2) {
                 canvas.restore();

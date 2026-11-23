@@ -1,12 +1,12 @@
 package oi;
 
 import android.text.Editable;
-import org.telegram.messenger.du;
+import org.telegram.messenger.cu;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.kt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements j5, d1 {
     public final /* synthetic */ t3 a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class s2 implements j5, d1 {
         }
         if (z10) {
             t3Var.r3(false);
-            r3Var.R0(new s3(t3Var, f1Var, spanStart, spanEnd, i4Var), f1Var);
+            r3Var.l0(new s3(t3Var, f1Var, spanStart, spanEnd, i4Var), f1Var);
             return;
         }
         TL_iv.textButton textbutton = i4Var.a;
@@ -52,18 +52,19 @@ public final /* synthetic */ class s2 implements j5, d1 {
         if (text2 == null || text2.getSpanStart(i4Var) < 0) {
             return;
         }
-        du duVar = i4Var.b;
-        if (duVar != null && i4Var.c == f1Var) {
-            duVar.b(f1Var);
+        cu cuVar = i4Var.b;
+        if (cuVar != null && i4Var.c == f1Var) {
+            cuVar.h = null;
+            cuVar.a.a.f(f1Var);
             i4Var.c = null;
         }
         text2.removeSpan(i4Var);
         i4 i4Var2 = new i4(textbutton);
         i4Var2.a(t3Var.n3, f1Var, t3Var.o3);
         text2.setSpan(i4Var2, spanStart, spanEnd, 33);
-        mt mtVar = f1Var.T1;
-        if (mtVar != null) {
-            mtVar.g();
+        kt ktVar = f1Var.T1;
+        if (ktVar != null) {
+            ktVar.u();
         }
         f1Var.v2 = true;
         f1Var.invalidate();

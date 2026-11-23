@@ -14,10 +14,11 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nd0;
 import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Wallet.o5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class z extends o0 implements r0 {
     public int F;
@@ -26,7 +27,7 @@ public class z extends o0 implements r0 {
     public VelocityTracker K;
     public ArrayList L;
     public ArrayList M;
-    public jn O;
+    public nd0 O;
     public x P;
     public Rect R;
     public long S;
@@ -45,7 +46,7 @@ public class z extends o0 implements r0 {
     public int x = -1;
     public int E = 0;
     public final ArrayList G = new ArrayList();
-    public final s4.s0 J = new s4.s0(this, 7);
+    public final o5 J = new o5(this, 11);
     public View N = null;
     public final xj0 Q = new xj0(this);
 
@@ -220,7 +221,7 @@ public class z extends o0 implements r0 {
             }
             recyclerView3.Q.add(this);
             this.P = new x(this);
-            this.O = new jn(this.I.getContext(), this.P);
+            this.O = new nd0(this.I.getContext(), this.P);
         }
     }
 

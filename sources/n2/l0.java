@@ -1,89 +1,102 @@
 package n2;
 
-import android.content.Context;
-import android.media.AudioFormat;
-import android.media.AudioManager;
-import android.os.Build;
+import a8.ma;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Arrays;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class l0 {
-    public final Context a;
-    public Boolean b;
+public final class l0 extends f2.o {
+    public int[] i;
+    public int[] j;
 
-    public l0(Context context) {
-        this.a = context == null ? null : context.getApplicationContext();
+    @Override // f2.n
+    public final void c(ByteBuffer byteBuffer) {
+        int[] iArr = this.j;
+        iArr.getClass();
+        int position = byteBuffer.position();
+        int limit = byteBuffer.limit();
+        ByteBuffer l10 = l(((limit - position) / this.b.d) * this.c.d);
+        while (position < limit) {
+            for (int i7 : iArr) {
+                int u10 = (h2.l0.u(this.b.c) * i7) + position;
+                int i10 = this.b.c;
+                if (i10 != 2) {
+                    if (i10 == 3) {
+                        l10.put(byteBuffer.get(u10));
+                    } else if (i10 != 4) {
+                        if (i10 != 21) {
+                            if (i10 != 22) {
+                                if (i10 != 268435456) {
+                                    if (i10 != 1342177280) {
+                                        if (i10 != 1610612736) {
+                                            if (i10 != 1879048192) {
+                                                throw new IllegalStateException("Unexpected encoding: " + this.b.c);
+                                            }
+                                            l10.putDouble(byteBuffer.getDouble(u10));
+                                        }
+                                    }
+                                }
+                            }
+                            l10.putInt(byteBuffer.getInt(u10));
+                        }
+                        ByteOrder order = byteBuffer.order();
+                        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+                        byte b10 = byteBuffer.get(order == byteOrder ? u10 : u10 + 2);
+                        byte b11 = byteBuffer.get(u10 + 1);
+                        if (byteBuffer.order() == byteOrder) {
+                            u10 += 2;
+                        }
+                        int i11 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
+                        ma.h((i11 & (-16777216)) == 0 || (i11 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i11));
+                        ma.f(l10.remaining() >= 3);
+                        l10.put((byte) (l10.order() == byteOrder ? (i11 & 16711680) >> 16 : i11 & ks.e4)).put((byte) ((i11 & 65280) >> 8)).put((byte) (l10.order() == byteOrder ? i11 & ks.e4 : (i11 & 16711680) >> 16));
+                    } else {
+                        l10.putFloat(byteBuffer.getFloat(u10));
+                    }
+                }
+                l10.putShort(byteBuffer.getShort(u10));
+            }
+            position += this.b.d;
+        }
+        byteBuffer.position(limit);
+        l10.flip();
     }
 
-    public final f a(e2.e eVar, e2.u uVar) {
-        boolean booleanValue;
-        uVar.getClass();
-        int i7 = uVar.L;
-        eVar.getClass();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 29 || i7 == -1) {
-            return f.d;
+    @Override // f2.o
+    public final f2.k h(f2.k kVar) {
+        int i7 = kVar.c;
+        int[] iArr = this.i;
+        if (iArr == null) {
+            return f2.k.e;
         }
-        Boolean bool = this.b;
-        if (bool != null) {
-            booleanValue = bool.booleanValue();
-        } else {
-            Context context = this.a;
-            if (context != null) {
-                String parameters = f2.i.d(context).getParameters("offloadVariableRateSupported");
-                this.b = Boolean.valueOf(parameters != null && parameters.equals("offloadVariableRateSupported=1"));
-            } else {
-                this.b = Boolean.FALSE;
-            }
-            booleanValue = this.b.booleanValue();
+        int i10 = kVar.b;
+        if (!h2.l0.M(i7)) {
+            throw new f2.m(kVar);
         }
-        String str = uVar.s;
-        str.getClass();
-        int c10 = e2.s0.c(str, uVar.k);
-        if (c10 == 0 || i10 < h2.l0.s(c10)) {
-            return f.d;
+        boolean z10 = i10 != iArr.length;
+        int i11 = 0;
+        while (i11 < iArr.length) {
+            int i12 = iArr[i11];
+            if (i12 >= i10) {
+                throw new f2.m("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", kVar);
+            }
+            z10 |= i12 != i11;
+            i11++;
         }
-        int t6 = h2.l0.t(uVar.K);
-        if (t6 == 0) {
-            return f.d;
-        }
-        try {
-            AudioFormat build = new AudioFormat.Builder().setSampleRate(i7).setChannelMask(t6).setEncoding(c10).build();
-            if (i10 >= 33) {
-                int directPlaybackSupport = AudioManager.getDirectPlaybackSupport(build, eVar.b());
-                if ((directPlaybackSupport & 1) == 0) {
-                    return f.d;
-                }
-                r3 = (directPlaybackSupport & 3) == 3;
-                ia.a aVar = new ia.a();
-                aVar.a = true;
-                aVar.b = r3;
-                aVar.c = booleanValue;
-                return aVar.a();
-            }
-            if (i10 < 31) {
-                if (!AudioManager.isOffloadedPlaybackSupported(build, eVar.b())) {
-                    return f.d;
-                }
-                ia.a aVar2 = new ia.a();
-                aVar2.a = true;
-                aVar2.c = booleanValue;
-                return aVar2.a();
-            }
-            int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(build, eVar.b());
-            if (playbackOffloadSupport == 0) {
-                return f.d;
-            }
-            ia.a aVar3 = new ia.a();
-            if (i10 > 32 && playbackOffloadSupport == 2) {
-                r3 = true;
-            }
-            aVar3.a = true;
-            aVar3.b = r3;
-            aVar3.c = booleanValue;
-            return aVar3.a();
-        } catch (IllegalArgumentException unused) {
-            return f.d;
-        }
+        return z10 ? new f2.k(kVar.a, iArr.length, i7) : f2.k.e;
+    }
+
+    @Override // f2.o
+    public final void i() {
+        this.j = this.i;
+    }
+
+    @Override // f2.o
+    public final void k() {
+        this.j = null;
+        this.i = null;
     }
 }

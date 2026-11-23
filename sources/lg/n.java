@@ -13,10 +13,10 @@ import ch.w;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n extends q {
     public float[] J1;
@@ -302,7 +302,7 @@ public final class n extends q {
             float f18 = this.A0.f;
             i7 = (int) (f18 * f18 * 255.0f);
         } else {
-            i7 = ls.e4;
+            i7 = ks.e4;
         }
         float f19 = 0.0f;
         if (this.M1) {
@@ -395,7 +395,7 @@ public final class n extends q {
                                 f17 = f16;
                                 i13 = i11;
                             }
-                            ((o) arrayList.get(i12)).c.setAlpha(ls.e4);
+                            ((o) arrayList.get(i12)).c.setAlpha(ks.e4);
                             f27 = (f28 * 360.0f) + f17;
                             i16 = i12 + 1;
                             i14 = i10;
@@ -409,7 +409,7 @@ public final class n extends q {
                     ((o) arrayList.get(i16)).c.setAntiAlias(!g.B1);
                     if (canvas == null) {
                     }
-                    ((o) arrayList.get(i12)).c.setAlpha(ls.e4);
+                    ((o) arrayList.get(i12)).c.setAlpha(ks.e4);
                     f27 = (f28 * 360.0f) + f17;
                     i16 = i12 + 1;
                     i14 = i10;
@@ -459,7 +459,7 @@ public final class n extends q {
                         canvas.drawText(this.S1[i19], (float) ((Math.cos(Math.toRadians(c11)) * d2) + rectF.centerX()), ((float) ((Math.sin(Math.toRadians(c11)) * d2) + rectF.centerY())) - ((textPaint2.ascent() + textPaint2.descent()) / f13), textPaint2);
                     }
                     canvas.restore();
-                    ((o) arrayList.get(i18)).c.setAlpha(ls.e4);
+                    ((o) arrayList.get(i18)).c.setAlpha(ks.e4);
                     f29 = 360.0f;
                     f15 = (f14 * 360.0f) + f12;
                 } else {
@@ -625,7 +625,7 @@ public final class n extends q {
                 Paint paint = fVar3.c;
                 Paint paint2 = fVar3.c;
                 paint.setStrokeWidth(length2);
-                paint2.setAlpha(ls.e4);
+                paint2.setAlpha(ks.e4);
                 paint2.setAntiAlias(false);
                 canvas.drawLines(fVar3.k, 0, fVar3.j, paint2);
             }

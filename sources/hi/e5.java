@@ -1,28 +1,21 @@
 package hi;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class e5 extends sg.u0 {
-    public final /* synthetic */ u9 F;
+public final class e5 extends x3 {
+    public final /* synthetic */ pa m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e5(u9 u9Var, Context context, sg.i0 i0Var, Bitmap bitmap, Bitmap bitmap2, org.telegram.ui.Components.ca caVar) {
-        super(context, i0Var, bitmap, bitmap2, caVar);
-        this.F = u9Var;
+    public e5(pa paVar, mb mbVar, ai.s1 s1Var) {
+        super(mbVar, false, s1Var);
+        this.m = paVar;
     }
 
-    @Override // sg.u0
-    public final void g(sg.h hVar) {
-        int indexOf = sg.h.a.indexOf(hVar);
-        int i7 = indexOf + 1;
-        if (i7 <= 1) {
-            indexOf = i7;
+    @Override // hi.x3
+    public final void b(boolean z10) {
+        super.b(z10);
+        if (z10) {
+            this.m.P0(false);
         }
-        u9 u9Var = this.F;
-        u9Var.U0.b(indexOf);
-        u9Var.w(hVar);
     }
 }

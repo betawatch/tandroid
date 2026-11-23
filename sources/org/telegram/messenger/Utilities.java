@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class Utilities {
     public static final Pattern a = Pattern.compile("[\\-0-9]+");
@@ -37,14 +37,14 @@ public class Utilities {
         b = secureRandom;
         long nextLong = secureRandom.nextLong();
         g5.a aVar = new g5.a(0L);
-        long a10 = a8.ia.a(nextLong);
+        long a10 = a8.ja.a(nextLong);
         aVar.a = a10;
-        long a11 = a8.ia.a(a10);
+        long a11 = a8.ja.a(a10);
         aVar.b = a11;
         if (aVar.a == 0 && a11 == 0) {
-            long a12 = a8.ia.a(3735928559L);
+            long a12 = a8.ja.a(3735928559L);
             aVar.a = a12;
-            aVar.b = a8.ia.a(a12);
+            aVar.b = a8.ja.a(a12);
         }
         c = aVar;
         d = new q5("stageQueue");
@@ -81,14 +81,14 @@ public class Utilities {
         return Long.valueOf(j3);
     }
 
-    public static void B(Runnable runnable, y10... y10VarArr) {
-        if (y10VarArr.length == 0) {
+    public static void B(Runnable runnable, w10... w10VarArr) {
+        if (w10VarArr.length == 0) {
             runnable.run();
             return;
         }
-        pz pzVar = new pz(new int[]{0}, y10VarArr, runnable, 2);
-        for (y10 y10Var : y10VarArr) {
-            y10Var.a(pzVar);
+        nz nzVar = new nz(new int[]{0}, w10VarArr, runnable, 2);
+        for (w10 w10Var : w10VarArr) {
+            w10Var.a(nzVar);
         }
     }
 
@@ -110,7 +110,7 @@ public class Utilities {
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ls.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ks.g2));
         return createBitmap;
     }
 
@@ -123,7 +123,7 @@ public class Utilities {
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ls.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ks.g2));
         return createBitmap;
     }
 
@@ -372,9 +372,9 @@ public class Utilities {
         return (float) Math.sqrt((f15 * f15) + (f14 * f14));
     }
 
-    public static void u(int i7, y10... y10VarArr) {
-        if (y10VarArr.length > i7) {
-            y10VarArr[i7].a(new x0(i7, y10VarArr, 14));
+    public static void u(int i7, w10... w10VarArr) {
+        if (w10VarArr.length > i7) {
+            w10VarArr[i7].a(new x0(i7, w10VarArr, 14));
         }
     }
 

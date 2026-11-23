@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.c9;
+import a8.d9;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p extends a8.i0 implements ListIterator {
     public final int b;
@@ -15,7 +15,7 @@ public final class p extends a8.i0 implements ListIterator {
     public p(r rVar, int i7) {
         super(3);
         int size = rVar.size();
-        c9.b(i7, size);
+        d9.b(i7, size);
         this.b = size;
         this.c = i7;
         this.d = rVar;

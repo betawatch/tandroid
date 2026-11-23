@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a {
     public static volatile ab.b0 b;
@@ -325,7 +325,7 @@ public abstract class a {
                     }
                     l(b11, c10);
                     int i10 = (int) c10;
-                    k8.a[] aVarArr = new k8.a[i10];
+                    jb.m[] mVarArr = new jb.m[i10];
                     c1 c1Var = null;
                     int i11 = 0;
                     while (i11 < c10) {
@@ -333,17 +333,17 @@ public abstract class a {
                         if (c1Var != null && k10.compareTo(c1Var) <= 0) {
                             throw new androidx.datastore.preferences.protobuf.l("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + c1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        aVarArr[i11] = new k8.a(k10, k(e1Var), false, 27);
+                        mVarArr[i11] = new jb.m(28, k10, k(e1Var));
                         i11++;
                         c1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i7 < i10) {
-                        k8.a aVar = aVarArr[i7];
-                        if (treeMap.containsKey((c1) aVar.b)) {
+                        jb.m mVar = mVarArr[i7];
+                        if (treeMap.containsKey((c1) mVar.b)) {
                             throw new androidx.datastore.preferences.protobuf.l("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((c1) aVar.b, (c1) aVar.c);
+                        treeMap.put((c1) mVar.b, (c1) mVar.c);
                         i7++;
                     }
                     return new z0(r.c(treeMap));

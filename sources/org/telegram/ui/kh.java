@@ -3,22 +3,22 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class kh extends AnimatorListenerAdapter {
     public final /* synthetic */ an a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m5 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n5 c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ qm e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ bn h;
 
-    public kh(bn bnVar, an anVar, boolean z10, org.telegram.ui.ActionBar.m5 m5Var, boolean z11, qm qmVar, boolean z12) {
+    public kh(bn bnVar, an anVar, boolean z10, org.telegram.ui.ActionBar.n5 n5Var, boolean z11, qm qmVar, boolean z12) {
         this.h = bnVar;
         this.a = anVar;
         this.b = z10;
-        this.c = m5Var;
+        this.c = n5Var;
         this.d = z11;
         this.e = qmVar;
         this.f = z12;
@@ -44,9 +44,9 @@ public final class kh extends AnimatorListenerAdapter {
         if (!z10) {
             anVar.setTranslationY(0.0f);
         }
-        org.telegram.ui.ActionBar.m5 m5Var = this.c;
+        org.telegram.ui.ActionBar.n5 n5Var = this.c;
         if (!z10) {
-            m5Var.setTranslationY(0.0f);
+            n5Var.setTranslationY(0.0f);
         }
         boolean z11 = this.d;
         qm qmVar = this.e;
@@ -61,11 +61,11 @@ public final class kh extends AnimatorListenerAdapter {
         bnVar.Q2[0].setAlpha(1.0f);
         bnVar.Q2[0].setScaleX(1.0f);
         bnVar.Q2[0].setScaleY(1.0f);
-        org.telegram.ui.ActionBar.m5[] m5VarArr = bnVar.S2;
-        org.telegram.ui.ActionBar.m5 m5Var2 = m5VarArr[0];
-        m5VarArr[1] = m5Var2;
-        m5VarArr[0] = m5Var;
-        m5Var2.setVisibility(4);
+        org.telegram.ui.ActionBar.n5[] n5VarArr = bnVar.S2;
+        org.telegram.ui.ActionBar.n5 n5Var2 = n5VarArr[0];
+        n5VarArr[1] = n5Var2;
+        n5VarArr[0] = n5Var;
+        n5Var2.setVisibility(4);
         qm[] qmVarArr = bnVar.T2;
         qm qmVar2 = qmVarArr[0];
         qmVarArr[1] = qmVar2;
@@ -82,12 +82,12 @@ public final class kh extends AnimatorListenerAdapter {
             bnVar.Q2[1].setImageBitmap(null);
             bnVar.Q2[1].setVisibility(4);
         }
-        org.telegram.ui.Components.q9[] q9VarArr = bnVar.Q2;
-        org.telegram.ui.Components.q9 q9Var = q9VarArr[1];
-        org.telegram.ui.Components.q9 q9Var2 = q9VarArr[0];
-        q9VarArr[1] = q9Var2;
-        q9VarArr[0] = q9Var;
-        q9Var2.setAlpha(1.0f);
+        org.telegram.ui.Components.p9[] p9VarArr = bnVar.Q2;
+        org.telegram.ui.Components.p9 p9Var = p9VarArr[1];
+        org.telegram.ui.Components.p9 p9Var2 = p9VarArr[0];
+        p9VarArr[1] = p9Var2;
+        p9VarArr[0] = p9Var;
+        p9Var2.setAlpha(1.0f);
         bnVar.Q2[1].setScaleX(1.0f);
         bnVar.Q2[1].setScaleY(1.0f);
         bnVar.Q2[1].setVisibility(4);

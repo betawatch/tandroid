@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import c8.k1;
+import c8.l1;
 import e2.p1;
 import e2.q1;
 import h2.l0;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import x2.r1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n extends q1 {
     public static final n F0 = new n(new m());
@@ -129,7 +129,7 @@ public final class n extends q1 {
                 arrayList2.add((r1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
-            c10.putIntArray(Q0, k1.f(arrayList));
+            c10.putIntArray(Q0, l1.f(arrayList));
             c10.putParcelableArrayList(R0, h2.e.h(arrayList2, new l(0)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {

@@ -3,10 +3,10 @@ package lg;
 import android.animation.ValueAnimator;
 import android.graphics.Rect;
 import android.view.MotionEvent;
-import hi.g6;
+import hi.q6;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class j {
     public g a;
@@ -235,7 +235,7 @@ public final class j {
                 }
                 this.g = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.a.a(f11, f10, true);
-                this.g.addUpdateListener(new g6(this, f14, f11, f13, f10, 1));
+                this.g.addUpdateListener(new q6(this, f14, f11, f13, f10, 1));
                 this.g.setInterpolator(g.D1);
                 this.g.start();
                 return true;

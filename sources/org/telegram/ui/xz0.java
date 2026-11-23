@@ -1,37 +1,46 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xz0 implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.gj0 {
-    public final /* synthetic */ s11 a;
+public final /* synthetic */ class xz0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q11 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ xz0(s11 s11Var) {
-        this.a = s11Var;
+    public /* synthetic */ xz0(q11 q11Var, boolean z10, int i7) {
+        this.a = i7;
+        this.b = q11Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        s11 s11Var = this.a;
-        int i10 = s11Var.W;
-        ConnectionsManager.getInstance(i10).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
-        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i10);
-        ArrayList[] arrayListArr = d02.F0;
-        ArrayList arrayList = arrayListArr[0];
-        if (arrayList != null) {
-            arrayList.clear();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                q11 q11Var = this.b;
+                o01 o01Var = q11Var.i0;
+                e01 e01Var = q11Var.j0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f10 = 1.0f - floatValue;
+                o01Var.setAlpha(f10);
+                o01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * floatValue);
+                e01Var.setAlpha(floatValue);
+                e01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * f10);
+                q11Var.k0.setAlpha(e01Var.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                q11 q11Var2 = this.b;
+                q11Var2.k0.setAlpha(q11Var2.j0.getAlpha() * floatValue2);
+                break;
         }
-        d02.E0[0] = 0;
-        d02.getMessagesStorage().a.c(new org.telegram.messenger.fg(d02, 9));
-        ArrayList arrayList2 = arrayListArr[0];
-        s11Var.B(false, true, true);
-    }
-
-    @Override // org.telegram.ui.Components.gj0
-    public void i() {
-        this.a.m();
     }
 }

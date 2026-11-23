@@ -9,11 +9,11 @@ import android.graphics.RecordingCanvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
-import c8.kc;
+import c8.lc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class d extends kc {
+public final class d extends lc {
     public final RenderNode a = new RenderNode("glass-fade-content");
     public final RenderNode b = new RenderNode("glass-fade-overlay");
     public final Paint c;
@@ -38,7 +38,7 @@ public final class d extends kc {
         paint.setBlendMode(blendMode);
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void a(Rect rect, RectF rectF) {
         float f10;
         float f11;
@@ -117,7 +117,7 @@ public final class d extends kc {
         } else {
             beginRecording.save();
             beginRecording.translate(-rectF.left, -rectF.top);
-            fVar.f.o(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
+            fVar.f.z(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
             beginRecording.restore();
         }
         beginRecording.drawRect(0.0f, 0.0f, f16, f17, paint);
@@ -126,25 +126,25 @@ public final class d extends kc {
         fVar.w = false;
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void b() {
         this.a.discardDisplayList();
         this.b.discardDisplayList();
         this.g = -1;
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
         canvas.drawRenderNode(this.b);
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final boolean d() {
         return this.a.hasDisplayList() && this.b.hasDisplayList();
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void e(float f10) {
         this.a.setAlpha(f10);
         this.b.setAlpha(f10);

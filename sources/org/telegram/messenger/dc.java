@@ -1,14 +1,108 @@
 package org.telegram.messenger;
 
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class dc {
-    public TLRPC.Document a;
-    public String b;
-    public ArrayList c;
-    public ArrayList d;
-    public boolean e;
+public final class dc implements Runnable {
+    public final File a;
+    public final int b;
+    public final cc c;
+    public final /* synthetic */ ec d;
+
+    public dc(ec ecVar, int i7, File file, cc ccVar) {
+        this.d = ecVar;
+        this.b = i7;
+        this.a = file;
+        this.c = ccVar;
+    }
+
+    public final void a() {
+        this.d.s.c(new z4(20, this, w7.r(null, this.c.a)));
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int min;
+        Bitmap createScaledBitmap;
+        File file = this.a;
+        cc ccVar = this.c;
+        try {
+            String str = "q_" + ccVar.a.dc_id + "_" + ccVar.a.id;
+            File file2 = new File(w7.z(4), str + ".jpg");
+            if (!file2.exists() && file.exists()) {
+                if (ccVar.e) {
+                    Point point = g0.q;
+                    min = Math.max(point.x, point.y);
+                } else {
+                    Point point2 = g0.q;
+                    min = Math.min(ks.K2, Math.min(point2.x, point2.y) / 4);
+                }
+                int i7 = this.b;
+                Bitmap bitmap = null;
+                if (i7 == 0) {
+                    String file3 = file.toString();
+                    float f10 = min;
+                    bitmap = ec.K(file3, null, f10, f10, false);
+                } else {
+                    int i10 = 2;
+                    if (i7 == 2) {
+                        String file4 = file.toString();
+                        if (!ccVar.e) {
+                            i10 = 1;
+                        }
+                        bitmap = zy.r(i10, file4);
+                    } else if (i7 == 3) {
+                        String lowerCase = file.toString().toLowerCase();
+                        if (lowerCase.endsWith("mp4")) {
+                            String file5 = file.toString();
+                            if (!ccVar.e) {
+                                i10 = 1;
+                            }
+                            bitmap = zy.r(i10, file5);
+                        } else if (lowerCase.endsWith(".jpg") || lowerCase.endsWith(".jpeg") || lowerCase.endsWith(".png") || lowerCase.endsWith(".gif")) {
+                            float f11 = min;
+                            bitmap = ec.K(lowerCase, null, f11, f11, false);
+                        }
+                    }
+                }
+                if (bitmap == null) {
+                    a();
+                    return;
+                }
+                int width = bitmap.getWidth();
+                int height = bitmap.getHeight();
+                if (width != 0 && height != 0) {
+                    float f12 = width;
+                    float f13 = min;
+                    float f14 = height;
+                    float min2 = Math.min(f12 / f13, f14 / f13);
+                    if (min2 > 1.0f && (createScaledBitmap = Bitmap.createScaledBitmap(bitmap, (int) (f12 / min2), (int) (f14 / min2), true)) != bitmap) {
+                        bitmap.recycle();
+                        bitmap = createScaledBitmap;
+                    }
+                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, ccVar.e ? 83 : 60, fileOutputStream);
+                    try {
+                        fileOutputStream.close();
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                    }
+                    g0.g3(new fn(this, str, new ArrayList(ccVar.c), new BitmapDrawable(bitmap), new ArrayList(ccVar.d), 4));
+                    return;
+                }
+                a();
+                return;
+            }
+            a();
+        } catch (Throwable th2) {
+            a8.g(th2, true);
+            a();
+        }
+    }
 }

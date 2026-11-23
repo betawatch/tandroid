@@ -1,176 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.graphics.PointF;
+import android.view.animation.Interpolator;
+import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class kr extends Drawable {
-    public final Drawable a;
-    public final RectF b = new RectF();
-    public final Paint c;
-    public final Paint d;
-    public int e;
-    public final int f;
-    public float g;
-    public boolean h;
-    public float i;
-    public float j;
-    public float k;
+public final class kr implements Interpolator {
+    public static final kr f = new kr(0.25d, 0.1d, 0.25d, 1.0d);
+    public static final kr g = new kr(0.0d, 0.0d, 0.58d, 1.0d);
+    public static final kr h = new kr(0.23d, 1.0d, 0.32d, 1.0d);
+    public static final kr i = new kr(0.42d, 0.0d, 1.0d, 1.0d);
+    public static final kr j = new kr(0.42d, 0.0d, 0.58d, 1.0d);
+    public static final kr k = new kr(0.34d, 1.56d, 0.64d, 1.0d);
+    public static final PathInterpolator l;
+    public final PointF a;
+    public final PointF b;
+    public final PointF c;
+    public final PointF d;
+    public final PointF e;
 
-    public kr(Context context, int i7, int i10) {
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.a = context.getDrawable(i7);
-        this.f = i10;
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.7f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setColor(-16777216);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.N(2.5f));
+    static {
+        new PathInterpolator(c8.m0.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
+        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
+        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.h != z10) {
-            this.h = z10;
-            if (z11) {
-                this.g = z10 ? 0.0f : 1.0f;
-            } else {
-                this.g = z10 ? 1.0f : 0.0f;
+    public kr(float f10, float f11, float f12, float f13) {
+        PointF pointF = new PointF(f10, f11);
+        PointF pointF2 = new PointF(f12, f13);
+        this.c = new PointF();
+        this.d = new PointF();
+        this.e = new PointF();
+        float f14 = pointF.x;
+        if (f14 < 0.0f || f14 > 1.0f) {
+            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
+        }
+        float f15 = pointF2.x;
+        if (f15 < 0.0f || f15 > 1.0f) {
+            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
+        }
+        this.a = pointF;
+        this.b = pointF2;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        PointF pointF;
+        PointF pointF2;
+        PointF pointF3;
+        PointF pointF4;
+        PointF pointF5;
+        int i7 = 1;
+        float f11 = f10;
+        while (true) {
+            pointF = this.b;
+            pointF2 = this.a;
+            pointF3 = this.c;
+            pointF4 = this.d;
+            pointF5 = this.e;
+            if (i7 >= 14) {
+                break;
             }
-            invalidateSelf();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x003b  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        int x02;
-        int i7;
-        boolean z10 = this.h;
-        if (z10) {
-            float f10 = this.g;
-            if (f10 != 1.0f) {
-                this.g = f10 + 0.10666667f;
-                invalidateSelf();
-                if (this.g > 1.0f) {
-                    this.g = 1.0f;
-                }
-                int i10 = this.f;
-                x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.m6.x0(null, i10, false);
-                i7 = this.e;
-                Drawable drawable = this.a;
-                Paint paint = this.c;
-                if (i7 != x02) {
-                    this.e = x02;
-                    paint.setColor(x02);
-                    drawable.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.MULTIPLY));
-                }
-                if (this.g != 0.0f) {
-                    drawable.draw(canvas);
-                    return;
-                }
-                Rect bounds = drawable.getBounds();
-                RectF rectF = this.b;
-                rectF.set(bounds);
-                canvas.saveLayerAlpha(rectF, org.telegram.messenger.ls.e4, 31);
-                drawable.draw(canvas);
-                float N = org.telegram.messenger.g0.N(4.5f) + rectF.left + this.i + this.j;
-                float N2 = ((org.telegram.messenger.g0.N(4.5f) + rectF.top) - org.telegram.messenger.g0.L(1.0f)) + this.j;
-                float L = ((rectF.right - org.telegram.messenger.g0.L(3.0f)) + this.i) - this.k;
-                float L2 = ((rectF.bottom - org.telegram.messenger.g0.L(1.0f)) - org.telegram.messenger.g0.L(3.0f)) - this.k;
-                if (this.h) {
-                    float f11 = this.g;
-                    L = ((L - N) * f11) + N;
-                    L2 = com.google.android.gms.internal.vision.e2.z(L2, N2, f11, N2);
-                } else {
-                    float f12 = this.g;
-                    N = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L - N, N);
-                    N2 = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L2 - N2, N2);
-                }
-                float f13 = L2;
-                float f14 = N2;
-                float f15 = L;
-                float f16 = N;
-                float strokeWidth = f14 - paint.getStrokeWidth();
-                float strokeWidth2 = f13 - paint.getStrokeWidth();
-                Paint paint2 = this.d;
-                canvas.drawLine(f16, strokeWidth, f15, strokeWidth2, paint2);
-                float strokeWidth3 = ((paint2.getStrokeWidth() - paint.getStrokeWidth()) / 2.0f) + 1.0f;
-                canvas.drawLine(f16, f14 - strokeWidth3, f15, f13 - strokeWidth3, paint2);
-                canvas.drawLine(f16, f14, f15, f13, paint);
-                canvas.restore();
-                return;
+            float f12 = pointF2.x * 3.0f;
+            pointF5.x = f12;
+            float f13 = ((pointF.x - pointF2.x) * 3.0f) - f12;
+            pointF4.x = f13;
+            float f14 = (1.0f - pointF5.x) - f13;
+            pointF3.x = f14;
+            float f15 = (((((f14 * f11) + pointF4.x) * f11) + pointF5.x) * f11) - f10;
+            if (Math.abs(f15) < 0.001d) {
+                break;
             }
+            f11 -= f15 / (((((pointF3.x * 3.0f) * f11) + (pointF4.x * 2.0f)) * f11) + pointF5.x);
+            i7++;
         }
-        if (!z10) {
-            float f17 = this.g;
-            if (f17 != 0.0f) {
-                this.g = f17 - 0.10666667f;
-                invalidateSelf();
-                if (this.g < 0.0f) {
-                    this.g = 0.0f;
-                }
-            }
-        }
-        int i102 = this.f;
-        if (i102 >= 0) {
-        }
-        i7 = this.e;
-        Drawable drawable2 = this.a;
-        Paint paint3 = this.c;
-        if (i7 != x02) {
-        }
-        if (this.g != 0.0f) {
-        }
+        float f16 = pointF2.y * 3.0f;
+        pointF5.y = f16;
+        float f17 = ((pointF.y - pointF2.y) * 3.0f) - f16;
+        pointF4.y = f17;
+        float f18 = (1.0f - pointF5.y) - f17;
+        pointF3.y = f18;
+        return ((((f18 * f11) + pointF4.y) * f11) + pointF5.y) * f11;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i7, int i10, int i11, int i12) {
-        super.setBounds(i7, i10, i11, i12);
-        this.a.setBounds(i7, i10, i11, i12);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public kr(double d, double d2, double d10, double d11) {
+        this((float) d, (float) d2, (float) d10, (float) d11);
     }
 }

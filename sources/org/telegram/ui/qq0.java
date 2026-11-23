@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class qq0 extends org.telegram.ui.Components.eu0 {
+public final class qq0 extends org.telegram.ui.Components.du0 {
     public final Paint k0;
     public boolean l0;
     public boolean m0;
@@ -36,7 +36,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
         setLayerType(2, null);
     }
 
-    @Override // org.telegram.ui.Components.eu0, org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.du0, org.telegram.ui.Components.cu0
     public final void R() {
         super.R();
         PhotoViewer photoViewer = this.o0;
@@ -55,15 +55,15 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
             if (photoViewer.u4 == 1 || photoViewer.o6 == 1) {
                 int measuredHeight = getMeasuredHeight();
                 int measuredWidth = getMeasuredWidth();
-                this.n0.add(new Rect(0, org.telegram.messenger.o10.z(200.0f, measuredHeight, 2), org.telegram.messenger.g0.L(100.0f), (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
-                this.n0.add(new Rect(measuredWidth - org.telegram.messenger.g0.L(100.0f), org.telegram.messenger.o10.z(200.0f, measuredHeight, 2), measuredWidth, (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
+                this.n0.add(new Rect(0, org.telegram.messenger.m10.z(200.0f, measuredHeight, 2), org.telegram.messenger.g0.L(100.0f), (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
+                this.n0.add(new Rect(measuredWidth - org.telegram.messenger.g0.L(100.0f), org.telegram.messenger.m10.z(200.0f, measuredHeight, 2), measuredWidth, (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
             }
             setSystemGestureExclusionRects(this.n0);
             invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         PhotoViewer photoViewer = this.o0;
@@ -73,18 +73,18 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer = this.o0;
-        org.telegram.ui.Cells.v9 n10 = photoViewer.R.n(getContext());
-        org.telegram.ui.Cells.w9 w9Var = n10.r;
+        org.telegram.ui.Cells.u9 n10 = photoViewer.R.n(getContext());
+        org.telegram.ui.Cells.v9 v9Var = n10.r;
         if (motionEvent.getAction() == 0) {
             n10.h = motionEvent.getX();
             n10.n = motionEvent.getY();
-            w9Var.e = w9Var.x();
-        } else if (w9Var.e && Math.abs(motionEvent.getX() - n10.h) < org.telegram.messenger.g0.e && Math.abs(motionEvent.getY() - n10.n) < org.telegram.messenger.g0.e && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
+            v9Var.e = v9Var.x();
+        } else if (v9Var.e && Math.abs(motionEvent.getX() - n10.h) < org.telegram.messenger.g0.e && Math.abs(motionEvent.getY() - n10.n) < org.telegram.messenger.g0.e && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
             motionEvent.getX();
             motionEvent.getY();
-            org.telegram.ui.Cells.w9 w9Var2 = n10.r;
-            if (!w9Var2.i && w9Var2.e) {
-                w9Var2.f(false);
+            org.telegram.ui.Cells.v9 v9Var2 = n10.r;
+            if (!v9Var2.i && v9Var2.e) {
+                v9Var2.f(false);
             }
         }
         if (!photoViewer.R.x()) {
@@ -103,13 +103,13 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
             return;
         }
         int measuredHeight = ((int) ((photoViewer.a6 - 1.0f) * dq0Var.getWebView().getMeasuredHeight())) / 2;
-        org.telegram.ui.Components.a61 a61Var = photoViewer.A1;
-        if (a61Var != null && a61Var.j) {
-            a61Var.setBounds(photoViewer.g0.getLeft(), (photoViewer.g0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
+        org.telegram.ui.Components.z51 z51Var = photoViewer.A1;
+        if (z51Var != null && z51Var.j) {
+            z51Var.setBounds(photoViewer.g0.getLeft(), (photoViewer.g0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
             photoViewer.A1.draw(canvas);
         }
-        org.telegram.ui.Components.fn0 fn0Var = photoViewer.B1;
-        if (fn0Var == null || !fn0Var.a()) {
+        org.telegram.ui.Components.en0 en0Var = photoViewer.B1;
+        if (en0Var == null || !en0Var.a()) {
             return;
         }
         photoViewer.B1.setBounds(photoViewer.g0.getLeft(), (int) ((photoViewer.G.getAlpha() * org.telegram.messenger.g0.L(90.0f)) + org.telegram.messenger.g0.m), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
@@ -122,10 +122,10 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
         if (view == photoViewer.R.n(photoViewer.h0.getContext()) || view == photoViewer.s5 || view == photoViewer.z4 || view == photoViewer.A4 || view == photoViewer.Y0) {
             return false;
         }
-        FrameLayout frameLayout = photoViewer.R7;
+        FrameLayout frameLayout = photoViewer.X7;
         if (view == frameLayout && frameLayout.getTranslationY() > 0.0f && photoViewer.Q0.getTranslationY() == 0.0f) {
             canvas.save();
-            canvas.clipRect(photoViewer.R7.getX(), photoViewer.R7.getY(), photoViewer.R7.getX() + photoViewer.R7.getMeasuredWidth(), photoViewer.R7.getBottom());
+            canvas.clipRect(photoViewer.X7.getX(), photoViewer.X7.getY(), photoViewer.X7.getX() + photoViewer.X7.getMeasuredWidth(), photoViewer.X7.getBottom());
             boolean drawChild = super.drawChild(canvas, view, j3);
             canvas.restore();
             return drawChild;
@@ -140,18 +140,18 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.cu0
     public final int getBottomPadding() {
         return this.o0.Q0.getHeight();
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         setTag(R.id.bulletin_delegate_tag, new z8(this, 6));
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
@@ -159,15 +159,15 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.v7 v7Var;
+        org.telegram.ui.Components.u7 u7Var;
         Canvas canvas2;
-        Drawable[] drawableArr = PhotoViewer.Z8;
+        Drawable[] drawableArr = PhotoViewer.f9;
         PhotoViewer photoViewer = this.o0;
-        photoViewer.T1(canvas);
-        if (org.telegram.messenger.g0.m == 0 || (v7Var = photoViewer.G) == null) {
+        photoViewer.U1(canvas);
+        if (org.telegram.messenger.g0.m == 0 || (u7Var = photoViewer.G) == null) {
             return;
         }
-        int alpha = (int) (v7Var.getAlpha() * 255.0f * 0.498f);
+        int alpha = (int) (u7Var.getAlpha() * 255.0f * 0.498f);
         Paint paint = this.k0;
         paint.setAlpha(alpha);
         if (getPaddingRight() > 0) {
@@ -188,7 +188,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
     /* JADX WARN: Removed duplicated region for block: B:122:0x00c5  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00d8  */
-    @Override // org.telegram.ui.Components.eu0, org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, org.telegram.ui.Components.cu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -202,7 +202,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
         int i16;
         int i17;
         int i18;
-        ap0 ap0Var;
+        zo0 zo0Var;
         int top;
         int L;
         int measuredHeight;
@@ -238,7 +238,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                     i20 = 51;
                 }
                 int i21 = i20 & 7;
-                int i22 = i20 & org.telegram.messenger.ls.x1;
+                int i22 = i20 & org.telegram.messenger.ks.x1;
                 if (i21 == 1) {
                     i13 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + layoutParams.leftMargin;
                     i14 = layoutParams.rightMargin;
@@ -249,25 +249,25 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                         i17 = layoutParams.bottomMargin;
                     } else if (i22 != 80) {
                         i18 = layoutParams.topMargin;
-                        ap0Var = photoViewer.V1;
-                        if (childAt != ap0Var.N) {
+                        zo0Var = photoViewer.V1;
+                        if (childAt != zo0Var.N) {
                             if (childAt == photoViewer.W1.N) {
                                 i18 += photoViewer.G.getMeasuredHeight();
-                            } else if (ap0Var.f.l(childAt) || photoViewer.W1.f.l(childAt)) {
+                            } else if (zo0Var.f.l(childAt) || photoViewer.W1.f.l(childAt)) {
                                 i18 = ((i12 - i10) - measuredHeight2) + ((photoViewer.s || org.telegram.messenger.g0.E) ? 0 : org.telegram.messenger.g0.n);
                             } else if (childAt == photoViewer.p1) {
                                 i18 = org.telegram.messenger.g0.L(5.0f) + photoViewer.G.getMeasuredHeight();
                             } else {
                                 float f11 = 40.0f;
                                 if (childAt == photoViewer.f1 || childAt == photoViewer.g1 || childAt == photoViewer.h1) {
-                                    FrameLayout frameLayout = photoViewer.R7;
+                                    FrameLayout frameLayout = photoViewer.X7;
                                     if (frameLayout == null || frameLayout.getVisibility() != 0) {
                                         top = photoViewer.Q0.getTop();
                                         if (childAt == photoViewer.g1) {
                                             top -= org.telegram.messenger.g0.L(50.0f);
                                         }
                                     } else {
-                                        top = photoViewer.R7.getTop();
+                                        top = photoViewer.X7.getTop();
                                     }
                                     int i23 = photoViewer.d2;
                                     if (i23 != 4 && i23 != 5) {
@@ -280,15 +280,15 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                                     if (arrayList == null || !arrayList.contains(childAt)) {
                                         ArrayList arrayList2 = photoViewer.i1;
                                         if (arrayList2 != null && arrayList2.contains(childAt)) {
-                                            FrameLayout frameLayout2 = photoViewer.R7;
-                                            int top2 = (frameLayout2 == null || frameLayout2.getVisibility() != 0) ? photoViewer.Q0.getTop() : photoViewer.R7.getTop();
+                                            FrameLayout frameLayout2 = photoViewer.X7;
+                                            int top2 = (frameLayout2 == null || frameLayout2.getVisibility() != 0) ? photoViewer.Q0.getTop() : photoViewer.X7.getTop();
                                             int i24 = photoViewer.d2;
                                             if (i24 != 4 && i24 != 5) {
                                                 f11 = 15.0f;
                                             }
                                             L = (org.telegram.messenger.g0.L(12.0f) + (top2 - org.telegram.messenger.g0.L(f11))) - org.telegram.messenger.g0.L(36.0f);
                                             measuredHeight = childAt.getMeasuredHeight();
-                                        } else if (childAt == photoViewer.R7) {
+                                        } else if (childAt == photoViewer.X7) {
                                             i18 -= photoViewer.Q0.getHeight();
                                             if (photoViewer.d2 == 1) {
                                                 L2 = org.telegram.messenger.g0.L(52.0f);
@@ -304,12 +304,12 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                                         } else if (childAt == photoViewer.S0) {
                                             L = ((paddingBottom - i10) - measuredHeight2) - layoutParams.bottomMargin;
                                             measuredHeight = photoViewer.Q0.getHeight();
-                                        } else if (childAt == photoViewer.T7) {
-                                            i18 = org.telegram.messenger.o10.x(31.0f, photoViewer.Q0.getHeight(), i18);
+                                        } else if (childAt == photoViewer.Z7) {
+                                            i18 = org.telegram.messenger.m10.x(31.0f, photoViewer.Q0.getHeight(), i18);
                                         }
                                     } else {
-                                        FrameLayout frameLayout3 = photoViewer.R7;
-                                        int top3 = (frameLayout3 == null || frameLayout3.getVisibility() != 0) ? photoViewer.Q0.getTop() - org.telegram.messenger.g0.L(50.0f) : photoViewer.R7.getTop();
+                                        FrameLayout frameLayout3 = photoViewer.X7;
+                                        int top3 = (frameLayout3 == null || frameLayout3.getVisibility() != 0) ? photoViewer.Q0.getTop() - org.telegram.messenger.g0.L(50.0f) : photoViewer.X7.getTop();
                                         int i25 = photoViewer.d2;
                                         if (i25 != 4 && i25 != 5) {
                                             f11 = 15.0f;
@@ -327,8 +327,8 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                         i17 = layoutParams.bottomMargin;
                     }
                     i18 = i16 - i17;
-                    ap0Var = photoViewer.V1;
-                    if (childAt != ap0Var.N) {
+                    zo0Var = photoViewer.V1;
+                    if (childAt != zo0Var.N) {
                     }
                     childAt.layout(i15 + paddingLeft, i18, i15 + measuredWidth + paddingLeft, measuredHeight2 + i18);
                 } else {
@@ -339,8 +339,8 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                 if (i22 != 16) {
                 }
                 i18 = i16 - i17;
-                ap0Var = photoViewer.V1;
-                if (childAt != ap0Var.N) {
+                zo0Var = photoViewer.V1;
+                if (childAt != zo0Var.N) {
                 }
                 childAt.layout(i15 + paddingLeft, i18, i15 + measuredWidth + paddingLeft, measuredHeight2 + i18);
             }
@@ -380,8 +380,8 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
             qq0Var.l0 = false;
         }
         int L = photoViewer.j0.getVisibility() != 8 ? org.telegram.messenger.g0.L(48.0f) : 0;
-        org.telegram.ui.Components.z20 z20Var = photoViewer.m1;
-        if (z20Var == null || z20Var.getVisibility() == 8) {
+        org.telegram.ui.Components.w20 w20Var = photoViewer.m1;
+        if (w20Var == null || w20Var.getVisibility() == 8) {
             i11 = i7;
             i12 = 0;
         } else {
@@ -412,11 +412,11 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
         while (i16 < childCount) {
             View childAt = qq0Var.getChildAt(i16);
             if (childAt.getVisibility() != 8 && childAt != photoViewer.m1) {
-                org.telegram.ui.Components.ue0 ue0Var = photoViewer.z2;
-                if (childAt == ue0Var) {
+                org.telegram.ui.Components.te0 te0Var = photoViewer.z2;
+                if (childAt == te0Var) {
                     childAt.measure(i11, View.MeasureSpec.makeMeasureSpec(qq0Var.getMeasuredHeight(), TLObject.FLAG_30));
                 } else if (childAt == photoViewer.y4) {
-                    if (ue0Var == null || ue0Var.getVisibility() != 0) {
+                    if (te0Var == null || te0Var.getVisibility() != 0) {
                         q10 = photoViewer.C4.q();
                         o4 = photoViewer.C4.o();
                     } else {

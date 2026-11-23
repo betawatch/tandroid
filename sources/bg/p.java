@@ -11,13 +11,13 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.y5;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.x5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class p {
     public static SpannableStringBuilder a(String str) {
@@ -77,18 +77,18 @@ public abstract class p {
                     } else if (i7 == 2 || i7 == 3) {
                         arrayList3.add(oVar);
                     }
-                } else if (obj instanceof y5) {
+                } else if (obj instanceof x5) {
                     TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-                    y5 y5Var = (y5) obj;
-                    tL_messageEntityCustomEmoji.document_id = y5Var.documentId;
-                    tL_messageEntityCustomEmoji.document = y5Var.document;
+                    x5 x5Var = (x5) obj;
+                    tL_messageEntityCustomEmoji.document_id = x5Var.documentId;
+                    tL_messageEntityCustomEmoji.document = x5Var.document;
                     tL_messageEntityCustomEmoji.offset = spanStart;
                     tL_messageEntityCustomEmoji.length = spanEnd - spanStart;
                     arrayList.add(tL_messageEntityCustomEmoji);
                 }
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(fromHtml.toString());
-            si.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
+            ri.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
             for (Object obj2 : spans) {
                 if (obj2 instanceof URLSpan) {
                     int spanStart2 = fromHtml.getSpanStart(obj2);
@@ -98,11 +98,11 @@ public abstract class p {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new u41(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new t41(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
-            si.a(null, spannableStringBuilder, arrayList);
+            ri.a(null, spannableStringBuilder, arrayList);
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 o oVar2 = (o) arrayList2.get(i10);
                 int spanStart3 = fromHtml.getSpanStart(oVar2);
@@ -111,7 +111,7 @@ public abstract class p {
             }
             for (int i11 = 0; i11 < arrayList3.size(); i11++) {
                 o oVar3 = (o) arrayList3.get(i11);
-                jh0.c(spannableStringBuilder, fromHtml.getSpanStart(oVar3), fromHtml.getSpanEnd(oVar3), oVar3.a == 3);
+                ih0.c(spannableStringBuilder, fromHtml.getSpanStart(oVar3), fromHtml.getSpanEnd(oVar3), oVar3.a == 3);
             }
             return spannableStringBuilder;
         } catch (Exception e10) {

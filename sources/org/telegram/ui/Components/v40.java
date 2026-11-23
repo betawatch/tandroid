@@ -1,36 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.os.SystemClock;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v40 implements ValueAnimator.AnimatorUpdateListener {
+public final class v40 extends TextureView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b50 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ v40(b50 b50Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v40(int i7, Context context, Object obj) {
+        super(context);
         this.a = i7;
-        this.b = b50Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View
+    public void invalidate() {
+        zi.t0 t0Var;
         switch (this.a) {
             case 0:
-                b50 b50Var = this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * b50Var.getMeasuredHeight() * 0.5f;
-                b50Var.y0 = floatValue;
-                b50Var.s.setTranslationY(floatValue + b50Var.x0);
+                y40 y40Var = (y40) this.b;
+                if (!y40Var.J0 && (t0Var = y40Var.R) != null && t0Var.a == 3) {
+                    y40Var.J0 = true;
+                    try {
+                        y40Var.H0 = SystemClock.elapsedRealtimeNanos();
+                        y40Var.F();
+                    } finally {
+                        y40Var.J0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                View.MeasureSpec.getSize(i7);
+                super.onMeasure(i7, i10);
+                break;
+            case 2:
+                xh.e eVar = (xh.e) this.b;
+                setMeasuredDimension(eVar.g, eVar.h);
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b50 b50Var2 = this.b;
-                b50Var2.A0 = floatValue2;
-                zi.u0 u0Var = b50Var2.P;
-                if (u0Var != null) {
-                    u0Var.y(floatValue2);
-                    break;
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.TextureView
+    public void setTransform(Matrix matrix) {
+        switch (this.a) {
+            case 1:
+                super.setTransform(matrix);
+                bz bzVar = ((de0) this.b).m0;
+                if (bzVar != null) {
+                    int width = getWidth();
+                    int height = getHeight();
+                    ga gaVar = bzVar.J;
+                    if (gaVar != null) {
+                        Matrix matrix2 = gaVar.v;
+                        matrix.invert(matrix2);
+                        float f10 = width;
+                        float f11 = height;
+                        matrix2.preScale(f10, f11);
+                        matrix2.postScale(1.0f / f10, 1.0f / f11);
+                        gaVar.c(matrix2);
+                        bzVar.c(false, false, false);
+                        break;
+                    }
                 }
+                break;
+            default:
+                super.setTransform(matrix);
                 break;
         }
     }

@@ -1,55 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class rq0 extends v4.o0 {
-    public final /* synthetic */ kq0 a;
-    public final /* synthetic */ jt0 b;
+public final class rq0 implements org.telegram.ui.d50 {
+    public final /* synthetic */ it0 a;
 
-    public rq0(jt0 jt0Var, kq0 kq0Var) {
-        this.b = jt0Var;
-        this.a = kq0Var;
+    public rq0(it0 it0Var) {
+        this.a = it0Var;
     }
 
-    @Override // v4.o0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        kq0 kq0Var = this.a;
-        if (kq0Var.h.getAdapter() == this.b.R) {
-            int R = RecyclerView.R(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            lq0 lq0Var = kq0Var.x;
-            lq0Var.B1();
-            if (R <= lq0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = org.telegram.messenger.g0.L(2.0f);
-            }
-            rect.right = kq0Var.x.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
-            return;
+    @Override // org.telegram.ui.d50
+    public final void d(org.telegram.ui.e50 e50Var, long j3) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", j3);
+        bundle.putBoolean("just_created_chat", true);
+        e50Var.presentFragment(new org.telegram.ui.bn(bundle), true);
+        vr0 vr0Var = this.a.S;
+        org.telegram.ui.ActionBar.g2 g2Var = vr0Var.r.y1;
+        if (vr0Var.n != 0) {
+            g2Var.getConnectionsManager().cancelRequest(vr0Var.n, true);
+            vr0Var.n = 0;
         }
-        if (!(view instanceof org.telegram.ui.Cells.p7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+        vr0Var.d.clear();
+        vr0Var.e = false;
+        vr0Var.h = false;
+        vr0Var.E(0L);
+        TLRPC.User c22 = g2Var.getMessagesController().c2(Long.valueOf(vr0Var.F()));
+        if (c22 != null) {
+            g2Var.getMessagesController().c3(c22, g2Var.getClassGuid(), true, null);
         }
-        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
-        kq0Var.h.getClass();
-        int R2 = RecyclerView.R(p7Var);
-        int i7 = kq0Var.x.J;
-        p7Var.b0 = R2 < i7;
-        int i10 = R2 % i7;
-        p7Var.W = i10 == 0;
-        p7Var.a0 = i10 == i7 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
     }
 }

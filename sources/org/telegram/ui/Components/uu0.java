@@ -1,37 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xu0 b;
+public final class uu0 {
+    public org.telegram.messenger.bp a;
+    public org.telegram.ui.ActionBar.i6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public /* synthetic */ uu0(xu0 xu0Var, int i7) {
-        this.a = i7;
-        this.b = xu0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                xu0 xu0Var = this.b;
-                xu0Var.invalidate();
-                org.telegram.messenger.g0.g3(new uu0(xu0Var, 1));
-                break;
-            default:
-                xu0 xu0Var2 = this.b;
-                wu0 wu0Var = xu0Var2.e;
-                if (wu0Var != null) {
-                    xu0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.tt0) wu0Var).b;
-                    profileActivity.r.setTranslationX(profileActivity.m4(profileActivity.B6, profileActivity.D6));
-                    profileActivity.r.setTranslationY(profileActivity.n4(profileActivity.E6));
-                    break;
-                }
-                break;
+    public final void a(org.telegram.messenger.bp bpVar) {
+        this.a = bpVar;
+        if (bpVar == null) {
+            this.c = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, this.b);
+            this.c = i0.a.f(this.e, this.c, 603979776);
+            this.d = i0.a.f(this.e, this.d, -1);
+            return;
         }
+        int c10 = bpVar.c(org.telegram.ui.ActionBar.n6.I.q());
+        int d = bpVar.d(org.telegram.ui.ActionBar.n6.I.q());
+        org.telegram.ui.ActionBar.i6 i6Var = this.b;
+        int f10 = i0.a.f(0.75f, d, c10);
+        int w02 = org.telegram.messenger.g0.B(f10) > 0.721f ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.v6, i6Var) : org.telegram.ui.ActionBar.n6.b(0.08f, -0.08f, f10);
+        this.c = w02;
+        this.d = org.telegram.messenger.g0.B(w02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.f(this.e, this.c, 603979776);
+        this.d = i0.a.f(this.e, this.d, -1);
     }
 }

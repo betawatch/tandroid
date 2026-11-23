@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 
-import c8.xb;
+import c8.yb;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.Map;
 import rd.v;
 import rd.w;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements vd.c, d {
     public static final Map b;
@@ -146,11 +146,11 @@ public final class e implements vd.c, d {
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof e) && xb.a(this).equals(xb.a((vd.c) obj));
+        return (obj instanceof e) && yb.a(this).equals(yb.a((vd.c) obj));
     }
 
     public final int hashCode() {
-        return xb.a(this).hashCode();
+        return yb.a(this).hashCode();
     }
 
     public final String toString() {

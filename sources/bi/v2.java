@@ -1,237 +1,300 @@
 package bi;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ca;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.ok0;
-import org.telegram.ui.Components.zm0;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.na;
+import c8.sa;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.p9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class v2 implements View.OnAttachStateChangeListener {
+public final class v2 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ v2(Object obj, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v2(Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = obj;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
-            case 0:
-                ((o2) this.b).run();
+            case 24:
+                super.dispatchDraw(canvas);
                 break;
-            case 1:
-                ((c3) this.b).l.a();
-                break;
-            case 2:
-                s7 s7Var = (s7) this.b;
-                q7 q7Var = s7Var.b0;
-                if (q7Var != null) {
-                    q7Var.a(s7Var.c);
-                    break;
-                }
-                break;
-            case 3:
-                v7 v7Var = (v7) this.b;
-                t7 t7Var = v7Var.b0;
-                if (t7Var != null) {
-                    t7Var.a(v7Var.c);
-                    break;
-                }
-                break;
-            case 4:
-                ArrayList arrayList = ((di.o5) this.b).e;
-                int size = arrayList.size();
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    di.m5 m5Var = (di.m5) obj;
-                    if (m5Var.c) {
-                        m5Var.d.P();
-                    }
-                }
-                break;
-            case 5:
-                ((fi.l1) this.b).f.P();
-                break;
-            case 6:
-                h6.m mVar = (h6.m) this.b;
-                jh.k kVar = (jh.k) mVar.c;
-                ViewTreeObserver viewTreeObserver = ((View) mVar.b).getViewTreeObserver();
-                ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) mVar.d;
-                if (viewTreeObserver2 != viewTreeObserver) {
-                    if (viewTreeObserver2 != null) {
-                        if (viewTreeObserver2.isAlive()) {
-                            ((ViewTreeObserver) mVar.d).removeOnPreDrawListener(kVar);
-                        }
-                        mVar.d = null;
-                    }
-                    mVar.d = viewTreeObserver;
-                    if (viewTreeObserver.isAlive()) {
-                        viewTreeObserver.addOnPreDrawListener(kVar);
-                        break;
-                    }
-                }
-                break;
-            case 9:
-                ((org.telegram.ui.Components.w6) this.b).c(null);
-                break;
-            case 10:
-                ((k6) this.b).a(view);
-                break;
-            case 11:
-                ca caVar = (ca) this.b;
-                ArrayList arrayList2 = caVar.c;
-                arrayList2.clear();
-                for (View view2 = caVar.b; view2 != null; view2 = (View) view2.getParent()) {
-                    arrayList2.add(0, view2);
-                    if (!(view2.getParent() instanceof View)) {
-                        break;
-                    }
-                }
-                break;
-            case 13:
-                ((a5.h) this.b).a();
-                break;
-            case 14:
-                ok0 ok0Var = (ok0) this.b;
-                org.telegram.ui.Components.n5 n5Var = ok0Var.t;
-                if (n5Var != null) {
-                    n5Var.a();
-                }
-                org.telegram.ui.Components.n5 n5Var2 = ok0Var.u;
-                if (n5Var2 != null) {
-                    n5Var2.a();
-                    break;
-                }
+            default:
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                ((c3) this.b).l.b();
-                break;
-            case 2:
-                s7 s7Var = (s7) this.b;
-                q7 q7Var = s7Var.b0;
-                if (q7Var != null) {
-                    q7Var.n(s7Var.c);
-                    break;
-                }
-                break;
-            case 3:
-                v7 v7Var = (v7) this.b;
-                t7 t7Var = v7Var.b0;
-                if (t7Var != null) {
-                    t7Var.n(v7Var.c);
-                    break;
-                }
-                break;
-            case 4:
-                ArrayList arrayList = ((di.o5) this.b).e;
-                int size = arrayList.size();
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    ((di.m5) obj).a();
-                }
-                break;
-            case 5:
-                ((fi.l1) this.b).f.R();
-                break;
-            case 6:
-                h6.m mVar = (h6.m) this.b;
-                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) mVar.d;
-                if (viewTreeObserver != null) {
-                    if (viewTreeObserver.isAlive()) {
-                        ((ViewTreeObserver) mVar.d).removeOnPreDrawListener((jh.k) mVar.c);
-                    }
-                    mVar.d = null;
-                    break;
-                }
-                break;
-            case 7:
-                l.e eVar = (l.e) this.b;
-                ViewTreeObserver viewTreeObserver2 = eVar.O;
-                if (viewTreeObserver2 != null) {
-                    if (!viewTreeObserver2.isAlive()) {
-                        eVar.O = view.getViewTreeObserver();
-                    }
-                    eVar.O.removeGlobalOnLayoutListener(eVar.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
-                break;
+            case 16:
+                return false;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
             case 8:
-                l.c0 c0Var = (l.c0) this.b;
-                ViewTreeObserver viewTreeObserver3 = c0Var.F;
-                if (viewTreeObserver3 != null) {
-                    if (!viewTreeObserver3.isAlive()) {
-                        c0Var.F = view.getViewTreeObserver();
-                    }
-                    c0Var.F.removeGlobalOnLayoutListener(c0Var.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
+                int intrinsicHeight = org.telegram.ui.ActionBar.n6.i3.getIntrinsicHeight();
+                org.telegram.ui.ActionBar.n6.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight);
+                org.telegram.ui.ActionBar.n6.i3.draw(canvas);
+                canvas.drawRect(0.0f, intrinsicHeight, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.j2);
                 break;
-            case 9:
-                ((org.telegram.ui.Components.w6) this.b).b(null);
+            case 21:
+                canvas.drawLine(0.0f, org.telegram.messenger.g0.L(40.0f), getMeasuredWidth(), org.telegram.messenger.g0.L(40.0f), org.telegram.ui.ActionBar.n6.k0);
                 break;
-            case 10:
-                ((k6) this.b).n(view);
+            default:
+                super.onDraw(canvas);
                 break;
-            case 11:
-                ((ca) this.b).c.clear();
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 22:
+                getParent().requestDisallowInterceptTouchEvent(true);
+                return true;
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 7:
                 break;
-            case 12:
-                gc gcVar = (gc) this.b;
-                gcVar.e.removeOnAttachStateChangeListener(this);
-                gcVar.c(0L, false);
-                break;
-            case 13:
-                ((a5.h) this.b).b();
-                break;
-            case 14:
-                ok0 ok0Var = (ok0) this.b;
-                org.telegram.ui.Components.n5 n5Var = ok0Var.t;
-                if (n5Var != null) {
-                    n5Var.b();
-                }
-                org.telegram.ui.Components.n5 n5Var2 = ok0Var.u;
-                if (n5Var2 != null) {
-                    n5Var2.a();
+            case 18:
+                super.onLayout(z10, i7, i10, i11, i12);
+                if (getParent() instanceof View) {
+                    float min = Math.min(((View) getParent()).getHeight() / getHeight(), 1.0f);
+                    setPivotX(getWidth() / 2.0f);
+                    setPivotY(((FrameLayout.LayoutParams) getLayoutParams()).gravity == 17 ? getHeight() / 2.0f : 0.0f);
+                    setScaleX(min);
+                    setScaleY(min);
                     break;
+                }
+                break;
+            case 23:
+                int childCount = getChildCount();
+                int i13 = 0;
+                int i14 = 0;
+                for (int i15 = 0; i15 < childCount; i15++) {
+                    if (getChildAt(i15).getVisibility() != 8) {
+                        if (getChildAt(i15).getMeasuredWidth() + i13 > getMeasuredWidth()) {
+                            i14 = org.telegram.messenger.f3.C(8.0f, getChildAt(i15).getMeasuredHeight(), i14);
+                            i13 = 0;
+                        }
+                        getChildAt(i15).layout(i13, i14, getChildAt(i15).getMeasuredWidth() + i13, getChildAt(i15).getMeasuredHeight() + i14);
+                        i13 = org.telegram.messenger.f3.C(16.0f, getChildAt(i15).getMeasuredWidth(), i13);
+                    }
                 }
                 break;
             default:
-                view.removeCallbacks((Runnable) ((zm0) this.b).a.remove(view));
-                view.removeOnAttachStateChangeListener(this);
+                super.onLayout(z10, i7, i10, i11, i12);
                 break;
         }
     }
 
-    private final void a(View view) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(120.0f), TLObject.FLAG_30));
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 8:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 22:
+            case 24:
+            case 28:
+            default:
+                super.onMeasure(i7, i10);
+                break;
+            case 4:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(12.0f), TLObject.FLAG_30));
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
+                break;
+            case 6:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(60.0f)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 7:
+                setMeasuredDimension(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
+                break;
+            case 9:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
+                break;
+            case 10:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
+                break;
+            case 11:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(325.0f)), View.MeasureSpec.getMode(i7)), i10);
+                break;
+            case 12:
+                super.onMeasure(i7, i10);
+                break;
+            case 13:
+                super.onMeasure(i7, i10);
+                break;
+            case 14:
+                super.onMeasure(i7, i10);
+                break;
+            case 20:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(300.0f), View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(32.0f)), TLObject.FLAG_31), i10);
+                break;
+            case 21:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), m10.C(48.0f, 1, TLObject.FLAG_30));
+                break;
+            case 23:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+                int childCount = getChildCount();
+                int i11 = 0;
+                int i12 = 0;
+                int i13 = 0;
+                for (int i14 = 0; i14 < childCount; i14++) {
+                    if (getChildAt(i14).getVisibility() != 8) {
+                        if (getChildAt(i14).getMeasuredWidth() + i12 > View.MeasureSpec.getSize(i7)) {
+                            i13 = org.telegram.messenger.f3.C(8.0f, getChildAt(i14).getMeasuredHeight(), i13);
+                            i12 = 0;
+                        }
+                        i12 = org.telegram.messenger.f3.C(16.0f, getChildAt(i14).getMeasuredWidth(), i12);
+                        i11 = getChildAt(i14).getMeasuredHeight() + i13;
+                    }
+                }
+                setMeasuredDimension(getMeasuredWidth(), i11);
+                break;
+            case 25:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+                break;
+            case 26:
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
+                measureChildren(makeMeasureSpec, i10);
+                int i15 = 0;
+                for (int i16 = 0; i16 < getChildCount(); i16++) {
+                    i15 = Math.max(i15, getChildAt(i16).getMeasuredHeight());
+                }
+                super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30));
+                break;
+            case 27:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            case 29:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+                break;
+        }
     }
 
-    private final void b(View view) {
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        switch (this.a) {
+            case 17:
+                super.setTranslationY(f10);
+                setPadding(0, 0, (int) f10, 0);
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
     }
 
-    private final void c(View view) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v2(Context context, int i7, String str, CharSequence charSequence, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.a = 11;
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.s(imageView, i10, i6Var, PorterDuff.Mode.SRC_IN);
+        imageView.setImageResource(i7);
+        addView(imageView, na.d(24, 24.0f, 51, 0.0f, 5.0f, 18.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, na.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        j80 j80Var = new j80(context, null);
+        j80Var.setTypeface(org.telegram.messenger.g0.o());
+        j80Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(j80Var, i10, i6Var);
+        int i11 = org.telegram.ui.ActionBar.n6.Xc;
+        org.telegram.ui.ActionBar.u6.G(j80Var, i11, i6Var);
+        j80Var.setText(str);
+        linearLayout.addView(j80Var, na.t(-1, -2, 55, 0, 0, 0, 2));
+        j80 j80Var2 = new j80(context, null);
+        j80Var2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(j80Var2, org.telegram.ui.ActionBar.n6.y6, i6Var);
+        org.telegram.ui.ActionBar.u6.G(j80Var2, i11, i6Var);
+        j80Var2.setText(charSequence);
+        linearLayout.addView(j80Var2, na.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
-    private final void d(View view) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v2(Context context, x6 x6Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.a = 1;
+        LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
+        addView(g10, na.e(-1, -2, 23));
+        p9 p9Var = new p9(context);
+        p9Var.setImageDrawable(new nh0(R.raw.utyan_empty, org.telegram.messenger.g0.L(130.0f), org.telegram.messenger.g0.L(130.0f)));
+        g10.addView(p9Var, na.r(ks.O1, ks.O1, 17));
+        TextView textView = new TextView(context);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        textView.setTextSize(1, 17.0f);
+        textView.setGravity(17);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setText(gd.N0(2131749994, null));
+        g10.addView(textView, na.t(-2, -2, 17, 32, 12, 32, 9));
+        j80 j80Var = new j80(context, null);
+        org.telegram.ui.ActionBar.u6.U(j80Var, org.telegram.ui.ActionBar.n6.A6, i6Var);
+        j80Var.setTextSize(1, 14.0f);
+        j80Var.setGravity(17);
+        j80Var.setText(gd.N0(2131749995, null));
+        j80Var.setMaxWidth(org.telegram.messenger.g0.L(200.0f));
+        g10.addView(j80Var, na.t(-2, -2, 17, 32, 0, 32, 12));
+        TextView textView2 = new TextView(context);
+        int i7 = org.telegram.ui.ActionBar.n6.Fi;
+        org.telegram.ui.ActionBar.u6.U(textView2, i7, i6Var);
+        org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.n6.a0(org.telegram.ui.ActionBar.n6.r1(0.1f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var)), 6, 6);
+        org.telegram.ui.ActionBar.q6 K = org.telegram.ui.ActionBar.u6.K(0.1f, i7);
+        textView2.setBackground(a02);
+        org.telegram.ui.ActionBar.u6.j(textView2, a02, null, K, i6Var);
+        textView2.setGravity(17);
+        textView2.setText(gd.N0(2131749996, null));
+        textView2.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
+        sa.a(textView2);
+        g10.addView(textView2, na.t(-2, 27, 17, 32, 0, 32, 12));
+        textView2.setOnClickListener(x6Var);
     }
 
-    private final void e(View view) {
+    private final void a(boolean z10, int i7, int i10, int i11, int i12) {
     }
 }

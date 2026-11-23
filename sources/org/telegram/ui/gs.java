@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class gs extends org.telegram.ui.ActionBar.g1 {
     public final /* synthetic */ js o;
@@ -25,10 +25,10 @@ public final class gs extends org.telegram.ui.ActionBar.g1 {
         }
         View view = nsVar.h;
         if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.a8) {
-                ((org.telegram.ui.Cells.a8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.y7) {
-                ((org.telegram.ui.Cells.y7) view).setScaled(false);
+            if (view instanceof org.telegram.ui.Cells.z7) {
+                ((org.telegram.ui.Cells.z7) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.x7) {
+                ((org.telegram.ui.Cells.x7) view).setScaled(false);
             } else if (view instanceof org.telegram.ui.Cells.i2) {
                 ((org.telegram.ui.Cells.i2) view).setScaled(false);
             }

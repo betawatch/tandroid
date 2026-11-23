@@ -1,6 +1,6 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m1 {
     public static final String f;
@@ -28,7 +28,7 @@ public final class m1 {
     }
 
     public m1(String str, u... uVarArr) {
-        la.f(uVarArr.length > 0);
+        ma.f(uVarArr.length > 0);
         this.b = str;
         this.d = uVarArr;
         this.a = uVarArr.length;

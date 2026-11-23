@@ -1,47 +1,9 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g1 {
-    public static final f1 Companion = new f1();
-    public final long a;
-    public final long b;
-    public final long c;
-
-    public /* synthetic */ g1(int i7, long j3, long j10, long j11) {
-        if (1 != (i7 & 1)) {
-            oe.k.a(i7, 1, e1.a.d());
-            throw null;
-        }
-        this.a = j3;
-        this.b = (i7 & 2) == 0 ? 1000 * j3 : j10;
-        if ((i7 & 4) == 0) {
-            this.c = j3 / 1000;
-        } else {
-            this.c = j11;
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof g1) && this.a == ((g1) obj).a;
-    }
-
-    public final int hashCode() {
-        long j3 = this.a;
-        return (int) (j3 ^ (j3 >>> 32));
-    }
-
-    public final String toString() {
-        return "Time(ms=" + this.a + ')';
-    }
-
-    public g1(long j3) {
-        this.a = j3;
-        long j10 = 1000;
-        this.b = j3 * j10;
-        this.c = j3 / j10;
+    public final ke.a serializer() {
+        return f1.a;
     }
 }

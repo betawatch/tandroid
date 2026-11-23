@@ -8,11 +8,12 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import jb.m;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.ui.ActionBar.v4;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class b {
     public long[] a;
@@ -205,7 +206,7 @@ public class b {
             if (((a) this.d.get(i10)).f < this.f) {
                 this.f = ((a) this.d.get(i10)).f;
             }
-            ((a) this.d.get(i10)).b = new k8.a(((a) this.d.get(i10)).a);
+            ((a) this.d.get(i10)).b = new m(((a) this.d.get(i10)).a);
         }
         long j11 = this.k;
         this.c = new String[((int) ((j10 - j3) / j11)) + 10];

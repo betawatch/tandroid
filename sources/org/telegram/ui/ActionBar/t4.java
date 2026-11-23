@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public interface t4 {
     boolean a();
@@ -16,7 +16,7 @@ public interface t4 {
 
     boolean f();
 
-    fh.g g(j5 j5Var);
+    fh.g g(k5 k5Var);
 
     int getButtonsGlassBackgroundColor();
 
@@ -34,15 +34,15 @@ public interface t4 {
 
     int getMenuMaxHeight();
 
-    h6 getMenuResourcesProvider();
+    i6 getMenuResourcesProvider();
 
     int getMenuRise();
 
     View getMenuView();
 
-    j5 getOpenMenuOverlay();
+    k5 getOpenMenuOverlay();
 
-    void h(j5 j5Var, q0 q0Var);
+    void h(k5 k5Var, q0 q0Var);
 
     void setMenuGlassFrostedProgress(float f10);
 }

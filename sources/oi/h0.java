@@ -1,28 +1,28 @@
 package oi;
 
+import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public interface h0 {
-    j9 P0();
+    i9 K();
 
-    void S0(CharSequence charSequence);
+    void M(CharSequence charSequence);
 
-    i9 a1();
+    h9 P();
 
-    a c1();
+    a V();
 
-    void e(f1 f1Var);
+    boolean W();
 
-    boolean g1();
+    void Y(int i7, int i10);
 
-    void k2();
+    void d(f1 f1Var);
 
-    void l1(int i7, int i10);
+    void g();
 
-    void u();
+    void h0();
 
-    void u1();
+    void w0();
 }

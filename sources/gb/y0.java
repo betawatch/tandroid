@@ -1,86 +1,52 @@
 package gb;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class y0 implements ce.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class y0 extends kd.j implements rd.q {
+    public int a;
+    public /* synthetic */ ce.d b;
+    public /* synthetic */ Throwable c;
+    public final /* synthetic */ e1 d;
 
-    public /* synthetic */ y0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y0(e1 e1Var, id.c cVar) {
+        super(3, cVar);
+        this.d = e1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0051  */
-    @Override // ce.d
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object a(Object obj, id.c cVar) {
-        m1.o oVar;
-        int i7;
-        Object e10;
-        switch (this.a) {
-            case 0:
-                j0 j0Var = (j0) obj;
-                d1 d1Var = (d1) this.b;
-                kotlin.jvm.internal.j.e(j0Var, "<set-?>");
-                d1Var.h = j0Var;
-                if (d1Var.j) {
-                    d1Var.j = false;
-                    d1Var.c();
-                }
-                Object a10 = d1.a(d1Var, j0Var.a.a, a1.a, cVar);
-                return a10 == jd.a.a ? a10 : gd.k.a;
-            case 1:
-                if (cVar instanceof m1.o) {
-                    oVar = (m1.o) cVar;
-                    int i10 = oVar.b;
-                    if ((i10 & TLObject.FLAG_31) != 0) {
-                        oVar.b = i10 - TLObject.FLAG_31;
-                        Object obj2 = oVar.a;
-                        jd.a aVar = jd.a.a;
-                        i7 = oVar.b;
-                        if (i7 != 0) {
-                            b7.h.b(obj2);
-                            ce.d dVar = (ce.d) this.b;
-                            m1.e1 e1Var = (m1.e1) obj;
-                            if (e1Var instanceof m1.w0) {
-                                throw ((m1.w0) e1Var).b;
-                            }
-                            if (!(e1Var instanceof m1.c)) {
-                                if (e1Var instanceof m1.l0 ? true : e1Var instanceof m1.f1) {
-                                    throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
-                                }
-                                throw new androidx.car.app.j();
-                            }
-                            Object obj3 = ((m1.c) e1Var).b;
-                            oVar.b = 1;
-                            if (dVar.a(obj3, oVar) == aVar) {
-                                return aVar;
-                            }
-                        } else {
-                            if (i7 != 1) {
-                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                            }
-                            b7.h.b(obj2);
-                        }
-                        return gd.k.a;
-                    }
-                }
-                oVar = new m1.o(this, cVar);
-                Object obj22 = oVar.a;
-                jd.a aVar2 = jd.a.a;
-                i7 = oVar.b;
-                if (i7 != 0) {
-                }
-                return gd.k.a;
-            default:
-                m1.b0 b0Var = (m1.b0) this.b;
-                return ((b0Var.h.E() instanceof m1.l0) || (e10 = m1.b0.e(b0Var, true, cVar)) != jd.a.a) ? gd.k.a : e10;
+    @Override // rd.q
+    public final Object b(Object obj, Object obj2, Object obj3) {
+        y0 y0Var = new y0(this.d, (id.c) obj3);
+        y0Var.b = (ce.d) obj;
+        y0Var.c = (Throwable) obj2;
+        return y0Var.invokeSuspend(gd.k.a);
+    }
+
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        jd.a aVar = jd.a.a;
+        int i7 = this.a;
+        if (i7 == 0) {
+            c8.z.b(obj);
+            ce.d dVar = this.b;
+            Throwable th2 = this.c;
+            o0 a10 = this.d.b.a(null);
+            k0 k0Var = new k0(a10, null, null);
+            StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
+            sb2.append(th2.getMessage());
+            sb2.append(". Emit fallback session ");
+            p5.c.t(sb2, a10.a, "FirebaseSessions");
+            this.b = null;
+            this.a = 1;
+            if (dVar.a(k0Var, this) == aVar) {
+                return aVar;
+            }
+        } else {
+            if (i7 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            c8.z.b(obj);
         }
+        return gd.k.a;
     }
 }

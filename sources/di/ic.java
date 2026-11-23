@@ -3,9 +3,9 @@ package di;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ic extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final class ic extends AnimatorListenerAdapter {
                 jcVar.invalidate();
                 break;
             case 1:
-                pz pzVar = (pz) this.d;
+                mz mzVar = (mz) this.d;
                 int i7 = this.b;
-                pzVar.b(i7 == 5 ? 0.0f : -this.c, i7 + 1);
-                pzVar.E = 0.0f;
-                pzVar.invalidate();
+                mzVar.b(i7 == 5 ? 0.0f : -this.c, i7 + 1);
+                mzVar.E = 0.0f;
+                mzVar.invalidate();
                 break;
             default:
                 ((org.telegram.ui.web.j1) this.d).c(this.b, this.c, false);

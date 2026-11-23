@@ -1,45 +1,36 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.os.SystemClock;
-import android.view.View;
-import android.view.ViewTreeObserver;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z70 implements ViewTreeObserver.OnGlobalLayoutListener {
+public final /* synthetic */ class z70 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ z70(Object obj, int i7) {
+    public /* synthetic */ z70(LaunchActivity launchActivity, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = launchActivity;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i7 = this.a;
-        Object obj = this.b;
+        LaunchActivity launchActivity = this.b;
         switch (i7) {
             case 0:
                 String str = LaunchActivity.C1;
-                int measuredHeight = ((View) obj).getMeasuredHeight();
-                StringBuilder m10 = i5.c.m(measuredHeight, "height = ", " displayHeight = ");
-                Point point = org.telegram.messenger.g0.q;
-                i5.c.t(point.y, m10);
-                int i10 = (measuredHeight - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.m;
-                if (i10 > org.telegram.messenger.g0.L(100.0f) && i10 < point.y && org.telegram.messenger.g0.L(100.0f) + i10 > point.y) {
-                    point.y = i10;
-                    if (org.telegram.messenger.s2.a) {
-                        i5.c.t(point.y, new StringBuilder("fix display size y to "));
-                        break;
-                    }
+                if (tLObject != null) {
+                    org.telegram.messenger.g0.g3(new i50(10, launchActivity, (TL_account.Password) tLObject));
+                    break;
                 }
                 break;
             default:
-                x71 x71Var = (x71) obj;
-                x71Var.R = SystemClock.elapsedRealtime() + 1500;
-                x71Var.m0.invalidate();
+                String str2 = LaunchActivity.C1;
+                org.telegram.messenger.g0.g3(new i50(6, launchActivity, tLObject));
                 break;
         }
     }

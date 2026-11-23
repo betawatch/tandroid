@@ -1,43 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xw0 extends ek0 {
-    public boolean f3;
-    public boolean g3;
-    public final /* synthetic */ ax0 h3;
+public interface xw0 {
+    boolean a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw0(ax0 ax0Var, Context context) {
-        super(context, null);
-        this.h3 = ax0Var;
-    }
+    void e(TextWatcher textWatcher);
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i7) {
-        boolean canScrollHorizontally = canScrollHorizontally(-1);
-        boolean canScrollHorizontally2 = canScrollHorizontally(1);
-        if (this.f3 == canScrollHorizontally && this.g3 == canScrollHorizontally2) {
-            return;
-        }
-        bi.e3 e3Var = this.h3.d;
-        if (e3Var != null) {
-            e3Var.invalidate();
-        }
-        this.f3 = canScrollHorizontally;
-        this.g3 = canScrollHorizontally2;
-    }
+    EditTextBoldCursor getEditField();
 
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ls previewDelegate;
-        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
-        ax0 ax0Var = this.h3;
-        xw0 xw0Var = ax0Var.e;
-        previewDelegate = ax0Var.getPreviewDelegate();
-        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, xw0Var, previewDelegate, this.o2);
-    }
+    float getEditFieldBottomOffset();
+
+    Editable getEditText();
+
+    CharSequence getFieldText();
+
+    org.telegram.ui.ActionBar.g2 getParentFragment();
+
+    int getVisibility();
+
+    void setFieldText(CharSequence charSequence);
 }

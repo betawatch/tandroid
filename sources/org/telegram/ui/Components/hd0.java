@@ -1,18 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final class hd0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ md0 a;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public hd0(md0 md0Var) {
-        this.a = md0Var;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class hd0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kd0 b;
+
+    public /* synthetic */ hd0(kd0 kd0Var, int i7) {
+        this.a = i7;
+        this.b = kd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        if (i7 == -1) {
-            this.a.dismiss();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.x1 = null;
+                break;
+            default:
+                this.b.y1 = null;
+                break;
         }
     }
 }

@@ -2,22 +2,23 @@ package m4;
 
 import android.util.Pair;
 import e2.s0;
-import f3.i0;
+import f3.j0;
+import h2.l0;
 import java.util.Arrays;
 import java.util.Collections;
-import l2.l0;
-import org.telegram.messenger.ls;
+import l2.m0;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
     public String a;
-    public i0 b;
+    public j0 b;
     public final c0 c;
     public final String d;
     public final h2.x e;
-    public final l0 f;
+    public final m0 f;
     public final boolean[] g = new boolean[4];
     public final j h;
     public long i;
@@ -37,7 +38,7 @@ public final class k implements i {
         jVar.d = new byte[128];
         this.h = jVar;
         if (c0Var != null) {
-            this.f = new l0(ls.I2);
+            this.f = new m0(ks.I2);
             this.e = new h2.x();
         } else {
             this.f = null;
@@ -58,7 +59,7 @@ public final class k implements i {
     */
     public final void c(h2.x xVar) {
         j jVar;
-        l0 l0Var;
+        m0 m0Var;
         int i7;
         boolean z10;
         long j3;
@@ -81,7 +82,7 @@ public final class k implements i {
         while (true) {
             int c10 = i2.o.c(bArr, i13, i14, this.g);
             jVar = this.h;
-            l0Var = this.f;
+            m0Var = this.f;
             if (c10 == i14) {
                 break;
             }
@@ -146,7 +147,7 @@ public final class k implements i {
                             this.l = ((Long) create.second).longValue();
                             this.k = true;
                         } else {
-                            f10 = i22 * ls.F1;
+                            f10 = i22 * ks.F1;
                             i11 = i21 * 100;
                         }
                         f11 = f10 / i11;
@@ -176,17 +177,17 @@ public final class k implements i {
                 }
                 jVar.a(0, 3, j.e);
             }
-            if (l0Var != null) {
+            if (m0Var != null) {
                 if (i17 > 0) {
-                    l0Var.a(i13, c10, bArr);
+                    m0Var.a(i13, c10, bArr);
                     i10 = 0;
                 } else {
                     i10 = -i17;
                 }
-                if (l0Var.e(i10)) {
-                    int p10 = i2.o.p(l0Var.e, (byte[]) l0Var.f);
-                    String str2 = h2.l0.a;
-                    byte[] bArr2 = (byte[]) l0Var.f;
+                if (m0Var.e(i10)) {
+                    int p10 = i2.o.p(m0Var.e, (byte[]) m0Var.f);
+                    String str2 = l0.a;
+                    byte[] bArr2 = (byte[]) m0Var.f;
                     h2.x xVar2 = this.e;
                     xVar2.L(p10, bArr2);
                     this.c.a(this.o, xVar2);
@@ -194,7 +195,7 @@ public final class k implements i {
                 if (i16 == 178) {
                     z10 = true;
                     if (xVar.a[c10 + 2] == 1) {
-                        l0Var.h(i16);
+                        m0Var.h(i16);
                     }
                     if (i16 != 0 || i16 == 179) {
                         int i25 = i7 - c10;
@@ -273,8 +274,8 @@ public final class k implements i {
         if (!this.k) {
             jVar.a(i13, i14, bArr);
         }
-        if (l0Var != null) {
-            l0Var.a(i13, i14, bArr);
+        if (m0Var != null) {
+            m0Var.a(i13, i14, bArr);
         }
     }
 
@@ -285,9 +286,9 @@ public final class k implements i {
         jVar.a = false;
         jVar.b = 0;
         jVar.c = 0;
-        l0 l0Var = this.f;
-        if (l0Var != null) {
-            l0Var.g();
+        m0 m0Var = this.f;
+        if (m0Var != null) {
+            m0Var.g();
         }
         this.i = 0L;
         this.j = false;

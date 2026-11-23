@@ -1,6 +1,6 @@
 package f9;
 
-import a8.ca;
+import a8.da;
 import android.app.IntentService;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class c extends IntentService {
     public final boolean a;
@@ -64,7 +64,7 @@ public abstract class c extends IntentService {
         boolean equals = str.equals("com.google.android.googlequicksearchbox");
         boolean z10 = this.a;
         if (equals || str.equals("com.google.android.apps.assistant")) {
-            if (!"user".equals(Build.TYPE) || ca.a(this, str)) {
+            if (!"user".equals(Build.TYPE) || da.a(this, str)) {
                 if (intent.hasExtra("SearchActionVerificationClientExtraIntent")) {
                     Intent intent2 = (Intent) intent.getParcelableExtra("SearchActionVerificationClientExtraIntent");
                     if (z10) {
@@ -148,11 +148,11 @@ public abstract class c extends IntentService {
         }
         super.onCreate();
         this.e = new b(this);
-        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || ca.a(this, "com.google.android.googlequicksearchbox"))) {
+        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || da.a(this, "com.google.android.googlequicksearchbox"))) {
             bindService(this.c, this.e, 1);
         }
         this.f = new b(this);
-        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || ca.a(this, "com.google.android.apps.assistant"))) {
+        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || da.a(this, "com.google.android.apps.assistant"))) {
             bindService(this.d, this.f, 1);
         }
         if (Build.VERSION.SDK_INT >= 26) {

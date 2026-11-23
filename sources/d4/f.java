@@ -1,6 +1,6 @@
 package d4;
 
-import a8.la;
+import a8.ma;
 import androidx.datastore.preferences.protobuf.b0;
 import androidx.datastore.preferences.protobuf.b1;
 import androidx.datastore.preferences.protobuf.c0;
@@ -13,10 +13,10 @@ import androidx.datastore.preferences.protobuf.z;
 import h2.l0;
 import h2.x;
 import java.nio.charset.Charset;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f {
     public final /* synthetic */ int a;
@@ -230,7 +230,7 @@ public final class f {
                 if (i14 < 0 || (i14 >= (i10 = this.c) && (i14 != i10 || this.e != 0))) {
                     z10 = false;
                 }
-                la.p(z10);
+                ma.p(z10);
                 break;
             default:
                 int i15 = i7 / 8;
@@ -248,7 +248,7 @@ public final class f {
     }
 
     public void M(int i7) {
-        la.p(this.d == 0);
+        ma.p(this.d == 0);
         this.c += i7;
         a();
     }
@@ -265,7 +265,7 @@ public final class f {
     public void a() {
         int i7;
         int i10 = this.c;
-        la.p(i10 >= 0 && (i10 < (i7 = this.e) || (i10 == i7 && this.d == 0)));
+        ma.p(i10 >= 0 && (i10 < (i7 = this.e) || (i10 == i7 && this.d == 0)));
     }
 
     public int b() {
@@ -282,7 +282,7 @@ public final class f {
     }
 
     public int d() {
-        la.p(this.d == 0);
+        ma.p(this.d == 0);
         return this.c;
     }
 
@@ -350,7 +350,7 @@ public final class f {
                 int min = Math.min(i7, 8 - this.e);
                 byte[] bArr = (byte[]) this.b;
                 int i11 = i10 + 1;
-                int i12 = ((bArr[i10] & 255) >> this.e) & (ls.e4 >> (8 - min));
+                int i12 = ((bArr[i10] & 255) >> this.e) & (ks.e4 >> (8 - min));
                 while (min < i7) {
                     i12 |= (bArr[i11] & 255) << min;
                     min += 8;
@@ -405,7 +405,7 @@ public final class f {
         if (i15 == 0) {
             return;
         }
-        byte b12 = (byte) (bArr[i10] & (ls.e4 >> i15));
+        byte b12 = (byte) (bArr[i10] & (ks.e4 >> i15));
         bArr[i10] = b12;
         int i16 = this.d;
         if (i16 + i15 > 8) {
@@ -471,7 +471,7 @@ public final class f {
     }
 
     public void o(int i7, byte[] bArr) {
-        la.p(this.d == 0);
+        ma.p(this.d == 0);
         System.arraycopy((byte[]) this.b, this.c, bArr, 0, i7);
         this.c += i7;
         a();

@@ -1,62 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lr0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class lr0 implements org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ it0 a;
 
-    public /* synthetic */ lr0(KeyEvent.Callback callback, int i7, int i10) {
-        this.a = i10;
-        this.c = callback;
-        this.b = i7;
+    public lr0(it0 it0Var) {
+        this.a = it0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i7 = this.a;
-        int i10 = this.b;
-        KeyEvent.Callback callback = this.c;
-        switch (i7) {
-            case 0:
-                jt0 jt0Var = (jt0) callback;
-                jt0Var.n0[i10].getViewTreeObserver().removeOnPreDrawListener(this);
-                jt0Var.e0(i10);
-                break;
-            default:
-                r51 r51Var = (r51) callback;
-                di.b1 b1Var = r51Var.o1;
-                b1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = b1Var.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = b1Var.getChildAt(i11);
-                    b1Var.getClass();
-                    int R = RecyclerView.R(childAt);
-                    if (R >= i10) {
-                        if (R == 1 && b1Var.getAdapter() == r51Var.p1 && (childAt instanceof org.telegram.ui.Cells.y3)) {
-                            childAt = ((org.telegram.ui.Cells.y3) childAt).getTextView();
-                        }
-                        childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(b1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / b1Var.getMeasuredHeight()) * 100.0f);
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                        ofFloat.setStartDelay(min);
-                        ofFloat.setDuration(200L);
-                        animatorSet.playTogether(ofFloat);
-                    }
-                }
-                animatorSet.start();
-                break;
+    @Override // org.telegram.ui.Cells.j7
+    public final void a(String str, boolean z10) {
+        it0 it0Var = this.a;
+        org.telegram.ui.ActionBar.g2 g2Var = it0Var.y1;
+        if (!z10) {
+            it0Var.d1(str);
+            return;
         }
-        return true;
+        org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.m10.j(g2Var.getParentActivity(), false, 1, null);
+        j3.P = str;
+        j3.Q = false;
+        CharSequence[] charSequenceArr = {org.telegram.messenger.gd.N0(2131747623, "Open"), org.telegram.messenger.gd.N0(2131751755, "Copy")};
+        og.j jVar = new og.j(6, this, str);
+        j3.M = charSequenceArr;
+        j3.L = jVar;
+        g2Var.showDialog(j3);
+    }
+
+    @Override // org.telegram.ui.Cells.j7
+    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.fj fjVar) {
+        it0 it0Var = this.a;
+        gu.O0(it0Var.y1, fjVar, it0Var.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d() {
+        return !this.a.F1;
     }
 }

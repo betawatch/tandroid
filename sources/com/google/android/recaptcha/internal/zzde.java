@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import c8.p0;
+import c8.q0;
 import d9.o;
 import id.c;
 import id.f;
@@ -26,7 +26,7 @@ import zd.s;
 import zd.t;
 import zd.y;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class zzde implements e0 {
     private final /* synthetic */ s zza;
@@ -64,7 +64,7 @@ public final class zzde implements e0 {
     public final f get(g gVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return p0.a(n1Var, gVar);
+        return q0.a(n1Var, gVar);
     }
 
     @Override // zd.a1
@@ -146,7 +146,7 @@ public final class zzde implements e0 {
     public final h minusKey(g gVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return p0.b(n1Var, gVar);
+        return q0.b(n1Var, gVar);
     }
 
     public final a1 plus(a1 a1Var) {
@@ -172,7 +172,7 @@ public final class zzde implements e0 {
     public final h plus(h hVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return p0.c(n1Var, hVar);
+        return q0.c(n1Var, hVar);
     }
 
     public final /* synthetic */ boolean cancel(Throwable th2) {

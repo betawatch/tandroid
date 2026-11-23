@@ -6,18 +6,18 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public class NotificationBadge$SonyHomeBadger implements xr {
-    public static zr b;
+public class NotificationBadge$SonyHomeBadger implements wr {
+    public static yr b;
     public final Uri a = Uri.parse("content://com.sonymobile.home.resourceprovider/badge");
 
-    @Override // org.telegram.messenger.xr
+    @Override // org.telegram.messenger.wr
     public final void a(int i7) {
         if (t0.b.getPackageManager().resolveContentProvider("com.sonymobile.home.resourceprovider", 0) == null) {
             Intent intent = new Intent("com.sonyericsson.home.action.UPDATE_BADGE");
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME", as.d.getPackageName());
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME", as.d.getClassName());
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME", zr.d.getPackageName());
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME", zr.d.getClassName());
             intent.putExtra("com.sonyericsson.home.intent.extra.badge.MESSAGE", String.valueOf(i7));
             intent.putExtra("com.sonyericsson.home.intent.extra.badge.SHOW_MESSAGE", i7 > 0);
             g0.g3(new s(intent, 5));
@@ -27,10 +27,10 @@ public class NotificationBadge$SonyHomeBadger implements xr {
             return;
         }
         if (b == null) {
-            b = new zr(t0.b.getApplicationContext().getContentResolver());
+            b = new yr(t0.b.getApplicationContext().getContentResolver());
         }
-        String packageName = as.d.getPackageName();
-        String className = as.d.getClassName();
+        String packageName = zr.d.getPackageName();
+        String className = zr.d.getClassName();
         ContentValues contentValues = new ContentValues();
         contentValues.put("badge_count", Integer.valueOf(i7));
         contentValues.put("package_name", packageName);
@@ -38,7 +38,7 @@ public class NotificationBadge$SonyHomeBadger implements xr {
         b.startInsert(0, null, this.a, contentValues);
     }
 
-    @Override // org.telegram.messenger.xr
+    @Override // org.telegram.messenger.wr
     public final List b() {
         return Arrays.asList("com.sonyericsson.home", "com.sonymobile.home");
     }

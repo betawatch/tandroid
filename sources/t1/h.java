@@ -1,19 +1,38 @@
 package t1;
 
-import android.widget.EditText;
-import java.lang.ref.WeakReference;
+import android.text.InputFilter;
+import android.widget.TextView;
+import androidx.emoji2.text.l;
+import c8.mc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class h extends androidx.emoji2.text.i {
-    public final WeakReference a;
+public final class h extends mc {
+    public final g a;
 
-    public h(EditText editText) {
-        this.a = new WeakReference(editText);
+    public h(TextView textView) {
+        this.a = new g(textView);
     }
 
-    @Override // androidx.emoji2.text.i
-    public final void a() {
-        i.a((EditText) this.a.get(), 1);
+    @Override // c8.mc
+    public final InputFilter[] a(InputFilter[] inputFilterArr) {
+        return !(l.j != null) ? inputFilterArr : this.a.a(inputFilterArr);
+    }
+
+    @Override // c8.mc
+    public final void b(boolean z10) {
+        if (l.j != null) {
+            this.a.b(z10);
+        }
+    }
+
+    @Override // c8.mc
+    public final void c(boolean z10) {
+        g gVar = this.a;
+        if (l.j != null) {
+            gVar.c(z10);
+        } else {
+            gVar.c = z10;
+        }
     }
 }

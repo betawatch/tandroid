@@ -4,17 +4,17 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf implements org.telegram.ui.Components.fi0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
-    public final /* synthetic */ org.telegram.messenger.gj c;
+    public final /* synthetic */ org.telegram.messenger.fj c;
 
-    public /* synthetic */ jf(bn bnVar, org.telegram.messenger.gj gjVar, int i7) {
+    public /* synthetic */ jf(bn bnVar, org.telegram.messenger.fj fjVar, int i7) {
         this.a = i7;
         this.b = bnVar;
-        this.c = gjVar;
+        this.c = fjVar;
     }
 
     @Override // org.telegram.ui.Components.fi0
@@ -55,12 +55,12 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.fi0,
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         bn bnVar = this.b;
         org.telegram.ui.ActionBar.t1[] t1VarArr = {new org.telegram.ui.ActionBar.t1(3, bnVar.getParentActivity(), bnVar.Ba)};
         TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        org.telegram.messenger.gj gjVar = this.c;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) gjVar.k.media;
+        org.telegram.messenger.fj fjVar = this.c;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) fjVar.k.media;
         TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
         TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
         tL_inputMediaPoll.poll = tL_poll;
@@ -71,7 +71,7 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.fi0,
         tL_poll.closed = true;
         tL_messages_editMessage.media = tL_inputMediaPoll;
         tL_messages_editMessage.peer = bnVar.getMessagesController().l1(bnVar.l6);
-        tL_messages_editMessage.id = gjVar.e1();
+        tL_messages_editMessage.id = fjVar.e1();
         tL_messages_editMessage.flags |= TLObject.FLAG_14;
         org.telegram.messenger.g0.h3(new yf(bnVar, t1VarArr, bnVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new z9(bnVar, t1VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }

@@ -2,14 +2,14 @@ package ci;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import c8.ma;
+import c8.na;
 import com.google.android.gms.internal.vision.u2;
 import com.google.android.gms.internal.vision.x1;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class x implements Runnable {
             case 0:
                 b0 b0Var = this.b;
                 b0Var.g();
-                b0Var.a.c(b0Var);
+                b0Var.a.e(b0Var);
                 break;
             case 1:
                 b0 b0Var2 = this.b;
@@ -52,7 +52,7 @@ public final /* synthetic */ class x implements Runnable {
                 } catch (Throwable th2) {
                     a8.g(th2, true);
                 }
-                b0Var3.k0 = new d6.i(20);
+                b0Var3.k0 = new d6.i(21);
                 break;
             default:
                 b0 b0Var4 = this.b;
@@ -64,7 +64,7 @@ public final /* synthetic */ class x implements Runnable {
                     cameraView.setAlpha(0.0f);
                     cameraView.setDelegate(new ab.g(10, b0Var4, cameraView));
                     b0Var4.b = cameraView;
-                    b0Var4.addView(cameraView, 0, ma.c(-1.0f, -1));
+                    b0Var4.addView(cameraView, 0, na.c(-1.0f, -1));
                     break;
                 }
                 break;

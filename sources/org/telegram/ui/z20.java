@@ -1,36 +1,37 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class z20 implements ViewTreeObserver.OnPreDrawListener {
+public final class z20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f40 b;
+    public final /* synthetic */ e40 b;
 
-    public /* synthetic */ z20(f40 f40Var, int i7) {
+    public /* synthetic */ z20(e40 e40Var, int i7) {
         this.a = i7;
-        this.b = f40Var;
+        this.b = e40Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                f40 f40Var = this.b;
-                f40Var.L1.getViewTreeObserver().removeOnPreDrawListener(this);
-                f40Var.Z3.j(null);
-                org.telegram.messenger.g0.Z3(f40Var.l4);
-                f40Var.b.requestLayout();
+                e40 e40Var = this.b;
+                e40Var.Q1.setVisibility(4);
+                e40Var.R1.setVisibility(4);
+                e40Var.P1.setVisibility(4);
+                break;
+            case 1:
+                this.b.c2 = null;
                 break;
             default:
-                f40 f40Var2 = this.b;
-                f40Var2.L1.getViewTreeObserver().removeOnPreDrawListener(this);
-                f40Var2.Z3.j(null);
-                org.telegram.messenger.g0.Z3(f40Var2.l4);
-                f40Var2.b.requestLayout();
+                e40 e40Var2 = this.b;
+                e40Var2.c3 = null;
+                e40Var2.b3.setColor(e40Var2.S3 == 3 ? -1163700 : -12761513);
+                e40Var2.a3.invalidate();
                 break;
         }
-        return false;
     }
 }

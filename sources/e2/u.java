@@ -1,6 +1,6 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 import android.text.TextUtils;
 import com.google.android.gms.internal.vision.e2;
 import j$.util.Objects;
@@ -13,7 +13,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u {
     public static final String A0;
@@ -151,12 +151,12 @@ public final class u {
                     }
                 }
                 z10 = false;
-                la.p(z10);
+                ma.p(z10);
                 this.c = tVar.c;
                 this.b = tVar.b;
             }
             z10 = true;
-            la.p(z10);
+            ma.p(z10);
             this.c = tVar.c;
             this.b = tVar.b;
         } else {
@@ -180,7 +180,7 @@ public final class u {
             this.b = str;
         }
         this.e = tVar.e;
-        la.o("Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set", tVar.g == 0 || (tVar.f & 32768) != 0);
+        ma.o("Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set", tVar.g == 0 || (tVar.f & 32768) != 0);
         this.f = tVar.f;
         this.g = tVar.g;
         int i11 = tVar.h;

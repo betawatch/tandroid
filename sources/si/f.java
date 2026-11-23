@@ -8,12 +8,12 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.os.Build;
 import bg.d0;
-import c8.kc;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.m6;
+import c8.lc;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
 import ri.r;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class f extends ri.e {
     public g E;
@@ -27,9 +27,9 @@ public final class f extends ri.e {
     public final RectF M;
     public final ui.a f;
     public final a h;
-    public final kc n;
-    public final kc r;
-    public kc s;
+    public final lc n;
+    public final lc r;
+    public lc s;
     public boolean w = true;
     public boolean x = true;
     public int y = 1;
@@ -39,13 +39,13 @@ public final class f extends ri.e {
         this.E = gVar;
         this.F = gVar;
         this.G = gVar;
-        this.J = ls.e4;
-        this.L = ls.e4;
+        this.J = ks.e4;
+        this.L = ks.e4;
         this.M = new RectF();
         this.f = aVar;
         this.h = aVar instanceof a ? (a) aVar : null;
         if (aVar instanceof ui.e) {
-            kc cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
+            lc cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
             this.n = cVar;
             this.r = cVar;
         } else {
@@ -120,8 +120,8 @@ public final class f extends ri.e {
         canvas.clipRect(bounds);
         canvas.translate(bounds.left, bounds.top);
         if (!canvas.isHardwareAccelerated()) {
-            kc kcVar = this.s;
-            kcVar.getClass();
+            lc lcVar = this.s;
+            lcVar.getClass();
         }
         this.s.c(canvas);
         canvas.restore();
@@ -141,16 +141,16 @@ public final class f extends ri.e {
     @Override // ri.e
     public final void g(r rVar) {
         boolean z10 = rVar.a;
-        kc kcVar = this.r;
-        kc kcVar2 = z10 ? this.n : kcVar;
-        kc kcVar3 = this.s;
-        if (kcVar3 != kcVar2) {
-            if (kcVar3 != null) {
-                kcVar3.b();
+        lc lcVar = this.r;
+        lc lcVar2 = z10 ? this.n : lcVar;
+        lc lcVar3 = this.s;
+        if (lcVar3 != lcVar2) {
+            if (lcVar3 != null) {
+                lcVar3.b();
             }
-            this.s = kcVar2;
-            kcVar2.e(this.c / 255.0f);
-            if (this.s == kcVar) {
+            this.s = lcVar2;
+            lcVar2.e(this.c / 255.0f);
+            if (this.s == lcVar) {
                 this.x = true;
             } else {
                 this.w = true;
@@ -177,12 +177,12 @@ public final class f extends ri.e {
         this.x = true;
     }
 
-    @Override // ri.e, org.telegram.ui.ActionBar.b6
+    @Override // ri.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         ui.c cVar = this.H;
         if (cVar != null) {
-            this.I = m6.r1(this.J / 255.0f, cVar.b);
-            this.K = m6.r1(this.L / 255.0f, this.H.b);
+            this.I = n6.r1(this.J / 255.0f, cVar.b);
+            this.K = n6.r1(this.L / 255.0f, this.H.b);
         }
         this.w = true;
         this.x = true;

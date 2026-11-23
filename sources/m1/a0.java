@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a0 extends kd.j implements rd.p {
     public kotlin.jvm.internal.p a;
@@ -49,7 +49,7 @@ public final class a0 extends kd.j implements rd.p {
         b0 b0Var = this.e;
         kotlin.jvm.internal.p pVar2 = this.d;
         if (i7 == 0) {
-            b7.h.b(obj);
+            c8.z.b(obj);
             k0 k0Var2 = (k0) this.c;
             m0 g10 = b0Var.g();
             this.c = k0Var2;
@@ -67,15 +67,15 @@ public final class a0 extends kd.j implements rd.p {
             if (i7 != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            b7.h.b(obj);
+            c8.z.b(obj);
             if (this.h) {
-                b0Var.h.L(new c(obj2, obj2 != null ? obj2.hashCode() : 0, pVar2.a));
+                b0Var.h.E(new c(obj2, obj2 != null ? obj2.hashCode() : 0, pVar2.a));
             }
             return gd.k.a;
         }
         pVar = this.a;
         k0Var = (k0) this.c;
-        b7.h.b(obj);
+        c8.z.b(obj);
         pVar.a = ((Number) obj).intValue();
         this.c = null;
         this.a = null;

@@ -34,14 +34,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import p1.g;
 import q6.j;
 import w7.p;
-import y7.d9;
+import y7.e9;
 import z7.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final class b implements Callable {
                                 bVar2.k(0);
                                 int i10 = tVar.d;
                                 f fVar = z.h;
-                                bVar2.j(ls.s1, i10, fVar);
+                                bVar2.j(ks.s1, i10, fVar);
                                 tVar.c(fVar);
                             } else {
                                 f5.b bVar3 = tVar.e;
@@ -228,7 +228,7 @@ public final class b implements Callable {
                                                 p10.c();
                                                 a4.o((a4) p10.b, longValue2);
                                             }
-                                            tVar.e.h.b0((a4) p10.a());
+                                            tVar.e.h.d0((a4) p10.a());
                                         }
                                     } catch (Throwable th2) {
                                         u.i("BillingClient", "Unable to log.", th2);
@@ -255,46 +255,46 @@ public final class b implements Callable {
                     if (!bVar5.hasNext()) {
                         return arrayList;
                     }
-                    g0.b bVar6 = ((x4.f) bVar5.next()).c;
-                    g0.b bVar7 = new g0.b();
-                    bVar7.a = bVar6.a;
-                    bVar7.b = bVar6.b;
-                    Intent[] intentArr = bVar6.c;
-                    bVar7.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-                    bVar7.d = bVar6.d;
-                    bVar7.e = bVar6.e;
-                    bVar7.f = bVar6.f;
-                    bVar7.g = bVar6.g;
-                    bVar7.h = bVar6.h;
-                    bVar7.k = bVar6.k;
-                    bVar7.l = bVar6.l;
-                    bVar7.m = bVar6.m;
-                    j0[] j0VarArr = bVar6.i;
+                    g0.c cVar2 = ((x4.f) bVar5.next()).c;
+                    g0.c cVar3 = new g0.c();
+                    cVar3.a = cVar2.a;
+                    cVar3.b = cVar2.b;
+                    Intent[] intentArr = cVar2.c;
+                    cVar3.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+                    cVar3.d = cVar2.d;
+                    cVar3.e = cVar2.e;
+                    cVar3.f = cVar2.f;
+                    cVar3.g = cVar2.g;
+                    cVar3.h = cVar2.h;
+                    cVar3.k = cVar2.k;
+                    cVar3.l = cVar2.l;
+                    cVar3.m = cVar2.m;
+                    j0[] j0VarArr = cVar2.i;
                     if (j0VarArr != null) {
-                        bVar7.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+                        cVar3.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
                     }
-                    if (bVar6.j != null) {
-                        bVar7.j = new HashSet(bVar6.j);
+                    if (cVar2.j != null) {
+                        cVar3.j = new HashSet(cVar2.j);
                     }
-                    PersistableBundle persistableBundle = bVar6.n;
+                    PersistableBundle persistableBundle = cVar2.n;
                     if (persistableBundle != null) {
-                        bVar7.n = persistableBundle;
+                        cVar3.n = persistableBundle;
                     }
-                    if (TextUtils.isEmpty(bVar7.e)) {
+                    if (TextUtils.isEmpty(cVar3.e)) {
                         throw new IllegalArgumentException("Shortcut must have a non-empty label");
                     }
-                    Intent[] intentArr2 = bVar7.c;
+                    Intent[] intentArr2 = cVar3.c;
                     if (intentArr2 != null && intentArr2.length != 0) {
-                        arrayList.add(bVar7);
+                        arrayList.add(cVar3);
                     }
                 }
                 throw new IllegalArgumentException("Shortcut must have an intent");
             case 7:
                 return BitmapFactory.decodeFile(((x4.f) this.b).b);
             case 8:
-                d9 d9Var = (d9) this.b;
-                d9Var.getClass();
-                return j.c.a(d9Var.g);
+                e9 e9Var = (e9) this.b;
+                e9Var.getClass();
+                return j.c.a(e9Var.g);
             default:
                 ma maVar = (ma) this.b;
                 maVar.getClass();

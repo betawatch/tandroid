@@ -8,7 +8,7 @@ import k2.f;
 import k2.h;
 import k2.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends l implements c4.e {
     public final String o;
@@ -54,11 +54,11 @@ public final class b extends l implements c4.e {
             if (z10) {
                 mVar.reset();
             }
-            c4.d q10 = mVar.q(0, limit, array);
+            c4.d s5 = mVar.s(0, limit, array);
             long j3 = iVar.e;
             long j10 = iVar.r;
             jVar2.timeUs = j3;
-            jVar2.a = q10;
+            jVar2.a = s5;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }

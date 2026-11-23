@@ -1,141 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class pb1 extends org.telegram.ui.Components.j71 {
-    public boolean W;
-    public final Path a0;
-    public final /* synthetic */ qb1 b0;
+public final /* synthetic */ class pb1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fc1 b;
+    public final /* synthetic */ VoIPService c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb1(qb1 qb1Var, Context context) {
-        super(context, null);
-        this.b0 = qb1Var;
-        this.a0 = new Path();
+    public /* synthetic */ pb1(fc1 fc1Var, VoIPService voIPService, int i7) {
+        this.a = i7;
+        this.b = fc1Var;
+        this.c = voIPService;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.W) {
-            Path path = this.a0;
-            path.rewind();
-            float N = org.telegram.messenger.g0.N(24.0f);
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(0.0f, org.telegram.messenger.g0.m, getWidth(), getHeight());
-            path.addRoundRect(rectF, N, N, Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                fc1 fc1Var = this.b;
+                org.telegram.messenger.g0.g3(new rb1(fc1Var, 8));
+                int i7 = fc1Var.M;
+                if (i7 > 0) {
+                    this.c.sendCallRating(i7);
+                    break;
+                }
+                break;
+            default:
+                fc1 fc1Var2 = this.b;
+                org.telegram.messenger.g0.g3(new rb1(fc1Var2, 10));
+                int i10 = fc1Var2.M;
+                if (i10 > 0) {
+                    this.c.sendCallRating(i10);
+                    break;
+                }
+                break;
         }
-        super.dispatchDraw(canvas);
-        if (this.W) {
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final boolean e(MotionEvent motionEvent) {
-        Object c02 = ((me0) this.b0).c0();
-        if (c02 instanceof le0) {
-            return ((le0) c02).X(motionEvent, false);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final boolean f(MotionEvent motionEvent) {
-        Object c02 = ((me0) this.b0).c0();
-        if (c02 instanceof le0) {
-            return ((le0) c02).X(motionEvent, true);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public float getAvailableTranslationX() {
-        return getMeasuredWidth();
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public long getManualScrollDuration() {
-        return 320L;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void p(View view, View view2, int i7, int i10) {
-        this.b0.Z();
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void q() {
-        cx cxVar;
-        qb1 qb1Var = this.b0;
-        me0 me0Var = (me0) qb1Var;
-        if (me0Var.G != null) {
-            me0Var.s0(me0Var.c.getCurrentPosition(), true);
-            me0Var.t0(false, 0.0f);
-        }
-        me0Var.i0();
-        pb1 pb1Var = me0Var.c;
-        if (pb1Var != null) {
-            int currentPosition = pb1Var.getCurrentPosition();
-            if (currentPosition != 2 && me0Var.y) {
-                me0Var.b0(2);
-                me0Var.y = false;
-            }
-            if (currentPosition != 3) {
-                me0Var.b0(3);
-            }
-            Integer num = me0Var.J;
-            if (num != null && currentPosition == 0 && (cxVar = me0Var.K) != null) {
-                cxVar.Q4(num.intValue());
-                me0Var.J = null;
-            }
-        }
-        qb1Var.Z();
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void s(boolean z10) {
-        qb1 qb1Var = this.b0;
-        me0 me0Var = (me0) qb1Var;
-        boolean z11 = !z10;
-        if (me0Var.G != null) {
-            float positionAnimated = me0Var.c.getPositionAnimated();
-            me0Var.t0(z11, positionAnimated);
-            if (!z10) {
-                me0Var.s0(Math.round(positionAnimated), true);
-            }
-        }
-        me0Var.n0();
-        me0Var.i0();
-        me0Var.b.invalidate();
-        qb1Var.Z();
-        qb1Var.checkSystemBarColors();
-    }
-
-    @Override // android.view.View
-    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        super.setLayoutParams(layoutParams);
-    }
-
-    public void setTabletLayout(boolean z10) {
-        if (this.W == z10) {
-            return;
-        }
-        this.W = z10;
-        invalidate();
     }
 }

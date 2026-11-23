@@ -1,44 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zc0 implements org.telegram.ui.ActionBar.q1 {
+public final class zc0 implements org.telegram.messenger.fs {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+    public final /* synthetic */ org.telegram.messenger.w10 b;
+    public final /* synthetic */ org.telegram.messenger.fs[] c;
 
-    public /* synthetic */ zc0(Activity activity, int i7) {
+    public zc0(int i7, org.telegram.messenger.w10 w10Var, org.telegram.messenger.fs[] fsVarArr) {
         this.a = i7;
-        this.b = activity;
+        this.b = w10Var;
+        this.c = fsVarArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                Activity activity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    activity.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        int i11 = org.telegram.messenger.ks.s5;
+        if (i7 == i11) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                org.telegram.messenger.w10 w10Var = this.b;
+                if (w10Var != null) {
+                    w10Var.a(iArr);
                 }
-            default:
-                Activity activity2 = this.b;
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    activity2.startActivity(intent2);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
+                org.telegram.messenger.ks.e().n(this.c[0], i11);
+            }
         }
     }
 }

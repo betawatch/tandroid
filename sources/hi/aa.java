@@ -1,63 +1,95 @@
 package hi;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import android.graphics.Point;
+import android.graphics.RectF;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class aa extends View {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ sa w;
+public final /* synthetic */ class aa implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ fs e;
+    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ TLObject h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aa(sa saVar, Context context, boolean z10, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14) {
-        super(context);
-        this.w = saVar;
-        this.a = z10;
-        this.b = canvas;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f13;
-        this.s = f14;
+    public /* synthetic */ aa(nb nbVar, boolean z10, TL_stories.StoryItem storyItem, long j3, TLRPC.InputGroupCall inputGroupCall, boolean z11) {
+        this.e = nbVar;
+        this.c = z10;
+        this.f = storyItem;
+        this.b = j3;
+        this.h = inputGroupCall;
+        this.d = z11;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        boolean z10 = this.a;
-        Paint paint = this.n;
-        float f10 = this.e;
-        float f11 = this.d;
-        float f12 = this.c;
-        sa saVar = this.w;
-        if (z10) {
-            float f13 = saVar.E2;
-            if (f13 > 0.0f) {
-                this.b.drawCircle(f12, f11, f10 * f13, this.f);
-            }
-            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-        } else {
-            canvas.drawCircle(f12, f11, (1.0f - saVar.E2) * f10, paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        TLObject tLObject = this.h;
+        TLObject tLObject2 = this.f;
+        fs fsVar = this.e;
+        switch (i7) {
+            case 0:
+                nb nbVar = (nb) fsVar;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
+                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
+                boolean z10 = this.c;
+                long j3 = this.b;
+                if (!z10) {
+                    fi.c1.X = new fi.c1(nbVar.b, nbVar.c, storyItem, j3, storyItem.id, z10, inputGroupCall, true, this.d);
+                }
+                ib ibVar = nbVar.G;
+                if (ibVar != null) {
+                    ibVar.f(false);
+                }
+                nbVar.G = null;
+                nbVar.K = 0;
+                RectF rectF = nbVar.I;
+                Point point = org.telegram.messenger.g0.q;
+                rectF.set(0.0f, 0.0f, point.x, point.y);
+                nbVar.H = org.telegram.messenger.g0.L(8.0f);
+                nbVar.p(true);
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
+                storyItem.dialogId = j3;
+                storyItem.justUploaded = true;
+                T.getOrCreateStoryViewer().L(nbVar.b, storyItem, null);
+                ks.f(nbVar.c).k(ks.G2, Long.valueOf(inputGroupCall.id));
+                break;
+            default:
+                bx bxVar = (bx) fsVar;
+                TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
+                TLRPC.User user = (TLRPC.User) tLObject;
+                long j10 = this.b;
+                boolean z11 = this.c;
+                if (chat == null) {
+                    bxVar.getMessagesController().X(0, j10, z11);
+                    if (user != null && user.bot && this.d) {
+                        bxVar.getMessagesController().w(user.id);
+                    }
+                } else if (org.telegram.messenger.v3.r0(chat)) {
+                    bxVar.getMessagesController().X(0, j10, z11);
+                } else {
+                    bxVar.getMessagesController().g0(-j10, bxVar.getMessagesController().c2(Long.valueOf(bxVar.getUserConfig().e())), null, z11, z11);
+                }
+                bxVar.getMessagesController().J(bxVar.Y2);
+                break;
         }
-        canvas.save();
-        canvas.translate(this.r, this.s);
-        saVar.j1.draw(canvas);
-        canvas.restore();
+    }
+
+    public /* synthetic */ aa(bx bxVar, TLRPC.Chat chat, long j3, boolean z10, TLRPC.User user, boolean z11) {
+        this.e = bxVar;
+        this.f = chat;
+        this.b = j3;
+        this.c = z10;
+        this.h = user;
+        this.d = z11;
     }
 }

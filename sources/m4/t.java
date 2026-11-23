@@ -1,20 +1,20 @@
 package m4;
 
-import a8.la;
+import a8.ma;
 import e2.s0;
 import e2.t0;
-import f3.i0;
+import f3.j0;
 import java.util.Collections;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
     public final int b;
     public final h2.x c;
     public final d4.f d;
-    public i0 e;
+    public j0 e;
     public String f;
     public e2.u g;
     public int h;
@@ -190,7 +190,7 @@ public final class t implements i {
                                 xVar2.N(0);
                             }
                             this.e.b(i13, xVar2);
-                            la.p(this.l != -9223372036854775807L);
+                            ma.p(this.l != -9223372036854775807L);
                             this.e.c(this.l, 1, i13, 0, null);
                             this.l += this.t;
                             if (this.q) {
@@ -203,7 +203,7 @@ public final class t implements i {
                     }
                 } else {
                     int A2 = xVar.A();
-                    if ((A2 & ls.B3) == 224) {
+                    if ((A2 & ks.B3) == 224) {
                         this.k = A2;
                         this.h = 2;
                     } else if (A2 != 86) {

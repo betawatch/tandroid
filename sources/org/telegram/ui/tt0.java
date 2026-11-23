@@ -1,149 +1,107 @@
 package org.telegram.ui;
 
 import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Components.wu0, org.telegram.ui.ActionBar.q1, org.telegram.messenger.mr, r0.m, org.telegram.ui.Components.sf0, org.telegram.ui.Components.sj0, te.b, org.telegram.messenger.i9 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final /* synthetic */ class tt0 implements org.telegram.messenger.w10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ org.telegram.messenger.fs d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ tt0(ProfileActivity profileActivity, int i7) {
-        this.a = i7;
-        this.b = profileActivity;
+    public /* synthetic */ tt0(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z10, String str) {
+        this.d = profileActivity;
+        this.e = channelParticipant;
+        this.f = user;
+        this.g = chatParticipant;
+        this.b = z10;
+        this.c = str;
     }
 
-    @Override // te.b
-    public void H(int i7, float f10, float f11, te.c cVar) {
-        RectF rectF = ProfileActivity.Z6;
-        this.b.s5();
-    }
-
-    @Override // r0.m
-    public r0.l1 P0(View view, r0.l1 l1Var) {
-        RectF rectF = ProfileActivity.Z6;
-        int i7 = l1Var.a.f(519).d;
-        ProfileActivity profileActivity = this.b;
-        profileActivity.P6 = i7;
-        FrameLayout frameLayout = profileActivity.y5;
-        if (frameLayout != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) frameLayout.getLayoutParams();
-            int i10 = profileActivity.P6 + profileActivity.O6;
-            if (marginLayoutParams != null && marginLayoutParams.bottomMargin != i10) {
-                marginLayoutParams.bottomMargin = i10;
-                profileActivity.y5.setLayoutParams(marginLayoutParams);
-            }
-        }
-        if (profileActivity.O != null) {
-            profileActivity.H3();
-            org.telegram.ui.Components.gq0 gq0Var = profileActivity.O.b0;
-            if (gq0Var != null) {
-                gq0Var.setButtonOffset(profileActivity.P6 + profileActivity.O6);
-            }
-        }
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.sj0
-    public boolean c(int i7, View view) {
-        ProfileActivity profileActivity = this.b;
-        ww0 ww0Var = profileActivity.e;
-        if (ww0Var.x || ww0Var.w.isEmpty()) {
-            return false;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.A0);
-        String N0 = org.telegram.messenger.hd.N0(2131752044, null);
-        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-        t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.hd.N0(2131752049, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, null), new tt0(profileActivity, 10));
-        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-        profileActivity.showDialog(t1Var);
-        TextView textView = (TextView) t1Var.d(-1);
-        if (textView == null) {
-            return true;
-        }
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
-        return true;
-    }
-
-    @Override // org.telegram.messenger.mr
-    public void d(boolean z10) {
-        ProfileActivity profileActivity = this.b;
-        profileActivity.J1 = 0;
-        org.telegram.messenger.ls notificationCenter = profileActivity.getNotificationCenter();
-        int i7 = org.telegram.messenger.ls.t;
-        notificationCenter.n(profileActivity, i7);
-        profileActivity.getNotificationCenter().k(i7, new Object[0]);
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().k(org.telegram.messenger.ls.K2, Long.valueOf(-profileActivity.F2.id), null, profileActivity.F2, Boolean.valueOf(z10));
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        int i10 = this.a;
-        ProfileActivity profileActivity = this.b;
-        switch (i10) {
-            case 2:
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        ArrayList<TLRPC.Document> arrayList;
+        ArrayList<TLRPC.Document> arrayList2;
+        int i7 = this.a;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        org.telegram.messenger.fs fsVar = this.d;
+        switch (i7) {
+            case 0:
+                ProfileActivity profileActivity = (ProfileActivity) fsVar;
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj4;
+                TLRPC.User user = (TLRPC.User) obj3;
+                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj2;
+                Integer num = (Integer) obj;
                 RectF rectF = ProfileActivity.Z6;
-                profileActivity.getMessagesController().w(profileActivity.e1);
-                if (org.telegram.ui.Components.lc.a(profileActivity)) {
-                    org.telegram.ui.Components.lc.d(profileActivity, true).j();
+                profileActivity.getClass();
+                boolean z10 = this.b;
+                if (channelParticipant != null) {
+                    profileActivity.R4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
+                    break;
+                } else {
+                    profileActivity.R4(num.intValue(), user, chatParticipant, null, null, this.c, z10);
+                    break;
+                }
+            default:
+                q11 q11Var = (q11) fsVar;
+                LinkedHashSet linkedHashSet = (LinkedHashSet) obj4;
+                HashMap hashMap = (HashMap) obj3;
+                ArrayList arrayList3 = (ArrayList) obj2;
+                Runnable runnable = (Runnable) obj;
+                int i10 = q11Var.W;
+                boolean z11 = this.b;
+                String str = this.c;
+                if (z11) {
+                    ArrayList u02 = org.telegram.messenger.ri.d0(i10).u0(5);
+                    for (int i11 = 0; i11 < u02.size(); i11++) {
+                        if (((TLRPC.TL_messages_stickerSet) u02.get(i11)).documents != null && (arrayList2 = ((TLRPC.TL_messages_stickerSet) u02.get(i11)).documents) != null) {
+                            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                                String V = org.telegram.messenger.fj.V(arrayList2.get(i12), null, null);
+                                long j3 = arrayList2.get(i12).id;
+                                if (V != null && !linkedHashSet.contains(Long.valueOf(j3)) && str.contains(V.toLowerCase())) {
+                                    linkedHashSet.add(Long.valueOf(j3));
+                                }
+                            }
+                        }
+                    }
+                    ArrayList arrayList4 = org.telegram.messenger.ri.d0(i10).t0[1];
+                    for (int i13 = 0; i13 < arrayList4.size(); i13++) {
+                        if ((arrayList4.get(i13) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i13)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i13)).documents) != null) {
+                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                                String V2 = org.telegram.messenger.fj.V(arrayList.get(i14), null, null);
+                                long j10 = arrayList.get(i14).id;
+                                if (V2 != null && !linkedHashSet.contains(Long.valueOf(j10)) && str.contains(V2)) {
+                                    linkedHashSet.add(Long.valueOf(j10));
+                                }
+                            }
+                        }
+                    }
+                    runnable.run();
+                    break;
+                } else {
+                    org.telegram.messenger.ri.d0(i10).X(q11.c2, str, false, new di.l6(q11Var, linkedHashSet, hashMap, arrayList3, runnable), true, q11Var.a0 == 3, false, false, 30);
                     break;
                 }
                 break;
-            case 9:
-                RectF rectF2 = ProfileActivity.Z6;
-                profileActivity.getClass();
-                org.telegram.messenger.cz.l = null;
-                org.telegram.messenger.cz.m = null;
-                org.telegram.messenger.cz.y();
-                profileActivity.getConnectionsManager().switchBackend(true);
-                break;
-            default:
-                ww0 ww0Var = profileActivity.e;
-                ww0Var.w.clear();
-                org.telegram.messenger.np.g1().edit().remove("settingsSearchRecent2").commit();
-                ww0Var.f();
-                break;
         }
     }
 
-    @Override // org.telegram.ui.u40
-    public void i(int i7, ArrayList arrayList) {
-        TLRPC.ChatParticipants chatParticipants;
-        RectF rectF = ProfileActivity.Z6;
-        HashSet hashSet = new HashSet();
-        ArrayList arrayList2 = new ArrayList();
-        ProfileActivity profileActivity = this.b;
-        TLRPC.ChatFull chatFull = profileActivity.v2;
-        if (chatFull != null && (chatParticipants = chatFull.participants) != null && chatParticipants.participants != null) {
-            for (int i10 = 0; i10 < profileActivity.v2.participants.participants.size(); i10++) {
-                hashSet.add(Long.valueOf(profileActivity.v2.participants.participants.get(i10).user_id));
-            }
-        }
-        profileActivity.getMessagesController().o(profileActivity.F2, profileActivity, arrayList, i7, new f3(arrayList2, 6), new f3(profileActivity, 7), new mc0(profileActivity, arrayList2, hashSet, 26));
-    }
-
-    @Override // org.telegram.messenger.i9
-    public boolean run() {
-        ProfileActivity profileActivity = this.b;
-        return profileActivity.E2 != null || profileActivity.w4();
-    }
-
-    @Override // org.telegram.ui.u40
-    public /* synthetic */ void f(TLRPC.User user) {
-    }
-
-    @Override // te.b
-    public /* synthetic */ void D(float f10, int i7) {
+    public /* synthetic */ tt0(q11 q11Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.d = q11Var;
+        this.b = z10;
+        this.e = linkedHashSet;
+        this.c = str;
+        this.f = hashMap;
+        this.g = arrayList;
     }
 }

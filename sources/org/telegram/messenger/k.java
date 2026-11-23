@@ -6,7 +6,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class k implements Runnable {
                         } else if (r5Var.getPriority() != 10) {
                             r5Var.setPriority(10);
                         }
-                        r5Var.postRunnable(new zf(s5Var, runnable, r5Var, 17));
+                        r5Var.postRunnable(new yf(s5Var, runnable, r5Var, 17));
                     }
                 }
                 arrayList2.clear();
@@ -86,7 +86,7 @@ public final /* synthetic */ class k implements Runnable {
                 }
                 break;
             default:
-                ls.e().k(ls.h4, this.b);
+                ks.e().k(ks.h4, this.b);
                 break;
         }
     }

@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -21,9 +21,9 @@ public final class r5 extends FrameLayout {
         di.n4 n4Var = new di.n4(t5Var, getContext());
         di.n4 n4Var2 = new di.n4(t5Var, getContext());
         di.n4 n4Var3 = new di.n4(t5Var, getContext());
-        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.hd.N0(2131753661, null));
-        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.hd.N0(2131749377, null));
-        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.hd.N0(2131750818, null));
+        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.gd.N0(2131753661, null));
+        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.gd.N0(2131749377, null));
+        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.gd.N0(2131750818, null));
         n4Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
@@ -33,7 +33,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.h6 h6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i10 = i7;
                 r5 r5Var = this.b;
                 switch (i10) {
@@ -57,8 +57,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, h6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
@@ -81,7 +81,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.h6 h6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i102 = i10;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -105,8 +105,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, h6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
@@ -129,7 +129,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.h6 h6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i102 = i11;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -153,8 +153,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, h6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
@@ -169,11 +169,11 @@ public final class r5 extends FrameLayout {
         });
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(n4Var, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        if (org.telegram.messenger.np.u1(t5Var.T).s4 && org.telegram.messenger.v3.N(t5Var.j0)) {
-            linearLayout.addView(n4Var2, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(n4Var, c8.na.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        if (org.telegram.messenger.mp.u1(t5Var.T).s4 && org.telegram.messenger.v3.N(t5Var.j0)) {
+            linearLayout.addView(n4Var2, c8.na.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(n4Var3, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, c8.ma.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
+        linearLayout.addView(n4Var3, c8.na.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        addView(linearLayout, c8.na.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

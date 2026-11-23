@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import q6.m;
 import va.e;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -215,7 +215,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo b10;
+        PackageInfo c10;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -243,8 +243,8 @@ public final class c {
             }
             String str2 = null;
             try {
-                b10 = z6.b.a(context).b(64, context.getPackageName());
-                signatureArr = b10.signatures;
+                c10 = z6.b.a(context).c(64, context.getPackageName());
+                signatureArr = c10.signatures;
             } catch (PackageManager.NameNotFoundException e12) {
                 Log.e("ContentValues", "No such package: " + context.getPackageName(), e12);
             }
@@ -265,7 +265,7 @@ public final class c {
                     i7++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(c10.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {

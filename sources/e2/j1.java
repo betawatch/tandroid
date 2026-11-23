@@ -1,8 +1,8 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j1 extends l1 {
     public final h9.i0 e;
@@ -10,10 +10,10 @@ public final class j1 extends l1 {
     public final int[] g;
     public final int[] h;
 
-    public j1(h9.t1 t1Var, h9.t1 t1Var2, int[] iArr) {
-        la.f(t1Var.d == iArr.length);
-        this.e = t1Var;
-        this.f = t1Var2;
+    public j1(h9.s1 s1Var, h9.s1 s1Var2, int[] iArr) {
+        ma.f(s1Var.d == iArr.length);
+        this.e = s1Var;
+        this.f = s1Var2;
         this.g = iArr;
         this.h = new int[iArr.length];
         for (int i7 = 0; i7 < iArr.length; i7++) {

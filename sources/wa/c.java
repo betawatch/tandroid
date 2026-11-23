@@ -1,16 +1,16 @@
 package wa;
 
-import c8.ub;
+import c8.vb;
 import ka.d;
 import o9.g;
 import o9.i;
 import q1.e;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
-    public static final e c = ub.a("|S||P|");
-    public static final e d = ub.a("|S|id");
+    public static final e c = vb.a("|S||P|");
+    public static final e d = vb.a("|S|id");
     public static final String[] e = {"*", "FCM", "GCM", ""};
     public final d a;
     public final String b;

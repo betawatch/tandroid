@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import gd.g;
 import gd.k;
 import id.c;
@@ -12,7 +12,7 @@ import zd.b0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzlk extends j implements p {
     int zza;
@@ -85,10 +85,10 @@ final class zzlk extends j implements p {
             if (sVar != null) {
                 ((t) sVar).Q(zza3);
             }
-            a10 = h.a(zza3);
+            a10 = z.a(zza3);
         }
         if (i10 == 0) {
-            h.b(obj);
+            z.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzdj zzn = this.zzb.zzn();
             zzmc zzmcVar = zzmc.zzd;
@@ -97,11 +97,11 @@ final class zzlk extends j implements p {
             zza = zzn.zza(zzmcVar, this);
         } else if (i10 == 1) {
             zzhkVar = (zzhk) this.zzd;
-            h.b(obj);
+            z.b(obj);
             zza = obj;
         } else if (i10 == 2) {
             zzhkVar = (zzhk) this.zzd;
-            h.b(obj);
+            z.b(obj);
             zza2 = obj;
             if (!((Boolean) zza2).booleanValue()) {
                 zzly zzlyVar2 = this.zzb;
@@ -114,14 +114,14 @@ final class zzlk extends j implements p {
             this.zza = 5;
         } else if (i10 == 3) {
             zzhkVar = (zzhk) this.zzd;
-            h.b(obj);
+            z.b(obj);
             zzu = obj;
             this.zzd = null;
             this.zza = 4;
         } else {
             if (i10 != 4) {
                 if (i10 != 5) {
-                    h.b(obj);
+                    z.b(obj);
                     i7 = obj;
                     zzxx zzxxVar = (zzxx) i7;
                     zzxw zzf = zzxx.zzf();
@@ -136,7 +136,7 @@ final class zzlk extends j implements p {
                     a10 = zzf.zzk();
                     return new g(a10);
                 }
-                h.b(obj);
+                z.b(obj);
                 t a11 = b0.a();
                 zzly zzlyVar3 = this.zzb;
                 map2 = zzlyVar3.zzd;
@@ -166,13 +166,13 @@ final class zzlk extends j implements p {
                 a10 = zzf5.zzk();
                 return new g(a10);
             }
-            h.b(obj);
+            z.b(obj);
             s zzz2 = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         }
         if (((Boolean) zza).booleanValue()) {
-            return new g(h.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return new g(z.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
         }
         zzdj zzn2 = this.zzb.zzn();
         zzmc zzmcVar2 = zzmc.zzc;

@@ -4,129 +4,70 @@ import android.os.DeadObjectException;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c1 extends u0 {
-    public final TaskCompletionSource b;
-    public final /* synthetic */ int c;
-    public final Object d;
+public final class c1 extends t0 {
+    public final u b;
+    public final TaskCompletionSource c;
+    public final r d;
 
-    public c1(int i7, TaskCompletionSource taskCompletionSource) {
+    public c1(int i7, u uVar, TaskCompletionSource taskCompletionSource, r rVar) {
         super(i7);
-        this.b = taskCompletionSource;
+        this.c = taskCompletionSource;
+        this.b = uVar;
+        this.d = rVar;
+        if (i7 == 2 && uVar.b) {
+            throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
+        }
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
+    @Override // com.google.android.gms.common.api.internal.d1
     public final void a(Status status) {
-        this.b.trySetException(new com.google.android.gms.common.api.f(status));
+        this.c.trySetException(this.d.f(status));
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
+    @Override // com.google.android.gms.common.api.internal.d1
     public final void b(Exception exc) {
-        this.b.trySetException(exc);
+        this.c.trySetException(exc);
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final /* bridge */ /* synthetic */ void c(a1 a1Var, boolean z10) {
-        int i7 = this.c;
+    @Override // com.google.android.gms.common.api.internal.d1
+    public final void c(z0 z0Var, boolean z10) {
+        Boolean valueOf = Boolean.valueOf(z10);
+        Map map = (Map) z0Var.b;
+        TaskCompletionSource taskCompletionSource = this.c;
+        map.put(taskCompletionSource, valueOf);
+        taskCompletionSource.getTask().addOnCompleteListener(new z0(z0Var, taskCompletionSource));
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final void d(l0 l0Var) {
+    @Override // com.google.android.gms.common.api.internal.d1
+    public final void d(k0 k0Var) {
+        TaskCompletionSource taskCompletionSource = this.c;
         try {
-            k(l0Var);
+            this.b.c(k0Var.b, taskCompletionSource);
         } catch (DeadObjectException e10) {
-            a(e1.e(e10));
             throw e10;
         } catch (RemoteException e11) {
-            a(e1.e(e11));
+            a(d1.e(e11));
         } catch (RuntimeException e12) {
-            this.b.trySetException(e12);
+            taskCompletionSource.trySetException(e12);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final n6.c[] f(l0 l0Var) {
-        switch (this.c) {
-            case 0:
-                return (n6.c[]) ((w0) this.d).a.d;
-            default:
-                w0 w0Var = (w0) l0Var.f.get((m) this.d);
-                if (w0Var == null) {
-                    return null;
-                }
-                return (n6.c[]) w0Var.a.d;
-        }
+    @Override // com.google.android.gms.common.api.internal.t0
+    public final n6.c[] f(k0 k0Var) {
+        return this.b.a;
     }
 
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final boolean g(l0 l0Var) {
-        switch (this.c) {
-            case 0:
-                return ((w0) this.d).a.a;
-            default:
-                w0 w0Var = (w0) l0Var.f.get((m) this.d);
-                return w0Var != null && w0Var.a.a;
-        }
+    @Override // com.google.android.gms.common.api.internal.t0
+    public final boolean g(k0 k0Var) {
+        return this.b.b;
     }
 
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final int h(l0 l0Var) {
-        switch (this.c) {
-            case 0:
-                return ((w0) this.d).a.b;
-            default:
-                w0 w0Var = (w0) l0Var.f.get((m) this.d);
-                if (w0Var != null) {
-                    return w0Var.a.b;
-                }
-                return -1;
-        }
-    }
-
-    public final void k(l0 l0Var) {
-        switch (this.c) {
-            case 0:
-                w0 w0Var = (w0) this.d;
-                h2.w wVar = w0Var.a;
-                ((q) ((p) wVar.e).c).accept(l0Var.b, this.b);
-                m mVar = ((o) wVar.c).b;
-                if (mVar != null) {
-                    l0Var.f.put(mVar, w0Var);
-                    break;
-                }
-                break;
-            default:
-                w0 w0Var2 = (w0) l0Var.f.remove((m) this.d);
-                if (w0Var2 == null) {
-                    this.b.trySetResult(Boolean.FALSE);
-                    break;
-                } else {
-                    ((q) ((p) w0Var2.b.b).d).accept(l0Var.b, this.b);
-                    ((o) w0Var2.a.c).b = null;
-                    break;
-                }
-        }
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public c1(m mVar, TaskCompletionSource taskCompletionSource) {
-        this(4, taskCompletionSource);
-        this.c = 1;
-        this.d = mVar;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public c1(w0 w0Var, TaskCompletionSource taskCompletionSource) {
-        this(3, taskCompletionSource);
-        this.c = 0;
-        this.d = w0Var;
-    }
-
-    private final /* bridge */ /* synthetic */ void i(a1 a1Var, boolean z10) {
-    }
-
-    private final /* bridge */ /* synthetic */ void j(a1 a1Var, boolean z10) {
+    @Override // com.google.android.gms.common.api.internal.t0
+    public final int h(k0 k0Var) {
+        return this.b.c;
     }
 }

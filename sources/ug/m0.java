@@ -7,8 +7,9 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.s2;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class m0 {
     public static boolean i = true;
@@ -57,14 +58,14 @@ public final class m0 {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
-            ((v4.f0) this.f).b((v4.a) arrayList.get(i7));
+            ((jh.g) this.f).a((v4.a) arrayList.get(i7));
         }
         l(arrayList);
         this.b = 0;
     }
 
     public void c() {
-        v4.f0 f0Var = (v4.f0) this.f;
+        jh.g gVar = (jh.g) this.f;
         b();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -72,22 +73,22 @@ public final class m0 {
             v4.a aVar = (v4.a) arrayList.get(i7);
             int i10 = aVar.a;
             if (i10 == 1) {
-                f0Var.b(aVar);
-                f0Var.d(aVar.b, aVar.d);
+                gVar.a(aVar);
+                gVar.c(aVar.b, aVar.d);
             } else if (i10 == 2) {
-                f0Var.b(aVar);
+                gVar.a(aVar);
                 int i11 = aVar.b;
                 int i12 = aVar.d;
-                RecyclerView recyclerView = (RecyclerView) f0Var.a;
+                RecyclerView recyclerView = gVar.a;
                 recyclerView.f0(i11, i12, true);
                 recyclerView.y0 = true;
                 recyclerView.v0.c += i12;
             } else if (i10 == 4) {
-                f0Var.b(aVar);
-                f0Var.c(aVar.b, aVar.d, aVar.c);
+                gVar.a(aVar);
+                gVar.b(aVar.b, aVar.d, aVar.c);
             } else if (i10 == 8) {
-                f0Var.b(aVar);
-                f0Var.e(aVar.b, aVar.d);
+                gVar.a(aVar);
+                gVar.d(aVar.b, aVar.d);
             }
         }
         l(arrayList);
@@ -142,17 +143,17 @@ public final class m0 {
     }
 
     public void e(v4.a aVar, int i7) {
-        v4.f0 f0Var = (v4.f0) this.f;
-        f0Var.b(aVar);
+        jh.g gVar = (jh.g) this.f;
+        gVar.a(aVar);
         int i10 = aVar.a;
         if (i10 != 2) {
             if (i10 != 4) {
                 throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
             }
-            f0Var.c(i7, aVar.d, aVar.c);
+            gVar.b(i7, aVar.d, aVar.c);
         } else {
             int i11 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) f0Var.a;
+            RecyclerView recyclerView = gVar.a;
             recyclerView.f0(i7, i11, true);
             recyclerView.y0 = true;
             recyclerView.v0.c += i11;
@@ -250,35 +251,35 @@ public final class m0 {
     }
 
     public void j(v4.a aVar) {
-        v4.f0 f0Var = (v4.f0) this.f;
+        jh.g gVar = (jh.g) this.f;
         ((ArrayList) this.e).add(aVar);
         int i7 = aVar.a;
         if (i7 == 1) {
-            f0Var.d(aVar.b, aVar.d);
+            gVar.c(aVar.b, aVar.d);
             return;
         }
         if (i7 == 2) {
             int i10 = aVar.b;
             int i11 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) f0Var.a;
+            RecyclerView recyclerView = gVar.a;
             recyclerView.f0(i10, i11, false);
             recyclerView.y0 = true;
             return;
         }
         if (i7 == 4) {
-            f0Var.c(aVar.b, aVar.d, aVar.c);
+            gVar.b(aVar.b, aVar.d, aVar.c);
         } else if (i7 == 8) {
-            f0Var.e(aVar.b, aVar.d);
+            gVar.d(aVar.b, aVar.d);
         } else {
             throw new IllegalArgumentException("Unknown update op type for " + aVar);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x021f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x021d, code lost:
     
         if (((java.util.ArrayList) r15.e.d).contains(r8.a) != false) goto L138;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x0292, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x028e, code lost:
     
         if (((java.util.ArrayList) r13.e.d).contains(r15.a) != false) goto L166;
      */
@@ -316,10 +317,10 @@ public final class m0 {
         Object obj;
         v4.a aVar;
         b3.j jVar = (b3.j) this.c;
-        v4.f0 f0Var = (v4.f0) this.f;
-        v4.f0 f0Var2 = (v4.f0) this.g;
+        jh.g gVar = (jh.g) this.f;
+        nd0 nd0Var = (nd0) this.g;
         ArrayList arrayList = (ArrayList) this.d;
-        f0Var2.getClass();
+        nd0Var.getClass();
         while (true) {
             int size = arrayList.size() - 1;
             boolean z13 = false;
@@ -341,7 +342,7 @@ public final class m0 {
                 break;
             }
             int i19 = size + 1;
-            m0 m0Var = (m0) f0Var2.a;
+            m0 m0Var = (m0) nd0Var.b;
             b3.j jVar2 = (b3.j) m0Var.c;
             v4.a aVar2 = (v4.a) arrayList.get(size);
             v4.a aVar3 = (v4.a) arrayList.get(i19);
@@ -579,7 +580,7 @@ public final class m0 {
                 int i49 = 0;
                 char c11 = 65535;
                 while (i48 < i47) {
-                    RecyclerView recyclerView = (RecyclerView) f0Var.a;
+                    RecyclerView recyclerView = gVar.a;
                     v4.f1 L = recyclerView.L(i48, true);
                     if (L != null) {
                     }
@@ -636,7 +637,7 @@ public final class m0 {
                 int i53 = 0;
                 char c12 = 65535;
                 while (i50 < i51) {
-                    RecyclerView recyclerView2 = (RecyclerView) f0Var.a;
+                    RecyclerView recyclerView2 = gVar.a;
                     v4.f1 L2 = recyclerView2.L(i50, true);
                     if (L2 != null) {
                     }
@@ -698,17 +699,17 @@ public final class m0 {
         String str;
         ze.c cVar = ze.c.e;
         if (i) {
-            v4.f0 f0Var = (v4.f0) this.f;
-            if (f0Var == null) {
+            ze.b bVar = (ze.b) this.f;
+            if (bVar == null) {
                 try {
-                    v4.f0 f0Var2 = new v4.f0();
-                    f0Var2.a = new SoftReference(new String[3]);
-                    this.f = f0Var2;
+                    ze.b bVar2 = new ze.b();
+                    bVar2.a = new SoftReference(new String[3]);
+                    this.f = bVar2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) f0Var.a).get();
+                String[] strArr = (String[]) ((SoftReference) bVar.a).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -762,11 +763,11 @@ public final class m0 {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        v4.f0 f0Var3 = (v4.f0) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) f0Var3.a).get();
+                        ze.b bVar3 = (ze.b) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) bVar3.a).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            f0Var3.a = new SoftReference(strArr2);
+                            bVar3.a = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }
@@ -868,7 +869,7 @@ public final class m0 {
         }
     }
 
-    public m0(v4.f0 f0Var) {
+    public m0(jh.g gVar) {
         this.a = 1;
         this.c = new b3.j(30, 11);
         this.d = new ArrayList();
@@ -876,7 +877,7 @@ public final class m0 {
         this.b = 0;
         boolean z10 = s2.a;
         this.h = new ArrayList();
-        this.f = f0Var;
-        this.g = new v4.f0(this);
+        this.f = gVar;
+        this.g = new nd0(this, 22);
     }
 }

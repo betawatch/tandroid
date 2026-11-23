@@ -1,10 +1,10 @@
 package tf;
 
 import java.io.EOFException;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -15,22 +15,22 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(md0 md0Var) {
+    public f(i61 i61Var) {
         byte b10;
         byte b11;
-        uf.a aVar = (uf.a) md0Var.b;
+        uf.a aVar = (uf.a) i61Var.b;
         long j3 = aVar.b;
-        jn jnVar = (jn) md0Var.d;
-        h hVar = (h) md0Var.c;
+        nd0 nd0Var = (nd0) i61Var.d;
+        h hVar = (h) i61Var.c;
         int i7 = hVar.a;
         int i10 = hVar.a;
         byte b12 = 2;
         if (i7 == 2) {
-            jnVar.getClass();
+            nd0Var.getClass();
             byte[] bArr = new byte[3];
             int i11 = 0;
             while (i11 < 3) {
-                int read = ((ab.d) jnVar.b).read(bArr, i11, 3 - i11);
+                int read = ((ab.d) nd0Var.b).read(bArr, i11, 3 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -38,11 +38,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            jnVar.getClass();
+            nd0Var.getClass();
             byte[] bArr2 = new byte[4];
             int i12 = 0;
             while (i12 < 4) {
-                int read2 = ((ab.d) jnVar.b).read(bArr2, i12, 4 - i12);
+                int read2 = ((ab.d) nd0Var.b).read(bArr2, i12, 4 - i12);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -52,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i10 == 2) {
-            this.c = ((jnVar.Q() & 255) << 16) | ((jnVar.Q() & 255) << 8) | (jnVar.Q() & 255);
+            this.c = ((nd0Var.v() & 255) << 16) | ((nd0Var.v() & 255) << 8) | (nd0Var.v() & 255);
         } else if (i10 == 3) {
-            this.c = jnVar.R();
+            this.c = nd0Var.y();
         } else {
-            this.c = jnVar.S();
+            this.c = nd0Var.A();
         }
         if (i10 > 2) {
-            jnVar.Q();
-            byte Q = jnVar.Q();
+            nd0Var.v();
+            byte v = nd0Var.v();
             byte b14 = 64;
             if (i10 == 3) {
                 b13 = 128;
@@ -72,35 +72,35 @@ public final class f {
                 b11 = 1;
                 b14 = 4;
             }
-            boolean z10 = (b13 & Q) != 0;
+            boolean z10 = (b13 & v) != 0;
             this.e = z10;
-            this.d = (b12 & Q) != 0;
-            boolean z11 = (Q & b14) != 0;
+            this.d = (b12 & v) != 0;
+            boolean z11 = (v & b14) != 0;
             this.f = z11;
             if (i10 == 3) {
                 if (z10) {
-                    this.g = jnVar.R();
+                    this.g = nd0Var.y();
                     this.c -= 4;
                 }
                 if (z11) {
-                    jnVar.Q();
+                    nd0Var.v();
                     this.c--;
                 }
-                if ((Q & b10) != 0) {
-                    jnVar.Q();
+                if ((v & b10) != 0) {
+                    nd0Var.v();
                     this.c--;
                 }
             } else {
-                if ((Q & b10) != 0) {
-                    jnVar.Q();
+                if ((v & b10) != 0) {
+                    nd0Var.v();
                     this.c--;
                 }
                 if (z11) {
-                    jnVar.Q();
+                    nd0Var.v();
                     this.c--;
                 }
-                if ((Q & b11) != 0) {
-                    this.g = jnVar.S();
+                if ((v & b11) != 0) {
+                    this.g = nd0Var.A();
                     this.c -= 4;
                 }
             }

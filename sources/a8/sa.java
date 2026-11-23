@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sa implements Runnable {
     public final /* synthetic */ int a;
@@ -43,14 +43,23 @@ public final /* synthetic */ class sa implements Runnable {
     public final void run() {
         boolean z10;
         boolean z11;
-        ai.h2[] h2VarArr;
+        ai.y1[] y1VarArr;
         int i7;
         int i10;
         Layout layout;
-        long j3;
+        boolean z12;
+        TextView textView;
+        int i11;
         Object obj;
-        int i11 = 3;
-        f fVar = null;
+        int i12;
+        char c10;
+        float hypot;
+        double d = 75.0d;
+        double d2 = 100.0d;
+        int i13 = 3;
+        int i14 = 2;
+        float f10 = 0.0f;
+        boolean z13 = true;
         switch (this.a) {
             case 0:
                 ua uaVar = (ua) this.b;
@@ -78,15 +87,15 @@ public final /* synthetic */ class sa implements Runnable {
                         Collections.sort(arrayList);
                         k7 k7Var = new k7();
                         int size = arrayList.size();
-                        long j10 = 0;
-                        int i12 = 0;
-                        while (i12 < size) {
-                            Object obj3 = arrayList.get(i12);
-                            i12++;
-                            j10 = ((Long) obj3).longValue() + j10;
+                        long j3 = 0;
+                        int i15 = 0;
+                        while (i15 < size) {
+                            Object obj3 = arrayList.get(i15);
+                            i15++;
+                            j3 = ((Long) obj3).longValue() + j3;
                         }
-                        k7Var.c = Long.valueOf((j10 / arrayList.size()) & Long.MAX_VALUE);
-                        k7Var.a = Long.valueOf(ua.a(arrayList, 100.0d) & Long.MAX_VALUE);
+                        k7Var.c = Long.valueOf((j3 / arrayList.size()) & Long.MAX_VALUE);
+                        k7Var.a = Long.valueOf(ua.a(arrayList, d2) & Long.MAX_VALUE);
                         k7Var.f = Long.valueOf(ua.a(arrayList, 75.0d) & Long.MAX_VALUE);
                         k7Var.e = Long.valueOf(ua.a(arrayList, 50.0d) & Long.MAX_VALUE);
                         k7Var.d = Long.valueOf(ua.a(arrayList, 25.0d) & Long.MAX_VALUE);
@@ -101,6 +110,7 @@ public final /* synthetic */ class sa implements Runnable {
                         a0Var.d = l7Var;
                         b8Var.f = new f1(a0Var);
                         pb.n.a.execute(new qa(uaVar, new xa(b8Var, 0), a8Var, uaVar.b(), 0));
+                        d2 = 100.0d;
                     }
                     hashMap.remove(a8Var);
                     return;
@@ -108,183 +118,190 @@ public final /* synthetic */ class sa implements Runnable {
                 return;
             case 1:
                 org.telegram.messenger.g0.r(this);
-                ai.p0 p0Var = (ai.p0) this.b;
-                if (p0Var.r != 1 || p0Var.s == null) {
+                ai.l0 l0Var = (ai.l0) this.b;
+                if (l0Var.r != 1 || l0Var.s == null) {
                     return;
                 }
-                Editable text = p0Var.f.a.F0.getText();
-                boolean z12 = text != null && text.toString().trim().length() > 0;
+                Editable text = l0Var.f.a.F0.getText();
+                boolean z14 = text != null && text.toString().trim().length() > 0;
                 long uptimeMillis = SystemClock.uptimeMillis();
-                boolean z13 = p0Var.s.getRightMode() == 2;
-                long j11 = p0Var.r0;
-                if (uptimeMillis - j11 >= 300) {
-                    if (z13) {
-                        if (!z12 || p0Var.U > j11) {
-                            p0Var.s.setRightMode(0);
-                            p0Var.r0 = uptimeMillis;
+                boolean z15 = l0Var.s.getRightMode() == 2;
+                long j10 = l0Var.r0;
+                if (uptimeMillis - j10 >= 300) {
+                    if (z15) {
+                        if (!z14 || l0Var.U > j10) {
+                            l0Var.s.setRightMode(0);
+                            l0Var.r0 = uptimeMillis;
                         }
-                    } else if (z12 && uptimeMillis - p0Var.U > 1200 && uptimeMillis - p0Var.q0 > 1200) {
-                        p0Var.s.setRightMode(2);
-                        p0Var.r0 = uptimeMillis;
+                    } else if (z14 && uptimeMillis - l0Var.U > 1200 && uptimeMillis - l0Var.q0 > 1200) {
+                        l0Var.s.setRightMode(2);
+                        l0Var.r0 = uptimeMillis;
                     }
                 }
                 org.telegram.messenger.g0.h3(this, 50L);
                 return;
             case 2:
-                ai.s0 s0Var = (ai.s0) this.b;
-                s0Var.j1 = false;
-                if (s0Var.isAttachedToWindow() && s0Var.getVisibility() == 0) {
-                    s0Var.invalidate();
-                    s0Var.j1 = true;
-                    s0Var.postOnAnimation(this);
+                ai.o0 o0Var = (ai.o0) this.b;
+                o0Var.j1 = false;
+                if (o0Var.isAttachedToWindow() && o0Var.getVisibility() == 0) {
+                    o0Var.invalidate();
+                    o0Var.j1 = true;
+                    o0Var.postOnAnimation(this);
                     return;
                 }
                 return;
             case 3:
-                ai.k2 k2Var = (ai.k2) this.b;
-                TextView textView = k2Var.a;
-                Editable editableText = textView.getEditableText();
+                ai.b2 b2Var = (ai.b2) this.b;
+                TextView textView2 = b2Var.a;
+                Editable editableText = textView2.getEditableText();
                 if (editableText == null) {
-                    k2Var.g = false;
+                    b2Var.g = false;
                     return;
                 }
                 long uptimeMillis2 = SystemClock.uptimeMillis();
-                ai.i2[] i2VarArr = (ai.i2[]) editableText.getSpans(0, editableText.length(), ai.i2.class);
-                int length = i2VarArr.length;
-                int i13 = 0;
-                boolean z14 = false;
-                while (i13 < length) {
-                    ai.i2 i2Var = i2VarArr[i13];
-                    int spanStart = editableText.getSpanStart(i2Var);
-                    int spanEnd = editableText.getSpanEnd(i2Var);
+                ai.z1[] z1VarArr = (ai.z1[]) editableText.getSpans(0, editableText.length(), ai.z1.class);
+                int length = z1VarArr.length;
+                int i16 = 0;
+                boolean z16 = false;
+                while (i16 < length) {
+                    ai.z1 z1Var = z1VarArr[i16];
+                    int spanStart = editableText.getSpanStart(z1Var);
+                    int spanEnd = editableText.getSpanEnd(z1Var);
                     if (spanStart < 0 || spanEnd <= spanStart) {
-                        j3 = uptimeMillis2;
+                        z12 = z13;
+                        textView = textView2;
+                        i11 = i14;
                     } else {
-                        j3 = uptimeMillis2;
-                        if (j3 < (Math.max(0, i2Var.c - 1) * 22) + i2Var.a + 320) {
-                            editableText.setSpan(i2Var, spanStart, spanEnd, 33);
-                            z14 = true;
-                            i13++;
-                            uptimeMillis2 = j3;
+                        z12 = z13;
+                        textView = textView2;
+                        i11 = i14;
+                        if (uptimeMillis2 < (Math.max(0, z1Var.c - 1) * 22) + z1Var.a + 320) {
+                            editableText.setSpan(z1Var, spanStart, spanEnd, 33);
+                            z16 = z12;
+                            i16++;
+                            textView2 = textView;
+                            z13 = z12;
+                            i14 = i11;
                         }
                     }
-                    editableText.removeSpan(i2Var);
-                    i13++;
-                    uptimeMillis2 = j3;
+                    editableText.removeSpan(z1Var);
+                    i16++;
+                    textView2 = textView;
+                    z13 = z12;
+                    i14 = i11;
                 }
-                long j12 = uptimeMillis2;
-                ai.h2[] h2VarArr2 = (ai.h2[]) editableText.getSpans(0, editableText.length(), ai.h2.class);
-                int length2 = h2VarArr2.length;
-                boolean z15 = z14;
-                int i14 = 0;
-                while (i14 < length2) {
-                    ai.h2 h2Var = h2VarArr2[i14];
-                    int spanStart2 = editableText.getSpanStart(h2Var);
-                    int spanEnd2 = editableText.getSpanEnd(h2Var);
+                boolean z17 = z13;
+                TextView textView3 = textView2;
+                ai.y1[] y1VarArr2 = (ai.y1[]) editableText.getSpans(0, editableText.length(), ai.y1.class);
+                int length2 = y1VarArr2.length;
+                int i17 = 0;
+                while (i17 < length2) {
+                    ai.y1 y1Var = y1VarArr2[i17];
+                    int spanStart2 = editableText.getSpanStart(y1Var);
+                    int spanEnd2 = editableText.getSpanEnd(y1Var);
                     if (spanStart2 < 0 || spanEnd2 <= spanStart2) {
-                        h2VarArr = h2VarArr2;
+                        y1VarArr = y1VarArr2;
                         i7 = length2;
-                        i10 = i14;
-                        editableText.removeSpan(h2Var);
-                    } else if (p0.C(j12 - h2Var.a, 750.0f, 1.0f, 0.0f) >= 1.0f) {
-                        editableText.removeSpan(h2Var);
-                        h2VarArr = h2VarArr2;
+                        i10 = i17;
+                        editableText.removeSpan(y1Var);
+                    } else if (p0.C(uptimeMillis2 - y1Var.a, 750.0f, 1.0f, f10) >= 1.0f) {
+                        editableText.removeSpan(y1Var);
+                        y1VarArr = y1VarArr2;
                         i7 = length2;
-                        i10 = i14;
+                        i10 = i17;
                     } else {
-                        long j13 = h2Var.b;
-                        if (j13 <= 0) {
-                            j13 = h2Var.a;
+                        long j11 = y1Var.b;
+                        if (j11 <= 0) {
+                            j11 = y1Var.a;
                         }
-                        if (j12 >= j13 - 16) {
-                            if (!h2Var.e) {
-                                h2Var.e = true;
-                                ai.a0 a0Var2 = k2Var.h;
-                                if (a0Var2 != null) {
-                                    ai.p0 p0Var2 = a0Var2.b;
-                                    float[] fArr = p0Var2.D0;
-                                    org.telegram.ui.Components.d6 d6Var = p0Var2.Y;
-                                    if (d6Var == null || d6Var.c < 0.2f || !p0Var2.r(fArr) || (layout = p0Var2.f.a.F0.getLayout()) == null || spanEnd2 > layout.getText().length()) {
-                                        h2VarArr = h2VarArr2;
-                                        i7 = length2;
-                                    } else {
+                        if (uptimeMillis2 >= j11 - 16) {
+                            if (!y1Var.e) {
+                                y1Var.e = z17;
+                                ai.w wVar = b2Var.h;
+                                if (wVar != null) {
+                                    ai.l0 l0Var2 = wVar.b;
+                                    float[] fArr = l0Var2.D0;
+                                    org.telegram.ui.Components.c6 c6Var = l0Var2.Y;
+                                    if (c6Var != null && c6Var.c >= 0.2f && l0Var2.p(fArr) && (layout = l0Var2.f.a.F0.getLayout()) != null && spanEnd2 <= layout.getText().length()) {
                                         int lineForOffset = layout.getLineForOffset(spanStart2);
                                         float primaryHorizontal = layout.getPrimaryHorizontal(spanStart2);
+                                        y1VarArr = y1VarArr2;
                                         float primaryHorizontal2 = layout.getLineForOffset(spanEnd2) == lineForOffset ? layout.getPrimaryHorizontal(spanEnd2) : layout.getLineRight(lineForOffset);
-                                        h2VarArr = h2VarArr2;
-                                        ai.u0 u0Var = p0Var2.x;
-                                        float f10 = primaryHorizontal + fArr[0];
                                         i7 = length2;
+                                        ai.q0 q0Var = l0Var2.x;
+                                        float f11 = primaryHorizontal + fArr[0];
+                                        i10 = i17;
                                         float lineTop = layout.getLineTop(lineForOffset) + fArr[1];
                                         float max = Math.max(primaryHorizontal, primaryHorizontal2) + fArr[0];
                                         float lineBottom = layout.getLineBottom(lineForOffset) + fArr[1];
-                                        int i15 = ((int) (p0Var2.Q * 2.5f)) + 2;
-                                        Random random = u0Var.t;
-                                        float f11 = 0.5f;
-                                        int i16 = i15 + (random.nextFloat() < 0.5f ? 1 : 0);
-                                        int i17 = 0;
-                                        while (i17 < i16) {
-                                            float f12 = f11;
-                                            ai.u0 u0Var2 = u0Var;
-                                            float max2 = (Math.max(1.0f, max - f10) * random.nextFloat()) + f10;
-                                            float z16 = com.google.android.gms.internal.vision.e2.z(lineBottom, lineTop, org.telegram.ui.Cells.c0.h(random, 0.85f, 0.15f), lineTop);
+                                        int i18 = ((int) (l0Var2.Q * 2.5f)) + 2;
+                                        Random random = q0Var.t;
+                                        float f12 = 0.5f;
+                                        int i19 = i18 + (random.nextFloat() < 0.5f ? 1 : 0);
+                                        int i20 = 0;
+                                        while (i20 < i19) {
+                                            float f13 = f12;
+                                            float f14 = max;
+                                            float max2 = (Math.max(1.0f, max - f11) * random.nextFloat()) + f11;
+                                            float z18 = com.google.android.gms.internal.vision.e2.z(lineBottom, lineTop, org.telegram.ui.Cells.c0.h(random, 0.85f, 0.15f), lineTop);
                                             float L = org.telegram.messenger.g0.L((random.nextFloat() * 7.0f) + 3.0f);
-                                            double nextFloat = ((random.nextFloat() - f12) * 2.2f) - 1.5707963267948966d;
-                                            u0Var2.j(max2, z16, ((float) Math.cos(nextFloat)) * L, ((float) Math.sin(nextFloat)) * L, org.telegram.ui.Cells.c0.h(random, 0.55f, 0.45f), org.telegram.ui.Cells.c0.h(random, f12, 0.55f));
-                                            i17++;
-                                            f11 = f12;
-                                            u0Var = u0Var2;
-                                            i14 = i14;
-                                            lineTop = lineTop;
+                                            ai.q0 q0Var2 = q0Var;
+                                            double nextFloat = ((random.nextFloat() - f13) * 2.2f) - 1.5707963267948966d;
+                                            q0Var2.j(max2, z18, ((float) Math.cos(nextFloat)) * L, ((float) Math.sin(nextFloat)) * L, org.telegram.ui.Cells.c0.h(random, 0.55f, 0.45f), org.telegram.ui.Cells.c0.h(random, f13, 0.55f));
+                                            i20++;
+                                            f12 = f13;
+                                            q0Var = q0Var2;
+                                            max = f14;
                                         }
+                                        editableText.setSpan(y1Var, spanStart2, spanEnd2, 33);
                                     }
-                                    i10 = i14;
-                                    editableText.setSpan(h2Var, spanStart2, spanEnd2, 33);
                                 }
                             }
-                            h2VarArr = h2VarArr2;
+                            y1VarArr = y1VarArr2;
                             i7 = length2;
-                            i10 = i14;
-                            editableText.setSpan(h2Var, spanStart2, spanEnd2, 33);
+                            i10 = i17;
+                            editableText.setSpan(y1Var, spanStart2, spanEnd2, 33);
                         } else {
-                            h2VarArr = h2VarArr2;
+                            y1VarArr = y1VarArr2;
                             i7 = length2;
-                            i10 = i14;
+                            i10 = i17;
                         }
-                        z15 = true;
+                        z16 = true;
                     }
-                    i14 = i10 + 1;
-                    h2VarArr2 = h2VarArr;
+                    i17 = i10 + 1;
+                    y1VarArr2 = y1VarArr;
                     length2 = i7;
+                    z17 = true;
+                    f10 = 0.0f;
                 }
-                for (ai.g2 g2Var : (ai.g2[]) editableText.getSpans(0, editableText.length(), ai.g2.class)) {
-                    if (g2Var.a != 0) {
-                        int spanStart3 = editableText.getSpanStart(g2Var);
-                        int spanEnd3 = editableText.getSpanEnd(g2Var);
+                for (ai.x1 x1Var : (ai.x1[]) editableText.getSpans(0, editableText.length(), ai.x1.class)) {
+                    if (x1Var.a != 0) {
+                        int spanStart3 = editableText.getSpanStart(x1Var);
+                        int spanEnd3 = editableText.getSpanEnd(x1Var);
                         if (spanStart3 >= 0 && spanEnd3 > spanStart3) {
-                            long j14 = g2Var.a;
-                            if (j14 == 0 || j12 < j14 + 300) {
-                                editableText.setSpan(g2Var, spanStart3, spanEnd3, 33);
-                                z15 = true;
+                            long j12 = x1Var.a;
+                            if (j12 == 0 || uptimeMillis2 < j12 + 300) {
+                                editableText.setSpan(x1Var, spanStart3, spanEnd3, 33);
+                                z16 = true;
                             }
                         }
-                        editableText.removeSpan(g2Var);
+                        editableText.removeSpan(x1Var);
                     }
                 }
-                ai.j2 j2Var = k2Var.j;
-                if (j2Var == null || k2Var.m <= 0.0f || editableText.getSpanStart(j2Var) < 0) {
+                ai.a2 a2Var = b2Var.j;
+                if (a2Var == null || b2Var.m <= 0.0f || editableText.getSpanStart(a2Var) < 0) {
                     z10 = false;
-                    z11 = z15;
+                    z11 = z16;
                 } else {
                     z10 = false;
-                    editableText.setSpan(k2Var.j, 0, editableText.length(), 18);
+                    editableText.setSpan(b2Var.j, 0, editableText.length(), 18);
                     z11 = true;
                 }
                 if (z11) {
-                    textView.postOnAnimation(this);
+                    textView3.postOnAnimation(this);
                     return;
                 } else {
-                    k2Var.g = z10;
+                    b2Var.g = z10;
                     return;
                 }
             case 4:
@@ -352,7 +369,7 @@ public final /* synthetic */ class sa implements Runnable {
                 }
                 return;
             case 12:
-                ((b3.n) this.b).d();
+                ((b3.n) this.b).e();
                 return;
             case 13:
                 for (Thread thread : bg.i.w.keySet()) {
@@ -399,44 +416,42 @@ public final /* synthetic */ class sa implements Runnable {
                         Object next2 = it2.next();
                         Object obj4 = (Collection) jgVar.c.get(next2);
                         if (obj4 == null) {
-                            obj4 = new ArrayList(i11);
+                            obj4 = new ArrayList(i13);
                         }
                         List list2 = (List) obj4;
-                        ArrayList arrayList2 = new ArrayList(list2 instanceof RandomAccess ? new be(jgVar, next2, list2, fVar) : new f(jgVar, next2, list2, fVar));
+                        ArrayList arrayList2 = new ArrayList(list2 instanceof RandomAccess ? new be(jgVar, next2, list2, null) : new f(jgVar, next2, list2, (f) null));
                         Collections.sort(arrayList2);
                         k7 k7Var2 = new k7();
                         int size3 = arrayList2.size();
-                        long j15 = 0;
-                        int i18 = 0;
-                        while (i18 < size3) {
-                            Object obj5 = arrayList2.get(i18);
-                            i18++;
-                            j15 = ((Long) obj5).longValue() + j15;
+                        long j13 = 0;
+                        int i21 = 0;
+                        while (i21 < size3) {
+                            Object obj5 = arrayList2.get(i21);
+                            i21++;
+                            j13 = ((Long) obj5).longValue() + j13;
                         }
-                        jg jgVar4 = jgVar;
-                        k7Var2.c = Long.valueOf((j15 / arrayList2.size()) & Long.MAX_VALUE);
+                        k7Var2.c = Long.valueOf((j13 / arrayList2.size()) & Long.MAX_VALUE);
                         k7Var2.a = Long.valueOf(uf.a(arrayList2, 100.0d) & Long.MAX_VALUE);
-                        k7Var2.f = Long.valueOf(uf.a(arrayList2, 75.0d) & Long.MAX_VALUE);
+                        k7Var2.f = Long.valueOf(uf.a(arrayList2, d) & Long.MAX_VALUE);
                         k7Var2.e = Long.valueOf(uf.a(arrayList2, 50.0d) & Long.MAX_VALUE);
                         k7Var2.d = Long.valueOf(uf.a(arrayList2, 25.0d) & Long.MAX_VALUE);
                         k7Var2.b = Long.valueOf(uf.a(arrayList2, 0.0d) & Long.MAX_VALUE);
                         c8.la laVar = new c8.la(k7Var2);
                         int size4 = arrayList2.size();
-                        ga.d dVar = new ga.d(1);
-                        dVar.d = c8.db.b;
-                        android.support.v4.media.session.a0 a0Var3 = new android.support.v4.media.session.a0(15, false);
-                        a0Var3.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        a0Var3.b = (c8.h1) next2;
-                        a0Var3.d = laVar;
-                        dVar.n = new c8.i1(a0Var3);
+                        ga.d dVar = new ga.d();
+                        dVar.c = c8.db.b;
+                        android.support.v4.media.session.a0 a0Var2 = new android.support.v4.media.session.a0(15, false);
+                        a0Var2.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        a0Var2.b = (c8.h1) next2;
+                        a0Var2.d = laVar;
+                        dVar.h = new c8.i1(a0Var2);
                         uf ufVar2 = ufVar;
                         c8.fb fbVar2 = fbVar;
                         pb.n.a.execute(new qa(ufVar2, new xa(dVar, 0), fbVar2, ufVar.c(), 1));
                         fbVar = fbVar2;
                         ufVar = ufVar2;
-                        jgVar = jgVar4;
-                        fVar = null;
-                        i11 = 3;
+                        d = 75.0d;
+                        i13 = 3;
                     }
                     hashMap2.remove(fbVar);
                     return;
@@ -453,11 +468,11 @@ public final /* synthetic */ class sa implements Runnable {
                 int height = textureView.getHeight();
                 if (width > 0 && height > 0) {
                     if (width > 720 || height > 720) {
-                        float f13 = width;
-                        float f14 = height;
-                        float min = Math.min(720.0f / f13, 720.0f / f14);
-                        width = Math.max(1, (int) (f13 * min));
-                        height = Math.max(1, (int) (f14 * min));
+                        float f15 = width;
+                        float f16 = height;
+                        float min = Math.min(720.0f / f15, 720.0f / f16);
+                        width = Math.max(1, (int) (f15 * min));
+                        height = Math.max(1, (int) (f16 * min));
                     }
                     Bitmap bitmap = ((ci.b0) this.b).l0;
                     if (bitmap == null || bitmap.getWidth() != width || ((ci.b0) this.b).l0.getHeight() != height) {
@@ -466,9 +481,9 @@ public final /* synthetic */ class sa implements Runnable {
                     try {
                         textureView.getBitmap(((ci.b0) this.b).l0);
                         ci.b0 b0Var2 = (ci.b0) this.b;
-                        q4.q f15 = ci.b0.f(b0Var2.l0, b0Var2.j0, b0Var2.k0, b0Var2.P);
-                        if (f15 != null) {
-                            org.telegram.messenger.g0.g3(new c1.a(13, this, f15));
+                        q4.q f17 = ci.b0.f(b0Var2.l0, b0Var2.j0, b0Var2.k0, b0Var2.P);
+                        if (f17 != null) {
+                            org.telegram.messenger.g0.g3(new c1.a(13, this, f17));
                             return;
                         }
                     } catch (Throwable th2) {
@@ -500,31 +515,31 @@ public final /* synthetic */ class sa implements Runnable {
                     return;
                 }
             case 19:
-                ((com.google.android.gms.common.api.internal.l0) this.b).a();
+                ((com.google.android.gms.common.api.internal.k0) this.b).a();
                 return;
             case 20:
-                com.google.android.gms.common.api.internal.l0 l0Var = (com.google.android.gms.common.api.internal.l0) ((ob.c) this.b).b;
-                ((q6.d) l0Var.b).j(l0Var.b.getClass().getName().concat(" disconnecting because it was signed out."));
+                com.google.android.gms.common.api.internal.k0 k0Var = (com.google.android.gms.common.api.internal.k0) ((ob.c) this.b).b;
+                ((q6.d) k0Var.b).j(k0Var.b.getClass().getName().concat(" disconnecting because it was signed out."));
                 return;
             case 21:
-                ((com.google.android.gms.common.api.internal.x0) this.b).j.b(new n6.a(4, null, null));
+                ((com.google.android.gms.common.api.internal.w0) this.b).j.b(new n6.a(4, null, null));
                 return;
             case 22:
-                com.google.android.gms.common.api.internal.h1 h1Var = (com.google.android.gms.common.api.internal.h1) this.b;
-                h1Var.o.lock();
+                com.google.android.gms.common.api.internal.g1 g1Var = (com.google.android.gms.common.api.internal.g1) this.b;
+                g1Var.o.lock();
                 try {
-                    h1Var.j();
+                    g1Var.j();
                     return;
                 } finally {
-                    h1Var.o.unlock();
+                    g1Var.o.unlock();
                 }
             case 23:
                 f5.t tVar3 = (f5.t) this.b;
                 f5.b bVar3 = tVar3.e;
                 bVar3.k(0);
-                f5.f fVar2 = f5.z.i;
-                bVar3.j(24, tVar3.d, fVar2);
-                tVar3.c(fVar2);
+                f5.f fVar = f5.z.i;
+                bVar3.j(24, tVar3.d, fVar);
+                tVar3.c(fVar);
                 return;
             case 24:
                 fi.z3 z3Var = (fi.z3) this.b;
@@ -544,19 +559,62 @@ public final /* synthetic */ class sa implements Runnable {
                 o7Var.invalidate();
                 return;
             case 27:
-                tg.j jVar = ((hi.u9) this.b).t0;
-                if (jVar instanceof tg.n2) {
-                    ((tg.n2) jVar).getEditText();
+                hi.a0 a0Var3 = (hi.a0) this.b;
+                tg.d dVar2 = a0Var3.f;
+                if (dVar2 == null || a0Var3.e == null) {
+                    return;
+                }
+                float[] fArr2 = a0Var3.h;
+                float[] fArr3 = a0Var3.g;
+                float width2 = dVar2.getWidth();
+                float height2 = dVar2.getHeight();
+                float f18 = Float.MAX_VALUE;
+                float f19 = -3.4028235E38f;
+                int i22 = 0;
+                while (i22 < 4) {
+                    int i23 = i14;
+                    a0Var3.d(dVar2, i22 % 2 == 0 ? 0.0f : width2, i22 < i14 ? 0.0f : height2);
+                    f18 = Math.min(f18, fArr3[1]);
+                    f19 = Math.max(f19, fArr3[1]);
+                    i22++;
+                    i14 = i23;
+                }
+                int i24 = i14;
+                float f20 = width2 / 2.0f;
+                float f21 = height2 / 2.0f;
+                float d10 = a0Var3.d(dVar2, f20, f21);
+                float f22 = fArr3[1];
+                float d11 = a0Var3.d(dVar2, width2, f21) - d10;
+                float f23 = fArr3[1] - f22;
+                if (width2 <= 0.0f) {
+                    i12 = i24;
+                    c10 = 0;
+                    hypot = 1.0f;
+                } else {
+                    i12 = i24;
+                    c10 = 0;
+                    hypot = ((float) Math.hypot(d11, f23)) / f20;
+                }
+                hi.a0.g(dVar2, fArr2);
+                a0Var3.e.d(d10, f22, f18, f19, (float) Math.toDegrees(Math.atan2(f23, d11)), hypot, dVar2.getEditText().getPaint(), dVar2.getEditText().getCurrentTextColor(), fArr2[c10], fArr2[1], fArr2[i12], dVar2.getEditText().getLayout() != null ? dVar2.getEditText().getLayout().getAlignment() : null);
+                if (dVar2.getParent() == null) {
+                    a0Var3.e.e(null, null);
+                } else {
+                    a0Var3.e.e(dVar2.x(-1), dVar2.x(1));
+                }
+                a0Var3.e.postOnAnimation(this);
+                return;
+            case 28:
+                tg.n nVar = ((hi.pa) this.b).t0;
+                if (nVar instanceof tg.q2) {
+                    ((tg.q2) nVar).getEditText();
                     return;
                 }
                 return;
-            case 28:
+            default:
                 i.e eVar2 = (i.e) this.b;
                 eVar2.a(true);
                 eVar2.invalidateSelf();
-                return;
-            default:
-                ((i6.h) this.b).g(false);
                 return;
         }
     }
@@ -566,9 +624,9 @@ public final /* synthetic */ class sa implements Runnable {
         this.b = obj;
     }
 
-    public sa(com.google.android.gms.common.api.internal.x0 x0Var) {
+    public sa(com.google.android.gms.common.api.internal.w0 w0Var) {
         this.a = 21;
-        Objects.requireNonNull(x0Var);
-        this.b = x0Var;
+        Objects.requireNonNull(w0Var);
+        this.b = w0Var;
     }
 }

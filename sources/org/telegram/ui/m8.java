@@ -1,8 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m8 implements Runnable {
+public final /* synthetic */ class m8 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ j9 b;
 
@@ -11,14 +14,27 @@ public final /* synthetic */ class m8 implements Runnable {
         this.b = j9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.m0(false);
-                break;
+                Long l10 = (Long) view.getTag();
+                j9 j9Var = this.b;
+                org.telegram.messenger.t3 i12 = j9Var.getMessagesController().i1(l10.longValue(), false, null);
+                TLRPC.Chat O0 = j9Var.getMessagesController().O0(l10);
+                j9Var.M = O0;
+                if (i12 == null) {
+                    j9Var.N = l10;
+                    j9Var.getMessagesController().b3(0, l10.longValue(), true);
+                    break;
+                } else {
+                    org.telegram.ui.Components.voip.c2.l(O0, null, false, null, j9Var.getParentActivity(), j9Var, j9Var.getAccountInstance());
+                    break;
+                }
             default:
-                this.b.h0();
+                j9 j9Var2 = this.b;
+                j9Var2.getClass();
+                j9.l0(j9Var2);
                 break;
         }
     }

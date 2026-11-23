@@ -1,134 +1,93 @@
 package bi;
 
 import android.content.Context;
-import android.text.SpannableString;
-import android.widget.LinearLayout;
-import c8.ma;
-import di.pb;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.y10;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.r80;
+import android.view.View;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.u10;
+import org.telegram.messenger.v10;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class l7 extends LinearLayout implements gs {
-    public final int a;
-    public final org.telegram.ui.Components.o6 b;
-    public final org.telegram.ui.Components.o6 c;
-    public final nq[] d;
-    public final nq[] e;
-    public SpannableString f;
-    public y10 h;
-    public long n;
+public final class l7 extends g51 {
+    public final /* synthetic */ int n3;
 
-    public l7(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.d = new nq[1];
-        this.e = new nq[1];
-        this.n = -1L;
-        this.a = i7;
-        setOrientation(1);
-        setGravity(21);
-        int L = org.telegram.messenger.g0.L(6.0f);
-        setPadding(org.telegram.messenger.g0.L(13.0f) + L, L, org.telegram.messenger.g0.L(14.0f) + L, L);
-        org.telegram.ui.Components.o6 a10 = a(context, h6Var);
-        this.b = a10;
-        addView(a10, ma.r(-2, 18, 5));
-        org.telegram.ui.Components.o6 a11 = a(context, h6Var);
-        this.c = a11;
-        addView(a11, ma.r(-2, 18, 5));
-        b(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l7(Context context, int i7, int i10, boolean z10, p10 p10Var, u10 u10Var, v10 v10Var, org.telegram.ui.ActionBar.i6 i6Var, int i11) {
+        super(context, i7, i10, z10, p10Var, u10Var, v10Var, i6Var);
+        this.n3 = i11;
     }
 
-    public static org.telegram.ui.Components.o6 a(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, false);
-        o6Var.n = true;
-        o6Var.setTypeface(org.telegram.messenger.g0.o());
-        o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        o6Var.setGravity(5);
-        org.telegram.ui.ActionBar.t6.Y(o6Var, org.telegram.ui.ActionBar.m6.G6, h6Var);
-        return o6Var;
+    @Override // org.telegram.ui.Components.ek0
+    public Integer V0(int i7) {
+        switch (this.n3) {
+            case 0:
+                break;
+            case 7:
+                n41 G = this.g3.G(i7);
+                if (G != null && G.d == 2) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+        }
+        return super.V0(i7);
     }
 
-    public final void b(boolean z10) {
-        int i7 = this.a;
-        di.y8 y10 = di.y8.y(i7, false);
-        di.y8 y11 = di.y8.y(i7, true);
-        long j3 = y10.p().amount;
-        cg.a s5 = y11.s();
-        if (ii.n.c(i7)) {
-            s5 = cg.a.j(Math.max(0L, org.telegram.ui.Wallet.u0.D(i7).A()) + s5.b, cg.b.b);
-        }
-        boolean z11 = y10.e;
-        org.telegram.ui.Components.o6 o6Var = this.b;
-        org.telegram.ui.Components.o6 o6Var2 = this.c;
-        if (!z11 || !y11.e) {
-            if (this.f == null) {
-                SpannableString spannableString = new SpannableString("x");
-                this.f = spannableString;
-                spannableString.setSpan(new r80(org.telegram.messenger.g0.L(48.0f), o6Var), 0, 1, 33);
-            }
-            o6Var.c(this.f, false, true);
-            o6Var2.setVisibility(8);
-            this.n = -1L;
-            return;
-        }
-        o6Var.c(pb.b1(false, i5.c.l(j3, ' ', new StringBuilder("⭐️")), 0.7f, this.d), z10, true);
-        if (s5.l()) {
-            o6Var2.setVisibility(8);
-        } else {
-            o6Var2.setVisibility(0);
-            String str = "⭐️" + s5.o(2).d();
-            nq[] nqVarArr = this.e;
-            o6Var2.c(pb.b1(true, str, 0.7f, nqVarArr), z10, true);
-            nq nqVar = nqVarArr[0];
-            if (nqVar != null) {
-                nqVar.a(org.telegram.ui.ActionBar.m6.Zl);
-            }
-        }
-        this.n = j3;
-    }
-
-    @Override // org.telegram.messenger.gs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.A3 || i7 == ls.d4) {
-            b(true);
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.n3) {
+            case 1:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 2:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 3:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 4:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 5:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 6:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        b(false);
-        int i7 = this.a;
-        ls.f(i7).b(this, ls.A3);
-        ls.f(i7).b(this, ls.d4);
-        if (ii.n.c(i7) && org.telegram.ui.Wallet.u0.D(i7).y() == null) {
-            org.telegram.ui.Wallet.u0.D(i7).K();
+    @Override // org.telegram.ui.Components.ek0
+    public boolean u1(View view) {
+        switch (this.n3) {
+            case 8:
+                if (view instanceof org.telegram.ui.Wallet.g4) {
+                    org.telegram.ui.Wallet.g4 g4Var = (org.telegram.ui.Wallet.g4) view;
+                    if (g4Var.G > 0.0f || g4Var.J.d()) {
+                        return false;
+                    }
+                }
+                return true;
+            default:
+                return super.u1(view);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i7 = this.a;
-        ls.f(i7).n(this, ls.A3);
-        ls.f(i7).n(this, ls.d4);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l7(Context context, int i7, int i10, boolean z10, p10 p10Var, u10 u10Var, v10 v10Var, org.telegram.ui.ActionBar.i6 i6Var, int i11, int i12) {
+        super(context, i7, i10, z10, p10Var, u10Var, v10Var, i6Var, i11, i12);
+        this.n3 = 8;
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
-        y10 y10Var = this.h;
-        if (y10Var == null || i7 == i11) {
-            return;
-        }
-        y10Var.a(Integer.valueOf(i7));
-    }
-
-    public void setOnWidthChanged(y10 y10Var) {
-        this.h = y10Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l7(org.telegram.ui.ActionBar.g2 g2Var, p10 p10Var, u10 u10Var, v10 v10Var, int i7) {
+        super(g2Var, p10Var, u10Var, v10Var);
+        this.n3 = i7;
     }
 }

@@ -21,7 +21,7 @@ import java.lang.reflect.Modifier;
 import java.util.Set;
 import z1.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean U = false;
@@ -49,11 +49,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i B = i.B(this);
+                i F = i.F(this);
                 GoogleSignInOptions googleSignInOptions = this.Q.b;
-                synchronized (B) {
-                    synchronized (B) {
-                        ((b) B.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (F) {
+                    synchronized (F) {
+                        ((b) F.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -177,7 +177,7 @@ public class SignInHubActivity extends v {
 
     public final void u() {
         z1.b bVar = (z1.b) new a0(g(), z1.b.f).j(z1.b.class);
-        c cVar = new c(this, 15);
+        c cVar = new c(this, 16);
         boolean z10 = bVar.e;
         m mVar = bVar.d;
         if (z10) {

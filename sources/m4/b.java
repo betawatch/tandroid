@@ -1,11 +1,11 @@
 package m4;
 
-import a8.la;
+import a8.ma;
 import e2.s0;
-import f3.i0;
+import f3.j0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public i0 h;
+    public j0 h;
     public int i;
     public int j;
     public boolean k;
@@ -355,7 +355,7 @@ public final class b implements i {
                         int i34 = this.j + min2;
                         this.j = i34;
                         if (i34 == this.n) {
-                            la.p(this.o != -9223372036854775807L);
+                            ma.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -422,7 +422,7 @@ public final class b implements i {
                         int i38 = this.j + min4;
                         this.j = i38;
                         if (i38 == this.n) {
-                            la.p(this.o != -9223372036854775807L);
+                            ma.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;

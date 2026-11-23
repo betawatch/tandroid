@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class pn extends oq0 {
     public final /* synthetic */ rn a;
@@ -25,7 +25,7 @@ public final class pn extends oq0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         TLRPC.FileLocation fileLocation2;
         rn rnVar = this.a;
         long j3 = rnVar.C0;
@@ -56,7 +56,7 @@ public final class pn extends oq0 {
                     wq0Var.f = j3;
                     wq0Var.e = imageReceiver.p();
                     wq0Var.g = -1L;
-                    wq0Var.h = rnVar.e.getImageReceiver().E();
+                    wq0Var.h = rnVar.e.getImageReceiver().F();
                     wq0Var.k = rnVar.d.getScaleX();
                     wq0Var.p = true;
                 }
@@ -84,7 +84,7 @@ public final class pn extends oq0 {
                     wq0Var.f = j3;
                     wq0Var.e = imageReceiver2.p();
                     wq0Var.g = -1L;
-                    wq0Var.h = rnVar.e.getImageReceiver().E();
+                    wq0Var.h = rnVar.e.getImageReceiver().F();
                     wq0Var.k = rnVar.d.getScaleX();
                     wq0Var.p = true;
                 }
@@ -95,7 +95,7 @@ public final class pn extends oq0 {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final void G() {
-        this.a.e.getImageReceiver().O0(true, true);
+        this.a.e.getImageReceiver().P0(true, true);
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0

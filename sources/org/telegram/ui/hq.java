@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements q0.a {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final /* synthetic */ class hq implements q0.a {
             case 1:
                 View view = (View) obj;
                 boolean z10 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof org.telegram.ui.Cells.s5) {
-                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    s5Var.c(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().M, Float.valueOf(250.0f));
-                    s5Var.setHighQuality(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().c());
-                    s5Var.f(s5Var.getPhotoEntry() != null ? s5Var.getPhotoEntry().N : 0L, ChatAttachAlertPhotoLayout.t1.size() > 1);
+                if (view instanceof org.telegram.ui.Cells.r5) {
+                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+                    r5Var.c(r5Var.getPhotoEntry() != null && r5Var.getPhotoEntry().M, Float.valueOf(250.0f));
+                    r5Var.setHighQuality(r5Var.getPhotoEntry() != null && r5Var.getPhotoEntry().c());
+                    r5Var.f(r5Var.getPhotoEntry() != null ? r5Var.getPhotoEntry().N : 0L, ChatAttachAlertPhotoLayout.t1.size() > 1);
                     break;
                 }
                 break;

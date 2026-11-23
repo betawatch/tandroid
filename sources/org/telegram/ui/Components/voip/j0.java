@@ -3,48 +3,72 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ z b;
+    public final /* synthetic */ l0 c;
 
-    public /* synthetic */ j0(k0 k0Var, int i7) {
+    public /* synthetic */ j0(l0 l0Var, z zVar, int i7) {
         this.a = i7;
-        this.b = k0Var;
+        this.c = l0Var;
+        this.b = zVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                k0 k0Var = this.b;
-                k0Var.O0 = null;
-                k0Var.E.F = false;
-                y yVar = k0Var.F;
-                if (yVar != null) {
-                    if (yVar.getParent() != null) {
-                        k0Var.removeView(k0Var.F);
-                        k0Var.F.e();
+                l0 l0Var = this.c;
+                l0Var.O0 = null;
+                this.b.F = false;
+                z zVar = l0Var.F;
+                if (zVar != null) {
+                    if (zVar.getParent() != null) {
+                        l0Var.removeView(l0Var.F);
+                        l0Var.F.e();
                     }
-                    k0Var.F = null;
+                    l0Var.F = null;
                     break;
                 }
                 break;
             case 1:
-                super.onAnimationEnd(animator);
-                k0 k0Var2 = this.b;
-                k0Var2.K0 = null;
-                k0Var2.J0 = 0.0f;
-                k0Var2.invalidate();
+                l0 l0Var2 = this.c;
+                l0Var2.y.e();
+                l0Var2.r = null;
+                this.b.r = false;
+                if (!l0Var2.b) {
+                    l0Var2.d();
+                    l0Var2.E = null;
+                    l0Var2.d = 0L;
+                }
+                l0Var2.c = l0Var2.b ? 1.0f : 0.0f;
+                l0Var2.l();
+                l0Var2.i(false);
+                if (!l0Var2.b) {
+                    l0Var2.l0.setVisibility(8);
+                    l0Var2.m0.setVisibility(8);
+                    l0Var2.f0.setVisibility(8);
+                    l0Var2.g0.setVisibility(8);
+                    break;
+                }
+                break;
+            case 2:
+                z zVar2 = this.b;
+                if (zVar2.getParent() != null) {
+                    this.c.removeView(zVar2);
+                    zVar2.e();
+                    break;
+                }
                 break;
             default:
-                k0 k0Var3 = this.b;
-                k0Var3.C0 = null;
-                k0Var3.z0 = 1.0f;
-                k0Var3.s0 = 0.0f;
-                k0Var3.t0 = 0.0f;
-                k0Var3.invalidate();
+                z zVar3 = this.b;
+                if (zVar3.getParent() != null) {
+                    this.c.removeView(zVar3);
+                    zVar3.e();
+                    break;
+                }
                 break;
         }
     }

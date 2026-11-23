@@ -1,6 +1,6 @@
 package q2;
 
-import a8.la;
+import a8.ma;
 import android.media.MediaCrypto;
 import android.media.MediaCryptoException;
 import android.media.MediaDrm;
@@ -20,10 +20,10 @@ import java.util.UUID;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.ActionBar.i5;
 import p4.r0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t implements q {
     public static final r0 d = new r0(23);
@@ -34,7 +34,7 @@ public final class t implements q {
     public t(UUID uuid) {
         uuid.getClass();
         UUID uuid2 = e2.l.c;
-        la.e("Use C.CLEARKEY_UUID instead", !uuid2.equals(uuid));
+        ma.e("Use C.CLEARKEY_UUID instead", !uuid2.equals(uuid));
         this.a = uuid;
         MediaDrm mediaDrm = new MediaDrm((Build.VERSION.SDK_INT >= 27 || !uuid.equals(e2.l.d)) ? uuid : uuid2);
         this.b = mediaDrm;
@@ -45,41 +45,7 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final byte[] A(byte[] bArr, byte[] bArr2) {
-        if (e2.l.d.equals(this.a) && Build.VERSION.SDK_INT < 27) {
-            try {
-                JSONObject jSONObject = new JSONObject(l0.r(bArr2));
-                StringBuilder sb2 = new StringBuilder("{\"keys\":[");
-                JSONArray jSONArray = jSONObject.getJSONArray("keys");
-                for (int i7 = 0; i7 < jSONArray.length(); i7++) {
-                    if (i7 != 0) {
-                        sb2.append(",");
-                    }
-                    JSONObject jSONObject2 = jSONArray.getJSONObject(i7);
-                    sb2.append("{\"k\":\"");
-                    sb2.append(jSONObject2.getString("k").replace('-', '+').replace('_', '/'));
-                    sb2.append("\",\"kid\":\"");
-                    sb2.append(jSONObject2.getString("kid").replace('-', '+').replace('_', '/'));
-                    sb2.append("\",\"kty\":\"");
-                    sb2.append(jSONObject2.getString("kty"));
-                    sb2.append("\"}");
-                }
-                sb2.append("]}");
-                bArr2 = sb2.toString().getBytes(StandardCharsets.UTF_8);
-            } catch (JSONException e10) {
-                h2.a.d("ClearKeyUtil", "Failed to adjust response data: ".concat(l0.r(bArr2)), e10);
-            }
-        }
-        return this.b.provideKeyResponse(bArr, bArr2);
-    }
-
-    @Override // q2.q
-    public final void C(byte[] bArr) {
-        this.b.provideProvisionResponse(bArr);
-    }
-
-    @Override // q2.q
-    public final void F(byte[] bArr, m2.i iVar) {
+    public final void B(byte[] bArr, m2.i iVar) {
         if (Build.VERSION.SDK_INT >= 31) {
             try {
                 o0.h(this.b, bArr, iVar);
@@ -106,7 +72,7 @@ public final class t implements q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final o G(byte[] bArr, List list, int i7, HashMap hashMap) {
+    public final o E(byte[] bArr, List list, int i7, HashMap hashMap) {
         byte[] bArr2;
         String str;
         String str2;
@@ -254,12 +220,12 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final int H() {
+    public final int G() {
         return 2;
     }
 
     @Override // q2.q
-    public final boolean O(String str, byte[] bArr) {
+    public final boolean N(String str, byte[] bArr) {
         MediaCrypto mediaCrypto;
         boolean equals;
         int i7 = Build.VERSION.SDK_INT;
@@ -308,39 +274,39 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void a(final c5 c5Var) {
-        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: q2.s
-            @Override // android.media.MediaDrm.OnEventListener
-            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i7, int i10, byte[] bArr2) {
-                t tVar = t.this;
-                c5 c5Var2 = c5Var;
-                tVar.getClass();
-                android.support.v4.media.session.q qVar = ((e) c5Var2.a).N;
-                qVar.getClass();
-                qVar.obtainMessage(i7, bArr).sendToTarget();
-            }
-        });
-    }
-
-    @Override // q2.q
-    public final Map d(byte[] bArr) {
+    public final Map a(byte[] bArr) {
         return this.b.queryKeyStatus(bArr);
     }
 
     @Override // q2.q
-    public final p n() {
+    public final p g() {
         MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
         return new p(provisionRequest.getDefaultUrl(), provisionRequest.getData());
     }
 
     @Override // q2.q
-    public final k2.b r(byte[] bArr) {
+    public final k2.b j(byte[] bArr) {
         int i7 = Build.VERSION.SDK_INT;
         UUID uuid = this.a;
         if (i7 < 27 && Objects.equals(uuid, e2.l.d)) {
             uuid = e2.l.c;
         }
         return new r(uuid, bArr);
+    }
+
+    @Override // q2.q
+    public final byte[] l() {
+        return this.b.openSession();
+    }
+
+    @Override // q2.q
+    public final void n(byte[] bArr, byte[] bArr2) {
+        this.b.restoreKeys(bArr, bArr2);
+    }
+
+    @Override // q2.q
+    public final void r(byte[] bArr) {
+        this.b.closeSession(bArr);
     }
 
     @Override // q2.q
@@ -353,17 +319,51 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final byte[] t() {
-        return this.b.openSession();
+    public final byte[] u(byte[] bArr, byte[] bArr2) {
+        if (e2.l.d.equals(this.a) && Build.VERSION.SDK_INT < 27) {
+            try {
+                JSONObject jSONObject = new JSONObject(l0.r(bArr2));
+                StringBuilder sb2 = new StringBuilder("{\"keys\":[");
+                JSONArray jSONArray = jSONObject.getJSONArray("keys");
+                for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+                    if (i7 != 0) {
+                        sb2.append(",");
+                    }
+                    JSONObject jSONObject2 = jSONArray.getJSONObject(i7);
+                    sb2.append("{\"k\":\"");
+                    sb2.append(jSONObject2.getString("k").replace('-', '+').replace('_', '/'));
+                    sb2.append("\",\"kid\":\"");
+                    sb2.append(jSONObject2.getString("kid").replace('-', '+').replace('_', '/'));
+                    sb2.append("\",\"kty\":\"");
+                    sb2.append(jSONObject2.getString("kty"));
+                    sb2.append("\"}");
+                }
+                sb2.append("]}");
+                bArr2 = sb2.toString().getBytes(StandardCharsets.UTF_8);
+            } catch (JSONException e10) {
+                h2.a.d("ClearKeyUtil", "Failed to adjust response data: ".concat(l0.r(bArr2)), e10);
+            }
+        }
+        return this.b.provideKeyResponse(bArr, bArr2);
     }
 
     @Override // q2.q
-    public final void u(byte[] bArr, byte[] bArr2) {
-        this.b.restoreKeys(bArr, bArr2);
+    public final void v(final i5 i5Var) {
+        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: q2.s
+            @Override // android.media.MediaDrm.OnEventListener
+            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i7, int i10, byte[] bArr2) {
+                t tVar = t.this;
+                i5 i5Var2 = i5Var;
+                tVar.getClass();
+                android.support.v4.media.session.q qVar = ((e) i5Var2.a).N;
+                qVar.getClass();
+                qVar.obtainMessage(i7, bArr).sendToTarget();
+            }
+        });
     }
 
     @Override // q2.q
-    public final void x(byte[] bArr) {
-        this.b.closeSession(bArr);
+    public final void w(byte[] bArr) {
+        this.b.provideProvisionResponse(bArr);
     }
 }

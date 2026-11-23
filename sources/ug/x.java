@@ -11,13 +11,13 @@ import com.google.firebase.concurrent.ExecutorsRegistrar;
 import com.google.firebase.installations.FirebaseInstallationsRegistrar;
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.mb0;
+import org.telegram.ui.Components.ut0;
 import org.telegram.ui.Components.vt0;
-import org.telegram.ui.Components.wt0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5.e, u9.d, ua.a, OnFailureListener, j2.g, pb0, vt0, wt0, g9.k {
+public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5.e, u9.d, ua.a, OnFailureListener, j2.g, mb0, ut0, vt0, g9.k {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x(int i7) {
@@ -37,7 +37,7 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5
                         a10.d = y5.a.b(rawQuery.getInt(2));
                         String string = rawQuery.getString(3);
                         a10.c = string == null ? null : Base64.decode(string, 0);
-                        arrayList.add(a10.j());
+                        arrayList.add(a10.u());
                     }
                     return arrayList;
                 } finally {
@@ -59,8 +59,32 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5
         throw new ClassCastException();
     }
 
-    @Override // org.telegram.ui.Components.wt0
-    public void c(Object obj, float f10) {
+    @Override // u9.d
+    public Object c(r7 r7Var) {
+        va.d lambda$getComponents$0;
+        switch (this.a) {
+            case 8:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 9:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 10:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            case 11:
+                u9.m mVar = ExecutorsRegistrar.a;
+                return v9.k.a;
+            default:
+                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(r7Var);
+                return lambda$getComponents$0;
+        }
+    }
+
+    @Override // j2.g
+    public j2.h createDataSource() {
+        return new j2.b(org.telegram.messenger.t0.b);
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public void d(Object obj, float f10) {
         wi.h hVar = (wi.h) obj;
         switch (this.a) {
             case 23:
@@ -78,31 +102,17 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5
         }
     }
 
-    @Override // j2.g
-    public j2.h createDataSource() {
-        return new j2.b(org.telegram.messenger.t0.b);
-    }
-
-    @Override // u9.d
-    public Object e(r7 r7Var) {
-        va.d lambda$getComponents$0;
+    @Override // org.telegram.ui.Components.mb0
+    public String e(int i7) {
         switch (this.a) {
-            case 8:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            case 9:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 10:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
-            case 11:
-                u9.m mVar = ExecutorsRegistrar.a;
-                return v9.j.a;
+            case 18:
+                return String.valueOf(i7);
             default:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(r7Var);
-                return lambda$getComponents$0;
+                return String.format("%02d", Integer.valueOf(i7 * 5));
         }
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.ut0
     public float get(Object obj) {
         wi.h hVar = (wi.h) obj;
         switch (this.a) {
@@ -114,7 +124,7 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 t1Var.dismiss();
@@ -130,16 +140,6 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5
             default:
                 t1Var.dismiss();
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public String i(int i7) {
-        switch (this.a) {
-            case 18:
-                return String.valueOf(i7);
-            default:
-                return String.format("%02d", Integer.valueOf(i7 * 5));
         }
     }
 

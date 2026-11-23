@@ -1,41 +1,74 @@
 package t1;
 
-import android.graphics.Rect;
-import android.text.method.TransformationMethod;
-import android.view.View;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import androidx.emoji2.text.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class j implements TransformationMethod {
-    public final TransformationMethod a;
+public final class j implements TextWatcher {
+    public final EditText a;
+    public i b;
+    public boolean c = true;
 
-    public j(TransformationMethod transformationMethod) {
-        this.a = transformationMethod;
+    public j(EditText editText) {
+        this.a = editText;
     }
 
-    @Override // android.text.method.TransformationMethod
-    public final CharSequence getTransformation(CharSequence charSequence, View view) {
-        if (view.isInEditMode()) {
-            return charSequence;
+    public static void a(EditText editText, int i7) {
+        int length;
+        if (i7 == 1 && editText != null && editText.isAttachedToWindow()) {
+            Editable editableText = editText.getEditableText();
+            int selectionStart = Selection.getSelectionStart(editableText);
+            int selectionEnd = Selection.getSelectionEnd(editableText);
+            l a10 = l.a();
+            if (editableText == null) {
+                length = 0;
+            } else {
+                a10.getClass();
+                length = editableText.length();
+            }
+            a10.e(0, length, editableText);
+            if (selectionStart >= 0 && selectionEnd >= 0) {
+                Selection.setSelection(editableText, selectionStart, selectionEnd);
+            } else if (selectionStart >= 0) {
+                Selection.setSelection(editableText, selectionStart);
+            } else if (selectionEnd >= 0) {
+                Selection.setSelection(editableText, selectionEnd);
+            }
         }
-        TransformationMethod transformationMethod = this.a;
-        if (transformationMethod != null) {
-            charSequence = transformationMethod.getTransformation(charSequence, view);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        EditText editText = this.a;
+        if (editText.isInEditMode() || !this.c || l.j == null || i10 > i11 || !(charSequence instanceof Spannable)) {
+            return;
         }
-        if (charSequence == null || l.a().b() != 1) {
-            return charSequence;
+        int b10 = l.a().b();
+        if (b10 != 0) {
+            if (b10 == 1) {
+                l.a().e(i7, i11 + i7, (Spannable) charSequence);
+                return;
+            } else if (b10 != 3) {
+                return;
+            }
         }
         l a10 = l.a();
-        a10.getClass();
-        return a10.e(0, charSequence.length(), charSequence);
+        if (this.b == null) {
+            this.b = new i(editText);
+        }
+        a10.f(this.b);
     }
 
-    @Override // android.text.method.TransformationMethod
-    public final void onFocusChanged(View view, CharSequence charSequence, boolean z10, int i7, Rect rect) {
-        TransformationMethod transformationMethod = this.a;
-        if (transformationMethod != null) {
-            transformationMethod.onFocusChanged(view, charSequence, z10, i7, rect);
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

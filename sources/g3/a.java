@@ -5,18 +5,19 @@ import b3.j;
 import e2.s0;
 import e2.t;
 import e2.t0;
-import f3.b0;
-import f3.i0;
+import f3.c0;
+import f3.j0;
 import f3.k;
 import f3.n;
 import f3.o;
 import f3.p;
 import f3.q;
 import f3.s;
-import f3.y;
+import f3.z;
 import h2.l0;
 import h9.g0;
-import h9.t1;
+import h9.i0;
+import h9.s1;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -24,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import p5.c;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -41,9 +42,9 @@ public final class a implements o {
     public int j;
     public long k;
     public q l;
-    public i0 m;
-    public i0 n;
-    public b0 o;
+    public j0 m;
+    public j0 n;
+    public c0 o;
     public boolean p;
     public long q;
     public boolean r;
@@ -72,10 +73,10 @@ public final class a implements o {
     @Override // f3.o
     public final void c(q qVar) {
         this.l = qVar;
-        i0 d2 = qVar.d2(0, 1);
+        j0 d2 = qVar.d2(0, 1);
         this.m = d2;
         this.n = d2;
-        qVar.d1();
+        qVar.Z0();
     }
 
     @Override // f3.o
@@ -84,19 +85,19 @@ public final class a implements o {
         this.f = 0;
         this.g = 0;
         this.q = j10;
-        b0 b0Var = this.o;
-        if (!(b0Var instanceof y)) {
-            if (j3 == 0 || !(b0Var instanceof k)) {
+        c0 c0Var = this.o;
+        if (!(c0Var instanceof z)) {
+            if (j3 == 0 || !(c0Var instanceof k)) {
                 this.k = 0L;
                 return;
             } else {
-                this.k = (Math.max(0L, j3 - ((k) b0Var).b) * 8000000) / r7.e;
+                this.k = (Math.max(0L, j3 - ((k) c0Var).b) * 8000000) / r7.e;
                 return;
             }
         }
-        y yVar = (y) b0Var;
-        j jVar = yVar.b;
-        long m10 = jVar.b == 0 ? -9223372036854775807L : jVar.m(l0.c(yVar.a, j3));
+        z zVar = (z) c0Var;
+        j jVar = zVar.b;
+        long m10 = jVar.b == 0 ? -9223372036854775807L : jVar.m(l0.c(zVar.a, j3));
         this.k = m10;
         if (Math.abs(this.q - m10) < 20000) {
             return;
@@ -107,8 +108,8 @@ public final class a implements o {
 
     @Override // f3.o
     public final List e() {
-        g0 g0Var = h9.i0.b;
-        return t1.e;
+        g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
@@ -132,14 +133,14 @@ public final class a implements o {
             String str3 = z10 ? "audio/amr-wb" : "audio/3gpp";
             int i10 = z10 ? b.AUDIO_CONTENT_SAMPLING_RATE : 8000;
             int i11 = z10 ? t[8] : s[7];
-            i0 i0Var = this.m;
+            j0 j0Var = this.m;
             t tVar = new t();
             tVar.q = s0.n(str2);
             tVar.r = s0.n(str3);
             tVar.s = i11;
             tVar.J = 1;
             tVar.K = i10;
-            c.r(tVar, i0Var);
+            c.r(tVar, j0Var);
         }
         int i12 = 0;
         if (this.g == 0) {
@@ -154,16 +155,16 @@ public final class a implements o {
                 if (this.i == this.f) {
                     this.j++;
                 }
-                b0 b0Var = this.o;
-                if (b0Var instanceof y) {
-                    y yVar = (y) b0Var;
+                c0 c0Var = this.o;
+                if (c0Var instanceof z) {
+                    z zVar = (z) c0Var;
                     long j3 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    j jVar = yVar.b;
+                    j jVar = zVar.b;
                     int i13 = jVar.b;
                     if (i13 == 0 || j3 - jVar.m(i13 - 1) >= 100000) {
-                        j jVar2 = yVar.a;
-                        j jVar3 = yVar.b;
+                        j jVar2 = zVar.a;
+                        j jVar3 = zVar.b;
                         if (jVar3.b == 0 && j3 > 0) {
                             jVar2.c(0L);
                             jVar3.c(0L);
@@ -198,17 +199,17 @@ public final class a implements o {
                     this.o = kVar;
                     this.m.d(kVar.f);
                 }
-                b0 b0Var2 = this.o;
-                if (b0Var2 != null) {
-                    this.l.j(b0Var2);
+                c0 c0Var2 = this.o;
+                if (c0Var2 != null) {
+                    this.l.h(c0Var2);
                 }
             }
             if (i12 == -1) {
-                b0 b0Var3 = this.o;
-                if (b0Var3 instanceof y) {
+                c0 c0Var3 = this.o;
+                if (c0Var3 instanceof z) {
                     long j10 = this.k + this.e;
-                    ((y) b0Var3).c = j10;
-                    this.l.j(b0Var3);
+                    ((z) c0Var3).c = j10;
+                    this.l.h(c0Var3);
                     this.m.d(j10);
                 }
             }
@@ -225,7 +226,7 @@ public final class a implements o {
 
     public final int g(p pVar) {
         boolean z10;
-        pVar.n();
+        pVar.o();
         byte[] bArr = this.a;
         pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
@@ -244,16 +245,16 @@ public final class a implements o {
     }
 
     public final boolean h(p pVar) {
-        pVar.n();
+        pVar.o();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
         pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.r(bArr.length);
+            pVar.q(bArr.length);
             return true;
         }
-        pVar.n();
+        pVar.o();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
         pVar.b(0, bArr3.length, bArr4);
@@ -261,7 +262,7 @@ public final class a implements o {
             return false;
         }
         this.d = true;
-        pVar.r(bArr3.length);
+        pVar.q(bArr3.length);
         return true;
     }
 

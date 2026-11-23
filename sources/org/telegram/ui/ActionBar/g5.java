@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class g5 extends q0 {
     public final f5 A0;
@@ -12,8 +12,8 @@ public final class g5 extends q0 {
     public boolean D0;
     public boolean E0;
 
-    public g5(Context context, f5 f5Var, int i7, int i10, boolean z10, h6 h6Var) {
-        super(context, null, i7, i10, z10, h6Var);
+    public g5(Context context, f5 f5Var, int i7, int i10, boolean z10, i6 i6Var) {
+        super(context, null, i7, i10, z10, i6Var);
         this.D0 = true;
         this.E0 = true;
         this.A0 = f5Var;
@@ -123,7 +123,7 @@ public final class g5 extends q0 {
     }
 
     @Override // org.telegram.ui.ActionBar.q0
-    public j5 getSubMenuOverlay() {
+    public k5 getSubMenuOverlay() {
         return this.A0.a.getMenuOverlay();
     }
 

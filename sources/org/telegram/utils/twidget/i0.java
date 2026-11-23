@@ -1,10 +1,10 @@
 package org.telegram.utils.twidget;
 
-import org.telegram.ui.Wallet.x2;
+import org.telegram.ui.Wallet.y2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class i0 implements x2 {
+public final class i0 implements y2 {
     public final /* synthetic */ k0 a;
     public final /* synthetic */ d1 b;
     public final /* synthetic */ long c;
@@ -17,12 +17,12 @@ public final class i0 implements x2 {
         this.d = bArr;
     }
 
-    @Override // org.telegram.ui.Wallet.x2
+    @Override // org.telegram.ui.Wallet.y2
     public final void a() {
         this.b.b(5, null, this.c);
     }
 
-    @Override // org.telegram.ui.Wallet.x2
+    @Override // org.telegram.ui.Wallet.y2
     public final void b() {
         this.b.b(3, null, this.c);
     }

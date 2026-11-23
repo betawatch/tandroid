@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.gu0 {
+public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.fu0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ nq b;
 
@@ -12,13 +12,13 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.t
     }
 
     @Override // org.telegram.ui.Cells.a5
-    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
         rq rqVar = this.b.d;
         return rqVar.m0(rqVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
     }
 
-    @Override // org.telegram.ui.Components.gu0
-    public void k(int i7) {
+    @Override // org.telegram.ui.Components.fu0
+    public void n(int i7) {
         switch (this.a) {
             case 1:
                 rq rqVar = this.b.d;
@@ -41,7 +41,7 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.t
         }
     }
 
-    @Override // org.telegram.ui.Components.gu0
+    @Override // org.telegram.ui.Components.fu0
     public /* synthetic */ void o() {
         int i7 = this.a;
     }
@@ -49,6 +49,6 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.t
     private final /* synthetic */ void a() {
     }
 
-    private final /* synthetic */ void c() {
+    private final /* synthetic */ void b() {
     }
 }

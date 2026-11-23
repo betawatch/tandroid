@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements na.d {
     public static final h a = new h();
@@ -14,14 +14,14 @@ public final class h implements na.d {
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {
-        v0 v0Var = (v0) obj;
+        w0 w0Var = (w0) obj;
         na.e eVar = (na.e) obj2;
-        eVar.a(b, v0Var.a);
-        eVar.a(c, v0Var.b);
-        eVar.d(d, v0Var.c);
-        eVar.e(e, v0Var.d);
-        eVar.a(f, v0Var.e);
-        eVar.a(g, v0Var.f);
-        eVar.a(h, v0Var.g);
+        eVar.a(b, w0Var.a);
+        eVar.a(c, w0Var.b);
+        eVar.d(d, w0Var.c);
+        eVar.e(e, w0Var.d);
+        eVar.a(f, w0Var.e);
+        eVar.a(g, w0Var.f);
+        eVar.a(h, w0Var.g);
     }
 }

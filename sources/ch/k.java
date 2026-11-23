@@ -6,43 +6,44 @@ import android.os.SystemClock;
 import di.f6;
 import di.h1;
 import di.h4;
-import hi.k5;
-import hi.q3;
-import hi.u9;
-import hi.v6;
-import hi.z2;
+import hi.f7;
+import hi.i3;
+import hi.pa;
+import hi.v5;
+import hi.z3;
 import ki.k2;
-import ki.q2;
-import ki.s2;
+import ki.r2;
+import ki.t2;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.s3;
-import org.telegram.ui.Components.ax0;
-import org.telegram.ui.Components.c50;
-import org.telegram.ui.Components.f30;
-import org.telegram.ui.Components.fq0;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.i00;
-import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.ov;
+import org.telegram.ui.Components.c30;
+import org.telegram.ui.Components.eq0;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.g00;
+import org.telegram.ui.Components.ip;
+import org.telegram.ui.Components.jp;
+import org.telegram.ui.Components.kp;
+import org.telegram.ui.Components.lv;
+import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.u40;
+import org.telegram.ui.Components.z40;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ml;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +58,7 @@ public final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        l6 K0;
+        m6 K0;
         int i7 = this.a;
         char c10 = 1;
         char c11 = 1;
@@ -85,7 +86,7 @@ public final /* synthetic */ class k implements Runnable {
             case 2:
                 f6 f6Var = (f6) obj;
                 f6Var.getClass();
-                f6Var.C2(f6Var.i3, org.telegram.messenger.g0.W2(hd.a0(null, null, z10 ? 2131750407 : 2131750404, f6Var.E1())), true);
+                f6Var.C2(f6Var.i3, org.telegram.messenger.g0.W2(gd.a0(null, null, z10 ? 2131750407 : 2131750404, f6Var.E1())), true);
                 break;
             case 3:
                 f6 f6Var2 = ((h4) obj).W;
@@ -101,88 +102,88 @@ public final /* synthetic */ class k implements Runnable {
                     }
                 }
                 f6Var2.Q2 = -1;
-                gc gcVar = gc.w;
-                if (gcVar != null) {
-                    gcVar.c(0L, false);
+                fc fcVar = fc.w;
+                if (fcVar != null) {
+                    fcVar.c(0L, false);
                     break;
                 }
                 break;
             case 4:
                 gi.m mVar = (gi.m) obj;
-                fq0 fq0Var = mVar.a0;
+                eq0 eq0Var = mVar.a0;
                 if (z10) {
-                    new gi.p(fq0Var.a, hd.N0(2131746497, null), new ai.h0(fq0Var, 20)).show();
+                    new gi.p(eq0Var.a, gd.N0(2131746497, null), new ai.d0(eq0Var, 20)).show();
                     break;
                 } else {
-                    fq0Var.b(mVar.a.E);
+                    eq0Var.b(mVar.a.E);
                     break;
                 }
             case 5:
-                z2 z2Var = (z2) obj;
+                i3 i3Var = (i3) obj;
                 if (z10) {
-                    z2Var.getClass();
+                    i3Var.getClass();
                     break;
                 } else {
-                    z2Var.J.setVisibility(8);
+                    i3Var.J.setVisibility(8);
                     break;
                 }
             case 6:
-                ((q3) obj).b.setVisibility(z10 ? 0 : 8);
+                ((z3) obj).b.setVisibility(z10 ? 0 : 8);
                 break;
             case 7:
-                k5 k5Var = (k5) obj;
+                v5 v5Var = (v5) obj;
                 if (z10) {
-                    k5Var.getClass();
+                    v5Var.getClass();
                     break;
                 } else {
-                    k5Var.H0.setVisibility(8);
+                    v5Var.H0.setVisibility(8);
                     break;
                 }
             case 8:
-                v6 v6Var = (v6) obj;
+                f7 f7Var = (f7) obj;
                 if (z10) {
-                    v6Var.getClass();
+                    f7Var.getClass();
                     break;
                 } else {
-                    v6Var.setVisibility(8);
+                    f7Var.setVisibility(8);
                     break;
                 }
             case 9:
-                u9 u9Var = (u9) obj;
+                pa paVar = (pa) obj;
                 if (z10) {
-                    u9Var.getClass();
+                    paVar.getClass();
                     break;
                 } else {
-                    u9Var.k2.k1.setVisibility(8);
+                    paVar.o2.k1.setVisibility(8);
                     break;
                 }
             case 10:
-                s2 s2Var = (s2) obj;
-                q2 q2Var = s2Var.F;
-                k2 k2Var = s2Var.E;
+                t2 t2Var = (t2) obj;
+                r2 r2Var = t2Var.F;
+                k2 k2Var = t2Var.E;
                 if (k2Var.getWebView() != null) {
                     k2Var.getWebView().animate().cancel();
                     k2Var.getWebView().animate().alpha(0.0f).start();
                 }
-                q2Var.setLoadProgress(0.0f);
-                q2Var.setAlpha(1.0f);
-                q2Var.setVisibility(0);
-                k2Var.setBotUser(z10 ? null : np.u1(s2Var.I).c2(Long.valueOf(s2Var.J)));
+                r2Var.setLoadProgress(0.0f);
+                r2Var.setAlpha(1.0f);
+                r2Var.setVisibility(0);
+                k2Var.setBotUser(z10 ? null : mp.u1(t2Var.I).c2(Long.valueOf(t2Var.J)));
                 if (!z10) {
-                    k2Var.s(s2Var.I, s2Var.J);
+                    k2Var.s(t2Var.I, t2Var.J);
                 }
-                ls.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, c10 == true ? 1 : 0));
+                ks.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, c10 == true ? 1 : 0));
                 break;
             case 11:
-                ((li.k0) obj).f(z10, false);
+                ((li.j0) obj).f(z10, false);
                 break;
             case 12:
-                n2.s sVar = (n2.s) ((k8.a) obj).c;
+                n2.s sVar = (n2.s) ((jb.m) obj).c;
                 String str = h2.l0.a;
-                l2.f0 f0Var = ((l2.z) sVar).a;
-                if (f0Var.d0 != z10) {
-                    f0Var.d0 = z10;
-                    f0Var.m.e(23, new l2.v(c11 == true ? 1 : 0, z10));
+                l2.g0 g0Var = ((l2.a0) sVar).a;
+                if (g0Var.d0 != z10) {
+                    g0Var.d0 = z10;
+                    g0Var.m.e(23, new l2.w(c11 == true ? 1 : 0, z10));
                     break;
                 }
                 break;
@@ -214,12 +215,12 @@ public final /* synthetic */ class k implements Runnable {
                 q0Var.r0 = true;
                 break;
             case 19:
-                vf.c.t((Context) obj, hd.N0(z10 ? 2131753026 : 2131748199, null));
+                vf.c.t((Context) obj, gd.N0(z10 ? 2131753026 : 2131748199, null));
                 break;
             case 20:
-                ax0 ax0Var = ((ml) obj).b.s1;
-                if (ax0Var != null && z10) {
-                    ax0Var.setVisibility(8);
+                zw0 zw0Var = ((ml) obj).b.s1;
+                if (zw0Var != null && z10) {
+                    zw0Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -229,76 +230,76 @@ public final /* synthetic */ class k implements Runnable {
                 rnVar.getMessagesController().X3(rnVar.x0, false);
                 break;
             case 22:
-                org.telegram.ui.Components.n0 n0Var = (org.telegram.ui.Components.n0) obj;
-                n0Var.M2 = null;
-                n0Var.K2 = z10;
+                org.telegram.ui.Components.m0 m0Var = (org.telegram.ui.Components.m0) obj;
+                m0Var.M2 = null;
+                m0Var.K2 = z10;
                 if (z10) {
-                    n0Var.L2 = SystemClock.uptimeMillis();
+                    m0Var.L2 = SystemClock.uptimeMillis();
                 }
-                n0Var.C2.setLoading(z10);
+                m0Var.C2.setLoading(z10);
                 break;
             case 23:
-                org.telegram.ui.Components.np npVar = (org.telegram.ui.Components.np) obj;
-                lp lpVar = npVar.r1;
-                if (lpVar != null && lpVar.d != null && !npVar.J) {
-                    npVar.V0(z10, true);
-                    if (npVar.G1 != null) {
-                        npVar.J1 = true;
-                        TLRPC.WallPaper wallPaper = npVar.Q0() ? null : npVar.s1.g;
-                        s3 s3Var = npVar.G1.a;
+                kp kpVar = (kp) obj;
+                ip ipVar = kpVar.r1;
+                if (ipVar != null && ipVar.d != null && !kpVar.J) {
+                    kpVar.V0(z10, true);
+                    if (kpVar.G1 != null) {
+                        kpVar.J1 = true;
+                        TLRPC.WallPaper wallPaper = kpVar.Q0() ? null : kpVar.s1.g;
+                        s3 s3Var = kpVar.G1.a;
                         if (s3Var.a) {
-                            npVar.s1.r(null, wallPaper, false, Boolean.valueOf(z10), false);
+                            kpVar.s1.r(null, wallPaper, false, Boolean.valueOf(z10), false);
                         } else {
-                            npVar.s1.r(s3Var, wallPaper, false, Boolean.valueOf(z10), false);
+                            kpVar.s1.r(s3Var, wallPaper, false, Boolean.valueOf(z10), false);
                         }
                     }
-                    if (org.telegram.messenger.g0.Q1() && (K0 = org.telegram.ui.Components.np.K0(z10)) != null && K0 != m6.I) {
-                        npVar.d2 = z10 != npVar.u1;
-                        npVar.Y0(K0);
+                    if (org.telegram.messenger.g0.Q1() && (K0 = kp.K0(z10)) != null && K0 != n6.I) {
+                        kpVar.d2 = z10 != kpVar.u1;
+                        kpVar.Y0(K0);
                     }
-                    if (lpVar.d != null) {
-                        for (int i10 = 0; i10 < lpVar.d.size(); i10++) {
-                            ((mp) lpVar.d.get(i10)).c = z10 ? 1 : 0;
+                    if (ipVar.d != null) {
+                        for (int i10 = 0; i10 < ipVar.d.size(); i10++) {
+                            ((jp) ipVar.d.get(i10)).c = z10 ? 1 : 0;
                         }
-                        lpVar.f();
+                        ipVar.f();
                         break;
                     }
                 }
                 break;
             case 24:
-                ov ovVar = (ov) obj;
+                lv lvVar = (lv) obj;
                 if (!z10) {
-                    ovVar.F.setVisibility(8);
+                    lvVar.F.setVisibility(8);
                     break;
                 }
                 break;
             case 25:
-                i00 i00Var = (i00) obj;
-                i00Var.f1(i00Var.u2, z10);
+                g00 g00Var = (g00) obj;
+                g00Var.f1(g00Var.u2, z10);
                 break;
             case 26:
-                f30 f30Var = (f30) obj;
+                c30 c30Var = (c30) obj;
                 if (z10) {
-                    f30Var.getClass();
+                    c30Var.getClass();
                     break;
                 } else {
-                    f30Var.r.setVisibility(8);
+                    c30Var.r.setVisibility(8);
                     break;
                 }
             case 27:
-                c50 c50Var = ((u40) obj).I0;
-                if (!c50Var.l0) {
+                z40 z40Var = ((r40) obj).I0;
+                if (!z40Var.l0) {
                     try {
-                        c50Var.performHapticFeedback(3, 2);
+                        z40Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    org.telegram.messenger.g0.f2(c50Var.h.getParentActivity());
-                    c50Var.i0 = z10 ? c50Var.k0 : 0L;
-                    c50Var.h0 = System.currentTimeMillis();
-                    c50Var.j0 = true;
-                    c50Var.w();
-                    c50Var.invalidate();
-                    ls.f(c50Var.e).k(ls.l2, Integer.valueOf(c50Var.V), Boolean.FALSE);
+                    org.telegram.messenger.g0.f2(z40Var.h.getParentActivity());
+                    z40Var.i0 = z10 ? z40Var.k0 : 0L;
+                    z40Var.h0 = System.currentTimeMillis();
+                    z40Var.j0 = true;
+                    z40Var.w();
+                    z40Var.invalidate();
+                    ks.f(z40Var.e).k(ks.l2, Integer.valueOf(z40Var.V), Boolean.FALSE);
                     break;
                 }
                 break;

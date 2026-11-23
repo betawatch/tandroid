@@ -2,57 +2,43 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.o10;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.g20;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class xa extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final org.telegram.ui.Components.q9 b;
-    public final TextView c;
-    public final TextView d;
+public final class xa extends m41 {
+    public static final /* synthetic */ int b = 0;
 
-    public xa(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.a = h6Var;
-        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
-        this.b = q9Var;
-        q9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
-        addView(q9Var, c8.ma.d(28, 28.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, c8.ma.d(-1, -2.0f, 23, 62.0f, 0.0f, 20.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView f10 = o10.f(linearLayout, textView, c8.ma.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2), context);
-        this.d = f10;
-        f10.setTextSize(1, 14.0f);
-        linearLayout.addView(f10, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        updateColors();
+    static {
+        m41.h(new xa());
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
+        ya yaVar = (ya) view;
+        TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) n41Var.H;
+        yaVar.getClass();
+        TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
+        if (tonconnectmanifest != null) {
+            TLRPC.WebDocument webDocument = tonconnectmanifest.icon;
+            if (webDocument != null) {
+                yaVar.b.p(fc.p(g20.c(webDocument)), "28_28", null, tonconnectsession.manifest);
+            }
+            yaVar.c.setText(tonconnectsession.manifest.name);
+            yaVar.d.setText(org.telegram.messenger.g0.K0(tonconnectsession.manifest.url, false));
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.h6 h6Var = this.a;
-        this.c.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
-        this.d.setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, h6Var));
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new ya(context, i6Var);
     }
 }

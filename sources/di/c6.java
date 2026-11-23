@@ -9,9 +9,9 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
+public final class c6 extends View implements org.telegram.ui.ActionBar.c6 {
     public final ImageReceiver a;
     public final ImageReceiver b;
     public final Path c;
@@ -23,20 +23,20 @@ public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
         this.c = path;
         Paint paint = new Paint(1);
         this.d = paint;
-        org.telegram.ui.ActionBar.s6 s6Var = org.telegram.ui.ActionBar.t6.a;
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        b9Var.l(tLObject);
+        org.telegram.ui.ActionBar.t6 t6Var = org.telegram.ui.ActionBar.u6.a;
+        org.telegram.ui.Components.a9 a9Var = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
+        a9Var.l(tLObject);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.a = imageReceiver;
-        imageReceiver.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver.i0(tLObject, b9Var, null);
-        org.telegram.ui.Components.b9 b9Var2 = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        b9Var2.l(tLObject2);
+        imageReceiver.K0(org.telegram.messenger.g0.L(30.0f));
+        imageReceiver.j0(tLObject, a9Var, null);
+        org.telegram.ui.Components.a9 a9Var2 = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
+        a9Var2.l(tLObject2);
         ImageReceiver imageReceiver2 = new ImageReceiver(this);
         this.b = imageReceiver2;
-        imageReceiver2.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver2.i0(tLObject2, b9Var2, null);
-        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.E6, false));
+        imageReceiver2.K0(org.telegram.messenger.g0.L(30.0f));
+        imageReceiver2.j0(tLObject2, a9Var2, null);
+        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.E6, false));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -50,15 +50,15 @@ public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.P();
-        this.b.P();
+        this.a.Q();
+        this.b.Q();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.a.R();
-        this.b.R();
+        this.a.S();
+        this.b.S();
     }
 
     @Override // android.view.View
@@ -68,7 +68,7 @@ public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
         float L = org.telegram.messenger.g0.L(60.0f);
         float L2 = org.telegram.messenger.g0.L(60.0f);
         ImageReceiver imageReceiver = this.a;
-        imageReceiver.y0(width, height, L, L2);
+        imageReceiver.z0(width, height, L, L2);
         imageReceiver.h(canvas, null);
         canvas.save();
         canvas.translate((getWidth() / 2.0f) - (org.telegram.messenger.g0.L(6.166f) / 2.0f), getHeight() / 2.0f);
@@ -78,7 +78,7 @@ public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
         float L4 = org.telegram.messenger.g0.L(60.0f);
         float L5 = org.telegram.messenger.g0.L(60.0f);
         ImageReceiver imageReceiver2 = this.b;
-        imageReceiver2.y0(L3, height, L4, L5);
+        imageReceiver2.z0(L3, height, L4, L5);
         imageReceiver2.h(canvas, null);
     }
 
@@ -87,17 +87,17 @@ public final class c6 extends View implements org.telegram.ui.ActionBar.b6 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.d.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.E6, false));
+            this.d.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.E6, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

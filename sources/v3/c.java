@@ -1,6 +1,6 @@
 package v3;
 
-import c8.da;
+import c8.ea;
 import e2.p0;
 import e2.q0;
 import h2.k0;
@@ -9,17 +9,17 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Cells.aa;
 import w7.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c extends da {
+public final class c extends ea {
     public final x a = new x();
     public final d4.f b = new d4.f();
     public k0 c;
 
-    @Override // c8.da
+    @Override // c8.ea
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         b eVar;
         long j3;
@@ -80,7 +80,7 @@ public final class c extends da {
                     xVar.A();
                     xVar.A();
                 }
-                arrayList.add(new jn(arrayList2));
+                arrayList.add(new aa(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (j12 == 5) {

@@ -1,73 +1,113 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ya implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.graphics.Rect;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public /* synthetic */ ya(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class ya extends FrameLayout {
+    public final /* synthetic */ fc E;
+    public final kb a;
+    public final Rect b;
+    public final GestureDetector c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public boolean w;
+    public boolean x;
+    public final /* synthetic */ FrameLayout y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ya(fc fcVar, kb kbVar, FrameLayout frameLayout) {
+        super(kbVar.getContext());
+        this.E = fcVar;
+        this.y = frameLayout;
+        this.b = new Rect();
+        this.a = kbVar;
+        GestureDetector gestureDetector = new GestureDetector(kbVar.getContext(), new ub(this, kbVar));
+        this.c = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(false);
+        addView(kbVar);
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                gc gcVar = (gc) this.b;
-                if (gcVar.d == gVar) {
-                    gcVar.d = null;
-                    break;
-                }
-                break;
-            case 1:
-                ua uaVar = (ua) this.b;
-                if (!z10) {
-                    uaVar.run();
-                    break;
-                }
-                break;
-            case 2:
-                zk zkVar = (zk) this.b;
-                zkVar.m0 = null;
-                zkVar.n0 = 1.0f;
-                zkVar.m0();
-                break;
-            case 3:
-                qn0 qn0Var = (qn0) this.b;
-                qn0Var.q = false;
-                qn0Var.dismiss();
-                break;
-            case 4:
-                rn0 rn0Var = (rn0) this.b;
-                rn0Var.s = false;
-                rn0Var.r = false;
-                if (!z10) {
-                    gVar.d();
-                }
-                if (gVar == rn0Var.f) {
-                    rn0Var.f = null;
-                    break;
-                }
-                break;
-            case 5:
-                ap0 ap0Var = (ap0) this.b;
-                ap0Var.A1.setVisibility(8);
-                ap0Var.v2.setVisibility(8);
-                yo0 yo0Var = ap0Var.H1;
-                yo0Var.f = null;
-                yo0Var.f();
-                ap0Var.x2 = null;
-                ap0Var.I2 = false;
-                break;
-            default:
-                ap0 ap0Var2 = ((jo0) this.b).d;
-                ap0Var2.B1.setVisibility(8);
-                ap0Var2.C1.setVisibility(8);
-                ap0Var2.u2.setVisibility(8);
-                ap0Var2.x2 = null;
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x011d  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View.OnClickListener onClickListener;
+        boolean z10 = this.e;
+        kb kbVar = this.a;
+        if (!z10) {
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            Rect rect = this.b;
+            kbVar.getHitRect(rect);
+            if (!rect.contains((int) x10, (int) y10)) {
+                return false;
+            }
         }
+        this.c.onTouchEvent(motionEvent);
+        int actionMasked = motionEvent.getActionMasked();
+        FrameLayout frameLayout = this.y;
+        fc fcVar = this.E;
+        if (actionMasked == 0) {
+            if (!this.e && !this.s) {
+                kbVar.animate().cancel();
+                this.n = 0.0f;
+                this.h = 0.0f;
+                this.r = false;
+                this.f = kbVar.getTranslationX();
+                System.currentTimeMillis();
+                fc fcVar2 = kbVar.bulletin;
+                this.d = fcVar2 == null || fcVar2.m;
+                this.e = true;
+                fcVar.i(false);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                if (kbVar.onClickListener != null) {
+                    kbVar.setPressed(true);
+                    return true;
+                }
+            }
+        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
+            if (!this.s) {
+                if (Math.abs(this.f) > kbVar.getWidth() / 3.0f) {
+                    float signum = Math.signum(this.f) * kbVar.getWidth();
+                    float f10 = this.f;
+                    kbVar.animate().translationX(signum).alpha(((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) < 0 && this.w) || ((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) > 0 && this.x) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.a0(this, signum, 1)).start();
+                    this.e = false;
+                    fcVar.i(true);
+                    if (frameLayout.getParent() != null) {
+                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
+                    }
+                    if (kbVar.onClickListener != null) {
+                        kbVar.setPressed(false);
+                    }
+                } else {
+                    kbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
+                }
+            }
+            if (actionMasked == 1 && kbVar.isPressed() && (onClickListener = kbVar.onClickListener) != null && !this.r) {
+                onClickListener.onClick(kbVar);
+            }
+            this.e = false;
+            fcVar.i(true);
+            if (frameLayout.getParent() != null) {
+            }
+            if (kbVar.onClickListener != null) {
+            }
+        }
+        return true;
     }
 }

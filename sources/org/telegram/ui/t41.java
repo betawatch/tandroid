@@ -2,28 +2,37 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t41 extends np {
-    public final /* synthetic */ boolean[] d1;
-    public final /* synthetic */ c51 e1;
-    public final /* synthetic */ v41 f1;
+public final class t41 implements kp {
+    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(v41 v41Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, c51 c51Var) {
-        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
-        this.f1 = v41Var;
-        this.d1 = zArr;
-        this.e1 = c51Var;
+    public t41(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
+        this.a = tL_chatChannelParticipant;
+        this.b = z10;
+        this.c = zArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        if (!z10 && z11 && this.d1[0]) {
-            c51 c51Var = this.e1;
-            if (org.telegram.ui.Components.lc.a(c51Var)) {
-                org.telegram.ui.Components.lc.C(this.f1.a.first_name, c51Var).j();
+    @Override // org.telegram.ui.kp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
+        if (i7 == 0) {
+            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant.admin_rights = null;
+            channelParticipant.rank = "";
+        } else {
+            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant2.admin_rights = tL_chatAdminRights;
+            channelParticipant2.rank = str;
+            if (this.b) {
+                this.c[0] = true;
             }
         }
+    }
+
+    @Override // org.telegram.ui.kp
+    public final void a(TLRPC.User user) {
     }
 }

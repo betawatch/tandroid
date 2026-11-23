@@ -2,8 +2,8 @@ package di;
 
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -58,7 +58,7 @@ public final /* synthetic */ class z1 implements Runnable {
                             if (z11 && f6Var.B2 != null && (F = y8.y(f6Var.a, false).F(f6Var.T1, false)) != null) {
                                 F.m(f6Var.B2, true ^ savestargift.unsave);
                             }
-                            f6Var.k().t(org.telegram.ui.Components.lc.W(tL_error.text), null).k(false);
+                            f6Var.k().t(org.telegram.ui.Components.kc.W(tL_error.text), null).k(false);
                             break;
                         }
                     } else {
@@ -68,10 +68,10 @@ public final /* synthetic */ class z1 implements Runnable {
                             y8.y(f6Var.a, false).O(C1);
                         }
                         if (C1 < 0) {
-                            org.telegram.ui.Components.lc.b0(T).s(document, hd.N0(z10 ? 2131750243 : 2131750241, null), hd.N0(z10 ? 2131750244 : 2131750242, null)).j();
+                            org.telegram.ui.Components.kc.b0(T).s(document, gd.N0(z10 ? 2131750243 : 2131750241, null), gd.N0(z10 ? 2131750244 : 2131750242, null)).j();
                             break;
                         } else {
-                            org.telegram.ui.Components.lc.b0(T).s(document, hd.N0(z10 ? 2131750106 : 2131750104, null), org.telegram.messenger.g0.T2(hd.N0(z10 ? 2131750107 : 2131750105, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
+                            org.telegram.ui.Components.kc.b0(T).s(document, gd.N0(z10 ? 2131750106 : 2131750104, null), org.telegram.messenger.g0.T2(gd.N0(z10 ? 2131750107 : 2131750105, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
                             break;
                         }
                     }
@@ -81,7 +81,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 bn bnVar = (bn) obj5;
                 String str = (String) obj;
                 CharacterStyle characterStyle = (CharacterStyle) obj4;
-                gj gjVar = (gj) obj2;
+                fj fjVar = (fj) obj2;
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj3;
                 if (!str.startsWith("video?")) {
                     if (z11 && !z10) {
@@ -89,12 +89,12 @@ public final /* synthetic */ class z1 implements Runnable {
                         vf.c.o(str);
                         break;
                     } else {
-                        bnVar.ma(gjVar, false, false);
-                        bnVar.Ca(characterStyle, str, false, r1Var, gjVar);
+                        bnVar.ma(fjVar, false, false);
+                        bnVar.Ca(characterStyle, str, false, r1Var, fjVar);
                         break;
                     }
                 } else {
-                    bnVar.l8(characterStyle, false, gjVar, r1Var);
+                    bnVar.l8(characterStyle, false, fjVar, r1Var);
                     break;
                 }
             default:
@@ -118,11 +118,11 @@ public final /* synthetic */ class z1 implements Runnable {
         }
     }
 
-    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, gj gjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, boolean z11) {
+    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, fj fjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, boolean z11) {
         this.d = bnVar;
         this.e = str;
         this.f = characterStyle;
-        this.h = gjVar;
+        this.h = fjVar;
         this.n = r1Var;
         this.b = z10;
         this.c = z11;

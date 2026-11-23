@@ -1,27 +1,83 @@
 package v4;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
+public final class c implements e0 {
+    public final e0 a;
+    public int b = 0;
+    public int c = -1;
+    public int d = -1;
 
-    public /* synthetic */ c(k kVar, f1 f1Var, int i7) {
-        this.a = i7;
-        this.b = kVar;
+    public c(e0 e0Var) {
+        this.a = e0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.Q();
-                break;
-            default:
-                this.b.M();
-                break;
+    @Override // v4.e0
+    public final void V(int i7, int i10) {
+        int i11;
+        if (this.b == 1 && i7 >= (i11 = this.c)) {
+            int i12 = this.d;
+            if (i7 <= i11 + i12) {
+                this.d = i12 + i10;
+                this.c = Math.min(i7, i11);
+                return;
+            }
         }
+        a();
+        this.c = i7;
+        this.d = i10;
+        this.b = 1;
+    }
+
+    @Override // v4.e0
+    public final void V0(int i7, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        if (this.b == 3 && i7 <= (i12 = this.d + (i11 = this.c)) && (i13 = i7 + i10) >= i11) {
+            this.c = Math.min(i7, i11);
+            this.d = Math.max(i12, i13) - this.c;
+        } else {
+            a();
+            this.c = i7;
+            this.d = i10;
+            this.b = 3;
+        }
+    }
+
+    public final void a() {
+        int i7 = this.b;
+        if (i7 == 0) {
+            return;
+        }
+        e0 e0Var = this.a;
+        if (i7 == 1) {
+            e0Var.V(this.c, this.d);
+        } else if (i7 == 2) {
+            e0Var.y0(this.c, this.d);
+        } else if (i7 == 3) {
+            e0Var.V0(this.c, this.d);
+        }
+        this.b = 0;
+    }
+
+    @Override // v4.e0
+    public final void y0(int i7, int i10) {
+        int i11;
+        if (this.b == 2 && (i11 = this.c) >= i7 && i11 <= i7 + i10) {
+            this.d += i10;
+            this.c = i7;
+        } else {
+            a();
+            this.c = i7;
+            this.d = i10;
+            this.b = 2;
+        }
+    }
+
+    @Override // v4.e0
+    public final void z(int i7, int i10) {
+        a();
+        this.a.z(i7, i10);
     }
 }

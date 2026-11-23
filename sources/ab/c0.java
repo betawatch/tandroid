@@ -1,6 +1,6 @@
 package ab;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
@@ -12,10 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import ch.q0;
 import e2.y0;
-import gb.w0;
 import h9.t0;
 import java.lang.ref.WeakReference;
 import java.nio.ByteBuffer;
@@ -25,38 +24,38 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import m1.x0;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.wi0;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.xy0;
-import org.telegram.ui.Wallet.u4;
-import org.telegram.ui.as0;
+import org.telegram.ui.Components.yr;
 import org.telegram.ui.bn;
-import org.telegram.ui.hy0;
-import org.telegram.ui.i81;
-import org.telegram.ui.ly0;
-import org.telegram.ui.tr0;
-import org.telegram.ui.wt0;
-import p4.g1;
+import org.telegram.ui.eu0;
+import org.telegram.ui.fy0;
+import org.telegram.ui.g81;
+import org.telegram.ui.iy0;
+import org.telegram.ui.ky0;
+import org.telegram.ui.web.t1;
+import org.telegram.ui.zr0;
+import p4.f1;
+import p4.j1;
 import p4.k1;
-import p4.l1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c0 implements ib.b, wi0, ly0 {
+public final class c0 implements ib.b, wi0, ky0 {
     public static c0 f;
     public final /* synthetic */ int a;
     public Object b;
@@ -72,7 +71,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         this.e = obj4;
     }
 
-    public static synchronized c0 s() {
+    public static synchronized c0 v() {
         c0 c0Var;
         synchronized (c0.class) {
             try {
@@ -87,7 +86,17 @@ public final class c0 implements ib.b, wi0, ly0 {
         return c0Var;
     }
 
-    public boolean A(p4.v vVar) {
+    public boolean A(Context context) {
+        if (((Boolean) this.c) == null) {
+            this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
+        }
+        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
+        }
+        return ((Boolean) this.c).booleanValue();
+    }
+
+    public boolean B(p4.v vVar) {
         boolean z10;
         synchronized (this.b) {
             z10 = ((a0.f) this.d).get(vVar) != null;
@@ -95,17 +104,8 @@ public final class c0 implements ib.b, wi0, ly0 {
         return z10;
     }
 
-    public boolean B() {
+    public boolean C() {
         return ((ArrayList) this.d).isEmpty();
-    }
-
-    public boolean C(p4.v vVar, int i7) {
-        p4.h hVar;
-        synchronized (this.b) {
-            hVar = (p4.h) ((a0.f) this.d).get(vVar);
-        }
-        p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
-        return hVar != null && hVar.e.a(i7) && e0Var != null && e0Var.t.t().a(i7);
     }
 
     public boolean D(p4.v vVar, int i7) {
@@ -113,13 +113,22 @@ public final class c0 implements ib.b, wi0, ly0 {
         synchronized (this.b) {
             hVar = (p4.h) ((a0.f) this.d).get(vVar);
         }
+        p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
+        return hVar != null && hVar.e.a(i7) && d0Var != null && d0Var.t.u().a(i7);
+    }
+
+    public boolean E(p4.v vVar, int i7) {
+        p4.h hVar;
+        synchronized (this.b) {
+            hVar = (p4.h) ((a0.f) this.d).get(vVar);
+        }
         if (hVar != null) {
-            l1 l1Var = hVar.d;
-            l1Var.getClass();
-            la.e("Use contains(Command) for custom command", i7 != 0);
-            Iterator<E> it = l1Var.a.iterator();
+            k1 k1Var = hVar.d;
+            k1Var.getClass();
+            ma.e("Use contains(Command) for custom command", i7 != 0);
+            Iterator<E> it = k1Var.a.iterator();
             while (it.hasNext()) {
-                if (((k1) it.next()).a == i7) {
+                if (((j1) it.next()).a == i7) {
                     return true;
                 }
             }
@@ -127,14 +136,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ boolean E() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    public boolean F(p4.v vVar, k1 k1Var) {
+    public boolean F(p4.v vVar, j1 j1Var) {
         p4.h hVar;
         synchronized (this.b) {
             hVar = (p4.h) ((a0.f) this.d).get(vVar);
@@ -143,24 +145,24 @@ public final class c0 implements ib.b, wi0, ly0 {
             return false;
         }
         t0 t0Var = hVar.d.a;
-        k1Var.getClass();
-        return t0Var.contains(k1Var) || p4.d.j(k1Var.b);
+        j1Var.getClass();
+        return t0Var.contains(j1Var) || p4.d.j(j1Var.b);
     }
 
     public boolean G(k.a aVar, MenuItem menuItem) {
-        return ((ActionMode.Callback) this.b).onActionItemClicked(m(aVar), new l.r((Context) this.c, (l0.a) menuItem));
+        return ((ActionMode.Callback) this.b).onActionItemClicked(o(aVar), new l.r((Context) this.c, (l0.a) menuItem));
     }
 
     public boolean H(k.a aVar, Menu menu) {
         ActionMode.Callback callback = (ActionMode.Callback) this.b;
-        k.e m10 = m(aVar);
+        k.e o4 = o(aVar);
         a0.l lVar = (a0.l) this.e;
         Menu menu2 = (Menu) lVar.get(menu);
         if (menu2 == null) {
             menu2 = new l.a0((Context) this.c, (l.k) menu);
             lVar.put(menu, menu2);
         }
-        return callback.onCreateActionMode(m10, menu2);
+        return callback.onCreateActionMode(o4, menu2);
     }
 
     public void K(p4.v vVar) {
@@ -172,11 +174,11 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 ((a0.f) this.c).remove(hVar.a);
                 hVar.b.g();
-                p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
-                if (e0Var == null || e0Var.j()) {
+                p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
+                if (d0Var == null || d0Var.j()) {
                     return;
                 }
-                h2.l0.W(e0Var.l, new p4.e(e0Var, vVar, 0));
+                h2.l0.W(d0Var.l, new p4.e(d0Var, vVar, 0));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -211,7 +213,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     i7 = x0Var.e;
                     gd.k kVar = gd.k.a;
                     if (i7 != 0) {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         if (((zd.t) this.c).A()) {
                             return kVar;
                         }
@@ -231,7 +233,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                         aVar = x0Var.b;
                         c0Var2 = x0Var.a;
                         try {
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             ((zd.t) c0Var2.c).C(kVar);
                             ((ie.d) aVar).f(null);
                             return kVar;
@@ -243,7 +245,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     }
                     ?? r22 = x0Var.b;
                     c0Var = x0Var.a;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     dVar = r22;
                     if (!((zd.t) c0Var.c).A()) {
                         dVar.f(null);
@@ -279,26 +281,26 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
     }
 
-    @Override // org.telegram.ui.ly0
+    @Override // org.telegram.ui.ky0
     public void a() {
-        org.telegram.messenger.g0.h3(new hy0((g2) this.b, (Context) this.c, (h6) this.d, (ou) this.e, 2), 200L);
+        org.telegram.messenger.g0.h3(new fy0((g2) this.b, (Context) this.c, (i6) this.d, (sh0) this.e, 2), 200L);
     }
 
-    public void b(Object obj, p4.v vVar, l1 l1Var, y0 y0Var) {
+    public void b(Object obj, p4.v vVar, k1 k1Var, y0 y0Var) {
         synchronized (this.b) {
             try {
-                p4.v r10 = r(obj);
-                if (r10 == null) {
+                p4.v u10 = u(obj);
+                if (u10 == null) {
                     ((a0.f) this.c).put(obj, vVar);
                     a0.f fVar = (a0.f) this.d;
                     com.google.android.gms.common.api.internal.t tVar = new com.google.android.gms.common.api.internal.t();
                     tVar.c = new Object();
                     tVar.d = new a0.f(0);
-                    fVar.put(vVar, new p4.h(obj, tVar, l1Var, y0Var));
+                    fVar.put(vVar, new p4.h(obj, tVar, k1Var, y0Var));
                 } else {
-                    p4.h hVar = (p4.h) ((a0.f) this.d).get(r10);
+                    p4.h hVar = (p4.h) ((a0.f) this.d).get(u10);
                     hVar.getClass();
-                    hVar.d = l1Var;
+                    hVar.d = k1Var;
                     hVar.e = y0Var;
                 }
             } catch (Throwable th2) {
@@ -326,9 +328,9 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
     }
 
-    @Override // org.telegram.ui.ly0
+    @Override // org.telegram.ui.ky0
     public void d() {
-        org.telegram.messenger.g0.h3(new tr0(28, (g2) this.b, (ou) this.e), 200L);
+        org.telegram.messenger.g0.h3(new iy0(2, (g2) this.b, (sh0) this.e), 200L);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x003e  */
@@ -351,7 +353,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                 jd.a aVar = jd.a.a;
                 i7 = hVar.d;
                 if (i7 != 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     List list = (List) this.d;
                     if (list == null || list.isEmpty()) {
                         hVar.a = this;
@@ -376,17 +378,17 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 if (i7 == 1) {
                     c0Var = hVar.a;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     cVar2 = (m1.c) obj;
                 } else {
                     if (i7 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     c0Var = hVar.a;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     cVar2 = (m1.c) obj;
                 }
-                ((m1.b0) c0Var.e).h.L(cVar2);
+                ((m1.b0) c0Var.e).h.E(cVar2);
                 return gd.k.a;
             }
         }
@@ -396,7 +398,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         i7 = hVar.d;
         if (i7 != 0) {
         }
-        ((m1.b0) c0Var.e).h.L(cVar2);
+        ((m1.b0) c0Var.e).h.E(cVar2);
         return gd.k.a;
     }
 
@@ -406,58 +408,63 @@ public final class c0 implements ib.b, wi0, ly0 {
         RectF rectF = org.telegram.messenger.g0.P;
         float f10 = i7;
         rectF.set(0.0f, 0.0f, f10, org.telegram.messenger.g0.L(14.66f));
-        canvas.saveLayerAlpha(rectF, ls.e4, 31);
-        if (hd.a0) {
+        canvas.saveLayerAlpha(rectF, ks.e4, 31);
+        if (gd.a0) {
             canvas.translate(f10, 0.0f);
         }
         int L = i7 - org.telegram.messenger.g0.L(25.0f);
         int i10 = 0;
         while (i10 < arrayList.size()) {
-            bs bsVar = (bs) arrayList.get(i10);
-            L = o10.x(4.0f, bsVar.g, L);
+            yr yrVar = (yr) arrayList.get(i10);
+            L = m10.x(4.0f, yrVar.g, L);
             if (L < 0) {
                 break;
             }
-            if (hd.a0) {
-                canvas.translate(-bsVar.g, 0.0f);
-                bsVar.a(canvas);
+            if (gd.a0) {
+                canvas.translate(-yrVar.g, 0.0f);
+                yrVar.a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
             } else {
-                bsVar.a(canvas);
-                canvas.translate(org.telegram.messenger.g0.L(4.0f) + bsVar.g, 0.0f);
+                yrVar.a(canvas);
+                canvas.translate(org.telegram.messenger.g0.L(4.0f) + yrVar.g, 0.0f);
             }
             i10++;
         }
         if (i10 < arrayList.size()) {
             int size = arrayList.size() - i10;
-            bs bsVar2 = (bs) this.e;
-            if (bsVar2 == null || bsVar2.a != size) {
+            yr yrVar2 = (yr) this.e;
+            if (yrVar2 == null || yrVar2.a != size) {
                 u2 u2Var = (u2) this.b;
-                bs bsVar3 = new bs();
-                bsVar3.a = size;
-                xy0 xy0Var = new xy0(i5.c.i(size, "+"), 10.0f, org.telegram.messenger.g0.o());
-                xy0Var.r(u2Var);
-                bsVar3.c = xy0Var;
+                yr yrVar3 = new yr();
+                yrVar3.a = size;
+                wy0 wy0Var = new wy0(i5.c.i(size, "+"), 10.0f, org.telegram.messenger.g0.o());
+                wy0Var.r(u2Var);
+                yrVar3.c = wy0Var;
                 int L2 = org.telegram.messenger.g0.L(9.32f);
-                xy0 xy0Var2 = bsVar3.c;
-                bsVar3.g = L2 + ((int) xy0Var2.c);
-                xy0Var2.i();
-                int i11 = m6.n8;
-                bsVar3.f = i11;
-                bsVar3.e = true;
-                bsVar3.d = m6.x0(null, i11, false);
-                this.e = bsVar3;
+                wy0 wy0Var2 = yrVar3.c;
+                yrVar3.g = L2 + ((int) wy0Var2.c);
+                wy0Var2.i();
+                int i11 = n6.n8;
+                yrVar3.f = i11;
+                yrVar3.e = true;
+                yrVar3.d = n6.x0(null, i11, false);
+                this.e = yrVar3;
             }
-            if (hd.a0) {
-                canvas.translate(-((bs) this.e).g, 0.0f);
-                ((bs) this.e).a(canvas);
+            if (gd.a0) {
+                canvas.translate(-((yr) this.e).g, 0.0f);
+                ((yr) this.e).a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
             } else {
-                ((bs) this.e).a(canvas);
-                canvas.translate(org.telegram.messenger.g0.L(4.0f) + ((bs) this.e).g, 0.0f);
+                ((yr) this.e).a(canvas);
+                canvas.translate(org.telegram.messenger.g0.L(4.0f) + ((yr) this.e).g, 0.0f);
             }
         }
         canvas.restore();
+    }
+
+    @Override // fd.a
+    public Object get() {
+        return new gb.n((o9.g) ((e.a) this.b).a, (jb.l) ((ib.c) this.c).get(), (id.h) ((ib.c) this.d).get(), (gb.x0) ((ib.c) this.e).get());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0068  */
@@ -466,7 +473,7 @@ public final class c0 implements ib.b, wi0, ly0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void g(View view, ch.p0 p0Var, boolean z10, boolean z11) {
+    public void h(View view, ch.p0 p0Var, boolean z10, boolean z11) {
         float f10;
         q0 q0Var;
         ch.n0 k10;
@@ -482,7 +489,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         switch (this.a) {
             case 10:
                 bn bnVar = (bn) this.b;
-                org.telegram.ui.Cells.z J8 = bnVar.J8(((gj) this.c).e1(), true);
+                org.telegram.ui.Cells.z J8 = bnVar.J8(((fj) this.c).e1(), true);
                 float f16 = 0.0f;
                 if (J8 instanceof r1) {
                     q0 q0Var3 = ((r1) J8).O;
@@ -490,8 +497,8 @@ public final class c0 implements ib.b, wi0, ly0 {
                     if (k12 == null) {
                         f12 = 0.0f;
                         f10 = f12;
-                        bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                        ((as0) this.e).c(false);
+                        bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        ((zr0) this.e).c(false);
                         break;
                     } else {
                         f16 = q0Var3.b + k12.w + (k12.z / 2.0f);
@@ -500,8 +507,8 @@ public final class c0 implements ib.b, wi0, ly0 {
                     }
                 } else if (!(J8 instanceof v0) || (k10 = (q0Var = ((v0) J8).F0).k(p0Var)) == null) {
                     f10 = 0.0f;
-                    bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                    ((as0) this.e).c(false);
+                    bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    ((zr0) this.e).c(false);
                 } else {
                     f16 = q0Var.b + k10.w + (k10.z / 2.0f);
                     f11 = q0Var.c + k10.x;
@@ -509,12 +516,12 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 f12 = f11 + (i7 / 2.0f);
                 f10 = f12;
-                bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                ((as0) this.e).c(false);
+                bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                ((zr0) this.e).c(false);
                 break;
             default:
                 bn bnVar2 = (bn) this.b;
-                org.telegram.ui.Cells.z J82 = bnVar2.J8(((gj) this.c).e1(), true);
+                org.telegram.ui.Cells.z J82 = bnVar2.J8(((fj) this.c).e1(), true);
                 float f17 = 0.0f;
                 if (J82 instanceof r1) {
                     q0 q0Var4 = ((r1) J82).O;
@@ -522,8 +529,8 @@ public final class c0 implements ib.b, wi0, ly0 {
                     if (k13 == null) {
                         f15 = 0.0f;
                         f13 = f15;
-                        bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                        ((i81) this.e).c(false);
+                        bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        ((g81) this.e).c(false);
                         break;
                     } else {
                         f17 = q0Var4.b + k13.w + (k13.z / 2.0f);
@@ -532,8 +539,8 @@ public final class c0 implements ib.b, wi0, ly0 {
                     }
                 } else if (!(J82 instanceof v0) || (k11 = (q0Var2 = ((v0) J82).F0).k(p0Var)) == null) {
                     f13 = 0.0f;
-                    bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                    ((i81) this.e).c(false);
+                    bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    ((g81) this.e).c(false);
                 } else {
                     f17 = q0Var2.b + k11.w + (k11.z / 2.0f);
                     f14 = q0Var2.c + k11.x;
@@ -541,26 +548,21 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 f15 = f14 + (i10 / 2.0f);
                 f13 = f15;
-                bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                ((i81) this.e).c(false);
+                bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                ((g81) this.e).c(false);
                 break;
         }
     }
 
-    @Override // fd.a
-    public Object get() {
-        return new gb.n((o9.g) ((d9.o) this.b).a, (jb.l) ((ib.c) this.c).get(), (id.h) ((ib.c) this.d).get(), (w0) ((ib.c) this.e).get());
-    }
-
-    @Override // org.telegram.ui.ly0
-    public void h() {
+    @Override // org.telegram.ui.ky0
+    public void i() {
         g2 g2Var = (g2) this.b;
         g2Var.showDialog(new ug.y0(g2Var, 3, true));
     }
 
     public void k(p4.h hVar) {
-        p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
-        if (e0Var == null) {
+        p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
+        if (d0Var == null) {
             return;
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
@@ -573,13 +575,20 @@ public final class c0 implements ib.b, wi0, ly0 {
             }
             AtomicBoolean atomicBoolean2 = new AtomicBoolean(true);
             p4.h hVar2 = hVar;
-            h2.l0.W(e0Var.l, new u4(e0Var, r(hVar.a), new wt0(this, gVar, atomicBoolean2, hVar2, atomicBoolean, 13)));
+            h2.l0.W(d0Var.l, new t1(d0Var, u(hVar.a), new eu0(this, gVar, atomicBoolean2, hVar2, atomicBoolean, 12)));
             atomicBoolean2.set(false);
             hVar = hVar2;
         }
     }
 
-    public void l(final p4.v vVar) {
+    @Override // org.telegram.ui.Components.wi0
+    public /* synthetic */ boolean l() {
+        switch (this.a) {
+        }
+        return true;
+    }
+
+    public void m(final p4.v vVar) {
         synchronized (this.b) {
             try {
                 p4.h hVar = (p4.h) ((a0.f) this.d).get(vVar);
@@ -593,9 +602,9 @@ public final class c0 implements ib.b, wi0, ly0 {
 
                     @Override // p4.g
                     public final m9.y run() {
-                        e0 e0Var = (e0) ((WeakReference) ab.c0.this.e).get();
-                        if (e0Var != null) {
-                            e0Var.p(this.b);
+                        d0 d0Var = (d0) ((WeakReference) ab.c0.this.e).get();
+                        if (d0Var != null) {
+                            d0Var.p(this.b);
                         }
                         return m9.w.b;
                     }
@@ -611,7 +620,14 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
     }
 
-    public k.e m(k.a aVar) {
+    @Override // org.telegram.ui.Components.wi0
+    public /* synthetic */ boolean n() {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    public k.e o(k.a aVar) {
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
@@ -625,7 +641,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         return eVar2;
     }
 
-    public y0 n(p4.v vVar) {
+    public y0 p(p4.v vVar) {
         synchronized (this.b) {
             try {
                 p4.h hVar = (p4.h) ((a0.f) this.d).get(vVar);
@@ -640,13 +656,16 @@ public final class c0 implements ib.b, wi0, ly0 {
     }
 
     @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ boolean o() {
-        switch (this.a) {
-        }
-        return true;
+    public /* synthetic */ void q(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
+        int i10 = this.a;
     }
 
-    public h9.i0 p() {
+    @Override // org.telegram.ui.Components.wi0
+    public /* synthetic */ void r() {
+        int i7 = this.a;
+    }
+
+    public h9.i0 s() {
         h9.i0 q10;
         synchronized (this.b) {
             q10 = h9.i0.q(((a0.f) this.c).values());
@@ -655,13 +674,22 @@ public final class c0 implements ib.b, wi0, ly0 {
     }
 
     @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ boolean q() {
+    public /* synthetic */ boolean t() {
         switch (this.a) {
         }
         return false;
     }
 
-    public p4.v r(Object obj) {
+    public String toString() {
+        switch (this.a) {
+            case 16:
+                return ((v4.b) this.e).toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public p4.v u(Object obj) {
         p4.v vVar;
         synchronized (this.b) {
             vVar = (p4.v) ((a0.f) this.c).get(obj);
@@ -669,7 +697,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         return vVar;
     }
 
-    public e2.v0 t(p4.v vVar) {
+    public e2.v0 w(p4.v vVar) {
         synchronized (this.b) {
             try {
                 return ((p4.h) ((a0.f) this.d).get(vVar)) != null ? null : null;
@@ -679,16 +707,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 16:
-                return ((ze.b) this.e).toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    public g1 u(p4.v vVar) {
+    public f1 x(p4.v vVar) {
         synchronized (this.b) {
             try {
                 return ((p4.h) ((a0.f) this.d).get(vVar)) != null ? null : null;
@@ -698,7 +717,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
     }
 
-    public com.google.android.gms.common.api.internal.t v(p4.v vVar) {
+    public com.google.android.gms.common.api.internal.t y(p4.v vVar) {
         p4.h hVar;
         synchronized (this.b) {
             hVar = (p4.h) ((a0.f) this.d).get(vVar);
@@ -709,7 +728,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         return null;
     }
 
-    public boolean w(Context context) {
+    public boolean z(Context context) {
         if (((Boolean) this.d) == null) {
             this.d = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
         }
@@ -717,26 +736,6 @@ public final class c0 implements ib.b, wi0, ly0 {
             Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
         }
         return ((Boolean) this.d).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
-        int i10 = this.a;
-    }
-
-    public boolean y(Context context) {
-        if (((Boolean) this.c) == null) {
-            this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
-        }
-        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return ((Boolean) this.c).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ void z() {
-        int i7 = this.a;
     }
 
     public /* synthetic */ c0(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i7) {
@@ -755,12 +754,12 @@ public final class c0 implements ib.b, wi0, ly0 {
         this.b = u2Var;
     }
 
-    public c0(p4.e0 e0Var) {
+    public c0(p4.d0 d0Var) {
         this.a = 13;
         this.c = new a0.f(0);
         this.d = new a0.f(0);
         this.b = new Object();
-        this.e = new WeakReference(e0Var);
+        this.e = new WeakReference(d0Var);
     }
 
     public c0(Typeface typeface, s1.b bVar) {
@@ -867,14 +866,14 @@ public final class c0 implements ib.b, wi0, ly0 {
         }
         TextView textView2 = new TextView(eVar.getContext());
         this.c = textView2;
-        linearLayout.addView(textView2, ma.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-        x5 x5Var = new x5(eVar.getContext());
-        this.b = x5Var;
-        linearLayout.addView(x5Var, ma.o(-1, -2));
+        linearLayout.addView(textView2, na.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
+        w5 w5Var = new w5(eVar.getContext());
+        this.b = w5Var;
+        linearLayout.addView(w5Var, na.o(-1, -2));
         textView2.setGravity(8388611);
-        x5Var.setGravity(8388613);
-        x5Var.setTypeface(org.telegram.messenger.g0.o());
-        x5Var.setTextSize(1, 13.0f);
+        w5Var.setGravity(8388613);
+        w5Var.setTypeface(org.telegram.messenger.g0.o());
+        w5Var.setTextSize(1, 13.0f);
         textView2.setTextSize(1, 13.0f);
     }
 
@@ -895,7 +894,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         this.e = new boolean[i7];
     }
 
-    private final /* synthetic */ void i(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
+    private final /* synthetic */ void g(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
     }
 
     private final /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {

@@ -1,49 +1,90 @@
 package j6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import c8.bc;
-import f7.t0;
-import java.util.Arrays;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.RemoteException;
+import com.google.android.gms.cast.CastDevice;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class y extends r6.a {
-    public static final Parcelable.Creator<y> CREATOR = new t0(27);
-    public final int a;
-    public final boolean b;
-    public final boolean c;
+public final class y extends q6.h {
+    public static final b J = new b("CastClientImplCxless", null);
+    public final CastDevice F;
+    public final long G;
+    public final Bundle H;
+    public final String I;
 
-    public y(int i7, boolean z10, boolean z11) {
-        this.a = i7;
-        this.b = z10;
-        this.c = z11;
+    public y(Context context, Looper looper, ga.d dVar, CastDevice castDevice, long j3, Bundle bundle, String str, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 10, dVar, kVar, lVar, 0);
+        this.F = castDevice;
+        this.G = j3;
+        this.H = bundle;
+        this.I = str;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final void a() {
+        try {
+            try {
+                ((f) n()).x1();
+            } finally {
+                super.a();
+            }
+        } catch (RemoteException | IllegalStateException e10) {
+            J.a(e10, "Error while disconnecting the controller interface", new Object[0]);
         }
-        if (!(obj instanceof y)) {
-            return false;
+    }
+
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 19390000;
+    }
+
+    @Override // q6.d
+    public final /* synthetic */ IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        y yVar = (y) obj;
-        return this.a == yVar.a && this.b == yVar.b && this.c == yVar.c;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.internal.ICastDeviceController");
+        return queryLocalInterface instanceof f ? (f) queryLocalInterface : new f(iBinder);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Boolean.valueOf(this.b), Boolean.valueOf(this.c)});
+    @Override // q6.d
+    public final n6.c[] k() {
+        return f6.y.e;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        bc.q(parcel, 3, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        bc.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        bc.s(parcel, r10);
+    @Override // q6.d
+    public final Bundle m() {
+        Bundle bundle = new Bundle();
+        J.b("getRemoteService()", new Object[0]);
+        CastDevice castDevice = this.F;
+        castDevice.getClass();
+        bundle.putParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE", castDevice);
+        bundle.putLong("com.google.android.gms.cast.EXTRA_CAST_FLAGS", this.G);
+        bundle.putString("connectionless_client_record_id", this.I);
+        Bundle bundle2 = this.H;
+        if (bundle2 != null) {
+            bundle.putAll(bundle2);
+        }
+        return bundle;
+    }
+
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.cast.internal.ICastDeviceController";
+    }
+
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.cast.service.BIND_CAST_DEVICE_CONTROLLER_SERVICE";
+    }
+
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

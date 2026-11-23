@@ -1,10 +1,10 @@
 package gb;
 
-import c8.n1;
+import c8.h9;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m implements pa.f {
     public static final m b;
@@ -17,7 +17,7 @@ public final class m implements pa.f {
         b = mVar2;
         m[] mVarArr = {mVar, mVar2};
         c = mVarArr;
-        n1.a(mVarArr);
+        h9.a(mVarArr);
     }
 
     public m(String str, int i7, int i10) {

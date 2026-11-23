@@ -1,111 +1,46 @@
 package wg;
 
-import android.view.ViewGroup;
-import c8.ma;
-import fi.g4;
-import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.n5;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.jg0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class q0 extends sa {
-    public final ArrayList T1;
-    public final ArrayList U1;
-    public final TLRPC.Chat V1;
-    public final d0 W1;
-    public p0 X1;
-    public l0 Y1;
+public final /* synthetic */ class q0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v0 b;
 
-    public q0(g2 g2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
-        super(g2Var, false);
-        this.T1 = new ArrayList();
-        this.U1 = new ArrayList();
-        this.v1 = 0.3f;
-        this.V1 = chat;
-        ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i7);
-            i7++;
-            TL_stories.TL_myBoost tL_myBoost2 = tL_myBoost;
-            TLRPC.Peer peer = tL_myBoost2.peer;
-            if (peer != null && n5.o(peer) != (-chat.id)) {
-                this.U1.add(tL_myBoost2);
-            }
+    public /* synthetic */ q0(v0 v0Var, int i7) {
+        this.a = i7;
+        this.b = v0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.j1(true);
+                break;
+            case 1:
+                this.b.o1(true, false);
+                break;
+            case 2:
+                this.b.f1();
+                break;
+            case 3:
+                this.b.o1(true, false);
+                break;
+            case 4:
+                this.b.o1(true, false);
+                break;
+            case 5:
+                this.b.o1(true, false);
+                break;
+            case 6:
+                v0 v0Var = this.b;
+                v0Var.a2.clear();
+                v0Var.b2.clear();
+                v0Var.dismiss();
+                break;
+            default:
+                this.b.dismiss();
+                break;
         }
-        ah.a aVar = new ah.a(getContext(), this.J0, this.o1);
-        aVar.setClickable(true);
-        aVar.setOrientation(1);
-        aVar.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-        t6.h(m6.h5, aVar, this.J0);
-        d0 d0Var = new d0(getContext(), this.J0);
-        this.W1 = d0Var;
-        d0Var.k();
-        d0Var.setCounterColor(-6785796);
-        d0Var.setOnClickListener(new jg0(29, this, chat));
-        aVar.addView(d0Var, ma.r(-1, 48, 87));
-        ViewGroup viewGroup = this.b;
-        int i10 = this.u0;
-        viewGroup.addView(aVar, ma.f(-2.0f, -1, 87, i10, 0, i10, 0));
-        ek0 ek0Var = this.o1;
-        int i11 = this.u0;
-        ek0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
-        this.o1.setOnItemClickListener(new g4(24, this, chat));
-        O();
-        c1();
-        e1(false);
-        gc.a(this.c, new k0());
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final dk0 M0(ek0 ek0Var) {
-        return new m0(this);
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence P0() {
-        return hd.N0(2131753318, null);
-    }
-
-    public final void e1(boolean z10) {
-        d0 d0Var = this.W1;
-        d0Var.setShowZero(false);
-        ArrayList arrayList = this.T1;
-        if (arrayList.size() > 1) {
-            d0Var.i(hd.N0(2131753313, null), z10, true);
-        } else {
-            d0Var.i(hd.N0(2131753318, null), z10, true);
-        }
-        d0Var.c(arrayList.size(), z10);
-        d0Var.setEnabled(arrayList.size() > 0);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.Y1 = new l0(this);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.Y1.cancel();
-    }
-
-    @Override // org.telegram.ui.ActionBar.w2
-    public final void v() {
-        this.Y1.start();
     }
 }

@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public class n extends AbstractCollection {
                 ((h9.l) this.b).clear();
                 break;
             case 5:
-                ((h9.l1) this.b).clear();
+                ((h9.k1) this.b).clear();
                 break;
             case 6:
                 ((h9.s) this.b).clear();
@@ -71,7 +71,7 @@ public class n extends AbstractCollection {
                 Collection collection = (Collection) lVar.b().get(key);
                 return collection != null && collection.contains(value);
             case 5:
-                return ((h9.l1) this.b).c(obj);
+                return ((h9.k1) this.b).c(obj);
             case 7:
                 return ((AbstractMap) this.b).containsValue(obj);
         }
@@ -109,7 +109,7 @@ public class n extends AbstractCollection {
             case 4:
                 return ((h9.l) this.b).g();
             case 5:
-                return new h9.b((h9.l1) this.b, 0);
+                return new h9.b((h9.k1) this.b, 0);
             case 6:
                 h9.s sVar = (h9.s) this.b;
                 Map d = sVar.d();
@@ -146,7 +146,7 @@ public class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry2 : lbVar2.entrySet()) {
-                        if (f8.a(obj, entry2.getValue())) {
+                        if (g8.a(obj, entry2.getValue())) {
                             lbVar2.remove(entry2.getKey());
                             return true;
                         }
@@ -165,7 +165,7 @@ public class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry4 : abstractMap.entrySet()) {
-                        if (ka.a(obj, entry4.getValue())) {
+                        if (la.a(obj, entry4.getValue())) {
                             abstractMap.remove(entry4.getKey());
                             return true;
                         }
@@ -297,7 +297,7 @@ public class n extends AbstractCollection {
             case 4:
                 return ((h9.l) this.b).size();
             case 5:
-                return ((h9.l1) this.b).f;
+                return ((h9.k1) this.b).f;
             case 6:
                 return ((h9.s) this.b).size();
             default:

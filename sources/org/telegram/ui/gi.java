@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class gi extends vf.b {
     public final /* synthetic */ int d;
@@ -24,13 +24,13 @@ public final class gi extends vf.b {
         switch (this.d) {
             case 0:
                 if (!z10) {
-                    org.telegram.messenger.g0.h3(new ai.c1(this, this.e, 25), 240L);
+                    org.telegram.messenger.g0.h3(new ai.u0(this, this.e, 27), 240L);
                     break;
                 }
                 break;
             default:
                 if (!z10) {
-                    org.telegram.messenger.g0.h3(new ai.c1(this, this.e, 28), 240L);
+                    org.telegram.messenger.g0.h3(new ii(this, this.e, 0), 240L);
                     break;
                 }
                 break;

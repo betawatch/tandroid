@@ -1,18 +1,18 @@
 package q2;
 
-import a8.la;
+import a8.ma;
 import android.media.ResourceBusyException;
 import android.media.UnsupportedSchemeException;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import c8.vb;
+import c8.wb;
 import e2.s0;
 import h9.g0;
-import h9.h2;
+import h9.g2;
 import h9.i0;
+import h9.s1;
 import h9.t0;
-import h9.t1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,12 +21,12 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.web.t1;
 import p4.r0;
-import p4.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set E;
@@ -46,16 +46,16 @@ public final class e implements m {
     public final boolean e;
     public final int[] f;
     public final boolean h;
-    public final k8.a n;
+    public final jb.m n;
     public final qb.a r;
-    public final jn s;
+    public final nd0 s;
     public final long w;
     public final ArrayList x;
     public final Set y;
 
     public e(UUID uuid, ab.q qVar, HashMap hashMap, boolean z10, int[] iArr, boolean z11, qb.a aVar) {
         uuid.getClass();
-        la.e("Use C.CLEARKEY_UUID instead", !e2.l.c.equals(uuid));
+        ma.e("Use C.CLEARKEY_UUID instead", !e2.l.c.equals(uuid));
         this.a = uuid;
         this.b = t.d;
         this.c = qVar;
@@ -64,8 +64,8 @@ public final class e implements m {
         this.f = iArr;
         this.h = z11;
         this.r = aVar;
-        this.n = new k8.a(23);
-        this.s = new jn(this, 10);
+        this.n = new jb.m(24);
+        this.s = new nd0(this, 7);
         this.x = new ArrayList();
         this.y = Collections.newSetFromMap(new IdentityHashMap());
         this.E = Collections.newSetFromMap(new IdentityHashMap());
@@ -80,7 +80,7 @@ public final class e implements m {
         f g10 = bVar.g();
         g10.getClass();
         Throwable cause = g10.getCause();
-        return (cause instanceof ResourceBusyException) || vb.c(cause);
+        return (cause instanceof ResourceBusyException) || wb.c(cause);
     }
 
     public static ArrayList f(e2.r rVar, UUID uuid, boolean z10) {
@@ -99,7 +99,7 @@ public final class e implements m {
         h(false);
         q qVar = this.G;
         qVar.getClass();
-        int H = qVar.H();
+        int G = qVar.G();
         e2.r rVar = uVar.w;
         if (rVar == null) {
             int h = s0.h(uVar.s);
@@ -131,17 +131,17 @@ public final class e implements m {
                 return 1;
             }
         }
-        return H;
+        return G;
     }
 
     @Override // q2.m
-    public final l M(j jVar, e2.u uVar) {
-        la.p(this.F > 0);
+    public final l I(j jVar, e2.u uVar) {
+        ma.p(this.F > 0);
         this.J.getClass();
         d dVar = new d(this, jVar);
         Handler handler = this.K;
         handler.getClass();
-        handler.post(new z(4, dVar, uVar));
+        handler.post(new t1(8, dVar, uVar));
         return dVar;
     }
 
@@ -165,7 +165,7 @@ public final class e implements m {
                     sVar = new w7.s(21);
                 }
                 this.G = sVar;
-                sVar.a(new c5(this));
+                sVar.v(new i5(this));
                 return;
             } catch (UnsupportedSchemeException e10) {
                 throw new x(e10);
@@ -199,7 +199,7 @@ public final class e implements m {
             int h = s0.h(uVar.s);
             q qVar = this.G;
             qVar.getClass();
-            if (qVar.H() != 2 || !r.c) {
+            if (qVar.G() != 2 || !r.c) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i7 >= iArr.length) {
@@ -211,11 +211,11 @@ public final class e implements m {
                     }
                     i7++;
                 }
-                if (i7 != -1 && qVar.H() != 1) {
+                if (i7 != -1 && qVar.G() != 1) {
                     b bVar2 = this.H;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;
-                        b e10 = e(t1.e, true, null, z10);
+                        b e10 = e(s1.e, true, null, z10);
                         this.x.add(e10);
                         this.H = e10;
                     } else {
@@ -293,7 +293,7 @@ public final class e implements m {
         long j3 = this.w;
         Set set = this.E;
         if (c10 && !set.isEmpty()) {
-            h2 it = t0.q(set).iterator();
+            g2 it = t0.q(set).iterator();
             while (it.hasNext()) {
                 ((g) it.next()).c(null);
             }
@@ -306,12 +306,12 @@ public final class e implements m {
         if (c(d) && z11) {
             Set set2 = this.y;
             if (!set2.isEmpty()) {
-                h2 it2 = t0.q(set2).iterator();
+                g2 it2 = t0.q(set2).iterator();
                 while (it2.hasNext()) {
                     ((d) it2.next()).release();
                 }
                 if (!set.isEmpty()) {
-                    h2 it3 = t0.q(set).iterator();
+                    g2 it3 = t0.q(set).iterator();
                     while (it3.hasNext()) {
                         ((g) it3.next()).c(null);
                     }
@@ -349,14 +349,6 @@ public final class e implements m {
     }
 
     @Override // q2.m
-    public final g r(j jVar, e2.u uVar) {
-        h(false);
-        la.p(this.F > 0);
-        this.J.getClass();
-        return b(this.J, jVar, uVar, true);
-    }
-
-    @Override // q2.m
     public final void r1(Looper looper, m2.i iVar) {
         synchronized (this) {
             try {
@@ -365,7 +357,7 @@ public final class e implements m {
                     this.J = looper;
                     this.K = new Handler(looper);
                 } else {
-                    la.p(looper2 == looper);
+                    ma.p(looper2 == looper);
                     this.K.getClass();
                 }
             } catch (Throwable th2) {
@@ -389,10 +381,18 @@ public final class e implements m {
                 ((b) arrayList.get(i10)).c(null);
             }
         }
-        h2 it = t0.q(this.y).iterator();
+        g2 it = t0.q(this.y).iterator();
         while (it.hasNext()) {
             ((d) it.next()).release();
         }
         g();
+    }
+
+    @Override // q2.m
+    public final g v(j jVar, e2.u uVar) {
+        h(false);
+        ma.p(this.F > 0);
+        this.J.getClass();
+        return b(this.J, jVar, uVar, true);
     }
 }

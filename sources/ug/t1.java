@@ -12,17 +12,18 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qc;
-import org.telegram.ui.ActionBar.b6;
-import tg.z1;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.pc;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Wallet.o5;
+import tg.c2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class t1 extends View implements b6 {
+public class t1 extends View implements c6 {
     public s1 a;
-    public final s4.s0 b;
+    public final o5 b;
     public int c;
     public z d;
     public boolean e;
@@ -33,8 +34,8 @@ public class t1 extends View implements b6 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public t1(Context context) {
         super(context);
-        int i7 = cz.o() == 2 ? ls.e3 : cz.o() == 1 ? 100 : 50;
-        this.b = new s4.s0(this, 6);
+        int i7 = bz.o() == 2 ? ks.e3 : bz.o() == 1 ? 100 : 50;
+        this.b = new o5(this, 10);
         this.e = true;
         this.a = new s1(i7);
         a();
@@ -57,12 +58,12 @@ public class t1 extends View implements b6 {
     public final void b(float f10) {
         float f11 = f10 < 60.0f ? 5.0f : f10 < 180.0f ? 9.0f : 15.0f;
         AnimatorSet animatorSet = new AnimatorSet();
-        z1 z1Var = new z1(this, 4);
+        c2 c2Var = new c2(this, 4);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, f11);
-        ofFloat.addUpdateListener(z1Var);
+        ofFloat.addUpdateListener(c2Var);
         ofFloat.setDuration(600L);
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 1.0f);
-        ofFloat2.addUpdateListener(z1Var);
+        ofFloat2.addUpdateListener(c2Var);
         ofFloat2.setDuration(2000L);
         animatorSet.playTogether(ofFloat, ofFloat2);
         animatorSet.start();
@@ -87,8 +88,8 @@ public class t1 extends View implements b6 {
         super.onAttachedToWindow();
         z zVar = new z(this, 1);
         this.d = zVar;
-        qc.a(zVar);
-        boolean e10 = qc.e(131072);
+        pc.a(zVar);
+        boolean e10 = pc.e(131072);
         if (this.e != e10) {
             this.e = e10;
             invalidate();
@@ -100,7 +101,7 @@ public class t1 extends View implements b6 {
         HashSet hashSet;
         super.onDetachedFromWindow();
         z zVar = this.d;
-        if (zVar == null || (hashSet = qc.n) == null) {
+        if (zVar == null || (hashSet = pc.n) == null) {
             return;
         }
         hashSet.remove(zVar);
@@ -112,7 +113,7 @@ public class t1 extends View implements b6 {
         super.onDraw(canvas);
         if (this.e) {
             if (this.f != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -169,14 +170,14 @@ public class t1 extends View implements b6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        s4.s0 s0Var = this.b;
-        removeCallbacks(s0Var);
-        postDelayed(s0Var, 150L);
+        o5 o5Var = this.b;
+        removeCallbacks(o5Var);
+        postDelayed(o5Var, 150L);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

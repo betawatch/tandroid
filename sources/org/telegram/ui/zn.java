@@ -1,44 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class zn extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ jo b;
+public final class zn extends org.telegram.ui.Components.vm0 {
+    public final /* synthetic */ io O;
 
-    public zn(jo joVar, Context context) {
-        this.b = joVar;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zn(io ioVar, Context context, org.telegram.ui.Components.um0 um0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, um0Var, i6Var, false);
+        this.O = ioVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        jo joVar = this.b;
-        if (i7 == -1) {
-            joVar.finishFragment();
-            return;
-        }
-        if (i7 == 1) {
-            org.telegram.ui.ActionBar.c5 c5Var = joVar.r;
-            if (c5Var == null || !c5Var.y.f) {
-                String K = org.telegram.messenger.v3.K(joVar.Y, false);
-                if (!joVar.W || TextUtils.isEmpty(K)) {
-                    joVar.e0();
-                    return;
-                }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, joVar.getResourceProvider());
-                String N0 = org.telegram.messenger.hd.N0(joVar.b0 ? 2131748509 : 2131748507, null);
-                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                t1Var.S = N0;
-                t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0(null, null, joVar.b0 ? 2131748510 : 2131748508, p5.c.m(joVar.getMessagesController().X2, "/", K, new StringBuilder())));
-                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new w0(this, 24));
-                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-                joVar.showDialog(t1Var);
-            }
-        }
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.O.M && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.O.M && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

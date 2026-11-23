@@ -1,7 +1,7 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
 import a8.c7;
+import a8.d7;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.MediaMetadata;
@@ -32,9 +32,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.ActionBar.i5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n0 extends g.u {
     public static final /* synthetic */ int k0 = 0;
@@ -88,9 +88,9 @@ public final class n0 extends g.u {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public n0(Context context) {
-        super(r2, r0 == 0 ? c7.e(r2) : r0);
-        ContextThemeWrapper a10 = c7.a(context, false);
-        int g10 = c7.g(a10, R.attr.mediaRouteTheme);
+        super(r2, r0 == 0 ? d7.e(r2) : r0);
+        ContextThemeWrapper a10 = d7.a(context, false);
+        int g10 = d7.g(a10, R.attr.mediaRouteTheme);
         this.n = s4.r.c;
         this.s = new ArrayList();
         this.w = new ArrayList();
@@ -184,7 +184,7 @@ public final class n0 extends g.u {
 
     public final void j() {
         Context context = this.E;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : b7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : c7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.e0 = null;
         this.f0 = null;
         f();
@@ -295,7 +295,7 @@ public final class n0 extends g.u {
         uVar.getClass();
         s4.x.b();
         for (s4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            c5 b10 = this.r.b(vVar);
+            i5 b10 = this.r.b(vVar);
             if (b10 != null) {
                 s4.o oVar = (s4.o) b10.a;
                 if (oVar != null && oVar.d) {
@@ -360,7 +360,7 @@ public final class n0 extends g.u {
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.E;
-        decorView.setBackgroundColor(context.getColor(c7.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(context.getColor(d7.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.S = imageButton;
         imageButton.setColorFilter(-1);

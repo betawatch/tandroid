@@ -5,15 +5,15 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.qf;
+import org.telegram.ui.Cells.aa;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e1 implements Closeable {
     public final ByteArrayInputStream a;
     public d1 b;
     public final byte[] c = new byte[8];
-    public final qf d = new qf(12);
+    public final aa d = new aa(14);
 
     public e1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -67,7 +67,7 @@ public final class e1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.A0();
+        this.d.J2();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -80,9 +80,9 @@ public final class e1 implements Closeable {
     public final d1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            qf qfVar = this.d;
+            aa aaVar = this.d;
             if (read == -1) {
-                qfVar.A0();
+                aaVar.J2();
                 return null;
             }
             d1 d1Var = new d1(read);
@@ -93,42 +93,42 @@ public final class e1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            qfVar.B0(-1L);
+                            aaVar.K2(-1L);
                         } else {
                             if (b10 != 96) {
                                 throw new IllegalStateException(i5.c.i((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            qfVar.B0(-2L);
+                            aaVar.K2(-2L);
                         }
-                        long C0 = qfVar.C0();
-                        ArrayDeque arrayDeque = (ArrayDeque) qfVar.b;
-                        if (C0 == 1) {
+                        long L2 = aaVar.L2();
+                        ArrayDeque arrayDeque = (ArrayDeque) aaVar.b;
+                        if (L2 == 1) {
                             arrayDeque.pop();
-                        } else if (C0 > 1) {
+                        } else if (L2 > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(C0 - 1));
-                        } else if (C0 == -4) {
+                            arrayDeque.push(Long.valueOf(L2 - 1));
+                        } else if (L2 == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (C0 == -5) {
+                        } else if (L2 == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (d1Var.b == 31) {
-                    long C02 = qfVar.C0();
-                    if (C02 >= 0) {
-                        throw new IOException(a8.p0.o(C02, "expected indefinite length scope but found "));
+                    long L22 = aaVar.L2();
+                    if (L22 >= 0) {
+                        throw new IOException(a8.p0.o(L22, "expected indefinite length scope but found "));
                     }
-                    if (C02 == -5) {
+                    if (L22 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) qfVar.b).pop();
+                    ((ArrayDeque) aaVar.b).pop();
                 }
             }
-            long C03 = qfVar.C0();
-            if (C03 == -1) {
-                j3 = C03;
+            long L23 = aaVar.L2();
+            if (L23 == -1) {
+                j3 = L23;
             }
             throw new IOException(a8.p0.o(j3, "expected non-string scope but found "));
         }

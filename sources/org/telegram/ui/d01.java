@@ -1,39 +1,41 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d01 implements org.telegram.messenger.y10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LinkedHashSet b;
-    public final /* synthetic */ Runnable c;
+public final class d01 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q11 d;
 
-    public /* synthetic */ d01(LinkedHashSet linkedHashSet, Runnable runnable, int i7) {
-        this.a = i7;
-        this.b = linkedHashSet;
-        this.c = runnable;
+    public /* synthetic */ d01(q11 q11Var, int i7) {
+        this.c = i7;
+        this.d = q11Var;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i7) {
+        int i10;
+        ArrayList arrayList;
+        int i11;
+        switch (this.c) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                if (arrayList != null) {
-                    this.b.addAll(arrayList);
-                }
-                this.c.run();
-                break;
+                q11 q11Var = this.d;
+                return (q11Var.x0.indexOfKey(i7) >= 0 || q11Var.A0.indexOfKey(i7) >= 0 || i7 == q11Var.f || i7 == q11Var.E || i7 == q11Var.n || i7 == q11Var.h || i7 == q11Var.w || i7 == q11Var.a || i7 == q11Var.y) ? q11Var.s0.J : ((i7 < q11Var.F || i7 >= q11Var.G) && !q11Var.R) ? 5 : 8;
             default:
-                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
-                if (tL_emojiList != null) {
-                    this.b.addAll(tL_emojiList.document_id);
+                q11 q11Var2 = this.d;
+                b11 b11Var = q11Var2.r0;
+                int d = b11Var.d(i7);
+                if (d == 6) {
+                    return q11Var2.s0.J;
                 }
-                this.c.run();
-                break;
+                if (d != 5) {
+                    q11 q11Var3 = b11Var.s;
+                    if (q11Var3.a0 != 14 ? i7 <= (i10 = b11Var.c) || (i7 - i10) - 1 >= q11Var3.E1.size() : (arrayList = q11Var3.D1) == null || i7 < (i11 = b11Var.c) || i7 - i11 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

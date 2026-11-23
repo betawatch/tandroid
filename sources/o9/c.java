@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements ua.b {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class c implements ua.b {
             default:
                 u9.f fVar = (u9.f) this.c;
                 u9.a aVar2 = (u9.a) this.b;
-                return aVar2.f.e(new r7(aVar2, fVar));
+                return aVar2.f.c(new r7(aVar2, fVar));
         }
     }
 

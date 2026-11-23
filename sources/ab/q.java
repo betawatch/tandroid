@@ -1,6 +1,6 @@
 package ab;
 
-import a8.la;
+import a8.ma;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -16,11 +16,11 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import c8.vb;
+import c8.wb;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.FirebaseMessaging;
 import fi.a3;
-import h9.y1;
+import h9.x1;
 import j$.util.Objects;
 import java.lang.reflect.Array;
 import java.nio.charset.Charset;
@@ -39,26 +39,26 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import m.o3;
-import org.telegram.messenger.jf;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.hf;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.lp0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.x30;
-import org.telegram.ui.Wallet.h1;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.u30;
 import org.telegram.ui.Wallet.i1;
+import org.telegram.ui.Wallet.j1;
 import org.telegram.ui.b5;
-import org.telegram.ui.bn0;
 import org.telegram.ui.r4;
 import org.telegram.ui.u4;
 import org.telegram.ui.w0;
 import org.telegram.ui.w4;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class q implements f3.q, bn0 {
+public final class q implements f3.q, zm0 {
     public static q e;
     public boolean a;
     public Object b;
@@ -71,7 +71,7 @@ public final class q implements f3.q, bn0 {
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(k(tVarArr[0], 0, ls.e4, 0, ls.X4), k(tVarArr[1], 0, ls.e4, ls.g2, ls.X4), k(tVarArr[2], 0, ls.e4, ls.X4, ls.X4), k(tVarArr[0], ls.e4, 0, 1000, 400), k(tVarArr[1], ls.e4, 0, 1000, 400), k(tVarArr[2], ls.e4, 0, 1000, 400));
+        animatorSet.playTogether(k(tVarArr[0], 0, ks.e4, 0, ks.X4), k(tVarArr[1], 0, ks.e4, ks.g2, ks.X4), k(tVarArr[2], 0, ks.e4, ks.X4, ks.X4), k(tVarArr[0], ks.e4, 0, 1000, 400), k(tVarArr[1], ks.e4, 0, 1000, 400), k(tVarArr[2], ks.e4, 0, 1000, 400));
         animatorSet.addListener(new a3(this, view));
     }
 
@@ -117,20 +117,28 @@ public final class q implements f3.q, bn0 {
         return true;
     }
 
-    public static boolean h(w4 w4Var) {
+    public static boolean i(w4 w4Var) {
         return (w4Var.a == null && w4Var.b == null) ? false : true;
     }
 
-    public static q o() {
+    public static q p() {
         if (e == null) {
             e = new q();
         }
         return e;
     }
 
-    public static gc.e q(int i7) {
+    public static gc.e r(int i7) {
         int c10 = p1.g.c(i7);
         return c10 != 0 ? c10 != 1 ? gc.e.c(40) : gc.e.c(26) : gc.e.c(9);
+    }
+
+    public void A() {
+        h2.i0 i0Var = (h2.i0) this.d;
+        if (this.a) {
+            i0Var.d(new ca.r(this, 29));
+            this.a = false;
+        }
     }
 
     public boolean B(String str, String str2) {
@@ -141,7 +149,7 @@ public final class q implements f3.q, bn0 {
                 }
                 AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) this.b;
                 atomicMarkableReference.set((ca.e) atomicMarkableReference.getReference(), true);
-                ca.r rVar = new ca.r(this, 1);
+                ca.r rVar = new ca.r(this, 0);
                 AtomicReference atomicReference = (AtomicReference) this.c;
                 while (!atomicReference.compareAndSet(null, rVar)) {
                     if (atomicReference.get() != null) {
@@ -165,7 +173,7 @@ public final class q implements f3.q, bn0 {
         eVar.invalidate();
     }
 
-    public void D(ViewGroup viewGroup, h6 h6Var, w4 w4Var, u4 u4Var) {
+    public void D(ViewGroup viewGroup, i6 i6Var, w4 w4Var, u4 u4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -176,7 +184,7 @@ public final class q implements f3.q, bn0 {
             }
             this.b = viewGroup;
             this.c = (WindowManager) context.getSystemService(WindowManager.class);
-            r4 r4Var2 = new r4(this, context, h6Var, u4Var);
+            r4 r4Var2 = new r4(this, context, i6Var, u4Var);
             this.d = r4Var2;
             w0 w0Var = new w0(this, 3);
             WeakHashMap weakHashMap = r0.i0.a;
@@ -243,6 +251,17 @@ public final class q implements f3.q, bn0 {
             executor.execute(new pb.l(3, this, runnable));
         } catch (RejectedExecutionException unused) {
             G();
+        }
+    }
+
+    @Override // f3.q
+    public void Z0() {
+        SparseArray sparseArray = (SparseArray) this.d;
+        ((f3.q) this.b).Z0();
+        if (this.a) {
+            for (int i7 = 0; i7 < sparseArray.size(); i7++) {
+                ((c4.o) sparseArray.valueAt(i7)).i = true;
+            }
         }
     }
 
@@ -345,38 +364,27 @@ public final class q implements f3.q, bn0 {
     }
 
     public void d(rc.v vVar) {
-        ArrayList arrayList = (ArrayList) p();
+        ArrayList arrayList = (ArrayList) q();
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
                     rc.u uVar = (rc.u) this.b;
-                    org.telegram.messenger.g0.g3(new lp0(h1Var.c, uVar, h1Var.a, "websocket error: " + i1.a(vVar), 20));
+                    org.telegram.messenger.g0.g3(new kp0(i1Var.c, uVar, i1Var.a, "websocket error: " + j1.a(vVar), 20));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                h1Var.getClass();
+                i1Var.getClass();
             }
         }
     }
 
     @Override // f3.q
-    public void d1() {
-        SparseArray sparseArray = (SparseArray) this.d;
-        ((f3.q) this.b).d1();
-        if (this.a) {
-            for (int i7 = 0; i7 < sparseArray.size(); i7++) {
-                ((c4.o) sparseArray.valueAt(i7)).i = true;
-            }
-        }
-    }
-
-    @Override // f3.q
-    public f3.i0 d2(int i7, int i10) {
+    public f3.j0 d2(int i7, int i10) {
         SparseArray sparseArray = (SparseArray) this.d;
         f3.q qVar = (f3.q) this.b;
         if (i10 != 3 && i10 != 5) {
@@ -394,38 +402,72 @@ public final class q implements f3.q, bn0 {
         return oVar2;
     }
 
-    @Override // org.telegram.ui.bn0
-    public boolean e() {
-        return ((x30) this.d).b.e();
-    }
-
-    public void f() {
-        ArrayList arrayList = (ArrayList) p();
+    public void e() {
+        ArrayList arrayList = (ArrayList) q();
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 } catch (Throwable unused) {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
         }
     }
 
-    public int i(int i7, int i10, int i11) {
-        cc.b bVar = (cc.b) this.b;
-        return this.a ? bVar.b(i10, i7) : bVar.b(i7, i10) ? (i11 << 1) | 1 : i11 << 1;
+    @Override // org.telegram.ui.zm0
+    public boolean f() {
+        return ((u30) this.d).b.f();
+    }
+
+    @Override // org.telegram.ui.zm0
+    public void g0(int i7, boolean z10, boolean z11) {
+        ArrayList arrayList = (ArrayList) this.c;
+        u30 u30Var = (u30) this.d;
+        HashMap hashMap = (HashMap) this.b;
+        if (hashMap.isEmpty() || u30Var.b == null || this.a || z10) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            Object obj = hashMap.get(arrayList.get(i10));
+            yy yyVar = new yy();
+            arrayList2.add(yyVar);
+            if (obj instanceof hf) {
+                hf hfVar = (hf) obj;
+                String str = hfVar.h;
+                if (str != null) {
+                    yyVar.c = str;
+                } else {
+                    yyVar.l = hfVar;
+                }
+                yyVar.k = hfVar.s;
+                yyVar.e = hfVar.c;
+                CharSequence charSequence = hfVar.I;
+                yyVar.d = charSequence != null ? charSequence.toString() : null;
+                yyVar.i = hfVar.n;
+                yyVar.j = hfVar.r;
+                yyVar.h = hfVar.x;
+            }
+        }
+        u30.a(u30Var, false, arrayList2);
     }
 
     @Override // f3.q
-    public void j(f3.b0 b0Var) {
-        ((f3.q) this.b).j(b0Var);
+    public void h(f3.c0 c0Var) {
+        ((f3.q) this.b).h(c0Var);
+    }
+
+    public int j(int i7, int i10, int i11) {
+        cc.b bVar = (cc.b) this.b;
+        return this.a ? bVar.b(i10, i7) : bVar.b(i7, i10) ? (i11 << 1) | 1 : i11 << 1;
     }
 
     public ValueAnimator k(org.telegram.messenger.t tVar, int i7, int i10, int i11, int i12) {
@@ -433,7 +475,7 @@ public final class q implements f3.q, bn0 {
         ofInt.addUpdateListener(new ch.w(15, this, tVar));
         ofInt.setDuration(i12);
         ofInt.setStartDelay(i11);
-        ofInt.setInterpolator(nr.f);
+        ofInt.setInterpolator(kr.f);
         return ofInt;
     }
 
@@ -483,8 +525,8 @@ public final class q implements f3.q, bn0 {
         if (TextUtils.isEmpty(str)) {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
-            la.k(uri, "The uri must be set.");
-            throw new q2.w(new j2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, y1.h, 0L, new IllegalStateException("No license URL"));
+            ma.k(uri, "The uri must be set.");
+            throw new q2.w(new j2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, x1.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = e2.l.f;
@@ -495,7 +537,7 @@ public final class q implements f3.q, bn0 {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return vb.a(((j2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return wb.a(((j2.o) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
     public q2.v n(q2.p pVar) {
@@ -506,7 +548,7 @@ public final class q implements f3.q, bn0 {
             j3 += bArr[i7].length;
         }
         int i10 = (int) j3;
-        la.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i10));
+        ma.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i10));
         byte[] bArr2 = new byte[i10];
         int i11 = 0;
         for (int i12 = 0; i12 < 3; i12++) {
@@ -520,10 +562,10 @@ public final class q implements f3.q, bn0 {
         String valueOf = String.valueOf(i10);
         h9.o.f("Content-Type", aVar);
         h9.o.f("Content-Length", valueOf);
-        return vb.a(createDataSource, str, bArr2, y1.g(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
+        return wb.a(createDataSource, str, bArr2, x1.g(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
     }
 
-    public List p() {
+    public List q() {
         synchronized (((ArrayList) this.c)) {
             try {
                 if (!this.a) {
@@ -536,7 +578,7 @@ public final class q implements f3.q, bn0 {
                 while (i7 < size) {
                     Object obj = arrayList2.get(i7);
                     i7++;
-                    arrayList.add((h1) obj);
+                    arrayList.add((i1) obj);
                 }
                 this.d = arrayList;
                 this.a = false;
@@ -547,14 +589,14 @@ public final class q implements f3.q, bn0 {
         }
     }
 
-    public synchronized void r() {
+    public synchronized void s() {
         try {
             if (this.a) {
                 return;
             }
-            Boolean t6 = t();
-            this.c = t6;
-            if (t6 == null) {
+            Boolean u10 = u();
+            this.c = u10;
+            if (u10 == null) {
                 ((u9.k) ((ra.b) this.b)).a(new a3.l(9));
             }
             this.a = true;
@@ -563,10 +605,10 @@ public final class q implements f3.q, bn0 {
         }
     }
 
-    public synchronized boolean s() {
+    public synchronized boolean t() {
         Boolean bool;
         try {
-            r();
+            s();
             bool = (Boolean) this.c;
         } catch (Throwable th2) {
             throw th2;
@@ -574,7 +616,7 @@ public final class q implements f3.q, bn0 {
         return bool != null ? bool.booleanValue() : ((FirebaseMessaging) this.d).a.h();
     }
 
-    public Boolean t() {
+    public Boolean u() {
         ApplicationInfo applicationInfo;
         Bundle bundle;
         o9.g gVar = ((FirebaseMessaging) this.d).a;
@@ -595,7 +637,7 @@ public final class q implements f3.q, bn0 {
         }
     }
 
-    public gc.c v() {
+    public gc.c w() {
         gc.c cVar = (gc.c) this.d;
         if (cVar != null) {
             return cVar;
@@ -603,23 +645,23 @@ public final class q implements f3.q, bn0 {
         int i7 = 0;
         int i10 = 0;
         for (int i11 = 0; i11 < 6; i11++) {
-            i10 = i(i11, 8, i10);
+            i10 = j(i11, 8, i10);
         }
-        int i12 = i(8, 7, i(8, 8, i(7, 8, i10)));
-        for (int i13 = 5; i13 >= 0; i13--) {
-            i12 = i(8, i13, i12);
+        int j3 = j(8, 7, j(8, 8, j(7, 8, i10)));
+        for (int i12 = 5; i12 >= 0; i12--) {
+            j3 = j(8, i12, j3);
         }
-        int i14 = ((cc.b) this.b).b;
-        int i15 = i14 - 7;
-        for (int i16 = i14 - 1; i16 >= i15; i16--) {
-            i7 = i(8, i16, i7);
+        int i13 = ((cc.b) this.b).b;
+        int i14 = i13 - 7;
+        for (int i15 = i13 - 1; i15 >= i14; i15--) {
+            i7 = j(8, i15, i7);
         }
-        for (int i17 = i14 - 8; i17 < i14; i17++) {
-            i7 = i(i17, 8, i7);
+        for (int i16 = i13 - 8; i16 < i13; i16++) {
+            i7 = j(i16, 8, i7);
         }
-        gc.c a10 = gc.c.a(i12, i7);
+        gc.c a10 = gc.c.a(j3, i7);
         if (a10 == null) {
-            a10 = gc.c.a(i12 ^ 21522, i7 ^ 21522);
+            a10 = gc.c.a(j3 ^ 21522, i7 ^ 21522);
         }
         this.d = a10;
         if (a10 != null) {
@@ -628,41 +670,7 @@ public final class q implements f3.q, bn0 {
         throw bc.c.a();
     }
 
-    @Override // org.telegram.ui.bn0
-    public void v0(int i7, boolean z10, boolean z11) {
-        ArrayList arrayList = (ArrayList) this.c;
-        x30 x30Var = (x30) this.d;
-        HashMap hashMap = (HashMap) this.b;
-        if (hashMap.isEmpty() || x30Var.b == null || this.a || z10) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            Object obj = hashMap.get(arrayList.get(i10));
-            zy zyVar = new zy();
-            arrayList2.add(zyVar);
-            if (obj instanceof jf) {
-                jf jfVar = (jf) obj;
-                String str = jfVar.h;
-                if (str != null) {
-                    zyVar.c = str;
-                } else {
-                    zyVar.l = jfVar;
-                }
-                zyVar.k = jfVar.s;
-                zyVar.e = jfVar.c;
-                CharSequence charSequence = jfVar.I;
-                zyVar.d = charSequence != null ? charSequence.toString() : null;
-                zyVar.i = jfVar.n;
-                zyVar.j = jfVar.r;
-                zyVar.h = jfVar.x;
-            }
-        }
-        x30.a(x30Var, false, arrayList2);
-    }
-
-    public gc.e w() {
+    public gc.e x() {
         gc.e eVar = (gc.e) this.c;
         if (eVar != null) {
             return eVar;
@@ -677,7 +685,7 @@ public final class q implements f3.q, bn0 {
         int i13 = 0;
         for (int i14 = 5; i14 >= 0; i14--) {
             for (int i15 = i7 - 9; i15 >= i11; i15--) {
-                i13 = i(i15, i14, i13);
+                i13 = j(i15, i14, i13);
             }
         }
         gc.e b10 = gc.e.b(i13);
@@ -687,7 +695,7 @@ public final class q implements f3.q, bn0 {
         }
         for (int i16 = 5; i16 >= 0; i16--) {
             for (int i17 = i7 - 9; i17 >= i11; i17--) {
-                i12 = i(i16, i17, i12);
+                i12 = j(i16, i17, i12);
             }
         }
         gc.e b11 = gc.e.b(i12);
@@ -698,7 +706,7 @@ public final class q implements f3.q, bn0 {
         return b11;
     }
 
-    public void x() {
+    public void y() {
         if (((gc.c) this.d) == null) {
             return;
         }
@@ -714,19 +722,11 @@ public final class q implements f3.q, bn0 {
         }
     }
 
-    public void y(View view) {
+    public void z(View view) {
         ArrayList arrayList = (ArrayList) this.d;
         arrayList.remove(view);
         if (arrayList.isEmpty()) {
             ((AnimatorSet) this.c).cancel();
-        }
-    }
-
-    public void z() {
-        h2.i0 i0Var = (h2.i0) this.d;
-        if (this.a) {
-            i0Var.d(new f2.a(this, 0));
-            this.a = false;
         }
     }
 
@@ -743,15 +743,15 @@ public final class q implements f3.q, bn0 {
         this.b = new AtomicMarkableReference(new ca.e(z10 ? TLObject.FLAG_13 : 1024), false);
     }
 
-    @Override // org.telegram.ui.bn0
-    public /* synthetic */ void b0() {
+    @Override // org.telegram.ui.zm0
+    public /* synthetic */ void S() {
     }
 
-    @Override // org.telegram.ui.bn0
-    public void u() {
+    @Override // org.telegram.ui.zm0
+    public void o() {
     }
 
-    @Override // org.telegram.ui.bn0
-    public void A(Editable editable) {
+    @Override // org.telegram.ui.zm0
+    public void v(Editable editable) {
     }
 }

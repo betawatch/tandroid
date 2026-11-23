@@ -8,13 +8,13 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.List;
 import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class r0 implements DownloadListener {
     public final /* synthetic */ s0 a;
@@ -54,19 +54,19 @@ public final class r0 implements DownloadListener {
             guessFileName = URLUtil.guessFileName(str, str3, str4);
             String U = org.telegram.messenger.g0.U(guessFileName);
             x xVar = new x(this, str, str4, str2, U, 4);
-            if (a6.q(k10.t0).c(8, j3)) {
+            if (a6.q(i10.t0).c(8, j3)) {
                 xVar.run();
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(s0Var.getContext());
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            t1Var.S = hd.N0(2131742664, null);
-            t1Var.U = org.telegram.messenger.g0.W2(j3 > 0 ? hd.a0(null, null, 2131742665, U, org.telegram.messenger.g0.i0(j3, false, false)) : hd.a0(null, null, 2131742666, U));
-            alertDialog$Builder.k(hd.N0(2131742663, null), new org.telegram.tgnet.u(xVar, 11));
-            alertDialog$Builder.h(hd.N0(2131752577, null), null);
+            t1Var.S = gd.N0(2131742659, null);
+            t1Var.U = org.telegram.messenger.g0.W2(j3 > 0 ? gd.a0(null, null, 2131742660, U, org.telegram.messenger.g0.i0(j3, false, false)) : gd.a0(null, null, 2131742661, U));
+            alertDialog$Builder.k(gd.N0(2131742658, null), new org.telegram.tgnet.g(xVar, 13));
+            alertDialog$Builder.h(gd.N0(2131752577, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-2);
             if (textView != null) {
-                t6.U(textView, m6.q7, null);
+                u6.U(textView, n6.q7, null);
             }
         } catch (Exception e10) {
             a8.g(e10, true);

@@ -4,97 +4,97 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s2 b;
+    public final /* synthetic */ t2 b;
 
-    public /* synthetic */ c2(s2 s2Var, int i7) {
+    public /* synthetic */ c2(t2 t2Var, int i7) {
         this.a = i7;
-        this.b = s2Var;
+        this.b = t2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new ji.i(10, this.b, tL_error));
+                org.telegram.messenger.g0.g3(new ji.f(12, this.b, tL_error));
                 break;
             case 1:
                 final int i7 = 1;
-                final s2 s2Var = this.b;
+                final t2 t2Var = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.z1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                s2 s2Var2 = s2Var;
+                                t2 t2Var2 = t2Var;
                                 if (tL_error == null) {
-                                    e4 e4Var = s2Var2.x0;
-                                    if (e4Var != null) {
-                                        e4Var.a(tLObject);
-                                        s2Var2.s();
+                                    f4 f4Var = t2Var2.x0;
+                                    if (f4Var != null) {
+                                        f4Var.a(tLObject);
+                                        t2Var2.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var2.getClass();
+                                    t2Var2.getClass();
                                     break;
                                 }
                                 break;
                             case 1:
-                                s2 s2Var3 = s2Var;
+                                t2 t2Var3 = t2Var;
                                 if (tL_error == null) {
-                                    e4 e4Var2 = s2Var3.x0;
-                                    if (e4Var2 != null) {
-                                        e4Var2.a(tLObject);
-                                        s2Var3.s();
+                                    f4 f4Var2 = t2Var3.x0;
+                                    if (f4Var2 != null) {
+                                        f4Var2.a(tLObject);
+                                        t2Var3.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var3.getClass();
+                                    t2Var3.getClass();
                                     break;
                                 }
                                 break;
                             case 2:
-                                s2 s2Var4 = s2Var;
+                                t2 t2Var4 = t2Var;
                                 if (tL_error == null) {
-                                    e4 e4Var3 = s2Var4.x0;
-                                    if (e4Var3 != null) {
-                                        e4Var3.a(tLObject);
-                                        s2Var4.s();
+                                    f4 f4Var3 = t2Var4.x0;
+                                    if (f4Var3 != null) {
+                                        f4Var3.a(tLObject);
+                                        t2Var4.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var4.getClass();
+                                    t2Var4.getClass();
                                     break;
                                 }
                                 break;
                             case 3:
-                                s2 s2Var5 = s2Var;
+                                t2 t2Var5 = t2Var;
                                 if (tL_error == null) {
-                                    e4 e4Var4 = s2Var5.x0;
-                                    if (e4Var4 != null) {
-                                        e4Var4.a(tLObject);
-                                        s2Var5.s();
+                                    f4 f4Var4 = t2Var5.x0;
+                                    if (f4Var4 != null) {
+                                        f4Var4.a(tLObject);
+                                        t2Var5.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var5.getClass();
+                                    t2Var5.getClass();
                                     break;
                                 }
                                 break;
                             default:
-                                s2 s2Var6 = s2Var;
+                                t2 t2Var6 = t2Var;
                                 if (tL_error == null) {
-                                    e4 e4Var5 = s2Var6.x0;
-                                    if (e4Var5 != null) {
-                                        e4Var5.a(tLObject);
-                                        s2Var6.s();
+                                    f4 f4Var5 = t2Var6.x0;
+                                    if (f4Var5 != null) {
+                                        f4Var5.a(tLObject);
+                                        t2Var6.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var6.getClass();
+                                    t2Var6.getClass();
                                     break;
                                 }
                                 break;
@@ -104,78 +104,78 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                 break;
             case 2:
                 final int i10 = 4;
-                final s2 s2Var2 = this.b;
+                final t2 t2Var2 = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.z1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                s2 s2Var22 = s2Var2;
+                                t2 t2Var22 = t2Var2;
                                 if (tL_error == null) {
-                                    e4 e4Var = s2Var22.x0;
-                                    if (e4Var != null) {
-                                        e4Var.a(tLObject);
-                                        s2Var22.s();
+                                    f4 f4Var = t2Var22.x0;
+                                    if (f4Var != null) {
+                                        f4Var.a(tLObject);
+                                        t2Var22.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var22.getClass();
+                                    t2Var22.getClass();
                                     break;
                                 }
                                 break;
                             case 1:
-                                s2 s2Var3 = s2Var2;
+                                t2 t2Var3 = t2Var2;
                                 if (tL_error == null) {
-                                    e4 e4Var2 = s2Var3.x0;
-                                    if (e4Var2 != null) {
-                                        e4Var2.a(tLObject);
-                                        s2Var3.s();
+                                    f4 f4Var2 = t2Var3.x0;
+                                    if (f4Var2 != null) {
+                                        f4Var2.a(tLObject);
+                                        t2Var3.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var3.getClass();
+                                    t2Var3.getClass();
                                     break;
                                 }
                                 break;
                             case 2:
-                                s2 s2Var4 = s2Var2;
+                                t2 t2Var4 = t2Var2;
                                 if (tL_error == null) {
-                                    e4 e4Var3 = s2Var4.x0;
-                                    if (e4Var3 != null) {
-                                        e4Var3.a(tLObject);
-                                        s2Var4.s();
+                                    f4 f4Var3 = t2Var4.x0;
+                                    if (f4Var3 != null) {
+                                        f4Var3.a(tLObject);
+                                        t2Var4.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var4.getClass();
+                                    t2Var4.getClass();
                                     break;
                                 }
                                 break;
                             case 3:
-                                s2 s2Var5 = s2Var2;
+                                t2 t2Var5 = t2Var2;
                                 if (tL_error == null) {
-                                    e4 e4Var4 = s2Var5.x0;
-                                    if (e4Var4 != null) {
-                                        e4Var4.a(tLObject);
-                                        s2Var5.s();
+                                    f4 f4Var4 = t2Var5.x0;
+                                    if (f4Var4 != null) {
+                                        f4Var4.a(tLObject);
+                                        t2Var5.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var5.getClass();
+                                    t2Var5.getClass();
                                     break;
                                 }
                                 break;
                             default:
-                                s2 s2Var6 = s2Var2;
+                                t2 t2Var6 = t2Var2;
                                 if (tL_error == null) {
-                                    e4 e4Var5 = s2Var6.x0;
-                                    if (e4Var5 != null) {
-                                        e4Var5.a(tLObject);
-                                        s2Var6.s();
+                                    f4 f4Var5 = t2Var6.x0;
+                                    if (f4Var5 != null) {
+                                        f4Var5.a(tLObject);
+                                        t2Var6.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var6.getClass();
+                                    t2Var6.getClass();
                                     break;
                                 }
                                 break;
@@ -185,78 +185,78 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                 break;
             case 3:
                 final int i11 = 0;
-                final s2 s2Var3 = this.b;
+                final t2 t2Var3 = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.z1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                s2 s2Var22 = s2Var3;
+                                t2 t2Var22 = t2Var3;
                                 if (tL_error == null) {
-                                    e4 e4Var = s2Var22.x0;
-                                    if (e4Var != null) {
-                                        e4Var.a(tLObject);
-                                        s2Var22.s();
+                                    f4 f4Var = t2Var22.x0;
+                                    if (f4Var != null) {
+                                        f4Var.a(tLObject);
+                                        t2Var22.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var22.getClass();
+                                    t2Var22.getClass();
                                     break;
                                 }
                                 break;
                             case 1:
-                                s2 s2Var32 = s2Var3;
+                                t2 t2Var32 = t2Var3;
                                 if (tL_error == null) {
-                                    e4 e4Var2 = s2Var32.x0;
-                                    if (e4Var2 != null) {
-                                        e4Var2.a(tLObject);
-                                        s2Var32.s();
+                                    f4 f4Var2 = t2Var32.x0;
+                                    if (f4Var2 != null) {
+                                        f4Var2.a(tLObject);
+                                        t2Var32.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var32.getClass();
+                                    t2Var32.getClass();
                                     break;
                                 }
                                 break;
                             case 2:
-                                s2 s2Var4 = s2Var3;
+                                t2 t2Var4 = t2Var3;
                                 if (tL_error == null) {
-                                    e4 e4Var3 = s2Var4.x0;
-                                    if (e4Var3 != null) {
-                                        e4Var3.a(tLObject);
-                                        s2Var4.s();
+                                    f4 f4Var3 = t2Var4.x0;
+                                    if (f4Var3 != null) {
+                                        f4Var3.a(tLObject);
+                                        t2Var4.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var4.getClass();
+                                    t2Var4.getClass();
                                     break;
                                 }
                                 break;
                             case 3:
-                                s2 s2Var5 = s2Var3;
+                                t2 t2Var5 = t2Var3;
                                 if (tL_error == null) {
-                                    e4 e4Var4 = s2Var5.x0;
-                                    if (e4Var4 != null) {
-                                        e4Var4.a(tLObject);
-                                        s2Var5.s();
+                                    f4 f4Var4 = t2Var5.x0;
+                                    if (f4Var4 != null) {
+                                        f4Var4.a(tLObject);
+                                        t2Var5.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var5.getClass();
+                                    t2Var5.getClass();
                                     break;
                                 }
                                 break;
                             default:
-                                s2 s2Var6 = s2Var3;
+                                t2 t2Var6 = t2Var3;
                                 if (tL_error == null) {
-                                    e4 e4Var5 = s2Var6.x0;
-                                    if (e4Var5 != null) {
-                                        e4Var5.a(tLObject);
-                                        s2Var6.s();
+                                    f4 f4Var5 = t2Var6.x0;
+                                    if (f4Var5 != null) {
+                                        f4Var5.a(tLObject);
+                                        t2Var6.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var6.getClass();
+                                    t2Var6.getClass();
                                     break;
                                 }
                                 break;
@@ -266,78 +266,78 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                 break;
             case 4:
                 final int i12 = 2;
-                final s2 s2Var4 = this.b;
+                final t2 t2Var4 = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.z1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                s2 s2Var22 = s2Var4;
+                                t2 t2Var22 = t2Var4;
                                 if (tL_error == null) {
-                                    e4 e4Var = s2Var22.x0;
-                                    if (e4Var != null) {
-                                        e4Var.a(tLObject);
-                                        s2Var22.s();
+                                    f4 f4Var = t2Var22.x0;
+                                    if (f4Var != null) {
+                                        f4Var.a(tLObject);
+                                        t2Var22.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var22.getClass();
+                                    t2Var22.getClass();
                                     break;
                                 }
                                 break;
                             case 1:
-                                s2 s2Var32 = s2Var4;
+                                t2 t2Var32 = t2Var4;
                                 if (tL_error == null) {
-                                    e4 e4Var2 = s2Var32.x0;
-                                    if (e4Var2 != null) {
-                                        e4Var2.a(tLObject);
-                                        s2Var32.s();
+                                    f4 f4Var2 = t2Var32.x0;
+                                    if (f4Var2 != null) {
+                                        f4Var2.a(tLObject);
+                                        t2Var32.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var32.getClass();
+                                    t2Var32.getClass();
                                     break;
                                 }
                                 break;
                             case 2:
-                                s2 s2Var42 = s2Var4;
+                                t2 t2Var42 = t2Var4;
                                 if (tL_error == null) {
-                                    e4 e4Var3 = s2Var42.x0;
-                                    if (e4Var3 != null) {
-                                        e4Var3.a(tLObject);
-                                        s2Var42.s();
+                                    f4 f4Var3 = t2Var42.x0;
+                                    if (f4Var3 != null) {
+                                        f4Var3.a(tLObject);
+                                        t2Var42.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var42.getClass();
+                                    t2Var42.getClass();
                                     break;
                                 }
                                 break;
                             case 3:
-                                s2 s2Var5 = s2Var4;
+                                t2 t2Var5 = t2Var4;
                                 if (tL_error == null) {
-                                    e4 e4Var4 = s2Var5.x0;
-                                    if (e4Var4 != null) {
-                                        e4Var4.a(tLObject);
-                                        s2Var5.s();
+                                    f4 f4Var4 = t2Var5.x0;
+                                    if (f4Var4 != null) {
+                                        f4Var4.a(tLObject);
+                                        t2Var5.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var5.getClass();
+                                    t2Var5.getClass();
                                     break;
                                 }
                                 break;
                             default:
-                                s2 s2Var6 = s2Var4;
+                                t2 t2Var6 = t2Var4;
                                 if (tL_error == null) {
-                                    e4 e4Var5 = s2Var6.x0;
-                                    if (e4Var5 != null) {
-                                        e4Var5.a(tLObject);
-                                        s2Var6.s();
+                                    f4 f4Var5 = t2Var6.x0;
+                                    if (f4Var5 != null) {
+                                        f4Var5.a(tLObject);
+                                        t2Var6.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var6.getClass();
+                                    t2Var6.getClass();
                                     break;
                                 }
                                 break;
@@ -347,78 +347,78 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                 break;
             default:
                 final int i13 = 3;
-                final s2 s2Var5 = this.b;
+                final t2 t2Var5 = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.z1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                s2 s2Var22 = s2Var5;
+                                t2 t2Var22 = t2Var5;
                                 if (tL_error == null) {
-                                    e4 e4Var = s2Var22.x0;
-                                    if (e4Var != null) {
-                                        e4Var.a(tLObject);
-                                        s2Var22.s();
+                                    f4 f4Var = t2Var22.x0;
+                                    if (f4Var != null) {
+                                        f4Var.a(tLObject);
+                                        t2Var22.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var22.getClass();
+                                    t2Var22.getClass();
                                     break;
                                 }
                                 break;
                             case 1:
-                                s2 s2Var32 = s2Var5;
+                                t2 t2Var32 = t2Var5;
                                 if (tL_error == null) {
-                                    e4 e4Var2 = s2Var32.x0;
-                                    if (e4Var2 != null) {
-                                        e4Var2.a(tLObject);
-                                        s2Var32.s();
+                                    f4 f4Var2 = t2Var32.x0;
+                                    if (f4Var2 != null) {
+                                        f4Var2.a(tLObject);
+                                        t2Var32.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var32.getClass();
+                                    t2Var32.getClass();
                                     break;
                                 }
                                 break;
                             case 2:
-                                s2 s2Var42 = s2Var5;
+                                t2 t2Var42 = t2Var5;
                                 if (tL_error == null) {
-                                    e4 e4Var3 = s2Var42.x0;
-                                    if (e4Var3 != null) {
-                                        e4Var3.a(tLObject);
-                                        s2Var42.s();
+                                    f4 f4Var3 = t2Var42.x0;
+                                    if (f4Var3 != null) {
+                                        f4Var3.a(tLObject);
+                                        t2Var42.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var42.getClass();
+                                    t2Var42.getClass();
                                     break;
                                 }
                                 break;
                             case 3:
-                                s2 s2Var52 = s2Var5;
+                                t2 t2Var52 = t2Var5;
                                 if (tL_error == null) {
-                                    e4 e4Var4 = s2Var52.x0;
-                                    if (e4Var4 != null) {
-                                        e4Var4.a(tLObject);
-                                        s2Var52.s();
+                                    f4 f4Var4 = t2Var52.x0;
+                                    if (f4Var4 != null) {
+                                        f4Var4.a(tLObject);
+                                        t2Var52.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var52.getClass();
+                                    t2Var52.getClass();
                                     break;
                                 }
                                 break;
                             default:
-                                s2 s2Var6 = s2Var5;
+                                t2 t2Var6 = t2Var5;
                                 if (tL_error == null) {
-                                    e4 e4Var5 = s2Var6.x0;
-                                    if (e4Var5 != null) {
-                                        e4Var5.a(tLObject);
-                                        s2Var6.s();
+                                    f4 f4Var5 = t2Var6.x0;
+                                    if (f4Var5 != null) {
+                                        f4Var5.a(tLObject);
+                                        t2Var6.s();
                                         break;
                                     }
                                 } else {
-                                    s2Var6.getClass();
+                                    t2Var6.getClass();
                                     break;
                                 }
                                 break;

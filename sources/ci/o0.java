@@ -7,12 +7,12 @@ import android.util.LongSparseArray;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ho;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.go;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o0 implements gs {
+public final class o0 implements fs {
     public static final LongSparseArray[] J = new LongSparseArray[4];
     public boolean E;
     public boolean F;
@@ -199,19 +199,19 @@ public final class o0 implements gs {
         return str + "?free=" + tL_exportedNoPaidMessagesToken.token;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.ChatFull chatFull;
         long j3 = this.c.f;
-        if (i7 == ls.k0) {
+        if (i7 == ks.k0) {
             r();
             return;
         }
-        if (i7 == ls.E0) {
+        if (i7 == ks.E0) {
             if (((Long) objArr[0]).longValue() == j3) {
                 i(((TLRPC.UserFull) objArr[1]).share_theme);
             }
-        } else if (i7 == ls.T && (chatFull = (TLRPC.ChatFull) objArr[0]) != null && (-chatFull.id) == j3) {
+        } else if (i7 == ks.T && (chatFull = (TLRPC.ChatFull) objArr[0]) != null && (-chatFull.id) == j3) {
             i(chatFull.share_theme);
         }
     }
@@ -221,7 +221,7 @@ public final class o0 implements gs {
         if (m0Var.e) {
             return new TLRPC.TL_inputPeerSelf();
         }
-        TLRPC.InputPeer l1 = np.u1(this.a).l1(m0Var.f);
+        TLRPC.InputPeer l1 = mp.u1(this.a).l1(m0Var.f);
         if (l1 instanceof TLRPC.TL_inputPeerEmpty) {
             return null;
         }
@@ -229,19 +229,19 @@ public final class o0 implements gs {
     }
 
     public final SharedPreferences f() {
-        return np.u1(this.a).h7;
+        return mp.u1(this.a).h7;
     }
 
     public final void g() {
         int i7 = this.a;
-        np u12 = np.u1(i7);
+        mp u12 = mp.u1(i7);
         long j3 = this.c.f;
         if (j3 > 0) {
             TLRPC.User c22 = u12.c2(Long.valueOf(j3));
             if (c22 == null) {
                 return;
             }
-            ls.f(i7).c(this, ls.E0);
+            ks.f(i7).c(this, ks.E0);
             u12.n3(c22, true, 0);
             return;
         }
@@ -249,8 +249,8 @@ public final class o0 implements gs {
         if (O0 == null) {
             return;
         }
-        ls.f(i7).c(this, ls.T);
-        ur.a0(i7).F0(O0.id, v3.T(O0), null, true, false, 0);
+        ks.f(i7).c(this, ks.T);
+        tr.a0(i7).F0(O0.id, v3.T(O0), null, true, false, 0);
     }
 
     public final void i(TLRPC.ShareTheme shareTheme) {
@@ -380,13 +380,13 @@ public final class o0 implements gs {
 
     public final void k(TLRPC.ShareTheme shareTheme) {
         int i7 = this.a;
-        np u12 = np.u1(i7);
+        mp u12 = mp.u1(i7);
         long j3 = this.c.f;
         if (j3 > 0) {
             TLRPC.UserFull d2 = u12.d2(j3);
             if (d2 != null) {
                 d2.share_theme = shareTheme;
-                ur.a0(i7).j2(d2, false);
+                tr.a0(i7).j2(d2, false);
                 return;
             }
             return;
@@ -394,16 +394,16 @@ public final class o0 implements gs {
         TLRPC.ChatFull P0 = u12.P0(-j3);
         if (P0 != null) {
             P0.share_theme = shareTheme;
-            ur.a0(i7).N1(P0, false);
+            tr.a0(i7).N1(P0, false);
         }
     }
 
     public final void l() {
         this.F = true;
         int i7 = this.a;
-        ls.f(i7).n(this, ls.k0);
-        ls.f(i7).n(this, ls.E0);
-        ls.f(i7).n(this, ls.T);
+        ks.f(i7).n(this, ks.k0);
+        ks.f(i7).n(this, ks.E0);
+        ks.f(i7).n(this, ks.T);
         org.telegram.messenger.g0.r(this.G);
         org.telegram.messenger.g0.r(this.H);
         o();
@@ -415,17 +415,17 @@ public final class o0 implements gs {
 
     public final void m() {
         this.s = SystemClock.elapsedRealtime();
-        np u12 = np.u1(this.a);
-        ai.h0 h0Var = new ai.h0(this, 8);
+        mp u12 = mp.u1(this.a);
+        ai.d0 d0Var = new ai.d0(this, 8);
         if (u12.c8) {
             return;
         }
         if (u12.d8 != null && r0.expires > System.currentTimeMillis() / 1000) {
-            h0Var.a(u12.d8);
+            d0Var.a(u12.d8);
             return;
         }
         u12.c8 = true;
-        u12.getConnectionsManager().sendRequest(new TLRPC.TL_contacts_exportContactToken(), new ho(u12, h0Var, System.currentTimeMillis(), 7));
+        u12.getConnectionsManager().sendRequest(new TLRPC.TL_contacts_exportContactToken(), new go(u12, d0Var, System.currentTimeMillis(), 7));
     }
 
     public final void n(boolean z10, boolean z11) {

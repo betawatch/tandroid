@@ -1,13 +1,13 @@
 package z7;
 
-import c8.le;
+import c8.me;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class ta extends l9 implements List, RandomAccess {
     public static final ra b = new ra(va.e, 0);
@@ -104,7 +104,7 @@ public abstract class ta extends l9 implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: l, reason: merged with bridge method [inline-methods] */
     public ta subList(int i7, int i10) {
-        le.b(i7, i10, size());
+        me.b(i7, i10, size());
         int i11 = i10 - i7;
         return i11 == size() ? this : i11 == 0 ? va.e : new sa(this, i7, i11);
     }
@@ -132,7 +132,7 @@ public abstract class ta extends l9 implements List, RandomAccess {
     public final ra listIterator(int i7) {
         int size = size();
         if (i7 < 0 || i7 > size) {
-            throw new IndexOutOfBoundsException(le.c(i7, size, "index"));
+            throw new IndexOutOfBoundsException(me.c(i7, size, "index"));
         }
         return isEmpty() ? b : new ra(this, i7);
     }

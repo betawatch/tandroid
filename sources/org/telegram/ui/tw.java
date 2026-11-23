@@ -1,109 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class tw implements org.telegram.ui.Components.nz {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ cx b;
+public final /* synthetic */ class tw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uw b;
 
-    public tw(Context context, cx cxVar) {
-        this.b = cxVar;
-        this.a = context;
+    public /* synthetic */ tw(uw uwVar, int i7) {
+        this.a = i7;
+        this.b = uwVar;
     }
 
-    public final int a(int i7) {
-        cx cxVar = this.b;
-        if (cxVar.T0 == 3) {
-            return 0;
-        }
-        if (i7 == cxVar.A0.getDefaultTabId()) {
-            return cxVar.getMessagesStorage().L;
-        }
-        ArrayList V0 = cxVar.getMessagesController().V0();
-        if (i7 < 0 || i7 >= V0.size()) {
-            return 0;
-        }
-        return ((org.telegram.messenger.so) cxVar.getMessagesController().V0().get(i7)).d;
-    }
-
-    public final void b(float f10) {
-        cx cxVar = this.b;
-        if (f10 != 1.0f || cxVar.f0[1].getVisibility() == 0 || cxVar.l2) {
-            if (cxVar.k3) {
-                cxVar.f0[0].setTranslationX((-f10) * r3.getMeasuredWidth());
-                cxVar.f0[1].setTranslationX(r3[0].getMeasuredWidth() - (f10 * cxVar.f0[0].getMeasuredWidth()));
-            } else {
-                cxVar.f0[0].setTranslationX(r3.getMeasuredWidth() * f10);
-                cxVar.f0[1].setTranslationX((f10 * r3[0].getMeasuredWidth()) - cxVar.f0[0].getMeasuredWidth());
-            }
-            if (f10 == 1.0f) {
-                bx[] bxVarArr = cxVar.f0;
-                bx bxVar = bxVarArr[0];
-                bxVarArr[0] = bxVarArr[1];
-                bxVarArr[1] = bxVar;
-                bxVar.setVisibility(8);
-                cx.i1(cxVar, true);
-                cxVar.n5(false);
-                cxVar.C5(-1, true);
-                cxVar.A0.P = false;
-                cxVar.C3(cxVar.f0[0]);
-                cxVar.f0[0].d.getClass();
-                cxVar.f0[1].d.getClass();
-            }
-        }
-    }
-
-    public final void c(org.telegram.ui.Components.oz ozVar, boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i7;
-        int i10;
-        cx cxVar = this.b;
-        int i11 = cxVar.f0[0].h;
-        int i12 = ozVar.a;
-        if (i11 == i12) {
-            return;
-        }
-        if (ozVar.f) {
-            cxVar.A0.l(i12);
-            i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-            cxVar.showDialog(new ug.k0(3, i10, this.a, cxVar, null));
-            return;
-        }
-        ArrayList V0 = cxVar.getMessagesController().V0();
-        if (ozVar.e || ((i7 = ozVar.a) >= 0 && i7 < V0.size())) {
-            bx bxVar = cxVar.f0[1];
-            bxVar.h = ozVar.a;
-            bxVar.setVisibility(0);
-            cxVar.f0[1].setTranslationX(r0[0].getMeasuredWidth());
-            cx.i1(cxVar, false);
-            cxVar.l5(true);
-            cxVar.C5(ozVar.a, true);
-            cxVar.k3 = z10;
-        }
-    }
-
-    public final void d(org.telegram.messenger.so soVar) {
-        boolean c10 = soVar.c();
-        cx cxVar = this.b;
-        if (c10) {
-            org.telegram.ui.Components.i00.h1(cxVar, soVar.a, null);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar.getParentActivity());
-        String N0 = org.telegram.messenger.hd.N0(2131750778, null);
-        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-        t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.hd.N0(2131750777, null);
-        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new at(5, this, soVar));
-        cxVar.showDialog(t1Var);
-        TextView textView = (TextView) t1Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, cxVar.getResourceProvider());
+        switch (this.a) {
+            case 0:
+                uw uwVar = this.b;
+                bx bxVar = uwVar.o0;
+                Context context = uwVar.getContext();
+                i7 = ((org.telegram.ui.ActionBar.g2) bxVar).currentAccount;
+                bxVar.showDialog(new ug.k0(3, i7, context, bxVar, null));
+                break;
+            default:
+                bx bxVar2 = this.b.o0;
+                yv yvVar = bxVar2.N0;
+                if (yvVar != null) {
+                    yvVar.dismiss();
+                    bxVar2.N0 = null;
+                    break;
+                }
+                break;
         }
     }
 }

@@ -2,12 +2,12 @@ package d3;
 
 import android.content.res.Resources;
 import android.util.Base64;
-import h9.y1;
+import h9.x1;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements g9.t {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class p implements g9.t {
                 }
                 return newSingleThreadExecutor instanceof ScheduledExecutorService ? new m9.d0((ScheduledExecutorService) newSingleThreadExecutor) : new m9.a0(newSingleThreadExecutor);
             case 3:
-                return new l2.h(new b3.e(), 1000, 1000, 1000, 2000, 1000, true, y1.h);
+                return new l2.i(new b3.e(), 1000, 1000, 1000, 2000, 1000, true, x1.h);
             case 4:
                 byte[] bArr = new byte[12];
                 m2.f.i.nextBytes(bArr);

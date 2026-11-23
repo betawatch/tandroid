@@ -1,11 +1,11 @@
 package jb;
 
-import c8.qb;
+import c8.rb;
 import java.io.FileInputStream;
 import m1.g1;
 import m1.y0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j implements y0 {
     public static final j a = new j();
@@ -20,7 +20,7 @@ public final class j implements y0 {
     public final Object b(FileInputStream fileInputStream) {
         try {
             pe.b bVar = pe.b.d;
-            String str = new String(qb.b(fileInputStream), xd.a.a);
+            String str = new String(rb.b(fileInputStream), xd.a.a);
             bVar.getClass();
             return (i) bVar.a(i.Companion.serializer(), str);
         } catch (Exception e10) {

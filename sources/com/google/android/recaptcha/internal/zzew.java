@@ -1,6 +1,5 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
@@ -9,7 +8,7 @@ import kotlin.jvm.internal.r;
 import rd.p;
 import zd.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzew extends j implements p {
     Object zza;
@@ -55,7 +54,7 @@ final class zzew extends j implements p {
         if (this.zzb != 0) {
             rVar2 = (r) this.zza;
             try {
-                h.b(obj);
+                c8.z.b(obj);
                 zzc = obj;
             } catch (Exception e10) {
                 e = e10;
@@ -66,7 +65,7 @@ final class zzew extends j implements p {
                 throw zzcgVar;
             }
         } else {
-            h.b(obj);
+            c8.z.b(obj);
             r rVar3 = new r();
             try {
                 j3 = this.zzc;

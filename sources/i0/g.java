@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.Log;
-import c8.m0;
 import c8.n0;
+import c8.o0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,9 +20,9 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class g extends m0 {
+public final class g extends n0 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -70,7 +70,7 @@ public final class g extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         Object obj;
         int i10;
@@ -84,10 +84,10 @@ public final class g extends m0 {
         if (obj != null) {
             for (h0.f fVar : eVar.a) {
                 int i11 = fVar.f;
-                File d2 = n0.d(context);
+                File d2 = o0.d(context);
                 if (d2 != null) {
                     try {
-                        if (n0.b(d2, resources, i11)) {
+                        if (o0.b(d2, resources, i11)) {
                             try {
                                 fileInputStream = new FileInputStream(d2);
                             } catch (IOException unused2) {
@@ -114,7 +114,7 @@ public final class g extends m0 {
         return null;
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface b(Context context, o0.h[] hVarArr, int i7) {
         Object obj;
         try {
@@ -132,7 +132,7 @@ public final class g extends m0 {
                     Uri uri = hVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) lVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = n0.e(context, uri);
+                        byteBuffer = o0.e(context, uri);
                         lVar.put(uri, byteBuffer);
                     }
                     if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {

@@ -14,11 +14,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.jn;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -61,7 +61,7 @@ public final class v {
         return null;
     }
 
-    public final c5 b(v vVar) {
+    public final i5 b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -70,7 +70,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new c5((o) this.w.get(str));
+        return new i5((o) this.w.get(str));
     }
 
     public final h3 c() {
@@ -89,7 +89,7 @@ public final class v {
         if (vVar == this || this.n == 3) {
             return true;
         }
-        return TextUtils.equals(((ComponentName) ((jn) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
+        return TextUtils.equals(((ComponentName) ((nd0) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
     }
 
     public final boolean e() {
@@ -381,7 +381,7 @@ public final class v {
                 }
             }
         }
-        x.c().a.b(ls.i4, this);
+        x.c().a.b(ks.i4, this);
     }
 
     public final String toString() {

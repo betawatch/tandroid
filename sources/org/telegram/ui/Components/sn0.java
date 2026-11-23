@@ -1,122 +1,38 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class sn0 extends bv0 {
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public float d;
-    public final Paint e;
+public final class sn0 {
+    public final zt a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    public sn0(boolean z10) {
-        if (z10) {
-            Paint paint = new Paint(1);
-            this.e = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void b(int i7) {
-        Paint paint = this.e;
-        if (paint != null) {
-            paint.setColor(i7);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void d() {
+    public sn0(View view) {
+        zt ztVar = new zt(1, view);
         this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
+        this.a = ztVar;
+        g5.a aVar = Utilities.c;
+        this.c = org.telegram.messenger.g0.T1(5.0f, 9.0f, Utilities.l(aVar.nextFloat()));
+        this.d = org.telegram.messenger.g0.T1(2.5f, 5.0f, Utilities.l(aVar.nextFloat()));
+        this.e = org.telegram.messenger.g0.T1(2.5f, 5.2f, Utilities.l(aVar.nextFloat()));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.m6.d2;
-        }
-        Paint paint2 = paint;
-        int i7 = 0;
-        while (i7 < 3) {
-            if (i7 == 0) {
-                paint2.setAlpha((int) (this.d * 255.0f));
-            } else if (i7 == 2) {
-                paint2.setAlpha((int) ((1.0f - this.d) * 255.0f));
-            } else {
-                paint2.setAlpha(org.telegram.messenger.ls.e4);
-            }
-            float L = (org.telegram.messenger.g0.L(5.0f) * i7) + (org.telegram.messenger.g0.L(5.0f) * this.d);
-            float f10 = 8.0f;
-            Canvas canvas2 = canvas;
-            canvas2.drawLine(L, org.telegram.messenger.g0.L(this.a ? 3.0f : 4.0f), L + org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(this.a ? 7.0f : 8.0f), paint2);
-            float L2 = org.telegram.messenger.g0.L(this.a ? 11.0f : 12.0f);
-            float L3 = L + org.telegram.messenger.g0.L(4.0f);
-            if (this.a) {
-                f10 = 7.0f;
-            }
-            canvas2.drawLine(L, L2, L3, org.telegram.messenger.g0.L(f10), paint2);
-            i7++;
-            canvas = canvas2;
-        }
-        if (!this.c) {
+    public final void a(Canvas canvas, float f10) {
+        zt ztVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10);
+        canvas.translate(-0.0f, -0.0f);
+        if (f10 <= 0.0f || (ztVar = this.a) == null) {
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.b;
-        this.b = currentTimeMillis;
-        if (j3 > 50) {
-            j3 = 50;
-        }
-        this.d = (j3 / 500.0f) + this.d;
-        while (true) {
-            float f11 = this.d;
-            if (f11 <= 1.0f) {
-                a();
-                return;
-            }
-            this.d = f11 - 1.0f;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(14.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        ztVar.run();
     }
 }

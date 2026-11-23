@@ -1,41 +1,9 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class zo {
-    public final String a;
-    public final String[] b;
-    public final String c;
-    public int d;
-
-    public zo(String str, String[] strArr, String str2) {
-        this.a = str;
-        this.b = strArr;
-        this.c = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof zo) {
-            return this.a.equals(((zo) obj).a);
-        }
-        return false;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.d);
-        serializedData.writeInt32(0);
-        serializedData.writeString(this.a);
-        String[] strArr = this.b;
-        serializedData.writeInt32(strArr != null ? strArr.length : 0);
-        if (strArr != null) {
-            for (String str : strArr) {
-                serializedData.writeString(str);
-            }
-        }
-        serializedData.writeString(this.c);
-        return Utilities.f(serializedData.toByteArray());
-    }
+public interface zo {
+    void a(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str);
 }

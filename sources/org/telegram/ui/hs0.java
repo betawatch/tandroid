@@ -1,418 +1,207 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class hs0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class hs0 extends org.telegram.ui.ActionBar.g2 {
+    public final long a;
+    public org.telegram.ui.Cells.t7 b;
+    public org.telegram.ui.Components.d80 c;
+    public org.telegram.ui.Components.g51 d;
+    public org.telegram.ui.ActionBar.c5 e;
+    public final boolean f;
+    public final long h;
+    public boolean n;
+    public long r;
+    public ln s;
+    public boolean w;
 
-    public /* synthetic */ hs0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hs0(long j3) {
+        super(null);
+        TLRPC.Chat chat = null;
+        this.w = true;
+        this.a = j3;
+        TLRPC.Chat O0 = getMessagesController().O0(Long.valueOf(j3));
+        if (O0 != null && O0.linked_monoforum_id != 0) {
+            chat = getMessagesController().O0(Long.valueOf(O0.linked_monoforum_id));
+        }
+        long j10 = chat != null ? chat.send_paid_messages_stars : 0L;
+        boolean z10 = O0 != null && O0.broadcast_messages_allowed;
+        this.f = z10;
+        long k10 = Utilities.k(z10 ? j10 : ((org.telegram.messenger.j0) getMessagesController().A7.b.b).c, getMessagesController().L6, 0L);
+        this.h = k10;
+        this.n = z10;
+        this.r = k10;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        int i10;
-        org.telegram.messenger.gj gjVar;
-        org.telegram.ui.ActionBar.k kVar3;
-        org.telegram.ui.ActionBar.k kVar4;
-        org.telegram.ui.ActionBar.k kVar5;
-        org.telegram.ui.ActionBar.k kVar6;
-        int i11 = this.a;
-        org.telegram.ui.ActionBar.j jVar = null;
-        boolean z10 = true;
-        char c10 = 1;
-        Object obj = this.b;
-        switch (i11) {
-            case 0:
-                is0 is0Var = (is0) obj;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        is0Var.d0();
-                        break;
-                    }
-                } else if (is0Var.onBackPressed(true)) {
-                    is0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                if (i7 == -1) {
-                    ((PremiumPreviewFragment) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 2:
-                PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) obj;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        privacyControlActivity.K0();
-                        break;
-                    }
-                } else if (privacyControlActivity.G0(true)) {
-                    privacyControlActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                if (i7 == -1) {
-                    ((PrivacySettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                if (i7 == -1) {
-                    ((st0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                ProfileActivity profileActivity = (ProfileActivity) obj;
-                if (i7 == -1) {
-                    vv0 vv0Var = profileActivity.O;
-                    if (vv0Var == null || !vv0Var.V(true)) {
-                        if (!profileActivity.J0) {
-                            profileActivity.finishFragment();
-                            break;
-                        } else {
-                            Bundle bundle = new Bundle();
-                            bundle.putLong("chat_id", profileActivity.f1);
-                            bundle.putLong("user_id", profileActivity.e1);
-                            profileActivity.presentFragment(new ci.j0(bundle));
-                            break;
-                        }
-                    }
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
-                    if (kVar != null) {
-                        kVar2 = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
-                        jVar = kVar2.getActionBarMenuOnItemClick();
-                    }
-                    if (jVar != null) {
-                        jVar.b(i7);
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                if (i7 == -1) {
-                    ((ProxyListActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                yx0 yx0Var = (yx0) obj;
-                boolean z11 = yx0Var.J;
-                org.telegram.messenger.bz bzVar = yx0Var.K;
-                if (i7 != -1) {
-                    if (i7 == 1 && yx0Var.getParentActivity() != null) {
-                        n2.o0 a10 = xi.a.a();
-                        a10.p(yx0Var.w);
-                        String obj2 = yx0Var.a[0].getText().toString();
-                        if (obj2 == null) {
-                            obj2 = "";
-                        }
-                        a10.c = obj2;
-                        a10.b = yx0Var.w == 3 ? 0 : Utilities.z(yx0Var.a[1].getText().toString()).intValue();
-                        String obj3 = yx0Var.w == 1 ? yx0Var.a[2].getText().toString() : "";
-                        if (obj3 == null) {
-                            obj3 = "";
-                        }
-                        a10.d = obj3;
-                        String obj4 = yx0Var.w == 1 ? yx0Var.a[3].getText().toString() : "";
-                        if (obj4 == null) {
-                            obj4 = "";
-                        }
-                        a10.e = obj4;
-                        String obj5 = yx0Var.w != 1 ? yx0Var.a[4].getText().toString() : "";
-                        a10.f = obj5 != null ? obj5 : "";
-                        bzVar.a = a10.d();
-                        SharedPreferences g12 = org.telegram.messenger.np.g1();
-                        SharedPreferences.Editor edit = g12.edit();
-                        if (z11) {
-                            org.telegram.messenger.cz.a(bzVar);
-                            org.telegram.messenger.cz.B1 = bzVar;
-                            edit.putBoolean("proxy_enabled", true);
-                        } else {
-                            z10 = g12.getBoolean("proxy_enabled", false);
-                            org.telegram.messenger.cz.z();
-                        }
-                        if (z11 || org.telegram.messenger.cz.B1 == bzVar) {
-                            bzVar.a.i(edit);
-                            ConnectionsManager.setProxySettings(z10, bzVar.a);
-                        }
-                        edit.commit();
-                        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.D4, new Object[0]);
-                        yx0Var.finishFragment();
-                        break;
-                    }
-                } else {
-                    yx0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                if (i7 == -1) {
-                    ((ey0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                if (i7 == -1) {
-                    ((sy0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                if (i7 == -1) {
-                    ((zy0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                if (i7 == -1) {
-                    ((SaveToGallerySettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i7 == -1) {
-                    ((SecretMediaViewer) obj).e(true, false);
-                    break;
-                }
-                break;
-            case 13:
-                if (i7 == -1) {
-                    ((SessionsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 14:
-                o31 o31Var = (o31) obj;
-                if (i7 != -1) {
-                    if (i7 == 2) {
-                        o31Var.k0(new ge0(null));
-                        break;
-                    }
-                } else if (!o31Var.O) {
-                    o31Var.finishFragment();
-                    break;
-                } else {
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putLong("user_id", o31Var.getUserConfig().e());
-                    bundle2.putBoolean("immediate", true);
-                    o31Var.presentFragment(new ci.j0(bundle2));
-                    break;
-                }
-                break;
-            case 15:
-                if (i7 == -1) {
-                    ((c51) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 16:
-                StickersActivity stickersActivity = (StickersActivity) obj;
-                if (i7 != -1) {
-                    StickersActivity.i0(stickersActivity, i7);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 17:
-                a81 a81Var = (a81) obj;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        a81.d0(a81Var);
-                        break;
-                    }
-                } else {
-                    a81Var.finishFragment();
-                    break;
-                }
-                break;
-            case 18:
-                if (i7 == -1) {
-                    ((p81) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 19:
-                if (i7 == -1) {
-                    ((ea1) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 20:
-                if (i7 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj;
-                    if (twoStepVerificationActivity.Y < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.C0();
-                        break;
-                    }
-                }
-                break;
-            case 21:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) obj;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        userInfoActivity.h0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 22:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) obj;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        usersSelectActivity.c0();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 23:
-                org.telegram.ui.Wallet.da daVar = (org.telegram.ui.Wallet.da) obj;
-                if (i7 != -1) {
-                    if (i7 != 2) {
-                        if (i7 == 3) {
-                            daVar.u0();
-                            break;
-                        }
-                    } else {
-                        Activity parentActivity = daVar.getParentActivity();
-                        i10 = ((org.telegram.ui.ActionBar.g2) daVar).currentAccount;
-                        org.telegram.ui.Wallet.n6.N0(i10, parentActivity, daVar.getResourceProvider());
-                        break;
-                    }
-                } else {
-                    daVar.finishFragment();
-                    break;
-                }
-                break;
-            case 24:
-                org.telegram.ui.web.m mVar = (org.telegram.ui.web.m) obj;
-                HashSet hashSet = mVar.y;
-                if (i7 != -1) {
-                    if (i7 != R.id.menu_delete) {
-                        if (i7 == R.id.menu_link) {
-                            mVar.i0();
-                            break;
-                        }
-                    } else {
-                        HashSet hashSet2 = new HashSet();
-                        ArrayList arrayList = new ArrayList();
-                        HashSet hashSet3 = new HashSet();
-                        Iterator it = hashSet.iterator();
-                        while (it.hasNext()) {
-                            int intValue = ((Integer) it.next()).intValue();
-                            ArrayList arrayList2 = mVar.e.a;
-                            int size = arrayList2.size();
-                            int i12 = 0;
-                            while (true) {
-                                if (i12 < size) {
-                                    Object obj6 = arrayList2.get(i12);
-                                    i12++;
-                                    gjVar = (org.telegram.messenger.gj) obj6;
-                                    if (gjVar == null || gjVar.e1() != intValue) {
-                                    }
-                                } else {
-                                    gjVar = null;
-                                }
-                            }
-                            org.telegram.ui.web.i iVar = mVar.f;
-                            if (iVar != null && gjVar == null) {
-                                ArrayList arrayList3 = iVar.a;
-                                int size2 = arrayList3.size();
-                                int i13 = 0;
-                                while (true) {
-                                    if (i13 < size2) {
-                                        Object obj7 = arrayList3.get(i13);
-                                        i13++;
-                                        org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) obj7;
-                                        if (gjVar2 != null && gjVar2.e1() == intValue) {
-                                            gjVar = gjVar2;
-                                        }
-                                    }
-                                }
-                            }
-                            if (gjVar != null) {
-                                arrayList.add(gjVar);
-                                hashSet3.add(Integer.valueOf(gjVar.e1()));
-                                hashSet2.add(org.telegram.ui.web.k.a(gjVar));
-                            }
-                        }
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, mVar.getParentActivity(), mVar.getResourceProvider());
-                        String G = org.telegram.messenger.hd.G(hashSet3.size(), "DeleteOptionsTitle", new Object[0]);
-                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                        t1Var.S = G;
-                        t1Var.U = org.telegram.messenger.hd.O0(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new wc1(c10 == true ? 1 : 0, mVar, hashSet3));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-                        alertDialog$Builder.d(-1);
-                        alertDialog$Builder.p();
-                        break;
-                    }
-                } else {
-                    kVar3 = ((org.telegram.ui.ActionBar.g2) mVar).actionBar;
-                    if (!kVar3.x()) {
-                        mVar.finishFragment();
-                        break;
-                    } else {
-                        kVar4 = ((org.telegram.ui.ActionBar.g2) mVar).actionBar;
-                        kVar4.w();
-                        hashSet.clear();
-                        org.telegram.messenger.g0.d0(mVar.a, new fi.e(28));
-                        break;
-                    }
-                }
-                break;
-            case 25:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj;
-                if (i7 == -1) {
-                    kVar5 = ((org.telegram.ui.ActionBar.g2) x0Var).actionBar;
-                    if (!kVar5.x()) {
-                        x0Var.finishFragment();
-                        break;
-                    } else {
-                        kVar6 = ((org.telegram.ui.ActionBar.g2) x0Var).actionBar;
-                        kVar6.w();
-                        x0Var.w.clear();
-                        org.telegram.messenger.g0.d0(x0Var.a, new fi.e(29));
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (i7 == -1) {
-                    ((ug.y0) obj).dismiss();
-                    break;
-                }
-                break;
+    public static /* synthetic */ void Z(hs0 hs0Var, TLRPC.TL_error tL_error, TLObject tLObject, TL_stars.updatePaidMessagesPrice updatepaidmessagesprice) {
+        if (tL_error != null) {
+            hs0Var.e.b(false);
+            org.telegram.ui.Components.kc.e0(tL_error);
+            return;
         }
+        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+        hs0Var.getMessagesController().Z3(updates.chats, false);
+        hs0Var.getMessagesController().V3(updates, false);
+        if (hs0Var.isFinished || hs0Var.finishing) {
+            return;
+        }
+        ln lnVar = hs0Var.s;
+        if (lnVar != null) {
+            lnVar.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
+        }
+        hs0Var.finishFragment();
+    }
+
+    public final void a0(boolean z10) {
+        boolean c02;
+        if (this.e == null || this.w == (c02 = c0())) {
+            return;
+        }
+        this.w = c02;
+        this.e.a(c02, z10);
+    }
+
+    public final String b0() {
+        return org.telegram.messenger.gd.a0(null, null, 2131746879, ki.j.J0(getMessagesController().M6), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().f6)) / 100.0d));
+    }
+
+    public final boolean c0() {
+        return (this.r == this.h && this.n == this.f) ? false : true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final View createView(Context context) {
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131746902, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new gs0(this, 0));
+        this.e = this.simpleActionBar.s(org.telegram.messenger.gd.N0(2131745750, null));
+        a0(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, frameLayout, null);
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7(context, this.resourceProvider);
+        this.b = t7Var;
+        int i7 = org.telegram.ui.ActionBar.n6.d6;
+        org.telegram.ui.ActionBar.u6.h(i7, t7Var, getResourceProvider());
+        org.telegram.ui.Components.d80 d80Var = new org.telegram.ui.Components.d80(context, this, null, true, true);
+        this.c = d80Var;
+        d80Var.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), 0);
+        org.telegram.ui.ActionBar.u6.h(i7, this.c, getResourceProvider());
+        this.c.b(true);
+        this.c.d(0, null, false);
+        org.telegram.ui.Components.g51 g51Var = new org.telegram.ui.Components.g51(context, this.currentAccount, this.classGuid, false, new a5(this, 17), new fs0(this, 2), null, this.resourceProvider);
+        this.d = g51Var;
+        g51Var.r1();
+        frameLayout2.addView(this.d, c8.na.e(-1, -1, 51));
+        return this.fragmentView;
+    }
+
+    public final void d0() {
+        if (this.e.y.f) {
+            return;
+        }
+        if (!c0()) {
+            finishFragment();
+            return;
+        }
+        this.e.b(true);
+        TL_stars.updatePaidMessagesPrice updatepaidmessagesprice = new TL_stars.updatePaidMessagesPrice();
+        org.telegram.messenger.mp messagesController = getMessagesController();
+        long j3 = this.a;
+        updatepaidmessagesprice.channel = messagesController.j1(j3);
+        boolean z10 = this.n;
+        updatepaidmessagesprice.send_paid_messages_stars = z10 ? this.r : 0L;
+        updatepaidmessagesprice.suggestions_allowed = z10;
+        getConnectionsManager().sendRequest(updatepaidmessagesprice, new d00(20, this, updatepaidmessagesprice));
+        TLRPC.Chat O0 = getMessagesController().O0(Long.valueOf(j3));
+        if (O0 != null) {
+            if (this.n) {
+                O0.flags2 |= 65536;
+                O0.broadcast_messages_allowed = true;
+            } else {
+                O0.flags2 &= -65537;
+                O0.broadcast_messages_allowed = false;
+            }
+            getMessagesController().X3(O0, true);
+            TLRPC.Chat O02 = getMessagesController().O0(Long.valueOf(O0.linked_monoforum_id));
+            if (O02 != null) {
+                if (this.n) {
+                    O02.flags2 |= TLObject.FLAG_14;
+                    O02.send_paid_messages_stars = this.r;
+                } else {
+                    O02.flags2 &= -16385;
+                    O02.send_paid_messages_stars = 0L;
+                }
+                getMessagesController().X3(O02, true);
+            }
+        }
+        ln lnVar = this.s;
+        if (lnVar != null) {
+            lnVar.run(this.n ? this.r : -1L);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final org.telegram.ui.Components.ek0 getListViewForSimpleGlass() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return !c0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean onBackPressed(boolean z10) {
+        if (!c0()) {
+            return super.onBackPressed(z10);
+        }
+        int i7 = 0;
+        if (z10) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            String N0 = org.telegram.messenger.gd.N0(2131743588, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = N0;
+            t1Var.U = org.telegram.messenger.gd.N0(2131748277, null);
+            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131754213, null), new fs0(this, i7));
+            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751394, null), new fs0(this, 1));
+            showDialog(t1Var);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean onFragmentCreate() {
+        org.telegram.ui.Components.b51 b51Var;
+        super.onFragmentCreate();
+        org.telegram.ui.Components.g51 g51Var = this.d;
+        if (g51Var == null || (b51Var = g51Var.g3) == null) {
+            return true;
+        }
+        b51Var.O(false);
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

@@ -5,24 +5,24 @@ import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import lc.c;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ ze.b E;
-    public static final /* synthetic */ ze.b b;
-    public static final /* synthetic */ ze.b c;
-    public static final /* synthetic */ ze.b d;
-    public static final /* synthetic */ ze.b e;
-    public static final /* synthetic */ ze.b f;
-    public static final /* synthetic */ ze.b h;
-    public static final /* synthetic */ ze.b n;
-    public static final /* synthetic */ ze.b r;
-    public static final /* synthetic */ ze.b s;
-    public static final /* synthetic */ ze.b w;
-    public static final /* synthetic */ ze.b x;
-    public static final /* synthetic */ ze.b y;
+    public static final /* synthetic */ v4.b E;
+    public static final /* synthetic */ v4.b b;
+    public static final /* synthetic */ v4.b c;
+    public static final /* synthetic */ v4.b d;
+    public static final /* synthetic */ v4.b e;
+    public static final /* synthetic */ v4.b f;
+    public static final /* synthetic */ v4.b h;
+    public static final /* synthetic */ v4.b n;
+    public static final /* synthetic */ v4.b r;
+    public static final /* synthetic */ v4.b s;
+    public static final /* synthetic */ v4.b w;
+    public static final /* synthetic */ v4.b x;
+    public static final /* synthetic */ v4.b y;
     public b a;
 
     static {
@@ -135,9 +135,9 @@ public final class a extends com.googlecode.mp4parser.a {
         i5.c.w(ze.a.c(y, this, this, byteBuffer));
         b bVar = this.a;
         h5.b.r(bVar.a, byteBuffer);
-        byteBuffer.put((byte) (bVar.b & ls.e4));
-        byteBuffer.put((byte) (bVar.c & ls.e4));
-        byteBuffer.put((byte) (bVar.d & ls.e4));
+        byteBuffer.put((byte) (bVar.b & ks.e4));
+        byteBuffer.put((byte) (bVar.c & ks.e4));
+        byteBuffer.put((byte) (bVar.d & ks.e4));
         c cVar = new c(1, byteBuffer);
         cVar.c(bVar.m, 6);
         cVar.c(bVar.e, 2);
@@ -154,7 +154,7 @@ public final class a extends com.googlecode.mp4parser.a {
             h5.b.p(bArr.length, byteBuffer);
             byteBuffer.put(bArr);
         }
-        byteBuffer.put((byte) (bVar.g.size() & ls.e4));
+        byteBuffer.put((byte) (bVar.g.size() & ks.e4));
         ArrayList arrayList2 = bVar.g;
         int size2 = arrayList2.size();
         int i11 = 0;

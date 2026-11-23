@@ -4,15 +4,15 @@ import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class t50 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.gs b;
+    public final /* synthetic */ org.telegram.messenger.fs b;
 
-    public /* synthetic */ t50(org.telegram.messenger.gs gsVar, int i7) {
+    public /* synthetic */ t50(org.telegram.messenger.fs fsVar, int i7) {
         this.a = i7;
-        this.b = gsVar;
+        this.b = fsVar;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
@@ -23,7 +23,7 @@ public final class t50 implements TextureView.SurfaceTextureListener {
                 if (v50Var.J == null && surfaceTexture != null) {
                     v50Var.J = new u50(v50Var, surfaceTexture);
                     Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
-                    v50Var.J.postRunnable(new lz(this, 12));
+                    v50Var.J.postRunnable(new kz(this, 12));
                     u50 u50Var = v50Var.J;
                     u50Var.postRunnable(u50Var.x);
                     break;
@@ -41,7 +41,7 @@ public final class t50 implements TextureView.SurfaceTextureListener {
                 if (u50Var == null) {
                     return true;
                 }
-                u50Var.postRunnable(new lz(u50Var, 14));
+                u50Var.postRunnable(new kz(u50Var, 14));
                 v50Var.J = null;
                 return true;
             default:

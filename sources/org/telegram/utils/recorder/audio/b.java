@@ -1,15 +1,15 @@
 package org.telegram.utils.recorder.audio;
 
 import a8.p0;
-import ai.g0;
+import ai.c0;
 import di.j2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.g80;
+import org.telegram.ui.f80;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -103,9 +103,9 @@ public final /* synthetic */ class b implements Runnable {
                 if (exc3 == null) {
                     j jVar = (j) eVar.c;
                     jVar.a((h) eVar.b, length);
-                    jVar.i.post(new g0(eVar, eVar.a, j3, 5));
+                    jVar.i.post(new c0(eVar, eVar.a, j3, 5));
                 } else {
-                    ((j) eVar.c).i.post(new g80(eVar, eVar.a, exc3, 4));
+                    ((j) eVar.c).i.post(new f80(eVar, eVar.a, exc3, 4));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();

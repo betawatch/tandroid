@@ -1,45 +1,26 @@
 package tg;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class r implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h0 b;
-    public final /* synthetic */ boolean c;
+import org.telegram.ui.vp0;
 
-    public /* synthetic */ r(h0 h0Var, boolean z10, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class r implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vp0 b;
+
+    public /* synthetic */ r(vp0 vp0Var, int i7) {
         this.a = i7;
-        this.b = h0Var;
-        this.c = z10;
+        this.b = vp0Var;
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                h0 h0Var = this.b;
-                k1 k1Var = h0Var.f1;
-                if (gVar == h0Var.p1) {
-                    h0Var.p1 = null;
-                    if (!this.c) {
-                        k1Var.setVisibility(8);
-                    }
-                    k1Var.setMaskProvider(null);
-                    break;
-                }
+                l0.Z(this.b, (Integer) obj);
                 break;
             default:
-                h0 h0Var2 = this.b;
-                e0 e0Var = h0Var2.q1;
-                if (gVar == h0Var2.w1) {
-                    h0Var2.w1 = null;
-                    if (!this.c) {
-                        e0Var.setVisibility(8);
-                        sg.k0.e(h0Var2.z1).g();
-                        e0Var.getAdapter().f();
-                        break;
-                    }
-                }
+                l0.a0(this.b, (Integer) obj);
                 break;
         }
     }

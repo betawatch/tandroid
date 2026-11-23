@@ -1,57 +1,57 @@
 package di;
 
-import org.telegram.messenger.r10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.w10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o6 implements r10 {
+public final /* synthetic */ class o6 implements p10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ r10 c;
-    public final /* synthetic */ y10 d;
+    public final /* synthetic */ p10 c;
+    public final /* synthetic */ w10 d;
 
-    public /* synthetic */ o6(y10 y10Var, boolean[] zArr, r10 r10Var) {
-        this.d = y10Var;
+    public /* synthetic */ o6(w10 w10Var, boolean[] zArr, p10 p10Var) {
+        this.d = w10Var;
         this.b = zArr;
-        this.c = r10Var;
+        this.c = p10Var;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.p10
     public final void a(Object obj, Object obj2) {
         Long l10 = (Long) obj;
         Boolean bool = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                y10 y10Var = this.d;
-                if (y10Var != null) {
-                    y10Var.a(Boolean.TRUE);
+                w10 w10Var = this.d;
+                if (w10Var != null) {
+                    w10Var.a(Boolean.TRUE);
                 }
                 this.b[0] = true;
-                r10 r10Var = this.c;
-                if (r10Var != null) {
-                    r10Var.a(bool.booleanValue() ? "paid" : "failed", l10);
+                p10 p10Var = this.c;
+                if (p10Var != null) {
+                    p10Var.a(bool.booleanValue() ? "paid" : "failed", l10);
                     break;
                 }
                 break;
             default:
                 this.b[0] = true;
-                r10 r10Var2 = this.c;
-                if (r10Var2 != null) {
-                    r10Var2.a(bool.booleanValue() ? "paid" : "failed", l10);
+                p10 p10Var2 = this.c;
+                if (p10Var2 != null) {
+                    p10Var2.a(bool.booleanValue() ? "paid" : "failed", l10);
                 }
-                y10 y10Var2 = this.d;
-                if (y10Var2 != null) {
-                    y10Var2.a(Boolean.TRUE);
+                w10 w10Var2 = this.d;
+                if (w10Var2 != null) {
+                    w10Var2.a(Boolean.TRUE);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ o6(boolean[] zArr, r10 r10Var, y10 y10Var) {
+    public /* synthetic */ o6(boolean[] zArr, p10 p10Var, w10 w10Var) {
         this.b = zArr;
-        this.c = r10Var;
-        this.d = y10Var;
+        this.c = p10Var;
+        this.d = w10Var;
     }
 }

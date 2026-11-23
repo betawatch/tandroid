@@ -1,26 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class g41 implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ k41 c;
+public abstract class g41 {
+    public String[] a = new String[0];
 
-    public g41(k41 k41Var, int i7) {
-        this.c = k41Var;
-        this.b = i7;
+    public boolean a() {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        k41 k41Var = this.c;
-        k41Var.O = true;
-        k41Var.n.scrollBy(0, floatValue - this.a);
-        k41Var.O = false;
-        this.a = floatValue;
+    public String[] b() {
+        return this.a;
+    }
+
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(z31 z31Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(z31 z31Var, n nVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i7) {
     }
 }

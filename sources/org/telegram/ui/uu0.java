@@ -1,33 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uu0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wu0 b;
+public final class uu0 extends org.telegram.ui.Components.zo0 {
+    public final /* synthetic */ vu0 V2;
 
-    public /* synthetic */ uu0(wu0 wu0Var, int i7) {
-        this.a = i7;
-        this.b = wu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uu0(vu0 vu0Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.V2 = vu0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                wu0 wu0Var = this.b;
-                wu0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new uu0(wu0Var, 1));
-                break;
-            default:
-                this.b.c.getMessagesController().X2(true);
-                break;
+    @Override // org.telegram.ui.Components.zo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.g0.h3(new mp0(this, hVar, i7, 21), 250L);
         }
     }
 }

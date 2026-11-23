@@ -1,12 +1,12 @@
 package h9;
 
-import a8.la;
+import a8.ma;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p0 extends c0 {
-    public q1 a;
+    public p1 a;
     public boolean b;
 
     @Override // h9.c0
@@ -27,30 +27,30 @@ public final class p0 extends c0 {
             return;
         }
         if (this.b) {
-            q1 q1Var = this.a;
-            q1 q1Var2 = new q1();
-            q1Var2.d(q1Var.c);
-            if (q1Var.c != 0) {
+            p1 p1Var = this.a;
+            p1 p1Var2 = new p1();
+            p1Var2.d(p1Var.c);
+            if (p1Var.c != 0) {
                 i10 = 0;
                 while (i10 != -1) {
-                    la.j(i10, q1Var.c);
-                    Object obj2 = q1Var.a[i10];
-                    la.j(i10, q1Var.c);
-                    q1Var2.e(q1Var.b[i10], obj2);
+                    ma.j(i10, p1Var.c);
+                    Object obj2 = p1Var.a[i10];
+                    ma.j(i10, p1Var.c);
+                    p1Var2.e(p1Var.b[i10], obj2);
                     i10++;
-                    if (i10 < q1Var.c) {
+                    if (i10 < p1Var.c) {
                     }
                 }
-                this.a = q1Var2;
+                this.a = p1Var2;
             }
             i10 = -1;
             while (i10 != -1) {
             }
-            this.a = q1Var2;
+            this.a = p1Var2;
         }
         this.b = false;
         obj.getClass();
-        q1 q1Var3 = this.a;
-        q1Var3.e(q1Var3.b(obj) + i7, obj);
+        p1 p1Var3 = this.a;
+        p1Var3.e(p1Var3.b(obj) + i7, obj);
     }
 }

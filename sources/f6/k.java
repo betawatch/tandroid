@@ -2,12 +2,12 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Arrays;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public final MediaInfo a;
@@ -60,22 +60,22 @@ public final class k extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.n;
         this.h = jSONObject == null ? null : jSONObject.toString();
-        int r10 = bc.r(parcel, 20293);
-        bc.k(parcel, 2, this.a, i7);
-        bc.k(parcel, 3, this.b, i7);
-        bc.a(parcel, 4, this.c);
-        bc.q(parcel, 5, 8);
+        int r10 = cc.r(parcel, 20293);
+        cc.k(parcel, 2, this.a, i7);
+        cc.k(parcel, 3, this.b, i7);
+        cc.a(parcel, 4, this.c);
+        cc.q(parcel, 5, 8);
         parcel.writeLong(this.d);
-        bc.q(parcel, 6, 8);
+        cc.q(parcel, 6, 8);
         parcel.writeDouble(this.e);
-        bc.j(parcel, 7, this.f);
-        bc.l(parcel, 8, this.h);
-        bc.l(parcel, 9, this.r);
-        bc.l(parcel, 10, this.s);
-        bc.l(parcel, 11, this.w);
-        bc.l(parcel, 12, this.x);
-        bc.q(parcel, 13, 8);
+        cc.j(parcel, 7, this.f);
+        cc.l(parcel, 8, this.h);
+        cc.l(parcel, 9, this.r);
+        cc.l(parcel, 10, this.s);
+        cc.l(parcel, 11, this.w);
+        cc.l(parcel, 12, this.x);
+        cc.q(parcel, 13, 8);
         parcel.writeLong(this.y);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
     }
 }

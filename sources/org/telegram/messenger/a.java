@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -143,22 +143,22 @@ public final /* synthetic */ class a implements Runnable {
                     longSparseArray.removeAt(0);
                     ArrayList arrayList = new ArrayList(hashMap2.keySet());
                     x6Var.d.addAll(arrayList);
-                    r00 r00Var = new r00(x6Var, keyAt, arrayList, hashMap2, 1);
+                    p00 p00Var = new p00(x6Var, keyAt, arrayList, hashMap2, 1);
                     if (arrayList.isEmpty()) {
-                        r00Var.a(new ArrayList());
+                        p00Var.a(new ArrayList());
                     } else {
-                        ur a02 = ur.a0(x6Var.a);
-                        a02.a.c(new zf(a02, arrayList, r00Var, 19));
+                        tr a02 = tr.a0(x6Var.a);
+                        a02.a.c(new yf(a02, arrayList, p00Var, 19));
                     }
                 }
                 longSparseArray.clear();
                 return;
             case 8:
-                f8 f8Var = (f8) this.b;
-                f8Var.c();
+                e8 e8Var = (e8) this.b;
+                e8Var.c();
                 try {
-                    f8Var.c.executeFast("DELETE FROM paths WHERE 1").stepThis().dispose();
-                    f8Var.c.executeFast("DELETE FROM paths_by_dialog_id WHERE 1").stepThis().dispose();
+                    e8Var.c.executeFast("DELETE FROM paths WHERE 1").stepThis().dispose();
+                    e8Var.c.executeFast("DELETE FROM paths_by_dialog_id WHERE 1").stepThis().dispose();
                     return;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -166,17 +166,17 @@ public final /* synthetic */ class a implements Runnable {
                 }
             case 9:
                 TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.b;
-                ArrayList arrayList2 = org.telegram.ui.ActionBar.m6.F;
+                ArrayList arrayList2 = org.telegram.ui.ActionBar.n6.F;
                 int size = arrayList2.size();
                 for (int i12 = 0; i12 < size; i12++) {
-                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.l6) arrayList2.get(i12)).G;
+                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.m6) arrayList2.get(i12)).G;
                     if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 == null || (document = tL_theme.document) == null) {
                             return;
                         }
                         document2.file_reference = document.file_reference;
-                        org.telegram.ui.ActionBar.m6.y1(true, false);
+                        org.telegram.ui.ActionBar.n6.y1(true, false);
                         return;
                     }
                 }
@@ -193,16 +193,16 @@ public final /* synthetic */ class a implements Runnable {
                 ((CancellationSignal) this.b).cancel();
                 return;
             case 12:
-                ((fc) ((androidx.mediarouter.app.f) this.b).b).i(null);
+                ((ec) ((androidx.mediarouter.app.f) this.b).b).i(null);
                 return;
             case 13:
                 ((ImageReceiver) this.b).invalidate();
                 return;
             case 14:
-                if (((hd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
+                if (((gd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
                     return;
                 }
-                hd.E0().Z0();
+                gd.E0().Z0();
                 return;
             case 15:
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
@@ -215,14 +215,14 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 16:
-                ((ke) this.b).d.q(true, true, false, false);
+                ((je) this.b).d.q(true, true, false, false);
                 return;
             case 17:
                 ((MediaController) ((h2.w) this.b).e).q(true, true, false, false);
                 return;
             case 18:
                 com.google.android.gms.internal.clearcut.e2 e2Var = (com.google.android.gms.internal.clearcut.e2) this.b;
-                if (!PhotoViewer.p1().P1()) {
+                if (!PhotoViewer.p1().Q1()) {
                     MediaController.Z1 = null;
                     MediaController.O(0);
                     return;
@@ -233,14 +233,14 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 19:
-                ((df) this.b).d();
+                ((cf) this.b).d();
                 return;
             case 20:
-                kf kfVar = (kf) this.b;
+                jf jfVar = (jf) this.b;
                 try {
-                    j6.o oVar = new j6.o();
-                    oVar.b = kfVar;
-                    Thread thread = new Thread(oVar, "VideoConvertRunnable");
+                    i6.g gVar = new i6.g();
+                    gVar.b = jfVar;
+                    Thread thread = new Thread(gVar, "VideoConvertRunnable");
                     thread.start();
                     thread.join();
                     return;
@@ -249,10 +249,10 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 21:
-                ls.e().k(ls.S4, 0, (TLRPC.Document) this.b, 7);
+                ks.e().k(ks.S4, 0, (TLRPC.Document) this.b, 7);
                 return;
             case 22:
-                ((org.telegram.ui.Components.ec) this.b).f();
+                ((org.telegram.ui.Components.dc) this.b).f();
                 return;
             case 23:
                 TLObject tLObject = (TLObject) this.b;
@@ -280,7 +280,7 @@ public final /* synthetic */ class a implements Runnable {
             case 25:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
                 if (tL_error != null) {
-                    org.telegram.ui.Components.lc.e0(tL_error);
+                    org.telegram.ui.Components.kc.e0(tL_error);
                     return;
                 }
                 return;
@@ -288,9 +288,9 @@ public final /* synthetic */ class a implements Runnable {
                 ((org.telegram.ui.vf) this.b).run();
                 return;
             case 27:
-                mr mrVar = (mr) this.b;
-                if (mrVar != null) {
-                    mrVar.d(true);
+                lr lrVar = (lr) this.b;
+                if (lrVar != null) {
+                    lrVar.q(true);
                     return;
                 }
                 return;

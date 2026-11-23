@@ -4,21 +4,21 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class y extends h0 {
+public final class y extends g0 {
     public final /* synthetic */ int b = 1;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(z zVar, g0 g0Var, n6.a aVar) {
-        super(g0Var);
+    public y(z zVar, f0 f0Var, n6.a aVar) {
+        super(f0Var);
         this.c = aVar;
         this.d = zVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.h0
+    @Override // com.google.android.gms.common.api.internal.g0
     public final void a() {
         q6.i m0Var;
         int i7 = this.b;
@@ -31,12 +31,12 @@ public final class y extends h0 {
             default:
                 c0 c0Var = (c0) obj2;
                 r8.h hVar = (r8.h) obj;
-                if (c0Var.j(0)) {
+                if (c0Var.k(0)) {
                     n6.a aVar = hVar.b;
                     if (!aVar.c()) {
                         if (c0Var.x && !aVar.b()) {
                             c0Var.g();
-                            c0Var.c();
+                            c0Var.d();
                             break;
                         } else {
                             c0Var.h(aVar);
@@ -64,7 +64,7 @@ public final class y extends h0 {
                             c0Var.F = m0Var;
                             c0Var.G = xVar.d;
                             c0Var.H = xVar.e;
-                            c0Var.c();
+                            c0Var.d();
                             break;
                         }
                     }

@@ -1,6 +1,6 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.net.Uri;
 import j$.util.Objects;
@@ -8,10 +8,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.md0;
-import org.telegram.ui.wc1;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
@@ -127,7 +127,7 @@ public final class q implements f0 {
             } else {
                 e2.c0 c0Var2 = new e2.c0();
                 List list = Collections.EMPTY_LIST;
-                h9.i0 i0Var = h9.t1.e;
+                h9.i0 i0Var = h9.s1.e;
                 e2.h0 h0Var = e2.h0.d;
                 e2.b0 b0Var = l0Var2.e;
                 e2.z zVar = new e2.z();
@@ -188,7 +188,7 @@ public final class q implements f0 {
                 List list2 = list;
                 h9.i0 i0Var2 = i0Var;
                 e2.e0 a11 = f0Var2.a();
-                la.p((c0Var2.b == null || c0Var2.a != null) ? z10 : z11 ? 1 : 0);
+                ma.p((c0Var2.b == null || c0Var2.a != null) ? z10 : z11 ? 1 : 0);
                 e2.g0 g0Var3 = uri2 != null ? new e2.g0(uri2, str, c0Var2.a != null ? new e2.d0(c0Var2) : uri, yVar, list2, str2, i0Var2, j3) : uri;
                 if (str4 == null) {
                     str4 = "";
@@ -216,16 +216,16 @@ public final class q implements f0 {
                         tVar.b = ((e2.k0) i0Var3.get(i7)).f;
                         tVar.a = ((e2.k0) i0Var3.get(i7)).g;
                         e2.u uVar = new e2.u(tVar);
-                        wc1 wc1Var = new wc1(26, this, uVar);
+                        uc1 uc1Var = new uc1(26, this, uVar);
                         wf.b bVar = this.b;
-                        tg.o1 o1Var = new tg.o1(wc1Var, 16);
-                        md0 md0Var = new md0(7);
+                        tg.s sVar = new tg.s(uc1Var, 18);
+                        i61 i61Var = new i61(9);
                         qb.a aVar = new qb.a(4);
-                        if (this.c.H(uVar)) {
+                        if (this.c.G(uVar)) {
                             e2.t a12 = uVar.a();
                             a12.r = e2.s0.n("application/x-media3-cues");
                             a12.j = uVar.s;
-                            a12.P = this.c.O(uVar);
+                            a12.P = this.c.I(uVar);
                             uVar = new e2.u(a12);
                         }
                         e2.u uVar2 = uVar;
@@ -234,15 +234,15 @@ public final class q implements f0 {
                         e2.z zVar2 = new e2.z();
                         e2.c0 c0Var4 = new e2.c0();
                         List list3 = Collections.EMPTY_LIST;
-                        h9.t1 t1Var = h9.t1.e;
+                        h9.s1 s1Var = h9.s1.e;
                         e2.e0 e0Var = new e2.e0();
                         e2.h0 h0Var3 = e2.h0.d;
                         Uri parse = uri4 == null ? uri : Uri.parse(uri4);
-                        la.p((c0Var4.b == null || c0Var4.a != null) ? z10 : z11 ? 1 : 0);
-                        e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, t1Var, -9223372036854775807L) : uri;
+                        ma.p((c0Var4.b == null || c0Var4.a != null) ? z10 : z11 ? 1 : 0);
+                        e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, s1Var, -9223372036854775807L) : uri;
                         e2.l0 l0Var3 = new e2.l0("", new e2.b0(zVar2), g0Var4, new e2.f0(e0Var), e2.o0.L, h0Var3);
                         g0Var4.getClass();
-                        aVarArr[i10] = new y0(l0Var3, bVar, o1Var, md0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
+                        aVarArr[i10] = new y0(l0Var3, bVar, sVar, i61Var.x(l0Var3), aVar, TLObject.FLAG_20, uVar2);
                     } else {
                         wf.b bVar2 = this.b;
                         bVar2.getClass();
@@ -258,25 +258,25 @@ public final class q implements f0 {
                 if (j11 >= 0) {
                     z11 = z10;
                 }
-                la.f(z11);
-                la.p(!eVar.h);
+                ma.f(z11);
+                ma.p(!eVar.h);
                 eVar.b = j11;
                 long j12 = b0Var3.d;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.c = j12;
                 boolean z12 = !b0Var3.g;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.d = z12;
                 boolean z13 = b0Var3.e;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.e = z13;
                 boolean z14 = b0Var3.f;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.f = z14;
                 boolean z15 = b0Var3.h;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.g = z15;
-                la.p(!eVar.h);
+                ma.p(!eVar.h);
                 eVar.h = z10;
                 b11 = new h(eVar);
             }

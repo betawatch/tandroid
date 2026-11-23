@@ -1,6 +1,6 @@
 package q6;
 
-import a8.k8;
+import a8.l8;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -9,7 +9,7 @@ import com.google.android.gms.internal.vision.e2;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class m {
     public static final Object a = new Object();
@@ -99,9 +99,9 @@ public abstract class m {
         return status.c != null ? new com.google.android.gms.common.api.p(status) : new com.google.android.gms.common.api.f(status);
     }
 
-    public static Task n(k8 k8Var, l lVar) {
+    public static Task n(l8 l8Var, l lVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        k8Var.b(new v(k8Var, taskCompletionSource, lVar));
+        l8Var.b(new v(l8Var, taskCompletionSource, lVar));
         return taskCompletionSource.getTask();
     }
 }

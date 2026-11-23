@@ -16,20 +16,20 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f2 extends c1 {
     public static volatile f2[] f = new f2[4];
-    public final hi.t5 a;
-    public final hi.t5 b;
+    public final hi.u0 a;
+    public final hi.u0 b;
     public final Set c;
     public final LongSparseArray d;
     public final SharedPreferences e;
 
     public f2(int i7) {
         super(i7);
-        this.a = new hi.t5();
-        this.b = new hi.t5();
+        this.a = new hi.u0();
+        this.b = new hi.u0();
         this.c = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
         this.d = new LongSparseArray();
         this.e = t0.b.getSharedPreferences("bot_drafts" + i7, 0);
@@ -91,12 +91,12 @@ public final class f2 extends c1 {
         } else {
             inputPeer = null;
             final long n10 = n5.n(inputPeer);
-            if (inputPeer != null || n10 <= 0 || !p10.w(getMessagesController().c2(Long.valueOf(n10)))) {
+            if (inputPeer != null || n10 <= 0 || !n10.w(getMessagesController().c2(Long.valueOf(n10)))) {
                 return true;
             }
             final long[] jArr = new long[list.size()];
             for (int i7 = 0; i7 < list.size(); i7++) {
-                jArr[i7] = ((gj) list.get(i7)).e1();
+                jArr[i7] = ((fj) list.get(i7)).e1();
             }
             if (z10) {
                 j10 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
@@ -115,7 +115,7 @@ public final class f2 extends c1 {
                         while (i10 < size) {
                             Long l10 = arrayList.get(i10);
                             i10++;
-                            j11 = si.r(j11, l10.longValue());
+                            j11 = ri.r(j11, l10.longValue());
                             inputPeer = inputPeer;
                         }
                         inputPeer3 = inputPeer;
@@ -131,7 +131,7 @@ public final class f2 extends c1 {
                             while (i11 < size2) {
                                 TLRPC.TL_inputSingleMedia tL_inputSingleMedia = arrayList2.get(i11);
                                 i11++;
-                                j10 = si.r(j10, tL_inputSingleMedia.random_id);
+                                j10 = ri.r(j10, tL_inputSingleMedia.random_id);
                             }
                         } else {
                             j10 = 0;
@@ -170,16 +170,16 @@ public final class f2 extends c1 {
                         E = ~j10;
                     } else {
                         getSendMessagesHelper().getClass();
-                        E = az.E();
+                        E = zy.E();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = hd.N0(2131743735, null);
+                        str = gd.N0(2131743733, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16) + "...";
                     }
                     final String str2 = str;
-                    or orVar = new or() { // from class: org.telegram.messenger.w1
-                        @Override // org.telegram.messenger.or
+                    nr nrVar = new nr() { // from class: org.telegram.messenger.w1
+                        @Override // org.telegram.messenger.nr
                         public final void a(int i13) {
                             f2 f2Var = f2.this;
                             TLObject tLObject2 = tLObject;
@@ -230,12 +230,12 @@ public final class f2 extends c1 {
                     LongSparseArray longSparseArray = this.d;
                     List list2 = (List) longSparseArray.get(n11);
                     if (list2 != null) {
-                        list2.add(orVar);
+                        list2.add(nrVar);
                         return false;
                     }
                     int i13 = 1;
                     ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(orVar);
+                    arrayList4.add(nrVar);
                     longSparseArray.put(n11, arrayList4);
                     TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
                     tL_messages_createForumTopic.title = TextUtils.isEmpty(str2) ? "#New Chat" : str2;
@@ -243,8 +243,8 @@ public final class f2 extends c1 {
                     tL_messages_createForumTopic.peer = inputPeer3;
                     tL_messages_createForumTopic.random_id = E;
                     final long j12 = E;
-                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new d3.b(i13), new r10() { // from class: org.telegram.messenger.y1
-                        @Override // org.telegram.messenger.r10
+                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new d3.b(i13), new p10() { // from class: org.telegram.messenger.y1
+                        @Override // org.telegram.messenger.p10
                         public final void a(Object obj, Object obj2) {
                             ArrayList<TLRPC.Update> arrayList5;
                             TLRPC.Updates updates = (TLRPC.Updates) obj;
@@ -273,7 +273,7 @@ public final class f2 extends c1 {
                                     arrayList5 = arrayList6;
                                     if (update2 instanceof TL_update.TL_updateNewMessage) {
                                         TLRPC.Message message = ((TL_update.TL_updateNewMessage) update2).message;
-                                        if (i15 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && gj.B0(message) == j13) {
+                                        if (i15 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && fj.B0(message) == j13) {
                                             i15 = message.id;
                                         }
                                     }
@@ -311,7 +311,7 @@ public final class f2 extends c1 {
                             tL_forumTopic.title_missing = true;
                             f2Var.getMessagesController().t7.q(j13, tL_forumTopic, true);
                             f2Var.f(i14, j13);
-                            f2Var.getNotificationCenter().k(ls.M5, new d2(j13, i14));
+                            f2Var.getNotificationCenter().k(ks.M5, new d2(j13, i14));
                         }
                     });
                     return false;
@@ -329,11 +329,11 @@ public final class f2 extends c1 {
     }
 
     public final boolean c(int i7, long j3) {
-        LongSparseArray p10 = this.a.p(j3, i7);
-        if (p10 != null && p10.size() > 0) {
-            int size = p10.size();
+        LongSparseArray B0 = this.a.B0(j3, i7);
+        if (B0 != null && B0.size() > 0) {
+            int size = B0.size();
             for (int i10 = 0; i10 < size; i10++) {
-                if (!((a2) p10.valueAt(i10)).e) {
+                if (!((a2) B0.valueAt(i10)).e) {
                     return true;
                 }
             }
@@ -347,11 +347,11 @@ public final class f2 extends c1 {
 
     public final void e(long j3, int i7, long j10) {
         long j11 = i7;
-        a2 a2Var = (a2) this.a.y(j3, j11, j10);
+        a2 a2Var = (a2) this.a.F0(j3, j11, j10);
         if (a2Var == null) {
             return;
         }
-        getNotificationCenter().k(ls.O5, new b2(j3, a2Var.b, j11));
+        getNotificationCenter().k(ks.O5, new b2(j3, a2Var.b, j11));
     }
 
     public final void f(int i7, long j3) {
@@ -361,7 +361,7 @@ public final class f2 extends c1 {
             longSparseArray.remove(j3);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ((or) it.next()).a(i7);
+                ((nr) it.next()).a(i7);
             }
         }
     }
@@ -370,19 +370,19 @@ public final class f2 extends c1 {
         long j10;
         long j11;
         long j12 = i7;
-        LongSparseArray p10 = this.a.p(j3, j12);
-        if (p10 == null) {
+        LongSparseArray B0 = this.a.B0(j3, j12);
+        if (B0 == null) {
             return;
         }
-        int size = p10.size();
+        int size = B0.size();
         int i10 = 0;
         while (i10 < size) {
-            a2 a2Var = (a2) p10.valueAt(i10);
+            a2 a2Var = (a2) B0.valueAt(i10);
             if (a2Var.e) {
                 long j13 = j12;
                 j10 = j3;
-                getNotificationCenter().k(ls.O5, new b2(j10, a2Var.b, j13));
-                this.a.y(j10, j13, a2Var.a);
+                getNotificationCenter().k(ks.O5, new b2(j10, a2Var.b, j13));
+                this.a.F0(j10, j13, a2Var.a);
                 j11 = j13;
                 i10--;
                 size--;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -64,7 +64,7 @@ public abstract class w {
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, c8.f0.a(constructor));
+                hashMap2.put(cls, c8.g0.a(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;

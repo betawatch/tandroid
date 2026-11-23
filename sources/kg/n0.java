@@ -1,14 +1,14 @@
 package kg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.bb1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final /* synthetic */ class n0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new q0((s0) this.c, tL_error, tLObject, (int[]) this.d, (ArrayList) this.e, this.b, (TLRPC.User) this.f));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new q0((bb1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
+                org.telegram.messenger.g0.g3(new q0((za1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
                 zh.l lVar = (zh.l) this.c;
@@ -41,15 +41,15 @@ public final /* synthetic */ class n0 implements RequestDelegate {
                 TLRPC.User user = (TLRPC.User) this.f;
                 TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.e;
                 if (tL_error == null) {
-                    np.u1(lVar.k).V3((TLRPC.TL_updates) tLObject, false);
+                    mp.u1(lVar.k).V3((TLRPC.TL_updates) tLObject, false);
                 }
                 org.telegram.messenger.g0.g3(new q0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.b, user, tL_messages_hideChatJoinRequest));
                 break;
         }
     }
 
-    public /* synthetic */ n0(bb1 bb1Var, boolean z10, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.c = bb1Var;
+    public /* synthetic */ n0(za1 za1Var, boolean z10, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.c = za1Var;
         this.b = z10;
         this.d = bArr;
         this.e = str;

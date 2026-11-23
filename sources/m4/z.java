@@ -3,12 +3,12 @@ package m4;
 import android.util.SparseArray;
 import h2.k0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class z implements f3.o {
     public boolean e;
@@ -27,10 +27,10 @@ public final class z implements f3.o {
     public final boolean b(f3.p pVar) {
         byte[] bArr = new byte[14];
         f3.l lVar = (f3.l) pVar;
-        lVar.g(bArr, 0, 14, false);
+        lVar.k(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.x(bArr[13] & 7, false);
-            lVar.g(bArr, 0, 3, false);
+            lVar.t(bArr[13] & 7, false);
+            lVar.k(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
             }
@@ -74,7 +74,7 @@ public final class z implements f3.o {
     @Override // f3.o
     public final List e() {
         h9.g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o
@@ -101,7 +101,7 @@ public final class z implements f3.o {
                     return 1;
                 }
                 xVar2.K(min);
-                pVar.n();
+                pVar.o();
                 pVar.b(0, min, xVar2.a);
                 int i12 = xVar2.b;
                 int i13 = xVar2.c - 4;
@@ -144,7 +144,7 @@ public final class z implements f3.o {
                 return 1;
             }
             xVar2.K(min2);
-            pVar.n();
+            pVar.o();
             pVar.b(0, min2, xVar2.a);
             int i14 = xVar2.b;
             int i15 = xVar2.c;
@@ -176,26 +176,26 @@ public final class z implements f3.o {
             if (j15 != -9223372036854775807L) {
                 i7 = i11;
                 i10 = 4;
-                k3.a aVar = new k3.a(new pb.b(8), new k8.a(xVar.b), j15, j15 + 1, 0L, length, 188L, 1000);
+                k3.a aVar = new k3.a(new pb.b(8), new jb.m(xVar.b), j15, j15 + 1, 0L, length, 188L, 1000);
                 this.i = aVar;
-                this.j.j(aVar.a);
+                this.j.h(aVar.a);
             } else {
                 i7 = i11;
                 i10 = 4;
-                this.j.j(new f3.t(j15));
+                this.j.h(new f3.t(j15));
             }
         }
         k3.a aVar2 = this.i;
         if (aVar2 != null && aVar2.c != null) {
             return aVar2.b(pVar, sVar);
         }
-        pVar.n();
+        pVar.o();
         long l10 = i7 != 0 ? length - pVar.l() : -1L;
         if (l10 != -1 && l10 < 4) {
             return -1;
         }
         h2.x xVar3 = this.c;
-        if (!pVar.g(xVar3.a, 0, i10, true)) {
+        if (!pVar.k(xVar3.a, 0, i10, true)) {
             return -1;
         }
         xVar3.N(0);
@@ -206,20 +206,20 @@ public final class z implements f3.o {
         if (m10 == 442) {
             pVar.b(0, 10, xVar3.a);
             xVar3.N(9);
-            pVar.r((xVar3.A() & 7) + 14);
+            pVar.q((xVar3.A() & 7) + 14);
             return 0;
         }
         if (m10 == 443) {
             pVar.b(0, 2, xVar3.a);
             xVar3.N(0);
-            pVar.r(xVar3.H() + 6);
+            pVar.q(xVar3.H() + 6);
             return 0;
         }
         if (((m10 & (-256)) >> 8) != 1) {
-            pVar.r(1);
+            pVar.q(1);
             return 0;
         }
-        int i16 = m10 & ls.e4;
+        int i16 = m10 & ks.e4;
         SparseArray sparseArray = this.b;
         y yVar = (y) sparseArray.get(i16);
         if (!this.e) {
@@ -228,11 +228,11 @@ public final class z implements f3.o {
                     iVar = new b("video/mp2p");
                     this.f = true;
                     this.h = pVar.getPosition();
-                } else if ((m10 & ls.B3) == 192) {
+                } else if ((m10 & ks.B3) == 192) {
                     iVar = new u(null, 0, "video/mp2p");
                     this.f = true;
                     this.h = pVar.getPosition();
-                } else if ((m10 & ls.P3) == 224) {
+                } else if ((m10 & ks.P3) == 224) {
                     iVar = new k(null, "video/mp2p");
                     this.g = true;
                     this.h = pVar.getPosition();
@@ -247,14 +247,14 @@ public final class z implements f3.o {
             }
             if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.d1();
+                this.j.Z0();
             }
         }
         pVar.b(0, 2, xVar3.a);
         xVar3.N(0);
         int H = xVar3.H() + 6;
         if (yVar == null) {
-            pVar.r(H);
+            pVar.q(H);
             return 0;
         }
         xVar3.K(H);

@@ -9,35 +9,35 @@ import java.util.ArrayList;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.aw;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.di;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.ci;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.v3;
-import org.telegram.messenger.vr;
 import org.telegram.messenger.w7;
+import org.telegram.messenger.yv;
+import org.telegram.messenger.yy;
 import org.telegram.messenger.zv;
-import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.f21;
-import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.lu0;
-import org.telegram.ui.Components.ms;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.js;
+import org.telegram.ui.Components.ku0;
+import org.telegram.ui.bd0;
 import org.telegram.ui.bn;
-import org.telegram.ui.f40;
-import org.telegram.ui.fe0;
-import org.telegram.ui.hk0;
-import org.telegram.ui.mj0;
+import org.telegram.ui.e40;
+import org.telegram.ui.fk0;
+import org.telegram.ui.kj0;
 import org.telegram.ui.sk;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,13 +71,13 @@ public final /* synthetic */ class l0 implements Runnable {
         Bitmap K;
         TLRPC.PhotoSize Y;
         int i11;
-        vr vrVar;
+        ur urVar;
         RandomAccessFile randomAccessFile;
         int i12;
         boolean z11;
         boolean z12;
-        vr i13;
-        vr j3;
+        ur i13;
+        ur j3;
         switch (this.a) {
             case 0:
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$55((String) this.e, this.b, this.c);
@@ -97,14 +97,14 @@ public final /* synthetic */ class l0 implements Runnable {
                             bnVar.getMessagesController().J3(bnVar.e, bnVar.f, ((Integer) arrayList.get(i15)).intValue(), true, false, false);
                         }
                     } else {
-                        np messagesController = bnVar.getMessagesController();
+                        mp messagesController = bnVar.getMessagesController();
                         TLRPC.Chat chat = bnVar.e;
                         TLRPC.User user = bnVar.f;
                         messagesController.getClass();
                         if (chat != null || user != null) {
                             TLRPC.TL_messages_unpinAllMessages tL_messages_unpinAllMessages = new TLRPC.TL_messages_unpinAllMessages();
                             tL_messages_unpinAllMessages.peer = messagesController.l1(chat != null ? -chat.id : user.id);
-                            messagesController.getConnectionsManager().sendRequest(tL_messages_unpinAllMessages, new di(messagesController, chat, user, 6));
+                            messagesController.getConnectionsManager().sendRequest(tL_messages_unpinAllMessages, new ci(messagesController, chat, user, 6));
                         }
                     }
                 }
@@ -114,52 +114,52 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 break;
             case 3:
-                ks ksVar = (ks) this.d;
+                hs hsVar = (hs) this.d;
                 int i16 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z14 = this.c;
-                if (i16 == ksVar.g0 && TextUtils.equals(tL_messages_searchGlobal.q, ksVar.h0)) {
-                    ConnectionsManager.getInstance(ksVar.Q).sendRequest(tL_messages_searchGlobal, new k0(ksVar, i16, tL_messages_searchGlobal, z14, 1));
+                if (i16 == hsVar.g0 && TextUtils.equals(tL_messages_searchGlobal.q, hsVar.h0)) {
+                    ConnectionsManager.getInstance(hsVar.Q).sendRequest(tL_messages_searchGlobal, new k0(hsVar, i16, tL_messages_searchGlobal, z14, 1));
                     break;
                 }
                 break;
             case 4:
-                ms msVar = (ms) this.d;
+                js jsVar = (js) this.d;
                 int i17 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z15 = this.c;
-                if (i17 == msVar.d0 && TextUtils.equals(tL_messages_searchGlobal2.q, msVar.e0)) {
-                    ConnectionsManager.getInstance(msVar.Q).sendRequest(tL_messages_searchGlobal2, new k0(msVar, i17, tL_messages_searchGlobal2, z15, 2));
+                if (i17 == jsVar.d0 && TextUtils.equals(tL_messages_searchGlobal2.q, jsVar.e0)) {
+                    ConnectionsManager.getInstance(jsVar.Q).sendRequest(tL_messages_searchGlobal2, new k0(jsVar, i17, tL_messages_searchGlobal2, z15, 2));
                     break;
                 }
                 break;
             case 5:
-                lu0 lu0Var = (lu0) this.d;
+                ku0 ku0Var = (ku0) this.d;
                 boolean z16 = this.c;
                 int i18 = this.b;
                 r1 r1Var = (r1) this.e;
-                if (z16 && lu0Var.R == null && lu0Var.S == null && lu0Var.Q == null) {
-                    lu0Var.K = 2;
-                    lu0Var.Y0 = true;
+                if (z16 && ku0Var.R == null && ku0Var.S == null && ku0Var.Q == null) {
+                    ku0Var.K = 2;
+                    ku0Var.Y0 = true;
                 }
-                lu0Var.W0 = false;
-                if (lu0Var.Z0 || !lu0Var.X0) {
-                    lu0Var.V0 = lu0Var.j1[0];
+                ku0Var.W0 = false;
+                if (ku0Var.Z0 || !ku0Var.X0) {
+                    ku0Var.V0 = ku0Var.j1[0];
                     a6.q(i18).v(r1Var);
-                    lu0Var.I();
-                    lu0Var.x();
+                    ku0Var.I();
+                    ku0Var.x();
                     break;
                 } else {
-                    lu0Var.C(true);
+                    ku0Var.C(true);
                     break;
                 }
                 break;
             case 6:
-                f40 f40Var = (f40) this.d;
+                e40 e40Var = (e40) this.d;
                 TLObject tLObject = (TLObject) this.e;
                 int i19 = this.b;
                 boolean z17 = this.c;
-                String[] strArr = f40Var.S4;
+                String[] strArr = e40Var.S4;
                 if (tLObject instanceof TL_phone.exportedGroupCallInvite) {
                     strArr[i19] = ((TL_phone.exportedGroupCallInvite) tLObject).link;
                 } else {
@@ -175,32 +175,32 @@ public final /* synthetic */ class l0 implements Runnable {
                         }
                     }
                 }
-                if (!z17 && f40Var.T0() && !f40Var.V2.b.join_muted) {
+                if (!z17 && e40Var.T0() && !e40Var.V2.b.join_muted) {
                     strArr[0] = null;
                 }
-                if (strArr[0] != null || strArr[1] != null || !v3.t0(f40Var.U2)) {
-                    f40Var.A1(strArr[0], strArr[1], false, z17);
+                if (strArr[0] != null || strArr[1] != null || !v3.t0(e40Var.U2)) {
+                    e40Var.A1(strArr[0], strArr[1], false, z17);
                     break;
                 } else {
-                    f40Var.A1(null, np.u1(f40Var.o1.a).X2 + "/" + v3.K(f40Var.U2, false), true, z17);
+                    e40Var.A1(null, mp.u1(e40Var.o1.a).X2 + "/" + v3.K(e40Var.U2, false), true, z17);
                     break;
                 }
                 break;
             default:
-                hk0 hk0Var = (hk0) this.d;
+                fk0 fk0Var = (fk0) this.d;
                 ArrayList arrayList2 = (ArrayList) this.e;
                 int i21 = this.b;
                 boolean z18 = this.c;
-                int i22 = hk0Var.T0;
+                int i22 = fk0Var.T0;
                 i7 = 4;
                 min = Math.min((i22 == 0 || i22 == 4) ? 20 : 1, arrayList2.size());
                 z10 = false;
                 i10 = 0;
                 boolean z19 = false;
                 while (i10 < min) {
-                    zy zyVar = (zy) arrayList2.get(i10);
-                    K = fc.K(zyVar.c, zyVar.a, 2048.0f, 2048.0f, z10);
-                    if (K == null || (Y = fc.Y(K, 2048.0f, 2048.0f, 89, ls.r5, ls.r5)) == null) {
+                    yy yyVar = (yy) arrayList2.get(i10);
+                    K = ec.K(yyVar.c, yyVar.a, 2048.0f, 2048.0f, z10);
+                    if (K == null || (Y = ec.Y(K, 2048.0f, 2048.0f, 89, ks.r5, ks.r5)) == null) {
                         i12 = min;
                         i11 = i10;
                     } else {
@@ -209,17 +209,17 @@ public final /* synthetic */ class l0 implements Runnable {
                         tL_secureFile.dc_id = (int) Y.location.volume_id;
                         tL_secureFile.id = r0.local_id;
                         tL_secureFile.date = (int) (System.currentTimeMillis() / 1000);
-                        mj0 mj0Var = (mj0) hk0Var.C1;
-                        mj0Var.getClass();
+                        kj0 kj0Var = (kj0) fk0Var.C1;
+                        kj0Var.getClass();
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(w7.z(i7));
                         sb2.append("/");
                         sb2.append(tL_secureFile.dc_id);
                         sb2.append("_");
                         String r10 = a8.p0.r(sb2, tL_secureFile.id, ".jpg");
-                        hk0 hk0Var2 = mj0Var.d;
+                        fk0 fk0Var2 = kj0Var.d;
                         byte[] bArr = new byte[(int) new File(r10).length()];
-                        vrVar = null;
+                        urVar = null;
                         try {
                             randomAccessFile = new RandomAccessFile(r10, "rws");
                             try {
@@ -229,7 +229,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         } catch (Exception unused2) {
                             randomAccessFile = null;
                         }
-                        r7 o12 = hk0Var2.o1(bArr);
+                        r7 o12 = fk0Var2.o1(bArr);
                         i12 = min;
                         try {
                             randomAccessFile.seek(0L);
@@ -237,12 +237,12 @@ public final /* synthetic */ class l0 implements Runnable {
                             randomAccessFile.close();
                         } catch (Exception unused3) {
                         }
-                        zv zvVar = new zv((aw) o12.f, tL_secureFile, r10, (byte[]) o12.e, (byte[]) o12.b);
-                        zvVar.i = i21;
-                        org.telegram.messenger.g0.g3(new f21(hk0Var, zvVar, i21, 6));
+                        yv yvVar = new yv((zv) o12.f, tL_secureFile, r10, (byte[]) o12.e, (byte[]) o12.b);
+                        yvVar.i = i21;
+                        org.telegram.messenger.g0.g3(new e21(fk0Var, yvVar, i21, 6));
                         if (z18 && !z19) {
                             try {
-                                z12 = hk0Var.G.type instanceof TLRPC.TL_secureValueTypeDriverLicense;
+                                z12 = fk0Var.G.type instanceof TLRPC.TL_secureValueTypeDriverLicense;
                                 if (!z12 || (j3 = MrzRecognizer.i(K)) == null) {
                                     try {
                                         j3 = MrzRecognizer.j(K);
@@ -251,10 +251,10 @@ public final /* synthetic */ class l0 implements Runnable {
                                         break;
                                     }
                                 }
-                                vrVar = j3;
-                                if (vrVar != null) {
+                                urVar = j3;
+                                if (urVar != null) {
                                     try {
-                                        org.telegram.messenger.g0.g3(new fe0(12, hk0Var, vrVar));
+                                        org.telegram.messenger.g0.g3(new bd0(16, fk0Var, urVar));
                                         z19 = true;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -278,14 +278,14 @@ public final /* synthetic */ class l0 implements Runnable {
                     i7 = 4;
                     z10 = false;
                 }
-                cz.y();
+                bz.y();
                 break;
         }
         return;
         if (!z12 && (i13 = MrzRecognizer.i(K)) != null) {
-            vrVar = i13;
+            urVar = i13;
         }
-        if (vrVar != null) {
+        if (urVar != null) {
         }
         i10 = i11 + 1;
         min = i12;
@@ -301,17 +301,17 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i7;
     }
 
-    public /* synthetic */ l0(lu0 lu0Var, boolean z10, int i7, r1 r1Var) {
+    public /* synthetic */ l0(ku0 ku0Var, boolean z10, int i7, r1 r1Var) {
         this.a = 5;
-        this.d = lu0Var;
+        this.d = ku0Var;
         this.c = z10;
         this.b = i7;
         this.e = r1Var;
     }
 
-    public /* synthetic */ l0(c51 c51Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
+    public /* synthetic */ l0(b51 b51Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
         this.a = i10;
-        this.d = c51Var;
+        this.d = b51Var;
         this.b = i7;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

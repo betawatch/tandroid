@@ -1,59 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLObject;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class d61 extends l2.j {
-    public final /* synthetic */ i61 d;
+public final class d61 implements j2.h {
+    public final j2.h a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d61(Context context, i61 i61Var) {
-        super(context);
-        this.d = i61Var;
+    public d61(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
+        this.a = extendedDefaultDataSource;
+        this.b = j3;
     }
 
-    /* JADX WARN: Type inference failed for: r3v2, types: [float[], java.io.Serializable] */
-    @Override // l2.j
-    public final n2.r0 a(Context context) {
-        fi.y3 y3Var = new fi.y3(context, 1);
-        oi.b6 b6Var = new oi.b6();
-        b6Var.f = this.d;
-        ci.b1 b1Var = new ci.b1();
-        b1Var.e = new float[0];
-        b1Var.a = 3;
-        b1Var.d = new float[513];
-        b1Var.b = new float[1024];
-        b1Var.c = new float[1024];
-        int[] iArr = new int[1024];
-        b1Var.f = iArr;
-        iArr[0] = 0;
-        int i7 = 512;
-        int i10 = 1;
-        while (i10 < 1024) {
-            for (int i11 = 0; i11 < i10; i11++) {
-                int[] iArr2 = (int[]) b1Var.f;
-                iArr2[i11 + i10] = iArr2[i11] + i7;
-            }
-            i10 <<= 1;
-            i7 >>= 1;
-        }
-        b1Var.g = new float[1024];
-        b1Var.h = new float[1024];
-        for (int i12 = 0; i12 < 1024; i12++) {
-            double d = (-3.1415927f) / i12;
-            ((float[]) b1Var.g)[i12] = (float) Math.sin(d);
-            ((float[]) b1Var.h)[i12] = (float) Math.cos(d);
-        }
-        b6Var.c = b1Var;
-        b6Var.d = new float[1024];
-        b6Var.a = 0;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_13);
-        b6Var.e = allocateDirect;
-        allocateDirect.position(0);
-        y3Var.d = new h6.m(new f2.n[]{new n2.y0(b6Var)});
-        return y3Var.a();
+    @Override // j2.h
+    public final void addTransferListener(j2.c0 c0Var) {
+        this.a.addTransferListener(c0Var);
+    }
+
+    @Override // j2.h
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        j2.l a10 = mVar.a();
+        a10.b = mVar.e + this.b;
+        return this.a.open(a10.d());
+    }
+
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        return this.a.read(bArr, i7, i10);
     }
 }

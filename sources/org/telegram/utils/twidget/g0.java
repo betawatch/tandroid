@@ -10,17 +10,17 @@ import org.json.JSONObject;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class g0 implements Runnable {
         ArrayList arrayList;
         String str3;
         d1 d1Var;
-        d81 d81Var;
+        e81 e81Var;
         d1 d1Var2;
         g2 T;
         rk0 rk0Var;
@@ -65,16 +65,16 @@ public final /* synthetic */ class g0 implements Runnable {
                 n0.c(k0Var, n0.C(tL_messageMediaWidget.chat_data), n0.C(tL_messageMediaWidget.public_data));
                 return;
             case 1:
-                ((ai.e) this.b).a(null, (TLRPC.TL_error) this.c);
+                ((ai.a) this.b).a(null, (TLRPC.TL_error) this.c);
                 return;
             case 2:
-                ur urVar = (ur) this.c;
+                tr trVar = (tr) this.c;
                 k0 k0Var2 = (k0) this.b;
                 long j3 = k0Var2.c;
                 int i10 = k0Var2.d;
                 ArrayList arrayList2 = new ArrayList();
                 try {
-                    SQLiteDatabase sQLiteDatabase = urVar.b;
+                    SQLiteDatabase sQLiteDatabase = trVar.b;
                     Locale locale = Locale.US;
                     SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT local FROM widget_state WHERE uid = " + j3 + " AND mid = " + i10, new Object[0]);
                     try {
@@ -82,7 +82,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             str2 = (!queryFinalized.next() || queryFinalized.isNull(0)) ? null : queryFinalized.stringValue(0);
                             try {
                                 queryFinalized.dispose();
-                                queryFinalized = urVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j3 + " AND mid = " + i10 + " ORDER BY date DESC", new Object[0]);
+                                queryFinalized = trVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j3 + " AND mid = " + i10 + " ORDER BY date DESC", new Object[0]);
                                 while (queryFinalized.next()) {
                                     arrayList2.add(new int[]{queryFinalized.intValue(0), queryFinalized.intValue(1), queryFinalized.intValue(2)});
                                 }
@@ -92,7 +92,7 @@ public final /* synthetic */ class g0 implements Runnable {
                                 str = str2;
                                 sQLiteCursor = queryFinalized;
                                 try {
-                                    urVar.o(e, true);
+                                    trVar.o(e, true);
                                     if (sQLiteCursor != null) {
                                         sQLiteCursor.dispose();
                                     }
@@ -114,7 +114,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             e = e11;
                             sQLiteCursor = queryFinalized;
                             str = null;
-                            urVar.o(e, true);
+                            trVar.o(e, true);
                             if (sQLiteCursor != null) {
                             }
                             str2 = str;
@@ -173,7 +173,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (d1Var4 != null) {
                     JSONObject jSONObject2 = (JSONObject) hashMap.get(a10);
                     try {
-                        str3 = hd.E0().y.toLanguageTag();
+                        str3 = gd.E0().y.toLanguageTag();
                     } catch (Exception unused) {
                         str3 = null;
                     }
@@ -199,16 +199,16 @@ public final /* synthetic */ class g0 implements Runnable {
             case 5:
                 p1 p1Var = (p1) this.b;
                 String str5 = (String) this.c;
-                if (p1Var.A || (d1Var = p1Var.R) == null || (d81Var = d1Var.h) == null) {
+                if (p1Var.A || (d1Var = p1Var.R) == null || (e81Var = d1Var.h) == null) {
                     return;
                 }
-                if (d81Var.F || (d81Var.w && d81Var.E)) {
-                    d81Var.a.f(str5);
+                if (e81Var.F || (e81Var.w && e81Var.E)) {
+                    e81Var.a.f(str5);
                     return;
                 }
                 return;
             case 6:
-                ((y10) this.b).a((String) this.c);
+                ((w10) this.b).a((String) this.c);
                 return;
             case 7:
                 p1 p1Var2 = (p1) this.b;
@@ -244,12 +244,12 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 n0.i = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
-                alertDialog$Builder.a.S = hd.N0(2131742606, null);
-                alertDialog$Builder.a.U = hd.a0(null, null, 2131742607, optString3);
-                alertDialog$Builder.k(hd.N0(2131747623, null), new v(i7, optString3, parentActivity));
-                alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                alertDialog$Builder.a.S = gd.N0(2131742601, null);
+                alertDialog$Builder.a.U = gd.a0(null, null, 2131742602, optString3);
+                alertDialog$Builder.k(gd.N0(2131747623, null), new v(i7, optString3, parentActivity));
+                alertDialog$Builder.h(gd.N0(2131752577, null), null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                t1Var.setOnDismissListener(new hi.f1(7));
+                t1Var.setOnDismissListener(new hi.n1(7));
                 if (T.showDialog(t1Var) == null) {
                     n0.i = false;
                     return;
@@ -266,9 +266,9 @@ public final /* synthetic */ class g0 implements Runnable {
         }
     }
 
-    public /* synthetic */ g0(ur urVar, k0 k0Var) {
+    public /* synthetic */ g0(tr trVar, k0 k0Var) {
         this.a = 2;
-        this.c = urVar;
+        this.c = trVar;
         this.b = k0Var;
     }
 }

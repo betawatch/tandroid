@@ -1,19 +1,70 @@
 package s2;
 
-import android.net.Uri;
+import h9.i0;
+import h9.l0;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class n {
-    public final Uri a;
-    public final e2.u b;
-    public final String c;
-    public final String d;
+public final class n extends r {
+    public final int d;
+    public final long e;
+    public final boolean f;
+    public final boolean g;
+    public final long h;
+    public final boolean i;
+    public final int j;
+    public final long k;
+    public final int l;
+    public final long m;
+    public final long n;
+    public final boolean o;
+    public final boolean p;
+    public final e2.r q;
+    public final i0 r;
+    public final i0 s;
+    public final l0 t;
+    public final long u;
+    public final m v;
+    public final i0 w;
+    public final k x;
 
-    public n(Uri uri, e2.u uVar, String str, String str2) {
-        this.a = uri;
-        this.b = uVar;
-        this.c = str;
-        this.d = str2;
+    public n(int i7, String str, List list, long j3, boolean z10, long j10, boolean z11, int i10, long j11, int i11, long j12, long j13, boolean z12, boolean z13, boolean z14, e2.r rVar, List list2, List list3, m mVar, Map map, List list4, k kVar) {
+        super(str, list, z12);
+        this.d = i7;
+        this.h = j10;
+        this.g = z10;
+        this.i = z11;
+        this.j = i10;
+        this.k = j11;
+        this.l = i11;
+        this.m = j12;
+        this.n = j13;
+        this.o = z13;
+        this.p = z14;
+        this.q = rVar;
+        this.r = i0.q(list2);
+        this.s = i0.q(list3);
+        this.t = l0.b(map);
+        this.w = i0.q(list4);
+        this.x = kVar;
+        if (!list3.isEmpty()) {
+            i iVar = (i) h9.o.n(list3);
+            this.u = iVar.e + iVar.c;
+        } else if (list2.isEmpty()) {
+            this.u = 0L;
+        } else {
+            k kVar2 = (k) h9.o.n(list2);
+            this.u = kVar2.e + kVar2.c;
+        }
+        this.e = j3 != -9223372036854775807L ? j3 >= 0 ? Math.min(this.u, j3) : Math.max(0L, this.u + j3) : -9223372036854775807L;
+        this.f = j3 >= 0;
+        this.v = mVar;
+    }
+
+    @Override // w2.a
+    public final Object a(List list) {
+        return this;
     }
 }

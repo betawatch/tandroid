@@ -3,32 +3,32 @@ package kg;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
-import hi.d7;
+import c8.na;
+import hi.y7;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c extends g2 implements gs {
+public final class c extends g2 implements fs {
     public int E;
     public int F;
     public int G;
     public c5 a;
-    public h51 b;
+    public g51 b;
     public b0 c;
     public boolean d;
     public boolean e;
@@ -41,64 +41,64 @@ public final class c extends g2 implements gs {
     public int x;
     public int y;
 
-    public static void Z(c cVar, ArrayList arrayList, c51 c51Var) {
-        String N0 = hd.N0(2131752826, null);
-        String N02 = hd.N0(2131752823, null);
-        o41 o41Var = new o41(2);
-        o41Var.m = N0;
-        o41Var.p = N02;
-        o41Var.n = "RestrictedEmoji";
-        o41Var.o = "💤";
-        arrayList.add(o41Var);
-        o41 i7 = o41.i(1, hd.N0(2131752809, null));
+    public static void Z(c cVar, ArrayList arrayList, b51 b51Var) {
+        String N0 = gd.N0(2131752826, null);
+        String N02 = gd.N0(2131752823, null);
+        n41 n41Var = new n41(2);
+        n41Var.m = N0;
+        n41Var.p = N02;
+        n41Var.n = "RestrictedEmoji";
+        n41Var.o = "💤";
+        arrayList.add(n41Var);
+        n41 i7 = n41.i(1, gd.N0(2131752809, null));
         i7.L(cVar.r);
         arrayList.add(i7);
-        arrayList.add(o41.C(null));
+        arrayList.add(n41.C(null));
         if (cVar.r) {
-            u1 d = v1.f(cVar.currentAccount).d("away");
+            v1 d = w1.f(cVar.currentAccount).d("away");
             if (d != null) {
-                o41 o41Var2 = new o41(17);
-                o41Var2.H = d;
-                arrayList.add(o41Var2);
+                n41 n41Var2 = new n41(17);
+                n41Var2.H = d;
+                arrayList.add(n41Var2);
             } else {
-                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, hd.N0(2131752825, null));
+                n41 c10 = n41.c(2, R.drawable.msg2_chats_add, gd.N0(2131752825, null));
                 c10.r = true;
                 arrayList.add(c10);
             }
-            arrayList.add(o41.C(null));
-            arrayList.add(o41.u(hd.N0(2131752818, null)));
-            o41 x10 = o41.x(3, hd.N0(2131752817, null));
+            arrayList.add(n41.C(null));
+            arrayList.add(n41.u(gd.N0(2131752818, null)));
+            n41 x10 = n41.x(3, gd.N0(2131752817, null));
             x10.L(cVar.x == 0);
             arrayList.add(x10);
             if (cVar.d) {
-                o41 x11 = o41.x(4, hd.N0(2131752810, null));
+                n41 x11 = n41.x(4, gd.N0(2131752810, null));
                 x11.L(cVar.x == 1);
                 arrayList.add(x11);
             }
-            o41 x12 = o41.x(5, hd.N0(2131752816, null));
+            n41 x12 = n41.x(5, gd.N0(2131752816, null));
             x12.L(cVar.x == 2);
             arrayList.add(x12);
             if (cVar.x == 2) {
-                arrayList.add(o41.C(null));
-                arrayList.add(o41.u(hd.N0(2131752818, null)));
-                arrayList.add(o41.f(hd.N0(2131752812, null), hd.Q(cVar.F), 8));
-                arrayList.add(o41.f(hd.N0(2131752815, null), hd.Q(cVar.G), 9));
+                arrayList.add(n41.C(null));
+                arrayList.add(n41.u(gd.N0(2131752818, null)));
+                arrayList.add(n41.f(gd.N0(2131752812, null), gd.Q(cVar.F), 8));
+                arrayList.add(n41.f(gd.N0(2131752815, null), gd.Q(cVar.G), 9));
             }
-            arrayList.add(o41.C(null));
-            o41 i10 = o41.i(10, hd.N0(2131752820, null));
+            arrayList.add(n41.C(null));
+            n41 i10 = n41.i(10, gd.N0(2131752820, null));
             i10.L(cVar.w);
             arrayList.add(i10);
-            arrayList.add(o41.C(hd.N0(2131752819, null)));
-            arrayList.add(o41.u(hd.N0(2131752676, null)));
-            o41 x13 = o41.x(6, hd.N0(2131752769, null));
+            arrayList.add(n41.C(gd.N0(2131752819, null)));
+            arrayList.add(n41.u(gd.N0(2131752676, null)));
+            n41 x13 = n41.x(6, gd.N0(2131752769, null));
             x13.L(cVar.s);
             arrayList.add(x13);
-            o41 x14 = o41.x(7, hd.N0(2131752764, null));
+            n41 x14 = n41.x(7, gd.N0(2131752764, null));
             x14.L(!cVar.s);
             arrayList.add(x14);
-            arrayList.add(o41.C(null));
-            cVar.c.a(arrayList, c51Var, true);
-            arrayList.add(o41.C(null));
+            arrayList.add(n41.C(null));
+            cVar.c.a(arrayList, b51Var, true);
+            arrayList.add(n41.C(null));
         }
     }
 
@@ -137,7 +137,7 @@ public final class c extends g2 implements gs {
             finishFragment();
             return;
         }
-        u1 d = v1.f(this.currentAccount).d("away");
+        v1 d = w1.f(this.currentAccount).d("away");
         boolean z10 = this.r;
         if (z10 && d == null) {
             q2.E.a();
@@ -145,8 +145,8 @@ public final class c extends g2 implements gs {
             int i7 = -this.f;
             this.f = i7;
             org.telegram.messenger.g0.E3(i7, B1, null);
-            h51 h51Var = this.b;
-            h51Var.y0(h51Var.A1(2));
+            g51 g51Var = this.b;
+            g51Var.y0(g51Var.A1(2));
             return;
         }
         if (!z10 || this.c.k(this.b)) {
@@ -184,7 +184,7 @@ public final class c extends g2 implements gs {
                 d2.flags2 &= -9;
                 d2.business_away_message = null;
             }
-            getConnectionsManager().sendRequest(updatebusinessawaymessage, new ai.g1(this, 16));
+            getConnectionsManager().sendRequest(updatebusinessawaymessage, new ai.b1(this, 16));
             getMessagesStorage().j2(d2, false);
         }
     }
@@ -193,32 +193,32 @@ public final class c extends g2 implements gs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.N0(2131752826, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 6));
-        this.a = this.simpleActionBar.s(hd.N0(2131745750, null));
+        this.simpleActionBar.setTitle(gd.N0(2131752826, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.w1(this, 6));
+        this.a = this.simpleActionBar.s(gd.N0(2131745750, null));
         int i7 = 0;
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        b0 b0Var = new b0(this, new hi.l(this, 28));
+        b0 b0Var = new b0(this, new hi.w(this, 28));
         this.c = b0Var;
         b0Var.h = this.s;
         TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.h;
         b0Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
-        h51 h51Var = new h51(this, new d7(this, 7), new a(this, i7), null);
-        this.b = h51Var;
-        h51Var.r1();
+        g51 g51Var = new g51(this, new y7(this, 7), new a(this, i7), null);
+        this.b = g51Var;
+        g51Var.r1();
         this.b.setSectionsDrawBackground(true);
-        h51 h51Var2 = this.b;
-        h51Var2.g3.r = false;
-        frameLayout.addView(h51Var2, ma.c(-1.0f, -1));
+        g51 g51Var2 = this.b;
+        g51Var2.g3.r = false;
+        frameLayout.addView(g51Var2, na.c(-1.0f, -1));
         d0();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     public final void d0() {
-        h51 h51Var;
-        c51 c51Var;
+        g51 g51Var;
+        b51 b51Var;
         if (this.e) {
             return;
         }
@@ -250,9 +250,9 @@ public final class c extends g2 implements gs {
                 int i10 = tL_businessAwayMessageScheduleCustom.end_date;
                 this.E = i10;
                 this.G = i10;
-                h51Var = this.b;
-                if (h51Var != null && (c51Var = h51Var.g3) != null) {
-                    c51Var.O(true);
+                g51Var = this.b;
+                if (g51Var != null && (b51Var = g51Var.g3) != null) {
+                    b51Var.O(true);
                 }
                 a0(true);
                 this.e = true;
@@ -271,25 +271,25 @@ public final class c extends g2 implements gs {
             this.n = 1;
             this.x = 1;
         }
-        h51Var = this.b;
-        if (h51Var != null) {
-            c51Var.O(true);
+        g51Var = this.b;
+        if (g51Var != null) {
+            b51Var.O(true);
         }
         a0(true);
         this.e = true;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        c51 c51Var;
-        if (i7 != ls.F1) {
-            if (i7 == ls.E0) {
+        b51 b51Var;
+        if (i7 != ks.F1) {
+            if (i7 == ks.E0) {
                 d0();
             }
         } else {
-            h51 h51Var = this.b;
-            if (h51Var != null && (c51Var = h51Var.g3) != null) {
-                c51Var.O(true);
+            g51 g51Var = this.b;
+            if (g51Var != null && (b51Var = g51Var.g3) != null) {
+                b51Var.O(true);
             }
             a0(true);
         }
@@ -316,12 +316,12 @@ public final class c extends g2 implements gs {
                 return false;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = hd.N0(2131743590, null);
+            String N0 = gd.N0(2131743588, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = hd.N0(2131752808, null);
-            alertDialog$Builder.k(hd.N0(2131754213, null), new a(this, 1));
-            alertDialog$Builder.h(hd.N0(2131747386, null), new a(this, 2));
+            t1Var.U = gd.N0(2131752808, null);
+            alertDialog$Builder.k(gd.N0(2131754213, null), new a(this, 1));
+            alertDialog$Builder.h(gd.N0(2131747386, null), new a(this, 2));
             showDialog(t1Var);
         }
         return false;
@@ -329,17 +329,17 @@ public final class c extends g2 implements gs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ls.F1);
-        getNotificationCenter().c(this, ls.E0);
-        v1.f(this.currentAccount).h();
+        getNotificationCenter().c(this, ks.F1);
+        getNotificationCenter().c(this, ks.E0);
+        w1.f(this.currentAccount).h();
         d0();
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ls.F1);
-        getNotificationCenter().n(this, ls.E0);
+        getNotificationCenter().n(this, ks.F1);
+        getNotificationCenter().n(this, ks.E0);
         super.onFragmentDestroy();
     }
 

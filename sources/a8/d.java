@@ -12,7 +12,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class d implements Iterator {
     public final /* synthetic */ int a;
@@ -189,14 +189,14 @@ public class d implements Iterator {
                 ((f) this.d).l();
                 return;
             case 6:
-                la.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
+                ma.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
                 this.b.remove();
-                ((h9.l1) ((lb) this.d).e).f -= ((Collection) this.c).size();
+                ((h9.k1) ((lb) this.d).e).f -= ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
                 return;
             case 7:
-                la.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
+                ma.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
                 Collection collection3 = (Collection) ((Map.Entry) this.c).getValue();
                 this.b.remove();
                 ((h9.d) this.d).c.f -= collection3.size();
@@ -206,8 +206,8 @@ public class d implements Iterator {
             default:
                 this.b.remove();
                 f fVar2 = (f) this.d;
-                h9.l1 l1Var = (h9.l1) fVar2.f;
-                l1Var.f--;
+                h9.k1 k1Var = (h9.k1) fVar2.f;
+                k1Var.f--;
                 fVar2.j();
                 return;
         }

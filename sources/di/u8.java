@@ -1,9 +1,9 @@
 package di;
 
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,27 +26,27 @@ public final /* synthetic */ class u8 implements Runnable {
                 w8Var.a();
                 break;
             default:
-                org.telegram.ui.Components.gc gcVar = w8Var.d;
+                org.telegram.ui.Components.fc fcVar = w8Var.d;
                 y8 y8Var = w8Var.q;
                 u8 u8Var = w8Var.p;
-                gj gjVar = w8Var.b;
+                fj fjVar = w8Var.b;
                 if (!w8Var.l) {
                     w8Var.l = true;
-                    gjVar.f((int) w8Var.k, w8Var.c(), true);
+                    fjVar.f((int) w8Var.k, w8Var.c(), true);
                     long j3 = y8Var.g;
                     int i10 = y8Var.a;
                     y8Var.g = j3 + w8Var.k;
-                    ls.f(i10).k(ls.A3, new Object[0]);
+                    ks.f(i10).k(ks.A3, new Object[0]);
                     w8Var.k = 0L;
-                    ls.f(i10).k(ls.o1, Long.valueOf(gj.B0(gjVar.k)), Integer.valueOf(gjVar.e1()), gjVar.k.reactions);
+                    ks.f(i10).k(ks.o1, Long.valueOf(fj.B0(fjVar.k)), Integer.valueOf(fjVar.e1()), fjVar.k.reactions);
                 }
                 if (!w8Var.m) {
                     w8Var.m = true;
                     w8Var.f.b = 5000L;
                     org.telegram.messenger.g0.r(u8Var);
                     org.telegram.messenger.g0.h3(u8Var, 5000L);
-                    gcVar.k(true);
-                    gcVar.v = u8Var;
+                    fcVar.k(true);
+                    fcVar.v = u8Var;
                 }
                 w8Var.e.b.setText(w8Var.d());
                 break;

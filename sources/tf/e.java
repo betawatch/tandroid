@@ -2,21 +2,21 @@ package tf;
 
 import java.io.EOFException;
 import java.io.InputStream;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
     public static final b7.j e = new b7.j(4);
     public final uf.a a;
     public final h b;
     public final f c;
-    public final jn d;
+    public final nd0 d;
 
     public e(InputStream inputStream, long j3, int i7, h hVar, f fVar) {
         uf.a aVar = new uf.a(inputStream, j3, i7);
         this.a = aVar;
-        this.d = new jn(aVar, 19);
+        this.d = new nd0(aVar, 16);
         this.b = hVar;
         this.c = fVar;
     }
@@ -46,20 +46,20 @@ public final class e {
     }
 
     public final b b() {
-        byte Q = this.d.Q();
-        if (Q == 0) {
+        byte v = this.d.v();
+        if (v == 0) {
             return b.c;
         }
-        if (Q == 1) {
+        if (v == 1) {
             return b.d;
         }
-        if (Q == 2) {
+        if (v == 2) {
             return b.e;
         }
-        if (Q == 3) {
+        if (v == 3) {
             return b.f;
         }
-        throw new c(i5.c.i(Q, "Invalid encoding: "));
+        throw new c(i5.c.i(v, "Invalid encoding: "));
     }
 
     public final String c(int i7, b bVar) {
@@ -78,12 +78,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i10 = 0;
         while (true) {
-            jn jnVar = this.d;
+            nd0 nd0Var = this.d;
             if (i10 >= i7) {
-                jnVar.getClass();
+                nd0Var.getClass();
                 return a(bArr2, i7, bVar, true);
             }
-            int read = ((ab.d) jnVar.b).read(bArr2, i10, i7 - i10);
+            int read = ((ab.d) nd0Var.b).read(bArr2, i10, i7 - i10);
             if (read <= 0) {
                 throw new EOFException();
             }
@@ -105,9 +105,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i10 = 0;
         for (int i11 = 0; i11 < min; i11++) {
-            byte Q = this.d.Q();
-            bArr2[i11] = Q;
-            if (Q != 0 || (bVar == b.d && i10 == 0 && i11 % 2 != 0)) {
+            byte v = this.d.v();
+            bArr2[i11] = v;
+            if (v != 0 || (bVar == b.d && i10 == 0 && i11 % 2 != 0)) {
                 i10 = 0;
             } else {
                 i10++;

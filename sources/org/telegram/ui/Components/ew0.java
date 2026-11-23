@@ -1,34 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.ShapeDrawable;
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ew0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public org.telegram.ui.ActionBar.h6 a;
-    public ShapeDrawable b;
-    public View c;
+public final class ew0 extends org.telegram.ui.Cells.z7 {
+    public final /* synthetic */ fw0 P;
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.b;
-            if (shapeDrawable != null) {
-                org.telegram.ui.ActionBar.m6.C1(org.telegram.ui.ActionBar.m6.r1(0.12f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ef, this.a)), shapeDrawable);
-                View view = this.c;
-                if (view != null) {
-                    view.invalidate();
-                }
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ew0(fw0 fw0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var, false);
+        this.P = fw0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        fw0 fw0Var = this.P;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(fw0Var.r.J1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(fw0Var.r.J1, TLObject.FLAG_30));
     }
 }

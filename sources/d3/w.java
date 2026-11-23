@@ -2,14 +2,14 @@ package d3;
 
 import a8.va;
 import e2.t0;
-import h9.t1;
+import h9.s1;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.a8;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class w {
     public long a;
@@ -52,7 +52,7 @@ public final class w {
         va vaVar;
         long j14;
         RandomAccessFile randomAccessFile;
-        t1 t1Var;
+        s1 s1Var;
         int i7;
         int i10;
         long length = file.length();
@@ -134,9 +134,9 @@ public final class w {
                     h2.a.l("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
                 }
                 if (j13 <= j12 && vaVar != 0) {
-                    t1Var = (t1) vaVar.c;
-                    for (i7 = 0; i7 < t1Var.d; i7++) {
-                        n3.c cVar = (n3.c) t1Var.get(i7);
+                    s1Var = (s1) vaVar.c;
+                    for (i7 = 0; i7 < s1Var.d; i7++) {
+                        n3.c cVar = (n3.c) s1Var.get(i7);
                         if ("MotionPhoto".equalsIgnoreCase(cVar.b)) {
                             long j18 = cVar.c;
                             if (j18 > j12 && j18 < length) {
@@ -167,8 +167,8 @@ public final class w {
             }
             vaVar = wVar;
             if (j13 <= j12) {
-                t1Var = (t1) vaVar.c;
-                while (i7 < t1Var.d) {
+                s1Var = (s1) vaVar.c;
+                while (i7 < s1Var.d) {
                 }
             }
             if (j13 > j12) {

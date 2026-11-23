@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.c9;
-import a8.e9;
+import a8.d9;
+import a8.f9;
 import a8.xa;
 import j$.util.Objects;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a0 extends a8.v {
     public static final a0 n = new a0(null, new Object[0], 0);
@@ -60,7 +60,7 @@ public final class a0 extends a8.v {
             Objects.requireNonNull(objArr2[1]);
             return new a0(null, objArr2, 1);
         }
-        c9.b(i13, objArr2.length >> 1);
+        d9.b(i13, objArr2.length >> 1);
         char c12 = 2;
         int max = Math.max(i13, 2);
         if (max < 751619276) {
@@ -94,7 +94,7 @@ public final class a0 extends a8.v {
                     Objects.requireNonNull(obj3);
                     Object obj4 = objArr2[i19 ^ i14];
                     Objects.requireNonNull(obj4);
-                    int a10 = e9.a(obj3.hashCode());
+                    int a10 = f9.a(obj3.hashCode());
                     while (true) {
                         int i20 = a10 & i15;
                         z11 = z14;
@@ -170,7 +170,7 @@ public final class a0 extends a8.v {
                         Objects.requireNonNull(obj8);
                         Object obj9 = objArr2[i26 ^ 1];
                         Objects.requireNonNull(obj9);
-                        int a11 = e9.a(obj8.hashCode());
+                        int a11 = f9.a(obj8.hashCode());
                         while (true) {
                             int i27 = a11 & i15;
                             int i28 = iArr[i27];
@@ -228,7 +228,7 @@ public final class a0 extends a8.v {
                     Objects.requireNonNull(obj11);
                     Object obj12 = objArr2[i33 ^ 1];
                     Objects.requireNonNull(obj12);
-                    int a12 = e9.a(obj11.hashCode());
+                    int a12 = f9.a(obj11.hashCode());
                     while (true) {
                         int i34 = a12 & i15;
                         char c13 = (char) sArr[i34];
@@ -295,7 +295,7 @@ public final class a0 extends a8.v {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a10 = e9.a(obj.hashCode());
+                        int a10 = f9.a(obj.hashCode());
                         while (true) {
                             int i10 = a10 & length;
                             int i11 = bArr[i10] & 255;
@@ -311,7 +311,7 @@ public final class a0 extends a8.v {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a11 = e9.a(obj.hashCode());
+                        int a11 = f9.a(obj.hashCode());
                         while (true) {
                             int i12 = a11 & length2;
                             char c10 = (char) sArr[i12];
@@ -327,7 +327,7 @@ public final class a0 extends a8.v {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a12 = e9.a(obj.hashCode());
+                        int a12 = f9.a(obj.hashCode());
                         while (true) {
                             int i13 = a12 & length3;
                             int i14 = iArr[i13];

@@ -1,22 +1,31 @@
 package c8;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class wa {
-    public static int a(w7.s sVar) {
-        sVar.getClass();
-        return Math.max(1, (int) Math.ceil(0.5f * org.telegram.messenger.g0.p)) + (((int) Math.ceil(1.9f * org.telegram.messenger.g0.p)) * 2);
+    public static j80 a(Context context, float f10, int i7, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
+        int i10 = org.telegram.ui.ActionBar.n6.Xc;
+        j80 j80Var = new j80(context, null);
+        j80Var.setTextSize(1, f10);
+        org.telegram.ui.ActionBar.u6.U(j80Var, i7, i6Var);
+        org.telegram.ui.ActionBar.u6.G(j80Var, i10, i6Var);
+        if (z10) {
+            j80Var.setTypeface(org.telegram.messenger.g0.o());
+        }
+        return j80Var;
     }
 
-    public static void b(Canvas canvas, Bitmap bitmap, int i7, float f10, float f11, int i10, int i11, Paint paint) {
-        int min = Math.min(i7, bitmap.getWidth());
-        int i12 = (int) f10;
-        int i13 = (int) f11;
-        canvas.drawBitmap(bitmap, new Rect(0, i10, min, i10 + i11), new Rect(i12, i13, min + i12, i11 + i13), paint);
+    public static TextView b(Context context, float f10, int i7, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, f10);
+        org.telegram.ui.ActionBar.u6.U(textView, i7, i6Var);
+        if (z10) {
+            textView.setTypeface(org.telegram.messenger.g0.o());
+        }
+        return textView;
     }
 }

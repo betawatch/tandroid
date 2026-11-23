@@ -1,23 +1,38 @@
 package org.telegram.ui;
 
-import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ph0 extends org.telegram.ui.Cells.n8 {
-    public ImageView a0;
+public final /* synthetic */ class ph0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qh0 b;
+    public final /* synthetic */ String c;
 
-    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        int L = org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(17.0f) : (i11 - i7) - org.telegram.messenger.g0.L(41.0f);
-        int z11 = org.telegram.messenger.o10.z(24.0f, i12 - i10, 2);
-        this.a0.layout(L, z11, org.telegram.messenger.g0.L(24.0f) + L, org.telegram.messenger.g0.L(24.0f) + z11);
+    public /* synthetic */ ph0(qh0 qh0Var, String str, int i7) {
+        this.a = i7;
+        this.b = qh0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        this.a0.measure(i7, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                qh0 qh0Var = this.b;
+                String str = this.c;
+                qh0Var.getClass();
+                org.telegram.messenger.g0.g3(new ph0(qh0Var, str, 1));
+                break;
+            default:
+                qh0 qh0Var2 = this.b;
+                String str2 = this.c;
+                jg.z1 z1Var = qh0Var2.h;
+                int i7 = qh0Var2.n.s;
+                z1Var.g(str2, true, (i7 == 1 || i7 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.g.c(new lc0(qh0Var2, str2, new ArrayList(qh0Var2.n.x), 10));
+                break;
+        }
     }
 }

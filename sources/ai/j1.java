@@ -1,423 +1,277 @@
 package ai;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.text.Editable;
-import android.util.Pair;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import bi.e4;
-import bi.x4;
-import bi.z4;
-import c8.ma;
-import di.a5;
-import di.b5;
-import di.n8;
-import di.p5;
-import di.p9;
-import di.s5;
-import di.v4;
-import di.y8;
-import fi.f9;
-import fi.v8;
-import fi.w8;
-import hi.k5;
-import hi.va;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArraySet;
-import ki.s3;
-import oi.a6;
-import oi.d3;
-import oi.m5;
-import oi.u5;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.gq0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.y5;
-import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
-import org.telegram.ui.g4;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.text.Layout;
+import android.widget.EditText;
+import java.util.Arrays;
+import org.telegram.ui.Components.hf;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.pt;
+import org.telegram.ui.Components.xu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class j1 {
+    public static final kr J = new kr(0.42d, 0.0d, 0.22d, 1.0d);
+    public final int[] A;
+    public final float B;
+    public boolean C;
+    public boolean D;
+    public float E;
+    public float F;
+    public int[] G;
+    public Runnable H;
+    public boolean I;
+    public final EditText b;
+    public boolean d;
+    public long e;
+    public float f;
+    public float g;
+    public Bitmap h;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public final Paint p;
+    public final Paint q;
+    public final LinearGradient r;
+    public final LinearGradient s;
+    public final LinearGradient t;
+    public final Matrix u;
+    public int v;
+    public int w;
+    public int x;
+    public float y;
+    public float z;
+    public long a = 900;
+    public final xu0 c = new xu0(2600);
+    public float[] i = new float[0];
+    public float[] j = new float[0];
+    public final Paint o = new Paint(2);
 
-    public /* synthetic */ j1(int i7, Object obj, Object obj2, int i10) {
-        this.a = i10;
-        this.b = i7;
-        this.c = obj;
-        this.d = obj2;
+    public j1(hf hfVar) {
+        Paint paint = new Paint();
+        this.p = paint;
+        Paint paint2 = new Paint();
+        this.q = paint2;
+        this.u = new Matrix();
+        this.A = new int[2];
+        this.F = 0.06f;
+        this.b = hfVar;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.r = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 0, -16777216, tileMode);
+        this.s = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -16777216, 0, tileMode);
+        this.t = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 16777215, -1, tileMode);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+        this.B = org.telegram.messenger.g0.L(22.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = 0;
-        switch (this.a) {
-            case 0:
-                int i10 = this.b;
-                int[] iArr = (int[]) this.c;
-                k1 k1Var = (k1) this.d;
-                ls f10 = ls.f(i10);
-                int length = iArr.length;
-                while (i7 < length) {
-                    f10.n(k1Var, iArr[i7]);
-                    i7++;
-                }
-                break;
-            case 1:
-                z4 z4Var = (z4) this.c;
-                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) this.d;
-                int i11 = this.b;
-                z4Var.run();
-                org.telegram.messenger.g0.g3(new e4(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749566, x4.k(p0Var.b), hd.x(i11, true))), i7));
-                break;
-            case 2:
-                gq0 gq0Var = (gq0) this.c;
-                int i12 = this.b;
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.d;
-                n8 n8Var = gq0Var.e;
-                if (i12 != -1) {
-                    int i13 = tL_starGiftCollection.collection_id;
-                    int i14 = n8Var.a;
-                    int f11 = n8Var.f(i13);
-                    if (f11 != -1) {
-                        TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) n8Var.e.remove(f11);
-                        n8Var.h.remove(Integer.valueOf(tL_starGiftCollection2.collection_id));
-                        TL_stars.deleteStarGiftCollection deletestargiftcollection = new TL_stars.deleteStarGiftCollection();
-                        deletestargiftcollection.peer = np.u1(i14).l1(n8Var.b);
-                        deletestargiftcollection.collection_id = tL_starGiftCollection2.collection_id;
-                        ConnectionsManager.getInstance(i14).sendRequest(deletestargiftcollection, null);
-                    }
-                    gq0Var.f(true);
-                    i71 i71Var = gq0Var.n;
-                    if (i12 < n8Var.d().size()) {
-                        i12++;
-                    }
-                    i71Var.e(-1, i12);
-                    gq0Var.o();
-                    break;
-                }
-                break;
-            case 3:
-                ch.p pVar = (ch.p) this.c;
-                y5 y5Var = (y5) this.d;
-                int i15 = this.b;
-                Editable text = pVar.h.getText();
-                int spanStart = text.getSpanStart(y5Var);
-                int spanEnd = text.getSpanEnd(y5Var);
-                int i16 = spanEnd - spanStart;
-                if (spanStart != -1 && spanEnd != -1) {
-                    pVar.h.getText().delete(spanStart, spanEnd);
-                    ch.m mVar = pVar.h;
-                    mVar.setSelection(Math.min(i15 - i16, mVar.getText().length()));
-                    break;
-                }
-                break;
-            case 4:
-                ci.b0.p((org.telegram.ui.ActionBar.g2) this.c, this.b + 1, (ci.z) this.d);
-                break;
-            case 5:
-                b5 b5Var = (b5) this.c;
-                int i17 = this.b;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) this.d;
-                int[] iArr2 = b5Var.W;
-                di.x4 x4Var = b5Var.f;
-                v4 v4Var = b5Var.h;
-                if (starGift == null) {
-                    FrameLayout frameLayout = new FrameLayout(b5Var.getContext());
-                    rh0 rh0Var = new rh0(b5Var.getContext());
-                    rh0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(rh0Var, ma.e(32, 32, 17));
-                    rh0Var.setScaleX(0.5f);
-                    rh0Var.setScaleY(0.5f);
-                    rh0Var.setAlpha(0.0f);
-                    rh0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    b5Var.m0 = rh0Var;
-                    frameLayout.setBackground(new p5(org.telegram.messenger.g0.L(12.0f), m6.r1(0.075f, -1)));
-                    v4Var.a[i17].setVisibility(8);
-                    frameLayout.setRotation(180.0f);
-                    v4Var.f(i17, frameLayout);
-                    b5Var.G.a(iArr2[2], iArr2[3]);
-                    a5 a5Var = b5Var.b;
-                    int[] iArr3 = b5Var.V;
-                    a5Var.a(iArr3[2], iArr3[3]);
-                    x4Var.a(iArr2[3], iArr2[2]);
-                    break;
-                } else {
-                    di.z4 z4Var2 = new di.z4(b5Var.getContext());
-                    z4Var2.a(starGift, false);
-                    z4Var2.setRotation(180.0f);
-                    v4Var.f(i17, z4Var2);
-                    z4Var2.setScaleX(0.5f);
-                    z4Var2.setScaleY(0.5f);
-                    z4Var2.setAlpha(0.0f);
-                    ViewPropertyAnimator duration = z4Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(520L);
-                    nr nrVar = nr.h;
-                    ViewPropertyAnimator interpolator = duration.setInterpolator(nrVar);
-                    interpolator.setUpdateListener(new ah.g(b5Var, 6));
-                    interpolator.start();
-                    v4Var.a[i17].setVisibility(8);
-                    x4Var.setVisibility(0);
-                    x4Var.setAlpha(0.0f);
-                    x4Var.animate().alpha(0.5f).setDuration(820L).setInterpolator(nrVar).start();
-                    break;
-                }
-            case 6:
-                ((t10) this.d).a(hd.a0(null, null, 2131750029, ki.j.J0(this.b)), (s5) this.c, Boolean.FALSE);
-                break;
-            case 7:
-                y8 y8Var = (y8) this.c;
-                int i18 = this.b;
-                TLObject tLObject = (TLObject) this.d;
-                boolean[] zArr = y8Var.r;
-                ArrayList[] arrayListArr = y8Var.q;
-                int i19 = y8Var.a;
-                y8Var.t[i18] = false;
-                if (tLObject instanceof TL_stars.StarsStatus) {
-                    TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
-                    np.u1(i19).f4(starsStatus.users, false);
-                    np.u1(i19).Z3(starsStatus.chats, false);
-                    arrayListArr[i18].addAll(starsStatus.history);
-                    zArr[i18] = !arrayListArr[i18].isEmpty() || zArr[i18];
-                    boolean[] zArr2 = y8Var.u;
-                    boolean z10 = (starsStatus.flags & 1) == 0;
-                    zArr2[i18] = z10;
-                    y8Var.s[i18] = z10 ? null : starsStatus.next_offset;
-                    y8Var.i0(starsStatus.balance);
-                    ls.f(i19).k(ls.B3, new Object[0]);
-                    break;
-                }
-                break;
-            case 8:
-                Context context = (Context) this.c;
-                int i20 = this.b;
-                vf.c.t(context, "https://" + np.u1(i20).X2 + "/nft/" + ((String) this.d));
-                break;
-            case 9:
-                ((fi.c1) this.c).G.put((String) this.d, Integer.valueOf(this.b));
-                break;
-            case 10:
-                TLObject tLObject2 = (TLObject) this.c;
-                int i21 = this.b;
-                p9 p9Var = (p9) this.d;
-                if (tLObject2 instanceof TL_stories.TL_albums) {
-                    ArrayList<TL_stories.TL_storyAlbum> arrayList = ((TL_stories.TL_albums) tLObject2).albums;
-                    int size = arrayList.size();
-                    while (i7 < size) {
-                        TL_stories.TL_storyAlbum tL_storyAlbum = arrayList.get(i7);
-                        i7++;
-                        TL_stories.TL_storyAlbum tL_storyAlbum2 = tL_storyAlbum;
-                        if (tL_storyAlbum2.album_id == i21) {
-                            p9Var.a(tL_storyAlbum2);
-                            break;
-                        }
-                    }
-                }
-                p9Var.a(null);
-                break;
-            case 11:
-                w8 w8Var = (w8) this.c;
-                ArrayList arrayList2 = (ArrayList) this.d;
-                int i22 = this.b;
-                f9 f9Var = w8Var.d;
-                v8 v8Var = f9Var.o0;
-                int i23 = f9Var.h;
-                v8Var.B0 = arrayList2;
-                v8Var.z0 = i23;
-                v8Var.setAdapter(null);
-                v8Var.setAdapter(v8Var.A0);
-                v8Var.setCurrentItem(i22);
-                v8Var.D0 = true;
-                break;
-            case 12:
-                CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
-                int i24 = this.b;
-                h2.o oVar = (h2.o) this.d;
-                Iterator it = copyOnWriteArraySet.iterator();
-                while (it.hasNext()) {
-                    h2.q qVar = (h2.q) it.next();
-                    if (!qVar.d) {
-                        if (i24 != -1) {
-                            qVar.b.b(i24);
-                        }
-                        qVar.c = true;
-                        oVar.invoke(qVar.a);
-                    }
-                }
-                break;
-            case 13:
-                ((FfmpegAudioWaveformLoader) this.c).lambda$new$0((String) this.d, this.b);
-                break;
-            case 14:
-                ((FfmpegAudioWaveformLoader) this.c).lambda$receiveChunk$1((short[]) this.d, this.b);
-                break;
-            case 15:
-                k5 k5Var = (k5) this.c;
-                sg.g gVar = (sg.g) this.d;
-                int i25 = this.b;
-                if (k5Var.y0.getCurrentBrush() instanceof sg.g) {
-                    k5Var.M0 = true;
-                }
-                k5Var.w(gVar);
-                tg.i1 i1Var = k5Var.U0;
-                int i26 = i1Var.d + 1;
-                i1Var.a(i26);
-                org.telegram.messenger.g0.P3(i1Var.a[i26], i25);
-                i1Var.e = true;
-                break;
-            case 16:
-                org.telegram.messenger.g0.g3(new c1(this.b, ((ur) this.c).l0(new ArrayList((HashSet) this.d)), 11));
-                break;
-            case 17:
-                ((va) this.c).b((short[]) this.d, this.b);
-                break;
-            case 18:
-                jg.h0 h0Var = (jg.h0) this.c;
-                int i27 = this.b;
-                String str = (String) this.d;
-                int i28 = h0Var.t0;
-                h0Var.r = null;
-                if (i27 == h0Var.e0) {
-                    if (h0Var.n >= 0) {
-                        ConnectionsManager.getInstance(i28).cancelRequest(h0Var.n, true);
-                    }
-                    TLRPC.TL_channels_searchPosts tL_channels_searchPosts = new TLRPC.TL_channels_searchPosts();
-                    tL_channels_searchPosts.flags = 1 | tL_channels_searchPosts.flags;
-                    tL_channels_searchPosts.hashtag = str;
-                    tL_channels_searchPosts.limit = 3;
-                    tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                    h0Var.n = ConnectionsManager.getInstance(i28).sendRequest(tL_channels_searchPosts, new jg.u(h0Var, i27, str, i7));
-                    break;
-                }
-                break;
-            case 19:
-                kg.z zVar = (kg.z) this.c;
-                zVar.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
-                ls.f(zVar.a).k(ls.J1, new Object[0]);
-                break;
-            case 20:
-                int[] iArr4 = (int[]) this.c;
-                int i29 = this.b;
-                gs[] gsVarArr = (gs[]) this.d;
-                if (iArr4[0] >= 0) {
-                    ConnectionsManager.getInstance(i29).cancelRequest(iArr4[0], true);
-                    iArr4[0] = -1;
-                }
-                if (gsVarArr[0] != null) {
-                    ls.f(i29).n(gsVarArr[0], 59);
-                    gsVarArr[0] = null;
-                    break;
-                }
-                break;
-            case 21:
-                s3 s3Var = (s3) this.c;
-                TLObject tLObject3 = (TLObject) this.d;
-                int i30 = this.b;
-                if (tLObject3 instanceof TLRPC.TL_webViewResultUrl) {
-                    TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) tLObject3;
-                    s3Var.y = tL_webViewResultUrl.query_id;
-                    s3Var.n.t(i30, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
-                    org.telegram.messenger.g0.g3(s3Var.V);
-                    break;
-                }
-                break;
-            case 22:
-                l2.c1 c1Var = (l2.c1) this.c;
-                Pair pair = (Pair) this.d;
-                c1Var.b.h.N(((Integer) pair.first).intValue(), (x2.g0) pair.second, this.b);
-                break;
-            case 23:
-                m5 m5Var = (m5) this.c;
-                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) this.d;
-                int i31 = this.b;
-                oi.p5 m10 = m5Var.getGrid().m(pagetablecell);
-                if (m10 != null) {
-                    oi.f1 f1Var = m10.a;
-                    f1Var.O();
-                    f1Var.setSelection(Math.max(0, Math.min(i31, f1Var.length())));
-                    break;
-                }
-                break;
-            case 24:
-                u5 u5Var = (u5) this.c;
-                oi.a aVar = (oi.a) this.d;
-                int i32 = this.b;
-                a6 a6Var = u5Var.a;
-                if (a6Var.E != null) {
-                    a6.e(aVar.b, "");
-                    ((d3) a6Var.E).c(aVar, i32);
-                    break;
-                }
-                break;
-            case 25:
-                ((CameraView) this.c).lambda$createCamera$13(this.b, (SurfaceTexture) this.d);
-                break;
-            case 26:
-                ((NativeInstance) this.c).lambda$onEmitJoinPayload$3(this.b, (String) this.d);
-                break;
-            case 27:
-                ((VoIPService) this.c).lambda$createGroupInstance$74((String) this.d, this.b);
-                break;
-            case 28:
-                int i33 = this.b;
-                Context context2 = (Context) this.c;
-                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.d;
-                String str2 = np.u1(i33).R6;
-                if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
-                    str2 = "https://".concat(str2);
-                }
-                vf.c.t(context2, str2);
-                w2VarArr[0].dismiss();
-                break;
-            default:
-                g4 g4Var = (g4) this.c;
-                String str3 = (String) this.d;
-                int i34 = this.b;
-                HashMap hashMap = new HashMap(g4Var.v0[0].c.x);
-                ArrayList arrayList3 = new ArrayList(g4Var.v0[0].c.y);
-                g4Var.X0 = null;
-                Utilities.g.c(new i1(g4Var, arrayList3, hashMap, str3, i34, 10));
-                break;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x004e, code lost:
+    
+        if (r1 != null) goto L10;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(long j3) {
+        this.a = j3;
+        EditText editText = this.b;
+        Layout layout = editText.getLayout();
+        this.l = 0;
+        if (layout != null && layout.getWidth() > 0 && layout.getHeight() > 0) {
+            Bitmap bitmap = null;
+            try {
+                bitmap = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                editText.getPaint().setColor(editText.getCurrentTextColor());
+                layout.draw(canvas);
+                this.l = f(1100, bitmap, false);
+            } catch (Throwable unused) {
+            }
+            bitmap.recycle();
+        }
+        this.n = 0;
+        this.m = 0;
+        this.e = SystemClock.uptimeMillis();
+        this.I = false;
+        this.d = true;
+        editText.invalidate();
+    }
+
+    public final boolean b(float f10, float f11, int i7, boolean z10) {
+        c();
+        EditText editText = this.b;
+        Layout layout = editText.getLayout();
+        if (layout == null || layout.getWidth() <= 0 || layout.getHeight() <= 0) {
+            return false;
+        }
+        try {
+            this.h = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(this.h);
+            editText.getPaint().setColor(editText.getCurrentTextColor());
+            layout.draw(canvas);
+            this.w = editText.getScrollY();
+            this.x = Math.max(1, (editText.getHeight() - editText.getTotalPaddingTop()) - editText.getTotalPaddingBottom());
+            this.k = f(1200, this.h, true);
+            editText.getLocationInWindow(this.A);
+            this.y = (editText instanceof pt ? ((pt) editText).getOffsetY() : 0.0f) + ((editText.getTotalPaddingTop() + r1[1]) - this.w);
+            this.f = f10;
+            this.g = f11;
+            int i10 = this.v;
+            Paint paint = this.q;
+            if (i10 != i7 || paint.getColorFilter() == null) {
+                this.v = i7;
+                paint.setColorFilter(new PorterDuffColorFilter(this.v, PorterDuff.Mode.SRC_IN));
+            }
+            xu0 xu0Var = this.c;
+            xu0Var.a();
+            xu0Var.e(z10);
+            xu0Var.a = q0.k(z10);
+            xu0Var.Q = org.telegram.messenger.g0.L(10.0f);
+            return true;
+        } catch (Throwable unused) {
+            return false;
         }
     }
 
-    public /* synthetic */ j1(Object obj, int i7, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
-        this.d = obj2;
+    public final void c() {
+        this.d = false;
+        this.e = 0L;
+        Bitmap bitmap = this.h;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.h = null;
+        }
+        this.c.a();
     }
 
-    public /* synthetic */ j1(Object obj, Object obj2, int i7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i7;
+    public final float d(float f10) {
+        float interpolation = J.getInterpolation(Math.max(0.0f, Math.min(1.0f, (f10 * 1000.0f) / (this.a - (this.F * 1000.0f)))));
+        float f11 = this.f;
+        return com.google.android.gms.internal.vision.e2.z(this.g, f11, interpolation, f11);
+    }
+
+    public final void e(LinearGradient linearGradient, float f10, float f11) {
+        float sqrt = (float) Math.sqrt(1.809999942779541d);
+        float f12 = 1.0f / sqrt;
+        float f13 = 0.9f / sqrt;
+        float f14 = f10 / sqrt;
+        float f15 = f11 / sqrt;
+        Matrix matrix = this.u;
+        matrix.reset();
+        matrix.setScale(Math.max(0.01f, f15 - f14), 1.0f);
+        matrix.postRotate((float) Math.toDegrees(Math.atan2(f13, f12)));
+        matrix.postTranslate(f12 * f14, f14 * f13);
+        linearGradient.setLocalMatrix(matrix);
+    }
+
+    public final int f(int i7, Bitmap bitmap, boolean z10) {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        int[] iArr = this.G;
+        if (iArr == null || iArr.length < width * height) {
+            this.G = new int[width * height];
+        }
+        int[] iArr2 = this.G;
+        bitmap.getPixels(iArr2, 0, width, 0, 0, width, height);
+        int max = Math.max(1, Math.round(org.telegram.messenger.g0.p * 0.8f));
+        int i10 = 0;
+        for (int i11 = 0; i11 < height; i11 += max) {
+            for (int i12 = 0; i12 < width; i12 += max) {
+                if ((iArr2[(i11 * width) + i12] >>> 24) > 90) {
+                    i10++;
+                }
+            }
+        }
+        float f10 = i10 > i7 ? i7 / i10 : 1.0f;
+        float[] fArr = z10 ? this.i : this.j;
+        int i13 = i7 + 32;
+        if (fArr.length < Math.min(i10, i13) * 3) {
+            fArr = new float[Math.min(i10, i13) * 3];
+        }
+        int i14 = 0;
+        for (int i15 = 0; i15 < height; i15 += max) {
+            for (int i16 = 0; i16 < width; i16 += max) {
+                if ((iArr2[(i15 * width) + i16] >>> 24) > 90) {
+                    if (z10) {
+                        int i17 = this.w;
+                        if (i15 >= i17 - max) {
+                            if (i15 > i17 + this.x + max) {
+                            }
+                        }
+                    }
+                    xu0 xu0Var = this.c;
+                    if (xu0Var.d() <= f10) {
+                        int i18 = i14 + 1;
+                        if (i18 * 3 <= fArr.length) {
+                            float f11 = max;
+                            float d = ((xu0Var.d() - 0.5f) * f11) + i16;
+                            float d2 = ((xu0Var.d() - 0.5f) * f11) + i15;
+                            int i19 = i14 * 3;
+                            fArr[i19] = d;
+                            fArr[i19 + 1] = d2;
+                            fArr[i19 + 2] = (d2 * 0.9f) + d;
+                            i14 = i18;
+                        }
+                    }
+                }
+            }
+        }
+        Integer[] numArr = new Integer[i14];
+        for (int i20 = 0; i20 < i14; i20++) {
+            numArr[i20] = Integer.valueOf(i20);
+        }
+        Arrays.sort(numArr, new o(1, fArr));
+        float[] copyOf = Arrays.copyOf(fArr, i14 * 3);
+        for (int i21 = 0; i21 < i14; i21++) {
+            int i22 = i21 * 3;
+            int intValue = numArr[i21].intValue() * 3;
+            fArr[i22] = copyOf[intValue];
+            fArr[i22 + 1] = copyOf[intValue + 1];
+            fArr[i22 + 2] = copyOf[intValue + 2];
+        }
+        if (z10) {
+            this.i = fArr;
+            return i14;
+        }
+        this.j = fArr;
+        return i14;
+    }
+
+    public final float g() {
+        if (!this.d) {
+            return -1.0f;
+        }
+        if (this.e == 0) {
+            return 0.0f;
+        }
+        return J.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - this.e) / this.a));
+    }
+
+    public final long h(float f10) {
+        if (this.g <= this.f) {
+            return 0L;
+        }
+        float f11 = this.a / 1000.0f;
+        float f12 = 0.0f;
+        for (int i7 = 0; i7 < 24; i7++) {
+            float f13 = (f12 + f11) / 2.0f;
+            if (d(f13) < f10) {
+                f12 = f13;
+            } else {
+                f11 = f13;
+            }
+        }
+        return (long) (f11 * 1000.0f);
     }
 }

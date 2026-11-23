@@ -1,43 +1,53 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.LinearLayout;
+import android.content.Intent;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class dc1 extends LinearLayout {
-    public final /* synthetic */ hc1 a;
+public final class dc1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ fc1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dc1(hc1 hc1Var, Activity activity) {
-        super(activity);
-        this.a = hc1Var;
+    public dc1(fc1 fc1Var) {
+        this.a = fc1Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        VoIPServiceState sharedState = VoIPService.getSharedState();
-        CharSequence text = this.a.F.getText();
-        if (sharedState == null || TextUtils.isEmpty(text)) {
-            return;
+    public final void a() {
+        fc1 fc1Var = this.a;
+        if (fc1Var.p0 != 17) {
+            if (fc1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                fc1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    fc1Var.i(new qu0(this, 27));
+                    return;
+                }
+                return;
+            }
         }
-        StringBuilder sb2 = new StringBuilder(text);
-        sb2.append(", ");
-        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
-            sb2.append(org.telegram.messenger.hd.N0(2131743055, null));
+        Intent intent = new Intent(fc1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", fc1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", fc1Var.U0);
+        intent.putExtra("can_video_call", fc1Var.U0);
+        intent.putExtra("account", fc1Var.a);
+        try {
+            fc1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            org.telegram.messenger.a8.g(th2, true);
+        }
+    }
+
+    public final void b() {
+        fc1 fc1Var = this.a;
+        if (fc1Var.p0 == 17) {
+            fc1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
         } else {
-            sb2.append(org.telegram.messenger.hd.N0(2131743052, null));
+            fc1Var.u0.b();
         }
-        long callDuration = sharedState.getCallDuration();
-        if (callDuration > 0) {
-            sb2.append(", ");
-            sb2.append(org.telegram.messenger.hd.z((int) (callDuration / 1000)));
-        }
-        accessibilityNodeInfo.setText(sb2);
     }
 }

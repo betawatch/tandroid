@@ -19,6 +19,6 @@ public final class p extends kd.c {
     public final Object invokeSuspend(Object obj) {
         this.a = obj;
         this.b |= TLObject.FLAG_31;
-        return this.c.v(null, this);
+        return this.c.J(null, this);
     }
 }

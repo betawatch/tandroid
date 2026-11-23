@@ -1,21 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public final class re implements Runnable {
-    public final /* synthetic */ MediaController a;
+import org.telegram.ui.Components.q40;
+import org.telegram.ui.Components.r40;
+import org.telegram.ui.Components.z40;
 
-    public re(MediaController mediaController) {
-        this.a = mediaController;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final /* synthetic */ class re implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ Runnable c;
+
+    public /* synthetic */ re(Runnable runnable, double d, int i7) {
+        this.a = i7;
+        this.c = runnable;
+        this.b = d;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        MediaController mediaController = this.a;
-        gj gjVar = mediaController.v0;
-        if (gjVar == null) {
-            return;
+        int i7 = this.a;
+        double d = this.b;
+        Runnable runnable = this.c;
+        switch (i7) {
+            case 0:
+                MediaController mediaController = (MediaController) ((i6.g) runnable).b;
+                ks.f(mediaController.i1).k(ks.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d));
+                break;
+            default:
+                z40 z40Var = ((r40) ((q40) runnable).b).I0;
+                ks.f(z40Var.e).k(ks.k2, Integer.valueOf(z40Var.V), Double.valueOf(d));
+                break;
         }
-        w7.G(gjVar.K1).b0(mediaController.v0.F0(), true, false);
     }
 }

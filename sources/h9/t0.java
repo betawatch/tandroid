@@ -1,6 +1,6 @@
 package h9;
 
-import a8.la;
+import a8.ma;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class t0 extends d0 implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
@@ -17,7 +17,7 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
     public static int o(int i7) {
         int max = Math.max(i7, 2);
         if (max >= 751619276) {
-            la.e("collection too large", max < 1073741824);
+            ma.e("collection too large", max < 1073741824);
             return TLObject.FLAG_30;
         }
         int highestOneBit = Integer.highestOneBit(max - 1) << 1;
@@ -29,12 +29,12 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
 
     public static t0 p(int i7, Object... objArr) {
         if (i7 == 0) {
-            return a2.s;
+            return z1.s;
         }
         if (i7 == 1) {
             Object obj = objArr[0];
             Objects.requireNonNull(obj);
-            return new f2(obj);
+            return new e2(obj);
         }
         int o4 = o(i7);
         Object[] objArr2 = new Object[o4];
@@ -68,7 +68,7 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
         if (i12 == 1) {
             Object obj4 = objArr[0];
             Objects.requireNonNull(obj4);
-            return new f2(obj4);
+            return new e2(obj4);
         }
         if (o(i12) < o4 / 2) {
             return p(i12, objArr);
@@ -77,7 +77,7 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
         if (i12 < (length >> 1) + (length >> 2)) {
             objArr = Arrays.copyOf(objArr, i12);
         }
-        return new a2(i11, i10, i12, objArr, objArr2);
+        return new z1(i11, i10, i12, objArr, objArr2);
     }
 
     public static t0 q(Collection collection) {
@@ -92,7 +92,7 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
     }
 
     public static t0 s(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object... objArr) {
-        la.e("the total number of elements must fit in an int", objArr.length <= 2147483641);
+        ma.e("the total number of elements must fit in an int", objArr.length <= 2147483641);
         int length = objArr.length + 6;
         Object[] objArr2 = new Object[length];
         objArr2[0] = obj;
@@ -110,7 +110,7 @@ public abstract class t0 extends d0 implements Set, j$.util.Set {
         if (obj == this) {
             return true;
         }
-        if ((obj instanceof t0) && (this instanceof a2) && (((t0) obj) instanceof a2) && hashCode() != obj.hashCode()) {
+        if ((obj instanceof t0) && (this instanceof z1) && (((t0) obj) instanceof z1) && hashCode() != obj.hashCode()) {
             return false;
         }
         return o.k(this, obj);

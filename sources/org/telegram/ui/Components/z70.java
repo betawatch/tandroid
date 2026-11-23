@@ -1,79 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z70 implements View.OnClickListener {
+public final class z70 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g80 b;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
+    public final /* synthetic */ ViewGroup e;
 
-    public /* synthetic */ z70(g80 g80Var, int i7) {
+    public /* synthetic */ z70(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i7) {
         this.a = i7;
-        this.b = g80Var;
+        this.e = viewGroup;
+        this.c = view;
+        this.b = frameLayout;
+        this.d = onPreDrawListener;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        g80 g80Var = this.b;
-        int i10 = 1;
-        switch (i7) {
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
             case 0:
-                g80Var.r.f();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.g1 g1Var = g80Var.s;
-                if (g1Var != null) {
-                    g1Var.d(true);
-                }
-                g80Var.r.d();
-                break;
-            case 2:
-                g80 g80Var2 = this.b;
-                String str = g80Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = g80Var2.getContext();
-                String N0 = org.telegram.messenger.hd.N0(2131748977, null);
-                String str2 = g80Var2.b;
-                String str3 = g80Var2.K;
-                if (str3 == null) {
-                    str3 = org.telegram.messenger.hd.N0(g80Var2.I ? z10 ? 2131746311 : 2131746312 : 2131746309, null);
-                }
-                d80 d80Var = new d80(g80Var2, context, N0, str2, str3);
-                g80Var2.F = d80Var;
-                d80Var.J0();
-                g80Var2.F.show();
-                org.telegram.ui.ActionBar.g1 g1Var2 = g80Var2.s;
-                if (g1Var2 != null) {
-                    g1Var2.d(true);
-                    break;
-                }
+                ((d80) this.e).s = null;
+                hi.w5 w5Var = (hi.w5) this.c;
+                w5Var.animate().cancel();
+                w5Var.animate().alpha(0.0f).setDuration(150L).setListener(new p60(this, 3));
                 break;
             default:
-                org.telegram.ui.ActionBar.g1 g1Var3 = g80Var.s;
-                if (g1Var3 != null) {
-                    g1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.g2 g2Var = g80Var.c;
-                if (g2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var.getParentActivity());
-                    String N02 = org.telegram.messenger.hd.N0(2131745827, null);
-                    org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                    t1Var.S = N02;
-                    t1Var.U = org.telegram.messenger.hd.N0(2131745830, null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745828, null), new y70(g80Var, i10));
-                    alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-                    TextView textView = (TextView) t1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
-                    }
-                    alertDialog$Builder.p();
-                    break;
-                }
+                ((org.telegram.ui.hy) this.e).y = null;
+                hi.w5 w5Var2 = (hi.w5) this.c;
+                w5Var2.animate().cancel();
+                w5Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.zx(this, 0));
                 break;
         }
     }

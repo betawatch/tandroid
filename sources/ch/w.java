@@ -1,5 +1,6 @@
 package ch;
 
+import a8.xa;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.graphics.LinearGradient;
@@ -12,40 +13,40 @@ import android.widget.TextView;
 import di.nc;
 import di.oc;
 import java.util.ArrayList;
-import kg.x1;
-import org.telegram.messenger.cz;
+import kg.f1;
+import org.telegram.messenger.bz;
 import org.telegram.ui.Cells.u0;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ch;
+import org.telegram.ui.Components.bh;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.lb;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.ot;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.pl;
+import org.telegram.ui.Components.pw0;
 import org.telegram.ui.Components.qw0;
-import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.rw0;
+import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.voip.i3;
-import org.telegram.ui.Components.voip.l1;
-import org.telegram.ui.Components.voip.u2;
-import org.telegram.ui.Components.voip.x2;
-import org.telegram.ui.Components.xa;
-import org.telegram.ui.Components.xh;
+import org.telegram.ui.Components.voip.j3;
+import org.telegram.ui.Components.voip.m1;
+import org.telegram.ui.Components.voip.v2;
+import org.telegram.ui.Components.voip.y2;
+import org.telegram.ui.Components.wa;
+import org.telegram.ui.Components.wh;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.ax;
 import org.telegram.ui.bn;
 import org.telegram.ui.bx;
-import org.telegram.ui.cx;
-import org.telegram.ui.gv;
-import org.telegram.ui.kc1;
+import org.telegram.ui.fv;
+import org.telegram.ui.ic1;
 import org.telegram.ui.pq0;
 import org.telegram.ui.rn;
-import tg.s1;
+import tg.v1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -97,9 +98,9 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (!zArr[0] && floatValue3 > 0.2f) {
                     zArr[0] = true;
-                    if (cz.o() > 0) {
+                    if (bz.o() > 0) {
                         org.telegram.messenger.g0.a4(profileStoriesView);
-                        org.telegram.messenger.g0.h3(new f2.a(profileStoriesView, 9), 180L);
+                        org.telegram.messenger.g0.h3(new f2.a(profileStoriesView, 8), 180L);
                     }
                 }
                 profileStoriesView.a0 = Math.max(1.0f, floatValue3);
@@ -156,11 +157,11 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 break;
             case 8:
                 m5.b bVar3 = (m5.b) this.b;
-                x1 x1Var = (x1) this.c;
+                f1 f1Var = (f1) this.c;
                 bVar3.getClass();
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 bVar3.b = intValue;
-                x1Var.c(intValue);
+                f1Var.c(intValue);
                 break;
             case 9:
                 bn bnVar = (bn) this.b;
@@ -184,9 +185,9 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 bnVar2.p1.getAvatarImageView().setScaleX(f14);
                 bnVar2.p1.getAvatarImageView().setScaleY(f14);
                 bnVar2.p1.getAvatarImageView().setAlpha(f11);
-                ch chVar = bnVar2.b1;
-                if (chVar != null) {
-                    chVar.setAlpha(f11);
+                bh bhVar = bnVar2.b1;
+                if (bhVar != null) {
+                    bhVar.setAlpha(f11);
                     break;
                 }
                 break;
@@ -205,34 +206,34 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 11:
-                q9 q9Var = (q9) this.b;
-                q9 q9Var2 = (q9) this.c;
+                p9 p9Var = (p9) this.b;
+                p9 p9Var2 = (p9) this.c;
                 float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q9Var.setScaleX(floatValue7);
-                q9Var.setScaleY(floatValue7);
+                p9Var.setScaleX(floatValue7);
+                p9Var.setScaleY(floatValue7);
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                if (animatedFraction > 0.25f && !q9Var2.getImageReceiver().I()) {
-                    q9Var.setAlpha(1.0f - ((animatedFraction - 0.25f) * 1.3333334f));
+                if (animatedFraction > 0.25f && !p9Var2.getImageReceiver().J()) {
+                    p9Var.setAlpha(1.0f - ((animatedFraction - 0.25f) * 1.3333334f));
                     break;
                 }
                 break;
             case 12:
-                ((xa) this.b).accept(Float.valueOf(((lb) this.c).getTranslationY()));
+                ((wa) this.b).accept(Float.valueOf(((kb) this.c).getTranslationY()));
                 break;
             case 13:
-                ((rl) this.b).accept(Float.valueOf(((lb) this.c).getTranslationY()));
+                ((pl) this.b).accept(Float.valueOf(((kb) this.c).getTranslationY()));
                 break;
             case 14:
-                xh xhVar = (xh) this.b;
-                ot otVar = (ot) this.c;
-                xhVar.getClass();
-                otVar.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                ui uiVar = xhVar.d0;
-                uiVar.K1();
-                mi miVar = uiVar.w2;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = uiVar.e2;
-                if (miVar == chatAttachAlertPhotoLayout) {
-                    chatAttachAlertPhotoLayout.m(uiVar.j4);
+                wh whVar = (wh) this.b;
+                mt mtVar = (mt) this.c;
+                whVar.getClass();
+                mtVar.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ti tiVar = whVar.d0;
+                tiVar.K1();
+                li liVar = tiVar.w2;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tiVar.e2;
+                if (liVar == chatAttachAlertPhotoLayout) {
+                    chatAttachAlertPhotoLayout.m(tiVar.j4);
                     break;
                 }
                 break;
@@ -249,22 +250,22 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 16:
-                rw0 rw0Var = (rw0) this.b;
-                qw0[] qw0VarArr = (qw0[]) this.c;
-                rw0Var.getClass();
+                qw0 qw0Var = (qw0) this.b;
+                pw0[] pw0VarArr = (pw0[]) this.c;
+                qw0Var.getClass();
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i7 < qw0VarArr.length) {
-                    rw0Var.c[i7] = (rw0Var.d[i7] * floatValue8) + ((1.0f - floatValue8) * rw0Var.e[i7]);
+                while (i7 < pw0VarArr.length) {
+                    qw0Var.c[i7] = (qw0Var.d[i7] * floatValue8) + ((1.0f - floatValue8) * qw0Var.e[i7]);
                     i7++;
                 }
-                rw0Var.invalidate();
+                qw0Var.invalidate();
                 break;
             case 17:
-                org.telegram.ui.Components.voip.k0 k0Var = (org.telegram.ui.Components.voip.k0) this.b;
-                org.telegram.ui.Components.voip.y yVar = (org.telegram.ui.Components.voip.y) this.c;
-                k0Var.getClass();
-                yVar.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                k0Var.invalidate();
+                org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) this.b;
+                org.telegram.ui.Components.voip.z zVar = (org.telegram.ui.Components.voip.z) this.c;
+                l0Var.getClass();
+                zVar.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                l0Var.invalidate();
                 break;
             case 18:
                 View view2 = (View) this.b;
@@ -277,14 +278,14 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 view3.setAlpha(f16);
                 break;
             case 19:
-                x2 x2Var = (x2) this.b;
-                l1 l1Var = (l1) this.c;
-                l1Var.h = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                l1Var.c();
-                int i11 = l1Var.h;
-                if (((i11 >= 0 && i11 <= 2) || (i11 >= 180 && i11 <= 182)) && x2Var.S) {
-                    x2Var.R.pause();
-                    AnimatorSet animatorSet = x2Var.Q;
+                y2 y2Var = (y2) this.b;
+                m1 m1Var = (m1) this.c;
+                m1Var.h = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                m1Var.c();
+                int i11 = m1Var.h;
+                if (((i11 >= 0 && i11 <= 2) || (i11 >= 180 && i11 <= 182)) && y2Var.S) {
+                    y2Var.R.pause();
+                    AnimatorSet animatorSet = y2Var.Q;
                     if (animatorSet != null) {
                         animatorSet.pause();
                         break;
@@ -292,19 +293,19 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 20:
-                i3 i3Var = (i3) this.b;
-                u2 u2Var = (u2) this.c;
-                i3Var.g = (int) ((((Float) valueAnimator.getAnimatedValue()).floatValue() * (i3Var.c - r3)) + i3Var.e);
-                i3Var.h = (int) ((((Float) valueAnimator.getAnimatedValue()).floatValue() * (i3Var.d - r3)) + i3Var.f);
-                u2Var.invalidate();
+                j3 j3Var = (j3) this.b;
+                v2 v2Var = (v2) this.c;
+                j3Var.g = (int) ((((Float) valueAnimator.getAnimatedValue()).floatValue() * (j3Var.c - r3)) + j3Var.e);
+                j3Var.h = (int) ((((Float) valueAnimator.getAnimatedValue()).floatValue() * (j3Var.d - r3)) + j3Var.f);
+                v2Var.invalidate();
                 break;
             case 21:
-                cx.v1(((gv) this.b).M, (bx) this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                bx.v1(((fv) this.b).M, (ax) this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 22:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 View view4 = (View) this.c;
-                Drawable[] drawableArr = PhotoViewer.Z8;
+                Drawable[] drawableArr = PhotoViewer.f9;
                 photoViewer.getClass();
                 photoViewer.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 view4.invalidateOutline();
@@ -319,7 +320,7 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 23:
-                a8.xa xaVar = (a8.xa) this.b;
+                xa xaVar = (xa) this.b;
                 int[] iArr = (int[]) this.c;
                 xaVar.getClass();
                 int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
@@ -329,11 +330,11 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 xaVar.b = intValue2;
                 break;
             case 24:
-                kc1 kc1Var = (kc1) this.b;
-                ti tiVar = (ti) this.c;
-                kc1Var.getClass();
-                kc1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tiVar.invalidate();
+                ic1 ic1Var = (ic1) this.b;
+                si siVar = (si) this.c;
+                ic1Var.getClass();
+                ic1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                siVar.invalidate();
                 break;
             case 25:
                 u0 u0Var = (u0) this.b;
@@ -360,25 +361,25 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 ((View) ((g.b0) ((cb.c) this.b).b).d.getParent()).invalidate();
                 break;
             default:
-                s1 s1Var = (s1) this.b;
+                v1 v1Var = (v1) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
-                s1Var.getClass();
+                v1Var.getClass();
                 float floatValue11 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (floatValue11 >= 0.5f) {
                     if (!zArr2[0]) {
                         zArr2[0] = true;
-                        s1Var.s0.b(s1Var.z0, false);
+                        v1Var.t0.b(v1Var.A0, false);
                     }
                     float f17 = (floatValue11 - 0.5f) / 0.5f;
-                    s1Var.setRotationY((1.0f - f17) * (-90.0f));
-                    s1Var.A0 = (f17 * 0.3f) + 0.7f;
-                    s1Var.invalidate();
+                    v1Var.setRotationY((1.0f - f17) * (-90.0f));
+                    v1Var.B0 = (f17 * 0.3f) + 0.7f;
+                    v1Var.invalidate();
                     break;
                 } else {
                     float f18 = floatValue11 / 0.5f;
-                    s1Var.setRotationY(90.0f * f18);
-                    s1Var.A0 = ((1.0f - f18) * 0.3f) + 0.7f;
-                    s1Var.invalidate();
+                    v1Var.setRotationY(90.0f * f18);
+                    v1Var.B0 = ((1.0f - f18) * 0.3f) + 0.7f;
+                    v1Var.invalidate();
                     break;
                 }
         }

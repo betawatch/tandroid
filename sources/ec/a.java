@@ -1,9 +1,9 @@
 package ec;
 
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a {
     public static final a h;
@@ -20,8 +20,8 @@ public final class a {
         new a(1033, 1024, 1);
         new a(67, 64, 1);
         new a(19, 16, 1);
-        h = new a(ls.I4, 256, 0);
-        new a(ls.Y4, 256, 1);
+        h = new a(ks.I4, 256, 0);
+        new a(ks.Y4, 256, 1);
     }
 
     public a(int i7, int i10, int i11) {

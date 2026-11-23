@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import b5.a;
+import b7.h;
 import gd.c;
 import kotlin.jvm.internal.f;
 import o8.e;
 import zd.e0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class zzu extends zzg {
     private final zzcz zza;
@@ -53,7 +53,7 @@ public final class zzu extends zzg {
     public zzu(zzcz zzczVar, e eVar) {
         this.zza = zzczVar;
         int i7 = zzby.zza;
-        this.zzd = a.c(zzt.zza);
+        this.zzd = h.b(zzt.zza);
     }
 
     public zzu(zzcz zzczVar, e eVar, int i7, f fVar) {

@@ -3,44 +3,44 @@ package oi;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class v0 extends n41 {
+public final class v0 extends m41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        n41.h(new v0());
+        m41.h(new v0());
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        gj gjVar;
-        r rVar;
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
+        fj fjVar;
+        s sVar;
         w0 w0Var = (w0) view;
-        a aVar = (a) o41Var.H;
-        o3 o3Var = (o3) o41Var.I;
+        a aVar = (a) n41Var.H;
+        o3 o3Var = (o3) n41Var.I;
         w0Var.a = aVar;
         w0Var.T = o3Var;
-        w0Var.N = hd.a0;
+        w0Var.N = gd.a0;
         w0Var.c(aVar);
         w0Var.G.b();
         TLRPC.Document h = w0Var.h();
         if (w0Var.V != h) {
             w0Var.V = h;
             if (h == null) {
-                gjVar = null;
+                fjVar = null;
             } else {
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                 tL_message.out = true;
@@ -50,7 +50,7 @@ public final class v0 extends n41 {
                 tL_message.from_id = tL_peerUser;
                 TLRPC.Peer peer = tL_message.peer_id;
                 int i7 = w0Var.n;
-                long e10 = k10.i(i7).e();
+                long e10 = i10.i(i7).e();
                 peer.user_id = e10;
                 tL_peerUser.user_id = e10;
                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -61,12 +61,12 @@ public final class v0 extends n41 {
                 tL_messageMediaDocument.document = h;
                 tL_message.flags |= 768;
                 a aVar2 = w0Var.a;
-                if (aVar2 != null && (rVar = aVar2.g) != null && !TextUtils.isEmpty(rVar.e)) {
+                if (aVar2 != null && (sVar = aVar2.g) != null && !TextUtils.isEmpty(sVar.e)) {
                     tL_message.attachPath = w0Var.a.g.e;
                 }
-                gjVar = new gj(i7, tL_message, false, true);
+                fjVar = new fj(i7, tL_message, false, true);
             }
-            w0Var.U = gjVar;
+            w0Var.U = fjVar;
         }
         w0Var.g(h);
         w0Var.l();
@@ -77,15 +77,15 @@ public final class v0 extends n41 {
         w0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, h6 h6Var) {
-        w0 w0Var = new w0(i7, context, h6Var);
-        w0Var.setBackground(new y1(m6.w0(m6.d6, h6Var)));
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, i6 i6Var) {
+        w0 w0Var = new w0(i7, context, i6Var);
+        w0Var.setBackground(new y1(n6.w0(n6.d6, i6Var)));
         w0Var.a0 = true;
         return w0Var;
     }
 
-    @Override // org.telegram.ui.Components.n41
+    @Override // org.telegram.ui.Components.m41
     public final boolean f() {
         return false;
     }

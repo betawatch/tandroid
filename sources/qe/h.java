@@ -9,7 +9,7 @@ import android.content.pm.ServiceInfo;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Handler;
-import c8.w9;
+import c8.x9;
 import h2.o0;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,15 +20,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ls;
-import org.telegram.tgnet.u;
-import org.telegram.ui.Components.f21;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.e21;
+import org.telegram.ui.Wallet.o5;
 import s4.n;
 import s4.r0;
-import s4.s0;
+import s4.u;
 import s4.x;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -198,7 +198,7 @@ public final class h {
         int ordinal = ((pe.a) o0Var.f).ordinal();
         if (ordinal != 0) {
             if (ordinal == 1) {
-                w9 e10 = serializer.d().e();
+                x9 e10 = serializer.d().e();
                 if (kotlin.jvm.internal.j.a(e10, me.f.b) || kotlin.jvm.internal.j.a(e10, me.f.e)) {
                     me.d d = serializer.d();
                     kotlin.jvm.internal.j.e(d, "<this>");
@@ -319,13 +319,13 @@ public final class h {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((u4.c) this.c).A();
+            ((u4.c) this.c).u();
             return null;
         }
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new f21(this, i7, serializable, 27));
+        ((Executor) this.b).execute(new e21(this, i7, serializable, 27));
     }
 
     public void o() {
@@ -382,7 +382,7 @@ public final class h {
                     }
                     if (i12 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.G = new u(this, r0Var);
+                        r0Var.G = new org.telegram.tgnet.g(this, r0Var);
                         if (!r0Var.x) {
                             r0Var.x = true;
                             r0Var.r();
@@ -414,7 +414,7 @@ public final class h {
             if (i10 < arrayList.size()) {
                 for (int size3 = arrayList.size() - 1; size3 >= i10; size3--) {
                     r0 r0Var3 = (r0) arrayList.get(size3);
-                    s4.u d = eVar.d(r0Var3);
+                    u d = eVar.d(r0Var3);
                     if (d != null) {
                         r0Var3.getClass();
                         x.b();
@@ -443,7 +443,7 @@ public final class h {
     public h(Context context, s4.e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.f(this, 12);
-        this.h = new s0(this, 0);
+        this.h = new o5(this, 3);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -472,10 +472,10 @@ public final class h {
                     break;
                 case 28:
                 case 29:
-                case ls.T /* 30 */:
+                case ks.T /* 30 */:
                     bArr = u4.d.e;
                     break;
-                case ls.U /* 31 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:

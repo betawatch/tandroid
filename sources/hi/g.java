@@ -2,19 +2,19 @@ package hi;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class g extends gh.b {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(i7, h6Var);
+    public /* synthetic */ g(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(i7, i6Var);
         this.s = 2;
     }
 
     @Override // gh.b, gh.a
-    public int U0() {
+    public int Q0() {
         switch (this.s) {
             case 2:
                 if (c()) {
@@ -22,12 +22,12 @@ public final class g extends gh.b {
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.U0();
+                return super.Q0();
         }
     }
 
     @Override // gh.b, gh.a
-    public int W1() {
+    public int X1() {
         switch (this.s) {
             case 2:
                 if (c()) {
@@ -35,7 +35,7 @@ public final class g extends gh.b {
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.W1();
+                return super.X1();
         }
     }
 
@@ -52,18 +52,18 @@ public final class g extends gh.b {
     }
 
     @Override // gh.b, gh.a
-    public int t0() {
+    public int i0() {
         switch (this.s) {
             case 2:
                 return c() ? 117440511 : 285212672;
             default:
-                return super.t0();
+                return super.i0();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(org.telegram.ui.ActionBar.h6 h6Var, int i7, float f10, int i10) {
-        super(h6Var, i7, f10);
+    public /* synthetic */ g(org.telegram.ui.ActionBar.i6 i6Var, int i7, float f10, int i10) {
+        super(i6Var, i7, f10);
         this.s = i10;
     }
 }

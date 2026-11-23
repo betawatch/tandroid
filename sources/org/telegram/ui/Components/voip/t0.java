@@ -1,61 +1,154 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.ui.Components.k40;
-import org.webrtc.EglBase;
-import org.webrtc.EglRenderer;
-import org.webrtc.GlRectDrawer;
-import org.webrtc.VideoFrame;
-import org.webrtc.VideoSink;
+import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.graphics.Canvas;
+import android.graphics.RenderNode;
+import android.os.SystemClock;
+import android.text.SpannableStringBuilder;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.na;
+import java.util.ArrayList;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.k30;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t0 implements VideoSink {
-    public final EglRenderer a;
-    public SurfaceTexture b;
-    public boolean c;
+public final class t0 extends LinearLayout {
+    public final ArrayList a;
+    public RenderNode b;
+    public float c;
+    public k30 d;
+    public Runnable e;
+    public int f;
+    public final oi.c2 h;
 
-    public t0(wi.o oVar) {
-        EglRenderer eglRenderer = new EglRenderer("pip-egl");
-        this.a = eglRenderer;
-        eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
-        oVar.setSurfaceTextureListener(new k40(this, 3));
-        SurfaceTexture surfaceTexture = oVar.getSurfaceTexture();
-        if (surfaceTexture == null || oVar.a == null) {
-            return;
-        }
-        int width = oVar.getWidth();
-        int height = oVar.getHeight();
-        if (this.c || this.b == surfaceTexture) {
-            return;
-        }
-        this.b = surfaceTexture;
-        if (width > 0 && height > 0) {
-            eglRenderer.setLayoutAspectRatio(width / height);
-        }
-        eglRenderer.createEglSurface(surfaceTexture);
+    public t0(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = new ArrayList();
+        this.h = new oi.c2(this, 18);
+        setOrientation(1);
+        setGravity(80);
+        setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
+        setClipToPadding(false);
+        LayoutTransition layoutTransition = new LayoutTransition();
+        layoutTransition.enableTransitionType(4);
+        layoutTransition.setDuration(320L);
+        kr krVar = kr.h;
+        layoutTransition.setInterpolator(4, krVar);
+        layoutTransition.setInterpolator(0, krVar);
+        layoutTransition.setInterpolator(1, krVar);
+        Property property = View.ALPHA;
+        layoutTransition.setAnimator(2, ObjectAnimator.ofPropertyValuesHolder(null, PropertyValuesHolder.ofFloat((Property<?, Float>) property, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.6f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.6f, 1.0f)));
+        layoutTransition.setInterpolator(2, krVar);
+        layoutTransition.setAnimator(3, ObjectAnimator.ofFloat((Object) null, (Property<Object, Float>) property, 1.0f, 0.0f));
+        layoutTransition.setStartDelay(2, 0L);
+        layoutTransition.setStartDelay(0, 0L);
+        layoutTransition.setStartDelay(3, 0L);
+        layoutTransition.setStartDelay(1, 0L);
+        setLayoutTransition(layoutTransition);
     }
 
-    public final void a() {
-        if (this.c) {
+    public final void a(int i7, long j3, long j10, String str, boolean z10) {
+        s0 s0Var;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= size) {
+                s0Var = null;
+                break;
+            }
+            Object obj = arrayList.get(i10);
+            i10++;
+            s0Var = (s0) obj;
+            if (s0Var.a == j10) {
+                break;
+            }
+        }
+        if (s0Var == null) {
+            if (str.trim().isEmpty()) {
+                return;
+            }
+            s0Var = new s0(this, getContext(), j10);
+            TLObject g22 = mp.u1(i7).g2(j3);
+            String k10 = g22 instanceof TLRPC.User ? n10.k((TLRPC.User) g22, true) : g22 instanceof TLRPC.Chat ? ((TLRPC.Chat) g22).title : "";
+            a9 a9Var = new a9((i6) null);
+            a9Var.p(g22);
+            s0Var.d.j0(g22, a9Var, null);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k10);
+            spannableStringBuilder.setSpan(new k41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) "  ");
+            s0Var.x = spannableStringBuilder.length();
+            s0Var.e.setText(spannableStringBuilder, TextView.BufferType.EDITABLE);
+            arrayList.add(s0Var);
+            addView(s0Var, na.k(0.0f, 6.0f, 0.0f, 0.0f, -1, -2));
+            while (arrayList.size() > 3) {
+                View view = (s0) arrayList.get(0);
+                arrayList.remove(view);
+                removeView(view);
+            }
+        }
+        s0Var.f.e(s0Var.x, -1, str.trim());
+        s0Var.b = z10;
+        s0Var.c = SystemClock.uptimeMillis();
+        Runnable runnable = this.h;
+        removeCallbacks(runnable);
+        if (arrayList.isEmpty()) {
             return;
         }
-        this.c = true;
-        this.a.release();
-        this.b = null;
+        postDelayed(runnable, 500L);
     }
 
-    @Override // org.webrtc.VideoSink
-    public final void onFrame(VideoFrame videoFrame) {
-        if (this.c) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float height = getHeight();
+        for (int i7 = 0; i7 < getChildCount(); i7++) {
+            View childAt = getChildAt(i7);
+            if (childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f) {
+                height = Math.min(height, childAt.getY() - org.telegram.messenger.g0.L(6.0f));
+            }
         }
-        this.a.onFrame(videoFrame);
+        int max = Math.max(0, Math.round(getHeight() - height));
+        if (max != this.f) {
+            this.f = max;
+            Runnable runnable = this.e;
+            if (runnable != null) {
+                post(runnable);
+            }
+        }
     }
 
-    @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        org.webrtc.d0.a(this, videoSink);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public int getContentHeight() {
+        return this.f;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(this.h);
+    }
+
+    public void setOnContentHeightChanged(Runnable runnable) {
+        this.e = runnable;
     }
 }

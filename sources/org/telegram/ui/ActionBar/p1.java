@@ -19,18 +19,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.Components.zt;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.u70;
+import org.telegram.ui.Components.xt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p1 extends LinearLayout implements b6 {
+public final class p1 extends LinearLayout implements c6 {
     public boolean a;
-    public final org.telegram.ui.Components.d6 b;
+    public final org.telegram.ui.Components.c6 b;
     public final Paint c;
     public final /* synthetic */ t1 d;
 
@@ -38,15 +38,15 @@ public final class p1 extends LinearLayout implements b6 {
     public p1(t1 t1Var, Context context) {
         super(context);
         this.d = t1Var;
-        org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6();
-        d6Var.f = 0L;
-        d6Var.g = 200L;
-        d6Var.h = nr.f;
-        d6Var.a = this;
-        d6Var.d = 0.0f;
-        d6Var.c = 0.0f;
-        d6Var.e = false;
-        this.b = d6Var;
+        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6();
+        c6Var.f = 0L;
+        c6Var.g = 200L;
+        c6Var.h = kr.f;
+        c6Var.a = this;
+        c6Var.d = 0.0f;
+        c6Var.c = 0.0f;
+        c6Var.e = false;
+        this.b = c6Var;
         this.c = new Paint(1);
     }
 
@@ -162,7 +162,7 @@ public final class p1 extends LinearLayout implements b6 {
         int i11;
         int measuredHeight;
         int i12;
-        x70 x70Var;
+        u70 u70Var;
         float f10;
         t1 t1Var = this.d;
         int i13 = t1Var.g0;
@@ -181,7 +181,7 @@ public final class p1 extends LinearLayout implements b6 {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int c10 = o10.c(48.0f, paddingLeft, TLObject.FLAG_30);
+        int c10 = m10.c(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = t1Var.u0;
         if (viewGroup != null) {
@@ -189,7 +189,7 @@ public final class p1 extends LinearLayout implements b6 {
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt = t1Var.u0.getChildAt(i15);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(org.telegram.messenger.g0.L(o10.z(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(org.telegram.messenger.g0.L(m10.z(24.0f, paddingLeft, 2)));
                 }
             }
             t1Var.u0.measure(makeMeasureSpec, i10);
@@ -214,9 +214,9 @@ public final class p1 extends LinearLayout implements b6 {
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) t1Var.h.getLayoutParams();
             i11 -= (t1Var.h.getMeasuredHeight() + layoutParams3.bottomMargin) + layoutParams3.topMargin;
         }
-        rh0 rh0Var = t1Var.l0;
-        if (rh0Var != null) {
-            rh0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(t1Var.b0), TLObject.FLAG_30));
+        qh0 qh0Var = t1Var.l0;
+        if (qh0Var != null) {
+            qh0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(t1Var.b0), TLObject.FLAG_30));
             i11 -= t1Var.l0.getMeasuredHeight();
         }
         View view = t1Var.W;
@@ -260,18 +260,18 @@ public final class p1 extends LinearLayout implements b6 {
                 measuredHeight = t1Var.r.getMeasuredHeight() + layoutParams5.bottomMargin;
                 i12 = layoutParams5.topMargin;
             } else {
-                zt ztVar = t1Var.n;
-                if (ztVar != null) {
-                    ztVar.measure(c10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+                xt xtVar = t1Var.n;
+                if (xtVar != null) {
+                    xtVar.measure(c10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
                     if (t1Var.n.getVisibility() != 8) {
                         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) t1Var.n.getLayoutParams();
                         measuredHeight = t1Var.n.getMeasuredHeight() + layoutParams6.bottomMargin;
                         i12 = layoutParams6.topMargin;
                     }
                 }
-                x70Var = t1Var.v0;
-                if (x70Var != null) {
-                    x70Var.measure(c10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(4.0f), TLObject.FLAG_30));
+                u70Var = t1Var.v0;
+                if (u70Var != null) {
+                    u70Var.measure(c10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(4.0f), TLObject.FLAG_30));
                     LinearLayout.LayoutParams layoutParams7 = (LinearLayout.LayoutParams) t1Var.v0.getLayoutParams();
                     int measuredHeight2 = i11 - ((t1Var.v0.getMeasuredHeight() + layoutParams7.bottomMargin) + layoutParams7.topMargin);
                     t1Var.w0.measure(c10, View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_31));
@@ -280,8 +280,8 @@ public final class p1 extends LinearLayout implements b6 {
                 }
             }
             i11 -= measuredHeight + i12;
-            x70Var = t1Var.v0;
-            if (x70Var != null) {
+            u70Var = t1Var.v0;
+            if (u70Var != null) {
             }
         }
         setMeasuredDimension(size, (getPaddingBottom() + (getPaddingTop() + (paddingTop - i11))) - (t1Var.X ? org.telegram.messenger.g0.L(8.0f) : 0));
@@ -310,7 +310,7 @@ public final class p1 extends LinearLayout implements b6 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         int f10;
         int f11;
@@ -326,20 +326,20 @@ public final class p1 extends LinearLayout implements b6 {
                 }
                 FrameLayout frameLayout = t1Var.r;
                 if (frameLayout != null && (frameLayout.getBackground() instanceof ShapeDrawable)) {
-                    m6.C1(t1Var.V0, t1Var.r.getBackground());
+                    n6.C1(t1Var.V0, t1Var.r.getBackground());
                 }
                 p1 p1Var = t1Var.b1;
                 if (p1Var != null) {
                     p1Var.invalidate();
                 }
             }
-            x70 x70Var = t1Var.v0;
-            if (x70Var != null) {
-                x70Var.setProgressColor(t1Var.f(m6.F5));
-                t1Var.v0.setBackColor(t1Var.f(m6.G5));
+            u70 u70Var = t1Var.v0;
+            if (u70Var != null) {
+                u70Var.setProgressColor(t1Var.f(n6.F5));
+                t1Var.v0.setBackColor(t1Var.f(n6.G5));
                 t1Var.v0.invalidate();
             }
-            if (t1Var.w != null && (f10 = t1Var.f(m6.A5)) != t1Var.e1) {
+            if (t1Var.w != null && (f10 = t1Var.f(n6.A5)) != t1Var.e1) {
                 t1Var.e1 = f10;
                 org.telegram.messenger.g0.x3(t1Var.w, f10);
             }
@@ -349,24 +349,24 @@ public final class p1 extends LinearLayout implements b6 {
             xh.l lVar = t1Var.f;
             if (lVar != null && lVar.getCurrentTextColor() == t1Var.f1) {
                 xh.l lVar2 = t1Var.f;
-                int f12 = t1Var.f(m6.j5);
+                int f12 = t1Var.f(n6.j5);
                 t1Var.f1 = f12;
                 lVar2.setTextColor(f12);
             }
-            zt ztVar = t1Var.n;
-            if (ztVar == null || ztVar.getCurrentTextColor() != t1Var.g1) {
+            xt xtVar = t1Var.n;
+            if (xtVar == null || xtVar.getCurrentTextColor() != t1Var.g1) {
                 return;
             }
-            zt ztVar2 = t1Var.n;
-            int f13 = t1Var.f(t1Var.X ? m6.y6 : m6.j5);
+            xt xtVar2 = t1Var.n;
+            int f13 = t1Var.f(t1Var.X ? n6.y6 : n6.j5);
             t1Var.g1 = f13;
-            ztVar2.setTextColor(f13);
+            xtVar2.setTextColor(f13);
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

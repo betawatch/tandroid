@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class rj extends ChatActivityEnterView {
     public int t7;
@@ -17,12 +17,12 @@ public final class rj extends ChatActivityEnterView {
     public final /* synthetic */ bn w7;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rj(bn bnVar, Activity activity, org.telegram.ui.Components.du0 du0Var, bn bnVar2, boolean z10, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(activity, du0Var, bnVar2, z10, h6Var);
+    public rj(bn bnVar, Activity activity, org.telegram.ui.Components.cu0 cu0Var, bn bnVar2, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(activity, cu0Var, bnVar2, z10, i6Var);
         this.w7 = bnVar;
     }
 
-    public final void I2() {
+    public final void L2() {
         org.telegram.ui.ActionBar.k kVar;
         Interpolator interpolator;
         Interpolator interpolator2;
@@ -91,7 +91,7 @@ public final class rj extends ChatActivityEnterView {
                     }
                 }
             });
-            bnVar.M9.addListener(new org.telegram.ui.Cells.y9(this, 6));
+            bnVar.M9.addListener(new org.telegram.ui.Cells.x9(this, 6));
             bnVar.M9.setDuration(E0());
             ValueAnimator valueAnimator4 = bnVar.M9;
             Interpolator interpolator3 = pi.k.V;
@@ -111,8 +111,8 @@ public final class rj extends ChatActivityEnterView {
         }
         if (this.d4) {
             float scrollY = (this.v7 - this.F0.getScrollY()) + (this.u7 - this.F0.getMeasuredHeight());
-            org.telegram.ui.Components.gf gfVar = this.F0;
-            gfVar.setOffsetY(gfVar.getOffsetY() - scrollY);
+            org.telegram.ui.Components.hf hfVar = this.F0;
+            hfVar.setOffsetY(hfVar.getOffsetY() - scrollY);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.F0.getOffsetY(), 0.0f);
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.qj
                 public final /* synthetic */ rj b;
@@ -164,8 +164,8 @@ public final class rj extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void O0(boolean z10) {
-        super.O0(z10);
+    public final void P0(boolean z10) {
+        super.P0(z10);
         bn bnVar = this.w7;
         af afVar = bnVar.Rb;
         if (afVar != null) {
@@ -175,12 +175,20 @@ public final class rj extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void b1(float f10) {
+    public final void c1(float f10) {
         this.w7.F7();
     }
 
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() != 1.0f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void d1(int i7, int i10) {
+    public final void e1(int i7, int i10) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         bn bnVar = this.w7;
@@ -205,25 +213,12 @@ public final class rj extends ChatActivityEnterView {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() != 1.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void i1() {
+    public final void j1() {
         if (this.w7.cb != null) {
             return;
         }
-        super.i1();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean o1() {
-        return this.w7.f6;
+        super.j1();
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.ViewGroup
@@ -240,6 +235,11 @@ public final class rj extends ChatActivityEnterView {
             return false;
         }
         return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final boolean p1() {
+        return this.w7.f6;
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.View

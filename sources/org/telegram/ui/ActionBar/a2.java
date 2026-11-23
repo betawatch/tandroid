@@ -1,11 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.fc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class a2 implements fb {
+public final class a2 implements eb {
     public final /* synthetic */ int a;
     public final /* synthetic */ g2 b;
 
@@ -14,36 +14,36 @@ public final class a2 implements fb {
         this.b = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void b(gc gcVar) {
+    @Override // org.telegram.ui.Components.eb
+    public final /* synthetic */ void b(fc fcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void d(gc gcVar) {
+    @Override // org.telegram.ui.Components.eb
+    public final /* synthetic */ void d(fc fcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final int f(int i7) {
         switch (this.a) {
             case 0:
@@ -56,14 +56,14 @@ public final class a2 implements fb {
         }
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ boolean g(int i7) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ int h(int i7) {
         switch (this.a) {
         }
@@ -76,15 +76,15 @@ public final class a2 implements fb {
     private final /* synthetic */ void j(float f10) {
     }
 
-    private final /* synthetic */ void k(gc gcVar) {
+    private final /* synthetic */ void k(fc fcVar) {
     }
 
-    private final /* synthetic */ void l(gc gcVar) {
+    private final /* synthetic */ void l(fc fcVar) {
     }
 
-    private final /* synthetic */ void m(gc gcVar) {
+    private final /* synthetic */ void m(fc fcVar) {
     }
 
-    private final /* synthetic */ void n(gc gcVar) {
+    private final /* synthetic */ void n(fc fcVar) {
     }
 }

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class b2 extends w2 {
     public final /* synthetic */ e2 m1;
@@ -17,8 +17,8 @@ public final class b2 extends w2 {
     public final /* synthetic */ w2[] p1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b2(Activity activity, h6 h6Var, e2 e2Var, r4[] r4VarArr, g2 g2Var, w2[] w2VarArr) {
-        super(1, (Context) activity, h6Var, true);
+    public b2(Activity activity, i6 i6Var, e2 e2Var, r4[] r4VarArr, g2 g2Var, w2[] w2VarArr) {
+        super(1, (Context) activity, i6Var, true);
         this.m1 = e2Var;
         this.n1 = r4VarArr;
         this.o1 = g2Var;
@@ -38,12 +38,12 @@ public final class b2 extends w2 {
     }
 
     @Override // org.telegram.ui.ActionBar.w2
-    public final boolean G() {
+    public final boolean F() {
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.w2
-    public final boolean J(MotionEvent motionEvent) {
+    public final boolean I(MotionEvent motionEvent) {
         r4[] r4VarArr;
         r4 r4Var;
         e2 e2Var = this.m1;
@@ -86,7 +86,7 @@ public final class b2 extends w2 {
         r4Var.setWindow(w2VarArr[0].getWindow());
         e2 e2Var = this.m1;
         if (e2Var == null || !e2Var.e) {
-            Q(m6.i5);
+            Q(n6.i5);
         } else {
             org.telegram.messenger.g0.m3(w2VarArr[0], true);
         }

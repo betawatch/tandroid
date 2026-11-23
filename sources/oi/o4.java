@@ -12,37 +12,37 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.fa;
-import c8.ma;
+import c8.ga;
+import c8.na;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
+public final class o4 extends y implements org.telegram.ui.ActionBar.c6, h9 {
     public z2 E;
     public boolean F;
     public final int[] G;
-    public final h6 n;
+    public final i6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView w;
     public Bitmap x;
     public int y;
 
-    public o4(Context context, h6 h6Var) {
+    public o4(Context context, i6 i6Var) {
         super(context);
         this.r = new Paint(1);
         this.y = 0;
         this.G = new int[4];
-        this.n = h6Var;
+        this.n = i6Var;
         setWillNotDraw(false);
         f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f));
         ImageView imageView = new ImageView(context);
@@ -56,7 +56,7 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         horizontalScrollView.setPadding(0, 0, 0, 0);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, ma.e(-1, -2, 16));
+        addView(horizontalScrollView, na.e(-1, -2, 16));
         updateColors();
     }
 
@@ -72,21 +72,21 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.lg));
-        hashSet.add(Integer.valueOf(m6.G6));
+        hashSet.add(Integer.valueOf(n6.lg));
+        hashSet.add(Integer.valueOf(n6.G6));
     }
 
     public final void g(a aVar, z2 z2Var) {
-        p a10;
+        q a10;
         this.a = aVar;
         this.E = z2Var;
         c(aVar);
         this.x = null;
         this.s.scrollTo(0, 0);
         String source = getSource();
-        if (!TextUtils.isEmpty(source) && (a10 = p.a(source, org.telegram.messenger.g0.L(cz.W0 + 4), false)) != null) {
+        if (!TextUtils.isEmpty(source) && (a10 = q.a(source, org.telegram.messenger.g0.L(bz.W0 + 4), false)) != null) {
             this.x = a10.a;
         }
         this.w.setImageBitmap(this.x);
@@ -116,18 +116,18 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         iArr[3] = height;
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         int[] iArr = this.G;
         h(iArr);
-        arrayList.add(fa.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+        arrayList.add(ga.a(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         z2 z2Var;
-        j9 textSelectionHelper;
-        if (this.y != m6.w0(m6.G6, this.n)) {
+        i9 textSelectionHelper;
+        if (this.y != n6.w0(n6.G6, this.n)) {
             updateColors();
         }
         if (this.x == null || (z2Var = this.E) == null || (textSelectionHelper = z2Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.x() || !(getParent() instanceof RecyclerView)) {
@@ -146,12 +146,12 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = m6.lg;
-        h6 h6Var = this.n;
-        this.r.setColor(m6.w0(i7, h6Var));
-        int w02 = m6.w0(m6.G6, h6Var);
+        int i7 = n6.lg;
+        i6 i6Var = this.n;
+        this.r.setColor(n6.w0(i7, i6Var));
+        int w02 = n6.w0(n6.G6, i6Var);
         if (!this.F || w02 != this.y) {
             this.F = true;
             this.y = w02;

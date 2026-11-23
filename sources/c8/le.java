@@ -1,36 +1,45 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.os.Build;
+import android.os.Trace;
+import android.util.Log;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.telegram.messenger.ks;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class le {
-    public static void a(int i7, int i10) {
-        String a10;
-        if (i7 < 0 || i7 >= i10) {
-            if (i7 < 0) {
-                a10 = me.a("%s (%s) must not be negative", "index", Integer.valueOf(i7));
-            } else {
-                if (i10 < 0) {
-                    throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
-                }
-                a10 = me.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
+    public static long a;
+    public static Method b;
+
+    public static void a(String str) {
+        if (str.length() > 127) {
+            str = str.substring(0, ks.L1);
+        }
+        Trace.beginSection(str);
+    }
+
+    public static boolean b() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return z4.a.a();
+        }
+        try {
+            if (b == null) {
+                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
+                b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
             }
-            throw new IndexOutOfBoundsException(a10);
+            return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
+        } catch (Exception e10) {
+            if (!(e10 instanceof InvocationTargetException)) {
+                Log.v("Trace", "Unable to call isTagEnabled via reflection", e10);
+                return false;
+            }
+            Throwable cause = e10.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            throw new RuntimeException(cause);
         }
-    }
-
-    public static void b(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? c(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? c(i10, i11, "end index") : me.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
-        }
-    }
-
-    public static String c(int i7, int i10, String str) {
-        if (i7 < 0) {
-            return me.a("%s (%s) must not be negative", str, Integer.valueOf(i7));
-        }
-        if (i10 >= 0) {
-            return me.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
-        }
-        throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
     }
 }

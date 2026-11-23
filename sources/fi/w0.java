@@ -1,12 +1,12 @@
 package fi;
 
-import c8.na;
+import c8.oa;
 import j$.util.Objects;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class w0 implements Runnable {
                 break;
             case 3:
                 c1 c1Var = this.b;
-                ls.f(c1Var.e).k(ls.G2, Long.valueOf(c1Var.w.id));
+                ks.f(c1Var.e).k(ks.G2, Long.valueOf(c1Var.w.id));
                 c1Var.u(true);
                 break;
             case 4:
@@ -79,7 +79,7 @@ public final /* synthetic */ class w0 implements Runnable {
             default:
                 c1 c1Var4 = this.b;
                 if (!c1Var4.n) {
-                    na.b(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new ai.h0(c1Var4, 15));
+                    oa.b(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new ai.d0(c1Var4, 15));
                     break;
                 }
                 break;

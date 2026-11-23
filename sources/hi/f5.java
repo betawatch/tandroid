@@ -1,181 +1,122 @@
 package hi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class f5 extends tg.d {
-    public final Paint h;
-    public long n;
-    public float r;
-    public float s;
-    public int w;
-    public int x;
-    public final /* synthetic */ u9 y;
+public final class f5 implements z, tg.g {
+    public final /* synthetic */ pa a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f5(u9 u9Var, Context context, h9.g1 g1Var) {
-        super(context, g1Var);
-        this.y = u9Var;
-        Paint paint = new Paint();
-        this.h = paint;
-        setWillNotDraw(false);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
+    public /* synthetic */ f5(pa paVar) {
+        this.a = paVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.y.W1) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // hi.z
+    public void M1(tg.d dVar) {
+        this.a.c0(dVar);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0078  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int i7;
-        int i10;
-        float f10;
-        Canvas canvas2;
-        float f11;
-        int measuredWidth;
-        float measuredWidth2;
-        int measuredHeight;
-        float measuredHeight2;
-        super.onDraw(canvas);
-        long min = Math.min(16L, System.currentTimeMillis() - this.n);
-        this.n = System.currentTimeMillis();
-        u9 u9Var = this.y;
-        tg.j jVar = u9Var.t0;
-        if (jVar == null || jVar.r || !jVar.n) {
-            i7 = 0;
-            i10 = 0;
-        } else {
-            i7 = jVar.getStickyX();
-            i10 = u9Var.t0.getStickyY();
+    @Override // hi.z
+    public FrameLayout N() {
+        return this.a.w1;
+    }
+
+    @Override // hi.z
+    public long N1() {
+        x7 x7Var = this.a.V1;
+        if (x7Var == null) {
+            return 0L;
         }
-        if (i7 != 0) {
-            this.w = i7;
+        return (long) (x7Var.Z * x7Var.h0);
+    }
+
+    @Override // hi.z
+    public org.telegram.ui.ActionBar.i6 Q() {
+        return this.a.q1;
+    }
+
+    @Override // hi.z
+    public FrameLayout Q0() {
+        return this.a;
+    }
+
+    @Override // hi.z
+    public tg.d S() {
+        pa paVar = this.a;
+        paVar.Z1 = true;
+        return paVar.g0();
+    }
+
+    @Override // hi.z
+    public void V0(tg.n nVar) {
+        this.a.B0(nVar);
+    }
+
+    @Override // hi.z
+    public long Z0() {
+        x7 x7Var = this.a.V1;
+        if (x7Var == null) {
+            return 0L;
         }
-        if (i10 != 0) {
-            this.x = i10;
+        return (long) (x7Var.a0 * x7Var.h0);
+    }
+
+    @Override // tg.g
+    public void h() {
+        pa paVar = this.a;
+        paVar.D0(null, true);
+        if (paVar.w0) {
+            nb nbVar = paVar.o2;
+            nbVar.d1.f.d();
+            nbVar.k0(-1, false, true);
+            paVar.w0 = false;
         }
-        if (i7 != 0) {
-            float f12 = this.r;
-            if (f12 != 1.0f) {
-                this.r = org.telegram.ui.Cells.c0.f(min, 150.0f, f12, 1.0f);
-                invalidate();
-                if (i10 != 0) {
-                    float f13 = this.s;
-                    if (f13 != 1.0f) {
-                        this.s = org.telegram.ui.Cells.c0.f(min, 150.0f, f13, 1.0f);
-                        invalidate();
-                        f10 = this.s;
-                        Paint paint = this.h;
-                        if (f10 != 0.0f) {
-                            paint.setAlpha((int) (f10 * 255.0f));
-                            int i11 = this.x;
-                            if (i11 == 1) {
-                                measuredHeight = org.telegram.messenger.g0.L(64.0f);
-                            } else if (i11 == 2) {
-                                measuredHeight2 = getMeasuredHeight() / 2.0f;
-                                float f14 = measuredHeight2;
-                                canvas2 = canvas;
-                                canvas2.drawLine(0.0f, f14, getMeasuredWidth(), f14, paint);
-                            } else {
-                                measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(64.0f);
-                            }
-                            measuredHeight2 = measuredHeight;
-                            float f142 = measuredHeight2;
-                            canvas2 = canvas;
-                            canvas2.drawLine(0.0f, f142, getMeasuredWidth(), f142, paint);
-                        } else {
-                            canvas2 = canvas;
-                        }
-                        f11 = this.r;
-                        if (f11 != 0.0f) {
-                            paint.setAlpha((int) (f11 * 255.0f));
-                            int i12 = this.w;
-                            if (i12 == 1) {
-                                measuredWidth = org.telegram.messenger.g0.L(8.0f);
-                            } else {
-                                if (i12 == 2) {
-                                    measuredWidth2 = getMeasuredWidth() / 2.0f;
-                                    float f15 = measuredWidth2;
-                                    canvas2.drawLine(f15, 0.0f, f15, getMeasuredHeight(), paint);
-                                    return;
-                                }
-                                measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(8.0f);
-                            }
-                            measuredWidth2 = measuredWidth;
-                            float f152 = measuredWidth2;
-                            canvas2.drawLine(f152, 0.0f, f152, getMeasuredHeight(), paint);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                if (i10 == 0) {
-                    float f16 = this.s;
-                    if (f16 != 0.0f) {
-                        this.s = org.telegram.ui.Cells.c0.B(min, 150.0f, f16, 0.0f);
-                        invalidate();
-                    }
-                }
-                f10 = this.s;
-                Paint paint2 = this.h;
-                if (f10 != 0.0f) {
-                }
-                f11 = this.r;
-                if (f11 != 0.0f) {
-                }
+        paVar.O0(false);
+    }
+
+    @Override // hi.z
+    public tg.d i0() {
+        q5 q5Var = this.a.B0;
+        for (int i7 = 0; i7 < q5Var.getChildCount(); i7++) {
+            if (q5Var.getChildAt(i7) instanceof tg.d) {
+                return (tg.d) q5Var.getChildAt(i7);
             }
         }
-        if (i7 == 0) {
-            float f17 = this.r;
-            if (f17 != 0.0f) {
-                this.r = org.telegram.ui.Cells.c0.B(min, 150.0f, f17, 0.0f);
-                invalidate();
+        return null;
+    }
+
+    @Override // tg.g
+    public tg.n o() {
+        return this.a.t0;
+    }
+
+    @Override // hi.z
+    public void s2(long j3) {
+        l2.g0 g0Var;
+        f6 f6Var = this.a.Q1;
+        if (f6Var != null) {
+            h61 h61Var = f6Var.e;
+            if (h61Var == null || ((g0Var = h61Var.d) != null && g0Var.f0())) {
+                f6Var.m(j3);
             }
-        }
-        if (i10 != 0) {
-        }
-        if (i10 == 0) {
-        }
-        f10 = this.s;
-        Paint paint22 = this.h;
-        if (f10 != 0.0f) {
-        }
-        f11 = this.r;
-        if (f11 != 0.0f) {
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        u9 u9Var = this.y;
-        f5 f5Var = u9Var.B0;
-        if (u9Var.B1 <= 0) {
-            u9Var.B1 = f5Var.getMeasuredWidth();
+    @Override // hi.z
+    public long u0() {
+        f6 f6Var = this.a.Q1;
+        if (f6Var != null) {
+            return f6Var.getCurrentPosition();
         }
-        if (u9Var.C1 <= 0) {
-            u9Var.C1 = f5Var.getMeasuredHeight();
+        return 0L;
+    }
+
+    @Override // hi.z
+    public void w(boolean z10) {
+        f6 f6Var = this.a.Q1;
+        if (f6Var != null) {
+            f6Var.x(-8713, z10);
         }
-        u9Var.E0();
     }
 }

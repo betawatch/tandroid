@@ -4,15 +4,15 @@ import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class y4 implements gs {
+public final class y4 implements fs {
     public int E;
     public volatile String F;
     public String G;
@@ -50,10 +50,10 @@ public final class y4 implements gs {
             return;
         }
         this.F = str;
-        ls f10 = ls.f(this.a);
-        f10.b(this, ls.U1);
-        f10.b(this, ls.V1);
-        f10.b(this, ls.W1);
+        ks f10 = ks.f(this.a);
+        f10.b(this, ks.U1);
+        f10.b(this, ks.V1);
+        f10.b(this, ks.W1);
         w7.G(this.a).h0(false, this.c ? 33554432 : this.d ? ConnectionsManager.FileTypeAudio : this.e ? 67108864 : 16777216, this.F, (this.c || this.d || this.e) ? false : true);
     }
 
@@ -134,7 +134,7 @@ public final class y4 implements gs {
                 tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
             }
         }
-        this.E = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new ai.g1(this, 24));
+        this.E = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new ai.b1(this, 24));
     }
 
     public final void d() {
@@ -174,7 +174,7 @@ public final class y4 implements gs {
         Utilities.e.c(new w4(this, 1));
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.InputFile inputFile;
         if (i10 != this.a || this.x || this.y) {
@@ -184,7 +184,7 @@ public final class y4 implements gs {
         if (this.F == null || !this.F.equals(str)) {
             return;
         }
-        if (i7 == ls.U1) {
+        if (i7 == ks.U1) {
             TLRPC.InputFile inputFile2 = (TLRPC.InputFile) objArr[1];
             if (this.e && !this.I && !TextUtils.isEmpty(this.G)) {
                 this.H = inputFile2;
@@ -201,7 +201,7 @@ public final class y4 implements gs {
                 return;
             }
         }
-        if (i7 == ls.V1) {
+        if (i7 == ks.V1) {
             if (this.e && this.I && (inputFile = this.H) != null) {
                 c(inputFile, null);
                 return;
@@ -211,7 +211,7 @@ public final class y4 implements gs {
             this.s.a();
             return;
         }
-        if (i7 == ls.W1) {
+        if (i7 == ks.W1) {
             long longValue = ((Long) objArr[1]).longValue();
             long longValue2 = ((Long) objArr[2]).longValue();
             x4 x4Var = this.s;
@@ -223,10 +223,10 @@ public final class y4 implements gs {
     }
 
     public final void e() {
-        ls f10 = ls.f(this.a);
-        f10.n(this, ls.U1);
-        f10.n(this, ls.V1);
-        f10.n(this, ls.W1);
+        ks f10 = ks.f(this.a);
+        f10.n(this, ks.U1);
+        f10.n(this, ks.V1);
+        f10.n(this, ks.W1);
     }
 
     public y4(int i7, String str, TLRPC.Document document, f3 f3Var) {

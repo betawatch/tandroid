@@ -11,10 +11,10 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.rp;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c5 extends View implements te.b {
     public int E;
@@ -25,7 +25,7 @@ public final class c5 extends View implements te.b {
     public final b5 c;
     public final a5 d;
     public final Drawable e;
-    public final up f;
+    public final rp f;
     public final TextPaint h;
     public final Paint n;
     public final RectF r;
@@ -40,29 +40,29 @@ public final class c5 extends View implements te.b {
         this.h = textPaint;
         this.n = new Paint(1);
         this.r = new RectF();
-        nr nrVar = nr.h;
-        this.x = new te.a(0, this, nrVar, 380L, true);
-        this.y = new te.a(1, this, nrVar, 250L, false);
+        kr krVar = kr.h;
+        this.x = new te.a(0, this, krVar, 380L, true);
+        this.y = new te.a(1, this, krVar, 250L, false);
         this.a = z4Var;
         this.b = 1;
         this.c = (b5) aj.e.k.a();
         this.d = (a5) aj.e.l.a();
         this.s = charSequence;
         this.e = context.getDrawable(R.drawable.ic_ab_done).mutate();
-        up upVar = new up(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(2.0f), -1);
-        this.f = upVar;
-        upVar.setCallback(this);
+        rp rpVar = new rp(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(2.0f), -1);
+        this.f = rpVar;
+        rpVar.setCallback(this);
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         c();
         CharSequence charSequence2 = this.s;
         this.w = charSequence2 != null ? textPaint.measureText(charSequence2, 0, charSequence2.length()) : 0.0f;
         setContentDescription(charSequence);
-        setOnClickListener(new hi.o4(this, 23));
+        setOnClickListener(new hi.z4(this, 23));
     }
 
     @Override // te.b
-    public final void H(int i7, float f10, float f11, te.c cVar) {
+    public final void K(int i7, float f10, float f11, te.c cVar) {
         if (i7 == 0) {
             this.a.l();
         }
@@ -77,7 +77,7 @@ public final class c5 extends View implements te.b {
         }
         z4 z4Var = this.a;
         aVar.a(z10, z11 && z4Var.y());
-        H(0, aVar.e, 0.0f, null);
+        K(0, aVar.e, 0.0f, null);
         z4Var.requestLayout();
     }
 
@@ -88,10 +88,10 @@ public final class c5 extends View implements te.b {
 
     public final void c() {
         z4 z4Var = this.a;
-        h6 h6Var = z4Var.a;
-        this.E = m6.w0(m6.Fi, h6Var);
-        this.F = i0.a.f(0.5f, m6.w0(m6.a7, h6Var), this.E);
-        int w02 = m6.w0(m6.Ji, h6Var);
+        i6 i6Var = z4Var.a;
+        this.E = n6.w0(n6.Fi, i6Var);
+        this.F = i0.a.f(0.5f, n6.w0(n6.a7, i6Var), this.E);
+        int w02 = n6.w0(n6.Ji, i6Var);
         this.G = w02;
         int i7 = z4Var.g0;
         b5 b5Var = this.c;
@@ -102,7 +102,7 @@ public final class c5 extends View implements te.b {
         this.e.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         this.f.b(w02);
         this.h.setColor(w02);
-        setBackground(m6.a0(b5Var == b5Var2 ? m6.r1(0.2f, this.G) : z4Var.i0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
+        setBackground(n6.a0(b5Var == b5Var2 ? n6.r1(0.2f, this.G) : z4Var.i0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
         invalidate();
     }
 
@@ -183,10 +183,10 @@ public final class c5 extends View implements te.b {
             float T12 = org.telegram.messenger.g0.T1(0.6f, 1.0f, f13);
             canvas.save();
             canvas.scale(T12, T12, width / 2.0f, height / 2.0f);
-            up upVar = this.f;
-            upVar.setBounds(0, 0, (int) width, (int) height);
-            upVar.setAlpha((int) (f13 * 255.0f));
-            upVar.draw(canvas);
+            rp rpVar = this.f;
+            rpVar.setBounds(0, 0, (int) width, (int) height);
+            rpVar.setAlpha((int) (f13 * 255.0f));
+            rpVar.draw(canvas);
             canvas.restore();
         }
     }
@@ -226,6 +226,6 @@ public final class c5 extends View implements te.b {
     }
 
     @Override // te.b
-    public final /* synthetic */ void D(float f10, int i7) {
+    public final /* synthetic */ void G(float f10, int i7) {
     }
 }

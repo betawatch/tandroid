@@ -15,14 +15,14 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import c8.ad;
-import c8.bc;
+import c8.bd;
+import c8.cc;
 import fi.l4;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o0 implements yb.a {
     public final /* synthetic */ int a = 1;
@@ -78,7 +78,7 @@ public final class o0 implements yb.a {
         int i7 = aVar.e;
         int i10 = aVar.b;
         int i11 = aVar.c;
-        int a10 = ad.a(aVar.d);
+        int a10 = bd.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i12 = aVar.e;
         if (i12 != -1) {
@@ -100,18 +100,18 @@ public final class o0 implements yb.a {
             int i13 = a8.g0.a;
             p12.writeStrongBinder(bVar);
             p12.writeInt(1);
-            int r10 = bc.r(p12, 20293);
-            bc.q(p12, 1, 4);
+            int r10 = cc.r(p12, 20293);
+            cc.q(p12, 1, 4);
             p12.writeInt(i7);
-            bc.q(p12, 2, 4);
+            cc.q(p12, 2, 4);
             p12.writeInt(i10);
-            bc.q(p12, 3, 4);
+            cc.q(p12, 3, 4);
             p12.writeInt(i11);
-            bc.q(p12, 4, 4);
+            cc.q(p12, 4, 4);
             p12.writeInt(a10);
-            bc.q(p12, 5, 8);
+            cc.q(p12, 5, 8);
             p12.writeLong(elapsedRealtime);
-            bc.s(p12, r10);
+            cc.s(p12, r10);
             Parcel r12 = dbVar.r1(p12, 3);
             ArrayList createTypedArrayList = r12.createTypedArrayList(hb.CREATOR);
             r12.recycle();

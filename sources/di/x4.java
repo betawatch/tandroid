@@ -10,10 +10,10 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class x4 extends View {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class x4 extends View {
     public final Paint c;
     public final RadialGradient[] d;
     public final Matrix e;
-    public final org.telegram.ui.Components.d6 f;
+    public final org.telegram.ui.Components.c6 f;
     public final RadialGradient h;
     public final Path n;
     public int r;
@@ -35,7 +35,7 @@ public final class x4 extends View {
         this.c = paint;
         this.d = new RadialGradient[2];
         this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.d6(1.0f, this, 0L, 420L, nr.h);
+        this.f = new org.telegram.ui.Components.c6(1.0f, this, 0L, 420L, kr.h);
         this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
         this.n = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -81,7 +81,7 @@ public final class x4 extends View {
             path.lineTo((((float) Math.cos(d2)) * min) + width, (((float) Math.sin(d2)) * min) + height);
             path.lineTo(width, height);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
         int i10 = 0;
         while (true) {
             RadialGradient[] radialGradientArr = this.d;

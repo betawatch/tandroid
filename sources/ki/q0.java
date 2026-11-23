@@ -12,15 +12,15 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.w6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.v6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class q0 extends Drawable implements w6 {
+public final class q0 extends Drawable implements v6 {
     public final Paint a;
     public final Paint b;
     public final Paint c;
@@ -48,42 +48,42 @@ public final class q0 extends Drawable implements w6 {
         paint2.setColor(-1);
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
         this.f = mutate;
-        int x02 = m6.x0(null, m6.L5, false);
+        int x02 = n6.x0(null, n6.L5, false);
         this.h = x02;
         mutate.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
-        b9 b9Var = new b9((h6) null);
-        b9Var.r(user);
-        imageReceiver.i0(user, b9Var, null);
-        imageReceiver.J0(org.telegram.messenger.g0.L(25.0f));
-        b9 b9Var2 = new b9((h6) null);
-        b9Var2.r(user2);
-        imageReceiver2.i0(user2, b9Var2, null);
-        imageReceiver2.J0(org.telegram.messenger.g0.L(25.0f));
+        a9 a9Var = new a9((i6) null);
+        a9Var.r(user);
+        imageReceiver.j0(user, a9Var, null);
+        imageReceiver.K0(org.telegram.messenger.g0.L(25.0f));
+        a9 a9Var2 = new a9((i6) null);
+        a9Var2.r(user2);
+        imageReceiver2.j0(user2, a9Var2, null);
+        imageReceiver2.K0(org.telegram.messenger.g0.L(25.0f));
     }
 
-    @Override // org.telegram.ui.Components.w6
-    public final void a(rh0 rh0Var) {
-        this.e.H0(rh0Var);
-        this.d.H0(rh0Var);
+    @Override // org.telegram.ui.Components.v6
+    public final void a(qh0 qh0Var) {
+        this.e.I0(qh0Var);
+        this.d.I0(qh0Var);
     }
 
-    @Override // org.telegram.ui.Components.w6
+    @Override // org.telegram.ui.Components.v6
     public final void b(ImageReceiver imageReceiver) {
-        this.d.R();
-        this.e.R();
+        this.d.S();
+        this.e.S();
     }
 
-    @Override // org.telegram.ui.Components.w6
+    @Override // org.telegram.ui.Components.v6
     public final void c(ImageReceiver imageReceiver) {
-        this.d.P();
-        this.e.P();
+        this.d.Q();
+        this.e.Q();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        int i7 = m6.L5;
-        int x02 = m6.x0(null, i7, false);
+        int i7 = n6.L5;
+        int x02 = n6.x0(null, i7, false);
         Paint paint = this.b;
         paint.setColor(x02);
         float L = org.telegram.messenger.g0.L(136.0f) / 2.0f;
@@ -91,13 +91,13 @@ public final class q0 extends Drawable implements w6 {
         float L2 = org.telegram.messenger.g0.L(50.0f);
         float L3 = org.telegram.messenger.g0.L(50.0f);
         ImageReceiver imageReceiver = this.d;
-        imageReceiver.y0(bounds.centerX() - L, centerY, L2, L3);
+        imageReceiver.z0(bounds.centerX() - L, centerY, L2, L3);
         imageReceiver.h(canvas, null);
         float centerX = (bounds.centerX() - L) + org.telegram.messenger.g0.L(41.0f);
         float L4 = org.telegram.messenger.g0.L(16.0f) + bounds.centerY();
         canvas.drawCircle(centerX, L4, org.telegram.messenger.g0.L(14.0f), paint);
         canvas.drawCircle(centerX, L4, org.telegram.messenger.g0.L(12.0f), this.c);
-        int x03 = m6.x0(null, i7, false);
+        int x03 = n6.x0(null, i7, false);
         int i10 = this.h;
         Drawable drawable = this.f;
         if (x03 != i10) {
@@ -117,7 +117,7 @@ public final class q0 extends Drawable implements w6 {
         float L6 = org.telegram.messenger.g0.L(50.0f);
         float L7 = org.telegram.messenger.g0.L(50.0f);
         ImageReceiver imageReceiver2 = this.e;
-        imageReceiver2.y0((bounds.centerX() + L) - org.telegram.messenger.g0.L(50.0f), centerY4, L6, L7);
+        imageReceiver2.z0((bounds.centerX() + L) - org.telegram.messenger.g0.L(50.0f), centerY4, L6, L7);
         imageReceiver2.h(canvas, null);
     }
 

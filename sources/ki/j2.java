@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class j2 extends r3 {
+public final class j2 extends s3 {
     public final /* synthetic */ int d0;
     public final /* synthetic */ Object e0;
 
@@ -32,8 +32,8 @@ public final class j2 extends r3 {
         int size;
         switch (this.d0) {
             case 0:
-                s2 s2Var = (s2) this.e0;
-                o2 o2Var = s2Var.n0;
+                t2 t2Var = (t2) this.e0;
+                p2 p2Var = t2Var.n0;
                 int size2 = View.MeasureSpec.getSize(i10);
                 if (!org.telegram.messenger.g0.Q1()) {
                     Point point = org.telegram.messenger.g0.q;
@@ -43,24 +43,24 @@ public final class j2 extends r3 {
                             i11 = 0;
                         }
                         f10 = i11;
-                        if (getOffsetY() != f10 && !s2Var.e0 && s2Var.V0) {
-                            s2Var.H = true;
+                        if (getOffsetY() != f10 && !t2Var.e0 && t2Var.V0) {
+                            t2Var.H = true;
                             setOffsetY(f10);
-                            s2Var.H = false;
-                            s2Var.V0 = false;
+                            t2Var.H = false;
+                            t2Var.V0 = false;
                         }
-                        if (!s2Var.f0 && org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
+                        if (!t2Var.f0 && org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
                             Point point2 = org.telegram.messenger.g0.q;
                             i7 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLObject.FLAG_30);
                         }
                         size = View.MeasureSpec.getSize(i10);
-                        if (!s2Var.f0) {
+                        if (!t2Var.f0) {
                             size = (size - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                         }
-                        if (o2Var != null && o2Var.getTotalHeight() > 0) {
-                            size -= o2Var.getTotalHeight();
+                        if (p2Var != null && p2Var.getTotalHeight() > 0) {
+                            size -= p2Var.getTotalHeight();
                         }
-                        super.onMeasure(i7, o10.C(24.0f, size, TLObject.FLAG_30));
+                        super.onMeasure(i7, m10.C(24.0f, size, TLObject.FLAG_30));
                         break;
                     }
                 }
@@ -69,24 +69,24 @@ public final class j2 extends r3 {
                 }
                 f10 = i11;
                 if (getOffsetY() != f10) {
-                    s2Var.H = true;
+                    t2Var.H = true;
                     setOffsetY(f10);
-                    s2Var.H = false;
-                    s2Var.V0 = false;
+                    t2Var.H = false;
+                    t2Var.V0 = false;
                 }
-                if (!s2Var.f0) {
+                if (!t2Var.f0) {
                     Point point22 = org.telegram.messenger.g0.q;
                     i7 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLObject.FLAG_30);
                 }
                 size = View.MeasureSpec.getSize(i10);
-                if (!s2Var.f0) {
+                if (!t2Var.f0) {
                 }
-                if (o2Var != null) {
-                    size -= o2Var.getTotalHeight();
+                if (p2Var != null) {
+                    size -= p2Var.getTotalHeight();
                 }
-                super.onMeasure(i7, o10.C(24.0f, size, TLObject.FLAG_30));
+                super.onMeasure(i7, m10.C(24.0f, size, TLObject.FLAG_30));
             default:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((s3) this.e0).O, TLObject.FLAG_30));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((t3) this.e0).O, TLObject.FLAG_30));
                 break;
         }
     }
@@ -95,7 +95,7 @@ public final class j2 extends r3 {
     public void requestLayout() {
         switch (this.d0) {
             case 0:
-                if (!((s2) this.e0).H) {
+                if (!((t2) this.e0).H) {
                     super.requestLayout();
                     break;
                 }
@@ -106,19 +106,19 @@ public final class j2 extends r3 {
         }
     }
 
-    @Override // ki.r3, android.view.View
+    @Override // ki.s3, android.view.View
     public void setTranslationY(float f10) {
         switch (this.d0) {
             case 0:
                 super.setTranslationY(f10);
-                s2 s2Var = (s2) this.e0;
-                org.telegram.messenger.h2 h2Var = s2Var.o0;
+                t2 t2Var = (t2) this.e0;
+                org.telegram.messenger.h2 h2Var = t2Var.o0;
                 if (h2Var != null) {
                     h2Var.setTranslationY(org.telegram.messenger.g0.L(24.0f) + f10);
                 }
-                FrameLayout frameLayout = s2Var.r0;
+                FrameLayout frameLayout = t2Var.r0;
                 if (frameLayout != null) {
-                    frameLayout.setTranslationY(s2Var.x.getTranslationY() + org.telegram.messenger.g0.W1(s2Var.h0, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(70.0f) + s2Var.n.top));
+                    frameLayout.setTranslationY(t2Var.x.getTranslationY() + org.telegram.messenger.g0.W1(t2Var.h0, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(70.0f) + t2Var.n.top));
                     break;
                 }
                 break;

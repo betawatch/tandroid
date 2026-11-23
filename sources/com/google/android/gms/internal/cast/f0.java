@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-import a8.o8;
+import a8.p8;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -10,7 +10,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class f0 extends c0 implements List, RandomAccess, j$.util.List {
     public static final d0 b = new d0(j0.e, 0);
@@ -111,7 +111,7 @@ public abstract class f0 extends c0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: l */
     public f0 subList(int i7, int i10) {
-        o8.c(i7, i10, size());
+        p8.c(i7, i10, size());
         int i11 = i10 - i7;
         return i11 == size() ? this : i11 == 0 ? j0.e : new e0(this, i7, i11);
     }
@@ -137,7 +137,7 @@ public abstract class f0 extends c0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: n, reason: merged with bridge method [inline-methods] */
     public final d0 listIterator(int i7) {
-        o8.b(i7, size());
+        p8.b(i7, size());
         return isEmpty() ? b : new d0(this, i7);
     }
 

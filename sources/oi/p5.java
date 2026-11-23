@@ -3,26 +3,26 @@ package oi;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import c8.ma;
-import org.telegram.messenger.cz;
+import c8.na;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class p5 extends FrameLayout {
     public final f1 a;
     public TL_iv.pageTableCell b;
 
-    public p5(Context context, h6 h6Var) {
+    public p5(Context context, i6 i6Var) {
         super(context);
-        f1 f1Var = new f1(context, h6Var);
+        f1 f1Var = new f1(context, i6Var);
         this.a = f1Var;
-        f1Var.setTextSize(1, Math.max(8, cz.W0 - 2));
+        f1Var.setTextSize(1, Math.max(8, bz.W0 - 2));
         f1Var.setAllowNewlines(true);
         setCompact(false);
-        addView(f1Var, ma.e(-1, -2, 51));
+        addView(f1Var, na.e(-1, -2, 51));
     }
 
     public final void a() {

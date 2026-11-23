@@ -4,13 +4,13 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.z61;
-import org.telegram.ui.sb1;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.h60;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class d4 implements ValueAnimator.AnimatorUpdateListener {
                 mVar.f.invalidate();
                 break;
             case 2:
-                hi.f0 f0Var = (hi.f0) this.b;
-                f0Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f0Var.p.invalidate();
+                hi.m0 m0Var = (hi.m0) this.b;
+                m0Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0Var.p.invalidate();
                 break;
             case 3:
                 jg.k1 k1Var = (jg.k1) this.b;
@@ -79,15 +79,15 @@ public final class d4 implements ValueAnimator.AnimatorUpdateListener {
                 mediaController.n0();
                 break;
             case 7:
-                org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) this.b;
-                p7Var.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p7Var.invalidate();
+                org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) this.b;
+                o7Var.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o7Var.invalidate();
                 break;
             case 8:
-                ((q9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((p9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 9:
-                di.b1 b1Var = ((k60) this.b).e.o1;
+                di.b1 b1Var = ((h60) this.b).e.o1;
                 int i10 = b1Var.D1;
                 if (i10 != -1 && (view = b1Var.E1) != null) {
                     b1Var.k1(i10, view);
@@ -96,27 +96,27 @@ public final class d4 implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 10:
-                j71 j71Var = (j71) this.b;
-                View[] viewArr = j71Var.e;
-                if (j71Var.y) {
+                k71 k71Var = (k71) this.b;
+                View[] viewArr = k71Var.e;
+                if (k71Var.y) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    j71Var.c = abs;
-                    z61 z61Var = j71Var.N;
-                    if (z61Var != null) {
-                        z61Var.f(abs, j71Var.d, j71Var.b);
+                    k71Var.c = abs;
+                    a71 a71Var = k71Var.N;
+                    if (a71Var != null) {
+                        a71Var.f(abs, k71Var.d, k71Var.b);
                     }
                 }
-                j71Var.t(false);
+                k71Var.u(false);
                 break;
             case 11:
-                org.telegram.ui.Components.voip.q1 q1Var = (org.telegram.ui.Components.voip.q1) this.b;
+                org.telegram.ui.Components.voip.r1 r1Var = (org.telegram.ui.Components.voip.r1) this.b;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q1Var.K = floatValue;
-                org.telegram.ui.Components.voip.p1 p1Var = q1Var.j0;
-                if (p1Var != null) {
-                    ((sb1) p1Var).b.e0.d(q1Var.Q, floatValue);
+                r1Var.K = floatValue;
+                org.telegram.ui.Components.voip.q1 q1Var = r1Var.j0;
+                if (q1Var != null) {
+                    ((qb1) q1Var).b.e0.d(r1Var.Q, floatValue);
                 }
-                q1Var.invalidate();
+                r1Var.invalidate();
                 break;
             case 12:
                 ug.r0 r0Var = (ug.r0) this.b;

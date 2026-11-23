@@ -5,11 +5,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import f6.v;
 import j$.util.DesugarCollections;
-import j6.y;
+import j6.z;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.Locale;
 import p5.c;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -27,7 +27,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     public final byte[] F;
     public final String G;
     public final boolean H;
-    public final y I;
+    public final z I;
     public final Integer J;
     public final String a;
     public final String b;
@@ -43,7 +43,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     public final String x;
     public final int y;
 
-    public CastDevice(String str, String str2, String str3, String str4, String str5, int i7, ArrayList arrayList, int i10, int i11, String str6, String str7, int i12, String str8, byte[] bArr, String str9, boolean z10, y yVar, Integer num) {
+    public CastDevice(String str, String str2, String str3, String str4, String str5, int i7, ArrayList arrayList, int i10, int i11, String str6, String str7, int i12, String str8, byte[] bArr, String str9, boolean z10, z zVar, Integer num) {
         this.a = str == null ? "" : str;
         str2 = str2 == null ? "" : str2;
         this.b = str2;
@@ -68,7 +68,7 @@ public class CastDevice extends a implements ReflectedParcelable {
         this.F = bArr;
         this.G = str9;
         this.H = z10;
-        this.I = yVar;
+        this.I = zVar;
         this.J = num;
     }
 
@@ -85,12 +85,12 @@ public class CastDevice extends a implements ReflectedParcelable {
         return (this.r & i7) == i7;
     }
 
-    public final y d() {
-        y yVar = this.I;
-        if (yVar == null) {
-            return (c(32) || c(64)) ? new y(1, false, false) : yVar;
+    public final z d() {
+        z zVar = this.I;
+        if (zVar == null) {
+            return (c(32) || c(64)) ? new z(1, false, false) : zVar;
         }
-        return yVar;
+        return zVar;
     }
 
     public final boolean equals(Object obj) {
@@ -140,30 +140,30 @@ public class CastDevice extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.l(parcel, 3, this.b);
-        bc.l(parcel, 4, this.d);
-        bc.l(parcel, 5, this.e);
-        bc.l(parcel, 6, this.f);
-        bc.q(parcel, 7, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.l(parcel, 3, this.b);
+        cc.l(parcel, 4, this.d);
+        cc.l(parcel, 5, this.e);
+        cc.l(parcel, 6, this.f);
+        cc.q(parcel, 7, 4);
         parcel.writeInt(this.h);
-        bc.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        bc.q(parcel, 9, 4);
+        cc.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        cc.q(parcel, 9, 4);
         parcel.writeInt(this.r);
-        bc.q(parcel, 10, 4);
+        cc.q(parcel, 10, 4);
         parcel.writeInt(this.s);
-        bc.l(parcel, 11, this.w);
-        bc.l(parcel, 12, this.x);
-        bc.q(parcel, 13, 4);
+        cc.l(parcel, 11, this.w);
+        cc.l(parcel, 12, this.x);
+        cc.q(parcel, 13, 4);
         parcel.writeInt(this.y);
-        bc.l(parcel, 14, this.E);
-        bc.c(parcel, 15, this.F);
-        bc.l(parcel, 16, this.G);
-        bc.q(parcel, 17, 4);
+        cc.l(parcel, 14, this.E);
+        cc.c(parcel, 15, this.F);
+        cc.l(parcel, 16, this.G);
+        cc.q(parcel, 17, 4);
         parcel.writeInt(this.H ? 1 : 0);
-        bc.k(parcel, 18, d(), i7);
-        bc.i(parcel, 19, this.J);
-        bc.s(parcel, r10);
+        cc.k(parcel, 18, d(), i7);
+        cc.i(parcel, 19, this.J);
+        cc.s(parcel, r10);
     }
 }

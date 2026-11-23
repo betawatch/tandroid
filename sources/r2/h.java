@@ -3,15 +3,15 @@ package r2;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Pair;
-import c8.k1;
+import c8.l1;
 import e2.m1;
 import e2.u;
 import h2.l0;
 import h9.g0;
-import h9.h2;
+import h9.g2;
 import h9.i0;
+import h9.s1;
 import h9.t0;
-import h9.t1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import j2.c0;
@@ -20,18 +20,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.jn;
-import s2.w;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.nd0;
+import org.telegram.utils.twidget.w;
+import s2.x;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
     public final j2.h b;
     public final j2.h c;
-    public final c5 d;
-    public final w[] e;
+    public final i5 d;
+    public final x[] e;
     public final u[] f;
     public final s2.d g;
     public final m1 h;
@@ -43,78 +44,78 @@ public final class h {
     public Uri p;
     public boolean q;
     public a3.u r;
-    public final jn j = new jn();
+    public final nd0 j = new nd0(9);
     public byte[] m = l0.b;
     public long s = -9223372036854775807L;
 
-    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, c5 c5Var, c0 c0Var, c5 c5Var2, List list, m2.i iVar) {
+    public h(c cVar, s2.d dVar, x[] xVarArr, u[] uVarArr, i5 i5Var, c0 c0Var, i5 i5Var2, List list, m2.i iVar) {
         this.a = cVar;
         this.g = dVar;
-        this.e = wVarArr;
+        this.e = xVarArr;
         this.f = uVarArr;
-        this.d = c5Var2;
+        this.d = i5Var2;
         this.i = list;
         this.k = iVar;
-        j2.h createDataSource = ((j2.g) c5Var.a).createDataSource();
+        j2.h createDataSource = ((j2.g) i5Var.a).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((j2.g) c5Var.a).createDataSource();
+        this.c = ((j2.g) i5Var.a).createDataSource();
         this.h = new m1("", uVarArr);
         ArrayList arrayList = new ArrayList();
-        for (int i7 = 0; i7 < wVarArr.length; i7++) {
+        for (int i7 = 0; i7 < xVarArr.length; i7++) {
             if ((uVarArr[i7].f & TLObject.FLAG_14) == 0) {
                 arrayList.add(Integer.valueOf(i7));
             }
         }
         m1 m1Var = this.h;
-        int[] f10 = k1.f(arrayList);
+        int[] f10 = l1.f(arrayList);
         f fVar = new f(m1Var, f10);
         fVar.g = fVar.b(m1Var.d[f10[0]]);
         this.r = fVar;
     }
 
-    public static g f(s2.m mVar, long j3, int i7) {
-        long j10 = mVar.k;
-        i0 i0Var = mVar.s;
+    public static g f(s2.n nVar, long j3, int i7) {
+        long j10 = nVar.k;
+        i0 i0Var = nVar.s;
         int i10 = (int) (j3 - j10);
-        i0 i0Var2 = mVar.r;
+        i0 i0Var2 = nVar.r;
         if (i10 == i0Var2.size()) {
             if (i7 == -1) {
                 i7 = 0;
             }
             if (i7 < i0Var.size()) {
-                return new g((s2.k) i0Var.get(i7), j3, i7);
+                return new g((s2.l) i0Var.get(i7), j3, i7);
             }
             return null;
         }
-        s2.j jVar = (s2.j) i0Var2.get(i10);
+        s2.k kVar = (s2.k) i0Var2.get(i10);
         if (i7 == -1) {
-            return new g(jVar, j3, -1);
+            return new g(kVar, j3, -1);
         }
-        if (i7 < jVar.y.size()) {
-            return new g((s2.k) jVar.y.get(i7), j3, i7);
+        if (i7 < kVar.y.size()) {
+            return new g((s2.l) kVar.y.get(i7), j3, i7);
         }
         int i11 = i10 + 1;
         if (i11 < i0Var2.size()) {
-            return new g((s2.k) i0Var2.get(i11), j3 + 1, -1);
+            return new g((s2.l) i0Var2.get(i11), j3 + 1, -1);
         }
         if (i0Var.isEmpty()) {
             return null;
         }
-        return new g((s2.k) i0Var.get(0), j3 + 1, 0);
+        return new g((s2.l) i0Var.get(0), j3 + 1, 0);
     }
 
     public final b3.h a(Uri uri) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         s2.d dVar = this.g;
         s2.c cVar = (s2.c) dVar.d.get(uri);
-        w wVar = cVar != null ? cVar.a : null;
-        wVar.getClass();
-        HashMap hashMap = wVar.b;
+        x xVar = cVar != null ? cVar.a : null;
+        xVar.getClass();
+        HashMap hashMap = xVar.b;
         int size = hashMap.size();
-        h2 it = t0.q(hashMap.values()).iterator();
+        g2 it = t0.q(hashMap.values()).iterator();
         int i7 = 0;
         while (it.hasNext()) {
             Uri uri2 = (Uri) it.next();
@@ -144,7 +145,7 @@ public final class h {
             Uri c10 = hVar.e[i10].c();
             s2.d dVar = hVar.g;
             if (dVar.f(c10)) {
-                s2.m b10 = dVar.b(c10, z10);
+                s2.n b10 = dVar.b(c10, z10);
                 b10.getClass();
                 long j10 = b10.h - dVar.J;
                 Pair e10 = hVar.e(iVar2, i10 != a10 ? true : z10, b10, j10, j3);
@@ -156,16 +157,16 @@ public final class h {
                 int i11 = (int) (longValue - j11);
                 if (i11 < 0 || i0Var2.size() < i11) {
                     g0 g0Var = i0.b;
-                    list = t1.e;
+                    list = s1.e;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     if (i11 < i0Var2.size()) {
                         if (intValue != -1) {
-                            s2.j jVar = (s2.j) i0Var2.get(i11);
+                            s2.k kVar = (s2.k) i0Var2.get(i11);
                             if (intValue == 0) {
-                                arrayList.add(jVar);
-                            } else if (intValue < jVar.y.size()) {
-                                i0 i0Var3 = jVar.y;
+                                arrayList.add(kVar);
+                            } else if (intValue < kVar.y.size()) {
+                                i0 i0Var3 = kVar.y;
                                 arrayList.addAll(i0Var3.subList(intValue, i0Var3.size()));
                             }
                             i11++;
@@ -200,22 +201,22 @@ public final class h {
         if (i7 == -1) {
             return 1;
         }
-        s2.m b10 = this.g.b(iVar.y, false);
+        s2.n b10 = this.g.b(iVar.y, false);
         b10.getClass();
         i0 i0Var = b10.r;
         int i10 = (int) (iVar.s - b10.k);
         if (i10 < 0) {
             return 1;
         }
-        i0 i0Var2 = i10 < i0Var.size() ? ((s2.j) i0Var.get(i10)).y : b10.s;
+        i0 i0Var2 = i10 < i0Var.size() ? ((s2.k) i0Var.get(i10)).y : b10.s;
         if (i7 >= i0Var2.size()) {
             return 2;
         }
-        s2.h hVar = (s2.h) i0Var2.get(i7);
-        if (hVar.y) {
+        s2.i iVar2 = (s2.i) i0Var2.get(i7);
+        if (iVar2.y) {
             return 0;
         }
-        return Objects.equals(Uri.parse(h2.e.f(b10.a, hVar.a)), iVar.b.a) ? 1 : 2;
+        return Objects.equals(Uri.parse(h2.e.f(b10.a, iVar2.a)), iVar.b.a) ? 1 : 2;
     }
 
     public final int d(long j3) {
@@ -238,7 +239,7 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Pair e(i iVar, boolean z10, s2.m mVar, long j3, long j10) {
+    public final Pair e(i iVar, boolean z10, s2.n nVar, long j3, long j10) {
         i0 i0Var;
         int i7;
         boolean z11 = true;
@@ -255,13 +256,13 @@ public final class h {
                 return new Pair(Long.valueOf(j11), Integer.valueOf(i10 != -1 ? i10 + 1 : -1));
             }
         }
-        long j12 = mVar.u;
-        long j13 = mVar.k;
-        i0 i0Var2 = mVar.s;
-        i0 i0Var3 = mVar.r;
+        long j12 = nVar.u;
+        long j13 = nVar.k;
+        i0 i0Var2 = nVar.s;
+        i0 i0Var3 = nVar.r;
         long j14 = j3 + j12;
         long j15 = (iVar == null || this.q) ? j10 : iVar.h;
-        if (!mVar.o && j15 >= j14) {
+        if (!nVar.o && j15 >= j14) {
             return new Pair(Long.valueOf(j13 + i0Var3.size()), -1);
         }
         long j16 = j15 - j3;
@@ -277,18 +278,18 @@ public final class h {
         }
         if (d >= 0) {
             if (!i0Var3.isEmpty()) {
-                s2.j jVar = (s2.j) i0Var3.get(d);
-                if (j16 < jVar.e + jVar.c) {
-                    i0Var = jVar.y;
+                s2.k kVar = (s2.k) i0Var3.get(d);
+                if (j16 < kVar.e + kVar.c) {
+                    i0Var = kVar.y;
                     i7 = 0;
                     while (true) {
                         if (i7 < i0Var.size()) {
                             break;
                         }
-                        s2.h hVar = (s2.h) i0Var.get(i7);
-                        if (j16 >= hVar.e + hVar.c) {
+                        s2.i iVar2 = (s2.i) i0Var.get(i7);
+                        if (j16 >= iVar2.e + iVar2.c) {
                             i7++;
-                        } else if (hVar.x) {
+                        } else if (iVar2.x) {
                             j17 += (i0Var != i0Var2 || i0Var3.isEmpty()) ? 0L : 1L;
                             r3 = i7;
                         }
@@ -311,8 +312,8 @@ public final class h {
         if (uri == null) {
             return null;
         }
-        jn jnVar = this.j;
-        byte[] bArr = (byte[]) ((org.telegram.utils.twidget.w) jnVar.b).remove(uri);
+        nd0 nd0Var = this.j;
+        byte[] bArr = (byte[]) ((w) nd0Var.b).remove(uri);
         if (bArr != null) {
             return null;
         }

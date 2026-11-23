@@ -1,7 +1,7 @@
 package l4;
 
-import a8.ha;
-import a8.la;
+import a8.ia;
+import a8.ma;
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;
 import android.text.SpannedString;
@@ -28,10 +28,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -41,23 +41,23 @@ public abstract class h {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(ls.e4, ls.e4, ls.e4)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, ls.e4, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, ls.e4, ls.e4)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(ls.e4, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(ls.e4, ls.e4, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(ls.e4, 0, ls.e4)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, ls.e4)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(ks.e4, ks.e4, ks.e4)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, ks.e4, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, ks.e4, ks.e4)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(ks.e4, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(ks.e4, ks.e4, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(ks.e4, 0, ks.e4)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, ks.e4)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         c = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(ls.e4, ls.e4, ls.e4)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, ls.e4, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, ls.e4, ls.e4)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(ls.e4, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(ls.e4, ls.e4, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(ls.e4, 0, ls.e4)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, ls.e4)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(ks.e4, ks.e4, ks.e4)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, ks.e4, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, ks.e4, ks.e4)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(ks.e4, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(ks.e4, ks.e4, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(ks.e4, 0, ks.e4)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, ks.e4)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         d = DesugarCollections.unmodifiableMap(hashMap2);
     }
@@ -81,35 +81,35 @@ public abstract class h {
                 }
                 c10 = 65535;
                 break;
-            case ls.j1 /* 98 */:
+            case ks.j1 /* 98 */:
                 if (str2.equals("b")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.k1 /* 99 */:
+            case ks.k1 /* 99 */:
                 if (str2.equals("c")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.q1 /* 105 */:
+            case ks.q1 /* 105 */:
                 if (str2.equals("i")) {
                     c10 = 3;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.C1 /* 117 */:
+            case ks.C1 /* 117 */:
                 if (str2.equals("u")) {
                     c10 = 4;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.D1 /* 118 */:
+            case ks.D1 /* 118 */:
                 if (str2.equals("v")) {
                     c10 = 5;
                     break;
@@ -211,7 +211,7 @@ public abstract class h {
                     i10 = 1;
                     i11 = (i21 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                ha.a(spannableStringBuilder, new StyleSpan(i11), i12, length);
+                ia.a(spannableStringBuilder, new StyleSpan(i11), i12, length);
             } else {
                 i10 = 1;
             }
@@ -225,24 +225,24 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                ha.a(spannableStringBuilder, new ForegroundColorSpan(bVar.f), i12, length);
+                ia.a(spannableStringBuilder, new ForegroundColorSpan(bVar.f), i12, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                ha.a(spannableStringBuilder, new BackgroundColorSpan(bVar.h), i12, length);
+                ia.a(spannableStringBuilder, new BackgroundColorSpan(bVar.h), i12, length);
             }
             if (bVar.e != null) {
-                ha.a(spannableStringBuilder, new TypefaceSpan(bVar.e), i12, length);
+                ia.a(spannableStringBuilder, new TypefaceSpan(bVar.e), i12, length);
             }
             int i22 = bVar.n;
             if (i22 == 1) {
-                ha.a(spannableStringBuilder, new AbsoluteSizeSpan((int) bVar.o, true), i12, length);
+                ia.a(spannableStringBuilder, new AbsoluteSizeSpan((int) bVar.o, true), i12, length);
             } else if (i22 == 2) {
-                ha.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o), i12, length);
+                ia.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o), i12, length);
             } else if (i22 == 3) {
-                ha.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o / 100.0f), i12, length);
+                ia.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o / 100.0f), i12, length);
             }
             if (bVar.q) {
                 spannableStringBuilder.setSpan(new g2.e(), i12, length, 33);
@@ -573,40 +573,40 @@ public abstract class h {
                     String substring2 = str2.substring(i12, i11);
                     if (!substring2.trim().isEmpty()) {
                         String trim = substring2.trim();
-                        la.f(!trim.isEmpty());
+                        ma.f(!trim.isEmpty());
                         String str4 = l0.a;
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
-                            case ls.j1 /* 98 */:
+                            case ks.j1 /* 98 */:
                                 if (str5.equals("b")) {
                                     c10 = 0;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ls.k1 /* 99 */:
+                            case ks.k1 /* 99 */:
                                 if (str5.equals("c")) {
                                     c10 = 1;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ls.q1 /* 105 */:
+                            case ks.q1 /* 105 */:
                                 if (str5.equals("i")) {
                                     c10 = 2;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ls.C1 /* 117 */:
+                            case ks.C1 /* 117 */:
                                 if (str5.equals("u")) {
                                     c10 = 3;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ls.D1 /* 118 */:
+                            case ks.D1 /* 118 */:
                                 if (str5.equals("v")) {
                                     c10 = 4;
                                     break;
@@ -664,7 +664,7 @@ public abstract class h {
                                 } else if (!z11) {
                                     int length = spannableStringBuilder.length();
                                     String trim2 = substring2.trim();
-                                    la.f(!trim2.isEmpty());
+                                    ma.f(!trim2.isEmpty());
                                     int indexOf4 = trim2.indexOf(" ");
                                     if (indexOf4 == -1) {
                                         c11 = 0;

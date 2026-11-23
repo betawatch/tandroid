@@ -4,31 +4,31 @@ import android.app.Activity;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import bi.g6;
-import bi.k8;
-import c8.ma;
+import bi.j6;
+import bi.n8;
+import c8.na;
 import di.b1;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.l90;
-import org.telegram.ui.Components.nv0;
-import org.telegram.ui.Components.ou;
-import org.telegram.ui.Components.r51;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.mv0;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.vz;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import v4.u0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class b extends r51 {
+public final class b extends q51 {
     public final int O1;
-    public final l90 P1;
-    public final yz Q1;
-    public final nv0 R1;
-    public final nv0 S1;
+    public final i90 P1;
+    public final vz Q1;
+    public final mv0 R1;
+    public final mv0 S1;
     public float T1;
     public boolean U1;
     public int V1;
@@ -39,54 +39,54 @@ public final class b extends r51 {
         super(g2Var.getCurrentAccount(), g2Var.getParentActivity(), g2Var.getResourceProvider());
         this.W1 = dVar;
         this.O1 = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        int i7 = m6.a7;
-        v0(m6.w0(i7, this.J0));
+        int i7 = n6.a7;
+        v0(n6.w0(i7, this.J0));
         this.G1 = i7;
         this.F1 = i7;
         N0(0.0f);
         Q(i7);
         this.B1 = false;
         this.C1 = false;
-        l90 l90Var = new l90(this, g2Var, this.c, j3);
-        this.P1 = l90Var;
-        l90Var.B = false;
+        i90 i90Var = new i90(this, g2Var, this.c, j3);
+        this.P1 = i90Var;
+        i90Var.B = false;
         this.q0 = 75;
-        this.w1.K.setHint(hd.N0(2131745562, null));
-        g gVar = l90Var.f;
+        this.w1.K.setHint(gd.N0(2131745562, null));
+        g gVar = i90Var.f;
         this.q1 = gVar;
         this.p1 = gVar;
         this.o1.setAdapter(gVar);
         this.o1.r1();
         b1 b1Var = this.o1;
-        l90Var.p = b1Var;
-        b1Var.setOnItemClickListener(new k8(l90Var, 24));
+        i90Var.p = b1Var;
+        b1Var.setOnItemClickListener(new n8(i90Var, 24));
         u0 onScrollListener = b1Var.getOnScrollListener();
         if (onScrollListener == null) {
-            b1Var.setOnScrollListener(l90Var.D);
+            b1Var.setOnScrollListener(i90Var.D);
         } else {
-            b1Var.setOnScrollListener(new g6(11, l90Var, onScrollListener));
+            b1Var.setOnScrollListener(new j6(11, i90Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.o1.getParent()).indexOfChild(this.o1);
-        yz b10 = l90Var.b();
+        vz b10 = i90Var.b();
         this.Q1 = b10;
-        this.b.addView(b10, indexOfChild, ma.c(-1.0f, -1));
-        nv0 a10 = l90Var.a();
+        this.b.addView(b10, indexOfChild, na.c(-1.0f, -1));
+        mv0 a10 = i90Var.a();
         this.R1 = a10;
-        this.b.addView(a10, indexOfChild, ma.c(-1.0f, -1));
-        nv0 c10 = l90Var.c();
+        this.b.addView(a10, indexOfChild, na.c(-1.0f, -1));
+        mv0 c10 = i90Var.c();
         this.S1 = c10;
-        this.b.addView(c10, indexOfChild, ma.c(-1.0f, -1));
-        l90Var.e();
+        this.b.addView(c10, indexOfChild, na.c(-1.0f, -1));
+        i90Var.e();
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void K0(MotionEvent motionEvent, ah.i iVar) {
         g2 g2Var;
         int action = motionEvent.getAction();
-        l90 l90Var = this.P1;
+        i90 i90Var = this.P1;
         if (action == 0) {
             this.T1 = this.y1;
-            l90Var.i(false);
+            i90Var.i(false);
         } else if (motionEvent.getAction() == 1 && Math.abs(this.y1 - this.T1) < this.O1 && !this.U1) {
             Activity W = g0.W(getContext());
             if (W instanceof LaunchActivity) {
@@ -98,25 +98,25 @@ public final class b extends r51 {
             if (g2Var instanceof bn) {
                 boolean sa2 = ((bn) g2Var).sa();
                 this.U1 = true;
-                g0.h3(new ou(22, this, iVar), sa2 ? 200L : 0L);
+                g0.h3(new bt(24, this, iVar), sa2 ? 200L : 0L);
             } else {
                 this.U1 = true;
                 A0(true);
                 iVar.requestFocus();
-                g0.g3(new org.telegram.ui.Components.j(iVar, 6));
+                g0.g3(new org.telegram.ui.Components.i(iVar, 6));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            l90Var.i(true);
+            i90Var.i(true);
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void M0(String str) {
         this.P1.j(str);
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void O0(int i7) {
         super.O0(i7);
         this.Q1.setTranslationY(this.n1.getMeasuredHeight() + i7);
@@ -125,7 +125,7 @@ public final class b extends r51 {
         this.S1.setTranslationY(f10);
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void R0() {
         b1 b1Var = this.o1;
         if (b1Var.getChildCount() > 0) {
@@ -139,7 +139,7 @@ public final class b extends r51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
+    @Override // org.telegram.ui.Components.q51, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         d dVar = this.W1;
         b bVar = dVar.i;
@@ -162,7 +162,7 @@ public final class b extends r51 {
     @Override // org.telegram.ui.ActionBar.w2
     public final void s0() {
         super.s0();
-        int w02 = m6.w0(m6.a7, this.J0);
+        int w02 = n6.w0(n6.a7, this.J0);
         if (w02 != this.V1) {
             this.V1 = w02;
             v0(w02);
@@ -171,11 +171,11 @@ public final class b extends r51 {
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
-        l90 l90Var = this.P1;
-        if (l90Var.b && this.y1 == 0) {
+        i90 i90Var = this.P1;
+        if (i90Var.b && this.y1 == 0) {
             this.y1 = g0.L(8.0f);
         }
         super.show();
-        l90Var.b = false;
+        i90Var.b = false;
     }
 }

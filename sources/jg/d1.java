@@ -1,10 +1,10 @@
 package jg;
 
-import org.telegram.messenger.gs;
-import org.telegram.messenger.np;
-import org.telegram.ui.Components.ty;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.mp;
+import org.telegram.ui.Components.qy;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d1 {
     public final int a;
@@ -12,13 +12,13 @@ public final class d1 {
     public final long c;
     public boolean e;
     public final /* synthetic */ int g;
-    public final /* synthetic */ gs h;
+    public final /* synthetic */ fs h;
     public boolean d = false;
     public long f = -1;
 
-    public d1(gs gsVar, int i7, long j3, long j10, int i10) {
+    public d1(fs fsVar, int i7, long j3, long j10, int i10) {
         this.g = i10;
-        this.h = gsVar;
+        this.h = fsVar;
         this.a = i7;
         this.b = j3;
         this.c = j10;
@@ -31,8 +31,8 @@ public final class d1 {
                 N = ((h1) this.h).N();
                 break;
             default:
-                ty tyVar = (ty) this.h;
-                if (tyVar.u1 == null || tyVar.getVisibility() != 0 || !tyVar.L0) {
+                qy qyVar = (qy) this.h;
+                if (qyVar.u1 == null || qyVar.getVisibility() != 0 || !qyVar.L0) {
                     N = false;
                     break;
                 } else {
@@ -45,7 +45,7 @@ public final class d1 {
             return;
         }
         if (this.e) {
-            np.u1(this.a).N4(2, 0, this.b, this.c, null);
+            mp.u1(this.a).N4(2, 0, this.b, this.c, null);
         }
         this.f = -1L;
     }
@@ -57,7 +57,7 @@ public final class d1 {
             } else if (System.currentTimeMillis() - this.f > 2000) {
                 this.e = true;
                 this.f = System.currentTimeMillis();
-                np.u1(this.a).N4(10, 0, this.b, this.c, null);
+                mp.u1(this.a).N4(10, 0, this.b, this.c, null);
             }
         }
     }

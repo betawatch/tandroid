@@ -1,53 +1,33 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class w extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y b;
+public final class w implements RendererCommon.RendererEvents {
+    public final /* synthetic */ z a;
 
-    public /* synthetic */ w(y yVar, int i7) {
-        this.a = i7;
-        this.b = yVar;
+    public w(z zVar) {
+        this.a = zVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                y yVar = this.b;
-                yVar.F = false;
-                yVar.invalidate();
-                break;
-            case 1:
-                y yVar2 = this.b;
-                x xVar = yVar2.c0;
-                float f10 = yVar2.a0 ? 0.0f : 1.0f;
-                yVar2.b0 = f10;
-                xVar.setAlpha(f10);
-                xVar.setVisibility(yVar2.a0 ? 8 : 0);
-                yVar2.a.invalidate();
-                break;
-            case 2:
-                super.onAnimationEnd(animator);
-                y yVar3 = this.b;
-                yVar3.K0 = null;
-                u uVar = yVar3.a;
-                uVar.setRotationY(0.0f);
-                if (!yVar3.L0) {
-                    uVar.d.clearImage();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.F = false;
-                break;
-            default:
-                this.b.F = false;
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        int i7 = 0;
+        while (true) {
+            z zVar = this.a;
+            if (i7 >= zVar.n0.size()) {
+                zVar.n0.clear();
+                return;
+            } else {
+                org.telegram.messenger.g0.r((Runnable) zVar.n0.get(i7));
+                ((Runnable) zVar.n0.get(i7)).run();
+                i7++;
+            }
         }
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i7, int i10, int i11) {
     }
 }

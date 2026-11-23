@@ -13,9 +13,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
+public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
     public final p50 a;
     public final e4 b;
     public z2 c;
@@ -64,10 +64,10 @@ public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.o10.a(this);
+        return org.telegram.messenger.m10.a(this);
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -154,7 +154,7 @@ public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
                 spannable = null;
                 metricAffectingSpanArr = null;
             }
-            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.hd.a0(null, null, 2131754053, A) : org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.hd.a0(null, null, 2131754037, org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000), A);
+            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.gd.a0(null, null, 2131754053, A) : org.telegram.messenger.gd.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.gd.a0(null, null, 2131754037, org.telegram.messenger.gd.E0().h0().format(this.f.published_date * 1000), A);
             if (metricAffectingSpanArr != null) {
                 try {
                     if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a02, A)) != -1) {

@@ -5,10 +5,10 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends j {
     public final int i;
@@ -27,10 +27,10 @@ public final class c extends j {
     public static final int[] z = {11, 1, 3, 12, 14, 5, 7, 9};
     public static final int[] A = {0, 4, 8, 12, 16, 20, 24, 28};
     public static final int[] B = {-1, -16711936, -16776961, -16711681, -65536, -256, -65281};
-    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, ls.C3, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, ls.J3, 93, ls.M3, ls.S3, ls.Z3, 97, 98, 99, 100, 101, ls.n1, ls.o1, ls.p1, ls.q1, ls.r1, ls.s1, ls.t1, ls.u1, ls.v1, ls.w1, ls.x1, ls.y1, ls.z1, ls.A1, ls.B1, ls.C1, ls.D1, ls.E1, 120, ls.F1, ls.G1, ls.H3, ls.W3, ls.n3, ls.Q3, 9632};
-    public static final int[] D = {ls.E2, ls.G2, ls.T2, ls.V2, 8482, ls.s2, ls.t2, 9834, ls.B3, 32, ls.I3, ls.D3, 234, ls.N3, ls.T3, ls.a4};
-    public static final int[] E = {ls.X2, ls.f3, ls.o3, ls.v3, ls.x3, ls.b4, 8216, ls.r2, 42, 39, 8212, ls.z2, 8480, 8226, 8220, 8221, ls.W2, ls.Y2, ls.d3, ls.e3, ls.g3, 203, ls.L3, ls.k3, ls.l3, ls.O3, ls.p3, ls.u3, ls.Y3, ls.w3, ls.B2, ls.R2};
-    public static final int[] F = {ls.Z2, ls.E3, ls.j3, ls.i3, 236, 210, ls.R3, ls.q3, ls.U3, ls.H1, ls.J1, 92, 94, 95, ls.I1, ls.K1, ls.a3, ls.F3, ls.r3, ls.V3, ls.A3, ls.v2, ls.u2, 9474, ls.b3, 229, ls.t3, ls.X3, 9484, 9488, 9492, 9496};
+    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, ks.C3, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, ks.J3, 93, ks.M3, ks.S3, ks.Z3, 97, 98, 99, 100, 101, ks.n1, ks.o1, ks.p1, ks.q1, ks.r1, ks.s1, ks.t1, ks.u1, ks.v1, ks.w1, ks.x1, ks.y1, ks.z1, ks.A1, ks.B1, ks.C1, ks.D1, ks.E1, 120, ks.F1, ks.G1, ks.H3, ks.W3, ks.n3, ks.Q3, 9632};
+    public static final int[] D = {ks.E2, ks.G2, ks.T2, ks.V2, 8482, ks.s2, ks.t2, 9834, ks.B3, 32, ks.I3, ks.D3, 234, ks.N3, ks.T3, ks.a4};
+    public static final int[] E = {ks.X2, ks.f3, ks.o3, ks.v3, ks.x3, ks.b4, 8216, ks.r2, 42, 39, 8212, ks.z2, 8480, 8226, 8220, 8221, ks.W2, ks.Y2, ks.d3, ks.e3, ks.g3, 203, ks.L3, ks.k3, ks.l3, ks.O3, ks.p3, ks.u3, ks.Y3, ks.w3, ks.B2, ks.R2};
+    public static final int[] F = {ks.Z2, ks.E3, ks.j3, ks.i3, 236, 210, ks.R3, ks.q3, ks.U3, ks.H1, ks.J1, 92, 94, 95, ks.I1, ks.K1, ks.a3, ks.F3, ks.r3, ks.V3, ks.A3, ks.v2, ks.u2, 9474, ks.b3, 229, ks.t3, ks.X3, 9484, 9488, 9492, 9496};
     public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
     public final x h = new x();
     public final ArrayList m = new ArrayList();
@@ -123,8 +123,8 @@ public final class c extends j {
             int A3 = xVar.A();
             int A4 = xVar.A();
             if ((A2 & 2) == 0 && (A2 & 1) == this.j) {
-                byte b10 = (byte) (A3 & ls.L1);
-                byte b11 = (byte) (A4 & ls.L1);
+                byte b10 = (byte) (A3 & ks.L1);
+                byte b11 = (byte) (A4 & ks.L1);
                 if (b10 != 0 || b11 != 0) {
                     boolean z12 = this.s;
                     if ((A2 & 4) == 4) {

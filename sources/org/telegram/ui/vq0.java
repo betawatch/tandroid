@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class vq0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -92,9 +92,9 @@ public final class vq0 extends FrameLayout {
                     if (actionMasked != 5) {
                     }
                 }
-                org.telegram.messenger.gj gjVar = photoViewer.T4;
-                if (gjVar == null || !gjVar.r4()) {
-                    photoViewer.q2();
+                org.telegram.messenger.fj fjVar = photoViewer.T4;
+                if (fjVar == null || !fjVar.r4()) {
+                    photoViewer.r2();
                 }
             }
             org.telegram.messenger.g0.r(photoViewer.y2);
@@ -104,7 +104,7 @@ public final class vq0 extends FrameLayout {
 
     @Override // android.view.View
     public final void draw(Canvas canvas) {
-        Drawable[] drawableArr = PhotoViewer.Z8;
+        Drawable[] drawableArr = PhotoViewer.f9;
         this.a.getClass();
         super.draw(canvas);
     }
@@ -122,9 +122,9 @@ public final class vq0 extends FrameLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         PhotoViewer photoViewer = this.a;
-        photoViewer.C4.P();
-        photoViewer.B4.P();
-        photoViewer.D4.P();
+        photoViewer.C4.Q();
+        photoViewer.B4.Q();
+        photoViewer.D4.Q();
         photoViewer.S5 = true;
     }
 
@@ -132,9 +132,9 @@ public final class vq0 extends FrameLayout {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         PhotoViewer photoViewer = this.a;
-        photoViewer.C4.R();
-        photoViewer.B4.R();
-        photoViewer.D4.R();
+        photoViewer.C4.S();
+        photoViewer.B4.S();
+        photoViewer.D4.S();
         photoViewer.S5 = false;
         photoViewer.T5 = false;
     }
@@ -185,11 +185,11 @@ public final class vq0 extends FrameLayout {
         photoViewer.T5 = true;
         if (z10) {
             if (!photoViewer.U5) {
-                float p22 = photoViewer.p2(true);
-                photoViewer.a6 = p22;
+                float q22 = photoViewer.q2(true);
+                photoViewer.a6 = q22;
                 photoViewer.X5 = 0.0f;
                 photoViewer.Y5 = 0.0f;
-                photoViewer.u3(p22);
+                photoViewer.v3(q22);
             }
             CheckBox checkBox = photoViewer.O0;
             if (checkBox != null) {
@@ -197,7 +197,7 @@ public final class vq0 extends FrameLayout {
             }
         }
         if (photoViewer.U5) {
-            photoViewer.L2();
+            photoViewer.M2();
             photoViewer.U5 = false;
         }
     }

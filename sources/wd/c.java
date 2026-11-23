@@ -1,5 +1,6 @@
 package wd;
 
+import c8.z;
 import gd.k;
 import id.h;
 import java.util.Iterator;
@@ -7,7 +8,7 @@ import java.util.NoSuchElementException;
 import kd.i;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements Iterator, id.c {
     public int a;
@@ -94,7 +95,7 @@ public final class c implements Iterator, id.c {
 
     @Override // id.c
     public final void resumeWith(Object obj) {
-        b7.h.b(obj);
+        z.b(obj);
         this.a = 4;
     }
 }

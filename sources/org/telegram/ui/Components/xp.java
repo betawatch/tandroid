@@ -1,31 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class xp extends c5.l {
-    public wp x0;
+public final class xp implements fu0 {
+    public final /* synthetic */ vp a;
+    public final /* synthetic */ zp b;
 
-    public xp(Context context) {
-        super(context);
-        b(new vp((hg0) this));
+    public xp(zp zpVar, vp vpVar) {
+        this.b = zpVar;
+        this.a = vpVar;
     }
 
-    @Override // c5.l
-    @Deprecated
-    public void setAdapter(c5.a aVar) {
-        if (!(aVar instanceof wp)) {
-            throw new IllegalArgumentException();
-        }
-        setAdapter((wp) aVar);
+    @Override // org.telegram.ui.Components.fu0
+    public final void n(int i7) {
+        zp zpVar = this.b;
+        zpVar.u1 = i7;
+        zpVar.K0(true);
     }
 
-    public void setAdapter(wp wpVar) {
-        this.x0 = wpVar;
-        super.setAdapter((c5.a) wpVar);
-        if (wpVar != null) {
-            x(wpVar.j(), false);
-        }
+    @Override // org.telegram.ui.Components.fu0
+    public final void o() {
+        int measuredHeight = this.b.o1.getMeasuredHeight();
+        vp vpVar = this.a;
+        vpVar.z(0 - vpVar.getScrollX(), measuredHeight - vpVar.getScrollY(), false);
     }
 }

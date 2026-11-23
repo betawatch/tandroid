@@ -1,32 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ya0 extends org.telegram.ui.ActionBar.m5 {
-    public final Paint N0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 O0;
+public final /* synthetic */ class ya0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ za0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ya0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.O0 = h6Var;
-        this.N0 = new Paint(1);
+    public /* synthetic */ ya0(za0 za0Var, int i7) {
+        this.a = i7;
+        this.b = za0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.K5, this.O0);
-        Paint paint = this.N0;
-        paint.setColor(w02);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - org.telegram.messenger.g0.L(8.0f), height, paint);
-        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + org.telegram.messenger.g0.L(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.y();
+                break;
+            default:
+                this.b.m(true);
+                break;
+        }
     }
 }

@@ -2,10 +2,10 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xl0 extends v4.k {
-    @Override // v4.k, v4.h1
+public final class xl0 extends v4.l {
+    @Override // v4.l, v4.h1
     public final boolean r(v4.f1 f1Var, e2.r0 r0Var, int i7, int i10, int i11, int i12) {
         dm0 dm0Var;
         cm0 cm0Var;
@@ -32,7 +32,7 @@ public final class xl0 extends v4.k {
         if (i14 != 0) {
             view.setTranslationY(-i14);
         }
-        this.r.add(new v4.j(f1Var, translationX, translationY, i11, i12));
+        this.r.add(new v4.k(f1Var, translationX, translationY, i11, i12));
         return true;
     }
 

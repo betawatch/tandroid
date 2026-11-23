@@ -1,249 +1,140 @@
 package org.telegram.messenger;
 
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class cu extends au {
-    public final bu[] X;
-    public final int Y;
-    public int Z;
-    public bu a0;
-    public bu b0;
-    public final org.telegram.ui.Cells.m9 c0;
+public final class cu extends ReplacementSpan {
+    public final au a;
+    public final TL_iv.textButton b;
+    public final RectF c = new RectF();
+    public float d;
+    public boolean e;
+    public int f;
+    public View h;
 
-    public cu(fv fvVar, Rect rect, int i7, TL_iv.pageBlockButtonRow pageblockbuttonrow) {
-        super(fvVar, rect, i7);
-        this.Z = -1;
-        this.c0 = new org.telegram.ui.Cells.m9(new h9.g1(this, 25));
-        this.X = new bu[pageblockbuttonrow.buttons.size()];
-        int size = pageblockbuttonrow.buttons.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            bu[] buVarArr = this.X;
-            TL_keyboard.PageButton pageButton = pageblockbuttonrow.buttons.get(i10);
-            buVarArr[i10] = new bu(fvVar, i7, fvVar.l(pageButton.text, fv.R(16, 13)), pageButton, pageButton.type, pageButton.style, cg.c.c(pageButton, TL_keyboard.TL_inlineButtonTypeDisabled.class), false, false, false, false, null, new yr(this, 5));
-        }
-        if (pageblockbuttonrow.align_left) {
-            this.Y = 1;
-        } else if (pageblockbuttonrow.align_center) {
-            this.Y = 3;
-        } else if (pageblockbuttonrow.align_right) {
-            this.Y = 2;
-        } else {
-            this.Y = 4;
-        }
-        l0(k0());
-    }
-
-    public static bu i0(cu cuVar, float f10, float f11) {
-        cuVar.m0();
-        bu[] buVarArr = cuVar.X;
-        int L = buVarArr.length == 0 ? g0.L(cuVar.a.M + 18) : buVarArr[0].c();
-        float I = (cuVar.I() - L) / 2.0f;
-        if (f11 < I || f11 > I + L) {
-            return null;
-        }
-        for (bu buVar : buVarArr) {
-            if (f10 >= buVar.d && f10 <= r1 + buVar.e) {
-                return buVar;
-            }
-        }
-        return null;
-    }
-
-    public static void j0(cu cuVar, bu buVar) {
-        bu buVar2 = cuVar.a0;
-        if (buVar2 == buVar) {
-            return;
-        }
-        if (buVar2 != null) {
-            buVar2.m(false);
-        }
-        cuVar.a0 = buVar;
-        if (buVar != null) {
-            buVar.m(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.au
-    public final int I() {
-        bu[] buVarArr = this.X;
-        int L = buVarArr.length == 0 ? g0.L(this.a.M + 18) : buVarArr[0].c();
-        Rect rect = this.b;
-        return g0.L(4.333f) + rect.top + L + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.au
-    public final int K() {
-        Rect rect = this.b;
-        return k0() + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.au
-    public final boolean Q() {
-        return this.b0 != null;
-    }
-
-    @Override // org.telegram.messenger.au
-    public final void T() {
-        for (bu buVar : this.X) {
-            buVar.a.i(this.W);
-        }
-    }
-
-    @Override // org.telegram.messenger.au
-    public final void V() {
-        for (bu buVar : this.X) {
-            buVar.a.f(this.W);
-        }
-    }
-
-    @Override // org.telegram.messenger.au
-    public final boolean Y(MotionEvent motionEvent) {
-        View view = this.W;
-        if (view == null) {
-            return false;
-        }
-        return this.c0.a(view, motionEvent);
-    }
-
-    public final int k0() {
-        bu[] buVarArr = this.X;
-        int length = buVarArr.length;
-        if (length == 0) {
-            return 0;
-        }
-        int L = (length - 1) * g0.L(7.0f);
-        for (bu buVar : buVarArr) {
-            L += buVar.h();
-        }
-        return Math.min(this.c, L);
-    }
-
-    public final void l0(int i7) {
-        int i10;
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public cu(ev evVar, int i7, TL_iv.textButton textbutton, Boolean bool) {
         boolean z10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        this.Z = i7;
-        bu[] buVarArr = this.X;
-        int length = buVarArr.length;
-        if (length == 0) {
-            return;
-        }
-        int L = g0.L(7.0f);
-        int i15 = 1;
-        int i16 = (length - 1) * L;
-        int max = Math.max(0, i7 - i16);
-        int i17 = 0;
-        for (bu buVar : buVarArr) {
-            int h = buVar.h();
-            buVar.e = h;
-            i17 += h;
-        }
-        int i18 = this.Y;
-        if (i17 > max) {
-            int i19 = 0;
-            for (bu buVar2 : buVarArr) {
-                i19 += buVar2.e - buVar2.e();
+        boolean z11;
+        this.b = textbutton;
+        TL_iv.RichText richText = textbutton.text;
+        if (richText instanceof TL_iv.textConcat) {
+            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
+            if (!textconcat.texts.isEmpty()) {
+                boolean z12 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
+                z11 = i5.c.h(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
+                z10 = z12;
+                TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
+                boolean z13 = richButtonStyle == null && richButtonStyle.link;
+                SpannableStringBuilder l10 = evVar.l(textbutton.text, !z13 ? ev.R(512, 0) : ev.R(16, 13));
+                TL_keyboard.InlineButtonType inlineButtonType = textbutton.type;
+                au auVar = new au(evVar, i7, l10, null, inlineButtonType, textbutton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new xr(this, 6));
+                this.a = auVar;
+                auVar.e = auVar.i();
             }
-            if (i19 <= 0) {
-                for (bu buVar3 : buVarArr) {
-                    buVar3.e = buVar3.e();
+        }
+        z10 = false;
+        z11 = false;
+        TL_keyboard.RichButtonStyle richButtonStyle2 = textbutton.style;
+        if (richButtonStyle2 == null) {
+        }
+        SpannableStringBuilder l102 = evVar.l(textbutton.text, !z13 ? ev.R(512, 0) : ev.R(16, 13));
+        TL_keyboard.InlineButtonType inlineButtonType2 = textbutton.type;
+        au auVar2 = new au(evVar, i7, l102, null, inlineButtonType2, textbutton.style, inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new xr(this, 6));
+        this.a = auVar2;
+        auVar2.e = auVar2.i();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        float f11;
+        au auVar = this.a;
+        int i14 = auVar.a.s;
+        int i15 = (i14 <= 0 || this.f <= 0) ? 0 : 1;
+        if (i15 == 0 && i14 > 0 && (charSequence instanceof Spanned)) {
+            av[] avVarArr = (av[]) ((Spanned) charSequence).getSpans(i7, i10, av.class);
+            int length = avVarArr.length;
+            int i16 = 0;
+            while (true) {
+                if (i16 >= length) {
+                    break;
                 }
-            } else {
-                int min = Math.min(i17 - max, i19);
-                int i20 = 0;
-                int i21 = 0;
-                while (i20 < buVarArr.length) {
-                    bu buVar4 = buVarArr[i20];
-                    int e10 = buVar4.e - buVar4.e();
-                    if (i20 == buVarArr.length - i15) {
-                        i14 = min - i21;
-                        i12 = i15;
-                        i13 = min;
-                    } else {
-                        i12 = i15;
-                        i13 = min;
-                        i14 = (int) ((min * e10) / i19);
-                    }
-                    int min2 = Math.min(i14, e10);
-                    buVar4.e -= min2;
-                    i21 += min2;
-                    i20++;
-                    i15 = i12;
-                    min = i13;
+                if ((avVarArr[i16].b & 15) == 14) {
+                    i15 = 1;
+                    break;
                 }
+                i16++;
             }
-            i10 = i15;
+        }
+        if (i15 != 0) {
+            f11 = (i11 + i13) / 2.0f;
         } else {
-            i10 = 1;
-            if (i18 == 4) {
-                boolean[] zArr = new boolean[buVarArr.length];
-                int length2 = buVarArr.length;
-                for (boolean z11 = true; z11 && length2 > 0; z11 = z10) {
-                    int i22 = max / length2;
-                    z10 = false;
-                    for (int i23 = 0; i23 < buVarArr.length; i23++) {
-                        if (!zArr[i23] && (i11 = buVarArr[i23].e) > i22) {
-                            zArr[i23] = true;
-                            max -= i11;
-                            length2--;
-                            z10 = true;
-                        }
-                    }
-                }
-                if (length2 > 0) {
-                    int i24 = max / length2;
-                    int i25 = max - (length2 * i24);
-                    for (int i26 = 0; i26 < buVarArr.length; i26++) {
-                        if (!zArr[i26]) {
-                            int i27 = i25 - 1;
-                            buVarArr[i26].e = (i25 > 0 ? 1 : 0) + i24;
-                            i25 = i27;
-                        }
-                    }
-                }
+            Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
+            f11 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2.0f) + i12;
+        }
+        canvas.save();
+        int round = Math.round(f10 + (auVar.s ? 0 : g0.L(1.0f)));
+        int ceil = (int) Math.ceil((f11 - (auVar.d() / 2.0f)) + (i15 ^ 1));
+        float f12 = round;
+        float f13 = ceil;
+        this.c.set(f12, f13, round + auVar.e, auVar.d() + ceil);
+        canvas.translate(f12, f13);
+        auVar.b(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        boolean z10 = this.e && fontMetricsInt != null;
+        int i11 = z10 ? fontMetricsInt.top : 0;
+        int i12 = z10 ? fontMetricsInt.ascent : 0;
+        int i13 = z10 ? fontMetricsInt.descent : 0;
+        int i14 = z10 ? fontMetricsInt.bottom : 0;
+        int i15 = z10 ? fontMetricsInt.leading : 0;
+        int L = g0.L(8.0f);
+        int L2 = g0.L(10.0f);
+        au auVar = this.a;
+        if (fontMetricsInt != null && auVar.s) {
+            float f10 = this.d;
+            int i16 = (int) (((-L2) - L) * f10);
+            fontMetricsInt.top = i16;
+            int i17 = (int) ((L2 - L) * f10);
+            fontMetricsInt.bottom = i17;
+            fontMetricsInt.ascent = i16;
+            fontMetricsInt.descent = i17;
+            fontMetricsInt.leading = 0;
+        }
+        if (z10) {
+            fontMetricsInt.top = i11;
+            fontMetricsInt.ascent = i12;
+            fontMetricsInt.descent = i13;
+            fontMetricsInt.bottom = i14;
+            fontMetricsInt.leading = i15;
+            int i18 = this.f;
+            int i19 = i13 - i12;
+            if (i18 > i19) {
+                int i20 = i18 - i19;
+                int i21 = (i20 + 1) / 2;
+                int i22 = i12 - i21;
+                fontMetricsInt.ascent = i22;
+                fontMetricsInt.descent = i13 + (i20 - i21);
+                fontMetricsInt.top = Math.min(i11, i22);
+                fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
             }
         }
-        for (bu buVar5 : buVarArr) {
-            i16 += buVar5.e;
-        }
-        int c10 = p1.g.c(i18);
-        int i28 = c10 != i10 ? c10 != 2 ? 0 : (i7 - i16) / 2 : i7 - i16;
-        for (bu buVar6 : buVarArr) {
-            buVar6.d = i28;
-            i28 += buVar6.e + L;
-        }
-    }
-
-    public final void m0() {
-        fv fvVar = this.a;
-        int i7 = fvVar.C;
-        int i10 = fvVar.S;
-        int i11 = ((i7 + i10) + fvVar.T) - (i10 * 2);
-        Rect rect = this.b;
-        int max = Math.max(0, (i11 - rect.left) - rect.right);
-        if (this.Z != max) {
-            l0(max);
-        }
-    }
-
-    @Override // org.telegram.messenger.au
-    public final void q(Canvas canvas) {
-        m0();
-        for (bu buVar : this.X) {
-            canvas.save();
-            canvas.translate(buVar.d, Math.round((I() - buVar.c()) / 2.0f));
-            buVar.a(canvas);
-            canvas.restore();
-        }
+        return auVar.e + (auVar.s ? 0 : g0.L(1.0f) * 2);
     }
 }

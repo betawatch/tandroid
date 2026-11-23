@@ -5,10 +5,10 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import c8.bc;
+import c8.cc;
 import f7.t0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final String a;
@@ -55,16 +55,16 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.l(parcel, 3, this.b);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.l(parcel, 3, this.b);
         k kVar = this.c;
-        bc.f(parcel, 4, kVar == null ? null : kVar.b);
-        bc.k(parcel, 5, this.d, i7);
-        bc.q(parcel, 6, 4);
+        cc.f(parcel, 4, kVar == null ? null : kVar.b);
+        cc.k(parcel, 5, this.d, i7);
+        cc.q(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        bc.q(parcel, 7, 4);
+        cc.q(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
     }
 }

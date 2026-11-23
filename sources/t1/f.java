@@ -1,90 +1,53 @@
 package t1;
 
-import android.text.InputFilter;
-import android.text.method.PasswordTransformationMethod;
-import android.text.method.TransformationMethod;
-import android.util.SparseArray;
-import android.widget.TextView;
-import c8.lc;
+import android.text.Editable;
+import android.text.method.KeyListener;
+import android.text.method.MetaKeyKeyListener;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class f extends lc {
-    public final TextView a;
-    public final d b;
-    public boolean c = true;
+public final class f implements KeyListener {
+    public final KeyListener a;
+    public final nb.a b;
 
-    public f(TextView textView) {
-        this.a = textView;
-        this.b = new d(textView);
+    public f(KeyListener keyListener) {
+        nb.a aVar = new nb.a(25);
+        this.a = keyListener;
+        this.b = aVar;
     }
 
-    @Override // c8.lc
-    public final InputFilter[] a(InputFilter[] inputFilterArr) {
-        if (!this.c) {
-            SparseArray sparseArray = new SparseArray(1);
-            for (int i7 = 0; i7 < inputFilterArr.length; i7++) {
-                InputFilter inputFilter = inputFilterArr[i7];
-                if (inputFilter instanceof d) {
-                    sparseArray.put(i7, inputFilter);
-                }
-            }
-            if (sparseArray.size() == 0) {
-                return inputFilterArr;
-            }
-            int length = inputFilterArr.length;
-            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - sparseArray.size()];
-            int i10 = 0;
-            for (int i11 = 0; i11 < length; i11++) {
-                if (sparseArray.indexOfKey(i11) < 0) {
-                    inputFilterArr2[i10] = inputFilterArr[i11];
-                    i10++;
-                }
-            }
-            return inputFilterArr2;
-        }
-        int length2 = inputFilterArr.length;
-        int i12 = 0;
-        while (true) {
-            d dVar = this.b;
-            if (i12 >= length2) {
-                InputFilter[] inputFilterArr3 = new InputFilter[inputFilterArr.length + 1];
-                System.arraycopy(inputFilterArr, 0, inputFilterArr3, 0, length2);
-                inputFilterArr3[length2] = dVar;
-                return inputFilterArr3;
-            }
-            if (inputFilterArr[i12] == dVar) {
-                return inputFilterArr;
-            }
-            i12++;
-        }
+    @Override // android.text.method.KeyListener
+    public final void clearMetaKeyState(View view, Editable editable, int i7) {
+        this.a.clearMetaKeyState(view, editable, i7);
     }
 
-    @Override // c8.lc
-    public final void b(boolean z10) {
-        if (z10) {
-            d();
-        }
+    @Override // android.text.method.KeyListener
+    public final int getInputType() {
+        return this.a.getInputType();
     }
 
-    @Override // c8.lc
-    public final void c(boolean z10) {
-        this.c = z10;
-        d();
-        TextView textView = this.a;
-        textView.setFilters(a(textView.getFilters()));
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyDown(View view, Editable editable, int i7, KeyEvent keyEvent) {
+        boolean z10;
+        this.b.getClass();
+        if (i7 != 67 ? i7 != 112 ? false : wf.b.s(editable, keyEvent, true) : wf.b.s(editable, keyEvent, false)) {
+            MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        return z10 || this.a.onKeyDown(view, editable, i7, keyEvent);
     }
 
-    public final void d() {
-        TextView textView = this.a;
-        TransformationMethod transformationMethod = textView.getTransformationMethod();
-        if (this.c) {
-            if (!(transformationMethod instanceof j) && !(transformationMethod instanceof PasswordTransformationMethod)) {
-                transformationMethod = new j(transformationMethod);
-            }
-        } else if (transformationMethod instanceof j) {
-            transformationMethod = ((j) transformationMethod).a;
-        }
-        textView.setTransformationMethod(transformationMethod);
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
+        return this.a.onKeyOther(view, editable, keyEvent);
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyUp(View view, Editable editable, int i7, KeyEvent keyEvent) {
+        return this.a.onKeyUp(view, editable, i7, keyEvent);
     }
 }

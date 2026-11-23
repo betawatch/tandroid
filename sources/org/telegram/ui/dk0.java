@@ -1,632 +1,175 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
+import android.app.Activity;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.util.HashSet;
-import java.util.Timer;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class dk0 extends org.telegram.ui.Components.iu0 implements org.telegram.messenger.gs, org.telegram.ui.ActionBar.b6 {
-    public static final /* synthetic */ int S = 0;
-    public int E;
-    public int F;
-    public double G;
-    public double H;
-    public boolean I;
-    public boolean J;
-    public boolean K;
-    public String L;
-    public final int M;
-    public int N;
-    public String O;
-    public int P;
-    public int Q;
-    public final /* synthetic */ hk0 R;
-    public String a;
-    public String b;
-    public final LinearLayout c;
-    public EditTextBoldCursor[] d;
-    public final TextView e;
-    public final TextView f;
-    public final ImageView h;
-    public final nb0 n;
-    public final nb0 r;
-    public final ek0 s;
-    public Timer w;
-    public Timer x;
-    public final Object y;
+public final class dk0 extends FrameLayout implements org.telegram.messenger.y5 {
+    public final TextView a;
+    public final TextView b;
+    public final org.telegram.ui.Components.p9 c;
+    public final org.telegram.ui.Components.rh0 d;
+    public int e;
+    public org.telegram.messenger.yv f;
+    public final int h;
+    public final /* synthetic */ fk0 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk0(hk0 hk0Var, Context context, int i7) {
-        super(context);
-        float f10;
-        this.R = hk0Var;
-        this.y = new Object();
-        this.E = 60000;
-        this.F = 15000;
-        this.L = "";
-        this.O = "*";
-        this.M = i7;
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.e = textView;
-        int i10 = org.telegram.ui.ActionBar.m6.D6;
-        org.telegram.ui.ActionBar.t6.U(textView, i10, null);
-        textView.setTextSize(1, 14.0f);
-        textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        int i11 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.messenger.f3.l(textView2, i11, null, 1, 18.0f);
-        int i12 = 3;
-        textView2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        textView2.setGravity(49);
-        if (i7 == 3) {
-            textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-            FrameLayout frameLayout = new FrameLayout(context);
-            addView(frameLayout, c8.ma.r(-2, -2, org.telegram.messenger.hd.a0 ? 5 : 3));
-            ImageView e10 = org.telegram.messenger.o10.e(context, R.drawable.phone_activate);
-            boolean z10 = org.telegram.messenger.hd.a0;
-            if (z10) {
-                f10 = 2.0f;
-                frameLayout.addView(e10, c8.ma.d(64, 76.0f, 19, 2.0f, 2.0f, 0.0f, 0.0f));
-                frameLayout.addView(textView, c8.ma.d(-1, -2.0f, org.telegram.messenger.hd.a0 ? 5 : 3, 82.0f, 0.0f, 0.0f, 0.0f));
-            } else {
-                f10 = 2.0f;
-                frameLayout.addView(textView, c8.ma.d(-1, -2.0f, z10 ? 5 : 3, 0.0f, 0.0f, 82.0f, 0.0f));
-                frameLayout.addView(e10, c8.ma.d(64, 76.0f, 21, 0.0f, 2.0f, 0.0f, 2.0f));
-            }
-        } else {
-            f10 = 2.0f;
-            textView.setGravity(49);
-            FrameLayout frameLayout2 = new FrameLayout(context);
-            addView(frameLayout2, c8.ma.r(-2, -2, 49));
-            if (i7 == 1) {
-                ImageView e11 = org.telegram.messenger.o10.e(context, R.drawable.sms_devices);
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                org.telegram.ui.ActionBar.t6.s(e11, i11, null, mode);
-                frameLayout2.addView(e11, c8.ma.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                ImageView imageView = new ImageView(context);
-                this.h = imageView;
-                imageView.setImageResource(R.drawable.sms_bubble);
-                org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.P9, null, mode);
-                frameLayout2.addView(imageView, c8.ma.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                textView2.setText(org.telegram.messenger.hd.N0(2131745376, null));
-            } else {
-                ImageView imageView2 = new ImageView(context);
-                this.h = imageView2;
-                imageView2.setImageResource(R.drawable.sms_code);
-                org.telegram.ui.ActionBar.t6.s(imageView2, org.telegram.ui.ActionBar.m6.P9, null, PorterDuff.Mode.MULTIPLY);
-                frameLayout2.addView(imageView2, c8.ma.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                textView2.setText(org.telegram.messenger.hd.N0(2131745370, null));
-            }
-            addView(textView2, c8.ma.t(-2, -2, 49, 0, 18, 0, 0));
-            addView(textView, c8.ma.t(-2, -2, 49, 0, 17, 0, 0));
-        }
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, c8.ma.r(-2, 36, 1));
-        if (i7 == 3) {
-            linearLayout.setVisibility(8);
-        }
-        nb0 nb0Var = new nb0(context, 2);
-        this.n = nb0Var;
-        org.telegram.ui.ActionBar.t6.U(nb0Var, i10, null);
-        nb0Var.setLineSpacing(org.telegram.messenger.g0.L(f10), 1.0f);
-        if (i7 == 3) {
-            nb0Var.setTextSize(1, 14.0f);
-            addView(nb0Var, c8.ma.r(-2, -2, org.telegram.messenger.hd.a0 ? 5 : 3));
-            ek0 ek0Var = new ek0(context);
-            Paint paint = new Paint();
-            ek0Var.a = paint;
-            Paint paint2 = new Paint();
-            ek0Var.b = paint2;
-            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Xi, false));
-            paint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Yi, false));
-            this.s = ek0Var;
-            nb0Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-            addView(ek0Var, c8.ma.k(0.0f, 12.0f, 0.0f, 0.0f, -1, 3));
-        } else {
-            nb0Var.setPadding(0, org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(10.0f));
-            nb0Var.setTextSize(1, 15.0f);
-            nb0Var.setGravity(49);
-            addView(nb0Var, c8.ma.r(-2, -2, 49));
-        }
-        nb0 nb0Var2 = new nb0(context, i12);
-        this.r = nb0Var2;
-        org.telegram.ui.ActionBar.t6.U(nb0Var2, org.telegram.ui.ActionBar.m6.q6, null);
-        nb0Var2.setLineSpacing(org.telegram.messenger.g0.L(f10), 1.0f);
-        nb0Var2.setPadding(0, org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(10.0f));
-        nb0Var2.setTextSize(1, 15.0f);
-        nb0Var2.setGravity(49);
-        if (i7 == 1) {
-            nb0Var2.setText(org.telegram.messenger.hd.N0(2131751431, null));
-        } else {
-            nb0Var2.setText(org.telegram.messenger.hd.N0(2131751437, null));
-        }
-        addView(nb0Var2, c8.ma.r(-2, -2, 49));
-        nb0Var2.setOnClickListener(new j40(this, 17));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public String getCode() {
-        if (this.d == null) {
-            return "";
-        }
-        StringBuilder sb2 = new StringBuilder();
-        int i7 = 0;
-        while (true) {
-            EditTextBoldCursor[] editTextBoldCursorArr = this.d;
-            if (i7 >= editTextBoldCursorArr.length) {
-                return sb2.toString();
-            }
-            sb2.append(pf.b.d(editTextBoldCursorArr[i7].getText().toString(), false));
-            i7++;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final boolean c(boolean z10) {
+    public dk0(fk0 fk0Var, Activity activity) {
+        super(activity);
         int i7;
-        int i10 = 1;
-        hk0 hk0Var = this.R;
-        if (!z10) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hk0Var.getParentActivity());
-            String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
-            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            t1Var.S = N0;
-            t1Var.U = org.telegram.messenger.hd.N0(2131744580, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), null);
-            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131744598, null), new zj0(this, i10));
-            hk0Var.showDialog(t1Var);
-            return false;
-        }
-        TLRPC.TL_auth_cancelCode tL_auth_cancelCode = new TLRPC.TL_auth_cancelCode();
-        tL_auth_cancelCode.phone_number = this.a;
-        tL_auth_cancelCode.phone_code_hash = this.b;
-        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_auth_cancelCode, new fi.l5(25), 2);
-        r();
-        q();
-        int i11 = this.M;
-        if (i11 == 2) {
-            org.telegram.messenger.g0.C3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.j4);
-        } else if (i11 == 3) {
-            org.telegram.messenger.g0.B3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
-        }
-        this.J = false;
-        return true;
+        this.n = fk0Var;
+        i7 = ((org.telegram.ui.ActionBar.g2) fk0Var).currentAccount;
+        this.h = org.telegram.messenger.a6.q(i7).k();
+        this.d = new org.telegram.ui.Components.rh0(this);
+        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(activity);
+        this.c = p9Var;
+        addView(p9Var, c8.na.d(48, 48.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
+        TextView textView = new TextView(activity);
+        this.a = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+        org.telegram.messenger.m10.q(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
+        boolean z10 = org.telegram.messenger.gd.a0;
+        addView(textView, c8.na.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f));
+        TextView textView2 = new TextView(activity);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, null);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setPadding(0, 0, 0, 0);
+        boolean z11 = org.telegram.messenger.gd.a0;
+        addView(textView2, c8.na.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 81, 35.0f, z11 ? 81 : 21, 0.0f));
+        setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public final void d() {
-        this.K = false;
+    @Override // org.telegram.messenger.y5
+    public final void C(boolean z10) {
+        a(false);
     }
 
-    @Override // org.telegram.messenger.gs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        EditTextBoldCursor[] editTextBoldCursorArr;
-        if (!this.J || (editTextBoldCursorArr = this.d) == null) {
-            return;
-        }
-        if (i7 == org.telegram.messenger.ls.j4) {
-            editTextBoldCursorArr[0].setText("" + objArr[0]);
-            h(null);
-            return;
-        }
-        if (i7 == org.telegram.messenger.ls.k4) {
-            String str = "" + objArr[0];
-            if (org.telegram.messenger.g0.x(this.O, str)) {
-                this.I = true;
-                this.d[0].setText(str);
-                this.I = false;
-                h(null);
-            }
-        }
+    @Override // org.telegram.messenger.y5
+    public final void N(String str) {
+        this.d.e(true, 1.0f);
+        a(true);
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public final void f() {
-        int i7 = this.M;
-        if (i7 == 2) {
-            org.telegram.messenger.g0.C3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.j4);
-        } else if (i7 == 3) {
-            org.telegram.messenger.g0.B3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
-        }
-        this.J = false;
-        r();
-        q();
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void h(String str) {
-        int i7;
-        if (this.K) {
-            return;
-        }
-        String code = getCode();
-        if (TextUtils.isEmpty(code)) {
-            org.telegram.messenger.g0.D3(this.c);
-            return;
-        }
-        this.K = true;
-        int i10 = this.M;
-        if (i10 == 2) {
-            org.telegram.messenger.g0.C3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.j4);
-        } else if (i10 == 3) {
-            org.telegram.messenger.g0.B3(false);
-            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
-        }
-        this.J = false;
-        hk0 hk0Var = this.R;
-        hk0Var.R1(true, true);
-        TL_account.verifyPhone verifyphone = new TL_account.verifyPhone();
-        verifyphone.phone_number = this.a;
-        verifyphone.phone_code = code;
-        verifyphone.phone_code_hash = this.b;
-        r();
-        hk0Var.C1();
-        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(verifyphone, new e00(16, this, verifyphone), 2);
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void j() {
-        LinearLayout linearLayout = this.c;
-        if (linearLayout == null || linearLayout.getVisibility() != 0) {
-            return;
-        }
-        for (int length = this.d.length - 1; length >= 0; length--) {
-            if (length == 0 || this.d[length].length() != 0) {
-                this.d[length].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = this.d[length];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                org.telegram.messenger.g0.I3(this.d[length]);
-                return;
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void m(Bundle bundle, boolean z10) {
+    public final void a(boolean z10) {
         int i7;
         int i10;
-        if (bundle == null) {
+        int i11;
+        int i12;
+        String r10 = org.telegram.messenger.w7.r(null, this.f);
+        org.telegram.messenger.w7.G(org.telegram.messenger.i10.t0);
+        boolean exists = org.telegram.messenger.w7.I(this.f).exists();
+        boolean isEmpty = TextUtils.isEmpty(r10);
+        org.telegram.ui.Components.rh0 rh0Var = this.d;
+        if (isEmpty) {
+            rh0Var.d(null, false, false);
             return;
         }
-        this.J = true;
-        int i11 = this.M;
-        if (i11 == 2) {
-            org.telegram.messenger.g0.C3(true);
-            org.telegram.messenger.ls.e().b(this, org.telegram.messenger.ls.j4);
-        } else if (i11 == 3) {
-            org.telegram.messenger.g0.B3(true);
-            org.telegram.messenger.ls.e().b(this, org.telegram.messenger.ls.k4);
-        }
-        this.a = bundle.getString("phone");
-        this.b = bundle.getString("phoneHash");
-        int i12 = bundle.getInt("timeout");
-        this.E = i12;
-        this.Q = i12;
-        this.N = bundle.getInt("nextType");
-        this.O = bundle.getString("pattern");
-        int i13 = bundle.getInt("length");
-        this.P = i13;
-        if (i13 == 0) {
-            this.P = 5;
-        }
-        EditTextBoldCursor[] editTextBoldCursorArr = this.d;
-        CharSequence charSequence = "";
-        if (editTextBoldCursorArr != null && editTextBoldCursorArr.length == this.P) {
-            int i14 = 0;
-            while (true) {
-                EditTextBoldCursor[] editTextBoldCursorArr2 = this.d;
-                if (i14 >= editTextBoldCursorArr2.length) {
-                    break;
-                }
-                editTextBoldCursorArr2[i14].setText("");
-                i14++;
-            }
-        } else {
-            this.d = new EditTextBoldCursor[this.P];
-            final int i15 = 0;
-            while (i15 < this.P) {
-                this.d[i15] = new EditTextBoldCursor(getContext());
-                EditTextBoldCursor editTextBoldCursor = this.d[i15];
-                int i16 = org.telegram.ui.ActionBar.m6.G6;
-                org.telegram.ui.ActionBar.t6.U(editTextBoldCursor, i16, null);
-                org.telegram.ui.ActionBar.t6.v(this.d[i15], i16, null);
-                this.d[i15].setCursorSize(org.telegram.messenger.g0.L(20.0f));
-                this.d[i15].setCursorWidth(1.5f);
-                Drawable mutate = getResources().getDrawable(R.drawable.search_dark_activated).mutate();
-                org.telegram.ui.ActionBar.t6.x(this, mutate, org.telegram.ui.ActionBar.m6.l6, null, PorterDuff.Mode.MULTIPLY);
-                this.d[i15].setBackgroundDrawable(mutate);
-                this.d[i15].setImeOptions(268435461);
-                this.d[i15].setTextSize(1, 20.0f);
-                this.d[i15].setMaxLines(1);
-                this.d[i15].setTypeface(org.telegram.messenger.g0.o());
-                this.d[i15].setPadding(0, 0, 0, 0);
-                this.d[i15].setGravity(49);
-                if (i11 == 3) {
-                    this.d[i15].setEnabled(false);
-                    this.d[i15].setInputType(0);
-                    this.d[i15].setVisibility(8);
-                } else {
-                    this.d[i15].setInputType(3);
-                }
-                this.c.addView(this.d[i15], c8.ma.t(34, 36, 1, 0, 0, i15 != this.P - 1 ? 7 : 0, 0));
-                this.d[i15].addTextChangedListener(new bk0(this, i15));
-                this.d[i15].setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.ak0
-                    @Override // android.view.View.OnKeyListener
-                    public final boolean onKey(View view, int i17, KeyEvent keyEvent) {
-                        dk0 dk0Var = dk0.this;
-                        if (i17 != 67) {
-                            dk0Var.getClass();
-                            return false;
-                        }
-                        EditTextBoldCursor[] editTextBoldCursorArr3 = dk0Var.d;
-                        int i18 = i15;
-                        if (editTextBoldCursorArr3[i18].length() != 0 || i18 <= 0) {
-                            return false;
-                        }
-                        int i19 = i18 - 1;
-                        EditTextBoldCursor editTextBoldCursor2 = dk0Var.d[i19];
-                        editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                        dk0Var.d[i19].requestFocus();
-                        dk0Var.d[i19].dispatchKeyEvent(keyEvent);
-                        return true;
-                    }
-                });
-                this.d[i15].setOnEditorActionListener(new fa(this, 9));
-                i15++;
-            }
-        }
-        ek0 ek0Var = this.s;
-        if (ek0Var != null) {
-            ek0Var.setVisibility(this.N != 0 ? 0 : 8);
-        }
-        if (this.a == null) {
-            return;
-        }
-        String h = org.telegram.messenger.o10.h(new StringBuilder("+"), this.a, pf.b.c());
-        if (i11 == 2) {
-            charSequence = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentSmsCode", null, 2131745371, org.telegram.messenger.hd.a(h)));
-        } else if (i11 == 3) {
-            charSequence = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentCallCode", null, 2131745374, org.telegram.messenger.hd.a(h)));
-        } else if (i11 == 4) {
-            charSequence = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentCallOnly", null, 2131745373, org.telegram.messenger.hd.a(h)));
-        }
-        this.e.setText(charSequence);
-        if (i11 != 3) {
-            org.telegram.messenger.g0.I3(this.d[0]);
-            this.d[0].requestFocus();
-        } else {
-            org.telegram.messenger.g0.v1(this.d[0]);
-        }
-        r();
-        q();
-        this.G = System.currentTimeMillis();
-        nb0 nb0Var = this.r;
-        nb0 nb0Var2 = this.n;
-        if (i11 == 3) {
-            int i17 = this.N;
-            i7 = 2;
-            if (i17 == 4 || i17 == 2) {
-                nb0Var.setVisibility(8);
-                nb0Var2.setVisibility(0);
-                int i18 = this.N;
-                if (i18 == 4) {
-                    nb0Var2.setText(org.telegram.messenger.hd.a0("CallText", null, 2131752589, 1, 0));
-                } else if (i18 == 2) {
-                    nb0Var2.setText(org.telegram.messenger.hd.a0("SmsText", null, 2131745099, 1, 0));
-                }
-                p();
+        org.telegram.messenger.yv yvVar = this.f;
+        String str = yvVar.c;
+        fk0 fk0Var = this.n;
+        if (str != null) {
+            if (yvVar.d != null) {
+                i12 = ((org.telegram.ui.ActionBar.g2) fk0Var).currentAccount;
+                org.telegram.messenger.a6.q(i12).v(this);
+                rh0Var.d(null, false, z10);
+                this.e = -1;
                 return;
             }
-        } else {
-            i7 = 2;
-        }
-        if (i11 == i7) {
-            int i19 = this.N;
-            i10 = 0;
-            if (i19 == 4 || i19 == 3) {
-                Object[] objArr = new Object[i7];
-                objArr[0] = 2;
-                objArr[1] = 0;
-                nb0Var2.setText(org.telegram.messenger.hd.a0("CallText", null, 2131752589, objArr));
-                nb0Var.setVisibility(this.E < 1000 ? 0 : 8);
-                nb0Var2.setVisibility(this.E < 1000 ? 8 : 0);
-                p();
-                return;
-            }
-        } else {
-            i10 = 0;
-        }
-        if (i11 != 4 || this.N != 2) {
-            nb0Var2.setVisibility(8);
-            nb0Var.setVisibility(8);
-            o();
+            i11 = ((org.telegram.ui.ActionBar.g2) fk0Var).currentAccount;
+            org.telegram.messenger.a6.q(i11).a(this.f.c, null, this);
+            this.e = 1;
+            Float w10 = org.telegram.messenger.ec.D().w(this.f.c);
+            rh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+            rh0Var.e(false, w10 != null ? w10.floatValue() : 0.0f);
+            invalidate();
             return;
         }
-        Object[] objArr2 = new Object[2];
-        objArr2[i10] = 2;
-        objArr2[1] = 0;
-        nb0Var2.setText(org.telegram.messenger.hd.a0("SmsText", null, 2131745099, objArr2));
-        nb0Var.setVisibility(this.E < 1000 ? i10 : 8);
-        nb0Var2.setVisibility(this.E < 1000 ? 8 : i10);
-        p();
-    }
-
-    public final void o() {
-        if (this.x != null) {
+        if (exists) {
+            i10 = ((org.telegram.ui.ActionBar.g2) fk0Var).currentAccount;
+            org.telegram.messenger.a6.q(i10).v(this);
+            this.e = -1;
+            rh0Var.d(null, false, z10);
+            invalidate();
             return;
         }
-        this.F = 15000;
-        this.x = new Timer();
-        this.H = System.currentTimeMillis();
-        this.x.schedule(new h6.r(this, 4), 0L, 1000L);
+        i7 = ((org.telegram.ui.ActionBar.g2) fk0Var).currentAccount;
+        org.telegram.messenger.a6.q(i7).a(r10, null, this);
+        this.e = 1;
+        Float w11 = org.telegram.messenger.ec.D().w(r10);
+        rh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+        rh0Var.e(z10, w11 != null ? w11.floatValue() : 0.0f);
+        invalidate();
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (view == this.c) {
+            this.d.a(canvas);
+        }
+        return drawChild;
+    }
+
+    @Override // org.telegram.messenger.y5
+    public int getObserverTag() {
+        return this.h;
+    }
+
+    @Override // org.telegram.messenger.y5
+    public final void i(long j3, long j10) {
+        this.d.e(true, Math.min(1.0f, j3 / j10));
+        if (this.e != 1) {
+            a(false);
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // org.telegram.messenger.y5
+    public final void o(long j3, long j10) {
+        this.d.e(true, Math.min(1.0f, j3 / j10));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        int i13;
         super.onLayout(z10, i7, i10, i11, i12);
-        if (this.M == 3 || this.h == null) {
-            return;
-        }
-        int bottom = this.e.getBottom();
-        int measuredHeight = getMeasuredHeight() - bottom;
-        nb0 nb0Var = this.r;
-        if (nb0Var.getVisibility() == 0) {
-            int measuredHeight2 = nb0Var.getMeasuredHeight();
-            i13 = (measuredHeight + bottom) - measuredHeight2;
-            nb0Var.layout(nb0Var.getLeft(), i13, nb0Var.getRight(), measuredHeight2 + i13);
-        } else {
-            nb0 nb0Var2 = this.n;
-            if (nb0Var2.getVisibility() == 0) {
-                int measuredHeight3 = nb0Var2.getMeasuredHeight();
-                i13 = (measuredHeight + bottom) - measuredHeight3;
-                nb0Var2.layout(nb0Var2.getLeft(), i13, nb0Var2.getRight(), measuredHeight3 + i13);
-            } else {
-                i13 = measuredHeight + bottom;
-            }
-        }
-        LinearLayout linearLayout = this.c;
-        int measuredHeight4 = linearLayout.getMeasuredHeight();
-        int e10 = i5.c.e(i13 - bottom, measuredHeight4, 2, bottom);
-        linearLayout.layout(linearLayout.getLeft(), e10, linearLayout.getRight(), measuredHeight4 + e10);
+        org.telegram.ui.Components.p9 p9Var = this.c;
+        int measuredWidth = ((p9Var.getMeasuredWidth() - org.telegram.messenger.g0.L(24.0f)) / 2) + p9Var.getLeft();
+        int measuredHeight = ((p9Var.getMeasuredHeight() - org.telegram.messenger.g0.L(24.0f)) / 2) + p9Var.getTop();
+        this.d.f(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(24.0f) + measuredWidth, org.telegram.messenger.g0.L(24.0f) + measuredHeight);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        ImageView imageView;
-        super.onMeasure(i7, i10);
-        if (this.M == 3 || (imageView = this.h) == null) {
-            return;
-        }
-        int L = org.telegram.messenger.g0.L(35.0f) + this.e.getMeasuredHeight() + this.f.getMeasuredHeight() + imageView.getMeasuredHeight();
-        int L2 = org.telegram.messenger.g0.L(80.0f);
-        int L3 = org.telegram.messenger.g0.L(291.0f);
-        hk0 hk0Var = this.R;
-        if (hk0Var.t0 - L < L2) {
-            setMeasuredDimension(getMeasuredWidth(), L + L2);
-        } else {
-            setMeasuredDimension(getMeasuredWidth(), Math.min(hk0Var.t0, L3));
-        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), org.telegram.messenger.m10.C(64.0f, 1, TLObject.FLAG_30));
     }
 
-    public final void p() {
-        if (this.w != null) {
-            return;
-        }
-        Timer timer = new Timer();
-        this.w = timer;
-        timer.schedule(new ck0(this), 0L, 1000L);
-    }
-
-    public final void q() {
-        try {
-            synchronized (this.y) {
-                try {
-                    Timer timer = this.x;
-                    if (timer != null) {
-                        timer.cancel();
-                        this.x = null;
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    public final void r() {
-        try {
-            synchronized (this.y) {
-                try {
-                    Timer timer = this.w;
-                    if (timer != null) {
-                        timer.cancel();
-                        this.w = null;
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    public final void s() {
-        int i7;
-        Bundle bundle = new Bundle();
-        bundle.putString("phone", this.a);
-        this.K = true;
-        hk0 hk0Var = this.R;
-        hk0Var.C1();
-        TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
-        tL_auth_resendCode.phone_number = this.a;
-        tL_auth_resendCode.phone_code_hash = this.b;
-        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_auth_resendCode, new z9(this, bundle, tL_auth_resendCode, 27), 2);
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void updateColors() {
-        try {
-            if (this.d == null) {
-                return;
-            }
-            int i7 = 0;
-            while (true) {
-                EditTextBoldCursor[] editTextBoldCursorArr = this.d;
-                if (i7 >= editTextBoldCursorArr.length) {
-                    return;
-                }
-                EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i7];
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
-                }
-                i7++;
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

@@ -1,19 +1,45 @@
 package j6;
 
-import com.google.android.gms.tasks.Task;
-import f3.k0;
+import android.os.Bundle;
+import android.os.Parcel;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class s extends com.google.android.gms.common.api.j {
-    public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("CastApi.API", new a9.e(6), new com.google.android.gms.common.api.d());
+public final class s extends a8.q implements e {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    public final Task f(String[] strArr) {
-        com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
-        b10.c = new k0(this, strArr);
-        b10.d = new n6.c[]{f6.y.b};
-        b10.b = false;
-        b10.a = 8425;
-        return e(0, b10.a());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s(int i7, TaskCompletionSource taskCompletionSource) {
+        super("com.google.android.gms.cast.internal.IBundleCallback", 1);
+        this.b = i7;
+        this.c = taskCompletionSource;
+    }
+
+    @Override // a8.q
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
+        if (i7 != 1) {
+            return false;
+        }
+        Bundle bundle = (Bundle) com.google.android.gms.internal.cast.t.a(parcel, Bundle.CREATOR);
+        com.google.android.gms.internal.cast.t.b(parcel);
+        y0(bundle);
+        return true;
+    }
+
+    @Override // j6.e
+    public final void y0(Bundle bundle) {
+        switch (this.b) {
+            case 0:
+                this.c.setResult(bundle);
+                break;
+            case 1:
+                this.c.setResult(bundle);
+                break;
+            default:
+                this.c.setResult(bundle);
+                break;
+        }
     }
 }

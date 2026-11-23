@@ -16,15 +16,15 @@ import android.view.ViewTreeObserver;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.u11;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.q30;
-import org.telegram.ui.uv;
-import org.telegram.ui.z40;
+import org.telegram.ui.p30;
+import org.telegram.ui.tv;
+import org.telegram.ui.y40;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class u2 extends View {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class u2 extends View {
                 this.c = new bg.a0(1, this);
                 break;
             default:
-                this.b = new te.a(this, nr.h, 320L);
+                this.b = new te.a(this, kr.h, 320L);
                 this.c = i5.c.g(context, R.drawable.outline_poll_emoji_24);
                 this.d = i5.c.g(context, R.drawable.input_keyboard);
                 break;
@@ -57,56 +57,56 @@ public final class u2 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 1:
-                v11 v11Var = (v11) this.d;
-                org.telegram.ui.Components.n6 n6Var = v11Var.e;
-                float i7 = n6Var.i();
+                u11 u11Var = (u11) this.d;
+                org.telegram.ui.Components.m6 m6Var = u11Var.e;
+                float i7 = m6Var.i();
                 if (i7 > 0.0f) {
                     float T1 = org.telegram.messenger.g0.T1(0.6f, 1.0f, i7);
-                    float max = Math.max(org.telegram.messenger.g0.L(16.66f), n6Var.c() + org.telegram.messenger.g0.L(10.0f));
+                    float max = Math.max(org.telegram.messenger.g0.L(16.66f), m6Var.c() + org.telegram.messenger.g0.L(10.0f));
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, 0.0f, max, getHeight());
                     canvas.save();
                     canvas.scale(T1, T1, rectF.centerX(), rectF.centerY());
                     float L = org.telegram.messenger.g0.L(8.33f);
                     float L2 = org.telegram.messenger.g0.L(8.33f);
-                    org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.b;
-                    h6Var.setColor(h6Var.b.a(org.telegram.ui.ActionBar.m6.w0(v11Var.J, h6Var.a), false));
-                    textColor = v11Var.getTextColor();
-                    h6Var.setColor(i0.a.f(v11Var.G, h6Var.getColor(), textColor));
-                    h6Var.setAlpha((int) (h6Var.getAlpha() * i7));
-                    canvas.drawRoundRect(rectF, L, L2, h6Var);
-                    n6Var.p(rectF);
-                    n6Var.C = (int) (i7 * 255.0f);
-                    n6Var.u(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.W8, (org.telegram.ui.ActionBar.h6) this.c));
-                    n6Var.draw(canvas);
+                    org.telegram.ui.Components.g6 g6Var = (org.telegram.ui.Components.g6) this.b;
+                    g6Var.setColor(g6Var.b.a(org.telegram.ui.ActionBar.n6.w0(u11Var.J, g6Var.a), false));
+                    textColor = u11Var.getTextColor();
+                    g6Var.setColor(i0.a.f(u11Var.G, g6Var.getColor(), textColor));
+                    g6Var.setAlpha((int) (g6Var.getAlpha() * i7));
+                    canvas.drawRoundRect(rectF, L, L2, g6Var);
+                    m6Var.p(rectF);
+                    m6Var.C = (int) (i7 * 255.0f);
+                    m6Var.u(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.W8, (org.telegram.ui.ActionBar.i6) this.c));
+                    m6Var.draw(canvas);
                     canvas.restore();
                 }
                 super.dispatchDraw(canvas);
                 break;
             case 2:
                 int[] iArr = (int[]) this.b;
-                uv uvVar = (uv) this.c;
-                q30 q30Var = (q30) this.d;
-                if (q30Var.h <= 0.0f || q30Var.d == null) {
+                tv tvVar = (tv) this.c;
+                p30 p30Var = (p30) this.d;
+                if (p30Var.h <= 0.0f || p30Var.d == null) {
                     canvas2 = canvas;
                 } else {
-                    q30Var.f.reset();
-                    float width = getWidth() / q30Var.c.getWidth();
-                    q30Var.f.postScale(width, width);
-                    q30Var.e.setLocalMatrix(q30Var.f);
-                    q30Var.d.setAlpha((int) (q30Var.h * 255.0f));
+                    p30Var.f.reset();
+                    float width = getWidth() / p30Var.c.getWidth();
+                    p30Var.f.postScale(width, width);
+                    p30Var.e.setLocalMatrix(p30Var.f);
+                    p30Var.d.setAlpha((int) (p30Var.h * 255.0f));
                     canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), q30Var.d);
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), p30Var.d);
                 }
-                if (uvVar != null) {
-                    if (!uvVar.isAttachedToWindow() || uvVar.getAlpha() <= 0.5f) {
-                        q30Var.dismiss();
+                if (tvVar != null) {
+                    if (!tvVar.isAttachedToWindow() || tvVar.getAlpha() <= 0.5f) {
+                        p30Var.dismiss();
                     } else {
-                        uvVar.getLocationInWindow(iArr);
+                        tvVar.getLocationInWindow(iArr);
                     }
                     canvas2.save();
-                    canvas2.translate(iArr[0] - ((1.0f - uvVar.getScaleX()) * uvVar.getMeasuredWidth()), iArr[1] - ((1.0f - uvVar.getScaleY()) * uvVar.getMeasuredHeight()));
-                    if (((g.b) uvVar.b).a(canvas2, uvVar.getMeasuredWidth(), q30Var.h)) {
+                    canvas2.translate(iArr[0] - ((1.0f - tvVar.getScaleX()) * tvVar.getMeasuredWidth()), iArr[1] - ((1.0f - tvVar.getScaleY()) * tvVar.getMeasuredHeight()));
+                    if (((g.b) tvVar.b).a(canvas2, tvVar.getMeasuredWidth(), p30Var.h)) {
                         invalidate();
                     }
                     canvas2.restore();
@@ -116,15 +116,15 @@ public final class u2 extends View {
             case 3:
                 super.dispatchDraw(canvas);
                 int L3 = org.telegram.messenger.g0.L(48.0f);
-                z40 z40Var = (z40) this.d;
-                int i10 = L3 + ((int) z40Var.b.f);
+                y40 y40Var = (y40) this.d;
+                int i10 = L3 + ((int) y40Var.b.f);
                 Paint paint = (Paint) this.c;
-                paint.setColor(z40Var.getThemedColor(org.telegram.ui.ActionBar.m6.s8));
+                paint.setColor(y40Var.getThemedColor(org.telegram.ui.ActionBar.n6.s8));
                 RectF rectF2 = (RectF) this.b;
                 float measuredWidth = getMeasuredWidth();
-                kVar = ((org.telegram.ui.ActionBar.g2) z40Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) y40Var).actionBar;
                 rectF2.set(0.0f, 0.0f, measuredWidth, kVar.getMeasuredHeight() + i10);
-                z40.f0(z40Var, canvas, rectF2, paint);
+                y40.f0(y40Var, canvas, rectF2, paint);
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -181,25 +181,25 @@ public final class u2 extends View {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                q80 q80Var = (q80) this.b;
+                n80 n80Var = (n80) this.b;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.d6 d6Var = (org.telegram.ui.Components.d6) this.c;
-                d6Var.a = this;
+                org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) this.c;
+                c6Var.a = this;
                 ((z3) this.d).getClass();
-                d6Var.e(false, 0.0f);
-                float f10 = d6Var.c;
+                c6Var.e(false, 0.0f);
+                float f10 = c6Var.c;
                 if (f10 != 0.0f) {
                     if (f10 != 1.0f) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight(), (int) (d6Var.c * 255.0f), 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight(), (int) (c6Var.c * 255.0f), 31);
                     } else {
                         canvas.save();
                     }
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight());
-                    q80Var.e(rectF);
-                    q80Var.k(24.0f);
-                    q80Var.g(i0.a.o(-1, 20), i0.a.o(-1, 50), i0.a.o(-1, 50), i0.a.o(-1, 70));
-                    q80Var.draw(canvas);
+                    n80Var.e(rectF);
+                    n80Var.k(24.0f);
+                    n80Var.g(i0.a.o(-1, 20), i0.a.o(-1, 50), i0.a.o(-1, 50), i0.a.o(-1, 70));
+                    n80Var.draw(canvas);
                     invalidate();
                     canvas.restore();
                     return;
@@ -291,7 +291,7 @@ public final class u2 extends View {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((v11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((u11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -332,17 +332,17 @@ public final class u2 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return ((v11) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((u11) this.d).e == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2(z40 z40Var, Context context) {
+    public u2(y40 y40Var, Context context) {
         super(context);
         this.a = 3;
-        this.d = z40Var;
+        this.d = y40Var;
         this.b = new RectF();
         this.c = new Paint(1);
     }
@@ -370,13 +370,13 @@ public final class u2 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2(v11 v11Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public u2(u11 u11Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.a = 1;
-        this.d = v11Var;
-        this.c = h6Var;
-        this.b = new org.telegram.ui.Components.h6(this, h6Var);
-        v11Var.e.setCallback(this);
+        this.d = u11Var;
+        this.c = i6Var;
+        this.b = new org.telegram.ui.Components.g6(this, i6Var);
+        u11Var.e.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -398,8 +398,8 @@ public final class u2 extends View {
         super(context);
         this.a = 0;
         this.d = z3Var;
-        this.b = new q80();
-        this.c = new org.telegram.ui.Components.d6(250L, nr.f);
+        this.b = new n80();
+        this.c = new org.telegram.ui.Components.c6(250L, kr.f);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -416,11 +416,11 @@ public final class u2 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2(q30 q30Var, Context context, uv uvVar) {
+    public u2(p30 p30Var, Context context, tv tvVar) {
         super(context);
         this.a = 2;
-        this.d = q30Var;
-        this.c = uvVar;
+        this.d = p30Var;
+        this.c = tvVar;
         this.b = new int[2];
     }
 }

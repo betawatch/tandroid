@@ -3,19 +3,19 @@ package ug;
 import android.view.ViewGroup;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.kc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.uv;
+import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -45,15 +45,15 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             case 2:
                 HashSet hashSet = k0Var.u2;
-                lc Y = lc.Y();
+                kc Y = kc.Y();
                 if (Y != null) {
-                    o10.u(hashSet.size() == 1 ? hd.a0(null, null, 2131748950, i5.p((TLRPC.User) hashSet.iterator().next())) : hd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), Y, R.raw.voip_invite, 36);
+                    m10.u(hashSet.size() == 1 ? gd.a0(null, null, 2131748950, i5.p((TLRPC.User) hashSet.iterator().next())) : gd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), Y, R.raw.voip_invite, 36);
                     break;
                 }
                 break;
             case 3:
                 hi.e eVar = k0Var.O2;
-                TLRPC.ChatFull P0 = np.u1(k0Var.a).P0(-k0Var.W1);
+                TLRPC.ChatFull P0 = mp.u1(k0Var.a).P0(-k0Var.W1);
                 eVar.c(Math.max(P0.boosts_unrestrict - P0.boosts_applied, 0), false);
                 break;
             default:
@@ -61,8 +61,8 @@ public final /* synthetic */ class v implements Runnable {
                     if (k0Var.A2.getParent() != null) {
                         ((ViewGroup) k0Var.A2.getParent()).removeView(k0Var.A2);
                     }
-                    uv uvVar = k0Var.H2;
-                    if (uvVar != null && uvVar.getParent() != null) {
+                    tv tvVar = k0Var.H2;
+                    if (tvVar != null && tvVar.getParent() != null) {
                         ((ViewGroup) k0Var.H2.getParent()).removeView(k0Var.H2);
                     }
                     k0Var.o1.setPadding(0, 0, 0, 0);

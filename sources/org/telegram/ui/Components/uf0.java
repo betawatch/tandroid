@@ -1,93 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
-import org.telegram.messenger.beta.R;
+import android.graphics.RectF;
+import android.os.Build;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class uf0 extends og0 {
-    public final Drawable R;
-    public final Drawable S;
-    public final xy0 T;
-    public xy0 U;
-    public final Paint V;
-    public final Path W;
-    public float a0;
-    public final DecimalFormat b0;
+public final class uf0 implements ui.a, si.a {
+    public final dh.c a;
 
-    public uf0(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.V = paint;
-        Path path = new Path();
-        this.W = path;
-        this.b0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
-        this.R = i5.c.g(context, R.drawable.profile_balance_gram);
-        this.S = i5.c.g(context, R.drawable.profile_balance_gram_color);
-        this.T = new xy0(org.telegram.messenger.hd.N0(2131744912, null) + ":", 11.0f, null);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.16f));
-        path.moveTo(0.0f, -org.telegram.messenger.g0.N(3.33f));
-        path.lineTo(org.telegram.messenger.g0.N(3.16f), 0.0f);
-        path.lineTo(0.0f, org.telegram.messenger.g0.N(3.33f));
-        setBalance(0L);
+    public uf0(dh.c cVar) {
+        this.a = cVar;
     }
 
-    @Override // org.telegram.ui.Components.og0
-    public final void b(Canvas canvas, float f10) {
-        float height = getHeight() / 2.0f;
-        canvas.translate(0.0f, (-org.telegram.messenger.g0.L(20.0f)) * this.a0);
-        float f11 = f10 * 0.85f;
-        this.T.c(0.0f, height, f11, this.F, canvas);
-        canvas.translate(this.T.k() + org.telegram.messenger.g0.L(4.0f), 0.0f);
-        Drawable drawable = (this.G || this.H >= 0.8f) ? this.S : this.R;
-        int L = org.telegram.messenger.g0.L(13.0f);
-        int i7 = ((int) height) - (L / 2);
-        drawable.setBounds(0, i7, L, i7 + L);
-        drawable.setAlpha((int) (255.0f * f10));
-        drawable.draw(canvas);
-        canvas.translate(org.telegram.messenger.g0.L(2.0f) + L, 0.0f);
-        this.U.c(0.0f, height, f10, this.F, canvas);
-        canvas.translate(org.telegram.messenger.g0.N(4.8f) + this.U.k(), height);
-        int r12 = org.telegram.ui.ActionBar.m6.r1(f11, this.F);
-        Paint paint = this.V;
-        paint.setColor(r12);
-        canvas.drawPath(this.W, paint);
+    @Override // si.a
+    public final int a() {
+        return ((si.a) b()).a();
     }
 
-    @Override // org.telegram.ui.Components.og0
-    public final float c(float f10) {
-        xy0 xy0Var = this.T;
-        xy0Var.p = -1.0f;
-        this.U.p = -1.0f;
-        float max = Math.max(0.0f, f10 - org.telegram.messenger.g0.L(43.0f));
-        xy0Var.p = Math.max(0.0f, max - this.U.k());
-        this.U.p = Math.max(0.0f, max - xy0Var.k());
-        return this.U.k() + xy0Var.k() + org.telegram.messenger.g0.L(27.0f);
+    public final ui.a b() {
+        ri.r f10 = ri.q.f();
+        boolean z10 = f10.a;
+        dh.c cVar = this.a;
+        return !z10 ? cVar.c : (!f10.b || Build.VERSION.SDK_INT < 33) ? cVar.b : cVar.a;
     }
 
-    public void setBalance(long j3) {
-        String format = this.b0.format(new BigDecimal(org.telegram.ui.Wallet.u0.u(j3, false)));
-        this.U = new xy0(format, 11.0f, org.telegram.messenger.g0.o());
-        setContentDescription(org.telegram.messenger.hd.N0(2131744912, null) + ": " + format);
-        invalidate();
+    @Override // si.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        ((si.a) b()).d(f10, f11, i7, canvas, rectF);
     }
 
-    public void setEjectProgress(float f10) {
-        if (this.a0 == f10) {
-            return;
-        }
-        this.a0 = f10;
-        invalidate();
+    @Override // si.a
+    public final int e() {
+        return ((si.a) b()).e();
+    }
+
+    @Override // si.a
+    public final int f() {
+        return ((si.a) b()).f();
+    }
+
+    @Override // si.a
+    public final boolean g() {
+        ui.a b10 = b();
+        return (b10 instanceof si.a) && ((si.a) b10).g();
+    }
+
+    @Override // ui.a
+    public final void z(float f10, float f11, float f12, float f13, Canvas canvas) {
+        b().z(f10, f11, f12, f13, canvas);
     }
 }

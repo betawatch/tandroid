@@ -1,71 +1,177 @@
 package k8;
 
-import android.content.Context;
+import a8.q;
+import a8.r7;
+import ai.h0;
+import android.location.Location;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import androidx.car.app.j;
-import c8.d1;
-import c8.j1;
-import c8.r9;
-import l8.d;
-import n6.f;
-import q6.m;
-import v7.e;
+import java.util.HashMap;
+import jb.m;
+import l8.e;
+import m8.f;
+import org.telegram.messenger.bb;
+import org.telegram.messenger.ca;
+import org.telegram.messenger.cb;
+import org.telegram.messenger.da;
+import org.telegram.messenger.fa;
+import org.telegram.messenger.j1;
+import org.telegram.messenger.o;
+import org.telegram.ui.Components.dl;
+import org.telegram.ui.Components.yk;
+import org.telegram.ui.z90;
+import v7.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static boolean a = false;
-    public static int b = 1;
+public final class b extends q {
+    public final /* synthetic */ int b = 1;
+    public final /* synthetic */ Object c;
 
-    public static synchronized int a(Context context) {
-        synchronized (b.class) {
-            try {
-                m.i(context, "Context is null");
-                Log.d("b", "preferredRenderer: ".concat("null"));
-                if (a) {
-                    return 0;
-                }
-                try {
-                    d a10 = j1.a(context);
-                    try {
-                        l8.a x12 = a10.x1();
-                        m.h(x12);
-                        d1.a = x12;
-                        e z12 = a10.z1();
-                        if (r9.a == null) {
-                            m.i(z12, "delegate must not be null");
-                            r9.a = z12;
-                        }
-                        a = true;
-                        try {
-                            Parcel o12 = a10.o1(a10.p1(), 9);
-                            int readInt = o12.readInt();
-                            o12.recycle();
-                            if (readInt == 2) {
-                                b = 2;
-                            }
-                            a7.b bVar = new a7.b(context);
-                            Parcel p12 = a10.p1();
-                            v7.b.c(p12, bVar);
-                            p12.writeInt(0);
-                            a10.t1(p12, 10);
-                        } catch (RemoteException e10) {
-                            Log.e("b", "Failed to retrieve renderer type or log initialization.", e10);
-                        }
-                        int i7 = b;
-                        Log.d("b", "loadedRenderer: ".concat(i7 != 1 ? i7 != 2 ? "null" : "LATEST" : "LEGACY"));
-                        return 0;
-                    } catch (RemoteException e11) {
-                        throw new j(e11);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(o oVar) {
+        super("com.google.android.gms.maps.internal.IOnMarkerClickListener", 12);
+        this.c = oVar;
+    }
+
+    @Override // a8.q
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
+        v7.a iVar;
+        e eVar;
+        switch (this.b) {
+            case 0:
+                if (i7 == 1) {
+                    IBinder readStrongBinder = parcel.readStrongBinder();
+                    if (readStrongBinder == null) {
+                        iVar = null;
+                    } else {
+                        IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IMarkerDelegate");
+                        iVar = queryLocalInterface instanceof v7.a ? (v7.a) queryLocalInterface : new i(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", 11);
                     }
-                } catch (f e12) {
-                    return e12.a;
+                    v7.b.a(parcel);
+                    o oVar = (o) this.c;
+                    f fVar = new f(iVar);
+                    da daVar = (da) oVar.b;
+                    cb cbVar = (cb) oVar.c;
+                    HashMap hashMap = daVar.b;
+                    if (((ca) hashMap.get(fVar)) == null) {
+                        hashMap.put(fVar, new ca(fVar));
+                    }
+                    cbVar.onClick();
+                    parcel2.writeNoException();
+                    parcel2.writeInt(1);
+                    break;
                 }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                break;
+            case 1:
+                if (i7 == 1) {
+                    IBinder readStrongBinder2 = parcel.readStrongBinder();
+                    if (readStrongBinder2 == null) {
+                        eVar = null;
+                    } else {
+                        IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("com.google.android.gms.maps.internal.IGoogleMapDelegate");
+                        eVar = queryLocalInterface2 instanceof e ? (e) queryLocalInterface2 : new e(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 11);
+                    }
+                    v7.b.a(parcel);
+                    fa faVar = (fa) this.c;
+                    m mVar = new m(eVar);
+                    r7 r7Var = faVar.a;
+                    q0.a aVar = faVar.b;
+                    da daVar2 = new da();
+                    daVar2.b = new HashMap();
+                    daVar2.c = new HashMap();
+                    daVar2.a = mVar;
+                    aVar.accept(daVar2);
+                    r7Var.u((h0) r7Var.b);
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 2:
+                if (i7 == 1) {
+                    a7.a m12 = a7.b.m1(parcel.readStrongBinder());
+                    v7.b.a(parcel);
+                    ((dl) ((j1) this.c).b).accept((Location) a7.b.n1(m12));
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 3:
+                if (i7 == 1) {
+                    ((yk) ((j1) this.c).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 4:
+                if (i7 == 1) {
+                    int readInt = parcel.readInt();
+                    v7.b.a(parcel);
+                    bb bbVar = (bb) ((j1) this.c).b;
+                    int i10 = 2;
+                    if (readInt != 2) {
+                        i10 = 3;
+                        if (readInt != 3) {
+                            i10 = 1;
+                        }
+                    }
+                    bbVar.b(i10);
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 5:
+                if (i7 == 1) {
+                    ((z90) ((j1) this.c).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            default:
+                if (i7 == 1) {
+                    ((yk) ((j1) this.c).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
         }
+        return true;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(j1 j1Var) {
+        super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 12);
+        this.c = j1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(j1 j1Var, byte b10) {
+        super("com.google.android.gms.maps.internal.IOnMapLoadedCallback", 12);
+        this.c = j1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(j1 j1Var, char c10) {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveStartedListener", 12);
+        this.c = j1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(j1 j1Var, int i7) {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveListener", 12);
+        this.c = j1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(j1 j1Var, short s5) {
+        super("com.google.android.gms.maps.internal.IOnCameraIdleListener", 12);
+        this.c = j1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(fa faVar) {
+        super("com.google.android.gms.maps.internal.IOnMapReadyCallback", 12);
+        this.c = faVar;
     }
 }

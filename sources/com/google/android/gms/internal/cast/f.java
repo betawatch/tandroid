@@ -3,9 +3,9 @@ package com.google.android.gms.internal.cast;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends a8.a {
     public final i6.e A1(a7.b bVar, g6.j jVar, int i7, int i10) {
@@ -18,7 +18,7 @@ public final class f extends a8.a {
         p12.writeInt(0);
         p12.writeLong(2097152L);
         p12.writeInt(5);
-        p12.writeInt(ls.E5);
+        p12.writeInt(ks.E5);
         p12.writeInt(10000);
         Parcel r12 = r1(p12, 6);
         IBinder readStrongBinder = r12.readStrongBinder();
@@ -44,7 +44,7 @@ public final class f extends a8.a {
         p12.writeInt(0);
         p12.writeLong(2097152L);
         p12.writeInt(5);
-        p12.writeInt(ls.E5);
+        p12.writeInt(ks.E5);
         p12.writeInt(10000);
         Parcel r12 = r1(p12, 7);
         IBinder readStrongBinder = r12.readStrongBinder();

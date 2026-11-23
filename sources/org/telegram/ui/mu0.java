@@ -1,34 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.view.View;
+import j$.util.function.Consumer$-CC;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mu0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final /* synthetic */ class mu0 implements Consumer {
+    public final /* synthetic */ ProfileActivity a;
 
-    public /* synthetic */ mu0(int i7, Runnable runnable) {
-        this.a = i7;
-        this.b = runnable;
+    public /* synthetic */ mu0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        Runnable runnable = this.b;
-        switch (i7) {
-            case 0:
-                RectF rectF = ProfileActivity.Z6;
-                runnable.run();
-                break;
-            default:
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ProfileActivity profileActivity = this.a;
+        HashSet hashSet = profileActivity.n5;
+        ArrayList arrayList = new ArrayList((HashSet) obj);
+        int i7 = 0;
+        while (i7 < arrayList.size()) {
+            if (profileActivity.getMessagesController().t7.f(profileActivity.f1, ((Integer) arrayList.get(i7)).intValue()) == null) {
+                arrayList.remove(i7);
+                i7--;
+            }
+            i7++;
         }
+        hashSet.clear();
+        hashSet.addAll(arrayList);
+        profileActivity.J5(true);
+    }
+
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

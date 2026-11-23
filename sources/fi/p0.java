@@ -2,33 +2,33 @@ package fi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class p0 extends n41 {
+public final class p0 extends m41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        n41.h(new p0());
+        m41.h(new p0());
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        ((q0) view).set((s0) o41Var.H);
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
+        ((q0) view).set((s0) n41Var.H);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
         return new q0(context);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean e(o41 o41Var, o41 o41Var2) {
-        return o41Var.H == o41Var2.H;
+    @Override // org.telegram.ui.Components.m41
+    public final boolean e(n41 n41Var, n41 n41Var2) {
+        return n41Var.H == n41Var2.H;
     }
 }

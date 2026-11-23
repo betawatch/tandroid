@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 0;
@@ -13,9 +13,9 @@ public final /* synthetic */ class wd implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ wd(ChatActivityEnterView chatActivityEnterView, tg tgVar, float f10, ChatActivityEnterView.RecordCircle recordCircle) {
+    public /* synthetic */ wd(ChatActivityEnterView chatActivityEnterView, sg sgVar, float f10, ChatActivityEnterView.RecordCircle recordCircle) {
         this.c = chatActivityEnterView;
-        this.d = tgVar;
+        this.d = sgVar;
         this.b = f10;
         this.e = recordCircle;
     }
@@ -30,52 +30,52 @@ public final /* synthetic */ class wd implements ValueAnimator.AnimatorUpdateLis
         switch (i7) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                tg tgVar = (tg) obj2;
+                sg sgVar = (sg) obj2;
                 ChatActivityEnterView.RecordCircle recordCircle = (ChatActivityEnterView.RecordCircle) obj;
                 int i10 = ChatActivityEnterView.s7;
                 chatActivityEnterView.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 chatActivityEnterView.L5 = floatValue;
-                float interpolation = nr.g.getInterpolation(Utilities.i((floatValue - 60.0f) / 170.0f, 1.0f, 0.0f));
+                float interpolation = kr.g.getInterpolation(Utilities.i((floatValue - 60.0f) / 170.0f, 1.0f, 0.0f));
                 float f11 = chatActivityEnterView.M5;
                 float i11 = Utilities.i((floatValue - f11) / Math.max(60.0f, chatActivityEnterView.N5 - f11), 1.0f, 0.0f);
-                tgVar.w = interpolation;
-                tgVar.x = i11;
-                tgVar.invalidate();
-                double radians = Math.toRadians(tgVar.g());
+                sgVar.w = interpolation;
+                sgVar.x = i11;
+                sgVar.invalidate();
+                double radians = Math.toRadians(sgVar.g());
                 chatActivityEnterView.F5.R = ((float) Math.sin(radians)) * f10;
                 chatActivityEnterView.F5.S = (1.0f - ((float) Math.cos(radians))) * f10;
                 float f12 = chatActivityEnterView.O5;
                 if (floatValue >= f12) {
                     float min = Math.min(1.0f, (floatValue - f12) / 260.0f);
-                    tgVar.y = min;
-                    tgVar.invalidate();
+                    sgVar.y = min;
+                    sgVar.invalidate();
                     chatActivityEnterView.u(min);
                 }
                 recordCircle.invalidate();
                 break;
             default:
                 sg.h hVar = (sg.h) obj;
-                sg.u0 u0Var = ((sg.v) obj3).a;
+                sg.t0 t0Var = ((sg.v) obj3).a;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                sg.j0 j0Var = new sg.j0(new sg.m0[]{(sg.m0) obj2});
+                sg.i0 i0Var = new sg.i0(new sg.l0[]{(sg.l0) obj2});
                 hVar.getClass();
-                j0Var.c = hVar instanceof sg.d ? -1 : u0Var.getCurrentColor();
-                j0Var.d = floatValue2 * f10;
-                j0Var.e = hVar;
-                sg.i0 painting = u0Var.getPainting();
+                i0Var.c = hVar instanceof sg.d ? -1 : t0Var.getCurrentColor();
+                i0Var.d = floatValue2 * f10;
+                i0Var.e = hVar;
+                sg.h0 painting = t0Var.getPainting();
                 if (painting.L == null) {
                     boolean z10 = true;
-                    painting.f.f(new fi.q5(painting, j0Var, z10, z10, null, 5));
+                    painting.f.f(new fi.q5(painting, i0Var, z10, z10, null, 5));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ wd(sg.v vVar, sg.m0 m0Var, sg.h hVar, float f10) {
+    public /* synthetic */ wd(sg.v vVar, sg.l0 l0Var, sg.h hVar, float f10) {
         this.c = vVar;
-        this.d = m0Var;
+        this.d = l0Var;
         this.e = hVar;
         this.b = f10;
     }

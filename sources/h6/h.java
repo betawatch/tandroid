@@ -8,7 +8,6 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.internal.cast.y;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -24,15 +23,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements f6.f {
     public static final j6.b k = new j6.b("RemoteMediaClient", null);
     public final Object a;
     public final y b;
-    public final j6.m c;
+    public final j6.n c;
     public final m d;
     public final c e;
     public f0 f;
@@ -42,19 +41,19 @@ public final class h implements f6.f {
     public final ConcurrentHashMap j;
 
     static {
-        String str = j6.m.v;
+        String str = j6.n.v;
     }
 
-    public h(j6.m mVar) {
+    public h(j6.n nVar) {
         new ConcurrentHashMap();
         this.j = new ConcurrentHashMap();
         this.a = new Object();
         this.b = new y(Looper.getMainLooper(), 0);
-        m mVar2 = new m(this);
-        this.d = mVar2;
-        this.c = mVar;
-        mVar.h = new d6.i(this, 27);
-        mVar.c = mVar2;
+        m mVar = new m(this);
+        this.d = mVar;
+        this.c = nVar;
+        nVar.h = new d6.i(this, 27);
+        nVar.c = mVar;
         this.e = new c(this);
     }
 
@@ -64,13 +63,13 @@ public final class h implements f6.f {
         return sVar;
     }
 
-    public static final void x(o oVar) {
+    public static final void x(p pVar) {
         try {
-            oVar.p();
+            pVar.p();
         } catch (IllegalArgumentException e10) {
             throw e10;
         } catch (Throwable unused) {
-            oVar.a(new n(new Status(2100, null, null, null), 1));
+            pVar.a(new n(new Status(2100, null, null, null), 1));
         }
     }
 
@@ -229,12 +228,12 @@ public final class h implements f6.f {
         int i10;
         f6.q qVar;
         int[] m10;
-        j6.m mVar = this.c;
-        String str2 = mVar.o;
-        j6.p pVar = mVar.n;
-        j6.p pVar2 = mVar.j;
-        List list = mVar.d;
-        j6.b bVar = mVar.a;
+        j6.n nVar = this.c;
+        String str2 = nVar.o;
+        j6.p pVar = nVar.n;
+        j6.p pVar2 = nVar.j;
+        List list = nVar.d;
+        j6.b bVar = nVar.a;
         bVar.b("message received: %s", str);
         String str3 = bVar.a;
         try {
@@ -248,21 +247,21 @@ public final class h implements f6.f {
                         switch (string.hashCode()) {
                             case -1830647528:
                                 if (string.equals("LOAD_CANCELLED")) {
-                                    pVar2.b(optLong, 2101, j6.m.f(jSONObject));
+                                    pVar2.b(optLong, 2101, j6.n.f(jSONObject));
                                     break;
                                 }
                                 break;
                             case -1790231854:
                                 if (string.equals("QUEUE_ITEMS")) {
-                                    mVar.s.b(optLong, 0, null);
-                                    mVar.h("QUEUE_ITEMS", jSONObject);
-                                    if (mVar.h != null) {
+                                    nVar.s.b(optLong, 0, null);
+                                    nVar.h("QUEUE_ITEMS", jSONObject);
+                                    if (nVar.h != null) {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         f6.o[] oVarArr = new f6.o[jSONArray.length()];
                                         for (int i11 = 0; i11 < jSONArray.length(); i11++) {
-                                            oVarArr[i11] = new ob.c(jSONArray.getJSONObject(i11)).C();
+                                            oVarArr[i11] = new ob.c(jSONArray.getJSONObject(i11)).v();
                                         }
-                                        Iterator it = ((h) mVar.h.b).i.iterator();
+                                        Iterator it = ((h) nVar.h.b).i.iterator();
                                         while (it.hasNext()) {
                                             ((g) it.next()).k(oVarArr);
                                         }
@@ -275,14 +274,14 @@ public final class h implements f6.f {
                                     Log.w(str3, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
                                     Iterator it2 = list.iterator();
                                     while (it2.hasNext()) {
-                                        ((j6.p) it2.next()).b(optLong, 2001, j6.m.f(jSONObject));
+                                        ((j6.p) it2.next()).b(optLong, 2001, j6.n.f(jSONObject));
                                     }
                                     break;
                                 }
                                 break;
                             case -262628938:
                                 if (string.equals("LOAD_FAILED")) {
-                                    pVar2.b(optLong, 2100, j6.m.f(jSONObject));
+                                    pVar2.b(optLong, 2100, j6.n.f(jSONObject));
                                     break;
                                 }
                                 break;
@@ -290,13 +289,13 @@ public final class h implements f6.f {
                                 if (string.equals("ERROR")) {
                                     Iterator it3 = list.iterator();
                                     while (it3.hasNext()) {
-                                        ((j6.p) it3.next()).b(optLong, 2100, j6.m.f(jSONObject));
+                                        ((j6.p) it3.next()).b(optLong, 2100, j6.n.f(jSONObject));
                                     }
-                                    if (mVar.h == null) {
+                                    if (nVar.h == null) {
                                         break;
                                     } else {
                                         MediaError b10 = MediaError.b(jSONObject);
-                                        Iterator it4 = ((h) mVar.h.b).i.iterator();
+                                        Iterator it4 = ((h) nVar.h.b).i.iterator();
                                         while (it4.hasNext()) {
                                             ((g) it4.next()).b(b10);
                                         }
@@ -306,17 +305,17 @@ public final class h implements f6.f {
                                 break;
                             case 154411710:
                                 if (string.equals("QUEUE_CHANGE")) {
-                                    mVar.t.b(optLong, 0, null);
-                                    mVar.h("QUEUE_CHANGE", jSONObject);
-                                    if (mVar.h != null) {
+                                    nVar.t.b(optLong, 0, null);
+                                    nVar.h("QUEUE_CHANGE", jSONObject);
+                                    if (nVar.h != null) {
                                         String string2 = jSONObject.getString("changeType");
-                                        int[] m11 = j6.m.m(jSONObject.getJSONArray("itemIds"));
+                                        int[] m11 = j6.n.m(jSONObject.getJSONArray("itemIds"));
                                         int optInt = jSONObject.optInt("insertBefore", 0);
                                         if (m11 != null) {
                                             switch (string2.hashCode()) {
                                                 case -2130463047:
                                                     if (string2.equals("INSERT")) {
-                                                        Iterator it5 = ((h) mVar.h.b).i.iterator();
+                                                        Iterator it5 = ((h) nVar.h.b).i.iterator();
                                                         while (it5.hasNext()) {
                                                             ((g) it5.next()).j(m11, optInt);
                                                         }
@@ -325,7 +324,7 @@ public final class h implements f6.f {
                                                     break;
                                                 case -1881281404:
                                                     if (string2.equals("REMOVE")) {
-                                                        Iterator it6 = ((h) mVar.h.b).i.iterator();
+                                                        Iterator it6 = ((h) nVar.h.b).i.iterator();
                                                         while (it6.hasNext()) {
                                                             ((g) it6.next()).l(m11);
                                                         }
@@ -334,22 +333,22 @@ public final class h implements f6.f {
                                                     break;
                                                 case -1785516855:
                                                     if (string2.equals("UPDATE")) {
-                                                        int[] m12 = j6.m.m(jSONObject.getJSONArray("itemIds"));
+                                                        int[] m12 = j6.n.m(jSONObject.getJSONArray("itemIds"));
                                                         q6.m.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
                                                         JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
                                                         if (optJSONArray != null) {
                                                             ArrayList c11 = j6.a.c(m12);
                                                             int optInt2 = jSONObject.optInt("insertBefore", 0);
-                                                            int[] m13 = j6.m.m(optJSONArray);
+                                                            int[] m13 = j6.n.m(optJSONArray);
                                                             q6.m.h(m13);
                                                             ArrayList c12 = j6.a.c(m13);
-                                                            Iterator it7 = ((h) mVar.h.b).i.iterator();
+                                                            Iterator it7 = ((h) nVar.h.b).i.iterator();
                                                             while (it7.hasNext()) {
                                                                 ((g) it7.next()).m(c11, c12, optInt2);
                                                             }
                                                             break;
                                                         } else {
-                                                            Iterator it8 = ((h) mVar.h.b).i.iterator();
+                                                            Iterator it8 = ((h) nVar.h.b).i.iterator();
                                                             while (it8.hasNext()) {
                                                                 ((g) it8.next()).i(m12);
                                                             }
@@ -359,7 +358,7 @@ public final class h implements f6.f {
                                                     break;
                                                 case 1122976047:
                                                     if (string2.equals("ITEMS_CHANGE")) {
-                                                        Iterator it9 = ((h) mVar.h.b).i.iterator();
+                                                        Iterator it9 = ((h) nVar.h.b).i.iterator();
                                                         while (it9.hasNext()) {
                                                             ((g) it9.next()).n(m11);
                                                         }
@@ -376,7 +375,7 @@ public final class h implements f6.f {
                                     Log.w(str3, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
                                     Iterator it10 = list.iterator();
                                     while (it10.hasNext()) {
-                                        ((j6.p) it10.next()).b(optLong, 2100, j6.m.f(jSONObject));
+                                        ((j6.p) it10.next()).b(optLong, 2100, j6.n.f(jSONObject));
                                     }
                                     break;
                                 }
@@ -391,46 +390,46 @@ public final class h implements f6.f {
                                             if (pVar.c(optLong)) {
                                             }
                                             i7 = 1;
-                                            if (!c13 && (qVar = mVar.f) != null) {
+                                            if (!c13 && (qVar = nVar.f) != null) {
                                                 i10 = qVar.b(jSONObject2, i7);
                                                 if ((i10 & 1) != 0) {
-                                                    mVar.e = SystemClock.elapsedRealtime();
-                                                    mVar.i = -1;
-                                                    mVar.l();
+                                                    nVar.e = SystemClock.elapsedRealtime();
+                                                    nVar.i = -1;
+                                                    nVar.l();
                                                 }
                                                 if ((i10 & 2) != 0) {
-                                                    mVar.e = SystemClock.elapsedRealtime();
-                                                    mVar.l();
+                                                    nVar.e = SystemClock.elapsedRealtime();
+                                                    nVar.l();
                                                 }
                                                 if ((i10 & 128) != 0) {
-                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    nVar.e = SystemClock.elapsedRealtime();
                                                 }
                                                 if ((i10 & 4) != 0) {
-                                                    mVar.i();
+                                                    nVar.i();
                                                 }
                                                 if ((i10 & 8) != 0) {
-                                                    mVar.k();
+                                                    nVar.k();
                                                 }
                                                 if ((i10 & 16) != 0) {
-                                                    mVar.j();
+                                                    nVar.j();
                                                 }
                                                 if ((i10 & 32) != 0) {
-                                                    mVar.e = SystemClock.elapsedRealtime();
-                                                    d6.i iVar = mVar.h;
+                                                    nVar.e = SystemClock.elapsedRealtime();
+                                                    d6.i iVar = nVar.h;
                                                     if (iVar != null) {
-                                                        iVar.I();
+                                                        iVar.L();
                                                     }
                                                 }
                                                 if ((i10 & 64) != 0) {
-                                                    mVar.e = SystemClock.elapsedRealtime();
-                                                    mVar.l();
+                                                    nVar.e = SystemClock.elapsedRealtime();
+                                                    nVar.l();
                                                 }
                                             }
                                             f6.q qVar2 = new f6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
                                             qVar2.b(jSONObject2, 0);
-                                            mVar.f = qVar2;
-                                            mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ls.L1;
+                                            nVar.f = qVar2;
+                                            nVar.e = SystemClock.elapsedRealtime();
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -471,9 +470,9 @@ public final class h implements f6.f {
                                             }
                                             f6.q qVar22 = new f6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
                                             qVar22.b(jSONObject2, 0);
-                                            mVar.f = qVar22;
-                                            mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ls.L1;
+                                            nVar.f = qVar22;
+                                            nVar.e = SystemClock.elapsedRealtime();
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -496,9 +495,9 @@ public final class h implements f6.f {
                                             }
                                             f6.q qVar222 = new f6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
                                             qVar222.b(jSONObject2, 0);
-                                            mVar.f = qVar222;
-                                            mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ls.L1;
+                                            nVar.f = qVar222;
+                                            nVar.e = SystemClock.elapsedRealtime();
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -517,11 +516,11 @@ public final class h implements f6.f {
                                             }
                                         }
                                     } else {
-                                        mVar.f = null;
-                                        mVar.l();
-                                        mVar.i();
-                                        mVar.k();
-                                        mVar.j();
+                                        nVar.f = null;
+                                        nVar.l();
+                                        nVar.i();
+                                        nVar.k();
+                                        nVar.j();
                                     }
                                     Iterator it11 = list.iterator();
                                     while (it11.hasNext()) {
@@ -532,10 +531,10 @@ public final class h implements f6.f {
                                 break;
                             case 2107149050:
                                 if (string.equals("QUEUE_ITEM_IDS")) {
-                                    mVar.r.b(optLong, 0, null);
-                                    mVar.h("QUEUE_ITEM_IDS", jSONObject);
-                                    if (mVar.h != null && (m10 = j6.m.m(jSONObject.getJSONArray("itemIds"))) != null) {
-                                        Iterator it12 = ((h) mVar.h.b).i.iterator();
+                                    nVar.r.b(optLong, 0, null);
+                                    nVar.h("QUEUE_ITEM_IDS", jSONObject);
+                                    if (nVar.h != null && (m10 = j6.n.m(jSONObject.getJSONArray("itemIds"))) != null) {
+                                        Iterator it12 = ((h) nVar.h.b).i.iterator();
                                         while (it12.hasNext()) {
                                             ((g) it12.next()).i(m10);
                                         }
@@ -639,7 +638,7 @@ public final class h implements f6.f {
         synchronized (e0Var.D) {
             e0Var.D.put(str, this);
         }
-        t b10 = u.b();
+        com.google.android.gms.common.api.internal.t b10 = u.b();
         b10.c = new a0(e0Var, str, this);
         b10.a = 8413;
         e0Var.e(1, b10.a());
@@ -669,7 +668,7 @@ public final class h implements f6.f {
             synchronized (e0Var2.D) {
                 fVar = (f6.f) e0Var2.D.remove(str);
             }
-            t b10 = u.b();
+            com.google.android.gms.common.api.internal.t b10 = u.b();
             b10.c = new a0(e0Var2, fVar, str);
             b10.a = 8414;
             e0Var2.e(1, b10.a());

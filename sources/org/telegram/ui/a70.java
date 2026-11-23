@@ -1,47 +1,84 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h60 b;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ a70(h60 h60Var, int i7) {
-        this.a = i7;
-        this.b = h60Var;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class a70 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ i50 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+
+    public /* synthetic */ a70(LaunchActivity launchActivity, i50 i50Var, int i7, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+        this.a = 0;
+        this.b = launchActivity;
+        this.d = i50Var;
+        this.c = i7;
+        this.i = authorizationform;
+        this.e = getauthorizationform;
+        this.f = str;
+        this.g = str2;
+        this.h = str3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i7 = this.a;
-        h60 h60Var = this.b;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.i;
         switch (i7) {
             case 0:
                 String str = LaunchActivity.C1;
-                try {
-                    h60Var.run();
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
+                org.telegram.messenger.g0.g3(new di.k8(this.b, this.d, tLObject, this.c, (TL_account.authorizationForm) obj5, (TL_account.getAuthorizationForm) obj4, (String) obj3, (String) obj2, (String) obj, 3));
+                break;
             case 1:
-                String str2 = LaunchActivity.C1;
-                try {
-                    h60Var.run();
+                int[] iArr = (int[]) obj5;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
+                String str2 = (String) obj3;
+                String str3 = (String) obj2;
+                String str4 = (String) obj;
+                String str5 = LaunchActivity.C1;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
+                LaunchActivity launchActivity = this.b;
+                i50 i50Var = this.d;
+                if (authorizationform == null) {
+                    org.telegram.messenger.g0.g3(new up(launchActivity, i50Var, tL_error, 15));
                     break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
+                } else {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    int i10 = this.c;
+                    iArr[0] = ConnectionsManager.getInstance(i10).sendRequest(getpassword, new a70(launchActivity, i50Var, i10, authorizationform, getauthorizationform, str2, str3, str4));
+                    break;
                 }
             default:
-                String str3 = LaunchActivity.C1;
-                try {
-                    h60Var.run();
-                    break;
-                } catch (Exception e12) {
-                    org.telegram.messenger.a8.g(e12, true);
-                }
+                String str6 = LaunchActivity.C1;
+                org.telegram.messenger.g0.g3(new di.k8(this.b, tLObject, (int[]) obj5, this.c, this.d, (Integer) obj4, (Integer) obj3, (Long) obj2, (Integer) obj, 2));
+                break;
         }
+    }
+
+    public /* synthetic */ a70(LaunchActivity launchActivity, int[] iArr, int i7, i50 i50Var, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
+        this.i = iArr;
+        this.c = i7;
+        this.d = i50Var;
+        this.e = obj;
+        this.f = obj2;
+        this.g = obj3;
+        this.h = obj4;
     }
 }

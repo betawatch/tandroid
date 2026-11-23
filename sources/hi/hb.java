@@ -1,79 +1,41 @@
 package hi;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class hb extends View implements m2 {
-    public Paint a;
-    public Paint b;
-    public org.telegram.ui.Components.n6 c;
-    public boolean d;
-    public org.telegram.ui.Components.d6 e;
+public final class hb extends ib {
+    public final /* synthetic */ fi.p g;
+    public final /* synthetic */ float h;
 
-    public final void a(long j3, boolean z10) {
-        long j10 = j3 % 60;
-        long j11 = (j3 - j10) / 60;
-        StringBuilder sb2 = new StringBuilder(5);
-        if (j11 < 10) {
-            sb2.append('0');
+    public hb(fi.p pVar, float f10) {
+        this.g = pVar;
+        this.h = f10;
+    }
+
+    @Override // hi.ib
+    public final void a(Canvas canvas, float f10) {
+        float pow = (float) Math.pow(f10, 16.0d);
+        fi.p pVar = this.g;
+        float f11 = this.h;
+        pVar.c(canvas, f11, f11, pow);
+    }
+
+    @Override // hi.ib
+    public final void e() {
+        fi.p pVar = this.g;
+        pVar.post(new fi.o(pVar, 1));
+    }
+
+    @Override // hi.ib
+    public final void f(boolean z10) {
+        fi.p pVar = this.g;
+        pVar.x = true;
+        pVar.invalidate();
+        if (z10) {
+            pVar.getLocationInWindow(new int[2]);
+            LaunchActivity.b0((pVar.getWidth() / 2.0f) + r6[0], (pVar.getHeight() / 2.0f) + r6[1], 1.0f);
         }
-        sb2.append(j11);
-        sb2.append(':');
-        if (j10 < 10) {
-            sb2.append('0');
-        }
-        sb2.append(j10);
-        this.c.t(sb2, z10, true);
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        this.d = z10;
-        if (!z11) {
-            this.e.e(true, z10 ? 1.0f : 0.0f);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        org.telegram.ui.Components.n6 n6Var = this.c;
-        super.onDraw(canvas);
-        float e10 = this.e.e(false, this.d ? 1.0f : 0.0f);
-        float L = org.telegram.messenger.g0.L(12.66f) * e10;
-        float c10 = n6Var.c() + L;
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(((getWidth() - c10) / 2.0f) - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(18.0f), ((getWidth() + c10) / 2.0f) + org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(40.0f));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), this.a);
-        if (e10 > 0.0f) {
-            paint.setAlpha((int) (Utilities.i((((float) Math.sin(((System.currentTimeMillis() % 2000) / 1000.0f) * 3.141592653589793d)) / 4.0f) + 0.75f, 1.0f, 0.0f) * 255.0f));
-            invalidate();
-            canvas.drawCircle(rectF.left + org.telegram.messenger.g0.L(10.66f), rectF.centerY(), org.telegram.messenger.g0.L(4.0f) * e10, paint);
-        }
-        n6Var.setBounds((int) (rectF.left + L), ((int) rectF.top) - org.telegram.messenger.g0.L(1.0f), (int) rectF.right, (int) rectF.bottom);
-        n6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(45.0f), TLObject.FLAG_30));
-    }
-
-    @Override // hi.m2
-    public void setInvert(float f10) {
-        this.a.setColor(i0.a.f(f10, 1056964608, TLObject.FLAG_28));
-        this.c.u(i0.a.f(f10, -1, -16777216));
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

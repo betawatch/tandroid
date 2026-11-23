@@ -1,26 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class kj extends v4.d0 {
-    public final /* synthetic */ kg.d0 r;
+public final class kj {
+    public final int a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kj(kg.d0 d0Var, Context context) {
-        super(context);
-        this.r = d0Var;
+    public kj(int i7, long j3) {
+        this.a = i7;
+        this.b = j3;
     }
 
-    @Override // v4.d0
-    public final int k(int i7, View view) {
-        return org.telegram.messenger.f3.B(8.0f, ((vj) this.r.V).s.getPaddingTop() - org.telegram.messenger.g0.m, super.k(i7, view));
+    public static kj a(Object obj) {
+        if (obj instanceof org.telegram.messenger.f5) {
+            return new kj(2, ((org.telegram.messenger.f5) obj).a);
+        }
+        if (obj instanceof TLRPC.User) {
+            return new kj(1, ((TLRPC.User) obj).id);
+        }
+        return null;
     }
 
-    @Override // v4.d0
-    public final int m(int i7) {
-        return super.m(i7) * 2;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || kj.class != obj.getClass()) {
+            return false;
+        }
+        kj kjVar = (kj) obj;
+        return this.b == kjVar.b && this.a == kjVar.a;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(p1.g.a(this.a), Long.valueOf(this.b));
     }
 }

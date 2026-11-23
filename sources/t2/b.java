@@ -1,6 +1,6 @@
 package t2;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.graphics.Point;
 import bg.o0;
@@ -14,7 +14,7 @@ import k2.j;
 import k2.l;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends l {
     public final Context o;
@@ -51,8 +51,8 @@ public final class b extends l {
         a aVar = (a) jVar;
         ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
-        la.p(byteBuffer.hasArray());
-        la.f(byteBuffer.arrayOffset() == 0);
+        ma.p(byteBuffer.hasArray());
+        ma.f(byteBuffer.arrayOffset() == 0);
         try {
             int i7 = this.p;
             if (i7 == -1) {

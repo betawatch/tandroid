@@ -1,25 +1,26 @@
 package n2;
 
-import android.os.Handler;
+import android.media.AudioTrack;
+import android.media.AudioTrack$StreamEventCallback;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class f0 {
-    public final Handler a;
-    public final e0 b;
-    public final /* synthetic */ g0 c;
+public final class f0 extends AudioTrack$StreamEventCallback {
+    public final /* synthetic */ g0 a;
 
     public f0(g0 g0Var) {
-        this.c = g0Var;
-        Handler q10 = h2.l0.q(null);
-        this.a = q10;
-        e0 e0Var = new e0(this);
-        this.b = e0Var;
-        g0Var.a.registerStreamEventCallback(new l2.d0(q10, 1), e0Var);
+        this.a = g0Var;
     }
 
-    public static void a(f0 f0Var) {
-        f0Var.c.a.unregisterStreamEventCallback(f0Var.b);
-        f0Var.a.removeCallbacksAndMessages(null);
+    public final void onDataRequest(AudioTrack audioTrack, int i7) {
+        this.a.c.j.e(-1, new a0(2));
+    }
+
+    public final void onPresentationEnded(AudioTrack audioTrack) {
+        this.a.c.j.e(-1, new a0(3));
+    }
+
+    public final void onTearDown(AudioTrack audioTrack) {
+        this.a.c.j.e(-1, new a0(2));
     }
 }

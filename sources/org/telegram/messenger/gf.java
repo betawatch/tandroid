@@ -1,32 +1,17 @@
 package org.telegram.messenger;
 
-import android.graphics.PointF;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class gf {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public int h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public int n;
-    public float o;
-    public h2.c p = new h2.c();
-    public float q;
-    public PointF r;
-    public float s;
-    public float t;
+    public final fj a;
+    public final float b;
+    public final int c;
+    public final int d;
 
-    public final boolean a() {
-        return Math.abs(this.a) < 0.1f && Math.abs(this.b) < 0.1f && Math.abs(this.c) < 0.1f && Math.abs(this.d) < 0.1f && Math.abs(this.e) < 0.1f && Math.abs(this.f) < 0.1f && Math.abs(this.g) < 0.1f && this.h == 0 && this.i == 0 && Math.abs(this.j) < 0.1f && Math.abs(this.k) < 0.1f && Math.abs(this.l) < 0.1f && Math.abs(this.m) < 0.1f && this.n == 0 && Math.abs(this.o) < 0.1f;
+    public gf(fj fjVar) {
+        this.a = fjVar;
+        this.b = fjVar.b0;
+        this.c = fjVar.d0;
+        this.d = fjVar.i0;
     }
 }

@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class tc {
     public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
-    public rq a;
+    public oq a;
     public final ArrayList b = new ArrayList();
     public int c;
     public boolean d;
@@ -27,7 +27,7 @@ public final class tc {
     public Runnable h;
     public boolean i;
     public Runnable j;
-    public final j6.o k;
+    public final rc k;
     public boolean l;
     public final CornerPathEffect m;
     public boolean n;
@@ -36,7 +36,7 @@ public final class tc {
     public tc(View view) {
         Paint paint = new Paint(1);
         this.g = paint;
-        this.k = new j6.o(this, 29);
+        this.k = new rc(this, 0);
         float L = org.telegram.messenger.g0.L(12.0f);
         this.f = view;
         CornerPathEffect cornerPathEffect = new CornerPathEffect(L);
@@ -50,7 +50,7 @@ public final class tc {
         Paint paint3 = new Paint(1);
         paint3.setFilterBitmap(true);
         paint3.setColor(-1);
-        org.telegram.ui.Cells.y yVar = new org.telegram.ui.Cells.y(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i6, false) & 436207615}), null, new sc(this, paint3));
+        org.telegram.ui.Cells.y yVar = new org.telegram.ui.Cells.y(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i6, false) & 436207615}), null, new sc(this, paint3));
         this.e = yVar;
         yVar.setCallback(view);
     }
@@ -71,7 +71,7 @@ public final class tc {
         int y10 = (int) motionEvent.getY();
         int action = motionEvent.getAction();
         View view = this.f;
-        j6.o oVar = this.k;
+        rc rcVar = this.k;
         org.telegram.ui.Cells.y yVar = this.e;
         if (action == 0) {
             for (int i7 = 0; i7 < this.c; i7++) {
@@ -83,9 +83,9 @@ public final class tc {
                         yVar.setHotspot(f10, f11);
                         yVar.setState(p);
                     }
-                    org.telegram.messenger.g0.r(oVar);
+                    org.telegram.messenger.g0.r(rcVar);
                     if (this.l) {
-                        org.telegram.messenger.g0.h3(oVar, ViewConfiguration.getLongPressTimeout());
+                        org.telegram.messenger.g0.h3(rcVar, ViewConfiguration.getLongPressTimeout());
                     }
                     view.invalidate();
                     return true;
@@ -103,7 +103,7 @@ public final class tc {
                 this.d = false;
                 view.invalidate();
             }
-            org.telegram.messenger.g0.r(oVar);
+            org.telegram.messenger.g0.r(rcVar);
         } else if (motionEvent.getAction() == 2 && this.d && yVar != null) {
             yVar.setHotspot(x10, y10);
         }
@@ -135,11 +135,11 @@ public final class tc {
             return;
         }
         if (!this.i) {
-            rq rqVar = this.a;
-            if (rqVar == null) {
-                this.a = new rq(0);
+            oq oqVar = this.a;
+            if (oqVar == null) {
+                this.a = new oq(0);
             } else {
-                rqVar.rewind();
+                oqVar.rewind();
             }
             int i11 = 0;
             int i12 = 0;
@@ -184,9 +184,9 @@ public final class tc {
             this.i = true;
         }
         paint.setPathEffect(cornerPathEffect);
-        rq rqVar2 = this.a;
-        if (rqVar2 != null) {
-            canvas.drawPath(rqVar2, paint);
+        oq oqVar2 = this.a;
+        if (oqVar2 != null) {
+            canvas.drawPath(oqVar2, paint);
         }
     }
 
@@ -194,7 +194,7 @@ public final class tc {
         this.g.setColor(i7);
         org.telegram.ui.Cells.y yVar = this.e;
         if (yVar != null) {
-            org.telegram.ui.ActionBar.m6.H1(yVar, i7, true);
+            org.telegram.ui.ActionBar.n6.H1(yVar, i7, true);
         }
     }
 

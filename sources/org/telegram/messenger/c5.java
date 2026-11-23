@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c5 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,8 +25,8 @@ public final /* synthetic */ class c5 implements Runnable {
                 Utilities.e.c(new c5(i5Var, this.c, this.d, 1));
                 if (!i5Var.e) {
                     i5Var.e = true;
-                    ur messagesStorage = i5Var.getMessagesStorage();
-                    messagesStorage.a.c(new zq(messagesStorage, false, 0));
+                    tr messagesStorage = i5Var.getMessagesStorage();
+                    messagesStorage.a.c(new yq(messagesStorage, false, 0));
                     break;
                 }
                 break;

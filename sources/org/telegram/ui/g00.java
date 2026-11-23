@@ -1,16 +1,54 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class g00 extends FrameLayout {
-    public org.telegram.ui.Components.rh0 a;
+public final class g00 extends rg.a {
+    public CharSequence c;
+    public org.telegram.messenger.ro d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof g00)) {
+            return false;
+        }
+        g00 g00Var = (g00) obj;
+        int i7 = g00Var.a;
+        int i10 = this.a;
+        if (i7 != i10) {
+            return false;
+        }
+        if ((i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6) && !TextUtils.equals(this.c, g00Var.c)) {
+            return false;
+        }
+        int i11 = this.a;
+        if (i11 == 2) {
+            org.telegram.messenger.ro roVar = this.d;
+            boolean z10 = roVar == null;
+            org.telegram.messenger.ro roVar2 = g00Var.d;
+            if (z10 != (roVar2 == null)) {
+                return false;
+            }
+            if (roVar != null && roVar.a != roVar2.a) {
+                return false;
+            }
+        }
+        if (i11 == 5) {
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = this.e;
+            boolean z11 = tL_dialogFilterSuggested == null;
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested2 = g00Var.e;
+            if (z11 != (tL_dialogFilterSuggested2 == null)) {
+                return false;
+            }
+            if (tL_dialogFilterSuggested != null && tL_dialogFilterSuggested.filter.id != tL_dialogFilterSuggested2.filter.id) {
+                return false;
+            }
+        }
+        return true;
     }
 }

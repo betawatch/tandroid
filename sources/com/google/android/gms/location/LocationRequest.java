@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.WorkSource;
 import android.util.Log;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.internal.vision.e2;
 import j7.b;
@@ -18,7 +18,7 @@ import u7.j;
 import u7.n;
 import x6.f;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new b(23);
@@ -242,38 +242,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
+        int r10 = cc.r(parcel, 20293);
         int i10 = this.a;
-        bc.q(parcel, 1, 4);
+        cc.q(parcel, 1, 4);
         parcel.writeInt(i10);
         long j3 = this.b;
-        bc.q(parcel, 2, 8);
+        cc.q(parcel, 2, 8);
         parcel.writeLong(j3);
         long j10 = this.c;
-        bc.q(parcel, 3, 8);
+        cc.q(parcel, 3, 8);
         parcel.writeLong(j10);
-        bc.q(parcel, 6, 4);
+        cc.q(parcel, 6, 4);
         parcel.writeInt(this.f);
-        bc.q(parcel, 7, 4);
+        cc.q(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        bc.q(parcel, 8, 8);
+        cc.q(parcel, 8, 8);
         parcel.writeLong(this.d);
-        bc.q(parcel, 9, 4);
+        cc.q(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        bc.q(parcel, 10, 8);
+        cc.q(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j11 = this.r;
-        bc.q(parcel, 11, 8);
+        cc.q(parcel, 11, 8);
         parcel.writeLong(j11);
-        bc.q(parcel, 12, 4);
+        cc.q(parcel, 12, 4);
         parcel.writeInt(this.s);
-        bc.q(parcel, 13, 4);
+        cc.q(parcel, 13, 4);
         parcel.writeInt(this.w);
-        bc.l(parcel, 14, this.x);
-        bc.q(parcel, 15, 4);
+        cc.l(parcel, 14, this.x);
+        cc.q(parcel, 15, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        bc.k(parcel, 16, this.E, i7);
-        bc.k(parcel, 17, this.F, i7);
-        bc.s(parcel, r10);
+        cc.k(parcel, 16, this.E, i7);
+        cc.k(parcel, 17, this.F, i7);
+        cc.s(parcel, r10);
     }
 }

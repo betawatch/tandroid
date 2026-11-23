@@ -1,15 +1,15 @@
 package y2;
 
-import a8.la;
+import a8.ma;
+import c8.t0;
 import e2.s0;
 import e2.u;
-import f3.i0;
+import f3.j0;
 import h2.x;
 import j2.b0;
-import sg.h0;
 import x2.c1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j extends a {
     public final int F;
@@ -27,27 +27,22 @@ public final class j extends a {
     }
 
     @Override // b3.m
-    public final void A() {
-        this.J = true;
-    }
-
-    @Override // b3.m
     public final void a() {
-        h0 h0Var = this.y;
-        h0Var.getClass();
+        s2.e eVar = this.y;
+        eVar.getClass();
         if (this.I == 0) {
             long j3 = this.G;
-            for (c1 c1Var : (c1[]) h0Var.c) {
+            for (c1 c1Var : (c1[]) eVar.c) {
                 if (c1Var.H != j3) {
                     c1Var.H = j3;
                     c1Var.B = true;
                 }
             }
-            e eVar = this.H;
+            e eVar2 = this.H;
             long j10 = this.w;
             long j11 = j10 == -9223372036854775807L ? -9223372036854775807L : j10 - this.G;
             long j12 = this.x;
-            eVar.b(h0Var, j11, j12 != -9223372036854775807L ? j12 - this.G : -9223372036854775807L);
+            eVar2.b(eVar, j11, j12 != -9223372036854775807L ? j12 - this.G : -9223372036854775807L);
         }
         try {
             j2.m b10 = this.b.b(this.I);
@@ -56,7 +51,7 @@ public final class j extends a {
             while (!this.J) {
                 try {
                     int f10 = this.H.a.f(lVar, e.w);
-                    la.p(f10 != 1);
+                    ma.p(f10 != 1);
                     if (!(f10 == 0)) {
                         break;
                     }
@@ -69,7 +64,7 @@ public final class j extends a {
             int i7 = uVar.R;
             int i10 = uVar.S;
             if (s0.k(str) && ((i7 > 1 || i10 > 1) && i7 != -1 && i10 != -1)) {
-                i0 f11 = h0Var.f(4);
+                j0 f11 = eVar.f(4);
                 int i11 = i7 * i10;
                 long j13 = (this.n - this.h) / i11;
                 for (int i12 = 1; i12 < i11; i12++) {
@@ -77,10 +72,10 @@ public final class j extends a {
                     f11.c(i12 * j13, 0, 0, 0, null);
                 }
             }
-            c8.s0.a(this.r);
+            t0.a(this.r);
             this.K = !this.J;
         } catch (Throwable th2) {
-            c8.s0.a(this.r);
+            t0.a(this.r);
             throw th2;
         }
     }
@@ -93,5 +88,10 @@ public final class j extends a {
     @Override // y2.l
     public final boolean c() {
         return this.K;
+    }
+
+    @Override // b3.m
+    public final void y() {
+        this.J = true;
     }
 }

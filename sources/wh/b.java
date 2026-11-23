@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import c8.l9;
+import c8.m9;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final a b;
@@ -20,7 +20,7 @@ public final class b extends Drawable {
     public int g;
     public int h;
     public final Paint a = new Paint(2);
-    public int i = ls.e4;
+    public int i = ks.e4;
 
     public b(a aVar) {
         this.b = aVar;
@@ -48,7 +48,7 @@ public final class b extends Drawable {
         this.d.translate(f11, f11);
         float f12 = 1.0f / f10;
         this.d.scale(f12, f12);
-        this.b.m(this.d, ls.e4);
+        this.b.j(this.d, ks.e4);
         Utilities.stackBlurBitmap(this.c, (int) f11);
         this.d.restore();
     }
@@ -60,7 +60,7 @@ public final class b extends Drawable {
         if (i7 == 255) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.m(canvas, ls.e4);
+            aVar.j(canvas, ks.e4);
             canvas.restore();
             return;
         }
@@ -71,8 +71,8 @@ public final class b extends Drawable {
         double d2 = d / ((1.0d - d) * 6.0d);
         double d10 = 1.0d + d2;
         double sqrt = ((-d10) + Math.sqrt((d10 * d10) - (((-d2) * 4.0d) * (-d)))) / ((-2.0d) * d2);
-        int b10 = l9.b((int) (d2 * sqrt * 255.0d), 0, ls.e4);
-        int b11 = l9.b((int) (sqrt * 255.0d), 0, ls.e4);
+        int b10 = m9.b((int) (d2 * sqrt * 255.0d), 0, ks.e4);
+        int b11 = m9.b((int) (sqrt * 255.0d), 0, ks.e4);
         if (b11 > 0 && this.c != null) {
             Paint paint = this.a;
             paint.setAlpha(b11);
@@ -88,7 +88,7 @@ public final class b extends Drawable {
         if (b10 > 0) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.m(canvas, b10);
+            aVar.j(canvas, b10);
             canvas.restore();
         }
     }

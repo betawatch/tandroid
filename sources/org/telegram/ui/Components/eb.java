@@ -1,75 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class eb extends lb {
-    private db button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.h6 resourcesProvider;
-    public zb timerView;
-    private boolean wrapWidth;
+public interface eb {
+    boolean a();
 
-    public eb(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.resourcesProvider = h6Var;
-    }
+    void b(fc fcVar);
 
-    public db getButton() {
-        return this.button;
-    }
+    void c(float f10);
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
-        db dbVar = this.button;
-        if (dbVar != null && view != dbVar) {
-            i10 = org.telegram.ui.Cells.c0.i(12.0f, dbVar.getMeasuredWidth(), i10);
-        }
-        super.measureChildWithMargins(view, i7, i10, i11, i12);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
+    void d(fc fcVar);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
-        }
-        super.onMeasure(i7, i10);
-        if (this.button == null || View.MeasureSpec.getMode(i7) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
+    boolean e();
 
-    public void setButton(db dbVar) {
-        db dbVar2 = this.button;
-        if (dbVar2 != null) {
-            removeCallback(dbVar2);
-            removeView(this.button);
-        }
-        this.button = dbVar;
-        if (dbVar != null) {
-            addCallback(dbVar);
-            addView(dbVar, 0, c8.ma.h(-2.0f, -2.0f, 8388629));
-        }
-    }
+    int f(int i7);
 
-    public void setTimer() {
-        zb zbVar = new zb(getContext(), this.resourcesProvider);
-        this.timerView = zbVar;
-        zbVar.b = 5000L;
-        addView(zbVar, c8.ma.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-    }
+    boolean g(int i7);
 
-    public void setWrapWidth() {
-        this.wrapWidth = true;
-    }
+    int h(int i7);
 }

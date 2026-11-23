@@ -1,69 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class m20 extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public abstract class m20 extends org.telegram.ui.ActionBar.w2 {
+    public c5.l m1;
+    public j20 n1;
+    public LinearLayout o1;
+    public TextView[] p1;
+    public float q1;
+    public int r1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m20(Object obj, Context context, int i7, int i10) {
-        super(context);
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                org.telegram.ui.f00 f00Var = (org.telegram.ui.f00) this.c;
-                q80 q80Var = f00Var.s;
-                if (f00Var.r) {
-                    int i7 = this.b / 2;
-                    q80Var.setBounds(i7, i7, getWidth() - i7, getHeight() - i7);
-                    q80Var.draw(canvas);
-                    break;
+    public static void J0(org.telegram.ui.f30 f30Var) {
+        TextView[] textViewArr = f30Var.p1;
+        int i7 = f30Var.r1;
+        TextView textView = textViewArr[i7];
+        TextView textView2 = i7 < textViewArr.length + (-1) ? textViewArr[i7 + 1] : null;
+        f30Var.b.getMeasuredWidth();
+        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
+        float measuredWidth2 = (f30Var.b.getMeasuredWidth() / 2) - measuredWidth;
+        if (textView2 != null) {
+            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * f30Var.q1;
+        }
+        for (int i10 = 0; i10 < textViewArr.length; i10++) {
+            int i11 = f30Var.r1;
+            float f10 = 0.9f;
+            float f11 = 0.7f;
+            if (i10 >= i11 && i10 <= i11 + 1) {
+                if (i10 == i11) {
+                    float f12 = f30Var.q1;
+                    f11 = 1.0f - (0.3f * f12);
+                    f10 = 1.0f - (f12 * 0.1f);
+                } else {
+                    float f13 = f30Var.q1;
+                    f11 = 0.7f + (0.3f * f13);
+                    f10 = 0.9f + (f13 * 0.1f);
                 }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+            }
+            textViewArr[i10].setAlpha(f11);
+            textViewArr[i10].setScaleX(f10);
+            textViewArr[i10].setScaleY(f10);
         }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((org.telegram.ui.g30) ((n20) this.c).d).m1.x(this.b, true);
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.f00) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
-        }
+        f30Var.o1.setTranslationX(measuredWidth2);
+        f30Var.n1.invalidate();
     }
 }

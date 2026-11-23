@@ -1,15 +1,15 @@
 package a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class q7 {
-    public abstract boolean a(c0.h hVar, c0.d dVar, c0.d dVar2);
-
-    public abstract boolean b(c0.h hVar, Object obj, Object obj2);
-
-    public abstract boolean c(c0.h hVar, c0.g gVar, c0.g gVar2);
-
-    public abstract void d(c0.g gVar, c0.g gVar2);
-
-    public abstract void e(c0.g gVar, Thread thread);
+    public static boolean a(float[] fArr) {
+        if (fArr != null && fArr.length == 8) {
+            float f10 = fArr[0];
+            if (f10 == fArr[1] && f10 == fArr[2] && f10 == fArr[3] && f10 == fArr[4] && f10 == fArr[5] && f10 == fArr[6] && f10 == fArr[7]) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

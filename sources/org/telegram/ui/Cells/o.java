@@ -7,14 +7,14 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -38,11 +38,11 @@ public final class o extends View {
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
         String V;
-        TLRPC.TL_availableReaction tL_availableReaction2 = p0Var.f != null ? (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(p0Var.f) : null;
+        TLRPC.TL_availableReaction tL_availableReaction2 = p0Var.f != null ? (TLRPC.TL_availableReaction) ri.d0(i10.t0).r.get(p0Var.f) : null;
         if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.p5.e(k10.t0, p0Var.g);
-            if (document != null && (V = gj.V(document, null, null)) != null) {
-                tL_availableReaction2 = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(V);
+            document = org.telegram.ui.Components.o5.e(i10.t0, p0Var.g);
+            if (document != null && (V = fj.V(document, null, null)) != null) {
+                tL_availableReaction2 = (TLRPC.TL_availableReaction) ri.d0(i10.t0).r.get(V);
             }
             tL_availableReaction = tL_availableReaction2;
         } else {
@@ -51,7 +51,7 @@ public final class o extends View {
         }
         ArrayList arrayList = this.e;
         if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.p5 m10 = document == null ? org.telegram.ui.Components.p5.m(2, p0Var.g, null, k10.t0) : org.telegram.ui.Components.p5.l(2, k10.t0, document);
+            org.telegram.ui.Components.o5 m10 = document == null ? org.telegram.ui.Components.o5.m(2, p0Var.g, null, i10.t0) : org.telegram.ui.Components.o5.l(2, i10.t0, document);
             if (this.n != null) {
                 m10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }
@@ -62,20 +62,20 @@ public final class o extends View {
             return;
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
-        imageReceiver.H0(this);
+        imageReceiver.I0(this);
         int i7 = this.d;
         this.d = i7 + 1;
         imageReceiver.w1 = Integer.toString(i7);
-        gc b10 = gc.b(tL_availableReaction.around_animation);
+        fc b10 = fc.b(tL_availableReaction.around_animation);
         StringBuilder sb2 = new StringBuilder();
         int i10 = this.b;
         sb2.append(i10);
         sb2.append("_");
         sb2.append(i10);
         sb2.append("_nolimit");
-        imageReceiver.q0(b10, sb2.toString(), null, "tgs", tL_availableReaction, 1);
-        imageReceiver.W(0);
-        imageReceiver.P();
+        imageReceiver.r0(b10, sb2.toString(), null, "tgs", tL_availableReaction, 1);
+        imageReceiver.X(0);
+        imageReceiver.Q();
         arrayList.add(imageReceiver);
         invalidate();
     }
@@ -101,7 +101,7 @@ public final class o extends View {
             if (obj instanceof ImageReceiver) {
                 ImageReceiver imageReceiver = (ImageReceiver) obj;
                 float f10 = L2;
-                imageReceiver.y0((getMeasuredWidth() - L2) / 2.0f, (getMeasuredHeight() - L2) / 2.0f, f10, f10);
+                imageReceiver.z0((getMeasuredWidth() - L2) / 2.0f, (getMeasuredHeight() - L2) / 2.0f, f10, f10);
                 imageReceiver.h(canvas, null);
             } else if (obj instanceof ch.d) {
                 ch.d dVar = (ch.d) obj;
@@ -127,7 +127,7 @@ public final class o extends View {
                 Object obj = arrayList.get(i7);
                 i7++;
                 if (obj instanceof ImageReceiver) {
-                    ((ImageReceiver) obj).R();
+                    ((ImageReceiver) obj).S();
                 } else if (obj instanceof ch.d) {
                     ((ch.d) obj).d(this);
                 }

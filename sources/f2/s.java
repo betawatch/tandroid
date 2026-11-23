@@ -1,12 +1,12 @@
 package f2;
 
-import a8.la;
+import a8.ma;
 import h2.l0;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s implements n {
     public int b;
@@ -29,7 +29,7 @@ public final class s implements n {
         if (this.o) {
             r rVar = this.j;
             if (rVar != null) {
-                la.p(rVar.k >= 0);
+                ma.p(rVar.k >= 0);
                 if (rVar.i.o() * rVar.k * rVar.b == 0) {
                 }
             }
@@ -44,7 +44,7 @@ public final class s implements n {
         if (rVar != null) {
             q qVar = rVar.i;
             int i7 = rVar.b;
-            la.p(rVar.k >= 0);
+            ma.p(rVar.k >= 0);
             int o4 = qVar.o() * rVar.k * i7;
             if (o4 > 0) {
                 if (this.k.capacity() < o4) {
@@ -53,7 +53,7 @@ public final class s implements n {
                     this.k.clear();
                 }
                 ByteBuffer byteBuffer = this.k;
-                la.p(rVar.k >= 0);
+                ma.p(rVar.k >= 0);
                 int min = Math.min(byteBuffer.remaining() / (qVar.o() * i7), rVar.k);
                 qVar.b(min, byteBuffer);
                 rVar.k -= min;

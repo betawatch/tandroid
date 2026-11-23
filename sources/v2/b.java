@@ -1,10 +1,10 @@
 package v2;
 
-import a8.la;
+import a8.ma;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import c8.da;
+import c8.ea;
 import e2.n0;
 import e2.o0;
 import e2.p0;
@@ -14,29 +14,29 @@ import h2.l0;
 import h2.r;
 import i5.c;
 import java.util.ArrayList;
-import kg.x1;
-import l2.f0;
-import l2.z;
-import x2.g0;
+import jb.m;
+import kg.f1;
+import l2.a0;
+import l2.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends l2.b implements Handler.Callback {
     public final a J;
-    public final z K;
+    public final a0 K;
     public final Handler L;
     public final o3.a M;
-    public da N;
+    public ea N;
     public boolean O;
     public boolean P;
     public long Q;
     public q0 R;
     public long S;
 
-    public b(z zVar, Looper looper) {
+    public b(a0 a0Var, Looper looper) {
         super(5);
         Handler handler;
-        this.K = zVar;
+        this.K = a0Var;
         if (looper == null) {
             handler = null;
         } else {
@@ -68,7 +68,7 @@ public final class b extends l2.b implements Handler.Callback {
             if (a10 != null) {
                 a aVar = this.J;
                 if (aVar.b(a10)) {
-                    da a11 = aVar.a(a10);
+                    ea a11 = aVar.a(a10);
                     byte[] c10 = p0VarArr[i7].c();
                     c10.getClass();
                     o3.a aVar2 = this.M;
@@ -89,16 +89,16 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     public final long G(long j3) {
-        la.p(j3 != -9223372036854775807L);
-        la.p(this.S != -9223372036854775807L);
+        ma.p(j3 != -9223372036854775807L);
+        ma.p(this.S != -9223372036854775807L);
         return j3 - this.S;
     }
 
     public final void H(q0 q0Var) {
-        z zVar = this.K;
-        f0 f0Var = zVar.a;
-        o0 o0Var = f0Var.o0;
-        r rVar = f0Var.m;
+        a0 a0Var = this.K;
+        g0 g0Var = a0Var.a;
+        o0 o0Var = g0Var.o0;
+        r rVar = g0Var.m;
         n0 a10 = o0Var.a();
         int i7 = 0;
         while (true) {
@@ -109,13 +109,13 @@ public final class b extends l2.b implements Handler.Callback {
             p0VarArr[i7].b(a10);
             i7++;
         }
-        f0Var.o0 = new o0(a10);
-        o0 f12 = f0Var.f1();
-        if (!f12.equals(f0Var.Q)) {
-            f0Var.Q = f12;
-            rVar.c(14, new x1(zVar, 8));
+        g0Var.o0 = new o0(a10);
+        o0 f12 = g0Var.f1();
+        if (!f12.equals(g0Var.Q)) {
+            g0Var.Q = f12;
+            rVar.c(14, new f1(a0Var, 10));
         }
-        rVar.c(28, new x1(q0Var, 9));
+        rVar.c(28, new f1(q0Var, 11));
         rVar.b();
     }
 
@@ -134,7 +134,7 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     @Override // l2.b
-    public final boolean l() {
+    public final boolean k() {
         return this.P;
     }
 
@@ -158,7 +158,7 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     @Override // l2.b
-    public final void u(u[] uVarArr, long j3, long j10, g0 g0Var) {
+    public final void u(u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
         this.N = this.J.a(uVarArr[0]);
         q0 q0Var = this.R;
         if (q0Var != null) {
@@ -179,18 +179,18 @@ public final class b extends l2.b implements Handler.Callback {
             if (!this.O && this.R == null) {
                 o3.a aVar = this.M;
                 aVar.clear();
-                k8.a aVar2 = this.c;
-                aVar2.g0();
-                int w10 = w(aVar2, aVar, 0);
+                m mVar = this.c;
+                mVar.T();
+                int w10 = w(mVar, aVar, 0);
                 if (w10 == -4) {
                     if (aVar.isEndOfStream()) {
                         this.O = true;
                     } else if (aVar.e >= this.x) {
                         aVar.r = this.Q;
                         aVar.c();
-                        da daVar = this.N;
+                        ea eaVar = this.N;
                         String str = l0.a;
-                        q0 a10 = daVar.a(aVar);
+                        q0 a10 = eaVar.a(aVar);
                         if (a10 != null) {
                             ArrayList arrayList = new ArrayList(a10.a.length);
                             F(a10, arrayList);
@@ -200,7 +200,7 @@ public final class b extends l2.b implements Handler.Callback {
                         }
                     }
                 } else if (w10 == -5) {
-                    u uVar = (u) aVar2.c;
+                    u uVar = (u) mVar.c;
                     uVar.getClass();
                     this.Q = uVar.x;
                 }

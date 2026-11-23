@@ -3,14 +3,14 @@ package gh;
 import e2.a1;
 import h2.j;
 import h2.o;
-import org.telegram.ui.ActionBar.h6;
-import p4.d0;
-import p4.i1;
+import org.telegram.ui.ActionBar.i6;
+import p4.c0;
+import p4.h1;
 import p4.u;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements d, o, d0, j {
+public final /* synthetic */ class c implements d, o, c0, j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -25,17 +25,22 @@ public final /* synthetic */ class c implements d, o, d0, j {
     public void accept(Object obj) {
         switch (this.a) {
             case 4:
-                ((i1) obj).M(this.b, this.c);
+                ((h1) obj).N(this.b, this.c);
                 break;
             default:
-                ((i1) obj).t0(this.b, this.c);
+                ((h1) obj).u0(this.b, this.c);
                 break;
         }
     }
 
-    @Override // p4.d0
+    @Override // p4.c0
     public void b(u uVar, int i7) {
         uVar.d(i7, this.b, this.c);
+    }
+
+    @Override // gh.d
+    public int f(i6 i6Var, boolean z10) {
+        return z10 ? this.b : this.c;
     }
 
     @Override // h2.o
@@ -48,10 +53,5 @@ public final /* synthetic */ class c implements d, o, d0, j {
                 ((a1) obj).J(this.b, this.c);
                 break;
         }
-    }
-
-    @Override // gh.d
-    public int j(h6 h6Var, boolean z10) {
-        return z10 ? this.b : this.c;
     }
 }

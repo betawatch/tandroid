@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.telegram.ui.Wallet.h1;
+import org.telegram.ui.Wallet.i1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a0 extends z {
     public final LinkedList b;
@@ -30,20 +30,20 @@ public final class a0 extends z {
             v vVar = new v(39, "An uncaught throwable was detected in the writing thread: " + th2.getMessage(), th2);
             ab.q qVar = this.a.d;
             qVar.d(vVar);
-            ArrayList arrayList = (ArrayList) qVar.p();
+            ArrayList arrayList = (ArrayList) qVar.q();
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     } catch (Throwable unused) {
                     }
                 } catch (Throwable unused2) {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 }
             }
         }
@@ -63,18 +63,18 @@ public final class a0 extends z {
             v vVar = new v(27, "Flushing frames to the server failed: " + e10.getMessage(), e10);
             ab.q qVar = this.a.d;
             qVar.d(vVar);
-            ArrayList arrayList = (ArrayList) qVar.p();
+            ArrayList arrayList = (ArrayList) qVar.q();
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     } catch (Throwable unused) {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -218,35 +218,35 @@ public final class a0 extends z {
                 xVar.b = true;
             }
         }
-        ArrayList arrayList = (ArrayList) this.a.d.p();
+        ArrayList arrayList = (ArrayList) this.a.d.q();
         int size = arrayList.size();
         int i10 = 0;
         int i11 = 0;
         while (i11 < size) {
             Object obj = arrayList.get(i11);
             i11++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                h1Var.getClass();
+                i1Var.getClass();
             }
         }
         if (this.e != null) {
-            ArrayList arrayList2 = (ArrayList) this.a.d.p();
+            ArrayList arrayList2 = (ArrayList) this.a.d.q();
             int size2 = arrayList2.size();
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                h1 h1Var2 = (h1) obj2;
+                i1 i1Var2 = (i1) obj2;
                 try {
                     try {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     } catch (Throwable unused4) {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     }
                 } catch (Throwable unused5) {
                 }
@@ -271,22 +271,22 @@ public final class a0 extends z {
                 }
             }
             if (z10) {
-                this.a.d.f();
+                this.a.d.e();
             }
         }
         try {
             this.a.i.a(xVar);
-            ArrayList arrayList3 = (ArrayList) this.a.d.p();
+            ArrayList arrayList3 = (ArrayList) this.a.d.q();
             int size3 = arrayList3.size();
             while (i10 < size3) {
                 Object obj3 = arrayList3.get(i10);
                 i10++;
-                h1 h1Var3 = (h1) obj3;
+                i1 i1Var3 = (i1) obj3;
                 try {
                     try {
-                        h1Var3.getClass();
+                        i1Var3.getClass();
                     } catch (Throwable unused6) {
-                        h1Var3.getClass();
+                        i1Var3.getClass();
                     }
                 } catch (Throwable unused7) {
                 }
@@ -295,17 +295,17 @@ public final class a0 extends z {
             v vVar = new v(26, "An I/O error occurred when a frame was tried to be sent: " + e10.getMessage(), e10);
             ab.q qVar = this.a.d;
             qVar.d(vVar);
-            ArrayList arrayList4 = (ArrayList) qVar.p();
+            ArrayList arrayList4 = (ArrayList) qVar.q();
             int size4 = arrayList4.size();
             while (i10 < size4) {
                 Object obj4 = arrayList4.get(i10);
                 i10++;
-                h1 h1Var4 = (h1) obj4;
+                i1 i1Var4 = (i1) obj4;
                 try {
                     try {
-                        h1Var4.getClass();
+                        i1Var4.getClass();
                     } catch (Throwable unused8) {
-                        h1Var4.getClass();
+                        i1Var4.getClass();
                     }
                 } catch (Throwable unused9) {
                 }

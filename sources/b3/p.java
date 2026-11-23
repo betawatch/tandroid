@@ -1,6 +1,6 @@
 package b3;
 
-import a8.la;
+import a8.ma;
 import a8.sa;
 import android.os.Looper;
 import android.os.SystemClock;
@@ -8,7 +8,7 @@ import h2.l0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p implements q {
     public static final i d = new i(0, -9223372036854775807L, false);
@@ -75,7 +75,7 @@ public final class p implements q {
         myLooper.getClass();
         this.c = null;
         l lVar = new l(this, myLooper, mVar, kVar, i7, SystemClock.elapsedRealtime());
-        la.p(this.b == null);
+        ma.p(this.b == null);
         this.b = lVar;
         lVar.b();
     }

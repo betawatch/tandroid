@@ -2,7 +2,7 @@ package ug;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class i1 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final class i1 extends v4.u0 {
                 break;
             case 2:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((wg.w0) this.b).U1.getEditText());
+                    org.telegram.messenger.g0.v1(((wg.v0) this.b).U1.getEditText());
                     break;
                 }
                 break;
             case 3:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((wg.e1) this.b).V1.getEditText());
+                    org.telegram.messenger.g0.v1(((wg.d1) this.b).V1.getEditText());
                     break;
                 }
                 break;

@@ -16,13 +16,11 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import ji.l;
-import org.telegram.ui.Cells.c5;
-import sg.h0;
+import org.telegram.ui.Components.nd0;
 import u9.m;
-import v9.j;
+import v9.k;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -52,10 +50,10 @@ public final class g {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList b10 = new h0(4, context, new c5(ComponentDiscoveryService.class)).b();
+        ArrayList b10 = new s2.e(5, context, new nd0(ComponentDiscoveryService.class, 21)).b();
         Trace.endSection();
         Trace.beginSection("Runtime");
-        j jVar = j.a;
+        k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         arrayList.addAll(b10);
@@ -69,7 +67,7 @@ public final class g {
         if ((Build.VERSION.SDK_INT >= 24 ? x.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(u9.a.c(aVar, a.class, new Class[0]));
         }
-        u9.f fVar = new u9.f(jVar, arrayList, arrayList2, aVar2);
+        u9.f fVar = new u9.f(kVar, arrayList, arrayList2, aVar2);
         this.d = fVar;
         Trace.endSection();
         this.g = new m(new c(0, this, context));
@@ -181,7 +179,7 @@ public final class g {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.g("[DEFAULT]".equals(str));
+            this.d.h("[DEFAULT]".equals(str));
             ((sa.c) this.h.get()).c();
             return;
         }
@@ -225,9 +223,9 @@ public final class g {
     }
 
     public final String toString() {
-        l lVar = new l(this);
-        lVar.E(this.b, "name");
-        lVar.E(this.c, "options");
-        return lVar.toString();
+        j6.k kVar = new j6.k(this);
+        kVar.S(this.b, "name");
+        kVar.S(this.c, "options");
+        return kVar.toString();
     }
 }

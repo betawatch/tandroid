@@ -1,7 +1,7 @@
 package fh;
 
-import a8.ea;
-import a8.n7;
+import a8.fa;
+import a8.q7;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.u6;
 import ri.q;
 import ri.r;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class g extends ri.e implements b6 {
+public final class g extends ri.e implements c6 {
     public static Path h0 = new Path();
     public int E;
     public int F;
@@ -42,7 +42,7 @@ public final class g extends ri.e implements b6 {
     public float W;
     public boolean X;
     public int Y;
-    public ea Z;
+    public fa Z;
     public boolean a0;
     public ui.a b0;
     public boolean c0;
@@ -59,7 +59,7 @@ public final class g extends ri.e implements b6 {
     public int y;
     public boolean s = true;
     public float J = -1.0f;
-    public int N = t6.b;
+    public int N = u6.b;
     public final l O = new l();
 
     public g(ui.a aVar, ui.a aVar2, ui.a aVar3) {
@@ -86,7 +86,7 @@ public final class g extends ri.e implements b6 {
     }
 
     public static void l(Outline outline, Rect rect, float[] fArr) {
-        if (n7.a(fArr)) {
+        if (q7.a(fArr)) {
             outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
             return;
         }
@@ -109,7 +109,7 @@ public final class g extends ri.e implements b6 {
 
     @Override // ri.e
     public final void a() {
-        ea o4 = o();
+        fa o4 = o();
         e eVar = this.g0;
         if (o4 != eVar || eVar == null) {
             return;
@@ -135,7 +135,7 @@ public final class g extends ri.e implements b6 {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         ui.a aVar;
-        int i7 = t6.b;
+        int i7 = u6.b;
         if (this.N != i7) {
             this.N = i7;
             try {
@@ -157,7 +157,7 @@ public final class g extends ri.e implements b6 {
         if (fVar.m.isEmpty()) {
             return;
         }
-        ea o4 = o();
+        fa o4 = o();
         ui.a aVar2 = this.r;
         if (o4 == this.g0 && !canvas.isHardwareAccelerated()) {
             ui.a v = v(v(this.r));
@@ -212,7 +212,7 @@ public final class g extends ri.e implements b6 {
 
     @Override // ri.e
     public final boolean e() {
-        ea o4 = o();
+        fa o4 = o();
         e eVar = this.g0;
         return o4 != eVar || eVar == null || eVar.c();
     }
@@ -268,12 +268,12 @@ public final class g extends ri.e implements b6 {
 
     @Override // ri.e
     public final boolean j() {
-        ea o4 = o();
+        fa o4 = o();
         e eVar = this.g0;
         return o4 == eVar && eVar != null;
     }
 
-    public final ea k(ui.a aVar) {
+    public final fa k(ui.a aVar) {
         ui.a v = v(aVar);
         if (Color.alpha(this.y) == 255 || (v instanceof ui.c)) {
             return this.d0;
@@ -314,8 +314,8 @@ public final class g extends ri.e implements b6 {
         }
     }
 
-    public final ea o() {
-        ea k10;
+    public final fa o() {
+        fa k10;
         if (this.a0) {
             r rVar = this.b;
             ui.a aVar = !rVar.a ? this.n : (this.X && rVar.b && Build.VERSION.SDK_INT >= 33) ? this.f : this.h;
@@ -350,9 +350,9 @@ public final class g extends ri.e implements b6 {
             if (eVar3 != null) {
                 eVar3.h(k10 == eVar3 && this.X && this.b.b && i7 >= 33);
             }
-            ea eaVar = this.Z;
-            if (eaVar != k10 && eaVar != null) {
-                eaVar.a();
+            fa faVar = this.Z;
+            if (faVar != k10 && faVar != null) {
+                faVar.a();
             }
             this.Z = k10;
         }
@@ -453,9 +453,9 @@ public final class g extends ri.e implements b6 {
         n();
     }
 
-    @Override // ri.e, org.telegram.ui.ActionBar.b6
+    @Override // ri.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        this.N = t6.b;
+        this.N = u6.b;
         gh.a aVar = this.w;
         if (aVar == null) {
             return;
@@ -463,12 +463,12 @@ public final class g extends ri.e implements b6 {
         if (aVar instanceof gh.b) {
             ((gh.b) aVar).d();
         }
-        this.y = this.w.A2();
-        this.x = this.w.W1();
-        this.E = this.w.t0();
-        this.F = this.w.U0();
+        this.y = this.w.x2();
+        this.x = this.w.X1();
+        this.E = this.w.i0();
+        this.F = this.w.Q0();
         this.G = this.w.D1();
-        this.H = this.w.M0();
+        this.H = this.w.D0();
         this.I = this.w.A1();
         gh.a aVar2 = this.w;
         if (aVar2 instanceof gh.e) {
@@ -477,11 +477,11 @@ public final class g extends ri.e implements b6 {
             float b10 = eVar.b();
             this.U = c10;
             this.V = b10;
-        } else if (aVar2.Z0() >= 0.0f) {
-            float Z0 = this.w.Z0();
-            float Y0 = this.w.Y0();
-            this.U = Z0;
-            this.V = Y0;
+        } else if (aVar2.V0() >= 0.0f) {
+            float V0 = this.w.V0();
+            float T0 = this.w.T0();
+            this.U = V0;
+            this.V = T0;
         } else {
             float f10 = this.J;
             if (f10 >= 0.0f) {
@@ -497,7 +497,7 @@ public final class g extends ri.e implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

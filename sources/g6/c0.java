@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c0 extends h6.g {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class c0 extends h6.g {
     public void a() {
         switch (this.a) {
             case 2:
-                ((i6.h) this.b).b();
+                ((i6.i) this.b).b();
                 break;
         }
     }
@@ -36,7 +36,7 @@ public final class c0 extends h6.g {
     public void c() {
         switch (this.a) {
             case 2:
-                ((i6.h) this.b).b();
+                ((i6.i) this.b).b();
                 break;
         }
     }
@@ -45,7 +45,7 @@ public final class c0 extends h6.g {
     public void d() {
         switch (this.a) {
             case 2:
-                ((i6.h) this.b).b();
+                ((i6.i) this.b).b();
                 break;
         }
     }
@@ -54,7 +54,7 @@ public final class c0 extends h6.g {
     public void e() {
         switch (this.a) {
             case 2:
-                ((i6.h) this.b).b();
+                ((i6.i) this.b).b();
                 break;
         }
     }
@@ -75,7 +75,7 @@ public final class c0 extends h6.g {
                 }
                 break;
             case 2:
-                ((i6.h) this.b).b();
+                ((i6.i) this.b).b();
                 break;
         }
     }

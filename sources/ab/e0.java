@@ -9,7 +9,7 @@ import android.os.Build;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e0 extends BroadcastReceiver {
     public final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final class e0 extends BroadcastReceiver {
             default:
                 Uri data = intent.getData();
                 if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
-                    ((d6.i) this.c).A();
+                    ((d6.i) this.c).D();
                     b();
                     break;
                 }

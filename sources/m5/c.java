@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.SparseArray;
-import c8.gc;
+import c8.hc;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -41,14 +41,14 @@ import n5.t;
 import n5.v;
 import n5.w;
 import n5.y;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.ActionBar.i5;
 import p5.f;
 import pa.d;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements f {
-    public final c5 a;
+    public final i5 a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -59,37 +59,37 @@ public final class c implements f {
     public c(Context context, x5.a aVar, x5.a aVar2) {
         d dVar = new d();
         n5.c cVar = n5.c.a;
-        dVar.b(w.class, cVar);
-        dVar.b(m.class, cVar);
+        dVar.c(w.class, cVar);
+        dVar.c(m.class, cVar);
         j jVar = j.a;
-        dVar.b(f0.class, jVar);
-        dVar.b(t.class, jVar);
+        dVar.c(f0.class, jVar);
+        dVar.c(t.class, jVar);
         n5.d dVar2 = n5.d.a;
-        dVar.b(y.class, dVar2);
-        dVar.b(n.class, dVar2);
+        dVar.c(y.class, dVar2);
+        dVar.c(n.class, dVar2);
         n5.b bVar = n5.b.a;
-        dVar.b(n5.a.class, bVar);
-        dVar.b(l.class, bVar);
+        dVar.c(n5.a.class, bVar);
+        dVar.c(l.class, bVar);
         i iVar = i.a;
-        dVar.b(e0.class, iVar);
-        dVar.b(s.class, iVar);
+        dVar.c(e0.class, iVar);
+        dVar.c(s.class, iVar);
         e eVar = e.a;
-        dVar.b(a0.class, eVar);
-        dVar.b(o.class, eVar);
+        dVar.c(a0.class, eVar);
+        dVar.c(o.class, eVar);
         h hVar = h.a;
-        dVar.b(d0.class, hVar);
-        dVar.b(r.class, hVar);
+        dVar.c(d0.class, hVar);
+        dVar.c(r.class, hVar);
         g gVar = g.a;
-        dVar.b(c0.class, gVar);
-        dVar.b(q.class, gVar);
+        dVar.c(c0.class, gVar);
+        dVar.c(q.class, gVar);
         k kVar = k.a;
-        dVar.b(i0.class, kVar);
-        dVar.b(v.class, kVar);
+        dVar.c(i0.class, kVar);
+        dVar.c(v.class, kVar);
         n5.f fVar = n5.f.a;
-        dVar.b(b0.class, fVar);
-        dVar.b(p.class, fVar);
+        dVar.c(b0.class, fVar);
+        dVar.c(p.class, fVar);
         dVar.d = true;
-        this.a = new c5(dVar);
+        this.a = new i5(dVar);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);
@@ -175,7 +175,7 @@ public final class c implements f {
             try {
                 i10 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e10) {
-                gc.b("CctTransportBackend", "Unable to find version code for package", e10);
+                hc.b("CctTransportBackend", "Unable to find version code for package", e10);
             }
             c10.a("application_build", Integer.toString(i10));
             return c10.b();

@@ -7,25 +7,15 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.c5;
-import p4.z;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.web.t1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public interface l {
-    void b(int i7, int i10, int i11, long j3);
-
-    void c(int i7, k2.d dVar, long j3, int i10);
-
-    void d(z zVar);
-
-    void e(int i7);
-
-    void f();
-
     void flush();
 
-    void g(int i7, long j3);
+    void g(int i7, int i10, int i11, long j3);
 
     ByteBuffer getInputBuffer(int i7);
 
@@ -33,23 +23,33 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    int h();
+    void h(int i7, k2.d dVar, long j3, int i10);
 
-    boolean i(c5 c5Var);
+    void i(int i7);
 
-    int j(MediaCodec.BufferInfo bufferInfo);
+    void j();
 
-    void k(d3.k kVar, Handler handler);
+    void k(int i7, long j3);
 
-    void l(int i7);
+    int l();
 
-    void m(Surface surface);
+    void m(t1 t1Var);
 
-    void n(ArrayList arrayList);
+    int n(MediaCodec.BufferInfo bufferInfo);
 
-    void o(ArrayList arrayList);
+    void o(d3.k kVar, Handler handler);
+
+    boolean p(nd0 nd0Var);
+
+    void q(int i7);
+
+    void r(Surface surface);
 
     void release();
 
+    void s(ArrayList arrayList);
+
     void setParameters(Bundle bundle);
+
+    void t(ArrayList arrayList);
 }

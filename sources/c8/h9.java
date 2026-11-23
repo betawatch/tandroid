@@ -1,10 +1,10 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h9 {
-    public static final ke.a a(ke.a aVar) {
-        kotlin.jvm.internal.j.e(aVar, "<this>");
-        return aVar.d().c() ? aVar : new oe.j(aVar);
+    public static final ld.b a(Enum[] entries) {
+        kotlin.jvm.internal.j.e(entries, "entries");
+        return new ld.b(entries);
     }
 }

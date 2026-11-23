@@ -1,54 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Intent;
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.kc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ja implements jg.f0, org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ na a;
+public final /* synthetic */ class ja implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oa b;
 
-    public /* synthetic */ ja(na naVar) {
-        this.a = naVar;
+    public /* synthetic */ ja(oa oaVar, int i7) {
+        this.a = i7;
+        this.b = oaVar;
     }
 
-    @Override // jg.f0
-    public void a(a0.h hVar, ArrayList arrayList) {
-        na naVar = this.a;
-        ArrayList arrayList2 = naVar.s;
-        if (naVar.r) {
-            return;
-        }
-        arrayList2.clear();
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            jg.g0 g0Var = (jg.g0) obj;
-            TLObject tLObject = g0Var.a;
-            if ((tLObject instanceof TLRPC.User) && na.h0((TLRPC.User) tLObject)) {
-                arrayList2.add((TLRPC.User) g0Var.a);
-            }
-        }
-        bi.f6 f6Var = naVar.a;
-        if (f6Var != null) {
-            f6Var.g3.O(true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        na naVar = this.a;
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-            naVar.getParentActivity().startActivity(intent);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        oa oaVar = this.b;
+        switch (i7) {
+            case 0:
+                oaVar.e0 = null;
+                break;
+            default:
+                kc.b0(oaVar).N(gd.N0(2131745665, null), gd.N0(2131751093, null)).j();
+                break;
         }
     }
 }

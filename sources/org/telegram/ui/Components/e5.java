@@ -1,47 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Picture;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e5 extends FrameLayout {
-    public boolean a;
-    public int b;
-    public o6 c;
-    public o6 d;
+public abstract class e5 extends f80 implements te.b {
+    public final te.c Q0;
+    public Picture R0;
+    public float S0;
+    public int T0;
+    public Paint U0;
 
-    public o6 getSubtitleTextView() {
-        return this.d;
+    public e5(Context context) {
+        super(context);
+        this.Q0 = new te.c(0, this, kr.h, 320L, 1.0f);
+        this.T0 = 0;
     }
 
-    public o6 getTitle() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        o6 o6Var = this.d;
-        o6 o6Var2 = this.c;
-        int z11 = org.telegram.messenger.o10.z(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? org.telegram.messenger.g0.m : 0);
-        int i13 = this.b;
-        if (o6Var.getVisibility() != 8) {
-            o6Var2.layout(i13, (org.telegram.messenger.g0.L(1.0f) + z11) - o6Var2.getPaddingTop(), o6Var2.getMeasuredWidth() + i13, o6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(1.3f) + (o6Var2.getTextHeight() + z11)) - o6Var2.getPaddingTop()));
-        } else {
-            o6Var2.layout(i13, (org.telegram.messenger.g0.L(11.0f) + z11) - o6Var2.getPaddingTop(), o6Var2.getMeasuredWidth() + i13, o6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(11.0f) + (o6Var2.getTextHeight() + z11)) - o6Var2.getPaddingTop()));
+    @Override // te.b
+    public final void G(float f10, int i7) {
+        if (f10 == 1.0f) {
+            if (this.R0 != null) {
+                this.R0 = null;
+                super.setLayerType(this.T0, this.U0);
+            }
+            invalidate();
         }
-        o6Var.layout(i13, org.telegram.messenger.g0.L(20.0f) + z11, o6Var.getMeasuredWidth() + i13, org.telegram.messenger.g0.L(24.0f) + o6Var.getTextHeight() + z11);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        o6 o6Var = this.c;
-        int paddingRight = o6Var.getPaddingRight() + size;
-        int L = paddingRight - org.telegram.messenger.g0.L(16.0f);
-        o6Var.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(o6Var.getPaddingRight() + org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_31));
-        this.d.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_31));
-        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i10));
+    @Override // android.view.View
+    public int getLayerType() {
+        return this.T0;
+    }
+
+    public final void n(Canvas canvas, float f10, float f11) {
+        if (f10 >= 1.0f && f11 == 0.0f) {
+            super.onDraw(canvas);
+            return;
+        }
+        canvas.save();
+        canvas.translate(0.0f, f11);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f10 * 255.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    public final boolean o(CharSequence charSequence, boolean z10) {
+        CharSequence text = getText();
+        if (TextUtils.equals(text, charSequence)) {
+            return l(charSequence, false);
+        }
+        te.c cVar = this.Q0;
+        if (!z10 || !isAttachedToWindow() || !isLaidOut() || getVisibility() != 0 || getAlpha() <= 0.0f || getWidth() <= 0 || getHeight() <= 0 || TextUtils.isEmpty(text)) {
+            cVar.c(1.0f);
+            if (this.R0 != null) {
+                this.R0 = null;
+                super.setLayerType(this.T0, this.U0);
+            }
+            invalidate();
+        } else {
+            Picture picture = new Picture();
+            n(picture.beginRecording(getWidth(), getHeight()), 1.0f, 0.0f);
+            picture.endRecording();
+            cVar.c(0.0f);
+            this.R0 = picture;
+            this.S0 = getTranslationX();
+            super.setLayerType(0, null);
+            cVar.a(1.0f);
+        }
+        invalidate();
+        return l(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.Components.f80, org.telegram.ui.ActionBar.n5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.R0 == null) {
+            super.onDraw(canvas);
+            return;
+        }
+        float f10 = this.Q0.f;
+        int L = org.telegram.messenger.g0.L(6.0f);
+        canvas.save();
+        canvas.translate(this.S0 - getTranslationX(), (-L) * f10);
+        float f11 = 1.0f - f10;
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.R0.getWidth(), this.R0.getHeight(), (int) (255.0f * f11));
+        canvas.drawPicture(this.R0);
+        canvas.restore();
+        canvas.restore();
+        n(canvas, f10, L * f11);
+    }
+
+    @Override // android.view.View
+    public final void setLayerType(int i7, Paint paint) {
+        this.T0 = i7;
+        this.U0 = paint;
+        if (this.R0 == null) {
+            super.setLayerType(i7, paint);
+        }
     }
 }

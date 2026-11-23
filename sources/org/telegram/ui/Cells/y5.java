@@ -1,110 +1,136 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.jf;
-import org.telegram.messenger.ls;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.op;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.m10;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.oa0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
-    public org.telegram.ui.Components.q9 a;
-    public FrameLayout b;
-    public op c;
-    public TextView d;
-    public di.n4 e;
-    public int f;
-    public int h;
+    public final TextView a;
+    public final TextView b;
+    public final ImageView c;
+    public final Switch d;
+    public boolean e;
+    public boolean f;
+    public final org.telegram.ui.ActionBar.i6 h;
+
+    public y5(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.h = i6Var;
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setFocusable(false);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, c8.na.d(28, 28.0f, (gd.a0 ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        m10.q(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((gd.a0 ? 5 : 3) | 16);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z10 = gd.a0;
+        addView(textView, c8.na.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, i6Var);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(gd.a0 ? 5 : 3);
+        textView2.setLines(0);
+        textView2.setMaxLines(0);
+        textView2.setSingleLine(false);
+        textView2.setEllipsize(null);
+        textView2.setLineSpacing(org.telegram.messenger.g0.L(1.66f), 1.0f);
+        boolean z11 = gd.a0;
+        addView(textView2, c8.na.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f));
+        Switch r32 = new Switch(context, i6Var);
+        this.d = r32;
+        int i7 = org.telegram.ui.ActionBar.n6.M6;
+        int i10 = org.telegram.ui.ActionBar.n6.N6;
+        int i11 = org.telegram.ui.ActionBar.n6.d6;
+        r32.d(i7, i10, i11, i11);
+        addView(r32, c8.na.d(37, 40.0f, (gd.a0 ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
+        r32.setFocusable(false);
+    }
+
+    public final void a(String str, String str2, n30 n30Var, int i7, boolean z10) {
+        this.a.setText(str);
+        org.telegram.ui.ActionBar.i6 i6Var = this.h;
+        boolean b10 = i6Var != null ? i6Var.b() : org.telegram.ui.ActionBar.n6.I.q();
+        oa0 oa0Var = new oa0(1);
+        oa0Var.b(n30Var.a, n30Var.b);
+        oa0Var.b = b10;
+        ImageView imageView = this.c;
+        imageView.setBackground(oa0Var);
+        imageView.setImageResource(i7);
+        boolean z11 = this.e;
+        Switch r02 = this.d;
+        r02.b(0, z10, z11);
+        this.b.setText(str2);
+        r02.setContentDescription(str);
+    }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.m6.W9, org.telegram.ui.ActionBar.m6.X9, org.telegram.ui.ActionBar.m6.V9);
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.f) {
+            org.telegram.ui.ActionBar.i6 i6Var = this.h;
+            Paint e10 = i6Var != null ? i6Var.e("paintDivider") : org.telegram.ui.ActionBar.n6.k0;
+            if (e10 == null) {
+                e10 = org.telegram.ui.ActionBar.n6.k0;
+            }
+            Paint paint = e10;
+            if (paint != null) {
+                canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(19.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(19.0f) : 0), getMeasuredHeight() - 1, paint);
+            }
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.f + this.h, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.f, TLObject.FLAG_30));
+    public Switch getCheckBox() {
+        return this.d;
     }
 
-    public void setImage(ff ffVar) {
-        di.n4 n4Var = this.e;
-        org.telegram.ui.Components.q9 q9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        String str = ffVar.c;
-        int i7 = ffVar.C;
-        String str2 = ffVar.I;
-        if (str != null) {
-            q9Var.h(str, null, drawable);
-            return;
-        }
-        if (str2 == null) {
-            q9Var.setImageDrawable(drawable);
-            return;
-        }
-        q9Var.s(ffVar.J, ffVar.K, true);
-        if (ffVar.d()) {
-            n4Var.setVisibility(4);
-            setContentDescription(hd.N0(2131753959, null));
-            q9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
-            return;
-        }
-        if (!ffVar.b) {
-            n4Var.setVisibility(4);
-            setContentDescription(hd.N0(2131753945, null));
-            q9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
-            return;
-        }
-        n4Var.setVisibility(0);
-        this.d.setText(org.telegram.messenger.g0.g0(ffVar.E, false, false));
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Switch");
         StringBuilder sb2 = new StringBuilder();
-        c0.u(null, 2131753930, sb2, ", ");
-        sb2.append(hd.z(ffVar.E));
-        setContentDescription(sb2.toString());
-        StringBuilder sb3 = new StringBuilder("vthumb://");
-        sb3.append(i7);
-        q9Var.h(a8.p0.s(sb3, ":", str2), null, drawable);
+        sb2.append(this.a.getText());
+        TextView textView = this.b;
+        if (textView != null && !TextUtils.isEmpty(textView.getText())) {
+            sb2.append("\n");
+            sb2.append(textView.getText());
+        }
+        accessibilityNodeInfo.setContentDescription(sb2);
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.d.h);
     }
 
-    public void setNum(int i7) {
-        this.c.setNum(i7);
+    public void setAnimationsEnabled(boolean z10) {
+        this.e = z10;
     }
 
-    public void setImage(jf jfVar) {
-        org.telegram.ui.Components.q9 q9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        TLRPC.PhotoSize photoSize = jfVar.M;
-        if (photoSize != null) {
-            q9Var.j(gc.i(photoSize, jfVar.K), null, drawable, jfVar);
-            return;
-        }
-        TLRPC.PhotoSize photoSize2 = jfVar.L;
-        if (photoSize2 != null) {
-            q9Var.j(gc.i(photoSize2, jfVar.K), "80_80", drawable, jfVar);
-            return;
-        }
-        String str = jfVar.c;
-        if (str != null) {
-            q9Var.h(str, null, drawable);
-            return;
-        }
-        String str2 = jfVar.D;
-        if (str2 != null && str2.length() > 0) {
-            q9Var.h(jfVar.D, null, drawable);
-        } else if (gj.W2(jfVar.J)) {
-            q9Var.j(gc.c(org.telegram.messenger.w7.w(jfVar.J.thumbs, ls.r5, false, null, false), jfVar.J), null, drawable, jfVar);
-        } else {
-            q9Var.setImageDrawable(drawable);
-        }
+    public void setChecked(boolean z10) {
+        this.d.b(0, z10, true);
+    }
+
+    public void setDivider(boolean z10) {
+        this.f = z10;
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

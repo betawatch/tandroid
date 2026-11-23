@@ -1,13 +1,13 @@
 package androidx.fragment.app;
 
-import a8.z6;
+import a8.a7;
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class u extends z6 implements androidx.lifecycle.u0, androidx.lifecycle.t, w4.e, n0 {
+public final class u extends a7 implements androidx.lifecycle.u0, androidx.lifecycle.t, w4.e, n0 {
     public final v a;
     public final v b;
     public final Handler c;
@@ -23,12 +23,12 @@ public final class u extends z6 implements androidx.lifecycle.u0, androidx.lifec
         this.d = new k0();
     }
 
-    @Override // a8.z6
+    @Override // a8.a7
     public final View b(int i7) {
         return this.e.findViewById(i7);
     }
 
-    @Override // a8.z6
+    @Override // a8.a7
     public final boolean c() {
         Window window = this.e.getWindow();
         return (window == null || window.peekDecorView() == null) ? false : true;

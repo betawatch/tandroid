@@ -1,7 +1,7 @@
 package rc;
 
 import a8.p0;
-import bi.u3;
+import bi.w3;
 import com.google.android.gms.internal.clearcut.y0;
 import e2.r0;
 import java.io.BufferedInputStream;
@@ -15,11 +15,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Wallet.h1;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Wallet.i1;
 import org.telegram.ui.web.d1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -73,19 +73,19 @@ public final class u {
                 }
                 this.m = true;
                 ab.q qVar = this.d;
-                ArrayList arrayList = (ArrayList) qVar.p();
+                ArrayList arrayList = (ArrayList) qVar.q();
                 int size = arrayList.size();
                 int i7 = 0;
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    h1 h1Var = (h1) obj;
+                    i1 i1Var = (i1) obj;
                     try {
                         try {
                             int i10 = 6;
-                            g0.g3(new u3(h1Var.a, i10, h1Var.b, h1Var, (u) qVar.b));
+                            g0.g3(new w3(i1Var.a, i10, i1Var.b, i1Var, (u) qVar.b));
                         } catch (Throwable unused) {
-                            h1Var.getClass();
+                            i1Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -104,7 +104,7 @@ public final class u {
             }
             r0Var.a = 2;
         }
-        this.d.f();
+        this.d.e();
         try {
             s sVar = this.a;
             try {
@@ -130,7 +130,7 @@ public final class u {
                 }
                 this.u = oVar;
                 this.b.a = 3;
-                this.d.f();
+                this.d.e();
                 i();
             } catch (v e10) {
                 Socket socket = sVar.g;
@@ -151,7 +151,7 @@ public final class u {
                 }
             }
             this.b.a = 5;
-            this.d.f();
+            this.d.e();
             throw e11;
         }
     }
@@ -171,25 +171,25 @@ public final class u {
                         r0Var.b = 3;
                     }
                     g(x.a(1000, null));
-                    this.d.f();
+                    this.d.e();
                     j();
                     return;
                 }
                 b bVar = new b("FinishThread", this, i7, 1);
                 ab.q qVar = bVar.a.d;
                 if (qVar != null) {
-                    ArrayList arrayList = (ArrayList) qVar.p();
+                    ArrayList arrayList = (ArrayList) qVar.q();
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        h1 h1Var = (h1) obj;
+                        i1 i1Var = (i1) obj;
                         try {
                             try {
-                                h1Var.getClass();
+                                i1Var.getClass();
                             } catch (Throwable unused) {
-                                h1Var.getClass();
+                                i1Var.getClass();
                             }
                         } catch (Throwable unused2) {
                         }
@@ -215,25 +215,25 @@ public final class u {
         synchronized (this.b) {
             this.b.a = 5;
         }
-        this.d.f();
+        this.d.e();
         ab.q qVar = this.d;
         x xVar = this.s;
         x xVar2 = this.t;
         int i7 = 0;
         boolean z10 = this.b.b == 2;
-        ArrayList arrayList = (ArrayList) qVar.p();
+        ArrayList arrayList = (ArrayList) qVar.q();
         int size = arrayList.size();
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
-                    h1Var.a((u) qVar.b, xVar, xVar2, z10);
+                    i1Var.a((u) qVar.b, xVar, xVar2, z10);
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                h1Var.getClass();
+                i1Var.getClass();
             }
         }
     }
@@ -341,18 +341,18 @@ public final class u {
                 }
                 n10.append("\r\n");
                 String sb2 = n10.toString();
-                ArrayList arrayList2 = (ArrayList) this.d.p();
+                ArrayList arrayList2 = (ArrayList) this.d.q();
                 int size2 = arrayList2.size();
                 int i13 = 0;
                 while (i13 < size2) {
                     Object obj2 = arrayList2.get(i13);
                     i13++;
-                    h1 h1Var = (h1) obj2;
+                    i1 i1Var = (i1) obj2;
                     try {
                         try {
-                            h1Var.getClass();
+                            i1Var.getClass();
                         } catch (Throwable unused) {
-                            h1Var.getClass();
+                            i1Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -360,7 +360,7 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    jn jnVar = new jn(this, 13);
+                    nd0 nd0Var = new nd0(this, 10);
                     try {
                         String b10 = k.b(d1Var);
                         if (b10 == null || b10.length() == 0) {
@@ -379,7 +379,7 @@ public final class u {
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            jn.P(sb3.toString(), treeMap);
+                                            nd0.u(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -390,7 +390,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                jn.P(sb3.toString(), treeMap);
+                                nd0.u(sb3.toString(), treeMap);
                             }
                             if (y0Var.b != 101) {
                                 try {
@@ -516,7 +516,7 @@ public final class u {
                                                                                 throw new n(16, p5.c.k("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), y0Var);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) jnVar.b).c;
+                                                                            h hVar2 = ((u) nd0Var.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
@@ -542,9 +542,9 @@ public final class u {
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) jnVar.b).l = arrayList3;
+                                                        ((u) nd0Var.b).l = arrayList3;
                                                     }
-                                                    jnVar.U(y0Var, treeMap);
+                                                    nd0Var.C(y0Var, treeMap);
                                                     this.h = d1Var;
                                                     this.i = yVar;
                                                     return treeMap;
@@ -587,18 +587,18 @@ public final class u {
         ab.q qVar2 = qVar.a.d;
         int i7 = 0;
         if (qVar2 != null) {
-            ArrayList arrayList = (ArrayList) qVar2.p();
+            ArrayList arrayList = (ArrayList) qVar2.q();
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     } catch (Throwable unused) {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -606,17 +606,17 @@ public final class u {
         }
         ab.q qVar3 = a0Var.a.d;
         if (qVar3 != null) {
-            ArrayList arrayList2 = (ArrayList) qVar3.p();
+            ArrayList arrayList2 = (ArrayList) qVar3.q();
             int size2 = arrayList2.size();
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                h1 h1Var2 = (h1) obj2;
+                i1 i1Var2 = (i1) obj2;
                 try {
                     try {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     } catch (Throwable unused3) {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }

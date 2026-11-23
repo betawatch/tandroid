@@ -1,6 +1,6 @@
 package f2;
 
-import a8.ja;
+import a8.ka;
 import android.content.Context;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -8,9 +8,10 @@ import android.os.SystemClock;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import b3.u;
-import c8.nd;
+import c8.od;
 import fi.a1;
 import fi.a6;
+import fi.a8;
 import fi.b1;
 import fi.b5;
 import fi.c1;
@@ -38,22 +39,23 @@ import fi.z3;
 import h2.j0;
 import h2.l0;
 import h2.v;
-import hi.a8;
-import hi.l3;
+import hi.j1;
+import hi.u3;
+import hi.v8;
 import java.util.ArrayList;
 import java.util.Locale;
-import n2.o0;
+import n2.p0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fq0;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.eq0;
+import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cx;
-import org.telegram.ui.tv;
+import org.telegram.ui.bx;
+import org.telegram.ui.sv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -73,51 +75,47 @@ public final /* synthetic */ class a implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ab.q qVar = (ab.q) this.b;
-                ((Context) qVar.b).unregisterReceiver((b) qVar.c);
-                return;
-            case 1:
                 b bVar = (b) this.b;
                 if (bVar.c.a) {
                     bVar.a.a.C1(3, false);
                     return;
                 }
                 return;
-            case 2:
-                cx cxVar = ((tv) this.b).P0;
-                if (cxVar.M && cxVar.k4().I()) {
-                    cxVar.F0.h();
+            case 1:
+                bx bxVar = ((sv) this.b).P0;
+                if (bxVar.M && bxVar.k4().I()) {
+                    bxVar.F0.h();
                     return;
                 } else {
-                    cxVar.R4(true, true);
+                    bxVar.R4(true, true);
                     return;
                 }
-            case 3:
+            case 2:
                 ((a1) this.b).a.t(false);
                 return;
-            case 4:
+            case 3:
                 c1 c1Var = ((b1) this.b).a;
-                ls.f(c1Var.e).k(ls.G2, Long.valueOf(c1Var.g()));
+                ks.f(c1Var.e).k(ks.G2, Long.valueOf(c1Var.g()));
                 return;
-            case 5:
+            case 4:
                 e1 e1Var = (e1) this.b;
                 f9 f9Var = e1Var.c;
-                if (f9Var == null || !e1Var.G() || (nVar = e1Var.a) == null || nVar.c != 0 || (launchActivity = LaunchActivity.H1) == null || !nd.a(launchActivity)) {
+                if (f9Var == null || !e1Var.O0() || (nVar = e1Var.a) == null || nVar.c != 0 || (launchActivity = LaunchActivity.H1) == null || !od.a(launchActivity)) {
                     return;
                 }
                 f9Var.T();
                 return;
-            case 6:
+            case 5:
                 wi.n nVar2 = ((d1) this.b).e.a;
                 if (nVar2 != null) {
                     nVar2.c();
                     return;
                 }
                 return;
-            case 7:
+            case 6:
                 ((x2) this.b).a.O0();
                 return;
-            case 8:
+            case 7:
                 z3 z3Var = ((c3) this.b).y;
                 s3 s3Var = z3Var.A1;
                 if (s3Var != null) {
@@ -138,42 +136,42 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
                 return;
-            case 9:
+            case 8:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
                 int i7 = ProfileStoriesView.t0;
                 profileStoriesView.getClass();
                 g0.a4(profileStoriesView);
                 return;
-            case 10:
+            case 9:
                 b5.a(((x4) this.b).d);
                 return;
-            case 11:
+            case 10:
                 n5 n5Var = (n5) this.b;
                 if (n5Var.isShowing()) {
                     n5Var.K0(true);
                     return;
                 }
                 return;
+            case 11:
+                j1 j1Var = (j1) this.b;
+                j1Var.c(j1Var.b);
+                j1Var.c = false;
+                return;
             case 12:
-                hi.b1 b1Var = (hi.b1) this.b;
-                b1Var.c(b1Var.b);
-                b1Var.c = false;
+                ((v8) this.b).run();
                 return;
             case 13:
-                ((a8) this.b).run();
-                return;
-            case 14:
                 t6 t6Var = (t6) this.b;
                 t6Var.c();
                 t6Var.a(true);
                 return;
-            case 15:
+            case 14:
                 ((p5) this.b).a(null);
                 return;
-            case 16:
-                ((d7) this.b).R();
+            case 15:
+                ((d7) this.b).S();
                 return;
-            case 17:
+            case 16:
                 m7 m7Var = (m7) this.b;
                 ArrayList arrayList = m7Var.c;
                 if (arrayList != null) {
@@ -201,22 +199,22 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 p6Var.V(y10, z10);
                 return;
+            case 17:
+                ((p0) this.b).f(true);
+                return;
             case 18:
-                ((o0) this.b).f(true);
+                ((a8) this.b).requestLayout();
                 return;
             case 19:
-                ((fi.a8) this.b).requestLayout();
-                return;
-            case 20:
                 j8 j8Var = (j8) this.b;
-                l3 l3Var = j8Var.c;
-                if (l3Var != null) {
-                    l3Var.f(true);
+                u3 u3Var = j8Var.c;
+                if (u3Var != null) {
+                    u3Var.f(true);
                     j8Var.c = null;
                 }
                 j8Var.b(false);
                 return;
-            case 21:
+            case 20:
                 h8 h8Var = (h8) this.b;
                 if (h8Var.w) {
                     h8Var.F = true;
@@ -228,7 +226,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
                 return;
-            case 22:
+            case 21:
                 f9 f9Var3 = ((o8) this.b).b;
                 try {
                     t8 t8Var = f9Var3.s;
@@ -246,25 +244,25 @@ public final /* synthetic */ class a implements Runnable {
                 } catch (Exception unused) {
                     return;
                 }
-            case 23:
+            case 22:
                 ((t8) this.b).s0.Q(true);
                 return;
-            case 24:
+            case 23:
                 ((o9) this.b).c();
                 return;
+            case 24:
+                ((ti) this.b).hide();
+                return;
             case 25:
-                ((ui) this.b).hide();
+                gi.m mVar = (gi.m) this.b;
+                eq0 eq0Var = mVar.a0;
+                a6 a6Var = mVar.a;
+                eq0Var.a(a6Var == null ? "" : a6Var.E);
                 return;
             case 26:
-                gi.m mVar = (gi.m) this.b;
-                fq0 fq0Var = mVar.a0;
-                a6 a6Var = mVar.a;
-                fq0Var.a(a6Var == null ? "" : a6Var.E);
-                return;
-            case 27:
                 ((j0) this.b).getClass();
                 return;
-            case 28:
+            case 27:
                 v vVar = (v) this.b;
                 b3.f fVar = (b3.f) vVar.a.get();
                 if (fVar != null) {
@@ -283,11 +281,11 @@ public final /* synthetic */ class a implements Runnable {
                                             if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
                                                 String networkCountryIso = telephonyManager.getNetworkCountryIso();
                                                 if (!TextUtils.isEmpty(networkCountryIso)) {
-                                                    d = ja.d(networkCountryIso);
+                                                    d = ka.d(networkCountryIso);
                                                     gVar.o = d;
                                                 }
                                             }
-                                            d = ja.d(Locale.getDefault().getCountry());
+                                            d = ka.d(Locale.getDefault().getCountry());
                                             gVar.o = d;
                                         }
                                         gVar.l = gVar.b(b10);
@@ -314,8 +312,11 @@ public final /* synthetic */ class a implements Runnable {
                     }
                 }
                 return;
-            default:
+            case 28:
                 ((hi.i) this.b).c.a0 = false;
+                return;
+            default:
+                ((hi.m) this.b).invalidateSelf();
                 return;
         }
     }

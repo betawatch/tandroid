@@ -1,213 +1,26 @@
 package gb;
 
-import android.util.Log;
-import c8.he;
-import j$.util.Objects;
-import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class d1 {
-    public final jb.l a;
-    public final u0 b;
-    public final q0 c;
-    public final h1 d;
-    public final m1.g e;
-    public final d0 f;
-    public final id.h g;
-    public j0 h;
-    public boolean i;
-    public boolean j;
-    public String k;
+public final class d1 extends kd.c {
+    public String a;
+    public b1 b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ e1 d;
+    public int e;
 
-    public d1(jb.l sessionsSettings, u0 sessionGenerator, q0 sessionFirelogPublisher, h1 timeProvider, m1.g sessionDataStore, d0 processDataManager, id.h backgroundDispatcher) {
-        kotlin.jvm.internal.j.e(sessionsSettings, "sessionsSettings");
-        kotlin.jvm.internal.j.e(sessionGenerator, "sessionGenerator");
-        kotlin.jvm.internal.j.e(sessionFirelogPublisher, "sessionFirelogPublisher");
-        kotlin.jvm.internal.j.e(timeProvider, "timeProvider");
-        kotlin.jvm.internal.j.e(sessionDataStore, "sessionDataStore");
-        kotlin.jvm.internal.j.e(processDataManager, "processDataManager");
-        kotlin.jvm.internal.j.e(backgroundDispatcher, "backgroundDispatcher");
-        this.a = sessionsSettings;
-        this.b = sessionGenerator;
-        this.c = sessionFirelogPublisher;
-        this.d = timeProvider;
-        this.e = sessionDataStore;
-        this.f = processDataManager;
-        this.g = backgroundDispatcher;
-        a1 a1Var = a1.a;
-        this.k = "";
-        zd.b0.q(zd.b0.b(backgroundDispatcher), new z0(this, null, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d1(e1 e1Var, id.c cVar) {
+        super(cVar);
+        this.d = e1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Object a(d1 d1Var, String str, a1 a1Var, id.c cVar) {
-        c1 c1Var;
-        int i7;
-        String str2;
-        if (cVar instanceof c1) {
-            c1Var = (c1) cVar;
-            int i10 = c1Var.e;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                c1Var.e = i10 - TLObject.FLAG_31;
-                Object obj = c1Var.c;
-                jd.a aVar = jd.a.a;
-                i7 = c1Var.e;
-                if (i7 != 0) {
-                    b7.h.b(obj);
-                    if (kotlin.jvm.internal.j.a(d1Var.k, str)) {
-                        return gd.k.a;
-                    }
-                    d1Var.k = str;
-                    hb.c cVar2 = hb.c.a;
-                    c1Var.a = str;
-                    c1Var.b = a1Var;
-                    c1Var.e = 1;
-                    obj = cVar2.b(c1Var);
-                    if (obj == aVar) {
-                        return aVar;
-                    }
-                } else {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    a1Var = c1Var.b;
-                    str = c1Var.a;
-                    b7.h.b(obj);
-                }
-                for (aa.j jVar : ((Map) obj).values()) {
-                    hb.e eVar = new hb.e(str);
-                    jVar.getClass();
-                    String str3 = "App Quality Sessions session changed: " + eVar;
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", str3, null);
-                    }
-                    aa.i iVar = jVar.b;
-                    synchronized (iVar) {
-                        if (!Objects.equals(iVar.c, str)) {
-                            aa.i.a(iVar.a, iVar.b, str);
-                            iVar.c = str;
-                        }
-                    }
-                    int ordinal = a1Var.ordinal();
-                    if (ordinal == 0) {
-                        str2 = "Notified " + hb.d.a + " of new session " + str;
-                    } else {
-                        if (ordinal != 1) {
-                            throw new androidx.car.app.j();
-                        }
-                        str2 = "Notified " + hb.d.a + " of new fallback session " + str;
-                    }
-                    Log.d("FirebaseSessions", str2);
-                }
-                return gd.k.a;
-            }
-        }
-        c1Var = new c1(d1Var, cVar);
-        Object obj2 = c1Var.c;
-        jd.a aVar2 = jd.a.a;
-        i7 = c1Var.e;
-        if (i7 != 0) {
-        }
-        while (r4.hasNext()) {
-        }
-        return gd.k.a;
-    }
-
-    public final void b() {
-        this.i = false;
-        if (this.h == null) {
-            Log.d("FirebaseSessions", "App backgrounded, but local SessionData not initialized");
-            return;
-        }
-        Log.d("FirebaseSessions", "App backgrounded on " + this.f.a());
-        zd.b0.q(zd.b0.b(this.g), new z0(this, null, 1));
-    }
-
-    public final void c() {
-        this.i = true;
-        j0 j0Var = this.h;
-        if (j0Var == null) {
-            this.j = true;
-            Log.d("FirebaseSessions", "App foregrounded, but local SessionData not initialized");
-            return;
-        }
-        id.c cVar = null;
-        if (j0Var == null) {
-            kotlin.jvm.internal.j.h("localSessionData");
-            throw null;
-        }
-        Log.d("FirebaseSessions", "App foregrounded on " + this.f.a());
-        if (e(j0Var) || d(j0Var)) {
-            zd.b0.q(zd.b0.b(this.g), new be.l(this, j0Var, cVar, 5));
-        }
-    }
-
-    public final boolean d(j0 j0Var) {
-        Map map = j0Var.c;
-        boolean z10 = true;
-        d0 d0Var = this.f;
-        if (map == null) {
-            Log.d("FirebaseSessions", "No process data for " + d0Var.a());
-            return true;
-        }
-        d0Var.getClass();
-        b0 b0Var = (b0) map.get(d0Var.a());
-        if (b0Var != null && b0Var.a == d0Var.c && kotlin.jvm.internal.j.a(b0Var.b, (String) d0Var.d.getValue())) {
-            z10 = false;
-        }
-        if (z10) {
-            Log.d("FirebaseSessions", "Process " + d0Var.a() + " is stale");
-        }
-        return z10;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0049, code lost:
-    
-        if (yd.a.c(r9) == false) goto L19;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0034, code lost:
-    
-        if (yd.a.c(r9) == false) goto L19;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean e(j0 j0Var) {
-        long c10;
-        g1 g1Var = j0Var.b;
-        n0 n0Var = j0Var.a;
-        if (g1Var == null) {
-            Log.d("FirebaseSessions", "Session " + n0Var.a + " has not backgrounded yet");
-            return false;
-        }
-        g1 a10 = this.d.a();
-        int i7 = yd.a.d;
-        long d = he.d(a10.a - g1Var.a, yd.c.c);
-        jb.l lVar = this.a;
-        yd.a c11 = lVar.a.c();
-        if (c11 != null) {
-            c10 = c11.a;
-            if (c10 > 0) {
-            }
-        }
-        yd.a c12 = lVar.b.c();
-        if (c12 != null) {
-            c10 = c12.a;
-            if (c10 > 0) {
-            }
-        }
-        c10 = he.c(30, yd.c.e);
-        boolean z10 = yd.a.b(d, c10) > 0;
-        if (z10) {
-            Log.d("FirebaseSessions", "Session " + n0Var.a + " is expired");
-        }
-        return z10;
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return e1.a(this.d, null, null, this);
     }
 }

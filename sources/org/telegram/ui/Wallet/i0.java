@@ -1,47 +1,60 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.r10;
-import org.telegram.tgnet.tl.TL_wallet;
+import java.util.ArrayList;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.ui.bd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class i0 implements Runnable {
-    public volatile boolean a;
-    public Runnable b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TL_wallet.nftItem d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ r10 f;
-    public final /* synthetic */ u0 h;
+public final class i0 implements Runnable, fs {
+    public boolean a;
+    public final /* synthetic */ ks b;
+    public final /* synthetic */ bd0 c;
+    public final /* synthetic */ v0 d;
 
-    public i0(u0 u0Var, String str, TL_wallet.nftItem nftitem, String str2, r10 r10Var) {
-        this.h = u0Var;
-        this.c = str;
-        this.d = nftitem;
-        this.e = str2;
-        this.f = r10Var;
+    public i0(ks ksVar, bd0 bd0Var, v0 v0Var) {
+        this.b = ksVar;
+        this.c = bd0Var;
+        this.d = v0Var;
+    }
+
+    public final void a() {
+        if (this.a) {
+            return;
+        }
+        v0 v0Var = this.d;
+        if (v0Var.e == null) {
+            return;
+        }
+        ArrayList arrayList = v0Var.J;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            if (((r0) obj).d) {
+                return;
+            }
+        }
+        run();
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ks.d4) {
+            a();
+        }
     }
 
     @Override // java.lang.Runnable
-    public final synchronized void run() {
-        try {
-            try {
-                if (this.a) {
-                    return;
-                }
-                WalletEngine2 walletEngine2 = this.h.b;
-                String str = this.c;
-                TL_wallet.nftItem nftitem = this.d;
-                String str2 = nftitem.address;
-                String str3 = this.e;
-                this.b = walletEngine2.emulateSendNFT(str, str2, str3, new s(this, nftitem, str3, this.f, 4));
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            throw th;
+    public final void run() {
+        if (this.a) {
+            return;
         }
+        this.a = true;
+        org.telegram.messenger.g0.r(this);
+        this.b.n(this, ks.d4);
+        this.c.run();
     }
 }

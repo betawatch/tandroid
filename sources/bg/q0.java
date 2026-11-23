@@ -6,7 +6,7 @@ import android.view.ViewOutlineProvider;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q0 extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -85,10 +85,10 @@ public final class q0 extends ViewOutlineProvider {
             case 21:
                 ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
                 if (imageReceiver != null) {
-                    int[] E = imageReceiver.E();
+                    int[] F = imageReceiver.F();
                     int i10 = 0;
                     for (int i11 = 0; i11 < 4; i11++) {
-                        i10 = Math.max(i10, E[i11]);
+                        i10 = Math.max(i10, F[i11]);
                     }
                     outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i10);
                     break;

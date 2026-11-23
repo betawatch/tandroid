@@ -2,12 +2,12 @@ package di;
 
 import android.content.DialogInterface;
 import java.util.Arrays;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.gi0;
+import org.telegram.ui.ei0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class n6 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ n6(y8 y8Var, y10 y10Var, boolean[] zArr, boolean[] zArr2, Object obj, int i7) {
+    public /* synthetic */ n6(y8 y8Var, w10 w10Var, boolean[] zArr, boolean[] zArr2, Object obj, int i7) {
         this.a = i7;
-        this.b = y10Var;
+        this.b = w10Var;
         this.c = zArr;
         this.d = zArr2;
         this.e = obj;
@@ -28,26 +28,26 @@ public final /* synthetic */ class n6 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                y10 y10Var = (y10) this.b;
+                w10 w10Var = (w10) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                r10 r10Var = (r10) this.e;
-                if (y10Var != null && !this.c[0]) {
-                    y10Var.a(Boolean.FALSE);
+                p10 p10Var = (p10) this.e;
+                if (w10Var != null && !this.c[0]) {
+                    w10Var.a(Boolean.FALSE);
                     if (!zArr[0]) {
-                        r10Var.a("cancelled", 0L);
+                        p10Var.a("cancelled", 0L);
                         zArr[0] = true;
                         break;
                     }
                 }
                 break;
             case 1:
-                y10 y10Var2 = (y10) this.b;
+                w10 w10Var2 = (w10) this.b;
                 boolean[] zArr2 = (boolean[]) this.d;
-                y10 y10Var3 = (y10) this.e;
-                if (y10Var2 != null && !this.c[0]) {
-                    y10Var2.a(Boolean.FALSE);
-                    if (!zArr2[0] && y10Var3 != null) {
-                        y10Var3.a("cancelled");
+                w10 w10Var3 = (w10) this.e;
+                if (w10Var2 != null && !this.c[0]) {
+                    w10Var2.a(Boolean.FALSE);
+                    if (!zArr2[0] && w10Var3 != null) {
+                        w10Var3.a("cancelled");
                         zArr2[0] = true;
                         break;
                     }
@@ -68,7 +68,7 @@ public final /* synthetic */ class n6 implements DialogInterface.OnDismissListen
                     w2Var.dismiss();
                     w2VarArr[0] = null;
                 }
-                gi0.a = null;
+                ei0.a = null;
                 org.telegram.ui.ActionBar.w2 w2Var2 = w2VarArr2[0];
                 if (w2Var2 != null) {
                     w2Var2.dismiss();

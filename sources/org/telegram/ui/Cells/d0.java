@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d0 {
     public final Runnable a;
@@ -20,7 +20,7 @@ public final class d0 {
     public float e;
     public int f;
     public int g;
-    public xy0 h;
+    public wy0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public org.telegram.messenger.p2 j;
     public org.telegram.messenger.n2 k;
@@ -30,10 +30,10 @@ public final class d0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public q80 r;
+    public n80 r;
     public y s;
     public Drawable t;
-    public org.telegram.ui.Components.p5 u;
+    public org.telegram.ui.Components.o5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -72,7 +72,7 @@ public final class d0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new ki.m3(this, 23));
+                this.x.addListener(new ki.n3(this, 23));
                 c0.q(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();

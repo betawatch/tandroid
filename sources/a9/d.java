@@ -6,17 +6,17 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.util.Log;
-import b9.a1;
+import b9.b1;
 import b9.c0;
-import b9.c1;
+import b9.k0;
 import b9.l0;
-import b9.m0;
-import b9.w0;
+import b9.v0;
+import b9.z0;
 import com.google.android.gms.common.data.DataHolder;
 import m9.u;
 import org.telegram.messenger.WearAuthListenerService;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d extends q {
     public volatile int b;
@@ -33,7 +33,7 @@ public final class d extends q {
     public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         c0 c0Var;
         if (i7 == 13) {
-            Object obj = (l0) i8.a.a(parcel, l0.CREATOR);
+            Object obj = (k0) i8.a.a(parcel, k0.CREATOR);
             IBinder readStrongBinder = parcel.readStrongBinder();
             if (readStrongBinder == null) {
                 c0Var = null;
@@ -66,29 +66,29 @@ public final class d extends q {
                     dataHolder.close();
                 }
             case 2:
-                Object obj2 = (l0) i8.a.a(parcel, l0.CREATOR);
+                Object obj2 = (k0) i8.a.a(parcel, k0.CREATOR);
                 i8.a.b(parcel);
                 m1(new u(this, obj2, false, 3), "onMessageReceived", obj2);
                 return true;
             case 3:
-                m0 m0Var = (m0) i8.a.a(parcel, m0.CREATOR);
+                l0 l0Var = (l0) i8.a.a(parcel, l0.CREATOR);
                 i8.a.b(parcel);
-                m1(new i(this, m0Var, 0), "onPeerConnected", m0Var);
+                m1(new i(this, l0Var, 0), "onPeerConnected", l0Var);
                 return true;
             case 4:
-                m0 m0Var2 = (m0) i8.a.a(parcel, m0.CREATOR);
+                l0 l0Var2 = (l0) i8.a.a(parcel, l0.CREATOR);
                 i8.a.b(parcel);
-                m1(new i(this, m0Var2, 1), "onPeerDisconnected", m0Var2);
+                m1(new i(this, l0Var2, 1), "onPeerDisconnected", l0Var2);
                 return true;
             case 5:
-                Object createTypedArrayList = parcel.createTypedArrayList(m0.CREATOR);
+                Object createTypedArrayList = parcel.createTypedArrayList(l0.CREATOR);
                 i8.a.b(parcel);
                 m1(new u(this, createTypedArrayList, false, 4), "onConnectedNodes", createTypedArrayList);
                 return true;
             case 6:
-                c1 c1Var = (c1) i8.a.a(parcel, c1.CREATOR);
+                b1 b1Var = (b1) i8.a.a(parcel, b1.CREATOR);
                 i8.a.b(parcel);
-                m1(new i(this, c1Var, 3), "onNotificationReceived", c1Var);
+                m1(new i(this, b1Var, 3), "onNotificationReceived", b1Var);
                 return true;
             case 7:
                 Object obj3 = (b9.e) i8.a.a(parcel, b9.e.CREATOR);
@@ -101,9 +101,9 @@ public final class d extends q {
                 m1(new i(this, bVar, 2), "onConnectedCapabilityChanged", bVar);
                 return true;
             case 9:
-                w0 w0Var = (w0) i8.a.a(parcel, w0.CREATOR);
+                v0 v0Var = (v0) i8.a.a(parcel, v0.CREATOR);
                 i8.a.b(parcel);
-                m1(new i(this, w0Var, 4), "onEntityUpdate", w0Var);
+                m1(new i(this, v0Var, 4), "onEntityUpdate", v0Var);
                 return true;
             default:
                 return false;
@@ -116,7 +116,7 @@ public final class d extends q {
         }
         int callingUid = Binder.getCallingUid();
         if (callingUid != this.b) {
-            if (a1.a(this.c).b() && x6.b.g(callingUid, this.c, "com.google.android.wearable.app.cn")) {
+            if (z0.a(this.c).b() && x6.b.g(callingUid, this.c, "com.google.android.wearable.app.cn")) {
                 this.b = callingUid;
             } else {
                 if (!x6.b.e(this.c, callingUid)) {

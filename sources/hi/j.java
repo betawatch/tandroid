@@ -7,32 +7,32 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.v90;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class j extends v90 {
+public final class j extends s90 {
     public final /* synthetic */ int W;
     public final /* synthetic */ KeyEvent.Callback a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, j3, 0L, g2Var, h6Var);
+    public /* synthetic */ j(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(context, j3, 0L, g2Var, i6Var);
         this.W = i7;
         this.a0 = callback;
     }
 
-    @Override // org.telegram.ui.Components.v90
+    @Override // org.telegram.ui.Components.s90
     public void f(Canvas canvas, Rect rect, float f10) {
         switch (this.W) {
             case 0:
-                o oVar = (o) this.a0;
-                Paint paint = oVar.e;
-                RectF rectF = oVar.z0;
+                n nVar = (n) this.a0;
+                Paint paint = nVar.e;
+                RectF rectF = nVar.z0;
                 rectF.set(rect);
-                if (!oVar.g()) {
-                    Paint c10 = oVar.U.c(1.0f);
+                if (!nVar.g()) {
+                    Paint c10 = nVar.U.c(1.0f);
                     if (c10 != null) {
                         canvas.drawRoundRect(rectF, f10, f10, c10);
                         paint.setAlpha(80);
@@ -44,7 +44,7 @@ public final class j extends v90 {
                         break;
                     }
                 } else {
-                    oVar.h(oVar.U, canvas, oVar.z0, f10, false, -oVar.N.getX(), -oVar.N.getY(), false);
+                    nVar.h(nVar.U, canvas, nVar.z0, f10, false, -nVar.N.getX(), -nVar.N.getY(), false);
                     break;
                 }
             default:
@@ -53,7 +53,7 @@ public final class j extends v90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v90
+    @Override // org.telegram.ui.Components.s90
     public boolean h() {
         switch (this.W) {
             case 0:
@@ -63,11 +63,11 @@ public final class j extends v90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v90
+    @Override // org.telegram.ui.Components.s90
     public void i() {
         switch (this.W) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ui) this.a0).e2;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ti) this.a0).e2;
                 if (chatAttachAlertPhotoLayout != null) {
                     chatAttachAlertPhotoLayout.Y();
                     break;
@@ -76,11 +76,11 @@ public final class j extends v90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v90
+    @Override // org.telegram.ui.Components.s90
     public void n(boolean z10) {
         switch (this.W) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ui) this.a0).e2;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ti) this.a0).e2;
                 if (chatAttachAlertPhotoLayout != null) {
                     chatAttachAlertPhotoLayout.Y();
                     break;

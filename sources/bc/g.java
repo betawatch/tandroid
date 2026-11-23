@@ -1,8 +1,8 @@
 package bc;
 
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g extends d {
     public final byte[] c;
@@ -19,7 +19,7 @@ public final class g extends d {
         byte[] bArr = new byte[i11];
         for (int i12 = 0; i12 < i11; i12++) {
             int i13 = iArr[i12];
-            bArr[i12] = (byte) (((((i13 >> 16) & ls.e4) + ((i13 >> 7) & 510)) + (i13 & ls.e4)) / 4);
+            bArr[i12] = (byte) (((((i13 >> 16) & ks.e4) + ((i13 >> 7) & 510)) + (i13 & ks.e4)) / 4);
         }
         this.c = bArr;
         this.d = i7;

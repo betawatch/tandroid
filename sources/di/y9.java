@@ -4,19 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y9 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ KeyEvent.Callback f;
     public final /* synthetic */ Object h;
@@ -24,14 +24,14 @@ public final /* synthetic */ class y9 implements View.OnClickListener {
     public final /* synthetic */ Context r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ y9(mc mcVar, gj gjVar, bn bnVar, int i7, boolean z10, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, TLRPC.Chat chat) {
+    public /* synthetic */ y9(mc mcVar, fj fjVar, bn bnVar, int i7, boolean z10, Context context, org.telegram.ui.ActionBar.i6 i6Var, long j3, TLRPC.Chat chat) {
         this.f = mcVar;
-        this.h = gjVar;
+        this.h = fjVar;
         this.n = bnVar;
         this.b = i7;
         this.c = z10;
         this.r = context;
-        this.d = h6Var;
+        this.d = i6Var;
         this.e = j3;
         this.s = chat;
     }
@@ -61,30 +61,30 @@ public final /* synthetic */ class y9 implements View.OnClickListener {
                 break;
             default:
                 mc mcVar = (mc) this.f;
-                gj gjVar = (gj) this.h;
+                fj fjVar = (fj) this.h;
                 bn bnVar = (bn) this.n;
                 TLRPC.Chat chat = (TLRPC.Chat) this.s;
                 if (!mcVar.O1) {
                     long value = mcVar.t1.getValue();
-                    if ((mcVar.M1 != null || (gjVar != null && bnVar != null)) && mcVar.S1 == null) {
+                    if ((mcVar.M1 != null || (fjVar != null && bnVar != null)) && mcVar.S1 == null) {
                         int i10 = this.b;
-                        if (!np.u1(i10).A2()) {
+                        if (!mp.u1(i10).A2()) {
                             y8 y11 = y8.y(i10, false);
-                            bi.o2 o2Var = new bi.o2(mcVar, value, y11, gjVar, bnVar, 7);
+                            bi.q2 q2Var = new bi.q2(mcVar, value, y11, fjVar, bnVar, 7);
                             if (y11.e && y11.p().amount < value) {
                                 boolean z10 = this.c;
                                 Context context = this.r;
-                                org.telegram.ui.ActionBar.h6 h6Var = this.d;
+                                org.telegram.ui.ActionBar.i6 i6Var = this.d;
                                 long j10 = this.e;
                                 if (!z10) {
-                                    new fb(context, h6Var, value, 5, chat == null ? "" : chat.title, o2Var, j10).show();
+                                    new fb(context, i6Var, value, 5, chat == null ? "" : chat.title, q2Var, j10).show();
                                     break;
                                 } else {
-                                    new fb(context, h6Var, value, 17, org.telegram.messenger.n5.s(i10, j10), o2Var, j10).show();
+                                    new fb(context, i6Var, value, 17, org.telegram.messenger.n5.s(i10, j10), q2Var, j10).show();
                                     break;
                                 }
                             } else {
-                                o2Var.run();
+                                q2Var.run();
                                 break;
                             }
                         } else {
@@ -97,14 +97,14 @@ public final /* synthetic */ class y9 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ y9(hi.e eVar, int i7, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.w2[] w2VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, String str) {
+    public /* synthetic */ y9(hi.e eVar, int i7, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.w2[] w2VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, String str) {
         this.f = eVar;
         this.b = i7;
         this.h = starsSubscription;
         this.n = w2VarArr;
         this.e = j3;
         this.r = activity;
-        this.d = h6Var;
+        this.d = i6Var;
         this.c = z10;
         this.s = str;
     }

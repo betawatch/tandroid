@@ -1,6 +1,7 @@
 package x3;
 
-import a8.la;
+import a8.ma;
+import aa.b0;
 import android.util.Pair;
 import android.util.SparseArray;
 import b3.j;
@@ -14,8 +15,8 @@ import e2.s0;
 import e2.t;
 import e2.t0;
 import e2.u;
-import f3.h0;
 import f3.j0;
+import f3.k0;
 import f3.l;
 import f3.o;
 import f3.p;
@@ -25,7 +26,7 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -40,11 +41,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -124,7 +124,7 @@ public final class f implements o {
         o0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
         e2.p(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        e2.p(ls.K2, hashMap, "htc_video_rotA-180", ls.t4, "htc_video_rotA-270");
+        e2.p(ks.K2, hashMap, "htc_video_rotA-180", ks.t4, "htc_video_rotA-270");
         p0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -143,7 +143,7 @@ public final class f implements o {
         this.L = -1L;
         this.M = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new qf(this, 27);
+        bVar.d = new v4.b(this, 4);
         this.f = kVar;
         this.C = new SparseArray();
         this.d = (i7 & 1) == 0;
@@ -165,7 +165,7 @@ public final class f implements o {
     }
 
     public static byte[] j(long j3, String str, long j10) {
-        la.f(j3 != -9223372036854775807L);
+        ma.f(j3 != -9223372036854775807L);
         int i7 = (int) (j3 / 3600000000L);
         long j11 = j3 - (i7 * 3600000000L);
         int i10 = (int) (j11 / 60000000);
@@ -187,7 +187,7 @@ public final class f implements o {
             j10 = j3;
         }
         int i7 = (int) j10;
-        lVar.g(xVar.a, 0, 4, false);
+        lVar.k(xVar.a, 0, 4, false);
         long C = xVar.C();
         jVar.b = 4;
         while (true) {
@@ -197,7 +197,7 @@ public final class f implements o {
                 if (i10 == i7) {
                     break;
                 }
-                lVar.g(xVar.a, 0, 1, false);
+                lVar.k(xVar.a, 0, 1, false);
                 C = ((C << 8) & (-256)) | (xVar.a[0] & 255);
             } else {
                 long s5 = jVar.s(lVar);
@@ -214,7 +214,7 @@ public final class f implements o {
                                 }
                                 if (s9 != 0) {
                                     int i11 = (int) s9;
-                                    lVar.x(i11, false);
+                                    lVar.t(i11, false);
                                     jVar.b += i11;
                                 }
                             } else {
@@ -266,10 +266,10 @@ public final class f implements o {
             if (i7 >= sparseArray.size()) {
                 return;
             }
-            j0 j0Var = ((e) sparseArray.valueAt(i7)).V;
-            if (j0Var != null) {
-                j0Var.b = false;
-                j0Var.c = 0;
+            k0 k0Var = ((e) sparseArray.valueAt(i7)).V;
+            if (k0Var != null) {
+                k0Var.b = false;
+                k0Var.c = 0;
             }
             i7++;
         }
@@ -278,7 +278,7 @@ public final class f implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -420,7 +420,7 @@ public final class f implements o {
         byte[] bArr;
         int i14;
         String str4;
-        ee.t a11;
+        b0 a11;
         List list4;
         int i15;
         List list5;
@@ -451,7 +451,7 @@ public final class f implements o {
                         long b10 = r82.b(pVar3, true, r43, 4);
                         if (b10 == -2) {
                             byte[] bArr2 = bVar.a;
-                            pVar3.n();
+                            pVar3.o();
                             int i19 = r43;
                             while (true) {
                                 pVar3.b(i19, i18, bArr2);
@@ -472,11 +472,11 @@ public final class f implements o {
                                     if (a10 == 357149030 || a10 == 524531317 || a10 == 475249515 || a10 == 374648427) {
                                     }
                                 }
-                                pVar3.r(1);
+                                pVar3.q(1);
                                 i18 = 4;
                                 i19 = 0;
                             }
-                            pVar3.r(i10);
+                            pVar3.q(i10);
                             b10 = a10;
                         }
                         z10 = true;
@@ -495,24 +495,24 @@ public final class f implements o {
                         bVar.g = r82.b(pVar3, false, z10, 8);
                         bVar.e = 2;
                     }
-                    qf qfVar = bVar.d;
+                    v4.b bVar2 = bVar.d;
                     int i21 = bVar.f;
-                    Object obj2 = qfVar.b;
+                    Object obj2 = bVar2.b;
                     switch (i21) {
-                        case ls.P1 /* 131 */:
-                        case ls.S1 /* 136 */:
-                        case ls.l2 /* 155 */:
-                        case ls.p2 /* 159 */:
-                        case ls.G2 /* 176 */:
-                        case ls.J2 /* 179 */:
-                        case ls.Q2 /* 186 */:
-                        case ls.s3 /* 215 */:
-                        case ls.H3 /* 231 */:
-                        case ls.N3 /* 238 */:
-                        case ls.P3 /* 240 */:
-                        case ls.Q3 /* 241 */:
-                        case ls.W3 /* 247 */:
-                        case ls.a4 /* 251 */:
+                        case ks.P1 /* 131 */:
+                        case ks.S1 /* 136 */:
+                        case ks.l2 /* 155 */:
+                        case ks.p2 /* 159 */:
+                        case ks.G2 /* 176 */:
+                        case ks.J2 /* 179 */:
+                        case ks.Q2 /* 186 */:
+                        case ks.s3 /* 215 */:
+                        case ks.H3 /* 231 */:
+                        case ks.N3 /* 238 */:
+                        case ks.P3 /* 240 */:
+                        case ks.Q3 /* 241 */:
+                        case ks.W3 /* 247 */:
+                        case ks.a4 /* 251 */:
                         case 16871:
                         case 16980:
                         case 17029:
@@ -549,13 +549,13 @@ public final class f implements o {
                         case 2274716:
                             i7 = 3;
                             break;
-                        case ls.q2 /* 160 */:
-                        case ls.w2 /* 166 */:
-                        case ls.E2 /* 174 */:
-                        case ls.N2 /* 183 */:
-                        case ls.R2 /* 187 */:
-                        case ls.B3 /* 224 */:
-                        case ls.C3 /* 225 */:
+                        case ks.q2 /* 160 */:
+                        case ks.w2 /* 166 */:
+                        case ks.E2 /* 174 */:
+                        case ks.N2 /* 183 */:
+                        case ks.R2 /* 187 */:
+                        case ks.B3 /* 224 */:
+                        case ks.C3 /* 225 */:
                         case 16868:
                         case 18407:
                         case 19899:
@@ -576,9 +576,9 @@ public final class f implements o {
                         case 524531317:
                             i7 = 1;
                             break;
-                        case ls.r2 /* 161 */:
-                        case ls.t2 /* 163 */:
-                        case ls.v2 /* 165 */:
+                        case ks.r2 /* 161 */:
+                        case ks.t2 /* 163 */:
+                        case ks.v2 /* 165 */:
                         case 16877:
                         case 16981:
                         case 18402:
@@ -587,7 +587,7 @@ public final class f implements o {
                         case 30322:
                             i7 = 4;
                             break;
-                        case ls.L2 /* 181 */:
+                        case ks.L2 /* 181 */:
                         case 17545:
                         case 21969:
                         case 21970:
@@ -609,14 +609,14 @@ public final class f implements o {
                             break;
                     }
                     if (i7 == 0) {
-                        pVar3.r((int) bVar.g);
+                        pVar3.q((int) bVar.g);
                         bVar.e = 0;
                         z12 = false;
                         r42 = 1;
                     } else if (i7 == 1) {
                         long position = pVar3.getPosition();
                         arrayDeque.push(new a(bVar.f, bVar.g + position));
-                        bVar.d.y0(position, bVar.f, bVar.g);
+                        bVar.d.e(position, bVar.f, bVar.g);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -625,7 +625,7 @@ public final class f implements o {
                         if (j12 > 8) {
                             throw t0.a(null, "Invalid integer size: " + bVar.g);
                         }
-                        qfVar.u0(i21, bVar.a(pVar3, (int) j12));
+                        bVar2.b(i21, bVar.a(pVar3, (int) j12));
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -647,12 +647,12 @@ public final class f implements o {
                             r15 = 0;
                             str = new String(bArr3, 0, i22);
                         }
-                        qfVar.z0(i21, str);
+                        bVar2.f(i21, str);
                         bVar.e = r15;
                         z11 = r15;
                         pVar2 = pVar3;
                     } else if (i7 == 4) {
-                        qfVar.r0(i21, (int) bVar.g, pVar3);
+                        bVar2.a(i21, (int) bVar.g, pVar3);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -666,7 +666,7 @@ public final class f implements o {
                         }
                         int i23 = (int) j14;
                         double intBitsToFloat = i23 == 4 ? Float.intBitsToFloat((int) r4) : Double.longBitsToDouble(bVar.a(pVar3, i23));
-                        f fVar2 = (f) qfVar.b;
+                        f fVar2 = (f) bVar2.b;
                         if (i21 == 181) {
                             fVar2.h(i21);
                             fVar2.y.S = (int) intBitsToFloat;
@@ -736,9 +736,9 @@ public final class f implements o {
                         pVar2 = pVar3;
                     }
                 } else {
-                    qf qfVar2 = bVar.d;
+                    v4.b bVar3 = bVar.d;
                     int i24 = ((a) arrayDeque.pop()).a;
-                    f fVar3 = (f) qfVar2.b;
+                    f fVar3 = (f) bVar3.b;
                     ?? r83 = fVar3.C;
                     ?? r92 = fVar3.c;
                     fVar3.j0.getClass();
@@ -1043,8 +1043,8 @@ public final class f implements o {
                                             list4 = u10;
                                             str2 = null;
                                             list3 = list4;
-                                            if (eVar.P != null && (a11 = ee.t.a(new x(eVar.P))) != null) {
-                                                str2 = a11.b;
+                                            if (eVar.P != null && (a11 = b0.a(new x(eVar.P))) != null) {
+                                                str2 = a11.a;
                                                 str6 = "video/dolby-vision";
                                             }
                                             int i26 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
@@ -1109,9 +1109,9 @@ public final class f implements o {
                                                     } else if (Float.compare(eVar.w, 90.0f) == 0) {
                                                         intValue = 90;
                                                     } else if (Float.compare(eVar.w, -180.0f) == 0 || Float.compare(eVar.w, 180.0f) == 0) {
-                                                        intValue = ls.K2;
+                                                        intValue = ks.K2;
                                                     } else if (Float.compare(eVar.w, -90.0f) == 0) {
-                                                        intValue = ls.t4;
+                                                        intValue = ks.t4;
                                                     }
                                                 }
                                                 tVar.y = eVar.n;
@@ -1161,7 +1161,7 @@ public final class f implements o {
                                                     str2 = null;
                                                     list3 = null;
                                                     if (eVar.P != null) {
-                                                        str2 = a11.b;
+                                                        str2 = a11.a;
                                                         str6 = "video/dolby-vision";
                                                         break;
                                                     }
@@ -1255,7 +1255,7 @@ public final class f implements o {
                                             }
                                             break;
                                         case 3:
-                                            eVar.V = new j0();
+                                            eVar.V = new k0();
                                             str6 = "audio/true-hd";
                                             D = -1;
                                             i11 = -1;
@@ -1296,18 +1296,18 @@ public final class f implements o {
                                                     int i34 = 0;
                                                     int i35 = 1;
                                                     while (true) {
-                                                        int i36 = a13[i35] & ls.e4;
+                                                        int i36 = a13[i35] & ks.e4;
                                                         if (i36 == 255) {
-                                                            i34 += ls.e4;
+                                                            i34 += ks.e4;
                                                             i35++;
                                                         } else {
                                                             int i37 = i35 + 1;
                                                             int i38 = i34 + i36;
                                                             int i39 = 0;
                                                             while (true) {
-                                                                int i40 = a13[i37] & ls.e4;
+                                                                int i40 = a13[i37] & ks.e4;
                                                                 if (i40 == 255) {
-                                                                    i39 += ls.e4;
+                                                                    i39 += ks.e4;
                                                                     i37++;
                                                                 } else {
                                                                     int i41 = i37 + 1;
@@ -2237,7 +2237,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.d2(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case ls.T /* 30 */:
+                                        case ks.T /* 30 */:
                                             str6 = "video/mpeg2";
                                             D = -1;
                                             i11 = -1;
@@ -2267,7 +2267,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.d2(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case ls.U /* 31 */:
+                                        case ks.U /* 31 */:
                                             str6 = "audio/eac3";
                                             D = -1;
                                             i11 = -1;
@@ -2392,11 +2392,11 @@ public final class f implements o {
                                 fVar3.h(i24);
                                 e eVar2 = fVar3.y;
                                 if (eVar2.i) {
-                                    h0 h0Var = eVar2.k;
-                                    if (h0Var == null) {
+                                    f3.i0 i0Var = eVar2.k;
+                                    if (i0Var == null) {
                                         throw t0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
                                     }
-                                    eVar2.m = new r(null, true, new e2.q(e2.l.b, null, "video/webm", h0Var.b));
+                                    eVar2.m = new r(null, true, new e2.q(e2.l.b, null, "video/webm", i0Var.b));
                                 }
                             } else if (i24 == 28032) {
                                 fVar3.h(i24);
@@ -2443,10 +2443,10 @@ public final class f implements o {
                                     if (z16) {
                                         eVar4.a0.getClass();
                                         if (!eVar4.W) {
-                                            f3.i0 i0Var = eVar4.a0;
+                                            j0 j0Var = eVar4.a0;
                                             u uVar = eVar4.b0;
                                             uVar.getClass();
-                                            i0Var.g(uVar);
+                                            j0Var.g(uVar);
                                         }
                                     }
                                 }
@@ -2474,11 +2474,11 @@ public final class f implements o {
                                             for (?? r63 = z12; r63 < r83.size(); r63++) {
                                                 Collections.sort((List) r83.valueAt(r63));
                                             }
-                                            fVar3.j0.j(new d(r83, fVar3.v, fVar3.I, fVar3.s, fVar3.r));
+                                            fVar3.j0.h(new d(r83, fVar3.v, fVar3.I, fVar3.s, fVar3.r));
                                         }
                                     }
                                 }
-                                fVar3.j0.j(new f3.t(fVar3.v));
+                                fVar3.j0.h(new f3.t(fVar3.v));
                                 fVar3.z = r42;
                                 fVar3.D = z12;
                                 int i55 = r42;
@@ -2557,10 +2557,10 @@ public final class f implements o {
                                     }
                                     if (!eVar5.W) {
                                         eVar5.a0.getClass();
-                                        f3.i0 i0Var2 = eVar5.a0;
+                                        j0 j0Var2 = eVar5.a0;
                                         u uVar3 = eVar5.b0;
                                         uVar3.getClass();
-                                        i0Var2.g(uVar3);
+                                        j0Var2.g(uVar3);
                                     }
                                     z12 = z17 ? 1 : 0;
                                     i55 = 1;
@@ -2630,9 +2630,9 @@ public final class f implements o {
             }
             e eVar7 = (e) sparseArray.valueAt(i65);
             eVar7.a0.getClass();
-            j0 j0Var = eVar7.V;
-            if (j0Var != null) {
-                j0Var.a(eVar7.a0, eVar7.k);
+            k0 k0Var = eVar7.V;
+            if (k0Var != null) {
+                k0Var.a(eVar7.a0, eVar7.k);
             }
             i65++;
         }
@@ -2660,9 +2660,9 @@ public final class f implements o {
         byte[] j10;
         int i12;
         int i13;
-        j0 j0Var = eVar.V;
-        if (j0Var != null) {
-            j0Var.b(eVar.a0, j3, i7, i10, i11, eVar.k);
+        k0 k0Var = eVar.V;
+        if (k0Var != null) {
+            k0Var.b(eVar.a0, j3, i7, i10, i11, eVar.k);
         } else {
             if ("S_TEXT/UTF8".equals(eVar.c) || "S_TEXT/ASS".equals(eVar.c) || "S_TEXT/SSA".equals(eVar.c) || "S_TEXT/WEBVTT".equals(eVar.c)) {
                 if (this.S > 1) {
@@ -2739,7 +2739,7 @@ public final class f implements o {
             if (i7 >= sparseArray.size()) {
                 q qVar = this.j0;
                 qVar.getClass();
-                qVar.d1();
+                qVar.Z0();
                 this.x = false;
                 return;
             }
@@ -2813,8 +2813,8 @@ public final class f implements o {
         if (eVar.W) {
             eVar.b0.getClass();
             x xVar = new x(i7);
-            if (pVar.g(xVar.a, 0, i7, true)) {
-                pVar.n();
+            if (pVar.k(xVar.a, 0, i7, true)) {
+                pVar.o();
                 if (f3.b.i(xVar.i()) == 1 && xVar.a() >= 10) {
                     byte[] bArr = new byte[10];
                     xVar.k(0, 10, bArr);
@@ -2834,7 +2834,7 @@ public final class f implements o {
             eVar.W = false;
             k();
         }
-        f3.i0 i0Var = eVar.a0;
+        j0 j0Var = eVar.a0;
         boolean z11 = this.d0;
         x xVar2 = this.l;
         if (!z11) {
@@ -2863,10 +2863,10 @@ public final class f implements o {
                         this.i0 = true;
                         xVar3.a[0] = (byte) ((z13 ? 128 : 0) | 8);
                         xVar3.N(0);
-                        i0Var.a(xVar3, 1, 1);
+                        j0Var.a(xVar3, 1, 1);
                         this.b0++;
                         xVar4.N(0);
-                        i0Var.a(xVar4, 8, 1);
+                        j0Var.a(xVar4, 8, 1);
                         this.b0 += 8;
                     }
                     if (z13) {
@@ -2915,7 +2915,7 @@ public final class f implements o {
                         byte[] array = this.q.array();
                         x xVar5 = this.o;
                         xVar5.L(i15, array);
-                        i0Var.a(xVar5, i15, 1);
+                        j0Var.a(xVar5, i15, 1);
                         this.b0 += i15;
                     }
                 }
@@ -2931,11 +2931,11 @@ public final class f implements o {
                 int i19 = (xVar2.c + i7) - this.a0;
                 xVar3.K(4);
                 byte[] bArr3 = xVar3.a;
-                bArr3[0] = (byte) ((i19 >> 24) & ls.e4);
-                bArr3[1] = (byte) ((i19 >> 16) & ls.e4);
-                bArr3[2] = (byte) ((i19 >> 8) & ls.e4);
-                bArr3[3] = (byte) (i19 & ls.e4);
-                i0Var.a(xVar3, 4, 2);
+                bArr3[0] = (byte) ((i19 >> 24) & ks.e4);
+                bArr3[1] = (byte) ((i19 >> 16) & ks.e4);
+                bArr3[2] = (byte) ((i19 >> 8) & ks.e4);
+                bArr3[3] = (byte) (i19 & ks.e4);
+                j0Var.a(xVar3, 4, 2);
                 this.b0 += 4;
             }
             this.d0 = true;
@@ -2943,7 +2943,7 @@ public final class f implements o {
         int i20 = i7 + xVar2.c;
         if (!"V_MPEG4/ISO/AVC".equals(eVar.c) && !"V_MPEGH/ISO/HEVC".equals(eVar.c)) {
             if (eVar.V != null) {
-                la.p(xVar2.c == 0);
+                ma.p(xVar2.c == 0);
                 eVar.V.c(pVar);
             }
             while (true) {
@@ -2955,9 +2955,9 @@ public final class f implements o {
                 int a11 = xVar2.a();
                 if (a11 > 0) {
                     e11 = Math.min(i22, a11);
-                    i0Var.b(e11, xVar2);
+                    j0Var.b(e11, xVar2);
                 } else {
-                    e11 = i0Var.e(pVar, i22, false);
+                    e11 = j0Var.e(pVar, i22, false);
                 }
                 this.a0 += e11;
                 this.b0 += e11;
@@ -2983,15 +2983,15 @@ public final class f implements o {
                     this.c0 = xVar6.E();
                     x xVar7 = this.g;
                     xVar7.N(0);
-                    i0Var.b(4, xVar7);
+                    j0Var.b(4, xVar7);
                     this.b0 += 4;
                 } else {
                     int a12 = xVar2.a();
                     if (a12 > 0) {
                         e10 = Math.min(i25, a12);
-                        i0Var.b(e10, xVar2);
+                        j0Var.b(e10, xVar2);
                     } else {
-                        e10 = i0Var.e(pVar, i25, false);
+                        e10 = j0Var.e(pVar, i25, false);
                     }
                     this.a0 += e10;
                     this.b0 += e10;
@@ -3002,7 +3002,7 @@ public final class f implements o {
         if ("A_VORBIS".equals(eVar.c)) {
             x xVar8 = this.j;
             xVar8.N(0);
-            i0Var.b(4, xVar8);
+            j0Var.b(4, xVar8);
             this.b0 += 4;
         }
         int i26 = this.b0;

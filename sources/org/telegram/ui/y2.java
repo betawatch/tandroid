@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class y2 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ArticleViewer$WindowView articleViewer$WindowView;
-        org.telegram.ui.Cells.j9 j9Var;
+        org.telegram.ui.Cells.i9 i9Var;
         int i7 = this.a;
         g4 g4Var = this.b;
         int i10 = 0;
@@ -35,7 +35,7 @@ public final class y2 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        g4Var.X(((org.telegram.ui.Components.bz0) g4Var.b.i).b);
+                        g4Var.X(((org.telegram.ui.Components.az0) g4Var.b.i).b);
                         g4Var.b = null;
                         g4Var.d = null;
                         View view = g4Var.f;
@@ -46,10 +46,10 @@ public final class y2 implements Runnable {
                     } else {
                         View view2 = g4Var.f;
                         if (view2 != null && g4Var.Q0.f0(view2)) {
-                            if (g4Var.f.getTag() == null || g4Var.f.getTag() != "bottomSheet" || (j9Var = g4Var.R0) == null) {
+                            if (g4Var.f.getTag() == null || g4Var.f.getTag() != "bottomSheet" || (i9Var = g4Var.R0) == null) {
                                 g4Var.Q0.l0();
                             } else {
-                                j9Var.l0();
+                                i9Var.l0();
                             }
                             if (g4Var.Q0.x()) {
                                 try {
@@ -87,18 +87,18 @@ public final class y2 implements Runnable {
                                     g4Var.C0.setShownFromBottom(false);
                                     TextView textView = new TextView(g4Var.M);
                                     g4Var.D0 = textView;
-                                    int i11 = org.telegram.ui.ActionBar.m6.i6;
-                                    org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.x0(null, i11, false), 2, -1);
-                                    org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i11);
+                                    int i11 = org.telegram.ui.ActionBar.n6.i6;
+                                    org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.x0(null, i11, false), 2, -1);
+                                    org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i11);
                                     textView.setBackground(h02);
-                                    org.telegram.ui.ActionBar.t6.j(textView, h02, null, M, null);
+                                    org.telegram.ui.ActionBar.u6.j(textView, h02, null, M, null);
                                     g4Var.D0.setGravity(16);
                                     g4Var.D0.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
                                     g4Var.D0.setTextSize(1, 15.0f);
                                     g4Var.D0.setTypeface(org.telegram.messenger.g0.o());
-                                    g4Var.D0.setText(org.telegram.messenger.hd.N0(2131751755, null).toUpperCase());
+                                    g4Var.D0.setText(org.telegram.messenger.gd.N0(2131751755, null).toUpperCase());
                                     g4Var.D0.setOnClickListener(new r(g4Var, 5));
-                                    g4Var.C0.addView(g4Var.D0, c8.ma.c(48.0f, -2));
+                                    g4Var.C0.addView(g4Var.D0, c8.na.c(48.0f, -2));
                                     org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(g4Var.C0, -2, -2);
                                     g4Var.I = g1Var2;
                                     g1Var2.b = false;
@@ -110,10 +110,10 @@ public final class y2 implements Runnable {
                                     g4Var.I.getContentView().setFocusableInTouchMode(true);
                                     g4Var.I.setOnDismissListener(new d0(g4Var, i10));
                                 }
-                                org.telegram.ui.ActionBar.t6.U(g4Var.D0, org.telegram.ui.ActionBar.m6.E8, null);
+                                org.telegram.ui.ActionBar.u6.U(g4Var.D0, org.telegram.ui.ActionBar.n6.E8, null);
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = g4Var.C0;
                                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                                    org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.G8, actionBarPopupWindow$ActionBarPopupWindowLayout2, null);
+                                    org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.G8, actionBarPopupWindow$ActionBarPopupWindowLayout2, null);
                                 }
                                 g4Var.C0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
                                 g4Var.I.setFocusable(true);

@@ -1,8 +1,8 @@
 package p7;
 
-import c8.mb;
+import c8.nb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends e {
     public final transient e c;
@@ -19,7 +19,7 @@ public final class c extends e {
     @Override // java.util.List
     public final Object get(int i7) {
         e eVar = this.c;
-        mb.a(i7, eVar.size());
+        nb.a(i7, eVar.size());
         return eVar.get((eVar.size() - 1) - i7);
     }
 
@@ -50,7 +50,7 @@ public final class c extends e {
     /* renamed from: m, reason: merged with bridge method [inline-methods] */
     public final e subList(int i7, int i10) {
         e eVar = this.c;
-        mb.b(i7, i10, eVar.size());
+        nb.b(i7, i10, eVar.size());
         return eVar.subList(eVar.size() - i10, eVar.size() - i7).l();
     }
 

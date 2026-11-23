@@ -4,19 +4,19 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
-import bi.w1;
+import bi.x1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p0 implements TextWatcher {
-    public final w1 a;
+    public final x1 a;
     public final EditText b;
     public String c;
     public boolean d;
     public boolean e;
 
-    public p0(ah.i iVar, w1 w1Var) {
-        this.a = w1Var;
+    public p0(ah.i iVar, x1 x1Var) {
+        this.a = x1Var;
         this.b = iVar;
     }
 
@@ -44,12 +44,12 @@ public final class p0 implements TextWatcher {
         if (this.d == z10) {
             return;
         }
-        w1 w1Var = this.a;
-        if (w1Var.c()) {
+        x1 x1Var = this.a;
+        if (x1Var.c()) {
             if (z10) {
-                w1Var.i();
+                x1Var.i();
             } else {
-                w1Var.h();
+                x1Var.h();
             }
             this.d = z10;
         }

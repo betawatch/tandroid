@@ -1,47 +1,47 @@
 package bi;
 
-import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.fc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t implements fb {
+public final class t implements eb {
     public final /* synthetic */ int a;
 
     public /* synthetic */ t(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void b(gc gcVar) {
+    @Override // org.telegram.ui.Components.eb
+    public final /* synthetic */ void b(fc fcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void d(gc gcVar) {
+    @Override // org.telegram.ui.Components.eb
+    public final /* synthetic */ void d(fc fcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final int f(int i7) {
         int i10;
         int L;
@@ -90,117 +90,117 @@ public final class t implements fb {
         return L + i10;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final boolean g(int i7) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fb
+    @Override // org.telegram.ui.Components.eb
     public final int h(int i7) {
         switch (this.a) {
         }
         return org.telegram.messenger.g0.m;
     }
 
-    private final /* synthetic */ void A(gc gcVar) {
+    private final /* synthetic */ void A(fc fcVar) {
     }
 
-    private final /* synthetic */ void B(gc gcVar) {
+    private final /* synthetic */ void B(fc fcVar) {
     }
 
-    private final /* synthetic */ void C(gc gcVar) {
+    private final /* synthetic */ void C(fc fcVar) {
     }
 
-    private final /* synthetic */ void D(gc gcVar) {
+    private final /* synthetic */ void D(fc fcVar) {
     }
 
-    private final /* synthetic */ void E(gc gcVar) {
+    private final /* synthetic */ void E(fc fcVar) {
     }
 
-    private final /* synthetic */ void F(gc gcVar) {
+    private final /* synthetic */ void F(fc fcVar) {
     }
 
-    private final /* synthetic */ void G(gc gcVar) {
+    private final /* synthetic */ void G(fc fcVar) {
     }
 
-    private final /* synthetic */ void H(gc gcVar) {
+    private final /* synthetic */ void H(fc fcVar) {
     }
 
-    private final /* synthetic */ void I(gc gcVar) {
+    private final /* synthetic */ void I(fc fcVar) {
     }
 
-    private final /* synthetic */ void J(gc gcVar) {
+    private final /* synthetic */ void J(fc fcVar) {
     }
 
-    private final /* synthetic */ void K(gc gcVar) {
+    private final /* synthetic */ void K(fc fcVar) {
     }
 
-    private final /* synthetic */ void L(gc gcVar) {
+    private final /* synthetic */ void L(fc fcVar) {
     }
 
-    private final /* synthetic */ void M(gc gcVar) {
+    private final /* synthetic */ void M(fc fcVar) {
     }
 
-    private final /* synthetic */ void N(gc gcVar) {
+    private final /* synthetic */ void N(fc fcVar) {
     }
 
-    private final /* synthetic */ void O(gc gcVar) {
+    private final /* synthetic */ void O(fc fcVar) {
     }
 
-    private final /* synthetic */ void P(gc gcVar) {
+    private final /* synthetic */ void P(fc fcVar) {
     }
 
-    private final /* synthetic */ void Q(gc gcVar) {
+    private final /* synthetic */ void Q(fc fcVar) {
     }
 
-    private final /* synthetic */ void R(gc gcVar) {
+    private final /* synthetic */ void R(fc fcVar) {
     }
 
-    private final /* synthetic */ void S(gc gcVar) {
+    private final /* synthetic */ void S(fc fcVar) {
     }
 
-    private final /* synthetic */ void T(gc gcVar) {
+    private final /* synthetic */ void T(fc fcVar) {
     }
 
-    private final /* synthetic */ void U(gc gcVar) {
+    private final /* synthetic */ void U(fc fcVar) {
     }
 
-    private final /* synthetic */ void V(gc gcVar) {
+    private final /* synthetic */ void V(fc fcVar) {
     }
 
-    private final /* synthetic */ void W(gc gcVar) {
+    private final /* synthetic */ void W(fc fcVar) {
     }
 
-    private final /* synthetic */ void X(gc gcVar) {
+    private final /* synthetic */ void X(fc fcVar) {
     }
 
-    private final /* synthetic */ void Y(gc gcVar) {
+    private final /* synthetic */ void Y(fc fcVar) {
     }
 
-    private final /* synthetic */ void Z(gc gcVar) {
+    private final /* synthetic */ void Z(fc fcVar) {
     }
 
-    private final /* synthetic */ void a0(gc gcVar) {
+    private final /* synthetic */ void a0(fc fcVar) {
     }
 
-    private final /* synthetic */ void b0(gc gcVar) {
+    private final /* synthetic */ void b0(fc fcVar) {
     }
 
-    private final /* synthetic */ void c0(gc gcVar) {
+    private final /* synthetic */ void c0(fc fcVar) {
     }
 
-    private final /* synthetic */ void d0(gc gcVar) {
+    private final /* synthetic */ void d0(fc fcVar) {
     }
 
-    private final /* synthetic */ void e0(gc gcVar) {
+    private final /* synthetic */ void e0(fc fcVar) {
     }
 
-    private final /* synthetic */ void f0(gc gcVar) {
+    private final /* synthetic */ void f0(fc fcVar) {
     }
 
-    private final /* synthetic */ void g0(gc gcVar) {
+    private final /* synthetic */ void g0(fc fcVar) {
     }
 
     private final /* synthetic */ void i(float f10) {
@@ -254,6 +254,6 @@ public final class t implements fb {
     private final /* synthetic */ void y(float f10) {
     }
 
-    private final /* synthetic */ void z(gc gcVar) {
+    private final /* synthetic */ void z(fc fcVar) {
     }
 }

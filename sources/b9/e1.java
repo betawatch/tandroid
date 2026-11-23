@@ -2,31 +2,52 @@ package b9;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e1 extends r6.a {
-    public static final Parcelable.Creator<e1> CREATOR = new o0(11);
-    public final int a;
+    public static final Parcelable.Creator<e1> CREATOR = new n0(12);
+    public final boolean a;
     public final List b;
-    public final b1 c;
 
-    public e1(int i7, ArrayList arrayList, b1 b1Var) {
-        this.a = i7;
+    public e1(ArrayList arrayList, boolean z10) {
+        this.a = z10;
         this.b = arrayList;
-        this.c = b1Var;
+    }
+
+    public final boolean equals(Object obj) {
+        Object obj2;
+        List list;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && e1.class == obj.getClass()) {
+            e1 e1Var = (e1) obj;
+            if (this.a == e1Var.a && ((list = this.b) == (obj2 = e1Var.b) || (list != null && list.equals(obj2)))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b});
+    }
+
+    public final String toString() {
+        return "AppWearDetailsParcelable{isWatchface=" + this.a + ", watchfaceCategories=" + String.valueOf(this.b) + "}";
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        bc.p(parcel, 2, this.b);
-        bc.k(parcel, 3, this.c, i7);
-        bc.s(parcel, r10);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        cc.n(parcel, 2, this.b);
+        cc.s(parcel, r10);
     }
 }

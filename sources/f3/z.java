@@ -1,69 +1,64 @@
 package f3;
 
-import java.io.Serializable;
-import org.telegram.messenger.ls;
+import a8.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class z {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Serializable g;
+public final class z implements c0 {
+    public final b3.j a;
+    public final b3.j b;
+    public long c;
 
-    public boolean a(int i7) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        if ((i7 & (-2097152)) != -2097152 || (i10 = (i7 >>> 19) & 3) == 1 || (i11 = (i7 >>> 17) & 3) == 0 || (i12 = (i7 >>> 12) & 15) == 0 || i12 == 15 || (i13 = (i7 >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i10;
-        this.g = b.s[3 - i11];
-        int i14 = b.t[i13];
-        this.c = i14;
-        if (i10 == 2) {
-            this.c = i14 / 2;
-        } else if (i10 == 0) {
-            this.c = i14 / 4;
-        }
-        int i15 = (i7 >>> 9) & 1;
-        int i16 = 1152;
-        if (i11 != 1) {
-            if (i11 != 2) {
-                if (i11 != 3) {
-                    throw new IllegalArgumentException();
-                }
-                i16 = 384;
-            }
-        } else if (i10 != 3) {
-            i16 = 576;
-        }
-        this.f = i16;
-        if (i11 == 3) {
-            int i17 = i10 == 3 ? b.u[i12 - 1] : b.v[i12 - 1];
-            this.e = i17;
-            this.b = (((i17 * 12) / this.c) + i15) * 4;
+    public z(long j3, long[] jArr, long[] jArr2) {
+        ma.f(jArr.length == jArr2.length);
+        int length = jArr2.length;
+        if (length <= 0 || jArr2[0] <= 0) {
+            this.a = new b3.j(length, 6);
+            this.b = new b3.j(length, 6);
         } else {
-            int i18 = ls.a2;
-            if (i10 == 3) {
-                int i19 = i11 == 2 ? b.w[i12 - 1] : b.x[i12 - 1];
-                this.e = i19;
-                this.b = ((i19 * ls.a2) / this.c) + i15;
-            } else {
-                int i20 = b.y[i12 - 1];
-                this.e = i20;
-                if (i11 == 1) {
-                    i18 = 72;
-                }
-                this.b = ((i18 * i20) / this.c) + i15;
-            }
+            int i7 = length + 1;
+            b3.j jVar = new b3.j(i7, 6);
+            this.a = jVar;
+            b3.j jVar2 = new b3.j(i7, 6);
+            this.b = jVar2;
+            jVar.c(0L);
+            jVar2.c(0L);
         }
-        this.d = ((i7 >> 6) & 3) == 3 ? 1 : 2;
-        return true;
+        this.a.d(jArr);
+        this.b.d(jArr2);
+        this.c = j3;
+    }
+
+    @Override // f3.c0
+    public final boolean d() {
+        return this.b.b > 0;
+    }
+
+    @Override // f3.c0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // f3.c0
+    public final b0 f(long j3) {
+        b3.j jVar = this.b;
+        if (jVar.b == 0) {
+            d0 d0Var = d0.c;
+            return new b0(d0Var, d0Var);
+        }
+        int c10 = h2.l0.c(jVar, j3);
+        long m10 = jVar.m(c10);
+        b3.j jVar2 = this.a;
+        d0 d0Var2 = new d0(m10, jVar2.m(c10));
+        if (m10 == j3 || c10 == jVar.b - 1) {
+            return new b0(d0Var2, d0Var2);
+        }
+        int i7 = c10 + 1;
+        return new b0(d0Var2, new d0(jVar.m(i7), jVar2.m(i7)));
+    }
+
+    @Override // f3.c0
+    public final long h() {
+        return this.c;
     }
 }

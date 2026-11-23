@@ -1,45 +1,19 @@
 package c8;
 
-import java.util.concurrent.Future;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class t9 {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z10 = false;
-        if (!future.isDone()) {
-            throw new IllegalStateException(a8.ma.a("Future was expected to be done: %s", future));
-        }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z10 = true;
-            } catch (Throwable th2) {
-                if (z10) {
-                    Thread.currentThread().interrupt();
-                }
-                throw th2;
-            }
-        }
-        if (z10) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
-    }
+    public abstract boolean a(m9.o oVar, m9.c cVar, m9.c cVar2);
 
-    public static m9.w b(Object obj) {
-        return obj == null ? m9.w.b : new m9.w(obj);
-    }
+    public abstract boolean b(m9.o oVar, Object obj, Object obj2);
 
-    public static m9.p c(m9.y yVar, g9.k kVar) {
-        m9.p pVar = new m9.p();
-        yVar.getClass();
-        pVar.n = yVar;
-        pVar.r = kVar;
-        yVar.b(pVar, m9.r.a);
-        return pVar;
-    }
+    public abstract boolean c(m9.o oVar, m9.n nVar, m9.n nVar2);
+
+    public abstract m9.c d(m9.o oVar);
+
+    public abstract m9.n e(m9.o oVar);
+
+    public abstract void f(m9.n nVar, m9.n nVar2);
+
+    public abstract void g(m9.n nVar, Thread thread);
 }

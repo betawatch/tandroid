@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class xj0 implements v4.t0 {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class xj0 implements v4.t0 {
                 break;
             default:
                 v4.z zVar = (v4.z) this.b;
-                s4.s0 s0Var = zVar.J;
+                org.telegram.ui.Wallet.o5 o5Var = zVar.J;
                 ((GestureDetector) zVar.O.b).onTouchEvent(motionEvent);
                 VelocityTracker velocityTracker = zVar.K;
                 if (velocityTracker != null) {
@@ -49,8 +49,8 @@ public final class xj0 implements v4.t0 {
                                 if (findPointerIndex >= 0) {
                                     zVar.u(zVar.F, findPointerIndex, motionEvent);
                                     zVar.p(f1Var);
-                                    zVar.I.removeCallbacks(s0Var);
-                                    s0Var.run();
+                                    zVar.I.removeCallbacks(o5Var);
+                                    o5Var.run();
                                     zVar.I.invalidate();
                                     break;
                                 }
@@ -129,7 +129,7 @@ public final class xj0 implements v4.t0 {
                 }
                 if (ek0Var.M1 != null && !ek0Var.O1) {
                     try {
-                        ek0Var.L1.w0(motionEvent);
+                        ek0Var.L1.I2(motionEvent);
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
                     }
@@ -147,7 +147,7 @@ public final class xj0 implements v4.t0 {
                         ek0Var.O1 = false;
                         ek0Var.m1(view2, motionEvent);
                         if ((actionMasked == 1 || actionMasked == 6 || actionMasked == 3) && (tj0Var = ek0Var.X0) != null && ek0Var.Y0) {
-                            tj0Var.j();
+                            tj0Var.h();
                             ek0Var.Y0 = false;
                             break;
                         }
@@ -265,9 +265,9 @@ public final class xj0 implements v4.t0 {
 
     public xj0(Context context, ek0 ek0Var) {
         this.b = ek0Var;
-        qf qfVar = new qf(context, new wj0(this));
-        ek0Var.L1 = qfVar;
-        ((o10) qfVar.b).t = false;
+        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(context, new wj0(this));
+        ek0Var.L1 = aaVar;
+        ((m10) aaVar.b).t = false;
     }
 
     private final void d(RecyclerView recyclerView, MotionEvent motionEvent) {

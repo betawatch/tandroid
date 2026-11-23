@@ -1,6 +1,6 @@
 package android.support.v4.media.session;
 
-import a8.k1;
+import a8.l1;
 import android.app.PendingIntent;
 import android.net.Uri;
 import android.os.Binder;
@@ -18,9 +18,9 @@ import android.view.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -278,11 +278,11 @@ public final class t extends Binder implements d {
         b bVar2 = null;
         switch (i7) {
             case 1:
-                D0(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR), (MediaSessionCompat$ResultReceiverWrapper) k1.a(parcel, MediaSessionCompat$ResultReceiverWrapper.CREATOR));
+                D0(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR), (MediaSessionCompat$ResultReceiverWrapper) l1.a(parcel, MediaSessionCompat$ResultReceiverWrapper.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 2:
-                boolean i02 = i0((KeyEvent) k1.a(parcel, KeyEvent.CREATOR));
+                boolean i02 = i0((KeyEvent) l1.a(parcel, KeyEvent.CREATOR));
                 parcel2.writeNoException();
                 parcel2.writeInt(i02 ? 1 : 0);
                 return true;
@@ -334,7 +334,7 @@ public final class t extends Binder implements d {
             case 8:
                 PendingIntent z10 = z();
                 parcel2.writeNoException();
-                k1.b(parcel2, z10);
+                l1.b(parcel2, z10);
                 return true;
             case 9:
                 long l10 = l();
@@ -344,7 +344,7 @@ public final class t extends Binder implements d {
             case 10:
                 ParcelableVolumeInfo V0 = V0();
                 parcel2.writeNoException();
-                k1.b(parcel2, V0);
+                l1.b(parcel2, V0);
                 return true;
             case 11:
                 int readInt = parcel.readInt();
@@ -365,15 +365,15 @@ public final class t extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 14:
-                V(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                V(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 15:
-                X(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                X(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 16:
-                b0((Uri) k1.a(parcel, Uri.CREATOR), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                b0((Uri) l1.a(parcel, Uri.CREATOR), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 17:
@@ -409,22 +409,22 @@ public final class t extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 25:
-                q((RatingCompat) k1.a(parcel, RatingCompat.CREATOR));
+                q((RatingCompat) l1.a(parcel, RatingCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 26:
-                o(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                o(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 27:
                 MediaMetadataCompat Q = Q();
                 parcel2.writeNoException();
-                k1.b(parcel2, Q);
+                l1.b(parcel2, Q);
                 return true;
             case 28:
                 PlaybackStateCompat i11 = i();
                 parcel2.writeNoException();
-                k1.b(parcel2, i11);
+                l1.b(parcel2, i11);
                 return true;
             case 29:
                 List F0 = F0();
@@ -436,10 +436,10 @@ public final class t extends Binder implements d {
                 int size = F0.size();
                 parcel2.writeInt(size);
                 for (int i12 = 0; i12 < size; i12++) {
-                    k1.b(parcel2, (Parcelable) F0.get(i12));
+                    l1.b(parcel2, (Parcelable) F0.get(i12));
                 }
                 return true;
-            case ls.T /* 30 */:
+            case ks.T /* 30 */:
                 CharSequence M = M();
                 parcel2.writeNoException();
                 if (M == null) {
@@ -449,10 +449,10 @@ public final class t extends Binder implements d {
                 parcel2.writeInt(1);
                 TextUtils.writeToParcel(M, parcel2, 1);
                 return true;
-            case ls.U /* 31 */:
+            case ks.U /* 31 */:
                 Bundle extras = getExtras();
                 parcel2.writeNoException();
-                k1.b(parcel2, extras);
+                l1.b(parcel2, extras);
                 return true;
             case 32:
                 B();
@@ -464,15 +464,15 @@ public final class t extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 34:
-                S(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                S(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 35:
-                C(parcel.readString(), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                C(parcel.readString(), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 36:
-                r((Uri) k1.a(parcel, Uri.CREATOR), (Bundle) k1.a(parcel, Bundle.CREATOR));
+                r((Uri) l1.a(parcel, Uri.CREATOR), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 37:
@@ -493,15 +493,15 @@ public final class t extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 41:
-                y((MediaDescriptionCompat) k1.a(parcel, MediaDescriptionCompat.CREATOR));
+                y((MediaDescriptionCompat) l1.a(parcel, MediaDescriptionCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 42:
-                n0((MediaDescriptionCompat) k1.a(parcel, MediaDescriptionCompat.CREATOR), parcel.readInt());
+                n0((MediaDescriptionCompat) l1.a(parcel, MediaDescriptionCompat.CREATOR), parcel.readInt());
                 parcel2.writeNoException();
                 return true;
             case 43:
-                v((MediaDescriptionCompat) k1.a(parcel, MediaDescriptionCompat.CREATOR));
+                v((MediaDescriptionCompat) l1.a(parcel, MediaDescriptionCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 44:
@@ -533,10 +533,10 @@ public final class t extends Binder implements d {
             case 50:
                 Bundle T = T();
                 parcel2.writeNoException();
-                k1.b(parcel2, T);
+                l1.b(parcel2, T);
                 return true;
-            case ls.o0 /* 51 */:
-                l0((RatingCompat) k1.a(parcel, RatingCompat.CREATOR), (Bundle) k1.a(parcel, Bundle.CREATOR));
+            case ks.o0 /* 51 */:
+                l0((RatingCompat) l1.a(parcel, RatingCompat.CREATOR), (Bundle) l1.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             default:

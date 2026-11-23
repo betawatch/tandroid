@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class v extends ImageView {
     public final h2.c a;
@@ -29,7 +29,7 @@ public class v extends ImageView {
         cVar.x(attributeSet, i7);
         xa xaVar = new xa(this);
         this.b = xaVar;
-        xaVar.s(attributeSet, i7);
+        xaVar.r(attributeSet, i7);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -142,7 +142,7 @@ public class v extends ImageView {
         if (xaVar != null) {
             ImageView imageView = (ImageView) xaVar.c;
             if (i7 != 0) {
-                Drawable b10 = c8.z.b(imageView.getContext(), i7);
+                Drawable b10 = c8.a0.b(imageView.getContext(), i7);
                 if (b10 != null) {
                     l1.a(b10);
                 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class mn implements Runnable {
                 break;
             default:
                 rnVar.e.setImageDrawable(rnVar.r);
-                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.hd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
+                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
                 TLRPC.User user = rnVar.D0;
                 if (user != null) {
                     user.photo = null;
@@ -42,7 +42,7 @@ public final /* synthetic */ class mn implements Runnable {
                 }
                 rnVar.P0 = true;
                 if (rnVar.S0 == null) {
-                    rnVar.S0 = new org.telegram.ui.Components.oh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
+                    rnVar.S0 = new org.telegram.ui.Components.nh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
                 }
                 rnVar.c0.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
                 rnVar.c0.e.setAnimation(rnVar.S0);

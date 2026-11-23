@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.f3;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.ws0;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.vs0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class x0 extends LinearLayout {
     public int a;
     public final TextView b;
-    public final m80 c;
+    public final j80 c;
     public LinearLayout d;
     public final n0 e;
     public final ViewGroup f;
@@ -30,14 +30,14 @@ public final class x0 extends LinearLayout {
     /* JADX WARN: Type inference failed for: r12v0, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, ug.x0] */
     /* JADX WARN: Type inference failed for: r15v10, types: [ug.m1] */
     /* JADX WARN: Type inference failed for: r15v9, types: [ug.p0] */
-    /* JADX WARN: Type inference failed for: r3v6, types: [ug.w1] */
+    /* JADX WARN: Type inference failed for: r3v6, types: [ug.x1] */
     public x0(y0 y0Var, Context context, int i7) {
         super(context);
         a aVar;
         this.n = y0Var;
         setOrientation(1);
-        ws0 ws0Var = (ws0) y0Var.o1.get(i7);
-        int i10 = ws0Var.a;
+        vs0 vs0Var = (vs0) y0Var.o1.get(i7);
+        int i10 = vs0Var.a;
         if (i10 == 0) {
             a bVar = new b(context, y0Var.J0);
             bVar.b.setOnScrollListener(new t0(y0Var, 1));
@@ -47,7 +47,7 @@ public final class x0 extends LinearLayout {
             iVar.b.setOnScrollListener(new t0(y0Var, 0));
             aVar = iVar;
         } else {
-            aVar = i10 == 5 ? new u0(context, y0Var.a) : i10 == 10 ? new p0(context, y0Var.J0) : new w1(context, y0Var.x1, y0Var.a, ws0Var.a, y0Var.J0);
+            aVar = i10 == 5 ? new u0(context, y0Var.a) : i10 == 10 ? new p0(context, y0Var.J0) : new x1(context, y0Var.x1, y0Var.a, vs0Var.a, y0Var.J0);
         }
         this.f = aVar;
         addView(aVar);
@@ -55,18 +55,18 @@ public final class x0 extends LinearLayout {
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setGravity(1);
-        int i11 = m6.j5;
+        int i11 = n6.j5;
         f3.l(textView, i11, y0Var.J0, 1, 20.0f);
-        addView(textView, ma.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-        m80 m80Var = new m80(context, null);
-        this.c = m80Var;
-        m80Var.setGravity(1);
-        m80Var.setTextSize(1, 15.0f);
-        t6.U(m80Var, i11, y0Var.J0);
+        addView(textView, na.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
+        j80 j80Var = new j80(context, null);
+        this.c = j80Var;
+        j80Var.setGravity(1);
+        j80Var.setTextSize(1, 15.0f);
+        u6.U(j80Var, i11, y0Var.J0);
         if (!y0Var.z1) {
-            m80Var.setLines(2);
+            j80Var.setLines(2);
         }
-        addView(m80Var, ma.t(-1, -2, 1, 21, 10, 21, 16));
+        addView(j80Var, na.t(-1, -2, 1, 21, 10, 21, 16));
         setImportantForAccessibility(2);
         setClipChildren(false);
     }
@@ -103,15 +103,15 @@ public final class x0 extends LinearLayout {
             ((a) viewGroup).setTopOffset(y0Var.G1);
         }
         viewGroup.getLayoutParams().height = y0Var.u1;
-        m80 m80Var = this.c;
-        m80Var.setVisibility(0);
+        j80 j80Var = this.c;
+        j80Var.setVisibility(0);
         ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
         super.onMeasure(i7, i10);
         if (this.h) {
             viewGroup.getLayoutParams().height = getMeasuredHeight() - org.telegram.messenger.g0.L(16.0f);
             ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
             textView.setVisibility(8);
-            m80Var.setVisibility(8);
+            j80Var.setVisibility(8);
             super.onMeasure(i7, i10);
         }
     }

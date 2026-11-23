@@ -1,6 +1,6 @@
 package androidx.biometric;
 
-import a8.l1;
+import a8.m1;
 import a8.sa;
 import android.app.Dialog;
 import android.content.Context;
@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class g0 extends androidx.fragment.app.p {
     public final Handler B0 = new Handler(Looper.getMainLooper());
@@ -79,7 +79,7 @@ public class g0 extends androidx.fragment.app.p {
         }
         this.G0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
         this.H0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
-        if (l1.a(this.D0.c())) {
+        if (m1.a(this.D0.c())) {
             obj = q(R.string.confirm_device_credential_password);
         } else {
             z zVar = this.D0;
@@ -97,9 +97,9 @@ public class g0 extends androidx.fragment.app.p {
         bVar.g = obj;
         bVar.j = yVar;
         bVar.i = inflate;
-        g.f g10 = jVar.g();
-        g10.setCanceledOnTouchOutside(false);
-        return g10;
+        g.f f10 = jVar.f();
+        f10.setCanceledOnTouchOutside(false);
+        return f10;
     }
 
     public final int P(int i7) {

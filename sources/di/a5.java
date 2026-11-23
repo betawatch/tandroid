@@ -10,9 +10,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a5 extends Drawable {
     public Drawable g;
@@ -21,7 +21,7 @@ public final class a5 extends Drawable {
     public final Paint b = new Paint(1);
     public final Shader[] c = new Shader[2];
     public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.d6 e = new org.telegram.ui.Components.d6(1.0f, new ca.r(this, 22), 0, 420, nr.h);
+    public final org.telegram.ui.Components.c6 e = new org.telegram.ui.Components.c6(1.0f, new ca.r(this, 21), 0, 420, kr.h);
     public final RectF f = new RectF();
     public final int a = 1;
 

@@ -12,9 +12,9 @@ import h2.l0;
 import h2.x;
 import java.lang.reflect.Array;
 import java.util.List;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements z3.b {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class c implements z3.b {
             int i12 = 8 - i10;
             int min = Math.min(i7, i12);
             int i13 = i12 - min;
-            int i14 = (ls.e4 >> (8 - min)) << i13;
+            int i14 = (ks.e4 >> (8 - min)) << i13;
             int i15 = this.b;
             int i16 = (i14 & bArr[i15]) >> i13;
             i7 -= min;
@@ -86,7 +86,7 @@ public final class c implements z3.b {
             }
             if (i7 > 0) {
                 int i21 = 8 - i7;
-                int i22 = ((bArr[this.b] & ((ls.e4 >> i21) << i21)) >> i21) | (i11 << i7);
+                int i22 = ((bArr[this.b] & ((ks.e4 >> i21) << i21)) >> i21) | (i11 << i7);
                 this.c += i7;
                 return i22;
             }
@@ -139,7 +139,7 @@ public final class c implements z3.b {
         PackageInfo packageInfo;
         if (this.b == 0) {
             try {
-                packageInfo = z6.b.a((Context) this.d).b(0, "com.google.android.gms");
+                packageInfo = z6.b.a((Context) this.d).c(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e10) {
                 Log.w("Metadata", "Failed to find package ".concat(e10.toString()));
                 packageInfo = null;

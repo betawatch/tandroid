@@ -2,9 +2,9 @@ package te;
 
 import android.view.View;
 import android.view.animation.Interpolator;
-import org.telegram.ui.Components.voip.r1;
+import org.telegram.ui.Components.voip.s1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final int a;
@@ -16,19 +16,19 @@ public final class a implements b {
     public c h;
 
     public a(View view, Interpolator interpolator, long j3) {
-        this(0, new r1(view), interpolator, j3, false);
+        this(0, new s1(view), interpolator, j3, false);
     }
 
     @Override // te.b
-    public final void D(float f10, int i7) {
-        this.b.D(f10, this.a);
+    public final void G(float f10, int i7) {
+        this.b.G(f10, this.a);
     }
 
     @Override // te.b
-    public final void H(int i7, float f10, float f11, c cVar) {
+    public final void K(int i7, float f10, float f11, c cVar) {
         if (this.e != f10) {
             this.e = f10;
-            this.b.H(this.a, f10, -1.0f, null);
+            this.b.K(this.a, f10, -1.0f, null);
         }
     }
 
@@ -59,9 +59,9 @@ public final class a implements b {
             b bVar = this.b;
             if (f11 != f10) {
                 this.e = f10;
-                bVar.H(i7, f10, -1.0f, null);
+                bVar.K(i7, f10, -1.0f, null);
             }
-            bVar.D(f10, i7);
+            bVar.G(f10, i7);
         }
     }
 

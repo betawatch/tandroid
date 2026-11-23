@@ -1,289 +1,51 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class hc0 extends org.telegram.ui.Components.iu0 {
-    public final /* synthetic */ de0 E;
-    public final mb0 a;
-    public final TextView b;
-    public final TextView c;
-    public final xh.l d;
-    public final org.telegram.ui.Components.rh0 e;
-    public Bundle f;
-    public String h;
-    public boolean n;
-    public String r;
-    public String s;
-    public String w;
-    public boolean x;
-    public final fc0 y;
+public final /* synthetic */ class hc0 implements org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00e0 A[LOOP:0: B:9:0x00de->B:10:0x00e0, LOOP_END] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public hc0(de0 de0Var, Context context) {
-        super(context);
-        int i7;
-        int length;
-        int i10;
-        this.E = de0Var;
-        this.y = new fc0(this, 1);
-        setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.rh0 rh0Var = new org.telegram.ui.Components.rh0(context);
-        this.e = rh0Var;
-        rh0Var.f(R.raw.tsv_setup_mail, 120, 120, null);
-        rh0Var.setAutoRepeat(false);
-        frameLayout.addView(rh0Var, c8.ma.e(120, 120, 1));
-        if (!org.telegram.messenger.g0.O1()) {
-            Point point = org.telegram.messenger.g0.q;
-            if (point.x <= point.y || org.telegram.messenger.g0.Q1()) {
-                i7 = 0;
-                frameLayout.setVisibility(i7);
-                addView(frameLayout, c8.ma.e(-1, -2, 1));
-                TextView textView = new TextView(context);
-                this.b = textView;
-                textView.setTextSize(1, 18.0f);
-                textView.setTypeface(org.telegram.messenger.g0.o());
-                textView.setText(org.telegram.messenger.hd.N0(2131751111, null));
-                textView.setGravity(17);
-                float f10 = 2.0f;
-                textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                addView(textView, c8.ma.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
-                TextView textView2 = new TextView(context);
-                this.c = textView2;
-                textView2.setTextSize(1, 14.0f);
-                textView2.setGravity(17);
-                textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                textView2.setText(org.telegram.messenger.hd.N0(2131745883, null));
-                addView(textView2, c8.ma.t(-2, -2, 1, 12, 8, 12, 0));
-                mb0 mb0Var = new mb0(1, context, this);
-                this.a = mb0Var;
-                mb0Var.b(6, 1);
-                er[] erVarArr = mb0Var.f;
-                length = erVarArr.length;
-                i10 = 0;
-                while (i10 < length) {
-                    er erVar = erVarArr[i10];
-                    erVar.setShowSoftInputOnFocusCompat(org.telegram.messenger.g0.C1());
-                    erVar.addTextChangedListener(new m0(this, 10));
-                    erVar.setOnFocusChangeListener(new ed(this, 6));
-                    i10++;
-                    f10 = f10;
-                }
-                addView(this.a, c8.ma.t(-2, 42, 1, 0, 32, 0, 0));
-                xh.l lVar = new xh.l(context, null, false);
-                this.d = lVar;
-                lVar.setGravity(17);
-                lVar.setTextSize(1, 14.0f);
-                lVar.setLineSpacing(org.telegram.messenger.g0.L(f10), 1.0f);
-                lVar.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-                lVar.setMaxLines(2);
-                lVar.setOnClickListener(new j40(this, 6));
-                FrameLayout frameLayout2 = new FrameLayout(context);
-                frameLayout2.addView(lVar, c8.ma.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
-                addView(frameLayout2, c8.ma.l(1.0f, -1, 0));
-                h6.m.i(lVar);
-            }
-        }
-        i7 = 8;
-        frameLayout.setVisibility(i7);
-        addView(frameLayout, c8.ma.e(-1, -2, 1));
-        TextView textView3 = new TextView(context);
-        this.b = textView3;
-        textView3.setTextSize(1, 18.0f);
-        textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(org.telegram.messenger.hd.N0(2131751111, null));
-        textView3.setGravity(17);
-        float f102 = 2.0f;
-        textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        addView(textView3, c8.ma.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
-        TextView textView22 = new TextView(context);
-        this.c = textView22;
-        textView22.setTextSize(1, 14.0f);
-        textView22.setGravity(17);
-        textView22.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        textView22.setText(org.telegram.messenger.hd.N0(2131745883, null));
-        addView(textView22, c8.ma.t(-2, -2, 1, 12, 8, 12, 0));
-        mb0 mb0Var2 = new mb0(1, context, this);
-        this.a = mb0Var2;
-        mb0Var2.b(6, 1);
-        er[] erVarArr2 = mb0Var2.f;
-        length = erVarArr2.length;
-        i10 = 0;
-        while (i10 < length) {
-        }
-        addView(this.a, c8.ma.t(-2, 42, 1, 0, 32, 0, 0));
-        xh.l lVar2 = new xh.l(context, null, false);
-        this.d = lVar2;
-        lVar2.setGravity(17);
-        lVar2.setTextSize(1, 14.0f);
-        lVar2.setLineSpacing(org.telegram.messenger.g0.L(f102), 1.0f);
-        lVar2.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        lVar2.setMaxLines(2);
-        lVar2.setOnClickListener(new j40(this, 6));
-        FrameLayout frameLayout22 = new FrameLayout(context);
-        frameLayout22.addView(lVar2, c8.ma.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
-        addView(frameLayout22, c8.ma.l(1.0f, -1, 0));
-        h6.m.i(lVar2);
+    public /* synthetic */ hc0(oc0 oc0Var, int i7) {
+        this.a = i7;
+        this.b = oc0Var;
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public final boolean a() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final boolean c(boolean z10) {
-        this.E.C1(true, true);
-        this.f = null;
-        this.n = false;
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void d() {
-        this.n = false;
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public String getHeaderName() {
-        return org.telegram.messenger.hd.N0(2131748533, "LoginPassword");
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void h(String str) {
-        int i7;
-        if (this.n) {
-            return;
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        int i10 = this.a;
+        oc0 oc0Var = this.b;
+        switch (i10) {
+            case 0:
+                oc0Var.c(true);
+                oc0Var.Q.M1(0, true, null, true);
+                oc0Var.n();
+                break;
+            case 1:
+                oc0Var.Q.s0.popup = false;
+                oc0Var.h(null);
+                break;
+            case 2:
+                de0 de0Var = oc0Var.Q;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
+                String N0 = org.telegram.messenger.gd.N0(2131743953, "TermsOfService");
+                org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
+                t1Var2.S = N0;
+                t1Var2.U = org.telegram.messenger.gd.N0(2131743730, "TosDecline");
+                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745124, "SignUp"), new hc0(oc0Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751592, "Decline"), new hc0(oc0Var, 4));
+                de0Var.showDialog(t1Var2);
+                break;
+            case 3:
+                oc0Var.Q.s0.popup = false;
+                oc0Var.h(null);
+                break;
+            default:
+                oc0Var.c(true);
+                oc0Var.Q.M1(0, true, null, true);
+                break;
         }
-        mb0 mb0Var = this.a;
-        mb0Var.e = true;
-        for (er erVar : mb0Var.f) {
-            erVar.B(0.0f);
-        }
-        String code = mb0Var.getCode();
-        if (code.length() == 0) {
-            n(false);
-            return;
-        }
-        this.n = true;
-        de0 de0Var = this.E;
-        de0Var.F1(0, true);
-        TLRPC.TL_auth_checkRecoveryPassword tL_auth_checkRecoveryPassword = new TLRPC.TL_auth_checkRecoveryPassword();
-        tL_auth_checkRecoveryPassword.code = code;
-        i7 = ((org.telegram.ui.ActionBar.g2) de0Var).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_auth_checkRecoveryPassword, new e00(10, this, code), 10);
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void j() {
-        org.telegram.messenger.g0.h3(new fc0(this, 0), de0.A0);
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void k(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle("recoveryview_params");
-        this.f = bundle2;
-        if (bundle2 != null) {
-            m(bundle2, true);
-        }
-        String string = bundle.getString("recoveryview_code");
-        if (string != null) {
-            this.a.setText(string);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void l(Bundle bundle) {
-        String code = this.a.getCode();
-        if (code != null && code.length() != 0) {
-            bundle.putString("recoveryview_code", code);
-        }
-        Bundle bundle2 = this.f;
-        if (bundle2 != null) {
-            bundle.putBundle("recoveryview_params", bundle2);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void m(Bundle bundle, boolean z10) {
-        if (bundle == null) {
-            return;
-        }
-        mb0 mb0Var = this.a;
-        mb0Var.setText("");
-        this.f = bundle;
-        this.h = bundle.getString("password");
-        this.r = this.f.getString("requestPhone");
-        this.s = this.f.getString("phoneHash");
-        this.w = this.f.getString("phoneCode");
-        String string = this.f.getString("email_unconfirmed_pattern");
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
-        int indexOf = string.indexOf(42);
-        int lastIndexOf = string.lastIndexOf(42);
-        if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-            org.telegram.ui.Components.fz0 fz0Var = new org.telegram.ui.Components.fz0();
-            fz0Var.a |= 256;
-            fz0Var.b = indexOf;
-            int i7 = lastIndexOf + 1;
-            fz0Var.c = i7;
-            valueOf.setSpan(new org.telegram.ui.Components.gz0(fz0Var, 0), indexOf, i7, 0);
-        }
-        this.d.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.hd.N0(2131745885, null), valueOf));
-        de0.b1(this.E, mb0Var);
-        mb0Var.requestFocus();
-    }
-
-    public final void n(boolean z10) {
-        mb0 mb0Var = this.a;
-        if (this.E.getParentActivity() == null) {
-            return;
-        }
-        try {
-            mb0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        if (z10) {
-            for (er erVar : mb0Var.f) {
-                erVar.setText("");
-            }
-        }
-        for (er erVar2 : mb0Var.f) {
-            erVar2.A(1.0f);
-        }
-        mb0Var.f[0].requestFocus();
-        org.telegram.messenger.g0.E3(10.0f, mb0Var, new fc0(this, 2));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        removeCallbacks(this.y);
-    }
-
-    @Override // org.telegram.ui.Components.iu0
-    public final void updateColors() {
-        this.b.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
-        this.c.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.D6, false));
-        this.d.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false));
-        this.a.invalidate();
     }
 }

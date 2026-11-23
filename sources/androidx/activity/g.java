@@ -12,14 +12,14 @@ import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
 import n2.a0;
+import org.telegram.messenger.fi;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gi;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.messenger.w7;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.jp;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class g implements Runnable {
     */
     public final void run() {
         l5.a aVar;
-        o5.r rVar;
+        o5.s sVar;
         VisionClearcutLogger visionClearcutLogger;
         int i7 = 0;
         switch (this.a) {
@@ -62,7 +62,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.f(obj);
+                        bVar.g(obj);
                         return;
                     }
                     return;
@@ -72,10 +72,10 @@ public final class g implements Runnable {
                 return;
             case 2:
                 com.google.android.gms.internal.cast.p pVar = (com.google.android.gms.internal.cast.p) this.d;
-                s4.r rVar2 = (s4.r) this.c;
+                s4.r rVar = (s4.r) this.c;
                 int i11 = this.b;
                 synchronized (pVar.e) {
-                    pVar.n1(rVar2, i11);
+                    pVar.n1(rVar, i11);
                 }
                 return;
             case 3:
@@ -107,9 +107,9 @@ public final class g implements Runnable {
                     }
                     m0.i.b("analytics event: %s", aVar2);
                     q6.m.h(aVar2);
-                    rVar = m0Var.g;
-                    if (rVar == null) {
-                        rVar.a(aVar2, new a0(8));
+                    sVar = m0Var.g;
+                    if (sVar == null) {
+                        sVar.a(aVar2, new a0(8));
                         return;
                     }
                     return;
@@ -118,8 +118,8 @@ public final class g implements Runnable {
                 aVar2 = aVar;
                 m0.i.b("analytics event: %s", aVar2);
                 q6.m.h(aVar2);
-                rVar = m0Var.g;
-                if (rVar == null) {
+                sVar = m0Var.g;
+                if (sVar == null) {
                 }
             case 4:
                 ((TextView) this.d).setTypeface((Typeface) this.c, this.b);
@@ -127,15 +127,15 @@ public final class g implements Runnable {
             case 5:
                 ArrayList arrayList = (ArrayList) this.d;
                 while (i7 < arrayList.size()) {
-                    ((mp) arrayList.get(i7)).a.m(this.b);
+                    ((jp) arrayList.get(i7)).a.m(this.b);
                     i7++;
                 }
-                g0.g3(new gi(3, this, arrayList));
+                g0.g3(new fi(3, this, arrayList));
                 return;
             case 6:
                 ArrayList arrayList2 = (ArrayList) this.d;
                 while (i7 < arrayList2.size()) {
-                    if (!((String) this.c).equals(((gj) arrayList2.get(i7)).S0())) {
+                    if (!((String) this.c).equals(((fj) arrayList2.get(i7)).S0())) {
                         arrayList2.remove(i7);
                         i7--;
                     }
@@ -160,9 +160,9 @@ public final class g implements Runnable {
         this.b = i7;
     }
 
-    public g(si siVar, ArrayList arrayList, int i7) {
+    public g(ri riVar, ArrayList arrayList, int i7) {
         this.a = 5;
-        this.c = siVar;
+        this.c = riVar;
         this.d = arrayList;
         this.b = i7;
     }

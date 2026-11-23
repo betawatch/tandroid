@@ -1,9 +1,9 @@
 package di;
 
-import org.telegram.messenger.y10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d7 implements q0.a {
     public final /* synthetic */ int a;
@@ -21,20 +21,20 @@ public final /* synthetic */ class d7 implements q0.a {
         switch (this.a) {
             case 0:
                 f5.f fVar = (f5.f) this.b;
-                bi.e8 e8Var = (bi.e8) this.c;
+                bi.h8 h8Var = (bi.h8) this.c;
                 int i7 = fVar.a;
                 boolean z10 = i7 == 0;
-                org.telegram.messenger.g0.g3(new p6(e8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
+                org.telegram.messenger.g0.g3(new p6(h8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
                 break;
             case 1:
                 f5.f fVar2 = (f5.f) this.b;
-                org.telegram.ui.Wallet.e0 e0Var = (org.telegram.ui.Wallet.e0) this.c;
+                org.telegram.ui.Wallet.f0 f0Var = (org.telegram.ui.Wallet.f0) this.c;
                 int i10 = fVar2.a;
                 boolean z11 = i10 == 0;
-                org.telegram.messenger.g0.g3(new p6(e0Var, z11, z11 ? null : org.telegram.messenger.r1.j(i10), 1));
+                org.telegram.messenger.g0.g3(new p6(f0Var, z11, z11 ? null : org.telegram.messenger.r1.j(i10), 1));
                 break;
             case 2:
-                hi.k5.X((hi.u9) this.b, (sg.k0) this.c, (Integer) obj);
+                hi.v5.Y((hi.pa) this.b, (sg.j0) this.c, (Integer) obj);
                 break;
             case 3:
                 org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.b;
@@ -55,17 +55,17 @@ public final /* synthetic */ class d7 implements q0.a {
                 break;
             case 4:
                 f5.f fVar3 = (f5.f) this.b;
-                y10 y10Var = (y10) this.c;
+                w10 w10Var = (w10) this.c;
                 if (fVar3.a == 0) {
-                    org.telegram.messenger.g0.g3(new hi.h9(y10Var, 2));
+                    org.telegram.messenger.g0.g3(new hi.ca(w10Var, 2));
                     break;
                 }
                 break;
             default:
                 f5.f fVar4 = (f5.f) this.b;
-                wg.v vVar = (wg.v) this.c;
+                wg.u uVar = (wg.u) this.c;
                 if (fVar4.a == 0) {
-                    org.telegram.messenger.g0.g3(new v4.p(vVar, 7));
+                    org.telegram.messenger.g0.g3(new ug.u1(uVar, 8));
                     break;
                 }
                 break;

@@ -1,69 +1,56 @@
 package tg;
 
-import android.view.View;
-import di.ca;
-import di.ta;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k implements View.OnClickListener {
+public final class k extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h0 b;
+    public final /* synthetic */ n b;
 
-    public /* synthetic */ k(h0 h0Var, int i7) {
+    public /* synthetic */ k(n nVar, int i7) {
         this.a = i7;
-        this.b = h0Var;
+        this.b = nVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                h0 h0Var = this.b;
-                if (!h0Var.D0) {
-                    h0Var.B0(0);
-                    break;
-                } else {
-                    h0Var.r0(null, true);
+                n nVar = this.b;
+                if (animator == nVar.c0) {
+                    nVar.c0 = null;
                     break;
                 }
+                break;
             case 1:
-                h0 h0Var2 = this.b;
-                int i7 = h0Var2.Q0;
-                h0Var2.B0(1);
-                h0Var2.postDelayed(new n(h0Var2, 1), 350L);
-                w wVar = new w(h0Var2.getContext(), h0Var2.A1, false, false);
-                wVar.z1 = new q(h0Var2);
-                wVar.O0(new ta(h0Var2, 4));
-                wVar.setOnDismissListener(new ca(h0Var2, i7));
-                wVar.show();
-                h0Var2.o0(true);
+                n nVar2 = this.b;
+                if (animator == nVar2.d0) {
+                    nVar2.d0 = null;
+                    break;
+                }
                 break;
             case 2:
-                h0 h0Var3 = this.b;
-                j jVar = h0Var3.C0;
-                if ((jVar instanceof n2) && !h0Var3.D0) {
-                    n2 n2Var = (n2) jVar;
-                    h0Var3.D0 = true;
-                    n2Var.q();
-                    View focusedView = n2Var.getFocusedView();
-                    focusedView.requestFocus();
-                    org.telegram.messenger.g0.I3(focusedView);
-                }
-                org.telegram.ui.ActionBar.g1 g1Var = h0Var3.B1;
-                if (g1Var != null && g1Var.isShowing()) {
-                    h0Var3.B1.d(true);
+                n nVar3 = this.b;
+                if (animator == nVar3.R) {
+                    nVar3.R = null;
+                    nVar3.Q = 0.0f;
                     break;
                 }
                 break;
             case 3:
-                h0.Z(this.b);
+                n nVar4 = this.b;
+                if (animator == nVar4.S) {
+                    nVar4.S = null;
+                    break;
+                }
                 break;
             default:
-                h0 h0Var4 = this.b;
-                h0Var4.B0(2);
-                if (!(h0Var4.C0 instanceof n2)) {
-                    h0Var4.h0(true);
+                n nVar5 = this.b;
+                if (!nVar5.n0) {
+                    org.telegram.messenger.g0.E2(nVar5.J);
+                    nVar5.J = null;
                     break;
                 }
                 break;

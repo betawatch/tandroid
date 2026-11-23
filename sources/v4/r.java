@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.a8;
+import ug.u1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -18,9 +19,9 @@ public final class r implements Runnable {
     public ArrayList d;
 
     public static f1 c(RecyclerView recyclerView, int i7, long j3) {
-        int z10 = recyclerView.e.z();
-        for (int i10 = 0; i10 < z10; i10++) {
-            f1 U = RecyclerView.U(recyclerView.e.y(i10));
+        int F = recyclerView.e.F();
+        for (int i10 = 0; i10 < F; i10++) {
+            f1 U = RecyclerView.U(recyclerView.e.E(i10));
             if (U.c == i7 && !U.h()) {
                 return null;
             }
@@ -41,7 +42,7 @@ public final class r implements Runnable {
                 return j10;
             } catch (Exception e10) {
                 a8.g(e10, true);
-                org.telegram.messenger.g0.g3(new p(recyclerView, 0));
+                org.telegram.messenger.g0.g3(new u1(recyclerView, 1));
                 recyclerView.i0(false);
                 return null;
             }
@@ -108,7 +109,7 @@ public final class r implements Runnable {
         for (int i15 = 0; i15 < arrayList.size() && (recyclerView = (qVar = (q) arrayList.get(i15)).d) != null; i15++) {
             f1 c10 = c(recyclerView, qVar.e, qVar.a ? Long.MAX_VALUE : j3);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
-                if (recyclerView2.R && recyclerView2.e.z() != 0) {
+                if (recyclerView2.R && recyclerView2.e.F() != 0) {
                     recyclerView2.p0();
                 }
                 h2.f fVar3 = recyclerView2.u0;

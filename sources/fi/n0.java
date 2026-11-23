@@ -8,16 +8,16 @@ import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
 import di.ec;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class n0 extends LinearLayout {
     public ec a;
     public final Path b;
     public final Paint c;
     public long d;
-    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.c6 e;
     public final /* synthetic */ q0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -27,7 +27,7 @@ public final class n0 extends LinearLayout {
         this.b = new Path();
         this.c = new Paint(1);
         this.d = 0L;
-        this.e = new org.telegram.ui.Components.d6(this, 0L, 1000L, new LinearInterpolator());
+        this.e = new org.telegram.ui.Components.c6(this, 0L, 1000L, new LinearInterpolator());
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -50,22 +50,22 @@ public final class n0 extends LinearLayout {
             long j3 = this.d;
             s0 s0Var3 = q0Var.f;
             long j10 = s0Var3.b;
-            org.telegram.ui.Components.d6 d6Var = this.e;
+            org.telegram.ui.Components.c6 c6Var = this.e;
             if (j3 != j10) {
-                d6Var.e(true, s0Var3.a());
+                c6Var.e(true, s0Var3.a());
             }
-            float e10 = d6Var.e(false, q0Var.f.a());
+            float e10 = c6Var.e(false, q0Var.f.a());
             this.d = q0Var.f.b;
             Paint paint = this.c;
             paint.setColor(b11);
-            paint.setAlpha(ls.L1);
+            paint.setAlpha(ks.L1);
             canvas2 = canvas;
             canvas2.drawRect(getWidth() * e10, 0.0f, getWidth(), getHeight(), paint);
         } else {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new ec(1, ls.Z3);
+            this.a = new ec(1, ks.Z3);
         }
         this.a.f(0, 0, getWidth(), getHeight());
         ec ecVar = this.a;

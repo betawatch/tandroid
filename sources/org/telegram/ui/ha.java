@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ha implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class ha implements ValueAnimator.AnimatorUpdateLis
                 ia iaVar2 = this.b;
                 iaVar2.getClass();
                 iaVar2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i7 = org.telegram.ui.ActionBar.m6.z6;
-                org.telegram.ui.ActionBar.h6 h6Var = iaVar2.b;
-                int f10 = i0.a.f(iaVar2.F, org.telegram.ui.ActionBar.m6.w0(i7, h6Var), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.n6, h6Var));
+                int i7 = org.telegram.ui.ActionBar.n6.z6;
+                org.telegram.ui.ActionBar.i6 i6Var = iaVar2.b;
+                int f10 = i0.a.f(iaVar2.F, org.telegram.ui.ActionBar.n6.w0(i7, i6Var), org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.n6, i6Var));
                 iaVar2.e.b(f10);
                 iaVar2.f.setTextColor(f10);
                 break;

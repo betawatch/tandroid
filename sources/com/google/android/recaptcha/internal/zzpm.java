@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import i5.c;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzpm extends zzpo {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -37,11 +37,11 @@ final class zzpm extends zzpo {
                 int i13 = i7 + 3;
                 int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i12)) << 6);
                 int i14 = i10 + 2;
-                bArr[i11] = (byte) ((zzb2 >>> 8) & ls.e4);
+                bArr[i11] = (byte) ((zzb2 >>> 8) & ks.e4);
                 if (i13 < zze.length()) {
                     i7 += 4;
                     i10 += 3;
-                    bArr[i14] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i13))) & ls.e4);
+                    bArr[i14] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i13))) & ks.e4);
                 } else {
                     i10 = i14;
                     i7 = i13;

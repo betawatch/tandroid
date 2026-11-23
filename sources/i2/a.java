@@ -1,7 +1,7 @@
 package i2;
 
-import a8.la;
-import c8.k1;
+import a8.ma;
+import c8.l1;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
@@ -10,7 +10,7 @@ import h2.x;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements p0 {
     public final String a;
@@ -27,23 +27,23 @@ public final class a implements p0 {
                 if (i10 == 23 && bArr.length == 4) {
                     z10 = true;
                 }
-                la.f(z10);
+                ma.f(z10);
                 break;
             case "auxiliary.tracks.interleaved":
                 if (i10 == 75 && bArr.length == 1 && ((b10 = bArr[0]) == 0 || b10 == 1)) {
                     z10 = true;
                 }
-                la.f(z10);
+                ma.f(z10);
                 break;
             case "auxiliary.tracks.length":
             case "auxiliary.tracks.offset":
                 if (i10 == 78 && bArr.length == 8) {
                     z10 = true;
                 }
-                la.f(z10);
+                ma.f(z10);
                 break;
             case "auxiliary.tracks.map":
-                la.f(i10 == 0);
+                ma.f(i10 == 0);
                 break;
         }
         this.a = str;
@@ -63,7 +63,7 @@ public final class a implements p0 {
     }
 
     public final ArrayList d() {
-        la.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
+        ma.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
         byte[] bArr = this.b;
         byte b10 = bArr[1];
         ArrayList arrayList = new ArrayList();
@@ -105,11 +105,11 @@ public final class a implements p0 {
         } else if (i7 == 1) {
             sb2 = l0.r(bArr);
         } else if (i7 == 23) {
-            la.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
-            sb2 = String.valueOf(Float.intBitsToFloat(k1.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+            ma.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb2 = String.valueOf(Float.intBitsToFloat(l1.c(bArr[0], bArr[1], bArr[2], bArr[3])));
         } else if (i7 == 67) {
-            la.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
-            sb2 = String.valueOf(k1.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+            ma.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb2 = String.valueOf(l1.c(bArr[0], bArr[1], bArr[2], bArr[3]));
         } else if (i7 != 75) {
             if (i7 == 78) {
                 sb2 = String.valueOf(new x(bArr).G());

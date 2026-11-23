@@ -14,7 +14,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -34,7 +34,7 @@ public abstract class f {
         if (dVar != null) {
             b bVar = dVar.a;
             if (this.d.contains(str)) {
-                bVar.f(dVar.b.a(intent, i10));
+                bVar.g(dVar.b.a(intent, i10));
                 this.d.remove(str);
                 return true;
             }
@@ -84,12 +84,12 @@ public abstract class f {
                 if (hashMap3.containsKey(str2)) {
                     Object obj = hashMap3.get(str2);
                     hashMap3.remove(str2);
-                    bVar2.f(obj);
+                    bVar2.g(obj);
                 }
                 a aVar = (a) bundle.getParcelable(str2);
                 if (aVar != null) {
                     bundle.remove(str2);
-                    bVar2.f(e0Var2.a(aVar.b, aVar.a));
+                    bVar2.g(e0Var2.a(aVar.b, aVar.a));
                 }
             }
         };
@@ -106,13 +106,13 @@ public abstract class f {
         if (hashMap.containsKey(str)) {
             Object obj = hashMap.get(str);
             hashMap.remove(str);
-            bVar.f(obj);
+            bVar.g(obj);
         }
         Bundle bundle = this.g;
         a aVar = (a) bundle.getParcelable(str);
         if (aVar != null) {
             bundle.remove(str);
-            bVar.f(e0Var.a(aVar.b, aVar.a));
+            bVar.g(e0Var.a(aVar.b, aVar.a));
         }
         return new c(this, str, e0Var, 1);
     }

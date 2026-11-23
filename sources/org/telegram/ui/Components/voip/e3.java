@@ -1,214 +1,283 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
+import a8.b8;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import c8.ma;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.h10;
-import org.telegram.ui.Components.oh0;
+import android.graphics.PorterDuffXfermode;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.nh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e3 extends FrameLayout {
-    public final l1 a;
-    public d3 b;
-    public int c;
-    public final TextView d;
-    public final TextView e;
-    public int f;
+public final class e3 extends View {
+    public ValueAnimator E;
+    public final m1 F;
+    public ValueAnimator G;
+    public float H;
+    public float I;
+    public float J;
+    public nh0 a;
+    public nh0 b;
+    public nh0 c;
+    public final Paint d;
+    public final Paint e;
+    public final Paint f;
+    public final Path h;
+    public final int n;
+    public int r;
+    public int s;
+    public boolean w;
+    public int x;
+    public d3 y;
 
-    public e3(Activity activity, l1 l1Var) {
-        super(activity);
-        this.a = l1Var;
-        setWillNotDraw(true);
-        d3 d3Var = new d3(activity, l1Var);
-        this.b = d3Var;
-        addView(d3Var, ma.a(53.5f, 53.5f, 1));
-        TextView textView = new TextView(activity);
-        this.d = textView;
-        textView.setGravity(1);
-        textView.setTextSize(1, 11.0f);
-        textView.setTextColor(-1);
-        textView.setImportantForAccessibility(2);
-        addView(textView, ma.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
-        TextView textView2 = new TextView(activity);
-        this.e = textView2;
-        textView2.setGravity(1);
-        textView2.setTextSize(1, 11.0f);
-        textView2.setTextColor(-1);
-        textView2.setImportantForAccessibility(2);
-        addView(textView2, ma.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
-        textView.setVisibility(8);
-        textView2.setVisibility(8);
+    public e3(Context context, m1 m1Var) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        Paint paint2 = new Paint(1);
+        this.e = paint2;
+        Paint paint3 = new Paint(1);
+        this.f = paint3;
+        this.h = new Path();
+        int L = org.telegram.messenger.g0.L(26.0f);
+        this.n = L;
+        this.r = L;
+        this.s = 0;
+        this.w = false;
+        this.x = 0;
+        this.H = 1.0f;
+        this.F = m1Var;
+        m1Var.a(this);
+        setLayerType(1, null);
+        paint2.setColor(-1);
+        paint.setColor(-16777216);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint3.setColor(-16777216);
+        paint3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP));
+        paint3.setAlpha(35);
     }
 
-    public final void a(int i7) {
-        this.b.a = new oh0(R.raw.bt_to_speaker, i7, i7, true, null);
-        this.b.b = new oh0(R.raw.bt_to_speaker, i7, i7, true, null);
-        this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-    }
-
-    public final void b(int i7, int i10, int i11, boolean z10) {
-        d3 d3Var = new d3(getContext(), this.a);
-        if (i7 == R.raw.camera_flip2) {
-            oh0 oh0Var = new oh0(i7, i10, i10, true, null);
-            d3Var.c = oh0Var;
-            oh0Var.R(d3Var);
-        } else {
-            d3Var.a = new oh0(i7, i10, i10, true, null);
-            oh0 oh0Var2 = new oh0(i7, i10, i10, true, null);
-            d3Var.b = oh0Var2;
-            oh0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+    private void setPressedBtn(boolean z10) {
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        d3Var.a(i11, z10, false);
-        d3Var.setAlpha(0.0f);
-        d3Var.setOnBtnClickedListener(this.b.y);
-        addView(d3Var, ma.a(53.5f, 53.5f, 1));
-        d3 d3Var2 = this.b;
-        this.b = d3Var;
-        d3Var.animate().alpha(1.0f).setDuration(250L).start();
-        d3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new h10(8, this, d3Var2)).start();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.H, z10 ? 0.8f : 1.0f);
+        this.G = ofFloat;
+        ofFloat.addUpdateListener(new b3(this, 0));
+        this.G.setDuration(150L);
+        this.G.start();
     }
 
-    public final void c(int i7) {
-        this.b.a = new oh0(R.raw.speaker_to_bt, i7, i7, true, null);
-        this.b.b = new oh0(R.raw.speaker_to_bt, i7, i7, true, null);
-        this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+    public final void a(int i7, boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.E;
+        if (valueAnimator != null && valueAnimator.isRunning()) {
+            this.E.removeAllUpdateListeners();
+            this.E.cancel();
+            z11 = false;
+        }
+        int i10 = this.n;
+        if (z11) {
+            if (this.c != null) {
+                ValueAnimator valueAnimator2 = this.E;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.removeAllUpdateListeners();
+                    this.E.cancel();
+                }
+                ValueAnimator ofInt = z10 ? ValueAnimator.ofInt(20, 100) : ValueAnimator.ofInt(100, 20);
+                this.E = ofInt;
+                ofInt.addUpdateListener(new b3(this, 1));
+                this.E.setDuration(200L);
+                this.E.start();
+                if (i7 == 2) {
+                    this.c.N(0, false, false);
+                    this.c.start();
+                }
+            } else {
+                ValueAnimator valueAnimator3 = this.E;
+                if (valueAnimator3 != null) {
+                    valueAnimator3.removeAllUpdateListeners();
+                    this.E.cancel();
+                }
+                ValueAnimator ofInt2 = ValueAnimator.ofInt(0, i10);
+                this.E = ofInt2;
+                if (z10) {
+                    this.r = i10;
+                    ofInt2.addUpdateListener(new b3(this, 2));
+                    this.E.addListener(new c3(this, 0));
+                    this.E.setDuration(200L);
+                    this.E.start();
+                    this.b.N(0, false, false);
+                    this.b.start();
+                } else {
+                    this.s = i10;
+                    ofInt2.addUpdateListener(new b3(this, 3));
+                    this.E.setDuration(200L);
+                    this.E.addListener(new c3(this, 1));
+                    this.E.start();
+                }
+            }
+        } else if (z10) {
+            this.s = i10;
+            this.r = 0;
+            this.x = 100;
+            if (i7 == 3 || i7 == 1) {
+                nh0 nh0Var = this.b;
+                nh0Var.N(nh0Var.e[0] - 1, false, false);
+            }
+        } else {
+            this.s = 0;
+            this.r = i10;
+            this.x = 20;
+        }
+        this.w = z10;
+        invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0181  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d(int i7, boolean z10, boolean z11) {
-        boolean z12;
-        String N0;
-        TextView textView;
-        int visibility;
-        TextView textView2;
-        if (this.c == i7 && z10 == this.b.w) {
-            if (getVisibility() != 0) {
-                setVisibility(0);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7;
+        Path path;
+        canvas.save();
+        float f10 = this.H;
+        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float x10 = ((View) getParent()).getX() + getX();
+        float y10 = ((View) ((View) getParent()).getParent()).getY() + getY();
+        m1 m1Var = this.F;
+        int i10 = m1Var.g;
+        Paint paint = m1Var.j;
+        b8 b8Var = m1Var.a;
+        float f11 = m1Var.g;
+        float f12 = 1.12f * f11;
+        float f13 = (f12 - m1Var.f) / 2.0f;
+        float f14 = (f12 - f11) / 2.0f;
+        float f15 = -x10;
+        float f16 = f15 - f13;
+        float f17 = -y10;
+        b8Var.m(f16, f17 - f14, (i10 * 1.12f) / ((Bitmap) b8Var.c).getHeight(), m1Var.h);
+        m1Var.c.k(f15, f17, m1Var.f - x10, m1Var.g - y10);
+        nh0 nh0Var = this.c;
+        Paint paint2 = this.e;
+        Paint paint3 = this.d;
+        int i11 = this.n;
+        if (nh0Var != null) {
+            if (this.x > 20) {
+                Paint paint4 = this.f;
+                paint4.setAlpha((int) ((r1 * 35) / 100.0f));
+                paint2.setAlpha((int) ((this.x * ks.e4) / 100.0f));
+                canvas.drawCircle(width, height, i11, paint2);
+                this.c.q(canvas, paint3, false, 0L, 0);
+                this.c.q(canvas, paint4, false, 0L, 0);
                 return;
             }
+            float f18 = i11;
+            if (!m1Var.i) {
+                paint = (Paint) b8Var.a;
+            }
+            canvas.drawCircle(width, height, f18, paint);
+            if (m1Var.e) {
+                canvas.drawCircle(width, height, f18, (Paint) m1Var.c.a);
+            }
+            this.c.draw(canvas);
             return;
         }
-        if (getVisibility() != 0) {
-            setVisibility(0);
+        if (this.b == null || this.a == null) {
+            return;
         }
-        int L = org.telegram.messenger.g0.L(53.5f);
-        int c10 = p1.g.c(i7);
-        if (c10 != 0) {
-            if (c10 == 1) {
-                int i10 = this.c;
-                if (i10 == 5 || i10 == 4) {
-                    b(R.raw.camera_flip2, L, i7, z10);
-                    z12 = true;
-                } else if (i10 != 2) {
-                    this.b.c = new oh0(R.raw.camera_flip2, L, L, true, null);
-                    d3 d3Var = this.b;
-                    d3Var.c.R(d3Var);
-                }
-            } else if (c10 != 2) {
-                if (c10 == 3) {
-                    int i11 = this.c;
-                    if (i11 == 5) {
-                        d3 d3Var2 = this.b;
-                        z12 = z10 == d3Var2.w;
-                        oh0 oh0Var = z10 ? d3Var2.b : d3Var2.a;
-                        oh0Var.R(d3Var2);
-                        oh0Var.u0 = new z2(this, L, 1);
-                        oh0Var.start();
-                    } else if (i11 == 2) {
-                        b(R.raw.bt_to_speaker, L, i7, z10);
-                        z12 = true;
-                    } else if (i11 != 4) {
-                        a(L);
-                    }
-                } else if (c10 == 4) {
-                    int i12 = this.c;
-                    if (i12 == 4) {
-                        d3 d3Var3 = this.b;
-                        z12 = z10 == d3Var3.w;
-                        oh0 oh0Var2 = z10 ? d3Var3.b : d3Var3.a;
-                        oh0Var2.R(d3Var3);
-                        oh0Var2.u0 = new z2(this, L, 0);
-                        oh0Var2.start();
-                    } else if (i12 == 2) {
-                        b(R.raw.speaker_to_bt, L, i7, z10);
-                        z12 = true;
-                    } else if (i12 != 5) {
-                        c(L);
-                    }
-                }
-            } else if (this.c != 3) {
-                this.b.a = new oh0(R.raw.video_stop, L, L, true, null);
-                this.b.b = new oh0(R.raw.video_stop, L, L, true, null);
-                this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-                d3 d3Var4 = this.b;
-                d3Var4.b.R(d3Var4);
+        int i12 = this.r;
+        boolean z10 = i12 == i11 && this.s == 0;
+        int i13 = this.s;
+        boolean z11 = i13 == i11 && i12 == 0;
+        Path path2 = this.h;
+        if (i13 != i11 || i12 <= 0 || i12 == i11) {
+            i7 = i11;
+            path = path2;
+        } else {
+            canvas.drawCircle(width, height, i13, paint2);
+            canvas.drawCircle(width, height, this.r, paint3);
+            this.b.setAlpha(ks.e4);
+            i7 = i11;
+            this.b.q(canvas, paint3, false, 0L, 0);
+            this.b.setAlpha(35);
+            this.b.draw(canvas);
+            path2.reset();
+            path = path2;
+            path.addCircle(width, height, this.r, Path.Direction.CW);
+            canvas.clipPath(path);
+            canvas.drawCircle(width, height, this.r, paint3);
+        }
+        if (z10 || this.r > 0) {
+            float f19 = this.r;
+            if (!m1Var.i) {
+                paint = (Paint) b8Var.a;
             }
-            if (!z12) {
-                this.b.a(i7, z10, (this.c == 0 || z11) ? false : true);
+            canvas.drawCircle(width, height, f19, paint);
+            if (m1Var.e) {
+                canvas.drawCircle(width, height, this.r, (Paint) m1Var.c.a);
             }
-            int c11 = p1.g.c(i7);
-            N0 = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : hd.N0(2131742994, null) : hd.N0(2131743258, null) : z10 ? hd.N0(2131742993, null) : hd.N0(2131742992, null) : hd.N0(2131743161, null) : z10 ? hd.N0(2131742985, null) : hd.N0(2131743048, null);
-            setContentDescription(N0);
-            textView = this.d;
-            visibility = textView.getVisibility();
-            textView2 = this.e;
-            if (visibility != 8 && textView2.getVisibility() == 8) {
-                textView.setVisibility(0);
-                textView.setText(N0);
-                textView2.setText(N0);
-            } else if (textView2.getText().equals(N0) || !textView.getText().equals(N0)) {
-                textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h10(7, this, N0)).start();
-                textView2.setText(N0);
-                textView2.setVisibility(0);
-                textView2.setAlpha(0.0f);
-                textView2.setTranslationY(org.telegram.messenger.g0.L(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new y9(this, 21)).start();
-            }
-            this.c = i7;
+            this.a.draw(canvas);
         }
-        if (this.c != 1) {
-            this.b.a = new oh0(R.raw.call_mute, L, L, true, null);
-            this.b.b = new oh0(R.raw.call_mute, L, L, true, null);
-            this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-            d3 d3Var5 = this.b;
-            d3Var5.b.R(d3Var5);
+        if (z11 || (this.s > 0 && this.r == i7)) {
+            path.reset();
+            path.addCircle(width, height, this.s, Path.Direction.CW);
+            canvas.clipPath(path);
+            canvas.drawCircle(width, height, this.s, paint2);
+            this.b.setAlpha(ks.e4);
+            this.b.q(canvas, paint3, false, 0L, 0);
+            this.b.setAlpha(35);
+            this.b.draw(canvas);
         }
-        z12 = false;
-        if (!z12) {
-        }
-        int c112 = p1.g.c(i7);
-        if (c112 == 0) {
-        }
-        setContentDescription(N0);
-        textView = this.d;
-        visibility = textView.getVisibility();
-        textView2 = this.e;
-        if (visibility != 8) {
-        }
-        if (textView2.getText().equals(N0)) {
-        }
-        textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h10(7, this, N0)).start();
-        textView2.setText(N0);
-        textView2.setVisibility(0);
-        textView2.setAlpha(0.0f);
-        textView2.setTranslationY(org.telegram.messenger.g0.L(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new y9(this, 21)).start();
-        this.c = i7;
+        canvas.restore();
     }
 
-    public void setOnBtnClickedListener(c3 c3Var) {
-        this.b.setOnBtnClickedListener(c3Var);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        d3 d3Var;
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            setPressedBtn(true);
+            this.I = motionEvent.getX();
+            this.J = motionEvent.getY();
+            return true;
+        }
+        boolean z10 = false;
+        if (action == 1) {
+            setPressedBtn(false);
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            float f10 = this.I;
+            float f11 = this.J;
+            float abs = Math.abs(f10 - x10);
+            float abs2 = Math.abs(f11 - y10);
+            if (abs <= org.telegram.messenger.g0.L(48.0f) && abs2 <= org.telegram.messenger.g0.L(48.0f)) {
+                int i7 = this.r;
+                int i10 = this.n;
+                boolean z11 = i7 == i10 && this.s == 0;
+                if (this.s == i10 && i7 == 0) {
+                    z10 = true;
+                }
+                if ((z11 || z10) && (d3Var = this.y) != null) {
+                    d3Var.d(this);
+                }
+            }
+        } else if (action == 3) {
+            setPressedBtn(false);
+            return true;
+        }
+        return true;
+    }
+
+    public void setOnBtnClickedListener(d3 d3Var) {
+        this.y = d3Var;
     }
 }

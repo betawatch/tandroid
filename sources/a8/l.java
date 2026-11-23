@@ -5,7 +5,7 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class l implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -145,7 +145,7 @@ public abstract class l implements Iterator {
                 if (sVar.e != this.b) {
                     throw new ConcurrentModificationException();
                 }
-                la.o("no calls to next() since the last call to remove()", this.d >= 0);
+                ma.o("no calls to next() since the last call to remove()", this.d >= 0);
                 this.b += 32;
                 sVar.remove(sVar.k()[this.d]);
                 this.c--;

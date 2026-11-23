@@ -18,9 +18,9 @@ import android.graphics.SweepGradient;
 import android.os.Build;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i {
     public static final PorterDuff.Mode[] Y = {null, PorterDuff.Mode.SRC_IN, PorterDuff.Mode.SRC_OUT, PorterDuff.Mode.SRC_ATOP, PorterDuff.Mode.DST_OVER, PorterDuff.Mode.DST_IN, PorterDuff.Mode.DST_OUT, PorterDuff.Mode.DST_ATOP, PorterDuff.Mode.ADD, PorterDuff.Mode.SRC, PorterDuff.Mode.XOR, PorterDuff.Mode.MULTIPLY, PorterDuff.Mode.SCREEN, PorterDuff.Mode.OVERLAY, PorterDuff.Mode.DARKEN, PorterDuff.Mode.LIGHTEN};
@@ -424,7 +424,7 @@ public final class i {
                         int i24 = max;
                         while (i24 < min) {
                             int i25 = this.t[(i24 - f14) + e2.v(i23, f15, i16, i19)];
-                            iArr3[(i24 - max) + ((i23 - max2) * i21)] = ((i25 & ls.e4) << 16) | ((-16711936) & i25) | ((i25 >>> 16) & ls.e4);
+                            iArr3[(i24 - max) + ((i23 - max2) * i21)] = ((i25 & ks.e4) << 16) | ((-16711936) & i25) | ((i25 >>> 16) & ks.e4);
                             i24++;
                             f14 = f14;
                         }

@@ -1,21 +1,22 @@
 package r2;
 
-import a8.ja;
-import a8.la;
+import a8.bb;
+import a8.ka;
 import a8.ma;
-import a8.y9;
+import a8.z9;
 import android.net.Uri;
 import android.text.TextUtils;
-import c8.s0;
+import c8.t0;
 import e2.p0;
 import e2.q0;
+import e2.s0;
 import e2.t;
 import e2.u;
 import h2.k0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.io.EOFException;
 import java.io.IOException;
@@ -30,7 +31,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m4.d0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i extends y2.l {
     public static final AtomicInteger d0 = new AtomicInteger();
@@ -86,12 +87,12 @@ public final class i extends y2.l {
         this.c0 = z15;
         this.E = z16;
         g0 g0Var = i0.b;
-        this.Z = t1.e;
+        this.Z = s1.e;
         this.w = d0.getAndIncrement();
     }
 
     public static byte[] e(String str) {
-        if (ja.c(str).startsWith("0x")) {
+        if (ka.c(str).startsWith("0x")) {
             str = str.substring(2);
         }
         byte[] byteArray = new BigInteger(str, 16).toByteArray();
@@ -99,11 +100,6 @@ public final class i extends y2.l {
         int length = byteArray.length > 16 ? byteArray.length - 16 : 0;
         System.arraycopy(byteArray, length, bArr, (16 - byteArray.length) + length, byteArray.length - length);
         return bArr;
-    }
-
-    @Override // b3.m
-    public final void A() {
-        this.X = true;
     }
 
     @Override // b3.m
@@ -154,7 +150,7 @@ public final class i extends y2.l {
         try {
             f3.l h = h(hVar, b10);
             if (z11) {
-                h.f(this.V, false);
+                h.j(this.V, false);
             }
             do {
                 try {
@@ -178,14 +174,14 @@ public final class i extends y2.l {
             this.V = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            s0.a(hVar);
+            t0.a(hVar);
             throw th3;
         }
-        s0.a(hVar);
+        t0.a(hVar);
     }
 
     public final int f(int i7) {
-        la.p(!this.c0);
+        ma.p(!this.c0);
         if (i7 >= this.Z.size()) {
             return 0;
         }
@@ -238,7 +234,7 @@ public final class i extends y2.l {
                 lVar.f = 0;
                 try {
                     xVar.K(10);
-                    lVar.g(xVar.a, 0, 10, false);
+                    lVar.k(xVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -255,7 +251,7 @@ public final class i extends y2.l {
                         xVar.K(i13);
                         System.arraycopy(bArr, 0, xVar.a, 0, 10);
                     }
-                    lVar.g(xVar.a, 10, z11, false);
+                    lVar.k(xVar.a, 10, z11, false);
                     q0 c10 = this.P.c(z11, xVar.a);
                     if (c10 != null) {
                         p0[] p0VarArr = c10.a;
@@ -291,11 +287,11 @@ public final class i extends y2.l {
                 if (bVar4 != null) {
                     f3.o oVar = bVar4.a;
                     f3.o a10 = oVar.a();
-                    la.p(!((a10 instanceof d0) || (a10 instanceof z3.h)));
+                    ma.p(!((a10 instanceof d0) || (a10 instanceof z3.h)));
                     ?? r11 = oVar.a() == oVar;
                     Class<?> cls = oVar.getClass();
                     if (r11 != true) {
-                        throw new IllegalStateException(ma.a("Can't recreate wrapped extractors. Outer type: %s", cls));
+                        throw new IllegalStateException(bb.a("Can't recreate wrapped extractors. Outer type: %s", cls));
                     }
                     if (oVar instanceof s) {
                         dVar = new s(bVar4.b.d, bVar4.c, bVar4.d, bVar4.e);
@@ -320,10 +316,10 @@ public final class i extends y2.l {
                     c cVar = this.M;
                     cVar.getClass();
                     u uVar = this.d;
-                    int a11 = y9.a(uVar.s);
+                    int a11 = z9.a(uVar.s);
                     List list = (List) responseHeaders.get("Content-Type");
-                    int a12 = y9.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
-                    int b10 = y9.b(uri);
+                    int a12 = z9.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
+                    int b10 = z9.b(uri);
                     ArrayList arrayList2 = new ArrayList(7);
                     c.a(a11, arrayList2);
                     c.a(a12, arrayList2);
@@ -380,7 +376,7 @@ public final class i extends y2.l {
                                     i11 = 36;
                                     bVar3 = bVar5;
                                 }
-                                aVar = new z3.h(bVar3, i11 | z3.h.g(i18), k0Var, list2 != null ? list2 : t1.e, null);
+                                aVar = new z3.h(bVar3, i11 | z3.h.g(i18), k0Var, list2 != null ? list2 : s1.e, null);
                             } else if (intValue == 11) {
                                 i10 = i17;
                                 arrayList = arrayList2;
@@ -391,16 +387,16 @@ public final class i extends y2.l {
                                     singletonList = list2;
                                 } else {
                                     t tVar = new t();
-                                    tVar.r = e2.s0.n("application/cea-608");
+                                    tVar.r = s0.n("application/cea-608");
                                     singletonList = Collections.singletonList(new u(tVar));
                                     i12 = 16;
                                 }
                                 String str = uVar.k;
                                 if (!TextUtils.isEmpty(str)) {
-                                    if (e2.s0.b(str, "audio/mp4a-latm") == null) {
+                                    if (s0.b(str, "audio/mp4a-latm") == null) {
                                         i12 |= 2;
                                     }
-                                    if (e2.s0.b(str, "video/avc") == null) {
+                                    if (s0.b(str, "video/avc") == null) {
                                         i12 |= 4;
                                     }
                                 }
@@ -513,5 +509,10 @@ public final class i extends y2.l {
         } catch (TimeoutException e10) {
             throw new IOException(e10);
         }
+    }
+
+    @Override // b3.m
+    public final void y() {
+        this.X = true;
     }
 }

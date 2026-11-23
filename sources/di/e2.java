@@ -4,23 +4,23 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.p31;
+import org.telegram.ui.Components.o31;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gi0;
+import org.telegram.ui.ei0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e2 implements r10 {
+public final /* synthetic */ class e2 implements p10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,10 +35,10 @@ public final /* synthetic */ class e2 implements r10 {
         this.e = obj4;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.p10
     public final void a(Object obj, Object obj2) {
         AlertDialog$Builder alertDialog$Builder;
-        gj gjVar;
+        fj fjVar;
         int i7 = this.a;
         Object obj3 = this.e;
         Object obj4 = this.d;
@@ -47,13 +47,13 @@ public final /* synthetic */ class e2 implements r10 {
         switch (i7) {
             case 0:
                 f6 f6Var = (f6) obj6;
-                r10 r10Var = (r10) obj5;
+                p10 p10Var = (p10) obj5;
                 ArrayList arrayList = (ArrayList) obj4;
                 Runnable runnable = (Runnable) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (updates != null) {
-                    ArrayList A0 = np.A0(updates, TL_update.TL_updateNewMessage.class);
+                    ArrayList A0 = mp.A0(updates, TL_update.TL_updateNewMessage.class);
                     int size = A0.size();
                     int i10 = 0;
                     while (true) {
@@ -62,33 +62,33 @@ public final /* synthetic */ class e2 implements r10 {
                             i10++;
                             TLRPC.Message message = ((TL_update.TL_updateNewMessage) obj7).message;
                             if (message != null && (message.action instanceof TLRPC.TL_messageActionStarGiftUnique)) {
-                                gjVar = new gj(f6Var.a, message, false, false);
+                                fjVar = new fj(f6Var.a, message, false, false);
                             }
                         } else {
-                            gjVar = null;
+                            fjVar = null;
                         }
                     }
-                    np.u1(f6Var.a).V3(updates, false);
-                    if (gjVar == null) {
-                        r10Var.a(null, null);
+                    mp.u1(f6Var.a).V3(updates, false);
+                    if (fjVar == null) {
+                        p10Var.a(null, null);
                         y8.y(f6Var.a, false).N();
-                        p8 G = y8.y(f6Var.a, false).G(k10.i(f6Var.a).e(), false);
+                        p8 G = y8.y(f6Var.a, false).G(i10.i(f6Var.a).e(), false);
                         if (G != null) {
                             G.l(arrayList, null);
                             break;
                         }
                     } else {
-                        TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) gjVar.k.action).gift;
-                        r10Var.a(starGift, new ai.r(f6Var, gjVar, arrayList, starGift, 12));
+                        TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) fjVar.k.action).gift;
+                        p10Var.a(starGift, new ai.j(f6Var, fjVar, arrayList, starGift, 13));
                         break;
                     }
                 } else if (tL_error != null) {
                     if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
                         alertDialog$Builder = new AlertDialog$Builder(0, f6Var.getContext(), new fi.b());
-                        String N0 = hd.N0(2131749738, null);
+                        String N0 = gd.N0(2131749738, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = org.telegram.messenger.g0.W2(hd.N0(2131749740, null));
+                        t1Var.U = org.telegram.messenger.g0.W2(gd.N0(2131749740, null));
                     } else {
                         String str = tL_error.text;
                         if (str == null || !str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
@@ -98,10 +98,10 @@ public final /* synthetic */ class e2 implements r10 {
                         } else {
                             long parseLong = Long.parseLong(tL_error.text.substring(25)) + ConnectionsManager.getInstance(f6Var.a).getCurrentTime();
                             alertDialog$Builder = new AlertDialog$Builder(0, f6Var.getContext(), new fi.b());
-                            String N02 = hd.N0(2131749738, null);
+                            String N02 = gd.N0(2131749738, null);
                             org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                             t1Var2.S = N02;
-                            t1Var2.U = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749739, hd.x(parseLong, true)));
+                            t1Var2.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749739, gd.x(parseLong, true)));
                         }
                     }
                     org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
@@ -111,7 +111,7 @@ public final /* synthetic */ class e2 implements r10 {
             case 1:
                 f6 f6Var2 = (f6) obj6;
                 vf.b bVar = (vf.b) obj5;
-                bi.e2 e2Var = (bi.e2) obj4;
+                bi.f2 f2Var = (bi.f2) obj4;
                 w2 w2Var = (w2) obj3;
                 TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
@@ -120,24 +120,24 @@ public final /* synthetic */ class e2 implements r10 {
                     break;
                 } else {
                     bVar.b();
-                    (e2Var != null ? new org.telegram.ui.Components.lc(e2Var.c, f6Var2.J0) : f6Var2.k()).g0(tL_error2, false);
+                    (f2Var != null ? new org.telegram.ui.Components.kc(f2Var.c, f6Var2.J0) : f6Var2.k()).g0(tL_error2, false);
                     break;
                 }
             case 2:
-                p31 p31Var = (p31) obj5;
+                o31 o31Var = (o31) obj5;
                 String str2 = (String) obj4;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj3;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj3;
                 ((org.telegram.ui.ActionBar.t1) obj6).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.w2 w2Var2 = gi0.a;
+                    org.telegram.ui.ActionBar.w2 w2Var2 = ei0.a;
                     if (w2Var2 != null) {
                         w2Var2.dismiss();
-                        gi0.a = null;
+                        ei0.a = null;
                     }
-                    gi0.a().I(R.raw.error, hd.N0(2131753125, null), TextUtils.isEmpty(str2) ? hd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), hd.a0(null, null, 2131753127, str2))).j();
+                    ei0.a().I(R.raw.error, gd.N0(2131753125, null), TextUtils.isEmpty(str2) ? gd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.xj, i6Var), gd.a0(null, null, 2131753127, str2))).j();
                     break;
                 } else {
-                    p31Var.run();
+                    o31Var.run();
                     break;
                 }
             default:
@@ -147,19 +147,19 @@ public final /* synthetic */ class e2 implements r10 {
                 TLRPC.User user = (TLRPC.User) obj3;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.h6 h6Var2 = v0Var.e;
+                org.telegram.ui.ActionBar.i6 i6Var2 = v0Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new org.telegram.ui.Components.lc(v0Var, h6Var2).f0("UNKNOWN_BUTTON", false);
+                        new org.telegram.ui.Components.kc(v0Var, i6Var2).f0("UNKNOWN_BUTTON", false);
                         v0Var.x(f7Var, "requested_chat_failed", org.telegram.ui.web.v0.A(str3, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.lc(v0Var, h6Var2).g0(tL_error3, false);
+                        new org.telegram.ui.Components.kc(v0Var, i6Var2).g0(tL_error3, false);
                         v0Var.x(f7Var, "requested_chat_failed", org.telegram.ui.web.v0.A(str3, "req_id"));
                         break;
                     }
                 } else {
-                    np.u1(v0Var.N).V3(updates2, false);
+                    mp.u1(v0Var.N).V3(updates2, false);
                     v0Var.x(f7Var, "requested_chat_sent", org.telegram.ui.web.v0.A(str3, "req_id"));
                     long j3 = v0Var.V.id;
                     Bundle bundle = new Bundle();

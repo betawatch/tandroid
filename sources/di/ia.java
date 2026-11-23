@@ -1,19 +1,19 @@
 package di;
 
 import android.text.TextUtils;
-import c8.oe;
+import c8.pe;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.az;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,33 +75,33 @@ public final /* synthetic */ class ia implements Runnable {
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     if (z11 && !TextUtils.isEmpty(starsSubscription.title)) {
-                        a02 = hd.a0(null, null, 2131744757, hd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = gd.a0(null, null, 2131744759, gd.u(starsSubscription.until_date, false), starsSubscription.title);
                         z10 = false;
                     } else if (!z12 || TextUtils.isEmpty(starsSubscription.title)) {
                         z10 = false;
-                        a02 = hd.a0(null, null, 2131744753, hd.u(starsSubscription.until_date, false));
+                        a02 = gd.a0(null, null, 2131744755, gd.u(starsSubscription.until_date, false));
                     } else {
                         z10 = false;
-                        a02 = hd.a0(null, null, 2131744756, hd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = gd.a0(null, null, 2131744758, gd.u(starsSubscription.until_date, false), starsSubscription.title);
                     }
-                    org.telegram.ui.Components.lc.b0(T).V(Collections.singletonList(tLObject), hd.N0(2131744754, null), org.telegram.messenger.g0.W2(a02), null).k(z10);
+                    org.telegram.ui.Components.kc.b0(T).V(Collections.singletonList(tLObject), gd.N0(2131744756, null), org.telegram.messenger.g0.W2(a02), null).k(z10);
                     return;
                 }
                 return;
             case 1:
-                az azVar = (az) this.e;
+                zy zyVar = (zy) this.e;
                 boolean z13 = this.b;
                 TLRPC.Message message = (TLRPC.Message) this.f;
                 ArrayList arrayList = (ArrayList) this.h;
                 boolean z14 = this.c;
                 ArrayList arrayList2 = (ArrayList) this.n;
                 int i11 = this.d;
-                azVar.getClass();
-                azVar.getMessagesController().b0(arrayList, null, null, message.dialog_id, false, z14 ? 1 : 0, false, 0L, null, 0, !z14 && z13, (!z13 || message == null) ? 0 : message.id);
-                azVar.getMessagesController().x5(z13 ? 1 : 0, message.dialog_id, arrayList2);
-                azVar.getMediaDataController().y0(message.dialog_id);
-                azVar.d0(i11);
-                azVar.i0(i11, z14);
+                zyVar.getClass();
+                zyVar.getMessagesController().b0(arrayList, null, null, message.dialog_id, false, z14 ? 1 : 0, false, 0L, null, 0, !z14 && z13, (!z13 || message == null) ? 0 : message.id);
+                zyVar.getMessagesController().x5(z13 ? 1 : 0, message.dialog_id, arrayList2);
+                zyVar.getMediaDataController().y0(message.dialog_id);
+                zyVar.d0(i11);
+                zyVar.i0(i11, z14);
                 return;
             default:
                 zi.u0 u0Var = (zi.u0) this.e;
@@ -163,13 +163,13 @@ public final /* synthetic */ class ia implements Runnable {
                                             u0Var = u0Var2;
                                             u0Var.i.post(new zi.e0(u0Var, e, 0));
                                             if (r42 != 0) {
-                                                oe.c(r42);
+                                                pe.c(r42);
                                             }
                                             if (z15) {
                                                 return;
                                             }
                                             file = xVar.a;
-                                            oe.c(file);
+                                            pe.c(file);
                                             return;
                                         }
                                         try {
@@ -188,7 +188,7 @@ public final /* synthetic */ class ia implements Runnable {
                                     }
                                     u0Var.V = null;
                                     if (file2 != null) {
-                                        oe.c(file2);
+                                        pe.c(file2);
                                     }
                                 } catch (Exception e12) {
                                     e = e12;
@@ -200,10 +200,10 @@ public final /* synthetic */ class ia implements Runnable {
                         } catch (Throwable th4) {
                             th = th4;
                             if (file3 != null) {
-                                oe.c(file3);
+                                pe.c(file3);
                             }
                             if (z15) {
-                                oe.c(xVar.a);
+                                pe.c(xVar.a);
                             }
                             throw th;
                         }
@@ -213,7 +213,7 @@ public final /* synthetic */ class ia implements Runnable {
                     }
                     if (z15) {
                         file = xVar.a;
-                        oe.c(file);
+                        pe.c(file);
                         return;
                     }
                     return;
@@ -223,8 +223,8 @@ public final /* synthetic */ class ia implements Runnable {
         }
     }
 
-    public /* synthetic */ ia(az azVar, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i7) {
-        this.e = azVar;
+    public /* synthetic */ ia(zy zyVar, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i7) {
+        this.e = zyVar;
         this.b = z10;
         this.f = message;
         this.h = arrayList;

@@ -3,26 +3,26 @@ package s2;
 import android.net.Uri;
 import android.os.SystemClock;
 import h9.g0;
-import h9.h2;
+import h9.g2;
 import h9.t0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class a implements u {
+public final class a implements v {
     public final /* synthetic */ d a;
 
     public a(d dVar) {
         this.a = dVar;
     }
 
-    @Override // s2.u
+    @Override // s2.v
     public final void a() {
         this.a.e.remove(this);
     }
 
-    @Override // s2.u
-    public final boolean d(Uri uri, b3.j jVar, boolean z10) {
+    @Override // s2.v
+    public final boolean b(Uri uri, b3.j jVar, boolean z10) {
         c cVar;
         d dVar = this.a;
         HashMap hashMap = dVar.d;
@@ -30,9 +30,9 @@ public final class a implements u {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             c cVar2 = (c) hashMap.get(uri);
             cVar2.getClass();
-            w wVar = cVar2.a;
-            int size = wVar.b.size();
-            h2 it = t0.q(wVar.b.values()).iterator();
+            x xVar = cVar2.a;
+            int size = xVar.b.size();
+            g2 it = t0.q(xVar.b.values()).iterator();
             int i7 = 0;
             while (it.hasNext()) {
                 Uri uri2 = (Uri) it.next();
@@ -49,7 +49,7 @@ public final class a implements u {
             g0 listIterator = dVar.x.listIterator(0);
             int i10 = 0;
             while (listIterator.hasNext()) {
-                if (dVar.e((w) listIterator.next(), elapsedRealtime)) {
+                if (dVar.e((x) listIterator.next(), elapsedRealtime)) {
                     i10++;
                 }
             }

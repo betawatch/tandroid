@@ -1,41 +1,75 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q80 b;
-    public final /* synthetic */ org.telegram.messenger.c c;
+public final class p80 implements org.telegram.messenger.ap {
+    public final /* synthetic */ i50 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 e;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity h;
 
-    public /* synthetic */ p80(q80 q80Var, org.telegram.messenger.c cVar, long j3, org.telegram.ui.ActionBar.g2 g2Var, int i7) {
-        this.a = i7;
-        this.b = q80Var;
-        this.c = cVar;
+    public p80(LaunchActivity launchActivity, i50 i50Var, String str, org.telegram.ui.ActionBar.g2 g2Var, long j3, Integer num, Bundle bundle) {
+        this.h = launchActivity;
+        this.a = i50Var;
+        this.b = str;
+        this.c = g2Var;
         this.d = j3;
-        this.e = g2Var;
+        this.e = num;
+        this.f = bundle;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.g3(new p80(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                org.telegram.messenger.c cVar = this.c;
-                int i7 = cVar.a;
-                org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
-                long j3 = this.d;
-                long j10 = -j3;
-                org.telegram.messenger.t3 i12 = u12.i1(j10, false, null);
-                TLRPC.Chat O0 = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(j10));
-                org.telegram.messenger.np.u1(i7).l1(j3);
-                org.telegram.ui.Components.voip.b2.l(O0, null, false, Boolean.valueOf(i12 == null || !i12.b.rtmp_stream), this.b.h, this.e, cVar);
-                break;
+    @Override // org.telegram.messenger.ap
+    public final void a() {
+        LaunchActivity launchActivity = this.h;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.b5.r0((org.telegram.ui.ActionBar.g2) i5.c.h(1, launchActivity.e0), null, org.telegram.messenger.gd.N0(2131748882, null), null);
         }
+        try {
+            this.a.run();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.ap
+    public final void e(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+        LaunchActivity launchActivity = this.h;
+        if (launchActivity.isFinishing()) {
+            return;
+        }
+        String str = this.b;
+        long j3 = this.d;
+        org.telegram.ui.ActionBar.g2 g2Var = this.c;
+        if (str == null || !(g2Var instanceof bn) || ((bn) g2Var).a() != j3) {
+            if (g2Var instanceof bn) {
+                bn bnVar = (bn) g2Var;
+                if (bnVar.a() == j3 && this.e == null) {
+                    org.telegram.messenger.g0.E3(5.0f, bnVar.A0, null);
+                    org.telegram.messenger.q2.E.a();
+                    rj rjVar = bnVar.a0;
+                    for (int i7 = 0; i7 < rjVar.getChildCount(); i7++) {
+                        org.telegram.messenger.g0.E3(5.0f, rjVar.getChildAt(i7), null);
+                    }
+                    org.telegram.ui.ActionBar.k actionBar = bnVar.getActionBar();
+                    for (int i10 = 0; i10 < actionBar.getChildCount(); i10++) {
+                        org.telegram.messenger.g0.E3(5.0f, actionBar.getChildAt(i10), null);
+                    }
+                }
+            }
+            g2Var = new bn(this.f);
+            ((ActionBarLayout) launchActivity.M()).S(g2Var);
+        }
+        org.telegram.messenger.g0.h3(new di.j2(this, this.b, this.d, g2Var, 21), 150L);
     }
 }

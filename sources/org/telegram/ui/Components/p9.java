@@ -1,299 +1,337 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p9 extends GradientDrawable {
-    public final int[] a;
-    public final a0.f b;
-    public final a0.f c;
-    public final a0.f d;
-    public final ArrayList e;
-    public final Paint f;
-    public boolean g;
+public class p9 extends View {
+    public wy0 E;
+    public Path F;
+    public ColorMatrixColorFilter G;
+    public ImageReceiver a;
+    public ImageReceiver b;
+    public int c;
+    public int d;
+    public o5 e;
+    public ColorFilter f;
+    public a9 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean w;
+    public boolean x;
+    public ValueAnimator y;
 
-    public p9(GradientDrawable.Orientation orientation, int[] iArr) {
-        super(orientation, iArr);
-        this.b = new a0.f(0);
-        this.c = new a0.f(0);
-        this.d = new a0.f(0);
-        this.e = new ArrayList();
-        Paint paint = new Paint(1);
-        this.f = paint;
-        this.g = false;
-        setDither(true);
-        this.a = iArr;
-        paint.setDither(true);
+    public p9(Context context) {
+        super(context);
+        this.c = -1;
+        this.d = -1;
+        this.x = true;
+        ImageReceiver c10 = c();
+        this.a = c10;
+        c10.o1 = 0.0f;
+        c10.A1 = true;
+        c10.h1 = new b0(this, 13);
     }
 
-    public static /* synthetic */ void a(p9 p9Var, Runnable[] runnableArr, Bitmap bitmap, i50 i50Var, int i7, c8.ia[] iaVarArr) {
-        a0.f fVar = p9Var.b;
-        ArrayList arrayList = p9Var.e;
-        if (!arrayList.contains(runnableArr)) {
-            if (bitmap != null) {
-                bitmap.recycle();
-                return;
-            }
+    public final void a() {
+        Bitmap n10;
+        if (!this.r || this.b.n() != null || this.a.n() == null || (n10 = this.a.n()) == null || n10.isRecycled()) {
             return;
         }
-        if (bitmap != null) {
-            fVar.put(i50Var, bitmap);
-        } else {
-            fVar.remove(i50Var);
-            p9Var.c.remove(i50Var);
-        }
-        runnableArr[i7] = null;
-        boolean z10 = true;
-        if (runnableArr.length > 1) {
-            for (Runnable runnable : runnableArr) {
-                if (runnable != null) {
-                    break;
-                }
-            }
-        }
-        z10 = false;
-        if (!z10) {
-            arrayList.remove(runnableArr);
-        }
-        c8.ia iaVar = iaVarArr[0];
-        if (iaVar != null) {
-            iaVar.b(i50Var.a, i50Var.b);
-            if (z10) {
-                return;
-            }
-            iaVarArr[0].a();
-            iaVarArr[0] = null;
-        }
-    }
-
-    public static GradientDrawable.Orientation d(int i7) {
-        return i7 != 0 ? i7 != 90 ? i7 != 135 ? i7 != 180 ? i7 != 225 ? i7 != 270 ? i7 != 315 ? GradientDrawable.Orientation.BL_TR : GradientDrawable.Orientation.BR_TL : GradientDrawable.Orientation.RIGHT_LEFT : GradientDrawable.Orientation.TR_BL : GradientDrawable.Orientation.TOP_BOTTOM : GradientDrawable.Orientation.TL_BR : GradientDrawable.Orientation.LEFT_RIGHT : GradientDrawable.Orientation.BOTTOM_TOP;
-    }
-
-    public static Rect e(GradientDrawable.Orientation orientation, int i7, int i10) {
-        Rect rect = new Rect();
-        switch (n9.a[orientation.ordinal()]) {
-            case 1:
-                int i11 = i7 / 2;
-                rect.left = i11;
-                rect.top = 0;
-                rect.right = i11;
-                rect.bottom = i10;
-                break;
-            case 2:
-                rect.left = i7;
-                rect.top = 0;
-                rect.right = 0;
-                rect.bottom = i10;
-                break;
-            case 3:
-                rect.left = i7;
-                int i12 = i10 / 2;
-                rect.top = i12;
-                rect.right = 0;
-                rect.bottom = i12;
-                break;
-            case 4:
-                rect.left = i7;
-                rect.top = i10;
-                rect.right = 0;
-                rect.bottom = 0;
-                break;
-            case 5:
-                int i13 = i7 / 2;
-                rect.left = i13;
-                rect.top = i10;
-                rect.right = i13;
-                rect.bottom = 0;
-                break;
-            case 6:
-                rect.left = 0;
-                rect.top = i10;
-                rect.right = i7;
-                rect.bottom = 0;
-                break;
-            case 7:
-                rect.left = 0;
-                int i14 = i10 / 2;
-                rect.top = i14;
-                rect.right = i7;
-                rect.bottom = i14;
-                break;
-            default:
-                rect.left = 0;
-                rect.top = 0;
-                rect.right = i7;
-                rect.bottom = i10;
-                break;
-        }
-        return rect;
+        this.b.w0(Utilities.D(n10, false));
+        invalidate();
     }
 
     public final void b() {
-        if (this.g) {
-            return;
-        }
-        for (int size = this.e.size() - 1; size >= 0; size--) {
-            org.telegram.messenger.q5 q5Var = Utilities.e;
-            Runnable[] runnableArr = (Runnable[]) this.e.remove(size);
-            q5Var.getClass();
-            for (Runnable runnable : runnableArr) {
-                q5Var.a(runnable);
-            }
-        }
-        for (int i7 = this.b.c - 1; i7 >= 0; i7--) {
-            Bitmap bitmap = (Bitmap) this.b.g(i7);
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        }
-        this.c.clear();
-        this.d.clear();
-        this.g = true;
+        this.a.f();
     }
 
-    public final o9 c(Canvas canvas, final ViewGroup viewGroup) {
-        if (this.g) {
-            super.draw(canvas);
-            return null;
-        }
-        Rect bounds = getBounds();
-        int width = (int) (bounds.width() * 0.5f);
-        int height = (int) (bounds.height() * 0.5f);
-        a0.f fVar = this.b;
-        int i7 = fVar.c;
-        int i10 = 0;
-        while (true) {
-            a0.f fVar2 = this.d;
-            if (i10 >= i7) {
-                o9 o9Var = (o9) fVar2.remove(viewGroup);
-                if (o9Var != null) {
-                    o9Var.dispose();
-                }
-                i50 i50Var = new i50(width, height);
-                fVar.put(i50Var, null);
-                this.c.put(i50Var, Boolean.TRUE);
-                final k9 g10 = g(new i50[]{i50Var}, new m9(this, viewGroup), 0L);
-                o9 o9Var2 = (o9) fVar2.put(viewGroup, new o9() { // from class: org.telegram.ui.Components.l9
-                    @Override // org.telegram.ui.Components.o9
-                    public final void dispose() {
-                        p9.this.d.remove(viewGroup);
-                        g10.dispose();
-                    }
-                });
-                super.draw(canvas);
-                return o9Var2;
+    public ImageReceiver c() {
+        return new ImageReceiver(this);
+    }
+
+    public final void e() {
+        if (this.r) {
+            if (this.b.n() != null && !this.b.n().isRecycled()) {
+                this.b.n().recycle();
             }
-            i50 i50Var2 = (i50) fVar.f(i10);
-            if (i50Var2.a == width && i50Var2.b == height) {
-                Bitmap bitmap = (Bitmap) fVar.i(i10);
-                if (bitmap != null) {
-                    canvas.drawBitmap(bitmap, (Rect) null, bounds, this.f);
-                } else {
-                    super.draw(canvas);
-                }
-                return (o9) fVar2.get(viewGroup);
-            }
-            i10++;
+            this.b.x0(null);
+            a();
         }
     }
 
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Bitmap bitmap;
-        Boolean bool;
-        if (this.g) {
-            super.draw(canvas);
+    public final void f(TLObject tLObject, a9 a9Var) {
+        this.a.j0(tLObject, a9Var, null);
+        e();
+    }
+
+    public final void g(int i7, long j3, Object obj, String str, String str2, String str3, org.telegram.messenger.fc fcVar, org.telegram.messenger.fc fcVar2) {
+        this.a.s0(fcVar, str, fcVar2, str2, null, j3, str3, obj, i7);
+        e();
+    }
+
+    public o5 getAnimatedEmojiDrawable() {
+        return this.e;
+    }
+
+    public a9 getAvatarDrawable() {
+        if (this.h == null) {
+            this.h = new a9((org.telegram.ui.ActionBar.i6) null);
+        }
+        return this.h;
+    }
+
+    public ImageReceiver getImageReceiver() {
+        return this.a;
+    }
+
+    public int[] getRoundRadius() {
+        return this.a.X0;
+    }
+
+    public final void h(String str, String str2, Drawable drawable) {
+        n(org.telegram.messenger.fc.g(str), str2, null, null, drawable, null, 0, null);
+    }
+
+    public final void j(org.telegram.messenger.fc fcVar, String str, Drawable drawable, Object obj) {
+        n(fcVar, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void k(org.telegram.messenger.fc fcVar, String str, String str2, Drawable drawable, Object obj) {
+        n(fcVar, str, null, null, drawable, str2, 0, obj);
+    }
+
+    public final void l(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, int i7, Object obj) {
+        n(fcVar, str, fcVar2, str2, null, null, i7, obj);
+    }
+
+    public final void m(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, Drawable drawable, Object obj) {
+        this.a.v0(fcVar, str, fcVar2, str2, null, null, drawable, 0L, null, obj, 1);
+        e();
+    }
+
+    public final void n(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, Drawable drawable, String str3, int i7, Object obj) {
+        this.a.s0(fcVar, str, fcVar2, str2, drawable, i7, str3, obj, 0);
+        e();
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.n = true;
+        if (this.x) {
+            this.a.Q();
+        }
+        if (this.s) {
+            this.b.Q();
+        }
+        o5 o5Var = this.e;
+        if (o5Var != null) {
+            o5Var.a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.n = false;
+        if (this.x) {
+            this.a.S();
+        }
+        if (this.s) {
+            this.b.S();
+        }
+        o5 o5Var = this.e;
+        if (o5Var != null) {
+            o5Var.n(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        int i7;
+        ColorFilter colorFilter;
+        o5 o5Var = this.e;
+        ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
+        if (imageReceiver == null) {
             return;
         }
-        Rect bounds = getBounds();
-        int width = bounds.width();
-        int height = bounds.height();
-        a0.f fVar = this.b;
-        int i7 = fVar.c;
-        float f10 = Float.MAX_VALUE;
-        Bitmap bitmap2 = null;
-        for (int i10 = 0; i10 < i7; i10++) {
-            i50 i50Var = (i50) fVar.f(i10);
-            float f11 = f10;
-            float sqrt = (float) Math.sqrt(Math.pow(height - i50Var.b, 2.0d) + Math.pow(width - i50Var.a, 2.0d));
-            if (sqrt >= f11 || (bitmap = (Bitmap) fVar.i(i10)) == null || ((bool = (Boolean) this.c.get(i50Var)) != null && bool.booleanValue())) {
-                f10 = f11;
-            } else {
-                bitmap2 = bitmap;
-                f10 = sqrt;
-            }
+        if (o5Var != null && (colorFilter = this.f) != null) {
+            o5Var.setColorFilter(colorFilter);
         }
-        if (bitmap2 != null) {
-            canvas.drawBitmap(bitmap2, (Rect) null, bounds, this.f);
+        int i10 = this.c;
+        if (i10 == -1 || (i7 = this.d) == -1) {
+            imageReceiver.z0(0.0f, 0.0f, getWidth(), getHeight());
+            if (this.s) {
+                this.b.z0(0.0f, 0.0f, getWidth(), getHeight());
+            }
+        } else if (this.w) {
+            imageReceiver.z0(0.0f, 0.0f, i10, i7);
+            if (this.s) {
+                this.b.z0(0.0f, 0.0f, this.c, this.d);
+            }
         } else {
-            super.draw(canvas);
-        }
-    }
-
-    public final k9 f(org.telegram.ui.Cells.c5 c5Var, c8.ia iaVar, long j3) {
-        i50[] i50VarArr = (i50[]) c5Var.a;
-        if (!this.g) {
-            ArrayList arrayList = new ArrayList(i50VarArr.length);
-            for (i50 i50Var : i50VarArr) {
-                a0.f fVar = this.b;
-                if (!fVar.containsKey(i50Var)) {
-                    fVar.put(i50Var, null);
-                    arrayList.add(i50Var);
-                }
-            }
-            if (!arrayList.isEmpty()) {
-                return g((i50[]) arrayList.toArray(new i50[0]), iaVar, j3);
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.z0(width, (height - r3) / 2, this.c, this.d);
+            if (this.s) {
+                ImageReceiver imageReceiver2 = this.b;
+                float width2 = (getWidth() - this.c) / 2;
+                int height2 = getHeight();
+                imageReceiver2.z0(width2, (height2 - r4) / 2, this.c, this.d);
             }
         }
-        return null;
-    }
-
-    public final void finalize() {
-        try {
-            b();
-        } finally {
-            super.finalize();
+        imageReceiver.h(canvas, null);
+        if (this.s) {
+            this.b.h(canvas, null);
         }
     }
 
-    public final k9 g(i50[] i50VarArr, c8.ia iaVar, long j3) {
-        if (i50VarArr.length == 0) {
-            return null;
+    public final void p(org.telegram.messenger.fc fcVar, String str, Drawable drawable, Object obj) {
+        n(fcVar, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void q(s51 s51Var, org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, org.telegram.messenger.fc fcVar3, String str2, int i7, String str3) {
+        if (s51Var != null) {
+            this.a.x0(s51Var);
+        } else {
+            this.a.v0(fcVar, str, fcVar2, null, fcVar3, str2, null, i7, null, str3, 1);
         }
-        c8.ia[] iaVarArr = {iaVar};
-        Runnable[] runnableArr = new Runnable[i50VarArr.length];
-        this.e.add(runnableArr);
-        for (int i7 = 0; i7 < i50VarArr.length; i7++) {
-            i50 i50Var = i50VarArr[i7];
-            if (i50Var.a != 0 && i50Var.b != 0) {
-                org.telegram.messenger.q5 q5Var = Utilities.e;
-                j9 j9Var = new j9(this, i50Var, runnableArr, i7, iaVarArr);
-                runnableArr[i7] = j9Var;
-                q5Var.d(j9Var, j3);
+        e();
+    }
+
+    public final void r() {
+        this.a.H0(0, 0, true);
+    }
+
+    public final void s(int i7, int i10, boolean z10) {
+        this.a.H0(i7, i10, true);
+    }
+
+    public void setAnimatedEmojiDrawable(o5 o5Var) {
+        o5 o5Var2 = this.e;
+        if (o5Var2 == o5Var) {
+            return;
+        }
+        if (this.n && o5Var2 != null) {
+            o5Var2.n(this);
+        }
+        this.e = o5Var;
+        if (this.n && o5Var != null) {
+            o5Var.a(this);
+        }
+        invalidate();
+    }
+
+    public void setAspectFit(boolean z10) {
+        this.a.S0 = z10;
+    }
+
+    public void setBlurAllowed(boolean z10) {
+        if (this.n) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) only when detached!");
+        }
+        this.s = z10;
+        if (z10) {
+            this.b = new ImageReceiver(null);
+        }
+    }
+
+    public void setBlurredText(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            this.E = null;
+            return;
+        }
+        this.E = new wy0(charSequence, 16.5f, org.telegram.messenger.g0.o());
+        if (this.G == null) {
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.setSaturation(1.2f);
+            org.telegram.messenger.g0.h(colorMatrix, -0.2f);
+            this.G = new ColorMatrixColorFilter(colorMatrix);
+        }
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.a.p1 = colorFilter;
+    }
+
+    public void setEmojiColorFilter(ColorFilter colorFilter) {
+        this.f = colorFilter;
+        invalidate();
+    }
+
+    public void setHasBlur(boolean z10) {
+        if (z10 && !this.s) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
+        }
+        this.r = z10;
+        if (!z10) {
+            if (this.b.n() != null && !this.b.n().isRecycled()) {
+                this.b.n().recycle();
             }
+            this.b.x0(null);
         }
-        return new k9(this, iaVarArr, runnableArr, i50VarArr);
+        a();
     }
 
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        super.setAlpha(i7);
-        this.f.setAlpha(i7);
+    public void setImageBitmap(Bitmap bitmap) {
+        this.a.w0(bitmap);
+        e();
     }
 
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        super.setColorFilter(colorFilter);
-        this.f.setColorFilter(colorFilter);
+    public void setImageDrawable(Drawable drawable) {
+        this.a.x0(drawable);
+        e();
+    }
+
+    public void setImageResource(int i7) {
+        this.a.x0(getResources().getDrawable(i7));
+        invalidate();
+        e();
+    }
+
+    public void setLayerNum(int i7) {
+        this.a.F0(i7);
+    }
+
+    public void setRoundRadius(int i7) {
+        this.a.K0(i7);
+        if (this.s) {
+            this.b.K0(i7);
+        }
+        invalidate();
+    }
+
+    public final void t(int i7, int i10, int i11, int i12) {
+        this.a.L0(i7, i10, i11, i12);
+        if (this.s) {
+            this.b.L0(i7, i10, i11, i12);
+        }
+        invalidate();
+    }
+
+    public final void u(int i7, int i10) {
+        this.c = i7;
+        this.d = i10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a.t() || drawable == this.a.T || super.verifyDrawable(drawable);
     }
 }

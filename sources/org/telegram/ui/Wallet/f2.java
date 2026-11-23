@@ -1,45 +1,16 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class f2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ h2 c;
-    public final /* synthetic */ d3 d;
+public final class f2 extends org.telegram.ui.ActionBar.v4 {
+    public final /* synthetic */ hi.e r;
 
-    public /* synthetic */ f2(boolean[] zArr, h2 h2Var, d3 d3Var, int i7) {
-        this.a = i7;
-        this.b = zArr;
-        this.c = h2Var;
-        this.d = d3Var;
+    public f2(hi.e eVar) {
+        this.r = eVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.h3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.h3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.v4, org.telegram.ui.ActionBar.q2
+    public final boolean x() {
+        return !this.r.R;
     }
 }

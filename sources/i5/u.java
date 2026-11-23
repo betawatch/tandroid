@@ -1,13 +1,13 @@
 package i5;
 
-import c8.ob;
+import c8.pb;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u extends d {
-    public static final /* synthetic */ ze.b h;
-    public static final /* synthetic */ ze.b n;
+    public static final /* synthetic */ v4.b h;
+    public static final /* synthetic */ v4.b n;
     public long[] f;
 
     static {
@@ -19,7 +19,7 @@ public final class u extends d {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a10 = ob.a(h5.b.i(byteBuffer));
+        int a10 = pb.a(h5.b.i(byteBuffer));
         this.f = new long[a10];
         for (int i7 = 0; i7 < a10; i7++) {
             this.f[i7] = h5.b.i(byteBuffer);

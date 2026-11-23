@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class j extends rg.b {
     public final /* synthetic */ k d;
@@ -57,26 +57,26 @@ public final class j extends rg.b {
             return;
         }
         if (i12 == 2) {
-            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
             if (TextUtils.isEmpty(iVar.c)) {
-                a9Var.setFixedSize(12);
-                a9Var.setText(null);
+                z8Var.setFixedSize(12);
+                z8Var.setText(null);
                 return;
             } else {
-                a9Var.setFixedSize(0);
-                a9Var.setText(iVar.c);
+                z8Var.setFixedSize(0);
+                z8Var.setText(iVar.c);
                 return;
             }
         }
         if (i12 == 1) {
-            org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
             int i13 = iVar.d;
             if (i13 == 1) {
                 z10 = kVar.d.keep_archived_unmuted;
-                s8Var.setCheckBoxIcon(0);
+                r8Var.setCheckBoxIcon(0);
             } else if (i13 == 4) {
                 z10 = kVar.d.keep_archived_folders;
-                s8Var.setCheckBoxIcon(0);
+                r8Var.setCheckBoxIcon(0);
             } else {
                 if (i13 != 7) {
                     return;
@@ -85,16 +85,16 @@ public final class j extends rg.b {
                 if (!kVar.getUserConfig().q() && !kVar.getMessagesController().b4) {
                     i11 = R.drawable.permission_locked;
                 }
-                s8Var.setCheckBoxIcon(i11);
+                r8Var.setCheckBoxIcon(i11);
                 z10 = z12;
             }
-            s8Var.f(iVar.c, z10, z11);
+            r8Var.f(iVar.c, z10, z11);
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         k kVar = this.d;
-        return new org.telegram.ui.Components.mj0(i7 == 0 ? new org.telegram.ui.Cells.o4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.s8(kVar.getParentActivity()) : new org.telegram.ui.Cells.a9(kVar.getParentActivity()));
+        return new org.telegram.ui.Components.mj0(i7 == 0 ? new org.telegram.ui.Cells.o4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.r8(kVar.getParentActivity()) : new org.telegram.ui.Cells.z8(kVar.getParentActivity()));
     }
 }

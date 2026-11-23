@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
@@ -43,7 +43,7 @@ public final class e implements m {
         }
     }
 
-    public static void d(d dVar) {
+    public static void b(d dVar) {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             arrayDeque.add(dVar);
@@ -51,8 +51,30 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void b(int i7, int i10, int i11, long j3) {
-        j();
+    public final void flush() {
+        if (this.f) {
+            try {
+                android.support.v4.media.session.q qVar = this.c;
+                qVar.getClass();
+                qVar.removeCallbacksAndMessages(null);
+                h2.i iVar = this.e;
+                synchronized (iVar) {
+                    iVar.b = false;
+                }
+                android.support.v4.media.session.q qVar2 = this.c;
+                qVar2.getClass();
+                qVar2.obtainMessage(3).sendToTarget();
+                iVar.a();
+            } catch (InterruptedException e10) {
+                Thread.currentThread().interrupt();
+                throw new IllegalStateException(e10);
+            }
+        }
+    }
+
+    @Override // u2.m
+    public final void g(int i7, int i10, int i11, long j3) {
+        w1();
         d a10 = a();
         a10.a = i7;
         a10.b = i10;
@@ -64,8 +86,8 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void c(int i7, k2.d dVar, long j3, int i10) {
-        j();
+    public final void h(int i7, k2.d dVar, long j3, int i10) {
+        w1();
         d a10 = a();
         a10.a = i7;
         a10.b = 0;
@@ -125,38 +147,8 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void flush() {
-        if (this.f) {
-            try {
-                android.support.v4.media.session.q qVar = this.c;
-                qVar.getClass();
-                qVar.removeCallbacksAndMessages(null);
-                h2.i iVar = this.e;
-                synchronized (iVar) {
-                    iVar.b = false;
-                }
-                android.support.v4.media.session.q qVar2 = this.c;
-                qVar2.getClass();
-                qVar2.obtainMessage(3).sendToTarget();
-                iVar.a();
-            } catch (InterruptedException e10) {
-                Thread.currentThread().interrupt();
-                throw new IllegalStateException(e10);
-            }
-        }
-    }
-
-    @Override // u2.m
-    public final void j() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-    }
-
-    @Override // u2.m
     public final void setParameters(Bundle bundle) {
-        j();
+        w1();
         android.support.v4.media.session.q qVar = this.c;
         String str = l0.a;
         qVar.obtainMessage(4, bundle).sendToTarget();
@@ -180,5 +172,13 @@ public final class e implements m {
         handlerThread.start();
         this.c = new android.support.v4.media.session.q(this, handlerThread.getLooper(), 13);
         this.f = true;
+    }
+
+    @Override // u2.m
+    public final void w1() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
     }
 }

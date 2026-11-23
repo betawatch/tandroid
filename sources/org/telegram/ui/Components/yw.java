@@ -1,128 +1,196 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.ColorFilter;
-import android.util.SparseIntArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Point;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class yw extends ov {
-    public final /* synthetic */ ty h0;
+public class yw extends gl0 {
+    public float A0;
+    public boolean B0;
+    public boolean C0;
+    public VelocityTracker D0;
+    public final /* synthetic */ qy E0;
+    public final int v0;
+    public boolean w0;
+    public float x0;
+    public boolean y0;
+    public float z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yw(ty tyVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, pv pvVar, boolean z11) {
-        super(context, h6Var, true, false, true, z10, 0, pvVar, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.v6, h6Var), z11);
-        this.h0 = tyVar;
+    public yw(qy qyVar, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var, qyVar.j2);
+        this.E0 = qyVar;
+        this.y0 = true;
+        this.v0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.ov
-    public final boolean d() {
-        return this.h0.V0;
-    }
-
-    @Override // org.telegram.ui.Components.ov
-    public final void e() {
-        ty tyVar = this.h0;
-        ArrayList arrayList = tyVar.o1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || org.telegram.messenger.np.u1(tyVar.d1).i7.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
-            return;
+    @Override // org.telegram.ui.Components.gl0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.s != null) {
+            return super.onInterceptTouchEvent(motionEvent);
         }
-        org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0);
-    }
-
-    @Override // org.telegram.ui.Components.ov
-    public final boolean g(hx hxVar) {
-        return hxVar.f || this.h0.q1.contains(Long.valueOf(hxVar.b.id));
-    }
-
-    @Override // org.telegram.ui.Components.ov
-    public final ColorFilter getEmojiColorFilter() {
-        return this.h0.f2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0094  */
-    @Override // org.telegram.ui.Components.ov
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean h(int i7) {
-        Integer num;
-        int i10;
-        fy fyVar;
-        ty tyVar = this.h0;
-        ArrayList arrayList = tyVar.r1;
-        dx dxVar = tyVar.S;
-        if (tyVar.g0) {
-            return false;
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(true);
         }
-        sx sxVar = tyVar.T;
-        if (sxVar != null) {
-            sxVar.F(null, true);
-        }
-        vv vvVar = tyVar.W;
-        if (vvVar != null && (fyVar = vvVar.r) != null) {
-            fyVar.I1(null);
-        }
-        if (i7 == 0) {
-            num = Integer.valueOf(tyVar.e0 ? 1 : 0);
-        } else {
-            i7--;
-            num = null;
-        }
-        if (num == null) {
-            char[] cArr = org.telegram.messenger.k6.a;
-            if (i7 < 8 && dxVar.s.indexOfKey(i7) >= 0) {
-                num = Integer.valueOf(dxVar.s.get(i7));
-            }
-        }
-        if (num == null) {
-            ArrayList<hx> emojipacks = tyVar.getEmojipacks();
-            char[] cArr2 = org.telegram.messenger.k6.a;
-            int i11 = i7 - 8;
-            if (emojipacks != null && i11 >= 0 && i11 < emojipacks.size()) {
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        i12 = -1;
-                        break;
-                    }
-                    if (((hx) arrayList.get(i12)).b.id == emojipacks.get(i11).b.id) {
-                        break;
-                    }
-                    i12++;
-                }
-                SparseIntArray sparseIntArray = dxVar.s;
-                char[] cArr3 = org.telegram.messenger.k6.a;
-                num = Integer.valueOf(sparseIntArray.get(i12 + 8));
-                i10 = org.telegram.messenger.g0.L(-9.0f);
-                if (num != null) {
-                    tyVar.Q.C0();
-                    tyVar.V(num.intValue());
-                    tyVar.G(num.intValue(), i10);
-                    tyVar.n(0, null);
+        if (motionEvent.getAction() == 0) {
+            this.C0 = false;
+            this.B0 = false;
+            this.z0 = motionEvent.getRawX();
+            this.A0 = motionEvent.getRawY();
+        } else if (!this.B0 && !this.C0) {
+            qy qyVar = this.E0;
+            if (qyVar.P0 != null && Math.abs(motionEvent.getRawY() - this.A0) >= this.v0) {
+                this.B0 = true;
+                this.A0 = motionEvent.getRawY();
+                ((bg.w0) qyVar.P0).e();
+                if (this.w0) {
+                    qyVar.h.i();
+                    this.w0 = false;
                 }
                 return true;
             }
         }
-        i10 = 0;
-        if (num != null) {
-        }
-        return true;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            super.setTranslationY(f10);
-            ty tyVar = this.h0;
-            View view = tyVar.P;
-            if (view != null) {
-                view.setTranslationY(f10);
-            }
-            tyVar.K.invalidate();
+    @Override // org.telegram.ui.Components.gl0, android.widget.HorizontalScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        qy qyVar = this.E0;
+        rc rcVar = qyVar.g2;
+        gw gwVar = qyVar.h;
+        if (this.s != null) {
+            return super.onTouchEvent(motionEvent);
         }
+        if (this.y0) {
+            this.y0 = false;
+            this.x0 = motionEvent.getX();
+        }
+        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
+            qyVar.X1 = motionEvent.getRawX();
+        }
+        if (motionEvent.getAction() == 0) {
+            this.C0 = false;
+            this.B0 = false;
+            this.z0 = motionEvent.getRawX();
+            this.A0 = motionEvent.getRawY();
+        } else if (!this.B0 && !this.C0 && qyVar.P0 != null) {
+            float abs = Math.abs(motionEvent.getRawX() - this.z0);
+            float f10 = this.v0;
+            if (abs >= f10 && canScrollHorizontally((int) (this.z0 - motionEvent.getRawX()))) {
+                this.C0 = true;
+                org.telegram.messenger.g0.r(rcVar);
+                qyVar.Y1 = true;
+                qyVar.Z();
+            } else if (Math.abs(motionEvent.getRawY() - this.A0) >= f10) {
+                this.B0 = true;
+                this.A0 = motionEvent.getRawY();
+                ((bg.w0) qyVar.P0).e();
+                if (this.w0) {
+                    gwVar.i();
+                    this.w0 = false;
+                }
+            }
+        }
+        if (qyVar.Y1 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
+            org.telegram.messenger.g0.h3(rcVar, 1500L);
+        }
+        if (!this.B0) {
+            float translationX = getTranslationX();
+            if (getScrollX() == 0 && translationX == 0.0f) {
+                if (this.w0 || this.x0 - motionEvent.getX() >= 0.0f) {
+                    if (this.w0 && this.x0 - motionEvent.getX() > 0.0f && gwVar.f0) {
+                        gwVar.i();
+                        this.w0 = false;
+                    }
+                } else if (!gwVar.N) {
+                    gwVar.f0 = true;
+                    gwVar.setScrollState(1);
+                    gwVar.S = 0.0f;
+                    gwVar.U = 0.0f;
+                    VelocityTracker velocityTracker = gwVar.a0;
+                    if (velocityTracker == null) {
+                        gwVar.a0 = VelocityTracker.obtain();
+                    } else {
+                        velocityTracker.clear();
+                    }
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 0, 0.0f, 0.0f, 0);
+                    gwVar.a0.addMovement(obtain);
+                    obtain.recycle();
+                    this.w0 = true;
+                    getTranslationX();
+                }
+            }
+            if (this.w0) {
+                motionEvent.getX();
+            }
+            this.x0 = motionEvent.getX();
+            if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+                this.y0 = true;
+                this.C0 = false;
+                this.B0 = false;
+                if (this.w0) {
+                    gwVar.i();
+                    this.w0 = false;
+                }
+            }
+            return this.w0 || super.onTouchEvent(motionEvent);
+        }
+        if (this.D0 == null) {
+            this.D0 = VelocityTracker.obtain();
+        }
+        this.D0.addMovement(motionEvent);
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            this.D0.computeCurrentVelocity(1000);
+            float yVelocity = this.D0.getYVelocity();
+            this.D0.recycle();
+            this.D0 = null;
+            if (motionEvent.getAction() == 1) {
+                bg.w0 w0Var = (bg.w0) qyVar.P0;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) w0Var.c;
+                if (w0Var.d()) {
+                    chatActivityEnterView.u4 = false;
+                    if ((!w0Var.a || yVelocity < org.telegram.messenger.g0.L(200.0f)) && ((w0Var.a || yVelocity > org.telegram.messenger.g0.L(-200.0f)) && ((!(z10 = w0Var.a) || chatActivityEnterView.s4 > 0.6f) && (z10 || chatActivityEnterView.s4 < 0.4f)))) {
+                        chatActivityEnterView.S1(z10, true, true, true);
+                    } else {
+                        chatActivityEnterView.S1(!w0Var.a, true, true, true);
+                    }
+                }
+            } else {
+                bg.w0 w0Var2 = (bg.w0) qyVar.P0;
+                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) w0Var2.c;
+                if (chatActivityEnterView2.n4) {
+                    chatActivityEnterView2.u4 = false;
+                    chatActivityEnterView2.S1(w0Var2.a, true, false, true);
+                }
+            }
+            this.y0 = true;
+            this.C0 = false;
+            this.B0 = false;
+        } else {
+            xw xwVar = qyVar.P0;
+            int round = Math.round(motionEvent.getRawY() - this.A0);
+            bg.w0 w0Var3 = (bg.w0) xwVar;
+            ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) w0Var3.c;
+            if (w0Var3.d()) {
+                Point point = org.telegram.messenger.g0.q;
+                int max = Math.max(Math.min(round + w0Var3.b, 0), -(chatActivityEnterView3.t4 - (point.x > point.y ? chatActivityEnterView3.o3 : chatActivityEnterView3.n3)));
+                if (chatActivityEnterView3.e7 == null) {
+                    float f11 = max;
+                    chatActivityEnterView3.V0.setTranslationY(f11);
+                    chatActivityEnterView3.setTranslationY(f11);
+                }
+                chatActivityEnterView3.s4 = max / (-(chatActivityEnterView3.t4 - r4));
+                chatActivityEnterView3.c2.invalidate();
+            }
+        }
+        cancelLongPress();
+        return true;
     }
 }

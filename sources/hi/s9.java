@@ -1,48 +1,32 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class s9 extends AnimatorListenerAdapter {
+public final /* synthetic */ class s9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ nb b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ s9(sa saVar, int i7) {
+    public /* synthetic */ s9(nb nbVar, Runnable runnable, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = nbVar;
+        this.c = runnable;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                sa saVar = this.b;
-                saVar.k2 = null;
-                saVar.r.setTranslationY(0.0f);
-                saVar.r.b(0.0f);
-                break;
-            case 1:
-                sa saVar2 = this.b;
-                saVar2.n.removeView(saVar2.N0);
-                saVar2.N0 = null;
-                saVar2.o2 = null;
-                saVar2.q2 = null;
-                saVar2.d1.M.b(saVar2.g0 != 1);
+                this.c.run();
+                this.b.o0();
                 break;
             default:
-                sa saVar3 = this.b;
-                aa aaVar = saVar3.D2;
-                if (aaVar != null) {
-                    if (aaVar.getParent() != null) {
-                        ((ViewGroup) saVar3.D2.getParent()).removeView(saVar3.D2);
-                    }
-                    saVar3.D2 = null;
-                }
-                saVar3.F2 = null;
-                super.onAnimationEnd(animator);
+                nb nbVar = this.b;
+                nbVar.e(false);
+                org.telegram.messenger.g0.r(nbVar.h2);
+                nbVar.h2 = null;
+                nbVar.T1 = false;
+                this.c.run();
                 break;
         }
     }

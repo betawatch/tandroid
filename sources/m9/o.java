@@ -1,7 +1,7 @@
 package m9;
 
 import a8.p0;
-import c8.s9;
+import c8.t9;
 import com.google.android.gms.internal.play_billing.s0;
 import j$.util.Objects;
 import java.util.Locale;
@@ -16,12 +16,12 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class o extends n9.a implements y {
     public static final boolean d;
     public static final s0 e;
-    public static final s9 f;
+    public static final t9 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -30,7 +30,7 @@ public abstract class o extends n9.a implements y {
     static {
         boolean z10;
         Throwable th2;
-        s9 fVar;
+        t9 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -367,9 +367,9 @@ public abstract class o extends n9.a implements y {
                 n nVar3 = new n();
                 z10 = true;
                 while (true) {
-                    s9 s9Var = f;
-                    s9Var.f(nVar3, nVar2);
-                    if (s9Var.c(this, nVar2, nVar3)) {
+                    t9 t9Var = f;
+                    t9Var.f(nVar3, nVar2);
+                    if (t9Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -645,9 +645,9 @@ public abstract class o extends n9.a implements y {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    s9 s9Var = f;
-                    s9Var.f(nVar3, nVar2);
-                    if (s9Var.c(this, nVar2, nVar3)) {
+                    t9 t9Var = f;
+                    t9Var.f(nVar3, nVar2);
+                    if (t9Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

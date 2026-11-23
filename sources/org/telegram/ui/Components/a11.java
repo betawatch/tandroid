@@ -1,66 +1,336 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class a11 extends v4.o {
-    public final /* synthetic */ int b = 1;
-    public ArrayList c;
-    public ArrayList d;
+public final class a11 extends dk0 {
+    public final ArrayList c = new ArrayList();
+    public String d;
+    public final /* synthetic */ f11 e;
 
-    public /* synthetic */ a11() {
+    public a11(f11 f11Var) {
+        this.e = f11Var;
     }
 
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                return true;
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.a(aVar2);
-        }
+    @Override // org.telegram.ui.Components.dk0
+    public final boolean D(v4.f1 f1Var) {
+        return true;
     }
 
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                d11 d11Var = (d11) this.c.get(i7);
-                d11 d11Var2 = (d11) this.d.get(i10);
-                return d11Var.a == d11Var2.a && Objects.equals(d11Var.b, d11Var2.b);
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.equals(aVar2);
+    public final void E(ArrayList arrayList, boolean z10) {
+        ek0 ek0Var = this.e.r;
+        if (!z10) {
+            f();
+            return;
         }
+        boolean canScrollVertically = ek0Var.canScrollVertically(-1);
+        v4.p.c(new jg.g(this, arrayList, 3), true).c(this);
+        if (canScrollVertically) {
+            return;
+        }
+        ek0Var.v0(0);
     }
 
-    @Override // v4.o
-    public final int d() {
-        switch (this.b) {
-        }
-        return this.d.size();
-    }
-
-    @Override // v4.o
-    public final int e() {
-        switch (this.b) {
-        }
+    @Override // v4.i0
+    public final int b() {
         return this.c.size();
     }
 
-    public a11(ArrayList arrayList, ArrayList arrayList2) {
-        this.c = arrayList;
-        this.d = arrayList2;
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x03ae, code lost:
+    
+        if (r0 != null) goto L133;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0374  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0449  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0459  */
+    @Override // v4.i0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(v4.f1 f1Var, int i7) {
+        e11 e11Var;
+        boolean z10;
+        TextPaint textPaint;
+        String str;
+        TLRPC.Message message;
+        int i10;
+        TLRPC.Message message2;
+        int i11;
+        String str2;
+        TextPaint textPaint2;
+        int i12;
+        CharSequence replace;
+        TLRPC.Chat O0;
+        String str3;
+        CharSequence charSequence;
+        CharSequence charSequence2;
+        ArrayList arrayList = this.c;
+        b11 b11Var = (b11) arrayList.get(i7);
+        e11 e11Var2 = (e11) f1Var.a;
+        boolean z11 = i7 < arrayList.size() - 1;
+        e11Var2.getClass();
+        TLRPC.TL_forumTopic tL_forumTopic = b11Var.a;
+        e11Var2.c = z11;
+        f11 f11Var = e11Var2.y;
+        int i13 = f11Var.a;
+        TextPaint textPaint3 = f11Var.o0;
+        boolean z12 = f11Var.c;
+        boolean z13 = f11Var.d;
+        TextPaint textPaint4 = f11Var.p0;
+        long j3 = f11Var.b;
+        TextPaint textPaint5 = f11Var.n0;
+        org.telegram.ui.ActionBar.i6 i6Var = f11Var.e;
+        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i13);
+        p9 p9Var = e11Var2.a;
+        p9Var.setAnimatedEmojiDrawable(null);
+        p9Var.b();
+        p9Var.setScaleX(1.0f);
+        p9Var.setScaleY(1.0f);
+        p9Var.setRoundRadius(0);
+        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.y6, i6Var);
+        p9Var.setColorFilter(null);
+        org.telegram.messenger.ov ovVar = b11Var.b;
+        if (ovVar != null) {
+            String g10 = f11Var.g(ovVar.a);
+            org.telegram.messenger.fj fjVar = ovVar.d;
+            TLRPC.Message message3 = fjVar != null ? fjVar.k : null;
+            int i14 = (int) ovVar.f;
+            e11Var = e11Var2;
+            e11Var.n = false;
+            e11Var.r = ovVar.b;
+            a9 a9Var = new a9((org.telegram.ui.ActionBar.i6) null);
+            p9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
+            z10 = z13;
+            if (ovVar.a == org.telegram.messenger.i10.i(i13).e()) {
+                a9Var.g(22);
+                a9Var.p = 0.38f;
+                p9Var.setImageDrawable(a9Var);
+            } else {
+                long j10 = ovVar.a;
+                if (j10 == 2666000) {
+                    a9Var.g(21);
+                    a9Var.p = 0.38f;
+                    p9Var.setImageDrawable(a9Var);
+                } else {
+                    TLObject c22 = j10 > 0 ? u12.c2(Long.valueOf(j10)) : u12.O0(Long.valueOf(-j10));
+                    a9Var.p(c22);
+                    p9Var.f(c22, a9Var);
+                }
+            }
+            textPaint = textPaint3;
+            message = message3;
+            i11 = i14;
+            str = g10;
+        } else {
+            e11Var = e11Var2;
+            z10 = z13;
+            if (tL_forumTopic == null) {
+                String N0 = org.telegram.messenger.gd.N0(2131743737, null);
+                if (z10) {
+                    a9 a9Var2 = new a9((org.telegram.ui.ActionBar.i6) null);
+                    a9Var2.g(1);
+                    a9Var2.p = 0.38f;
+                    p9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
+                    p9Var.setImageDrawable(a9Var2);
+                } else {
+                    p9Var.setImageResource(R.drawable.other_chats);
+                    p9Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                }
+                ArrayList arrayList2 = (ArrayList) u12.S.f(j3);
+                TLRPC.Message message4 = (arrayList2 == null || arrayList2.isEmpty()) ? null : ((org.telegram.messenger.fj) arrayList2.get(0)).k;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) u12.R.f(j3);
+                int i15 = dialog != null ? dialog.unread_count : 0;
+                e11Var.n = u12.u2(f11Var.b, 0L, null);
+                e11Var.r = false;
+                str = N0;
+                textPaint = textPaint3;
+                message = message4;
+                i11 = i15;
+            } else {
+                String str4 = tL_forumTopic.title;
+                TLRPC.Message message5 = tL_forumTopic.topMessage;
+                int i16 = tL_forumTopic.unread_count;
+                textPaint = textPaint3;
+                str = str4;
+                e11Var.n = u12.u2(f11Var.b, tL_forumTopic.id, null);
+                e11Var.r = tL_forumTopic.pinned;
+                if (z12) {
+                    message = message5;
+                    i10 = i16;
+                    long o4 = org.telegram.messenger.n5.o(tL_forumTopic.from_id);
+                    TLObject c23 = o4 > 0 ? u12.c2(Long.valueOf(o4)) : u12.O0(Long.valueOf(-o4));
+                    a9 a9Var3 = new a9((org.telegram.ui.ActionBar.i6) null);
+                    a9Var3.p(c23);
+                    p9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
+                    p9Var.f(c23, a9Var3);
+                    if (c23 instanceof TLRPC.User) {
+                        str2 = org.telegram.messenger.n10.q((TLRPC.User) c23);
+                    } else if (c23 instanceof TLRPC.Chat) {
+                        str2 = ((TLRPC.Chat) c23).title;
+                    }
+                    str = str2;
+                    i11 = i10;
+                } else {
+                    message = message5;
+                    i10 = i16;
+                    if (tL_forumTopic.id == 1) {
+                        p9Var.setImageResource(R.drawable.msg_filled_general);
+                        p9Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                    } else {
+                        long j11 = tL_forumTopic.icon_emoji_id;
+                        if (j11 != 0) {
+                            message2 = message;
+                            p9Var.setAnimatedEmojiDrawable(o5.m(org.telegram.messenger.i10.t0, j11, null, 3));
+                        } else {
+                            message2 = message;
+                            p9Var.setImageDrawable(qg.c.f(tL_forumTopic));
+                        }
+                        i11 = i10;
+                        message = message2;
+                    }
+                }
+                message2 = message;
+                i11 = i10;
+                message = message2;
+            }
+        }
+        e11Var.s = b11Var.a() == f11Var.L;
+        e11Var.h = i11 > 0 ? i11 > 999 ? "999+" : String.valueOf(i11) : null;
+        int i17 = org.telegram.ui.ActionBar.n6.G6;
+        textPaint5.setColor(org.telegram.ui.ActionBar.n6.w0(i17, i6Var));
+        textPaint.setColor(w02);
+        textPaint4.setColor(org.telegram.ui.ActionBar.n6.r1(0.6f, org.telegram.ui.ActionBar.n6.w0(i17, i6Var)));
+        int L = f11Var.J - org.telegram.messenger.g0.L(40.0f);
+        CharSequence charSequence3 = "";
+        String f12 = message != null ? org.telegram.messenger.gd.f1(message.date) : "";
+        int ceil = (int) Math.ceil(textPaint.measureText(f12));
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+        e11Var.f = new StaticLayout(f12, textPaint, ceil, alignment, 1.0f, 0.0f, false);
+        int L2 = ((((L - org.telegram.messenger.g0.L(26.0f)) - e11Var.f.getWidth()) - org.telegram.messenger.g0.L(6.0f)) - (e11Var.n ? org.telegram.messenger.g0.L(18.0f) : 0)) - (e11Var.r ? org.telegram.messenger.g0.L(19.0f) : 0);
+        String replace2 = str == null ? "" : str.toString().replace('\n', ' ');
+        int i18 = (z12 || z10) ? 0 : 1;
+        HashMap hashMap = f11Var.m0;
+        if (message == null) {
+            textPaint2 = textPaint4;
+        } else {
+            long j12 = ((message.id << 1) ^ (message.dialog_id * 31)) ^ i18;
+            CharSequence charSequence4 = (CharSequence) hashMap.get(Long.valueOf(j12));
+            if (charSequence4 != null) {
+                textPaint2 = textPaint4;
+                charSequence3 = charSequence4;
+            } else {
+                org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(i13, message, false, false);
+                CharSequence charSequence5 = fjVar2.z;
+                if (charSequence5 == null) {
+                    charSequence5 = fjVar2.v;
+                }
+                if (charSequence5 == null) {
+                    textPaint2 = textPaint4;
+                    i12 = i13;
+                    replace = "";
+                } else {
+                    textPaint2 = textPaint4;
+                    i12 = i13;
+                    replace = charSequence5.toString().replace('\n', ' ');
+                }
+                if (i18 != 0 && !fjVar2.k.out) {
+                    long B1 = org.telegram.messenger.fj.B1(message.from_id);
+                    if (B1 > 0) {
+                        TLRPC.User c24 = org.telegram.messenger.mp.u1(i12).c2(Long.valueOf(B1));
+                        if (c24 != null) {
+                            str3 = org.telegram.messenger.n10.k(c24, true);
+                            if (!TextUtils.isEmpty(str3)) {
+                                replace = TextUtils.concat(str3, ": ", replace);
+                            }
+                        }
+                        str3 = null;
+                        if (!TextUtils.isEmpty(str3)) {
+                        }
+                    } else {
+                        if (B1 < 0 && B1 != j3 && (O0 = org.telegram.messenger.mp.u1(i12).O0(Long.valueOf(-B1))) != null) {
+                            str3 = O0.title;
+                            if (!TextUtils.isEmpty(str3)) {
+                            }
+                        }
+                        str3 = null;
+                        if (!TextUtils.isEmpty(str3)) {
+                        }
+                    }
+                }
+                charSequence3 = org.telegram.messenger.j6.m(replace, textPaint2.getFontMetricsInt(), false, null, 0);
+                hashMap.put(Long.valueOf(j12), charSequence3);
+            }
+        }
+        if (!TextUtils.isEmpty(f11Var.M)) {
+            if (f11Var.m(b11Var)) {
+                charSequence = org.telegram.messenger.g0.w1(replace2, f11Var.M, i6Var);
+            } else {
+                TLObject f10 = f11Var.f(b11Var);
+                String o10 = f10 instanceof TLRPC.User ? org.telegram.messenger.n10.o((TLRPC.User) f10) : f10 instanceof TLRPC.Chat ? org.telegram.messenger.v3.K((TLRPC.Chat) f10, false) : null;
+                if (o10 != null && o10.toLowerCase().contains(f11Var.M)) {
+                    StringBuilder sb2 = new StringBuilder("@");
+                    TLObject f11 = f11Var.f(b11Var);
+                    sb2.append(f11 instanceof TLRPC.User ? org.telegram.messenger.n10.o((TLRPC.User) f11) : f11 instanceof TLRPC.Chat ? org.telegram.messenger.v3.K((TLRPC.Chat) f11, false) : null);
+                    SpannableStringBuilder w12 = org.telegram.messenger.g0.w1(sb2.toString(), f11Var.M, i6Var);
+                    if (w12 != null) {
+                        String str5 = replace2;
+                        charSequence2 = w12;
+                        charSequence = str5;
+                        CharSequence m10 = org.telegram.messenger.j6.m(charSequence, textPaint5.getFontMetricsInt(), false, null, 0);
+                        float max = Math.max(0, L2);
+                        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+                        e11Var.d = new StaticLayout(TextUtils.ellipsize(m10, textPaint5, max, truncateAt), textPaint5, Math.max(1, L2), alignment, 1.0f, 0.0f, false);
+                        String str6 = e11Var.h;
+                        int L3 = L - (str6 == null ? org.telegram.messenger.g0.L(22.0f) + ((int) f11Var.q0.measureText(str6)) : 0);
+                        e11Var.e = yu0.c(charSequence2, textPaint2, Math.max(1, L3), alignment, org.telegram.messenger.g0.L(1.0f), truncateAt, Math.max(1, L3), 2, true);
+                        if (e11Var.n && e11Var.w == null) {
+                            e11Var.w = e11Var.getContext().getDrawable(R.drawable.list_mute).mutate();
+                        }
+                        if (e11Var.r && e11Var.x == null) {
+                            e11Var.x = e11Var.getContext().getDrawable(R.drawable.list_pin).mutate();
+                        }
+                        e11Var.requestLayout();
+                        e11Var.invalidate();
+                    }
+                }
+            }
+        }
+        charSequence = replace2;
+        charSequence2 = charSequence3;
+        CharSequence m102 = org.telegram.messenger.j6.m(charSequence, textPaint5.getFontMetricsInt(), false, null, 0);
+        float max2 = Math.max(0, L2);
+        TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
+        e11Var.d = new StaticLayout(TextUtils.ellipsize(m102, textPaint5, max2, truncateAt2), textPaint5, Math.max(1, L2), alignment, 1.0f, 0.0f, false);
+        String str62 = e11Var.h;
+        int L32 = L - (str62 == null ? org.telegram.messenger.g0.L(22.0f) + ((int) f11Var.q0.measureText(str62)) : 0);
+        e11Var.e = yu0.c(charSequence2, textPaint2, Math.max(1, L32), alignment, org.telegram.messenger.g0.L(1.0f), truncateAt2, Math.max(1, L32), 2, true);
+        if (e11Var.n) {
+            e11Var.w = e11Var.getContext().getDrawable(R.drawable.list_mute).mutate();
+        }
+        if (e11Var.r) {
+            e11Var.x = e11Var.getContext().getDrawable(R.drawable.list_pin).mutate();
+        }
+        e11Var.requestLayout();
+        e11Var.invalidate();
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        e11 e11Var = new e11(this.e, viewGroup.getContext());
+        e11Var.setLayoutParams(new v4.q0(-1, -2));
+        return new mj0(e11Var);
     }
 }

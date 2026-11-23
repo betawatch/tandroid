@@ -12,44 +12,44 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.k71;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class n5 extends j71 {
+public final class n5 extends k71 {
     public boolean W;
     public final m5 a0;
     public final /* synthetic */ ArrayList b0;
-    public final /* synthetic */ t0 c0;
+    public final /* synthetic */ u0 c0;
     public final /* synthetic */ int d0;
     public final /* synthetic */ Rect e0;
     public final /* synthetic */ View[] f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Wallet.m5] */
-    public n5(Context context, org.telegram.ui.ActionBar.h6 h6Var, final ArrayList arrayList, final t0 t0Var, int i7, Rect rect, View[] viewArr) {
-        super(context, h6Var);
+    public n5(Context context, org.telegram.ui.ActionBar.i6 i6Var, final ArrayList arrayList, final u0 u0Var, int i7, Rect rect, View[] viewArr) {
+        super(context, i6Var);
         this.b0 = arrayList;
-        this.c0 = t0Var;
+        this.c0 = u0Var;
         this.d0 = i7;
         this.e0 = rect;
         this.f0 = viewArr;
-        this.a0 = new gs() { // from class: org.telegram.ui.Wallet.m5
-            @Override // org.telegram.messenger.gs
+        this.a0 = new fs() { // from class: org.telegram.ui.Wallet.m5
+            @Override // org.telegram.messenger.fs
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 ArrayList arrayList2 = arrayList;
-                ArrayList arrayList3 = t0Var.c;
-                u0[] u0VarArr = u0.R;
+                ArrayList arrayList3 = u0Var.c;
+                v0[] v0VarArr = v0.R;
                 IdentityHashMap identityHashMap = new IdentityHashMap();
                 HashMap hashMap = new HashMap();
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    u0.J(identityHashMap, hashMap, i12, (TL_wallet.walletTransaction) arrayList2.get(i12), true);
+                    v0.J(identityHashMap, hashMap, i12, (TL_wallet.walletTransaction) arrayList2.get(i12), true);
                 }
                 int size = arrayList3.size();
                 int i13 = 0;
@@ -59,7 +59,7 @@ public final class n5 extends j71 {
                     TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                     TreeSet treeSet = (TreeSet) identityHashMap.get(wallettransaction);
                     int intValue = (treeSet == null || treeSet.isEmpty()) ? -1 : ((Integer) treeSet.first()).intValue();
-                    ArrayList s02 = u0.s0(wallettransaction);
+                    ArrayList s02 = v0.s0(wallettransaction);
                     int size2 = s02.size();
                     int i14 = 0;
                     while (i14 < size2) {
@@ -74,21 +74,21 @@ public final class n5 extends j71 {
                     if (intValue >= 0) {
                         TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) arrayList2.get(intValue);
                         if (wallettransaction2 != wallettransaction) {
-                            u0.J(identityHashMap, hashMap, intValue, wallettransaction2, false);
+                            v0.J(identityHashMap, hashMap, intValue, wallettransaction2, false);
                             arrayList2.set(intValue, wallettransaction);
-                            u0.J(identityHashMap, hashMap, intValue, wallettransaction, true);
+                            v0.J(identityHashMap, hashMap, intValue, wallettransaction, true);
                         }
                     } else {
                         arrayList2.add(wallettransaction);
-                        u0.J(identityHashMap, hashMap, arrayList2.size() - 1, wallettransaction, true);
+                        v0.J(identityHashMap, hashMap, arrayList2.size() - 1, wallettransaction, true);
                     }
                 }
             }
         };
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void B(View view, float f10) {
+    @Override // org.telegram.ui.Components.k71
+    public final void D(View view, float f10) {
         view.setTranslationX(f10);
         if (getMeasuredWidth() <= 0) {
             return;
@@ -99,62 +99,62 @@ public final class n5 extends j71 {
         view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
         view.setScaleX(1.0f - Math.abs(0.25f * i7));
         view.setRotationY(10.0f * i7);
-        m7 m7Var = (m7) view.findViewWithTag(m7.class);
-        if (m7Var != null) {
+        n7 n7Var = (n7) view.findViewWithTag(n7.class);
+        if (n7Var != null) {
             boolean z10 = this.W;
             long nanoTime = System.nanoTime();
-            if (!m7Var.T) {
-                m7Var.T = true;
-                m7Var.O = i7;
-                m7Var.S = nanoTime;
+            if (!n7Var.T) {
+                n7Var.T = true;
+                n7Var.O = i7;
+                n7Var.S = nanoTime;
                 return;
             }
-            float f11 = i7 - m7Var.O;
-            m7Var.O = i7;
+            float f11 = i7 - n7Var.O;
+            n7Var.O = i7;
             if (!z10) {
-                m7Var.R = 0.0f;
-                m7Var.S = nanoTime;
+                n7Var.R = 0.0f;
+                n7Var.S = nanoTime;
             } else if (f11 != 0.0f) {
-                float C = a8.p0.C(nanoTime - m7Var.S, 1.0E9f, 0.033333335f, 0.008333334f);
-                m7Var.S = nanoTime;
+                float C = a8.p0.C(nanoTime - n7Var.S, 1.0E9f, 0.033333335f, 0.008333334f);
+                n7Var.S = nanoTime;
                 float f12 = f11 / C;
-                float L = (-(f12 - m7Var.R)) * org.telegram.messenger.g0.L(140.0f);
-                m7Var.R = f12;
-                if (m7Var.P == null) {
-                    r1.g gVar = new r1.g(m7Var, r1.g.o);
-                    m7Var.P = gVar;
+                float L = (-(f12 - n7Var.R)) * org.telegram.messenger.g0.L(140.0f);
+                n7Var.R = f12;
+                if (n7Var.P == null) {
+                    r1.g gVar = new r1.g(n7Var, r1.g.o);
+                    n7Var.P = gVar;
                     r1.h hVar = new r1.h(0.0f);
                     hVar.a(0.32f);
                     hVar.b(300.0f);
                     gVar.m = hVar;
-                    m7Var.P.b(new g7(m7Var, 1));
+                    n7Var.P.b(new h7(n7Var, 1));
                 }
-                float A = o10.A(m7Var.Q, L, org.telegram.messenger.g0.L(1600.0f), -org.telegram.messenger.g0.L(1600.0f));
-                m7Var.Q = A;
-                r1.g gVar2 = m7Var.P;
+                float A = m10.A(n7Var.Q, L, org.telegram.messenger.g0.L(1600.0f), -org.telegram.messenger.g0.L(1600.0f));
+                n7Var.Q = A;
+                r1.g gVar2 = n7Var.P;
                 gVar2.a = A;
                 gVar2.c(0.0f);
             }
             if (f11 == 0.0f) {
                 return;
             }
-            m7Var.V = Math.max(-720.0f, Math.min(720.0f, m7Var.V - (f11 * 300.0f)));
-            if (m7Var.a0 || !m7Var.n) {
+            n7Var.V = Math.max(-720.0f, Math.min(720.0f, n7Var.V - (f11 * 300.0f)));
+            if (n7Var.a0 || !n7Var.n) {
                 return;
             }
-            m7Var.a0 = true;
-            m7Var.W = 0L;
-            Choreographer.getInstance().postFrameCallback(m7Var.b0);
+            n7Var.a0 = true;
+            n7Var.W = 0L;
+            Choreographer.getInstance().postFrameCallback(n7Var.b0);
         }
     }
 
-    public final void H() {
+    public final void J() {
         if (this.b >= this.b0.size() - 2) {
-            t0 t0Var = this.c0;
-            if (t0Var.k || t0Var.h) {
+            u0 u0Var = this.c0;
+            if (u0Var.k || u0Var.h) {
                 return;
             }
-            t0Var.h();
+            u0Var.h();
         }
     }
 
@@ -178,7 +178,7 @@ public final class n5 extends j71 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.k71
     public final float getAvailableTranslationX() {
         int measuredWidth = getMeasuredWidth();
         Rect rect = this.e0;
@@ -188,14 +188,14 @@ public final class n5 extends j71 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ls.f(this.d0).c(this.a0, ls.e4);
-        H();
+        ks.f(this.d0).c(this.a0, ks.e4);
+        J();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ls.f(this.d0).n(this.a0, ls.e4);
+        ks.f(this.d0).n(this.a0, ks.e4);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -214,22 +214,22 @@ public final class n5 extends j71 {
         super.onMeasure(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void p(View view, View view2, int i7, int i10) {
+    @Override // org.telegram.ui.Components.k71
+    public final void q(View view, View view2, int i7, int i10) {
         requestLayout();
         View childAt = ((FrameLayout) view).getChildAt(0);
         if (childAt != null && (childAt.getTag() instanceof Runnable)) {
             ((Runnable) childAt.getTag()).run();
         }
-        H();
-        gc gcVar = gc.w;
-        if (gcVar != null) {
-            gcVar.c(0L, false);
+        J();
+        fc fcVar = fc.w;
+        if (fcVar != null) {
+            fcVar.c(0L, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void s(boolean z10) {
+    @Override // org.telegram.ui.Components.k71
+    public final void t(boolean z10) {
         requestLayout();
         View view = this.f0[0];
         if (view != null) {

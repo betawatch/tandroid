@@ -1,414 +1,79 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.Surface;
-import android.webkit.JsPromptResult;
-import androidx.car.app.IStartCarApp;
-import androidx.car.app.notification.CarAppNotificationBroadcastReceiver;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Arrays;
+import javax.crypto.Cipher;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegram.ui.ActionBar.q1, p4.m0, h2.j, p4.c1, qi.m, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.b, v5.e, ll0, ww, f3.r {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public abstract class wc1 {
+    public static final BigInteger a = new BigInteger("FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE649286651ECE45B3DC2007CB8A163BF0598DA48361C55D39A69163FA8FD24CF5F83655D23DCA3AD961C62F356208552BB9ED529077096966D670C354E4ABC9804F1746C08CA18217C32905E462E36CE3BE39E772C180E86039B2783A2EC07A28FB5C55DF06F4C52C9DE2BCBF6955817183995497CEA956AE515D2261898FA051015728E5A8AACAA68FFFFFFFFFFFFFFFF", 16);
+    public static final BigInteger b = BigInteger.valueOf(2);
+    public static org.telegram.ui.ActionBar.w2 c;
+    public static a8.r7 d;
 
-    public /* synthetic */ wc1(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-    }
-
-    @Override // org.telegram.ui.ww
-    public /* synthetic */ boolean G() {
-        switch (this.a) {
+    public static byte[] a(BigInteger bigInteger) {
+        byte[] byteArray = bigInteger.toByteArray();
+        if (byteArray.length == 256) {
+            return byteArray;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ww
-    public /* synthetic */ boolean P(cx cxVar) {
-        switch (this.a) {
+        if (byteArray.length == 257 && byteArray[0] == 0) {
+            return Arrays.copyOfRange(byteArray, 1, byteArray.length);
         }
-        return false;
-    }
-
-    @Override // qi.m
-    public void a(ji.l lVar) {
-        switch (this.a) {
-            case 11:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.es0((SpannableString) this.b, lVar, (oi.t) this.c, 26));
-                break;
-            default:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.es0((SpannableString) this.b, lVar, (di.p9) this.c, 27));
-                break;
+        if (byteArray.length < 256) {
+            byte[] bArr = new byte[256];
+            System.arraycopy(byteArray, 0, bArr, 256 - byteArray.length, byteArray.length);
+            return bArr;
         }
+        throw new IllegalStateException("unexpected DH value size " + byteArray.length);
     }
 
-    @Override // h2.j
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 6:
-                p4.e1 e1Var = (p4.e1) this.b;
-                e2.q1 q1Var = (e2.q1) this.c;
-                p4.i1 i1Var = (p4.i1) obj;
-                e1Var.getClass();
-                h9.l0 l0Var = q1Var.H;
-                if (!l0Var.isEmpty()) {
-                    e2.p1 c10 = q1Var.a().c();
-                    h9.h2 it = l0Var.values().iterator();
-                    while (it.hasNext()) {
-                        e2.n1 n1Var = (e2.n1) it.next();
-                        e2.m1 m1Var = (e2.m1) e1Var.d.n.get(n1Var.a.b);
-                        if (m1Var == null || n1Var.a.a != m1Var.a) {
-                            c10.a(n1Var);
-                        } else {
-                            c10.a(new e2.n1(m1Var, n1Var.b));
-                        }
-                    }
-                    q1Var = c10.b();
-                }
-                i1Var.q0(q1Var);
-                break;
-            case 7:
-                p4.e1 e1Var2 = (p4.e1) this.b;
-                p4.v vVar = (p4.v) this.c;
-                p4.e0 e0Var = (p4.e0) e1Var2.a.get();
-                if (e0Var != null && !e0Var.j()) {
-                    e0Var.g(vVar, false);
-                    break;
-                }
-                break;
-            case 8:
-                p4.e1 e1Var3 = (p4.e1) this.b;
-                Surface surface = (Surface) this.c;
-                p4.i1 i1Var2 = (p4.i1) obj;
-                ((p4.e0) e1Var3.a.get()).getClass();
-                if (surface != null) {
-                    p4.d1 d1Var = new p4.d1(surface);
-                    e1Var3.i = d1Var;
-                    i1Var2.S(d1Var);
-                    break;
-                } else {
-                    i1Var2.S(null);
-                    e1Var3.i = null;
-                    break;
-                }
-            default:
-                a8.xa xaVar = (a8.xa) this.b;
-                ((x2.k0) obj).b(xaVar.b, (x2.g0) xaVar.c, (x2.c0) this.c);
-                break;
-        }
-    }
-
-    @Override // v5.e
-    public Object apply(Object obj) {
-        v5.g gVar = (v5.g) this.b;
-        o5.i iVar = (o5.i) this.c;
-        SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
-        v5.a aVar = gVar.d;
-        ArrayList d = gVar.d(sQLiteDatabase, iVar, aVar.b);
-        for (l5.d dVar : l5.d.values()) {
-            if (dVar != iVar.c) {
-                int size = aVar.b - d.size();
-                if (size <= 0) {
-                    break;
-                }
-                d.addAll(gVar.d(sQLiteDatabase, iVar.b(dVar), size));
+    public static byte[] b(byte[][] bArr) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+            for (byte[] bArr2 : bArr) {
+                messageDigest.update(bArr2);
             }
-        }
-        HashMap hashMap = new HashMap();
-        StringBuilder sb2 = new StringBuilder("event_id IN (");
-        for (int i7 = 0; i7 < d.size(); i7++) {
-            sb2.append(((v5.b) d.get(i7)).a);
-            if (i7 < d.size() - 1) {
-                sb2.append(',');
-            }
-        }
-        sb2.append(')');
-        Cursor query = sQLiteDatabase.query("event_metadata", new String[]{"event_id", "name", "value"}, sb2.toString(), null, null, null, null);
-        while (query.moveToNext()) {
-            try {
-                long j3 = query.getLong(0);
-                Set set = (Set) hashMap.get(Long.valueOf(j3));
-                if (set == null) {
-                    set = new HashSet();
-                    hashMap.put(Long.valueOf(j3), set);
-                }
-                set.add(new v5.f(query.getString(1), query.getString(2)));
-            } catch (Throwable th2) {
-                query.close();
-                throw th2;
-            }
-        }
-        query.close();
-        ListIterator listIterator = d.listIterator();
-        while (listIterator.hasNext()) {
-            v5.b bVar = (v5.b) listIterator.next();
-            long j10 = bVar.a;
-            if (hashMap.containsKey(Long.valueOf(j10))) {
-                h2.e0 c10 = bVar.c.c();
-                for (v5.f fVar : (Set) hashMap.get(Long.valueOf(j10))) {
-                    c10.a(fVar.a, fVar.b);
-                }
-                listIterator.set(new v5.b(j10, bVar.b, c10.b()));
-            }
-        }
-        return d;
-    }
-
-    @Override // ua.a
-    public void b(ua.b bVar) {
-        ua.a aVar = (ua.a) this.b;
-        ua.a aVar2 = (ua.a) this.c;
-        aVar.b(bVar);
-        aVar2.b(bVar);
-    }
-
-    @Override // u2.v
-    public int c(Object obj) {
-        Context context = (Context) this.b;
-        e2.u uVar = (e2.u) this.c;
-        u2.o oVar = (u2.o) obj;
-        String str = oVar.b;
-        return ((str.equals(uVar.s) || str.equals(u2.w.c(uVar))) && oVar.c(context, uVar, false) && oVar.d(uVar)) ? 1 : 0;
-    }
-
-    @Override // androidx.car.app.utils.b
-    public void call() {
-        IStartCarApp iStartCarApp = (IStartCarApp) this.b;
-        Intent intent = (Intent) this.c;
-        int i7 = CarAppNotificationBroadcastReceiver.a;
-        iStartCarApp.startCarApp(intent);
-    }
-
-    @Override // org.telegram.ui.ll0
-    public void d(int i7) {
-        switch (this.a) {
-            case 23:
-                wg.v vVar = (wg.v) this.b;
-                wg.v vVar2 = (wg.v) this.c;
-                if (i7 != 1) {
-                    if (i7 != 3) {
-                        vVar2.a(null);
-                        break;
-                    }
-                } else {
-                    vVar.a(null);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.b;
-                org.telegram.messenger.y10 y10Var2 = (org.telegram.messenger.y10) this.c;
-                if (i7 != 1) {
-                    if (i7 != 3) {
-                        y10Var2.a(null);
-                        break;
-                    }
-                } else {
-                    y10Var.a(null);
-                    break;
-                }
-                break;
+            return messageDigest.digest();
+        } catch (Exception e10) {
+            throw new RuntimeException(e10);
         }
     }
 
-    @Override // f3.r
-    public f3.o[] e(Uri uri, Map map) {
-        x2.q qVar = (x2.q) this.b;
-        e2.u uVar = (e2.u) this.c;
-        return new f3.o[]{qVar.c.H(uVar) ? new c4.h(qVar.c.j(uVar), null) : new n3.a(uVar)};
+    public static byte[] c(a8.r7 r7Var, String str, int i7, boolean z10) {
+        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+        ByteBuffer allocate = ByteBuffer.allocate(bytes.length + 9);
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.putInt(bytes.length);
+        allocate.put(bytes);
+        allocate.putInt(i7);
+        allocate.put(z10 ? (byte) 1 : (byte) 0);
+        byte[] array = allocate.array();
+        byte[] bArr = new byte[12];
+        new SecureRandom().nextBytes(bArr);
+        byte[] bArr2 = (byte[]) r7Var.e;
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(1, new SecretKeySpec(bArr2, "AES"), new GCMParameterSpec(128, bArr));
+        byte[] doFinal = cipher.doFinal(array);
+        byte[] bArr3 = new byte[doFinal.length + 28];
+        System.arraycopy((byte[]) r7Var.b, 0, bArr3, 0, 16);
+        System.arraycopy(bArr, 0, bArr3, 16, 12);
+        System.arraycopy(doFinal, 0, bArr3, 28, doFinal.length);
+        return bArr3;
     }
 
-    @Override // p4.m0
-    public void f(p4.v vVar) {
-        switch (this.a) {
-            case 4:
-                ((p4.d) this.c).f(((p4.n0) this.b).h.t);
-                break;
-            default:
-                p4.n0 n0Var = (p4.n0) this.b;
-                q4.h hVar = (q4.h) this.c;
-                n0Var.getClass();
-                String str = hVar.a;
-                if (TextUtils.isEmpty(str)) {
-                    h2.a.l("MediaSessionLegacyStub", "onRemoveQueueItem(): Media ID shouldn't be null");
-                    break;
-                } else {
-                    p4.i1 i1Var = n0Var.h.t;
-                    if (i1Var.p0(17)) {
-                        e2.l1 y02 = i1Var.y0();
-                        e2.k1 k1Var = new e2.k1();
-                        for (int i7 = 0; i7 < y02.o(); i7++) {
-                            if (TextUtils.equals(y02.m(i7, k1Var, 0L).c.a, str)) {
-                                i1Var.Q(i7);
-                                break;
-                            }
-                        }
-                        break;
-                    } else {
-                        h2.a.l("MediaSessionLegacyStub", "Can't remove item by ID without COMMAND_GET_TIMELINE being available");
-                        break;
-                    }
-                }
+    public static String d(byte[] bArr) {
+        StringBuilder sb2 = new StringBuilder(bArr.length * 2);
+        for (byte b10 : bArr) {
+            sb2.append(String.format("%02x", Byte.valueOf(b10)));
         }
-    }
-
-    @Override // w5.b
-    public Object g() {
-        switch (this.a) {
-            case 15:
-                ia.c cVar = (ia.c) this.b;
-                Iterable iterable = (Iterable) this.c;
-                v5.g gVar = (v5.g) ((v5.d) cVar.c);
-                gVar.getClass();
-                if (iterable.iterator().hasNext()) {
-                    gVar.a().compileStatement("DELETE FROM events WHERE _id in " + v5.g.g(iterable)).execute();
-                    break;
-                }
-                break;
-            default:
-                ia.c cVar2 = (ia.c) this.b;
-                for (Map.Entry entry : ((HashMap) this.c).entrySet()) {
-                    ((v5.g) ((v5.c) cVar2.i)).e(((Integer) entry.getValue()).intValue(), r5.c.h, (String) entry.getKey());
-                }
-                break;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.web.m.d0((org.telegram.ui.web.m) this.b, (HashSet) this.c);
-                break;
-            case 2:
-                org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.b;
-                String[] strArr = (String[]) this.c;
-                TL_bots.allowSendMessage allowsendmessage = new TL_bots.allowSendMessage();
-                allowsendmessage.bot = org.telegram.messenger.np.u1(v0Var.N).s1(v0Var.V);
-                ConnectionsManager.getInstance(v0Var.N).sendRequest(allowsendmessage, new bi.q1(v0Var, strArr, t1Var, 23));
-                break;
-            case 3:
-                boolean[] zArr = (boolean[]) this.b;
-                JsPromptResult jsPromptResult = (JsPromptResult) this.c;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    jsPromptResult.cancel();
-                    break;
-                }
-                break;
-            case 18:
-                ug.k0 k0Var = (ug.k0) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                k0Var.dismiss();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
-                    tL_channels_updateUsername.channel = org.telegram.messenger.np.k1((TLRPC.Chat) arrayList.get(i10));
-                    tL_channels_updateUsername.username = "";
-                    ConnectionsManager.getInstance(k0Var.a).sendRequest(tL_channels_updateUsername, new ug.u(k0Var, 1), 64);
-                }
-                break;
-            case 21:
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                wg.r0 r0Var = (wg.r0) this.c;
-                atomicBoolean.set(true);
-                r0Var.run();
-                break;
-            default:
-                ((wg.v) this.b).a((TLRPC.TL_premiumGiftCodeOption) this.c);
-                break;
-        }
-    }
-
-    @Override // p4.c1
-    public Object k(p4.e0 e0Var, p4.v vVar, int i7) {
-        switch (this.a) {
-            case 9:
-                return e0Var.j() ? c8.t9.b(new p4.o1(-100)) : h2.l0.g0((m9.y) ((p4.c1) this.b).k(e0Var, vVar, i7), new org.telegram.ui.Components.tm(e0Var, vVar, (p4.r0) this.c, 10));
-            default:
-                return e0Var.j() ? c8.t9.b(new p4.o1(-100)) : h2.l0.g0((m9.y) ((p4.c1) this.b).k(e0Var, vVar, i7), new org.telegram.ui.Components.tm(e0Var, vVar, (p4.b1) this.c, 11));
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        tg.p1 p1Var = (tg.p1) this.b;
-        Bitmap bitmap = (Bitmap) this.c;
-        p1Var.C0 = false;
-        org.telegram.messenger.a8.g(exc, true);
-        if (Build.VERSION.SDK_INT >= 24 && (exc instanceof lb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && p1Var.isAttachedToWindow()) {
-            org.telegram.messenger.g0.h3(new p4.z(13, p1Var, bitmap), 2000L);
-        } else {
-            p1Var.D0 = true;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        a8.r7 r7Var = (a8.r7) this.b;
-        hi.e eVar = (hi.e) this.c;
-        org.telegram.messenger.a8.b("wear-auth: /token delivered to " + ((String) r7Var.d));
-        eVar.setLoading(false);
-        yc1.d = null;
-        org.telegram.ui.ActionBar.w2 w2Var = yc1.c;
-        if (w2Var != null) {
-            w2Var.dismiss();
-            yc1.c = null;
-        }
-    }
-
-    @Override // org.telegram.ui.ww
-    public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
-        switch (this.a) {
-            case 25:
-                wg.g0 g0Var = (wg.g0) this.b;
-                String str = (String) this.c;
-                long j3 = 0;
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    j3 = ((org.telegram.messenger.tr) arrayList.get(i11)).a;
-                    g0Var.s1.getSendMessagesHelper().r0(org.telegram.messenger.yy.b(str, j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                }
-                cxVar.finishFragment();
-                wg.h.h(j3);
-                break;
-            default:
-                xg.e eVar = (xg.e) this.b;
-                String str2 = (String) this.c;
-                long j10 = 0;
-                int i12 = 0;
-                while (i12 < arrayList.size()) {
-                    j10 = ((org.telegram.messenger.tr) arrayList.get(i12)).a;
-                    eVar.e.getSendMessagesHelper().r0(org.telegram.messenger.yy.b(str2, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                    i12++;
-                    eVar = eVar;
-                }
-                cxVar.finishFragment();
-                wg.h.h(j10);
-                break;
-        }
-        return true;
+        return sb2.toString();
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class zp extends np {
     public final /* synthetic */ boolean[] d1;
@@ -21,19 +21,19 @@ public final class zp extends np {
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (!z10 && z11 && this.d1[0]) {
             rq rqVar = this.f1;
-            if (org.telegram.ui.Components.lc.a(rqVar)) {
+            if (org.telegram.ui.Components.kc.a(rqVar)) {
                 long j3 = this.e1;
                 if (j3 > 0) {
                     TLRPC.User c22 = getMessagesController().c2(Long.valueOf(j3));
                     if (c22 != null) {
-                        org.telegram.ui.Components.lc.C(c22.first_name, rqVar).j();
+                        org.telegram.ui.Components.kc.C(c22.first_name, rqVar).j();
                         return;
                     }
                     return;
                 }
                 TLRPC.Chat O0 = getMessagesController().O0(Long.valueOf(-j3));
                 if (O0 != null) {
-                    org.telegram.ui.Components.lc.C(O0.title, rqVar).j();
+                    org.telegram.ui.Components.kc.C(O0.title, rqVar).j();
                 }
             }
         }

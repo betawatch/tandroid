@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -79,7 +79,7 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
             Point point = org.telegram.messenger.g0.q;
             float min2 = Math.min(measuredWidth3, (point.y + (!photoViewer.s ? org.telegram.messenger.g0.m : 0)) / layoutParams.height);
             if (photoViewer.d2 == 11) {
-                min2 = photoViewer.p2(true) * min2;
+                min2 = photoViewer.q2(true) * min2;
             }
             w10 = com.google.android.gms.internal.vision.e2.w(layoutParams.height, min2, point.y + (!photoViewer.s ? org.telegram.messenger.g0.m : 0), 2.0f);
             float w11 = com.google.android.gms.internal.vision.e2.w(layoutParams.width, min2, photoViewer.h0.getMeasuredWidth(), 2.0f);
@@ -113,6 +113,7 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
         fArr[i7][i7] = photoViewer.i0.getScaleX();
         fArr[i7][1] = photoViewer.i0.getScaleY();
         fArr[i7][2] = photoViewer.i0.getTranslationX();
+        int i13 = 3;
         fArr[i7][3] = photoViewer.i0.getTranslationY();
         float[] fArr2 = fArr[i7];
         float f20 = abs;
@@ -123,11 +124,11 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
         char c10 = 6;
         fArr2[6] = f22;
         int[] radius = photoViewer.i0.getRadius();
-        int i13 = i7;
-        while (i13 < 4) {
+        int i14 = i7;
+        while (i14 < 4) {
             char c11 = c10;
-            fArr[i7][i13 + 7] = radius != null ? radius[i13] : 0.0f;
-            i13++;
+            fArr[i7][i14 + 7] = radius != null ? radius[i14] : 0.0f;
+            i14++;
             c10 = c11;
         }
         float[] fArr3 = fArr[i7];
@@ -148,19 +149,19 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
         fArr4[10] = 0.0f;
         fArr4[11] = 0.0f;
         fArr4[12] = 0.0f;
-        for (int i14 = i7; i14 < clippingImageViewArr.length; i14++) {
-            clippingImageViewArr[i14].setAnimationProgress(0.0f);
+        for (int i15 = i7; i15 < clippingImageViewArr.length; i15++) {
+            clippingImageViewArr[i15].setAnimationProgress(0.0f);
         }
         backgroundDrawable.setAlpha(i7);
         photoViewer.f0.setAlpha(0.0f);
         photoViewer.k0.setAlpha(0.0f);
-        wn wnVar = new wn(this, clippingImageViewArr, this.h, this.n, this.f, 27);
-        photoViewer.p4 = wnVar;
+        ip ipVar = new ip(this, clippingImageViewArr, this.h, this.n, this.f, 26);
+        photoViewer.p4 = ipVar;
         if (photoViewer.m2) {
-            wnVar.run();
+            ipVar.run();
             photoViewer.p4 = null;
             photoViewer.f0.setAlpha(1.0f);
-            backgroundDrawable.setAlpha(org.telegram.messenger.ls.e4);
+            backgroundDrawable.setAlpha(org.telegram.messenger.ks.e4);
             for (ClippingImageView clippingImageView2 : clippingImageViewArr) {
                 clippingImageView2.setAnimationProgress(1.0f);
             }
@@ -169,41 +170,41 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
             }
         } else {
             AnimatorSet animatorSet = new AnimatorSet();
-            ArrayList arrayList = new ArrayList((photoViewer.d2 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
-            int i15 = 0;
-            while (i15 < clippingImageViewArr.length) {
+            ArrayList arrayList = new ArrayList((photoViewer.d2 == 1 ? 3 : 2) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
+            int i16 = 0;
+            while (i16 < clippingImageViewArr.length) {
                 float[] fArr5 = new float[i11];
                 // fill-array-data instruction
                 fArr5[0] = 0.0f;
                 fArr5[1] = 1.0f;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i15], org.telegram.ui.Components.r6.f, fArr5);
-                if (i15 == 0) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i16], org.telegram.ui.Components.q6.f, fArr5);
+                if (i16 == 0) {
                     ofFloat.addUpdateListener(new a3(this, 21));
                 }
                 arrayList.add(ofFloat);
-                i15++;
+                i16++;
                 i11 = 2;
             }
             if (clippingImageViewArr.length > 1) {
                 arrayList.add(ObjectAnimator.ofFloat(photoViewer.i0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
             }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.r6.d, 0, org.telegram.messenger.ls.e4));
+            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.q6.d, 0, org.telegram.messenger.ks.e4));
             qq0 qq0Var = photoViewer.f0;
             Property property = View.ALPHA;
             arrayList.add(ObjectAnimator.ofFloat(qq0Var, (Property<qq0, Float>) property, 0.0f, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(photoViewer.k0, (Property<View, Float>) property, 0.0f, 1.0f));
             if (photoViewer.d2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.rd0, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.qd0, Float>) property, 0.0f, 1.0f));
             }
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(200L);
-            animatorSet.addListener(new ay(this, 17));
+            animatorSet.addListener(new zx(this, 17));
             photoViewer.f0.setLayerType(2, null);
-            photoViewer.w2(false);
+            photoViewer.x2(false);
             photoViewer.o4 = System.currentTimeMillis();
-            org.telegram.messenger.g0.g3(new fe0(28, this, animatorSet));
+            org.telegram.messenger.g0.g3(new mp0(2, this, animatorSet));
         }
-        backgroundDrawable.d = new fe0(29, this, wq0Var);
+        backgroundDrawable.d = new mp0(i13, this, wq0Var);
         bn bnVar = photoViewer.l4;
         if (bnVar == null || bnVar.getFragmentView() == null) {
             return true;

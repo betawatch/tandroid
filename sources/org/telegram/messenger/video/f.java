@@ -7,29 +7,30 @@ import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.tb0;
-import org.telegram.ui.Wallet.e3;
-import org.telegram.ui.Wallet.r5;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.qb0;
+import org.telegram.ui.Wallet.f3;
+import org.telegram.ui.Wallet.s5;
 import org.telegram.ui.a3;
-import org.telegram.ui.f40;
+import org.telegram.ui.e40;
+import org.telegram.ui.o20;
 import org.telegram.ui.p20;
-import org.telegram.ui.q20;
-import org.telegram.ui.s20;
+import org.telegram.ui.r20;
+import org.telegram.ui.s10;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,15 +42,15 @@ public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ f(hi.e eVar, r5 r5Var, t10 t10Var, String[] strArr, boolean[] zArr, e3[] e3VarArr, h6 h6Var) {
+    public /* synthetic */ f(hi.e eVar, s5 s5Var, r10 r10Var, String[] strArr, boolean[] zArr, f3[] f3VarArr, i6 i6Var) {
         this.a = 2;
         this.b = eVar;
-        this.c = r5Var;
-        this.d = t10Var;
+        this.c = s5Var;
+        this.d = r10Var;
         this.e = strArr;
         this.h = zArr;
-        this.n = e3VarArr;
-        this.f = h6Var;
+        this.n = f3VarArr;
+        this.f = i6Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -64,61 +65,61 @@ public final /* synthetic */ class f implements View.OnClickListener {
         Object obj7 = this.b;
         switch (i7) {
             case 0:
-                ((VideoAds) obj7).lambda$show$17((gc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (h6) obj, (VideoAds.AdLayout) obj3, (e) obj2, view);
+                ((VideoAds) obj7).lambda$show$17((fc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (i6) obj, (VideoAds.AdLayout) obj3, (e) obj2, view);
                 break;
             case 1:
-                f40 f40Var = (f40) obj7;
-                tb0 tb0Var = (tb0) obj6;
-                p20 p20Var = (p20) obj5;
-                q20 q20Var = (q20) obj4;
+                e40 e40Var = (e40) obj7;
+                qb0 qb0Var = (qb0) obj6;
+                o20 o20Var = (o20) obj5;
+                p20 p20Var = (p20) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
-                org.telegram.ui.t10 t10Var = f40Var.Z2;
+                s10 s10Var = e40Var.Z2;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                f40Var.S2 = ofFloat;
+                e40Var.S2 = ofFloat;
                 ofFloat.setDuration(600L);
-                f40Var.S2.addUpdateListener(new a3(f40Var, 12));
-                f40Var.S2.addListener(new s20(f40Var));
-                f40Var.S2.start();
-                if (v3.W(f40Var.U2)) {
-                    t10Var.b(hd.N0(2131743202, null), true);
+                e40Var.S2.addUpdateListener(new a3(e40Var, 12));
+                e40Var.S2.addListener(new r20(e40Var));
+                e40Var.S2.start();
+                if (v3.W(e40Var.U2)) {
+                    s10Var.b(gd.N0(2131743197, null), true);
                 } else {
-                    t10Var.b(hd.N0(2131743061, null), true);
+                    s10Var.b(gd.N0(2131743056, null), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = c5.g(null, null, 0L, 604800L, 3, tb0Var, p20Var, q20Var);
-                calendar.setTimeInMillis((tb0Var.getValue() * 86400000) + System.currentTimeMillis());
+                boolean g10 = b5.g(null, null, 0L, 604800L, 3, qb0Var, o20Var, p20Var);
+                calendar.setTimeInMillis((qb0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i10 = 11;
-                calendar.set(11, p20Var.getValue());
-                calendar.set(12, q20Var.getValue());
+                calendar.set(11, o20Var.getValue());
+                calendar.set(12, p20Var.getValue());
                 if (g10) {
                     calendar.set(13, 0);
                 }
-                f40Var.j4 = (int) (calendar.getTimeInMillis() / 1000);
-                f40Var.U1(false);
+                e40Var.j4 = (int) (calendar.getTimeInMillis() / 1000);
+                e40Var.T1(false);
                 TL_phone.createGroupCall creategroupcall = new TL_phone.createGroupCall();
-                creategroupcall.peer = np.n1(chat);
+                creategroupcall.peer = mp.n1(chat);
                 creategroupcall.random_id = Utilities.b.nextInt();
-                creategroupcall.schedule_date = f40Var.j4;
+                creategroupcall.schedule_date = e40Var.j4;
                 creategroupcall.flags |= 2;
-                ConnectionsManager.getInstance(cVar.a).sendRequest(creategroupcall, new z9(f40Var, chat, inputPeer, i10), 2);
+                ConnectionsManager.getInstance(cVar.a).sendRequest(creategroupcall, new z9(e40Var, chat, inputPeer, i10), 2);
                 break;
             default:
                 hi.e eVar = (hi.e) obj7;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj6;
-                t10 t10Var2 = (t10) obj5;
+                r10 r10Var = (r10) obj5;
                 String[] strArr = (String[]) obj4;
                 boolean[] zArr = (boolean[]) obj3;
-                e3[] e3VarArr = (e3[]) obj2;
-                h6 h6Var = (h6) obj;
+                f3[] f3VarArr = (f3[]) obj2;
+                i6 i6Var = (i6) obj;
                 if (!eVar.R) {
                     if (editTextBoldCursor != null && editTextBoldCursor.getText().toString().getBytes(StandardCharsets.UTF_8).length > 960) {
                         g0.F3(editTextBoldCursor);
                         break;
                     } else {
                         eVar.setLoading(true);
-                        t10Var2.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.o(eVar, e3VarArr, h6Var, 6));
+                        r10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.o(eVar, f3VarArr, i6Var, 6));
                         break;
                     }
                 }

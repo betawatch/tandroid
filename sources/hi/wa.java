@@ -1,47 +1,65 @@
 package hi;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.animation.ValueAnimator;
+import org.telegram.messenger.fs;
+import org.telegram.ui.jm0;
+import org.telegram.ui.qc;
+import org.telegram.ui.v71;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public interface wa {
-    void D0(boolean z10);
+public final class wa implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public boolean b = false;
+    public final /* synthetic */ fs c;
 
-    void F(float f10);
+    public /* synthetic */ wa(fs fsVar, int i7) {
+        this.a = i7;
+        this.c = fsVar;
+    }
 
-    void G1(float f10, int i7);
-
-    void J0(float f10, int i7);
-
-    void M(long j3, boolean z10);
-
-    void M1(float f10);
-
-    void N1();
-
-    void Q0(float f10);
-
-    void b2(float f10);
-
-    void e1(long j3);
-
-    void f0();
-
-    void g(int i7);
-
-    void g0(boolean z10, float f10);
-
-    void h1(boolean z10);
-
-    void i2(int i7, long j3);
-
-    void m2(long j3);
-
-    void n1(float f10, int i7);
-
-    void q1(float f10);
-
-    void s0(float f10);
-
-    void t(float f10);
-
-    void w1(float f10);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                nb nbVar = (nb) this.c;
+                nbVar.E2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                va vaVar = nbVar.D2;
+                if (vaVar != null) {
+                    vaVar.invalidate();
+                }
+                if (!this.b && nbVar.E2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 1:
+                qc qcVar = (qc) this.c;
+                qcVar.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qcVar.n0.invalidate();
+                if (!this.b && qcVar.o0 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 2:
+                jm0 jm0Var = (jm0) this.c;
+                jm0Var.Z = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jm0Var.Y.invalidate();
+                if (!this.b && jm0Var.Z > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            default:
+                v71 v71Var = (v71) this.c;
+                v71Var.k2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v71Var.j2.invalidate();
+                if (!this.b && v71Var.k2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+        }
+    }
 }

@@ -1,73 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class t11 extends m41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ t11(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    static {
+        m41.h(new t11());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                fi.u2 u2Var = ((v11) this.b).f;
-                u2Var.setScaleX(1.0f);
-                u2Var.setScaleY(1.0f);
-                u2Var.invalidate();
-                break;
-            case 1:
-                z11 z11Var = (z11) this.b;
-                z11Var.M = 1.0f;
-                z11Var.h.invalidate();
-                break;
-            case 2:
-                ((k41) this.b).M = null;
-                break;
-            case 3:
-                UndoView undoView = (UndoView) this.b;
-                undoView.setVisibility(4);
-                undoView.setScaleX(1.0f);
-                undoView.setScaleY(1.0f);
-                undoView.setAlpha(1.0f);
-                break;
-            case 4:
-                o51 o51Var = (o51) this.b;
-                if (o51Var.a.getTag() == null) {
-                    o51Var.a.setVisibility(4);
-                    break;
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
+        u11 u11Var = (u11) view;
+        boolean z11 = false;
+        if (n41Var.s) {
+            u11Var.f();
+        } else {
+            Object obj = n41Var.H;
+            if (obj == null) {
+                if (n41Var.d == -2) {
+                    u11Var.c();
+                } else {
+                    u11Var.d((n41Var.z & 1) != 0, n41Var.r, n41Var.e);
                 }
-                break;
-            case 5:
-                super.onAnimationEnd(animator);
-                p51 p51Var = (p51) this.b;
-                p51Var.b = 0.0f;
-                p51Var.setTranslationY(0.0f);
-                p51Var.a = null;
-                break;
-            case 6:
-                i71 i71Var = (i71) this.b;
-                i71Var.K = false;
-                i71Var.setEnabled(true);
-                h71 h71Var = i71Var.E;
-                if (h71Var != null) {
-                    h71Var.g(1.0f);
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (n41Var.J) {
+                    u11Var.b(n41Var.y, (TLRPC.TL_forumTopic) obj, n41Var.e);
+                } else {
+                    u11Var.g(n41Var.y, (TLRPC.TL_forumTopic) obj, n41Var.e);
                 }
-                i71Var.invalidate();
-                break;
-            case 7:
-                ((z71) this.b).f0 = null;
-                break;
-            default:
-                ((f81) this.b).L = null;
-                break;
+            }
         }
+        u11Var.M = c8.ed.a(n41Var.z, 8) ? org.telegram.messenger.g0.L(10.0f) : 0;
+        if (g51Var != null && g51Var.k3 && u11Var.s) {
+            z11 = true;
+        }
+        u11Var.setReorder(z11);
+    }
+
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new u11(i7, context, i6Var);
     }
 }

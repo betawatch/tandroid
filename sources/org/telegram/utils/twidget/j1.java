@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class j1 implements Runnable {
         JSONObject jSONObject;
         d1 d1Var;
         d1 d1Var2;
-        d81 d81Var;
+        e81 e81Var;
         p1 p1Var;
         String str;
         String optString;
@@ -152,12 +152,12 @@ public final /* synthetic */ class j1 implements Runnable {
         if (jSONObject.optBoolean("loaded") && d1Var2.g != null && (p1Var = d1Var2.f) != null) {
             d1Var2.g(p1Var);
         } else {
-            if (!d1Var2.e() || (d81Var = d1Var2.h) == null) {
+            if (!d1Var2.e() || (e81Var = d1Var2.h) == null) {
                 return;
             }
-            c81 c81Var = d81Var.a;
-            c81Var.j();
-            c81Var.h();
+            d81 d81Var = e81Var.a;
+            d81Var.j();
+            d81Var.h();
         }
     }
 
@@ -257,7 +257,7 @@ public final /* synthetic */ class j1 implements Runnable {
                             if (k0Var.t != null && a10.equals(k0Var.a())) {
                                 d1 d1Var2 = k0Var.t;
                                 try {
-                                    str = hd.E0().y.toLanguageTag();
+                                    str = gd.E0().y.toLanguageTag();
                                 } catch (Exception unused2) {
                                     str = null;
                                 }

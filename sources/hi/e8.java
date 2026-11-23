@@ -1,139 +1,100 @@
 package hi;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.SpannableString;
 import android.view.View;
 import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.np;
-import org.telegram.messenger.o10;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.zl;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.o80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class e8 extends v4.u0 {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ Object c;
+public final class e8 extends FrameLayout {
+    public final Paint a;
+    public final ImageView b;
+    public final ImageView c;
+    public final org.telegram.ui.Components.n6 d;
+    public final org.telegram.ui.Components.n6 e;
+    public final ImageView f;
+    public final SpannableString h;
+    public final SpannableString n;
 
-    public /* synthetic */ e8(int i7, FrameLayout frameLayout) {
-        this.a = i7;
-        this.c = frameLayout;
+    public e8(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        setWillNotDraw(false);
+        paint.setColor(-16777216);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.filled_link);
+        imageView.setColorFilter(new PorterDuffColorFilter(-15033089, PorterDuff.Mode.SRC_IN));
+        addView(imageView, c8.na.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setBackground(new c8(org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(2.4f), -15033089));
+        addView(imageView2, c8.na.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.d = n6Var;
+        n6Var.setTextColor(-15033089);
+        n6Var.setTextSize(org.telegram.messenger.g0.L(14.21f));
+        n6Var.setTypeface(org.telegram.messenger.g0.o());
+        n6Var.setEllipsizeByGradient(true);
+        org.telegram.ui.Components.m6 drawable = n6Var.getDrawable();
+        Point point = org.telegram.messenger.g0.q;
+        drawable.N = point.x;
+        addView(n6Var, c8.na.d(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
+        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.e = n6Var2;
+        n6Var2.setTextColor(-8355712);
+        n6Var2.setTextSize(org.telegram.messenger.g0.L(14.21f));
+        n6Var2.setEllipsizeByGradient(true);
+        n6Var2.getDrawable().N = point.x;
+        addView(n6Var2, c8.na.d(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
+        int textColor = n6Var.getTextColor();
+        SpannableString spannableString = new SpannableString("x");
+        this.h = spannableString;
+        o80 o80Var = new o80(org.telegram.messenger.g0.L(200.0f), n6Var);
+        o80Var.e = 0.8f;
+        o80Var.a(org.telegram.ui.ActionBar.n6.r1(0.4f, textColor), org.telegram.ui.ActionBar.n6.r1(0.08f, textColor));
+        spannableString.setSpan(o80Var, 0, spannableString.length(), 33);
+        int textColor2 = n6Var2.getTextColor();
+        SpannableString spannableString2 = new SpannableString("x");
+        this.n = spannableString2;
+        o80 o80Var2 = new o80(org.telegram.messenger.g0.L(140.0f), n6Var2);
+        o80Var2.e = 0.8f;
+        o80Var2.a(org.telegram.ui.ActionBar.n6.r1(0.4f, textColor2), org.telegram.ui.ActionBar.n6.r1(0.08f, textColor2));
+        spannableString2.setSpan(o80Var2, 0, spannableString2.length(), 33);
+        ImageView imageView3 = new ImageView(context);
+        this.f = imageView3;
+        imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));
+        imageView3.setImageResource(R.drawable.input_clear);
+        imageView3.setScaleType(scaleType);
+        imageView3.setBackground(org.telegram.ui.ActionBar.n6.h0(436207615, 1, org.telegram.messenger.g0.L(18.0f)));
+        addView(imageView3, c8.na.d(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
     }
 
-    @Override // v4.u0
-    public final void a(RecyclerView recyclerView, int i7) {
-        mj0 mj0Var;
-        int topScrollOffset;
-        int topScrollOffset2;
-        int i10 = this.a;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                k8 k8Var = (k8) obj;
-                ek0 ek0Var = k8Var.f;
-                if (i7 == 1) {
-                    p8 p8Var = k8Var.a0;
-                    int i11 = p8.Y1;
-                    if (p8Var.d && k8Var.y != null) {
-                        p8Var.N0();
-                    }
-                }
-                if (i7 == 0) {
-                    k8Var.T = !ek0Var.canScrollVertically(-1);
-                    ek0Var.canScrollVertically(1);
-                }
-                k8Var.N = i7 != 0;
-                break;
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                zl zlVar = chatAttachAlertPhotoLayout.F;
-                ui uiVar = chatAttachAlertPhotoLayout.b;
-                if (i7 == 0) {
-                    int L = org.telegram.messenger.g0.L(13.0f);
-                    org.telegram.ui.ActionBar.q0 q0Var = uiVar.Y2;
-                    int L2 = L + (q0Var != null ? org.telegram.messenger.g0.L(q0Var.getAlpha() * 26.0f) : 0);
-                    int i12 = uiVar.t0;
-                    if (((uiVar.Z3[0] - i12) - L2) + i12 < (uiVar.M2.getAlpha() * uiVar.M2.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (mj0Var = (mj0) zlVar.K(0)) != null) {
-                        View view = mj0Var.a;
-                        int top = view.getTop();
-                        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-                        if (top > topScrollOffset) {
-                            int top2 = view.getTop();
-                            topScrollOffset2 = chatAttachAlertPhotoLayout.getTopScrollOffset();
-                            zlVar.w0(0, top2 - topScrollOffset2, null);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                if (i7 == 0 && this.b) {
-                    this.b = false;
-                    ((org.telegram.ui.Wallet.j6) obj).f();
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth();
+        float f12 = org.telegram.messenger.g0.f1();
+        Paint paint = this.a;
+        canvas.drawRect(0.0f, 0.0f, width, f12, paint);
+        canvas.drawRect(0.0f, getHeight() - org.telegram.messenger.g0.f1(), getWidth(), getHeight(), paint);
     }
 
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        int i11 = this.a;
-        Object obj = this.c;
-        switch (i11) {
-            case 0:
-                k8 k8Var = (k8) obj;
-                p8 p8Var = k8Var.a0;
-                ek0 ek0Var = k8Var.f;
-                boolean canScrollVertically = ek0Var.canScrollVertically(1);
-                if (canScrollVertically != this.b) {
-                    k8Var.r.invalidate();
-                    this.b = canScrollVertically;
-                }
-                k8Var.e.invalidate();
-                int i12 = p8.Y1;
-                p8Var.b.invalidate();
-                if (k8Var.a == 6 && ek0Var.getChildCount() > 0 && RecyclerView.R(ek0Var.getChildAt(0)) >= np.u1(p8Var.a).R1().L.size()) {
-                    np.u1(p8Var.a).R1().S();
-                    break;
-                }
-                break;
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                ui uiVar = chatAttachAlertPhotoLayout.b;
-                zl zlVar = chatAttachAlertPhotoLayout.F;
-                if (zlVar.getChildCount() > 0) {
-                    uiVar.N1(chatAttachAlertPhotoLayout, i10);
-                    if (chatAttachAlertPhotoLayout.H.b() > 30) {
-                        boolean z10 = this.b;
-                        boolean z11 = uiVar.M1;
-                        if (z10 != z11) {
-                            this.b = z11;
-                            o10.n(zlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
-                        }
-                    } else {
-                        zlVar.getFastScroll().setAlpha(0.0f);
-                    }
-                    if (i10 != 0) {
-                        chatAttachAlertPhotoLayout.Y();
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (i7 != 0 || i10 != 0) {
-                    this.b = true;
-                    break;
-                }
-        }
-    }
-
-    public e8(org.telegram.ui.Wallet.j6 j6Var) {
-        this.a = 2;
-        this.c = j6Var;
-        this.b = false;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
     }
 }

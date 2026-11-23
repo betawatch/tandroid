@@ -1,13 +1,13 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m0 implements e0, d0 {
     public final e0[] a;
@@ -26,8 +26,8 @@ public final class m0 implements e0, d0 {
         this.a = e0VarArr;
         aVar.getClass();
         h9.g0 g0Var = h9.i0.b;
-        h9.t1 t1Var = h9.t1.e;
-        this.s = new n(t1Var, t1Var);
+        h9.s1 s1Var = h9.s1.e;
+        this.s = new n(s1Var, s1Var);
         this.c = new IdentityHashMap();
         this.r = new e0[0];
         this.b = new boolean[e0VarArr.length];
@@ -40,8 +40,66 @@ public final class m0 implements e0, d0 {
         }
     }
 
+    @Override // x2.d0
+    public final void V(e0 e0Var) {
+        ArrayList arrayList = this.e;
+        arrayList.remove(e0Var);
+        if (arrayList.isEmpty()) {
+            e0[] e0VarArr = this.a;
+            int i7 = 0;
+            for (e0 e0Var2 : e0VarArr) {
+                i7 += e0Var2.q().a;
+            }
+            e2.m1[] m1VarArr = new e2.m1[i7];
+            int i10 = 0;
+            for (int i11 = 0; i11 < e0VarArr.length; i11++) {
+                r1 q10 = e0VarArr[i11].q();
+                int i12 = q10.a;
+                int i13 = 0;
+                while (i13 < i12) {
+                    e2.m1 a10 = q10.a(i13);
+                    int i14 = a10.a;
+                    e2.u[] uVarArr = new e2.u[i14];
+                    int i15 = 0;
+                    while (i15 < i14) {
+                        e2.u uVar = a10.d[i15];
+                        e2.t a11 = uVar.a();
+                        String str = uVar.m;
+                        e0[] e0VarArr2 = e0VarArr;
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(i11);
+                        sb2.append(":");
+                        String str2 = uVar.a;
+                        if (str2 == null) {
+                            str2 = "";
+                        }
+                        sb2.append(str2);
+                        a11.a = sb2.toString();
+                        if (str != null) {
+                            a11.l = i11 + ":" + str;
+                        }
+                        uVarArr[i15] = new e2.u(a11);
+                        i15++;
+                        e0VarArr = e0VarArr2;
+                    }
+                    e0[] e0VarArr3 = e0VarArr;
+                    e2.m1 m1Var = new e2.m1(i11 + ":" + a10.b, uVarArr);
+                    this.f.put(m1Var, a10);
+                    m1VarArr[i10] = m1Var;
+                    i13++;
+                    i10++;
+                    e0VarArr = e0VarArr3;
+                }
+            }
+            this.n = new r1(m1VarArr);
+            d0 d0Var = this.h;
+            d0Var.getClass();
+            d0Var.V(this);
+        }
+    }
+
     @Override // x2.e0
-    public final long b(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
+    public final long c(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
         IdentityHashMap identityHashMap;
         int[] iArr;
         int[] iArr2 = new int[uVarArr.length];
@@ -96,10 +154,10 @@ public final class m0 implements e0, d0 {
             int[] iArr4 = iArr2;
             e0[] e0VarArr2 = e0VarArr;
             int i13 = i11;
-            long b10 = e0VarArr2[i11].b(uVarArr2, zArr, d1VarArr3, zArr2, j10);
+            long c10 = e0VarArr2[i11].c(uVarArr2, zArr, d1VarArr3, zArr2, j10);
             if (i13 == 0) {
-                j10 = b10;
-            } else if (b10 != j10) {
+                j10 = c10;
+            } else if (c10 != j10) {
                 throw new IllegalStateException("Children enabled at different positions.");
             }
             boolean z10 = false;
@@ -111,7 +169,7 @@ public final class m0 implements e0, d0 {
                     identityHashMap.put(d1Var2, Integer.valueOf(i13));
                     z10 = true;
                 } else if (iArr4[i14] == i13) {
-                    la.p(d1VarArr3[i14] == null);
+                    ma.p(d1VarArr3[i14] == null);
                 }
             }
             if (z10) {
@@ -132,34 +190,21 @@ public final class m0 implements e0, d0 {
     }
 
     @Override // x2.f1
-    public final boolean c(l2.s0 s0Var) {
+    public final boolean d(l2.t0 t0Var) {
         ArrayList arrayList = this.e;
         if (arrayList.isEmpty()) {
-            return this.s.c(s0Var);
+            return this.s.d(t0Var);
         }
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
-            ((e0) arrayList.get(i7)).c(s0Var);
+            ((e0) arrayList.get(i7)).d(t0Var);
         }
         return false;
     }
 
-    @Override // x2.e1
-    public final void c0(f1 f1Var) {
-        d0 d0Var = this.h;
-        d0Var.getClass();
-        d0Var.c0(this);
-    }
-
     @Override // x2.f1
-    public final long e() {
-        return this.s.e();
-    }
-
-    @Override // x2.e0
-    public final long f(long j3, l2.p1 p1Var) {
-        e0[] e0VarArr = this.r;
-        return (e0VarArr.length > 0 ? e0VarArr[0] : this.a[0]).f(j3, p1Var);
+    public final long f() {
+        return this.s.f();
     }
 
     @Override // x2.f1
@@ -168,83 +213,38 @@ public final class m0 implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final void i() {
+    public final long i(long j3, l2.q1 q1Var) {
+        e0[] e0VarArr = this.r;
+        return (e0VarArr.length > 0 ? e0VarArr[0] : this.a[0]).i(j3, q1Var);
+    }
+
+    @Override // x2.e1
+    public final void i2(f1 f1Var) {
+        d0 d0Var = this.h;
+        d0Var.getClass();
+        d0Var.i2(this);
+    }
+
+    @Override // x2.e0
+    public final void j() {
         for (e0 e0Var : this.a) {
-            e0Var.i();
+            e0Var.j();
         }
     }
 
     @Override // x2.e0
-    public final long k(long j3) {
-        long k10 = this.r[0].k(j3);
+    public final long l(long j3) {
+        long l10 = this.r[0].l(j3);
         int i7 = 1;
         while (true) {
             e0[] e0VarArr = this.r;
             if (i7 >= e0VarArr.length) {
-                return k10;
+                return l10;
             }
-            if (e0VarArr[i7].k(k10) != k10) {
+            if (e0VarArr[i7].l(l10) != l10) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
             i7++;
-        }
-    }
-
-    @Override // x2.d0
-    public final void m(e0 e0Var) {
-        ArrayList arrayList = this.e;
-        arrayList.remove(e0Var);
-        if (arrayList.isEmpty()) {
-            e0[] e0VarArr = this.a;
-            int i7 = 0;
-            for (e0 e0Var2 : e0VarArr) {
-                i7 += e0Var2.q().a;
-            }
-            e2.m1[] m1VarArr = new e2.m1[i7];
-            int i10 = 0;
-            for (int i11 = 0; i11 < e0VarArr.length; i11++) {
-                r1 q10 = e0VarArr[i11].q();
-                int i12 = q10.a;
-                int i13 = 0;
-                while (i13 < i12) {
-                    e2.m1 a10 = q10.a(i13);
-                    int i14 = a10.a;
-                    e2.u[] uVarArr = new e2.u[i14];
-                    int i15 = 0;
-                    while (i15 < i14) {
-                        e2.u uVar = a10.d[i15];
-                        e2.t a11 = uVar.a();
-                        String str = uVar.m;
-                        e0[] e0VarArr2 = e0VarArr;
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append(i11);
-                        sb2.append(":");
-                        String str2 = uVar.a;
-                        if (str2 == null) {
-                            str2 = "";
-                        }
-                        sb2.append(str2);
-                        a11.a = sb2.toString();
-                        if (str != null) {
-                            a11.l = i11 + ":" + str;
-                        }
-                        uVarArr[i15] = new e2.u(a11);
-                        i15++;
-                        e0VarArr = e0VarArr2;
-                    }
-                    e0[] e0VarArr3 = e0VarArr;
-                    e2.m1 m1Var = new e2.m1(i11 + ":" + a10.b, uVarArr);
-                    this.f.put(m1Var, a10);
-                    m1VarArr[i10] = m1Var;
-                    i13++;
-                    i10++;
-                    e0VarArr = e0VarArr3;
-                }
-            }
-            this.n = new r1(m1VarArr);
-            d0 d0Var = this.h;
-            d0Var.getClass();
-            d0Var.m(this);
         }
     }
 
@@ -256,25 +256,25 @@ public final class m0 implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final long o() {
+    public final long p() {
         long j3 = -9223372036854775807L;
         for (e0 e0Var : this.r) {
-            long o4 = e0Var.o();
-            if (o4 != -9223372036854775807L) {
+            long p10 = e0Var.p();
+            if (p10 != -9223372036854775807L) {
                 if (j3 == -9223372036854775807L) {
                     for (e0 e0Var2 : this.r) {
                         if (e0Var2 == e0Var) {
                             break;
                         }
-                        if (e0Var2.k(o4) != o4) {
+                        if (e0Var2.l(p10) != p10) {
                             throw new IllegalStateException("Unexpected child seekToUs result.");
                         }
                     }
-                    j3 = o4;
-                } else if (o4 != j3) {
+                    j3 = p10;
+                } else if (p10 != j3) {
                     throw new IllegalStateException("Conflicting discontinuities.");
                 }
-            } else if (j3 != -9223372036854775807L && e0Var.k(j3) != j3) {
+            } else if (j3 != -9223372036854775807L && e0Var.l(j3) != j3) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
         }
@@ -294,13 +294,13 @@ public final class m0 implements e0, d0 {
     }
 
     @Override // x2.e0
-    public final void t(d0 d0Var, long j3) {
+    public final void s(d0 d0Var, long j3) {
         this.h = d0Var;
         ArrayList arrayList = this.e;
         e0[] e0VarArr = this.a;
         Collections.addAll(arrayList, e0VarArr);
         for (e0 e0Var : e0VarArr) {
-            e0Var.t(this, j3);
+            e0Var.s(this, j3);
         }
     }
 

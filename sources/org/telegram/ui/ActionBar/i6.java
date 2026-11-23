@@ -1,53 +1,31 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class i6 extends Drawable {
-    public float[] b;
-    public Path a = new Path();
-    public boolean c = true;
+public interface i6 {
+    boolean b();
 
-    public i6(float f10, float f11) {
-        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
-        float L = org.telegram.messenger.g0.L(f10);
-        float L2 = org.telegram.messenger.g0.L(f11);
-    }
+    void c(float f10, float f11, int i7, int i10);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Path path = this.a;
-        if (this.c) {
-            this.c = false;
-            path.reset();
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(getBounds());
-            path.addRoundRect(rectF, this.b, Path.Direction.CW);
-        }
-        canvas.drawPath(path, m6.z);
-    }
+    ColorFilter d();
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
+    Paint e(String str);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.c = true;
-    }
+    boolean f();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
+    int g(int i7);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+    Drawable getDrawable(String str);
+
+    boolean h();
+
+    int i(int i7);
+
+    void j(int i7, int i10);
+
+    int k(int i7);
 }

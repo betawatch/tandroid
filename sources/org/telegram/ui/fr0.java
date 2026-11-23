@@ -18,13 +18,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class fr0 {
     public float A;
     public float B;
     public ValueAnimator C;
-    public org.telegram.messenger.gj D;
+    public org.telegram.messenger.fj D;
     public dr0 E;
     public er0 F;
     public float G;
@@ -43,7 +43,7 @@ public class fr0 {
     public final ViewGroup a;
     public final ViewGroup b;
     public final boolean c;
-    public org.telegram.ui.Cells.v5 d;
+    public org.telegram.ui.Cells.u5 d;
     public View e;
     public ImageReceiver f;
     public ImageReceiver g;
@@ -79,13 +79,13 @@ public class fr0 {
         this.c = false;
     }
 
-    public final boolean a(MotionEvent motionEvent, ViewGroup viewGroup, ImageReceiver imageReceiver, org.telegram.messenger.gj gjVar, int i7) {
+    public final boolean a(MotionEvent motionEvent, ViewGroup viewGroup, ImageReceiver imageReceiver, org.telegram.messenger.fj fjVar, int i7) {
         int i10;
         int i11;
         int i12;
         int i13;
-        org.telegram.messenger.gc c10;
-        org.telegram.messenger.gc gcVar;
+        org.telegram.messenger.fc c10;
+        org.telegram.messenger.fc fcVar;
         if (!j(viewGroup, imageReceiver)) {
             return false;
         }
@@ -138,17 +138,17 @@ public class fr0 {
                 this.K = 0.0f;
                 viewGroup.getParent().requestDisallowInterceptTouchEvent(true);
                 this.e = viewGroup;
-                this.D = gjVar;
-                org.telegram.ui.Cells.v5 v5Var = this.d;
+                this.D = fjVar;
+                org.telegram.ui.Cells.u5 u5Var = this.d;
                 ViewGroup viewGroup2 = this.a;
                 boolean z10 = this.c;
-                if (v5Var != null || z10) {
+                if (u5Var != null || z10) {
                     i12 = -1;
                 } else {
                     i12 = -1;
-                    org.telegram.ui.Cells.v5 v5Var2 = new org.telegram.ui.Cells.v5(this, viewGroup2.getContext());
-                    this.d = v5Var2;
-                    v5Var2.setFocusable(false);
+                    org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(this, viewGroup2.getContext());
+                    this.d = u5Var2;
+                    u5Var2.setFocusable(false);
                     this.d.setFocusableInTouchMode(false);
                     this.d.setEnabled(false);
                 }
@@ -157,12 +157,12 @@ public class fr0 {
                     this.g = imageReceiver2;
                     imageReceiver2.l1 = (byte) 2;
                     imageReceiver2.B0 = false;
-                    imageReceiver2.P();
+                    imageReceiver2.Q();
                     ImageReceiver imageReceiver3 = new ImageReceiver(null);
                     this.h = imageReceiver3;
                     imageReceiver3.l1 = (byte) 2;
                     imageReceiver3.B0 = false;
-                    imageReceiver3.P();
+                    imageReceiver3.Q();
                 }
                 this.n = true;
                 this.A = 1.0f;
@@ -172,7 +172,7 @@ public class fr0 {
                     i10 = i15;
                 } else {
                     viewGroup2.addView(this.d);
-                    boolean z11 = (gjVar == null || !gjVar.t2() || gjVar.O0) ? false : true;
+                    boolean z11 = (fjVar == null || !fjVar.t2() || fjVar.O0) ? false : true;
                     this.i = z11;
                     if (z11 && this.k == null) {
                         xh.e e10 = xh.e.e(this.d);
@@ -183,12 +183,12 @@ public class fr0 {
                     }
                     if (this.h.n() != null) {
                         this.h.n().recycle();
-                        this.h.w0(null);
+                        this.h.x0(null);
                     }
                     if (imageReceiver.n() == null || imageReceiver.n().isRecycled() || !this.i) {
                         this.h.p1 = null;
                     } else {
-                        this.h.v0(Utilities.D(imageReceiver.n(), false));
+                        this.h.w0(Utilities.D(imageReceiver.n(), false));
                         ImageReceiver imageReceiver4 = this.h;
                         if (this.S == null) {
                             ColorMatrix colorMatrix = new ColorMatrix();
@@ -198,70 +198,70 @@ public class fr0 {
                         }
                         imageReceiver4.p1 = this.S;
                     }
-                    if (gjVar != null && org.telegram.messenger.gj.S3(gjVar.k)) {
+                    if (fjVar != null && org.telegram.messenger.fj.S3(fjVar.k)) {
                         int[] iArr = new int[1];
-                        TLRPC.Message message = gjVar.k;
+                        TLRPC.Message message = fjVar.k;
                         if (message instanceof TLRPC.TL_messageService) {
                             if (!(message.action instanceof TLRPC.TL_messageActionUserUpdatedPhoto)) {
-                                TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(gjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, false);
+                                TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(fjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, false);
                                 if (w10 != null) {
                                     int i17 = w10.size;
                                     iArr[0] = i17;
                                     if (i17 == 0) {
                                         iArr[0] = i12;
                                     }
-                                    c10 = org.telegram.messenger.gc.f(w10, gjVar.n0);
-                                    gcVar = c10;
+                                    c10 = org.telegram.messenger.fc.f(w10, fjVar.n0);
+                                    fcVar = c10;
                                 } else {
                                     iArr[0] = i12;
                                 }
                             }
-                            gcVar = null;
+                            fcVar = null;
                         } else {
                             TLRPC.MessageMedia messageMedia = message.media;
                             if ((!(messageMedia instanceof TLRPC.TL_messageMediaPhoto) || messageMedia.photo == null) && (!(messageMedia instanceof TLRPC.TL_messageMediaWebPage) || messageMedia.webpage == null)) {
                                 if (messageMedia instanceof TLRPC.TL_messageMediaInvoice) {
-                                    c10 = org.telegram.messenger.gc.p(org.telegram.messenger.i20.c(((TLRPC.TL_messageMediaInvoice) messageMedia).webPhoto));
+                                    c10 = org.telegram.messenger.fc.p(org.telegram.messenger.g20.c(((TLRPC.TL_messageMediaInvoice) messageMedia).webPhoto));
                                 } else {
-                                    if (gjVar.F0() != null) {
-                                        TLRPC.Document F0 = gjVar.F0();
-                                        if (org.telegram.messenger.gj.W2(gjVar.F0())) {
+                                    if (fjVar.F0() != null) {
+                                        TLRPC.Document F0 = fjVar.F0();
+                                        if (org.telegram.messenger.fj.W2(fjVar.F0())) {
                                             TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(F0.thumbs, 90, false, null, false);
                                             int i18 = w11.size;
                                             iArr[0] = i18;
                                             if (i18 == 0) {
                                                 iArr[0] = i12;
                                             }
-                                            c10 = org.telegram.messenger.gc.c(w11, F0);
+                                            c10 = org.telegram.messenger.fc.c(w11, F0);
                                         }
                                     }
-                                    gcVar = null;
+                                    fcVar = null;
                                 }
-                                gcVar = c10;
+                                fcVar = c10;
                             } else {
-                                if (org.telegram.messenger.gj.t3(message)) {
-                                    c10 = org.telegram.messenger.gc.b(gjVar.F0());
+                                if (org.telegram.messenger.fj.t3(message)) {
+                                    c10 = org.telegram.messenger.fc.b(fjVar.F0());
                                 } else {
-                                    TLRPC.PhotoSize w12 = org.telegram.messenger.w7.w(gjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, true);
+                                    TLRPC.PhotoSize w12 = org.telegram.messenger.w7.w(fjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, true);
                                     if (w12 != null) {
                                         int i19 = w12.size;
                                         iArr[0] = i19;
                                         if (i19 == 0) {
                                             iArr[0] = i12;
                                         }
-                                        c10 = org.telegram.messenger.gc.f(w12, gjVar.n0);
+                                        c10 = org.telegram.messenger.fc.f(w12, fjVar.n0);
                                     } else {
                                         iArr[0] = i12;
-                                        gcVar = null;
+                                        fcVar = null;
                                     }
                                 }
-                                gcVar = c10;
+                                fcVar = c10;
                             }
                         }
-                        if (gcVar != null) {
+                        if (fcVar != null) {
                             i10 = i15;
                             i13 = i14;
-                            this.g.r0(gcVar, null, null, null, null, iArr[0], null, gjVar, gjVar.Z4() ? 1 : 0);
+                            this.g.s0(fcVar, null, null, null, null, iArr[0], null, fjVar, fjVar.Z4() ? 1 : 0);
                             this.g.l1 = (byte) 2;
                         } else {
                             i13 = i14;
@@ -294,11 +294,11 @@ public class fr0 {
                         this.y = f11 * f13;
                         this.z = f13;
                     }
-                    if (gjVar != null && org.telegram.messenger.gj.L4(gjVar.k) && MediaController.B().I(gjVar)) {
+                    if (fjVar != null && org.telegram.messenger.fj.L4(fjVar.k) && MediaController.B().I(fjVar)) {
                         this.R = true;
                         MediaController B = MediaController.B();
-                        org.telegram.ui.Cells.v5 v5Var3 = this.d;
-                        B.p0((TextureView) v5Var3.d, (j4) v5Var3.e, (FrameLayout) v5Var3.c, true);
+                        org.telegram.ui.Cells.u5 u5Var3 = this.d;
+                        B.p0((TextureView) u5Var3.d, (j4) u5Var3.e, (FrameLayout) u5Var3.c, true);
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ((FrameLayout) this.d.c).getLayoutParams();
                         ((FrameLayout) this.d.c).setTag(R.id.parent_tag, imageReceiver);
                         if (layoutParams.width != imageReceiver.N0 || layoutParams.height != imageReceiver.O0) {
@@ -311,35 +311,35 @@ public class fr0 {
                         ((TextureView) this.d.d).setScaleY(1.0f);
                         dr0 dr0Var = this.E;
                         if (dr0Var != null) {
-                            this.d.b.setImageBitmap(dr0Var.f0().getBitmap((int) this.z, (int) this.y));
+                            this.d.b.setImageBitmap(dr0Var.T().getBitmap((int) this.z, (int) this.y));
                             this.d.b.u((int) this.z, (int) this.y);
-                            this.d.b.getImageReceiver().L0(imageReceiver.E());
+                            this.d.b.getImageReceiver().M0(imageReceiver.F());
                         }
                         ((FrameLayout) this.d.c).setVisibility(0);
                     } else {
                         this.R = false;
                         ImageReceiver imageReceiver5 = new ImageReceiver(null);
                         this.f = imageReceiver5;
-                        imageReceiver5.P();
+                        imageReceiver5.Q();
                         Drawable t6 = imageReceiver.t();
-                        this.f.w0(t6);
-                        if (t6 instanceof org.telegram.ui.Components.c6) {
-                            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) t6;
-                            c6Var.f(this.d);
-                            c6Var.S = true;
+                        this.f.x0(t6);
+                        if (t6 instanceof org.telegram.ui.Components.b6) {
+                            org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) t6;
+                            b6Var.f(this.d);
+                            b6Var.S = true;
                         }
-                        this.f.y0(this.u, this.v, this.x, this.w);
+                        this.f.z0(this.u, this.v, this.x, this.w);
                         ImageReceiver imageReceiver6 = this.f;
                         imageReceiver6.S0 = imageReceiver.S0;
-                        imageReceiver6.L0(imageReceiver.E());
-                        this.g.L0(imageReceiver.E());
+                        imageReceiver6.M0(imageReceiver.F());
+                        this.g.M0(imageReceiver.F());
                         this.g.S0 = imageReceiver.S0;
                         ((FrameLayout) this.d.c).setVisibility(8);
                     }
                 }
                 dr0 dr0Var2 = this.E;
                 if (dr0Var2 != null) {
-                    dr0Var2.G0(gjVar);
+                    dr0Var2.u0(fjVar);
                 }
                 this.P = 0.0f;
                 i11 = i13;
@@ -368,12 +368,12 @@ public class fr0 {
         if (this.n) {
             dr0 dr0Var = this.E;
             if (dr0Var != null) {
-                dr0Var.H(this.D);
+                dr0Var.G(this.D);
             }
             this.n = false;
         }
-        org.telegram.ui.Cells.v5 v5Var = this.d;
-        if (v5Var != null && v5Var.getParent() != null) {
+        org.telegram.ui.Cells.u5 u5Var = this.d;
+        if (u5Var != null && u5Var.getParent() != null) {
             this.a.removeView(this.d);
             this.d.b.getImageReceiver().f();
             xh.e eVar = this.k;
@@ -384,8 +384,8 @@ public class fr0 {
             ImageReceiver imageReceiver = this.f;
             if (imageReceiver != null) {
                 Drawable t6 = imageReceiver.t();
-                if (t6 instanceof org.telegram.ui.Components.c6) {
-                    ((org.telegram.ui.Components.c6) t6).w(this.d);
+                if (t6 instanceof org.telegram.ui.Components.b6) {
+                    ((org.telegram.ui.Components.b6) t6).w(this.d);
                 }
             }
         }
@@ -396,19 +396,19 @@ public class fr0 {
         }
         ImageReceiver imageReceiver2 = this.f;
         if (imageReceiver2 != null) {
-            imageReceiver2.R();
+            imageReceiver2.S();
             this.f.f();
             this.f = null;
         }
         ImageReceiver imageReceiver3 = this.g;
         if (imageReceiver3 != null) {
-            imageReceiver3.R();
+            imageReceiver3.S();
             this.g.f();
             this.g = null;
         }
         ImageReceiver imageReceiver4 = this.h;
         if (imageReceiver4 != null) {
-            imageReceiver4.R();
+            imageReceiver4.S();
             this.h.f();
             this.h = null;
         }
@@ -423,9 +423,9 @@ public class fr0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
             this.C = ofFloat;
             ofFloat.addUpdateListener(new a3(this, 23));
-            this.C.addListener(new ay(this, 20));
+            this.C.addListener(new zx(this, 20));
             this.C.setDuration(220L);
-            this.C.setInterpolator(org.telegram.ui.Components.nr.f);
+            this.C.setInterpolator(org.telegram.ui.Components.kr.f);
             this.C.start();
         }
     }
@@ -435,9 +435,9 @@ public class fr0 {
         if (this.c && (view = this.e) != null) {
             view.invalidate();
         }
-        org.telegram.ui.Cells.v5 v5Var = this.d;
-        if (v5Var != null) {
-            v5Var.invalidate();
+        org.telegram.ui.Cells.u5 u5Var = this.d;
+        if (u5Var != null) {
+            u5Var.invalidate();
         }
     }
 
@@ -453,8 +453,8 @@ public class fr0 {
         return this.e.onTouchEvent(motionEvent);
     }
 
-    public final void h(dh dhVar) {
-        this.F = dhVar;
+    public final void h(eh ehVar) {
+        this.F = ehVar;
     }
 
     public final boolean i() {
@@ -490,18 +490,18 @@ public class fr0 {
         if (this.c) {
             return true;
         }
-        if (imageReceiver.t() instanceof org.telegram.ui.Components.c6) {
-            AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.c6) imageReceiver.t()).v0;
+        if (imageReceiver.t() instanceof org.telegram.ui.Components.b6) {
+            AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.b6) imageReceiver.t()).v0;
             return animatedFileDrawableStream == null || !animatedFileDrawableStream.s;
         }
         if (imageReceiver.T != null || imageReceiver.k0 != null) {
             return true;
         }
         Drawable drawable = imageReceiver.n0;
-        if (drawable instanceof org.telegram.ui.Components.t51) {
+        if (drawable instanceof org.telegram.ui.Components.s51) {
             return true;
         }
-        return drawable != null && !(drawable instanceof org.telegram.ui.Components.b9) && imageReceiver.R == null && imageReceiver.i0 == null;
+        return drawable != null && !(drawable instanceof org.telegram.ui.Components.a9) && imageReceiver.R == null && imageReceiver.i0 == null;
     }
 
     public fr0() {

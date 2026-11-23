@@ -1,10 +1,10 @@
 package d4;
 
-import a8.la;
+import a8.ma;
 import h2.l0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class j implements c4.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -43,7 +43,7 @@ public abstract class j implements c4.e {
 
     @Override // k2.e
     public final Object d() {
-        la.p(this.d == null);
+        ma.p(this.d == null);
         ArrayDeque arrayDeque = this.a;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -56,7 +56,7 @@ public abstract class j implements c4.e {
     @Override // k2.e
     public final void e(Object obj) {
         c4.i iVar = (c4.i) obj;
-        la.f(iVar == this.d);
+        ma.f(iVar == this.d);
         h hVar = (h) iVar;
         if (!hVar.isEndOfStream()) {
             long j3 = hVar.e;

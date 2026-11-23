@@ -1,130 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
 import android.view.View;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class hj extends mi {
-    public di.b1 n;
-    public int r;
-    public gi.g s;
-    public qa w;
-    public int x;
-    public q0.a y;
+public final /* synthetic */ class hj implements sj0, lj {
+    public final /* synthetic */ uj a;
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.mi
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void B(int i7, int i10) {
-        int i11;
-        int i12;
-        di.b1 b1Var = this.n;
-        qa qaVar = this.w;
-        if (org.telegram.messenger.g0.Q1()) {
-            this.x = 4;
+    public /* synthetic */ hj(uj ujVar) {
+        this.a = ujVar;
+    }
+
+    @Override // org.telegram.ui.Components.lj
+    public void a(TLRPC.User user, boolean z10, int i7, long j3) {
+        uj ujVar = this.a;
+        ujVar.b.a(true);
+        ujVar.K.a(user, z10, i7, j3);
+    }
+
+    @Override // org.telegram.ui.Components.sj0
+    public boolean b(int i7, View view) {
+        Object O;
+        uj ujVar = this.a;
+        v4.i0 adapter = ujVar.s.getAdapter();
+        qj qjVar = ujVar.G;
+        if (adapter == qjVar) {
+            O = qjVar.E(i7);
         } else {
-            Point point = org.telegram.messenger.g0.q;
-            if (point.x > point.y) {
-                this.x = 4;
-            } else {
-                this.x = 3;
-            }
+            oj ojVar = ujVar.F;
+            O = ojVar.O(ojVar.S(i7), ojVar.Q(i7));
         }
-        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int L = ((i7 - org.telegram.messenger.g0.L(12.0f)) - org.telegram.messenger.g0.L(10.0f)) / this.x;
-        if (this.r != L) {
-            this.r = L;
-            qaVar.f();
+        if (O == null) {
+            return false;
         }
-        this.s.y1(Math.max(1, ((this.x - 1) * org.telegram.messenger.g0.L(5.0f)) + (this.x * L)));
-        int ceil = (int) Math.ceil((((ArrayList) qaVar.e).size() - 1) / this.x);
-        Math.max(0, ((i10 - ((org.telegram.messenger.g0.L(5.0f) * (ceil - 1)) + (L * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(60.0f));
-        if (!org.telegram.messenger.g0.Q1()) {
-            Point point2 = org.telegram.messenger.g0.q;
-            if (point2.x > point2.y) {
-                i11 = (int) (i10 / 3.5f);
-                int L2 = i11 - org.telegram.messenger.g0.L(52.0f);
-                i12 = L2 >= 0 ? L2 : 0;
-                if (b1Var.getPaddingTop() == i12) {
-                    b1Var.setPadding(org.telegram.messenger.g0.L(6.0f), i12, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
-                    return;
-                }
-                return;
-            }
-        }
-        i11 = (i10 / 5) * 2;
-        int L22 = i11 - org.telegram.messenger.g0.L(52.0f);
-        if (L22 >= 0) {
-        }
-        if (b1Var.getPaddingTop() == i12) {
-        }
+        ujVar.Q((tj) view, O);
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.mi
-    public final void I(mi miVar) {
-        ui uiVar = this.b;
-        try {
-            uiVar.V2.getTitleTextView().setBuildFullLayout(true);
-        } catch (Exception unused) {
-        }
-        uiVar.V2.setTitle(org.telegram.messenger.hd.N0(2131745467, null));
-        this.s.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public final void K() {
-        this.n.y0(0);
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getCurrentItemTop() {
-        di.b1 b1Var = this.n;
-        if (b1Var.getChildCount() <= 0) {
-            b1Var.setTopGlowOffset(b1Var.getPaddingTop());
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = b1Var.getChildAt(0);
-        mj0 mj0Var = (mj0) b1Var.G(childAt);
-        int top = childAt.getTop();
-        int L = org.telegram.messenger.g0.L(7.0f);
-        if (top < org.telegram.messenger.g0.L(7.0f) || mj0Var == null || mj0Var.b() != 0) {
-            top = L;
-        }
-        b1Var.setTopGlowOffset(top);
-        return top;
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getFirstOffset() {
-        return org.telegram.messenger.g0.L(56.0f) + getListTopPadding();
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getListTopPadding() {
-        return this.n.getPaddingTop();
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public final int j() {
-        return 1;
-    }
-
-    public void setDelegate(q0.a aVar) {
-        this.y = aVar;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        this.b.b.invalidate();
-        invalidate();
+    @Override // org.telegram.ui.Components.lj
+    public /* synthetic */ void c(ArrayList arrayList, String str, boolean z10, int i7, long j3, boolean z11) {
     }
 }

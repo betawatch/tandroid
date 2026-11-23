@@ -1,113 +1,347 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.ov;
-import org.telegram.ui.Components.zf;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bc1;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+public final class i9 {
+    public final int a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final HashMap d;
+    public final ArrayList e;
+    public final ArrayList f;
 
-    public /* synthetic */ i9(Object obj, float f10, float f11, int i7) {
-        this.a = i7;
-        this.d = obj;
-        this.b = f10;
-        this.c = f11;
+    public i9(int i7, ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        this.b = arrayList2;
+        this.c = new ArrayList();
+        this.d = new HashMap();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        int i10 = 0;
+        if (a(arrayList, TLRPC.TL_privacyValueAllowAll.class) != null) {
+            this.a = 4;
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+            TLRPC.TL_privacyValueDisallowUsers tL_privacyValueDisallowUsers = (TLRPC.TL_privacyValueDisallowUsers) a(arrayList, TLRPC.TL_privacyValueDisallowUsers.class);
+            if (tL_privacyValueDisallowUsers != null) {
+                TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+                mp u12 = mp.u1(i7);
+                while (i10 < tL_privacyValueDisallowUsers.users.size()) {
+                    Long l10 = tL_privacyValueDisallowUsers.users.get(i10);
+                    l10.getClass();
+                    TLRPC.InputUser s12 = u12.s1(u12.c2(l10));
+                    if (!(s12 instanceof TLRPC.TL_inputUserEmpty)) {
+                        tL_inputPrivacyValueDisallowUsers.users.add(s12);
+                        this.c.add(l10);
+                        this.e.add(s12);
+                    }
+                    i10++;
+                }
+                this.b.add(tL_inputPrivacyValueDisallowUsers);
+                return;
+            }
+            return;
+        }
+        if (a(arrayList, TLRPC.TL_privacyValueAllowCloseFriends.class) != null) {
+            this.a = 1;
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowCloseFriends());
+            return;
+        }
+        TLRPC.TL_privacyValueAllowUsers tL_privacyValueAllowUsers = (TLRPC.TL_privacyValueAllowUsers) a(arrayList, TLRPC.TL_privacyValueAllowUsers.class);
+        if (tL_privacyValueAllowUsers != null) {
+            this.a = 3;
+            TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = new TLRPC.TL_inputPrivacyValueAllowUsers();
+            mp u13 = mp.u1(i7);
+            while (i10 < tL_privacyValueAllowUsers.users.size()) {
+                Long l11 = tL_privacyValueAllowUsers.users.get(i10);
+                l11.getClass();
+                TLRPC.InputUser s13 = u13.s1(u13.c2(l11));
+                if (!(s13 instanceof TLRPC.TL_inputUserEmpty)) {
+                    tL_inputPrivacyValueAllowUsers.users.add(s13);
+                    this.c.add(l11);
+                    this.e.add(s13);
+                }
+                i10++;
+            }
+            this.b.add(tL_inputPrivacyValueAllowUsers);
+            return;
+        }
+        if (a(arrayList, TLRPC.TL_privacyValueAllowContacts.class) == null) {
+            this.a = 4;
+            return;
+        }
+        this.a = 2;
+        arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowContacts());
+        TLRPC.TL_privacyValueDisallowUsers tL_privacyValueDisallowUsers2 = (TLRPC.TL_privacyValueDisallowUsers) a(arrayList, TLRPC.TL_privacyValueDisallowUsers.class);
+        if (tL_privacyValueDisallowUsers2 != null) {
+            TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers2 = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+            mp u14 = mp.u1(i7);
+            while (i10 < tL_privacyValueDisallowUsers2.users.size()) {
+                Long l12 = tL_privacyValueDisallowUsers2.users.get(i10);
+                l12.getClass();
+                TLRPC.InputUser s14 = u14.s1(u14.c2(l12));
+                if (!(s14 instanceof TLRPC.TL_inputUserEmpty)) {
+                    tL_inputPrivacyValueDisallowUsers2.users.add(s14);
+                    this.c.add(l12);
+                    this.e.add(s14);
+                }
+                i10++;
+            }
+            this.b.add(tL_inputPrivacyValueDisallowUsers2);
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i7 = this.a;
-        float f10 = this.c;
-        float f11 = this.b;
-        Object obj = this.d;
-        switch (i7) {
-            case 0:
-                sa saVar = (sa) obj;
-                saVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                saVar.r.setTranslationY(f11 * floatValue);
-                saVar.r.b(f10 * floatValue);
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ChatActivityEnterView chatActivityEnterView = ((zf) obj).d;
-                chatActivityEnterView.H = f11 * floatValue2;
-                chatActivityEnterView.q2();
-                chatActivityEnterView.R0.setTranslationX(f10 * floatValue2);
-                break;
-            case 2:
-                ov ovVar = (ov) obj;
-                ovVar.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ovVar.M = floatValue3;
-                ovVar.L = org.telegram.messenger.g0.T1(f11, f10, floatValue3);
-                ovVar.b.invalidate();
-                break;
-            case 3:
-                bc1 bc1Var = (bc1) obj;
-                bc1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float L = f11 + org.telegram.messenger.g0.L(28.0f);
-                float L2 = f10 + org.telegram.messenger.g0.L(52.0f);
-                float f12 = bc1Var.E;
-                bc1Var.H = L - (L * f12);
-                bc1Var.I = L2 - (f12 * L2);
-                bc1Var.invalidate();
-                break;
-            case 4:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                CropAreaView cropAreaView = photoViewer.D1.b.a;
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue() * f11;
-                float f13 = photoViewer.a6;
-                float f14 = ((photoViewer.e6 - f13) * photoViewer.l6) + f13;
-                cropAreaView.o0 = floatValue4;
-                cropAreaView.p0 = f14;
-                cropAreaView.q0 = 0.0f;
-                cropAreaView.r0 = 0.0f;
-                cropAreaView.invalidate();
-                photoViewer.D1.c.b(org.telegram.messenger.g0.T1(f10, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 5:
-                org.telegram.ui.Wallet.m4 m4Var = (org.telegram.ui.Wallet.m4) obj;
-                float floatValue5 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m4Var.A = (f11 * floatValue5) + m4Var.g();
-                m4Var.B = (f10 * floatValue5) + (m4Var.k.F * 0.14f);
-                m4Var.D = floatValue5 > 0.0f;
-                m4Var.a.invalidate();
-                break;
-            case 6:
-                org.telegram.ui.Wallet.s6 s6Var = (org.telegram.ui.Wallet.s6) obj;
-                s6Var.getClass();
-                float floatValue6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s6Var.O = f11 * floatValue6;
-                s6Var.P = f10 * floatValue6;
-                break;
-            case 7:
-                te.c cVar = (te.c) obj;
-                if (cVar.h) {
-                    DecelerateInterpolator decelerateInterpolator = se.a.a;
-                    float animatedFraction = valueAnimator.getAnimatedFraction();
-                    cVar.d((f10 * animatedFraction) + f11, animatedFraction);
-                    break;
-                }
-                break;
-            default:
-                vg.e eVar = (vg.e) obj;
-                eVar.getClass();
-                float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vg.f fVar = eVar.a;
-                fVar.d = f11 * floatValue7;
-                fVar.i = f10 * floatValue7;
-                break;
+    public static TLRPC.PrivacyRule a(ArrayList arrayList, Class cls) {
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            TLRPC.PrivacyRule privacyRule = (TLRPC.PrivacyRule) arrayList.get(i7);
+            if (cls.isInstance(privacyRule)) {
+                return privacyRule;
+            }
         }
+        return null;
+    }
+
+    public final boolean b(TLRPC.User user) {
+        if (user == null) {
+            return false;
+        }
+        ArrayList arrayList = this.c;
+        int i7 = this.a;
+        if (i7 == 4) {
+            return !arrayList.contains(Long.valueOf(user.id));
+        }
+        if (i7 == 2) {
+            return !arrayList.contains(Long.valueOf(user.id)) && user.contact;
+        }
+        if (i7 == 1) {
+            return user.close_friend;
+        }
+        if (i7 == 3) {
+            if (arrayList.contains(Long.valueOf(user.id))) {
+                return true;
+            }
+            Iterator it = this.d.values().iterator();
+            while (it.hasNext()) {
+                if (((ArrayList) it.next()).contains(Long.valueOf(user.id))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final String toString() {
+        int size;
+        ArrayList arrayList = this.f;
+        if (!arrayList.isEmpty()) {
+            return gd.G(arrayList.size(), "StoryPrivacyRecipients", new Object[0]);
+        }
+        ArrayList arrayList2 = this.b;
+        if (arrayList2.isEmpty()) {
+            return gd.N0(2131744289, null);
+        }
+        TLRPC.InputPrivacyRule inputPrivacyRule = (TLRPC.InputPrivacyRule) arrayList2.get(0);
+        int i7 = this.a;
+        if (i7 == 4) {
+            TLRPC.InputPrivacyRule inputPrivacyRule2 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
+            return (!(inputPrivacyRule2 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers) || (size = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule2).users.size()) <= 0) ? gd.N0(2131744301, null) : gd.G(size, "StoryPrivacyEveryoneExclude", new Object[0]);
+        }
+        if (i7 == 1) {
+            return gd.N0(2131744308, null);
+        }
+        if (i7 == 3 && (inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
+            return gd.G(((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size(), "StoryPrivacyContacts", new Object[0]);
+        }
+        if (i7 == 2) {
+            TLRPC.InputPrivacyRule inputPrivacyRule3 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
+            if (!(inputPrivacyRule3 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers)) {
+                return gd.N0(2131744316, null);
+            }
+            int size2 = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule3).users.size();
+            return size2 > 0 ? gd.G(size2, "StoryPrivacyContactsExclude", new Object[0]) : gd.N0(2131744316, null);
+        }
+        if (i7 != 0) {
+            return gd.N0(2131744289, null);
+        }
+        if (!(inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
+            return gd.N0(2131744289, null);
+        }
+        int size3 = ((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size();
+        return size3 <= 0 ? gd.N0(2131744289, null) : gd.G(size3, "StoryPrivacyContacts", new Object[0]);
+    }
+
+    public i9() {
+        ArrayList arrayList = new ArrayList();
+        this.b = arrayList;
+        this.c = new ArrayList();
+        this.d = new HashMap();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.a = 4;
+        arrayList.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+    }
+
+    public i9(int i7, int i10, ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        this.b = arrayList2;
+        this.c = new ArrayList();
+        this.d = new HashMap();
+        this.e = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        this.f = arrayList3;
+        this.a = i7;
+        int i11 = 0;
+        if (i7 == 4) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+            if (i10 < 0 || arrayList == null || arrayList.isEmpty()) {
+                return;
+            }
+            TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+            while (i11 < arrayList.size()) {
+                Long l10 = (Long) arrayList.get(i11);
+                l10.longValue();
+                this.c.add(l10);
+                mp u12 = mp.u1(i10);
+                TLRPC.InputUser s12 = u12.s1(u12.c2(l10));
+                if (!(s12 instanceof TLRPC.TL_inputUserEmpty)) {
+                    tL_inputPrivacyValueDisallowUsers.users.add(s12);
+                    this.e.add(s12);
+                }
+                i11++;
+            }
+            this.b.add(tL_inputPrivacyValueDisallowUsers);
+            return;
+        }
+        if (i7 == 1) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowCloseFriends());
+            return;
+        }
+        if (i7 == 2) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowContacts());
+            if (i10 < 0 || arrayList == null || arrayList.isEmpty()) {
+                return;
+            }
+            TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers2 = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+            while (i11 < arrayList.size()) {
+                Long l11 = (Long) arrayList.get(i11);
+                l11.longValue();
+                this.c.add(l11);
+                mp u13 = mp.u1(i10);
+                TLRPC.InputUser s13 = u13.s1(u13.c2(l11));
+                if (!(s13 instanceof TLRPC.TL_inputUserEmpty)) {
+                    tL_inputPrivacyValueDisallowUsers2.users.add(s13);
+                    this.e.add(s13);
+                }
+                i11++;
+            }
+            this.b.add(tL_inputPrivacyValueDisallowUsers2);
+            return;
+        }
+        if (i7 != 3) {
+            if (i7 != 5 || arrayList == null) {
+                return;
+            }
+            arrayList3.addAll(arrayList);
+            return;
+        }
+        TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = new TLRPC.TL_inputPrivacyValueAllowUsers();
+        if (i10 >= 0 && arrayList != null && !arrayList.isEmpty()) {
+            while (i11 < arrayList.size()) {
+                Long l12 = (Long) arrayList.get(i11);
+                l12.longValue();
+                this.c.add(l12);
+                mp u14 = mp.u1(i10);
+                TLRPC.InputUser s14 = u14.s1(u14.c2(l12));
+                if (!(s14 instanceof TLRPC.TL_inputUserEmpty)) {
+                    tL_inputPrivacyValueAllowUsers.users.add(s14);
+                    this.e.add(s14);
+                }
+                i11++;
+            }
+        }
+        this.b.add(tL_inputPrivacyValueAllowUsers);
+    }
+
+    public i9(int i7, ArrayList arrayList, int i10) {
+        ArrayList arrayList2 = new ArrayList();
+        this.b = arrayList2;
+        this.c = new ArrayList();
+        this.d = new HashMap();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.a = i7;
+        int i11 = 0;
+        if (i7 == 4) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+            while (i11 < arrayList.size()) {
+                TLRPC.InputUser inputUser = (TLRPC.InputUser) arrayList.get(i11);
+                if (inputUser != null) {
+                    tL_inputPrivacyValueDisallowUsers.users.add(inputUser);
+                    this.c.add(Long.valueOf(inputUser.user_id));
+                    this.e.add(inputUser);
+                }
+                i11++;
+            }
+            this.b.add(tL_inputPrivacyValueDisallowUsers);
+            return;
+        }
+        if (i7 == 1) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowCloseFriends());
+            return;
+        }
+        if (i7 == 2) {
+            arrayList2.add(new TLRPC.TL_inputPrivacyValueAllowContacts());
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers2 = new TLRPC.TL_inputPrivacyValueDisallowUsers();
+            while (i11 < arrayList.size()) {
+                TLRPC.InputUser inputUser2 = (TLRPC.InputUser) arrayList.get(i11);
+                if (inputUser2 != null) {
+                    tL_inputPrivacyValueDisallowUsers2.users.add(inputUser2);
+                    this.c.add(Long.valueOf(inputUser2.user_id));
+                    this.e.add(inputUser2);
+                }
+                i11++;
+            }
+            this.b.add(tL_inputPrivacyValueDisallowUsers2);
+            return;
+        }
+        if (i7 != 3) {
+            if (i7 == 5) {
+                while (i11 < arrayList.size()) {
+                    TLRPC.InputUser inputUser3 = (TLRPC.InputUser) arrayList.get(i11);
+                    if (inputUser3 != null) {
+                        this.f.add(Long.valueOf(inputUser3.user_id));
+                    }
+                    i11++;
+                }
+                return;
+            }
+            return;
+        }
+        TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = new TLRPC.TL_inputPrivacyValueAllowUsers();
+        if (!arrayList.isEmpty()) {
+            while (i11 < arrayList.size()) {
+                TLRPC.InputUser inputUser4 = (TLRPC.InputUser) arrayList.get(i11);
+                if (inputUser4 != null) {
+                    tL_inputPrivacyValueAllowUsers.users.add(inputUser4);
+                    this.c.add(Long.valueOf(inputUser4.user_id));
+                    this.e.add(inputUser4);
+                }
+                i11++;
+            }
+        }
+        this.b.add(tL_inputPrivacyValueAllowUsers);
     }
 }

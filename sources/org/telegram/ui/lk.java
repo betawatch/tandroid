@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class lk implements Runnable {
             case 0:
                 rj rjVar = this.b.I.a0;
                 if (rjVar != null) {
-                    rjVar.i1();
+                    rjVar.j1();
                     break;
                 }
                 break;
@@ -25,9 +25,9 @@ public final /* synthetic */ class lk implements Runnable {
                 rj rjVar2 = this.b.I.a0;
                 if (rjVar2 != null) {
                     rjVar2.U0 = false;
-                    org.telegram.ui.Components.fg fgVar = rjVar2.V0;
-                    if (fgVar != null) {
-                        fgVar.u(false);
+                    org.telegram.ui.Components.eg egVar = rjVar2.V0;
+                    if (egVar != null) {
+                        egVar.u(false);
                         break;
                     }
                 }

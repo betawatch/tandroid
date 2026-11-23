@@ -1,6 +1,6 @@
 package g;
 
-import a8.fa;
+import a8.ga;
 import android.R;
 import android.app.Activity;
 import android.content.Context;
@@ -20,9 +20,9 @@ import m.k3;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class b0 extends fa implements m.b {
+public final class b0 extends ga implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
@@ -57,7 +57,7 @@ public final class b0 extends fa implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new cb.c(this, 24);
+        this.w = new cb.c(this, 25);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -331,7 +331,7 @@ public final class b0 extends fa implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new cb.c(this, 24);
+        this.w = new cb.c(this, 25);
         b(uVar.getWindow().getDecorView());
     }
 }

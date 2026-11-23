@@ -1,50 +1,61 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.messenger.pc;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class k2 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n2 b;
+public final class k2 extends kv0 {
+    public final /* synthetic */ boolean H3;
+    public final /* synthetic */ l2 I3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k2(n2 n2Var, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = n2Var;
+    public k2(l2 l2Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(i7, context, i6Var);
+        this.I3 = l2Var;
+        this.H3 = z10;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                n2 n2Var = this.b;
-                n2Var.q.reset();
-                n2Var.b(canvas, true);
-                break;
-            default:
-                n2 n2Var2 = this.b;
-                n2Var2.q.reset();
-                n2Var2.q.postTranslate(-getX(), (-getY()) + org.telegram.messenger.g0.m);
-                n2Var2.q.postScale(1.0f / getScaleX(), 1.0f / getScaleY(), getPivotX(), getPivotY());
-                n2Var2.b(canvas, false);
-                break;
-        }
+    @Override // org.telegram.ui.Components.kv0
+    public final boolean D1() {
+        return pc.e(8200);
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i7, i10);
-                this.b.g();
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
+    @Override // org.telegram.ui.Components.kv0
+    public final gv0[] E1(gv0[] gv0VarArr) {
+        if (gv0VarArr != null && this.H3) {
+            int i7 = 0;
+            while (true) {
+                if (i7 >= gv0VarArr.length) {
+                    i7 = -1;
+                    break;
+                }
+                gv0 gv0Var = gv0VarArr[i7];
+                if (gv0Var != null && gv0Var.b) {
+                    break;
+                }
+                i7++;
+            }
+            if (i7 >= 0) {
+                int length = gv0VarArr.length;
+                gv0[] gv0VarArr2 = new gv0[length];
+                gv0VarArr2[0] = gv0VarArr[i7];
+                int i10 = 1;
+                while (i10 < length) {
+                    gv0VarArr2[i10] = gv0VarArr[i10 <= i7 ? i10 - 1 : i10];
+                    i10++;
+                }
+                return gv0VarArr2;
+            }
         }
+        return gv0VarArr;
+    }
+
+    @Override // org.telegram.ui.Components.kv0
+    public final void H1(int i7) {
+        super.H1(i7);
+        this.I3.d(false);
     }
 }

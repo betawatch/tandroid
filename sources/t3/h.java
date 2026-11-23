@@ -1,7 +1,7 @@
 package t3;
 
-import a8.ja;
-import c8.da;
+import a8.ka;
+import c8.ea;
 import com.google.android.gms.internal.vision.e2;
 import e2.p0;
 import e2.q0;
@@ -10,19 +10,19 @@ import h2.l0;
 import h2.x;
 import h9.f0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import r0.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class h extends da {
+public final class h extends ea {
     public static final f1 b = new f1(26);
     public final g a;
 
@@ -39,14 +39,14 @@ public final class h extends da {
         byte[] bArr = new byte[i11];
         xVar.k(0, i11, bArr);
         if (i10 == 2) {
-            concat = "image/" + ja.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
+            concat = "image/" + ka.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             v = 2;
         } else {
             v = v(0, bArr);
-            String c10 = ja.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+            String c10 = ka.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
             concat = c10.indexOf(47) == -1 ? "image/".concat(c10) : c10;
         }
         int i12 = bArr[v + 1] & 255;
@@ -184,7 +184,7 @@ public final class h extends da {
         if (i15 == 4) {
             E = xVar.E();
             if (!z10) {
-                E = (((E >> 24) & ls.e4) << 21) | (E & ls.e4) | (((E >> 8) & ls.e4) << 7) | (((E >> 16) & ls.e4) << 14);
+                E = (((E >> 24) & ks.e4) << 21) | (E & ks.e4) | (((E >> 8) & ks.e4) << 7) | (((E >> 16) & ks.e4) << 14);
             }
         } else {
             E = i15 == 3 ? xVar.E() : xVar.D();
@@ -561,7 +561,7 @@ public final class h extends da {
         return new n(str, null, n(A, 0, bArr));
     }
 
-    public static t1 n(int i7, int i10, byte[] bArr) {
+    public static s1 n(int i7, int i10, byte[] bArr) {
         if (i10 >= bArr.length) {
             return i0.u("");
         }
@@ -572,7 +572,7 @@ public final class h extends da {
             i10 = r(i7) + u10;
             u10 = u(i10, i7, bArr);
         }
-        t1 f10 = p10.f();
+        s1 f10 = p10.f();
         return f10.isEmpty() ? i0.u("") : f10;
     }
 
@@ -738,7 +738,7 @@ public final class h extends da {
         }
     }
 
-    @Override // c8.da
+    @Override // c8.ea
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }

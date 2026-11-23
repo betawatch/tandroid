@@ -13,13 +13,13 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements m {
     public static final c4.a e;
@@ -30,7 +30,7 @@ public final class b implements m {
 
     static {
         g0 g0Var = i0.b;
-        e = new c4.a(-9223372036854775807L, -9223372036854775807L, t1.e);
+        e = new c4.a(-9223372036854775807L, -9223372036854775807L, s1.e);
     }
 
     public b(List list) {
@@ -70,11 +70,6 @@ public final class b implements m {
         }
     }
 
-    @Override // c4.m
-    public final /* synthetic */ d q(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
-    }
-
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Failed to find 'out' block for switch in B:76:0x00bd. Please report as an issue. */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0276  */
@@ -85,7 +80,7 @@ public final class b implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final void E(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         c4.a aVar;
         boolean z10;
         long j3;
@@ -258,7 +253,7 @@ public final class b implements m {
                         } else {
                             j11 = j3;
                         }
-                        aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : t1.e);
+                        aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : s1.e);
                     }
                 }
             } else {
@@ -272,14 +267,19 @@ public final class b implements m {
             j10 = aVar2.c;
             if (j10 == j3) {
             }
-            aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : t1.e);
+            aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : s1.e);
         }
         jVar.accept(aVar);
     }
 
     @Override // c4.m
-    public final int y() {
+    public final int N() {
         return 2;
+    }
+
+    @Override // c4.m
+    public final /* synthetic */ d s(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
     }
 
     @Override // c4.m

@@ -8,8 +8,8 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
-import c8.m0;
 import c8.n0;
+import c8.o0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,9 +18,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public class f extends m0 {
+public class f extends n0 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
@@ -68,18 +68,18 @@ public class f extends m0 {
         d = method;
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d2 = n0.d(context);
+                File d2 = o0.d(context);
                 if (d2 == null) {
                     return null;
                 }
                 try {
-                    if (!n0.b(d2, resources, fVar.f)) {
+                    if (!o0.b(d2, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d2.getPath(), fVar.b, fVar.c)) {
@@ -105,7 +105,7 @@ public class f extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public Typeface b(Context context, o0.h[] hVarArr, int i7) {
         File file;
         String readlink;

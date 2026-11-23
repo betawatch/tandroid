@@ -4,9 +4,9 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import di.p9;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.wc1;
+import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,10 +41,10 @@ public final /* synthetic */ class j2 implements Runnable {
                             SpannableString spannableString = new SpannableString(obj);
                             String b10 = qi.p.b(str);
                             if (!b10.isEmpty() && spannableString.length() != 0) {
-                                qi.j.a.d(spannableString.toString(), b10, new wc1(12, spannableString, p9Var));
+                                qi.j.a.d(spannableString.toString(), b10, new uc1(12, spannableString, p9Var));
                                 break;
                             } else {
-                                org.telegram.messenger.g0.g3(new p4.z(5, p9Var, spannableString));
+                                org.telegram.messenger.g0.g3(new org.telegram.ui.web.t1(9, p9Var, spannableString));
                                 break;
                             }
                         }

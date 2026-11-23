@@ -1,17 +1,17 @@
 package m4;
 
-import a8.la;
+import a8.ma;
 import e2.s0;
-import f3.i0;
+import f3.j0;
 import java.util.List;
-import kg.x1;
+import kg.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
     public final List b;
-    public final i0[] c;
+    public final j0[] c;
     public final h2.c d;
 
     public c0(int i7, List list) {
@@ -19,15 +19,15 @@ public final class c0 {
         switch (i7) {
             case 1:
                 this.b = list;
-                this.c = new i0[list.size()];
-                h2.c cVar = new h2.c(new x1(this, 16));
+                this.c = new j0[list.size()];
+                h2.c cVar = new h2.c(new f1(this, 18));
                 this.d = cVar;
                 cVar.C(3);
                 break;
             default:
                 this.b = list;
-                this.c = new i0[list.size()];
-                this.d = new h2.c(new x1(this, 15));
+                this.c = new j0[list.size()];
+                this.d = new h2.c(new f1(this, 17));
                 break;
         }
     }
@@ -49,16 +49,16 @@ public final class c0 {
             case 0:
                 int i7 = 0;
                 while (true) {
-                    i0[] i0VarArr = this.c;
-                    if (i7 >= i0VarArr.length) {
+                    j0[] j0VarArr = this.c;
+                    if (i7 >= j0VarArr.length) {
                         break;
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        i0 d2 = qVar.d2(f0Var.c, 3);
+                        j0 d2 = qVar.d2(f0Var.c, 3);
                         e2.u uVar = (e2.u) this.b.get(i7);
                         String str = uVar.s;
-                        la.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
+                        ma.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
                         String str2 = uVar.a;
                         if (str2 == null) {
                             f0Var.c();
@@ -73,7 +73,7 @@ public final class c0 {
                         tVar.O = uVar.P;
                         tVar.u = uVar.v;
                         p5.c.r(tVar, d2);
-                        i0VarArr[i7] = d2;
+                        j0VarArr[i7] = d2;
                         i7++;
                     }
                 }
@@ -81,16 +81,16 @@ public final class c0 {
             default:
                 int i10 = 0;
                 while (true) {
-                    i0[] i0VarArr2 = this.c;
-                    if (i10 >= i0VarArr2.length) {
+                    j0[] j0VarArr2 = this.c;
+                    if (i10 >= j0VarArr2.length) {
                         break;
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        i0 d22 = qVar.d2(f0Var.c, 3);
+                        j0 d22 = qVar.d2(f0Var.c, 3);
                         e2.u uVar2 = (e2.u) this.b.get(i10);
                         String str3 = uVar2.s;
-                        la.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
+                        ma.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
                         e2.t tVar2 = new e2.t();
                         f0Var.c();
                         tVar2.a = (String) f0Var.e;
@@ -101,7 +101,7 @@ public final class c0 {
                         tVar2.O = uVar2.P;
                         tVar2.u = uVar2.v;
                         p5.c.r(tVar2, d22);
-                        i0VarArr2[i10] = d22;
+                        j0VarArr2[i10] = d22;
                         i10++;
                     }
                 }

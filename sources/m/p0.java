@@ -21,7 +21,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -48,8 +48,8 @@ public final class p0 extends Spinner {
         this.n = new Rect();
         z2.a(this, getContext());
         int[] iArr = f.a.v;
-        h6.m D = h6.m.D(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-        TypedArray typedArray2 = (TypedArray) D.c;
+        h6.m E = h6.m.E(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        TypedArray typedArray2 = (TypedArray) E.c;
         this.a = new h2.c(this);
         int resourceId = typedArray2.getResourceId(4, 0);
         if (resourceId != 0) {
@@ -94,11 +94,11 @@ public final class p0 extends Spinner {
             i0Var.c = typedArray2.getString(2);
         } else if (i7 == 1) {
             m0 m0Var = new m0(this, this.b, attributeSet);
-            h6.m D2 = h6.m.D(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-            this.h = ((TypedArray) D2.c).getLayoutDimension(3, -2);
-            m0Var.j(D2.t(1));
+            h6.m E2 = h6.m.E(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            this.h = ((TypedArray) E2.c).getLayoutDimension(3, -2);
+            m0Var.i(E2.z(1));
             m0Var.T = typedArray2.getString(2);
-            D2.G();
+            E2.G();
             this.f = m0Var;
             this.c = new e0(this, this, m0Var);
         }
@@ -108,7 +108,7 @@ public final class p0 extends Spinner {
             arrayAdapter.setDropDownViewResource(org.telegram.messenger.beta.R.layout.support_simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
-        D.G();
+        E.G();
         this.e = true;
         SpinnerAdapter spinnerAdapter = this.d;
         if (spinnerAdapter != null) {
@@ -168,7 +168,7 @@ public final class p0 extends Spinner {
     @Override // android.widget.Spinner
     public int getDropDownVerticalOffset() {
         o0 o0Var = this.f;
-        return o0Var != null ? o0Var.o() : super.getDropDownVerticalOffset();
+        return o0Var != null ? o0Var.n() : super.getDropDownVerticalOffset();
     }
 
     @Override // android.widget.Spinner
@@ -183,7 +183,7 @@ public final class p0 extends Spinner {
     @Override // android.widget.Spinner
     public Drawable getPopupBackground() {
         o0 o0Var = this.f;
-        return o0Var != null ? o0Var.e() : super.getPopupBackground();
+        return o0Var != null ? o0Var.f() : super.getPopupBackground();
     }
 
     @Override // android.widget.Spinner
@@ -325,7 +325,7 @@ public final class p0 extends Spinner {
     public void setPopupBackgroundDrawable(Drawable drawable) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.j(drawable);
+            o0Var.i(drawable);
         } else {
             super.setPopupBackgroundDrawable(drawable);
         }
@@ -333,14 +333,14 @@ public final class p0 extends Spinner {
 
     @Override // android.widget.Spinner
     public void setPopupBackgroundResource(int i7) {
-        setPopupBackgroundDrawable(c8.z.b(getPopupContext(), i7));
+        setPopupBackgroundDrawable(c8.a0.b(getPopupContext(), i7));
     }
 
     @Override // android.widget.Spinner
     public void setPrompt(CharSequence charSequence) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.i(charSequence);
+            o0Var.h(charSequence);
         } else {
             super.setPrompt(charSequence);
         }
@@ -382,7 +382,7 @@ public final class p0 extends Spinner {
             if (theme != null && (spinnerAdapter instanceof ThemedSpinnerAdapter)) {
                 h0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
             }
-            o0Var.p(j0Var);
+            o0Var.o(j0Var);
         }
     }
 }

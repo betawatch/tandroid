@@ -1,45 +1,68 @@
 package sg;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class m0 {
-    public final double a;
-    public final double b;
-    public final double c;
-    public boolean d;
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
 
-    public m0(double d, double d2, double d10) {
-        this.a = d;
-        this.b = d2;
-        this.c = d10;
-    }
-
-    public final float a(m0 m0Var) {
-        return (float) Math.sqrt(Math.pow(this.c - m0Var.c, 2.0d) + Math.pow(this.b - m0Var.b, 2.0d) + Math.pow(this.a - m0Var.a, 2.0d));
-    }
-
-    public final m0 b(m0 m0Var) {
-        return new m0((this.a + m0Var.a) * 0.5d, (this.b + m0Var.b) * 0.5d, (this.c + m0Var.c) * 0.5d);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null) {
+    public final boolean a(PointF pointF, float f10, float f11, float f12, int i7) {
+        if ((i7 != -1 && i7 >= this.i) || this.j.position() == this.j.limit()) {
+            d();
             return false;
         }
-        if (obj == this) {
-            return true;
+        if (i7 != -1) {
+            this.j.position(i7 * 20);
         }
-        if (!(obj instanceof m0)) {
-            return false;
-        }
-        m0 m0Var = (m0) obj;
-        return this.a == m0Var.a && this.b == m0Var.b && this.c == m0Var.c;
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f10);
+        this.j.putFloat(f11);
+        this.j.putFloat(f12);
+        return true;
     }
 
-    public m0(double d, double d2, double d10, int i7) {
-        this.a = d;
-        this.b = d2;
-        this.c = d10;
-        this.d = true;
+    public final void b(int i7) {
+        int i10 = this.h + i7;
+        if (i10 > this.i || this.j == null) {
+            d();
+        }
+        this.h = i10;
+    }
+
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
+            return;
+        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
+    }
+
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
+        }
+        int max = Math.max(this.i * 2, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

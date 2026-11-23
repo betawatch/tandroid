@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a;
@@ -40,14 +40,14 @@ public final /* synthetic */ class ge implements Runnable {
                         break;
                     }
                 }
-                bnVar.getSendMessagesHelper().r0(org.telegram.messenger.yy.b("/start", bnVar.l6, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                bnVar.getSendMessagesHelper().r0(org.telegram.messenger.xy.b("/start", bnVar.l6, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
                 bnVar.Oa(str);
                 break;
             case 5:
                 bnVar.getClass();
-                bnVar.presentFragment(new org.telegram.ui.Wallet.da(str));
+                bnVar.presentFragment(new org.telegram.ui.Wallet.ea(str));
                 break;
             case 6:
                 String str2 = bnVar.getMessagesController().K6;
@@ -69,7 +69,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 9:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.o10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.m10.t(null, 2131747101, org.telegram.ui.Components.kc.b0(bnVar));
                 break;
             case 10:
                 bn.a0(bnVar, str);
@@ -79,7 +79,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 12:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.o10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.m10.t(null, 2131747101, org.telegram.ui.Components.kc.b0(bnVar));
                 break;
             default:
                 vf.c.t(bnVar.getParentActivity(), "https://fragment.com/username/" + str);

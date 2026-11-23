@@ -1,60 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xq0 extends yz {
-    public final /* synthetic */ kq0 V;
-    public final /* synthetic */ jt0 W;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xq0(jt0 jt0Var, Context context, kq0 kq0Var) {
-        super(context, null);
-        this.W = jt0Var;
-        this.V = kq0Var;
-    }
-
-    @Override // org.telegram.ui.Components.yz
-    public final int getColumnsCount() {
-        return this.W.p1[jt0.z0(this.V.F) ? 1 : 0];
-    }
-
-    @Override // org.telegram.ui.Components.yz
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i7 = this.V.F;
-        if (i7 == 0 || i7 == 5) {
-            return 2;
-        }
-        if (i7 == 1) {
-            return 3;
-        }
-        if (i7 != 2 && i7 != 4) {
-            if (i7 == 3) {
-                return 5;
-            }
-            if (i7 != 7) {
-                if (i7 == 6) {
-                    if (this.W.L0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
-                    }
-                } else if (jt0.z0(i7)) {
-                    return 27;
-                }
-                return 1;
-            }
-        }
-        return 6;
-    }
-
-    @Override // org.telegram.ui.Components.yz, android.view.View
-    public final void onDraw(Canvas canvas) {
-        jt0 jt0Var = this.W;
-        jt0Var.W0.setColor(jt0Var.s0(org.telegram.ui.ActionBar.m6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), jt0Var.W0);
-        super.onDraw(canvas);
+public final class xq0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(16.0f));
     }
 }

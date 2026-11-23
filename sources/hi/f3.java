@@ -1,59 +1,65 @@
 package hi;
 
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.rj0;
+import org.telegram.ui.Components.sj0;
+import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f3 implements r1.c {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public final /* synthetic */ class f3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g3 b;
+    public final /* synthetic */ i3 c;
 
-    public /* synthetic */ f3(float f10, View view, Runnable runnable) {
-        this.b = runnable;
-        this.d = view;
-        this.c = f10;
+    public /* synthetic */ f3(g3 g3Var, i3 i3Var, int i7) {
+        this.a = i7;
+        this.b = g3Var;
+        this.c = i3Var;
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
-        int i7 = this.a;
-        float f12 = this.c;
-        KeyEvent.Callback callback = this.d;
-        Runnable runnable = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                h3 h3Var = (h3) callback;
-                g3 g3Var = h3Var.m1;
-                if (!z10) {
-                    g3Var.setTranslationY(f12);
-                    g3Var.L = false;
-                    h3Var.o1 = null;
-                    h3Var.p1 = null;
-                    if (runnable != null) {
-                        runnable.run();
+                di.b1 b1Var = this.b.c.d;
+                b1Var.getClass();
+                i3 i3Var = this.c;
+                int R = RecyclerView.R(i3Var);
+                if (R != -1) {
+                    qj0 qj0Var = b1Var.U0;
+                    if (qj0Var == null) {
+                        rj0 rj0Var = b1Var.V0;
+                        if (rj0Var != null) {
+                            rj0Var.g(0.0f, 0.0f, R, i3Var);
+                            break;
+                        }
+                    } else {
+                        qj0Var.b(R, i3Var);
                         break;
                     }
                 }
                 break;
             default:
-                View view = (View) callback;
-                if (runnable != null) {
-                    runnable.run();
+                di.b1 b1Var2 = this.b.c.d;
+                b1Var2.getClass();
+                i3 i3Var2 = this.c;
+                int R2 = RecyclerView.R(i3Var2);
+                if (R2 != -1) {
+                    sj0 sj0Var = b1Var2.W0;
+                    if (sj0Var == null) {
+                        tj0 tj0Var = b1Var2.X0;
+                        if (tj0Var != null) {
+                            tj0Var.g(0.0f, 0.0f, R2, i3Var2);
+                            break;
+                        }
+                    } else {
+                        sj0Var.b(R2, i3Var2);
+                        break;
+                    }
                 }
-                view.setTranslationX(f12);
-                view.setTag(R.id.spring_tag, null);
-                view.setTag(R.id.spring_was_translation_x_tag, null);
                 break;
         }
-    }
-
-    public /* synthetic */ f3(h3 h3Var, float f10, Runnable runnable) {
-        this.d = h3Var;
-        this.c = f10;
-        this.b = runnable;
     }
 }

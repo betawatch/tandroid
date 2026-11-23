@@ -2,9 +2,9 @@ package oi;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class v5 implements e1 {
     public final /* synthetic */ a6 a;
@@ -14,32 +14,18 @@ public final class v5 implements e1 {
     }
 
     @Override // oi.e1
-    public final void A(int i7, int i10) {
-        g2 g2Var;
+    public final void A(f1 f1Var) {
+        a aVar;
         a6 a6Var = this.a;
         x5 x5Var = a6Var.E;
-        if (x5Var == null || a6Var.y == null || (g2Var = ((d3) x5Var).a.R3) == null) {
+        if (x5Var == null || (aVar = a6Var.y) == null) {
             return;
         }
-        g2Var.f(i7, i10);
+        t3.T1(((d3) x5Var).a, aVar);
     }
 
     @Override // oi.e1
-    public final /* synthetic */ boolean E1(boolean z10) {
-        return false;
-    }
-
-    @Override // oi.e1
-    public final boolean J(f1 f1Var) {
-        a6 a6Var = this.a;
-        a6Var.f.O();
-        f1 f1Var2 = a6Var.f;
-        f1Var2.setSelection(f1Var2.length());
-        return true;
-    }
-
-    @Override // oi.e1
-    public final void b1(CharSequence charSequence) {
+    public final void T(CharSequence charSequence) {
         x5 x5Var = this.a.E;
         if (x5Var != null) {
             d3 d3Var = (d3) x5Var;
@@ -51,34 +37,19 @@ public final class v5 implements e1 {
     }
 
     @Override // oi.e1
-    public final /* synthetic */ boolean d2(f1 f1Var) {
-        return false;
-    }
-
-    @Override // oi.e1
-    public final void e(f1 f1Var) {
+    public final void d(f1 f1Var) {
         x5 x5Var = this.a.E;
         if (x5Var != null) {
             t3 t3Var = ((d3) x5Var).a;
             t3.Q1(t3Var, f1Var);
-            t3Var.p3.k(f1Var, true);
+            t3Var.p3.b(f1Var, true);
         }
     }
 
     @Override // oi.e1
-    public final boolean o() {
-        a6 a6Var = this.a;
-        x5 x5Var = a6Var.E;
-        if (x5Var == null || a6Var.y == null) {
-            return false;
-        }
-        return ((d3) x5Var).a.V4();
-    }
-
-    @Override // oi.e1
-    public final void r1(f1 f1Var, int i7, int i10) {
+    public final void e0(f1 f1Var, int i7, int i10) {
         x5 x5Var;
-        j9 textSelectionHelper;
+        i9 textSelectionHelper;
         a6 a6Var = this.a;
         if (a6Var.n || i7 == i10 || (x5Var = a6Var.E) == null || (textSelectionHelper = ((d3) x5Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -87,7 +58,7 @@ public final class v5 implements e1 {
     }
 
     @Override // oi.e1
-    public final void s1(Editable editable) {
+    public final void g0(Editable editable) {
         a6 a6Var = this.a;
         if (a6Var.y == null) {
             return;
@@ -120,17 +91,46 @@ public final class v5 implements e1 {
     }
 
     @Override // oi.e1
-    public final void x0(f1 f1Var) {
-        a aVar;
+    public final boolean i() {
         a6 a6Var = this.a;
         x5 x5Var = a6Var.E;
-        if (x5Var == null || (aVar = a6Var.y) == null) {
-            return;
+        if (x5Var == null || a6Var.y == null) {
+            return false;
         }
-        t3.T1(((d3) x5Var).a, aVar);
+        return ((d3) x5Var).a.V4();
     }
 
     @Override // oi.e1
-    public final void E0() {
+    public final void m(int i7, int i10) {
+        g2 g2Var;
+        a6 a6Var = this.a;
+        x5 x5Var = a6Var.E;
+        if (x5Var == null || a6Var.y == null || (g2Var = ((d3) x5Var).a.R3) == null) {
+            return;
+        }
+        g2Var.f(i7, i10);
+    }
+
+    @Override // oi.e1
+    public final /* synthetic */ boolean m0(boolean z10) {
+        return false;
+    }
+
+    @Override // oi.e1
+    public final boolean o(f1 f1Var) {
+        a6 a6Var = this.a;
+        a6Var.f.O();
+        f1 f1Var2 = a6Var.f;
+        f1Var2.setSelection(f1Var2.length());
+        return true;
+    }
+
+    @Override // oi.e1
+    public final /* synthetic */ boolean t0(f1 f1Var) {
+        return false;
+    }
+
+    @Override // oi.e1
+    public final void F() {
     }
 }

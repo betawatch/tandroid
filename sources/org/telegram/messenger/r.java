@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.t41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements q10 {
+public final /* synthetic */ class r implements o10 {
     public final /* synthetic */ SpannableStringBuilder a;
     public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class r implements q10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.o10
     public final Object run() {
         boolean z10;
         int i7;
@@ -52,7 +52,7 @@ public final /* synthetic */ class r implements q10 {
                         break;
                     }
                     URLSpan uRLSpan = uRLSpanArr[length];
-                    if (!(uRLSpan instanceof u41) || z10) {
+                    if (!(uRLSpan instanceof t41) || z10) {
                         spannableStringBuilder.removeSpan(uRLSpan);
                     }
                     length--;
@@ -63,7 +63,7 @@ public final /* synthetic */ class r implements q10 {
                 if (!z13 && (this.b & 4) != 0) {
                     Linkify.addLinks(spannableStringBuilder, 4);
                 }
-                Pattern pattern = pc.a;
+                Pattern pattern = oc.a;
                 String[] strArr = {"http://", "https://", "tg://", "tonsite://"};
                 f fVar = g0.c0;
                 SpannableStringBuilder spannableStringBuilder2 = TextUtils.indexOf((CharSequence) spannableStringBuilder, (char) 9472) >= 0 ? new SpannableStringBuilder(spannableStringBuilder.toString().replace((char) 9472, ' ')) : spannableStringBuilder;
@@ -146,7 +146,7 @@ public final /* synthetic */ class r implements q10 {
                             for (int i24 = i7; i24 < uRLSpanArr2.length; i24++) {
                                 URLSpan uRLSpan2 = uRLSpanArr2[i24];
                                 spannableStringBuilder.removeSpan(uRLSpan2);
-                                if (!(uRLSpan2 instanceof u41) || z10) {
+                                if (!(uRLSpan2 instanceof t41) || z10) {
                                     spannableStringBuilder.removeSpan(uRLSpan2);
                                 }
                             }

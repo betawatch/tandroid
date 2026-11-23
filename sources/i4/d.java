@@ -1,10 +1,10 @@
 package i4;
 
-import a8.ja;
-import a8.la;
+import a8.ka;
+import a8.ma;
 import a8.p0;
 import a8.r7;
-import a8.u7;
+import a8.v7;
 import android.text.Layout;
 import android.text.TextUtils;
 import c4.l;
@@ -15,12 +15,11 @@ import e2.r0;
 import h2.h;
 import h2.j;
 import h2.l0;
-import h9.a2;
-import h9.c2;
-import h9.f2;
+import h9.b2;
 import h9.o;
 import h9.t0;
 import h9.v0;
+import h9.z1;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -28,13 +27,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -86,7 +85,7 @@ public final class d implements m {
             if (parseInt == 0 || parseInt2 == 0) {
                 z10 = false;
             }
-            la.b(parseInt, parseInt2, "Invalid cell resolution %s %s", z10);
+            ma.b(parseInt, parseInt2, "Invalid cell resolution %s %s", z10);
             return parseInt2;
         } catch (NumberFormatException unused) {
             h2.a.l("TtmlParser", "Ignoring malformed cell resolution: ".concat(attributeValue));
@@ -140,7 +139,7 @@ public final class d implements m {
         String attributeValue2 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRateMultiplier");
         if (attributeValue2 != null) {
             String str = l0.a;
-            la.e("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
+            ma.e("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
             f10 = Integer.parseInt(r2[0]) / Integer.parseInt(r2[1]);
         } else {
             f10 = 1.0f;
@@ -296,7 +295,7 @@ public final class d implements m {
                     }
                     String f26 = h2.a.f(xmlPullParser, "displayAlign");
                     if (f26 != null) {
-                        String c11 = ja.c(f26);
+                        String c11 = ka.c(f26);
                         c11.getClass();
                         if (c11.equals("center")) {
                             f16 = f12 + (f15 / 2.0f);
@@ -308,7 +307,7 @@ public final class d implements m {
                         float f27 = 1.0f / i7;
                         f17 = h2.a.f(xmlPullParser, "writingMode");
                         if (f17 != null) {
-                            String c12 = ja.c(f17);
+                            String c12 = ka.c(f17);
                             c12.getClass();
                             switch (c12.hashCode()) {
                                 case 3694:
@@ -532,7 +531,7 @@ public final class d implements m {
         boolean z10;
         char c11;
         int i7;
-        c2 p10;
+        b2 p10;
         int i10;
         int hashCode;
         int i11;
@@ -685,7 +684,7 @@ public final class d implements m {
                     break;
                 case 3:
                     fVar2 = a(fVar2);
-                    String c13 = ja.c(attributeValue);
+                    String c13 = ka.c(attributeValue);
                     c13.getClass();
                     switch (c13.hashCode()) {
                         case -1364013995:
@@ -747,7 +746,7 @@ public final class d implements m {
                     fVar2.t = attributeValue;
                     break;
                 case 5:
-                    String c14 = ja.c(attributeValue);
+                    String c14 = ka.c(attributeValue);
                     c14.getClass();
                     switch (c14.hashCode()) {
                         case -1461280213:
@@ -813,7 +812,7 @@ public final class d implements m {
                         break;
                     }
                 case '\b':
-                    String c15 = ja.c(attributeValue);
+                    String c15 = ka.c(attributeValue);
                     c15.getClass();
                     switch (c15.hashCode()) {
                         case -618561360:
@@ -911,7 +910,7 @@ public final class d implements m {
                     fVar2 = a10;
                     break;
                 case 11:
-                    String c16 = ja.c(attributeValue);
+                    String c16 = ka.c(attributeValue);
                     c16.getClass();
                     if (c16.equals("all")) {
                         fVar2 = a(fVar2);
@@ -937,11 +936,11 @@ public final class d implements m {
                     fVar2 = a(fVar2);
                     Pattern pattern = b.d;
                     if (attributeValue != null) {
-                        String c17 = ja.c(attributeValue.trim());
+                        String c17 = ka.c(attributeValue.trim());
                         if (!c17.isEmpty()) {
                             String[] split = TextUtils.split(c17, b.d);
                             int length = split.length;
-                            t0 p11 = length != 0 ? length != 1 ? t0.p(split.length, (Object[]) split.clone()) : new f2(split[0]) : a2.s;
+                            t0 p11 = length != 0 ? length != 1 ? t0.p(split.length, (Object[]) split.clone()) : new h9.e2(split[0]) : z1.s;
                             String str = (String) o.m(o.p(b.h, p11), "outside");
                             int hashCode2 = str.hashCode();
                             if (hashCode2 != -1392885889) {
@@ -950,8 +949,8 @@ public final class d implements m {
                                         i7 = 2;
                                         p10 = o.p(b.e, p11);
                                         if (p10.isEmpty()) {
-                                            c2 p12 = o.p(b.g, p11);
-                                            c2 p13 = o.p(b.f, p11);
+                                            b2 p12 = o.p(b.g, p11);
+                                            b2 p13 = o.p(b.f, p11);
                                             if (p12.isEmpty() && p13.isEmpty()) {
                                                 bVar = new b(-1, 0, i7);
                                             } else {
@@ -1020,7 +1019,7 @@ public final class d implements m {
                     fVar2.r = bVar;
                     break;
                 case 14:
-                    String c18 = ja.c(attributeValue);
+                    String c18 = ka.c(attributeValue);
                     c18.getClass();
                     if (c18.equals("before")) {
                         fVar2 = a(fVar2);
@@ -1045,7 +1044,7 @@ public final class d implements m {
                     }
                 case 16:
                     fVar2 = a(fVar2);
-                    String c19 = ja.c(attributeValue);
+                    String c19 = ka.c(attributeValue);
                     c19.getClass();
                     switch (c19.hashCode()) {
                         case -1364013995:
@@ -1141,28 +1140,28 @@ public final class d implements m {
         String group4 = matcher2.group(2);
         group4.getClass();
         switch (group4.hashCode()) {
-            case ls.n1 /* 102 */:
+            case ks.n1 /* 102 */:
                 if (group4.equals("f")) {
                     c10 = 0;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.p1 /* 104 */:
+            case ks.p1 /* 104 */:
                 if (group4.equals("h")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.u1 /* 109 */:
+            case ks.u1 /* 109 */:
                 if (group4.equals("m")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ls.B1 /* 116 */:
+            case ks.B1 /* 116 */:
                 if (group4.equals("t")) {
                     c10 = 3;
                     break;
@@ -1223,7 +1222,17 @@ public final class d implements m {
     }
 
     @Override // c4.m
-    public final c4.d q(int i7, int i10, byte[] bArr) {
+    public final void E(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+        v7.b(s(i7, i10, bArr), lVar, jVar);
+    }
+
+    @Override // c4.m
+    public final int N() {
+        return 1;
+    }
+
+    @Override // c4.m
+    public final c4.d s(int i7, int i10, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1306,16 +1315,6 @@ public final class d implements m {
         } catch (XmlPullParserException e12) {
             throw new IllegalStateException("Unable to decode source", e12);
         }
-    }
-
-    @Override // c4.m
-    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
-        u7.b(q(i7, i10, bArr), lVar, jVar);
-    }
-
-    @Override // c4.m
-    public final int y() {
-        return 1;
     }
 
     @Override // c4.m

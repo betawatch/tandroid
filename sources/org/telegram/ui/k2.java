@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k2 implements c5.h {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class k2 implements c5.h {
                 ((v50) this.b).I = i7;
                 break;
             default:
-                ((x71) this.b).c0.invalidate();
+                ((v71) this.b).c0.invalidate();
                 break;
         }
     }
@@ -44,10 +44,10 @@ public final class k2 implements c5.h {
                 break;
             case 1:
                 v50 v50Var = (v50) this.b;
-                org.telegram.ui.Components.ia iaVar = v50Var.e;
-                iaVar.b = f10;
-                iaVar.c = i7;
-                iaVar.invalidate();
+                org.telegram.ui.Components.ha haVar = v50Var.e;
+                haVar.b = f10;
+                haVar.c = i7;
+                haVar.invalidate();
                 float measuredWidth2 = v50Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
                     Intro.setScrollOffset((((i7 * measuredWidth2) + i10) - (v50Var.I * measuredWidth2)) / measuredWidth2);

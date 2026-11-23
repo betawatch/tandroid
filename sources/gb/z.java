@@ -1,68 +1,41 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import c8.h9;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements oe.e {
-    public static final z a;
-    private static final me.d descriptor;
+public final class z implements pa.f {
+    public static final z b;
+    public static final /* synthetic */ z[] c;
+    public final int a;
 
     static {
-        z zVar = new z();
-        a = zVar;
-        oe.m mVar = new oe.m("com.google.firebase.sessions.ProcessData", zVar, 2);
-        mVar.k("pid", false);
-        mVar.k("uuid", false);
-        descriptor = mVar;
+        z zVar = new z("LOG_ENVIRONMENT_UNKNOWN", 0, 0);
+        z zVar2 = new z("LOG_ENVIRONMENT_AUTOPUSH", 1, 1);
+        z zVar3 = new z("LOG_ENVIRONMENT_STAGING", 2, 2);
+        z zVar4 = new z("LOG_ENVIRONMENT_PROD", 3, 3);
+        b = zVar4;
+        z[] zVarArr = {zVar, zVar2, zVar3, zVar4};
+        c = zVarArr;
+        h9.a(zVarArr);
     }
 
-    @Override // ke.a
-    public final void a(qe.h hVar, Object obj) {
-        b0 value = (b0) obj;
-        kotlin.jvm.internal.j.e(value, "value");
-        me.d dVar = descriptor;
-        qe.h a10 = hVar.a(dVar);
-        int i7 = value.a;
-        a10.b(dVar, 0);
-        a10.c(i7);
-        a10.k(dVar, 1, value.b);
-        a10.l(dVar);
+    public z(String str, int i7, int i10) {
+        this.a = i10;
     }
 
-    @Override // ke.a
-    public final Object b(h2.c decoder) {
-        kotlin.jvm.internal.j.e(decoder, "decoder");
-        me.d dVar = descriptor;
-        h2.c c10 = decoder.c(dVar);
-        String str = null;
-        boolean z10 = true;
-        int i7 = 0;
-        int i10 = 0;
-        while (z10) {
-            int d = c10.d(dVar);
-            if (d == -1) {
-                z10 = false;
-            } else if (d == 0) {
-                i10 = c10.f(dVar, 0);
-                i7 |= 1;
-            } else {
-                if (d != 1) {
-                    throw new ke.d(d);
-                }
-                str = c10.n(dVar, 1);
-                i7 |= 2;
-            }
-        }
-        c10.p(dVar);
-        return new b0(i7, i10, str);
+    public static z valueOf(String str) {
+        return (z) Enum.valueOf(z.class, str);
     }
 
-    @Override // oe.e
-    public final ke.a[] c() {
-        return new ke.a[]{oe.f.a, oe.p.a};
+    public static z[] values() {
+        return (z[]) c.clone();
     }
 
-    @Override // ke.a
-    public final me.d d() {
-        return descriptor;
+    @Override // pa.f
+    public final int a() {
+        return this.a;
     }
 }

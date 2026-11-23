@@ -2,19 +2,20 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import android.webkit.WebView;
-import b5.a;
+import b7.h;
 import gd.c;
 import gd.k;
 import hd.f;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import jd.a;
 import kotlin.jvm.internal.j;
 import zd.b0;
 import zd.s;
 import zd.t;
 import zd.x1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -35,13 +36,13 @@ public final class zzly extends zzg {
 
     public zzly() {
         int i7 = zzby.zza;
-        this.zzi = a.c(zzlm.zza);
-        this.zzj = a.c(zzln.zza);
-        this.zzk = a.c(zzlo.zza);
-        this.zzl = a.c(zzlp.zza);
-        this.zzm = a.c(zzlq.zza);
-        this.zzn = a.c(zzlr.zza);
-        this.zzo = a.c(zzls.zza);
+        this.zzi = h.b(zzlm.zza);
+        this.zzj = h.b(zzln.zza);
+        this.zzk = h.b(zzlo.zza);
+        this.zzl = h.b(zzlp.zza);
+        this.zzm = h.b(zzlq.zza);
+        this.zzn = h.b(zzlr.zza);
+        this.zzo = h.b(zzls.zza);
     }
 
     private final Application zzC() {
@@ -151,7 +152,7 @@ public final class zzly extends zzg {
 
     public final Object zzw(id.c cVar) {
         Object y10 = b0.y(zzD().zzb().c(), new zzlf(this, null), cVar);
-        return y10 == jd.a.a ? y10 : k.a;
+        return y10 == a.a ? y10 : k.a;
     }
 
     public final s zzz() {

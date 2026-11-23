@@ -1,23 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class bc1 extends org.telegram.ui.Components.voip.c1 {
-    public final /* synthetic */ hc1 W;
+public final class bc1 extends LinearLayout {
+    public final /* synthetic */ fc1 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bc1(hc1 hc1Var, Context context, float f10, float f11) {
-        super(context, f10, f11);
-        this.W = hc1Var;
+    public bc1(fc1 fc1Var, Activity activity) {
+        super(activity);
+        this.a = fc1Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.c1
-    public final int[] getFloatingViewLocation() {
-        int[] iArr = new int[2];
-        hc1 hc1Var = this.W;
-        hc1Var.Z.getLocationOnScreen(iArr);
-        return new int[]{iArr[0], iArr[1], hc1Var.Z.getMeasuredWidth()};
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.F.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
+        }
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(org.telegram.messenger.gd.N0(2131743050, null));
+        } else {
+            sb2.append(org.telegram.messenger.gd.N0(2131743047, null));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(org.telegram.messenger.gd.z((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

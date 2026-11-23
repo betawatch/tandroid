@@ -1,6 +1,6 @@
 package i4;
 
-import a8.ha;
+import a8.ia;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
@@ -12,7 +12,7 @@ import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Pair;
-import c8.o0;
+import c8.p0;
 import g2.g;
 import h2.l0;
 import java.util.ArrayDeque;
@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -176,7 +176,7 @@ public final class c {
                     e eVar = (e) hashMap.get(str3);
                     eVar.getClass();
                     int i15 = eVar.j;
-                    f a11 = o0.a(this.f, this.g, map2);
+                    f a11 = p0.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -216,16 +216,16 @@ public final class c {
                             if (!a11.c) {
                                 throw new IllegalStateException("Font color has not been defined.");
                             }
-                            ha.a(spannableStringBuilder, new ForegroundColorSpan(a11.b), intValue, intValue2);
+                            ia.a(spannableStringBuilder, new ForegroundColorSpan(a11.b), intValue, intValue2);
                         }
                         if (a11.e) {
                             if (!a11.e) {
                                 throw new IllegalStateException("Background color has not been defined.");
                             }
-                            ha.a(spannableStringBuilder, new BackgroundColorSpan(a11.d), intValue, intValue2);
+                            ia.a(spannableStringBuilder, new BackgroundColorSpan(a11.d), intValue, intValue2);
                         }
                         if (a11.a != null) {
-                            ha.a(spannableStringBuilder, new TypefaceSpan(a11.a), intValue, intValue2);
+                            ia.a(spannableStringBuilder, new TypefaceSpan(a11.a), intValue, intValue2);
                         }
                         b bVar = a11.r;
                         if (bVar != null) {
@@ -240,7 +240,7 @@ public final class c {
                             if (i20 == -2) {
                                 i20 = 1;
                             }
-                            ha.a(spannableStringBuilder, new g(i19, i13, i20), intValue, intValue2);
+                            ia.a(spannableStringBuilder, new g(i19, i13, i20), intValue, intValue2);
                         }
                         int i21 = a11.m;
                         if (i21 == 2) {
@@ -250,7 +250,7 @@ public final class c {
                                     cVar2 = null;
                                     break;
                                 }
-                                f a12 = o0.a(cVar2.f, cVar2.g, map2);
+                                f a12 = p0.a(cVar2.f, cVar2.g, map2);
                                 if (a12 != null && a12.m == 1) {
                                     break;
                                 } else {
@@ -266,7 +266,7 @@ public final class c {
                                         break;
                                     }
                                     c cVar3 = (c) arrayDeque.pop();
-                                    f a13 = o0.a(cVar3.f, cVar3.g, map2);
+                                    f a13 = p0.a(cVar3.f, cVar3.g, map2);
                                     if (a13 != null && a13.m == 3) {
                                         cVar = cVar3;
                                         break;
@@ -281,25 +281,25 @@ public final class c {
                                         if (cVar.b(0).b != null) {
                                             String str5 = cVar.b(0).b;
                                             String str6 = l0.a;
-                                            f a14 = o0.a(cVar.f, cVar.g, map2);
+                                            f a14 = p0.a(cVar.f, cVar.g, map2);
                                             int i22 = a14 != null ? a14.n : -1;
-                                            if (i22 == -1 && (a10 = o0.a(cVar2.f, cVar2.g, map2)) != null) {
+                                            if (i22 == -1 && (a10 = p0.a(cVar2.f, cVar2.g, map2)) != null) {
                                                 i22 = a10.n;
                                             }
                                             spannableStringBuilder.setSpan(new g2.f(str5, i22), intValue, intValue2, 33);
                                             if (a11.q == 1) {
-                                                ha.a(spannableStringBuilder, new g2.e(), intValue, intValue2);
+                                                ia.a(spannableStringBuilder, new g2.e(), intValue, intValue2);
                                             }
                                             i11 = a11.j;
                                             float f11 = 100.0f;
                                             if (i11 == 1) {
                                                 it = it2;
                                                 f10 = 100.0f;
-                                                ha.a(spannableStringBuilder, new AbsoluteSizeSpan((int) a11.k, true), intValue, intValue2);
+                                                ia.a(spannableStringBuilder, new AbsoluteSizeSpan((int) a11.k, true), intValue, intValue2);
                                             } else if (i11 == 2) {
                                                 it = it2;
                                                 f10 = 100.0f;
-                                                ha.a(spannableStringBuilder, new RelativeSizeSpan(a11.k), intValue, intValue2);
+                                                ia.a(spannableStringBuilder, new RelativeSizeSpan(a11.k), intValue, intValue2);
                                             } else if (i11 != 3) {
                                                 it = it2;
                                                 f10 = 100.0f;

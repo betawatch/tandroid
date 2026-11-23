@@ -5,22 +5,22 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u6 implements TextView.OnEditorActionListener {
     public final /* synthetic */ t6 a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ gj c;
+    public final /* synthetic */ fj c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ org.telegram.ui.ActionBar.t1[] e;
     public final /* synthetic */ View f;
     public final /* synthetic */ x6 g;
 
-    public u6(x6 x6Var, t6 t6Var, int i7, gj gjVar, boolean z10, org.telegram.ui.ActionBar.t1[] t1VarArr, View view) {
+    public u6(x6 x6Var, t6 t6Var, int i7, fj fjVar, boolean z10, org.telegram.ui.ActionBar.t1[] t1VarArr, View view) {
         this.g = x6Var;
         this.a = t6Var;
         this.b = i7;
-        this.c = gjVar;
+        this.c = fjVar;
         this.d = z10;
         this.e = t1VarArr;
         this.f = view;
@@ -39,7 +39,7 @@ public final class u6 implements TextView.OnEditorActionListener {
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         CharSequence[] charSequenceArr = {t6Var.getText()};
         x6 x6Var = this.g;
-        tL_textWithEntities.entities = si.d0(x6Var.a).Y(charSequenceArr, true, true);
+        tL_textWithEntities.entities = ri.d0(x6Var.a).Y(charSequenceArr, true, true);
         CharSequence charSequence = charSequenceArr[0];
         tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
         x6Var.a(this.c, tL_textWithEntities, this.d);

@@ -1,35 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class nm0 extends jg.h0 {
-    public final /* synthetic */ org.telegram.ui.cx J0;
-    public final /* synthetic */ Context K0;
-    public final /* synthetic */ org.telegram.ui.kw L0;
+public final class nm0 extends v4.l {
+    public final /* synthetic */ org.telegram.ui.jw F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nm0(org.telegram.ui.kw kwVar, Context context, org.telegram.ui.cx cxVar, int i7, int i10, v4.k kVar, boolean z10, org.telegram.ui.cx cxVar2, Context context2) {
-        super(context, cxVar, i7, i10, kVar, z10);
-        this.L0 = kwVar;
-        this.J0 = cxVar2;
-        this.K0 = context2;
+    public nm0(org.telegram.ui.jw jwVar) {
+        this.F = jwVar;
     }
 
-    @Override // v4.i0
-    public final void f() {
-        di.b1 b1Var;
-        int i7 = this.C0;
-        super.f();
-        org.telegram.ui.kw kwVar = this.L0;
-        if (!kwVar.L0 && (b1Var = kwVar.b0) != null) {
-            b1Var.v0(0);
-            kwVar.L0 = true;
-        }
-        if (b() != 0 || i7 == 0 || this.E0 > 0) {
-            return;
-        }
-        kwVar.c0.e(false, false);
+    @Override // v4.l
+    public final void P(v4.f1 f1Var) {
+        this.F.invalidate();
     }
 }

@@ -1,11 +1,15 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public abstract class u0 extends e1 {
-    public abstract n6.c[] f(l0 l0Var);
+public final class u0 {
+    public final d1 a;
+    public final int b;
+    public final com.google.android.gms.common.api.j c;
 
-    public abstract boolean g(l0 l0Var);
-
-    public abstract int h(l0 l0Var);
+    public u0(d1 d1Var, int i7, com.google.android.gms.common.api.j jVar) {
+        this.a = d1Var;
+        this.b = i7;
+        this.c = jVar;
+    }
 }

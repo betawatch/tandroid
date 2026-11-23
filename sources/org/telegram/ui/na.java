@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na implements org.telegram.messenger.or {
+public final /* synthetic */ class na implements org.telegram.messenger.nr {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class na implements org.telegram.messenger.or {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.nr
     public final void a(int i7) {
         qq0 qq0Var;
         int i10 = this.a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class na implements org.telegram.messenger.or {
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
                 if (photoViewer.E != null && (qq0Var = photoViewer.f0) != null && i7 > 0) {
-                    org.telegram.ui.Components.lc.F(qq0Var, true).j();
+                    org.telegram.ui.Components.kc.F(qq0Var, true).j();
                     break;
                 }
                 break;
@@ -46,12 +46,12 @@ public final /* synthetic */ class na implements org.telegram.messenger.or {
                     break;
                 }
             default:
-                y91 y91Var = ((e91) obj).a;
+                w91 w91Var = ((c91) obj).a;
                 if (i7 != 0) {
-                    y91Var.finishFragment();
+                    w91Var.finishFragment();
                     break;
                 } else {
-                    y91Var.S0(false);
+                    w91Var.S0(false);
                     break;
                 }
         }

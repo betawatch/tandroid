@@ -2,129 +2,117 @@ package org.telegram.messenger;
 
 import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tn implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ TLObject g;
+public final /* synthetic */ class tn implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ tn(c1 c1Var, Object obj, Object obj2, Object obj3, Object obj4, TLObject tLObject, int i7) {
-        this.a = i7;
-        this.b = c1Var;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-        this.g = tLObject;
+    public /* synthetic */ tn(mp mpVar, long j3, int i7, int i10, long j10, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, org.telegram.ui.vf vfVar) {
+        this.h = mpVar;
+        this.c = j3;
+        this.b = i7;
+        this.e = i10;
+        this.d = j10;
+        this.n = tL_messages_affectedHistory;
+        this.f = z10;
+        this.r = vfVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0091, code lost:
+    
+        if (0 == 0) goto L22;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
         switch (this.a) {
             case 0:
-                np npVar = (np) this.b;
-                Context context = (Context) this.c;
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
-                mr mrVar = (mr) this.e;
-                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.f;
-                TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) this.g;
-                npVar.getClass();
-                if (tL_error != null) {
-                    g0.g3(new xm(npVar, mrVar, context, t1Var, tL_error, g2Var, tL_channels_convertToGigagroup, 1));
-                    break;
-                } else {
-                    if (context != null) {
-                        g0.g3(new wm(1, context, t1Var));
+                final mp mpVar = (mp) this.h;
+                final long j3 = this.c;
+                final int i7 = this.b;
+                final int i10 = this.e;
+                final TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) this.n;
+                final org.telegram.ui.vf vfVar = (org.telegram.ui.vf) this.r;
+                tr messagesStorage = mpVar.getMessagesStorage();
+                messagesStorage.getClass();
+                final ArrayList arrayList = new ArrayList();
+                SQLiteCursor sQLiteCursor = null;
+                try {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = messagesStorage.b;
+                        Locale locale = Locale.US;
+                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT mid FROM messages_v2 WHERE uid = " + j3 + " AND date >= " + i7 + " AND date <= " + i10, new Object[0]);
+                        while (sQLiteCursor.next()) {
+                            try {
+                                arrayList.add(Integer.valueOf(sQLiteCursor.intValue(0)));
+                            } catch (Exception e10) {
+                                messagesStorage.o(e10, true);
+                            }
+                        }
+                        sQLiteCursor.dispose();
+                    } catch (Exception e11) {
+                        messagesStorage.o(e11, true);
+                        break;
                     }
-                    npVar.V3((TLRPC.Updates) tLObject, false);
-                    g0.g3(new a(mrVar, 27));
-                    break;
-                }
-            default:
-                final a10 a10Var = (a10) this.b;
-                final TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-                final String str = (String) this.d;
-                final y00 y00Var = (y00) this.e;
-                final bi.c4 c4Var = (bi.c4) this.f;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.g;
-                a10Var.getClass();
-                if (!(tLObject instanceof TLRPC.TL_messages_translateResult)) {
-                    final int i7 = 1;
-                    g0.g3(new Runnable() { // from class: org.telegram.messenger.p00
+                    sQLiteCursor.dispose();
+                    mpVar.getMessagesStorage().P0(j3, arrayList, false, true, 0, 0);
+                    mpVar.getMessagesStorage().R1(j3, 0L, arrayList, null);
+                    final long j10 = this.d;
+                    final boolean z10 = this.f;
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.wn
                         @Override // java.lang.Runnable
                         public final void run() {
-                            switch (i7) {
-                                case 0:
-                                    a10 a10Var2 = a10Var;
-                                    a10Var2.getClass();
-                                    TL_stories.StoryItem storyItem2 = storyItem;
-                                    storyItem2.translatedLng = str;
-                                    storyItem2.translatedText = null;
-                                    a10Var2.getMessagesController().R1().k.h(storyItem2.dialogId, storyItem2);
-                                    a10Var2.K.remove(y00Var);
-                                    c4Var.run();
-                                    break;
-                                default:
-                                    a10 a10Var3 = a10Var;
-                                    a10Var3.getClass();
-                                    TL_stories.StoryItem storyItem3 = storyItem;
-                                    storyItem3.translatedLng = str;
-                                    storyItem3.translatedText = null;
-                                    a10Var3.getMessagesController().R1().k.h(storyItem3.dialogId, storyItem3);
-                                    a10Var3.K.remove(y00Var);
-                                    c4Var.run();
-                                    break;
+                            mp mpVar2 = mp.this;
+                            ks notificationCenter = mpVar2.getNotificationCenter();
+                            long j11 = j10;
+                            notificationCenter.k(ks.w, arrayList, Long.valueOf(j11), Boolean.FALSE);
+                            int i11 = tL_messages_affectedHistory.offset;
+                            org.telegram.ui.vf vfVar2 = vfVar;
+                            if (i11 > 0) {
+                                mpVar2.d0(j3, j11, i7, i10, z10, vfVar2);
+                            } else {
+                                vfVar2.run();
                             }
                         }
                     });
-                    break;
-                } else {
-                    ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
-                    if (arrayList.size() > 0) {
-                        g0.g3(new xm(a10Var, storyItem, str, tL_textWithEntities, arrayList.get(0), y00Var, c4Var, 4));
-                        break;
-                    } else {
-                        final int i10 = 0;
-                        g0.g3(new Runnable() { // from class: org.telegram.messenger.p00
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i10) {
-                                    case 0:
-                                        a10 a10Var2 = a10Var;
-                                        a10Var2.getClass();
-                                        TL_stories.StoryItem storyItem2 = storyItem;
-                                        storyItem2.translatedLng = str;
-                                        storyItem2.translatedText = null;
-                                        a10Var2.getMessagesController().R1().k.h(storyItem2.dialogId, storyItem2);
-                                        a10Var2.K.remove(y00Var);
-                                        c4Var.run();
-                                        break;
-                                    default:
-                                        a10 a10Var3 = a10Var;
-                                        a10Var3.getClass();
-                                        TL_stories.StoryItem storyItem3 = storyItem;
-                                        storyItem3.translatedLng = str;
-                                        storyItem3.translatedText = null;
-                                        a10Var3.getMessagesController().R1().k.h(storyItem3.dialogId, storyItem3);
-                                        a10Var3.K.remove(y00Var);
-                                        c4Var.run();
-                                        break;
-                                }
-                            }
-                        });
-                        break;
+                    return;
+                } catch (Throwable th2) {
+                    if (0 != 0) {
+                        sQLiteCursor.dispose();
                     }
+                    throw th2;
                 }
+            default:
+                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
+                return;
         }
+    }
+
+    public /* synthetic */ tn(TLObject tLObject, int i7, long j3, long j10, int i10, boolean z10, Context context, String str) {
+        this.h = tLObject;
+        this.b = i7;
+        this.c = j3;
+        this.d = j10;
+        this.e = i10;
+        this.f = z10;
+        this.n = context;
+        this.r = str;
     }
 }

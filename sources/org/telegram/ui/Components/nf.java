@@ -4,16 +4,16 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nf implements bi.a1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rf b;
+    public final /* synthetic */ qf b;
     public final /* synthetic */ FrameLayout c;
 
-    public /* synthetic */ nf(rf rfVar, FrameLayout frameLayout, int i7) {
+    public /* synthetic */ nf(qf qfVar, FrameLayout frameLayout, int i7) {
         this.a = i7;
-        this.b = rfVar;
+        this.b = qfVar;
         this.c = frameLayout;
     }
 
@@ -21,15 +21,15 @@ public final /* synthetic */ class nf implements bi.a1 {
     public final void a(Canvas canvas) {
         switch (this.a) {
             case 0:
-                rf rfVar = this.b;
-                rfVar.getClass();
+                qf qfVar = this.b;
+                qfVar.getClass();
                 this.c.getLocationInWindow(new int[2]);
-                ChatActivityEnterView chatActivityEnterView = rfVar.a;
-                du0 du0Var = chatActivityEnterView.c2;
-                du0Var.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView = qfVar.a;
+                cu0 cu0Var = chatActivityEnterView.c2;
+                cu0Var.getLocationInWindow(new int[2]);
                 canvas.save();
                 canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
-                Drawable backgroundImage = du0Var.getBackgroundImage();
+                Drawable backgroundImage = cu0Var.getBackgroundImage();
                 if (backgroundImage != null) {
                     backgroundImage.draw(canvas);
                 }
@@ -42,15 +42,15 @@ public final /* synthetic */ class nf implements bi.a1 {
                 canvas.restore();
                 break;
             default:
-                rf rfVar2 = this.b;
-                rfVar2.getClass();
+                qf qfVar2 = this.b;
+                qfVar2.getClass();
                 this.c.getLocationInWindow(new int[2]);
-                ChatActivityEnterView chatActivityEnterView2 = rfVar2.a;
-                du0 du0Var2 = chatActivityEnterView2.c2;
-                du0Var2.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView2 = qfVar2.a;
+                cu0 cu0Var2 = chatActivityEnterView2.c2;
+                cu0Var2.getLocationInWindow(new int[2]);
                 canvas.save();
                 canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
-                Drawable backgroundImage2 = du0Var2.getBackgroundImage();
+                Drawable backgroundImage2 = cu0Var2.getBackgroundImage();
                 if (backgroundImage2 != null) {
                     backgroundImage2.draw(canvas);
                 }

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o0 extends di.z5 {
     public final Path H0;
@@ -14,8 +14,8 @@ public final class o0 extends di.z5 {
     public final /* synthetic */ t0 K0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o0(t0 t0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, a3.f fVar, o oVar, o oVar2, o oVar3, o oVar4, o oVar5, o oVar6, int i7) {
-        super(context, h6Var, fVar, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
+    public o0(t0 t0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, a3.f fVar, o oVar, o oVar2, o oVar3, o oVar4, o oVar5, o oVar6, int i7) {
+        super(context, i6Var, fVar, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
         this.K0 = t0Var;
         this.J0 = i7;
         this.H0 = new Path();

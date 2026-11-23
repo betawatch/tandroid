@@ -1,63 +1,33 @@
 package hi;
 
-import org.telegram.ui.wv0;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class la extends na {
-    public final /* synthetic */ int g;
-    public final /* synthetic */ Object h;
+public final class la extends CharacterStyle {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ la(Object obj, int i7) {
-        this.g = i7;
-        this.h = obj;
+    public /* synthetic */ la(int i7) {
+        this.a = i7;
     }
 
-    @Override // hi.na
-    public final void e() {
-        switch (this.g) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
             case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.R = false;
-                wv0Var.invalidate();
+                textPaint.setAlpha(128);
                 break;
             case 1:
-                fi.z3 z10 = ((fi.f9) this.h).z();
-                if (z10 != null) {
-                    z10.k0(true);
-                    break;
-                }
+                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.T2.getColor());
                 break;
-            default:
-                org.telegram.ui.Components.q9 q9Var = (org.telegram.ui.Components.q9) this.h;
-                q9Var.post(new l(q9Var, 21));
+            case 2:
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.o2.linkColor);
                 break;
         }
     }
 
-    @Override // hi.na
-    public final void f(boolean z10) {
-        switch (this.g) {
-            case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.R = true;
-                wv0Var.invalidate();
-                break;
-            case 1:
-                fi.z3 z11 = ((fi.f9) this.h).z();
-                if (z11 != null) {
-                    z11.k0(false);
-                }
-                fi.c3 c3Var = this.f;
-                if (c3Var != null) {
-                    c3Var.setTranslationX(0.0f);
-                    this.f.setTranslationY(0.0f);
-                    break;
-                }
-                break;
-            default:
-                ((org.telegram.ui.Components.q9) this.h).setVisibility(0);
-                break;
-        }
+    private final void a(TextPaint textPaint) {
     }
 }

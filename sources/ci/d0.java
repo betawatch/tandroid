@@ -13,9 +13,9 @@ import android.view.animation.AnimationUtils;
 import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Consumer {
     public final /* synthetic */ j0 a;
@@ -197,7 +197,7 @@ public final /* synthetic */ class d0 implements Consumer {
         mVar2.getLocationOnScreen(j0Var.k0);
         float scaleX = (r0[0] - r3[0]) / mVar2.getScaleX();
         rectF3.set((j0Var.b0 / scaleY) + scaleX, (j0Var.c0 / scaleY) + f25, ((rVar.getWidth() - j0Var.b0) / scaleY) + scaleX, ((rVar.getHeight() - j0Var.d0) / scaleY) + f25);
-        paint6.setAlpha(ls.e4);
+        paint6.setAlpha(ks.e4);
         canvas3.drawRoundRect(rectF3, rectF3.height() / 2.0f, rectF3.height() / 2.0f, paint6);
         matrix.setScale(1.0f, L - f25);
         matrix.postTranslate(0.0f, f25);

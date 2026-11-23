@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final j6.b j = new j6.b("MediaRouterProxy", null);
@@ -19,7 +19,7 @@ public final class p extends g {
     public final s f;
     public final boolean i;
 
-    public p(Context context, s4.x xVar, g6.b bVar, j6.s sVar) {
+    public p(Context context, s4.x xVar, g6.b bVar, j6.t tVar) {
         super("com.google.android.gms.cast.framework.internal.IMediaRouter", 0);
         this.e = new HashMap();
         this.c = xVar;
@@ -39,7 +39,7 @@ public final class p extends g {
         if (!isEmpty) {
             a2.a(a1.b0);
         }
-        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new wf.b(11, this, bVar));
+        tVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new wf.b(11, this, bVar));
     }
 
     public final void m1(android.support.v4.media.session.a0 a0Var) {
@@ -47,13 +47,13 @@ public final class p extends g {
         s4.x.b();
         s4.e c10 = s4.x.c();
         c10.D = a0Var;
-        md0 md0Var = a0Var != null ? new md0(c10, a0Var) : null;
-        md0 md0Var2 = c10.C;
-        if (md0Var2 != null) {
-            md0Var2.n();
+        i61 i61Var = a0Var != null ? new i61(c10, a0Var) : null;
+        i61 i61Var2 = c10.C;
+        if (i61Var2 != null) {
+            i61Var2.q();
         }
-        c10.C = md0Var;
-        if (md0Var != null) {
+        c10.C = i61Var;
+        if (i61Var != null) {
             c10.l();
         }
     }

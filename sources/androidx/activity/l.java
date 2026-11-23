@@ -21,7 +21,7 @@ import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import androidx.lifecycle.u0;
-import c8.ke;
+import c8.le;
 import com.google.android.gms.internal.cast.b0;
 import e0.k0;
 import java.util.ArrayList;
@@ -31,9 +31,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public final CopyOnWriteArrayList E;
@@ -43,7 +43,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public boolean I;
     public boolean J;
     public final b0 b;
-    public final md0 c;
+    public final i61 c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -58,7 +58,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public l() {
         b0 b0Var = new b0();
         this.b = b0Var;
-        this.c = new md0(new a3.f(this, 9));
+        this.c = new i61(new a3.f(this, 8));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);
@@ -404,8 +404,8 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (ke.b()) {
-                ke.a("reportFullyDrawn() for ComponentActivity");
+            if (le.b()) {
+                le.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;

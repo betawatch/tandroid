@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.content.Context;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bk extends org.telegram.ui.Components.em0 {
     public final /* synthetic */ bn J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bk(bn bnVar, Context context, bn bnVar2, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, bnVar2, i7, j3, h6Var);
+    public bk(bn bnVar, Context context, bn bnVar2, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, bnVar2, i7, j3, i6Var);
         this.J = bnVar;
     }
 
@@ -36,7 +36,7 @@ public final class bk extends org.telegram.ui.Components.em0 {
         bnVar.F3 = p0Var;
         bnVar.G3 = p0Var != null;
         if (p0Var == null) {
-            org.telegram.messenger.si mediaDataController = bnVar.getMediaDataController();
+            org.telegram.messenger.ri mediaDataController = bnVar.getMediaDataController();
             mediaDataController.Z0.clear();
             mediaDataController.a1.clear();
             mediaDataController.b1.clear();
@@ -46,7 +46,7 @@ public final class bk extends org.telegram.ui.Components.em0 {
         bnVar.qd();
         bnVar.dd();
         bnVar.I3 = bnVar.k0.getSearchField().getText().toString();
-        org.telegram.messenger.si mediaDataController2 = bnVar.getMediaDataController();
+        org.telegram.messenger.ri mediaDataController2 = bnVar.getMediaDataController();
         String str = bnVar.I3;
         long j3 = bnVar.l6;
         long j10 = bnVar.d7;

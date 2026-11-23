@@ -3,113 +3,89 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class fo0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ap0 b;
+public final class fo0 extends wt {
+    public boolean W;
+    public int a0;
+    public int b0;
+    public ValueAnimator c0;
+    public final /* synthetic */ zo0 d0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fo0(ap0 ap0Var, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = ap0Var;
+    public fo0(zo0 zo0Var, Context context, mo0 mo0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, mo0Var, null, 1, true, i6Var);
+        this.d0 = zo0Var;
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void c(float f10) {
+        this.d0.a1();
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                ap0 ap0Var = this.b;
-                ap0Var.S2.setBounds(0, (int) ap0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                ap0Var.S2.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, ap0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.W) {
+            mt editText = this.d0.o1.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.b0 - editText.getScrollY()) + (this.a0 - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new e60(editText, 19));
+            ValueAnimator valueAnimator = this.c0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.c0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(kr.f);
+            ofFloat.start();
+            this.W = false;
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void f() {
+        super.f();
+        qy emojiView = getEmojiView();
+        zo0 zo0Var = this.d0;
+        if (emojiView != null) {
+            emojiView.x0 = false;
+            emojiView.y2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(zo0Var.C2.d);
+        }
+        FrameLayout frameLayout = zo0Var.Y1;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
+        }
+        eo0 eo0Var = zo0Var.n1;
+        if (eo0Var != null) {
+            eo0Var.bringToFront();
+        }
+        eo0 eo0Var2 = zo0Var.q1;
+        if (eo0Var2 != null) {
+            eo0Var2.bringToFront();
         }
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                ap0 ap0Var = this.b;
-                fo0 fo0Var = ap0Var.n1;
-                float f10 = ap0Var.r2;
-                if (f10 != 0.0f && f10 != fo0Var.getTop() + ap0Var.r2) {
-                    ValueAnimator valueAnimator = ap0Var.s2;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = ap0Var.r2 - (fo0Var.getTop() + ap0Var.q2);
-                    ap0Var.q2 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    ap0Var.s2 = ofFloat;
-                    ofFloat.addUpdateListener(new h60(this, 18));
-                    ap0Var.s2.setInterpolator(nr.f);
-                    ap0Var.s2.setDuration(200L);
-                    ap0Var.s2.start();
-                    ap0Var.r2 = 0.0f;
-                }
-                ap0Var.O1[1].setTranslationY((-(fo0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))) + ap0Var.q2 + ap0Var.p2 + ((1.0f - getAlpha()) * (fo0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // org.telegram.ui.Components.wt
+    public final void q(int i7, int i10) {
+        zo0 zo0Var = this.d0;
+        eo0 eo0Var = zo0Var.n1;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.W = false;
+        } else {
+            this.W = true;
+            this.a0 = getEditText().getMeasuredHeight();
+            this.b0 = getEditText().getScrollY();
+            invalidate();
         }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.b.Q1.m(), "AccDescrShareInChats", new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i7);
-                if (i7 != 0) {
-                    this.b.O1[1].setTranslationY(0.0f);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
-        }
+        zo0Var.r2 = eo0Var.getTop() + zo0Var.q2;
+        eo0Var.invalidate();
     }
 }

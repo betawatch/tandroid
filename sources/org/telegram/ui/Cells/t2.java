@@ -7,14 +7,14 @@ import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.k41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class t2 {
     public final u2 a;
@@ -29,48 +29,48 @@ public final class t2 {
         this.a = u2Var;
     }
 
-    public static void a(t2 t2Var, int i7, gj gjVar, TLRPC.Chat chat) {
+    public static void a(t2 t2Var, int i7, fj fjVar, TLRPC.Chat chat) {
         long j3;
         boolean z10;
         int i10;
         t2Var.getClass();
-        int e12 = (gjVar == null || chat == null) ? 0 : gjVar.e1();
+        int e12 = (fjVar == null || chat == null) ? 0 : fjVar.e1();
         if (t2Var.b != e12 || t2Var.e) {
             t2Var.f = null;
             t2Var.c = 0;
             t2Var.d = false;
             t2Var.e = false;
             t2Var.b = e12;
-            TextPaint textPaint = org.telegram.ui.ActionBar.m6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.n6.F0[0];
             if (chat != null) {
-                ArrayList l10 = np.u1(i7).t7.l(chat.id);
+                ArrayList l10 = mp.u1(i7).t7.l(chat.id);
                 boolean z11 = true;
                 if (l10 == null || l10.isEmpty()) {
-                    if (np.u1(i7).t7.e(chat.id)) {
-                        t2Var.g = hd.N0(org.telegram.messenger.v3.p0(chat) ? 2131747997 : 2131747944, null);
+                    if (mp.u1(i7).t7.e(chat.id)) {
+                        t2Var.g = gd.N0(org.telegram.messenger.v3.p0(chat) ? 2131747997 : 2131747944, null);
                         return;
                     }
-                    np.u1(i7).t7.n(0, chat.id, true);
-                    t2Var.g = hd.N0(2131748586, null);
+                    mp.u1(i7).t7.n(0, chat.id, true);
+                    t2Var.g = gd.N0(2131748586, null);
                     t2Var.e = true;
                     return;
                 }
                 ArrayList arrayList = new ArrayList(l10);
                 Collections.sort(arrayList, Comparator$-CC.comparingInt(new bg.d(14)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                if (gjVar == null || org.telegram.messenger.v3.p0(chat)) {
+                if (fjVar == null || org.telegram.messenger.v3.p0(chat)) {
                     j3 = 0;
                     z10 = false;
                     i10 = 0;
                 } else {
-                    j3 = gj.b2(i7, gjVar.k, true, false);
-                    TLRPC.TL_forumTopic f10 = np.u1(i7).t7.f(chat.id, j3);
+                    j3 = fj.b2(i7, fjVar.k, true, false);
+                    TLRPC.TL_forumTopic f10 = mp.u1(i7).t7.f(chat.id, j3);
                     if (f10 != null) {
                         CharSequence k10 = qg.c.k(f10, textPaint, null);
                         spannableStringBuilder.append(k10);
                         i10 = f10.unread_count > 0 ? k10.length() : 0;
                         t2Var.c = k10.length();
-                        if (gjVar.P3()) {
+                        if (fjVar.P3()) {
                             t2Var.d = false;
                         } else {
                             t2Var.d = f10.unread_count > 0;
@@ -98,7 +98,7 @@ public final class t2 {
                         f5Var.h = false;
                         f5Var.c(o4);
                         t2Var.f.put(Long.valueOf(o4), f5Var);
-                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.n5.l(k10.t0, o4));
+                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.n5.l(i10.t0, o4));
                         valueOf.insert(0, (CharSequence) "  ");
                         valueOf.setSpan(f5Var, 0, 1, 33);
                         spannableStringBuilder.append((CharSequence) valueOf);
@@ -122,12 +122,12 @@ public final class t2 {
                 }
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
-                    int i14 = org.telegram.ui.ActionBar.m6.X8;
-                    l41 l41Var = new l41();
-                    l41Var.a = o10;
-                    l41Var.c = i14;
-                    l41Var.b = org.telegram.ui.ActionBar.m6.v0(i14);
-                    spannableStringBuilder.setSpan(l41Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    int i14 = org.telegram.ui.ActionBar.n6.X8;
+                    k41 k41Var = new k41();
+                    k41Var.a = o10;
+                    k41Var.c = i14;
+                    k41Var.b = org.telegram.ui.ActionBar.n6.v0(i14);
+                    spannableStringBuilder.setSpan(k41Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 t2Var.g = spannableStringBuilder;
             }

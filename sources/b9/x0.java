@@ -1,9 +1,60 @@
 package b9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import a8.k8;
+import com.google.android.gms.common.api.Status;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class x0 extends a {
+    public g0 b;
+
     @Override // b9.a, b9.d0
-    public final void H() {
+    public final void O(t0 t0Var) {
+        String str;
+        int i7 = t0Var.a;
+        switch (i7) {
+            case 4000:
+                str = "TARGET_NODE_NOT_CONNECTED";
+                break;
+            case 4001:
+                str = "DUPLICATE_LISTENER";
+                break;
+            case 4002:
+                str = "UNKNOWN_LISTENER";
+                break;
+            case 4003:
+                str = "DATA_ITEM_TOO_LARGE";
+                break;
+            case 4004:
+                str = "INVALID_TARGET_NODE";
+                break;
+            case 4005:
+                str = "ASSET_UNAVAILABLE";
+                break;
+            case 4006:
+                str = "DUPLICATE_CAPABILITY";
+                break;
+            case 4007:
+                str = "UNKNOWN_CAPABILITY";
+                break;
+            case 4008:
+                str = "WIFI_CREDENTIAL_SYNC_NO_CREDENTIAL_FETCHED";
+                break;
+            case 4009:
+                str = "UNSUPPORTED_BY_TARGET";
+                break;
+            case 4010:
+                str = "ACCOUNT_KEY_CREATION_FAILED";
+                break;
+            default:
+                str = k8.a(i7);
+                break;
+        }
+        h0 h0Var = new h0(new Status(i7, str, null, null), t0Var.b);
+        g0 g0Var = this.b;
+        if (g0Var != null) {
+            g0Var.a(h0Var);
+            this.b = null;
+        }
     }
 }

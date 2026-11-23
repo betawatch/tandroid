@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cs implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class cs implements View.OnClickListener {
                 ns nsVar3 = this.b;
                 ls lsVar = nsVar3.l;
                 if (lsVar != null) {
-                    lsVar.K();
+                    lsVar.J();
                 }
                 nsVar3.o();
                 break;

@@ -25,21 +25,21 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import c8.l9;
+import c8.m9;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.pc;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cb0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.ou0;
+import org.telegram.ui.Components.za0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class v0 extends FrameLayout implements b6 {
+public abstract class v0 extends FrameLayout implements c6 {
     public final Paint E;
     public final Paint F;
     public final Paint G;
@@ -61,13 +61,13 @@ public abstract class v0 extends FrameLayout implements b6 {
     public boolean W;
     public float a;
     public boolean a0;
-    public r10 b;
+    public p10 b;
     public final oi.c2 b0;
     public final r0 c;
     public PorterDuffColorFilter c0;
     public final r0 d;
     public float d0;
-    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.c6 e;
     public float e0;
     public Bitmap f;
     public long f0;
@@ -78,13 +78,13 @@ public abstract class v0 extends FrameLayout implements b6 {
     public float s;
     public boolean w;
     public boolean x;
-    public final h6 y;
+    public final i6 y;
 
-    public v0(Context context, h6 h6Var) {
+    public v0(Context context, i6 i6Var) {
         super(context);
         this.a = 0.5f;
-        nr nrVar = nr.h;
-        this.e = new org.telegram.ui.Components.d6(1.0f, this, 0L, 320L, nrVar);
+        kr krVar = kr.h;
+        this.e = new org.telegram.ui.Components.c6(1.0f, this, 0L, 320L, krVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -104,45 +104,45 @@ public abstract class v0 extends FrameLayout implements b6 {
         this.O = true;
         this.a0 = false;
         this.b0 = new oi.c2(this, 4);
-        this.y = h6Var;
+        this.y = i6Var;
         setWillNotDraw(false);
         r0 r0Var = new r0(this, 0);
         this.c = r0Var;
         r0Var.setCallback(this);
         r0Var.x(org.telegram.messenger.g0.o());
-        r0Var.n(0.3f, 165L, nrVar);
+        r0Var.n(0.3f, 165L, krVar);
         r0Var.w(org.telegram.messenger.g0.N(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = r0Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        r0Var.b = hd.a0 ? 5 : 3;
+        r0Var.b = gd.a0 ? 5 : 3;
         r0 r0Var2 = new r0(this, 1);
         this.d = r0Var2;
         r0Var2.setCallback(this);
         r0Var2.x(org.telegram.messenger.g0.o());
-        r0Var2.n(0.3f, 165L, nrVar);
+        r0Var2.n(0.3f, 165L, krVar);
         r0Var2.w(org.telegram.messenger.g0.N(14.0f));
         TextPaint textPaint2 = r0Var2.a;
         textPaint2.setStyle(style);
         textPaint2.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        r0Var2.b = hd.a0 ? 3 : 5;
+        r0Var2.b = gd.a0 ? 3 : 5;
         paint.setColor(0);
         paint.setShadowLayer(org.telegram.messenger.g0.N(1.33f), 0.0f, org.telegram.messenger.g0.N(0.33f), 1056964608);
         ColorMatrix colorMatrix = new ColorMatrix();
         org.telegram.messenger.g0.i(colorMatrix, -0.4f);
         org.telegram.messenger.g0.h(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        int w02 = m6.w0(m6.G8, h6Var);
+        int w02 = n6.w0(n6.G8, i6Var);
         this.V = w02;
         paint2.setColor(w02);
         boolean z10 = org.telegram.messenger.g0.B(paint2.getColor()) <= 0.721f;
         this.M = z10;
         r0Var.u(z10 ? -1 : -16777216);
         r0Var2.u(this.M ? -1 : -16777216);
-        paint4.setColor(m6.r1(0.025f, -16777216));
-        paint3.setColor(m6.r1(0.35f, -1));
-        paint6.setColor(m6.r1(0.2f, -1));
+        paint4.setColor(n6.r1(0.025f, -16777216));
+        paint3.setColor(n6.r1(0.35f, -1));
+        paint6.setColor(n6.r1(0.2f, -1));
     }
 
     public final void a(Canvas canvas) {
@@ -197,13 +197,13 @@ public abstract class v0 extends FrameLayout implements b6 {
             valueAnimator.cancel();
             this.U = null;
         }
-        float a10 = l9.a(f10, 0.0f, 1.0f);
+        float a10 = m9.a(f10, 0.0f, 1.0f);
         if (z10) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, a10);
             this.U = ofFloat;
-            ofFloat.addUpdateListener(new hi.j3(this, 10));
+            ofFloat.addUpdateListener(new hi.s3(this, 10));
             this.U.addListener(new s0(this, a10, 0));
-            this.U.setInterpolator(nr.h);
+            this.U.setInterpolator(kr.h);
             this.U.setDuration(220L);
             this.U.start();
         } else {
@@ -213,7 +213,7 @@ public abstract class v0 extends FrameLayout implements b6 {
         u0 u0Var = (u0) this;
         String str2 = u0Var.i0;
         if (str2 == null) {
-            str2 = pu0.a((a10 * 2.8f) + 0.2f) + "x";
+            str2 = ou0.a((a10 * 2.8f) + 0.2f) + "x";
         }
         if (str2 != null) {
             r0 r0Var = this.c;
@@ -223,7 +223,7 @@ public abstract class v0 extends FrameLayout implements b6 {
             }
         }
         if (u0Var.i0 != null) {
-            str = pu0.a((2.8f * a10) + 0.2f) + "x";
+            str = ou0.a((2.8f * a10) + 0.2f) + "x";
         }
         if (str != null) {
             r0 r0Var2 = this.d;
@@ -325,14 +325,14 @@ public abstract class v0 extends FrameLayout implements b6 {
             }
         }
         boolean z11 = this.O;
-        h6 h6Var = this.y;
+        i6 i6Var = this.y;
         if (z11) {
-            Drawable s02 = m6.s0();
+            Drawable s02 = n6.s0();
             if (s02 instanceof ColorDrawable) {
                 w02 = ((ColorDrawable) s02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = s02 instanceof cb0 ? ((cb0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
+                Bitmap bitmap = s02 instanceof za0 ? ((za0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
                 if (bitmap != null) {
                     int i14 = iArr[0];
                     Point point = org.telegram.messenger.g0.q;
@@ -356,12 +356,12 @@ public abstract class v0 extends FrameLayout implements b6 {
                     this.P = linearGradient;
                     this.J.setShader(linearGradient);
                 }
-                w02 = m6.r1(0.25f, m6.w0(m6.d6, h6Var));
+                w02 = n6.r1(0.25f, n6.w0(n6.d6, i6Var));
             }
         } else {
-            w02 = m6.w0(m6.d6, h6Var);
-            if (!m6.I.q()) {
-                w02 = m6.w(w02, m6.r1(0.18f, -16777216));
+            w02 = n6.w0(n6.d6, i6Var);
+            if (!n6.I.q()) {
+                w02 = n6.w(w02, n6.r1(0.18f, -16777216));
             }
         }
         i13 = w02;
@@ -380,7 +380,7 @@ public abstract class v0 extends FrameLayout implements b6 {
             i7 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
         }
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-        boolean z10 = cz.o() >= 2 && qc.e(256);
+        boolean z10 = bz.o() >= 2 && pc.e(256);
         if (this.x && this.f == null && !this.a0 && z10) {
             this.b0.run();
         }
@@ -416,9 +416,9 @@ public abstract class v0 extends FrameLayout implements b6 {
                             i7++;
                         }
                     }
-                    r10 r10Var = this.b;
-                    if (r10Var != null) {
-                        r10Var.a(Float.valueOf(paddingLeft), Boolean.TRUE);
+                    p10 p10Var = this.b;
+                    if (p10Var != null) {
+                        p10Var.a(Float.valueOf(paddingLeft), Boolean.TRUE);
                         return true;
                     }
                 }
@@ -440,9 +440,9 @@ public abstract class v0 extends FrameLayout implements b6 {
             }
             boolean z10 = !this.g0;
             d(false, max);
-            r10 r10Var2 = this.b;
-            if (r10Var2 != null) {
-                r10Var2.a(Float.valueOf(this.a), Boolean.valueOf(z10));
+            p10 p10Var2 = this.b;
+            if (p10Var2 != null) {
+                p10Var2.a(Float.valueOf(this.a), Boolean.valueOf(z10));
             }
         }
         return true;
@@ -470,8 +470,8 @@ public abstract class v0 extends FrameLayout implements b6 {
         invalidate();
     }
 
-    public void setOnValueChange(r10 r10Var) {
-        this.b = r10Var;
+    public void setOnValueChange(p10 p10Var) {
+        this.b = p10Var;
     }
 
     public void setRoundRadiusDp(float f10) {
@@ -489,13 +489,13 @@ public abstract class v0 extends FrameLayout implements b6 {
         this.d.u(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         int w02;
         Paint paint = this.F;
         if (paint != null) {
             try {
-                if (paint.getColor() == this.V && (w02 = m6.w0(m6.G8, this.y)) != this.V) {
+                if (paint.getColor() == this.V && (w02 = n6.w0(n6.G8, this.y)) != this.V) {
                     this.V = w02;
                     paint.setColor(w02);
                     boolean z10 = org.telegram.messenger.g0.B(w02) <= 0.721f;
@@ -523,7 +523,7 @@ public abstract class v0 extends FrameLayout implements b6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

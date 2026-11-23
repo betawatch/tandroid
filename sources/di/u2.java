@@ -2,9 +2,9 @@ package di;
 
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c51;
+import org.telegram.ui.b51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -18,7 +18,7 @@ public final /* synthetic */ class u2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                f6.p2(c51.g0(this.b, true));
+                f6.p2(b51.g0(this.b, true));
                 break;
             default:
                 TLRPC.Chat chat = this.b;

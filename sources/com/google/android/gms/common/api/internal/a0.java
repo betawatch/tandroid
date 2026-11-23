@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a0 extends r8.c {
     public final WeakReference b;
@@ -18,7 +18,7 @@ public final class a0 extends r8.c {
             return;
         }
         y yVar = new y(this, c0Var, c0Var, hVar);
-        e0 e0Var = c0Var.a.e;
-        e0Var.sendMessage(e0Var.obtainMessage(1, yVar));
+        d0 d0Var = c0Var.a.e;
+        d0Var.sendMessage(d0Var.obtainMessage(1, yVar));
     }
 }

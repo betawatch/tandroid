@@ -2,7 +2,7 @@ package m1;
 
 import java.io.File;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y extends kotlin.jvm.internal.k implements rd.l {
     public final /* synthetic */ int b;
@@ -22,7 +22,7 @@ public final class y extends kotlin.jvm.internal.k implements rd.l {
                 Throwable th2 = (Throwable) obj;
                 b0 b0Var = (b0) this.c;
                 if (th2 != null) {
-                    b0Var.h.L(new l0(th2));
+                    b0Var.h.E(new l0(th2));
                 }
                 if (b0Var.j.b != gd.j.a) {
                     ((i0) b0Var.j.getValue()).close();

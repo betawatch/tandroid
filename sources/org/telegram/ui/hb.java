@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class hb implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ View a;
@@ -50,7 +50,7 @@ public final class hb implements ViewTreeObserver.OnPreDrawListener {
         org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
         float y11 = view.getY();
         kVar2 = ((org.telegram.ui.ActionBar.g2) lbVar).actionBar;
-        v0Var.k0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
+        v0Var.m0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
         return true;
     }
 }

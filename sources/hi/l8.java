@@ -1,83 +1,59 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ls;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class l8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ah.n c;
+public final class l8 extends FrameLayout {
+    public final Paint a;
+    public final org.telegram.ui.Components.c6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
+    public final /* synthetic */ o8 d;
 
-    public /* synthetic */ l8(ah.n nVar, ArrayList arrayList, int i7) {
-        this.a = i7;
-        this.c = nVar;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l8(o8 o8Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.d = o8Var;
+        this.c = i6Var;
+        this.a = new Paint(1);
+        this.b = new org.telegram.ui.Components.c6(this, 0L, 350L, kr.h);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i7 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    int size = arrayList.size();
-                    ah.n nVar = this.c;
-                    if (i7 >= size) {
-                        nVar.getClass();
-                        m8 m8Var = (m8) nVar.n;
-                        nVar.h.clear();
-                        nVar.b = null;
-                        nVar.c = false;
-                        m8Var.b.setAllowDrawCursor(true);
-                        a8 a8Var = m8Var.h;
-                        if (a8Var != null) {
-                            a8Var.run();
-                        }
-                        if (m8Var.M) {
-                            m8Var.fullScroll(ls.O1);
-                            m8Var.M = false;
-                            break;
-                        }
-                    } else {
-                        nVar.removeView((View) arrayList.get(i7));
-                        i7++;
-                    }
-                }
-                break;
-            default:
-                int i10 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    int size2 = arrayList2.size();
-                    ah.n nVar2 = this.c;
-                    if (i10 >= size2) {
-                        ArrayList arrayList3 = nVar2.h;
-                        m8 m8Var2 = (m8) nVar2.n;
-                        arrayList3.clear();
-                        nVar2.b = null;
-                        nVar2.c = false;
-                        m8Var2.b.setAllowDrawCursor(true);
-                        a8 a8Var2 = m8Var2.h;
-                        if (a8Var2 != null) {
-                            a8Var2.run();
-                        }
-                        if (m8Var2.M) {
-                            m8Var2.fullScroll(ls.O1);
-                            m8Var2.M = false;
-                            break;
-                        }
-                    } else {
-                        nVar2.removeView((View) arrayList2.get(i10));
-                        i10++;
-                    }
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, this.c);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        o8 o8Var = this.d;
+        float max = Math.max(0.0f, o8Var.J0());
+        boolean z10 = max < ((float) org.telegram.messenger.g0.m);
+        org.telegram.ui.Components.c6 c6Var = this.b;
+        float T1 = org.telegram.messenger.g0.T1(max, 0.0f, c6Var.d(z10));
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(o8Var.u0, T1, getWidth() - o8Var.u0, org.telegram.messenger.g0.L(14.0f) + getHeight());
+        float L = (1.0f - c6Var.c) * org.telegram.messenger.g0.L(14.0f);
+        canvas.drawRoundRect(rectF, L, L, paint);
+        o8Var.r1.setTranslationY(Math.max(org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m, org.telegram.messenger.g0.L(14.0f) + T1));
+        canvas.save();
+        canvas.clipRect(o8Var.u0, org.telegram.messenger.g0.L(14.0f) + org.telegram.messenger.g0.m, getWidth() - o8Var.u0, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float y10 = motionEvent.getY();
+        o8 o8Var = this.d;
+        if (y10 >= o8Var.J0()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        o8Var.dismiss();
+        return true;
     }
 }

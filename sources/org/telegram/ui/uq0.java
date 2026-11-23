@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public interface uq0 {
     boolean A();
@@ -15,7 +15,7 @@ public interface uq0 {
 
     void D();
 
-    wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11);
+    wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11);
 
     void F(boolean z10);
 
@@ -31,7 +31,7 @@ public interface uq0 {
 
     boolean L();
 
-    void M(org.telegram.messenger.f20 f20Var);
+    void M(org.telegram.messenger.d20 d20Var);
 
     boolean N();
 
@@ -49,7 +49,7 @@ public interface uq0 {
 
     boolean U();
 
-    org.telegram.messenger.gj V();
+    org.telegram.messenger.fj V();
 
     void W();
 
@@ -83,9 +83,9 @@ public interface uq0 {
 
     void i();
 
-    org.telegram.messenger.ic j(int i7);
+    org.telegram.messenger.hc j(int i7);
 
-    int k(int i7, org.telegram.messenger.f20 f20Var);
+    int k(int i7, org.telegram.messenger.d20 d20Var);
 
     boolean l();
 
@@ -93,7 +93,7 @@ public interface uq0 {
 
     void n();
 
-    void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11);
+    void o(int i7, org.telegram.messenger.d20 d20Var, boolean z10, int i10, int i11, boolean z11);
 
     boolean p();
 

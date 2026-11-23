@@ -1,6 +1,6 @@
 package e7;
 
-import a8.l8;
+import a8.m8;
 import android.app.PendingIntent;
 import android.os.BadParcelableException;
 import android.os.Binder;
@@ -15,7 +15,7 @@ import j$.util.Objects;
 import o7.d;
 import q7.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final class b extends Binder implements IInterface {
                 if (dataAvail > 0) {
                     throw new BadParcelableException(c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                l8.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
+                m8.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
             case 1:
                 if (i7 > 16777215) {
@@ -98,7 +98,7 @@ public final class b extends Binder implements IInterface {
                 if (dataAvail2 > 0) {
                     throw new BadParcelableException(c.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
-                l8.a(createFromParcel2, null, (TaskCompletionSource) this.b);
+                m8.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;
             case 2:
                 if (i7 > 16777215) {
@@ -115,7 +115,7 @@ public final class b extends Binder implements IInterface {
                 String readString = parcel.readString();
                 int dataAvail3 = parcel.dataAvail();
                 if (dataAvail3 <= 0) {
-                    l8.a(createFromParcel3, readString, (TaskCompletionSource) this.b);
+                    m8.a(createFromParcel3, readString, (TaskCompletionSource) this.b);
                     return true;
                 }
                 StringBuilder sb2 = new StringBuilder(String.valueOf(dataAvail3).length() + 45);

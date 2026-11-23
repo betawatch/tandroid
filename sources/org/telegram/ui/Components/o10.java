@@ -1,50 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o10 {
-    public static final int w = ViewConfiguration.getTapTimeout();
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final p10 f;
-    public final p10 g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public MotionEvent m;
-    public MotionEvent n;
-    public boolean o;
-    public float p;
-    public float q;
-    public float r;
-    public float s;
-    public boolean t;
-    public VelocityTracker v;
-    public long u = ViewConfiguration.getLongPressTimeout();
-    public final android.support.v4.media.session.q e = new android.support.v4.media.session.q(this, 6);
+public final class o10 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    public o10(Context context, p10 p10Var) {
-        this.f = p10Var;
-        this.g = p10Var;
-        if (context == null) {
-            throw new IllegalArgumentException("Context must not be null");
-        }
-        this.t = true;
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
-        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
-        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
-        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.a = scaledTouchSlop * scaledTouchSlop;
-        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

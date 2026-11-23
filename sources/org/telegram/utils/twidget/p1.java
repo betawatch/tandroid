@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import org.telegram.ui.Components.rp0;
-import org.telegram.ui.qx0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.ui.Components.qp0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class p1 {
     public static boolean e0;
@@ -124,7 +124,7 @@ public final class p1 {
 
     public static boolean a() {
         for (int i7 = 0; i7 < 4; i7++) {
-            if (k10.i(i7).p() && ((org.telegram.messenger.h0) np.u1(i7).A7.u0.b).c) {
+            if (i10.i(i7).p() && ((org.telegram.messenger.h0) mp.u1(i7).A7.u0.b).c) {
                 return true;
             }
         }
@@ -165,7 +165,7 @@ public final class p1 {
     }
 
     public final void b(boolean z10) {
-        this.a.post(new rp0(17, this, z10));
+        this.a.post(new qp0(17, this, z10));
     }
 
     public final void c(d0 d0Var, o1[] o1VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, v1 v1Var) {
@@ -289,7 +289,7 @@ public final class p1 {
                 String str4 = this.f;
                 String str5 = this.H;
                 float f10 = this.l;
-                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, hd.N0(2131742601, null), this.L, this.b);
+                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, gd.N0(2131742596, null), this.L, this.b);
                 try {
                     SystemClock.uptimeMillis();
                     this.a.post(new bi.e0(this, j3, i7, this.H, str));
@@ -297,7 +297,7 @@ public final class p1 {
                 } catch (Exception e10) {
                     e = e10;
                     if (j3 != 0) {
-                        i1.a.execute(new qx0(this, j3, 3));
+                        i1.a.execute(new ox0(this, j3, 3));
                     }
                     this.a.post(new g0(8, this, e));
                     throw e;

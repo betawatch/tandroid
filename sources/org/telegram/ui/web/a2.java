@@ -1,55 +1,111 @@
 package org.telegram.ui.web;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.s2;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
+import android.text.TextUtils;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import org.telegram.messenger.a8;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class a2 {
-    public static a2 e;
-    public HashMap a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class a2 extends TLObject {
+    public long a = System.currentTimeMillis();
+    public String b;
+    public String c;
+    public String d;
+    public int e;
+    public int f;
+    public Bitmap i;
+    public byte[] j;
 
-    public static a2 b() {
-        if (e == null) {
-            e = new a2();
-        }
-        return e;
-    }
-
-    public final z1 a(String str) {
-        c();
-        z1 z1Var = (z1) this.a.get(str);
-        if (z1Var == null) {
+    public static a2 a(s0 s0Var) {
+        a2 a2Var = new a2();
+        String K0 = org.telegram.messenger.g0.K0(s0Var.getUrl(), true);
+        a2Var.b = K0;
+        if (TextUtils.isEmpty(K0)) {
             return null;
         }
-        z1Var.a = Math.max(z1Var.a, System.currentTimeMillis());
-        d();
-        return z1Var;
+        if (s0Var.K) {
+            a2Var.c = s0Var.L;
+        }
+        a2Var.d = s0Var.r;
+        if (s0Var.s) {
+            a2Var.e = s0Var.x;
+        }
+        if (s0Var.w) {
+            a2Var.f = s0Var.y;
+        }
+        if (s0Var.N) {
+            a2Var.i = s0Var.P;
+        }
+        return a2Var;
     }
 
-    public final void c() {
-        if (this.b || this.c) {
-            return;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readInt64(z10);
+        this.b = inputSerializedData.readString(z10);
+        this.c = inputSerializedData.readString(z10);
+        this.d = inputSerializedData.readString(z10);
+        this.e = inputSerializedData.readInt32(z10);
+        this.f = inputSerializedData.readInt32(z10);
+        if (inputSerializedData.readInt32(z10) == 1450380236) {
+            this.i = null;
+        } else {
+            this.j = inputSerializedData.readByteArray(z10);
+            this.i = BitmapFactory.decodeStream(new ByteArrayInputStream(this.j));
         }
-        this.c = true;
-        if (this.a == null) {
-            this.a = new HashMap();
-        }
-        Utilities.e.c(new w1(this, 1));
     }
 
-    public final void d() {
-        int i7 = 0;
-        org.telegram.messenger.g0.r(new w1(this, i7));
-        if (this.d) {
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        Bitmap.CompressFormat compressFormat;
+        outputSerializedData.writeInt64(this.a);
+        String str = this.b;
+        if (str == null) {
+            str = "";
+        }
+        outputSerializedData.writeString(str);
+        String str2 = this.c;
+        if (str2 == null) {
+            str2 = "";
+        }
+        outputSerializedData.writeString(str2);
+        String str3 = this.d;
+        outputSerializedData.writeString(str3 != null ? str3 : "");
+        outputSerializedData.writeInt32(this.e);
+        outputSerializedData.writeInt32(this.f);
+        if (this.i == null) {
+            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
             return;
         }
-        w1 w1Var = new w1(this, i7);
-        boolean z10 = s2.a;
-        org.telegram.messenger.g0.h3(w1Var, 1000L);
+        outputSerializedData.writeInt32(953850003);
+        byte[] bArr = this.j;
+        if (bArr != null) {
+            outputSerializedData.writeByteArray(bArr);
+            return;
+        }
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        if (Build.VERSION.SDK_INT >= 30) {
+            Bitmap bitmap = this.i;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            bitmap.compress(compressFormat, 80, byteArrayOutputStream);
+        } else {
+            this.i.compress(Bitmap.CompressFormat.WEBP, 80, byteArrayOutputStream);
+        }
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        this.j = byteArray;
+        outputSerializedData.writeByteArray(byteArray);
+        try {
+            byteArrayOutputStream.close();
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
     }
 }

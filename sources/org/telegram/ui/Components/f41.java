@@ -1,46 +1,26 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class f41 implements iw0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ k41 b;
+public final class f41 implements ValueAnimator.AnimatorUpdateListener {
+    public int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ j41 c;
 
-    public f41(k41 k41Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = k41Var;
-        this.a = inputStickerSet;
+    public f41(j41 j41Var, int i7) {
+        this.c = j41Var;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public final void a() {
-        k41 k41Var = this.b;
-        v4.i0 adapter = k41Var.n.getAdapter();
-        j41 j41Var = k41Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i7 = 0;
-        if (adapter == j41Var) {
-            while (i7 < j41Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) j41Var.e.get(i7);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    j41Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i7++;
-            }
-            return;
-        }
-        jg.c2 c2Var = k41Var.w;
-        ArrayList arrayList = c2Var.F;
-        while (i7 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i7);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                c2Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i7++;
-        }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
+        j41 j41Var = this.c;
+        j41Var.O = true;
+        j41Var.n.scrollBy(0, floatValue - this.a);
+        j41Var.O = false;
+        this.a = floatValue;
     }
 }

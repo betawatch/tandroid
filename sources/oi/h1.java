@@ -3,17 +3,17 @@ package oi;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.ty;
-import org.telegram.ui.Components.yg;
-import org.telegram.ui.eg0;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.xg;
+import org.telegram.ui.dg0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
         m5 U2;
         p5 q10;
         int i7 = this.a;
-        int i10 = 5;
+        int i10 = 6;
         final int i11 = 0;
         TL_iv.pageTableCell pagetablecell = null;
         r6 = null;
@@ -68,24 +68,24 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 b2 b2Var2 = this.b;
                 if (!b2Var2.C0) {
                     if (b2Var2.B0 == null) {
-                        ty tyVar = new ty(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.P, true, b2Var2.getResourceProvider(), false, false);
-                        b2Var2.B0 = tyVar;
-                        tyVar.setVisibility(8);
-                        ty tyVar2 = b2Var2.B0;
-                        tyVar2.y2 = false;
-                        tyVar2.setDelegate(new s1(b2Var2));
+                        qy qyVar = new qy(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.P, true, b2Var2.getResourceProvider(), false, false);
+                        b2Var2.B0 = qyVar;
+                        qyVar.setVisibility(8);
+                        qy qyVar2 = b2Var2.B0;
+                        qyVar2.y2 = false;
+                        qyVar2.setDelegate(new s1(b2Var2));
                         int indexOfChild = b2Var2.P.indexOfChild(b2Var2.b0);
                         if (indexOfChild < 0) {
                             indexOfChild = b2Var2.P.getChildCount();
                         }
-                        FrameLayout.LayoutParams e10 = ma.e(-1, b2Var2.o0(), 87);
+                        FrameLayout.LayoutParams e10 = na.e(-1, b2Var2.o0(), 87);
                         e10.bottomMargin = b2Var2.U0;
                         b2Var2.P.addView(b2Var2.B0, indexOfChild, e10);
                     }
                     int o02 = b2Var2.o0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) b2Var2.B0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = ma.e(-1, o02, 87);
+                        layoutParams = na.e(-1, o02, 87);
                     } else {
                         layoutParams.height = o02;
                     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                         org.telegram.messenger.g0.v1(S2);
                     }
                     b2Var2.m0();
-                    b2Var2.c0.j(yg.d, true);
+                    b2Var2.c0.j(xg.d, true);
                     break;
                 } else {
                     b2Var2.p0(true);
@@ -112,20 +112,20 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 }
                 break;
             case 6:
-                a70 a70Var = b2Var.y0;
-                if (a70Var != null) {
-                    a70Var.v();
+                x60 x60Var = b2Var.y0;
+                if (x60Var != null) {
+                    x60Var.v();
                     b2Var.y0 = null;
                 }
-                final a70 I = a70.I(b2Var, view);
+                final x60 I = x60.I(b2Var, view);
                 I.T = true;
                 a T2 = b2Var.Q.T2();
-                I.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, hd.N0(2131753996, null), new l1(b2Var, T2, 5));
-                I.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, hd.N0(2131754002, null), new l1(b2Var, T2, 6));
-                I.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, hd.N0(2131753999, null), new l1(b2Var, T2, 7));
-                I.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, hd.N0(2131754001, null), new l1(b2Var, T2, 8));
+                I.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, gd.N0(2131753996, null), new l1(b2Var, T2, 5));
+                I.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, gd.N0(2131754002, null), new l1(b2Var, T2, 6));
+                I.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, gd.N0(2131753999, null), new l1(b2Var, T2, 7));
+                I.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, gd.N0(2131754001, null), new l1(b2Var, T2, 8));
                 boolean z10 = T2 != null && (T2.b instanceof TL_iv.pageBlockDetails);
-                String N0 = hd.N0(2131753984, null);
+                String N0 = gd.N0(2131753984, null);
                 t3 t3Var = b2Var.Q;
                 Objects.requireNonNull(t3Var);
                 I.j(z10, R.drawable.iv_details, null, N0, new b(t3Var, i12));
@@ -134,7 +134,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 if (p22 || s22) {
                     I.k();
                     if (p22) {
-                        I.c(R.drawable.iv_list_tab, hd.N0(2131754010, null), new Runnable() { // from class: oi.o1
+                        I.c(R.drawable.iv_list_tab, gd.N0(2131754010, null), new Runnable() { // from class: oi.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i11) {
@@ -151,7 +151,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                         }, false);
                     }
                     if (s22) {
-                        I.c(R.drawable.iv_list_untab, hd.N0(2131753995, null), new Runnable() { // from class: oi.o1
+                        I.c(R.drawable.iv_list_untab, gd.N0(2131753995, null), new Runnable() { // from class: oi.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {
@@ -173,9 +173,9 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 b2Var.y0 = I;
                 break;
             case 7:
-                a70 a70Var2 = b2Var.y0;
-                if (a70Var2 != null) {
-                    a70Var2.v();
+                x60 x60Var2 = b2Var.y0;
+                if (x60Var2 != null) {
+                    x60Var2.v();
                     b2Var.y0 = null;
                 }
                 t3 t3Var2 = b2Var.Q;
@@ -202,9 +202,9 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                     break;
                 }
             case 8:
-                a70 a70Var3 = b2Var.y0;
-                if (a70Var3 != null) {
-                    a70Var3.v();
+                x60 x60Var3 = b2Var.y0;
+                if (x60Var3 != null) {
+                    x60Var3.v();
                     b2Var.y0 = null;
                 }
                 a T22 = b2Var.Q.T2();
@@ -214,7 +214,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                o.Z(b2Var.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new li.d(i10, b2Var, pageblockmath), b2Var.getResourceProvider());
+                p.Z(b2Var.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ki.n2(i10, b2Var, pageblockmath), b2Var.getResourceProvider());
                 break;
             case 9:
                 b2Var.Q.j4 = null;
@@ -222,9 +222,9 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 break;
             case 10:
                 b2Var.w0();
-                eg0 eg0Var = b2Var.P0;
-                if (eg0Var != null) {
-                    eg0Var.h(true);
+                dg0 dg0Var = b2Var.P0;
+                if (dg0Var != null) {
+                    dg0Var.h(true);
                     b2Var.P0 = null;
                     break;
                 }

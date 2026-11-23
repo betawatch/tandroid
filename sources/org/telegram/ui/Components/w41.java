@@ -1,34 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UndoView b;
+public final class w41 extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    public /* synthetic */ w41(UndoView undoView, int i7) {
-        this.a = i7;
-        this.b = undoView;
+    public w41(UndoView undoView) {
+        this.a = undoView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        UndoView undoView = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = UndoView.j0;
-                if (undoView.a()) {
-                    undoView.d(1, false);
-                    break;
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
+                if (motionEvent.getAction() != 1) {
+                    return super.onTouchEvent(textView, spannable, motionEvent);
                 }
-                break;
-            default:
-                int i11 = UndoView.j0;
-                undoView.d(1, false);
-                break;
+                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                    this.a.b(characterStyleArr2[0]);
+                }
+                Selection.removeSelection(spannable);
+                return true;
+            }
+            return false;
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            return false;
         }
     }
 }

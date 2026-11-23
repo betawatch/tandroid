@@ -7,17 +7,17 @@ import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.q80;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.n80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n1 {
     public final boolean a;
     public final ImageReceiver b;
-    public final org.telegram.ui.Components.b9 c;
+    public final org.telegram.ui.Components.a9 c;
     public final RectF d;
-    public final mc e;
+    public final lc e;
     public StaticLayout f;
     public StaticLayout g;
     public StaticLayout h;
@@ -25,21 +25,21 @@ public final class n1 {
     public int j;
     public y k;
     public int l;
-    public q80 m;
+    public n80 m;
     public boolean n;
     public final float[] o;
 
     public n1(r1 r1Var, boolean z10) {
         ImageReceiver imageReceiver = new ImageReceiver(r1Var);
         this.b = imageReceiver;
-        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
+        this.c = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
         this.d = new RectF();
-        this.e = new mc(r1Var);
+        this.e = new lc(r1Var);
         this.o = new float[8];
         this.a = z10;
-        imageReceiver.J0(org.telegram.messenger.g0.L(16.0f) / 2);
+        imageReceiver.K0(org.telegram.messenger.g0.L(16.0f) / 2);
         if (r1Var.O0) {
-            imageReceiver.P();
+            imageReceiver.Q();
         }
     }
 
@@ -60,9 +60,9 @@ public final class n1 {
         this.i = z10;
         ImageReceiver imageReceiver = this.b;
         if (z10) {
-            org.telegram.ui.Components.b9 b9Var = this.c;
-            b9Var.p(tLObject);
-            imageReceiver.i0(tLObject, b9Var, null);
+            org.telegram.ui.Components.a9 a9Var = this.c;
+            a9Var.p(tLObject);
+            imageReceiver.j0(tLObject, a9Var, null);
             L -= org.telegram.messenger.g0.L(21.0f);
             this.j = org.telegram.messenger.f3.C(21.0f, this.f == null ? org.telegram.messenger.g0.L(6.0f) : 0, this.j);
         } else {

@@ -1,15 +1,12 @@
 package org.telegram.ui.Wallet;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.ui.jw0;
+import android.view.KeyEvent;
+import android.widget.EditText;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class i9 implements TextWatcher {
+public final /* synthetic */ class i9 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -18,248 +15,77 @@ public final class i9 implements TextWatcher {
         this.b = obj;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                break;
+                k9 k9Var = (k9) this.b;
+                if (i7 != 3) {
+                    k9Var.getClass();
+                    return false;
+                }
+                org.telegram.messenger.g0.v1(k9Var.b);
+                return true;
             case 1:
-                ((da) this.b).C0();
-                break;
-            case 2:
-                final na naVar = (na) this.b;
-                ArrayList arrayList = naVar.w;
-                arrayList.clear();
-                final String trim = editable.toString().trim();
-                Runnable runnable = naVar.L;
-                String str = null;
-                if (runnable != null) {
-                    org.telegram.messenger.g0.r(runnable);
-                    naVar.L = null;
-                }
-                if (naVar.F != 0) {
-                    naVar.getConnectionsManager().cancelRequest(naVar.F, true);
-                    naVar.F = 0;
-                }
-                String str2 = WalletEngine2.isValidRecipientAddress(trim) ? trim : null;
-                naVar.y = str2;
-                if (str2 == null && trim != null && trim.length() <= 126) {
-                    String lowerCase = trim.toLowerCase(Locale.ROOT);
-                    if (lowerCase.matches("[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*\\.ton")) {
-                        str = lowerCase;
+                ea eaVar = (ea) this.b;
+                if (i7 == 6) {
+                    hi.e eVar = eaVar.e0;
+                    if (eVar.e0) {
+                        eVar.performClick();
+                        return true;
                     }
-                }
-                naVar.E = str;
-                final int i7 = naVar.K + 1;
-                naVar.K = i7;
-                naVar.M = !TextUtils.isEmpty(trim) && naVar.y == null;
-                naVar.x.g(null, true, false, false, false, 0L, false, 0, i7);
-                hi.e eVar = naVar.a0;
-                if (eVar != null) {
-                    eVar.setEnabled(naVar.y != null);
-                }
-                if (!TextUtils.isEmpty(trim) && naVar.y == null && naVar.E == null) {
-                    naVar.j0(trim);
-                    final int i10 = 1;
-                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Wallet.ka
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i10) {
-                                case 0:
-                                    na.f0(naVar, trim, i7);
-                                    break;
-                                default:
-                                    na naVar2 = naVar;
-                                    naVar2.L = null;
-                                    jg.z1 z1Var = naVar2.x;
-                                    int i11 = i7;
-                                    z1Var.h(trim, true, false, false, false, false, 0L, false, 0, i11, 0L, new jw0(naVar2, i11, 10));
-                                    break;
-                            }
-                        }
-                    };
-                    naVar.L = runnable2;
-                    org.telegram.messenger.g0.h3(runnable2, 300L);
                 } else {
-                    arrayList.clear();
-                    naVar.a.g3.O(true);
-                    final String str3 = naVar.E;
-                    if (str3 != null) {
-                        final int i11 = 0;
-                        Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Wallet.ka
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i11) {
-                                    case 0:
-                                        na.f0(naVar, str3, i7);
-                                        break;
-                                    default:
-                                        na naVar2 = naVar;
-                                        naVar2.L = null;
-                                        jg.z1 z1Var = naVar2.x;
-                                        int i112 = i7;
-                                        z1Var.h(str3, true, false, false, false, false, 0L, false, 0, i112, 0L, new jw0(naVar2, i112, 10));
-                                        break;
+                    eaVar.getClass();
+                }
+                return false;
+            default:
+                eb ebVar = (eb) this.b;
+                EditText editText = ebVar.a;
+                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
+                if (i7 != 5 && !z10) {
+                    return false;
+                }
+                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
+                    String lowerCase = editText.getText().toString().trim().toLowerCase();
+                    if (lowerCase.isEmpty() || !ebVar.b()) {
+                        String str = null;
+                        if (!lowerCase.isEmpty()) {
+                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
+                            int length = mnemonicWordlist.length;
+                            int i10 = 0;
+                            while (true) {
+                                if (i10 < length) {
+                                    String str2 = mnemonicWordlist[i10];
+                                    if (str2.startsWith(lowerCase)) {
+                                        str = str2;
+                                    } else {
+                                        i10++;
+                                    }
                                 }
                             }
-                        };
-                        naVar.L = runnable3;
-                        org.telegram.messenger.g0.h3(runnable3, 300L);
-                    }
-                }
-                naVar.p0(true);
-                break;
-            case 3:
-                db dbVar = (db) this.b;
-                if (dbVar.w && !editable.toString().trim().toLowerCase().matches(".*\\s+.*") && dbVar.b()) {
-                    dbVar.setError(false);
-                }
-                dbVar.e();
-                dbVar.d();
-                if (dbVar.a.hasFocus()) {
-                    dbVar.f(editable.toString().trim().toLowerCase());
-                }
-                Runnable runnable4 = dbVar.f;
-                if (runnable4 != null) {
-                    runnable4.run();
-                    break;
-                }
-                break;
-            case 4:
-                org.telegram.ui.l0 l0Var = (org.telegram.ui.l0) this.b;
-                org.telegram.messenger.g0.T3(l0Var.K, editable.length() > 0 && l0Var.U, true);
-                String obj = editable.toString();
-                org.telegram.ui.g4 g4Var = l0Var.C0;
-                String lowerCase2 = obj.toLowerCase();
-                ai.j1 j1Var = g4Var.X0;
-                if (j1Var != null) {
-                    org.telegram.messenger.g0.r(j1Var);
-                    g4Var.X0 = null;
-                }
-                if (!TextUtils.isEmpty(lowerCase2)) {
-                    int i12 = g4Var.Y0 + 1;
-                    g4Var.Y0 = i12;
-                    if (!g4Var.v0[0].f()) {
-                        ai.j1 j1Var2 = new ai.j1(g4Var, lowerCase2, i12, 29);
-                        g4Var.X0 = j1Var2;
-                        org.telegram.messenger.g0.h3(j1Var2, 400L);
-                        break;
+                        }
+                        if (str != null) {
+                            editText.setText(str);
+                            editText.setSelection(str.length());
+                            ebVar.setError(false);
+                            ebVar.a();
+                            Runnable runnable = ebVar.r;
+                            if (runnable != null) {
+                                editText.post(runnable);
+                            }
+                        } else {
+                            ebVar.setError(true);
+                        }
                     } else {
-                        g4Var.b0(true);
-                        if (g4Var.v0[0].getWebView() != null) {
-                            org.telegram.ui.web.s0 webView = g4Var.v0[0].getWebView();
-                            webView.J = new org.telegram.ui.z(g4Var, 9);
-                            webView.findAllAsync(lowerCase2);
-                            g4Var.f0();
-                            break;
+                        ebVar.setError(false);
+                        ebVar.a();
+                        Runnable runnable2 = ebVar.r;
+                        if (runnable2 != null) {
+                            editText.post(runnable2);
                         }
                     }
-                } else {
-                    g4Var.F.clear();
-                    g4Var.G = lowerCase2;
-                    g4Var.v0[0].c.E.clear();
-                    g4Var.b0(false);
-                    if (!g4Var.v0[0].f()) {
-                        g4Var.v0[0].b.g1();
-                        g4Var.U(0);
-                    } else if (g4Var.v0[0].getWebView() != null) {
-                        org.telegram.ui.web.s0 webView2 = g4Var.v0[0].getWebView();
-                        webView2.J = new org.telegram.ui.z(g4Var, 9);
-                        webView2.findAllAsync("");
-                        g4Var.f0();
-                    }
-                    g4Var.Y0 = -1;
-                    break;
                 }
-                break;
-            case 5:
-                sh.b bVar = (sh.b) this.b;
-                int length = bVar.a.getText().length();
-                te.a aVar = bVar.I;
-                int i13 = bVar.y;
-                aVar.a(length > (i13 * 7) / 10, true);
-                bVar.J.a(length > i13, true);
-                bVar.f.l(Integer.toString(i13 - length), false);
-                break;
-            case 6:
-                vh.g gVar = (vh.g) this.b;
-                gVar.Y0();
-                gVar.Y1 = editable.toString();
-                gVar.Z1.O(true);
-                break;
-            default:
-                yg.k kVar = ((yg.l) this.b).c;
-                if (kVar != null) {
-                    String trim2 = editable.toString().trim();
-                    wg.a0 a0Var = ((wg.u) kVar).a;
-                    a0Var.r2 = trim2;
-                    a0Var.l1(false, false);
-                    a0Var.l1(true, true);
-                    break;
-                }
-                break;
+                return true;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                ((w4) this.b).a(charSequence.toString());
-                break;
-        }
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final /* synthetic */ void g(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final /* synthetic */ void h(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void i(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void j(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void k(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void l(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void m(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final /* synthetic */ void n(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final /* synthetic */ void o(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void p(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.window.OnBackInvokedDispatcher;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.k1;
+import c8.l1;
 import com.google.firebase.pnv.internal.FirebasePhoneNumberVerificationRegistrar;
 import di.f6;
 import di.mb;
@@ -15,41 +15,42 @@ import e2.f1;
 import e2.m1;
 import e2.n1;
 import e2.r1;
-import h9.t1;
+import h9.s1;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import org.telegram.messenger.gs;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.v10;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.x10;
 import org.telegram.ui.ActionBar.q1;
-import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.bb1;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.qt0;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
+public final /* synthetic */ class v implements v10, q1, r6, s6, qt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v(int i7) {
         this.a = i7;
     }
 
-    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher g(Object obj) {
+    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher e(Object obj) {
         return (OnBackInvokedDispatcher) obj;
     }
 
-    @Override // org.telegram.messenger.x10
-    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
+    @Override // org.telegram.messenger.v10
+    public Boolean a(n41 n41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
-        t1 f10;
-        t1 b10;
+        s1 f10;
+        s1 b10;
         int i7 = 0;
         switch (this.a) {
             case 8:
@@ -144,7 +145,7 @@ public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d
                 tVar.b = string6;
                 ArrayList parcelableArrayList = bundle4.getParcelableArrayList(e2.u.B0);
                 if (parcelableArrayList == null) {
-                    f10 = t1.e;
+                    f10 = s1.e;
                 } else {
                     h9.f0 p10 = h9.i0.p();
                     for (int i17 = 0; i17 < parcelableArrayList.size(); i17++) {
@@ -236,14 +237,14 @@ public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d
                 ArrayList parcelableArrayList2 = bundle8.getParcelableArrayList(m1.f);
                 if (parcelableArrayList2 == null) {
                     h9.g0 g0Var = h9.i0.b;
-                    b10 = t1.e;
+                    b10 = s1.e;
                 } else {
                     b10 = h2.e.b(new v(12), parcelableArrayList2);
                 }
                 m1 m1Var = new m1(bundle8.getString(m1.g, ""), (e2.u[]) b10.toArray(new e2.u[0]));
                 int[] intArray = bundle7.getIntArray(n1.d);
                 intArray.getClass();
-                return new n1(m1Var, k1.a(intArray));
+                return new n1(m1Var, l1.a(intArray));
             default:
                 r1 r1Var = (r1) obj;
                 r1Var.getClass();
@@ -268,31 +269,26 @@ public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r6
-    public void d(int i7, View view) {
-        ((x8) view).setColor(i7);
-    }
-
     @Override // u9.d
-    public Object e(r7 r7Var) {
+    public Object c(r7 r7Var) {
         db.a components$lambda$0;
         components$lambda$0 = FirebasePhoneNumberVerificationRegistrar.getComponents$lambda$0(r7Var);
         return components$lambda$0;
     }
 
-    @Override // org.telegram.ui.ActionBar.q6
-    public int f(View view) {
-        return ((x8) view).y;
+    @Override // org.telegram.ui.ActionBar.s6
+    public void g(int i7, View view) {
+        ((x8) view).setColor(i7);
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(t1 t1Var, int i7) {
         switch (this.a) {
             case 2:
                 int i10 = f6.z3;
                 break;
             case 3:
-                f6.p2(new bb1(6, null));
+                f6.p2(new za1(6, null));
                 break;
             case 26:
                 t1Var.dismiss();
@@ -303,22 +299,27 @@ public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d
         }
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.qt0
     public /* synthetic */ float j(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.c0.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.rt0
-    public RecyclerView n(View view) {
+    @Override // org.telegram.ui.ActionBar.r6
+    public int k(View view) {
+        return ((x8) view).y;
+    }
+
+    @Override // org.telegram.ui.Components.qt0
+    public RecyclerView l(View view) {
         return ((mb) view).a;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.qt0
     public /* synthetic */ void r(RecyclerView recyclerView) {
         org.telegram.ui.Cells.c0.b(recyclerView);
     }
 
-    public /* synthetic */ v(gs gsVar, int i7) {
+    public /* synthetic */ v(fs fsVar, int i7) {
         this.a = i7;
     }
 

@@ -4,54 +4,54 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.LinearLayout;
-import c8.ma;
+import c8.na;
 import di.pb;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.p9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class w extends LinearLayout implements gs {
-    public final q9 a;
-    public final org.telegram.ui.Components.o6 b;
-    public final org.telegram.ui.Components.o6 c;
-    public final org.telegram.ui.Components.o6 d;
-    public final nq[] e;
+public final class w extends LinearLayout implements fs {
+    public final p9 a;
+    public final org.telegram.ui.Components.n6 b;
+    public final org.telegram.ui.Components.n6 c;
+    public final org.telegram.ui.Components.n6 d;
+    public final kq[] e;
     public boolean f;
 
-    public w(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public w(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
-        this.e = new nq[1];
+        this.e = new kq[1];
         setOrientation(0);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, false, false);
-        this.c = o6Var;
-        int i7 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.t6.Y(o6Var, i7, h6Var);
-        o6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        o6Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        o6Var.setEllipsizeByGradient(true);
-        org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(context, false, false, false);
-        this.d = o6Var2;
-        org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.y6, h6Var);
-        o6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        q9 q9Var = new q9(context);
-        this.a = q9Var;
-        org.telegram.ui.Components.o6 o6Var3 = new org.telegram.ui.Components.o6(context, false, false, false);
-        this.b = o6Var3;
-        o6Var3.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        o6Var3.setPadding(org.telegram.messenger.g0.L(20.0f), 0, 0, 0);
-        org.telegram.ui.ActionBar.t6.Y(o6Var3, i7, h6Var);
-        o6Var3.setTypeface(org.telegram.messenger.g0.o());
-        o6Var3.setGravity(17);
-        addView(o6Var3, ma.p(66, -2, 0.0f, 16));
-        addView(q9Var, ma.p(32, 32, 0.0f, 16));
-        addView(o6Var, ma.p(0, -2, 1.0f, 16));
-        addView(o6Var2, ma.q(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.c = n6Var;
+        int i7 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.Y(n6Var, i7, i6Var);
+        n6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        n6Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
+        n6Var.setEllipsizeByGradient(true);
+        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.d = n6Var2;
+        org.telegram.ui.ActionBar.u6.Y(n6Var2, org.telegram.ui.ActionBar.n6.y6, i6Var);
+        n6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        p9 p9Var = new p9(context);
+        this.a = p9Var;
+        org.telegram.ui.Components.n6 n6Var3 = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.b = n6Var3;
+        n6Var3.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        n6Var3.setPadding(org.telegram.messenger.g0.L(20.0f), 0, 0, 0);
+        org.telegram.ui.ActionBar.u6.Y(n6Var3, i7, i6Var);
+        n6Var3.setTypeface(org.telegram.messenger.g0.o());
+        n6Var3.setGravity(17);
+        addView(n6Var3, na.p(66, -2, 0.0f, 16));
+        addView(p9Var, na.p(32, 32, 0.0f, 16));
+        addView(n6Var, na.p(0, -2, 1.0f, 16));
+        addView(n6Var2, na.q(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
     public final void a(long j3, boolean z10) {
@@ -59,37 +59,37 @@ public final class w extends LinearLayout implements gs {
     }
 
     public final void b(int i7, boolean z10, boolean z11) {
-        org.telegram.ui.Components.o6 o6Var = this.b;
+        org.telegram.ui.Components.n6 n6Var = this.b;
         if (!z10 || i7 > 3) {
             if (i7 >= 10000) {
-                o6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
+                n6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
             } else if (i7 >= 1000) {
-                o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+                n6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
             } else {
-                o6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+                n6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
             }
-            o6Var.c(Integer.toString(i7), z11, true);
+            n6Var.c(Integer.toString(i7), z11, true);
             return;
         }
         if (i7 == 1) {
-            o6Var.c(org.telegram.messenger.j6.o("🥇", o6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
+            n6Var.c(org.telegram.messenger.j6.o("🥇", n6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
         } else if (i7 == 2) {
-            o6Var.c(org.telegram.messenger.j6.o("🥈", o6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
+            n6Var.c(org.telegram.messenger.j6.o("🥈", n6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
         } else if (i7 == 3) {
-            o6Var.c(org.telegram.messenger.j6.o("🥉", o6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
+            n6Var.c(org.telegram.messenger.j6.o("🥉", n6Var.getPaint().getFontMetricsInt(), 20, null), z11, true);
         }
     }
 
     public final void c(TLRPC.User user) {
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        b9Var.r(user);
-        q9 q9Var = this.a;
-        q9Var.f(user, b9Var);
-        q9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
-        this.c.setText(p10.q(user));
+        org.telegram.ui.Components.a9 a9Var = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
+        a9Var.r(user);
+        p9 p9Var = this.a;
+        p9Var.f(user, a9Var);
+        p9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
+        this.c.setText(n10.q(user));
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         this.b.invalidate();
     }
@@ -98,20 +98,20 @@ public final class w extends LinearLayout implements gs {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawLine(org.telegram.messenger.g0.L(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.k0);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ls.e().c(this, ls.l4);
+        ks.e().c(this, ks.l4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ls.e().n(this, ls.l4);
+        ks.e().n(this, ks.l4);
     }
 
     @Override // android.widget.LinearLayout, android.view.View

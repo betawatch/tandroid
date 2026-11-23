@@ -4,15 +4,40 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
 import com.google.android.gms.internal.clearcut.d2;
+import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b0 implements com.google.android.gms.internal.clearcut.g {
     public String a;
 
-    public b0(String str) {
+    public /* synthetic */ b0(String str) {
         this.a = str;
+    }
+
+    public static b0 a(h2.x xVar) {
+        String str;
+        xVar.O(2);
+        int A = xVar.A();
+        int i7 = A >> 1;
+        int A2 = ((xVar.A() >> 3) & 31) | ((A & 1) << 5);
+        if (i7 == 4 || i7 == 5 || i7 == 7 || i7 == 8) {
+            str = "dvhe";
+        } else if (i7 == 9) {
+            str = "dvav";
+        } else {
+            if (i7 != 10) {
+                return null;
+            }
+            str = "dav1";
+        }
+        StringBuilder m10 = e2.m(str);
+        m10.append(i7 < 10 ? ".0" : ".");
+        m10.append(i7);
+        m10.append(A2 < 10 ? ".0" : ".");
+        m10.append(A2);
+        return new b0(m10.toString());
     }
 
     @Override // com.google.android.gms.internal.clearcut.g

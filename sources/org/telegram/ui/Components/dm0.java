@@ -9,11 +9,11 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class dm0 extends View {
     public cm0 a;
-    public final d6 b;
+    public final c6 b;
     public final fh.g c;
     public ch.p0 d;
     public boolean e;
@@ -27,11 +27,11 @@ public final class dm0 extends View {
     public dm0(em0 em0Var, Context context) {
         super(context);
         this.s = em0Var;
-        this.b = new d6(this, 0L, 260L, nr.h);
+        this.b = new c6(this, 0L, 260L, kr.h);
         this.f = new Path();
         this.h = new RectF();
         this.n = new RectF();
-        c8.ra.a(this);
+        c8.sa.a(this);
         dh.c cVar = em0Var.w;
         if (cVar != null) {
             fh.g c10 = cVar.c(this, null, false);
@@ -42,7 +42,7 @@ public final class dm0 extends View {
             if (eVar != null) {
                 eVar.g(false);
             }
-            org.telegram.messenger.o10.s(c10, org.telegram.messenger.g0.L(6.0f), 4.0f);
+            org.telegram.messenger.m10.s(c10, org.telegram.messenger.g0.L(6.0f), 4.0f);
             this.c = c10;
         }
     }
@@ -55,14 +55,14 @@ public final class dm0 extends View {
         cm0 cm0Var = this.a;
         if (cm0Var != null) {
             cm0Var.o = z10;
-            d6 d6Var = this.b;
+            c6 c6Var = this.b;
             if (z11) {
                 cm0Var.h = cm0Var.M;
                 cm0Var.f = cm0Var.N;
                 cm0Var.g = cm0Var.O;
-                d6Var.e(true, 0.0f);
+                c6Var.e(true, 0.0f);
             } else {
-                d6Var.e(true, 1.0f);
+                c6Var.e(true, 1.0f);
             }
             invalidate();
         }
@@ -121,8 +121,8 @@ public final class dm0 extends View {
             canvas.save();
             canvas.clipPath(path);
             gVar.draw(canvas);
-            org.telegram.ui.ActionBar.h6 h6Var = em0Var.c;
-            paint.setColor((h6Var == null ? !org.telegram.ui.ActionBar.m6.I.q() : !h6Var.d()) ? -1 : 687865855);
+            org.telegram.ui.ActionBar.i6 i6Var = em0Var.c;
+            paint.setColor((i6Var == null ? !org.telegram.ui.ActionBar.n6.I.q() : !i6Var.b()) ? -1 : 687865855);
             canvas.drawPath(path, paint);
             canvas.restore();
         }

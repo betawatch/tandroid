@@ -1,6 +1,6 @@
 package h2;
 
-import a8.la;
+import a8.ma;
 import a8.xa;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -26,13 +26,13 @@ import m.b3;
 import m.l1;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ic;
+import org.telegram.messenger.hc;
 import org.telegram.messenger.q5;
-import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.ce0;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.be0;
 import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -75,7 +75,7 @@ public final class c {
     }
 
     public void C(int i7) {
-        la.p(i7 >= 0);
+        ma.p(i7 >= 0);
         this.a = i7;
         r(i7);
     }
@@ -101,7 +101,7 @@ public final class c {
     }
 
     public boolean F() {
-        return ((ce0) this.b).b() && ((ce0) this.c).b() && ((ce0) this.d).b() && ((ce0) this.e).b();
+        return ((be0) this.b).b() && ((be0) this.c).b() && ((be0) this.d).b() && ((be0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -110,14 +110,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        l2.f0 f0Var = ((l2.u) this.d).b;
+        l2.g0 g0Var = ((l2.v) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        f0Var.F1();
-        f0Var.t1(1, 10, num);
-        f0Var.t1(2, 10, num);
-        f0Var.m.e(21, new l2.t(intValue, 1));
+        g0Var.F1();
+        g0Var.t1(1, 10, num);
+        g0Var.t1(2, 10, num);
+        g0Var.m.e(21, new l2.u(intValue, 1));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x002c, code lost:
@@ -147,8 +147,8 @@ public final class c {
             }
             i2.t tVar3 = arrayDeque.isEmpty() ? new i2.t() : (i2.t) arrayDeque.pop();
             ArrayList arrayList = tVar3.a;
-            la.f(j3 != -9223372036854775807L);
-            la.p(arrayList.isEmpty());
+            ma.f(j3 != -9223372036854775807L);
+            ma.p(arrayList.isEmpty());
             tVar3.b = j3;
             arrayList.add(xVar2);
             priorityQueue.add(tVar3);
@@ -278,18 +278,18 @@ public final class c {
                 int d = descriptor.d(name);
                 i10 = -3;
                 if (d == -3 && o0Var3.c) {
-                    c5 c5Var = json.c;
+                    i5 i5Var = json.c;
                     b1.f fVar = new b1.f(2, descriptor, json);
-                    c5Var.getClass();
-                    c5Var.getClass();
+                    i5Var.getClass();
+                    i5Var.getClass();
                     kotlin.jvm.internal.j.e(descriptor, "descriptor");
-                    Map map = (Map) ((ConcurrentHashMap) c5Var.a).get(descriptor);
+                    Map map = (Map) ((ConcurrentHashMap) i5Var.a).get(descriptor);
                     qe.g gVar = qe.f.a;
                     Object obj = map != null ? map.get(gVar) : null;
                     Object obj2 = obj != null ? obj : null;
                     if (obj2 == null) {
                         obj2 = fVar.invoke();
-                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) c5Var.a;
+                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) i5Var.a;
                         Object obj3 = concurrentHashMap.get(descriptor);
                         Object obj4 = obj3;
                         if (obj3 == null) {
@@ -539,7 +539,7 @@ public final class c {
             if (xd.d.e(message, "at path")) {
                 throw e10;
             }
-            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((xa) ((a4.k) this.d).c).m(), e10);
+            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((xa) ((a4.k) this.d).c).l(), e10);
         }
     }
 
@@ -593,26 +593,26 @@ public final class c {
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        ce0 ce0Var = (ce0) this.b;
-        if (ce0Var.f == null) {
-            ce0Var.a();
+        be0 be0Var = (be0) this.b;
+        if (be0Var.f == null) {
+            be0Var.a();
         }
-        float[] fArr = ce0Var.f;
-        ce0 ce0Var2 = (ce0) this.c;
-        if (ce0Var2.f == null) {
-            ce0Var2.a();
+        float[] fArr = be0Var.f;
+        be0 be0Var2 = (be0) this.c;
+        if (be0Var2.f == null) {
+            be0Var2.a();
         }
-        float[] fArr2 = ce0Var2.f;
-        ce0 ce0Var3 = (ce0) this.d;
-        if (ce0Var3.f == null) {
-            ce0Var3.a();
+        float[] fArr2 = be0Var2.f;
+        be0 be0Var3 = (be0) this.d;
+        if (be0Var3.f == null) {
+            be0Var3.a();
         }
-        float[] fArr3 = ce0Var3.f;
-        ce0 ce0Var4 = (ce0) this.e;
-        if (ce0Var4.f == null) {
-            ce0Var4.a();
+        float[] fArr3 = be0Var3.f;
+        be0 be0Var4 = (be0) this.e;
+        if (be0Var4.f == null) {
+            be0Var4.a();
         }
-        float[] fArr4 = ce0Var4.f;
+        float[] fArr4 = be0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -675,11 +675,11 @@ public final class c {
         return null;
     }
 
-    public Bitmap t(ic icVar) {
-        if (icVar == null) {
+    public Bitmap t(hc hcVar) {
+        if (hcVar == null) {
             return null;
         }
-        return s(icVar.c, icVar.a, icVar.e, 0, false);
+        return s(hcVar.c, hcVar.a, hcVar.e, 0, false);
     }
 
     public Bitmap u(ImageReceiver imageReceiver) {
@@ -710,10 +710,10 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) D.c;
+        h6.m E = h6.m.E(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) E.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
+        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) E.c, i7);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -728,14 +728,14 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, D.s(1));
+                r0.a0.f(view, E.y(1));
             }
             if (typedArray.hasValue(2)) {
                 r0.a0.g(view, l1.b(typedArray.getInt(2, -1), null));
             }
-            D.G();
+            E.G();
         } catch (Throwable th2) {
-            D.G();
+            E.G();
             throw th2;
         }
     }
@@ -777,10 +777,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new ce0();
-        this.c = new ce0();
-        this.d = new ce0();
-        this.e = new ce0();
+        this.b = new be0();
+        this.c = new be0();
+        this.d = new be0();
+        this.e = new be0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

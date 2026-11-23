@@ -1,55 +1,19 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.cn0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bn implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ gs e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class bn implements nr {
+    public final /* synthetic */ int[] a;
+    public final /* synthetic */ di.j9 b;
 
-    public /* synthetic */ bn(np npVar, int i7, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
-        this.e = npVar;
-        this.b = i7;
-        this.f = chat;
-        this.d = user;
-        this.c = z10;
+    public /* synthetic */ bn(int[] iArr, di.j9 j9Var) {
+        this.a = iArr;
+        this.b = j9Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                np npVar = (np) this.e;
-                TLRPC.Chat chat = (TLRPC.Chat) this.f;
-                npVar.getClass();
-                if (tL_error == null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(Integer.valueOf(this.b));
-                    npVar.getMessagesStorage().c2(chat != null ? -chat.id : this.d.id, arrayList, !this.c, -1, 0, false, null);
-                    npVar.V3((TLRPC.Updates) tLObject, false);
-                    break;
-                }
-                break;
-            default:
-                g0.g3(new oi.q2((cn0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
-                break;
-        }
-    }
-
-    public /* synthetic */ bn(cn0 cn0Var, String str, int i7, boolean z10, TLRPC.User user) {
-        this.e = cn0Var;
-        this.f = str;
-        this.b = i7;
-        this.c = z10;
-        this.d = user;
+    @Override // org.telegram.messenger.nr
+    public final void a(int i7) {
+        this.a[0] = i7;
+        this.b.run();
     }
 }

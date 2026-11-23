@@ -1,9 +1,62 @@
 package a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class m7 {
-    public static float a(float f10) {
-        return 1.0f - c8.l9.a(f10, 0.0f, 1.0f);
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object a(be.s sVar, androidx.lifecycle.k0 k0Var, kd.c cVar) {
+        be.p pVar;
+        int i7;
+        try {
+            if (cVar instanceof be.p) {
+                pVar = (be.p) cVar;
+                int i10 = pVar.c;
+                if ((i10 & TLObject.FLAG_31) != 0) {
+                    pVar.c = i10 - TLObject.FLAG_31;
+                    Object obj = pVar.b;
+                    jd.a aVar = jd.a.a;
+                    i7 = pVar.c;
+                    if (i7 != 0) {
+                        c8.z.b(obj);
+                        if (pVar.getContext().get(zd.y.b) != sVar) {
+                            throw new IllegalStateException("awaitClose() can only be invoked from the producer context");
+                        }
+                        pVar.a = k0Var;
+                        pVar.c = 1;
+                        zd.m mVar = new zd.m(1, c8.y0.b(pVar));
+                        mVar.s();
+                        ((be.r) sVar).T(new be.q(mVar, 0));
+                        if (mVar.r() == aVar) {
+                            return aVar;
+                        }
+                    } else {
+                        if (i7 != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        k0Var = pVar.a;
+                        c8.z.b(obj);
+                    }
+                    k0Var.invoke();
+                    return gd.k.a;
+                }
+            }
+            if (i7 != 0) {
+            }
+            k0Var.invoke();
+            return gd.k.a;
+        } catch (Throwable th2) {
+            k0Var.invoke();
+            throw th2;
+        }
+        pVar = new be.p(cVar);
+        Object obj2 = pVar.b;
+        jd.a aVar2 = jd.a.a;
+        i7 = pVar.c;
     }
 }

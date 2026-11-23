@@ -5,40 +5,40 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
-import c8.ra;
+import c8.sa;
 import java.util.HashSet;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class x1 extends ImageView implements org.telegram.ui.ActionBar.b6 {
+public final class x1 extends ImageView implements org.telegram.ui.ActionBar.c6 {
     public final int a;
     public int b;
     public boolean c;
     public boolean d;
     public int e;
     public int f;
-    public final h6 h;
+    public final i6 h;
     public boolean n;
     public boolean r;
     public boolean s;
 
-    public x1(int i7, Context context, h6 h6Var) {
+    public x1(int i7, Context context, i6 i6Var) {
         super(context);
         this.e = 20;
-        this.f = m6.d6;
+        this.f = n6.d6;
         this.n = true;
         this.s = true;
         this.b = i7;
         this.a = i7;
-        this.h = h6Var;
+        this.h = i6Var;
         if (i7 != 0) {
             setImageResource(i7);
         }
         setScaleType(ImageView.ScaleType.CENTER);
-        ra.a(this);
+        sa.a(this);
         updateColors();
     }
 
@@ -46,11 +46,11 @@ public final class x1 extends ImageView implements org.telegram.ui.ActionBar.b6 
         e(this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.Fi));
-        hashSet.add(Integer.valueOf(m6.G6));
-        hashSet.add(Integer.valueOf(m6.i6));
+        hashSet.add(Integer.valueOf(n6.Fi));
+        hashSet.add(Integer.valueOf(n6.G6));
+        hashSet.add(Integer.valueOf(n6.i6));
         hashSet.add(Integer.valueOf(this.f));
     }
 
@@ -100,7 +100,7 @@ public final class x1 extends ImageView implements org.telegram.ui.ActionBar.b6 
         setClickable(z10);
         ViewPropertyAnimator animate = animate();
         this.n = z10;
-        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(nr.h).start();
+        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(kr.h).start();
     }
 
     public void setPremiumLocked(boolean z10) {
@@ -119,16 +119,16 @@ public final class x1 extends ImageView implements org.telegram.ui.ActionBar.b6 
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         boolean z10 = this.r;
-        h6 h6Var = this.h;
+        i6 i6Var = this.h;
         if (!z10) {
-            setBackground(m6.b0(m6.w0(this.f, h6Var), m6.w0(m6.i6, h6Var), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
-            setColorFilter(new PorterDuffColorFilter(m6.w0(m6.G6, h6Var), PorterDuff.Mode.SRC_IN));
+            setBackground(n6.b0(n6.w0(this.f, i6Var), n6.w0(n6.i6, i6Var), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
+            setColorFilter(new PorterDuffColorFilter(n6.w0(n6.G6, i6Var), PorterDuff.Mode.SRC_IN));
         } else {
-            int x02 = m6.x0(null, this.s ? m6.Fi : m6.G6, false);
-            setBackground(m6.b0(m6.w(m6.w0(this.f, h6Var), m6.r1(0.1f, x02)), m6.r1(0.1f, x02), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
+            int x02 = n6.x0(null, this.s ? n6.Fi : n6.G6, false);
+            setBackground(n6.b0(n6.w(n6.w0(this.f, i6Var), n6.r1(0.1f, x02)), n6.r1(0.1f, x02), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
             setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
         }
     }

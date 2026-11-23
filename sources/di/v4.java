@@ -10,9 +10,9 @@ import android.widget.FrameLayout;
 import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class v4 extends FrameLayout {
     public final float[] E;
@@ -52,13 +52,13 @@ public final class v4 extends FrameLayout {
         this.y = new HashMap();
         this.E = new float[6];
         this.G = -1;
-        this.J = new ca.r(this, 20);
+        this.J = new ca.r(this, 19);
         setClipToOutline(false);
         setClipToPadding(false);
         android.opengl.Matrix.setIdentityM(fArr, 0);
         this.a = viewArr;
         for (View view : viewArr) {
-            addView(view, c8.ma.e(ls.t1, ls.t1, 17));
+            addView(view, c8.na.e(ks.t1, ks.t1, 17));
         }
     }
 
@@ -354,7 +354,7 @@ public final class v4 extends FrameLayout {
         }
         org.telegram.messenger.g0.E2(frameLayout);
         int childCount = getChildCount();
-        addView(frameLayout, c8.ma.e(64, 64, 17));
+        addView(frameLayout, c8.na.e(64, 64, 17));
         this.w.add(Integer.valueOf(i7));
         this.x.put(Integer.valueOf(childCount), Integer.valueOf(i7));
     }

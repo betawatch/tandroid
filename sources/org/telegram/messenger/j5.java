@@ -1,8 +1,8 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j5 implements gs {
+public final /* synthetic */ class j5 implements fs {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -11,7 +11,7 @@ public final /* synthetic */ class j5 implements gs {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
         switch (this.a) {
             case 0:
@@ -22,9 +22,9 @@ public final /* synthetic */ class j5 implements gs {
                 }
                 break;
             default:
-                rz rzVar = (rz) this.b;
+                pz pzVar = (pz) this.b;
                 if (i7 == 256) {
-                    g0.g3(new yr(rzVar, 15));
+                    g0.g3(new xr(pzVar, 15));
                     break;
                 }
                 break;

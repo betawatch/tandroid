@@ -1,8 +1,8 @@
 package h9;
 
-import a8.la;
+import a8.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u0 extends i0 {
     public final /* synthetic */ q0 c;
@@ -16,13 +16,13 @@ public final class u0 extends i0 {
         q0 q0Var = this.c;
         switch (q0Var.d) {
             case 0:
-                q1 q1Var = ((z1) q0Var.e).e;
-                la.j(i7, q1Var.c);
-                return new p1(q1Var, i7);
+                p1 p1Var = ((y1) q0Var.e).e;
+                ma.j(i7, p1Var.c);
+                return new o1(p1Var, i7);
             default:
-                q1 q1Var2 = ((z1) q0Var.e).e;
-                la.j(i7, q1Var2.c);
-                return q1Var2.a[i7];
+                p1 p1Var2 = ((y1) q0Var.e).e;
+                ma.j(i7, p1Var2.c);
+                return p1Var2.a[i7];
         }
     }
 

@@ -1,44 +1,47 @@
 package l2;
 
-import a8.la;
-import android.text.TextUtils;
-import com.google.android.gms.internal.vision.e2;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
-    public final String a;
-    public final e2.u b;
-    public final e2.u c;
-    public final int d;
-    public final int e;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public long k;
+    public int l;
 
-    public e(String str, e2.u uVar, e2.u uVar2, int i7, int i10) {
-        la.f(i7 == 0 || i10 == 0);
-        la.f(true ^ TextUtils.isEmpty(str));
-        this.a = str;
-        uVar.getClass();
-        this.b = uVar;
-        uVar2.getClass();
-        this.c = uVar2;
-        this.d = i7;
-        this.e = i10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && e.class == obj.getClass()) {
-            e eVar = (e) obj;
-            if (this.d == eVar.d && this.e == eVar.e && this.a.equals(eVar.a) && this.b.equals(eVar.b) && this.c.equals(eVar.c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + ((this.b.hashCode() + e2.h((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
+    public final String toString() {
+        int i7 = this.a;
+        int i10 = this.b;
+        int i11 = this.c;
+        int i12 = this.d;
+        int i13 = this.e;
+        int i14 = this.f;
+        int i15 = this.g;
+        int i16 = this.h;
+        int i17 = this.i;
+        int i18 = this.j;
+        long j3 = this.k;
+        int i19 = this.l;
+        String str = h2.l0.a;
+        Locale locale = Locale.US;
+        StringBuilder n10 = i5.c.n("DecoderCounters {\n decoderInits=", i7, ",\n decoderReleases=", i10, "\n queuedInputBuffers=");
+        i5.c.z(n10, i11, "\n skippedInputBuffers=", i12, "\n renderedOutputBuffers=");
+        i5.c.z(n10, i13, "\n skippedOutputBuffers=", i14, "\n droppedBuffers=");
+        i5.c.z(n10, i15, "\n droppedInputBuffers=", i16, "\n maxConsecutiveDroppedBuffers=");
+        i5.c.z(n10, i17, "\n droppedToKeyframeEvents=", i18, "\n totalVideoFrameProcessingOffsetUs=");
+        n10.append(j3);
+        n10.append("\n videoFrameProcessingOffsetCount=");
+        n10.append(i19);
+        n10.append("\n}");
+        return n10.toString();
     }
 }

@@ -3,16 +3,16 @@ package zi;
 import android.net.Uri;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.f20;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.b50;
-import org.telegram.ui.Components.g50;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.Components.w61;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.y40;
 import org.telegram.ui.ee;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class f0 implements Runnable {
     public final void run() {
         File file;
         rj rjVar;
-        w61 w61Var;
+        x61 x61Var;
         switch (this.a) {
             case 0:
                 u0 u0Var = this.b;
@@ -55,28 +55,28 @@ public final /* synthetic */ class f0 implements Runnable {
                     u0Var2.L = min;
                     u0Var2.b.setSurfaceTextureListener(null);
                     u0Var2.b.setTransform(u0Var2.h);
-                    l2.f0 a10 = new l2.n(u0Var2.a).a();
+                    l2.g0 a10 = new l2.o(u0Var2.a).a();
                     u0Var2.W = a10;
                     a10.z1(u0Var2.b);
-                    u0Var2.W.m0(e2.l0.b(Uri.fromFile(u0Var2.V)));
+                    u0Var2.W.n0(e2.l0.b(Uri.fromFile(u0Var2.V)));
                     u0Var2.W.k(0);
-                    u0Var2.W.T(1.0f);
-                    u0Var2.W.I0(u0Var2.Z);
+                    u0Var2.W.U(1.0f);
+                    u0Var2.W.J0(u0Var2.Z);
                     u0Var2.W.a();
                     u0Var2.W.Z0(5, u0Var2.K);
                     u0Var2.m.b("preview player prepared: durationMs=" + u0Var2.I + ", trim=" + u0Var2.K + ".." + u0Var2.L);
                     u0Var2.x(5);
-                    qf qfVar = u0Var2.d;
+                    aa aaVar = u0Var2.d;
                     long j11 = u0Var2.I;
                     long j12 = u0Var2.K;
                     long j13 = u0Var2.L;
-                    ((b50) qfVar.b).w.setProgress(((float) j11) / 60000.0f);
-                    b50 b50Var = (b50) qfVar.b;
-                    b50Var.k0 = false;
-                    b50Var.I.setAlpha(0.0f);
-                    b50 b50Var2 = (b50) qfVar.b;
-                    if (b50Var2.V == null) {
-                        u0 u0Var3 = b50Var2.P;
+                    ((y40) aaVar.b).w.setProgress(((float) j11) / 60000.0f);
+                    y40 y40Var = (y40) aaVar.b;
+                    y40Var.k0 = false;
+                    y40Var.I.setAlpha(0.0f);
+                    y40 y40Var2 = (y40) aaVar.b;
+                    if (y40Var2.V == null) {
+                        u0 u0Var3 = y40Var2.P;
                         if (u0Var3 == null) {
                             file = null;
                         } else {
@@ -84,23 +84,23 @@ public final /* synthetic */ class f0 implements Runnable {
                             file = u0Var3.V;
                         }
                         if (file != null) {
-                            b50 b50Var3 = (b50) qfVar.b;
-                            b50Var3.U = b50Var3.t(file, j11, null);
-                            b50 b50Var4 = (b50) qfVar.b;
-                            f20 f20Var = b50Var4.U;
-                            f20Var.a = j12 > 0 ? j12 : -1L;
-                            f20Var.b = j13 < j11 ? j13 : -1L;
-                            ls.f(b50Var4.f).k(ls.s2, Integer.valueOf(((b50) qfVar.b).h), ((b50) qfVar.b).U, file.getAbsolutePath(), new ArrayList());
+                            y40 y40Var3 = (y40) aaVar.b;
+                            y40Var3.U = y40Var3.t(file, j11, null);
+                            y40 y40Var4 = (y40) aaVar.b;
+                            d20 d20Var = y40Var4.U;
+                            d20Var.a = j12 > 0 ? j12 : -1L;
+                            d20Var.b = j13 < j11 ? j13 : -1L;
+                            ks.f(y40Var4.f).k(ks.s2, Integer.valueOf(((y40) aaVar.b).h), ((y40) aaVar.b).U, file.getAbsolutePath(), new ArrayList());
                             float max = Math.max(1L, j11);
-                            b50 b50Var5 = (b50) qfVar.b;
+                            y40 y40Var5 = (y40) aaVar.b;
                             float f10 = j12 / max;
                             float f11 = j13 / max;
-                            g50 g50Var = b50Var5.b;
-                            if (g50Var != null && (rjVar = ((ee) g50Var).b.a0) != null && (w61Var = rjVar.g1) != null) {
+                            d50 d50Var = y40Var5.b;
+                            if (d50Var != null && (rjVar = ((ee) d50Var).b.a0) != null && (x61Var = rjVar.g1) != null) {
                                 float max2 = Math.max(0.0f, Math.min(1.0f, f10));
-                                w61Var.b = max2;
-                                w61Var.c = Math.max(max2, Math.min(1.0f, f11));
-                                w61Var.invalidate();
+                                x61Var.b = max2;
+                                x61Var.c = Math.max(max2, Math.min(1.0f, f11));
+                                x61Var.invalidate();
                             }
                         }
                     }

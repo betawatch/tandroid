@@ -3,11 +3,11 @@ package org.telegram.ui.web;
 import android.os.Bundle;
 import fi.f7;
 import org.json.JSONObject;
-import org.telegram.ui.cx;
+import org.telegram.ui.bx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class b0 extends cx {
+public final class b0 extends bx {
     public final /* synthetic */ boolean[] G4;
     public final /* synthetic */ f7 H4;
     public final /* synthetic */ v0 I4;
@@ -20,7 +20,7 @@ public final class b0 extends cx {
         this.H4 = f7Var;
     }
 
-    @Override // org.telegram.ui.cx, org.telegram.ui.ActionBar.g2
+    @Override // org.telegram.ui.bx, org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         JSONObject jSONObject;
         super.onFragmentDestroy();

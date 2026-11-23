@@ -1,33 +1,28 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.r10;
+import org.telegram.messenger.w10;
+import org.telegram.ui.PasscodeActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class g0 implements Runnable {
-    public volatile boolean a;
-    public Runnable b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ byte[] f;
-    public final /* synthetic */ r10 h;
-    public final /* synthetic */ u0 n;
+public final class g0 extends PasscodeActivity {
+    public final /* synthetic */ boolean[] X;
+    public final /* synthetic */ w10 Y;
 
-    public g0(u0 u0Var, String str, long j3, String str2, byte[] bArr, r10 r10Var) {
-        this.n = u0Var;
-        this.c = str;
-        this.d = j3;
-        this.e = str2;
-        this.f = bArr;
-        this.h = r10Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(boolean[] zArr, w10 w10Var) {
+        super(3);
+        this.X = zArr;
+        this.Y = w10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final synchronized void run() {
-        if (this.a) {
+    @Override // org.telegram.ui.PasscodeActivity, org.telegram.ui.ActionBar.g2
+    public final void onFragmentDestroy() {
+        w10 w10Var;
+        super.onFragmentDestroy();
+        if (this.X[0] || (w10Var = this.Y) == null) {
             return;
         }
-        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new e0(1, this, this.h));
+        w10Var.a("PASSCODE_FAILED");
     }
 }

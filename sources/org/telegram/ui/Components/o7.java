@@ -5,28 +5,22 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o7 extends rh0 {
-    public final n7 E;
-    public final n7 F;
-    public long G;
-    public final /* synthetic */ float H;
-    public final /* synthetic */ f8 I;
+public final class o7 extends qh0 {
+    public final /* synthetic */ e8 E;
     public float r;
     public float s;
-    public int w;
-    public long x;
-    public long y;
+    public boolean w;
+    public final i6.g x;
+    public final /* synthetic */ float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o7(f8 f8Var, Context context, float f10) {
+    public o7(e8 e8Var, Context context, float f10) {
         super(context);
-        this.I = f8Var;
-        this.H = f10;
-        this.w = 0;
-        this.E = new n7(this, 0);
-        this.F = new n7(this, 1);
+        this.E = e8Var;
+        this.y = f10;
+        this.x = new i6.g(this, 28);
     }
 
     @Override // android.view.View
@@ -35,30 +29,29 @@ public final class o7 extends rh0 {
         accessibilityNodeInfo.addAction(16);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
     
-        if (r6 != 3) goto L20;
+        if (r5 != 3) goto L20;
      */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        f8 f8Var = this.I;
-        o7 o7Var = f8Var.E1;
-        if (f8Var.N1.x || f8Var.B2 == 1) {
+        e8 e8Var = this.E;
+        o7 o7Var = e8Var.F1;
+        if (e8Var.N1.x || e8Var.B2 == -1) {
             return false;
         }
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
         int action = motionEvent.getAction();
-        n7 n7Var = this.E;
+        i6.g gVar = this.x;
         if (action == 0) {
+            this.w = false;
             this.r = rawX;
             this.s = rawY;
-            this.G = System.currentTimeMillis();
-            f8Var.B2 = 0;
-            org.telegram.messenger.g0.h3(n7Var, 300L);
+            org.telegram.messenger.g0.h3(gVar, 300L);
             if (getBackground() != null) {
                 getBackground().setHotspot(this.r, this.s);
             }
@@ -70,31 +63,31 @@ public final class o7 extends rh0 {
                 float f10 = rawX - this.r;
                 float f11 = rawY - this.s;
                 float f12 = (f11 * f11) + (f10 * f10);
-                float f13 = this.H;
-                if (f12 > f13 * f13 && f8Var.B2 == 0) {
-                    org.telegram.messenger.g0.r(n7Var);
+                float f13 = this.y;
+                if (f12 > f13 * f13 && !this.w) {
+                    org.telegram.messenger.g0.r(gVar);
                     setPressed(false);
                 }
             }
             return true;
         }
-        org.telegram.messenger.g0.r(n7Var);
-        n7 n7Var2 = this.F;
-        org.telegram.messenger.g0.r(n7Var2);
-        if (f8Var.B2 == 0 && motionEvent.getAction() == 1 && System.currentTimeMillis() - this.G < 300) {
-            MediaController.B().V();
+        if (!this.w && motionEvent.getAction() == 1 && isPressed()) {
+            MediaController.B().U(false);
             o7Var.setProgress(0.0f);
             o7Var.d();
         }
-        if (this.w > 0) {
-            this.y = 0L;
-            n7Var2.run();
-            MediaController.B().c0();
+        org.telegram.messenger.g0.r(gVar);
+        if (e8Var.D2 > 0) {
+            MediaController.B().m0(true, 1.0f);
+            if (MediaController.B().H()) {
+                e8Var.F2 = 0L;
+                e8Var.I2.run();
+            }
         }
-        f8Var.C2 = -1.0f;
+        e8Var.B2 = 0;
         setPressed(false);
-        f8Var.B2 = 0;
-        this.w = 0;
+        e8Var.D2 = 0;
+        e8Var.C2 = -1.0f;
         return true;
     }
 }

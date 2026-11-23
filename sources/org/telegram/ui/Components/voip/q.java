@@ -1,59 +1,128 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.TimeInterpolator;
-import android.app.Activity;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import c8.ma;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.fm0;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class q extends FrameLayout {
-    public final p a;
-    public final TransitionSet b;
-    public boolean c;
+public final class q extends View {
+    public org.telegram.ui.Cells.y a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final RectF e;
+    public final Drawable f;
+    public final String h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
 
-    public q(Activity activity) {
-        super(activity);
-        this.c = false;
-        setWillNotDraw(false);
-        p pVar = new p(activity);
-        this.a = pVar;
-        addView(pVar, ma.e(52, 52, 5));
-        TransitionSet transitionSet = new TransitionSet();
-        this.b = transitionSet;
-        transitionSet.setOrdering(0);
-        transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
-        transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) nr.f);
+    public q(Context context) {
+        super(context);
+        this.b = new Paint(1);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.e = new RectF();
+        this.n = -761748;
+        this.r = org.telegram.messenger.g0.L(26.0f);
+        this.s = ks.e4;
+        this.w = 0;
+        Drawable mutate = getContext().getDrawable(R.drawable.calls_decline).mutate();
+        this.f = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
+        paint.setTextSize(org.telegram.messenger.g0.L(18.0f));
+        paint.setTypeface(org.telegram.messenger.g0.o());
+        Paint.Align align = Paint.Align.CENTER;
+        paint.setTextAlign(align);
+        paint.setColor(-16777216);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setTextSize(org.telegram.messenger.g0.L(18.0f));
+        paint2.setTypeface(org.telegram.messenger.g0.o());
+        paint2.setTextAlign(align);
+        paint2.setColor(-16777216);
+        setLayerType(2, null);
+        setClickable(true);
+        this.h = gd.N0(2131752029, null);
     }
 
-    public final void a(View.OnClickListener onClickListener, boolean z10) {
-        if (this.c) {
-            return;
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        this.c = true;
-        if (z10) {
-            TransitionManager.beginDelayedTransition(this, this.b);
-        }
-        p pVar = this.a;
-        pVar.w = ls.e4;
-        pVar.n = -1;
-        pVar.s = 0;
-        pVar.r = org.telegram.messenger.g0.L(8.0f);
-        ViewGroup.LayoutParams layoutParams = pVar.getLayoutParams();
-        layoutParams.width = -1;
-        pVar.setLayoutParams(layoutParams);
-        org.telegram.messenger.g0.h3(new fm0(26, this, onClickListener), 500L);
+        return false;
     }
 
-    public p getEndCloseView() {
-        return this.a;
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        org.telegram.ui.Cells.y yVar = this.a;
+        if (yVar != null) {
+            yVar.setState(getDrawableState());
+        }
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        org.telegram.ui.Cells.y yVar = this.a;
+        if (yVar != null) {
+            yVar.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        int i7 = this.n;
+        Paint paint = this.b;
+        paint.setColor(i7);
+        float width2 = getWidth();
+        float height2 = getHeight();
+        RectF rectF = this.e;
+        rectF.set(0.0f, 0.0f, width2, height2);
+        float f10 = this.r;
+        canvas.drawRoundRect(rectF, f10, f10, paint);
+        Drawable drawable = this.f;
+        drawable.setBounds((int) (width - (drawable.getIntrinsicWidth() / 2.0f)), (int) (height - (drawable.getIntrinsicHeight() / 2)), (int) ((drawable.getIntrinsicWidth() / 2) + width), (int) ((drawable.getIntrinsicHeight() / 2) + height));
+        drawable.setAlpha(this.s);
+        drawable.draw(canvas);
+        int i10 = this.w;
+        Paint paint2 = this.c;
+        paint2.setAlpha(i10);
+        int i11 = (this.w / ks.e4) * 38;
+        Paint paint3 = this.d;
+        paint3.setAlpha(i11);
+        String str = this.h;
+        canvas.drawText(str, width, org.telegram.messenger.g0.L(6.0f) + height, paint2);
+        canvas.drawText(str, width, height + org.telegram.messenger.g0.L(6.0f), paint3);
+        if (this.a == null) {
+            org.telegram.ui.Cells.y a02 = n6.a0(n6.x0(null, n6.i6, false), 8, 8);
+            this.a = a02;
+            a02.setCallback(this);
+        }
+        this.a.setBounds(0, 0, getWidth(), getHeight());
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.a == drawable || super.verifyDrawable(drawable);
     }
 }

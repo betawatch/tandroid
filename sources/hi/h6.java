@@ -1,41 +1,25 @@
 package hi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.camera.CameraView;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class h6 extends CameraView {
-    public final Path a;
-    public final /* synthetic */ i6 b;
+public final class h6 {
+    public final String a;
+    public final PointF[] b;
+    public final float c;
+    public final float d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h6(i6 i6Var, Context context) {
-        super(context, true, false);
-        this.b = i6Var;
-        this.a = new Path();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.a;
-        path.rewind();
-        path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth() / 2.0f, getHeight() / 2.0f), Path.Direction.CW);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void receivedAmplitude(double d) {
-        ((r) this.b).G.setAmplitude(d);
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final boolean square() {
-        return true;
+    public h6(String str, PointF[] pointFArr) {
+        this.a = str;
+        this.b = pointFArr;
+        float f10 = 0.0f;
+        float f11 = 0.0f;
+        for (PointF pointF : pointFArr) {
+            f10 += pointF.x;
+            f11 += pointF.y;
+        }
+        this.c = f10 / pointFArr.length;
+        this.d = f11 / pointFArr.length;
     }
 }

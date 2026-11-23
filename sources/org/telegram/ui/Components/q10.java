@@ -1,22 +1,121 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class q10 extends FrameLayout {
-    public View a;
-    public TextView b;
+public class q10 {
+    public boolean a;
+    public boolean b;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public Shader i;
+    public boolean m;
+    public final Paint c = new Paint(1);
+    public final RectF h = new RectF();
+    public final Matrix j = new Matrix();
+    public Bitmap k = null;
+    public final int[] l = new int[4];
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+    public final int a() {
+        int i7 = this.d;
+        int i10 = this.e;
+        if (i10 != 0) {
+            i7 = i0.a.f(0.5f, i7, i10);
+        }
+        int i11 = this.f;
+        if (i11 != 0) {
+            i7 = i0.a.f(0.5f, i7, i11);
+        }
+        int i12 = this.g;
+        return i12 != 0 ? i0.a.f(0.5f, i7, i12) : i7;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    public final void b(float f10, float f11, float f12, float f13) {
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(f10, f11, f12, f13);
+        c(rectF);
+    }
+
+    public final void c(RectF rectF) {
+        RectF rectF2 = this.h;
+        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
+            return;
+        }
+        rectF2.set(rectF);
+        e();
+    }
+
+    public final void d(int i7, int i10, int i11, int i12) {
+        if (this.i != null && this.d == i7 && this.e == i10 && this.f == i11 && this.g == i12) {
+            return;
+        }
+        this.d = i7;
+        int[] iArr = this.l;
+        iArr[0] = i7;
+        this.e = i10;
+        iArr[1] = i10;
+        this.f = i11;
+        iArr[2] = i11;
+        this.g = i12;
+        iArr[3] = i12;
+        Paint paint = this.c;
+        if (i10 == 0) {
+            this.i = null;
+            paint.setShader(null);
+            paint.setColor(i7);
+        } else if (i11 == 0) {
+            if (this.a && this.b) {
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i7, i10}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient;
+                paint.setShader(linearGradient);
+            } else {
+                LinearGradient linearGradient2 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i7, i10}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient2;
+                paint.setShader(linearGradient2);
+            }
+        } else if (!this.m) {
+            if (this.k == null) {
+                this.k = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
+            }
+            Utilities.generateGradient(this.k, 0, 0.0f, iArr);
+            Bitmap bitmap = this.k;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.i = bitmapShader;
+            paint.setShader(bitmapShader);
+        } else if (this.a && this.b) {
+            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i7, i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient3;
+            paint.setShader(linearGradient3);
+        } else {
+            LinearGradient linearGradient4 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i7, i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient4;
+            paint.setShader(linearGradient4);
+        }
+        e();
+    }
+
+    public void e() {
+        if (this.i == null) {
+            return;
+        }
+        RectF rectF = this.h;
+        float width = rectF.width() / 60.0f;
+        float height = rectF.height() / 80.0f;
+        Matrix matrix = this.j;
+        matrix.reset();
+        matrix.postTranslate(rectF.left, rectF.top);
+        matrix.preScale(width, height);
+        this.i.setLocalMatrix(matrix);
     }
 }

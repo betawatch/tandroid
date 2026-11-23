@@ -9,18 +9,18 @@ import android.view.View;
 import androidx.mediarouter.app.b0;
 import androidx.mediarouter.app.z;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.cx;
-import org.telegram.ui.ss;
-import org.telegram.ui.xt;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.voip.o;
+import org.telegram.ui.bx;
+import org.telegram.ui.wt;
 import s4.v;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,6 @@ public final class d implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        int i7 = 4;
         switch (this.a) {
             case 0:
                 try {
@@ -62,50 +61,50 @@ public final class d implements View.OnClickListener {
                 zVar.x.setVisibility(0);
                 break;
             default:
-                if (!cx.C4) {
-                    cx.C4 = true;
+                if (!bx.C4) {
+                    bx.C4 = true;
                     SharedPreferences sharedPreferences = t0.b.getSharedPreferences("themeconfig", 0);
                     String str = "Blue";
                     String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                    if (m6.Q0(string) == null || m6.Q0(string).q()) {
+                    if (n6.Q0(string) == null || n6.Q0(string).q()) {
                         string = "Blue";
                     }
                     String str2 = "Dark Blue";
                     String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                    if (m6.Q0(string2) == null || !m6.Q0(string2).q()) {
+                    if (n6.Q0(string2) == null || !n6.Q0(string2).q()) {
                         string2 = "Dark Blue";
                     }
-                    l6 l6Var = m6.I;
+                    m6 m6Var = n6.I;
                     if (!string.equals(string2)) {
                         str2 = string2;
-                    } else if (l6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    } else if (m6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        boolean q10 = m6.I.q();
+                        boolean q10 = n6.I.q();
                         boolean z10 = !q10;
-                        l6 Q0 = q10 ? m6.Q0(str2) : m6.Q0(str);
-                        oh0 oh0Var = ((xt) this.c).d;
-                        oh0Var.P(q10 ? oh0Var.e[0] - 1 : 0);
-                        ((xt) this.c).e.getImageView().d();
-                        int[] iArr = {(((xt) this.c).e.getImageView().getMeasuredWidth() / 2) + r6, f3.C(3.0f, ((xt) this.c).e.getImageView().getMeasuredHeight() / 2, r6)};
-                        ((xt) this.c).e.getImageView().getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        ls.e().k(ls.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
+                        m6 Q0 = q10 ? n6.Q0(str2) : n6.Q0(str);
+                        nh0 nh0Var = ((wt) this.c).d;
+                        nh0Var.P(q10 ? nh0Var.e[0] - 1 : 0);
+                        ((wt) this.c).e.getImageView().d();
+                        int[] iArr = {(((wt) this.c).e.getImageView().getMeasuredWidth() / 2) + r6, f3.C(3.0f, ((wt) this.c).e.getImageView().getMeasuredHeight() / 2, r6)};
+                        ((wt) this.c).e.getImageView().getLocationInWindow(iArr);
+                        int i7 = iArr[0];
+                        int i10 = iArr[1];
+                        ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((wt) this.c).e.getImageView(), ((wt) this.c).e, new o(8, this, (g2) this.b));
                         break;
                     }
                     str = string;
-                    boolean q102 = m6.I.q();
+                    boolean q102 = n6.I.q();
                     boolean z102 = !q102;
                     if (q102) {
                     }
-                    oh0 oh0Var2 = ((xt) this.c).d;
-                    oh0Var2.P(q102 ? oh0Var2.e[0] - 1 : 0);
-                    ((xt) this.c).e.getImageView().d();
-                    int[] iArr2 = {(((xt) this.c).e.getImageView().getMeasuredWidth() / 2) + i10, f3.C(3.0f, ((xt) this.c).e.getImageView().getMeasuredHeight() / 2, i11)};
-                    ((xt) this.c).e.getImageView().getLocationInWindow(iArr2);
-                    int i102 = iArr2[0];
-                    int i112 = iArr2[1];
-                    ls.e().k(ls.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
+                    nh0 nh0Var2 = ((wt) this.c).d;
+                    nh0Var2.P(q102 ? nh0Var2.e[0] - 1 : 0);
+                    ((wt) this.c).e.getImageView().d();
+                    int[] iArr2 = {(((wt) this.c).e.getImageView().getMeasuredWidth() / 2) + i7, f3.C(3.0f, ((wt) this.c).e.getImageView().getMeasuredHeight() / 2, i10)};
+                    ((wt) this.c).e.getImageView().getLocationInWindow(iArr2);
+                    int i72 = iArr2[0];
+                    int i102 = iArr2[1];
+                    ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((wt) this.c).e.getImageView(), ((wt) this.c).e, new o(8, this, (g2) this.b));
                 }
                 break;
         }

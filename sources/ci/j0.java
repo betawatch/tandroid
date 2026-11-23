@@ -27,37 +27,37 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
-import bi.g6;
-import bi.n3;
-import bi.u1;
-import bi.u2;
-import c8.ma;
+import bi.j6;
+import bi.p3;
+import bi.v1;
+import bi.w2;
+import c8.na;
 import com.google.android.gms.internal.vision.e2;
 import di.ua;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hi0;
+import org.telegram.ui.fi0;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class j0 extends g2 {
     public boolean E;
@@ -149,8 +149,8 @@ public class j0 extends g2 {
         boolean z10 = !j0Var.E;
         int i7 = j0Var.currentAccount;
         j0Var.Z = i7;
-        j0Var.X = ls.f(i7).q(null, -1, z10);
-        j0Var.Y = ls.e().q(null, -1, z10);
+        j0Var.X = ks.f(i7).q(null, -1, z10);
+        j0Var.Y = ks.e().q(null, -1, z10);
         animatorSet.start();
     }
 
@@ -158,29 +158,29 @@ public class j0 extends g2 {
         if (j0Var.getParentActivity() == null) {
             return;
         }
-        n3 n3Var = new n3(j0Var.getParentActivity(), j0Var.currentAccount, j0Var.getUserConfig().e(), null, null);
-        if (!n3Var.o2) {
-            n3Var.o2 = true;
-            ua uaVar = n3Var.q2;
+        p3 p3Var = new p3(j0Var.getParentActivity(), j0Var.currentAccount, j0Var.getUserConfig().e(), null, null);
+        if (!p3Var.o2) {
+            p3Var.o2 = true;
+            ua uaVar = p3Var.q2;
             if (uaVar != null && (uaVar.getParent() instanceof ViewGroup)) {
-                ViewGroup viewGroup = (ViewGroup) n3Var.q2.getParent();
-                int indexOfChild = viewGroup.indexOfChild(n3Var.q2);
-                viewGroup.removeView(n3Var.q2);
-                ua uaVar2 = new ua(n3Var.getContext(), ls.Z3, 2, 0);
-                n3Var.q2 = uaVar2;
-                viewGroup.addView(uaVar2, indexOfChild, ma.c(-1.0f, -1));
+                ViewGroup viewGroup = (ViewGroup) p3Var.q2.getParent();
+                int indexOfChild = viewGroup.indexOfChild(p3Var.q2);
+                viewGroup.removeView(p3Var.q2);
+                ua uaVar2 = new ua(p3Var.getContext(), ks.Z3, 2, 0);
+                p3Var.q2 = uaVar2;
+                viewGroup.addView(uaVar2, indexOfChild, na.c(-1.0f, -1));
             }
-            m80 m80Var = n3Var.r2;
-            if (m80Var != null) {
-                String N0 = hd.N0(2131750271, null);
-                u2 u2Var = n3Var.f2;
-                u2Var.setText(N0);
-                u2Var.setBreakStrategy(2);
-                m80Var.setVisibility(8);
+            j80 j80Var = p3Var.r2;
+            if (j80Var != null) {
+                String N0 = gd.N0(2131750271, null);
+                w2 w2Var = p3Var.f2;
+                w2Var.setText(N0);
+                w2Var.setBreakStrategy(2);
+                j80Var.setVisibility(8);
             }
-            n3Var.U1.O(false);
+            p3Var.U1.O(false);
         }
-        n3Var.show();
+        p3Var.show();
     }
 
     public static void c0(View view) {
@@ -310,20 +310,20 @@ public class j0 extends g2 {
             }
         }
         Activity parentActivity = getParentActivity();
-        hi0 hi0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).t1 : null;
-        if (hi0Var != null && this.c == null) {
-            org.telegram.ui.f fVar = new org.telegram.ui.f(hi0Var, 27);
-            hi0Var.b.add(fVar);
-            hi0Var.a();
+        fi0 fi0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).t1 : null;
+        if (fi0Var != null && this.c == null) {
+            org.telegram.ui.f fVar = new org.telegram.ui.f(fi0Var, 27);
+            fi0Var.b.add(fVar);
+            fi0Var.a();
             this.c = fVar;
         }
         int i10 = this.currentAccount;
         long j10 = this.a;
         long j11 = this.b;
-        np u12 = np.u1(i10);
+        mp u12 = mp.u1(i10);
         String s5 = a8.p0.s(new StringBuilder("https://"), u12.X2, "/");
         if (j10 != 0 || j11 == 0) {
-            if (j10 == k10.i(i10).e()) {
+            if (j10 == i10.i(i10).e()) {
                 str = "";
                 z10 = true;
             } else {
@@ -331,7 +331,7 @@ public class j0 extends g2 {
                 z10 = false;
             }
             TLRPC.User c22 = u12.c2(Long.valueOf(j10));
-            String o4 = c22 != null ? p10.o(c22) : null;
+            String o4 = c22 != null ? n10.o(c22) : null;
             if (o4 != null) {
                 j3 = 0;
                 m0Var = new m0(p5.c.v(s5, o4), o4, true, false, z10, j10, z10);
@@ -395,10 +395,10 @@ public class j0 extends g2 {
                 TLRPC.TL_exportedContactToken tL_exportedContactToken2 = (tL_exportedContactToken == null || ((long) tL_exportedContactToken.expires) <= System.currentTimeMillis() / 1000) ? null : u12.d8;
                 String str4 = tL_exportedContactToken2 != null ? tL_exportedContactToken2.url : null;
                 j3 = 0;
-                m0Var = new m0(str4, c22 != null ? p10.q(c22) : str, false, true, true, j10, true);
+                m0Var = new m0(str4, c22 != null ? n10.q(c22) : str, false, true, true, j10, true);
             } else {
                 j3 = 0;
-                m0Var = new m0(s5, c22 != null ? p10.q(c22) : str, false, false, false, j10, false);
+                m0Var = new m0(s5, c22 != null ? n10.q(c22) : str, false, false, false, j10, false);
             }
             m0Var2 = m0Var;
         } else {
@@ -414,9 +414,9 @@ public class j0 extends g2 {
             }
         }
         this.f = new FrameLayout(context);
-        z0 z0Var = new z0(context, this.currentAccount, m0Var2.a, m0Var2.b, m0Var2.c, new d6.i(this, 7));
+        z0 z0Var = new z0(context, this.currentAccount, m0Var2.a, m0Var2.b, m0Var2.c, new d6.i(this, 8));
         this.d = z0Var;
-        this.f.addView(z0Var, ma.c(-1.0f, -1));
+        this.f.addView(z0Var, na.c(-1.0f, -1));
         this.d.setImmediateOnOpen(this.E);
         this.d.setRevealOpening(true);
         if (this.H) {
@@ -447,7 +447,7 @@ public class j0 extends g2 {
         if (n0Var != null) {
             shareTheme = n0Var.a;
         } else {
-            np u13 = np.u1(i13);
+            mp u13 = mp.u1(i13);
             if (j12 > j3) {
                 TLRPC.UserFull d2 = u13.d2(j12);
                 if (d2 != null) {
@@ -479,9 +479,9 @@ public class j0 extends g2 {
             z0Var3.setGiftsOwner(j12);
         }
         if (m0Var2.e) {
-            ls.f(i13).c(o0Var2, ls.k0);
+            ks.f(i13).c(o0Var2, ks.k0);
             if (z11) {
-                np u14 = np.u1(i13);
+                mp u14 = mp.u1(i13);
                 TLRPC.TL_exportedContactToken tL_exportedContactToken3 = u14.d8;
                 TLRPC.TL_exportedContactToken tL_exportedContactToken4 = (tL_exportedContactToken3 == null || ((long) tL_exportedContactToken3.expires) <= System.currentTimeMillis() / 1000) ? null : u14.d8;
                 o0Var2.r = tL_exportedContactToken4;
@@ -538,10 +538,10 @@ public class j0 extends g2 {
         this.d.setScanHidden(true);
         b0 b0Var = new b0(getParentActivity(), rectF, rectF2, new ob.c(this, 11));
         this.G = b0Var;
-        b0Var.setButtonLabel(hd.N0(2131746274, null));
+        b0Var.setButtonLabel(gd.N0(2131746274, null));
         b0 b0Var2 = this.G;
         b0Var2.setOnGallery(new c1.a(16, this, b0Var2));
-        this.f.addView(this.G, ma.c(-1.0f, -1));
+        this.f.addView(this.G, na.c(-1.0f, -1));
     }
 
     public final void g0(float f10, float f11, boolean z10) {
@@ -571,7 +571,7 @@ public class j0 extends g2 {
             this.d.setOnPicksChanged(new f0(this, 1));
             this.y.setOutlineProvider(this.h.getOutlineProvider());
             this.y.setClipToOutline(true);
-            this.f.addView(this.h, ma.e(-1, -1, 48));
+            this.f.addView(this.h, na.e(-1, -1, 48));
             d0();
             this.f.post(new f0(this, 2));
         }
@@ -581,7 +581,7 @@ public class j0 extends g2 {
         int i10 = layoutParams.leftMargin;
         int i11 = layoutParams.rightMargin;
         if (this.y.getParent() == null) {
-            this.f.addView(this.y, ma.e(-1, -1, 48));
+            this.f.addView(this.y, na.e(-1, -1, 48));
         }
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.y.getLayoutParams();
         if (layoutParams2.height != i7 || layoutParams2.leftMargin != i10 || layoutParams2.rightMargin != i11) {
@@ -673,7 +673,7 @@ public class j0 extends g2 {
             intent.putExtra("android.intent.extra.TEXT", str);
         }
         try {
-            getParentActivity().startActivity(Intent.createChooser(intent, hd.N0(2131748977, null)));
+            getParentActivity().startActivity(Intent.createChooser(intent, gd.N0(2131748977, null)));
         } catch (ActivityNotFoundException e10) {
             a8.g(e10, true);
         }
@@ -739,23 +739,23 @@ public class j0 extends g2 {
         if (cVar.U != grid) {
             cVar.U = grid;
             grid.setVerticalScrollBarEnabled(false);
-            grid.j(new u1(cVar, 5));
+            grid.j(new v1(cVar, 5));
         }
         int L3 = org.telegram.messenger.g0.L(44.0f);
         this.a0 = grid;
         grid.setPadding(grid.getPaddingLeft(), L3, org.telegram.messenger.g0.L(5.0f) + grid.getPaddingRight(), grid.getPaddingBottom());
         m0();
         grid.setClipToPadding(false);
-        grid.j(new g6(1, this, tabs));
+        grid.j(new j6(1, this, tabs));
         tabs.bringToFront();
     }
 
     public final void l0() {
         if (this.X >= 0) {
-            ls.f(this.Z).j(this.X);
+            ks.f(this.Z).j(this.X);
         }
         if (this.Y >= 0) {
-            ls.e().j(this.Y);
+            ks.e().j(this.Y);
         }
         this.Y = -1;
         this.X = -1;
@@ -824,7 +824,7 @@ public class j0 extends g2 {
         Bundle bundle2 = this.arguments;
         this.b = bundle2 != null ? bundle2.getLong("chat_id") : 0L;
         Bundle bundle3 = this.arguments;
-        this.E = bundle3 != null && bundle3.getBoolean("immediate") && cz.o() == 2;
+        this.E = bundle3 != null && bundle3.getBoolean("immediate") && bz.o() == 2;
         if (this.a == 0 && this.b == 0) {
             this.a = getUserConfig().e();
         }
@@ -837,9 +837,9 @@ public class j0 extends g2 {
         l0();
         org.telegram.ui.f fVar = this.c;
         if (fVar != null) {
-            hi0 hi0Var = (hi0) fVar.b;
-            if (hi0Var.b.remove(fVar)) {
-                hi0Var.a();
+            fi0 fi0Var = (fi0) fVar.b;
+            if (fi0Var.b.remove(fVar)) {
+                fi0Var.a();
             }
             this.c = null;
         }
@@ -909,11 +909,11 @@ public class j0 extends g2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(hd.N0(2131746307, null));
-        alertDialog$Builder.k(hd.N0(2131747106, null), new c0(this));
-        alertDialog$Builder.h(hd.N0(2131751760, null), null);
-        int i10 = m6.L5;
-        alertDialog$Builder.m(R.raw.permission_request_camera, 72, m6.x0(null, i10, false), null);
+        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(gd.N0(2131746307, null));
+        alertDialog$Builder.k(gd.N0(2131747106, null), new c0(this));
+        alertDialog$Builder.h(gd.N0(2131751760, null), null);
+        int i10 = n6.L5;
+        alertDialog$Builder.m(R.raw.permission_request_camera, 72, n6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
         alertDialog$Builder.p();
     }
@@ -942,7 +942,7 @@ public class j0 extends g2 {
         }
         float f10 = f.S;
         long j3 = 0;
-        if (Build.VERSION.SDK_INT >= 29 && cz.o() == 2) {
+        if (Build.VERSION.SDK_INT >= 29 && bz.o() == 2) {
             j3 = Math.max(0L, Math.round(c1.b[51]) - 860);
         }
         FrameLayout frameLayout = this.f;

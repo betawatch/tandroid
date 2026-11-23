@@ -1,18 +1,18 @@
 package di;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.p10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n7 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r10 b;
+    public final /* synthetic */ p10 b;
     public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ n7(int i7, r10 r10Var, boolean[] zArr) {
+    public /* synthetic */ n7(int i7, p10 p10Var, boolean[] zArr) {
         this.a = i7;
-        this.b = r10Var;
+        this.b = p10Var;
         this.c = zArr;
     }
 
@@ -20,23 +20,23 @@ public final /* synthetic */ class n7 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                r10 r10Var = this.b;
-                if (r10Var != null && !this.c[0]) {
-                    r10Var.a(0L, Boolean.FALSE);
+                p10 p10Var = this.b;
+                if (p10Var != null && !this.c[0]) {
+                    p10Var.a(0L, Boolean.FALSE);
                     break;
                 }
                 break;
             case 1:
-                r10 r10Var2 = this.b;
-                if (r10Var2 != null && !this.c[0]) {
-                    r10Var2.a(Boolean.FALSE, null);
+                p10 p10Var2 = this.b;
+                if (p10Var2 != null && !this.c[0]) {
+                    p10Var2.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
             default:
-                r10 r10Var3 = this.b;
-                if (r10Var3 != null && !this.c[0]) {
-                    r10Var3.a(Boolean.FALSE, null);
+                p10 p10Var3 = this.b;
+                if (p10Var3 != null && !this.c[0]) {
+                    p10Var3.a(Boolean.FALSE, null);
                     break;
                 }
                 break;

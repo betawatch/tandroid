@@ -15,7 +15,7 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class e1 {
     public static void a(h1 h1Var, cc.e eVar, j jVar, int i7, r7 r7Var, RectF rectF, float[] fArr, g1 g1Var, float f10) {

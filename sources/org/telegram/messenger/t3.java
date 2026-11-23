@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.f40;
+import org.telegram.ui.e40;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t3 {
     public static int R;
@@ -78,7 +78,7 @@ public final class t3 {
             return sharedInstance.getVideoState(z10) == 2;
         }
         u3 u3Var2 = t3Var.A;
-        if ((u3Var2 != null && u3Var2.a == groupCallParticipant) || (((u3Var = t3Var.z) != null && u3Var.a == groupCallParticipant) || t3Var.d.f(gj.B1(groupCallParticipant.peer)) != null)) {
+        if ((u3Var2 != null && u3Var2.a == groupCallParticipant) || (((u3Var = t3Var.z) != null && u3Var.a == groupCallParticipant) || t3Var.d.f(fj.B1(groupCallParticipant.peer)) != null)) {
             if (z10) {
                 return groupCallParticipant.presentation != null;
             }
@@ -132,12 +132,12 @@ public final class t3 {
             togglegroupcallrecord.video_portrait = i7 == 1;
         }
         ConnectionsManager.getInstance(this.C.a).sendRequest(togglegroupcallrecord, new m3(this, i10));
-        ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+        ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
     }
 
     public final void B() {
         z();
-        ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE, 0L);
+        ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE, 0L);
     }
 
     public final void a(long j3) {
@@ -151,7 +151,7 @@ public final class t3 {
             this.j.add(Long.valueOf(j3));
             this.o.remove(Long.valueOf(j3));
             z();
-            ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+            ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
         }
     }
 
@@ -165,19 +165,19 @@ public final class t3 {
         tL_groupCallParticipant.muted = true;
         tL_groupCallParticipant.self = true;
         tL_groupCallParticipant.video_joined = this.b.can_start_video;
-        TLRPC.Chat O0 = np.u1(this.C.a).O0(Long.valueOf(this.c));
+        TLRPC.Chat O0 = mp.u1(this.C.a).O0(Long.valueOf(this.c));
         tL_groupCallParticipant.can_self_unmute = !this.b.join_muted || v3.w(14, O0);
         tL_groupCallParticipant.date = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
         if (v3.w(14, O0) || !v3.T(O0) || O0.megagroup || tL_groupCallParticipant.can_self_unmute) {
             tL_groupCallParticipant.active_date = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
         }
         if (h > 0) {
-            TLRPC.UserFull d2 = np.u1(this.C.a).d2(h);
+            TLRPC.UserFull d2 = mp.u1(this.C.a).d2(h);
             if (d2 != null) {
                 tL_groupCallParticipant.about = d2.about;
             }
         } else {
-            TLRPC.ChatFull P0 = np.u1(this.C.a).P0(-h);
+            TLRPC.ChatFull P0 = mp.u1(this.C.a).P0(-h);
             if (P0 != null) {
                 tL_groupCallParticipant.about = P0.about;
             }
@@ -186,7 +186,7 @@ public final class t3 {
         this.e.add(tL_groupCallParticipant);
         z();
         if (z10) {
-            ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+            ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
         }
     }
 
@@ -283,7 +283,7 @@ public final class t3 {
 
     public final long h() {
         TLRPC.Peer peer = this.J;
-        return peer != null ? gj.B1(peer) : k10.i(this.C.a).e();
+        return peer != null ? fj.B1(peer) : i10.i(this.C.a).e();
     }
 
     public final boolean j() {
@@ -312,7 +312,7 @@ public final class t3 {
             str = "";
         }
         getgroupparticipants.offset = str;
-        getgroupparticipants.limit = this.a ? np.u1(this.C.a).S6 : 20;
+        getgroupparticipants.limit = this.a ? mp.u1(this.C.a).S6 : 20;
         ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupparticipants, new p3(this, z10, getgroupparticipants, 0));
     }
 
@@ -341,7 +341,7 @@ public final class t3 {
         for (int i11 = 0; i11 < size2; i11++) {
             long longValue = ((Long) arrayList.get(i11)).longValue();
             if (z10) {
-                getgroupparticipants.ids.add(np.u1(this.C.a).l1(longValue));
+                getgroupparticipants.ids.add(mp.u1(this.C.a).l1(longValue));
             } else {
                 getgroupparticipants.sources.add(Integer.valueOf((int) longValue));
             }
@@ -390,7 +390,7 @@ public final class t3 {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        ls.f(this.C.a).k(ls.B2, Long.valueOf(elapsedRealtime));
+        ks.f(this.C.a).k(ks.B2, Long.valueOf(elapsedRealtime));
         int size = arrayList.size();
         boolean z11 = false;
         for (int i11 = 0; i11 <= size; i11++) {
@@ -402,7 +402,7 @@ public final class t3 {
             } else if (z10 && groupCallParticipant3 != null && !z11) {
                 groupCallParticipant = groupCallParticipant3;
             }
-            TLRPC.GroupCallParticipant groupCallParticipant4 = (TLRPC.GroupCallParticipant) this.d.f(gj.B1(groupCallParticipant.peer));
+            TLRPC.GroupCallParticipant groupCallParticipant4 = (TLRPC.GroupCallParticipant) this.d.f(fj.B1(groupCallParticipant.peer));
             if (groupCallParticipant4 != null) {
                 arrayList2.remove(groupCallParticipant4);
                 n(groupCallParticipant4, false);
@@ -414,7 +414,7 @@ public final class t3 {
                 if (elapsedRealtime != groupCallParticipant.lastVisibleDate) {
                     groupCallParticipant.active_date = groupCallParticipant.lastTypingDate;
                 }
-            } else if (hVar != null && (groupCallParticipant2 = (TLRPC.GroupCallParticipant) hVar.f(gj.B1(groupCallParticipant.peer))) != null) {
+            } else if (hVar != null && (groupCallParticipant2 = (TLRPC.GroupCallParticipant) hVar.f(fj.B1(groupCallParticipant.peer))) != null) {
                 if (groupCallParticipant2.self) {
                     groupCallParticipant.lastTypingDate = groupCallParticipant2.active_date;
                 } else {
@@ -426,7 +426,7 @@ public final class t3 {
                     groupCallParticipant.active_date = groupCallParticipant2.active_date;
                 }
             }
-            this.d.k(groupCallParticipant, gj.B1(groupCallParticipant.peer));
+            this.d.k(groupCallParticipant, fj.B1(groupCallParticipant.peer));
             arrayList2.add(groupCallParticipant);
             n(groupCallParticipant, true);
         }
@@ -434,7 +434,7 @@ public final class t3 {
             this.b.participants_count = this.d.m();
         }
         z();
-        ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+        ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
         w();
     }
 
@@ -498,7 +498,7 @@ public final class t3 {
         cg.d.a(this.b, groupCall);
         this.b = groupCall;
         this.w = this.b.record_start_date != 0;
-        ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+        ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
     }
 
     public final void p(TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, boolean z10) {
@@ -556,7 +556,7 @@ public final class t3 {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         ArrayList arrayList = this.e;
         int i11 = !arrayList.isEmpty() ? ((TLRPC.GroupCallParticipant) i5.c.h(1, arrayList)).date : 0;
-        ls.f(this.C.a).k(ls.B2, Long.valueOf(elapsedRealtime));
+        ks.f(this.C.a).k(ks.B2, Long.valueOf(elapsedRealtime));
         int size2 = tL_updateGroupCallParticipants.participants.size();
         long j11 = 0;
         int i12 = 0;
@@ -569,7 +569,7 @@ public final class t3 {
             long j12 = j10;
             TLRPC.GroupCallParticipant groupCallParticipant = tL_updateGroupCallParticipants.participants.get(i12);
             boolean z18 = z12;
-            long B1 = gj.B1(groupCallParticipant.peer);
+            long B1 = fj.B1(groupCallParticipant.peer);
             if (s2.a) {
                 StringBuilder t6 = a8.p0.t(B1, "process participant ", " left = ");
                 t6.append(groupCallParticipant.left);
@@ -602,11 +602,11 @@ public final class t3 {
                     if (hVar.g(null, B1) != null) {
                         if (B1 > j12) {
                             j3 = elapsedRealtime;
-                            TLRPC.User c22 = np.u1(this.C.a).c2(Long.valueOf(B1));
+                            TLRPC.User c22 = mp.u1(this.C.a).c2(Long.valueOf(B1));
                             p5.c.t(a8.p0.t(B1, "left remove from speaking ", " "), c22 == null ? null : c22.first_name, "GroupCall");
                         } else {
                             j3 = elapsedRealtime;
-                            TLRPC.Chat O0 = np.u1(this.C.a).O0(Long.valueOf(-B1));
+                            TLRPC.Chat O0 = mp.u1(this.C.a).O0(Long.valueOf(-B1));
                             p5.c.t(a8.p0.t(B1, "left remove from speaking ", " "), O0 == null ? null : O0.title, "GroupCall");
                         }
                         hVar.l(B1);
@@ -620,7 +620,7 @@ public final class t3 {
                         if (i14 >= arrayList2.size()) {
                             break;
                         }
-                        if (gj.B1(((u3) arrayList2.get(i14)).a.peer) == gj.B1(groupCallParticipant2.peer)) {
+                        if (fj.B1(((u3) arrayList2.get(i14)).a.peer) == fj.B1(groupCallParticipant2.peer)) {
                             arrayList2.remove(i14);
                             i14--;
                         }
@@ -652,10 +652,10 @@ public final class t3 {
                     if (groupCallParticipant.muted && hVar.g(null, B1) != null) {
                         hVar.l(B1);
                         if (B1 > j12) {
-                            TLRPC.User c23 = np.u1(this.C.a).c2(Long.valueOf(B1));
+                            TLRPC.User c23 = mp.u1(this.C.a).c2(Long.valueOf(B1));
                             p5.c.t(a8.p0.t(B1, "muted remove from speaking ", " "), c23 == null ? null : c23.first_name, "GroupCall");
                         } else {
-                            TLRPC.Chat O02 = np.u1(this.C.a).O0(Long.valueOf(-B1));
+                            TLRPC.Chat O02 = mp.u1(this.C.a).O0(Long.valueOf(-B1));
                             p5.c.t(a8.p0.t(B1, "muted remove from speaking ", " "), O02 == null ? null : O02.title, "GroupCall");
                         }
                         z16 = z18;
@@ -767,15 +767,15 @@ public final class t3 {
             if (z15) {
                 z();
             }
-            ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.valueOf(z17), Long.valueOf(j11));
+            ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.valueOf(z17), Long.valueOf(j11));
         }
         if (z16) {
-            ls.f(this.C.a).k(ls.y2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+            ks.f(this.C.a).k(ks.y2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
         }
     }
 
     public final void q(int i7, ArrayList arrayList) {
-        ls.f(this.C.a).k(ls.B2, Long.valueOf(SystemClock.elapsedRealtime()));
+        ks.f(this.C.a).k(ks.B2, Long.valueOf(SystemClock.elapsedRealtime()));
         int size = arrayList.size();
         ArrayList arrayList2 = null;
         boolean z10 = false;
@@ -800,7 +800,7 @@ public final class t3 {
         }
         if (z10) {
             z();
-            ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+            ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
         }
     }
 
@@ -863,7 +863,7 @@ public final class t3 {
         this.n.remove(Long.valueOf(j3));
         this.j.remove(Long.valueOf(j3));
         z();
-        ls.f(this.C.a).k(ls.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
+        ks.f(this.C.a).k(ks.w2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
     }
 
     public final void u(c cVar, long j3, TL_phone.groupCall groupcall) {
@@ -879,7 +879,7 @@ public final class t3 {
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         for (int i11 = 0; i11 < size; i11++) {
             TLRPC.GroupCallParticipant groupCallParticipant = groupcall.participants.get(i11);
-            this.d.k(groupCallParticipant, gj.B1(groupCallParticipant.peer));
+            this.d.k(groupCallParticipant, fj.B1(groupCallParticipant.peer));
             this.e.add(groupCallParticipant);
             n(groupCallParticipant, true);
             i10 = Math.min(i10, groupCallParticipant.date);
@@ -923,7 +923,7 @@ public final class t3 {
         if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             this.J = tL_peerUser;
-            tL_peerUser.user_id = k10.i(this.C.a).e();
+            tL_peerUser.user_id = i10.i(this.C.a).e();
         } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
             TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
             this.J = tL_peerUser2;
@@ -957,7 +957,7 @@ public final class t3 {
         arrayList3.clear();
         ArrayList arrayList4 = this.g;
         arrayList4.clear();
-        TLRPC.Chat O0 = np.u1(this.C.a).O0(Long.valueOf(this.c));
+        TLRPC.Chat O0 = mp.u1(this.C.a).O0(Long.valueOf(this.c));
         final boolean w10 = v3.w(14, O0);
         u3 u3Var2 = this.A;
         if (u3Var2 != null) {
@@ -1040,12 +1040,12 @@ public final class t3 {
                             return -1;
                         }
                         if (groupCallParticipant3.active_date == 0) {
-                            long B1 = gj.B1(groupCallParticipant2.peer);
+                            long B1 = fj.B1(groupCallParticipant2.peer);
                             long j3 = h;
                             if (B1 == j3) {
                                 return -1;
                             }
-                            if (gj.B1(groupCallParticipant3.peer) != j3) {
+                            if (fj.B1(groupCallParticipant3.peer) != j3) {
                                 if (w10) {
                                     long j10 = groupCallParticipant2.raise_hand_rating;
                                     if (j10 != 0) {
@@ -1091,7 +1091,7 @@ public final class t3 {
                     n(groupCallParticipant3, false);
                     c10 = c12;
                     z10 = z11;
-                    this.d.l(gj.B1(groupCallParticipant3.peer));
+                    this.d.l(fj.B1(groupCallParticipant3.peer));
                     i10 = 5000;
                     arrayList.remove(5000);
                 }
@@ -1199,7 +1199,7 @@ public final class t3 {
                 }
             }
         }
-        if (f40.E5 || arrayList3.size() % 2 != 1) {
+        if (e40.E5 || arrayList3.size() % 2 != 1) {
             return;
         }
         arrayList3.add((u3) arrayList3.remove(i16));

@@ -7,14 +7,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.jq;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.b20;
-import org.telegram.ui.bb1;
-import org.telegram.ui.yo0;
+import org.telegram.ui.a20;
+import org.telegram.ui.xo0;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class f0 extends ImageView {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final class f0 extends ImageView {
         switch (this.a) {
             case 2:
                 super.invalidate();
-                b20 b20Var = (b20) this.b;
-                b20Var.g0.invalidate();
-                b20Var.invalidate();
+                a20 a20Var = (a20) this.b;
+                a20Var.g0.invalidate();
+                a20Var.invalidate();
                 break;
             default:
                 super.invalidate();
@@ -88,7 +88,7 @@ public final class f0 extends ImageView {
             case 4:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((bb1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((za1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -113,7 +113,7 @@ public final class f0 extends ImageView {
         switch (this.a) {
             case 1:
                 super.setAlpha(f10);
-                ((mq) this.b).y.invalidate();
+                ((jq) this.b).y.invalidate();
                 break;
             default:
                 super.setAlpha(f10);
@@ -134,16 +134,16 @@ public final class f0 extends ImageView {
                     while (i7 < size) {
                         Object obj = arrayList.get(i7);
                         i7++;
-                        ((hi.l3) obj).setTranslationY(f10);
+                        ((hi.u3) obj).setTranslationY(f10);
                     }
                 }
-                yo0 yo0Var = photoViewer.h1;
-                if (yo0Var != null) {
-                    yo0Var.setTranslationY(f10);
+                xo0 xo0Var = photoViewer.h1;
+                if (xo0Var != null) {
+                    xo0Var.setTranslationY(f10);
                 }
-                o80 o80Var = photoViewer.g1;
-                if (o80Var != null) {
-                    o80Var.setTranslationY(f10);
+                l80 l80Var = photoViewer.g1;
+                if (l80Var != null) {
+                    l80Var.setTranslationY(f10);
                     break;
                 }
                 break;

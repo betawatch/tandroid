@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import org.telegram.ui.Cells.r1;
 import v4.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v4.i b;
+    public final /* synthetic */ v4.j b;
     public final /* synthetic */ ViewPropertyAnimator c;
     public final /* synthetic */ View d;
     public final /* synthetic */ k e;
 
-    public /* synthetic */ h(k kVar, v4.i iVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i7) {
+    public /* synthetic */ h(k kVar, v4.j jVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i7) {
         this.a = i7;
         this.e = kVar;
-        this.b = iVar;
+        this.b = jVar;
         this.c = viewPropertyAnimator;
         this.d = view;
     }
@@ -42,9 +42,9 @@ public final class h extends AnimatorListenerAdapter {
                 view.setTranslationY(0.0f);
                 k kVar = this.e;
                 ArrayList arrayList = kVar.B;
-                v4.i iVar = this.b;
-                if (arrayList.remove(iVar.a)) {
-                    kVar.d(iVar.a);
+                v4.j jVar = this.b;
+                if (arrayList.remove(jVar.a)) {
+                    kVar.d(jVar.a);
                     kVar.G();
                     break;
                 }
@@ -63,9 +63,9 @@ public final class h extends AnimatorListenerAdapter {
                 view2.setTranslationY(0.0f);
                 k kVar2 = this.e;
                 ArrayList arrayList2 = kVar2.B;
-                v4.i iVar2 = this.b;
-                if (arrayList2.remove(iVar2.b)) {
-                    kVar2.d(iVar2.b);
+                v4.j jVar2 = this.b;
+                if (arrayList2.remove(jVar2.b)) {
+                    kVar2.d(jVar2.b);
                     kVar2.G();
                     break;
                 }

@@ -1,6 +1,6 @@
 package q6;
 
-import a8.j8;
+import a8.k8;
 import android.accounts.Account;
 import android.content.AttributionSource;
 import android.content.Context;
@@ -22,8 +22,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final n6.c[] D = new n6.c[0];
@@ -54,7 +55,7 @@ public abstract class d {
     public final int v;
     public final String w;
     public volatile String x;
-    public volatile v4.f0 y;
+    public volatile nd0 y;
     public n6.a z;
 
     public d(Context context, Looper looper, l0 l0Var, int i7, n nVar, n nVar2, String str) {
@@ -268,7 +269,7 @@ public abstract class d {
             append2.println(sb3.toString());
         }
         if (this.e > j3) {
-            printWriter.append((CharSequence) str).append("lastFailedStatus=").append((CharSequence) j8.a(this.d));
+            printWriter.append((CharSequence) str).append("lastFailedStatus=").append((CharSequence) k8.a(this.d));
             PrintWriter append3 = printWriter.append(" lastFailedTime=");
             long j12 = this.e;
             String format3 = simpleDateFormat.format(new Date(j12));
@@ -302,7 +303,7 @@ public abstract class d {
         } else if (this.y == null) {
             attributionTag = this.x;
         } else {
-            AttributionSource attributionSource = (AttributionSource) this.y.a;
+            AttributionSource attributionSource = (AttributionSource) this.y.b;
             attributionTag = attributionSource == null ? this.x : attributionSource.getAttributionTag() == null ? this.x : attributionSource.getAttributionTag();
         }
         String str = attributionTag;

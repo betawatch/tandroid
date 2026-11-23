@@ -1,70 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class z0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.Cells.d2[] b;
 
-    public /* synthetic */ z0(Object obj, int i7) {
+    public /* synthetic */ z0(org.telegram.ui.Cells.d2[] d2VarArr, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = d2VarArr;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                ((org.telegram.ui.vf) obj).run();
-                break;
-            case 1:
-                org.telegram.messenger.g0.v1((b5) obj);
-                break;
-            case 2:
-                org.telegram.messenger.g0.v1((i4) obj);
-                break;
-            case 3:
-                ((ui) obj).A4 = false;
-                break;
-            case 4:
-                zk zkVar = (zk) obj;
-                zkVar.U0 = null;
-                zkVar.T.post(new tk(zkVar, 2));
-                break;
-            case 5:
-                ot otVar = (ot) obj;
-                otVar.b2 = null;
-                otVar.requestFocus();
-                break;
-            case 6:
-                float[] fArr = FragmentContextView.X0;
-                ((FragmentContextView) obj).c(false);
-                break;
-            case 7:
-                em0.I = null;
-                ((View) obj).requestFocus();
-                break;
-            case 8:
-                org.telegram.messenger.g0.v1((yl0) obj);
+                int intValue = ((Integer) view.getTag()).intValue();
+                this.b[intValue].c(!r1[r3.intValue()].b(), true);
                 break;
             default:
-                ThemeEditorView themeEditorView = ((pz0) obj).d;
-                themeEditorView.n = null;
-                if (themeEditorView.d != null) {
-                    org.telegram.messenger.g0.w3(themeEditorView.j, themeEditorView.c, themeEditorView.i);
-                    try {
-                        themeEditorView.j.addView(themeEditorView.c, themeEditorView.i);
-                        themeEditorView.e();
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
+                int intValue2 = ((Integer) view.getTag()).intValue();
+                this.b[intValue2].c(!r1[r3.intValue()].b(), true);
                 break;
         }
     }

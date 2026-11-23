@@ -1,33 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.io.Serializable;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h51 implements org.telegram.messenger.w10, org.telegram.messenger.x10 {
-    public final /* synthetic */ StickersActivity a;
+public final class h51 extends org.telegram.ui.Components.g41 {
+    public final /* synthetic */ StickersActivity b;
 
-    public /* synthetic */ h51(StickersActivity stickersActivity) {
-        this.a = stickersActivity;
+    public h51(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // org.telegram.messenger.x10
-    public Boolean a(org.telegram.ui.Components.o41 o41Var, View view, Integer num, Float f10, Float f11) {
-        boolean z10;
-        StickersActivity stickersActivity = this.a;
-        if (stickersActivity.x.isEmpty() && (o41Var.H instanceof TLRPC.TL_messages_stickerSet)) {
-            stickersActivity.s0((org.telegram.ui.Cells.h8) view);
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        return Boolean.valueOf(z10);
+    @Override // org.telegram.ui.Components.g41
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        int i7;
+        StickersActivity stickersActivity = this.b;
+        i7 = ((org.telegram.ui.ActionBar.g2) stickersActivity).currentAccount;
+        org.telegram.messenger.ri.d0(i7).k2(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
     }
 
-    @Override // org.telegram.messenger.w10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        StickersActivity.Z(this.a, (org.telegram.ui.Components.o41) obj, (View) obj2);
+    @Override // org.telegram.ui.Components.g41
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i7;
+        StickersActivity stickersActivity = this.b;
+        i7 = ((org.telegram.ui.ActionBar.g2) stickersActivity).currentAccount;
+        org.telegram.messenger.ri.d0(i7).k2(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
     }
 }

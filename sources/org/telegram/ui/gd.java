@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gd implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -36,8 +36,8 @@ public final /* synthetic */ class gd implements View.OnClickListener {
                         eVar.setLoading(true);
                         TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
                         int i7 = this.b;
-                        tL_payments_getStarsRevenueAdsAccountUrl.peer = org.telegram.messenger.np.u1(i7).l1(this.c);
-                        ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new u7(2, xdVar, context));
+                        tL_payments_getStarsRevenueAdsAccountUrl.peer = org.telegram.messenger.mp.u1(i7).l1(this.c);
+                        ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new v7(2, xdVar, context));
                         break;
                     }
                 }

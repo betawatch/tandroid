@@ -6,10 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public final q1 a;
@@ -17,23 +18,23 @@ public final class t5 extends FrameLayout {
     public final s5 c;
     public final s5 d;
     public boolean e;
-    public final h6.m f;
+    public final i61 f;
     public final RectF h;
 
-    public t5(Context context, org.telegram.ui.ActionBar.h6 h6Var, q1 q1Var) {
+    public t5(Context context, org.telegram.ui.ActionBar.i6 i6Var, q1 q1Var) {
         super(context);
-        this.f = new h6.m(29);
+        this.f = new i61(1);
         this.h = new RectF();
         this.a = q1Var;
-        s5 s5Var = new s5(context, h6Var);
+        s5 s5Var = new s5(context, i6Var);
         this.b = s5Var;
-        s5 s5Var2 = new s5(context, h6Var);
+        s5 s5Var2 = new s5(context, i6Var);
         this.c = s5Var2;
-        s5 s5Var3 = new s5(context, h6Var);
+        s5 s5Var3 = new s5(context, i6Var);
         this.d = s5Var3;
-        addView(s5Var, c8.ma.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(s5Var2, c8.ma.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(s5Var3, c8.ma.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(s5Var, c8.na.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(s5Var2, c8.na.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(s5Var3, c8.na.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
     }
 
     public final void a(j5 j5Var, float f10, boolean z10, j5 j5Var2, float f11, boolean z11, j5 j5Var3, float f12, boolean z12) {
@@ -85,17 +86,17 @@ public final class t5 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float width = getWidth();
         float L = org.telegram.messenger.g0.L(8.0f);
         RectF rectF = this.h;
         rectF.set(0.0f, 0.0f, width, L);
-        h6.m mVar = this.f;
-        mVar.n(canvas, rectF, 1, 1.0f);
+        i61 i61Var = this.f;
+        i61Var.u(canvas, rectF, 1, 1.0f);
         rectF.set(0.0f, getHeight() - org.telegram.messenger.g0.L(8.0f), getWidth(), getHeight());
-        mVar.n(canvas, rectF, 3, 1.0f);
+        i61Var.u(canvas, rectF, 3, 1.0f);
         canvas.restore();
         canvas.restore();
     }

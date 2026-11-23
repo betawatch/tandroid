@@ -10,20 +10,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.sh0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class v3 extends FrameLayout {
     public final t3 a;
     public final u3 b;
     public final TextView[] c;
-    public sh0 d;
+    public rh0 d;
     public final x3 e;
     public Paint f;
     public float h;
@@ -38,7 +38,7 @@ public final class v3 extends FrameLayout {
         t3 t3Var = new t3(0, context, this);
         this.a = t3Var;
         t3Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
-        addView(t3Var, ma.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
+        addView(t3Var, na.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
         setClipChildren(false);
         u3 u3Var = new u3(context, 0);
         this.b = u3Var;
@@ -47,8 +47,8 @@ public final class v3 extends FrameLayout {
         u3Var.setMaxLines(1);
         u3Var.setEllipsizeByGradient(org.telegram.messenger.g0.L(4.0f));
         u3Var.setPivotX(0.0f);
-        ls.i(u3Var);
-        addView(u3Var, ma.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
+        ks.i(u3Var);
+        addView(u3Var, na.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i7 = 0; i7 < 2; i7++) {
             this.c[i7] = new TextView(context);
             this.c[i7].setTextSize(1, 12.0f);
@@ -57,7 +57,7 @@ public final class v3 extends FrameLayout {
             this.c[i7].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i7].setTextColor(-1);
             this.c[i7].setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(1.0f));
-            addView(this.c[i7], ma.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
+            addView(this.c[i7], na.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
         }
         this.b.setTextColor(-1);
     }
@@ -88,12 +88,12 @@ public final class v3 extends FrameLayout {
             }
             z11 = false;
         }
-        sh0 sh0Var = this.d;
+        rh0 rh0Var = this.d;
         t3 t3Var = this.a;
-        if (sh0Var == null) {
-            sh0 sh0Var2 = new sh0(t3Var);
-            this.d = sh0Var2;
-            sh0Var2.d(null, true, false);
+        if (rh0Var == null) {
+            rh0 rh0Var2 = new rh0(t3Var);
+            this.d = rh0Var2;
+            rh0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = t3Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class v3 extends FrameLayout {
             if (f10 != 1.0f) {
                 Paint t10 = i7.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                sh0 sh0Var3 = this.d;
-                sh0Var3.t = t10;
-                sh0Var3.a(canvas);
+                rh0 rh0Var3 = this.d;
+                rh0Var3.t = t10;
+                rh0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class v3 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f10 * this.h));
-            sh0 sh0Var4 = this.d;
-            sh0Var4.t = this.f;
-            sh0Var4.a(canvas);
+            rh0 rh0Var4 = this.d;
+            rh0Var4.t = this.f;
+            rh0Var4.a(canvas);
         }
     }
 
@@ -153,8 +153,8 @@ public final class v3 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new ah.g(this, 19));
-        this.s.addListener(new ai.k0(this, 12));
-        this.s.setInterpolator(nr.h);
+        this.s.addListener(new ai.g0(this, 12));
+        this.s.setInterpolator(kr.h);
         this.s.setDuration(340L);
         this.s.start();
     }
@@ -171,7 +171,7 @@ public final class v3 extends FrameLayout {
         TextView[] textViewArr = this.c;
         textViewArr[0].setOnClickListener(onClickListener);
         textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.m6.h0(822083583, 7, -1));
+        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.n6.h0(822083583, 7, -1));
     }
 
     public void setSubtitle(CharSequence charSequence) {

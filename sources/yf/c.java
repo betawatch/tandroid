@@ -8,8 +8,8 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
@@ -17,9 +17,8 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import wg.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -34,7 +33,7 @@ public final class c {
 
     public c(int i7) {
         this.c = i7;
-        this.a = k10.i(i7).n;
+        this.a = i10.i(i7).n;
         SharedPreferences d = d();
         try {
             g = d.getLong("hash", 0L);
@@ -64,7 +63,7 @@ public final class c {
             f(true);
             this.f = true;
         }
-        Utilities.e.c(new q(16, this, new ArrayList(this.e)));
+        Utilities.e.c(new v9.b(20, this, new ArrayList(this.e)));
     }
 
     public final TLRPC.Document c(long j3) {
@@ -169,7 +168,7 @@ public final class c {
             if (i7 >= arrayList.size()) {
                 edit.putInt("count", i10);
                 edit.apply();
-                ls.f(this.c).k(ls.h5, new Object[0]);
+                ks.f(this.c).k(ks.h5, new Object[0]);
                 return;
             }
             if (!((b) arrayList.get(i7)).d) {

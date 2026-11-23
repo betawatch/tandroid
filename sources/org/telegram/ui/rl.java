@@ -9,17 +9,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class rl implements rq0 {
     public final TL_iv.RichMessage a;
     public final ArrayList b;
-    public final org.telegram.messenger.gj c;
+    public final org.telegram.messenger.fj c;
 
-    public rl(TL_iv.RichMessage richMessage, ArrayList arrayList, org.telegram.messenger.gj gjVar) {
+    public rl(TL_iv.RichMessage richMessage, ArrayList arrayList, org.telegram.messenger.fj fjVar) {
         this.a = richMessage;
         this.b = arrayList;
-        this.c = gjVar;
+        this.c = fjVar;
     }
 
     @Override // org.telegram.ui.rq0
@@ -37,7 +37,7 @@ public final class rl implements rq0 {
         }
         TLRPC.Document b10 = d4.b(this.a, ((TL_iv.pageBlockVideo) pageBlock).video_id);
         if (b10 != null) {
-            return org.telegram.messenger.gj.K4(b10);
+            return org.telegram.messenger.fj.K4(b10);
         }
         return false;
     }
@@ -117,7 +117,7 @@ public final class rl implements rq0 {
         }
         if (tLObject instanceof TLRPC.Document) {
             TLRPC.Document document = (TLRPC.Document) tLObject;
-            TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.ls.r5, false, null, true);
+            TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.ks.r5, false, null, true);
             if (w11 == null) {
                 w11 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
             }
@@ -136,8 +136,8 @@ public final class rl implements rq0 {
 
     @Override // org.telegram.ui.rq0
     public final Object g() {
-        org.telegram.messenger.gj gjVar = this.c;
-        return gjVar != null ? gjVar : this.a;
+        org.telegram.messenger.fj fjVar = this.c;
+        return fjVar != null ? fjVar : this.a;
     }
 
     @Override // org.telegram.ui.rq0
@@ -152,36 +152,36 @@ public final class rl implements rq0 {
 
     @Override // org.telegram.ui.rq0
     public final void h(TL_iv.PageBlock pageBlock) {
-        org.telegram.messenger.fv fvVar;
-        org.telegram.messenger.gj gjVar = this.c;
-        if (gjVar == null || (fvVar = gjVar.y2) == null) {
+        org.telegram.messenger.ev evVar;
+        org.telegram.messenger.fj fjVar = this.c;
+        if (fjVar == null || (evVar = fjVar.y2) == null) {
             return;
         }
-        ArrayList arrayList = fvVar.g;
+        ArrayList arrayList = evVar.g;
         if (pageBlock == null) {
             return;
         }
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            org.telegram.messenger.au auVar = (org.telegram.messenger.au) arrayList.get(i7);
-            if (auVar instanceof org.telegram.messenger.ru) {
-                org.telegram.messenger.ru ruVar = (org.telegram.messenger.ru) auVar;
-                ArrayList arrayList2 = ruVar.Y;
+            org.telegram.messenger.zt ztVar = (org.telegram.messenger.zt) arrayList.get(i7);
+            if (ztVar instanceof org.telegram.messenger.qu) {
+                org.telegram.messenger.qu quVar = (org.telegram.messenger.qu) ztVar;
+                ArrayList arrayList2 = quVar.Y;
                 for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                    if (((org.telegram.messenger.tt) arrayList2.get(i10)).b == pageBlock) {
+                    if (((org.telegram.messenger.st) arrayList2.get(i10)).b == pageBlock) {
                         int max = Math.max(0, Math.min(i10, arrayList2.size() - 1));
-                        ValueAnimator valueAnimator = ruVar.l0;
+                        ValueAnimator valueAnimator = quVar.l0;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
-                            ruVar.l0 = null;
+                            quVar.l0 = null;
                         }
-                        if (ruVar.b0 == max && ruVar.c0 == 0.0f) {
+                        if (quVar.b0 == max && quVar.c0 == 0.0f) {
                             return;
                         }
-                        ruVar.b0 = max;
-                        ruVar.c0 = 0.0f;
-                        ruVar.d0 = false;
-                        ruVar.e0 = false;
-                        View view = ruVar.W;
+                        quVar.b0 = max;
+                        quVar.c0 = 0.0f;
+                        quVar.d0 = false;
+                        quVar.e0 = false;
+                        View view = quVar.W;
                         if (view != null) {
                             view.invalidate();
                             return;

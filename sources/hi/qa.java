@@ -1,55 +1,41 @@
 package hi;
 
-import android.view.ScaleGestureDetector;
+import android.content.Context;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.f81;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class qa extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-    public final /* synthetic */ ra a;
+public final class qa extends l1 {
+    public final /* synthetic */ nb c0;
 
-    public qa(ra raVar) {
-        this.a = raVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qa(nb nbVar, Context context, boolean z10) {
+        super(context, z10);
+        this.c0 = nbVar;
     }
 
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
-        v9 v9Var;
-        ra raVar = this.a;
-        sa saVar = raVar.o0;
-        if (!raVar.k0 || (v9Var = saVar.C0) == null || saVar.g0 != 0 || v9Var.s || saVar.B0.getFilledProgress() >= 1.0f) {
-            return false;
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        n6 n6Var = this.c0.P0;
+        if (n6Var != null) {
+            n6Var.h0 = Utilities.i((float) (d / 1800.0d), 1.0f, 0.0f);
         }
-        float scaleFactor = saVar.U1 + ((scaleGestureDetector.getScaleFactor() - 1.0f) * 0.75f);
-        saVar.U1 = scaleFactor;
-        saVar.U1 = Utilities.i(scaleFactor, 1.0f, 0.0f);
-        saVar.C0.setZoom(saVar.U1);
-        f81 f81Var = saVar.W0;
-        if (f81Var != null) {
-            f81Var.b(false, saVar.U1);
-        }
-        saVar.i0(true);
-        return true;
     }
 
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
-        ra raVar = this.a;
-        sa saVar = raVar.o0;
-        if (saVar.C0 == null || saVar.g0 != 0 || saVar.L0) {
-            return false;
-        }
-        raVar.k0 = true;
-        return super.onScaleBegin(scaleGestureDetector);
+    @Override // hi.l1, org.telegram.messenger.camera.CameraView
+    public final void toggleDual() {
+        super.toggleDual();
+        nb nbVar = this.c0;
+        nbVar.G0.setValue(isDual());
+        nbVar.G0.setContentDescription(gd.N0(isDual() ? 2131754886 : 2131754887, null));
+        nbVar.d0(nbVar.B());
     }
 
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
-        ra raVar = this.a;
-        raVar.k0 = false;
-        raVar.o0.e(false);
-        sa.b(raVar.o0);
-        super.onScaleEnd(scaleGestureDetector);
+    @Override // hi.l1
+    public final void u(boolean z10) {
+        nb nbVar = this.c0;
+        nbVar.p1.b(nbVar.d1.getText());
+        nbVar.p1.a(false, z10, nbVar.l0);
     }
 }

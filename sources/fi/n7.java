@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class n7 extends c5.l {
     public final k7 A0;
@@ -32,7 +32,7 @@ public abstract class n7 extends c5.l {
     public ArrayList y0;
     public int z0;
 
-    public n7(int i7, Context context, f9 f9Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public n7(int i7, Context context, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.B0 = new ArrayList();
         this.E0 = true;
@@ -43,7 +43,7 @@ public abstract class n7 extends c5.l {
         this.z0 = i7;
         this.I0 = new w3(context);
         this.O0 = f9Var;
-        k7 k7Var = new k7(wVar, context, f9Var, h6Var);
+        k7 k7Var = new k7(wVar, context, f9Var, i6Var);
         this.A0 = k7Var;
         setAdapter(k7Var);
         di.v6 v6Var = new di.v6(wVar, 10);

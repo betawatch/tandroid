@@ -1,11 +1,11 @@
 package l3;
 
 import com.google.android.gms.common.api.q;
-import f3.i0;
+import f3.j0;
 import h2.x;
 import i2.o;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e extends q {
     public final x b;
@@ -15,8 +15,8 @@ public final class e extends q {
     public boolean f;
     public int g;
 
-    public e(i0 i0Var) {
-        super(i0Var);
+    public e(j0 j0Var) {
+        super(j0Var);
         this.b = new x(o.a);
         this.c = new x(4);
     }

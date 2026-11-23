@@ -1,7 +1,7 @@
 package com.google.firebase;
 
 import a3.l;
-import a8.i8;
+import a8.j8;
 import ab.r;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -22,7 +22,7 @@ import u9.a;
 import u9.i;
 import u9.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -51,15 +51,15 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         j0Var.a(new i(qVar, 1, 0));
         j0Var.f = new r(qVar, 1);
         arrayList.add(j0Var.b());
-        arrayList.add(i8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(i8.a("fire-core", "22.2.1"));
-        arrayList.add(i8.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(i8.a("device-model", b(Build.DEVICE)));
-        arrayList.add(i8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(i8.b("android-target-sdk", new a0(9)));
-        arrayList.add(i8.b("android-min-sdk", new a0(10)));
-        arrayList.add(i8.b("android-platform", new a0(11)));
-        arrayList.add(i8.b("android-installer", new a0(12)));
+        arrayList.add(j8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(j8.a("fire-core", "22.2.1"));
+        arrayList.add(j8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(j8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(j8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(j8.b("android-target-sdk", new a0(9)));
+        arrayList.add(j8.b("android-min-sdk", new a0(10)));
+        arrayList.add(j8.b("android-platform", new a0(11)));
+        arrayList.add(j8.b("android-installer", new a0(12)));
         try {
             gd.b.b.getClass();
             str = "2.1.20";
@@ -67,7 +67,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
             str = null;
         }
         if (str != null) {
-            arrayList.add(i8.a("kotlin", str));
+            arrayList.add(j8.a("kotlin", str));
         }
         return arrayList;
     }

@@ -1,71 +1,129 @@
 package org.telegram.ui.Wallet;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.Random;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ga implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ na b;
+public final class ga {
+    public static final int[] f = {-16106272, -16754689, -14779393, -13326081, -10235137, -6559233};
+    public final ArrayList a = new ArrayList();
+    public final Random b = new Random();
+    public final Paint c = new Paint(1);
+    public final Path d;
+    public long e;
 
-    public /* synthetic */ ga(na naVar, int i7) {
-        this.a = i7;
-        this.b = naVar;
+    public ga() {
+        Path path = new Path();
+        this.d = path;
+        path.moveTo(0.0f, -1.0f);
+        path.quadTo(0.12f, -0.12f, 1.0f, 0.0f);
+        path.quadTo(0.12f, 0.12f, 0.0f, 1.0f);
+        path.quadTo(-0.12f, 0.12f, -1.0f, 0.0f);
+        path.quadTo(-0.12f, -0.12f, 0.0f, -1.0f);
+        path.close();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                na naVar = this.b;
-                if (naVar.y != null) {
-                    org.telegram.messenger.g0.v1(naVar.O);
-                    naVar.m0(naVar.y, null);
-                    break;
-                }
-                break;
-            case 1:
-                na naVar2 = this.b;
-                if (naVar2.y != null) {
-                    org.telegram.messenger.g0.v1(naVar2.O);
-                    naVar2.m0(naVar2.y, null);
-                    break;
-                }
-                break;
-            case 2:
-                na naVar3 = this.b;
-                ClipboardManager clipboardManager = (ClipboardManager) naVar3.getParentActivity().getSystemService("clipboard");
-                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
-                    ClipData primaryClip = clipboardManager.getPrimaryClip();
-                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
-                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(naVar3.getParentActivity());
-                        if (!TextUtils.isEmpty(coerceToText)) {
-                            naVar3.O.setText(coerceToText.toString().trim());
-                            ah.i iVar = naVar3.O;
-                            iVar.setSelection(iVar.length());
-                            break;
-                        } else {
-                            naVar3.T = false;
-                            naVar3.p0(true);
-                            break;
-                        }
-                    } else {
-                        naVar3.T = false;
-                        naVar3.p0(true);
-                        break;
-                    }
-                } else {
-                    naVar3.T = false;
-                    naVar3.p0(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.i0();
-                break;
+    public final fa a(float f10, float f11, float f12, float f13, float f14, float f15, float f16) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            this.e = SystemClock.uptimeMillis();
         }
+        fa faVar = new fa();
+        faVar.l = 1.0f;
+        faVar.a = f10;
+        faVar.b = f11;
+        double d = f12;
+        faVar.c = ((float) Math.cos(d)) * f13;
+        faVar.d = ((float) Math.sin(d)) * f13;
+        faVar.e = f14;
+        faVar.f = f15;
+        faVar.g = f16;
+        faVar.k = f[this.b.nextInt(6)];
+        faVar.h = e(0.0f, 90.0f);
+        faVar.i = e(-180.0f, 180.0f);
+        arrayList.add(faVar);
+        return faVar;
+    }
+
+    public final void b(float f10, float f11) {
+        float f12 = org.telegram.messenger.g0.p;
+        for (int i7 = 0; i7 < 28; i7++) {
+            a(f10, f11, e(0.0f, 6.2831855f), e(60.0f, 300.0f) * f12, e(2.5f, 6.0f) * f12, e(0.5f, 0.9f), 3.0f);
+        }
+    }
+
+    public final void c(Canvas canvas) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        float min = Math.min(0.033f, (uptimeMillis - this.e) / 1000.0f);
+        this.e = uptimeMillis;
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            fa faVar = (fa) arrayList.get(size);
+            float f10 = faVar.j + min;
+            faVar.j = f10;
+            if (f10 >= 0.0f) {
+                if (f10 >= faVar.f) {
+                    arrayList.remove(size);
+                } else {
+                    float exp = (float) Math.exp((-faVar.g) * min);
+                    float f11 = faVar.c * exp;
+                    faVar.c = f11;
+                    float f12 = faVar.d * exp;
+                    faVar.d = f12;
+                    faVar.a = (f11 * min) + faVar.a;
+                    faVar.b = (f12 * min) + faVar.b;
+                    faVar.h = (faVar.i * min) + faVar.h;
+                    float f13 = faVar.j / faVar.f;
+                    float max = Math.max(0.0f, Math.min(1.0f, (f13 - 0.35f) / 0.65f));
+                    float min2 = (1.0f - ((3.0f - (max * 2.0f)) * (max * max))) * Math.min(1.0f, 8.0f * f13) * faVar.l;
+                    float C = com.google.android.gms.internal.vision.e2.C(f13, 0.5f, 1.0f, faVar.e);
+                    int save = canvas.save();
+                    canvas.translate(faVar.a, faVar.b);
+                    canvas.rotate(faVar.h);
+                    canvas.scale(C, C);
+                    int i7 = faVar.k;
+                    Paint paint = this.c;
+                    paint.setColor(i7);
+                    paint.setAlpha(Math.round(20.4f * min2));
+                    canvas.drawCircle(0.0f, 0.0f, 1.4f, paint);
+                    paint.setAlpha(Math.round(min2 * 255.0f));
+                    canvas.drawPath(this.d, paint);
+                    canvas.restoreToCount(save);
+                }
+            }
+        }
+    }
+
+    public final boolean d() {
+        return !this.a.isEmpty();
+    }
+
+    public final float e(float f10, float f11) {
+        return com.google.android.gms.internal.vision.e2.z(f11, f10, this.b.nextFloat(), f10);
+    }
+
+    public final void f() {
+        this.a.clear();
+        float f10 = org.telegram.messenger.g0.p;
+        for (int i7 = 0; i7 < 48; i7++) {
+            int i10 = -1;
+            while (i10 <= 1) {
+                fa a10 = a(0.0f, (e(-3.0f, 3.0f) * f10) + 0.0f, e(-0.6f, 0.6f) + (i10 < 0 ? 3.1415927f : 0.0f), e(150.0f, 310.0f) * f10, e(1.3f, 3.2f) * f10, e(0.65f, 1.05f), 1.8f);
+                a10.k = -6562049;
+                a10.l = e(0.3f, 1.0f);
+                a10.j = (-i7) * 0.006f;
+                i10 += 2;
+            }
+        }
+    }
+
+    public final void g(float f10, float f11) {
+        float f12 = org.telegram.messenger.g0.p;
+        a(f10, f11, e(0.0f, 6.2831855f), e(0.0f, 28.0f) * f12, e(1.5f, 3.5f) * f12, e(0.35f, 0.6f), 2.0f);
     }
 }

@@ -6,9 +6,10 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
-import org.telegram.ui.b80;
+import org.telegram.ui.a80;
+import y7.h7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ int a;
@@ -185,13 +186,13 @@ public final class f extends CameraCaptureSession.StateCallback {
                             k kVar8 = this.b;
                             kVar8.c.post(new a(kVar8, 9));
                             k kVar9 = this.b;
-                            k0 k0Var = kVar9.k;
+                            h7 h7Var = kVar9.k;
                             n0 n0Var = kVar9.F;
                             o0 o0Var = kVar9.H;
                             p0 p0Var = kVar9.I;
                             Size size = kVar9.q;
                             k kVar10 = this.b;
-                            ((u0) k0Var.a).i.post(new b80(k0Var, new h(n0Var, o0Var, p0Var, size, kVar10.N, kVar10.F()), z11, 17));
+                            ((u0) h7Var.a).i.post(new a80(h7Var, new h(n0Var, o0Var, p0Var, size, kVar10.N, kVar10.F()), z11, 17));
                             if (z10) {
                                 k.d(this.b);
                                 return;

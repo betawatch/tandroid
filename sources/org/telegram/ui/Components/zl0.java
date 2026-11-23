@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class zl0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ yl0 a;
@@ -33,7 +33,7 @@ public final class zl0 implements TextView.OnEditorActionListener {
             org.telegram.messenger.g0.D3(yl0Var);
             return true;
         }
-        org.telegram.messenger.np.u1(this.b).t4(ch.p0.d(this.c), obj);
+        org.telegram.messenger.mp.u1(this.b).t4(ch.p0.d(this.c), obj);
         org.telegram.ui.ActionBar.t1[] t1VarArr = this.d;
         org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
         if (t1Var != null) {

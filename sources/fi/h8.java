@@ -14,10 +14,10 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.zt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public class h8 extends View {
     public final boolean E;
@@ -25,7 +25,7 @@ public class h8 extends View {
     public long G;
     public final Path H;
     public final f2.a I;
-    public final org.telegram.ui.Components.d6 a;
+    public final org.telegram.ui.Components.c6 a;
     public final TL_stories.MediaArea b;
     public final Paint c;
     public final Paint d;
@@ -33,7 +33,7 @@ public class h8 extends View {
     public LinearGradient f;
     public final Matrix h;
     public final org.telegram.ui.Cells.y n;
-    public final mc r;
+    public final lc r;
     public final boolean s;
     public final boolean w;
     public final boolean x;
@@ -46,14 +46,14 @@ public class h8 extends View {
         Paint paint = new Paint(1);
         this.d = paint;
         this.h = new Matrix();
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(1174405119, 2, -1);
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(1174405119, 2, -1);
         this.n = h02;
-        this.r = new mc(this);
+        this.r = new lc(this);
         this.s = false;
         this.w = false;
         this.F = false;
         this.H = new Path();
-        this.I = new f2.a(this, 21);
+        this.I = new f2.a(this, 20);
         this.b = mediaArea;
         boolean z11 = mediaArea instanceof TL_stories.TL_mediaAreaGeoPoint;
         this.s = z11 || (mediaArea instanceof TL_stories.TL_mediaAreaVenue) || (mediaArea instanceof TL_stories.TL_mediaAreaUrl);
@@ -64,7 +64,7 @@ public class h8 extends View {
         this.x = z10;
         this.E = z10;
         this.y = z10;
-        this.a = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
+        this.a = new org.telegram.ui.Components.c6(view, 0L, 120L, new LinearInterpolator());
         paint.setStyle(Paint.Style.STROKE);
         h02.setCallback(this);
     }
@@ -92,18 +92,18 @@ public class h8 extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         org.telegram.ui.Cells.y yVar = this.n;
-        mc mcVar = this.r;
+        lc lcVar = this.r;
         if (action == 0) {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                mcVar.f = new bu(1, view);
+                lcVar.f = new zt(1, view);
             }
-            mcVar.c(true);
+            lcVar.c(true);
             yVar.setHotspot(motionEvent.getX(), motionEvent.getY());
             yVar.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            mcVar.c(false);
+            lcVar.c(false);
             yVar.setState(new int[0]);
         }
         super.dispatchTouchEvent(motionEvent);

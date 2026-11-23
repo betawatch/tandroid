@@ -1,11 +1,11 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ur;
-import org.telegram.ui.mw;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.tr;
+import org.telegram.ui.lw;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class n implements Runnable {
                     if (lowerCase.length() != 0) {
                         str = str3;
                         i7 = i13;
-                        ur.a0(h0Var.t0).a.c(new n(h0Var, lowerCase, i7, str, 2));
+                        tr.a0(h0Var.t0).a.c(new n(h0Var, lowerCase, i7, str, 2));
                         if (h0Var.i0 == 15) {
                             n nVar = new n(h0Var, i7, str, str2);
                             h0Var.h = nVar;
@@ -62,7 +62,7 @@ public final /* synthetic */ class n implements Runnable {
                         ArrayList arrayList2 = new ArrayList();
                         ArrayList arrayList3 = new ArrayList();
                         new ArrayList();
-                        org.telegram.messenger.g0.g3(new ai.i1(h0Var, h0Var.e0, arrayList, arrayList2, arrayList3, 4));
+                        org.telegram.messenger.g0.g3(new ai.d1(h0Var, h0Var.e0, arrayList, arrayList2, arrayList3, 4));
                     }
                 }
                 str = str3;
@@ -87,9 +87,9 @@ public final /* synthetic */ class n implements Runnable {
                         boolean z11 = (i15 == 4 || i15 == 11) ? false : true;
                         boolean z12 = i15 == 2 || i15 == 1;
                         boolean z13 = i15 == 0;
-                        mw mwVar = h0Var2.V;
-                        if (mwVar != null) {
-                            j3 = mwVar.a();
+                        lw lwVar = h0Var2.V;
+                        if (lwVar != null) {
+                            j3 = lwVar.a();
                         }
                         zVar.h(this.d, true, z10, true, z11, z12, 0L, z13, 0, i17, j3, null);
                         i10 = i17;
@@ -112,15 +112,15 @@ public final /* synthetic */ class n implements Runnable {
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 new ArrayList();
-                ur a02 = ur.a0(h0Var3.t0);
+                tr a02 = tr.a0(h0Var3.t0);
                 int i18 = h0Var3.i0;
                 ArrayList arrayList7 = h0Var3.r0;
                 String str4 = this.d;
                 a02.M0(i18, str4, arrayList4, arrayList5, arrayList6, arrayList7, -1);
-                org.telegram.messenger.g0.g3(new ai.i1(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
+                org.telegram.messenger.g0.g3(new ai.d1(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
                 q0.B1(str4, h0Var3.z0);
                 h0Var3.A0 = false;
-                if (str4.length() >= 3 && (hd.N0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
+                if (str4.length() >= 3 && (gd.N0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
                     h0Var3.A0 = true;
                 }
                 org.telegram.messenger.g0.g3(new v(h0Var3, 0));

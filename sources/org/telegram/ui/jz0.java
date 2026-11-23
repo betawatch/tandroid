@@ -1,66 +1,61 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class jz0 extends Fade {
+public final class jz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+    public final /* synthetic */ org.telegram.ui.Components.cl0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jz0(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i7) {
-        super(1);
+    public /* synthetic */ jz0(org.telegram.ui.Components.cl0 cl0Var, int i7) {
         this.a = i7;
-        switch (i7) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
+        this.b = cl0Var;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.Y) {
-                    onAppear.addListener(new ay(this, 25));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new iz0(this, 0));
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
+                secretMediaViewer.Y.getNextView().setText((CharSequence) null);
+                wp0 wp0Var = secretMediaViewer.Z;
+                wp0Var.m0 = false;
+                if (wp0Var.n0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) wp0Var.p0.getLayoutParams()).topMargin = wp0Var.n0;
+                    wp0Var.n0 = -1;
+                    wp0Var.requestLayout();
+                    break;
                 }
-                return onAppear;
+                break;
             default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                ((SecretMediaViewer) this.b.b).Y.setTranslationY(0.0f);
+                break;
         }
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.Y) {
-                    onDisappear.addListener(new ay(this, 26));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new iz0(this, 1));
+            case 0:
+                wp0 wp0Var = ((SecretMediaViewer) this.b.b).Z;
+                Method method = wp0Var.g0;
+                if (method != null) {
+                    try {
+                        method.invoke(wp0Var, null);
+                        break;
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
+                    }
                 }
-                return onDisappear;
+                break;
             default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

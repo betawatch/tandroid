@@ -1,109 +1,52 @@
 package ai;
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Dictation.DictationAsr;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.ui.Components.rf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class w {
-    public final z a;
-    public final t b;
-    public final String c;
-    public final u1 d;
-    public volatile int[] g;
-    public int i;
-    public boolean j;
-    public volatile boolean k;
-    public volatile boolean l;
-    public volatile String n;
-    public r1 o;
-    public final StringBuilder e = new StringBuilder();
-    public final ArrayList f = new ArrayList();
-    public String h = "";
-    public volatile int m = -1;
+public final /* synthetic */ class w implements m0, bi.a1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    public w(z zVar, android.support.v4.media.session.a0 a0Var, u1 u1Var) {
-        this.a = zVar;
-        this.b = (t) a0Var.b;
-        this.c = (String) a0Var.c;
-        this.d = u1Var;
+    public /* synthetic */ w(l0 l0Var, int i7) {
+        this.a = i7;
+        this.b = l0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(String str) {
-        int i7;
-        if (str == null || str.length() <= 2) {
-            return;
-        }
-        int i10 = 0;
-        try {
-            JSONArray jSONArray = new JSONArray(str);
-            i7 = 0;
-            while (i10 < jSONArray.length()) {
-                try {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i10);
-                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-                    int hashCode = optString.hashCode();
-                    if (hashCode != -1613589672) {
-                        if (hashCode != -1354815177) {
-                            if (hashCode == -792934015 && optString.equals("partial")) {
-                                StringBuilder sb2 = new StringBuilder();
-                                this.j = DictationAsr.j(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("open"), null);
-                                this.i = sb2.length();
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("tail"), null);
-                                this.h = sb2.toString();
-                                i7 = 1;
-                            }
-                        } else if (optString.equals("commit")) {
-                            DictationAsr.n(this.e, jSONObject.optJSONArray("words"), this.f);
-                            i7 = 1;
-                        }
-                    } else if (optString.equals("language")) {
-                        String optString2 = jSONObject.optString("lang");
-                        Log.d("Dictation", "tinyasr: language → " + optString2);
-                        if (!TextUtils.isEmpty(optString2)) {
-                            this.n = DictationAsr.o(optString2);
-                        }
-                    }
-                    i10++;
-                } catch (Exception e10) {
-                    e = e10;
-                    i10 = i7;
-                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
-                    i7 = i10;
-                    if (i7 == 0) {
-                    }
-                }
-            }
-        } catch (Exception e11) {
-            e = e11;
-        }
-        if (i7 == 0) {
-            b(null);
+    @Override // bi.a1
+    public void a(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                l0 l0Var = this.b;
+                rf rfVar = l0Var.f;
+                rfVar.a.c2.getLocationInWindow(new int[2]);
+                l0Var.w.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r0[0], r1[1] - r0[1]);
+                rfVar.a(canvas);
+                canvas.restore();
+                break;
+            default:
+                l0 l0Var2 = this.b;
+                rf rfVar2 = l0Var2.f;
+                rfVar2.a.c2.getLocationInWindow(new int[2]);
+                l0Var2.w.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r0[0], r1[1] - r0[1]);
+                rfVar2.a(canvas);
+                canvas.restore();
+                break;
         }
     }
 
-    public final void b(Runnable runnable) {
-        String sb2 = this.e.toString();
-        String str = this.h;
-        boolean z10 = this.j;
-        int i7 = this.i;
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int[] iArr = new int[size];
-        for (int i10 = 0; i10 < size; i10++) {
-            iArr[i10] = ((Integer) arrayList.get(i10)).intValue();
+    public int b(float f10, float f11) {
+        l0 l0Var = this.b;
+        RectF rectF = l0Var.y;
+        if (l0Var.k(rectF)) {
+            return l0Var.x.a(f10, f11, rectF);
         }
-        org.telegram.messenger.g0.g3(new v(this, iArr, sb2, str, z10, i7, runnable));
+        return 0;
     }
 }

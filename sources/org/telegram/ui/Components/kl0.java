@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class kl0 extends HorizontalScrollView {
     public boolean a;
@@ -36,10 +36,10 @@ public abstract class kl0 extends HorizontalScrollView {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i7);
         this.f = ofFloat;
-        ofFloat.addUpdateListener(new h60(this, 15));
-        this.f.setInterpolator(nr.h);
+        ofFloat.addUpdateListener(new e60(this, 15));
+        this.f.setInterpolator(kr.h);
         this.f.setDuration(250L);
-        this.f.addListener(new s60(this, 16));
+        this.f.addListener(new p60(this, 16));
         this.f.start();
     }
 
@@ -58,45 +58,45 @@ public abstract class kl0 extends HorizontalScrollView {
                 measuredWidth = (i10 - getMeasuredWidth()) + L;
             }
         }
-        a(c8.l9.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+        a(c8.m9.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
     }
 
     public final void c() {
-        p5 p5Var;
+        o5 o5Var;
         fi.s2 s2Var;
-        oh0 oh0Var;
+        nh0 nh0Var;
         ValueAnimator valueAnimator;
         int childCount = this.b.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = this.b.getChildAt(i7);
-            if (childAt instanceof kv) {
-                kv kvVar = (kv) childAt;
+            if (childAt instanceof hv) {
+                hv hvVar = (hv) childAt;
                 boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
                 boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!kvVar.E && z10 && (oh0Var = kvVar.e) != null && !oh0Var.l0 && !z11) {
-                    kvVar.e.T(true, 0.0f);
-                    kvVar.e.start();
+                if (!hvVar.E && z10 && (nh0Var = hvVar.e) != null && !nh0Var.l0 && !z11) {
+                    hvVar.e.T(true, 0.0f);
+                    hvVar.e.start();
                 }
-                if (kvVar.E != z10) {
-                    kvVar.E = z10;
+                if (hvVar.E != z10) {
+                    hvVar.E = z10;
                     if (z10) {
-                        kvVar.invalidate();
-                        ug.b1 b1Var = kvVar.f;
+                        hvVar.invalidate();
+                        ug.b1 b1Var = hvVar.f;
                         if (b1Var != null) {
                             b1Var.invalidate();
                         }
-                        ug.b1 b1Var2 = kvVar.f;
-                        if (b1Var2 != null && (p5Var = kvVar.x) != null && (s2Var = p5Var.k) != null) {
+                        ug.b1 b1Var2 = hvVar.f;
+                        if (b1Var2 != null && (o5Var = hvVar.x) != null && (s2Var = o5Var.k) != null) {
                             b1Var2.setImageReceiver(s2Var);
                         }
-                        q9 q9Var = kvVar.d;
-                        if (q9Var != null) {
-                            q9Var.invalidate();
+                        p9 p9Var = hvVar.d;
+                        if (p9Var != null) {
+                            p9Var.invalidate();
                         }
                     } else {
-                        kvVar.b();
+                        hvVar.b();
                     }
-                    kvVar.c();
+                    hvVar.c();
                 }
             }
         }

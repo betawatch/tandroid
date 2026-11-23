@@ -3,17 +3,17 @@ package ki;
 import android.animation.ValueAnimator;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s2 b;
+    public final /* synthetic */ t2 b;
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ q1(s2 s2Var, int i7, int i10, int i11) {
+    public /* synthetic */ q1(t2 t2Var, int i7, int i10, int i11) {
         this.a = i11;
-        this.b = s2Var;
+        this.b = t2Var;
         this.c = i7;
         this.d = i10;
     }
@@ -22,23 +22,23 @@ public final /* synthetic */ class q1 implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                s2 s2Var = this.b;
-                Paint paint = s2Var.R;
+                t2 t2Var = this.b;
+                Paint paint = t2Var.R;
                 paint.setColor(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d));
-                s2Var.F();
-                s2Var.f.invalidate();
-                org.telegram.ui.b3 b3Var = s2Var.Z0;
+                t2Var.F();
+                t2Var.f.invalidate();
+                org.telegram.ui.b3 b3Var = t2Var.Z0;
                 if (b3Var != null) {
                     b3Var.b(org.telegram.messenger.g0.B(paint.getColor()) <= 0.721f, false);
-                    s2Var.Z0.setBackgroundColor(paint.getColor());
+                    t2Var.Z0.setBackgroundColor(paint.getColor());
                 }
-                s2Var.K();
+                t2Var.K();
                 break;
             default:
-                s2 s2Var2 = this.b;
-                s2Var2.getClass();
-                s2Var2.T = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
-                s2Var2.l();
+                t2 t2Var2 = this.b;
+                t2Var2.getClass();
+                t2Var2.T = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
+                t2Var2.l();
                 break;
         }
     }

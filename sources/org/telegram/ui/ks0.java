@@ -1,29 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ks0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PremiumPreviewFragment b;
+import android.util.SparseIntArray;
+import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public /* synthetic */ ks0(PremiumPreviewFragment premiumPreviewFragment, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ks0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.mp b;
+
+    public /* synthetic */ ks0(org.telegram.messenger.mp mpVar, int i7) {
         this.a = i7;
-        this.b = premiumPreviewFragment;
+        this.b = mpVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i7;
+        int i10;
+        vs0 vs0Var = (vs0) obj;
+        vs0 vs0Var2 = (vs0) obj2;
         switch (this.a) {
             case 0:
-                this.b.o0();
-                break;
-            case 1:
-                PremiumPreviewFragment premiumPreviewFragment = this.b;
-                premiumPreviewFragment.a.postOnAnimation(new ks0(premiumPreviewFragment, 0));
+                SparseIntArray sparseIntArray = this.b.P0;
+                i7 = sparseIntArray.get(vs0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray.get(vs0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
             default:
-                this.b.getMediaDataController().U0(false);
+                SparseIntArray sparseIntArray2 = this.b.O0;
+                i7 = sparseIntArray2.get(vs0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray2.get(vs0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
         }
+        return i7 - i10;
     }
 }

@@ -18,7 +18,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class u50 extends org.telegram.messenger.r5 {
     public static final /* synthetic */ int E = 0;
@@ -32,7 +32,7 @@ public final class u50 extends org.telegram.messenger.r5 {
     public final int[] n;
     public float r;
     public long s;
-    public final org.telegram.ui.Components.xb0 w;
+    public final org.telegram.ui.Components.ub0 w;
     public final m4 x;
     public final /* synthetic */ v50 y;
 
@@ -41,7 +41,7 @@ public final class u50 extends org.telegram.messenger.r5 {
         super("EGLThread", true);
         this.y = v50Var;
         this.n = new int[24];
-        this.w = new org.telegram.ui.Components.xb0(28);
+        this.w = new org.telegram.ui.Components.ub0(28);
         this.x = new m4(this, 9);
         this.a = surfaceTexture;
     }
@@ -74,13 +74,13 @@ public final class u50 extends org.telegram.messenger.r5 {
         }
     }
 
-    public final void b(org.telegram.messenger.j9 j9Var, int i7, boolean z10) {
+    public final void b(org.telegram.messenger.i9 i9Var, int i7, boolean z10) {
         int[] iArr = this.n;
         if (z10) {
             GLES20.glDeleteTextures(1, iArr, i7);
             GLES20.glGenTextures(1, iArr, i7);
         }
-        Bitmap bitmap = (Bitmap) j9Var.m(null);
+        Bitmap bitmap = (Bitmap) i9Var.h(null);
         GLES20.glBindTexture(3553, iArr[i7]);
         GLES20.glTexParameteri(3553, 10241, 9729);
         GLES20.glTexParameteri(3553, 10240, 9729);
@@ -130,7 +130,7 @@ public final class u50 extends org.telegram.messenger.r5 {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (org.telegram.messenger.s2.a) {
-                org.telegram.messenger.o10.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                org.telegram.messenger.m10.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
@@ -139,7 +139,7 @@ public final class u50 extends org.telegram.messenger.r5 {
             v50 v50Var = this.y;
             if (!this.b.eglChooseConfig(this.c, org.telegram.messenger.n6.h(v50Var.getParentActivity()).f() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 24, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 24, 12326, 0, 12338, 1, 12337, 2, 12344}, eGLConfigArr, 1, iArr)) {
                 if (org.telegram.messenger.s2.a) {
-                    org.telegram.messenger.o10.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                    org.telegram.messenger.m10.v(this.b, new StringBuilder("eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -149,7 +149,7 @@ public final class u50 extends org.telegram.messenger.r5 {
                 this.e = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (org.telegram.messenger.s2.a) {
-                        org.telegram.messenger.o10.v(this.b, new StringBuilder("eglCreateContext failed "));
+                        org.telegram.messenger.m10.v(this.b, new StringBuilder("eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -159,7 +159,7 @@ public final class u50 extends org.telegram.messenger.r5 {
                         this.f = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (org.telegram.messenger.s2.a) {
-                                org.telegram.messenger.o10.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                org.telegram.messenger.m10.v(this.b, new StringBuilder("createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.e)) {
@@ -182,12 +182,12 @@ public final class u50 extends org.telegram.messenger.r5 {
                             a(R.drawable.intro_knot_up, 14, 0, false);
                             a(R.drawable.intro_powerful_infinity_white, 15, 0, false);
                             a(R.drawable.intro_powerful_infinity, 16, 0, false);
-                            a(R.drawable.intro_powerful_mask, 17, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false), false);
+                            a(R.drawable.intro_powerful_mask, 17, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false), false);
                             a(R.drawable.intro_powerful_star, 18, 0, false);
                             a(R.drawable.intro_private_door, 19, 0, false);
                             a(R.drawable.intro_private_screw, 20, 0, false);
                             a(R.drawable.intro_tg_plane, 21, 0, false);
-                            b(new org.telegram.ui.Components.xb0(29), 22, false);
+                            b(new org.telegram.ui.Components.ub0(29), 22, false);
                             b(this.w, 23, false);
                             d();
                             c();
@@ -200,7 +200,7 @@ public final class u50 extends org.telegram.messenger.r5 {
                             z10 = true;
                         } else {
                             if (org.telegram.messenger.s2.a) {
-                                org.telegram.messenger.o10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                org.telegram.messenger.m10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -216,7 +216,7 @@ public final class u50 extends org.telegram.messenger.r5 {
             }
         } else {
             if (org.telegram.messenger.s2.a) {
-                org.telegram.messenger.o10.v(this.b, new StringBuilder("eglInitialize failed "));
+                org.telegram.messenger.m10.v(this.b, new StringBuilder("eglInitialize failed "));
             }
             finish();
         }

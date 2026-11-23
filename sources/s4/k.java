@@ -20,18 +20,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.qf;
+import org.telegram.ui.Cells.aa;
 import r0.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k extends h3 {
     public final f E;
-    public final l2.d0 F;
+    public final l2.e0 F;
     public ArrayList G;
     public final ArrayMap H;
     public final MediaRouter2 r;
-    public final qf s;
+    public final aa s;
     public final ArrayMap w;
     public final MediaRouter2$RouteCallback x;
     public final j y;
@@ -40,7 +40,7 @@ public final class k extends h3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, qf qfVar) {
+    public k(Context context, aa aaVar) {
         super(context, null);
         this.w = new ArrayMap();
         this.y = new j(this);
@@ -48,8 +48,8 @@ public final class k extends h3 {
         this.G = new ArrayList();
         this.H = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = qfVar;
-        this.F = new l2.d0(new Handler(Looper.getMainLooper()), 1);
+        this.s = aaVar;
+        this.F = new l2.e0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.x = new i(this, 1);
         } else {
@@ -195,10 +195,10 @@ public final class k extends h3 {
             }
             build = new RouteDiscoveryPreference.Builder(arrayList2, z11).build();
         }
-        l2.d0 d0Var = this.F;
-        mediaRouter2.registerRouteCallback(d0Var, mediaRouter2$RouteCallback, build);
-        this.r.registerTransferCallback(d0Var, jVar);
-        this.r.registerControllerCallback(d0Var, fVar);
+        l2.e0 e0Var = this.F;
+        mediaRouter2.registerRouteCallback(e0Var, mediaRouter2$RouteCallback, build);
+        this.r.registerTransferCallback(e0Var, jVar);
+        this.r.registerControllerCallback(e0Var, fVar);
     }
 
     public final MediaRoute2Info o(String str) {
@@ -259,7 +259,7 @@ public final class k extends h3 {
             Object obj2 = arrayList4.get(i11);
             i11++;
             MediaRoute2Info d10 = f1.d(obj2);
-            m w10 = g0.f.w(d10);
+            m w10 = g0.g.w(d10);
             if (d10 != null) {
                 arrayList3.add(w10);
             }
@@ -295,9 +295,9 @@ public final class k extends h3 {
             Log.w("MR2Provider", "setDynamicRouteDescriptors: No selected routes. This may happen when the selected routes become invalid.routingController=" + routingController);
             return;
         }
-        ArrayList h = g0.f.h(selectedRoutes);
+        ArrayList h = g0.g.h(selectedRoutes);
         int i7 = 0;
-        m w10 = g0.f.w(f1.d(selectedRoutes.get(0)));
+        m w10 = g0.g.w(f1.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         m mVar = null;
@@ -347,8 +347,8 @@ public final class k extends h3 {
             }
         }
         m b10 = lVar.b();
-        ArrayList h7 = g0.f.h(routingController.getSelectableRoutes());
-        ArrayList h10 = g0.f.h(routingController.getDeselectableRoutes());
+        ArrayList h7 = g0.g.h(routingController.getSelectableRoutes());
+        ArrayList h10 = g0.g.h(routingController.getDeselectableRoutes());
         ca.i iVar = (ca.i) this.n;
         if (iVar == null) {
             Log.w("MR2Provider", "setDynamicRouteDescriptors: providerDescriptor is not set.");

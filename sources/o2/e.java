@@ -1,6 +1,6 @@
 package o2;
 
-import a8.la;
+import a8.ma;
 import e2.f0;
 import e2.i1;
 import e2.k1;
@@ -8,7 +8,7 @@ import e2.l0;
 import e2.l1;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e extends l1 {
     public final long e;
@@ -23,7 +23,7 @@ public final class e extends l1 {
     public final f0 n;
 
     public e(long j3, long j10, long j11, int i7, long j12, long j13, long j14, p2.c cVar, l0 l0Var, f0 f0Var) {
-        la.p(cVar.d == (f0Var != null));
+        ma.p(cVar.d == (f0Var != null));
         this.e = j3;
         this.f = j10;
         this.g = j11;
@@ -47,7 +47,7 @@ public final class e extends l1 {
 
     @Override // e2.l1
     public final i1 f(int i7, i1 i1Var, boolean z10) {
-        la.j(i7, h());
+        ma.j(i7, h());
         p2.c cVar = this.l;
         String str = z10 ? cVar.b(i7).a : null;
         Integer valueOf = z10 ? Integer.valueOf(this.h + i7) : null;
@@ -65,7 +65,7 @@ public final class e extends l1 {
 
     @Override // e2.l1
     public final Object l(int i7) {
-        la.j(i7, h());
+        ma.j(i7, h());
         return Integer.valueOf(this.h + i7);
     }
 
@@ -75,8 +75,8 @@ public final class e extends l1 {
         long j10;
         boolean z11;
         long j11;
-        i c10;
-        la.j(i7, 1);
+        i d;
+        ma.j(i7, 1);
         p2.c cVar = this.l;
         boolean z12 = cVar.d;
         long j12 = this.k;
@@ -94,12 +94,12 @@ public final class e extends l1 {
                 }
             }
             long j14 = this.i + j12;
-            long d = cVar.d(0);
+            long d2 = cVar.d(0);
             int i10 = 0;
-            while (i10 < cVar.m.size() - 1 && j14 >= d) {
-                j14 -= d;
+            while (i10 < cVar.m.size() - 1 && j14 >= d2) {
+                j14 -= d2;
                 i10++;
-                d = cVar.d(i10);
+                d2 = cVar.d(i10);
             }
             p2.h b10 = cVar.b(i10);
             List list = b10.c;
@@ -120,8 +120,8 @@ public final class e extends l1 {
                 i11++;
                 j13 = j11;
             }
-            if (i11 != -1 && (c10 = ((p2.m) ((p2.a) b10.c.get(i11)).c.get(0)).c()) != null && c10.y(d) != j11) {
-                j12 = (c10.a(c10.o(j14, d)) + j12) - j14;
+            if (i11 != -1 && (d = ((p2.m) ((p2.a) b10.c.get(i11)).c.get(0)).d()) != null && d.x(d2) != j11) {
+                j12 = (d.a(d.n(j14, d2)) + j12) - j14;
             }
         } else {
             z10 = true;

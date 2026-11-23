@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.vision;
 
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d3 extends e1 {
     public final /* synthetic */ int b;
@@ -94,7 +94,7 @@ public final class d3 extends e1 {
                                 char charAt4 = str.charAt(i18);
                                 if (Character.isSurrogatePair(charAt3, charAt4)) {
                                     int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                    bArr[i16] = (byte) ((codePoint >>> 18) | ls.P3);
+                                    bArr[i16] = (byte) ((codePoint >>> 18) | ks.P3);
                                     bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                                     int i19 = i16 + 3;
                                     bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
@@ -166,7 +166,7 @@ public final class d3 extends e1 {
                                     char charAt7 = str.charAt(i22);
                                     if (Character.isSurrogatePair(charAt6, charAt7)) {
                                         int codePoint2 = Character.toCodePoint(charAt6, charAt7);
-                                        y2.e(bArr, j12, (byte) ((codePoint2 >>> 18) | ls.P3));
+                                        y2.e(bArr, j12, (byte) ((codePoint2 >>> 18) | ks.P3));
                                         y2.e(bArr, j12 + j10, (byte) (((codePoint2 >>> 12) & 63) | 128));
                                         long j14 = j12 + 3;
                                         y2.e(bArr, j12 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));

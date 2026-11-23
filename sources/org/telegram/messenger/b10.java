@@ -1,137 +1,21 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h10 b;
+public final /* synthetic */ class b10 implements w10 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ b10(h10 h10Var, int i7) {
-        this.a = i7;
-        this.b = h10Var;
+    public /* synthetic */ b10(int i7, Runnable runnable, boolean[] zArr) {
+        this.a = zArr;
+        this.b = i7;
+        this.c = runnable;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0061, code lost:
-    
-        org.telegram.messenger.g0.g3(new org.telegram.messenger.b10(r1, 3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x005e, code lost:
-    
-        if (r3 == null) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00ea, code lost:
-    
-        if (r4 == null) goto L48;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h10 h10Var = this.b;
-                ArrayList arrayList = h10Var.b;
-                int i7 = 0;
-                while (i7 < arrayList.size()) {
-                    h10 h10Var2 = ((g10) arrayList.get(i7)).i;
-                    if ((ConnectionsManager.getInstance(h10Var2.a).getCurrentTime() + np.u1(h10Var2.a).q4) - r3.d <= 0) {
-                        arrayList.remove(i7);
-                        i7--;
-                    }
-                    i7++;
-                }
-                h10Var.d();
-                return;
-            case 1:
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                HashSet hashSet = new HashSet();
-                ArrayList arrayList4 = new ArrayList();
-                h10 h10Var3 = this.b;
-                int i10 = h10Var3.a;
-                SQLiteDatabase sQLiteDatabase = ur.a0(i10).b;
-                SQLiteCursor sQLiteCursor = null;
-                try {
-                    try {
-                        Locale locale = Locale.US;
-                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM unconfirmed_auth", new Object[0]);
-                        while (sQLiteCursor.next()) {
-                            NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
-                            if (byteBufferValue != null) {
-                                try {
-                                    g10 g10Var = new g10(h10Var3, byteBufferValue);
-                                    arrayList4.add(g10Var);
-                                    hashSet.add(Long.valueOf(g10Var.b));
-                                    if (g10Var.a && !arrayList3.contains(Long.valueOf(g10Var.c))) {
-                                        arrayList3.add(Long.valueOf(g10Var.c));
-                                    }
-                                } catch (Exception e10) {
-                                    a8.g(e10, true);
-                                }
-                            }
-                        }
-                        ur.a0(i10).n0(arrayList3, arrayList2, false);
-                    } catch (Exception e11) {
-                        a8.g(e11, true);
-                        break;
-                    }
-                    sQLiteCursor.dispose();
-                    g0.g3(new l10(h10Var3, arrayList2, hashSet, arrayList4, 1));
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th2;
-                }
-            case 2:
-                h10 h10Var4 = this.b;
-                SQLiteDatabase sQLiteDatabase2 = ur.a0(h10Var4.a).b;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        sQLiteDatabase2.executeFast("DELETE FROM unconfirmed_auth WHERE 1").stepThis().dispose();
-                        sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO unconfirmed_auth VALUES(?)");
-                        ArrayList arrayList5 = h10Var4.b;
-                        int size = arrayList5.size();
-                        int i11 = 0;
-                        while (i11 < size) {
-                            Object obj = arrayList5.get(i11);
-                            i11++;
-                            g10 g10Var2 = (g10) obj;
-                            sQLitePreparedStatement.requery();
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(g10Var2.getObjectSize());
-                            g10Var2.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            sQLitePreparedStatement.step();
-                        }
-                        break;
-                    } finally {
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                    }
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                    break;
-                }
-            default:
-                this.b.g = false;
-                return;
-        }
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        this.a[this.b] = ((Boolean) obj).booleanValue();
+        this.c.run();
     }
 }

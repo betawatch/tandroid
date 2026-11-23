@@ -2,12 +2,13 @@ package m4;
 
 import android.util.SparseArray;
 import e2.s0;
-import f3.i0;
+import f3.j0;
+import h2.l0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import l2.l0;
+import l2.m0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -15,14 +16,14 @@ public final class q implements i {
     public final boolean c;
     public long g;
     public String i;
-    public i0 j;
+    public j0 j;
     public p k;
     public boolean l;
     public boolean n;
     public final boolean[] h = new boolean[3];
-    public final l0 d = new l0(7);
-    public final l0 e = new l0(8);
-    public final l0 f = new l0(6);
+    public final m0 d = new m0(7);
+    public final m0 e = new m0(8);
+    public final m0 f = new m0(6);
     public long m = -9223372036854775807L;
     public final h2.x o = new h2.x();
 
@@ -71,7 +72,7 @@ public final class q implements i {
     public final void a(long j3, long j10, int i7, int i10) {
         int i11;
         boolean z10;
-        l0 l0Var;
+        m0 m0Var;
         p pVar;
         boolean z11;
         long j11;
@@ -83,33 +84,33 @@ public final class q implements i {
         int i13;
         h2.c cVar = this.a.d;
         if (!this.l || this.k.c) {
-            l0 l0Var2 = this.d;
-            l0Var2.e(i10);
-            l0 l0Var3 = this.e;
-            l0Var3.e(i10);
+            m0 m0Var2 = this.d;
+            m0Var2.e(i10);
+            m0 m0Var3 = this.e;
+            m0Var3.e(i10);
             if (this.l) {
                 i11 = 2;
                 z10 = false;
-                if (l0Var2.d) {
-                    i2.n m10 = i2.o.m(3, l0Var2.e, (byte[]) l0Var2.f);
+                if (m0Var2.d) {
+                    i2.n m10 = i2.o.m(3, m0Var2.e, (byte[]) m0Var2.f);
                     cVar.C(m10.s);
                     this.k.d.append(m10.d, m10);
-                    l0Var2.g();
-                } else if (l0Var3.d) {
-                    i2.s sVar = new i2.s((byte[]) l0Var3.f, 4, l0Var3.e);
+                    m0Var2.g();
+                } else if (m0Var3.d) {
+                    i2.s sVar = new i2.s((byte[]) m0Var3.f, 4, m0Var3.e);
                     int f10 = sVar.f();
                     int f11 = sVar.f();
                     sVar.i();
                     this.k.e.append(f10, new i2.m(f10, f11, sVar.d()));
-                    l0Var3.g();
+                    m0Var3.g();
                 }
-            } else if (l0Var2.d && l0Var3.d) {
+            } else if (m0Var2.d && m0Var3.d) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf((byte[]) l0Var2.f, l0Var2.e));
-                arrayList.add(Arrays.copyOf((byte[]) l0Var3.f, l0Var3.e));
-                i2.n m11 = i2.o.m(3, l0Var2.e, (byte[]) l0Var2.f);
+                arrayList.add(Arrays.copyOf((byte[]) m0Var2.f, m0Var2.e));
+                arrayList.add(Arrays.copyOf((byte[]) m0Var3.f, m0Var3.e));
+                i2.n m11 = i2.o.m(3, m0Var2.e, (byte[]) m0Var2.f);
                 int i14 = m11.s;
-                i2.s sVar2 = new i2.s((byte[]) l0Var3.f, 4, l0Var3.e);
+                i2.s sVar2 = new i2.s((byte[]) m0Var3.f, 4, m0Var3.e);
                 int f12 = sVar2.f();
                 int f13 = sVar2.f();
                 sVar2.i();
@@ -121,7 +122,7 @@ public final class q implements i {
                 int i17 = m11.c;
                 byte[] bArr = h2.g.a;
                 String format = String.format("avc1.%02X%02X%02X", Integer.valueOf(i15), Integer.valueOf(i16), Integer.valueOf(i17));
-                i0 i0Var = this.j;
+                j0 j0Var = this.j;
                 e2.t tVar = new e2.t();
                 tVar.a = this.i;
                 tVar.q = s0.n("video/mp2t");
@@ -133,18 +134,18 @@ public final class q implements i {
                 tVar.E = m11.g;
                 tVar.u = arrayList;
                 tVar.t = i14;
-                p5.c.r(tVar, i0Var);
+                p5.c.r(tVar, j0Var);
                 this.l = true;
                 cVar.C(i14);
                 this.k.d.append(m11.d, m11);
                 this.k.e.append(f12, mVar);
-                l0Var2.g();
-                l0Var3.g();
+                m0Var2.g();
+                m0Var3.g();
             }
-            l0Var = this.f;
-            if (l0Var.e(i10)) {
-                int p10 = i2.o.p(l0Var.e, (byte[]) l0Var.f);
-                byte[] bArr2 = (byte[]) l0Var.f;
+            m0Var = this.f;
+            if (m0Var.e(i10)) {
+                int p10 = i2.o.p(m0Var.e, (byte[]) m0Var.f);
+                byte[] bArr2 = (byte[]) m0Var.f;
                 h2.x xVar = this.o;
                 xVar.L(p10, bArr2);
                 xVar.N(4);
@@ -257,8 +258,8 @@ public final class q implements i {
         }
         i11 = 2;
         z10 = false;
-        l0Var = this.f;
-        if (l0Var.e(i10)) {
+        m0Var = this.f;
+        if (m0Var.e(i10)) {
         }
         pVar = this.k;
         z11 = this.l;
@@ -511,7 +512,7 @@ public final class q implements i {
     public final void c(h2.x xVar) {
         int i7;
         this.j.getClass();
-        String str = h2.l0.a;
+        String str = l0.a;
         int i10 = xVar.b;
         int i11 = xVar.c;
         byte[] bArr = xVar.a;
@@ -567,7 +568,7 @@ public final class q implements i {
     @Override // m4.i
     public final void e(boolean z10) {
         this.j.getClass();
-        String str = h2.l0.a;
+        String str = l0.a;
         if (z10) {
             this.a.d.r(0);
             a(this.g, this.m, 0, 0);
@@ -588,7 +589,7 @@ public final class q implements i {
         f0Var.c();
         this.i = (String) f0Var.e;
         f0Var.c();
-        i0 d2 = qVar.d2(f0Var.c, 2);
+        j0 d2 = qVar.d2(f0Var.c, 2);
         this.j = d2;
         this.k = new p(d2, this.b, this.c);
         this.a.b(qVar, f0Var);

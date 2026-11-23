@@ -5,12 +5,12 @@ import android.opengl.EGL14;
 import android.opengl.EGLDisplay;
 import android.os.Bundle;
 import android.text.TextUtils;
-import h9.t1;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class e {
     public static void a(String str, boolean z10) {
@@ -18,10 +18,10 @@ public abstract class e {
             return;
         }
         h9.g0 g0Var = h9.i0.b;
-        throw new m(str, t1.e);
+        throw new m(str, s1.e);
     }
 
-    public static t1 b(g9.k kVar, ArrayList arrayList) {
+    public static s1 b(g9.k kVar, ArrayList arrayList) {
         h9.f0 p10 = h9.i0.p();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             Bundle bundle = (Bundle) arrayList.get(i7);

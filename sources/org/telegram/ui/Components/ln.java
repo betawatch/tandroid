@@ -1,133 +1,73 @@
 package org.telegram.ui.Components;
 
+import android.R;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ActionMode;
+import android.view.Menu;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ln extends View {
-    public final /* synthetic */ int a;
+public final class ln extends org.telegram.ui.Cells.a6 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ org.telegram.ui.l4 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ln(Context context, int i7) {
-        super(context);
-        this.a = i7;
+    public ln(org.telegram.ui.l4 l4Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10) {
+        super(context, i7, null, i6Var);
+        this.H = l4Var;
+        this.G = i10;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 8:
-                super.onDraw(canvas);
-                canvas.drawLine(0.0f, org.telegram.messenger.g0.L(14.0f), 2.0f, getMeasuredHeight() - org.telegram.messenger.g0.L(14.0f), org.telegram.ui.ActionBar.m6.k0);
-                break;
-            case 15:
-                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
-                break;
-            case 16:
-                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
-                break;
-            case 17:
-                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
-                break;
-            case 18:
-                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
-                break;
-            case 26:
-                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // org.telegram.ui.Cells.a6
+    public final void h(bi.u uVar, ActionMode actionMode) {
+        qn qnVar = (qn) this.H.e;
+        if (!qnVar.n && this.G == 11 && uVar.isFocused() && uVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.bn.C8(menu, ((org.telegram.ui.bn) qnVar.b.a2).h, false, true, true, true);
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30));
-                break;
-            case 2:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 3:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(81.0f), TLObject.FLAG_30));
-                break;
-            case 4:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(8.0f), TLObject.FLAG_30));
-                break;
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 6:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(60.0f), TLObject.FLAG_30));
-                break;
-            case 7:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) (org.telegram.messenger.g0.q.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 8:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 26:
-            default:
-                super.onMeasure(i7, i10);
-                break;
-            case 9:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(300.0f), TLObject.FLAG_30));
-                break;
-            case 10:
-                Point point = org.telegram.messenger.g0.q;
-                int i11 = point.x;
-                int i12 = point.y;
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) (i12 * (i11 < i12 ? 0.56f : 0.3f)), TLObject.FLAG_30));
-                break;
-            case 11:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(5.0f), TLObject.FLAG_30));
-                break;
-            case 12:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (org.telegram.messenger.g0.q.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 13:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(4.0f), TLObject.FLAG_30));
-                break;
-            case 14:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(org.telegram.ui.f40.E5 ? 0.0f : 8.0f), TLObject.FLAG_30));
-                break;
-            case 19:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(12.0f), TLObject.FLAG_30));
-                break;
-            case 20:
-                setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(36.0f));
-                break;
-            case 21:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(7.33f), TLObject.FLAG_30));
-                break;
-            case 22:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.0f), TLObject.FLAG_30));
-                break;
-            case 23:
-                super.onMeasure(i7, i10);
-                setPivotX(getMeasuredWidth() / 2);
-                setPivotY(getMeasuredHeight());
-                break;
-            case 24:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 25:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(4.0f), TLObject.FLAG_30));
-                break;
-            case 27:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(6.0f), TLObject.FLAG_30));
-                break;
-            case 28:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.0f), TLObject.FLAG_30));
-                break;
+    @Override // org.telegram.ui.Cells.a6
+    public final void j(boolean z10) {
+        qn.R((qn) this.H.e, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void k(org.telegram.ui.Cells.a6 a6Var) {
+        qn.S((qn) this.H.e, a6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void l(bi.u uVar) {
+        ((qn) this.H.e).b.i1(uVar, true);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final boolean m(ArrayList arrayList) {
+        qn qnVar = (qn) this.H.e;
+        if (arrayList.isEmpty()) {
+            return false;
         }
+        bi.u uVar = this.d;
+        uVar.getText().replace(uVar.getSelectionStart(), uVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i7 = 0;
+        while (!arrayList.isEmpty() && i7 < qnVar.K) {
+            for (int length = qnVar.L.length - 1; length > i7; length--) {
+                CharSequence[] charSequenceArr = qnVar.L;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            qnVar.L[i7] = (CharSequence) arrayList.remove(0);
+            qnVar.N++;
+            i7++;
+        }
+        qnVar.n0();
+        qnVar.l0 = (qnVar.u0 + i7) - 1;
+        qnVar.s.setItemAnimator(qnVar.w);
+        qnVar.r.f();
+        return true;
     }
 }

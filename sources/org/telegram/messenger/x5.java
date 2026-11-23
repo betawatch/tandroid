@@ -5,7 +5,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x5 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,13 +33,13 @@ public final /* synthetic */ class x5 implements Runnable {
                         if (byteBufferValue != null) {
                             TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             if (TLdeserialize != null) {
-                                TLdeserialize.readAttachPath(byteBufferValue, k10.i(a6Var.currentAccount).n);
-                                gj gjVar = new gj(a6Var.currentAccount, TLdeserialize, false, false);
-                                arrayList3.add(gjVar);
+                                TLdeserialize.readAttachPath(byteBufferValue, i10.i(a6Var.currentAccount).n);
+                                fj fjVar = new fj(a6Var.currentAccount, TLdeserialize, false, false);
+                                arrayList3.add(fjVar);
                                 if (intValue == 0) {
-                                    arrayList.add(gjVar);
+                                    arrayList.add(fjVar);
                                 } else {
-                                    arrayList2.add(gjVar);
+                                    arrayList2.add(fjVar);
                                 }
                             }
                             byteBufferValue.reuse();
@@ -51,16 +51,16 @@ public final /* synthetic */ class x5 implements Runnable {
                 }
                 a6Var.getFileLoader().l(arrayList);
                 a6Var.getFileLoader().l(arrayList2);
-                g0.g3(new zf(a6Var, arrayList, arrayList2, 18));
+                g0.g3(new yf(a6Var, arrayList, arrayList2, 18));
                 break;
             case 1:
                 a6 a6Var2 = this.b;
-                a6Var2.getNotificationCenter().b(a6Var2, ls.Z1);
-                a6Var2.getNotificationCenter().b(a6Var2, ls.Y1);
-                a6Var2.getNotificationCenter().b(a6Var2, ls.X1);
-                a6Var2.getNotificationCenter().b(a6Var2, ls.W1);
-                a6Var2.getNotificationCenter().b(a6Var2, ls.R1);
-                a6Var2.getNotificationCenter().b(a6Var2, ls.S1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.Z1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.Y1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.X1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.W1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.R1);
+                a6Var2.getNotificationCenter().b(a6Var2, ks.S1);
                 a6Var2.s(false);
                 break;
             default:

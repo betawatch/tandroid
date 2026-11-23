@@ -11,11 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.ActionMenuView;
-import hi.t5;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements l.x {
     public int E;
@@ -40,7 +39,7 @@ public final class h implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray I = new SparseBooleanArray();
-    public final t5 N = new t5(this, 12);
+    public final hi.u0 N = new hi.u0(this, 13);
 
     public h(Context context) {
         this.a = context;
@@ -193,22 +192,9 @@ public final class h implements l.x {
         return z10;
     }
 
-    @Override // l.x
-    public final void d(l.k kVar, boolean z10) {
-        f();
-        d dVar = this.K;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
-        }
-        l.w wVar = this.e;
-        if (wVar != null) {
-            wVar.d(kVar, z10);
-        }
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     @Override // l.x
-    public final void e() {
+    public final void d() {
         int i7;
         ViewGroup viewGroup = (ViewGroup) this.n;
         ArrayList arrayList = null;
@@ -303,7 +289,7 @@ public final class h implements l.x {
         ((ActionMenuView) this.n).setOverflowReserved(this.x);
     }
 
-    public final boolean f() {
+    public final boolean e() {
         Object obj;
         f fVar = this.L;
         if (fVar != null && (obj = this.n) != null) {
@@ -319,6 +305,19 @@ public final class h implements l.x {
             dVar.i.dismiss();
         }
         return true;
+    }
+
+    @Override // l.x
+    public final void f(l.k kVar, boolean z10) {
+        e();
+        d dVar = this.K;
+        if (dVar != null && dVar.b()) {
+            dVar.i.dismiss();
+        }
+        l.w wVar = this.e;
+        if (wVar != null) {
+            wVar.f(kVar, z10);
+        }
     }
 
     public final boolean g() {
@@ -437,7 +436,7 @@ public final class h implements l.x {
                 }
                 l.w wVar = this.e;
                 if (wVar != null) {
-                    wVar.C(d0Var);
+                    wVar.u(d0Var);
                 }
                 return true;
             }

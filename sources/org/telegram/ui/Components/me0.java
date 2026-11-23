@@ -1,32 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class me0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pe0 b;
+import android.view.View;
 
-    public /* synthetic */ me0(pe0 pe0Var, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class me0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oe0 b;
+    public final /* synthetic */ Runnable c;
+
+    public /* synthetic */ me0(oe0 oe0Var, Runnable runnable, int i7) {
         this.a = i7;
-        this.b = pe0Var;
+        this.b = oe0Var;
+        this.c = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.d.a(false);
+                oe0 oe0Var = this.b;
+                org.telegram.ui.ActionBar.k5 k5Var = oe0Var.d;
+                if (k5Var.I) {
+                    oe0Var.I = this.c;
+                    k5Var.a(true);
+                    break;
+                }
                 break;
             default:
-                pe0 pe0Var = this.b;
-                Runnable runnable = pe0Var.I;
-                pe0Var.I = null;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                Runnable runnable2 = pe0Var.J;
-                if (runnable2 != null) {
-                    runnable2.run();
+                oe0 oe0Var2 = this.b;
+                org.telegram.ui.ActionBar.k5 k5Var2 = oe0Var2.d;
+                if (k5Var2.I) {
+                    oe0Var2.I = this.c;
+                    k5Var2.a(true);
                     break;
                 }
                 break;

@@ -2,9 +2,10 @@ package m3;
 
 import a8.va;
 import c4.k;
-import c8.n9;
+import c8.o9;
 import e2.q0;
 import e2.s0;
+import f3.j0;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -13,12 +14,12 @@ import f3.t;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 import p5.c;
 import z3.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
@@ -34,7 +35,7 @@ public final class a implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        return n9.a((f3.l) pVar, true);
+        return o9.a((f3.l) pVar, true);
     }
 
     @Override // f3.o
@@ -64,7 +65,7 @@ public final class a implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o
@@ -75,11 +76,11 @@ public final class a implements o {
                 int i10 = this.i;
                 x xVar = this.a;
                 if (i10 == 0) {
-                    if (!pVar.c(xVar.a, 0, 8, true)) {
+                    if (!pVar.d(xVar.a, 0, 8, true)) {
                         q qVar = this.b;
                         qVar.getClass();
-                        qVar.d1();
-                        this.b.j(new t(-9223372036854775807L));
+                        qVar.Z0();
+                        this.b.h(new t(-9223372036854775807L));
                         this.f = 4;
                         return -1;
                     }
@@ -100,7 +101,7 @@ public final class a implements o {
                     o3.b bVar = new o3.b(0L, position - j3, -9223372036854775807L, position, this.h - j3);
                     q qVar2 = this.b;
                     qVar2.getClass();
-                    f3.i0 d2 = qVar2.d2(1024, 4);
+                    j0 d2 = qVar2.d2(1024, 4);
                     e2.t tVar = new e2.t();
                     tVar.q = s0.n("image/heic");
                     tVar.k = new q0(bVar);
@@ -110,7 +111,7 @@ public final class a implements o {
                     this.f = 1;
                 }
             } else if (i7 == 1) {
-                pVar.r((int) (this.h - this.i));
+                pVar.q((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {
@@ -148,8 +149,8 @@ public final class a implements o {
                 } else {
                     q qVar4 = this.b;
                     qVar4.getClass();
-                    qVar4.d1();
-                    this.b.j(new t(-9223372036854775807L));
+                    qVar4.Z0();
+                    this.b.h(new t(-9223372036854775807L));
                     this.f = 4;
                 }
             }

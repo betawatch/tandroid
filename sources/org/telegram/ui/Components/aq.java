@@ -1,27 +1,117 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.util.StateSet;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class aq implements gu0 {
-    public final /* synthetic */ yp a;
-    public final /* synthetic */ cq b;
+public final class aq extends n6 {
+    public final Rect s;
+    public Drawable w;
+    public boolean x;
 
-    public aq(cq cqVar, yp ypVar) {
-        this.b = cqVar;
-        this.a = ypVar;
+    public aq(Context context) {
+        super(context, false, false, false);
+        this.s = new Rect();
     }
 
-    @Override // org.telegram.ui.Components.gu0
-    public final void k(int i7) {
-        cq cqVar = this.b;
-        cqVar.u1 = i7;
-        cqVar.K0(true);
+    public Rect getClickBounds() {
+        return this.s;
     }
 
-    @Override // org.telegram.ui.Components.gu0
-    public final void o() {
-        int measuredHeight = this.b.o1.getMeasuredHeight();
-        yp ypVar = this.a;
-        ypVar.z(0 - ypVar.getScrollX(), measuredHeight - ypVar.getScrollY(), false);
+    @Override // org.telegram.ui.Components.n6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.w != null) {
+            Rect bounds = getDrawable().getBounds();
+            Rect rect = this.s;
+            rect.set(bounds);
+            int ceil = (int) Math.ceil(getDrawable().c());
+            if (getDrawable().b == 3) {
+                rect.right = rect.left + ceil;
+            } else if (getDrawable().b == 5) {
+                rect.left = rect.right - ceil;
+            } else if (getDrawable().b == 17) {
+                int i7 = (rect.left + rect.right) / 2;
+                int i10 = ceil / 2;
+                rect.left = i7 - i10;
+                rect.right = i7 + i10;
+            }
+            rect.left -= getPaddingLeft();
+            rect.top -= getPaddingTop();
+            rect.right = getPaddingRight() + rect.right;
+            rect.bottom = getPaddingBottom() + rect.bottom;
+            this.w.setBounds(rect);
+            this.w.draw(canvas);
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean contains = getClickBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
+        if (motionEvent.getAction() == 0 && contains) {
+            this.x = true;
+            Drawable drawable = this.w;
+            if (drawable != null) {
+                drawable.setHotspot(motionEvent.getX(), motionEvent.getY());
+                this.w.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+            }
+            invalidate();
+            return contains;
+        }
+        if (motionEvent.getAction() == 1) {
+            if (this.x && contains) {
+                callOnClick();
+            }
+            this.x = false;
+            Drawable drawable2 = this.w;
+            if (drawable2 != null) {
+                drawable2.setState(StateSet.NOTHING);
+                return contains;
+            }
+        } else if (motionEvent.getAction() == 3) {
+            this.x = false;
+            Drawable drawable3 = this.w;
+            if (drawable3 != null) {
+                drawable3.setState(StateSet.NOTHING);
+            }
+        }
+        return contains;
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+        Drawable drawable2 = this.w;
+        if (drawable2 != null) {
+            drawable2.setCallback(null);
+        }
+        this.w = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        Drawable drawable2 = this.w;
+        if (drawable2 != null) {
+            drawable2.setCallback(null);
+        }
+        this.w = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.w || super.verifyDrawable(drawable);
     }
 }

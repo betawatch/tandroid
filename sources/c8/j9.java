@@ -1,31 +1,19 @@
 package c8;
 
-import android.os.Build;
-import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewParent;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class j9 {
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            m.l3.a(view, charSequence);
+    public static void a(EditorInfo editorInfo, InputConnection inputConnection, TextView textView) {
+        if (inputConnection == null || editorInfo.hintText != null) {
             return;
         }
-        m.n3 n3Var = m.n3.w;
-        if (n3Var != null && n3Var.a == view) {
-            m.n3.b(null);
+        for (ViewParent parent = textView.getParent(); parent instanceof View; parent = parent.getParent()) {
         }
-        if (!TextUtils.isEmpty(charSequence)) {
-            new m.n3(view, charSequence);
-            return;
-        }
-        m.n3 n3Var2 = m.n3.x;
-        if (n3Var2 != null && n3Var2.a == view) {
-            n3Var2.a();
-        }
-        view.setOnLongClickListener(null);
-        view.setLongClickable(false);
-        view.setOnHoverListener(null);
     }
 }

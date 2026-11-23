@@ -1,95 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class nc0 extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+public final class nc0 extends Drawable implements Drawable.Callback {
+    public final fh.g a;
+    public final RectF b = new RectF();
+    public int c = org.telegram.messenger.ks.e4;
 
-    public nc0(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 26.0f);
-        textView.setGravity(17);
-        addView(textView, c8.ma.d(-1, -2.0f, 17, 0.0f, -5.33f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setTextSize(1, 10.0f);
-        textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        textView2.setGravity(17);
-        addView(textView2, c8.ma.d(-1, -2.0f, 17, 0.0f, 14.0f, 0.0f, 0.0f));
+    public nc0(fh.g gVar) {
+        this.a = gVar;
+        gVar.setCallback(this);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.draw(canvas);
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
+        float f10 = this.c / 255.0f;
+        ci.u.c(canvas, rectF, min, f10);
+        ci.u.a(min, f10, 0, canvas, rectF);
     }
 
-    public void setImage(int i7) {
-        ImageView imageView = this.a;
-        imageView.setVisibility(0);
-        this.b.setVisibility(8);
-        this.c.setVisibility(8);
-        imageView.setImageResource(i7);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    public void setNum(int i7) {
-        this.a.setVisibility(8);
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        TextView textView2 = this.c;
-        textView2.setVisibility(0);
-        String str = "";
-        textView.setText("" + i7);
-        if (i7 != 0) {
-            switch (i7) {
-                case 2:
-                    str = "ABC";
-                    break;
-                case 3:
-                    str = "DEF";
-                    break;
-                case 4:
-                    str = "GHI";
-                    break;
-                case 5:
-                    str = "JKL";
-                    break;
-                case 6:
-                    str = "MNO";
-                    break;
-                case 7:
-                    str = "PQRS";
-                    break;
-                case 8:
-                    str = "TUV";
-                    break;
-                case 9:
-                    str = "WXYZ";
-                    break;
-            }
-        } else {
-            str = "+";
-        }
-        textView2.setText(str);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.c = i7;
+        this.a.setAlpha(i7);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.getClass();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

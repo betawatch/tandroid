@@ -8,8 +8,8 @@ import com.google.android.gms.common.api.Status;
 public final class u1 extends com.google.android.gms.common.api.internal.d {
     public final l6.c q;
 
-    public u1(l6.c cVar, com.google.android.gms.common.api.internal.p0 p0Var) {
-        super(l6.a.j, p0Var);
+    public u1(l6.c cVar, com.google.android.gms.common.api.internal.o0 o0Var) {
+        super(l6.a.j, o0Var);
         this.q = cVar;
     }
 

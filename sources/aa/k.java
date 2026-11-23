@@ -21,7 +21,7 @@ import java.util.WeakHashMap;
 import java.util.function.Consumer;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Consumer {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class k implements Consumer {
                 k0 k0Var = new k0(new l0(intValue));
                 try {
                     ga.b.g.getClass();
-                    ga.b.g(bVar.b.b(str, "profiling-manager-info"), ea.a.a.v(k0Var));
+                    ga.b.g(bVar.b.b(str, "profiling-manager-info"), ea.a.a.F(k0Var));
                     return;
                 } catch (IOException e10) {
                     Log.w("FirebaseCrashlytics", "Could not persist Profiling Manager info " + str, e10);

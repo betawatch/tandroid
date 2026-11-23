@@ -1,8 +1,8 @@
 package e5;
 
-import a8.q9;
+import a8.r9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j extends b {
     public final /* synthetic */ int e;
@@ -17,7 +17,7 @@ public final class j extends b {
     public final boolean b() {
         switch (this.e) {
             case 0:
-                if (!super.b() || !q9.a("MULTI_PROCESS")) {
+                if (!super.b() || !r9.a("MULTI_PROCESS")) {
                     return false;
                 }
                 boolean z10 = d5.b.a;
@@ -26,7 +26,7 @@ public final class j extends b {
                 }
                 throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
             default:
-                if (q9.a("MULTI_PROFILE")) {
+                if (r9.a("MULTI_PROFILE")) {
                     return super.b();
                 }
                 return false;

@@ -5,17 +5,17 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class y1 extends Drawable {
     public boolean c;
     public final Paint a = new Paint(1);
-    public final org.telegram.ui.Components.d6 b = new org.telegram.ui.Components.d6(new kg.i0(this, 29), 420, nr.h, 0);
-    public int d = ls.e4;
+    public final org.telegram.ui.Components.c6 b = new org.telegram.ui.Components.c6(new kg.i0(this, 29), 420, kr.h, 0);
+    public int d = ks.e4;
 
     public y1(int i7) {
         a(i7);
@@ -33,7 +33,7 @@ public final class y1 extends Drawable {
         }
         Paint paint = this.a;
         paint.setAlpha((int) (this.d * d));
-        paint.setShadowLayer(org.telegram.messenger.g0.L(12.0f) * d, 0.0f, org.telegram.messenger.g0.L(3.0f), m6.r1(d, 805306368));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(12.0f) * d, 0.0f, org.telegram.messenger.g0.L(3.0f), n6.r1(d, 805306368));
         Rect bounds = getBounds();
         float L = org.telegram.messenger.g0.L(8.0f) * d;
         float L2 = org.telegram.messenger.g0.L(0.0f) * d;

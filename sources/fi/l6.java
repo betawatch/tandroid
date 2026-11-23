@@ -1,8 +1,8 @@
 package fi;
 
 import java.util.ArrayList;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,13 +39,13 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                 long j3 = o6Var.K;
                 String str = o6Var.f;
                 boolean z11 = o6Var.b;
-                hi.c7 c7Var = o6Var.c;
+                hi.x7 x7Var = o6Var.c;
                 int i13 = o6Var.N.a;
                 if (tLObject instanceof TLRPC.Updates) {
                     o6Var.J = false;
                     TLRPC.Updates updates3 = (TLRPC.Updates) tLObject;
-                    if (c7Var.b0) {
-                        np.u1(i13).V3(updates3, false);
+                    if (x7Var.b0) {
+                        mp.u1(i13).V3(updates3, false);
                         org.telegram.messenger.g0.g3(new m6(o6Var, 1));
                         break;
                     } else {
@@ -72,13 +72,13 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                     storyItem = new TL_stories.TL_storyItem();
                                     int currentTime = ConnectionsManager.getInstance(i13).getCurrentTime();
                                     storyItem.date = currentTime;
-                                    int i17 = c7Var.I0;
+                                    int i17 = x7Var.I0;
                                     if (i17 == Integer.MAX_VALUE) {
                                         i17 = 86400;
                                     }
                                     storyItem.expire_date = currentTime + i17;
                                     storyItem.parsedPrivacy = null;
-                                    ArrayList arrayList2 = c7Var.F0;
+                                    ArrayList arrayList2 = x7Var.F0;
                                     ArrayList<TLRPC.PrivacyRule> arrayList3 = new ArrayList<>();
                                     int i18 = 0;
                                     while (true) {
@@ -143,8 +143,8 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                             i7 = i14;
                                             i10 = i13;
                                             storyItem.privacy = arrayList3;
-                                            storyItem.pinned = c7Var.I0 == Integer.MAX_VALUE;
-                                            storyItem.dialogId = k10.i(i10).n;
+                                            storyItem.pinned = x7Var.I0 == Integer.MAX_VALUE;
+                                            storyItem.dialogId = i10.i(i10).n;
                                             storyItem.attachPath = o6Var.e;
                                             storyItem.firstFramePath = str;
                                             storyItem.id = tL_updateStoryID.id;
@@ -171,13 +171,13 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                         int i21 = i13;
                         if (o6Var.w) {
                             TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
-                            tL_stories_deleteStories.peer = np.u1(i21).l1(j3);
+                            tL_stories_deleteStories.peer = mp.u1(i21).l1(j3);
                             tL_stories_deleteStories.id.add(Integer.valueOf(i15));
                             ConnectionsManager.getInstance(i21).sendRequest(tL_stories_deleteStories, new l6(o6Var, 1));
                         } else {
                             if ((i15 == 0 || z12) && storyItem != null) {
                                 TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                                tL_updateStory.peer = np.u1(i21).B1(j3);
+                                tL_updateStory.peer = mp.u1(i21).B1(j3);
                                 tL_updateStory.story = storyItem;
                                 org.telegram.messenger.g0.g3(new l4(6, o6Var, tL_updateStory));
                             }
@@ -192,15 +192,15 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                     }
                                 }
                             }
-                            org.telegram.messenger.g0.g3(new bi.q2(o6Var, j3, storyItem, 7));
-                            np.u1(i21).U3(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
+                            org.telegram.messenger.g0.g3(new bi.s2(o6Var, j3, storyItem, 7));
+                            mp.u1(i21).U3(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
                         }
                     }
                 } else if (tLObject instanceof TL_bots.botPreviewMedia) {
                     o6Var.M = (TL_bots.botPreviewMedia) tLObject;
-                } else if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && c7Var.c0 != null && (jVar = c7Var.d0) != null) {
+                } else if (tL_error != null && org.telegram.messenger.q8.r(tL_error.text) && x7Var.c0 != null && (jVar = x7Var.d0) != null) {
                     jVar.a(new n6(o6Var, 0));
-                    c7Var.d0 = null;
+                    x7Var.d0 = null;
                     break;
                 } else if (tL_error != null && !z11) {
                     org.telegram.messenger.g0.g3(new l4(7, o6Var, tL_error));

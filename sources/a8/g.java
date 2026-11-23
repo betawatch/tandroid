@@ -2,7 +2,7 @@ package a8;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class g implements Map.Entry {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public abstract class g implements Map.Entry {
             default:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry2 = (Map.Entry) obj;
-                    if (!f8.a(getKey(), entry2.getKey()) || !f8.a(getValue(), entry2.getValue())) {
+                    if (!g8.a(getKey(), entry2.getKey()) || !g8.a(getValue(), entry2.getValue())) {
                     }
                 }
                 break;

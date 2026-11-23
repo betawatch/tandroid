@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 q4Var.invalidate();
                 break;
             case 2:
-                i8 i8Var = (i8) obj;
+                j8 j8Var = (j8) obj;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i11 = 0; i11 < i8Var.b.getChildCount(); i11++) {
-                    f8.b((f8) i8Var.b.getChildAt(i11), floatValue2);
+                for (int i11 = 0; i11 < j8Var.b.getChildCount(); i11++) {
+                    g8.b((g8) j8Var.b.getChildAt(i11), floatValue2);
                 }
                 break;
             case 3:
@@ -56,7 +56,7 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 adVar.b.invalidateSelf();
                 break;
             case 4:
-                ((org.telegram.ui.Components.mr) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((org.telegram.ui.Components.jr) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 5:
                 ik ikVar = (ik) obj;
@@ -94,26 +94,26 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 9:
-                yw ywVar = (yw) obj;
-                ywVar.getClass();
-                ywVar.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                xw xwVar = (xw) obj;
+                xwVar.getClass();
+                xwVar.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 10:
-                ez ezVar = (ez) obj;
-                ezVar.getClass();
-                ezVar.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ezVar.invalidate();
+                dz dzVar = (dz) obj;
+                dzVar.getClass();
+                dzVar.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dzVar.invalidate();
                 break;
             case 11:
-                f00 f00Var = (f00) obj;
-                f00Var.getClass();
+                e00 e00Var = (e00) obj;
+                e00Var.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ImageView imageView = f00Var.c;
+                ImageView imageView = e00Var.c;
                 imageView.setAlpha(floatValue3);
                 float f10 = (floatValue3 * 0.5f) + 0.5f;
                 imageView.setScaleX(f10);
                 imageView.setScaleY(f10);
-                View view = f00Var.f;
+                View view = e00Var.f;
                 float f11 = 1.0f - floatValue3;
                 view.setAlpha(f11);
                 float f12 = (f11 * 0.5f) + 0.5f;
@@ -121,34 +121,34 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 view.setScaleY(f12);
                 break;
             case 12:
-                f40 f40Var = (f40) obj;
-                f40Var.Q2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f40Var.U1(true);
-                f40Var.p1.invalidate();
-                f40Var.L1.invalidate();
+                e40 e40Var = (e40) obj;
+                e40Var.Q2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e40Var.T1(true);
+                e40Var.p1.invalidate();
+                e40Var.L1.invalidate();
                 break;
             case 13:
-                q30 q30Var = (q30) obj;
-                q30Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q30Var.a.invalidate();
+                p30 p30Var = (p30) obj;
+                p30Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p30Var.a.invalidate();
                 break;
             case 14:
-                t30 t30Var = (t30) obj;
-                t30Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f40 f40Var2 = t30Var.L;
-                f40Var2.L1.invalidate();
-                f40Var2.Z3.invalidate();
-                f40Var2.b.invalidate();
-                f40.Q0(f40Var2);
+                s30 s30Var = (s30) obj;
+                s30Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e40 e40Var2 = s30Var.L;
+                e40Var2.L1.invalidate();
+                e40Var2.Z3.invalidate();
+                e40Var2.b.invalidate();
+                e40.Q0(e40Var2);
                 break;
             case 15:
-                ((qa0) obj).glassEngine.g();
+                ((pa0) obj).glassEngine.g();
                 break;
             case 16:
-                hh0 hh0Var = (hh0) obj;
-                hh0Var.getClass();
-                hh0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                hh0Var.invalidate();
+                fh0 fh0Var = (fh0) obj;
+                fh0Var.getClass();
+                fh0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                fh0Var.invalidate();
                 break;
             case 17:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
@@ -188,24 +188,24 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 fr0Var.e();
                 break;
             case 24:
-                ((su0) obj).G.a.invalidate();
+                ((ru0) obj).G.a.invalidate();
                 break;
             case 25:
-                ProfileActivity profileActivity = ((vv0) obj).y2;
+                ProfileActivity profileActivity = ((uv0) obj).y2;
                 RectF rectF = ProfileActivity.Z6;
                 profileActivity.s5();
                 break;
             case 26:
-                mw0 mw0Var = (mw0) obj;
-                float[] fArr = mw0Var.n;
+                kw0 kw0Var = (kw0) obj;
+                float[] fArr = kw0Var.n;
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                mw0Var.G = animatedFraction;
-                mw0Var.e(true, org.telegram.messenger.g0.U1(animatedFraction, fArr));
+                kw0Var.G = animatedFraction;
+                kw0Var.e(true, org.telegram.messenger.g0.U1(animatedFraction, fArr));
                 break;
             case 27:
-                ow0 ow0Var = (ow0) obj;
-                float U12 = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), ow0Var.e);
-                ProfileActivity profileActivity2 = ow0Var.n;
+                mw0 mw0Var = (mw0) obj;
+                float U12 = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), mw0Var.e);
+                ProfileActivity profileActivity2 = mw0Var.n;
                 org.telegram.ui.ActionBar.g5 g5Var = profileActivity2.U0;
                 if (g5Var != null && !profileActivity2.q2) {
                     float f13 = 1.0f - U12;
@@ -213,19 +213,19 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                     profileActivity2.U0.setScaleY(f13);
                     profileActivity2.U0.setAlpha(f13);
                 }
-                ow0Var.setScaleX(U12);
-                ow0Var.setScaleY(U12);
-                ow0Var.setAlpha(U12);
+                mw0Var.setScaleX(U12);
+                mw0Var.setScaleY(U12);
+                mw0Var.setAlpha(U12);
                 break;
             case 28:
-                nx0 nx0Var = (nx0) obj;
-                nx0Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nx0Var.b();
+                lx0 lx0Var = (lx0) obj;
+                lx0Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lx0Var.b();
                 break;
             default:
-                yx0 yx0Var = (yx0) obj;
-                yx0Var.E = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), yx0Var.F);
-                yx0Var.h.setTextColor(i0.a.f(yx0Var.E, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.z6, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false)));
+                wx0 wx0Var = (wx0) obj;
+                wx0Var.E = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), wx0Var.F);
+                wx0Var.h.setTextColor(i0.a.f(wx0Var.E, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.z6, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q6, false)));
                 break;
         }
     }

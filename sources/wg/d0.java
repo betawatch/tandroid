@@ -1,54 +1,33 @@
 package wg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.i10;
+import ug.h1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class d0 extends hi.e {
-    public final RectF m0;
-    public boolean n0;
-    public float o0;
-    public final org.telegram.ui.Components.voip.n p0;
+public final /* synthetic */ class d0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f0 b;
 
-    public d0(Context context, h6 h6Var) {
-        super(context, h6Var, true);
-        this.m0 = new RectF();
-        org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
-        this.p0 = nVar;
-        nVar.n = 1.2f;
-        nVar.k = false;
-        nVar.m = 4.0f;
+    public /* synthetic */ d0(f0 f0Var, int i7) {
+        this.a = i7;
+        this.b = f0Var;
     }
 
-    @Override // hi.e, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.n0) {
-            float f10 = this.o0 + 0.016f;
-            this.o0 = f10;
-            if (f10 > 3.0f) {
-                this.n0 = false;
-            }
-        } else {
-            float f11 = this.o0 - 0.016f;
-            this.o0 = f11;
-            if (f11 < 1.0f) {
-                this.n0 = true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f0.m1(this.b);
+                break;
+            default:
+                f0 f0Var = this.b;
+                h1 h1Var = new h1(f0Var.s1, i10.t0, null, null, null, f0Var.J0);
+                h1Var.F2 = true;
+                h1Var.G2 = true;
+                h1Var.Y1 = true;
+                f0Var.s1.showDialog(h1Var);
+                break;
         }
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.m0;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        ia.e.d().f((-getMeasuredWidth()) * 0.1f * this.o0, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), ia.e.d().e());
-        int measuredWidth2 = getMeasuredWidth();
-        org.telegram.ui.Components.voip.n nVar = this.p0;
-        nVar.f = measuredWidth2;
-        nVar.a(org.telegram.messenger.g0.L(8.0f), canvas, rectF, null);
-        super.onDraw(canvas);
-        invalidate();
     }
 }

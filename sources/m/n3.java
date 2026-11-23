@@ -8,7 +8,6 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -20,7 +19,7 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n3 implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
     public static n3 w;
@@ -144,68 +143,50 @@ public final class n3 implements View.OnLongClickListener, View.OnHoverListener,
             }
             x = this;
             this.r = z10;
-            Context context = view.getContext();
-            o3 o3Var = new o3();
-            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-            o3Var.d = layoutParams;
-            o3Var.e = new Rect();
-            o3Var.f = new int[2];
-            o3Var.g = new int[2];
-            o3Var.a = context;
-            View inflate = LayoutInflater.from(context).inflate(R.layout.abc_tooltip, (ViewGroup) null);
-            o3Var.b = inflate;
-            o3Var.c = (TextView) inflate.findViewById(R.id.message);
-            layoutParams.setTitle(o3.class.getSimpleName());
-            layoutParams.packageName = context.getPackageName();
-            layoutParams.type = 1002;
-            layoutParams.width = -2;
-            layoutParams.height = -2;
-            layoutParams.format = -3;
-            layoutParams.windowAnimations = R.style.Animation_AppCompat_Tooltip;
-            layoutParams.flags = 24;
+            o3 o3Var = new o3(view.getContext());
             View view2 = (View) o3Var.b;
-            Context context2 = (Context) o3Var.a;
+            Context context = (Context) o3Var.a;
             this.n = o3Var;
             int i13 = this.f;
             int i14 = this.h;
             boolean z12 = this.r;
-            WindowManager.LayoutParams layoutParams2 = (WindowManager.LayoutParams) o3Var.d;
+            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) o3Var.d;
             if (view2.getParent() != null && view2.getParent() != null) {
-                ((WindowManager) context2.getSystemService("window")).removeView(view2);
+                ((WindowManager) context.getSystemService("window")).removeView(view2);
             }
             ((TextView) o3Var.c).setText(this.b);
-            int[] iArr = (int[]) o3Var.g;
+            int[] iArr = (int[]) o3Var.h;
             int[] iArr2 = (int[]) o3Var.f;
             Rect rect = (Rect) o3Var.e;
-            layoutParams2.token = view.getApplicationWindowToken();
-            int dimensionPixelOffset = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
+            layoutParams.token = view.getApplicationWindowToken();
+            int dimensionPixelOffset = context.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
             if (view.getWidth() < dimensionPixelOffset) {
                 i13 = view.getWidth() / 2;
             }
             if (view.getHeight() >= dimensionPixelOffset) {
-                int dimensionPixelOffset2 = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
+                int dimensionPixelOffset2 = context.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
                 height = i14 + dimensionPixelOffset2;
                 i7 = i14 - dimensionPixelOffset2;
             } else {
                 height = view.getHeight();
                 i7 = 0;
             }
-            layoutParams2.gravity = 49;
-            int dimensionPixelOffset3 = context2.getResources().getDimensionPixelOffset(z12 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
+            layoutParams.gravity = 49;
+            int dimensionPixelOffset3 = context.getResources().getDimensionPixelOffset(z12 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
             View rootView = view.getRootView();
-            ViewGroup.LayoutParams layoutParams3 = rootView.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams2 = rootView.getLayoutParams();
             int i15 = i13;
-            if (!(layoutParams3 instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams3).type != 2) {
-                Context context3 = view.getContext();
+            if (!(layoutParams2 instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams2).type != 2) {
+                Context context2 = view.getContext();
                 while (true) {
-                    if (!(context3 instanceof ContextWrapper)) {
+                    if (!(context2 instanceof ContextWrapper)) {
                         break;
                     }
-                    if (context3 instanceof Activity) {
-                        rootView = ((Activity) context3).getWindow().getDecorView();
+                    if (context2 instanceof Activity) {
+                        rootView = ((Activity) context2).getWindow().getDecorView();
                         break;
                     }
-                    context3 = ((ContextWrapper) context3).getBaseContext();
+                    context2 = ((ContextWrapper) context2).getBaseContext();
                 }
             }
             if (rootView == null) {
@@ -219,7 +200,7 @@ public final class n3 implements View.OnLongClickListener, View.OnHoverListener,
                     i11 = 0;
                     i12 = 1;
                 } else {
-                    Resources resources = context2.getResources();
+                    Resources resources = context.getResources();
                     i12 = 1;
                     i10 = i7;
                     z11 = z12;
@@ -234,7 +215,7 @@ public final class n3 implements View.OnLongClickListener, View.OnHoverListener,
                 int i16 = iArr2[i11] - iArr[i11];
                 iArr2[i11] = i16;
                 iArr2[i12] = iArr2[i12] - iArr[i12];
-                layoutParams2.x = (i16 + i15) - (rootView.getWidth() / 2);
+                layoutParams.x = (i16 + i15) - (rootView.getWidth() / 2);
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i11, i11);
                 view2.measure(makeMeasureSpec, makeMeasureSpec);
                 int measuredHeight = view2.getMeasuredHeight();
@@ -243,17 +224,17 @@ public final class n3 implements View.OnLongClickListener, View.OnHoverListener,
                 int i19 = i17 + height + dimensionPixelOffset3;
                 if (z11) {
                     if (i18 >= 0) {
-                        layoutParams2.y = i18;
+                        layoutParams.y = i18;
                     } else {
-                        layoutParams2.y = i19;
+                        layoutParams.y = i19;
                     }
                 } else if (measuredHeight + i19 <= rect.height()) {
-                    layoutParams2.y = i19;
+                    layoutParams.y = i19;
                 } else {
-                    layoutParams2.y = i18;
+                    layoutParams.y = i18;
                 }
             }
-            ((WindowManager) context2.getSystemService("window")).addView(view2, layoutParams2);
+            ((WindowManager) context.getSystemService("window")).addView(view2, layoutParams);
             view.addOnAttachStateChangeListener(this);
             if (this.r) {
                 j10 = 2500;

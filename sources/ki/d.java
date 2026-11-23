@@ -1,10 +1,10 @@
 package ki;
 
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class d implements Runnable {
                 jVar.getConnectionsManager().sendRequest(updatestarrefprogram, new b(jVar, t1Var, i10));
                 break;
             default:
-                vf.c.t(jVar.getParentActivity(), hd.N0((jVar.Z || jVar.b0.end_date != 0) ? 2131754311 : 2131754324, null));
+                vf.c.t(jVar.getParentActivity(), gd.N0((jVar.Z || jVar.b0.end_date != 0) ? 2131754311 : 2131754324, null));
                 break;
         }
     }

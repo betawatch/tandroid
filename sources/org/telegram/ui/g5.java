@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class g5 extends androidx.fragment.app.v {
     public int P = -1;
@@ -20,21 +20,21 @@ public abstract class g5 extends androidx.fragment.app.v {
         boolean z10 = iArr.length > 0 && iArr[0] == 0;
         if (i7 == 104) {
             if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.N0(2131743040, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.gd.N0(2131743035, null));
                 return true;
             }
-            f40 f40Var = f40.C5;
-            if (f40Var != null) {
-                f40Var.s1.callOnClick();
+            e40 e40Var = e40.C5;
+            if (e40Var != null) {
+                e40Var.s1.callOnClick();
                 return true;
             }
         } else {
             if (i7 == 4 || i7 == 151) {
                 if (z10) {
-                    org.telegram.messenger.fc.D().i(null);
+                    org.telegram.messenger.ec.D().i(null);
                     return true;
                 }
-                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.hd.N0(2131747107, null) : org.telegram.messenger.hd.N0(2131747105, null));
+                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.gd.N0(2131747107, null) : org.telegram.messenger.gd.N0(2131747105, null));
                 return true;
             }
             if (i7 == 5) {
@@ -42,7 +42,7 @@ public abstract class g5 extends androidx.fragment.app.v {
                     org.telegram.messenger.i5.r(this.P).l();
                     return true;
                 }
-                w(R.raw.permission_request_contacts, org.telegram.messenger.hd.N0(2131747112, null));
+                w(R.raw.permission_request_contacts, org.telegram.messenger.gd.N0(2131747112, null));
                 return false;
             }
             if (i7 == 3 || i7 == 150) {
@@ -57,27 +57,27 @@ public abstract class g5 extends androidx.fragment.app.v {
                     }
                 }
                 if (i7 == 150 && (!z11 || !z12)) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.N0(2131747115, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.gd.N0(2131747115, null));
                     return true;
                 }
                 if (!z11) {
-                    w(R.raw.permission_request_microphone, org.telegram.messenger.hd.N0(2131747117, null));
+                    w(R.raw.permission_request_microphone, org.telegram.messenger.gd.N0(2131747117, null));
                     return true;
                 }
                 if (!z12) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.N0(2131747114, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.gd.N0(2131747114, null));
                     return true;
                 }
-                if (org.telegram.messenger.cz.y0) {
+                if (org.telegram.messenger.bz.y0) {
                     CameraController.getInstance().initCamera(null);
                 }
                 return false;
             }
             if (i7 != 18 && i7 != 19 && i7 != 20 && i7 != 22) {
-                int i11 = org.telegram.messenger.ls.z4;
-                int i12 = org.telegram.messenger.ls.y4;
+                int i11 = org.telegram.messenger.ks.z4;
+                int i12 = org.telegram.messenger.ks.y4;
                 if (i7 == 2) {
-                    org.telegram.messenger.ls e10 = org.telegram.messenger.ls.e();
+                    org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
                     if (z10) {
                         i11 = i12;
                     }
@@ -85,7 +85,7 @@ public abstract class g5 extends androidx.fragment.app.v {
                     return true;
                 }
                 if (i7 == 211) {
-                    org.telegram.messenger.ls e11 = org.telegram.messenger.ls.e();
+                    org.telegram.messenger.ks e11 = org.telegram.messenger.ks.e();
                     if (z10) {
                         i11 = i12;
                     }
@@ -93,7 +93,7 @@ public abstract class g5 extends androidx.fragment.app.v {
                     return true;
                 }
             } else if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.N0(2131747114, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.gd.N0(2131747114, null));
             }
         }
         return true;
@@ -101,14 +101,14 @@ public abstract class g5 extends androidx.fragment.app.v {
 
     public final org.telegram.ui.ActionBar.t1 v(int i7, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        int i10 = org.telegram.ui.ActionBar.m6.L5;
-        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.m6.x0(null, i10, false), null);
+        int i10 = org.telegram.ui.ActionBar.n6.L5;
+        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.n6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
         SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(str);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.U = W2;
-        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747106, null), new w0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751760, null), null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747106, null), new w0(this, 4));
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751760, null), null);
         return t1Var;
     }
 

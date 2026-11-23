@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import com.google.android.gms.internal.vision.e2;
-import ki.m3;
+import ki.n3;
 import og.a;
 import og.m;
 import og.n;
@@ -25,7 +25,7 @@ import og.o;
 import org.telegram.messenger.g0;
 import p1.g;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
     public RectF E;
@@ -215,7 +215,7 @@ public class CropAreaView extends ViewGroup {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.c0, f10);
         this.d0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.d0.addListener(new m3(this, 4));
+        this.d0.addListener(new n3(this, 4));
         if (i7 == 1) {
             this.d0.setStartDelay(200L);
         }
@@ -868,7 +868,7 @@ public class CropAreaView extends ViewGroup {
             oVar3.n = 0.0f;
             n nVar = oVar3.N;
             if (nVar != null) {
-                nVar.D(false);
+                nVar.q0(false);
                 return true;
             }
         }

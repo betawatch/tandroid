@@ -1,49 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class i91 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ y91 c;
+public final class i91 extends u91 {
+    public final /* synthetic */ w91 p3;
 
-    public /* synthetic */ i91(y91 y91Var, boolean z10, int i7) {
-        this.a = i7;
-        this.c = y91Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i91(w91 w91Var, Context context) {
+        super(w91Var, context);
+        this.p3 = w91Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7;
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                boolean z10 = this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                y91 y91Var = this.c;
-                y91Var.W0(f10);
-                if (!z10) {
-                    Activity parentActivity = y91Var.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.g2) y91Var).classGuid;
-                    org.telegram.messenger.g0.k3(parentActivity, i7);
-                    y91Var.s0.setVisibility(8);
-                    y91Var.U0(true);
-                    break;
-                } else {
-                    y91Var.r0.setVisibility(8);
-                    break;
-                }
-            default:
-                if (!this.b) {
-                    this.c.p0.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ek0
+    public final boolean R0() {
+        ArrayList arrayList = this.p3.b;
+        return (getAdapter() == null || this.W1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((o91) arrayList.get(0)).c == null || ((o91) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
+    }
+
+    @Override // org.telegram.ui.u91, org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        this.p3.C0();
     }
 }

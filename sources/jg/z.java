@@ -1,17 +1,17 @@
 package jg;
 
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class z extends z1 {
-    public final /* synthetic */ nm0 t;
+    public final /* synthetic */ mm0 t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(nm0 nm0Var) {
+    public z(mm0 mm0Var) {
         super(false);
-        this.t = nm0Var;
+        this.t = mm0Var;
     }
 
     @Override // jg.z1

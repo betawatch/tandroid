@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final Logger a = Logger.getLogger(k.class.getName());
@@ -69,12 +69,12 @@ public abstract class k {
         }
         nVar.a = k10;
         int a10 = h5.b.a(byteBuffer.get());
-        nVar.b = a10 & ls.L1;
+        nVar.b = a10 & ks.L1;
         int i10 = 1;
         while ((a10 >>> 7) == 1) {
             a10 = h5.b.a(byteBuffer.get());
             i10++;
-            nVar.b = (nVar.b << 7) | (a10 & ls.L1);
+            nVar.b = (nVar.b << 7) | (a10 & ks.L1);
         }
         nVar.c = i10;
         ByteBuffer slice = byteBuffer.slice();

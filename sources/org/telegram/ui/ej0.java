@@ -1,178 +1,148 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import j$.util.Objects;
+import java.util.regex.Pattern;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ej0 extends FrameLayout {
+public final class ej0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public Object b;
-    public float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final Object b;
+    public String c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ej0(Context context, EditTextBoldCursor editTextBoldCursor, int i7) {
-        super(context);
+    public /* synthetic */ ej0(fk0 fk0Var, EditTextBoldCursor editTextBoldCursor, String str, int i7) {
         this.a = i7;
-        this.d = editTextBoldCursor;
+        this.d = fk0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long parseLong;
+        int i7;
+        int i10 = this.a;
+        boolean z10 = true;
+        Object obj = this.b;
+        Object obj2 = this.d;
+        switch (i10) {
             case 0:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.g0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.g0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+                fk0.N0((fk0) obj2, (EditTextBoldCursor) obj, this.c, editable, false);
                 break;
             case 1:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.g0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.g0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
+                fk0 fk0Var = (fk0) obj2;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
+                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                int i11 = 0;
+                while (true) {
+                    if (i11 < editable.length()) {
+                        char charAt = editable.charAt(i11);
+                        if ((charAt >= '0' && charAt <= '9') || ((charAt >= 'a' && charAt <= 'z') || ((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                            i11++;
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (z10 && !fk0Var.v0) {
+                    editTextBoldCursor.setErrorText(org.telegram.messenger.gd.N0(2131747255, null));
+                    break;
+                } else {
+                    fk0Var.u0[intValue] = z10;
+                    fk0.N0(fk0Var, editTextBoldCursor, this.c, editable, false);
                     break;
                 }
                 break;
             case 2:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.g0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.g0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+                fk0.N0((fk0) obj2, (EditTextBoldCursor) obj, this.c, editable, false);
                 break;
             default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(34.0f);
-                StaticLayout p10 = ((EditTextBoldCursor) this.d).p(size);
-                this.b = p10;
-                if (p10 != null) {
-                    int lineCount = p10.getLineCount();
-                    int i11 = 0;
-                    if (lineCount > 1) {
-                        i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.hd.a0) {
-                        float f10 = 0.0f;
-                        while (true) {
-                            if (i11 < lineCount) {
-                                if (((StaticLayout) this.b).getLineLeft(i11) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i11));
-                                    if (i11 == lineCount - 1) {
-                                        this.c = size - f10;
-                                    }
-                                    i11++;
-                                }
+                sg.p pVar = (sg.p) obj2;
+                sg.q qVar = pVar.f;
+                EditTextBoldCursor editTextBoldCursor2 = pVar.d;
+                if (!pVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                    String obj3 = editable.toString();
+                    if (obj3.length() > 8) {
+                        editTextBoldCursor2.setText(obj3.substring(2, 8).toUpperCase());
+                        editTextBoldCursor2.setSelection(8);
+                        break;
+                    } else if (((Pattern) obj).matcher(editable).find()) {
+                        int length = obj3.length();
+                        if (length != 3) {
+                            if (length == 6) {
+                                i7 = ((int) Long.parseLong(obj3, 16)) - 16777216;
+                            } else if (length != 8) {
+                                i7 = qVar.q1;
+                            } else {
+                                parseLong = Long.parseLong(obj3, 16);
                             }
+                            if (i7 == qVar.q1) {
+                                qVar.J0(i7, 5);
+                                break;
+                            }
+                        } else {
+                            parseLong = Long.parseLong("FF" + obj3.charAt(0) + obj3.charAt(0) + obj3.charAt(1) + obj3.charAt(1) + obj3.charAt(2) + obj3.charAt(2), 16);
+                        }
+                        i7 = (int) parseLong;
+                        if (i7 == qVar.q1) {
                         }
                     }
-                }
-                super.onMeasure(i7, i10);
-                break;
-            case 1:
-                int size2 = View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(34.0f);
-                StaticLayout p11 = ((EditTextBoldCursor) this.d).p(size2);
-                this.b = p11;
-                if (p11 != null) {
-                    int lineCount2 = p11.getLineCount();
-                    int i12 = 0;
-                    if (lineCount2 > 1) {
-                        i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.hd.a0) {
-                        float f11 = 0.0f;
-                        while (true) {
-                            if (i12 < lineCount2) {
-                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i12));
-                                    if (i12 == lineCount2 - 1) {
-                                        this.c = size2 - f11;
-                                    }
-                                    i12++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i7, i10);
-                break;
-            case 2:
-                int size3 = View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(34.0f);
-                StaticLayout p12 = ((EditTextBoldCursor) this.d).p(size3);
-                this.b = p12;
-                if (p12 != null) {
-                    int lineCount3 = p12.getLineCount();
-                    int i13 = 0;
-                    if (lineCount3 > 1) {
-                        i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.hd.a0) {
-                        float f12 = 0.0f;
-                        while (true) {
-                            if (i13 < lineCount3) {
-                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f12 = Math.max(f12, ((StaticLayout) this.b).getLineWidth(i13));
-                                    if (i13 == lineCount3 - 1) {
-                                        this.c = size3 - f12;
-                                    }
-                                    i13++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i7, i10);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                org.telegram.ui.Components.rh0 rh0Var = ((org.telegram.ui.Components.ah0) this.d).r1;
-                float measuredHeight = (r0.q1 / 768.0f) * ((kg.k) this.b).getMeasuredHeight();
-                if (this.c != measuredHeight) {
-                    this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = rh0Var.getLayoutParams();
-                    int i14 = (int) measuredHeight;
-                    rh0Var.getLayoutParams().width = i14;
-                    layoutParams.height = i14;
-                    super.onMeasure(i7, i10);
-                    break;
                 }
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ej0(org.telegram.ui.Components.ah0 ah0Var, Context context, kg.k kVar) {
-        super(context);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 2:
+                break;
+            default:
+                this.c = charSequence.toString();
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    public ej0(sg.p pVar) {
         this.a = 3;
-        this.d = ah0Var;
-        this.b = kVar;
+        this.d = pVar;
+        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

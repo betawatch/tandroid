@@ -1,125 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class vb extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ lb a;
-    public final /* synthetic */ za b;
+public final class vb extends FrameLayout {
+    public final c6 a;
+    public final c6 b;
+    public final Paint c;
+    public final RectF d;
+    public final long e;
+    public final /* synthetic */ wb f;
 
-    public vb(za zaVar, lb lbVar) {
-        this.b = zaVar;
-        this.a = lbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vb(wb wbVar, Activity activity) {
+        super(activity);
+        this.f = wbVar;
+        kr krVar = kr.h;
+        this.a = new c6(this, 320L, krVar);
+        this.b = new c6(this, 320L, krVar);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(268435455);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.66f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.d = new RectF();
+        this.e = System.currentTimeMillis();
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        za zaVar = this.b;
-        if (zaVar.s) {
-            return false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        wb wbVar = this.f;
+        float e10 = this.a.e(false, wbVar.a);
+        float d = this.b.d(wbVar.a >= 1.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float N = width - org.telegram.messenger.g0.N(13.0f);
+        float N2 = height - org.telegram.messenger.g0.N(13.0f);
+        float N3 = org.telegram.messenger.g0.N(13.0f) + width;
+        float N4 = org.telegram.messenger.g0.N(13.0f) + height;
+        RectF rectF = this.d;
+        rectF.set(N, N2, N3, N4);
+        float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
+        float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
+        for (int i7 = 0; i7 < 4; i7++) {
+            x1.a aVar = rp.h;
+            aVar.getInterpolation((currentTimeMillis - (i7 * 1350)) / 667.0f);
+            max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
-        lb lbVar = this.a;
-        zaVar.w = lb.access$1600(lbVar, true);
-        zaVar.x = lb.access$1600(lbVar, false);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        boolean z10 = false;
-        if (Math.abs(f10) <= 2000.0f) {
-            return false;
+        int r12 = org.telegram.ui.ActionBar.n6.r1((1.0f - d) * 1.0f, -1);
+        Paint paint = this.c;
+        paint.setColor(r12);
+        canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, e10) * (-360.0f), false, paint);
+        if (e10 < 1.0f && d < 1.0f) {
+            invalidate();
         }
-        za zaVar = this.b;
-        if ((f10 < 0.0f && zaVar.w) || (f10 > 0.0f && zaVar.x)) {
-            z10 = true;
-        }
-        float signum = Math.signum(f10);
-        lb lbVar = this.a;
-        r1.g gVar = new r1.g(lbVar, r1.g.o, signum * lbVar.getWidth() * 2.0f);
-        if (!z10) {
-            final int i7 = 0;
-            gVar.a(new r1.c(this) { // from class: org.telegram.ui.Components.tb
-                public final /* synthetic */ vb b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // r1.c
-                public final void a(r1.g gVar2, boolean z11, float f12, float f13) {
-                    switch (i7) {
-                        case 0:
-                            this.b.b.E.b();
-                            break;
-                        default:
-                            this.b.b.E.b();
-                            break;
-                    }
-                }
-            });
-            gVar.b(new j7(lbVar, 2));
-        }
-        gVar.m.a(1.0f);
-        gVar.m.b(100.0f);
-        gVar.a = f10;
-        gVar.h();
-        if (z10) {
-            r1.g gVar2 = new r1.g((Object) lbVar, (r1.e) r1.g.v, 0.0f);
-            final int i10 = 1;
-            gVar2.a(new r1.c(this) { // from class: org.telegram.ui.Components.tb
-                public final /* synthetic */ vb b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // r1.c
-                public final void a(r1.g gVar22, boolean z11, float f12, float f13) {
-                    switch (i10) {
-                        case 0:
-                            this.b.b.E.b();
-                            break;
-                        default:
-                            this.b.b.E.b();
-                            break;
-                    }
-                }
-            });
-            gVar2.b(new ub());
-            gVar.m.a(1.0f);
-            gVar.m.b(10.0f);
-            gVar.a = f10;
-            gVar2.h();
-        }
-        zaVar.s = true;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        za zaVar = this.b;
-        float f12 = zaVar.h + f10;
-        zaVar.h = f12;
-        float f13 = zaVar.n + f11;
-        zaVar.n = f13;
-        if (Utilities.t(0.0f, 0.0f, f12, f13) > org.telegram.messenger.g0.e) {
-            zaVar.r = true;
-        }
-        if (!zaVar.d) {
-            return false;
-        }
-        float f14 = zaVar.f - f10;
-        zaVar.f = f14;
-        lb lbVar = this.a;
-        lbVar.setTranslationX(f14);
-        float f15 = zaVar.f;
-        if (f15 == 0.0f || ((f15 < 0.0f && zaVar.w) || (f15 > 0.0f && zaVar.x))) {
-            lbVar.setAlpha(1.0f - (Math.abs(f15) / lbVar.getWidth()));
-        }
-        return true;
+        super.onDraw(canvas);
     }
 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l extends r6.a {
     public static final android.support.v4.media.session.a0 e;
@@ -312,13 +312,13 @@ public final class l extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.p(parcel, 2, this.a);
-        bc.b(parcel, 3, this.b);
+        int r10 = cc.r(parcel, 20293);
+        cc.p(parcel, 2, this.a);
+        cc.b(parcel, 3, this.b);
         int i10 = this.c;
-        bc.q(parcel, 4, 4);
+        cc.q(parcel, 4, 4);
         parcel.writeInt(i10);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
     }
 
     public l(int i7) {

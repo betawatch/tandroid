@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
-import a8.k8;
+import a8.l8;
 import android.os.Looper;
 import android.util.Log;
 import android.util.Pair;
@@ -12,13 +12,13 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.r> extends k8 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.r> extends l8 {
     public static final b7.j n = new b7.j(1);
     public final f b;
     public final WeakReference c;
-    public h6.q f;
+    public h6.r f;
     public com.google.android.gms.common.api.r h;
     public Status i;
     public volatile boolean j;
@@ -46,7 +46,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    @Override // a8.k8
+    @Override // a8.l8
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {
@@ -120,7 +120,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    public final void i(h6.q qVar) {
+    public final void i(h6.r rVar) {
         synchronized (this.a) {
             try {
                 q6.m.j("Result has already been consumed.", !this.j);
@@ -131,9 +131,9 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                     f fVar = this.b;
                     com.google.android.gms.common.api.r j3 = j();
                     fVar.getClass();
-                    fVar.sendMessage(fVar.obtainMessage(1, new Pair(qVar, j3)));
+                    fVar.sendMessage(fVar.obtainMessage(1, new Pair(rVar, j3)));
                 } else {
-                    this.f = qVar;
+                    this.f = rVar;
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -151,9 +151,9 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
             this.f = null;
             this.j = true;
         }
-        z0 z0Var = (z0) this.g.getAndSet(null);
-        if (z0Var != null) {
-            ((Set) z0Var.a.a).remove(this);
+        y0 y0Var = (y0) this.g.getAndSet(null);
+        if (y0Var != null) {
+            ((Set) y0Var.a.a).remove(this);
         }
         q6.m.h(rVar);
         return rVar;
@@ -166,11 +166,11 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         if (this.k) {
             this.f = null;
         } else {
-            h6.q qVar = this.f;
-            if (qVar != null) {
+            h6.r rVar2 = this.f;
+            if (rVar2 != null) {
                 f fVar = this.b;
                 fVar.removeMessages(2);
-                fVar.sendMessage(fVar.obtainMessage(1, new Pair(qVar, j())));
+                fVar.sendMessage(fVar.obtainMessage(1, new Pair(rVar2, j())));
             }
         }
         ArrayList arrayList = this.e;

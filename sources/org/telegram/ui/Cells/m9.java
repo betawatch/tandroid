@@ -1,104 +1,15 @@
 package org.telegram.ui.Cells;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
+import android.graphics.Path;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class m9 {
-    public int a;
-    public float b;
-    public float c;
-    public Object d;
-    public Object e;
+public final class m9 extends Path {
+    public oq a;
 
-    public m9(ue.a aVar) {
-        this.d = aVar;
-    }
-
-    public boolean a(View view, MotionEvent motionEvent) {
-        ue.a aVar = (ue.a) this.d;
-        float x10 = motionEvent.getX();
-        float y10 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            b(view, x10, y10);
-            if (aVar.Q0(x10, y10)) {
-                this.a |= 1;
-                this.b = x10;
-                this.c = y10;
-                aVar.t0();
-                if (aVar.m1() && view != null) {
-                    if (((p4.z) this.e) != null) {
-                        throw new AssertionError();
-                    }
-                    this.a |= 2;
-                    p4.z zVar = new p4.z(20, this, view);
-                    this.e = zVar;
-                    view.postDelayed(zVar, aVar.getLongPressDuration());
-                    return true;
-                }
-            }
-        }
-        if (action == 1) {
-            int i7 = this.a;
-            if ((i7 & 1) != 0) {
-                if ((i7 & 4) != 0) {
-                    aVar.o(view, x10, y10);
-                    this.a &= -5;
-                } else {
-                    aVar.M(x10, y10);
-                    if ((this.a & 256) == 0 && view != null) {
-                        view.playSoundEffect(0);
-                    }
-                }
-                b(view, x10, y10);
-                return true;
-            }
-        } else if (action != 2) {
-            if (action == 3 && (this.a & 1) != 0) {
-                b(view, x10, y10);
-                return true;
-            }
-        } else if ((this.a & 1) != 0) {
-            aVar.t(x10, y10);
-            if ((this.a & 4) != 0) {
-                aVar.e1(view, x10, y10);
-                return true;
-            }
-            if (aVar.m0() && Math.max(Math.abs(this.b - x10), Math.abs(this.c - y10)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
-                b(view, x10, y10);
-                return true;
-            }
-        }
-        return (this.a & 1) != 0;
-    }
-
-    public void b(View view, float f10, float f11) {
-        ue.a aVar = (ue.a) this.d;
-        int i7 = this.a;
-        if ((i7 & 2) != 0) {
-            this.a = i7 & (-3);
-            p4.z zVar = (p4.z) this.e;
-            if (zVar == null) {
-                throw new AssertionError();
-            }
-            view.removeCallbacks(zVar);
-            this.e = null;
-        }
-        int i10 = this.a;
-        if ((i10 & 8) != 0) {
-            this.a = i10 & (-9);
-            aVar.x(view, f10, f11);
-        }
-        if ((this.a & 4) != 0) {
-            aVar.o(view, f10, f11);
-            this.a &= -5;
-        }
-        if ((this.a & 1) != 0) {
-            aVar.E0();
-            this.a &= -2;
-        }
+    @Override // android.graphics.Path
+    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        this.a.addRect(f10, f11, f12, f13, direction);
     }
 }

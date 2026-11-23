@@ -4,17 +4,16 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import c8.i0;
-import c8.ma;
+import c8.j0;
+import c8.na;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
-import org.telegram.tgnet.u;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -35,11 +34,11 @@ public final class a {
 
     public a(q qVar, n nVar) {
         this.a = qVar;
-        qVar.a = new u(this, 21);
+        qVar.a = new org.telegram.tgnet.g(this, 23);
         qVar.d = new ti.b(g0.L(48.0f));
         ui.c cVar = new ui.c();
         this.b = cVar;
-        cVar.a(nVar.e());
+        cVar.a(nVar.j());
         qVar.E.add(new o(cVar, nVar));
         if (Build.VERSION.SDK_INT < 31) {
             this.k = ui.e.a;
@@ -112,10 +111,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ls.q2;
+        fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = m6.r1(ls.q2 / 255.0f, cVar.b);
+            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -128,7 +127,7 @@ public final class a {
         fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = m6.r1(210 / 255.0f, cVar2.b);
+            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -154,10 +153,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ls.q2;
+        fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = m6.r1(ls.q2 / 255.0f, cVar.b);
+            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -170,7 +169,7 @@ public final class a {
         fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = m6.r1(210 / 255.0f, cVar2.b);
+            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -181,28 +180,28 @@ public final class a {
         return fVar;
     }
 
-    public final void f(FrameLayout frameLayout, ek0 ek0Var, View view, h6 h6Var) {
+    public final void f(FrameLayout frameLayout, ek0 ek0Var, View view, i6 i6Var) {
         this.m = frameLayout;
         this.n = ek0Var;
         ek0Var.setCaptureSectionsDecoratorAllowed(true);
         this.o = new di.f(9, ek0Var, frameLayout);
         this.a.b(ek0Var);
         ek0Var.setClipToPadding(false);
-        g(frameLayout, view, h6Var);
+        g(frameLayout, view, i6Var);
     }
 
-    public final void g(FrameLayout frameLayout, View view, h6 h6Var) {
+    public final void g(FrameLayout frameLayout, View view, i6 i6Var) {
         if (view == null) {
             return;
         }
         g0.E2(view);
-        frameLayout.addView(view, ma.e(-1, -2, 48));
+        frameLayout.addView(view, na.e(-1, -2, 48));
         boolean z10 = view instanceof z4;
         dh.c cVar = this.c;
         if (z10) {
             z4 z4Var = (z4) view;
             z4Var.setExtraHeight(g0.L(6.0f));
-            gh.e m10 = i0.m(h6Var);
+            gh.e m10 = j0.m(i6Var);
             z4Var.M = cVar;
             z4Var.N = m10;
             z4Var.r();
@@ -216,7 +215,7 @@ public final class a {
             kVar.setCenterTitleAndGlass(true);
             kVar.setExtraHeight(g0.L(6.0f));
             kVar.U0 = true;
-            kVar.P(cVar, i0.m(h6Var), false);
+            kVar.P(cVar, j0.m(i6Var), false);
         }
     }
 }

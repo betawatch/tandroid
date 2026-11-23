@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 if (yVar == null) {
                     l0 l0Var = q0Var2.Q;
                     if (l0Var != null) {
-                        l0Var.g(((Integer) view.getTag()).intValue());
+                        l0Var.h(((Integer) view.getTag()).intValue());
                         break;
                     }
                 } else {
@@ -70,7 +70,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 if (!((m1) this.c).a) {
                     q1 q1Var = t1Var.n0;
                     if (q1Var != null) {
-                        q1Var.h(t1Var, -1);
+                        q1Var.i(t1Var, -1);
                     }
                     if (t1Var.k0) {
                         t1Var.dismiss();
@@ -83,7 +83,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 if (!((m1) this.c).a) {
                     q1 q1Var2 = t1Var2.p0;
                     if (q1Var2 != null) {
-                        q1Var2.h(t1Var2, -2);
+                        q1Var2.i(t1Var2, -2);
                     }
                     if (t1Var2.k0) {
                         t1Var2.cancel();
@@ -96,7 +96,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 if (!((m1) this.c).a) {
                     q1 q1Var3 = t1Var3.t0;
                     if (q1Var3 != null) {
-                        q1Var3.h(t1Var3, -2);
+                        q1Var3.i(t1Var3, -2);
                     }
                     if (t1Var3.k0) {
                         t1Var3.dismiss();
@@ -109,7 +109,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 if (!((m1) this.c).a) {
                     oi.c4 c4Var = t1Var4.r0;
                     if (c4Var != null) {
-                        c4Var.h(t1Var4, -2);
+                        c4Var.i(t1Var4, -2);
                     }
                     if (t1Var4.k0) {
                         t1Var4.cancel();

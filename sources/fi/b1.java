@@ -2,7 +2,7 @@ package fi;
 
 import org.telegram.messenger.voip.Instance;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class b1 implements Instance.OnStateUpdatedListener {
     public final /* synthetic */ c1 a;
@@ -18,7 +18,7 @@ public final class b1 implements Instance.OnStateUpdatedListener {
         c1Var.E = i7;
         org.telegram.messenger.a8.b("[LivePlayer] connectionState = " + i7);
         if (m10 != c1Var.m()) {
-            org.telegram.messenger.g0.g3(new f2.a(this, 4));
+            org.telegram.messenger.g0.g3(new f2.a(this, 3));
         }
     }
 }

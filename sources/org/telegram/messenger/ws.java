@@ -1,15 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.util.Pair;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class ws {
     public final long a;
-    public final long b;
-    public final boolean c;
+    public String b;
+    public final HashMap c;
+    public boolean d;
+    public long e;
 
-    public ws(long j3, long j10, boolean z10) {
+    public ws(String str, long j3, int i7, long j10, long j11) {
+        HashMap hashMap = new HashMap();
+        this.c = hashMap;
         this.a = j3;
-        this.b = j10;
-        this.c = z10;
+        this.b = str;
+        hashMap.put(Integer.valueOf(i7), new Pair(Long.valueOf(j10), Long.valueOf(j11)));
+        this.e = j10;
+    }
+
+    public final long a() {
+        long j3 = -1;
+        for (Pair pair : this.c.values()) {
+            if (j3 == -1 || j3 > ((Long) pair.first).longValue()) {
+                j3 = ((Long) pair.first).longValue();
+            }
+        }
+        return j3;
     }
 }

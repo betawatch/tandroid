@@ -3,23 +3,23 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t5 extends TLRPC.TL_document {
     public final TLRPC.ThemeSettings a;
     public final TLRPC.Document b;
-    public final org.telegram.ui.ActionBar.l6 c;
-    public final org.telegram.ui.ActionBar.j6 d;
+    public final org.telegram.ui.ActionBar.m6 c;
+    public final org.telegram.ui.ActionBar.k6 d;
 
     public t5(TLRPC.ThemeSettings themeSettings) {
         this.a = themeSettings;
-        org.telegram.ui.ActionBar.l6 Q0 = org.telegram.ui.ActionBar.m6.Q0(org.telegram.ui.ActionBar.m6.r0(themeSettings));
+        org.telegram.ui.ActionBar.m6 Q0 = org.telegram.ui.ActionBar.n6.Q0(org.telegram.ui.ActionBar.n6.r0(themeSettings));
         this.c = Q0;
         Q0.getClass();
-        org.telegram.ui.ActionBar.j6 j6Var = new org.telegram.ui.ActionBar.j6();
-        org.telegram.ui.ActionBar.l6.i(j6Var, themeSettings);
-        j6Var.b = Q0;
-        this.d = j6Var;
+        org.telegram.ui.ActionBar.k6 k6Var = new org.telegram.ui.ActionBar.k6();
+        org.telegram.ui.ActionBar.m6.i(k6Var, themeSettings);
+        k6Var.b = Q0;
+        this.d = k6Var;
         TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
         if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
             this.id = -2147483648L;

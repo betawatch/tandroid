@@ -1,135 +1,203 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.SweepGradient;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.x01;
-import org.telegram.ui.vp0;
+import java.util.ArrayList;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.g6;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j6;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.j41;
+import org.telegram.ui.Components.qx;
+import org.telegram.ui.Components.x5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class f0 extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ vp0 c;
+public final class f0 implements qx {
+    public final /* synthetic */ l0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(vp0 vp0Var, Context context) {
-        super(context);
-        this.c = vp0Var;
-        new Path();
-        setWillNotDraw(false);
-        Paint paint = vp0Var.r1;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+    public f0(l0 l0Var) {
+        this.a = l0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ViewGroup barView;
-        Canvas canvas2 = canvas;
-        super.onDraw(canvas);
-        vp0 vp0Var = this.c;
-        sg.h1 h1Var = vp0Var.u1;
-        Paint paint = vp0Var.s1;
-        Paint paint2 = vp0Var.r1;
-        Paint paint3 = vp0Var.t1;
-        barView = vp0Var.getBarView();
-        Rect rect = org.telegram.messenger.g0.Q;
-        int left = barView.getLeft();
-        e0 e0Var = vp0Var.q1;
-        rect.set(org.telegram.messenger.g0.W1(vp0Var.x1, left, e0Var.getLeft()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getTop(), e0Var.getTop()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getRight(), e0Var.getRight()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getBottom(), e0Var.getBottom()));
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(rect);
-        float W1 = org.telegram.messenger.g0.W1(vp0Var.x1, org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(24.0f));
-        if (vp0Var.M1 != null) {
-            rect.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
-            vp0Var.M1.r(W1);
-            vp0Var.M1.setBounds(rect);
-            vp0Var.M1.draw(canvas2);
-        } else {
-            canvas2.drawRoundRect(rectF, W1, W1, vp0Var.y1);
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ int f() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final boolean k() {
+        f editText = ((q2) this.a.C0).getEditText();
+        if (editText == null || editText.length() == 0) {
+            return false;
         }
-        if (barView.getChildCount() < 1 || vp0Var.x1 == 1.0f) {
+        editText.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final void l(String str) {
+        q2 q2Var;
+        f editText;
+        g6[] g6VarArr;
+        n nVar = this.a.C0;
+        if ((nVar instanceof q2) && (editText = (q2Var = (q2) nVar).getEditText()) != null) {
+            int selectionEnd = editText.getSelectionEnd();
+            if (selectionEnd < 0) {
+                selectionEnd = 0;
+            }
+            try {
+                CharSequence m10 = j6.m(str, q2Var.getFontMetricsInt(), false, null, 0);
+                if ((m10 instanceof Spanned) && (g6VarArr = (g6[]) ((Spanned) m10).getSpans(0, m10.length(), g6.class)) != null) {
+                    for (g6 g6Var : g6VarArr) {
+                        g6Var.b = 0.85f;
+                    }
+                }
+                editText.setText(editText.getText().insert(selectionEnd, m10));
+                int length = selectionEnd + m10.length();
+                editText.setSelection(length, length);
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final void n() {
+        l0 l0Var = this.a;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, l0Var.getContext(), l0Var.A1);
+        String N0 = gd.N0(2131752056, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = gd.N0(2131752057, null);
+        alertDialog$Builder.k(gd.N0(2131752087, null), new s(this, 1));
+        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+        alertDialog$Builder.p();
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ float p() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
+        f editText = ((q2) this.a.C0).getEditText();
+        if (editText == null) {
             return;
         }
-        canvas2.save();
-        canvas2.translate(barView.getLeft(), barView.getTop());
-        View childAt = barView.getChildAt(0);
-        if (barView instanceof f1) {
-            childAt = ((f1) barView).getColorClickableView();
+        int selectionEnd = editText.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
         }
-        if (childAt.getAlpha() != 0.0f) {
-            canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
-            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - vp0Var.x1) * 255.0f));
-            int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
-            int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
-            float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
-            float y10 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
-            int i7 = h1Var.a;
-            int i10 = vp0Var.R0;
-            View view = childAt;
-            if (i10 != -1) {
-                ViewGroup viewGroup = i10 == 0 ? vp0Var.d1 : i10 == 2 ? vp0Var.e1 : null;
-                View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
-                if (viewGroup instanceof f1) {
-                    childAt2 = ((f1) viewGroup).getColorClickableView();
-                }
-                x10 = org.telegram.messenger.g0.T1(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), vp0Var.S0);
-                y10 = org.telegram.messenger.g0.T1(y10, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), vp0Var.S0);
-            }
-            if (e0Var != null && e0Var.getChildCount() > 0) {
-                View childAt3 = e0Var.getChildAt(0);
-                x10 = org.telegram.messenger.g0.T1(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (e0Var.getX() - barView.getLeft()), vp0Var.x1);
-                y10 = org.telegram.messenger.g0.T1(y10, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (e0Var.getY() - barView.getTop()), vp0Var.x1);
-                i7 = i0.a.f(vp0Var.x1, h1Var.a, vp0Var.F1.b(0));
-            }
-            float f10 = x10;
-            float f11 = y10;
-            if (f10 != this.a || f11 != this.b) {
-                this.a = f10;
-                this.b = f11;
-                paint2.setShader(new SweepGradient(f10, f11, new int[]{-1356981, -1146130, -10452764, -16711681, -7352832, -256, -23296, -1356981}, (float[]) null));
-            }
-            float min = (Math.min(width, height) / 2.0f) - org.telegram.messenger.g0.L(0.5f);
-            if (e0Var != null && e0Var.getChildCount() > 0) {
-                View childAt4 = e0Var.getChildAt(0);
-                min = org.telegram.messenger.g0.T1(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), vp0Var.x1);
-            }
-            float f12 = min;
-            rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-            canvas2 = canvas;
-            canvas2.drawArc(rectF, 0.0f, 360.0f, false, paint2);
-            paint.setColor(i7);
-            paint.setAlpha((int) (view.getAlpha() * paint.getAlpha()));
-            paint3.setColor(i7);
-            paint3.setAlpha((int) (view.getAlpha() * 255.0f));
-            float L = f12 - org.telegram.messenger.g0.L(3.0f);
-            if (e0Var != null && e0Var.getSelectedColorIndex() != 0) {
-                L = org.telegram.messenger.g0.T1(f12 - org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(2.0f) + f12, vp0Var.x1);
-            }
-            z0.A1(f10, f11, L, paint.getColor(), canvas2);
-            if (e0Var != null && e0Var.getSelectedColorIndex() == 0) {
-                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * vp0Var.x1));
-                canvas2.drawCircle(f10, f11, com.google.android.gms.internal.vision.e2.t(1.0f, vp0Var.x1, paint3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f), f12), paint3);
-            }
+        try {
+            SpannableString spannableString = new SpannableString(str);
+            spannableString.setSpan(document != null ? new x5(document, editText.getPaint().getFontMetricsInt()) : new x5(j3, editText.getPaint().getFontMetricsInt()), 0, spannableString.length(), 33);
+            editText.setText(editText.getText().insert(selectionEnd, spannableString));
+            int length = selectionEnd + spannableString.length();
+            editText.setSelection(length, length);
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        } catch (Throwable th2) {
+            throw th2;
         }
-        canvas2.restore();
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        x01 x01Var = this.c.N0;
-        if (x01Var != null) {
-            x01Var.invalidate();
-        }
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ boolean z() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void i(int i7) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void o(j41 j41Var) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void s(int i7) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void y(long j3) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final void q() {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void w() {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void e(Object obj, Object obj2) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, bj bjVar, boolean z10, int i7) {
+    }
+
+    @Override // org.telegram.ui.Components.qx
+    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10) {
     }
 }

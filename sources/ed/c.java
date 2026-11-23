@@ -1,11 +1,11 @@
 package ed;
 
-import c8.a1;
+import c8.b1;
 import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Pattern;
 import kf.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("`+");
@@ -30,7 +30,7 @@ public final class c extends h {
         String replace = this.c.substring(i7, this.d - a11.length()).replace('\n', ' ');
         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
             int length = replace.length();
-            if (a1.b(' ', 0, length, replace) != length) {
+            if (b1.b(' ', 0, length, replace) != length) {
                 replace = e2.k(replace, 1, 1);
             }
         }

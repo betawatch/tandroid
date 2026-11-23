@@ -1,37 +1,18 @@
 package com.google.android.gms.common.api.internal;
 
-import j$.util.Objects;
-import java.util.Set;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class o0 implements q6.b {
-    public final com.google.android.gms.common.api.c a;
-    public final a b;
-    public q6.i c;
-    public Set d;
-    public boolean e;
-    public final /* synthetic */ g f;
+public final class o0 extends com.google.android.gms.common.api.m {
+    public final com.google.android.gms.common.api.j b;
 
-    public o0(g gVar, com.google.android.gms.common.api.c cVar, a aVar) {
-        Objects.requireNonNull(gVar);
-        this.f = gVar;
-        this.c = null;
-        this.d = null;
-        this.e = false;
-        this.a = cVar;
-        this.b = aVar;
+    public o0(com.google.android.gms.common.api.j jVar) {
+        this.b = jVar;
     }
 
-    @Override // q6.b
-    public final void a(n6.a aVar) {
-        this.f.y.post(new n0(this, aVar, 0));
-    }
-
-    public final void b(n6.a aVar) {
-        l0 l0Var = (l0) this.f.s.get(this.b);
-        if (l0Var != null) {
-            l0Var.k(aVar);
-        }
+    @Override // com.google.android.gms.common.api.m
+    public final Looper a() {
+        return this.b.g;
     }
 }

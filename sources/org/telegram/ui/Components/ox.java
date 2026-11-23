@@ -1,28 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ox extends h51 {
-    public ox(Context context, int i7, org.telegram.messenger.r10 r10Var, org.telegram.messenger.w10 w10Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, i7, -1, false, r10Var, w10Var, null, h6Var, -1, 0);
-        this.z2 = true;
-        setOverScrollMode(2);
+public final class ox implements ey {
+    public final /* synthetic */ px a;
+
+    public ox(px pxVar) {
+        this.a = pxVar;
     }
 
-    public final void L1(View view) {
-        if (view == null) {
+    @Override // org.telegram.ui.Components.ey
+    public final void e() {
+        px pxVar = this.a;
+        if (pxVar.G.W.G) {
             return;
         }
-        float L = org.telegram.messenger.g0.L(92.0f);
-        float width = getWidth() - L;
-        float x10 = view.getX();
-        float width2 = view.getWidth() + x10;
-        int i7 = x10 < L ? (int) (x10 - L) : width2 > width ? (int) (width2 - width) : 0;
-        if (i7 != 0) {
-            org.telegram.messenger.g0.J(this, new f21(this, view, i7, 23));
+        ArrayList arrayList = new ArrayList();
+        pxVar.G.W.e(true);
+        px.E(pxVar, new bt(7, this, arrayList), arrayList, true);
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        String str = this.a.w;
+        bt btVar = new bt(6, this, str);
+        if (org.telegram.messenger.j6.d(str)) {
+            kv0.G3.c(org.telegram.messenger.i10.t0, str, new ph(4, linkedHashSet, btVar));
+        } else {
+            btVar.run();
         }
     }
 }

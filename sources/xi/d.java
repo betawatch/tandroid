@@ -1,18 +1,17 @@
 package xi;
 
-import kg.x1;
 import org.telegram.tgnet.RequestTimeDelegate;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d {
-    public final x1 a;
+    public final org.telegram.tgnet.g a;
     public final a b;
     public final RequestTimeDelegate c;
     public int d;
 
-    public d(x1 x1Var, a aVar, RequestTimeDelegate requestTimeDelegate) {
-        this.a = x1Var;
+    public d(org.telegram.tgnet.g gVar, a aVar, RequestTimeDelegate requestTimeDelegate) {
+        this.a = gVar;
         this.b = aVar;
         this.c = requestTimeDelegate;
     }

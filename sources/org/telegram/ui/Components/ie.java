@@ -1,132 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ie extends ImageView {
+public final class ie extends View.AccessibilityDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.a) {
             case 0:
-                if (getAlpha() < 0.5f || this.b.y1 > 0.0f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                float f10 = chatActivityEnterView.y1;
-                if (f10 < 1.0f) {
-                    if (f10 <= 0.0f) {
-                        super.draw(canvas);
-                        break;
-                    } else {
-                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
-                        super.draw(canvas);
-                        canvas.restoreToCount(saveLayerAlpha);
-                        break;
-                    }
-                }
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
                 break;
             default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                super.onLayout(z10, i7, i10, i11, i12);
-                post(new td(this.b, 16));
-                break;
-            default:
-                super.onLayout(z10, i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 3:
-                if (getAlpha() <= 0.0f) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 1:
-                super.setAlpha(f10);
-                se seVar = this.b.z2;
-                if (seVar != null) {
-                    seVar.setTranslationX(seVar.a);
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
                     break;
                 }
-                break;
-            case 2:
-                super.setAlpha(f10);
-                se seVar2 = this.b.z2;
-                if (seVar2 != null) {
-                    seVar2.setTranslationX(seVar2.a);
-                    break;
-                }
-                break;
-            case 3:
-                super.setAlpha(f10);
-                oe oeVar = this.b.a1;
-                if (oeVar != null) {
-                    oeVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 3:
-                super.setVisibility(i7);
-                oe oeVar = this.b.a1;
-                if (oeVar != null) {
-                    oeVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i7);
                 break;
         }
     }

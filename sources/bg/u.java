@@ -2,20 +2,20 @@ package bg;
 
 import java.util.ArrayList;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class u {
     public final ArrayList a = new ArrayList();
     public final a0.h b = new a0.h();
     public final a0.h c = new a0.h();
 
-    public static void a(u uVar, TL_ephemeral.EphemeralMessage ephemeralMessage, TLRPC.TL_message tL_message, gj gjVar) {
+    public static void a(u uVar, TL_ephemeral.EphemeralMessage ephemeralMessage, TLRPC.TL_message tL_message, fj fjVar) {
         a0.h hVar = uVar.c;
-        long B0 = gj.B0(tL_message);
+        long B0 = fj.B0(tL_message);
         uVar.a.add(ephemeralMessage);
         a0.h hVar2 = uVar.b;
         TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) hVar2.f(B0);
@@ -28,6 +28,6 @@ public class u {
         if (arrayList == null) {
             arrayList = f3.h(hVar, B0);
         }
-        arrayList.add(gjVar);
+        arrayList.add(fjVar);
     }
 }

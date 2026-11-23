@@ -9,13 +9,13 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.ui.Components.ds0;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.rs;
-import org.telegram.ui.Components.ts;
-import org.telegram.ui.Components.voip.k2;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.os;
+import org.telegram.ui.Components.qs;
+import org.telegram.ui.Components.voip.l2;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -69,17 +69,17 @@ public final class j0 extends AnimatorListenerAdapter {
             case 1:
                 ((v4.f1) this.b).a.setAlpha(1.0f);
                 ((AnimatorSet) this.d).removeAllListeners();
-                ts tsVar = (ts) this.e;
-                rs rsVar = (rs) this.c;
-                tsVar.d(rsVar.a);
-                tsVar.y.remove(rsVar.a);
-                tsVar.A();
-                tsVar.d(rsVar.b);
-                tsVar.y.remove(rsVar.b);
-                tsVar.A();
+                qs qsVar = (qs) this.e;
+                os osVar = (os) this.c;
+                qsVar.d(osVar.a);
+                qsVar.y.remove(osVar.a);
+                qsVar.A();
+                qsVar.d(osVar.b);
+                qsVar.y.remove(osVar.b);
+                qsVar.A();
                 break;
             case 2:
-                ((jt0) this.e).L1 = false;
+                ((it0) this.e).L1 = false;
                 View view2 = (View) this.d;
                 if (view2.getParent() != null) {
                     ((ds0) this.b).removeView(view2);
@@ -88,8 +88,8 @@ public final class j0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 3:
-                k2 k2Var = (k2) this.e;
-                TextView[] textViewArr = k2Var.a;
+                l2 l2Var = (l2) this.e;
+                TextView[] textViewArr = l2Var.a;
                 View view3 = (View) this.d;
                 view3.setVisibility(8);
                 view3.setAlpha(1.0f);
@@ -106,16 +106,16 @@ public final class j0 extends AnimatorListenerAdapter {
                 if (runnable != null) {
                     runnable.run();
                 }
-                k2Var.f = false;
-                CharSequence charSequence = k2Var.e;
+                l2Var.f = false;
+                CharSequence charSequence = l2Var.e;
                 if (charSequence != null) {
                     if (charSequence.equals("timer")) {
-                        k2Var.e(true);
+                        l2Var.e(true);
                     } else {
-                        textViewArr[1].setText(k2Var.e);
-                        k2Var.a(textViewArr[0], textViewArr[1], new oi.c2(this, 22));
+                        textViewArr[1].setText(l2Var.e);
+                        l2Var.a(textViewArr[0], textViewArr[1], new oi.c2(this, 22));
                     }
-                    k2Var.e = null;
+                    l2Var.e = null;
                     break;
                 }
                 break;
@@ -176,12 +176,12 @@ public final class j0 extends AnimatorListenerAdapter {
             case 0:
                 break;
             case 1:
-                ts tsVar = (ts) this.e;
-                rs rsVar = (rs) this.c;
-                v4.f1 f1Var = rsVar.a;
-                tsVar.getClass();
-                v4.f1 f1Var2 = rsVar.b;
-                tsVar.getClass();
+                qs qsVar = (qs) this.e;
+                os osVar = (os) this.c;
+                v4.f1 f1Var = osVar.a;
+                qsVar.getClass();
+                v4.f1 f1Var2 = osVar.b;
+                qsVar.getClass();
                 break;
             case 5:
                 ((pi.k) this.e).getClass();
@@ -208,10 +208,10 @@ public final class j0 extends AnimatorListenerAdapter {
         this.c = viewPropertyAnimator;
     }
 
-    public j0(ts tsVar, rs rsVar, v4.f1 f1Var, AnimatorSet animatorSet) {
+    public j0(qs qsVar, os osVar, v4.f1 f1Var, AnimatorSet animatorSet) {
         this.a = 1;
-        this.e = tsVar;
-        this.c = rsVar;
+        this.e = qsVar;
+        this.c = osVar;
         this.b = f1Var;
         this.d = animatorSet;
     }

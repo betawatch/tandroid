@@ -4,21 +4,21 @@ import e2.s0;
 import e2.t;
 import e2.t0;
 import e2.u;
-import f3.i0;
+import f3.j0;
 import f3.q;
 import h2.l0;
 import h2.x;
 import i2.s;
 import java.math.RoundingMode;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
-    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, ls.s1, ls.D1, ls.O1, ls.Z1, ls.n2, ls.D2, ls.U2, ls.n3, ls.G3, ls.c4, ls.C4, ls.e5, ls.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
+    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, ks.s1, ks.D1, ks.O1, ks.Z1, ks.n2, ks.D2, ks.U2, ks.n3, ks.G3, ks.c4, ks.C4, ks.e5, ks.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
     public final q a;
-    public final i0 b;
+    public final j0 b;
     public final s c;
     public final int d;
     public final byte[] e;
@@ -30,9 +30,9 @@ public final class a implements b {
     public int k;
     public long l;
 
-    public a(q qVar, i0 i0Var, s sVar) {
+    public a(q qVar, j0 j0Var, s sVar) {
         this.a = qVar;
-        this.b = i0Var;
+        this.b = j0Var;
         this.c = sVar;
         int i7 = sVar.b;
         int max = Math.max(1, i7 / 10);
@@ -94,11 +94,11 @@ public final class a implements b {
     @Override // n4.b
     public final void c(int i7, long j3) {
         e eVar = new e(this.c, this.d, i7, j3);
-        this.a.j(eVar);
+        this.a.h(eVar);
         u uVar = this.h;
-        i0 i0Var = this.b;
-        i0Var.g(uVar);
-        i0Var.d(eVar.e);
+        j0 j0Var = this.b;
+        j0Var.g(uVar);
+        j0Var.d(eVar.e);
     }
 
     public final void d(int i7) {

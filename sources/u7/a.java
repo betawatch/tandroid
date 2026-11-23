@@ -3,14 +3,14 @@ package u7;
 import android.location.Location;
 import android.os.IInterface;
 import android.os.Parcel;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.messenger.y9;
+import org.telegram.messenger.x9;
 import q6.h0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.q, com.google.android.gms.common.api.internal.n {
     public static final /* synthetic */ a a = new a();
@@ -50,11 +50,11 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                             Parcel p12 = xVar.p1();
                             int i10 = d.a;
                             p12.writeInt(1);
-                            int r10 = bc.r(p12, 20293);
-                            bc.q(p12, 1, 4);
+                            int r10 = cc.r(p12, 20293);
+                            cc.q(p12, 1, 4);
                             p12.writeInt(2);
-                            bc.f(p12, 3, iVar);
-                            bc.s(p12, r10);
+                            cc.f(p12, 3, iVar);
+                            cc.s(p12, r10);
                             d.c(p12, eVar);
                             xVar.t1(p12, 89);
                         }
@@ -69,12 +69,12 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                     Parcel p13 = xVar2.p1();
                     int i12 = d.a;
                     p13.writeInt(1);
-                    int r11 = bc.r(p13, 20293);
-                    bc.q(p13, 1, 4);
+                    int r11 = cc.r(p13, 20293);
+                    cc.q(p13, 1, 4);
                     p13.writeInt(2);
-                    bc.f(p13, 5, iVar2.asBinder());
-                    bc.f(p13, 6, uVar.asBinder());
-                    bc.s(p13, r11);
+                    cc.f(p13, 5, iVar2.asBinder());
+                    cc.f(p13, 6, uVar.asBinder());
+                    cc.s(p13, r11);
                     xVar2.t1(p13, 59);
                 } else {
                     taskCompletionSource.setResult(Boolean.TRUE);
@@ -141,8 +141,8 @@ public final /* synthetic */ class a implements Continuation, com.google.android
     }
 
     @Override // com.google.android.gms.common.api.internal.n
-    public /* synthetic */ void q(Object obj) {
-        ((y9) obj).getClass();
+    public /* synthetic */ void g0(Object obj) {
+        ((x9) obj).getClass();
     }
 
     @Override // com.google.android.gms.tasks.Continuation

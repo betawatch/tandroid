@@ -9,43 +9,44 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
-import bi.i8;
+import bi.l8;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import e2.m1;
 import h9.g0;
-import h9.t1;
+import h9.s1;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.j9;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.i9;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.q1;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.n6;
-import org.telegram.ui.md0;
+import org.telegram.ui.Wallet.o6;
 import x2.r1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, q1, x10, j9, u9.d {
+public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, q1, v10, i9, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.x10
-    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
+    @Override // org.telegram.messenger.v10
+    public Boolean a(n41 n41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -101,9 +102,9 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                 r1Var.getClass();
                 Bundle bundle = new Bundle();
                 String str4 = r1.e;
-                t1 t1Var = r1Var.b;
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(t1Var.d);
-                g0 listIterator = t1Var.listIterator(0);
+                s1 s1Var = r1Var.b;
+                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(s1Var.d);
+                g0 listIterator = s1Var.listIterator(0);
                 while (listIterator.hasNext()) {
                     arrayList.add(((m1) listIterator.next()).c());
                 }
@@ -112,11 +113,11 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
             case 10:
                 bb.e eVar = (bb.e) obj;
                 eVar.getClass();
-                md0 md0Var = ab.x.a;
-                md0Var.getClass();
+                i61 i61Var = ab.x.a;
+                i61Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    md0Var.q(eVar, byteArrayOutputStream);
+                    i61Var.v(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -329,13 +330,8 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         }
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i7, z10);
-    }
-
     @Override // u9.d
-    public Object e(r7 r7Var) {
+    public Object c(r7 r7Var) {
         Set L = r7Var.L(cb.a.class);
         cb.c cVar = cb.c.c;
         if (cVar == null) {
@@ -353,8 +349,19 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         return new cb.b(L, cVar);
     }
 
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i7, z10);
+    }
+
+    @Override // org.telegram.messenger.i9
+    public Object h(Object obj) {
+        int i7 = l8.g2;
+        return 0;
+    }
+
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(t1 t1Var, int i7) {
         switch (this.a) {
             case 19:
                 t1Var.dismiss();
@@ -362,7 +369,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
             case 20:
                 g2 T = LaunchActivity.T();
                 if (T != null) {
-                    T.presentFragment(new n6());
+                    T.presentFragment(new o6());
                     break;
                 }
                 break;
@@ -370,12 +377,6 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                 t1Var.dismiss();
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.j9
-    public Object m(Object obj) {
-        int i7 = i8.g2;
-        return 0;
     }
 
     @Override // com.google.android.gms.tasks.Continuation

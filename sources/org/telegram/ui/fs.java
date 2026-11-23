@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class fs implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
@@ -43,7 +43,7 @@ public final class fs implements View.OnClickListener {
                 lsVar2.M(nsVar.a0, nsVar.i);
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            org.telegram.messenger.si.d0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+            org.telegram.messenger.ri.d0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
             TLRPC.Document document2 = nsVar.W;
             Object obj2 = nsVar.b0;
@@ -52,16 +52,16 @@ public final class fs implements View.OnClickListener {
             if (lsVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.c5.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
+                org.telegram.ui.Components.b5.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            org.telegram.messenger.si.d0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
+            org.telegram.messenger.ri.d0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
             nsVar.l.i(nsVar.X);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
             nsVar.l.n(nsVar.W);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
-            nsVar.l.F(nsVar.W);
+            nsVar.l.E(nsVar.W);
         }
         nsVar.o();
     }

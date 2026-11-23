@@ -1,36 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class zv extends v4.o0 {
-    public final /* synthetic */ ty a;
+public final /* synthetic */ class zv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ey b;
 
-    public zv(ty tyVar) {
-        this.a = tyVar;
+    public /* synthetic */ zv(ey eyVar, int i7) {
+        this.a = i7;
+        this.b = eyVar;
     }
 
-    @Override // v4.o0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        int R = RecyclerView.R(view);
-        ty tyVar = this.a;
-        v4.i0 adapter = tyVar.i0.getAdapter();
-        xx xxVar = tyVar.o0;
-        if (adapter == xxVar && R == xxVar.J) {
-            rect.set(0, 0, 0, 0);
-            return;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
         }
-        if (R == 0) {
-            xxVar.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = org.telegram.messenger.g0.L(2.0f);
-        yx yxVar = tyVar.j0;
-        xxVar.getClass();
-        rect.right = yxVar.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
+        this.b.e();
     }
 }

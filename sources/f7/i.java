@@ -2,13 +2,13 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new t0(4);
@@ -65,33 +65,33 @@ public final class i extends l {
     }
 
     public final String toString() {
-        md0 md0Var = new md0(getClass().getSimpleName(), 10);
+        i61 i61Var = new i61(getClass().getSimpleName());
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        md0Var.L(k0Var.c(p10.length, p10), "keyHandle");
+        i61Var.R(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        md0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
+        i61Var.R(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        md0Var.L(k0Var.c(p12.length, p12), "authenticatorData");
+        i61Var.R(k0Var.c(p12.length, p12), "authenticatorData");
         byte[] p13 = this.d.p();
-        md0Var.L(k0Var.c(p13.length, p13), "signature");
+        i61Var.R(k0Var.c(p13.length, p13), "signature");
         q7.s0 s0Var = this.e;
         byte[] p14 = s0Var == null ? null : s0Var.p();
         if (p14 != null) {
-            md0Var.L(k0Var.c(p14.length, p14), "userHandle");
+            i61Var.R(k0Var.c(p14.length, p14), "userHandle");
         }
-        return md0Var.toString();
+        return i61Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.c(parcel, 2, this.a.p());
-        bc.c(parcel, 3, this.b.p());
-        bc.c(parcel, 4, this.c.p());
-        bc.c(parcel, 5, this.d.p());
+        int r10 = cc.r(parcel, 20293);
+        cc.c(parcel, 2, this.a.p());
+        cc.c(parcel, 3, this.b.p());
+        cc.c(parcel, 4, this.c.p());
+        cc.c(parcel, 5, this.d.p());
         q7.s0 s0Var = this.e;
-        bc.c(parcel, 6, s0Var == null ? null : s0Var.p());
-        bc.s(parcel, r10);
+        cc.c(parcel, 6, s0Var == null ? null : s0Var.p());
+        cc.s(parcel, r10);
     }
 }

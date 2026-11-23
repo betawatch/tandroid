@@ -1,37 +1,17 @@
 package hi;
 
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.view.ViewParent;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class u5 {
-    public TextureView a;
-    public s6 b;
-    public org.telegram.ui.web.b c;
-    public boolean d;
-    public int e;
-    public int f;
-    public boolean g;
+    public final PointF a;
+    public final float b;
+    public final float c;
 
-    public final void a(TextureView textureView) {
-        TextureView textureView2 = this.a;
-        if (textureView2 == textureView) {
-            return;
-        }
-        if (textureView2 != null) {
-            ViewParent parent = textureView2.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).removeView(this.a);
-            }
-            this.a = null;
-        }
-        this.d = false;
-        this.a = textureView;
-        s6 s6Var = this.b;
-        if (s6Var != null) {
-            s6Var.a(textureView);
-        }
+    public /* synthetic */ u5(PointF pointF, float f10, float f11) {
+        this.a = pointF;
+        this.b = f10;
+        this.c = f11;
     }
 }

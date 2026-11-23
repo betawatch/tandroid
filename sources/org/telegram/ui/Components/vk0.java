@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class vk0 extends Drawable {
     public final RectF a = new RectF();
@@ -26,23 +26,23 @@ public final class vk0 extends Drawable {
         this.b = paint;
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
-        this.g = org.telegram.messenger.ls.e4;
-        this.h = org.telegram.messenger.ls.e4;
+        this.g = org.telegram.messenger.ks.e4;
+        this.h = org.telegram.messenger.ks.e4;
         this.f = i7;
         textPaint.setTextSize(org.telegram.messenger.g0.L(11));
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
         if (i7 == 0) {
-            this.e = org.telegram.messenger.hd.N0(2131745666, null);
+            this.e = org.telegram.messenger.gd.N0(2131745666, null);
         } else {
-            this.e = org.telegram.messenger.hd.N0(2131750831, null);
+            this.e = org.telegram.messenger.gd.N0(2131750831, null);
         }
         this.d = (int) Math.ceil(textPaint.measureText(this.e));
     }
 
     public final void a() {
-        String N0 = this.f == 0 ? org.telegram.messenger.hd.N0(2131745666, null) : org.telegram.messenger.hd.N0(2131750831, null);
+        String N0 = this.f == 0 ? org.telegram.messenger.gd.N0(2131745666, null) : org.telegram.messenger.gd.N0(2131750831, null);
         if (N0.equals(this.e)) {
             return;
         }

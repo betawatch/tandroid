@@ -2,20 +2,20 @@ package fi;
 
 import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.az;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ck;
+import org.telegram.ui.Components.bk;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class p2 implements ck {
+public final class p2 implements bk {
     public final /* synthetic */ z3 a;
 
     public p2(z3 z3Var) {
         this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.ck
+    @Override // org.telegram.ui.Components.bk
     public final void A() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -31,7 +31,7 @@ public final class p2 implements ck {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck
+    @Override // org.telegram.ui.Components.bk
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
         org.telegram.messenger.c accountInstance;
         z3 z3Var = this.a;
@@ -40,15 +40,15 @@ public final class p2 implements ck {
             return;
         }
         accountInstance = z3Var.getAccountInstance();
-        az.V(i7, z3Var.l1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z10, false);
+        zy.V(i7, z3Var.l1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z10, false);
         z3Var.i0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.ck
+    @Override // org.telegram.ui.Components.bk
     public final /* synthetic */ void T() {
     }
 
-    @Override // org.telegram.ui.Components.ck
+    @Override // org.telegram.ui.Components.bk
     public final /* synthetic */ void p(ArrayList arrayList, boolean z10, int i7, long j3) {
     }
 }

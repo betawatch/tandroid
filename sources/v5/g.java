@@ -9,9 +9,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.rm;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g implements d, w5.c, c {
     public static final l5.c f = new l5.c("proto");
@@ -72,12 +72,12 @@ public final class g implements d, w5.c, c {
         i iVar = this.a;
         Objects.requireNonNull(iVar);
         x5.a aVar = this.c;
-        long r10 = aVar.r();
+        long o4 = aVar.o();
         while (true) {
             try {
                 return iVar.getWritableDatabase();
             } catch (SQLiteDatabaseLockedException e10) {
-                if (aVar.r() >= this.d.c + r10) {
+                if (aVar.o() >= this.d.c + o4) {
                     throw new w5.a("Timed out while trying to open db.", e10);
                 }
                 SystemClock.sleep(50L);
@@ -108,7 +108,7 @@ public final class g implements d, w5.c, c {
         if (b10 == null) {
             return arrayList;
         }
-        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i7)), new tm(this, arrayList, iVar, 15));
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i7)), new rm(this, arrayList, iVar, 15));
         return arrayList;
     }
 
@@ -119,19 +119,19 @@ public final class g implements d, w5.c, c {
     public final Object f(w5.b bVar) {
         SQLiteDatabase a10 = a();
         x5.a aVar = this.c;
-        long r10 = aVar.r();
+        long o4 = aVar.o();
         while (true) {
             try {
                 a10.beginTransaction();
                 try {
-                    Object g10 = bVar.g();
+                    Object h = bVar.h();
                     a10.setTransactionSuccessful();
-                    return g10;
+                    return h;
                 } finally {
                     a10.endTransaction();
                 }
             } catch (SQLiteDatabaseLockedException e10) {
-                if (aVar.r() >= this.d.c + r10) {
+                if (aVar.o() >= this.d.c + o4) {
                     throw new w5.a("Timed out while trying to acquire the lock.", e10);
                 }
                 SystemClock.sleep(50L);

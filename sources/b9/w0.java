@@ -1,50 +1,9 @@
 package b9;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import c8.bc;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class w0 extends r6.a {
-    public static final Parcelable.Creator<w0> CREATOR = new o0(8);
-    public final byte a;
-    public final byte b;
-    public final String c;
-
-    public w0(byte b10, byte b11, String str) {
-        this.a = b10;
-        this.b = b11;
-        this.c = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || w0.class != obj.getClass()) {
-            return false;
-        }
-        w0 w0Var = (w0) obj;
-        return this.a == w0Var.a && this.b == w0Var.b && this.c.equals(w0Var.c);
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + ((((this.a + 31) * 31) + this.b) * 31);
-    }
-
-    public final String toString() {
-        return a8.p0.s(i5.c.n("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        bc.q(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        bc.l(parcel, 4, this.c);
-        bc.s(parcel, r10);
+public final class w0 extends a {
+    @Override // b9.a, b9.d0
+    public final void H() {
     }
 }

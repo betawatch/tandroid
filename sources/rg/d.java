@@ -3,10 +3,10 @@ package rg;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Cells.a8;
+import org.telegram.ui.Cells.z7;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class d extends ek0 {
     public boolean f3;
@@ -24,9 +24,9 @@ public abstract class d extends ek0 {
                 if (rectF.intersects(x10, y10, childAt.getWidth() + x10, childAt.getHeight() + y10)) {
                     canvas.save();
                     canvas.translate(x10, y10);
-                    a8 a8Var = (a8) ((c) childAt);
-                    if (a8Var.M) {
-                        a8Var.b(canvas, this);
+                    z7 z7Var = (z7) ((c) childAt);
+                    if (z7Var.M) {
+                        z7Var.b(canvas, this);
                     }
                     canvas.restore();
                 }
@@ -42,9 +42,9 @@ public abstract class d extends ek0 {
                 c cVar = (c) getChildAt(i7);
                 canvas.save();
                 canvas.translate(cVar.getX(), cVar.getY());
-                a8 a8Var = (a8) cVar;
-                if (a8Var.M) {
-                    a8Var.b(canvas, this);
+                z7 z7Var = (z7) cVar;
+                if (z7Var.M) {
+                    z7Var.b(canvas, this);
                 }
                 canvas.restore();
             }

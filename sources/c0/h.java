@@ -1,7 +1,7 @@
 package c0;
 
 import a8.p0;
-import a8.q7;
+import a8.t7;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -15,19 +15,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import m9.y;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final q7 f;
+    public static final t7 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        q7 fVar;
+        t7 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -195,9 +195,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    q7 q7Var = f;
-                    q7Var.d(gVar3, gVar2);
-                    if (q7Var.c(this, gVar2, gVar3)) {
+                    t7 t7Var = f;
+                    t7Var.d(gVar3, gVar2);
+                    if (t7Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -372,9 +372,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    q7 q7Var = f;
-                    q7Var.d(gVar3, gVar2);
-                    if (q7Var.c(this, gVar2, gVar3)) {
+                    t7 t7Var = f;
+                    t7Var.d(gVar3, gVar2);
+                    if (t7Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

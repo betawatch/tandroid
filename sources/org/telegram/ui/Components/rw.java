@@ -1,30 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class rw extends v4.d0 {
-    public final /* synthetic */ int r;
+public final class rw extends v4.t {
+    public final /* synthetic */ qy Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rw(Context context, int i7) {
-        super(context);
-        this.r = i7;
+    public rw(qy qyVar) {
+        super(8);
+        this.Q = qyVar;
     }
 
-    @Override // v4.d0
-    public final int i(int i7, int i10, int i11, int i12, int i13) {
-        return super.i(i7, i10, i11, i12, i13) + this.r;
-    }
-
-    @Override // v4.d0
-    public final int m(int i7) {
-        return super.m(i7) * 16;
-    }
-
-    @Override // v4.d0
-    public final int p() {
-        return -1;
+    @Override // v4.c0, v4.p0
+    public final void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
+        try {
+            hi.t1 t1Var = new hi.t1(2, recyclerView.getContext(), this);
+            t1Var.a = i7;
+            w0(t1Var);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 }

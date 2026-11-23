@@ -7,23 +7,23 @@ import android.view.inputmethod.InputMethodSubtype;
 import java.util.Currency;
 import java.util.LinkedHashSet;
 import java.util.Locale;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class g {
     public final int a;
-    public final u0 b;
+    public final v0 b;
     public boolean c;
     public TL_wallet.currencyRates d;
     public String e = "en";
     public String f;
 
-    public g(u0 u0Var) {
-        this.b = u0Var;
-        this.a = u0Var.a;
+    public g(v0 v0Var) {
+        this.b = v0Var;
+        this.a = v0Var.a;
         try {
             this.f = org.telegram.messenger.t0.b.getSharedPreferences("gram_wallet", 0).getString("currency", g());
         } catch (Exception e10) {
@@ -93,7 +93,7 @@ public final class g {
         TL_wallet.currencyRate currencyrate = new TL_wallet.currencyRate();
         currencyrate.currency = "USD";
         currencyrate.rate = 1.0d;
-        currencyrate.title = hd.N0(2131742901, null);
+        currencyrate.title = gd.N0(2131742896, null);
         currencyrate.symbol = "$";
         currencyrate.thousandsSeparator = ",";
         currencyrate.decimalSeparator = ".";
@@ -106,7 +106,7 @@ public final class g {
 
     public final TL_wallet.currencyRates f() {
         if (this.d != null) {
-            Locale locale = hd.E0().y;
+            Locale locale = gd.E0().y;
             String language = (locale == null || TextUtils.isEmpty(locale.getLanguage())) ? "en" : locale.getLanguage();
             if (!TextUtils.equals(this.e, language)) {
                 boolean equals = TextUtils.equals(language, "en");

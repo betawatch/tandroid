@@ -5,16 +5,17 @@ import h2.l0;
 import h2.x;
 import i5.c;
 import java.nio.ByteBuffer;
+import jb.m;
 import k2.h;
-import l2.a0;
 import l2.b;
+import l2.b0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends b {
     public final h J;
     public final x K;
-    public a0 L;
+    public b0 L;
     public long M;
 
     public a() {
@@ -28,10 +29,10 @@ public final class a extends b {
         return "application/x-camera-motion".equals(uVar.s) ? c.a(4, 0, 0, 0) : c.a(0, 0, 0, 0);
     }
 
-    @Override // l2.b, l2.i1
+    @Override // l2.b, l2.j1
     public final void c(int i7, Object obj) {
         if (i7 == 8) {
-            this.L = (a0) obj;
+            this.L = (b0) obj;
         }
     }
 
@@ -41,8 +42,8 @@ public final class a extends b {
     }
 
     @Override // l2.b
-    public final boolean l() {
-        return k();
+    public final boolean k() {
+        return j();
     }
 
     @Override // l2.b
@@ -52,30 +53,30 @@ public final class a extends b {
 
     @Override // l2.b
     public final void n() {
-        a0 a0Var = this.L;
-        if (a0Var != null) {
-            a0Var.d();
+        b0 b0Var = this.L;
+        if (b0Var != null) {
+            b0Var.d();
         }
     }
 
     @Override // l2.b
     public final void p(long j3, boolean z10, boolean z11) {
         this.M = Long.MIN_VALUE;
-        a0 a0Var = this.L;
-        if (a0Var != null) {
-            a0Var.d();
+        b0 b0Var = this.L;
+        if (b0Var != null) {
+            b0Var.d();
         }
     }
 
     @Override // l2.b
     public final void x(long j3, long j10) {
         float[] fArr;
-        while (!k() && this.M < 100000 + j3) {
+        while (!j() && this.M < 100000 + j3) {
             h hVar = this.J;
             hVar.clear();
-            k8.a aVar = this.c;
-            aVar.g0();
-            if (w(aVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
+            m mVar = this.c;
+            mVar.T();
+            if (w(mVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }
             long j11 = hVar.e;

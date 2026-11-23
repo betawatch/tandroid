@@ -1,18 +1,206 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class kf extends Property {
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getScale());
+public final class kf implements TextWatcher {
+    public boolean a;
+    public boolean b;
+    public String c;
+    public boolean d;
+    public boolean e;
+    public final /* synthetic */ ChatActivityEnterView f;
+
+    public kf(ChatActivityEnterView chatActivityEnterView) {
+        this.f = chatActivityEnterView;
     }
 
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        ((ChatActivityEnterView.RecordCircle) obj).setScale(((Float) obj2).floatValue());
+    /* JADX WARN: Removed duplicated region for block: B:42:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0190  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        ff ffVar;
+        se seVar;
+        if (this.d) {
+            return;
+        }
+        if (this.c != null) {
+            this.d = true;
+            editable.replace(0, editable.length(), this.c);
+            this.c = null;
+            this.d = false;
+            return;
+        }
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        if (chatActivityEnterView.I3 == 0) {
+            if (this.b) {
+                chatActivityEnterView.w1();
+                this.b = false;
+            }
+            if (this.a) {
+                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                    editable.removeSpan(imageSpan);
+                }
+                org.telegram.messenger.j6.m(editable, chatActivityEnterView.F0.getPaint().getFontMetricsInt(), false, null, 0);
+                this.a = false;
+            }
+        }
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        chatActivityEnterView.e0 = codePointCount;
+        int i7 = chatActivityEnterView.d0;
+        if (i7 > 0) {
+            int i10 = i7 - codePointCount;
+            if (i10 <= (chatActivityEnterView.p7 ? 5 : 100)) {
+                if (i10 < -9999) {
+                    i10 = -9999;
+                }
+                chatActivityEnterView.X();
+                NumberTextView numberTextView = chatActivityEnterView.c0;
+                numberTextView.a(i10, numberTextView.getVisibility() == 0);
+                if (chatActivityEnterView.c0.getVisibility() != 0) {
+                    chatActivityEnterView.c0.setVisibility(0);
+                    chatActivityEnterView.c0.setAlpha(0.0f);
+                    chatActivityEnterView.c0.setScaleX(0.5f);
+                    chatActivityEnterView.c0.setScaleY(0.5f);
+                }
+                chatActivityEnterView.c0.animate().setListener(null).cancel();
+                chatActivityEnterView.c0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                if (i10 >= 0) {
+                    chatActivityEnterView.c0.setTextColor(chatActivityEnterView.G0(org.telegram.ui.ActionBar.n6.y6));
+                    z10 = true;
+                    if (chatActivityEnterView.g4 != z10) {
+                        chatActivityEnterView.g4 = z10;
+                        seVar.invalidate();
+                    }
+                    ffVar = chatActivityEnterView.n0;
+                    if (ffVar != null) {
+                    }
+                    chatActivityEnterView.I();
+                    if (chatActivityEnterView.Q2) {
+                        chatActivityEnterView.p0 = true;
+                        if (this.e) {
+                        }
+                    }
+                    chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                    chatActivityEnterView.M(true);
+                    chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                }
+                chatActivityEnterView.c0.setTextColor(chatActivityEnterView.G0(org.telegram.ui.ActionBar.n6.p7));
+                z10 = false;
+                if (chatActivityEnterView.g4 != z10 && (seVar = chatActivityEnterView.v2) != null) {
+                    chatActivityEnterView.g4 = z10;
+                    seVar.invalidate();
+                }
+                ffVar = chatActivityEnterView.n0;
+                if (ffVar != null) {
+                    ffVar.c();
+                }
+                chatActivityEnterView.I();
+                if (chatActivityEnterView.Q2 && !chatActivityEnterView.p0 && !org.telegram.messenger.mp.u1(chatActivityEnterView.R).K3() && !org.telegram.messenger.i10.i(chatActivityEnterView.R).q() && chatActivityEnterView.e0 > org.telegram.messenger.mp.u1(chatActivityEnterView.R).W4 && chatActivityEnterView.e0 < org.telegram.messenger.mp.u1(chatActivityEnterView.R).X4) {
+                    chatActivityEnterView.p0 = true;
+                    if (this.e) {
+                        chatActivityEnterView.W1();
+                    } else {
+                        org.telegram.messenger.g0.h3(new ng(this, 21), 300L);
+                    }
+                }
+                chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                chatActivityEnterView.M(true);
+                chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+            }
+        }
+        NumberTextView numberTextView2 = chatActivityEnterView.c0;
+        if (numberTextView2 != null) {
+            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new x(this, 7));
+        }
+        z10 = true;
+        if (chatActivityEnterView.g4 != z10) {
+        }
+        ffVar = chatActivityEnterView.n0;
+        if (ffVar != null) {
+        }
+        chatActivityEnterView.I();
+        if (chatActivityEnterView.Q2) {
+        }
+        chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+        chatActivityEnterView.M(true);
+        chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        if (this.d) {
+            return;
+        }
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        if (!chatActivityEnterView.v3 || chatActivityEnterView.p0()) {
+            return;
+        }
+        this.c = charSequence.toString();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        if (this.d) {
+            return;
+        }
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        eg egVar = chatActivityEnterView.V0;
+        boolean z10 = (egVar == null ? org.telegram.messenger.mp.f1().getInt("selected_page", 0) : egVar.getCurrentPage()) != 0 && (chatActivityEnterView.z3 || chatActivityEnterView.A3);
+        if (((i10 == 0 && !TextUtils.isEmpty(charSequence)) || (i10 != 0 && TextUtils.isEmpty(charSequence))) && z10) {
+            chatActivityEnterView.G1(false, true);
+        }
+        if (chatActivityEnterView.U != chatActivityEnterView.F0.getLineCount()) {
+            this.e = (chatActivityEnterView.F0.getLineCount() >= 4) != (chatActivityEnterView.U >= 4);
+            if (!chatActivityEnterView.T && chatActivityEnterView.F0.getMeasuredWidth() > 0) {
+                chatActivityEnterView.e1(chatActivityEnterView.U, chatActivityEnterView.F0.getLineCount());
+            }
+            int lineCount = chatActivityEnterView.F0.getLineCount();
+            chatActivityEnterView.U = lineCount;
+            chatActivityEnterView.V1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+            chatActivityEnterView.b2((chatActivityEnterView.U <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+        } else {
+            this.e = false;
+        }
+        if (chatActivityEnterView.I3 == 1) {
+            return;
+        }
+        if (chatActivityEnterView.r3 && !chatActivityEnterView.D0 && !chatActivityEnterView.E0 && !chatActivityEnterView.H3 && !chatActivityEnterView.N2 && chatActivityEnterView.P2 == null && i11 > i10 && charSequence.length() > 0 && charSequence.length() == i7 + i11 && charSequence.charAt(charSequence.length() - 1) == '\n') {
+            this.b = true;
+        }
+        chatActivityEnterView.N2 = false;
+        chatActivityEnterView.P(true);
+        CharSequence n1 = org.telegram.messenger.g0.n1(charSequence.toString());
+        if (chatActivityEnterView.P3 != null && !chatActivityEnterView.H3) {
+            int i12 = i11 + 1;
+            if (i10 > i12 || i11 - i10 > 2 || TextUtils.isEmpty(charSequence)) {
+                chatActivityEnterView.O3 = true;
+            }
+            chatActivityEnterView.P3.i1(charSequence, i10 > i12 || i11 - i10 > 2, false);
+        }
+        if (chatActivityEnterView.I3 != 2 && i11 - i10 > 1) {
+            this.a = true;
+        }
+        if (chatActivityEnterView.P2 == null && !chatActivityEnterView.X2 && n1.length() != 0 && chatActivityEnterView.s3 < System.currentTimeMillis() - 5000 && !chatActivityEnterView.H3) {
+            chatActivityEnterView.s3 = System.currentTimeMillis();
+            mg mgVar = chatActivityEnterView.P3;
+            if (mgVar != null) {
+                mgVar.G1();
+            }
+        }
+        chatActivityEnterView.B2();
     }
 }

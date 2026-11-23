@@ -1,43 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lx implements org.telegram.messenger.kc {
-    public final /* synthetic */ mx a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.messenger.gj c;
-    public final /* synthetic */ nx d;
+public final class lx {
+    public float a;
+    public float b;
+    public boolean c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public boolean h;
+    public boolean i;
+    public ch.d j;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public float o;
+    public int p;
+    public TLRPC.Document q;
+    public final ImageReceiver r;
+    public String s;
 
-    public lx(nx nxVar, mx mxVar, boolean z10, org.telegram.messenger.gj gjVar) {
-        this.d = nxVar;
-        this.a = mxVar;
-        this.b = z10;
-        this.c = gjVar;
-    }
-
-    @Override // org.telegram.messenger.kc
-    public final void V(ImageReceiver imageReceiver) {
-        org.telegram.messenger.gj gjVar;
-        if (this.b && (gjVar = this.c) != null && gjVar.F2() && imageReceiver.B() != null && imageReceiver.B().y == null) {
-            try {
-                this.d.H.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.kc
-    public final void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ImageReceiver imageReceiver2 = this.a.r;
-        if (imageReceiver2.B() != null) {
-            imageReceiver2.B().N(0, false, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.kc
-    public final /* synthetic */ void G0(int i7, Drawable drawable) {
+    public lx() {
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.r = imageReceiver;
+        imageReceiver.A1 = true;
+        imageReceiver.b = true;
     }
 }

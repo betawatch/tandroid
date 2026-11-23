@@ -1,85 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uv0 implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.sr {
-    public final /* synthetic */ kw0 a;
+public final /* synthetic */ class uv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jw0 b;
 
-    public /* synthetic */ uv0(kw0 kw0Var) {
-        this.a = kw0Var;
+    public /* synthetic */ uv0(jw0 jw0Var, int i7) {
+        this.a = i7;
+        this.b = jw0Var;
     }
 
-    @Override // org.telegram.messenger.sr
-    public void a(String str) {
-        kw0 kw0Var = this.a;
-        new z30(kw0Var.getContext(), kw0Var.j2, null, kw0Var.J0).show();
-    }
-
-    @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
-        String str;
-        kw0 kw0Var = this.a;
-        org.telegram.ui.ActionBar.g2 g2Var = kw0Var.G1;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = kw0Var.N1;
-        if (tL_messages_stickerSet == null) {
-            return;
-        }
-        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-        if (stickerSet == null || !stickerSet.emojis) {
-            str = "https://" + org.telegram.messenger.np.u1(kw0Var.a).X2 + "/addstickers/" + kw0Var.N1.set.short_name;
-        } else {
-            str = "https://" + org.telegram.messenger.np.u1(kw0Var.a).X2 + "/addemoji/" + kw0Var.N1.set.short_name;
-        }
-        String str2 = str;
-        if (i7 == 1) {
-            Context context = kw0Var.I1;
-            if (context == null && g2Var != null) {
-                context = g2Var.getParentActivity();
-            }
-            if (context == null) {
-                context = kw0Var.getContext();
-            }
-            wv0 wv0Var = new wv0(kw0Var, context, str2, str2, kw0Var.J0);
-            if (g2Var == null) {
-                wv0Var.show();
-                return;
-            }
-            g2Var.showDialog(wv0Var);
-            if (g2Var instanceof org.telegram.ui.bn) {
-                boolean V9 = ((org.telegram.ui.bn) g2Var).V9();
-                wv0Var.i0 = V9;
-                wv0Var.n = V9;
-                return;
-            }
-            return;
-        }
-        if (i7 == 2) {
-            try {
-                org.telegram.messenger.g0.g(str2);
-                new lc((FrameLayout) kw0Var.b, kw0Var.J0).k(false).j();
-                return;
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-                return;
-            }
-        }
-        if (i7 == 3) {
-            if (kw0Var.M1) {
-                kw0Var.M0();
-                return;
-            } else {
-                kw0Var.O0();
-                return;
-            }
-        }
-        if (i7 == 4) {
-            pw0.c(kw0Var.N1.set, kw0Var.J0, kw0Var.getContext(), new d(kw0Var, 21));
-        } else if (i7 == 5) {
-            pw0.b(kw0Var.N1.set, kw0Var.J0, kw0Var.getContext(), new vv0(kw0Var, 2));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.o1.f();
+                break;
+            case 1:
+                this.b.o1.f();
+                break;
+            case 2:
+                jw0 jw0Var = this.b;
+                jw0Var.dismiss();
+                org.telegram.messenger.ri.d0(jw0Var.a).k2(jw0Var.getContext(), jw0Var.N1, 1, jw0Var.G1, false, false);
+                break;
+            case 3:
+                jw0 jw0Var2 = this.b;
+                org.telegram.messenger.mp.u1(jw0Var2.a).F3("stickers", jw0Var2.G1, 1, null);
+                break;
+            default:
+                jw0 jw0Var3 = this.b;
+                jw0Var3.dismiss();
+                org.telegram.messenger.ri.d0(jw0Var3.a).k2(jw0Var3.getContext(), jw0Var3.N1, 1, jw0Var3.G1, false, false);
+                break;
         }
     }
 }

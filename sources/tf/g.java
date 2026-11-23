@@ -5,10 +5,10 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.jn;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g extends rf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -34,7 +34,7 @@ public final class g extends rf.a {
     public static f5.a c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new f5.a(4, eVar.d(ls.e3, b10), eVar.c((int) eVar.a.e(), b10));
+        return new f5.a(4, eVar.d(ks.e3, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -74,25 +74,25 @@ public final class g extends rf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    jn jnVar = eVar.d;
+                    nd0 nd0Var = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte Q = jnVar.Q();
-                    eVar.d(ls.e3, b10);
+                    byte v = nd0Var.v();
+                    eVar.d(ks.e3, b10);
                     int e10 = (int) eVar.a.e();
                     byte[] bArr = new byte[e10];
                     int i12 = 0;
                     while (i12 < e10) {
-                        int read = ((ab.d) jnVar.b).read(bArr, i12, e10 - i12);
+                        int read = ((ab.d) nd0Var.b).read(bArr, i12, e10 - i12);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i12 += read;
                     }
-                    if (this.o == null || Q == 3 || Q == 0) {
+                    if (this.o == null || v == 3 || v == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -119,7 +119,7 @@ public final class g extends rf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = Q;
+                            this.r = v;
                             return;
                         }
                         for (int max2 = Math.max(i10, options.outHeight); max2 > 800; max2 /= 2) {
@@ -130,7 +130,7 @@ public final class g extends rf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = Q;
+                        this.r = v;
                         return;
                     }
                     return;

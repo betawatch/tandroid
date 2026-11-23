@@ -1,32 +1,22 @@
 package a8;
 
-import j$.util.DesugarCollections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import android.util.Base64;
+import java.util.LinkedHashMap;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class q9 {
-    public static boolean a(String str) {
-        e5.b bVar = e5.k.a;
-        Set<e5.d> unmodifiableSet = DesugarCollections.unmodifiableSet(e5.c.c);
-        HashSet hashSet = new HashSet();
-        for (e5.d dVar : unmodifiableSet) {
-            if (((e5.c) dVar).a.equals(str)) {
-                hashSet.add(dVar);
-            }
+    public static byte[] a(JSONObject jSONObject) {
+        LinkedHashMap linkedHashMap = d1.g.a;
+        String optString = jSONObject.optString("challenge", "");
+        kotlin.jvm.internal.j.b(optString);
+        if (optString.length() == 0) {
+            throw new JSONException("Challenge not found in request or is unexpectedly empty");
         }
-        if (hashSet.isEmpty()) {
-            throw new RuntimeException("Unknown feature ".concat(str));
-        }
-        Iterator it = hashSet.iterator();
-        while (it.hasNext()) {
-            e5.c cVar = (e5.c) ((e5.d) it.next());
-            if (cVar.a() || cVar.b()) {
-                return true;
-            }
-        }
-        return false;
+        byte[] decode = Base64.decode(optString, 11);
+        kotlin.jvm.internal.j.d(decode, "decode(...)");
+        return decode;
     }
 }

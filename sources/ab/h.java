@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h extends Service {
     public final ExecutorService a;
@@ -76,7 +76,7 @@ public abstract class h extends Service {
             this.d = i10;
             this.e++;
         }
-        Intent intent2 = (Intent) ((ArrayDeque) c0.s().e).poll();
+        Intent intent2 = (Intent) ((ArrayDeque) c0.v().e).poll();
         if (intent2 == null) {
             a(intent);
             return 2;

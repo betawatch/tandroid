@@ -1,142 +1,171 @@
 package c8;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.y10;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.zc0;
-import org.telegram.ui.LaunchActivity;
+import android.view.Gravity;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class na {
-    public static int a = 1500;
-
-    public static boolean a() {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        }
-        if (activity == null) {
-            return false;
-        }
-        return activity.shouldShowRequestPermissionRationale("android.permission.POST_NOTIFICATIONS");
+    public static FrameLayout.LayoutParams a(float f10, float f11, int i7) {
+        return new FrameLayout.LayoutParams(z(f10), z(f11), i7);
     }
 
-    public static void b(String[] strArr, y10 y10Var) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        for (String str : strArr) {
-            if (activity.checkSelfPermission(str) != 0) {
-                int length = strArr.length;
-                int i7 = 0;
-                while (true) {
-                    int i10 = 1;
-                    if (i7 >= length) {
-                        e(strArr, new ad0(strArr, activity, y10Var, 1));
-                        return;
-                    }
-                    if (activity.shouldShowRequestPermissionRationale(strArr[i7])) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                        int i11 = org.telegram.ui.ActionBar.m6.L5;
-                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.m6.x0(null, i11, false), null);
-                        alertDialog$Builder.n(i11, null);
-                        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131747115, null));
-                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747106, null), new zc0(activity, i10));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751760, null), null);
-                        alertDialog$Builder.a.show();
-                        y10Var.a(Boolean.FALSE);
-                        return;
-                    }
-                    i7++;
-                }
-            }
-        }
-        y10Var.a(Boolean.TRUE);
+    public static FrameLayout.LayoutParams b(float f10, float f11, int i7, float f12, float f13, float f14, float f15) {
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(f10), z(f11), i7);
+        layoutParams.setMargins(org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f13), org.telegram.messenger.g0.L(f14), org.telegram.messenger.g0.L(f15));
+        return layoutParams;
     }
 
-    public static void c(int i7, int i10, String[] strArr, String[] strArr2, y10 y10Var) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        int i11 = 0;
-        for (String str : strArr) {
-            if (activity.checkSelfPermission(str) == 0) {
-                y10Var.a(Boolean.TRUE);
-                return;
-            }
-        }
-        for (String str2 : strArr) {
-            if (!activity.shouldShowRequestPermissionRationale(str2)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                int i12 = org.telegram.ui.ActionBar.m6.L5;
-                alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.m6.x0(null, i12, false), null);
-                alertDialog$Builder.n(i12, null);
-                alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(i10, null));
-                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747106, null), new zc0(activity, i11));
-                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751760, null), null);
-                alertDialog$Builder.a.show();
-                y10Var.a(Boolean.FALSE);
-                return;
-            }
-        }
-        e(strArr2, new ad0(strArr2, activity, y10Var, 0));
+    public static FrameLayout.LayoutParams c(float f10, int i7) {
+        return new FrameLayout.LayoutParams(z(i7), z(f10));
     }
 
-    public static boolean d(String str) {
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        }
-        return context != null && context.checkSelfPermission(str) == 0;
+    public static FrameLayout.LayoutParams d(int i7, float f10, int i10, float f11, float f12, float f13, float f14) {
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(i7), z(f10), i10);
+        layoutParams.setMargins(org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f13), org.telegram.messenger.g0.L(f14));
+        return layoutParams;
     }
 
-    public static void e(String[] strArr, y10 y10Var) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        int i7 = a;
-        a = i7 + 1;
-        gs[] gsVarArr = new gs[1];
-        gsVarArr[0] = new bd0(i7, y10Var, gsVarArr);
-        ls.e().b(gsVarArr[0], ls.s5);
-        activity.requestPermissions(strArr, i7);
+    public static FrameLayout.LayoutParams e(int i7, int i10, int i11) {
+        return new FrameLayout.LayoutParams(z(i7), z(i10), i11);
     }
 
-    public static void f() {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
+    public static FrameLayout.LayoutParams f(float f10, int i7, int i10, int i11, int i12, int i13, int i14) {
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(i7), z(f10), i10);
+        layoutParams.setMargins(i11, i12, i13, i14);
+        return layoutParams;
+    }
+
+    public static FrameLayout.LayoutParams g() {
+        return c(-1.0f, -1);
+    }
+
+    public static FrameLayout.LayoutParams h(float f10, float f11, int i7) {
+        return new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.gd.a0 ? 1 : 0));
+    }
+
+    public static FrameLayout.LayoutParams i(float f10, float f11, int i7, float f12, float f13, float f14, float f15) {
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.gd.a0 ? 1 : 0));
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? f14 : f12);
+        layoutParams.topMargin = org.telegram.messenger.g0.L(f13);
+        if (!org.telegram.messenger.gd.a0) {
+            f12 = f14;
         }
-        if (activity == null) {
-            return;
+        layoutParams.rightMargin = org.telegram.messenger.g0.L(f12);
+        layoutParams.bottomMargin = org.telegram.messenger.g0.L(f15);
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams j(float f10, float f11) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(-2.0f), z(20.66f));
+        layoutParams.setMargins(org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(0.0f));
+        layoutParams.gravity = 16;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams k(float f10, float f11, float f12, float f13, int i7, int i10) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10));
+        layoutParams.setMargins(org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f13));
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams l(float f10, int i7, int i10) {
+        return new LinearLayout.LayoutParams(z(i7), z(i10), f10);
+    }
+
+    public static LinearLayout.LayoutParams m(float f10, int i7, int i10, int i11, int i12, int i13) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10), f10);
+        layoutParams.setMargins(org.telegram.messenger.g0.L(i11), org.telegram.messenger.g0.L(0), org.telegram.messenger.g0.L(i12), org.telegram.messenger.g0.L(i13));
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams n(float f10, int i7, int i10, int i11, int i12, int i13, int i14) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(f10));
+        layoutParams.setMargins(org.telegram.messenger.g0.L(i11), org.telegram.messenger.g0.L(i12), org.telegram.messenger.g0.L(i13), org.telegram.messenger.g0.L(i14));
+        layoutParams.gravity = i10;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams o(int i7, int i10) {
+        return new LinearLayout.LayoutParams(z(i7), z(i10));
+    }
+
+    public static LinearLayout.LayoutParams p(int i7, int i10, float f10, int i11) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10), f10);
+        layoutParams.gravity = i11;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams q(int i7, int i10, float f10, int i11, int i12, int i13, int i14, int i15) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10), f10);
+        layoutParams.setMargins(org.telegram.messenger.g0.L(i12), org.telegram.messenger.g0.L(i13), org.telegram.messenger.g0.L(i14), org.telegram.messenger.g0.L(i15));
+        layoutParams.gravity = i11;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams r(int i7, int i10, int i11) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10));
+        layoutParams.gravity = i11;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams s(int i7, int i10, int i11, float f10, float f11, float f12, float f13) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10));
+        layoutParams.setMargins(org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f13));
+        layoutParams.gravity = i11;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams t(int i7, int i10, int i11, int i12, int i13, int i14, int i15) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(i7), z(i10));
+        layoutParams.setMargins(org.telegram.messenger.g0.L(i12), org.telegram.messenger.g0.L(i13), org.telegram.messenger.g0.L(i14), org.telegram.messenger.g0.L(i15));
+        layoutParams.gravity = i11;
+        return layoutParams;
+    }
+
+    public static LinearLayout.LayoutParams u(float f10, float f11, int i7, float f12, float f13, float f14, float f15) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.gd.a0 ? 1 : 0));
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? f14 : f12);
+        layoutParams.topMargin = org.telegram.messenger.g0.L(f13);
+        if (!org.telegram.messenger.gd.a0) {
+            f12 = f14;
         }
-        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-        intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-        try {
-            activity.startActivity(intent);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+        layoutParams.rightMargin = org.telegram.messenger.g0.L(f12);
+        layoutParams.bottomMargin = org.telegram.messenger.g0.L(f15);
+        return layoutParams;
+    }
+
+    public static RelativeLayout.LayoutParams v(int i7, float f10, int i10, float f11, int i11) {
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(z(f10), z(f11));
+        if (i11 >= 0) {
+            layoutParams.addRule(i11);
         }
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(i7);
+        float f12 = 0;
+        layoutParams.topMargin = org.telegram.messenger.g0.L(f12);
+        layoutParams.rightMargin = org.telegram.messenger.g0.L(i10);
+        layoutParams.bottomMargin = org.telegram.messenger.g0.L(f12);
+        return layoutParams;
+    }
+
+    public static RelativeLayout.LayoutParams w(int i7, int i10) {
+        return v(0, i7, 0, i10, -1);
+    }
+
+    public static FrameLayout.LayoutParams x(int i7, int i10, int i11) {
+        return new FrameLayout.LayoutParams(z(i7), z(i10), i11);
+    }
+
+    public static int y() {
+        return org.telegram.messenger.gd.a0 ? 5 : 3;
+    }
+
+    public static int z(float f10) {
+        if (f10 >= 0.0f) {
+            f10 = org.telegram.messenger.g0.L(f10);
+        }
+        return (int) f10;
     }
 }

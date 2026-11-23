@@ -1,11 +1,11 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import java.util.Map;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t implements j2.h {
     public final j2.h a;
@@ -15,7 +15,7 @@ public final class t implements j2.h {
     public int e;
 
     public t(j2.h hVar, int i7, t0 t0Var) {
-        la.f(i7 > 0);
+        ma.f(i7 > 0);
         this.a = hVar;
         this.b = i7;
         this.c = t0Var;
@@ -57,7 +57,7 @@ public final class t implements j2.h {
             byte[] bArr2 = this.d;
             int i12 = 0;
             if (hVar.read(bArr2, 0, 1) != -1) {
-                int i13 = (bArr2[0] & ls.e4) << 4;
+                int i13 = (bArr2[0] & ks.e4) << 4;
                 if (i13 != 0) {
                     byte[] bArr3 = new byte[i13];
                     int i14 = i13;
@@ -76,10 +76,10 @@ public final class t implements j2.h {
                         t0 t0Var = this.c;
                         long max = !t0Var.x ? t0Var.r : Math.max(t0Var.y.v(true), t0Var.r);
                         int a10 = xVar.a();
-                        f3.i0 i0Var = t0Var.w;
-                        i0Var.getClass();
-                        i0Var.b(a10, xVar);
-                        i0Var.c(max, 1, a10, 0, null);
+                        f3.j0 j0Var = t0Var.w;
+                        j0Var.getClass();
+                        j0Var.b(a10, xVar);
+                        j0Var.c(max, 1, a10, 0, null);
                         t0Var.x = true;
                     }
                 }

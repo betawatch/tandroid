@@ -6,12 +6,12 @@ import android.text.TextUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import org.telegram.messenger.az;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.ec;
 import org.telegram.messenger.w7;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,23 +22,23 @@ public final /* synthetic */ class w4 implements Runnable {
         this.b = y4Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x0187, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0188, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0114, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0115, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0116, code lost:
     
         r1.recycle();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0153, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0154, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x017e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x017f, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
@@ -58,7 +58,7 @@ public final /* synthetic */ class w4 implements Runnable {
                     try {
                         String str3 = document.mime_type;
                         String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? fc.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? az.r(1, str) : null;
+                        bitmap = lowerCase.startsWith("image/") ? ec.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? zy.r(1, str) : null;
                         if (bitmap != null) {
                             try {
                                 ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
@@ -77,7 +77,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                         document.attributes.add(tL_documentAttributeImageSize);
                                     }
                                 }
-                                TLRPC.PhotoSize Z = fc.Z(bitmap, 320.0f, 320.0f, 80, false);
+                                TLRPC.PhotoSize Z = ec.Z(bitmap, 320.0f, 320.0f, 80, false);
                                 if (Z != null) {
                                     document.thumbs.clear();
                                     document.thumbs.add(Z);
@@ -119,9 +119,9 @@ public final /* synthetic */ class w4 implements Runnable {
                     String str5 = options.outMimeType;
                     boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
                     float Z0 = org.telegram.messenger.g0.Z0(false);
-                    Bitmap K = fc.K(str4, null, Z0, Z0, true);
+                    Bitmap K = ec.K(str4, null, Z0, Z0, true);
                     if (K == null) {
-                        K = fc.K(str4, null, 800.0f, 800.0f, true);
+                        K = ec.K(str4, null, 800.0f, 800.0f, true);
                     }
                     if (K != null) {
                         File file = new File(w7.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
@@ -146,7 +146,7 @@ public final /* synthetic */ class w4 implements Runnable {
                     }
                 } catch (Throwable unused3) {
                 }
-                org.telegram.messenger.g0.g3(new t(6, y4Var2, str4));
+                org.telegram.messenger.g0.g3(new n2.c0(8, y4Var2, str4));
                 return;
             default:
                 y4 y4Var3 = this.b;

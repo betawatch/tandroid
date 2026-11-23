@@ -15,23 +15,22 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
-import c8.ma;
-import hi.s6;
-import java.io.Serializable;
+import c8.na;
+import hi.c7;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.es0;
-import org.telegram.ui.Components.g8;
-import org.telegram.ui.Components.ot;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.Components.f8;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,9 +53,9 @@ public final /* synthetic */ class c2 implements Runnable {
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);
                 break;
             case 2:
-                ai.b1 b1Var = (ai.b1) this.b;
+                ai.x0 x0Var = (ai.x0) this.b;
                 Drawable drawable = ActionBarLayout.w1;
-                org.telegram.messenger.g0.g3(b1Var);
+                org.telegram.messenger.g0.g3(x0Var);
                 break;
             case 3:
                 ((org.telegram.ui.ActionBar.p0) this.b).setSelectedForDelete(false);
@@ -64,7 +63,7 @@ public final /* synthetic */ class c2 implements Runnable {
             case 4:
                 org.telegram.ui.ActionBar.v0 v0Var = (org.telegram.ui.ActionBar.v0) this.b;
                 v0Var.a0 = true;
-                org.telegram.messenger.g0.l2(new s6(v0Var, 19), 8.0f);
+                org.telegram.messenger.g0.l2(new c7(v0Var, 19), 8.0f);
                 break;
             case 5:
                 ((org.telegram.ui.ActionBar.i1) this.b).c();
@@ -164,79 +163,79 @@ public final /* synthetic */ class c2 implements Runnable {
                 break;
             case 15:
                 Drawable drawable2 = (Drawable) this.b;
-                m6.d = null;
-                m6.P();
-                if (!m6.b) {
-                    m6.j(drawable2);
-                    m6.h(drawable2);
+                n6.d = null;
+                n6.P();
+                if (!n6.b) {
+                    n6.j(drawable2);
+                    n6.h(drawable2);
                 }
-                ls.e().k(ls.C4, new Object[0]);
+                ks.e().k(ks.C4, new Object[0]);
                 break;
             case 16:
-                g8 g8Var = (g8) m6.e5.remove((gj) this.b);
-                if (g8Var != null) {
-                    g8Var.i = null;
+                f8 f8Var = (f8) n6.e5.remove((fj) this.b);
+                if (f8Var != null) {
+                    f8Var.i = null;
                     break;
                 }
                 break;
             case 17:
-                org.telegram.ui.Components.voip.k0 k0Var = (org.telegram.ui.Components.voip.k0) this.b;
-                k0Var.Q0 = null;
-                k0Var.setVisibleParticipant(true);
+                org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) this.b;
+                l0Var.Q0 = null;
+                l0Var.setVisibleParticipant(true);
                 break;
             case 18:
-                org.telegram.ui.Components.voip.s0 s0Var = (org.telegram.ui.Components.voip.s0) this.b;
+                org.telegram.ui.Components.voip.t0 t0Var = (org.telegram.ui.Components.voip.t0) this.b;
                 long uptimeMillis = SystemClock.uptimeMillis();
-                ArrayList arrayList = s0Var.a;
+                ArrayList arrayList = t0Var.a;
                 ArrayList arrayList2 = new ArrayList(arrayList);
                 int size = arrayList2.size();
                 while (i7 < size) {
                     Object obj = arrayList2.get(i7);
                     i7++;
-                    org.telegram.ui.Components.voip.r0 r0Var = (org.telegram.ui.Components.voip.r0) obj;
-                    if (r0Var.b && uptimeMillis - r0Var.c > 5000) {
-                        arrayList.remove(r0Var);
-                        s0Var.removeView(r0Var);
+                    org.telegram.ui.Components.voip.s0 s0Var = (org.telegram.ui.Components.voip.s0) obj;
+                    if (s0Var.b && uptimeMillis - s0Var.c > 5000) {
+                        arrayList.remove(s0Var);
+                        t0Var.removeView(s0Var);
                     }
                 }
-                c2 c2Var = s0Var.h;
-                s0Var.removeCallbacks(c2Var);
+                c2 c2Var = t0Var.h;
+                t0Var.removeCallbacks(c2Var);
                 if (!arrayList.isEmpty()) {
-                    s0Var.postDelayed(c2Var, 500L);
+                    t0Var.postDelayed(c2Var, 500L);
                     break;
                 }
                 break;
             case 19:
-                org.telegram.ui.Components.voip.j1 j1Var = ((org.telegram.ui.Components.voip.g1) this.b).h;
-                wi.n nVar = j1Var.a;
+                org.telegram.ui.Components.voip.k1 k1Var = ((org.telegram.ui.Components.voip.h1) this.b).h;
+                wi.n nVar = k1Var.a;
                 if (nVar != null) {
                     nVar.c();
                 }
-                org.telegram.ui.Components.voip.i1 i1Var = j1Var.f;
-                if (i1Var != null) {
-                    i1Var.a();
+                org.telegram.ui.Components.voip.j1 j1Var = k1Var.f;
+                if (j1Var != null) {
+                    j1Var.a();
                     break;
                 }
                 break;
             case 20:
-                org.telegram.ui.Components.voip.d2 d2Var = (org.telegram.ui.Components.voip.d2) this.b;
-                d2Var.e = false;
-                HashMap hashMap = d2Var.a;
-                ArrayList arrayList3 = d2Var.c;
-                ArrayList arrayList4 = d2Var.b;
+                org.telegram.ui.Components.voip.e2 e2Var = (org.telegram.ui.Components.voip.e2) this.b;
+                e2Var.e = false;
+                HashMap hashMap = e2Var.a;
+                ArrayList arrayList3 = e2Var.c;
+                ArrayList arrayList4 = e2Var.b;
                 if (!arrayList4.isEmpty() || !arrayList3.isEmpty()) {
-                    if (d2Var.getParent() != null) {
-                        TransitionManager.beginDelayedTransition(d2Var, d2Var.d);
+                    if (e2Var.getParent() != null) {
+                        TransitionManager.beginDelayedTransition(e2Var, e2Var.d);
                     }
                     int i13 = 0;
                     while (i13 < arrayList4.size()) {
-                        org.telegram.ui.Components.voip.c2 c2Var2 = (org.telegram.ui.Components.voip.c2) arrayList4.get(i13);
+                        org.telegram.ui.Components.voip.d2 d2Var = (org.telegram.ui.Components.voip.d2) arrayList4.get(i13);
                         int i14 = 0;
                         while (true) {
                             if (i14 >= arrayList3.size()) {
                                 break;
                             }
-                            if (c2Var2.a.equals(((org.telegram.ui.Components.voip.c2) arrayList3.get(i14)).a)) {
+                            if (d2Var.a.equals(((org.telegram.ui.Components.voip.d2) arrayList3.get(i14)).a)) {
                                 arrayList4.remove(i13);
                                 arrayList3.remove(i14);
                                 i13--;
@@ -247,22 +246,22 @@ public final /* synthetic */ class c2 implements Runnable {
                         i13++;
                     }
                     for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                        d2Var.addView((View) arrayList4.get(i15), ma.t(-2, -2, 1, 4, 0, 0, 4));
+                        e2Var.addView((View) arrayList4.get(i15), na.t(-2, -2, 1, 4, 0, 0, 4));
                     }
                     for (int i16 = 0; i16 < arrayList3.size(); i16++) {
-                        d2Var.removeView((View) arrayList3.get(i16));
+                        e2Var.removeView((View) arrayList3.get(i16));
                     }
                     hashMap.clear();
-                    while (i7 < d2Var.getChildCount()) {
-                        org.telegram.ui.Components.voip.c2 c2Var3 = (org.telegram.ui.Components.voip.c2) d2Var.getChildAt(i7);
-                        hashMap.put(c2Var3.a, c2Var3);
+                    while (i7 < e2Var.getChildCount()) {
+                        org.telegram.ui.Components.voip.d2 d2Var2 = (org.telegram.ui.Components.voip.d2) e2Var.getChildAt(i7);
+                        hashMap.put(d2Var2.a, d2Var2);
                         i7++;
                     }
                     arrayList4.clear();
                     arrayList3.clear();
-                    d2Var.e = true;
-                    org.telegram.messenger.g0.h3(new c2(d2Var, 20), 700L);
-                    Runnable runnable = d2Var.h;
+                    e2Var.e = true;
+                    org.telegram.messenger.g0.h3(new c2(e2Var, 20), 700L);
+                    Runnable runnable = e2Var.h;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -270,49 +269,49 @@ public final /* synthetic */ class c2 implements Runnable {
                 }
                 break;
             case 21:
-                TextView[] textViewArr = ((org.telegram.ui.Components.voip.k2) this.b).a;
+                TextView[] textViewArr = ((org.telegram.ui.Components.voip.l2) this.b).a;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];
                 textViewArr[1] = textView;
                 break;
             case 22:
-                TextView[] textViewArr2 = ((org.telegram.ui.Components.voip.k2) ((jg.j0) this.b).e).a;
+                TextView[] textViewArr2 = ((org.telegram.ui.Components.voip.l2) ((jg.j0) this.b).e).a;
                 TextView textView2 = textViewArr2[0];
                 textViewArr2[0] = textViewArr2[1];
                 textViewArr2[1] = textView2;
                 break;
             case 23:
-                org.telegram.ui.Components.voip.o2 o2Var = (org.telegram.ui.Components.voip.o2) this.b;
-                if (o2Var.getVisibility() == 0) {
-                    o2Var.a();
+                org.telegram.ui.Components.voip.p2 p2Var = (org.telegram.ui.Components.voip.p2) this.b;
+                if (p2Var.getVisibility() == 0) {
+                    p2Var.a();
                     break;
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.voip.s2 s2Var = (org.telegram.ui.Components.voip.s2) this.b;
-                s2Var.e = Bitmap.createBitmap(s2Var.getMeasuredWidth(), s2Var.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-                new Canvas(s2Var.e).drawText(s2Var.d, s2Var.getMeasuredWidth() / 2, (int) ((s2Var.getMeasuredHeight() / 2) - ((s2Var.a.ascent() + s2Var.a.descent()) / 2.0f)), s2Var.a);
-                s2Var.postInvalidate();
+                org.telegram.ui.Components.voip.t2 t2Var = (org.telegram.ui.Components.voip.t2) this.b;
+                t2Var.e = Bitmap.createBitmap(t2Var.getMeasuredWidth(), t2Var.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                new Canvas(t2Var.e).drawText(t2Var.d, t2Var.getMeasuredWidth() / 2, (int) ((t2Var.getMeasuredHeight() / 2) - ((t2Var.a.ascent() + t2Var.a.descent()) / 2.0f)), t2Var.a);
+                t2Var.postInvalidate();
                 break;
             case 25:
                 ((org.telegram.ui.web.k) this.b).x.g3.O(true);
                 break;
             case 26:
-                org.telegram.ui.web.i iVar = ((org.telegram.ui.web.m) ((hi.s2) this.b).c).f;
+                org.telegram.ui.web.i iVar = ((org.telegram.ui.web.m) ((hi.b3) this.b).c).f;
                 if (iVar != null) {
                     iVar.d();
                     break;
                 }
                 break;
             case 27:
-                ((ot) this.b).requestFocus();
+                ((mt) this.b).requestFocus();
                 break;
             case 28:
                 vf.c.t(((org.telegram.ui.web.o0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             default:
-                hi.s2 s2Var2 = (hi.s2) this.b;
-                Utilities.g.c(new es0((Object) s2Var2, (Object) new ArrayList(((org.telegram.ui.web.x0) s2Var2.c).f), (Serializable) ((org.telegram.ui.web.x0) s2Var2.c).r, 14));
+                hi.b3 b3Var = (hi.b3) this.b;
+                Utilities.g.c(new as0(b3Var, new ArrayList(((org.telegram.ui.web.x0) b3Var.c).f), ((org.telegram.ui.web.x0) b3Var.c).r, 15));
                 break;
         }
     }

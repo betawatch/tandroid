@@ -1,25 +1,151 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
+import android.net.Uri;
+import java.io.File;
+import java.net.URLEncoder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public interface g61 {
-    void onError(i61 i61Var, Exception exc);
+public final class g61 {
+    public int a;
+    public boolean b;
+    public long c;
+    public Uri d;
+    public long e;
+    public Uri f;
+    public TLRPC.Document g;
+    public TLRPC.Document h;
+    public int i;
+    public int j;
+    public long k;
+    public double l;
+    public String m;
 
-    void onRenderedFirstFrame();
+    public static Uri a(int i7, int i10, TLRPC.Document document) {
+        StringBuilder m10 = i5.c.m(i7, "?account=", "&id=");
+        m10.append(document.id);
+        m10.append("&hash=");
+        m10.append(document.access_hash);
+        m10.append("&dc=");
+        m10.append(document.dc_id);
+        m10.append("&size=");
+        m10.append(document.size);
+        m10.append("&mime=");
+        m10.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+        m10.append("&rid=");
+        m10.append(i10);
+        m10.append("&name=");
+        m10.append(URLEncoder.encode(org.telegram.messenger.w7.B(document), "UTF-8"));
+        m10.append("&reference=");
+        byte[] bArr = document.file_reference;
+        if (bArr == null) {
+            bArr = new byte[0];
+        }
+        m10.append(Utilities.f(bArr));
+        return Uri.parse("tg://" + org.telegram.messenger.w7.r(null, document) + m10.toString());
+    }
 
-    void onRenderedFirstFrame(m2.a aVar);
+    public static g61 d(int i7, TLRPC.Document document, TLRPC.Document document2, int i10, boolean z10) {
+        TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
+        String str;
+        g61 g61Var = new g61();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= document.attributes.size()) {
+                tL_documentAttributeVideo = null;
+                break;
+            }
+            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i11);
+            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
+                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) documentAttribute;
+                break;
+            }
+            i11++;
+        }
+        String lowerCase = (tL_documentAttributeVideo == null || (str = tL_documentAttributeVideo.video_codec) == null) ? null : str.toLowerCase();
+        g61Var.a = i7;
+        g61Var.g = document;
+        g61Var.c = document.id;
+        g61Var.d = a(i7, i10, document);
+        if (document2 != null) {
+            g61Var.h = document2;
+            g61Var.e = document2.id;
+            g61Var.f = a(i7, i10, document2);
+            org.telegram.messenger.w7.G(i7);
+            File J = org.telegram.messenger.w7.J(document2, null, false, z10);
+            if (J == null || !J.exists()) {
+                org.telegram.messenger.w7.G(i7);
+                File J2 = org.telegram.messenger.w7.J(document2, null, true, z10);
+                if (J2 != null && J2.exists()) {
+                    g61Var.f = Uri.fromFile(J2);
+                }
+            } else {
+                g61Var.f = Uri.fromFile(J);
+            }
+        }
+        g61Var.m = lowerCase;
+        long j3 = document.size;
+        g61Var.k = j3;
+        if (tL_documentAttributeVideo != null) {
+            double d = tL_documentAttributeVideo.duration;
+            g61Var.i = tL_documentAttributeVideo.w;
+            g61Var.j = tL_documentAttributeVideo.h;
+            g61Var.l = j3 / d;
+        }
+        org.telegram.messenger.w7.G(i7);
+        File J3 = org.telegram.messenger.w7.J(document, null, false, z10);
+        if (J3 != null && J3.exists()) {
+            g61Var.d = Uri.fromFile(J3);
+            return g61Var;
+        }
+        org.telegram.messenger.w7.G(i7);
+        File J4 = org.telegram.messenger.w7.J(document, null, true, z10);
+        if (J4 != null && J4.exists()) {
+            g61Var.d = Uri.fromFile(J4);
+        }
+        return g61Var;
+    }
 
-    void onSeekFinished(m2.a aVar);
+    public final boolean b() {
+        Uri uri = this.d;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    }
 
-    void onSeekStarted(m2.a aVar);
+    public final boolean c() {
+        Uri uri = this.f;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    }
 
-    void onStateChanged(boolean z10, int i7);
-
-    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
-
-    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
-
-    void onVideoSizeChanged(int i7, int i10, int i11, float f10);
+    public final void e(boolean z10) {
+        if (!b() && this.g != null) {
+            org.telegram.messenger.w7.G(this.a);
+            File J = org.telegram.messenger.w7.J(this.g, null, false, z10);
+            if (J == null || !J.exists()) {
+                org.telegram.messenger.w7.G(this.a);
+                File J2 = org.telegram.messenger.w7.J(this.g, null, true, z10);
+                if (J2 != null && J2.exists()) {
+                    this.d = Uri.fromFile(J2);
+                }
+            } else {
+                this.d = Uri.fromFile(J);
+            }
+        }
+        if (c() || this.h == null) {
+            return;
+        }
+        org.telegram.messenger.w7.G(this.a);
+        File J3 = org.telegram.messenger.w7.J(this.h, null, false, z10);
+        if (J3 != null && J3.exists()) {
+            this.f = Uri.fromFile(J3);
+            return;
+        }
+        org.telegram.messenger.w7.G(this.a);
+        File J4 = org.telegram.messenger.w7.J(this.h, null, true, z10);
+        if (J4 == null || !J4.exists()) {
+            return;
+        }
+        this.f = Uri.fromFile(J4);
+    }
 }

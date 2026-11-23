@@ -1,6 +1,6 @@
 package d8;
 
-import a8.l8;
+import a8.m8;
 import android.os.BadParcelableException;
 import android.os.Binder;
 import android.os.IBinder;
@@ -10,7 +10,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class d extends Binder implements b, IInterface {
                 break;
             default:
                 j.e(status, "status");
-                l8.a(status, dVar, this.b);
+                m8.a(status, dVar, this.b);
                 break;
         }
     }
@@ -39,7 +39,7 @@ public final class d extends Binder implements b, IInterface {
         switch (this.a) {
             case 0:
                 j.e(status, "status");
-                l8.a(status, bVar, this.b);
+                m8.a(status, bVar, this.b);
                 break;
         }
     }

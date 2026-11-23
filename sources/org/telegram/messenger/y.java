@@ -4,18 +4,18 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y extends ClickableSpan {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
     public final /* synthetic */ Runnable d;
 
-    public y(int i7, int i10, org.telegram.ui.ActionBar.h6 h6Var, Runnable runnable) {
+    public y(int i7, int i10, org.telegram.ui.ActionBar.i6 i6Var, Runnable runnable) {
         this.a = i7;
         this.b = i10;
-        this.c = h6Var;
+        this.c = i6Var;
         this.d = runnable;
     }
 
@@ -34,7 +34,7 @@ public final class y extends ClickableSpan {
         textPaint.setUnderlineText(i7 == 4);
         int i10 = this.b;
         if (i10 >= 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(i10, this.c));
+            textPaint.setColor(org.telegram.ui.ActionBar.n6.w0(i10, this.c));
         }
         if (i7 == 2) {
             textPaint.setTypeface(g0.o());

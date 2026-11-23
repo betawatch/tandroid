@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z01 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c11 b;
+public final class z01 extends ug.b1 {
+    public final /* synthetic */ a11 N;
 
-    public /* synthetic */ z01(c11 c11Var, int i7) {
-        this.a = i7;
-        this.b = c11Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z01(a11 a11Var, Context context) {
+        super(2, context, null);
+        this.N = a11Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c11 c11Var = this.b;
-                c11Var.O = floatValue;
-                c11Var.W.i0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c11 c11Var2 = this.b;
-                c11Var2.O = floatValue2;
-                c11Var2.W.i0.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c11 c11Var3 = this.b;
-                c11Var3.O = floatValue3;
-                c11Var3.W.i0.invalidate();
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a11 a11Var = this.N;
+        if (a11Var.getParent() instanceof View) {
+            ((View) a11Var.getParent()).invalidate();
         }
     }
 }

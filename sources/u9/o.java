@@ -1,9 +1,9 @@
 package u9;
 
-import org.telegram.ui.wc1;
+import org.telegram.ui.uc1;
 import r0.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o implements ua.b {
     public static final f1 c = new f1(29);
@@ -30,7 +30,7 @@ public final class o implements ua.b {
             if (bVar != mVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new wc1(17, this.a, aVar);
+                this.a = new uc1(17, this.a, aVar);
                 bVar2 = null;
             }
         }

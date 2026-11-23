@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.os.ResultReceiver;
 import android.util.Base64;
 import android.util.Log;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.fido.common.Transport;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v extends r6.a {
     public static final Parcelable.Creator<v> CREATOR = new db.k(13);
@@ -319,26 +319,26 @@ public final class v extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.k(parcel, 2, this.a, i7);
-        bc.k(parcel, 3, this.b, i7);
-        bc.c(parcel, 4, this.c);
-        bc.p(parcel, 5, this.d);
+        int r10 = cc.r(parcel, 20293);
+        cc.k(parcel, 2, this.a, i7);
+        cc.k(parcel, 3, this.b, i7);
+        cc.c(parcel, 4, this.c);
+        cc.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            bc.q(parcel, 6, 8);
+            cc.q(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        bc.p(parcel, 7, this.f);
-        bc.k(parcel, 8, this.h, i7);
-        bc.i(parcel, 9, this.n);
-        bc.k(parcel, 10, this.r, i7);
+        cc.p(parcel, 7, this.f);
+        cc.k(parcel, 8, this.h, i7);
+        cc.i(parcel, 9, this.n);
+        cc.k(parcel, 10, this.r, i7);
         e eVar = this.s;
-        bc.l(parcel, 11, eVar == null ? null : eVar.a);
-        bc.k(parcel, 12, this.w, i7);
-        bc.l(parcel, 13, this.x);
-        bc.k(parcel, 14, this.y, i7);
-        bc.s(parcel, r10);
+        cc.l(parcel, 11, eVar == null ? null : eVar.a);
+        cc.k(parcel, 12, this.w, i7);
+        cc.l(parcel, 13, this.x);
+        cc.k(parcel, 14, this.y, i7);
+        cc.s(parcel, r10);
     }
 
     public v(String str) {

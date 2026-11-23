@@ -11,9 +11,9 @@ import android.graphics.RectF;
 import android.os.Build;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.qc;
+import org.telegram.messenger.pc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ec {
     public final int a;
@@ -60,7 +60,7 @@ public final class ec {
         path.close();
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint();
-        paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.75f, -1));
+        paint.setColor(org.telegram.ui.ActionBar.n6.r1(0.75f, -1));
         canvas.drawPath(path, paint);
         if (Build.VERSION.SDK_INT < 29) {
             this.l = null;
@@ -74,7 +74,7 @@ public final class ec {
         for (int i13 = 0; i13 < kVar.b; i13++) {
             a4.k.d((float[]) kVar.d, i13, 0.0f, 0.0f, width, height);
         }
-        this.m = ai.d.c(createBitmap);
+        this.m = g0.a.a(createBitmap);
     }
 
     public final void a(Canvas canvas, int i7) {
@@ -82,7 +82,7 @@ public final class ec {
     }
 
     public final void b(Canvas canvas, int i7, float f10) {
-        if (qc.e(131072)) {
+        if (pc.e(131072)) {
             int i10 = this.j;
             ArrayList arrayList = this.b;
             int min = Math.min(i10, arrayList.size());
@@ -102,7 +102,7 @@ public final class ec {
                     a4.k.d((float[]) kVar.c, i11, f15 - f13, f16 - f14, f15 + f13, f16 + f14);
                     this.l.s(i11, i0.a.o(i7, (int) (Utilities.l(dcVar.h * f10) * 255.0f)));
                 }
-                ai.d.d(canvas, this.l, min, this.m);
+                g0.a.b(canvas, this.l, min, this.m);
             } else {
                 if (this.e != i7) {
                     this.e = i7;
@@ -157,7 +157,7 @@ public final class ec {
     }
 
     public final boolean d() {
-        if (qc.e(131072)) {
+        if (pc.e(131072)) {
             long currentTimeMillis = System.currentTimeMillis();
             float min = (Math.min(this.o - currentTimeMillis, 16L) / 1000.0f) * this.h;
             int i7 = 0;

@@ -3,32 +3,33 @@ package p5;
 import android.content.Context;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
-import org.telegram.ui.md0;
+import jb.m;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
-    public final k8.a a;
-    public final md0 b;
+    public final m a;
+    public final i61 b;
     public final HashMap c;
 
-    public e(Context context, md0 md0Var) {
-        k8.a aVar = new k8.a(context, 22);
+    public e(Context context, i61 i61Var) {
+        m mVar = new m(context, 23);
         this.c = new HashMap();
-        this.a = aVar;
-        this.b = md0Var;
+        this.a = mVar;
+        this.b = i61Var;
     }
 
     public final synchronized f a(String str) {
         if (this.c.containsKey(str)) {
             return (f) this.c.get(str);
         }
-        CctBackendFactory x02 = this.a.x0(str);
-        if (x02 == null) {
+        CctBackendFactory u02 = this.a.u0(str);
+        if (u02 == null) {
             return null;
         }
-        md0 md0Var = this.b;
-        f create = x02.create(new b((Context) md0Var.b, (x5.a) md0Var.c, (x5.a) md0Var.d, str));
+        i61 i61Var = this.b;
+        f create = u02.create(new b((Context) i61Var.b, (x5.a) i61Var.c, (x5.a) i61Var.d, str));
         this.c.put(str, create);
         return create;
     }

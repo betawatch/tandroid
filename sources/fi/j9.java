@@ -2,11 +2,11 @@ package fi;
 
 import android.graphics.Canvas;
 import android.view.View;
-import hi.pb;
-import org.telegram.messenger.k10;
+import hi.kc;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class j9 extends g9 {
     public final i9 a;
@@ -17,15 +17,15 @@ public final class j9 extends g9 {
     public j9(k9 k9Var, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
         this.d = k9Var;
         this.b = tL_mediaAreaWeather;
-        pb pbVar = new pb();
-        pbVar.c = tL_mediaAreaWeather.emoji;
-        pbVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        kc kcVar = new kc();
+        kcVar.c = tL_mediaAreaWeather.emoji;
+        kcVar.d = (float) tL_mediaAreaWeather.temperature_c;
         i9 i9Var = new i9(this, org.telegram.messenger.t0.b, org.telegram.messenger.g0.p);
         this.a = i9Var;
         i9Var.setMaxWidth(org.telegram.messenger.g0.q.x);
         i9Var.setIsVideo(false);
-        i9Var.d(k10.t0, pbVar.c);
-        i9Var.setText(pbVar.a());
+        i9Var.d(i10.t0, kcVar.c);
+        i9Var.setText(kcVar.a());
         i9Var.e(3, tL_mediaAreaWeather.color);
         i9Var.f();
     }
@@ -62,14 +62,14 @@ public final class j9 extends g9 {
         i9 i9Var = this.a;
         if (!z10) {
             i9Var.L = false;
-            i9Var.r.R();
-            i9Var.s.R();
+            i9Var.r.S();
+            i9Var.s.S();
         } else {
             i9Var.L = true;
             if (i9Var.M) {
-                i9Var.s.P();
+                i9Var.s.Q();
             } else {
-                i9Var.r.P();
+                i9Var.r.Q();
             }
         }
     }

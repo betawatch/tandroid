@@ -1,37 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ok implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable[] c;
+import java.util.function.ToLongFunction;
+import org.telegram.ui.y41;
 
-    public /* synthetic */ ok(boolean[] zArr, Runnable[] runnableArr, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ok implements ToLongFunction {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ ok(int i7) {
         this.a = i7;
-        this.b = zArr;
-        this.c = runnableArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.ToLongFunction
+    public final long applyAsLong(Object obj) {
         switch (this.a) {
             case 0:
-                this.b[0] = true;
-                Runnable runnable = this.c[0];
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                return Long.parseLong((String) obj);
+            case 1:
+                return ((ws) obj).e;
+            case 2:
+                return ((ws) obj).e;
+            case 3:
+                return ((fj) obj).Z0();
+            case 4:
+                if (((y41) obj).b == null) {
+                    return 0L;
                 }
-                break;
+                return r3.k.date;
+            case 5:
+                return ((org.telegram.ui.Wallet.r8) obj).I;
             default:
-                this.b[0] = true;
-                Runnable runnable2 = this.c[0];
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
+                return ((org.telegram.ui.Wallet.r8) obj).J;
         }
     }
 }

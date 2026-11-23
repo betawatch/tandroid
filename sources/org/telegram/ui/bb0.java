@@ -1,84 +1,45 @@
 package org.telegram.ui;
 
-import android.graphics.PointF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bb0 implements r1.d {
+public final /* synthetic */ class bb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ oc0 b;
 
-    public /* synthetic */ bb0(Object obj, int i7) {
+    public /* synthetic */ bb0(oc0 oc0Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = oc0Var;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                qd0 qd0Var = ((de0) obj).c0;
-                if (qd0Var != null) {
-                    int i10 = qd0.G;
-                    View view = qd0Var.c;
-                    ViewGroup viewGroup = qd0Var.b;
-                    PointF pointF = qd0Var.E;
-                    jh.k.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.c10 c10Var = qd0Var.h;
-                    c10Var.setTranslationX(pointF.x);
-                    c10Var.setTranslationY(pointF.y);
-                    qd0Var.requestLayout();
-                    break;
-                }
+                this.b.N.m();
                 break;
             case 1:
-                il0 il0Var = (il0) obj;
-                float f12 = f10 / 100.0f;
-                il0Var.b = f12;
-                TextView textView = il0Var.d.V;
-                if (textView != null) {
-                    textView.setAlpha((f12 * 0.2f) + 0.8f);
-                }
-                il0Var.invalidate();
+                oc0 oc0Var = this.b;
+                oc0Var.O = null;
+                oc0Var.P = null;
+                oc0Var.o(true);
+                oc0Var.e.j(null, null, oc0Var.f, null);
+                xc xcVar = oc0Var.n;
+                org.telegram.ui.Components.nh0 nh0Var = oc0Var.K;
+                xcVar.setAnimation(nh0Var);
+                nh0Var.M(0);
+                oc0Var.M = true;
                 break;
             case 2:
-                jq0 jq0Var = (jq0) obj;
-                jq0Var.d0 = f10;
-                jq0Var.f0 = f11;
-                jq0Var.G();
-                break;
-            case 3:
-                cr0 cr0Var = (cr0) obj;
-                int L = cr0Var.e > cr0Var.f ? org.telegram.messenger.g0.L(48.0f) : 0;
-                org.telegram.ui.Components.k61 k61Var = cr0Var.s.q3;
-                int measuredHeight = cr0Var.getMeasuredHeight();
-                k61Var.h = (int) (((cr0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - L);
-                k61Var.i = measuredHeight;
-                View view2 = k61Var.v;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                yy0 yy0Var = (yy0) obj;
-                yy0Var.E = f10 / 1000.0f;
-                yy0Var.invalidate();
+                this.b.M = true;
                 break;
             default:
-                oz0 oz0Var = (oz0) obj;
-                org.telegram.ui.Components.k61 k61Var2 = oz0Var.r.P;
-                int measuredHeight2 = oz0Var.getMeasuredHeight();
-                k61Var2.h = (int) (((oz0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - 0);
-                k61Var2.i = measuredHeight2;
-                View view3 = k61Var2.v;
-                if (view3 != null) {
-                    view3.invalidate();
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    org.telegram.messenger.g0.I3(editTextBoldCursor);
                     break;
                 }
                 break;

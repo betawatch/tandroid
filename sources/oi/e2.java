@@ -2,7 +2,7 @@ package oi;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class e2 {
     public final long a;
@@ -12,11 +12,11 @@ public final class e2 {
     public final boolean e;
     public final boolean f;
     public final boolean g;
-    public final r h;
+    public final s h;
     public final ArrayList i;
     public final ArrayList j;
 
-    public e2(long j3, byte[] bArr, int i7, int i10, boolean z10, boolean z11, boolean z12, r rVar, ArrayList arrayList, ArrayList arrayList2) {
+    public e2(long j3, byte[] bArr, int i7, int i10, boolean z10, boolean z11, boolean z12, s sVar, ArrayList arrayList, ArrayList arrayList2) {
         this.a = j3;
         this.b = bArr;
         this.c = i7;
@@ -24,7 +24,7 @@ public final class e2 {
         this.e = z10;
         this.f = z11;
         this.g = z12;
-        this.h = rVar;
+        this.h = sVar;
         this.i = arrayList;
         this.j = arrayList2;
     }

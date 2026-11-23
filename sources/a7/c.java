@@ -9,24 +9,23 @@ import androidx.car.app.j;
 import h6.m;
 import j$.util.Objects;
 import l8.f;
-import m.o3;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o3 b;
+    public final /* synthetic */ ga.d b;
 
-    public c(o3 o3Var, int i7) {
+    public c(ga.d dVar, int i7) {
         this.a = i7;
         switch (i7) {
             case 1:
-                Objects.requireNonNull(o3Var);
-                this.b = o3Var;
+                Objects.requireNonNull(dVar);
+                this.b = dVar;
                 break;
             default:
-                Objects.requireNonNull(o3Var);
-                this.b = o3Var;
+                Objects.requireNonNull(dVar);
+                this.b = dVar;
                 break;
         }
     }
@@ -43,7 +42,7 @@ public final class c {
     public final void b() {
         switch (this.a) {
             case 0:
-                m mVar = (m) this.b.b;
+                m mVar = (m) this.b.a;
                 ViewGroup viewGroup = (ViewGroup) mVar.b;
                 f fVar = (f) mVar.c;
                 try {
@@ -63,7 +62,7 @@ public final class c {
                     throw new j(e10);
                 }
             default:
-                m mVar2 = (m) this.b.b;
+                m mVar2 = (m) this.b.a;
                 mVar2.getClass();
                 try {
                     f fVar2 = (f) mVar2.c;

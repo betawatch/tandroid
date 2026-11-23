@@ -1,32 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jz implements ValueAnimator.AnimatorUpdateListener {
+public final class jz extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pz b;
+    public final /* synthetic */ oz b;
 
-    public /* synthetic */ jz(pz pzVar, int i7) {
+    public /* synthetic */ jz(oz ozVar, int i7) {
         this.a = i7;
-        this.b = pzVar;
+        this.b = ozVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pz pzVar = this.b;
-                pzVar.y = floatValue;
-                pzVar.invalidate();
+                oz ozVar = this.b;
+                if (ozVar.C0 == animator) {
+                    ozVar.C0 = null;
+                    break;
+                }
                 break;
             default:
-                pz pzVar2 = this.b;
-                pzVar2.getClass();
-                pzVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pzVar2.invalidate();
+                oz ozVar2 = this.b;
+                ozVar2.V = ozVar2.d0;
+                ozVar2.c0 = ozVar2.g0;
+                ozVar2.W = ozVar2.e0;
+                ozVar2.a0 = ozVar2.f0;
+                ozVar2.d0 = -1;
+                ozVar2.e0 = -1;
+                ozVar2.f0 = -1;
+                ozVar2.g0 = -1;
                 break;
         }
     }

@@ -1,15 +1,9 @@
 package z2;
 
-import v4.f0;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public interface d {
-    public static final f0 D;
-
-    static {
-        f0 f0Var = new f0();
-        f0Var.a = new nb.a(6);
-        D = f0Var;
-    }
+    public static final nd0 D = new nd0(28);
 }

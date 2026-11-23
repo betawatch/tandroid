@@ -1,13 +1,13 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.b50;
 import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.ty;
-import org.telegram.ui.Components.yt;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.y40;
 import org.telegram.ui.yp;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,29 +39,29 @@ public final /* synthetic */ class j2 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                yt ytVar = (yt) this.c;
+                wt wtVar = (wt) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ytVar.d.setTranslationY(floatValue2);
+                wtVar.d.setTranslationY(floatValue2);
                 int i10 = this.b;
                 float f10 = i10;
                 float f11 = 1.0f - (floatValue2 / f10);
-                ytVar.S = f11;
-                if (i10 > 0 && ((i7 = ytVar.M) == 2 || i7 == 3)) {
-                    ytVar.d.setAlpha(f11);
+                wtVar.S = f11;
+                if (i10 > 0 && ((i7 = wtVar.M) == 2 || i7 == 3)) {
+                    wtVar.d.setAlpha(f11);
                 }
-                ytVar.c(floatValue2 - f10);
+                wtVar.c(floatValue2 - f10);
                 break;
             case 3:
-                ((ty) this.c).R0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((qy) this.c).R0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
-                b50 b50Var = (b50) this.c;
-                if (this.b == b50Var.u0) {
+                y40 y40Var = (y40) this.c;
+                if (this.b == y40Var.u0) {
                     float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     if (floatValue3 >= 0.5f) {
                         floatValue3 -= 1.0f;
                     }
-                    b50Var.x.setRotationY(floatValue3 * 180.0f);
+                    y40Var.x.setRotationY(floatValue3 * 180.0f);
                     break;
                 }
                 break;

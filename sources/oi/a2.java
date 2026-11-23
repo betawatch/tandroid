@@ -9,9 +9,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a2 extends Drawable implements Drawable.Callback {
     public final Drawable a;
@@ -34,12 +34,12 @@ public final class a2 extends Drawable implements Drawable.Callback {
         drawable.setCallback(this);
         paint.setColor(0);
         this.h = true;
-        a(m6.I.q());
+        a(n6.I.q());
     }
 
     public final void a(boolean z10) {
         this.n = z10;
-        this.b.setShadowLayer(org.telegram.messenger.g0.L(12.0f), 0.0f, org.telegram.messenger.g0.L(4.0f), m6.r1(z10 ? 0.3f : 0.1f, -16777216));
+        this.b.setShadowLayer(org.telegram.messenger.g0.L(12.0f), 0.0f, org.telegram.messenger.g0.L(4.0f), n6.r1(z10 ? 0.3f : 0.1f, -16777216));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
@@ -50,7 +50,7 @@ public final class a2 extends Drawable implements Drawable.Callback {
     */
     public final void draw(Canvas canvas) {
         float radius;
-        if (this.h && this.n != m6.I.q()) {
+        if (this.h && this.n != n6.I.q()) {
             a(!this.n);
         }
         boolean z10 = this.f;

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class wh implements org.telegram.ui.Components.tj0 {
     public final /* synthetic */ bn a;
@@ -18,7 +18,7 @@ public final class wh implements org.telegram.ui.Components.tj0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean f(float f10, float f11, int i7, View view) {
+    public final boolean g(float f10, float f11, int i7, View view) {
         boolean z10;
         boolean z11;
         org.telegram.ui.ActionBar.k kVar;
@@ -32,7 +32,7 @@ public final class wh implements org.telegram.ui.Components.tj0 {
                 bnVar.R4 = true;
                 if (view instanceof org.telegram.ui.Cells.v0) {
                     org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
-                    org.telegram.messenger.gj messageObject = v0Var.getMessageObject();
+                    org.telegram.messenger.fj messageObject = v0Var.getMessageObject();
                     if (messageObject != null) {
                         if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && v0Var.getMessageObject().D != 21 && !v0Var.getMessageObject().X4() && v0Var.getMessageObject().D != 30) {
                             z11 = false;
@@ -72,10 +72,10 @@ public final class wh implements org.telegram.ui.Components.tj0 {
     }
 
     @Override // org.telegram.ui.Components.tj0
-    public final /* synthetic */ void r(float f10) {
+    public final /* synthetic */ void l(float f10) {
     }
 
     @Override // org.telegram.ui.Components.tj0
-    public final /* synthetic */ void j() {
+    public final /* synthetic */ void h() {
     }
 }

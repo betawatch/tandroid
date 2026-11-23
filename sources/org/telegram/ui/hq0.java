@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class hq0 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        hi.x xVar;
+        hi.e0 e0Var;
         ArrayList arrayList;
         int i7;
         int i10;
@@ -51,7 +51,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 vq0 vq0Var = (vq0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) vq0Var.a.O0.getLayoutParams();
                 ((WindowManager) org.telegram.messenger.t0.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                int z10 = org.telegram.messenger.o10.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int z10 = org.telegram.messenger.m10.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = vq0Var.a;
                 int i14 = z10 + (!photoViewer.s ? org.telegram.messenger.g0.m : 0);
                 if (i14 != layoutParams.topMargin) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                     photoViewer.O0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) vq0Var.a.P0.getLayoutParams();
-                int z11 = org.telegram.messenger.o10.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int z11 = org.telegram.messenger.m10.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = vq0Var.a;
                 int i15 = z11 + (!photoViewer2.s ? org.telegram.messenger.g0.m : 0);
                 if (layoutParams2.topMargin != i15) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 }
                 break;
             case 2:
-                ((ai.j1) this.b).run();
+                ((ai.e1) this.b).run();
                 break;
             case 3:
                 k kVar = (k) this.b;
@@ -97,7 +97,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 g4 g4Var2 = q1Var.y;
                 View view = g4Var2.P;
                 if (view != null) {
-                    g4Var2.Q.addView(view, c8.ma.c(-1.0f, -1));
+                    g4Var2.Q.addView(view, c8.na.c(-1.0f, -1));
                     q1Var.y.Q.setVisibility(0);
                     break;
                 }
@@ -122,7 +122,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 int[] iArr = new int[i16];
                 int[] iArr2 = new int[i16];
                 k3 k3Var = g4Var3.v0[0];
-                if (k3Var != null && (xVar = k3Var.b) != null) {
+                if (k3Var != null && (e0Var = k3Var.b) != null) {
                     Point point = org.telegram.messenger.g0.q;
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(point.x, TLObject.FLAG_31);
                     int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31);
@@ -136,7 +136,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                             int i19 = z12 ? i17 - 1 : i17;
                             TL_iv.PageBlock pageBlock2 = (i19 < 0 || i19 >= arrayList2.size()) ? pageBlock : (TL_iv.PageBlock) arrayList2.get(i19);
                             if (pageBlock2 == null || pageBlock2.cachedHeight == 0 || pageBlock2.cachedWidth != View.MeasureSpec.getSize(makeMeasureSpec)) {
-                                v4.f1 a10 = e4Var.a(xVar, e4.I(pageBlock2));
+                                v4.f1 a10 = e4Var.a(e0Var, e4.I(pageBlock2));
                                 View view2 = a10.a;
                                 int i20 = i18;
                                 TL_iv.PageBlock pageBlock3 = pageBlock2;
@@ -190,22 +190,22 @@ public final /* synthetic */ class hq0 implements Runnable {
                 }
                 break;
             case 13:
-                x5 x5Var = (x5) this.b;
-                x5Var.d.clear();
-                x5Var.getMessagesController().u7.h(x5Var.e, x5Var.d);
-                x5Var.Z();
-                x5Var.finishFragment();
+                y5 y5Var = (y5) this.b;
+                y5Var.d.clear();
+                y5Var.getMessagesController().u7.h(y5Var.e, y5Var.d);
+                y5Var.Z();
+                y5Var.finishFragment();
                 break;
             case 14:
                 final a5 a5Var = (a5) this.b;
                 ArrayList d12 = org.telegram.messenger.g0.d1();
                 File file = (File) d12.get(0);
                 file.getAbsolutePath();
-                if (!TextUtils.isEmpty(org.telegram.messenger.cz.h0)) {
+                if (!TextUtils.isEmpty(org.telegram.messenger.bz.h0)) {
                     int size2 = d12.size();
                     while (i12 < size2) {
                         File file2 = (File) d12.get(i12);
-                        if (file2.getAbsolutePath().startsWith(org.telegram.messenger.cz.h0) && file2.canWrite()) {
+                        if (file2.getAbsolutePath().startsWith(org.telegram.messenger.bz.h0) && file2.canWrite()) {
                             file = file2;
                         } else {
                             i12++;
@@ -217,15 +217,15 @@ public final /* synthetic */ class hq0 implements Runnable {
                     final long blockSizeLong = statFs.getBlockSizeLong();
                     final long availableBlocksLong = statFs.getAvailableBlocksLong();
                     final long blockCountLong = statFs.getBlockCountLong();
-                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.c6
+                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.d6
                         @Override // java.lang.Runnable
                         public final void run() {
                             long j3 = blockCountLong;
                             long j10 = blockSizeLong;
-                            x6.l0 = Long.valueOf(j3 * j10);
+                            y6.l0 = Long.valueOf(j3 * j10);
                             Long valueOf = Long.valueOf(availableBlocksLong * j10);
-                            x6.m0 = valueOf;
-                            a5Var.a(x6.l0, valueOf);
+                            y6.m0 = valueOf;
+                            a5Var.a(y6.l0, valueOf);
                         }
                     });
                     break;
@@ -234,29 +234,29 @@ public final /* synthetic */ class hq0 implements Runnable {
                     return;
                 }
             case 15:
-                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.b;
-                x6.i0 = false;
-                long s02 = x6.s0(org.telegram.messenger.w7.j(4), 5);
-                long s03 = x6.s0(org.telegram.messenger.w7.j(4), 4);
-                long s04 = x6.s0(org.telegram.messenger.w7.j(100), 0) + x6.s0(org.telegram.messenger.w7.j(0), 0);
-                long s05 = x6.s0(org.telegram.messenger.w7.j(101), 0) + x6.s0(org.telegram.messenger.w7.j(2), 0);
-                long s06 = x6.s0(org.telegram.messenger.w7.j(5), 1) + x6.s0(org.telegram.messenger.w7.j(3), 1);
-                long s07 = x6.s0(org.telegram.messenger.w7.j(5), 2) + x6.s0(org.telegram.messenger.w7.j(3), 2);
-                long s08 = x6.s0(org.telegram.messenger.w7.j(4), 3) + x6.s0(new File(org.telegram.messenger.w7.j(4), "acache"), 0);
-                long s09 = x6.s0(org.telegram.messenger.w7.j(1), 0);
-                long s010 = x6.s0(org.telegram.messenger.w7.j(6), 0);
-                long s011 = x6.s0(org.telegram.messenger.g0.P0(), 1);
+                org.telegram.messenger.w10 w10Var = (org.telegram.messenger.w10) this.b;
+                y6.i0 = false;
+                long s02 = y6.s0(org.telegram.messenger.w7.j(4), 5);
+                long s03 = y6.s0(org.telegram.messenger.w7.j(4), 4);
+                long s04 = y6.s0(org.telegram.messenger.w7.j(100), 0) + y6.s0(org.telegram.messenger.w7.j(0), 0);
+                long s05 = y6.s0(org.telegram.messenger.w7.j(101), 0) + y6.s0(org.telegram.messenger.w7.j(2), 0);
+                long s06 = y6.s0(org.telegram.messenger.w7.j(5), 1) + y6.s0(org.telegram.messenger.w7.j(3), 1);
+                long s07 = y6.s0(org.telegram.messenger.w7.j(5), 2) + y6.s0(org.telegram.messenger.w7.j(3), 2);
+                long s08 = y6.s0(org.telegram.messenger.w7.j(4), 3) + y6.s0(new File(org.telegram.messenger.w7.j(4), "acache"), 0);
+                long s09 = y6.s0(org.telegram.messenger.w7.j(1), 0);
+                long s010 = y6.s0(org.telegram.messenger.w7.j(6), 0);
+                long s011 = y6.s0(org.telegram.messenger.g0.P0(), 1);
                 boolean z13 = org.telegram.messenger.s2.a;
                 long j3 = s02 + s03 + s05 + s09 + s04 + s06 + s07 + s08 + s010 + s011;
-                x6.k0 = Long.valueOf(j3);
-                x6.j0 = System.currentTimeMillis();
-                if (!x6.i0) {
-                    org.telegram.messenger.g0.g3(new a6(0, j3, y10Var));
+                y6.k0 = Long.valueOf(j3);
+                y6.j0 = System.currentTimeMillis();
+                if (!y6.i0) {
+                    org.telegram.messenger.g0.g3(new b6(0, j3, w10Var));
                     break;
                 }
                 break;
             case 16:
-                ((o6) this.b).dismiss();
+                ((p6) this.b).dismiss();
                 break;
             case 17:
                 t9 t9Var = (t9) ((m4) this.b).b;
@@ -306,7 +306,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 lbVar.getNotificationCenter().j(lbVar.L0);
                 break;
             case 22:
-                org.telegram.ui.Components.lc.e0((TLRPC.TL_error) this.b);
+                org.telegram.ui.Components.kc.e0((TLRPC.TL_error) this.b);
                 break;
             case 23:
                 ((boolean[]) this.b)[0] = true;
@@ -325,7 +325,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 ((org.telegram.ui.ActionBar.y0) this.b).performClick();
                 break;
             case 27:
-                ((org.telegram.ui.Components.a70) this.b).s();
+                ((org.telegram.ui.Components.x60) this.b).s();
                 break;
             case 28:
                 ((x) this.b).a(Boolean.FALSE);

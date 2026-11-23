@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.aj;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.ch;
-import org.telegram.ui.bh;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.zi;
+import org.telegram.ui.Components.bh;
 import org.telegram.ui.bn;
+import org.telegram.ui.ch;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class z0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -66,16 +66,16 @@ public final class z0 extends AnimatorListenerAdapter {
                 b1Var.invalidate();
                 break;
             case 1:
-                hi.k5 k5Var = (hi.k5) this.e;
-                k5Var.I0 = k5Var.J0;
-                k5Var.J0 = -1;
-                k5Var.G0.invalidate();
+                hi.v5 v5Var = (hi.v5) this.e;
+                v5Var.I0 = v5Var.J0;
+                v5Var.J0 = -1;
+                v5Var.G0.invalidate();
                 View view = (View) this.c;
                 if (view != null && ((View) this.d) != null) {
                     view.setVisibility(8);
                 }
-                if (animator == k5Var.L0) {
-                    k5Var.L0 = null;
+                if (animator == v5Var.L0) {
+                    v5Var.L0 = null;
                     break;
                 }
                 break;
@@ -84,7 +84,7 @@ public final class z0 extends AnimatorListenerAdapter {
                 bnVar.g6 = true;
                 ((org.telegram.ui.ActionBar.g2) bnVar).fragmentBeginToShow = true;
                 bnVar.sa = null;
-                org.telegram.messenger.g0.h3(new bh(this, 1), 32L);
+                org.telegram.messenger.g0.h3(new ch(this, 1), 32L);
                 super.onAnimationEnd(animator);
                 bnVar.m1.invalidate();
                 bnVar.m1.setSkipBackgroundDrawing(false);
@@ -105,9 +105,9 @@ public final class z0 extends AnimatorListenerAdapter {
                 bnVar2.p1.getAvatarImageView().setScaleX(1.0f);
                 bnVar2.p1.getAvatarImageView().setScaleY(1.0f);
                 bnVar2.p1.getAvatarImageView().setAlpha(1.0f);
-                ch chVar = bnVar2.b1;
-                if (chVar != null) {
-                    chVar.setAlpha(1.0f);
+                bh bhVar = bnVar2.b1;
+                if (bhVar != null) {
+                    bhVar.setAlpha(1.0f);
                     break;
                 }
                 break;
@@ -123,15 +123,15 @@ public final class z0 extends AnimatorListenerAdapter {
                         r1Var.ob = false;
                         r1Var.setVisibility(0);
                     }
-                    bj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
+                    aj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup != null) {
-                        aj ajVar = currentMessagesGroup.m;
-                        ajVar.n = 1.0f;
-                        ajVar.h = 0.0f;
-                        ajVar.f = 0.0f;
-                        ajVar.g = 0.0f;
-                        ajVar.e = 0.0f;
-                        ajVar.j = false;
+                        zi ziVar = currentMessagesGroup.m;
+                        ziVar.n = 1.0f;
+                        ziVar.h = 0.0f;
+                        ziVar.f = 0.0f;
+                        ziVar.g = 0.0f;
+                        ziVar.e = 0.0f;
+                        ziVar.j = false;
                     }
                 }
                 if (kVar.z.remove(f1Var)) {
@@ -141,16 +141,16 @@ public final class z0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                tg.h0 h0Var = (tg.h0) this.e;
-                h0Var.Q0 = h0Var.R0;
-                h0Var.R0 = -1;
-                h0Var.P0.invalidate();
+                tg.l0 l0Var = (tg.l0) this.e;
+                l0Var.Q0 = l0Var.R0;
+                l0Var.R0 = -1;
+                l0Var.P0.invalidate();
                 View view3 = (View) this.c;
                 if (view3 != null && ((View) this.d) != null) {
                     view3.setVisibility(8);
                 }
-                if (animator == h0Var.T0) {
-                    h0Var.T0 = null;
+                if (animator == l0Var.T0) {
+                    l0Var.T0 = null;
                     break;
                 }
                 break;
@@ -164,50 +164,50 @@ public final class z0 extends AnimatorListenerAdapter {
         View view2;
         switch (this.a) {
             case 1:
-                hi.k5 k5Var = (hi.k5) this.e;
-                tg.n1 n1Var = k5Var.N0;
+                hi.v5 v5Var = (hi.v5) this.e;
+                tg.r1 r1Var = v5Var.N0;
                 if (((View) this.c) != null && (view = (View) this.d) != null) {
                     view.setVisibility(0);
                 }
                 if (this.b != 2) {
-                    sg.h currentBrush = k5Var.y0.getCurrentBrush();
+                    sg.h currentBrush = v5Var.y0.getCurrentBrush();
                     if (!(currentBrush instanceof sg.b) && !(currentBrush instanceof sg.d)) {
-                        n1Var.b(0.05f, 1.0f);
+                        r1Var.b(0.05f, 1.0f);
                         break;
                     } else {
-                        n1Var.b(0.4f, 1.75f);
+                        r1Var.b(0.4f, 1.75f);
                         break;
                     }
                 } else {
-                    n1Var.b(0.5f, 2.0f);
+                    v5Var.setTextWeightRange(v5Var.t0);
                     break;
                 }
                 break;
             case 2:
                 super.onAnimationStart(animator);
                 i7 = ((org.telegram.ui.ActionBar.g2) ((bn) this.e)).currentAccount;
-                this.b = ls.f(i7).q(null, this.b, true);
+                this.b = ks.f(i7).q(null, this.b, true);
                 break;
             case 3:
                 ((pi.k) this.e).getClass();
                 break;
             case 4:
-                tg.h0 h0Var = (tg.h0) this.e;
-                tg.n1 n1Var2 = h0Var.V0;
+                tg.l0 l0Var = (tg.l0) this.e;
+                tg.r1 r1Var2 = l0Var.V0;
                 if (((View) this.c) != null && (view2 = (View) this.d) != null) {
                     view2.setVisibility(0);
                 }
                 if (this.b != 2) {
-                    sg.h currentBrush2 = h0Var.G0.getCurrentBrush();
+                    sg.h currentBrush2 = l0Var.G0.getCurrentBrush();
                     if (!(currentBrush2 instanceof sg.b) && !(currentBrush2 instanceof sg.d)) {
-                        n1Var2.b(0.05f, 1.0f);
+                        r1Var2.b(0.05f, 1.0f);
                         break;
                     } else {
-                        n1Var2.b(0.4f, 1.75f);
+                        r1Var2.b(0.4f, 1.75f);
                         break;
                     }
                 } else {
-                    n1Var2.b(0.5f, 2.0f);
+                    l0Var.setTextWeightRange(l0Var.C0);
                     break;
                 }
                 break;

@@ -11,7 +11,6 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
-import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -22,13 +21,13 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.as0;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class z0 extends l {
     public int i;
@@ -836,7 +835,7 @@ public final class z0 extends l {
                     if (Build.VERSION.SDK_INT < 30 || y0Var.s == 0 || this.n == null) {
                         a8.b(str2);
                     } else {
-                        Utilities.e.d(new es0((Object) this, (Object) y0Var, (Serializable) str2, 16), 700L);
+                        Utilities.e.d(new as0(this, y0Var, str2, 17), 700L);
                     }
                 }
                 int size = arrayList.size();
@@ -871,7 +870,7 @@ public final class z0 extends l {
             return 1;
         }
         try {
-            i7 = ((org.telegram.messenger.j0) np.u1(k10.t0).A7.v0.b).c;
+            i7 = ((org.telegram.messenger.j0) mp.u1(i10.t0).A7.v0.b).c;
         } catch (Exception unused) {
             i7 = 6;
         }

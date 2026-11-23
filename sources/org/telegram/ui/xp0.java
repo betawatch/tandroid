@@ -7,7 +7,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class xp0 extends Fade {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class xp0 extends Fade {
             case 0:
                 Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
                 if (this.b && !this.c && view == this.d.R1) {
-                    onAppear.addListener(new ay(this, 15));
+                    onAppear.addListener(new zx(this, 15));
                     ((ObjectAnimator) onAppear).addUpdateListener(new a3(this, 18));
                 }
                 return onAppear;
@@ -55,7 +55,7 @@ public final class xp0 extends Fade {
             case 1:
                 Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
                 if (!this.b && this.c && view == this.d.R1) {
-                    onDisappear.addListener(new ay(this, 16));
+                    onDisappear.addListener(new zx(this, 16));
                     ((ObjectAnimator) onDisappear).addUpdateListener(new a3(this, 19));
                 }
                 return onDisappear;

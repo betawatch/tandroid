@@ -1,62 +1,179 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.os.AsyncTask;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Locale;
+import java.util.Scanner;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class cl0 implements kl0 {
-    public final /* synthetic */ Runnable a;
-    public final /* synthetic */ ml0 b;
+public final class cl0 extends AsyncTask {
+    public final /* synthetic */ uc.a a;
+    public final /* synthetic */ kl0 b;
 
-    public cl0(ml0 ml0Var, Runnable runnable) {
-        this.b = ml0Var;
-        this.a = runnable;
+    public cl0(kl0 kl0Var, uc.a aVar) {
+        this.b = kl0Var;
+        this.a = aVar;
     }
 
-    @Override // org.telegram.ui.kl0
-    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        String str3;
-        ml0 ml0Var = this.b;
-        ml0Var.z0 = tL_paymentSavedCredentialsCard;
-        ml0Var.x0 = str;
-        ml0Var.V0 = z10;
-        ml0Var.y0 = str2;
-        ml0Var.K0 = tL_inputPaymentCredentialsGooglePay;
-        org.telegram.ui.Cells.z8[] z8VarArr = ml0Var.Z;
-        org.telegram.ui.Cells.z8 z8Var = z8VarArr[0];
-        if (z8Var != null) {
-            z8Var.setVisibility(0);
-            org.telegram.ui.Cells.z8 z8Var2 = z8VarArr[0];
-            String str4 = ml0Var.y0;
-            if (str4 == null || str4.length() <= 1) {
-                str3 = ml0Var.y0;
-            } else {
-                str3 = ml0Var.y0.substring(0, 1).toUpperCase() + ml0Var.y0.substring(1);
+    /* JADX WARN: Can't wrap try/catch for region: R(11:0|1|(2:2|3)|(9:(13:46|47|(3:49|50|(1:52))|(1:7)(2:42|(1:44)(1:45))|8|9|10|11|12|13|14|15|(3:23|24|25)(3:19|20|21))|12|13|14|15|(1:17)|23|24|25)|5|(0)(0)|8|9|10|11|(2:(0)|(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0134, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x016c, code lost:
+    
+        org.telegram.messenger.a8.g(r0, true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x016f, code lost:
+    
+        if (r5 == null) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0084, code lost:
+    
+        if (r5.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L14;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0098 A[Catch: all -> 0x0087, Exception -> 0x0094, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x008e A[Catch: all -> 0x0087, Exception -> 0x0094, TRY_ENTER, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
+    /* JADX WARN: Type inference failed for: r8v0 */
+    /* JADX WARN: Type inference failed for: r8v1, types: [java.net.HttpURLConnection] */
+    /* JADX WARN: Type inference failed for: r8v2 */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        HttpURLConnection httpURLConnection;
+        ?? r82;
+        JSONObject jSONObject;
+        String string;
+        int responseCode;
+        kl0 kl0Var = this.b;
+        uc.a aVar = this.a;
+        try {
+            try {
+                try {
+                    jSONObject = new JSONObject();
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("number", aVar.a);
+                    jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", aVar.c));
+                    jSONObject2.put("expiration_year", "" + aVar.d);
+                    jSONObject2.put("security_code", "" + aVar.b);
+                    jSONObject.put("card", jSONObject2);
+                } catch (Throwable th2) {
+                    th = th2;
+                    r82 = aVar;
+                    if (r82 != 0) {
+                        r82.disconnect();
+                    }
+                    throw th;
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                r82 = 0;
+                if (r82 != 0) {
+                }
+                throw th;
             }
-            z8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.hd.N0(2131747220, null), true);
-            org.telegram.ui.Cells.z8 z8Var3 = z8VarArr[1];
-            if (z8Var3 != null) {
-                z8Var3.setVisibility(0);
+        } catch (Exception e10) {
+            e = e10;
+            httpURLConnection = null;
+        }
+        try {
+            if (kl0Var.D0.native_params != null) {
+                try {
+                    string = new JSONObject(kl0Var.D0.native_params.data).getString("tokenize_url");
+                    if (string != null) {
+                        try {
+                            if (string.startsWith("https://")) {
+                            }
+                        } catch (Exception unused) {
+                        }
+                    }
+                } catch (Exception unused2) {
+                }
+                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : kl0Var.D0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+                httpURLConnection.setConnectTimeout(30000);
+                httpURLConnection.setReadTimeout(80000);
+                httpURLConnection.setUseCaches(false);
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setRequestProperty("Content-Type", "application/json");
+                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", kl0Var.k0);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+                outputStream.close();
+                responseCode = httpURLConnection.getResponseCode();
+                if (responseCode >= 200 || responseCode >= 300) {
+                    boolean z10 = org.telegram.messenger.s2.a;
+                    StringBuilder sb2 = new StringBuilder("");
+                    InputStream errorStream = httpURLConnection.getErrorStream();
+                    String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
+                    errorStream.close();
+                    sb2.append(next);
+                    org.telegram.messenger.a8.d(sb2.toString());
+                    httpURLConnection.disconnect();
+                    return null;
+                }
+                JSONObject jSONObject3 = new JSONObject();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
+                inputStream.close();
+                jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
+                jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
+                String jSONObject4 = jSONObject3.toString();
+                httpURLConnection.disconnect();
+                return jSONObject4;
             }
+            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+            outputStream.close();
+            responseCode = httpURLConnection.getResponseCode();
+            if (responseCode >= 200) {
+            }
+            boolean z102 = org.telegram.messenger.s2.a;
+            StringBuilder sb22 = new StringBuilder("");
+            InputStream errorStream2 = httpURLConnection.getErrorStream();
+            String next3 = new Scanner(errorStream2, "UTF-8").useDelimiter("\\A").next();
+            errorStream2.close();
+            sb22.append(next3);
+            org.telegram.messenger.a8.d(sb22.toString());
+            httpURLConnection.disconnect();
+            return null;
+        } finally {
         }
-        Runnable runnable = this.a;
-        if (runnable != null) {
-            runnable.run();
+        string = null;
+        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : kl0Var.D0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+        httpURLConnection.setConnectTimeout(30000);
+        httpURLConnection.setReadTimeout(80000);
+        httpURLConnection.setUseCaches(false);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", kl0Var.k0);
+        OutputStream outputStream2 = httpURLConnection.getOutputStream();
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        kl0 kl0Var = this.b;
+        if (kl0Var.R0) {
+            return;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.kl0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.kl0
-    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-    }
-
-    @Override // org.telegram.ui.kl0
-    public final /* synthetic */ void b() {
+        if (str == null) {
+            org.telegram.ui.Components.b5.t0(org.telegram.messenger.gd.N0(2131747210, null), kl0Var);
+        } else {
+            kl0Var.x0 = str;
+            kl0Var.z0();
+        }
+        kl0Var.N0(true, false);
+        kl0Var.J0(false);
     }
 }

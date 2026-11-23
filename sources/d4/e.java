@@ -1,6 +1,6 @@
 package d4;
 
-import a8.la;
+import a8.ma;
 import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -9,9 +9,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
     public static final boolean[] A;
@@ -74,13 +74,13 @@ public final class e {
     */
     public static int c(int i7, int i10, int i11, int i12) {
         int i13;
-        la.j(i7, 4);
-        la.j(i10, 4);
-        la.j(i11, 4);
-        la.j(i12, 4);
+        ma.j(i7, 4);
+        ma.j(i10, 4);
+        ma.j(i11, 4);
+        ma.j(i12, 4);
         if (i12 != 0 && i12 != 1) {
             if (i12 == 2) {
-                i13 = ls.L1;
+                i13 = ks.L1;
             } else if (i12 == 3) {
                 i13 = 0;
             }

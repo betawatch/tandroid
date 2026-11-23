@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ik0 implements v4.t0 {
     public RecyclerView a;
@@ -18,7 +18,7 @@ public final class ik0 implements v4.t0 {
     public final hk0 k;
     public int b = -1;
     public final int j = org.telegram.messenger.g0.L(80.0f);
-    public final ik l = new ik(this, 15);
+    public final rc l = new rc(this, 17);
 
     public ik0(hk0 hk0Var) {
         this.k = hk0Var;
@@ -31,13 +31,13 @@ public final class ik0 implements v4.t0 {
         float y10 = motionEvent.getY();
         int action = motionEvent.getAction();
         hk0 hk0Var = this.k;
-        ik ikVar = this.l;
+        rc rcVar = this.l;
         if (action == 1) {
             this.c = false;
             this.g = false;
             this.h = false;
-            org.telegram.messenger.g0.r(ikVar);
-            hk0Var.e(false);
+            org.telegram.messenger.g0.r(rcVar);
+            hk0Var.f(false);
             return;
         }
         if (action != 2) {
@@ -49,20 +49,20 @@ public final class ik0 implements v4.t0 {
                 this.h = false;
                 if (!this.g) {
                     this.g = true;
-                    org.telegram.messenger.g0.r(ikVar);
-                    org.telegram.messenger.g0.g3(ikVar);
+                    org.telegram.messenger.g0.r(rcVar);
+                    org.telegram.messenger.g0.g3(rcVar);
                 }
                 this.i = ((int) (this.d - (y10 - f10))) / 2;
             } else if (y10 >= this.e && y10 <= this.f) {
                 this.g = false;
                 if (!this.h) {
                     this.h = true;
-                    org.telegram.messenger.g0.r(ikVar);
-                    org.telegram.messenger.g0.g3(ikVar);
+                    org.telegram.messenger.g0.r(rcVar);
+                    org.telegram.messenger.g0.g3(rcVar);
                 }
                 this.i = ((int) ((y10 + this.f) - (this.e + r11))) / 2;
             } else if (this.g || this.h) {
-                org.telegram.messenger.g0.r(ikVar);
+                org.telegram.messenger.g0.r(rcVar);
                 this.g = false;
                 this.h = false;
             }
@@ -71,7 +71,7 @@ public final class ik0 implements v4.t0 {
             return;
         }
         this.b = R;
-        hk0Var.l(E, !hk0Var.m(R));
+        hk0Var.n(E, !hk0Var.o(R));
     }
 
     @Override // v4.t0
@@ -91,7 +91,7 @@ public final class ik0 implements v4.t0 {
             this.g = false;
             this.h = false;
             org.telegram.messenger.g0.r(this.l);
-            this.k.e(false);
+            this.k.f(false);
         }
         return z10;
     }
@@ -105,12 +105,12 @@ public final class ik0 implements v4.t0 {
         this.g = false;
         this.h = false;
         hk0 hk0Var = this.k;
-        if (!hk0Var.f(i7)) {
+        if (!hk0Var.g(i7)) {
             this.c = false;
             return;
         }
-        hk0Var.e(true);
-        hk0Var.l(view, z10);
+        hk0Var.f(true);
+        hk0Var.n(view, z10);
         this.c = true;
         this.b = i7;
     }

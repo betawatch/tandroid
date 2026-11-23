@@ -19,14 +19,14 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.w60;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.t60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class t2 extends FrameLayout implements b6 {
+public abstract class t2 extends FrameLayout implements c6 {
     public float E;
     public boolean F;
     public final Paint G;
@@ -72,9 +72,9 @@ public abstract class t2 extends FrameLayout implements b6 {
         this.H.r0();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        this.H.E(hashSet);
+        this.H.D(hashSet);
     }
 
     public final void b(float f10, float f11) {
@@ -93,9 +93,9 @@ public abstract class t2 extends FrameLayout implements b6 {
         ofFloat.addUpdateListener(new r2(this, 1));
         this.h.playTogether(ObjectAnimator.ofFloat(w2Var.b, "translationY", 0.0f), ofFloat);
         this.h.setDuration((int) ((Math.max(0.0f, r1) / org.telegram.messenger.g0.a1(false, 0.8f)) * 250.0f));
-        this.h.setInterpolator(nr.f);
+        this.h.setInterpolator(kr.f);
         this.h.addListener(new s2(this, i7));
-        ls.e().k(ls.j1, 512);
+        ks.e().k(ks.j1, 512);
         this.h.start();
     }
 
@@ -106,7 +106,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         if (i7 >= 26) {
             int i10 = w2Var.G0;
             if (i10 >= 0) {
-                paint.setColor(m6.w0(i10, w2Var.J0));
+                paint.setColor(n6.w0(i10, w2Var.J0));
             } else {
                 paint.setColor(w2Var.H0);
             }
@@ -158,7 +158,7 @@ public abstract class t2 extends FrameLayout implements b6 {
             if (!w2Var.f0(motionEvent)) {
                 int i11 = 3;
                 int i12 = 2;
-                if (w2Var.J(motionEvent) || this.F) {
+                if (w2Var.I(motionEvent) || this.F) {
                     if (motionEvent != null && ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && !this.f && !this.e && motionEvent.getPointerCount() == 1)) {
                         this.F = true;
                         this.b = (int) motionEvent.getX();
@@ -194,13 +194,13 @@ public abstract class t2 extends FrameLayout implements b6 {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.E, getMeasuredWidth());
                             ofFloat.addUpdateListener(new r2(this, i11));
                             ofFloat.addListener(new s2(this, i12));
-                            nr nrVar = nr.h;
-                            ofFloat.setInterpolator(nrVar);
+                            kr krVar = kr.h;
+                            ofFloat.setInterpolator(krVar);
                             ofFloat.setDuration(320L);
                             ofFloat.start();
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
                             ofFloat2.addUpdateListener(new r2(this, 4));
-                            ofFloat2.setInterpolator(nrVar);
+                            ofFloat2.setInterpolator(krVar);
                             ofFloat2.setDuration(320L);
                             ofFloat2.start();
                         } else {
@@ -209,7 +209,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(max, 0.0f);
                             ofFloat3.addUpdateListener(new r2(this, i12));
                             ofFloat3.addListener(new s2(this, i10));
-                            ofFloat3.setInterpolator(nr.f);
+                            ofFloat3.setInterpolator(kr.f);
                             ofFloat3.setDuration(220L);
                             ofFloat3.start();
                         }
@@ -218,7 +218,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                         this.d = -1;
                         this.F = false;
                     }
-                } else if (w2Var.I() && motionEvent != null && ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && !this.f && !this.e && motionEvent.getPointerCount() == 1)) {
+                } else if (w2Var.H() && motionEvent != null && ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && !this.f && !this.e && motionEvent.getPointerCount() == 1)) {
                     this.b = (int) motionEvent.getX();
                     int y11 = (int) motionEvent.getY();
                     this.c = y11;
@@ -233,7 +233,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                     if (velocityTracker != null) {
                         velocityTracker.clear();
                     }
-                } else if (w2Var.G() && motionEvent != null && motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.d) {
+                } else if (w2Var.F() && motionEvent != null && motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.d) {
                     if (this.a == null) {
                         this.a = VelocityTracker.obtain();
                     }
@@ -273,7 +273,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                     }
                     this.d = -1;
                 }
-                if ((z10 || !this.e) && !this.f && (w2Var.G() || w2Var.J(motionEvent))) {
+                if ((z10 || !this.e) && !this.f && (w2Var.F() || w2Var.I(motionEvent))) {
                 }
             }
             return true;
@@ -305,7 +305,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         if (i12 >= 26) {
             int i13 = w2Var.G0;
             if (i13 >= 0) {
-                paint3.setColor(m6.w0(i13, w2Var.J0));
+                paint3.setColor(n6.w0(i13, w2Var.J0));
             } else {
                 paint3.setColor(w2Var.H0);
             }
@@ -331,7 +331,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         if (w2Var.r) {
             if ((getMeasuredHeight() - w2Var.b.getY()) - w2Var.b.getMeasuredHeight() > org.telegram.messenger.g0.L(48.0f)) {
                 int i14 = w2Var.b0;
-                paint3.setColor(i14 >= 0 ? m6.w0(i14, w2Var.J0) : 0);
+                paint3.setColor(i14 >= 0 ? n6.w0(i14, w2Var.J0) : 0);
                 canvas.drawRect(w2Var.b.getLeft() + w2Var.u0, w2Var.b.getMeasuredHeight() + w2Var.b.getY(), w2Var.b.getRight() - w2Var.u0, getMeasuredHeight(), paint3);
                 return;
             }
@@ -353,7 +353,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                 }
                 if (w2Var.b.getY() + w2Var.b.getMeasuredHeight() >= getMeasuredHeight()) {
                     int i15 = w2Var.b0;
-                    paint.setColor(i15 >= 0 ? m6.w0(i15, w2Var.J0) : 0);
+                    paint.setColor(i15 >= 0 ? n6.w0(i15, w2Var.J0) : 0);
                     canvas.drawRect(w2Var.b.getLeft() + w2Var.u0, w2Var.b.getMeasuredHeight() + w2Var.b.getY(), w2Var.b.getRight() - w2Var.u0, getMeasuredHeight(), paint);
                     return;
                 }
@@ -415,7 +415,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         super.onDraw(canvas2);
         if (w2Var.n && w2Var.h != null && w2Var.f != 0) {
             int i7 = w2Var.b0;
-            paint.setColor(i7 >= 0 ? m6.w0(i7, w2Var.J0) : 0);
+            paint.setColor(i7 >= 0 ? n6.w0(i7, w2Var.J0) : 0);
             canvas2.drawRect(w2Var.b.getLeft() + w2Var.u0, (getMeasuredHeight() - w2Var.f) - (w2Var.n ? w2Var.R() : 0), w2Var.b.getRight() - w2Var.u0, getMeasuredHeight() - (w2Var.n ? w2Var.R() : 0), paint);
         }
         w2Var.d0();
@@ -427,7 +427,7 @@ public abstract class t2 extends FrameLayout implements b6 {
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         w2 w2Var = this.H;
-        return (w2Var.G() || w2Var.J(motionEvent)) ? d(motionEvent, true) : super.onInterceptTouchEvent(motionEvent);
+        return (w2Var.F() || w2Var.I(motionEvent)) ? d(motionEvent, true) : super.onInterceptTouchEvent(motionEvent);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:53:0x019b  */
@@ -440,7 +440,7 @@ public abstract class t2 extends FrameLayout implements b6 {
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int i13;
         int i14;
-        j6.o oVar;
+        i6.g gVar;
         int i15;
         int i16;
         int i17;
@@ -514,7 +514,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                     if (i27 == -1) {
                         i27 = 51;
                     }
-                    int i28 = i27 & ls.x1;
+                    int i28 = i27 & ks.x1;
                     int i29 = i27 & 7;
                     if (i29 == i24) {
                         i15 = (((i14 - i13) - measuredWidth2) / 2) + layoutParams.leftMargin;
@@ -554,15 +554,15 @@ public abstract class t2 extends FrameLayout implements b6 {
             i26++;
             i24 = 1;
         }
-        if (w2Var.I == 0 && (oVar = w2Var.H) != null && !w2Var.E) {
-            org.telegram.messenger.g0.r(oVar);
+        if (w2Var.I == 0 && (gVar = w2Var.H) != null && !w2Var.E) {
+            org.telegram.messenger.g0.r(gVar);
             w2Var.H.run();
             w2Var.H = null;
         }
         if (w2Var.E && w2Var.d) {
-            j6.o oVar2 = w2Var.H;
-            if (oVar2 != null) {
-                org.telegram.messenger.g0.r(oVar2);
+            i6.g gVar2 = w2Var.H;
+            if (gVar2 != null) {
+                org.telegram.messenger.g0.r(gVar2);
                 w2Var.H.run();
             }
             w2Var.E = false;
@@ -663,7 +663,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                 for (int i16 = 0; i16 < childCount; i16++) {
                     View childAt = getChildAt(i16);
                     if (childAt.getVisibility() != 8 && childAt != w2Var.b) {
-                        if (childAt instanceof w60) {
+                        if (childAt instanceof t60) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), 0);
                         } else if (!w2Var.l0(childAt, i15, i14)) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30), 0);
@@ -756,7 +756,7 @@ public abstract class t2 extends FrameLayout implements b6 {
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final boolean onStartNestedScroll(View view, View view2, int i7) {
         w2 w2Var = this.H;
-        return !w2Var.J && w2Var.r0 && i7 == 2 && !w2Var.G();
+        return !w2Var.J && w2Var.r0 && i7 == 2 && !w2Var.F();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -782,7 +782,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         super.requestDisallowInterceptTouchEvent(z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         w2 w2Var = this.H;
         try {

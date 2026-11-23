@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class e0 extends zj0 {
     public final ArrayList r;
@@ -21,10 +21,10 @@ public final class e0 extends zj0 {
         this.x = h0Var;
         ArrayList arrayList = new ArrayList();
         this.r = arrayList;
-        int i7 = k10.t0;
+        int i7 = i10.t0;
         this.s = i7;
         this.w = context;
-        arrayList.addAll(v1.f(i7).e());
+        arrayList.addAll(w1.f(i7).e());
     }
 
     @Override // org.telegram.ui.Components.kj0
@@ -83,16 +83,16 @@ public final class e0 extends zj0 {
     @Override // org.telegram.ui.Components.zj0
     public final void W(int i7, int i10, v4.f1 f1Var) {
         if (f1Var.f == 0) {
-            r1 r1Var = (r1) f1Var.a;
+            s1 s1Var = (s1) f1Var.a;
             Object O = O(i7, i10);
             boolean z10 = true;
             if (i7 == 1 && i10 == M(i7) - 1) {
                 z10 = false;
             }
-            if (O instanceof u1) {
-                u1 u1Var = (u1) O;
-                r1Var.a(u1Var, null, z10);
-                r1Var.d.a(this.x.x.contains(Integer.valueOf(u1Var.a)), false);
+            if (O instanceof v1) {
+                v1 v1Var = (v1) O;
+                s1Var.a(v1Var, null, z10);
+                s1Var.d.a(this.x.x.contains(Integer.valueOf(v1Var.a)), false);
             }
         }
     }
@@ -101,25 +101,25 @@ public final class e0 extends zj0 {
     public final void f() {
         ArrayList arrayList = this.r;
         arrayList.clear();
-        arrayList.addAll(v1.f(this.s).e());
+        arrayList.addAll(w1.f(this.s).e());
         X(false);
         this.x.Q();
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View r1Var;
+        View s1Var;
         Context context = this.w;
         if (i7 == 0) {
-            r1Var = new r1(context, this.x.a, false);
+            s1Var = new s1(context, this.x.a, false);
         } else if (i7 != 1) {
-            r1Var = new View(context);
-            r1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setTag(-33024);
         } else {
-            r1Var = new View(context);
-            r1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
-            r1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+            s1Var.setTag(-33024);
         }
-        return new mj0(r1Var);
+        return new mj0(s1Var);
     }
 }

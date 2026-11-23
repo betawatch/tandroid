@@ -8,14 +8,14 @@ import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     @Override // android.service.media.MediaBrowserService, android.app.Service
     public final void onCreate() {
         super.onCreate();
         t0.w();
-        setSessionToken((MediaSession.Token) ((android.support.v4.media.session.u) rz.a(this).b.b).c.b);
+        setSessionToken((MediaSession.Token) ((android.support.v4.media.session.u) pz.a(this).b.b).c.b);
     }
 
     @Override // android.service.media.MediaBrowserService
@@ -24,8 +24,8 @@ public class MusicBrowserService extends MediaBrowserService {
             return null;
         }
         if (1000 != i7 && Process.myUid() != i7) {
-            HashSet hashSet = at.a;
-            if (i7 != 1000 && i7 != Process.myUid() && !at.a.contains(str)) {
+            HashSet hashSet = zs.a;
+            if (i7 != 1000 && i7 != Process.myUid() && !zs.a.contains(str)) {
                 PackageManager packageManager = getPackageManager();
                 try {
                     if (packageManager.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", str) != 0) {
@@ -38,11 +38,11 @@ public class MusicBrowserService extends MediaBrowserService {
                 }
             }
         }
-        rz.a(this).getClass();
-        if (rz.b()) {
+        pz.a(this).getClass();
+        if (pz.b()) {
             return null;
         }
-        rz.a(this).getClass();
+        pz.a(this).getClass();
         Bundle bundle2 = new Bundle();
         bundle2.putBoolean("android.media.browse.CONTENT_STYLE_SUPPORTED", true);
         bundle2.putInt("android.media.browse.CONTENT_STYLE_BROWSABLE_HINT", 2);
@@ -52,13 +52,13 @@ public class MusicBrowserService extends MediaBrowserService {
 
     @Override // android.service.media.MediaBrowserService
     public final void onLoadChildren(String str, MediaBrowserService.Result result) {
-        rz a10 = rz.a(this);
+        pz a10 = pz.a(this);
         a10.getClass();
-        if (!rz.b()) {
+        if (!pz.b()) {
             result.detach();
             a10.c(str, new j1(result, 13));
         } else {
-            Toast.makeText(getApplicationContext(), hd.N0(2131751098, null), 1).show();
+            Toast.makeText(getApplicationContext(), gd.N0(2131751098, null), 1).show();
             stopSelf();
             result.detach();
         }

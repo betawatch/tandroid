@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v2 {
     public final int a;
@@ -52,11 +52,11 @@ public final class v2 {
         if (i7 == 3) {
             return 6;
         }
-        return cz.G;
+        return bz.G;
     }
 
     public static String f(int i7) {
-        return i7 == 5 ? hd.G(1, "Minutes", new Object[0]) : i7 == 3 ? hd.G(1, "Days", new Object[0]) : i7 == 6 ? hd.G(2, "Days", new Object[0]) : i7 == 0 ? hd.G(1, "Weeks", new Object[0]) : i7 == 1 ? hd.G(1, "Months", new Object[0]) : hd.N0(2131753848, null);
+        return i7 == 5 ? gd.G(1, "Minutes", new Object[0]) : i7 == 3 ? gd.G(1, "Days", new Object[0]) : i7 == 6 ? gd.G(2, "Days", new Object[0]) : i7 == 0 ? gd.G(1, "Weeks", new Object[0]) : i7 == 1 ? gd.G(1, "Months", new Object[0]) : gd.N0(2131753848, null);
     }
 
     public final int c(int i7) {
@@ -65,17 +65,17 @@ public final class v2 {
         if (!z10) {
             this.b = true;
             for (int i10 = 0; i10 < 4; i10++) {
-                iArr[i10] = cz.q().getInt(i5.c.i(i10, "keep_media_type_"), b(i10));
+                iArr[i10] = bz.q().getInt(i5.c.i(i10, "keep_media_type_"), b(i10));
             }
         }
         int i11 = iArr[i7];
-        return i11 == -1 ? cz.G : i11;
+        return i11 == -1 ? bz.G : i11;
     }
 
     public final ArrayList d(int i7) {
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
-        String string = k10.i(this.a).k().getString("keep_media_exceptions_" + i7, "");
+        String string = i10.i(this.a).k().getString("keep_media_exceptions_" + i7, "");
         if (TextUtils.isEmpty(string)) {
             return arrayList;
         }
@@ -107,11 +107,11 @@ public final class v2 {
     public final void g(ArrayList arrayList) {
         int i7;
         int i10 = this.a;
-        f8 f8Var = w7.G(i10).d;
-        f8Var.getClass();
+        e8 e8Var = w7.G(i10).d;
+        e8Var.getClass();
         CountDownLatch countDownLatch = new CountDownLatch(1);
         LongSparseArray longSparseArray = new LongSparseArray();
-        f8Var.h(new ul(f8Var, arrayList, longSparseArray, countDownLatch, 7));
+        e8Var.h(new tl(e8Var, arrayList, longSparseArray, countDownLatch, 7));
         try {
             countDownLatch.await();
         } catch (InterruptedException e10) {
@@ -125,9 +125,9 @@ public final class v2 {
                 i7 = 0;
             } else {
                 long j3 = -keyAt;
-                TLRPC.Chat O0 = np.u1(i10).O0(Long.valueOf(j3));
+                TLRPC.Chat O0 = mp.u1(i10).O0(Long.valueOf(j3));
                 if (O0 == null) {
-                    O0 = ur.a0(i10).P(j3);
+                    O0 = tr.a0(i10).P(j3);
                 }
                 i7 = O0 == null ? -1 : v3.T(O0) ? 2 : 1;
             }
@@ -149,7 +149,7 @@ public final class v2 {
         boolean isEmpty = arrayList.isEmpty();
         int i11 = this.a;
         if (isEmpty) {
-            k10.i(i11).k().edit().remove(i10).apply();
+            i10.i(i11).k().edit().remove(i10).apply();
             return;
         }
         int size = arrayList.size();
@@ -159,7 +159,7 @@ public final class v2 {
             allocate.putLong(((t2) arrayList.get(i12)).a);
             allocate.putInt(((t2) arrayList.get(i12)).b);
         }
-        k10.i(i11).k().edit().putString(i10, Utilities.f(allocate.array())).apply();
+        i10.i(i11).k().edit().putString(i10, Utilities.f(allocate.array())).apply();
         allocate.clear();
     }
 }

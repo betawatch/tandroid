@@ -7,25 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nh0;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final /* synthetic */ g2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ gj d;
+    public final /* synthetic */ fj d;
     public final /* synthetic */ bn e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
@@ -37,13 +37,13 @@ public final class i0 extends FrameLayout {
     public final /* synthetic */ l0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(l0 l0Var, Context context, g2 g2Var, View view, boolean z10, gj gjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
+    public i0(l0 l0Var, Context context, g2 g2Var, View view, boolean z10, fj fjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
         super(context);
         this.y = l0Var;
         this.a = g2Var;
         this.b = view;
         this.c = z10;
-        this.d = gjVar;
+        this.d = fjVar;
         this.e = bnVar;
         this.f = i7;
         this.h = i10;
@@ -56,7 +56,7 @@ public final class i0 extends FrameLayout {
 
     /* JADX WARN: Code restructure failed: missing block: B:122:0x0373, code lost:
     
-        if (r24.y.c.getImageReceiver().B().l0 == false) goto L171;
+        if (r24.y.c.getImageReceiver().C().l0 == false) goto L171;
      */
     /* JADX WARN: Code restructure failed: missing block: B:126:0x038d, code lost:
     
@@ -64,11 +64,11 @@ public final class i0 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0539, code lost:
     
-        if (((int) org.telegram.messenger.o10.w(r24.y.b.getImageReceiver().B().b0, r24.y.b.getImageReceiver().B().e[0], r8, r8)) < r6.b) goto L260;
+        if (((int) org.telegram.messenger.m10.w(r24.y.b.getImageReceiver().C().b0, r24.y.b.getImageReceiver().C().e[0], r8, r8)) < r6.b) goto L260;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03b5, code lost:
     
-        if (r24.y.b.getImageReceiver().B().l0 == false) goto L197;
+        if (r24.y.b.getImageReceiver().C().l0 == false) goto L197;
      */
     /* JADX WARN: Code restructure failed: missing block: B:238:0x03ca, code lost:
     
@@ -83,7 +83,7 @@ public final class i0 extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:48:0x0139  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x02c2  */
     /* JADX WARN: Type inference failed for: r4v44, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.hc] */
+    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.gc] */
     /* JADX WARN: Type inference failed for: r9v3 */
     /* JADX WARN: Type inference failed for: r9v4 */
     @Override // android.view.ViewGroup, android.view.View
@@ -111,7 +111,7 @@ public final class i0 extends FrameLayout {
         n0 n0Var;
         int paddingTop;
         bn bnVar;
-        gj messageObject;
+        fj messageObject;
         l0 l0Var2 = this.y;
         final int i10 = 0;
         if (l0Var2.l) {
@@ -184,7 +184,7 @@ public final class i0 extends FrameLayout {
         } else {
             view = this.b;
         }
-        float L = this.c ? org.telegram.messenger.g0.L(cz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(14.0f);
+        float L = this.c ? org.telegram.messenger.g0.L(bz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(14.0f);
         final int i13 = 1;
         if (view != null) {
             view.getLocationInWindow(this.y.j);
@@ -268,16 +268,16 @@ public final class i0 extends FrameLayout {
                 f27 = (getMeasuredWidth() + this.y.j[0]) - this.f;
             }
         }
-        nr nrVar = nr.f;
-        float interpolation = nrVar.getInterpolation(this.y.h);
+        kr krVar = kr.f;
+        float interpolation = krVar.getInterpolation(this.y.h);
         if (this.h == 2) {
-            f13 = nr.h.getInterpolation(interpolation);
-            f14 = nrVar.getInterpolation(interpolation);
+            f13 = kr.h.getInterpolation(interpolation);
+            f14 = krVar.getInterpolation(interpolation);
             l0Var = null;
         } else if (this.n) {
             l0Var = null;
-            f13 = nr.h.getInterpolation(this.y.g);
-            f14 = nrVar.getInterpolation(this.y.g);
+            f13 = kr.h.getInterpolation(this.y.g);
+            f14 = krVar.getInterpolation(this.y.g);
         } else {
             l0Var = null;
             f13 = this.y.g;
@@ -343,7 +343,7 @@ public final class i0 extends FrameLayout {
                     if (i7 != 1) {
                         j0 j0Var = l0Var7.c;
                         if (j0Var.H) {
-                            if (j0Var.getImageReceiver().B() != null) {
+                            if (j0Var.getImageReceiver().C() != null) {
                             }
                         }
                     }
@@ -355,7 +355,7 @@ public final class i0 extends FrameLayout {
                     if (this.h == 1) {
                         j0 j0Var2 = this.y.b;
                         if (j0Var2.H) {
-                            if (j0Var2.getImageReceiver().B() != null) {
+                            if (j0Var2.getImageReceiver().C() != null) {
                             }
                         }
                     }
@@ -364,13 +364,13 @@ public final class i0 extends FrameLayout {
                     if (!this.y.x.isEmpty()) {
                         j0 j0Var3 = this.y.b;
                         if (j0Var3.H) {
-                            oh0 B = j0Var3.getImageReceiver().B();
+                            nh0 C = j0Var3.getImageReceiver().C();
                             int i15 = 0;
                             while (i15 < this.y.x.size()) {
                                 k0 k0Var = (k0) this.y.x.get(i15);
                                 float f35 = k0Var.c;
-                                if (B != null && B.l0) {
-                                    float r10 = this.y.b.getImageReceiver().B().r();
+                                if (C != null && C.l0) {
+                                    float r10 = this.y.b.getImageReceiver().C().r();
                                 }
                                 float f36 = k0Var.d;
                                 if (f36 != 1.0f) {
@@ -404,8 +404,8 @@ public final class i0 extends FrameLayout {
                                 float f42 = L2;
                                 float f43 = f42 / 2.0f;
                                 f19 = f34;
-                                ((k0) this.y.x.get(i15)).a.y0(scaleX - f43, scaleY - f43, f42, f42);
-                                ((k0) this.y.x.get(i15)).a.J0(L2 >> 1);
+                                ((k0) this.y.x.get(i15)).a.z0(scaleX - f43, scaleY - f43, f42, f42);
+                                ((k0) this.y.x.get(i15)).a.K0(L2 >> 1);
                                 canvas.save();
                                 canvas.translate(0.0f, k0Var.l);
                                 canvas.scale(f41, f41, scaleX, scaleY);
@@ -475,7 +475,7 @@ public final class i0 extends FrameLayout {
                         l0Var9.s = true;
                         l0Var9.y = System.currentTimeMillis();
                         this.y.f.i.setTag(R.id.parent_tag, 1);
-                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.k0(this, 5));
+                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.g0(this, 5));
                     }
                 }
                 l0 l0Var10 = this.y;
@@ -574,7 +574,7 @@ public final class i0 extends FrameLayout {
             if (i7 >= l0Var.x.size()) {
                 return;
             }
-            ((k0) l0Var.x.get(i7)).a.P();
+            ((k0) l0Var.x.get(i7)).a.Q();
             i7++;
         }
     }
@@ -588,7 +588,7 @@ public final class i0 extends FrameLayout {
             if (i7 >= l0Var.x.size()) {
                 return;
             }
-            ((k0) l0Var.x.get(i7)).a.R();
+            ((k0) l0Var.x.get(i7)).a.S();
             i7++;
         }
     }

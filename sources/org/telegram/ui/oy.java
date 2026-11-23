@@ -1,29 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_chatlists;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oy implements org.telegram.messenger.y10 {
+public final /* synthetic */ class oy implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kz b;
+    public final /* synthetic */ jz b;
 
-    public /* synthetic */ oy(kz kzVar, int i7) {
+    public /* synthetic */ oy(jz jzVar, int i7) {
         this.a = i7;
-        this.b = kzVar;
+        this.b = jzVar;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                this.b.s0((TL_chatlists.TL_exportedChatlistInvite) obj);
+                jz.a0(this.b);
                 break;
             default:
-                this.b.r0((TL_chatlists.TL_exportedChatlistInvite) obj);
+                jz.b0(this.b);
                 break;
         }
     }

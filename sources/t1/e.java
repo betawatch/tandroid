@@ -1,53 +1,46 @@
 package t1;
 
-import android.text.Editable;
-import android.text.method.KeyListener;
-import android.text.method.MetaKeyKeyListener;
-import android.view.KeyEvent;
-import android.view.View;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.widget.TextView;
+import androidx.emoji2.text.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class e implements KeyListener {
-    public final KeyListener a;
-    public final nb.a b;
+public final class e implements InputFilter {
+    public final TextView a;
+    public d b;
 
-    public e(KeyListener keyListener) {
-        nb.a aVar = new nb.a(25);
-        this.a = keyListener;
-        this.b = aVar;
+    public e(TextView textView) {
+        this.a = textView;
     }
 
-    @Override // android.text.method.KeyListener
-    public final void clearMetaKeyState(View view, Editable editable, int i7) {
-        this.a.clearMetaKeyState(view, editable, i7);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final int getInputType() {
-        return this.a.getInputType();
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyDown(View view, Editable editable, int i7, KeyEvent keyEvent) {
-        boolean z10;
-        this.b.getClass();
-        if (i7 != 67 ? i7 != 112 ? false : wf.b.s(editable, keyEvent, true) : wf.b.s(editable, keyEvent, false)) {
-            MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
-            z10 = true;
-        } else {
-            z10 = false;
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
+        TextView textView = this.a;
+        if (textView.isInEditMode()) {
+            return charSequence;
         }
-        return z10 || this.a.onKeyDown(view, editable, i7, keyEvent);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
-        return this.a.onKeyOther(view, editable, keyEvent);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyUp(View view, Editable editable, int i7, KeyEvent keyEvent) {
-        return this.a.onKeyUp(view, editable, i7, keyEvent);
+        int b10 = l.a().b();
+        if (b10 != 0) {
+            if (b10 == 1) {
+                if ((i12 == 0 && i11 == 0 && spanned.length() == 0 && charSequence == textView.getText()) || charSequence == null) {
+                    return charSequence;
+                }
+                if (i7 != 0 || i10 != charSequence.length()) {
+                    charSequence = charSequence.subSequence(i7, i10);
+                }
+                return l.a().e(0, charSequence.length(), charSequence);
+            }
+            if (b10 != 3) {
+                return charSequence;
+            }
+        }
+        l a10 = l.a();
+        if (this.b == null) {
+            this.b = new d(textView, this);
+        }
+        a10.f(this.b);
+        return charSequence;
     }
 }

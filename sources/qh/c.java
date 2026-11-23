@@ -5,10 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final LinearLayout a;
@@ -26,7 +26,7 @@ public abstract class c extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, ma.c(-1.0f, -1));
+        addView(linearLayout, na.c(-1.0f, -1));
     }
 
     public void setLensVisibility(float f10) {

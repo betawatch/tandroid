@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -50,20 +50,20 @@ public final class m extends kd.j implements rd.p {
                 jd.a aVar = jd.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     this.b = 1;
                     return b0.d(b0Var, this) == aVar ? aVar : kVar;
                 }
                 if (i10 != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
-                b7.h.b(obj);
+                c8.z.b(obj);
                 return kVar;
             case 1:
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     ab.c0 c0Var = b0Var.i;
                     this.b = 1;
                     Object i12 = ((zd.t) c0Var.c).i(this);
@@ -76,32 +76,32 @@ public final class m extends kd.j implements rd.p {
                         if (i11 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         return kVar;
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 ce.c d = b0Var.g().d();
                 be.a aVar3 = be.a.a;
                 be.a aVar4 = be.a.b;
                 boolean z10 = d instanceof de.e;
                 id.i iVar = id.i.a;
-                ce.c B = z10 ? ((de.e) d).B(iVar, 0, aVar4) : new ce.b(d, iVar, 0, aVar4, 1);
-                gb.y0 y0Var = new gb.y0(b0Var, 2);
+                ce.c a02 = z10 ? ((de.e) d).a0(iVar, 0, aVar4) : new ce.b(d, iVar, 0, aVar4, 1);
+                gb.z0 z0Var = new gb.z0(b0Var, 2);
                 this.b = 2;
-                if (B.v(y0Var, this) != aVar2) {
+                if (a02.J(z0Var, this) != aVar2) {
                     return kVar;
                 }
                 return aVar2;
             default:
-                h9.g1 g1Var = b0Var.h;
+                j6.r rVar = b0Var.h;
                 jd.a aVar5 = jd.a.a;
                 int i13 = this.b;
                 try {
                     if (i13 == 0) {
-                        b7.h.b(obj);
-                        if (g1Var.E() instanceof l0) {
-                            return g1Var.E();
+                        c8.z.b(obj);
+                        if (rVar.v() instanceof l0) {
+                            return rVar.v();
                         }
                         this.b = 1;
                         if (b0Var.h(this) == aVar5) {
@@ -112,10 +112,10 @@ public final class m extends kd.j implements rd.p {
                             if (i13 != 2) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             return (e1) obj;
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                     }
                     this.b = 2;
                     obj = b0.e(b0Var, false, this);

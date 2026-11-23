@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class pp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -16,15 +16,15 @@ public final class pp0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.k8) {
+        if (this.b.b.q8) {
             PhotoViewer photoViewer = this.b.b;
             if (photoViewer.s1) {
-                photoViewer.A3();
+                photoViewer.C3();
             }
         }
         if (this.a == 3) {
             PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.E2(photoViewer2.P4, false, true, true);
+            photoViewer2.F2(photoViewer2.P4, false, true, true);
         }
     }
 
@@ -32,7 +32,7 @@ public final class pp0 extends AnimatorListenerAdapter {
     public final void onAnimationStart(Animator animator) {
         PhotoViewer photoViewer = this.b.b;
         photoViewer.Q0.setVisibility(0);
-        if (photoViewer.D3()) {
+        if (photoViewer.F3()) {
             photoViewer.o0.setVisibility(0);
         } else {
             photoViewer.T0.setVisibility(0);
@@ -49,7 +49,7 @@ public final class pp0 extends AnimatorListenerAdapter {
         if ((i7 == 0 || i7 == 4 || ((i7 == 2 || i7 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
             photoViewer.O0.setVisibility(0);
             photoViewer.P0.setVisibility(0);
-            photoViewer.q3();
+            photoViewer.r3();
         }
     }
 }

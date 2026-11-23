@@ -8,26 +8,26 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class l8 extends Drawable {
     public int a;
     public final View b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.d6 g;
+    public final org.telegram.ui.Components.c6 g;
     public boolean h;
     public Paint i;
-    public int e = ls.e4;
+    public int e = ks.e4;
     public final float[] f = new float[15];
     public final Path j = new Path();
 
     public l8(View view) {
         this.b = view;
-        this.g = new org.telegram.ui.Components.d6(view, 350L, nr.h);
+        this.g = new org.telegram.ui.Components.c6(view, 350L, kr.h);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, 0.0f, 1593835520);
@@ -96,7 +96,7 @@ public final class l8 extends Drawable {
                 this.i.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 this.i.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
             }
-            paint.setColor(i0.a.o(-16777216, ls.L1));
+            paint.setColor(i0.a.o(-16777216, ks.L1));
         }
         if (this.e != 255 || this.a == 1) {
             canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, (getBounds().width() * 0.2f) + getBounds().right, (getBounds().height() * 0.2f) + getBounds().bottom, this.e, 31);

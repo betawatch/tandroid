@@ -1,81 +1,102 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.FrameLayout;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class w7 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ org.telegram.messenger.gs c;
+public final class w7 implements fi.b9, org.telegram.messenger.lr {
+    public final /* synthetic */ j8 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w7(org.telegram.messenger.gs gsVar, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.c = gsVar;
-        this.b = -1;
+    public /* synthetic */ w7(j8 j8Var) {
+        this.a = j8Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z10, i7, i10, i11, i12);
-                int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
-                if (this.b != measuredWidth) {
-                    this.b = measuredWidth;
-                    ((i8) this.c).M.f();
+    @Override // fi.b9
+    public void d(long j3, int i7, fi.e3 e3Var) {
+        j8 j8Var = this.a;
+        if (j8Var.b == null) {
+            e3Var.run();
+        }
+        j8Var.b.post(e3Var);
+    }
+
+    @Override // fi.b9
+    public boolean l(long j3, int i7, int i10, int i11, fi.c9 c9Var) {
+        j8 j8Var = this.a;
+        if (j8Var.b != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= j8Var.b.getChildCount()) {
                     break;
                 }
-                break;
-            case 1:
-                super.onLayout(z10, i7, i10, i11, i12);
-                int i13 = i12 - i10;
-                int i14 = this.b;
-                if (i14 != -1 && Math.abs(i14 - i13) > org.telegram.messenger.g0.L(20.0f)) {
-                    ((np) this.c).b.y0(r3.W - 1);
+                View childAt = j8Var.b.getChildAt(i12);
+                if (childAt instanceof g8) {
+                    g8 g8Var = (g8) childAt;
+                    if (g8Var.n == null) {
+                        continue;
+                    } else {
+                        for (int i13 = 0; i13 < g8Var.n.size(); i13++) {
+                            ArrayList arrayList = ((h8) g8Var.n.valueAt(i13)).b;
+                            if (arrayList != null && arrayList.contains(Integer.valueOf(i10))) {
+                                int keyAt = g8Var.n.keyAt(i13);
+                                j8Var.i0 = keyAt;
+                                ImageReceiver imageReceiver = (ImageReceiver) g8Var.r.get(keyAt);
+                                if (imageReceiver != null) {
+                                    c9Var.c = imageReceiver;
+                                    if (j8Var.j0 == null) {
+                                        j8Var.j0 = new w0(this, 11);
+                                    }
+                                    c9Var.e = j8Var.j0;
+                                    c9Var.a = g8Var;
+                                    c9Var.g = j8Var.fragmentView;
+                                    c9Var.h = org.telegram.messenger.g0.L(36.0f);
+                                    c9Var.i = j8Var.fragmentView.getBottom();
+                                    c9Var.b = null;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
                 }
-                this.b = i13;
-                break;
-            default:
-                super.onLayout(z10, i7, i10, i11, i12);
-                Point point = org.telegram.messenger.g0.q;
-                int i15 = point.x + point.y;
-                int i16 = this.b;
-                if (i16 > 0 && i16 != i15) {
-                    setVisibility(8);
-                    org.telegram.ui.Components.c20 c20Var = (org.telegram.ui.Components.c20) this.c;
-                    c20Var.y = false;
-                    c20Var.a();
+                i12++;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.messenger.lr
+    public void q(boolean z10) {
+        org.telegram.ui.ActionBar.r4 r4Var;
+        org.telegram.ui.ActionBar.r4 r4Var2;
+        org.telegram.ui.ActionBar.r4 r4Var3;
+        org.telegram.ui.ActionBar.r4 r4Var4;
+        j8 j8Var = this.a;
+        j8Var.finishFragment();
+        r4Var = ((org.telegram.ui.ActionBar.g2) j8Var).parentLayout;
+        if (r4Var != null) {
+            r4Var2 = ((org.telegram.ui.ActionBar.g2) j8Var).parentLayout;
+            if (r4Var2.getFragmentStack().size() >= 2) {
+                r4Var3 = ((org.telegram.ui.ActionBar.g2) j8Var).parentLayout;
+                List fragmentStack = r4Var3.getFragmentStack();
+                r4Var4 = ((org.telegram.ui.ActionBar.g2) j8Var).parentLayout;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) fragmentStack.get(r4Var4.getFragmentStack().size() - 2);
+                if (g2Var instanceof bn) {
+                    ((bn) g2Var).j8(j8Var.Q, j8Var.R + 86400, z10);
+                    return;
                 }
-                this.b = i15;
-                break;
+                return;
+            }
+        }
+        bn bnVar = j8Var.O;
+        if (bnVar != null) {
+            bnVar.j8(j8Var.Q, j8Var.R + 86400, z10);
         }
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i7);
-                if (i7 == 8) {
-                    this.b = -1;
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w7(i8 i8Var, Context context) {
-        super(context);
-        this.a = 0;
-        this.c = i8Var;
+    @Override // fi.b9
+    public /* synthetic */ void c(boolean z10) {
     }
 }

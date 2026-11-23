@@ -9,15 +9,15 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.vm0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 return;
             case 1:
                 k kVar = (k) obj2;
-                boolean canScrollVertically = ((wm0) obj).canScrollVertically(-1);
+                boolean canScrollVertically = ((vm0) obj).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
                 if (kVar.D1 == z10) {
                     return;
@@ -72,7 +72,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 ofFloat.addUpdateListener(new a(kVar, 4));
                 kVar.F1.addListener(new c(kVar, z10, i11));
                 kVar.F1.setDuration(320L);
-                kVar.F1.setInterpolator(nr.h);
+                kVar.F1.setInterpolator(kr.h);
                 kVar.F1.start();
                 return;
             case 2:
@@ -93,7 +93,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 ofFloat2.addUpdateListener(new a(kVar2, 3));
                 kVar2.F1.addListener(new c(kVar2, z11, objArr == true ? 1 : 0));
                 kVar2.F1.setDuration(320L);
-                kVar2.F1.setInterpolator(nr.h);
+                kVar2.F1.setInterpolator(kr.h);
                 kVar2.F1.start();
                 return;
             case 3:
@@ -132,19 +132,19 @@ public final /* synthetic */ class z1 implements Runnable {
                     return;
                 }
             case 6:
-                g6 g6Var = (g6) obj2;
+                h6 h6Var = (h6) obj2;
                 ArrayList arrayList3 = (ArrayList) obj;
                 int size2 = arrayList3.size();
                 int i12 = 0;
                 while (i12 < size2) {
-                    j6 j6Var = (j6) arrayList3.get(i12);
-                    File e11 = j6Var.e();
+                    k6 k6Var = (k6) arrayList3.get(i12);
+                    File e11 = k6Var.e();
                     if (e11 == null || e11.length() <= 0) {
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
-                        if (!arrayList.contains(j6Var.o)) {
-                            arrayList.add(j6Var.o);
+                        if (!arrayList.contains(k6Var.o)) {
+                            arrayList.add(k6Var.o);
                         }
                     } else {
                         arrayList3.remove(i12);
@@ -163,36 +163,36 @@ public final /* synthetic */ class z1 implements Runnable {
                     tL_inputWallPaperSlug.slug = (String) arrayList.get(i13);
                     getmultiwallpapers.wallpapers.add(tL_inputWallPaperSlug);
                 }
-                ConnectionsManager.getInstance(g6Var.a).sendRequest(getmultiwallpapers, new e6(g6Var, arrayList3, objArr2 == true ? 1 : 0));
+                ConnectionsManager.getInstance(h6Var.a).sendRequest(getmultiwallpapers, new f6(h6Var, arrayList3, objArr2 == true ? 1 : 0));
                 return;
             case 7:
-                g6 g6Var2 = (g6) obj2;
-                f6 f6Var = (f6) obj;
-                TLRPC.TL_wallPaper tL_wallPaper = f6Var.a;
-                w7.G(k10.t0);
+                h6 h6Var2 = (h6) obj2;
+                g6 g6Var = (g6) obj;
+                TLRPC.TL_wallPaper tL_wallPaper = g6Var.a;
+                w7.G(i10.t0);
                 File J = w7.J(tL_wallPaper.document, null, true, true);
-                ArrayList arrayList4 = f6Var.b;
+                ArrayList arrayList4 = g6Var.b;
                 int size4 = arrayList4.size();
                 ArrayList arrayList5 = null;
                 for (int i14 = 0; i14 < size4; i14++) {
-                    j6 j6Var2 = (j6) arrayList4.get(i14);
-                    if (j6Var2.o.equals(tL_wallPaper.slug)) {
-                        bitmap = g6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, j6Var2);
+                    k6 k6Var2 = (k6) arrayList4.get(i14);
+                    if (k6Var2.o.equals(tL_wallPaper.slug)) {
+                        bitmap = h6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, k6Var2);
                         if (arrayList5 == null) {
                             arrayList5 = new ArrayList();
-                            arrayList5.add(j6Var2);
+                            arrayList5.add(k6Var2);
                         }
                     }
                 }
                 if (bitmap != null) {
                     bitmap.recycle();
                 }
-                org.telegram.messenger.g0.g3(new di.p6((Object) g6Var2, (Object) arrayList5, (boolean) (objArr3 == true ? 1 : 0), 13));
+                org.telegram.messenger.g0.g3(new di.p6((Object) h6Var2, (Object) arrayList5, (boolean) (objArr3 == true ? 1 : 0), 13));
                 return;
             default:
-                l6 l6Var = (l6) obj2;
-                l6Var.d((File) obj, l6Var.i0);
-                org.telegram.messenger.g0.g3(new k6(l6Var, i10));
+                m6 m6Var = (m6) obj2;
+                m6Var.d((File) obj, m6Var.i0);
+                org.telegram.messenger.g0.g3(new l6(m6Var, i10));
                 return;
         }
     }

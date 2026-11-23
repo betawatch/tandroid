@@ -1,76 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.SharedPreferences;
-import java.io.File;
-import java.util.ArrayList;
-import org.json.JSONObject;
-import org.telegram.messenger.a8;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class d6 {
-    public String a = "";
-    public String b = "";
-    public String c = "";
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public boolean j;
-    public float k;
-    public long l;
-    public long m;
-    public long n;
-    public boolean o;
-    public l6 p;
-    public j6 q;
-    public float r;
-    public ArrayList s;
-    public TLRPC.WallPaper t;
+public enum d6 {
+    h(n6.rg, n6.sg, n6.tg, n6.Gg, n6.Hg, n6.Ig),
+    n(n6.ug, n6.vg, n6.wg, n6.Jg, n6.Kg, n6.Lg),
+    r(n6.xg, n6.yg, n6.zg, n6.Mg, n6.Ng, n6.Og),
+    s(n6.Ag, n6.Bg, n6.Cg, n6.Pg, n6.Qg, n6.Rg),
+    w(n6.Dg, n6.Eg, n6.Fg, n6.Sg, n6.Tg, n6.Ug);
 
-    public static void a(d6 d6Var) {
-        org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit().remove(d6Var.b()).commit();
-        new File(org.telegram.messenger.t0.h(), d6Var.a).delete();
-        new File(org.telegram.messenger.t0.h(), d6Var.b).delete();
-    }
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public final String b() {
-        if (this.q == null) {
-            return a8.p0.s(new StringBuilder(), this.p.a, "_owp");
-        }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.p.a);
-        sb2.append("_");
-        return a8.p0.n(this.q.a, "_owp", sb2);
-    }
-
-    public final void c() {
-        try {
-            String b10 = b();
-            SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit();
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("wall", this.a);
-            jSONObject.put("owall", this.b);
-            jSONObject.put("pColor", this.d);
-            jSONObject.put("pGrColor", this.e);
-            jSONObject.put("pGrColor2", this.f);
-            jSONObject.put("pGrColor3", this.g);
-            jSONObject.put("pGrAngle", this.h);
-            String str = this.c;
-            if (str == null) {
-                str = "";
-            }
-            jSONObject.put("wallSlug", str);
-            jSONObject.put("wBlur", this.i);
-            jSONObject.put("wMotion", this.j);
-            jSONObject.put("pIntensity", this.k);
-            edit.putString(b10, jSONObject.toString());
-            edit.commit();
-        } catch (Throwable th2) {
-            a8.g(th2, true);
-        }
+    d6(int i7, int i10, int i11, int i12, int i13, int i14) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
     }
 }

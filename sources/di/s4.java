@@ -4,15 +4,15 @@ import android.util.SparseIntArray;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.ve;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.ue;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements Comparator {
     public final /* synthetic */ int a;
@@ -60,14 +60,14 @@ public final /* synthetic */ class s4 implements Comparator {
                 if (L != L2) {
                     return (L2 ? 1 : 0) - (L ? 1 : 0);
                 }
-                boolean B = p10.B(o4);
-                boolean B2 = p10.B(o10);
+                boolean B = n10.B(o4);
+                boolean B2 = n10.B(o10);
                 if (B != B2) {
                     return (B2 ? 1 : 0) - (B ? 1 : 0);
                 }
-                TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(o4));
+                TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(o4));
                 ?? r02 = c22 == null ? 0 : c22.premium;
-                TLRPC.User c23 = np.u1(i7).c2(Long.valueOf(o10));
+                TLRPC.User c23 = mp.u1(i7).c2(Long.valueOf(o10));
                 ?? r12 = c23 == null ? 0 : c23.premium;
                 if (r02 == r12) {
                     return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i5.c.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i5.c.h(1, peerStories.stories)).date);
@@ -75,11 +75,11 @@ public final /* synthetic */ class s4 implements Comparator {
                 return r12 - r02;
             case 2:
                 ArrayList arrayList = (ArrayList) this.b;
-                ve veVar = (ve) obj;
-                ve veVar2 = (ve) obj2;
-                int i10 = veVar.a;
-                if (i10 != 0 || veVar2.a == 0) {
-                    if ((i10 != 0 && veVar2.a == 0) || (indexOf = arrayList.indexOf(veVar)) > (indexOf2 = arrayList.indexOf(veVar2))) {
+                ue ueVar = (ue) obj;
+                ue ueVar2 = (ue) obj2;
+                int i10 = ueVar.a;
+                if (i10 != 0 || ueVar2.a == 0) {
+                    if ((i10 != 0 && ueVar2.a == 0) || (indexOf = arrayList.indexOf(ueVar)) > (indexOf2 = arrayList.indexOf(ueVar2))) {
                         return 1;
                     }
                     if (indexOf >= indexOf2) {
@@ -96,7 +96,7 @@ public final /* synthetic */ class s4 implements Comparator {
                 return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(e6Var.a(pagetablecell), e6Var.a(pagetablecell2));
             case 4:
                 u2.v vVar = (u2.v) this.b;
-                return vVar.c(obj2) - vVar.c(obj);
+                return vVar.a(obj2) - vVar.a(obj);
             case 5:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
                 return sparseIntArray.get(((ug.g) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((ug.g) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);

@@ -1,6 +1,6 @@
 package com.google.firebase.installations;
 
-import a8.i8;
+import a8.j8;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.Arrays;
@@ -10,38 +10,39 @@ import java.util.concurrent.ExecutorService;
 import o9.g;
 import q9.a;
 import sa.e;
-import tg.o1;
+import tg.s;
 import u9.b;
+import u9.i;
 import u9.q;
 import ug.x;
-import v9.i;
+import v9.j;
 import va.c;
 import va.d;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(b bVar) {
-        return new c((g) bVar.a(g.class), bVar.c(e.class), (ExecutorService) bVar.e(new q(a.class, ExecutorService.class)), new i((Executor) bVar.e(new q(q9.b.class, Executor.class))));
+        return new c((g) bVar.a(g.class), bVar.c(e.class), (ExecutorService) bVar.e(new q(a.class, ExecutorService.class)), new j((Executor) bVar.e(new q(q9.b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<u9.a> getComponents() {
         j0 a10 = u9.a.a(d.class);
         a10.d = LIBRARY_NAME;
-        a10.a(u9.i.a(g.class));
-        a10.a(new u9.i(0, 1, e.class));
-        a10.a(new u9.i(new q(a.class, ExecutorService.class), 1, 0));
-        a10.a(new u9.i(new q(q9.b.class, Executor.class), 1, 0));
+        a10.a(i.a(g.class));
+        a10.a(new i(0, 1, e.class));
+        a10.a(new i(new q(a.class, ExecutorService.class), 1, 0));
+        a10.a(new i(new q(q9.b.class, Executor.class), 1, 0));
         a10.f = new x(12);
         u9.a b10 = a10.b();
         sa.d dVar = new sa.d(0);
         j0 a11 = u9.a.a(sa.d.class);
         a11.b = 1;
-        a11.f = new o1(dVar, 8);
-        return Arrays.asList(b10, a11.b(), i8.a(LIBRARY_NAME, "19.1.2"));
+        a11.f = new s(dVar, 10);
+        return Arrays.asList(b10, a11.b(), j8.a(LIBRARY_NAME, "19.1.2"));
     }
 }

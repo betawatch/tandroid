@@ -1,29 +1,41 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ts0 extends ug.n1 {
-    public final /* synthetic */ us0 O;
+public final class ts0 extends org.telegram.ui.Components.dk0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ us0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ts0(us0 us0Var, Context context) {
-        super(context);
-        this.O = us0Var;
+        this.d = us0Var;
+        this.c = context;
     }
 
-    @Override // ug.n1, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.r.getVisibility() == 0) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
-            us0 us0Var = this.O;
-            us0Var.d.n.o0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, us0Var.d.n.P);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), us0Var.d.n.o0.f);
-        }
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Components.dk0
+    public final boolean D(v4.f1 f1Var) {
+        return !((ws0) this.d.n.d.get(f1Var.b())).a.current;
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        return this.d.n.d.size();
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        ug.n1 n1Var = (ug.n1) f1Var.a;
+        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
+        n1Var.a((ws0) premiumPreviewFragment.d.get(i7), i7 != b() - 1);
+        n1Var.c(premiumPreviewFragment.e == i7, false);
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        ss0 ss0Var = new ss0(this, this.c);
+        ss0Var.setCirclePaintProvider(new yi0(10, this, ss0Var));
+        return new org.telegram.ui.Components.mj0(ss0Var);
     }
 }

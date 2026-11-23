@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
     public g.f a;
@@ -52,17 +52,17 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final Drawable e() {
+    public final Drawable f() {
         return null;
     }
 
     @Override // m.o0
-    public final void i(CharSequence charSequence) {
+    public final void h(CharSequence charSequence) {
         this.c = charSequence;
     }
 
     @Override // m.o0
-    public final void j(Drawable drawable) {
+    public final void i(Drawable drawable) {
         Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
     }
 
@@ -94,17 +94,22 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
         bVar.m = this;
         bVar.b = selectedItemPosition;
         bVar.a = true;
-        g.f g10 = jVar.g();
-        this.a = g10;
-        AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
+        g.f f10 = jVar.f();
+        this.a = f10;
+        AlertController$RecycleListView alertController$RecycleListView = f10.f.e;
         g0.d(alertController$RecycleListView, i7);
         g0.c(alertController$RecycleListView, i10);
         this.a.show();
     }
 
     @Override // m.o0
-    public final int o() {
+    public final int n() {
         return 0;
+    }
+
+    @Override // m.o0
+    public final void o(ListAdapter listAdapter) {
+        this.b = (j0) listAdapter;
     }
 
     @Override // android.content.DialogInterface.OnClickListener
@@ -115,10 +120,5 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
             p0Var.performItemClick(null, i7, this.b.getItemId(i7));
         }
         dismiss();
-    }
-
-    @Override // m.o0
-    public final void p(ListAdapter listAdapter) {
-        this.b = (j0) listAdapter;
     }
 }

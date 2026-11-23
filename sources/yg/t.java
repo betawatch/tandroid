@@ -7,17 +7,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.ez0;
 import org.telegram.ui.Components.fz0;
-import org.telegram.ui.Components.gz0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final xh.l a;
@@ -26,7 +26,7 @@ public final class t extends FrameLayout {
     public String d;
     public final ImageView e;
 
-    public t(Context context, h6 h6Var) {
+    public t(Context context, i6 i6Var) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
@@ -37,21 +37,21 @@ public final class t extends FrameLayout {
         lVar.setTextSize(1, 16.0f);
         lVar.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         lVar.setSingleLine(true);
-        t6.U(lVar, m6.G6, h6Var);
+        u6.U(lVar, n6.G6, i6Var);
         final int i10 = 0;
         lVar.r = false;
-        frameLayout.addView(lVar, ma.e(-2, -2, 17));
+        frameLayout.addView(lVar, na.e(-2, -2, 17));
         int L = g0.L(8.0f);
-        int i11 = m6.e7;
-        int w02 = m6.w0(i11, h6Var);
-        int i12 = m6.i6;
-        int o4 = i0.a.o(m6.w0(i12, h6Var), 76);
-        org.telegram.ui.Cells.y k02 = m6.k0(L, L, L, L, w02, o4, o4);
-        p6 M = t6.M(i11);
-        p6 g10 = t6.g(i12, 76);
+        int i11 = n6.e7;
+        int w02 = n6.w0(i11, i6Var);
+        int i12 = n6.i6;
+        int o4 = i0.a.o(n6.w0(i12, i6Var), 76);
+        org.telegram.ui.Cells.y k02 = n6.k0(L, L, L, L, w02, o4, o4);
+        q6 M = u6.M(i11);
+        q6 g10 = u6.g(i12, 76);
         frameLayout.setBackground(k02);
-        t6.j(frameLayout, k02, M, g10, h6Var);
-        addView(frameLayout, ma.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
+        u6.j(frameLayout, k02, M, g10, i6Var);
+        addView(frameLayout, na.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: yg.s
             public final /* synthetic */ t b;
 
@@ -74,12 +74,12 @@ public final class t extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         this.e = imageView;
         imageView.setImageResource(R.drawable.menu_copy_s);
-        t6.s(imageView, m6.j5, h6Var, PorterDuff.Mode.SRC_ATOP);
+        u6.s(imageView, n6.j5, i6Var, PorterDuff.Mode.SRC_ATOP);
         imageView.setPadding(g0.L(8.0f), g0.L(8.0f), g0.L(8.0f), g0.L(8.0f));
         int L2 = g0.L(20.0f);
-        int o10 = i0.a.o(m6.w0(i12, h6Var), 76);
-        imageView.setBackground(m6.k0(L2, L2, L2, L2, 0, o10, o10));
-        addView(imageView, ma.d(40, 40.0f, 21, 15.0f, 0.0f, 17.0f, 0.0f));
+        int o10 = i0.a.o(n6.w0(i12, i6Var), 76);
+        imageView.setBackground(n6.k0(L2, L2, L2, L2, 0, o10, o10));
+        addView(imageView, na.d(40, 40.0f, 21, 15.0f, 0.0f, 17.0f, 0.0f));
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: yg.s
             public final /* synthetic */ t b;
 
@@ -109,13 +109,13 @@ public final class t extends FrameLayout {
         int L4 = g0.L(18.0f);
         xh.l lVar = this.a;
         lVar.setPadding(L, L2, L3, L4);
-        fz0 fz0Var = new fz0();
-        fz0Var.a |= 256;
+        ez0 ez0Var = new ez0();
+        ez0Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new gz0(fz0Var, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new fz0(ez0Var, 0), 0, spannableStringBuilder.length(), 33);
         lVar.setText(spannableStringBuilder);
         this.b.setOnClickListener(new bi.d0(6, runnable));
     }

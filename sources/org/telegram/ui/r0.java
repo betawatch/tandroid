@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class r0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.messenger.gs c;
+    public final /* synthetic */ org.telegram.messenger.fs c;
 
-    public /* synthetic */ r0(org.telegram.messenger.gs gsVar, int i7, int i10) {
+    public /* synthetic */ r0(org.telegram.messenger.fs fsVar, int i7, int i10) {
         this.a = i10;
-        this.c = gsVar;
+        this.c = fsVar;
         this.b = i7;
     }
 
@@ -24,9 +24,9 @@ public final class r0 extends AnimatorListenerAdapter {
                 g4Var.v0[1].b();
                 g4Var.v0[1].setVisibility(8);
                 g4Var.Q0.S(g4Var.v0[0].b);
-                org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
+                org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
                 k3[] k3VarArr = g4Var.v0;
-                j9Var.z0 = k3VarArr[0].d;
+                i9Var.z0 = k3VarArr[0].d;
                 int i7 = this.b;
                 k3VarArr[i7].setBackgroundDrawable(null);
                 g4Var.v0[i7].setLayerType(0, null);

@@ -1,12 +1,11 @@
 package ah;
 
-import ai.k0;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.j8;
+import bi.m8;
 import ch.s;
 import ci.b0;
 import ci.j0;
@@ -28,15 +27,15 @@ import fi.t0;
 import fi.t6;
 import fi.v3;
 import fi.w7;
-import hi.a0;
-import hi.h3;
-import hi.n2;
+import hi.h0;
+import hi.q3;
+import hi.w2;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.wv0;
+import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -58,10 +57,10 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 oVar.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                j8 j8Var = (j8) this.b;
-                j8Var.getClass();
-                j8Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j8Var.k0();
+                m8 m8Var = (m8) this.b;
+                m8Var.getClass();
+                m8Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m8Var.k0();
                 break;
             case 2:
                 s sVar = (s) this.b;
@@ -157,9 +156,9 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 17:
-                k0 k0Var = (k0) this.b;
+                ai.g0 g0Var = (ai.g0) this.b;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m0 m0Var2 = (m0) k0Var.b;
+                m0 m0Var2 = (m0) g0Var.b;
                 Drawable drawable2 = m0Var2.e;
                 if (drawable2 != null) {
                     drawable2.setAlpha((int) (g0.T1(1.0f, m0Var2.f, floatValue6) * 255.0f));
@@ -186,11 +185,11 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 break;
             case 20:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                wv0 wv0Var = profileStoriesView.h;
+                vv0 vv0Var = profileStoriesView.h;
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.H = floatValue8;
-                wv0Var.S = floatValue8;
-                wv0Var.invalidate();
+                vv0Var.S = floatValue8;
+                vv0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 21:
@@ -233,36 +232,36 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 qVar.n.setTranslationY(g0.W1(qVar.x, 0, g0.L(42.0f)));
                 break;
             case 26:
-                hi.o oVar2 = (hi.o) this.b;
-                oVar2.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hi.h hVar = oVar2.f;
-                hVar.getEditText().setTranslationX(g0.W1(oVar2.o0, oVar2.getEditTextLeft() + g0.L(-26.0f), g0.L(2.0f)));
-                FrameLayout frameLayout = oVar2.s;
-                frameLayout.setTranslationX(g0.W1(oVar2.o0, -g0.L(8.0f), g0.L(2.0f)));
-                frameLayout.setTranslationY(g0.W1(oVar2.o0, -g0.L(8.0f), 0));
-                hVar.getEmojiButton().setAlpha(oVar2.o0);
-                oVar2.r.setAlpha((float) Math.pow(oVar2.o0, 16.0d));
-                oVar2.u(oVar2.o0);
-                hi.j jVar = oVar2.N;
+                hi.n nVar = (hi.n) this.b;
+                nVar.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                hi.h hVar = nVar.f;
+                hVar.getEditText().setTranslationX(g0.W1(nVar.o0, nVar.getEditTextLeft() + g0.L(-26.0f), g0.L(2.0f)));
+                FrameLayout frameLayout = nVar.s;
+                frameLayout.setTranslationX(g0.W1(nVar.o0, -g0.L(8.0f), g0.L(2.0f)));
+                frameLayout.setTranslationY(g0.W1(nVar.o0, -g0.L(8.0f), 0));
+                hVar.getEmojiButton().setAlpha(nVar.o0);
+                nVar.r.setAlpha((float) Math.pow(nVar.o0, 16.0d));
+                nVar.u(nVar.o0);
+                hi.j jVar = nVar.N;
                 if (jVar != null) {
-                    jVar.setAlpha((float) Math.pow(oVar2.o0, 4.0d));
+                    jVar.setAlpha((float) Math.pow(nVar.o0, 4.0d));
                 }
                 hVar.getEditText().invalidate();
-                oVar2.invalidate();
+                nVar.invalidate();
                 break;
             case 27:
-                a0 a0Var = (a0) this.b;
-                a0Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a0Var.a.invalidate();
+                h0 h0Var = (h0) this.b;
+                h0Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h0Var.a.invalidate();
                 break;
             case 28:
-                n2 n2Var = (n2) this.b;
-                n2Var.getClass();
-                n2Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n2Var.i();
+                w2 w2Var = (w2) this.b;
+                w2Var.getClass();
+                w2Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2Var.i();
                 break;
             default:
-                ((h3) this.b).m1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((q3) this.b).m1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

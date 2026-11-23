@@ -1,87 +1,105 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ei implements ck {
-    public final /* synthetic */ ui a;
+public final class ei extends p6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ti c;
 
-    public ei(ui uiVar) {
-        this.a = uiVar;
-    }
-
-    @Override // org.telegram.ui.Components.ck
-    public final void A() {
-        ui uiVar = this.a;
-        ck ckVar = uiVar.S1;
-        if (ckVar != null) {
-            ckVar.A();
-            return;
-        }
-        Object obj = uiVar.a2;
-        if (obj instanceof ck) {
-            ((ck) obj).A();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.hk0) {
-            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                hk0Var.startActivityForResult(intent, 21);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ei(ti tiVar, int i7) {
+        super("translation", 0);
+        this.b = i7;
+        switch (i7) {
+            case 1:
+                this.c = tiVar;
+                super("openProgress", 0);
+                break;
+            default:
+                this.c = tiVar;
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ck
-    public final void T() {
-        this.a.q1(true);
+    @Override // org.telegram.ui.Components.p6
+    public final void c(Object obj, float f10) {
+        float f11;
+        switch (this.b) {
+            case 0:
+                ti tiVar = this.c;
+                tiVar.Y1 = f10;
+                li liVar = tiVar.x2;
+                if (liVar != null) {
+                    if ((liVar instanceof pm) || (tiVar.w2 instanceof pm)) {
+                        int max = Math.max(liVar.getWidth(), tiVar.w2.getWidth());
+                        if (tiVar.x2 instanceof pm) {
+                            tiVar.w2.setTranslationX((-max) * f10);
+                            tiVar.x2.setTranslationX((1.0f - f10) * max);
+                        } else {
+                            tiVar.w2.setTranslationX(max * f10);
+                            tiVar.x2.setTranslationX((1.0f - f10) * (-max));
+                        }
+                    } else {
+                        liVar.setAlpha(f10);
+                        tiVar.x2.v(f10);
+                        li liVar2 = tiVar.x2;
+                        qn qnVar = tiVar.h2;
+                        if (liVar2 == qnVar || tiVar.w2 == qnVar) {
+                            tiVar.Q1(liVar2 == qnVar ? 1 : 0);
+                        }
+                        li liVar3 = tiVar.x2;
+                        qn qnVar2 = tiVar.i2;
+                        if (liVar3 == qnVar2 || tiVar.w2 == qnVar2) {
+                            tiVar.Q1(liVar3 == qnVar2 ? 1 : 0);
+                        }
+                        tiVar.x2.setTranslationY(org.telegram.messenger.g0.L(78.0f) * f10);
+                        tiVar.w2.v(1.0f - Math.min(1.0f, f10 / 0.7f));
+                        tiVar.w2.m(tiVar.j4);
+                    }
+                    if (tiVar.r3 != null) {
+                        tiVar.Q1(1);
+                    }
+                    tiVar.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                uh uhVar = this.c.w3;
+                int childCount = uhVar.getChildCount();
+                for (int i7 = 0; i7 < childCount; i7++) {
+                    float f12 = (3 - i7) * 32.0f;
+                    View childAt = uhVar.getChildAt(i7);
+                    if (f10 > f12) {
+                        float f13 = f10 - f12;
+                        if (f13 <= 200.0f) {
+                            float f14 = f13 / 200.0f;
+                            f11 = kr.g.getInterpolation(f14) * 1.1f;
+                            childAt.setAlpha(kr.j.getInterpolation(f14));
+                        } else {
+                            childAt.setAlpha(1.0f);
+                            float f15 = f13 - 200.0f;
+                            f11 = f15 <= 100.0f ? 1.1f - (kr.i.getInterpolation(f15 / 100.0f) * 0.1f) : 1.0f;
+                        }
+                    } else {
+                        f11 = 0.0f;
+                    }
+                    if (childAt instanceof oi) {
+                        ((oi) childAt).a.setAttachScale(f11);
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ck
-    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
-        ui uiVar = this.a;
-        ck ckVar = uiVar.S1;
-        if (ckVar != null) {
-            ckVar.n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
-            return;
-        }
-        Object obj = uiVar.a2;
-        if (obj instanceof ck) {
-            ((ck) obj).n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.hk0) {
-            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
-                zyVar.c = (String) arrayList.get(i10);
-                arrayList4.add(zyVar);
-            }
-            hk0Var.K1(arrayList4);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ck
-    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
-        ui uiVar = this.a;
-        ck ckVar = uiVar.S1;
-        if (ckVar != null) {
-            ckVar.p(arrayList, z10, i7, j3);
-            return;
-        }
-        org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
-        if (g2Var instanceof org.telegram.ui.bn) {
-            ((org.telegram.ui.bn) g2Var).p(arrayList, z10, i7, j3);
-        } else if (g2Var instanceof org.telegram.ui.hk0) {
-            ((org.telegram.ui.hk0) g2Var).K1(arrayList);
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.Y1);
+            default:
+                return Float.valueOf(0.0f);
         }
     }
 }

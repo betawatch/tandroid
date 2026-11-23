@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class br0 extends org.telegram.ui.Components.ek0 {
     public final /* synthetic */ int f3 = 0;
@@ -46,7 +46,7 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                 path.addRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), Path.Direction.CW);
-                int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false);
+                int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h5, false);
                 Paint paint = this.g3;
                 paint.setColor(x02);
                 canvas.drawPath(path, paint);
@@ -65,7 +65,7 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 1:
-                if (((vs0) this.i3).n.r0 < 1.0f) {
+                if (((us0) this.i3).n.r0 < 1.0f) {
                     break;
                 }
                 break;
@@ -109,7 +109,7 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 1:
-                if (((vs0) this.i3).n.r0 < 1.0f) {
+                if (((us0) this.i3).n.r0 < 1.0f) {
                     break;
                 }
                 break;
@@ -122,7 +122,7 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
         switch (this.f3) {
             case 1:
                 super.onSizeChanged(i7, i10, i11, i12);
-                PremiumPreviewFragment premiumPreviewFragment = ((vs0) this.i3).n;
+                PremiumPreviewFragment premiumPreviewFragment = ((us0) this.i3).n;
                 int i13 = 0;
                 int i14 = 0;
                 while (true) {
@@ -131,9 +131,9 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
                         premiumPreviewFragment.P = i14;
                         break;
                     } else {
-                        premiumPreviewFragment.N.a((xs0) arrayList.get(i13), false);
+                        premiumPreviewFragment.N.a((ws0) arrayList.get(i13), false);
                         premiumPreviewFragment.N.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
-                        ((xs0) arrayList.get(i13)).h = i14;
+                        ((ws0) arrayList.get(i13)).h = i14;
                         i14 += premiumPreviewFragment.N.getMeasuredHeight();
                         i13++;
                     }
@@ -145,12 +145,12 @@ public final class br0 extends org.telegram.ui.Components.ek0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public br0(vs0 vs0Var, Context context) {
+    public br0(us0 us0Var, Context context) {
         super(context, null);
-        this.i3 = vs0Var;
+        this.i3 = us0Var;
         Paint paint = new Paint(1);
         this.g3 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false));
+        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h5, false));
         this.h3 = new Path();
     }
 }

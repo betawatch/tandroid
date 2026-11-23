@@ -3,9 +3,9 @@ package di;
 import android.graphics.Typeface;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k5 {
     public final Runnable a;
@@ -20,7 +20,7 @@ public final class k5 {
     public final float j;
     public final int k;
     public int l;
-    public final org.telegram.ui.Components.d6 m;
+    public final org.telegram.ui.Components.c6 m;
     public int n = -1;
 
     public k5(Runnable runnable, ArrayList arrayList, j5 j5Var, j5 j5Var2, float f10, int i7) {
@@ -31,9 +31,9 @@ public final class k5 {
         this.i = j5Var2;
         this.j = f10;
         this.k = i7;
-        org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(runnable, 300L, nr.h);
-        this.m = d6Var;
-        d6Var.a(true);
+        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(runnable, 300L, kr.h);
+        this.m = c6Var;
+        c6Var.a(true);
         this.f = -0.5f;
         this.e = 1;
         this.l = i7;
@@ -120,9 +120,9 @@ public final class k5 {
         } else {
             j3 = i10 == 3 ? 4500 : 2500;
         }
-        org.telegram.ui.Components.d6 d6Var = this.m;
-        d6Var.g = j3;
-        float T1 = (f10 * org.telegram.messenger.g0.T1(i10 == 3 ? 0.75f : 2.0f, 7.5f, d6Var.d(i7 >= i10)) * this.j) + this.f;
+        org.telegram.ui.Components.c6 c6Var = this.m;
+        c6Var.g = j3;
+        float T1 = (f10 * org.telegram.messenger.g0.T1(i10 == 3 ? 0.75f : 2.0f, 7.5f, c6Var.d(i7 >= i10)) * this.j) + this.f;
         this.f = T1;
         j5 j5Var2 = this.i;
         if (T1 >= 0.0f) {

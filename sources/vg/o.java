@@ -10,9 +10,10 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
+import ug.u1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o {
     public final Context a;
@@ -38,7 +39,7 @@ public final class o {
     public o(Context context, int i7) {
         this.a = context;
         this.e = i7;
-        this.c = Math.max(1, Math.min(ls.W2, Math.round(context.getResources().getDisplayMetrics().density * 42.0f)));
+        this.c = Math.max(1, Math.min(ks.W2, Math.round(context.getResources().getDisplayMetrics().density * 42.0f)));
         HandlerThread handlerThread = new HandlerThread("WalletDiamondTextures");
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper());
@@ -107,7 +108,7 @@ public final class o {
 
     public final void c() {
         if (this.h.compareAndSet(false, true)) {
-            this.b.post(new v4.p(this, 2));
+            this.b.post(new u1(this, 3));
         }
     }
 }

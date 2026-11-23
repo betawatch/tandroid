@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class d4 {
     public static TLRPC.Document a(TLRPC.WebPage webPage, long j3) {
@@ -38,7 +38,7 @@ public abstract class d4 {
     }
 
     public static File c(TLObject tLObject) {
-        org.telegram.messenger.w7.G(org.telegram.messenger.k10.t0);
+        org.telegram.messenger.w7.G(org.telegram.messenger.i10.t0);
         File J = org.telegram.messenger.w7.J(tLObject, null, false, true);
         if (J != null && J.exists()) {
             return J;
@@ -101,6 +101,6 @@ public abstract class d4 {
         if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (a10 = a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
             return false;
         }
-        return org.telegram.messenger.gj.K4(a10);
+        return org.telegram.messenger.fj.K4(a10);
     }
 }

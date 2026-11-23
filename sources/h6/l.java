@@ -4,9 +4,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class l extends o {
+public final class l extends p {
     public final /* synthetic */ int r;
     public final /* synthetic */ double s;
     public final /* synthetic */ h t;
@@ -19,50 +19,50 @@ public final class l extends o {
         this.s = d;
     }
 
-    @Override // h6.o
+    @Override // h6.p
     public final void n() {
         switch (this.r) {
             case 0:
-                j6.m mVar = this.t.c;
-                j6.n o4 = o();
-                mVar.getClass();
+                j6.n nVar = this.t.c;
+                j6.o o4 = o();
+                nVar.getClass();
                 double d = this.s;
                 if (Double.isInfinite(d) || Double.isNaN(d)) {
                     throw new IllegalArgumentException("Volume cannot be " + d);
                 }
                 JSONObject jSONObject = new JSONObject();
-                long b10 = mVar.b();
+                long b10 = nVar.b();
                 try {
                     jSONObject.put("requestId", b10);
                     jSONObject.put(TeXSymbolParser.TYPE_ATTR, "SET_VOLUME");
-                    jSONObject.put("mediaSessionId", mVar.p());
+                    jSONObject.put("mediaSessionId", nVar.p());
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("level", d);
                     jSONObject.put("volume", jSONObject2);
                 } catch (JSONException unused) {
                 }
-                mVar.c(b10, jSONObject.toString());
-                mVar.n.a(b10, o4);
+                nVar.c(b10, jSONObject.toString());
+                nVar.n.a(b10, o4);
                 return;
             default:
-                j6.m mVar2 = this.t.c;
-                j6.n o10 = o();
+                j6.n nVar2 = this.t.c;
+                j6.o o10 = o();
                 double d2 = this.s;
-                if (mVar2.f == null) {
-                    throw new j6.k();
+                if (nVar2.f == null) {
+                    throw new j6.l();
                 }
                 JSONObject jSONObject3 = new JSONObject();
-                long b11 = mVar2.b();
+                long b11 = nVar2.b();
                 try {
                     jSONObject3.put("requestId", b11);
                     jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "SET_PLAYBACK_RATE");
                     jSONObject3.put("playbackRate", d2);
-                    q6.m.i(mVar2.f, "mediaStatus should not be null");
-                    jSONObject3.put("mediaSessionId", mVar2.f.b);
+                    q6.m.i(nVar2.f, "mediaStatus should not be null");
+                    jSONObject3.put("mediaSessionId", nVar2.f.b);
                 } catch (JSONException unused2) {
                 }
-                mVar2.c(b11, jSONObject3.toString());
-                mVar2.u.a(b11, o10);
+                nVar2.c(b11, jSONObject3.toString());
+                nVar2.u.a(b11, o10);
                 return;
         }
     }

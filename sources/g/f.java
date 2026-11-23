@@ -22,10 +22,10 @@ import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import r0.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class f extends u implements DialogInterface {
     public final e f;
@@ -36,7 +36,7 @@ public class f extends u implements DialogInterface {
     }
 
     public static int e(Context context, int i7) {
-        if (((i7 >>> 24) & ls.e4) >= 1) {
+        if (((i7 >>> 24) & ks.e4) >= 1) {
             return i7;
         }
         TypedValue typedValue = new TypedValue();
@@ -245,7 +245,7 @@ public class f extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i7, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.g(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
             return super.onKeyDown(i7, keyEvent);
         }
         return true;
@@ -254,7 +254,7 @@ public class f extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i7, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.g(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
             return super.onKeyUp(i7, keyEvent);
         }
         return true;

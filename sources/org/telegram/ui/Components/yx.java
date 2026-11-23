@@ -1,119 +1,101 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class yx extends wy {
-    public final yt0 X;
-    public final /* synthetic */ ty Y;
+public final class yx extends ImageView {
+    public int a;
+    public o5 b;
+    public boolean c;
+    public x5 d;
+    public ex e;
+    public final org.telegram.messenger.gc[] f;
+    public float h;
+    public ValueAnimator n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yx(ty tyVar) {
-        super(100, true);
-        this.Y = tyVar;
-        this.X = new yt0();
-        this.O = new bi.w2(this, 11);
+    public yx(Context context) {
+        super(context);
+        this.f = new org.telegram.messenger.gc[2];
+        setScaleType(ImageView.ScaleType.CENTER);
+        int i7 = org.telegram.ui.ActionBar.n6.i6;
+        org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.n6.a0(org.telegram.ui.ActionBar.n6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i7);
+        setBackground(a02);
+        org.telegram.ui.ActionBar.u6.j(this, a02, null, M, null);
     }
 
-    @Override // v4.p0
-    public final int A() {
-        ty tyVar = this.Y;
-        v4.i0 adapter = tyVar.i0.getAdapter();
-        xx xxVar = tyVar.k0;
-        if (adapter == xxVar && xxVar.y.isEmpty()) {
-            return 0;
-        }
-        return B() - 1;
+    public final void a(org.telegram.messenger.f6 f6Var, boolean z10) {
+        setImageDrawable(f6Var);
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final yt0 D1(int i7) {
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.Document document;
-        ty tyVar = this.Y;
-        xx xxVar = tyVar.k0;
-        v4.i0 adapter = tyVar.i0.getAdapter();
-        xx xxVar2 = tyVar.o0;
-        TLRPC.Document document2 = null;
-        r4 = null;
-        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
-        if (adapter != xxVar2) {
-            if (xxVar.y.isEmpty()) {
-                arrayList = null;
-                return F1(document2, arrayList);
-            }
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) xxVar.y.get(i7);
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList2 = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList2 = webDocument.attributes;
-                } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    if (webDocument2 != null) {
-                        arrayList2 = webDocument2.attributes;
-                    }
-                }
-            }
-            arrayList = arrayList2;
-            document2 = document;
-            return F1(document2, arrayList);
-        }
-        int i10 = xxVar2.I;
-        if (i7 <= i10) {
-            if (i7 == i10) {
-                return null;
-            }
-            document2 = (TLRPC.Document) tyVar.j1.get(i7);
-            arrayList = document2.attributes;
-            return F1(document2, arrayList);
-        }
-        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) xxVar2.y.get((i7 - i10) - 1);
-        document = botInlineResult2.document;
-        if (document != null) {
-            arrayList2 = document.attributes;
-        } else {
-            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
-            if (webDocument3 != null) {
-                arrayList2 = webDocument3.attributes;
-            } else {
-                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
-                if (webDocument4 != null) {
-                    arrayList2 = webDocument4.attributes;
-                }
-            }
-        }
-        arrayList = arrayList2;
-        document2 = document;
-        return F1(document2, arrayList);
+    public x5 getSpan() {
+        return this.d;
     }
 
-    public final yt0 F1(TLRPC.Document document, List list) {
-        TLRPC.PhotoSize w10;
-        int i7;
-        int i10;
-        yt0 yt0Var = this.X;
-        yt0Var.b = 100.0f;
-        yt0Var.a = 100.0f;
-        if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i7 = w10.w) != 0 && (i10 = w10.h) != 0) {
-            yt0Var.a = i7;
-            yt0Var.b = i10;
-        }
-        if (list != null) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i11);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    yt0Var.a = documentAttribute.w;
-                    yt0Var.b = documentAttribute.h;
-                    break;
-                }
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isPressed()) {
+            float f10 = this.h;
+            if (f10 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / org.telegram.messenger.g0.r) / 100.0f) + f10;
+                this.h = min;
+                this.h = Utilities.i(min, 1.0f, 0.0f);
+                invalidate();
             }
         }
-        return yt0Var;
+        float f11 = ((1.0f - this.h) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f11, f11, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.view.View");
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i7));
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z10) {
+            super.setPressed(z10);
+            invalidate();
+            if (z10 && (valueAnimator = this.n) != null) {
+                valueAnimator.removeAllListeners();
+                this.n.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f10 = this.h;
+            if (f10 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+                this.n = ofFloat;
+                ofFloat.addUpdateListener(new w(this, 22));
+                this.n.addListener(new x(this, 26));
+                org.telegram.ui.Cells.c0.q(5.0f, this.n);
+                this.n.setDuration(350L);
+                this.n.start();
+            }
+        }
+    }
+
+    public void setSpan(x5 x5Var) {
+        this.d = x5Var;
     }
 }

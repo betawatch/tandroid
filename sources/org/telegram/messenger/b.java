@@ -2,11 +2,11 @@ package org.telegram.messenger;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class b implements org.telegram.ui.Components.l00 {
+public final class b implements org.telegram.ui.Components.j00 {
     public final Thread c;
-    public final ai.n d;
+    public final ai.k d;
     public volatile boolean e;
     public volatile int f;
     public int g;
@@ -15,8 +15,8 @@ public final class b implements org.telegram.ui.Components.l00 {
     public volatile int h = -1;
     public final android.support.v4.media.session.q b = new android.support.v4.media.session.q(this, Looper.getMainLooper(), 4);
 
-    public b(ai.n nVar) {
-        this.d = nVar;
+    public b(ai.k kVar) {
+        this.d = kVar;
         r0 r0Var = r0.f;
         this.e = r0Var.a > 0;
         r0Var.d.add(this);
@@ -25,7 +25,7 @@ public final class b implements org.telegram.ui.Components.l00 {
         thread.start();
     }
 
-    @Override // org.telegram.ui.Components.l00
+    @Override // org.telegram.ui.Components.j00
     public final void a() {
         synchronized (this.a) {
             this.f++;
@@ -35,7 +35,7 @@ public final class b implements org.telegram.ui.Components.l00 {
         this.c.interrupt();
     }
 
-    @Override // org.telegram.ui.Components.l00
+    @Override // org.telegram.ui.Components.j00
     public final void b() {
         synchronized (this.a) {
             this.f++;

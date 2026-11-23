@@ -2,9 +2,9 @@ package j5;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends a {
     public final long[] E;
@@ -44,7 +44,7 @@ public final class c extends a {
         h5.b.n(allocate, this.s);
         allocate.putInt((int) 0);
         h5.b.p(this.w, allocate);
-        allocate.put((byte) (h5.b.l(this.x) & ls.e4));
+        allocate.put((byte) (h5.b.l(this.x) & ks.e4));
         allocate.put(h5.b.b(this.x));
         int l10 = h5.b.l(this.x);
         while (l10 < 31) {

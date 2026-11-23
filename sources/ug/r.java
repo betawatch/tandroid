@@ -14,16 +14,16 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
-import hi.l3;
+import hi.u3;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.ry;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final /* synthetic */ LimitPreviewView E;
@@ -111,7 +111,7 @@ public final class r extends View {
                 ArrayList arrayList2 = qVar.b;
                 arrayList2.add(staticLayout);
                 arrayList2.add(new StaticLayout("" + this.f.charAt(length), textPaint, (int) this.e, alignment, 1.0f, 0.0f, false));
-                spannableStringBuilder3.setSpan(new uy(false), length, length + 1, 0);
+                spannableStringBuilder3.setSpan(new ry(false), length, length + 1, 0);
             }
             length--;
         }
@@ -123,7 +123,7 @@ public final class r extends View {
             qVar2.f = ofFloat;
             ofFloat.addUpdateListener(new o(this, qVar2, 0));
             qVar2.f.addListener(new p(this, qVar2, 1));
-            qVar2.f.setInterpolator(nr.g);
+            qVar2.f.setInterpolator(kr.g);
             qVar2.f.setDuration(250L);
             qVar2.f.setStartDelay(((arrayList.size() - 1) - i11) * 60);
             qVar2.f.start();
@@ -174,7 +174,7 @@ public final class r extends View {
             if (((Paint) d2.d) == null) {
                 d2.d = new Paint(1);
             }
-            ((Paint) d2.d).setColor(m6.x0(null, m6.Fi, false));
+            ((Paint) d2.d).setColor(n6.x0(null, n6.Fi, false));
             canvas.drawRoundRect(rectF, f10, f10, (Paint) d2.d);
         } else {
             if (this.w) {
@@ -277,7 +277,7 @@ public final class r extends View {
     public final void onMeasure(int i7, int i10) {
         SpannableStringBuilder spannableStringBuilder = this.f;
         TextPaint textPaint = this.c;
-        this.e = l3.h(spannableStringBuilder, textPaint);
+        this.e = u3.h(spannableStringBuilder, textPaint);
         this.d = new StaticLayout(this.f, textPaint, org.telegram.messenger.g0.L(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = 0.0f;
         for (int i11 = 0; i11 < this.d.getLineCount(); i11++) {

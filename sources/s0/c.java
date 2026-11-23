@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public static int c;
@@ -299,7 +299,7 @@ public final class c {
         sb2.append("; maxTextLength: ");
         sb2.append(accessibilityNodeInfo.getMaxTextLength());
         sb2.append("; stateDescription: ");
-        sb2.append(i7 >= 30 ? g0.f.l(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY"));
+        sb2.append(i7 >= 30 ? g0.g.l(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY"));
         sb2.append("; contentDescription: ");
         sb2.append(accessibilityNodeInfo.getContentDescription());
         sb2.append("; tooltipText: ");
@@ -307,7 +307,7 @@ public final class c {
         sb2.append("; viewIdResName: ");
         sb2.append(accessibilityNodeInfo.getViewIdResourceName());
         sb2.append("; uniqueId: ");
-        sb2.append(i7 >= 33 ? ai.d.h(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
+        sb2.append(i7 >= 33 ? g0.a.f(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
         sb2.append("; checkable: ");
         sb2.append(accessibilityNodeInfo.isCheckable());
         sb2.append("; checked: ");
@@ -340,7 +340,7 @@ public final class c {
         sb2.append("; visible: ");
         sb2.append(accessibilityNodeInfo.isVisibleToUser());
         sb2.append("; isTextSelectable: ");
-        sb2.append(i7 >= 33 ? ai.d.j(accessibilityNodeInfo) : f(TLObject.FLAG_23));
+        sb2.append(i7 >= 33 ? g0.a.g(accessibilityNodeInfo) : f(TLObject.FLAG_23));
         sb2.append("; accessibilityDataSensitive: ");
         sb2.append(i7 >= 34 ? h1.a.k(accessibilityNodeInfo) : f(64));
         sb2.append("; [");

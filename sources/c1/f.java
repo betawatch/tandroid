@@ -1,6 +1,6 @@
 package c1;
 
-import a8.p9;
+import a8.q9;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,7 +15,7 @@ import f7.i;
 import f7.k;
 import f7.r;
 import f7.u;
-import hi.t5;
+import hi.u0;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
@@ -30,7 +30,7 @@ import v0.n;
 import v0.p;
 import w0.h;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends b1.d {
     public final Context e;
@@ -274,7 +274,7 @@ public final class f extends b1.d {
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new a6.c(true, p9.a(jSONObject), optString);
+                    cVar = new a6.c(true, q9.a(jSONObject), optString);
                 }
                 z10 = true;
             }
@@ -285,7 +285,7 @@ public final class f extends b1.d {
         a6.e eVar = new a6.e(dVar, aVar, a10.l, false, 0, cVar, bVar2, z11);
         t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.d = new n6.c[]{new n6.c("auth_api_credentials_begin_sign_in", 8L)};
-        b10.c = new t5(a10, eVar, 11);
+        b10.c = new u0(a10, eVar, 12);
         b10.b = false;
         b10.a = 1553;
         a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 16)).addOnFailureListener(new ab.g(7, this, cancellationSignal));

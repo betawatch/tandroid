@@ -2,7 +2,7 @@ package d1;
 
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class c implements Runnable {
             case 0:
                 v0.g gVar = this.b.f;
                 if (gVar != null) {
-                    gVar.a(new y0.a(new x0.a(26), this.c.getMessage()));
+                    gVar.T(new y0.a(new x0.a(26), this.c.getMessage()));
                     return;
                 } else {
                     j.h("callback");
@@ -30,7 +30,7 @@ public final /* synthetic */ class c implements Runnable {
             default:
                 v0.g gVar2 = this.b.f;
                 if (gVar2 != null) {
-                    gVar2.a(new w0.c(2, this.c.getMessage()));
+                    gVar2.T(new w0.c(2, this.c.getMessage()));
                     return;
                 } else {
                     j.h("callback");

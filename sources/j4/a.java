@@ -1,6 +1,6 @@
 package j4;
 
-import a8.la;
+import a8.ma;
 import a8.p0;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -16,15 +16,15 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import i5.c;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final x a = new x();
@@ -62,7 +62,7 @@ public final class a implements m {
 
     public static void a(SpannableStringBuilder spannableStringBuilder, int i7, int i10, int i11, int i12, int i13) {
         if (i7 != i10) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan((i7 >>> 8) | ((i7 & ls.e4) << 24)), i11, i12, i13 | 33);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan((i7 >>> 8) | ((i7 & ks.e4) << 24)), i11, i12, i13 | 33);
         }
     }
 
@@ -91,14 +91,9 @@ public final class a implements m {
         }
     }
 
-    @Override // c4.m
-    public final /* synthetic */ d q(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     @Override // c4.m
-    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final void E(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         String y10;
         int i11;
         int i12;
@@ -108,7 +103,7 @@ public final class a implements m {
         int i13 = 1;
         int i14 = 0;
         int i15 = 2;
-        la.f(xVar.a() >= 2);
+        ma.f(xVar.a() >= 2);
         int H = xVar.H();
         if (H == 0) {
             y10 = "";
@@ -123,7 +118,7 @@ public final class a implements m {
         }
         if (y10.isEmpty()) {
             g0 g0Var = i0.b;
-            jVar.accept(new c4.a(-9223372036854775807L, -9223372036854775807L, t1.e));
+            jVar.accept(new c4.a(-9223372036854775807L, -9223372036854775807L, s1.e));
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(y10);
@@ -140,11 +135,11 @@ public final class a implements m {
             int m10 = xVar.m();
             int m11 = xVar.m();
             if (m11 == 1937013100) {
-                la.f(xVar.a() >= i15 ? i13 : i14);
+                ma.f(xVar.a() >= i15 ? i13 : i14);
                 int H2 = xVar.H();
                 int i19 = i14;
                 while (i19 < H2) {
-                    la.f(xVar.a() >= 12 ? i13 : i14);
+                    ma.f(xVar.a() >= 12 ? i13 : i14);
                     int H3 = xVar.H();
                     int H4 = xVar.H();
                     xVar.O(i15);
@@ -176,7 +171,7 @@ public final class a implements m {
                 i11 = i15;
             } else if (m11 == 1952608120 && this.b) {
                 i11 = 2;
-                la.f(xVar.a() >= 2);
+                ma.f(xVar.a() >= 2);
                 f10 = l0.h(xVar.H() / this.h, 0.0f, 0.95f);
             } else {
                 i11 = 2;
@@ -190,8 +185,13 @@ public final class a implements m {
     }
 
     @Override // c4.m
-    public final int y() {
+    public final int N() {
         return 2;
+    }
+
+    @Override // c4.m
+    public final /* synthetic */ d s(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
     }
 
     @Override // c4.m

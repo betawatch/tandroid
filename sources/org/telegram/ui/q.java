@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements org.telegram.messenger.y10 {
+public final /* synthetic */ class q implements org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ g4 b;
 
@@ -14,15 +14,15 @@ public final /* synthetic */ class q implements org.telegram.messenger.y10 {
         this.b = g4Var;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
                 g4 g4Var = this.b;
-                bi.t2 t2Var = g4Var.r0;
+                bi.v2 v2Var = g4Var.r0;
                 float f10 = -((Integer) obj).intValue();
                 g4Var.q0 = f10;
-                t2Var.setTranslationY(((1.0f - g4Var.a1) * org.telegram.messenger.g0.L(51.0f)) + f10);
+                v2Var.setTranslationY(((1.0f - g4Var.a1) * org.telegram.messenger.g0.L(51.0f)) + f10);
                 break;
             case 1:
                 String str = (String) obj;

@@ -1,52 +1,54 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class x0 extends kd.j implements rd.q {
-    public int a;
-    public /* synthetic */ ce.d b;
-    public /* synthetic */ Throwable c;
-    public final /* synthetic */ d1 d;
+public final class x0 implements Application.ActivityLifecycleCallbacks {
+    public final e1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(d1 d1Var, id.c cVar) {
-        super(3, cVar);
-        this.d = d1Var;
+    public x0(e1 sharedSessionRepository) {
+        kotlin.jvm.internal.j.e(sharedSessionRepository, "sharedSessionRepository");
+        this.a = sharedSessionRepository;
     }
 
-    @Override // rd.q
-    public final Object b(Object obj, Object obj2, Object obj3) {
-        x0 x0Var = new x0(this.d, (id.c) obj3);
-        x0Var.b = (ce.d) obj;
-        x0Var.c = (Throwable) obj2;
-        return x0Var.invokeSuspend(gd.k.a);
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityCreated(Activity activity, Bundle bundle) {
+        kotlin.jvm.internal.j.e(activity, "activity");
     }
 
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
-        int i7 = this.a;
-        if (i7 == 0) {
-            b7.h.b(obj);
-            ce.d dVar = this.b;
-            Throwable th2 = this.c;
-            n0 a10 = this.d.b.a(null);
-            j0 j0Var = new j0(a10, null, null);
-            StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
-            sb2.append(th2.getMessage());
-            sb2.append(". Emit fallback session ");
-            p5.c.t(sb2, a10.a, "FirebaseSessions");
-            this.b = null;
-            this.a = 1;
-            if (dVar.a(j0Var, this) == aVar) {
-                return aVar;
-            }
-        } else {
-            if (i7 != 1) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-            b7.h.b(obj);
-        }
-        return gd.k.a;
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityDestroyed(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityPaused(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        this.a.b();
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityResumed(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        this.a.c();
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.j.e(outState, "outState");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStarted(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStopped(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
     }
 }

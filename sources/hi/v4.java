@@ -1,37 +1,34 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class v4 extends AnimatorListenerAdapter {
+public final /* synthetic */ class v4 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k5 b;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ v4(k5 k5Var, int i7) {
+    public /* synthetic */ v4(int i7, FrameLayout frameLayout) {
         this.a = i7;
-        this.b = k5Var;
+        this.b = frameLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
         switch (this.a) {
             case 0:
-                k5 k5Var = this.b;
-                k5Var.L1 = 0.0f;
-                k5Var.J1.setAlpha(1.0f);
-                k5Var.J1.setVisibility(8);
-                k5Var.J1.n();
+                ((v5) this.b).s1.d();
                 break;
             case 1:
-                this.b.Z1.setTranslationY(0.0f);
+                org.telegram.ui.ActionBar.n0 n0Var = ((org.telegram.ui.ActionBar.q0) this.b).R;
+                if (n0Var != null) {
+                    n0Var.a();
+                    break;
+                }
                 break;
             default:
-                k5 k5Var2 = this.b;
-                k5Var2.c2 = false;
-                k5Var2.Z1.setTranslationY(0.0f);
-                k5Var2.t0();
+                ((tg.l0) this.b).C1.d();
                 break;
         }
     }

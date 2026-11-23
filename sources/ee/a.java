@@ -1,6 +1,7 @@
 package ee;
 
 import a8.p0;
+import c8.z;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
@@ -14,16 +15,24 @@ import zd.v1;
 import zd.x;
 import zd.y;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final t a = new t("CLOSED", 0);
-    public static final t b = new t("UNDEFINED", 0);
-    public static final t c = new t("REUSABLE_CLAIMED", 0);
-    public static final t d = new t("NO_THREAD_ELEMENTS", 0);
+    public static final t a;
+    public static final t b;
+    public static final t c;
+    public static final t d;
     public static final b1.e e = new b1.e(5);
     public static final b1.e f = new b1.e(6);
     public static final b1.e g = new b1.e(7);
+
+    static {
+        int i7 = 0;
+        a = new t("CLOSED", i7);
+        b = new t("UNDEFINED", i7);
+        c = new t("REUSABLE_CLAIMED", i7);
+        d = new t("NO_THREAD_ELEMENTS", i7);
+    }
 
     public static final void a(int i7) {
         if (i7 < 1) {
@@ -76,14 +85,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    af.b.a(runtimeException, th2);
+                    b5.a.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            af.b.a(th2, new e(hVar));
+            b5.a.a(th2, new e(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -174,7 +183,7 @@ public abstract class a {
                     }
                 }
             } else {
-                fVar.resumeWith(b7.h.a(a1Var.getCancellationException()));
+                fVar.resumeWith(z.a(a1Var.getCancellationException()));
             }
             while (a11.k()) {
             }

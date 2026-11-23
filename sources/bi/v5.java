@@ -1,137 +1,57 @@
 package bi;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ub0;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.fq0;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.zo0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class v5 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ View c;
+public final class v5 extends zo0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 V2;
+    public final /* synthetic */ fq0 W2;
 
-    public /* synthetic */ v5(int i7, View view) {
-        this.a = i7;
-        this.c = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v5(fq0 fq0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.g2 g2Var) {
+        super(context, null, str, false, str2, false, i6Var);
+        this.W2 = fq0Var;
+        this.V2 = g2Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int j3;
-        int i7 = this.a;
-        View view = this.c;
-        switch (i7) {
-            case 0:
-                t5 t5Var = (t5) view;
-                if (!this.b && editable.length() > 12) {
-                    this.b = true;
-                    editable.delete(12, editable.length());
-                    org.telegram.messenger.g0.D3(t5Var);
-                    try {
-                        t5Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    this.b = false;
-                    break;
+    @Override // org.telegram.ui.Components.zo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        kc b02;
+        if (z10 && (b02 = kc.b0(this.V2)) != null) {
+            if (hVar.m() == 1) {
+                long j3 = hVar.j(0);
+                if (j3 == i10.i(this.a).n) {
+                    fc G = b02.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749785, new Object[0])));
+                    G.r = false;
+                    G.j();
+                } else if (j3 < 0) {
+                    fc G2 = b02.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749789, tL_forumTopic != null ? tL_forumTopic.title : mp.u1(this.a).O0(Long.valueOf(-j3)).title)));
+                    G2.r = false;
+                    G2.j();
+                } else {
+                    fc G3 = b02.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749789, mp.u1(this.a).c2(Long.valueOf(j3)).first_name)));
+                    G3.r = false;
+                    G3.j();
                 }
-                break;
-            case 1:
-                ub0 ub0Var = (ub0) view;
-                if (this.b) {
-                    if (ub0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (ub0Var.E) {
-                            ub0Var.f.callOnClick();
-                        }
-                        org.telegram.messenger.g0.X3(ub0Var.f, true, 0.1f, true, true);
-                        break;
-                    } else if (ub0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.g0.X3(ub0Var.f, false, 0.1f, true, true);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                boolean isEmpty = TextUtils.isEmpty(editable);
-                if (isEmpty != this.b) {
-                    TextView textView = (TextView) view;
-                    this.b = isEmpty;
-                    textView.setText(hd.N0(isEmpty ? 2131746125 : 2131754483, null));
-                    break;
-                }
-                break;
-            default:
-                tg.n2 n2Var = (tg.n2) view;
-                tg.m2 m2Var = n2Var.r0;
-                if (this.b && n2Var.x0 > 0 && n2Var.y0 > 0 && !n2Var.A0 && m2Var.getLayout() != null) {
-                    float f10 = org.telegram.messenger.g0.q.y / 3.0f;
-                    float height = m2Var.getLayout().getHeight();
-                    if (height > f10 && (j3 = Utilities.j((int) ((f10 / height) * n2Var.getBaseFontSize()), n2Var.y0, n2Var.x0)) != n2Var.getBaseFontSize()) {
-                        n2Var.setBaseFontSize(j3);
-                        Runnable runnable = n2Var.z0;
-                        if (runnable != null) {
-                            runnable.run();
-                        }
-                    }
-                }
-                n2Var.s();
-                break;
+            } else {
+                fc Q = b02.Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(gd.G(hVar.m(), "GiftCollectionSharedToManyChats", Integer.valueOf(hVar.m()))));
+                Q.r = false;
+                Q.j();
+            }
+            try {
+                this.W2.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-                break;
-            default:
-                this.b = i11 > 3;
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    public v5(kg.z0 z0Var, TextView textView) {
-        this.a = 2;
-        this.c = textView;
-        this.b = TextUtils.isEmpty(z0Var.getText());
-    }
-
-    public v5(ub0 ub0Var, boolean z10) {
-        this.a = 1;
-        this.c = ub0Var;
-        this.b = z10;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

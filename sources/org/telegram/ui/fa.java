@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -64,30 +64,30 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 brVar.getClass();
                 return false;
             case 4:
-                return i7 == 6 && ((z40) this.b).t0();
+                return i7 == 6 && ((y40) this.b).t0();
             case 5:
-                xb0 xb0Var = (xb0) this.b;
+                wb0 wb0Var = (wb0) this.b;
                 if (i7 == 5) {
-                    xb0Var.h(null);
+                    wb0Var.h(null);
                     return true;
                 }
-                xb0Var.getClass();
+                wb0Var.getClass();
                 return false;
             case 6:
-                ec0 ec0Var = (ec0) this.b;
+                dc0 dc0Var = (dc0) this.b;
                 if (i7 == 5) {
-                    ec0Var.h(null);
+                    dc0Var.h(null);
                     return true;
                 }
-                ec0Var.getClass();
+                dc0Var.getClass();
                 return false;
             case 7:
-                sc0 sc0Var = (sc0) this.b;
+                rc0 rc0Var = (rc0) this.b;
                 if (i7 == 5) {
-                    sc0Var.h(null);
+                    rc0Var.h(null);
                     return true;
                 }
-                sc0Var.getClass();
+                rc0Var.getClass();
                 return false;
             case 8:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -102,39 +102,39 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 passcodeActivity.u0();
                 return true;
             case 9:
-                dk0 dk0Var = (dk0) this.b;
+                bk0 bk0Var = (bk0) this.b;
                 if (i7 == 5) {
-                    dk0Var.h(null);
+                    bk0Var.h(null);
                     return true;
                 }
-                dk0Var.getClass();
+                bk0Var.getClass();
                 return false;
             case 10:
-                yx0 yx0Var = (yx0) this.b;
-                yx0Var.getClass();
+                wx0 wx0Var = (wx0) this.b;
+                wx0Var.getClass();
                 if (i7 != 5) {
                     if (i7 != 6) {
                         return false;
                     }
-                    yx0Var.finishFragment();
+                    wx0Var.finishFragment();
                     return true;
                 }
                 int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                EditTextBoldCursor[] editTextBoldCursorArr = yx0Var.a;
+                EditTextBoldCursor[] editTextBoldCursorArr = wx0Var.a;
                 if (intValue >= editTextBoldCursorArr.length) {
                     return true;
                 }
                 editTextBoldCursorArr[intValue].requestFocus();
                 return true;
             case 11:
-                c21 c21Var = (c21) this.b;
+                a21 a21Var = (a21) this.b;
                 if (keyEvent == null) {
                     return false;
                 }
                 if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                     return false;
                 }
-                org.telegram.messenger.g0.v1(c21Var.Y1);
+                org.telegram.messenger.g0.v1(a21Var.Y1);
                 return false;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;

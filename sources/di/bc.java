@@ -1,9 +1,9 @@
 package di;
 
 import android.content.Context;
-import org.telegram.ui.vs0;
+import org.telegram.ui.us0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bc extends vg.m {
     public final /* synthetic */ int j0;
@@ -87,7 +87,7 @@ public final class bc extends vg.m {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bc(vs0 vs0Var, Context context, int i7, int i10, Context context2) {
+    public bc(us0 us0Var, Context context, int i7, int i10, Context context2) {
         super(context, i7, i10);
         this.j0 = 2;
     }

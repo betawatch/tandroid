@@ -1,54 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.view.View;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ge implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.bn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class ge extends zg {
+    public final /* synthetic */ ChatActivityEnterView G;
 
-    public ge(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.bn bnVar, Activity activity) {
-        this.c = chatActivityEnterView;
-        this.a = bnVar;
-        this.b = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ge(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.G = chatActivityEnterView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i7;
-        org.telegram.ui.bn bnVar = this.a;
-        if (bnVar == null) {
+    @Override // org.telegram.ui.Components.zg, android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.G;
+        Paint paint = chatActivityEnterView.G2;
+        float[] fArr = chatActivityEnterView.H6;
+        float[] fArr2 = chatActivityEnterView.G6;
+        int i7 = ChatActivityEnterView.s7;
+        if (!chatActivityEnterView.o0()) {
+            super.onDraw(canvas);
+            if (getTag() == null || chatActivityEnterView.f2 == null || chatActivityEnterView.X0 || this.x || org.telegram.messenger.ri.d0(chatActivityEnterView.R).v0[0].isEmpty() || paint == null) {
+                return;
+            }
+            canvas.drawCircle(org.telegram.messenger.g0.L(9.0f) + (getWidth() / 2), (getHeight() / 2) - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f), paint);
             return;
         }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.W2 = !chatActivityEnterView.W2;
-        if (chatActivityEnterView.f0 == null) {
-            chatActivityEnterView.f0 = new kr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.m6.Nl);
+        if (chatActivityEnterView.F6 == null) {
+            nh0 nh0Var = new nh0(R.raw.chat_audio_record_delete_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+            chatActivityEnterView.F6 = nh0Var;
+            nh0Var.J(true);
+            chatActivityEnterView.F6.p0 = false;
+            int G0 = chatActivityEnterView.G0(org.telegram.ui.ActionBar.n6.Vf);
+            nh0 nh0Var2 = chatActivityEnterView.F6;
+            nh0Var2.a0 = true;
+            nh0Var2.Q(G0, "Cup Grey");
+            chatActivityEnterView.F6.Q(G0, "Box_Grey 2");
+            chatActivityEnterView.F6.Q(G0, "Box Grey");
+            chatActivityEnterView.F6.o();
+            chatActivityEnterView.F6.R(this);
+            chatActivityEnterView.F6.T(true, 0.0f);
         }
-        chatActivityEnterView.f0.a(chatActivityEnterView.W2, true);
-        chatActivityEnterView.y2.setImageDrawable(chatActivityEnterView.f0);
-        org.telegram.messenger.np.u1(chatActivityEnterView.R).g7.edit().putBoolean("silent_" + chatActivityEnterView.G3, chatActivityEnterView.W2).commit();
-        org.telegram.messenger.ys.t(chatActivityEnterView.R).c0(chatActivityEnterView.G3, bnVar == null ? 0L : bnVar.d(), true);
-        bnVar.h8();
-        UndoView undoView = bnVar.N3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.W2 ? 54 : 55, 0L, null);
+        nh0 nh0Var3 = chatActivityEnterView.F6;
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float scaleX = getScaleX() != 0.0f ? getScaleX() : 1.0f;
+        float scaleY = getScaleY() != 0.0f ? getScaleY() : 1.0f;
+        if (ChatActivityEnterView.h(chatActivityEnterView, chatActivityEnterView.b2, fArr2) && ChatActivityEnterView.h(chatActivityEnterView, this, fArr)) {
+            width = com.google.android.gms.internal.vision.e2.A(fArr2[0], fArr[0], scaleX, width);
         }
-        ImageView imageView = chatActivityEnterView.y2;
-        if (chatActivityEnterView.W2) {
-            str = "AccDescrChanSilentOn";
-            i7 = 2131754906;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i7 = 2131754907;
-        }
-        imageView.setContentDescription(org.telegram.messenger.hd.N0(i7, str));
-        chatActivityEnterView.n2(true);
+        float L = org.telegram.messenger.g0.L(14.0f) / scaleX;
+        float L2 = org.telegram.messenger.g0.L(14.0f) / scaleY;
+        nh0Var3.setBounds(Math.round(width - L), Math.round(height - L2), Math.round(width + L), Math.round(height + L2));
+        nh0Var3.draw(canvas);
     }
 }

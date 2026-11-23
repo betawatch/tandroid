@@ -3,17 +3,16 @@ package hi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.ImageView;
-import org.telegram.ui.Components.mc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class k extends ImageView {
     public final float a;
-    public final mc b;
+    public final org.telegram.ui.Components.lc b;
 
     public k(Context context) {
         super(context);
-        this.b = new mc(this);
+        this.b = new org.telegram.ui.Components.lc(this);
         this.a = 0.2f;
     }
 

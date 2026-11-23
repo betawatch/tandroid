@@ -1,16 +1,16 @@
 package be;
 
 import android.util.Log;
-import c8.m9;
-import c8.x0;
-import gb.a1;
+import c8.n9;
+import c8.y0;
 import gb.b1;
-import gb.d1;
-import gb.j0;
-import gb.r0;
-import gb.t0;
-import gb.w0;
-import hi.w4;
+import gb.c1;
+import gb.e1;
+import gb.k0;
+import gb.o0;
+import gb.s0;
+import gb.u0;
+import gb.x0;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import zd.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final class l extends kd.j implements rd.p {
                 lVar4.c = obj;
                 return lVar4;
             case 4:
-                return new l((gb.n) this.c, (w0) this.d, cVar, 4);
+                return new l((gb.n) this.c, (x0) this.d, cVar, 4);
             case 5:
-                return new l((d1) this.c, (j0) this.d, cVar, 5);
+                return new l((e1) this.c, (k0) this.d, cVar, 5);
             case 6:
                 l lVar5 = new l((jb.d) this.d, cVar, 6);
                 lVar5.c = obj;
@@ -124,7 +124,7 @@ public final class l extends kd.j implements rd.p {
      */
     /* JADX WARN: Code restructure failed: missing block: B:251:0x03fe, code lost:
     
-        if (gb.d1.a(r3, r0, r2, r19) == r4) goto L220;
+        if (gb.e1.a(r3, r0, r2, r19) == r4) goto L220;
      */
     /* JADX WARN: Code restructure failed: missing block: B:285:0x046c, code lost:
     
@@ -189,7 +189,7 @@ public final class l extends kd.j implements rd.p {
         Boolean bool;
         Double d;
         Integer num2;
-        jb.p pVar;
+        jb.q qVar;
         jb.i iVar;
         Integer num3;
         Double d2;
@@ -212,7 +212,7 @@ public final class l extends kd.j implements rd.p {
                 int i10 = this.b;
                 try {
                     if (i10 == 0) {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         u uVar = (u) obj3;
                         this.b = 1;
                         kVar = kVar4;
@@ -222,14 +222,14 @@ public final class l extends kd.j implements rd.p {
                             }
                         } catch (Throwable th2) {
                             th = th2;
-                            a10 = b7.h.a(th);
+                            a10 = c8.z.a(th);
                             return new j(a10 instanceof gd.f ? kVar : new h(gd.g.a(a10)));
                         }
                     } else {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         kVar = kVar4;
                     }
                     a10 = kVar;
@@ -242,7 +242,7 @@ public final class l extends kd.j implements rd.p {
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     s sVar = (s) this.c;
                     ce.b bVar = (ce.b) obj3;
                     this.b = 1;
@@ -251,7 +251,7 @@ public final class l extends kd.j implements rd.p {
                             invoke = ((de.c) bVar.e).invoke(sVar, this);
                             break;
                         default:
-                            invoke = ((ce.c) bVar.e).v(new de.l(sVar), this);
+                            invoke = ((ce.c) bVar.e).J(new de.l(sVar), this);
                             jd.a aVar3 = jd.a.a;
                             if (invoke != aVar3) {
                                 invoke = kVar4;
@@ -266,35 +266,35 @@ public final class l extends kd.j implements rd.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 2:
                 jd.a aVar4 = jd.a.a;
                 int i12 = this.b;
                 if (i12 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     ce.d dVar = (ce.d) this.c;
                     this.b = 1;
-                    Object v = ((ce.c) ((ce.b) obj3).e).v(dVar, this);
-                    if (v != aVar4) {
-                        v = kVar4;
+                    Object J = ((ce.c) ((ce.b) obj3).e).J(dVar, this);
+                    if (J != aVar4) {
+                        J = kVar4;
                     }
-                    if (v == aVar4) {
+                    if (J == aVar4) {
                         return aVar4;
                     }
                 } else {
                     if (i12 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 3:
                 jd.a aVar5 = jd.a.a;
                 int i13 = this.b;
                 if (i13 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     Object obj4 = this.c;
                     this.b = 1;
                     if (((ce.d) obj3).a(obj4, this) == aVar5) {
@@ -304,7 +304,7 @@ public final class l extends kd.j implements rd.p {
                     if (i13 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 4:
@@ -313,7 +313,7 @@ public final class l extends kd.j implements rd.p {
                 jd.a aVar6 = jd.a.a;
                 int i14 = this.b;
                 if (i14 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     hb.c cVar2 = hb.c.a;
                     this.b = 1;
                     b10 = cVar2.b(this);
@@ -323,7 +323,7 @@ public final class l extends kd.j implements rd.p {
                         if (i14 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         Boolean a12 = lVar2.a.a();
                         if (a12 != null) {
                             booleanValue = a12.booleanValue();
@@ -333,15 +333,15 @@ public final class l extends kd.j implements rd.p {
                         }
                         if (booleanValue) {
                             o9.g gVar = nVar.a;
-                            g0.e eVar = new g0.e(5);
+                            g0.f fVar = new g0.f(5);
                             gVar.a();
-                            gVar.j.add(eVar);
+                            gVar.j.add(fVar);
                         } else {
                             kd.g.a(Log.d("FirebaseSessions", "Sessions SDK disabled. Not listening to lifecycle events."));
                         }
                         return kVar4;
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     b10 = obj;
                 }
                 Collection values = ((Map) b10).values();
@@ -357,28 +357,28 @@ public final class l extends kd.j implements rd.p {
                 kd.g.a(Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events."));
                 return kVar4;
             case 5:
-                j0 j0Var = (j0) obj3;
-                d1 d1Var = (d1) this.c;
+                k0 k0Var = (k0) obj3;
+                e1 e1Var = (e1) this.c;
                 jd.a aVar7 = jd.a.a;
                 int i15 = this.b;
                 try {
                 } catch (Exception e10) {
                     Log.d("FirebaseSessions", "App foregrounded, failed to update data. Message: " + e10.getMessage());
-                    if (d1Var.e(j0Var)) {
-                        gb.n0 a14 = d1Var.b.a(j0Var.a);
-                        d1Var.h = j0.a(j0Var, a14, null, null, 4);
-                        t0 t0Var = (t0) d1Var.c;
-                        zd.b0.q(zd.b0.b(t0Var.e), new r0(t0Var, a14, null));
+                    if (e1Var.e(k0Var)) {
+                        o0 a14 = e1Var.b.a(k0Var.a);
+                        e1Var.h = k0.a(k0Var, a14, null, null, 4);
+                        u0 u0Var = (u0) e1Var.c;
+                        zd.b0.q(zd.b0.b(u0Var.e), new s0(u0Var, a14, null));
                         String str = a14.a;
-                        a1 a1Var = a1.b;
+                        b1 b1Var = b1.b;
                         this.b = 2;
                         break;
                     }
                 }
                 if (i15 == 0) {
-                    b7.h.b(obj);
-                    m1.g gVar2 = d1Var.e;
-                    b1 b1Var = new b1(d1Var, null, 1);
+                    c8.z.b(obj);
+                    m1.g gVar2 = e1Var.e;
+                    c1 c1Var = new c1(e1Var, null, 1);
                     this.b = 1;
                     break;
                 } else {
@@ -386,10 +386,10 @@ public final class l extends kd.j implements rd.p {
                         if (i15 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         return kVar4;
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 6:
@@ -397,7 +397,7 @@ public final class l extends kd.j implements rd.p {
                 jd.a aVar8 = jd.a.a;
                 int i16 = this.b;
                 if (i16 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     JSONObject jSONObject = (JSONObject) this.c;
                     Log.d("FirebaseSessions", "Fetched settings: " + jSONObject);
                     if (jSONObject.has("app_quality")) {
@@ -426,12 +426,12 @@ public final class l extends kd.j implements rd.p {
                                     d = d2;
                                     bool = bool2;
                                     num = null;
-                                    pVar = dVar2.e;
+                                    qVar = dVar2.e;
                                     if (num == null) {
                                     }
                                     iVar = new jb.i(bool, d, num2, new Integer(num == null ? num.intValue() : jb.d.g), new Long(dVar2.a.a().c));
                                     this.b = 1;
-                                    if (pVar.c(iVar, this) == aVar8) {
+                                    if (qVar.c(iVar, this) == aVar8) {
                                     }
                                     return kVar4;
                                 }
@@ -452,17 +452,17 @@ public final class l extends kd.j implements rd.p {
                         d = null;
                         num2 = null;
                     }
-                    pVar = dVar2.e;
+                    qVar = dVar2.e;
                     iVar = new jb.i(bool, d, num2, new Integer(num == null ? num.intValue() : jb.d.g), new Long(dVar2.a.a().c));
                     this.b = 1;
-                    if (pVar.c(iVar, this) == aVar8) {
+                    if (qVar.c(iVar, this) == aVar8) {
                         return aVar8;
                     }
                 } else {
                     if (i16 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 7:
@@ -472,7 +472,7 @@ public final class l extends kd.j implements rd.p {
                 int i17 = this.b;
                 try {
                     if (i17 == 0) {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         Object obj7 = threadLocal.get();
                         Boolean bool3 = Boolean.TRUE;
                         if (kotlin.jvm.internal.j.a(obj7, bool3)) {
@@ -490,7 +490,7 @@ public final class l extends kd.j implements rd.p {
                         if (i17 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         a11 = obj;
                     }
                     obj6 = (q1.b) a11;
@@ -502,17 +502,17 @@ public final class l extends kd.j implements rd.p {
                 jd.a aVar9 = jd.a.a;
                 int i18 = this.b;
                 if (i18 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     m1.j jVar = (m1.j) this.c;
                     this.b = 1;
-                    if (m9.a((List) obj3, jVar, this) == aVar9) {
+                    if (n9.a((List) obj3, jVar, this) == aVar9) {
                         return aVar9;
                     }
                 } else {
                     if (i18 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             case 9:
@@ -522,10 +522,10 @@ public final class l extends kd.j implements rd.p {
                     if (i19 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     return obj;
                 }
-                b7.h.b(obj);
+                c8.z.b(obj);
                 ?? r22 = (kd.j) this.c;
                 Object obj8 = ((m1.c) obj3).b;
                 this.b = 1;
@@ -535,7 +535,7 @@ public final class l extends kd.j implements rd.p {
                 jd.a aVar11 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     n0 n0Var = (n0) this.c;
                     this.b = 1;
                     if (b0.c((b0) obj3, n0Var, this) == aVar11) {
@@ -545,21 +545,21 @@ public final class l extends kd.j implements rd.p {
                     if (i20 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 return kVar4;
             default:
-                xi.e eVar2 = (xi.e) obj3;
+                xi.e eVar = (xi.e) obj3;
                 jd.a aVar12 = jd.a.a;
                 int i21 = this.b;
                 if (i21 == 0) {
-                    b7.h.b(obj);
-                    if (((AtomicInteger) ((w4) eVar2.d).b).get() <= 0) {
+                    c8.z.b(obj);
+                    if (((AtomicInteger) ((h6.o) eVar.d).b).get() <= 0) {
                         throw new IllegalStateException("Check failed.");
                     }
-                    zd.b0.g(((z) eVar2.a).c());
-                    l lVar3 = (l) eVar2.b;
-                    r92 = (c) eVar2.c;
+                    zd.b0.g(((z) eVar.a).c());
+                    l lVar3 = (l) eVar.b;
+                    r92 = (c) eVar.c;
                     this.c = lVar3;
                     this.b = r82;
                     r92.getClass();
@@ -577,16 +577,16 @@ public final class l extends kd.j implements rd.p {
                     if (i21 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     kVar2 = kVar4;
                     kVar4 = kVar2;
-                    if (((AtomicInteger) ((w4) eVar2.d).b).decrementAndGet() == 0) {
+                    if (((AtomicInteger) ((h6.o) eVar.d).b).decrementAndGet() == 0) {
                         return kVar4;
                     }
                     r82 = 1;
-                    zd.b0.g(((z) eVar2.a).c());
-                    l lVar32 = (l) eVar2.b;
-                    r92 = (c) eVar2.c;
+                    zd.b0.g(((z) eVar.a).c());
+                    l lVar32 = (l) eVar.b;
+                    r92 = (c) eVar.c;
                     this.c = lVar32;
                     this.b = r82;
                     r92.getClass();
@@ -625,7 +625,7 @@ public final class l extends kd.j implements rd.p {
                         ee.t tVar2 = e.o;
                         if (z10 != tVar2) {
                             if (z10 == e.n) {
-                                zd.m l11 = zd.b0.l(x0.b(this));
+                                zd.m l11 = zd.b0.l(y0.b(this));
                                 kVar2 = kVar4;
                                 try {
                                     Object z11 = r92.z(kVar6, i23, andIncrement, l11);
@@ -641,7 +641,7 @@ public final class l extends kd.j implements rd.p {
                                         k kVar7 = (k) atomicReferenceFieldUpdater3.get(r92);
                                         while (true) {
                                             if (r92.r(atomicLongFieldUpdater.get(r92), true)) {
-                                                l11.resumeWith(b7.h.a(r92.n()));
+                                                l11.resumeWith(c8.z.a(r92.n()));
                                             } else {
                                                 long andIncrement2 = atomicLongFieldUpdater22.getAndIncrement(r92);
                                                 long j11 = e.b;
@@ -710,7 +710,7 @@ public final class l extends kd.j implements rd.p {
                     throw n102;
                 }
                 l lVar5 = (l) this.c;
-                b7.h.b(obj);
+                c8.z.b(obj);
                 lVar = lVar5;
                 kVar2 = kVar4;
                 obj2 = obj;

@@ -5,7 +5,7 @@ import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p {
     public final f3.m a;
@@ -30,7 +30,7 @@ public final class p {
 
     public final f0 b(int i7) {
         g9.t tVar;
-        g9.t mVar;
+        g9.t nVar;
         Integer valueOf = Integer.valueOf(i7);
         HashMap hashMap = this.c;
         f0 f0Var = (f0) hashMap.get(valueOf);
@@ -50,12 +50,12 @@ public final class p {
                     if (i7 != 2) {
                         final int i12 = 3;
                         if (i7 == 3) {
-                            mVar = new l2.m(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
+                            nVar = new l2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
                         } else {
                             if (i7 != 4) {
                                 throw new IllegalArgumentException(i5.c.i(i7, "Unrecognized contentType: "));
                             }
-                            mVar = new g9.t() { // from class: x2.o
+                            nVar = new g9.t() { // from class: x2.o
                                 @Override // g9.t
                                 public final Object get() {
                                     switch (i12) {
@@ -71,7 +71,7 @@ public final class p {
                                 }
                             };
                         }
-                        tVar2 = mVar;
+                        tVar2 = nVar;
                     } else {
                         final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(f0.class);
                         tVar = new g9.t() { // from class: x2.o

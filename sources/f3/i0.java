@@ -1,19 +1,36 @@
 package f3;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public interface i0 {
-    void a(h2.x xVar, int i7, int i10);
+public final class i0 {
+    public final int a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
 
-    void b(int i7, h2.x xVar);
+    public i0(int i7, int i10, int i11, byte[] bArr) {
+        this.a = i7;
+        this.b = bArr;
+        this.c = i10;
+        this.d = i11;
+    }
 
-    void c(long j3, int i7, int i10, int i11, h0 h0Var);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && i0.class == obj.getClass()) {
+            i0 i0Var = (i0) obj;
+            if (this.a == i0Var.a && this.c == i0Var.c && this.d == i0Var.d && Arrays.equals(this.b, i0Var.b)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    void d(long j3);
-
-    int e(e2.n nVar, int i7, boolean z10);
-
-    int f(e2.n nVar, int i7, boolean z10);
-
-    void g(e2.u uVar);
+    public final int hashCode() {
+        return ((((Arrays.hashCode(this.b) + (this.a * 31)) * 31) + this.c) * 31) + this.d;
+    }
 }

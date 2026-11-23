@@ -2,7 +2,7 @@ package ce;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o implements d {
     public final /* synthetic */ int a = 1;
@@ -39,7 +39,7 @@ public final class o implements d {
                         i7 = nVar.e;
                         gd.k kVar = gd.k.a;
                         if (i7 != 0) {
-                            b7.h.b(obj2);
+                            c8.z.b(obj2);
                             if (((kotlin.jvm.internal.o) this.b).a) {
                                 d dVar = (d) this.c;
                                 nVar.e = 1;
@@ -65,7 +65,7 @@ public final class o implements d {
                             if (i7 == 2) {
                                 obj = nVar.b;
                                 oVar = nVar.a;
-                                b7.h.b(obj2);
+                                c8.z.b(obj2);
                                 if (!((Boolean) obj2).booleanValue()) {
                                     ((kotlin.jvm.internal.o) oVar.b).a = true;
                                     d dVar2 = (d) oVar.c;
@@ -82,7 +82,7 @@ public final class o implements d {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
                         }
-                        b7.h.b(obj2);
+                        c8.z.b(obj2);
                         return kVar;
                     }
                 }

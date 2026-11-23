@@ -3,11 +3,11 @@ package qi;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class g extends CharacterStyle {
     public final String a;
@@ -25,9 +25,9 @@ public final class g extends CharacterStyle {
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         if (this.c) {
-            textPaint.setTextSize(g0.L(cz.W0 - this.b));
+            textPaint.setTextSize(g0.L(bz.W0 - this.b));
         }
-        textPaint.setColor(m6.x0(null, m6.Vc, false));
+        textPaint.setColor(n6.x0(null, n6.Vc, false));
         textPaint.setTypeface(Typeface.MONOSPACE);
         textPaint.setUnderlineText(false);
     }

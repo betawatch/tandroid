@@ -6,10 +6,10 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class xb extends TextView {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class xb extends TextView {
                 break;
             case 29:
                 if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
-                    i7 = o10.c(52.0f, View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+                    i7 = m10.c(52.0f, View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
                 }
                 super.onMeasure(i7, i10);
                 break;

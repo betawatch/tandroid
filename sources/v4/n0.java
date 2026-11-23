@@ -7,13 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class n0 {
-    public jh.g a;
+    public h0 a;
     public ArrayList b;
     public long c;
     public long d;
@@ -47,9 +46,9 @@ public abstract class n0 {
     public abstract boolean c(f1 f1Var, List list);
 
     public final void d(f1 f1Var) {
-        jh.g gVar = this.a;
-        if (gVar != null) {
-            RecyclerView recyclerView = gVar.a;
+        h0 h0Var = this.a;
+        if (h0Var != null) {
+            RecyclerView recyclerView = h0Var.a;
             boolean z10 = true;
             f1Var.q(true);
             View view = f1Var.a;
@@ -62,16 +61,16 @@ public abstract class n0 {
             }
             x0 x0Var = recyclerView.b;
             recyclerView.z0();
-            md0 md0Var = recyclerView.e;
-            va vaVar = (va) md0Var.c;
-            qf qfVar = (qf) md0Var.b;
-            int indexOfChild = ((RecyclerView) qfVar.b).indexOfChild(view);
+            i61 i61Var = recyclerView.e;
+            va vaVar = (va) i61Var.c;
+            b bVar = (b) i61Var.b;
+            int indexOfChild = ((RecyclerView) bVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                md0Var.K(view);
-            } else if (vaVar.G(indexOfChild)) {
-                vaVar.I(indexOfChild);
-                md0Var.K(view);
-                qfVar.x0(indexOfChild);
+                i61Var.Q(view);
+            } else if (vaVar.E(indexOfChild)) {
+                vaVar.G(indexOfChild);
+                i61Var.Q(view);
+                bVar.c(indexOfChild);
             } else {
                 z10 = false;
             }

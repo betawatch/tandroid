@@ -1,24 +1,39 @@
 package l2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public final class k1 extends x2.s {
-    public final e2.k1 f;
+import a8.ma;
+import android.os.Looper;
 
-    public k1(e2.l1 l1Var) {
-        super(l1Var);
-        this.f = new e2.k1();
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final class k1 {
+    public final j1 a;
+    public final i1 b;
+    public int c;
+    public Object d;
+    public final Looper e;
+    public boolean f;
+
+    public k1(i1 i1Var, j1 j1Var, e2.l1 l1Var, int i7, Looper looper) {
+        this.b = i1Var;
+        this.a = j1Var;
+        this.e = looper;
     }
 
-    @Override // x2.s, e2.l1
-    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
-        e2.l1 l1Var = this.e;
-        e2.i1 f10 = l1Var.f(i7, i1Var, z10);
-        if (l1Var.m(f10.c, this.f, 0L).a()) {
-            f10.h(i1Var.a, i1Var.b, i1Var.c, i1Var.d, i1Var.e, e2.c.c, true);
-            return f10;
+    public final synchronized void a(boolean z10) {
+        synchronized (this) {
+            notifyAll();
         }
-        f10.f = true;
-        return f10;
+    }
+
+    public final void b() {
+        ma.p(!this.f);
+        this.f = true;
+        p0 p0Var = (p0) this.b;
+        if (!p0Var.a0 && p0Var.s.getThread().isAlive()) {
+            p0Var.n.b(14, this).b();
+        } else {
+            h2.a.l("ExoPlayerImplInternal", "Ignoring messages sent after release.");
+            a(false);
+        }
     }
 }

@@ -2,12 +2,12 @@ package fi;
 
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements y10 {
+public final /* synthetic */ class f implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class f implements y10 {
         this.b = i7;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         ArrayList<TLRPC.EmojiGroup> arrayList;
         switch (this.a) {
@@ -33,7 +33,7 @@ public final /* synthetic */ class f implements y10 {
                     while (i7 < size) {
                         TLRPC.EmojiGroup emojiGroup = arrayList.get(i7);
                         i7++;
-                        org.telegram.ui.Components.p5.g(this.b).b(emojiGroup.icon_emoji_id, null);
+                        org.telegram.ui.Components.o5.g(this.b).b(emojiGroup.icon_emoji_id, null);
                     }
                     break;
                 }

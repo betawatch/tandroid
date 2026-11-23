@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api;
 
-import a8.j8;
+import a8.k8;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.PendingIntent;
@@ -8,11 +8,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class Status extends r6.a implements r, ReflectedParcelable {
     public final int a;
@@ -59,25 +59,25 @@ public final class Status extends r6.a implements r, ReflectedParcelable {
     }
 
     public final String toString() {
-        ji.l lVar = new ji.l(this);
+        j6.k kVar = new j6.k(this);
         String str = this.b;
         if (str == null) {
-            str = j8.a(this.a);
+            str = k8.a(this.a);
         }
-        lVar.E(str, "statusCode");
-        lVar.E(this.c, "resolution");
-        return lVar.toString();
+        kVar.S(str, "statusCode");
+        kVar.S(this.c, "resolution");
+        return kVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 1, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        bc.l(parcel, 2, this.b);
-        bc.k(parcel, 3, this.c, i7);
-        bc.k(parcel, 4, this.d, i7);
-        bc.s(parcel, r10);
+        cc.l(parcel, 2, this.b);
+        cc.k(parcel, 3, this.c, i7);
+        cc.k(parcel, 4, this.d, i7);
+        cc.s(parcel, r10);
     }
 
     @Override // com.google.android.gms.common.api.r

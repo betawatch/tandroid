@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class y50 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -28,17 +28,17 @@ public final class y50 extends FrameLayout {
         this.e = new RectF();
         this.b = -1.0f;
         fh.g c10 = a60Var.getBaseSimpleGlass().c.c(this, null, false);
-        c10.p(c8.i0.m(a60Var.getResourceProvider()));
+        c10.p(c8.j0.m(a60Var.getResourceProvider()));
         c10.q(org.telegram.messenger.g0.L(6.0f));
         this.d = c10;
         setWillNotDraw(false);
-        addView(a60Var.e, c8.ma.c(-1.0f, -1));
+        addView(a60Var.e, c8.na.c(-1.0f, -1));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         View[] viewArr;
-        org.telegram.ui.Components.o41 G;
+        org.telegram.ui.Components.n41 G;
         switch (this.a) {
             case 0:
                 RectF rectF = (RectF) this.e;
@@ -68,8 +68,8 @@ public final class y50 extends FrameLayout {
                 }
                 break;
             default:
-                qy0 qy0Var = (qy0) this.f;
-                View[] viewPages = qy0Var.m1.getViewPages();
+                py0 py0Var = (py0) this.f;
+                View[] viewPages = py0Var.m1.getViewPages();
                 float f11 = 0.0f;
                 this.b = 0.0f;
                 int length = viewPages.length;
@@ -79,22 +79,22 @@ public final class y50 extends FrameLayout {
                     if (view == null) {
                         viewArr = viewPages;
                     } else {
-                        py0 py0Var = (py0) view;
-                        FrameLayout frameLayout = py0Var.e;
-                        org.telegram.ui.Components.h51 h51Var = py0Var.f;
-                        float i10 = Utilities.i(1.0f - Math.abs(py0Var.getTranslationX() / py0Var.getMeasuredWidth()), 1.0f, f11);
+                        oy0 oy0Var = (oy0) view;
+                        FrameLayout frameLayout = oy0Var.e;
+                        org.telegram.ui.Components.g51 g51Var = oy0Var.f;
+                        float i10 = Utilities.i(1.0f - Math.abs(oy0Var.getTranslationX() / oy0Var.getMeasuredWidth()), 1.0f, f11);
                         float f12 = this.b;
                         float paddingTop = frameLayout.getPaddingTop();
                         int i11 = 0;
                         while (true) {
-                            int childCount = h51Var.getChildCount();
-                            org.telegram.ui.Components.c51 c51Var = h51Var.g3;
+                            int childCount = g51Var.getChildCount();
+                            org.telegram.ui.Components.b51 b51Var = g51Var.g3;
                             if (i11 < childCount) {
-                                View childAt = h51Var.getChildAt(i11);
-                                h51Var.f3.getClass();
+                                View childAt = g51Var.getChildAt(i11);
+                                g51Var.f3.getClass();
                                 int H = v4.p0.H(childAt);
                                 View[] viewArr2 = viewPages;
-                                if (H >= 0 && H < c51Var.E.size() && (G = c51Var.G(H)) != null && G.a == 28) {
+                                if (H >= 0 && H < b51Var.E.size() && (G = b51Var.G(H)) != null && G.a == 28) {
                                     paddingTop = childAt.getY() + frameLayout.getPaddingTop();
                                 }
                                 i11++;
@@ -102,15 +102,15 @@ public final class y50 extends FrameLayout {
                             } else {
                                 viewArr = viewPages;
                                 this.b = (paddingTop * i10) + f12;
-                                if (py0Var.getVisibility() == 0) {
-                                    di.n4 n4Var = py0Var.h;
+                                if (oy0Var.getVisibility() == 0) {
+                                    di.n4 n4Var = oy0Var.h;
                                     float f13 = -n4Var.getHeight();
                                     int i12 = 0;
                                     while (true) {
-                                        if (i12 < h51Var.getChildCount()) {
-                                            View childAt2 = h51Var.getChildAt(i12);
-                                            h51Var.f3.getClass();
-                                            if (c51Var.G(v4.p0.H(childAt2)).a == 28) {
+                                        if (i12 < g51Var.getChildCount()) {
+                                            View childAt2 = g51Var.getChildAt(i12);
+                                            g51Var.f3.getClass();
+                                            if (b51Var.G(v4.p0.H(childAt2)).a == 28) {
                                                 f13 = childAt2.getY() + frameLayout.getPaddingTop();
                                             } else {
                                                 i12++;
@@ -126,15 +126,15 @@ public final class y50 extends FrameLayout {
                     viewPages = viewArr;
                     f11 = 0.0f;
                 }
-                float e10 = ((org.telegram.ui.Components.d6) this.d).e(false, this.b <= ((float) org.telegram.messenger.g0.m) ? 1.0f : 0.0f);
+                float e10 = ((org.telegram.ui.Components.c6) this.d).e(false, this.b <= ((float) org.telegram.messenger.g0.m) ? 1.0f : 0.0f);
                 float f14 = org.telegram.messenger.g0.m;
                 float f15 = f14 * e10;
                 float max = Math.max(f14, this.b) - (org.telegram.messenger.g0.m * e10);
                 this.b = max;
                 RectF rectF2 = org.telegram.messenger.g0.P;
-                rectF2.set(qy0Var.u0, max, getWidth() - qy0Var.u0, org.telegram.messenger.g0.L(8.0f) + getHeight());
+                rectF2.set(py0Var.u0, max, getWidth() - py0Var.u0, org.telegram.messenger.g0.L(8.0f) + getHeight());
                 float W1 = org.telegram.messenger.g0.W1(e10, org.telegram.messenger.g0.L(14.0f), 0);
-                canvas.drawRoundRect(rectF2, W1, W1, qy0Var.n1);
+                canvas.drawRoundRect(rectF2, W1, W1, py0Var.n1);
                 canvas.save();
                 Path path2 = this.c;
                 path2.rewind();
@@ -145,13 +145,13 @@ public final class y50 extends FrameLayout {
                 boolean z10 = f15 > ((float) org.telegram.messenger.g0.m) / 2.0f;
                 Boolean bool = (Boolean) this.e;
                 if (bool == null || bool.booleanValue() != z10) {
-                    boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, qy0Var.J0)) > 0.721f;
-                    boolean z12 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, qy0Var.J0), 855638016)) > 0.721f;
+                    boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, py0Var.J0)) > 0.721f;
+                    boolean z12 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.w(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, py0Var.J0), 855638016)) > 0.721f;
                     this.e = Boolean.valueOf(z10);
                     if (!z10) {
                         z11 = z12;
                     }
-                    org.telegram.messenger.g0.r3(qy0Var.getWindow(), z11);
+                    org.telegram.messenger.g0.r3(py0Var.getWindow(), z11);
                     break;
                 }
                 break;
@@ -168,7 +168,7 @@ public final class y50 extends FrameLayout {
                 break;
             default:
                 if (motionEvent.getAction() == 0 && motionEvent.getY() < this.b) {
-                    ((qy0) this.f).dismiss();
+                    ((py0) this.f).dismiss();
                     break;
                 } else {
                     break;
@@ -201,10 +201,10 @@ public final class y50 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y50(qy0 qy0Var, Context context) {
+    public y50(py0 py0Var, Context context) {
         super(context);
-        this.f = qy0Var;
-        this.d = new org.telegram.ui.Components.d6(this, 250L, org.telegram.ui.Components.nr.h);
+        this.f = py0Var;
+        this.d = new org.telegram.ui.Components.c6(this, 250L, org.telegram.ui.Components.kr.h);
         this.c = new Path();
     }
 }

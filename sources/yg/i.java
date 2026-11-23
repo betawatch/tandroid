@@ -1,33 +1,33 @@
 package yg;
 
 import android.content.Context;
-import c8.ma;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import c8.na;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class i extends c {
-    public final m5 s;
+    public final n5 s;
     public Object w;
 
-    public i(Context context, h6 h6Var) {
-        super(context, h6Var);
+    public i(Context context, i6 i6Var) {
+        super(context, i6Var);
         this.c.setVisibility(8);
-        m5 m5Var = this.e;
-        int i7 = m6.B6;
-        t6.X(m5Var, i7, h6Var);
-        m5 m5Var2 = new m5(context);
-        this.s = m5Var2;
-        m5Var2.setTextSize(16);
-        t6.X(m5Var2, i7, h6Var);
-        m5Var2.setGravity(hd.a0 ? 3 : 5);
-        addView(m5Var2);
-        boolean z10 = hd.a0;
-        m5Var2.setLayoutParams(ma.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 20.0f : 0.0f, 0.0f, z10 ? 0.0f : 20.0f, 0.0f));
+        n5 n5Var = this.e;
+        int i7 = n6.B6;
+        u6.X(n5Var, i7, i6Var);
+        n5 n5Var2 = new n5(context);
+        this.s = n5Var2;
+        n5Var2.setTextSize(16);
+        u6.X(n5Var2, i7, i6Var);
+        n5Var2.setGravity(gd.a0 ? 3 : 5);
+        addView(n5Var2);
+        boolean z10 = gd.a0;
+        n5Var2.setLayoutParams(na.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 20.0f : 0.0f, 0.0f, z10 ? 0.0f : 20.0f, 0.0f));
     }
 
     @Override // yg.c

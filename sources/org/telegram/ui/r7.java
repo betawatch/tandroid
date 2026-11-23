@@ -1,19 +1,15 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class r7 extends FrameLayout {
-    public final org.telegram.ui.Components.ek0 a;
+public final class r7 {
+    public final String a;
+    public final int b;
+    public final f7 c;
 
-    public r7(Context context, org.telegram.ui.Components.ek0 ek0Var) {
-        super(context);
-        this.a = ek0Var;
-        setClipChildren(false);
-        setClipToPadding(false);
-        setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        addView(ek0Var, new FrameLayout.LayoutParams(-1, -1));
+    public r7(String str, int i7, f7 f7Var) {
+        this.a = str;
+        this.b = i7;
+        this.c = f7Var;
     }
 }

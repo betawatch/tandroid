@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ej0 implements View.OnLayoutChangeListener {
     public final /* synthetic */ v4.i0 a;
     public final /* synthetic */ ArrayList b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ fj0 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k5 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.l5 e;
 
-    public ej0(org.telegram.ui.ActionBar.k5 k5Var, v4.i0 i0Var, ArrayList arrayList, boolean z10, fj0 fj0Var) {
-        this.e = k5Var;
+    public ej0(org.telegram.ui.ActionBar.l5 l5Var, v4.i0 i0Var, ArrayList arrayList, boolean z10, fj0 fj0Var) {
+        this.e = l5Var;
         this.a = i0Var;
         this.b = arrayList;
         this.c = z10;
@@ -31,9 +31,9 @@ public final class ej0 implements View.OnLayoutChangeListener {
         int height;
         long min;
         View view2;
-        org.telegram.ui.ActionBar.k5 k5Var = this.e;
-        HashMap hashMap = (HashMap) k5Var.w;
-        ek0 ek0Var = (ek0) k5Var.e;
+        org.telegram.ui.ActionBar.l5 l5Var = this.e;
+        HashMap hashMap = (HashMap) l5Var.w;
+        ek0 ek0Var = (ek0) l5Var.e;
         ek0Var.removeOnLayoutChangeListener(this);
         final ArrayList arrayList2 = new ArrayList();
         ek0Var.C0();
@@ -57,20 +57,20 @@ public final class ej0 implements View.OnLayoutChangeListener {
                 i19 = childAt.getBottom();
             }
             if (childAt instanceof org.telegram.ui.Cells.q4) {
-                ((org.telegram.ui.Cells.q4) childAt).c(true, false);
+                ((org.telegram.ui.Cells.q4) childAt).b(true, false);
             }
             v4.i0 i0Var = this.a;
-            if (i0Var != null && (i0Var.b || k5Var.c)) {
+            if (i0Var != null && (i0Var.b || l5Var.c)) {
                 ek0Var.getClass();
                 long c10 = i0Var.c(RecyclerView.R(childAt));
                 if (hashMap.containsKey(Long.valueOf(c10)) && (view2 = (View) hashMap.get(Long.valueOf(c10))) != 0) {
                     if (view2 instanceof org.telegram.ui.Cells.q4) {
-                        ((org.telegram.ui.Cells.q4) view2).c(false, false);
+                        ((org.telegram.ui.Cells.q4) view2).b(false, false);
                     }
                     arrayList.remove(view2);
-                    c8.oa oaVar = (c8.oa) k5Var.r;
-                    if (oaVar != null) {
-                        oaVar.d(view2);
+                    c8.ra raVar = (c8.ra) l5Var.r;
+                    if (raVar != null) {
+                        raVar.d(view2);
                     }
                     int top = childAt.getTop() - view2.getTop();
                     if (top != 0) {
@@ -100,16 +100,16 @@ public final class ej0 implements View.OnLayoutChangeListener {
             }
             if (view3.getParent() == null) {
                 ek0Var.addView(view3);
-                ((v4.c0) k5Var.f).M(view3);
+                ((v4.c0) l5Var.f).M(view3);
             }
             if (view3 instanceof org.telegram.ui.Cells.q4) {
-                ((org.telegram.ui.Cells.q4) view3).c(true, true);
+                ((org.telegram.ui.Cells.q4) view3).b(true, true);
             }
         }
         int i24 = i23 == Integer.MAX_VALUE ? 0 : i23;
-        c8.oa oaVar2 = (c8.oa) k5Var.r;
-        if (oaVar2 != null) {
-            oaVar2.b();
+        c8.ra raVar2 = (c8.ra) l5Var.r;
+        if (raVar2 != null) {
+            raVar2.b();
         }
         if (arrayList.isEmpty()) {
             height = Math.abs(i20);
@@ -121,13 +121,13 @@ public final class ej0 implements View.OnLayoutChangeListener {
             height = (z11 ? -i18 : i19 - ek0Var.getHeight()) + i21;
         }
         final int paddingBottom = ek0Var.getPaddingBottom();
-        ValueAnimator valueAnimator = (ValueAnimator) k5Var.h;
+        ValueAnimator valueAnimator = (ValueAnimator) l5Var.h;
         if (valueAnimator != null) {
             valueAnimator.removeAllListeners();
-            ((ValueAnimator) k5Var.h).cancel();
+            ((ValueAnimator) l5Var.h).cancel();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        k5Var.h = ofFloat;
+        l5Var.h = ofFloat;
         final boolean z12 = this.c;
         final int i25 = height;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.dj0
@@ -135,8 +135,8 @@ public final class ej0 implements View.OnLayoutChangeListener {
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 boolean z13;
                 int i26;
-                org.telegram.ui.ActionBar.k5 k5Var2 = ej0.this.e;
-                ek0 ek0Var2 = (ek0) k5Var2.e;
+                org.telegram.ui.ActionBar.l5 l5Var2 = ej0.this.e;
+                ek0 ek0Var2 = (ek0) l5Var2.e;
                 float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                 ArrayList arrayList3 = arrayList;
                 int size2 = arrayList3.size();
@@ -170,30 +170,30 @@ public final class ej0 implements View.OnLayoutChangeListener {
                     }
                 }
                 ek0Var2.invalidate();
-                gj0 gj0Var = (gj0) k5Var2.n;
+                gj0 gj0Var = (gj0) l5Var2.n;
                 if (gj0Var != null) {
-                    gj0Var.i();
+                    gj0Var.f();
                 }
             }
         });
-        ((ValueAnimator) k5Var.h).addListener(new h10(2, this, arrayList2));
-        if (!k5Var.d) {
+        ((ValueAnimator) l5Var.h).addListener(new f10(2, this, arrayList2));
+        if (!l5Var.d) {
             if (z10) {
                 min = 600;
             } else {
                 long measuredHeight = (long) (((i25 / ek0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
                 min = Math.min(measuredHeight >= 300 ? measuredHeight : 300L, 1300L);
             }
-            ((ValueAnimator) k5Var.h).setDuration(min);
-            ((ValueAnimator) k5Var.h).setInterpolator(nr.h);
+            ((ValueAnimator) l5Var.h).setDuration(min);
+            ((ValueAnimator) l5Var.h).setInterpolator(kr.h);
         } else if (z10) {
-            ((ValueAnimator) k5Var.h).setDuration(150L);
-            ((ValueAnimator) k5Var.h).setInterpolator(nr.g);
+            ((ValueAnimator) l5Var.h).setDuration(150L);
+            ((ValueAnimator) l5Var.h).setInterpolator(kr.g);
         } else {
             long measuredHeight2 = (long) (((i25 / ek0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
-            ((ValueAnimator) k5Var.h).setDuration(Math.min(measuredHeight2 >= 300 ? measuredHeight2 : 300L, 1300L));
-            ((ValueAnimator) k5Var.h).setInterpolator(nr.h);
+            ((ValueAnimator) l5Var.h).setDuration(Math.min(measuredHeight2 >= 300 ? measuredHeight2 : 300L, 1300L));
+            ((ValueAnimator) l5Var.h).setInterpolator(kr.h);
         }
-        ((ValueAnimator) k5Var.h).start();
+        ((ValueAnimator) l5Var.h).start();
     }
 }

@@ -3,10 +3,10 @@ package o9;
 import android.content.Context;
 import android.text.TextUtils;
 import j$.util.Objects;
-import ji.l;
+import j6.k;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -32,12 +32,12 @@ public final class i {
     }
 
     public static i a(Context context) {
-        k8.a aVar = new k8.a(context, 26);
-        String E0 = aVar.E0("google_app_id");
-        if (TextUtils.isEmpty(E0)) {
+        jb.m mVar = new jb.m(context, 27);
+        String y02 = mVar.y0("google_app_id");
+        if (TextUtils.isEmpty(y02)) {
             return null;
         }
-        return new i(E0, aVar.E0("google_api_key"), aVar.E0("firebase_database_url"), aVar.E0("ga_trackingId"), aVar.E0("gcm_defaultSenderId"), aVar.E0("google_storage_bucket"), aVar.E0("recaptcha_site_key"), aVar.E0("project_id"));
+        return new i(y02, mVar.y0("google_api_key"), mVar.y0("firebase_database_url"), mVar.y0("ga_trackingId"), mVar.y0("gcm_defaultSenderId"), mVar.y0("google_storage_bucket"), mVar.y0("recaptcha_site_key"), mVar.y0("project_id"));
     }
 
     public final boolean equals(Object obj) {
@@ -53,14 +53,14 @@ public final class i {
     }
 
     public final String toString() {
-        l lVar = new l(this);
-        lVar.E(this.b, "applicationId");
-        lVar.E(this.a, "apiKey");
-        lVar.E(this.c, "databaseUrl");
-        lVar.E(this.e, "gcmSenderId");
-        lVar.E(this.f, "storageBucket");
-        lVar.E(this.g, "recaptchaSiteKey");
-        lVar.E(this.h, "projectId");
-        return lVar.toString();
+        k kVar = new k(this);
+        kVar.S(this.b, "applicationId");
+        kVar.S(this.a, "apiKey");
+        kVar.S(this.c, "databaseUrl");
+        kVar.S(this.e, "gcmSenderId");
+        kVar.S(this.f, "storageBucket");
+        kVar.S(this.g, "recaptchaSiteKey");
+        kVar.S(this.h, "projectId");
+        return kVar.toString();
     }
 }

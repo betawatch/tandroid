@@ -5,27 +5,27 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class e3 implements x4 {
-    public final /* synthetic */ r a;
+    public final /* synthetic */ s a;
     public final /* synthetic */ a b;
     public final /* synthetic */ String c;
     public final /* synthetic */ t3 d;
 
-    public e3(t3 t3Var, r rVar, a aVar, String str) {
+    public e3(t3 t3Var, s sVar, a aVar, String str) {
         this.d = t3Var;
-        this.a = rVar;
+        this.a = sVar;
         this.b = aVar;
         this.c = str;
     }
 
     @Override // oi.x4
     public final void a() {
-        r rVar = this.a;
-        rVar.a = 3;
+        s sVar = this.a;
+        sVar.a = 3;
         t3 t3Var = this.d;
-        t3Var.h4.remove(rVar);
+        t3Var.h4.remove(sVar);
         t3Var.t3.remove(this.b);
         t3Var.g3.O(true);
         t3Var.p3.onContentChanged();
@@ -37,14 +37,14 @@ public final class e3 implements x4 {
         document.localPath = str;
         t3 t3Var = this.d;
         w7.G(t3Var.n3).e0(str, document);
-        r rVar = this.a;
-        rVar.h = document;
-        rVar.a = 2;
+        s sVar = this.a;
+        sVar.h = document;
+        sVar.a = 2;
         TL_iv.PageBlock pageBlock = this.b.b;
         if (pageBlock instanceof TL_iv.pageBlockDocument) {
             ((TL_iv.pageBlockDocument) pageBlock).document_id = document.id;
         }
-        t3Var.h4.remove(rVar);
+        t3Var.h4.remove(sVar);
         t3Var.g3.O(false);
         t3Var.p3.onContentChanged();
     }

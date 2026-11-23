@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.os.SystemClock;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r3 implements Runnable {
     public final /* synthetic */ t3 a;
@@ -25,12 +25,12 @@ public final class r3 implements Runnable {
             if (uptimeMillis - ((TLRPC.GroupCallParticipant) hVar.f(j3)).lastSpeakTime >= 500) {
                 hVar.l(j3);
                 if (j3 > 0) {
-                    TLRPC.User c22 = np.u1(t3Var.C.a).c2(Long.valueOf(j3));
+                    TLRPC.User c22 = mp.u1(t3Var.C.a).c2(Long.valueOf(j3));
                     p5.c.t(a8.p0.t(j3, "remove from speaking ", " "), c22 != null ? c22.first_name : null, "GroupCall");
                     i7 = i10;
                 } else {
                     i7 = i10;
-                    TLRPC.Chat O0 = np.u1(t3Var.C.a).O0(Long.valueOf(-j3));
+                    TLRPC.Chat O0 = mp.u1(t3Var.C.a).O0(Long.valueOf(-j3));
                     p5.c.t(a8.p0.t(j3, "remove from speaking ", " "), O0 != null ? O0.title : null, "GroupCall");
                 }
                 i10 = i7 - 1;
@@ -42,7 +42,7 @@ public final class r3 implements Runnable {
             g0.h3(t3Var.Q, 550L);
         }
         if (z10) {
-            ls.f(t3Var.C.a).k(ls.y2, Long.valueOf(t3Var.c), Long.valueOf(t3Var.b.id), Boolean.FALSE);
+            ks.f(t3Var.C.a).k(ks.y2, Long.valueOf(t3Var.c), Long.valueOf(t3Var.b.id), Boolean.FALSE);
         }
     }
 }

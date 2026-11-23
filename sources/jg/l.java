@@ -4,14 +4,14 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ba;
-import org.telegram.ui.yw;
+import org.telegram.ui.Components.aa;
+import org.telegram.ui.xw;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -45,9 +45,9 @@ public final class l extends FrameLayout {
         m mVar = this.b;
         int size = mVar.N.size();
         int i13 = mVar.r;
-        boolean z10 = i13 == 0 && mVar.h == 0 && np.u1(mVar.G).R.f(2305843009213693952L | ((long) 1)) != null;
+        boolean z10 = i13 == 0 && mVar.h == 0 && mp.u1(mVar.G).R.f(2305843009213693952L | ((long) 1)) != null;
         View view = (View) getParent();
-        int i14 = view instanceof ba ? ((ba) view).f3 : 0;
+        int i14 = view instanceof aa ? ((aa) view).f3 : 0;
         boolean z11 = mVar.K;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -73,12 +73,12 @@ public final class l extends FrameLayout {
                     size2 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
                 }
                 int i16 = size2 - i14;
-                int L = org.telegram.messenger.g0.L(cz.p1 ? 76.0f : 70.0f);
+                int L = org.telegram.messenger.g0.L(bz.p1 ? 76.0f : 70.0f);
                 int i17 = 0;
                 for (int i18 = 0; i18 < size; i18++) {
                     if (((k) mVar.N.get(i18)).a == 0) {
                         if (((k) mVar.N.get(i18)).f && !z11) {
-                            i17 += org.telegram.messenger.g0.L(cz.p1 ? 86.0f : 91.0f);
+                            i17 += org.telegram.messenger.g0.L(bz.p1 ? 86.0f : 91.0f);
                         }
                         i17 += L;
                     } else {
@@ -99,8 +99,8 @@ public final class l extends FrameLayout {
                         i11 -= org.telegram.messenger.g0.m;
                         if (!z11 && !mVar.T) {
                             i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof yw) {
-                                i12 = ((yw) getParent()).A3;
+                            if (getParent() instanceof xw) {
+                                i12 = ((xw) getParent()).A3;
                                 i11 -= i12;
                             }
                         }
@@ -113,8 +113,8 @@ public final class l extends FrameLayout {
                             i11 -= org.telegram.messenger.g0.m;
                             if (!z11 && !mVar.T) {
                                 i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof yw) {
-                                    i12 = ((yw) getParent()).A3;
+                                if (getParent() instanceof xw) {
+                                    i12 = ((xw) getParent()).A3;
                                     i11 -= i12;
                                 }
                             }

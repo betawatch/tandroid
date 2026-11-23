@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d5 implements te.d, l0 {
     public final /* synthetic */ f5 a;
@@ -10,17 +10,17 @@ public final /* synthetic */ class d5 implements te.d, l0 {
     }
 
     @Override // te.d
-    public /* synthetic */ boolean C() {
+    public /* synthetic */ boolean G() {
         return false;
     }
 
     @Override // te.d
-    public /* synthetic */ boolean D(float f10) {
+    public /* synthetic */ boolean H(float f10) {
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
+    public void h(int i7) {
         j jVar = this.a.a.W;
         if (jVar != null) {
             jVar.b(i7);
@@ -28,18 +28,18 @@ public final /* synthetic */ class d5 implements te.d, l0 {
     }
 
     @Override // te.d
-    public void m1() {
+    public void y1() {
         f5 f5Var = this.a;
         f5Var.e();
         f5Var.a.invalidate();
     }
 
     @Override // te.d
-    public /* synthetic */ void x(boolean z10) {
+    public /* synthetic */ void E(boolean z10) {
     }
 
     @Override // te.d
-    public /* synthetic */ void H() {
+    public /* synthetic */ void K() {
     }
 
     @Override // te.d

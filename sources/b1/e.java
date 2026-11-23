@@ -1,6 +1,6 @@
 package b1;
 
-import a8.e7;
+import a8.f7;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import gd.k;
@@ -10,7 +10,7 @@ import kotlin.jvm.internal.j;
 import rd.p;
 import zd.u1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements p {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class e implements p {
                 rd.a f10 = (rd.a) obj2;
                 j.e(f10, "f");
                 int i10 = d.d;
-                e7.a((CancellationSignal) obj, f10);
+                f7.a((CancellationSignal) obj, f10);
                 break;
             case 1:
                 rd.a f11 = (rd.a) obj2;

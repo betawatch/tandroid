@@ -1,21 +1,21 @@
 package g6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public interface h {
-    void a(f fVar, boolean z10);
+    void b(f fVar, boolean z10);
 
-    void b(f fVar, int i7);
+    void c(f fVar, int i7);
 
-    void e(f fVar, int i7);
+    void d(f fVar, int i7);
 
-    void f(f fVar, int i7);
+    void g(f fVar, int i7);
 
-    void h(f fVar, String str);
+    void i(f fVar, String str);
 
-    void k(f fVar, int i7);
+    void j(f fVar, int i7);
 
-    void l(f fVar, String str);
+    void k(f fVar, String str);
 
     void m(f fVar);
 

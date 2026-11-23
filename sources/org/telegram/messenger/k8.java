@@ -1,20 +1,20 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r8 b;
-    public final /* synthetic */ TLRPC.TL_messages_sendMedia c;
+    public final /* synthetic */ q8 b;
+    public final /* synthetic */ TL_ephemeral.TL_sendMessage c;
     public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ k8(r8 r8Var, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr, int i7) {
+    public /* synthetic */ k8(q8 q8Var, TL_ephemeral.TL_sendMessage tL_sendMessage, Object[] objArr, int i7) {
         this.a = i7;
-        this.b = r8Var;
-        this.c = tL_messages_sendMedia;
+        this.b = q8Var;
+        this.c = tL_sendMessage;
         this.d = objArr;
     }
 
@@ -22,14 +22,14 @@ public final /* synthetic */ class k8 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                az sendMessagesHelper = this.b.getSendMessagesHelper();
+                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                 Object[] objArr = this.d;
-                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (my) objArr[4], ((Boolean) objArr[5]).booleanValue());
+                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (ly) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                 Object[] objArr2 = this.d;
-                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (my) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
+                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (ly) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
                 break;
         }
     }

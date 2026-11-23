@@ -1,76 +1,58 @@
 package ze;
 
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import hi.h;
-import hi.o;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.j6;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.s90;
-import ug.m0;
+import aa.g;
+import android.util.Log;
+import java.io.File;
+import java.io.FileInputStream;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class b implements s90 {
-    public final /* synthetic */ int a = 0;
-    public Object b;
+public final class b {
+    public Object a;
 
-    public /* synthetic */ b() {
-    }
-
-    @Override // org.telegram.ui.Components.s90
-    public Paint.FontMetricsInt P() {
-        return ((o) this.b).f.getEditText().getPaint().getFontMetricsInt();
-    }
-
-    @Override // org.telegram.ui.Components.s90
-    public void l0(int i7, int i10, CharSequence charSequence, boolean z10) {
-        h hVar = ((o) this.b).f;
-        if (hVar == null) {
-            return;
+    public JSONObject a() {
+        FileInputStream fileInputStream;
+        JSONObject jSONObject;
+        FileInputStream fileInputStream2 = null;
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Checking for cached settings...", null);
         }
         try {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hVar.getText());
-            spannableStringBuilder.replace(i7, i10 + i7, charSequence);
-            if (z10) {
-                j6.l(spannableStringBuilder, hVar.getEditText().getPaint().getFontMetricsInt(), false);
+            File file = (File) this.a;
+            if (file.exists()) {
+                fileInputStream = new FileInputStream(file);
+                try {
+                    try {
+                        jSONObject = new JSONObject(g.j(fileInputStream));
+                        fileInputStream2 = fileInputStream;
+                    } catch (Exception e10) {
+                        e = e10;
+                        Log.e("FirebaseCrashlytics", "Failed to fetch cached settings", e);
+                        g.b(fileInputStream, "Error while closing settings cache file.");
+                        return null;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileInputStream2 = fileInputStream;
+                    g.b(fileInputStream2, "Error while closing settings cache file.");
+                    throw th;
+                }
+            } else {
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Settings file does not exist.", null);
+                }
+                jSONObject = null;
             }
-            hVar.setText(spannableStringBuilder);
-            hVar.setSelection(i7 + charSequence.length());
-        } catch (Exception e10) {
-            a8.g(e10, true);
+            g.b(fileInputStream2, "Error while closing settings cache file.");
+            return jSONObject;
+        } catch (Exception e11) {
+            e = e11;
+            fileInputStream = null;
+        } catch (Throwable th3) {
+            th = th3;
+            g.b(fileInputStream2, "Error while closing settings cache file.");
+            throw th;
         }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                c cVar = c.e;
-                StringBuffer stringBuffer = new StringBuffer();
-                stringBuffer.append("method-execution".substring(7));
-                stringBuffer.append("(");
-                stringBuffer.append(((m0) this.b).m());
-                stringBuffer.append(")");
-                return stringBuffer.toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    public b(o oVar) {
-        this.b = oVar;
-    }
-
-    @Override // org.telegram.ui.Components.s90
-    public /* synthetic */ void q0(String str) {
-    }
-
-    @Override // org.telegram.ui.Components.s90
-    public /* synthetic */ void Y(TLRPC.TL_document tL_document, String str, Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.s90
-    public /* synthetic */ void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i7) {
     }
 }

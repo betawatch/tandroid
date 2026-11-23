@@ -3,7 +3,7 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import f6.v;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import r6.a;
 import x6.c;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class MediaTrack extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
@@ -121,19 +121,19 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 2, 8);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        bc.q(parcel, 3, 4);
+        cc.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        bc.l(parcel, 4, this.c);
-        bc.l(parcel, 5, this.d);
-        bc.l(parcel, 6, this.e);
-        bc.l(parcel, 7, this.f);
-        bc.q(parcel, 8, 4);
+        cc.l(parcel, 4, this.c);
+        cc.l(parcel, 5, this.d);
+        cc.l(parcel, 6, this.e);
+        cc.l(parcel, 7, this.f);
+        cc.q(parcel, 8, 4);
         parcel.writeInt(this.h);
-        bc.n(parcel, 9, this.n);
-        bc.l(parcel, 10, this.r);
-        bc.s(parcel, r10);
+        cc.n(parcel, 9, this.n);
+        cc.l(parcel, 10, this.r);
+        cc.s(parcel, r10);
     }
 }

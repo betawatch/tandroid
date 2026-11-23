@@ -1,25 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l21 implements org.telegram.messenger.oc, org.telegram.messenger.nc {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.messenger.r10 c;
-
-    public /* synthetic */ l21(String str, String str2, org.telegram.messenger.r10 r10Var) {
-        this.a = str;
-        this.b = str2;
-        this.c = r10Var;
-    }
-
-    @Override // org.telegram.messenger.oc
-    public void a(String str) {
-        b31.K0(this.a, str, this.b, this.c);
-    }
-
-    @Override // org.telegram.messenger.nc
-    public void q(Exception exc) {
-        b31.K0(this.a, "en", this.b, this.c);
+public final class l21 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

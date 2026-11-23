@@ -1,29 +1,50 @@
 package y7;
 
-import a8.xa;
-import a8.ya;
+import a8.pa;
 import android.content.Context;
+import com.google.android.gms.tasks.Task;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class e9 implements c9 {
-    public final u9.m a;
-    public final a9 b;
+public final class e9 {
+    public static n9 j;
+    public static final d k;
+    public final String a;
+    public final String b;
+    public final c9 c;
+    public final pb.k d;
+    public final Task e;
+    public final Task f;
+    public final String g;
+    public final int h;
+    public final HashMap i = new HashMap();
 
-    public e9(Context context, a9 a9Var) {
-        this.b = a9Var;
-        m5.a aVar = m5.a.e;
-        o5.s.b(context);
-        o5.q c10 = o5.s.a().c(aVar);
-        if (m5.a.d.contains(new l5.c("json"))) {
-            new u9.m(new ya(c10, 4));
-        }
-        this.a = new u9.m(new ya(c10, 5));
+    static {
+        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
+        objArr[0].getClass();
+        objArr[1].getClass();
+        k = new d(objArr);
     }
 
-    @Override // y7.c9
-    public final void a(xa xaVar) {
-        this.b.getClass();
-        ((o5.r) this.a.get()).a(xaVar.b != 0 ? l5.a.a(xaVar.F()) : new l5.a(null, xaVar.F(), l5.d.b, null), new n2.a0(8));
+    public e9(Context context, pb.k kVar, c9 c9Var, String str) {
+        new HashMap();
+        this.a = context.getPackageName();
+        this.b = pb.c.a(context);
+        this.d = kVar;
+        this.c = c9Var;
+        h9.b();
+        this.g = str;
+        pb.f a10 = pb.f.a();
+        a2.b bVar = new a2.b(this, 8);
+        a10.getClass();
+        this.e = pb.f.b(bVar);
+        pb.f a11 = pb.f.a();
+        kVar.getClass();
+        pa paVar = new pa(kVar, 3);
+        a11.getClass();
+        this.f = pb.f.b(paVar);
+        d dVar = k;
+        this.h = dVar.containsKey(str) ? b7.f.d(context, (String) dVar.get(str), false) : -1;
     }
 }

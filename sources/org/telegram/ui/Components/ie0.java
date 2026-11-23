@@ -1,41 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ie0 implements Runnable {
+public final class ie0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ke0 b;
+    public final /* synthetic */ je0 b;
 
-    public /* synthetic */ ie0(ke0 ke0Var, int i7) {
+    public /* synthetic */ ie0(je0 je0Var, int i7) {
         this.a = i7;
-        this.b = ke0Var;
+        this.b = je0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.dq0 dq0Var = this.b.a;
-                RadialProgressView radialProgressView = dq0Var.n;
-                View view = dq0Var.r;
-                radialProgressView.setVisibility(4);
-                if (dq0Var.G) {
-                    dq0Var.G = false;
-                    dq0Var.setPlaybackSpeed(dq0Var.F);
-                }
-                view.setEnabled(true);
-                view.setAlpha(1.0f);
-                PhotoViewer photoViewer = dq0Var.b;
-                if (photoViewer != null) {
-                    photoViewer.s0();
-                    break;
-                }
+                this.b.a.n.setVisibility(8);
                 break;
             default:
-                this.b.a.h.setVisibility(4);
+                this.b.a.h.setVisibility(8);
                 break;
         }
     }

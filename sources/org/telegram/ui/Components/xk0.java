@@ -9,11 +9,11 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class xk0 extends Drawable {
-    public int a = org.telegram.messenger.ls.e4;
-    public final /* synthetic */ h80 b;
+    public int a = org.telegram.messenger.ks.e4;
+    public final /* synthetic */ e80 b;
     public final /* synthetic */ int[] c;
     public final /* synthetic */ org.telegram.ui.Cells.r1 d;
     public final /* synthetic */ int[] e;
@@ -23,8 +23,8 @@ public final class xk0 extends Drawable {
     public final /* synthetic */ Paint i;
     public final /* synthetic */ StaticLayout j;
 
-    public xk0(h80 h80Var, int[] iArr, org.telegram.ui.Cells.r1 r1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = h80Var;
+    public xk0(e80 e80Var, int[] iArr, org.telegram.ui.Cells.r1 r1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+        this.b = e80Var;
         this.c = iArr;
         this.d = r1Var;
         this.e = iArr2;
@@ -43,16 +43,16 @@ public final class xk0 extends Drawable {
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(getBounds());
         float f10 = rectF.left;
-        CornerPathEffect cornerPathEffect = h80.w;
+        CornerPathEffect cornerPathEffect = e80.w;
         rectF.left = f10 - (org.telegram.messenger.g0.L(5.0f) / 2.0f);
         canvas.save();
         canvas.saveLayerAlpha(rectF, this.a, 31);
         int[] iArr = this.c;
         canvas.translate(iArr[0], iArr[1]);
-        h80 h80Var = this.b;
+        e80 e80Var = this.b;
         org.telegram.ui.Cells.r1 r1Var = this.d;
         if (r1Var == null || !r1Var.L0()) {
-            canvas.drawPath(h80Var, this.i);
+            canvas.drawPath(e80Var, this.i);
         } else {
             org.telegram.ui.ActionBar.u4 u4Var = r1Var.L6;
             if (u4Var == null || u4Var.c == null) {
@@ -77,7 +77,7 @@ public final class xk0 extends Drawable {
                 canvas.restore();
             }
         }
-        canvas.clipPath(h80Var);
+        canvas.clipPath(e80Var);
         this.j.draw(canvas);
         canvas.restore();
     }

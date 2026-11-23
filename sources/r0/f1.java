@@ -5,9 +5,9 @@ import android.media.MediaRoute2Info;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
-import tg.f2;
+import tg.i2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureListener, u9.e, ua.a {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureList
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
         r2.p pVar = (r2.p) obj;
-        pVar.h();
+        pVar.b();
         return h9.i0.q(h9.o.y(pVar.Z.b, new x2.z0(1)));
     }
 
@@ -51,13 +51,13 @@ public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureList
     }
 
     @Override // u9.e
-    public List k(ComponentRegistrar componentRegistrar) {
+    public List j(ComponentRegistrar componentRegistrar) {
         return componentRegistrar.getComponents();
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        int i7 = f2.s0;
+        int i7 = i2.s0;
     }
 
     @Override // ua.a

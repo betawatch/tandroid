@@ -11,9 +11,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class dq0 extends org.telegram.ui.Components.le0 {
+public final class dq0 extends org.telegram.ui.Components.ke0 {
     public final Rect N;
     public final /* synthetic */ PhotoViewer O;
 
@@ -21,51 +21,51 @@ public final class dq0 extends org.telegram.ui.Components.le0 {
     public dq0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.y0 y0Var) {
         super(context);
         this.O = photoViewer;
-        this.a = org.telegram.messenger.k10.t0;
+        this.a = org.telegram.messenger.i10.t0;
         this.w = new ArrayList();
-        this.M = new org.telegram.ui.Components.hb0(this, 9);
+        this.M = new org.telegram.ui.Components.eb0(this, 9);
         this.b = photoViewer2;
         this.r = y0Var;
-        org.telegram.ui.Components.eu euVar = new org.telegram.ui.Components.eu(this, context, context, 1);
-        this.f = euVar;
-        euVar.getSettings().setJavaScriptEnabled(true);
-        euVar.getSettings().setDomStorageEnabled(true);
-        euVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        euVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(euVar, true);
-        euVar.setWebViewClient(new n1(this, 2));
-        addView(euVar, c8.ma.e(-1, -1, 51));
+        org.telegram.ui.Components.cu cuVar = new org.telegram.ui.Components.cu(this, context, context, 1);
+        this.f = cuVar;
+        cuVar.getSettings().setJavaScriptEnabled(true);
+        cuVar.getSettings().setDomStorageEnabled(true);
+        cuVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        cuVar.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(cuVar, true);
+        cuVar.setWebViewClient(new n1(this, 2));
+        addView(cuVar, c8.na.e(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
         linearLayout.setGravity(17);
         linearLayout.setVisibility(8);
-        addView(linearLayout, c8.ma.e(-2, -2, 17));
+        addView(linearLayout, c8.na.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.y6, null);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.y6, null);
         textView.setGravity(17);
-        linearLayout.addView(textView, c8.ma.r(-2, -2, 1));
+        linearLayout.addView(textView, c8.na.r(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.e = textView2;
         textView2.setTextSize(1, 16.0f);
-        int i7 = org.telegram.ui.ActionBar.m6.n6;
-        org.telegram.ui.ActionBar.t6.U(textView2, i7, null);
+        int i7 = org.telegram.ui.ActionBar.n6.n6;
+        org.telegram.ui.ActionBar.u6.U(textView2, i7, null);
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f));
-        int i10 = org.telegram.ui.ActionBar.a6.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.a6.d(0, org.telegram.ui.ActionBar.a6.b(org.telegram.ui.ActionBar.m6.x0(null, i7, false)), 12.0f));
+        int i10 = org.telegram.ui.ActionBar.b6.a;
+        textView2.setBackground(org.telegram.ui.ActionBar.b6.d(0, org.telegram.ui.ActionBar.b6.b(org.telegram.ui.ActionBar.n6.x0(null, i7, false)), 12.0f));
         textView2.setVisibility(8);
-        linearLayout.addView(textView2, c8.ma.t(-2, -2, 1, 0, 8, 0, 0));
-        bi.m3 m3Var = new bi.m3(22, context, this);
-        this.h = m3Var;
-        m3Var.setBackgroundColor(-16777216);
-        m3Var.setVisibility(4);
-        addView(m3Var, c8.ma.c(-1.0f, -1));
+        linearLayout.addView(textView2, c8.na.t(-2, -2, 1, 0, 8, 0, 0));
+        bi.o3 o3Var = new bi.o3(22, context, this);
+        this.h = o3Var;
+        o3Var.setBackgroundColor(-16777216);
+        o3Var.setVisibility(4);
+        addView(o3Var, c8.na.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.n = radialProgressView;
         radialProgressView.setVisibility(4);
-        addView(radialProgressView, c8.ma.e(-2, -2, 17));
+        addView(radialProgressView, c8.na.e(-2, -2, 17));
         this.N = new Rect();
     }
 

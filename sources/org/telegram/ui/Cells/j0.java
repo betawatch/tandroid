@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class j0 extends FrameLayout {
     public final int a;
@@ -22,16 +22,16 @@ public abstract class j0 extends FrameLayout {
         super(context);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
-        addView(imageView, c8.ma.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
+        addView(imageView, c8.na.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
         i0 i0Var = new i0(0, context, null, true);
         this.d = i0Var;
         i0Var.setReportChanges(true);
-        i0Var.setDelegate(new h9.g1(this, 26));
+        i0Var.setDelegate(new j6.r(this, 23));
         i0Var.setImportantForAccessibility(2);
-        addView(i0Var, c8.ma.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
+        addView(i0Var, c8.na.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
-        addView(imageView2, c8.ma.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
+        addView(imageView2, c8.na.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
         imageView.setImageResource(R.drawable.msg_brightness_low);
         imageView2.setImageResource(R.drawable.msg_brightness_high);
         this.a = 48;
@@ -40,10 +40,10 @@ public abstract class j0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i7 = org.telegram.ui.ActionBar.m6.m6;
+        int i7 = org.telegram.ui.ActionBar.n6.m6;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.t6.s(this.b, i7, null, mode);
-        org.telegram.ui.ActionBar.t6.s(this.c, i7, null, mode);
+        org.telegram.ui.ActionBar.u6.s(this.b, i7, null, mode);
+        org.telegram.ui.ActionBar.u6.s(this.c, i7, null, mode);
     }
 
     @Override // android.view.View

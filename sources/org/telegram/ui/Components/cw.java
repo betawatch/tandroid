@@ -1,21 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hy b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ cw(hy hyVar, int i7) {
-        this.a = i7;
-        this.b = hyVar;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class cw extends g.p {
+    public final /* synthetic */ qy c;
+
+    public cw(qy qyVar) {
+        this.c = qyVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i7) {
+        qy qyVar = this.c;
+        ly lyVar = qyVar.A0;
+        v4.i0 adapter = qyVar.E0.getAdapter();
+        iy iyVar = qyVar.z0;
+        if (adapter != iyVar) {
+            if (i7 == lyVar.y || !(lyVar.r.get(i7) == null || (lyVar.r.get(i7) instanceof TLRPC.Document))) {
+                return iyVar.d;
+            }
+            return 1;
         }
-        this.b.e();
+        if (i7 == 0) {
+            return iyVar.d;
+        }
+        if (i7 == iyVar.s || !(iyVar.h.get(i7) == null || (iyVar.h.get(i7) instanceof TLRPC.Document))) {
+            return iyVar.d;
+        }
+        return 1;
     }
 }

@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class il0 extends x5 {
-    public final d6 d;
+public final class il0 extends w5 {
+    public final c6 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ ScrollSlidingTextTabStrip f;
 
@@ -16,10 +16,10 @@ public final class il0 extends x5 {
         super(context);
         this.f = scrollSlidingTextTabStrip;
         this.e = i7;
-        this.d = new d6(this, 360L, nr.h);
+        this.d = new c6(this, 360L, kr.h);
     }
 
-    @Override // org.telegram.ui.Components.x5, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.w5, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         float d = this.d.d(this.f.o0);

@@ -1,10 +1,10 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class n1 {
-    public static final ld.b a(Enum[] entries) {
-        kotlin.jvm.internal.j.e(entries, "entries");
-        return new ld.b(entries);
+    public static byte a(long j3) {
+        a8.ma.d(j3, "out of range: %s", (j3 >> 8) == 0);
+        return (byte) j3;
     }
 }

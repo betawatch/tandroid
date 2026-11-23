@@ -3,10 +3,10 @@ package n6;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final int a;
@@ -121,25 +121,25 @@ public final class a extends r6.a {
     }
 
     public final String toString() {
-        ji.l lVar = new ji.l(this);
-        lVar.E(d(this.b), "statusCode");
-        lVar.E(this.c, "resolution");
-        lVar.E(this.d, "message");
-        lVar.E(this.e, "clientMethodKey");
-        return lVar.toString();
+        j6.k kVar = new j6.k(this);
+        kVar.S(d(this.b), "statusCode");
+        kVar.S(this.c, "resolution");
+        kVar.S(this.d, "message");
+        kVar.S(this.e, "clientMethodKey");
+        return kVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 1, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        bc.q(parcel, 2, 4);
+        cc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        bc.k(parcel, 3, this.c, i7);
-        bc.l(parcel, 4, this.d);
-        bc.i(parcel, 5, this.e);
-        bc.s(parcel, r10);
+        cc.k(parcel, 3, this.c, i7);
+        cc.l(parcel, 4, this.d);
+        cc.i(parcel, 5, this.e);
+        cc.s(parcel, r10);
     }
 
     public a(int i7, PendingIntent pendingIntent, String str) {

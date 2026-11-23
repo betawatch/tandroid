@@ -1,26 +1,334 @@
 package org.telegram.ui.Components.voip;
 
+import a8.b8;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.Components.ou0;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.animation.LinearInterpolator;
+import android.widget.FrameLayout;
+import j$.util.Objects;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.pc;
+import org.telegram.ui.Cells.x9;
+import org.telegram.ui.Components.za0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y2 extends View {
-    public ou0 a;
-    public boolean b;
+public final class y2 extends FrameLayout {
+    public final za0 E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public float J;
+    public boolean K;
+    public final Path L;
+    public int M;
+    public int N;
+    public ValueAnimator O;
+    public ValueAnimator P;
+    public AnimatorSet Q;
+    public final AnimatorSet R;
+    public boolean S;
+    public volatile boolean T;
+    public final m1 U;
+    public final boolean V;
+    public int W;
+    public final Drawable a;
+    public final Drawable b;
+    public final za0 c;
+    public final za0 d;
+    public final Drawable e;
+    public final Drawable f;
+    public final za0 h;
+    public final za0 n;
+    public final Drawable r;
+    public final Drawable s;
+    public final za0 w;
+    public final za0 x;
+    public final za0 y;
+
+    public y2(Activity activity, boolean z10, m1 m1Var) {
+        super(activity);
+        this.F = 0;
+        this.G = 0;
+        this.H = 0;
+        this.I = 0;
+        this.J = 0.0f;
+        this.K = false;
+        this.L = new Path();
+        this.M = 0;
+        this.N = 0;
+        this.S = false;
+        this.T = false;
+        this.U = m1Var;
+        boolean e10 = pc.e(512);
+        this.V = e10;
+        this.a = z10 ? new x2() : new za0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
+        this.b = z10 ? new x2() : new za0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
+        this.c = new za0(-16275028, -16270749, -5649306, -10833593, false, 0, true);
+        this.d = new za0(-1545896, -1613425, -2387892, -2198984, false, 0, true);
+        Drawable x2Var = z10 ? new x2() : new za0(-5818672, -9819171, -15755831, -14124319, false, 0, true);
+        this.e = x2Var;
+        Drawable x2Var2 = z10 ? new x2() : new za0(-13803306, -13866273, -16738923, -16608823, false, 0, true);
+        this.f = x2Var2;
+        za0 za0Var = new za0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        this.h = za0Var;
+        za0 za0Var2 = new za0(-1949911, -1691537, -3705322, -2663914, false, 0, true);
+        this.n = za0Var2;
+        Drawable x2Var3 = z10 ? new x2() : new za0(-2726657, -7186179, -13778695, -11034113, false, 0, true);
+        this.r = x2Var3;
+        Drawable x2Var4 = z10 ? new x2() : new za0(-11170817, -10507265, -16458548, -14105857, false, 0, true);
+        this.s = x2Var4;
+        za0 za0Var3 = new za0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.w = za0Var3;
+        za0 za0Var4 = new za0(-34714, -32091, -85931, -29103, false, 0, true);
+        this.x = za0Var4;
+        this.y = new za0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.E = new za0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        x2Var.setBounds(0, 0, 80, 80);
+        x2Var2.setBounds(0, 0, 80, 80);
+        za0Var.setBounds(0, 0, 80, 80);
+        za0Var2.setBounds(0, 0, 80, 80);
+        x2Var3.setBounds(0, 0, 80, 80);
+        x2Var4.setBounds(0, 0, 80, 80);
+        za0Var3.setBounds(0, 0, 80, 80);
+        za0Var4.setBounds(0, 0, 80, 80);
+        setWillNotDraw(false);
+        setLayerType(2, null);
+        AnimatorSet animatorSet = new AnimatorSet();
+        this.R = animatorSet;
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, 360);
+        ofInt.addUpdateListener(new ch.w(19, this, m1Var));
+        ofInt.setRepeatCount(-1);
+        ofInt.setRepeatMode(1);
+        animatorSet.setInterpolator(new LinearInterpolator());
+        animatorSet.playTogether(ofInt);
+        animatorSet.setDuration(12000L);
+        if (e10) {
+            animatorSet.start();
+        }
+        if (this.W == 1) {
+            return;
+        }
+        this.W = 1;
+        this.G = ks.e4;
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(ks.e4, 0, ks.e4);
+        this.O = ofInt2;
+        ofInt2.addUpdateListener(new w2(this, 3));
+        this.O.setRepeatCount(-1);
+        this.O.setRepeatMode(1);
+        this.O.setInterpolator(new LinearInterpolator());
+        this.O.setDuration(12000L);
+        if (e10) {
+            this.O.start();
+        }
+    }
+
+    public final void a() {
+        if (this.S) {
+            this.S = false;
+            AnimatorSet animatorSet = this.R;
+            if (animatorSet.isPaused()) {
+                animatorSet.resume();
+            }
+            AnimatorSet animatorSet2 = this.Q;
+            if (animatorSet2 == null || !animatorSet2.isPaused()) {
+                return;
+            }
+            this.Q.resume();
+        }
+    }
+
+    public final void b(int i7, int i10, boolean z10) {
+        int i11 = this.W;
+        if (i11 == 2 || i11 == 3) {
+            return;
+        }
+        this.W = 2;
+        ValueAnimator valueAnimator = this.O;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllUpdateListeners();
+            this.O.cancel();
+            this.O = null;
+        }
+        this.M = i7;
+        this.N = i10;
+        Point point = org.telegram.messenger.g0.q;
+        int i12 = point.x - i7;
+        int i13 = i12 * i12;
+        int i14 = ((point.y + org.telegram.messenger.g0.m) + org.telegram.messenger.g0.n) - i10;
+        int i15 = i14 * i14;
+        int i16 = i7 * i7;
+        int i17 = i10 * i10;
+        double max = Math.max(Math.max(Math.max(Math.sqrt(i13 + i15), Math.sqrt(i15 + i16)), Math.sqrt(i16 + i17)), Math.sqrt(i13 + i17));
+        this.K = true;
+        this.U.e = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, (float) max);
+        ofFloat.addUpdateListener(new w2(this, 1));
+        ofFloat.addListener(new x9(this, 20));
+        ofFloat.setDuration(z10 ? 400L : 0L);
+        ofFloat.start();
+    }
+
+    public final void c() {
+        if (this.Q != null) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.O;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllUpdateListeners();
+            this.O.cancel();
+            this.O = null;
+        }
+        this.H = ks.e4;
+        this.Q = new AnimatorSet();
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, ks.e4, ks.e4, ks.e4, 0);
+        ofInt.addUpdateListener(new w2(this, 4));
+        ofInt.setRepeatCount(-1);
+        ofInt.setRepeatMode(1);
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, ks.e4, 0, 0);
+        ofInt2.addUpdateListener(new w2(this, 5));
+        ofInt2.setRepeatCount(-1);
+        ofInt2.setRepeatMode(1);
+        this.Q.playTogether(ofInt2, ofInt);
+        this.Q.setInterpolator(new LinearInterpolator());
+        this.Q.setDuration(24000L);
+        if (this.V) {
+            this.Q.start();
+        } else {
+            this.G = 0;
+            this.F = 0;
+        }
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AnimatorSet animatorSet = this.R;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = this.Q;
+        if (animatorSet2 != null) {
+            animatorSet2.cancel();
+        }
+        ValueAnimator valueAnimator = this.O;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+    }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        ou0 ou0Var;
-        if (this.b || (ou0Var = this.a) == null) {
+        if (this.T) {
             return;
         }
-        ou0Var.b(canvas, this);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        canvas.save();
+        float sqrt = ((float) Math.sqrt((height * width) + (width * width))) / Math.min(height, width);
+        canvas.scale(sqrt, sqrt, width, height);
+        canvas.rotate(this.U.h, width, height);
+        Canvas canvas2 = (Canvas) this.U.a.b;
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        canvas2.drawColor(0, mode);
+        ((Canvas) this.U.b.b).drawColor(0, mode);
+        int i7 = this.H;
+        if (i7 != 0 && this.I != 255) {
+            this.c.setAlpha(i7);
+            this.w.setAlpha(this.H);
+            this.h.setAlpha(this.H);
+            this.c.draw(canvas);
+            this.w.draw((Canvas) this.U.a.b);
+            this.h.draw((Canvas) this.U.b.b);
+        }
+        int i10 = this.G;
+        if (i10 != 0 && this.I != 255) {
+            this.b.setAlpha(i10);
+            this.f.setAlpha(this.G);
+            this.s.setAlpha(this.G);
+            this.b.draw(canvas);
+            this.f.draw((Canvas) this.U.b.b);
+            this.s.draw((Canvas) this.U.a.b);
+        }
+        int i11 = this.F;
+        if (i11 != 0 && this.I != 255) {
+            this.a.setAlpha(i11);
+            this.e.setAlpha(this.F);
+            this.r.setAlpha(this.F);
+            this.a.draw(canvas);
+            this.e.draw((Canvas) this.U.b.b);
+            this.r.draw((Canvas) this.U.a.b);
+        }
+        int i12 = this.I;
+        if (i12 != 0) {
+            this.d.setAlpha(i12);
+            this.n.setAlpha(this.I);
+            this.x.setAlpha(this.I);
+            this.d.draw(canvas);
+            this.n.draw((Canvas) this.U.b.b);
+            this.x.draw((Canvas) this.U.a.b);
+        }
+        canvas.restore();
+        if (this.K) {
+            this.L.rewind();
+            Path path = this.L;
+            float f10 = this.M;
+            float f11 = this.N;
+            float f12 = this.J;
+            Path.Direction direction = Path.Direction.CW;
+            path.addCircle(f10, f11, f12, direction);
+            canvas.clipPath(this.L);
+            Objects.requireNonNull(this.U);
+            Objects.requireNonNull(this.U);
+            canvas.scale(1.12f, 1.12f, width, height);
+            this.c.setAlpha(ks.e4);
+            this.c.draw(canvas);
+            this.L.rewind();
+            this.L.addCircle(this.M / 4.0f, this.N / 4.0f, this.J / 4.0f, direction);
+            ((Canvas) this.U.c.b).drawColor(0, mode);
+            ((Canvas) this.U.c.b).save();
+            ((Canvas) this.U.c.b).clipPath(this.L);
+            this.y.setAlpha(ks.e4);
+            this.y.draw((Canvas) this.U.c.b);
+            ((Canvas) this.U.c.b).restore();
+            ((Canvas) this.U.d.b).drawColor(0, mode);
+            ((Canvas) this.U.d.b).save();
+            ((Canvas) this.U.d.b).clipPath(this.L);
+            this.E.setAlpha(ks.e4);
+            this.E.draw((Canvas) this.U.d.b);
+            ((Canvas) this.U.d.b).restore();
+        }
+        super.onDraw(canvas);
     }
 
-    public void setState(boolean z10) {
-        this.b = z10;
-        invalidate();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        this.c.setBounds(0, 0, getWidth(), getHeight());
+        this.d.setBounds(0, 0, getWidth(), getHeight());
+        this.b.setBounds(0, 0, getWidth(), getHeight());
+        this.a.setBounds(0, 0, getWidth(), getHeight());
+        this.y.setBounds(0, 0, getWidth() / 4, getHeight() / 4);
+        this.E.setBounds(0, 0, getWidth() / 4, getHeight() / 4);
+        int width = getWidth();
+        int height = getHeight();
+        m1 m1Var = this.U;
+        m1Var.f = width;
+        m1Var.g = height;
+        int i13 = width / 4;
+        int i14 = height / 4;
+        m1Var.c = new b8(i13, i14);
+        b8 b8Var = new b8(i13, i14);
+        m1Var.d = b8Var;
+        ((Paint) b8Var.a).setAlpha(ks.K2);
     }
 }

@@ -2,7 +2,7 @@ package x2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l1 implements b3.m {
     public final j2.m a;
@@ -33,14 +33,14 @@ public final class l1 implements b3.m {
                 byte[] bArr2 = this.c;
                 i7 = b0Var.read(bArr2, i10, bArr2.length - i10);
             }
-            c8.s0.a(b0Var);
+            c8.t0.a(b0Var);
         } catch (Throwable th2) {
-            c8.s0.a(b0Var);
+            c8.t0.a(b0Var);
             throw th2;
         }
     }
 
     @Override // b3.m
-    public final void A() {
+    public final void y() {
     }
 }

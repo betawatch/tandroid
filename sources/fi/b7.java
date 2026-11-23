@@ -3,37 +3,37 @@ package fi;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.si;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.uz;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.sz;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ tz b;
+    public final /* synthetic */ rz b;
     public final /* synthetic */ long c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ uz e;
+    public final /* synthetic */ sz e;
     public final /* synthetic */ Runnable f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Cloneable h;
     public final /* synthetic */ Serializable i;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ b7(c7 c7Var, tz tzVar, ArrayList arrayList, long j3, boolean z10, uz uzVar, int[] iArr, Runnable runnable) {
+    public /* synthetic */ b7(c7 c7Var, rz rzVar, ArrayList arrayList, long j3, boolean z10, sz szVar, int[] iArr, Runnable runnable) {
         this.g = c7Var;
-        this.b = tzVar;
+        this.b = rzVar;
         this.h = arrayList;
         this.c = j3;
         this.d = z10;
-        this.e = uzVar;
+        this.e = szVar;
         this.i = iArr;
         this.f = runnable;
     }
@@ -47,21 +47,21 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                 ArrayList arrayList = (ArrayList) this.h;
                 int[] iArr = (int[]) this.i;
                 int i7 = c7Var.a;
-                uz.a(this.b);
+                sz.a(this.b);
                 if (tLObject != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        gj gjVar = (gj) arrayList.get(i10);
+                        fj fjVar = (fj) arrayList.get(i10);
                         int i11 = 0;
                         while (true) {
                             int size = tL_stories_stories.stories.size();
                             long j3 = this.c;
                             if (i11 >= size) {
                                 TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-                                tL_storyItemDeleted.id = c7.e(gjVar);
-                                c7.b(i7, j3, gjVar, tL_storyItemDeleted);
-                            } else if (tL_stories_stories.stories.get(i11).id == c7.e(gjVar)) {
-                                c7.b(i7, j3, gjVar, tL_stories_stories.stories.get(i11));
+                                tL_storyItemDeleted.id = c7.e(fjVar);
+                                c7.b(i7, j3, fjVar, tL_storyItemDeleted);
+                            } else if (tL_stories_stories.stories.get(i11).id == c7.e(fjVar)) {
+                                c7.b(i7, j3, fjVar, tL_stories_stories.stories.get(i11));
                             } else {
                                 i11++;
                             }
@@ -71,7 +71,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                         }
                     }
                 } else if (tL_error != null) {
-                    uz.c(this.e, "fillMessagesWithStories: getStoriesByID error " + tL_error.code + " " + tL_error.text);
+                    sz.c(this.e, "fillMessagesWithStories: getStoriesByID error " + tL_error.code + " " + tL_error.text);
                 }
                 int i12 = iArr[0] - 1;
                 iArr[0] = i12;
@@ -81,11 +81,11 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                 }
                 break;
             default:
-                si siVar = (si) this.g;
+                ri riVar = (ri) this.g;
                 a0.h hVar = (a0.h) this.h;
                 AtomicInteger atomicInteger = (AtomicInteger) this.i;
-                siVar.getClass();
-                uz.a(this.b);
+                riVar.getClass();
+                sz.a(this.b);
                 if (tL_error == null) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     int i13 = 0;
@@ -99,14 +99,14 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             }
                             i13++;
                         } else {
-                            fc.X(messages_messages.messages);
-                            siVar.n(messages_messages.messages, hVar, messages_messages.users, messages_messages.chats, j10, false);
-                            siVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                            siVar.Y1(hVar, messages_messages.messages, this.d);
+                            ec.X(messages_messages.messages);
+                            riVar.n(messages_messages.messages, hVar, messages_messages.users, messages_messages.chats, j10, false);
+                            riVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
+                            riVar.Y1(hVar, messages_messages.messages, this.d);
                         }
                     }
                 } else {
-                    uz.c(this.e, "messages.getMessages error: " + tL_error.code + " " + tL_error.text);
+                    sz.c(this.e, "messages.getMessages error: " + tL_error.code + " " + tL_error.text);
                 }
                 if (atomicInteger.decrementAndGet() == 0 && (runnable = this.f) != null) {
                     org.telegram.messenger.g0.g3(runnable);
@@ -116,13 +116,13 @@ public final /* synthetic */ class b7 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ b7(si siVar, tz tzVar, long j3, a0.h hVar, boolean z10, uz uzVar, AtomicInteger atomicInteger, Runnable runnable) {
-        this.g = siVar;
-        this.b = tzVar;
+    public /* synthetic */ b7(ri riVar, rz rzVar, long j3, a0.h hVar, boolean z10, sz szVar, AtomicInteger atomicInteger, Runnable runnable) {
+        this.g = riVar;
+        this.b = rzVar;
         this.c = j3;
         this.h = hVar;
         this.d = z10;
-        this.e = uzVar;
+        this.e = szVar;
         this.i = atomicInteger;
         this.f = runnable;
     }

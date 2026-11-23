@@ -1,86 +1,34 @@
 package org.telegram.messenger;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.security.keystore.KeyGenParameterSpec;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPairGenerator;
-import java.util.Iterator;
-import java.util.Locale;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+public final /* synthetic */ class d9 implements OnSuccessListener, OnFailureListener {
+    public final /* synthetic */ org.telegram.ui.r3 a;
 
-    public /* synthetic */ d9(int i7, boolean z10) {
-        this.a = i7;
-        this.b = z10;
+    public /* synthetic */ d9(org.telegram.ui.r3 r3Var) {
+        this.a = r3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = 1;
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.b;
-                KeyPairGenerator keyPairGenerator = wr.f;
-                if (keyPairGenerator == null) {
-                    try {
-                        keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-                        wr.f = keyPairGenerator;
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
-                        keyPairGenerator = null;
-                    }
-                }
-                if (keyPairGenerator != null) {
-                    try {
-                        Locale locale = Locale.getDefault();
-                        Locale locale2 = Locale.ENGLISH;
-                        Locale.setDefault(locale2);
-                        Resources resources = t0.b.getResources();
-                        Configuration configuration = resources.getConfiguration();
-                        configuration.setLocale(locale2);
-                        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-                        keyPairGenerator.initialize(new KeyGenParameterSpec.Builder("tmessages_passcode", 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
-                        keyPairGenerator.generateKeyPair();
-                        Locale.setDefault(locale);
-                        Resources resources2 = t0.b.getResources();
-                        Configuration configuration2 = resources2.getConfiguration();
-                        configuration2.setLocale(locale);
-                        resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
-                        g0.g3(new d9(i7, z10));
-                        break;
-                    } catch (InvalidAlgorithmParameterException e11) {
-                        a8.g(e11, true);
-                        return;
-                    } catch (Exception e12) {
-                        if (e12.getClass().getName().equals("android.security.KeyStoreException")) {
-                            return;
-                        }
-                        a8.g(e12, true);
-                        return;
-                    }
-                }
-                break;
-            case 1:
-                ls.e().k(ls.Q1, Boolean.valueOf(this.b));
-                break;
-            case 2:
-                boolean z11 = this.b;
-                Iterator it = qc.n.iterator();
-                while (it.hasNext()) {
-                    y10 y10Var = (y10) it.next();
-                    if (y10Var != null) {
-                        y10Var.a(Boolean.valueOf(z11));
-                    }
-                }
-                break;
-            default:
-                ls.e().k(ls.q4, Boolean.FALSE, Boolean.valueOf(this.b));
-                break;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        a8.g(exc, true);
+        this.a.a(Collections.EMPTY_LIST);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        ArrayList arrayList = new ArrayList();
+        for (db.c cVar : (List) obj) {
+            if (cVar.c == 1) {
+                arrayList.add(cVar);
+            }
         }
+        this.a.a(arrayList);
     }
 }

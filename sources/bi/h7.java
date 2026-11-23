@@ -1,41 +1,32 @@
 package bi;
 
-import android.os.Bundle;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.wz;
-import org.telegram.ui.bn;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class h7 extends bn {
-    public boolean vd;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique wd;
-    public final /* synthetic */ long xd;
+public final /* synthetic */ class h7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h7(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        super(bundle);
-        this.wd = tL_starGiftUnique;
-        this.xd = j3;
-        this.vd = false;
+    public /* synthetic */ h7(org.telegram.ui.ActionBar.k5 k5Var, int i7) {
+        this.a = i7;
+        this.b = k5Var;
     }
 
-    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.vd) {
-            return;
-        }
-        this.vd = true;
-        gc O = lc.b0(this).O(this.wd.getDocument(), hd.N0(2131752873, null), hd.a0(null, null, 2131752874, org.telegram.messenger.n5.s(this.currentAccount, this.xd)));
-        O.r = false;
-        O.j();
-        wz wzVar = this.J9;
-        if (wzVar != null) {
-            wzVar.c(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(true);
+                break;
+            case 1:
+                this.b.a(true);
+                break;
+            default:
+                org.telegram.ui.ActionBar.k5 k5Var = this.b;
+                if (!k5Var.I && k5Var.S) {
+                    k5Var.c();
+                    break;
+                }
+                break;
         }
     }
 }

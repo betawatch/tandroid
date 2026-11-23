@@ -3,7 +3,7 @@ package gb;
 import android.os.Build;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -12,7 +12,7 @@ public final class b {
     public b(String appId, a aVar) {
         String deviceModel = Build.MODEL;
         String osVersion = Build.VERSION.RELEASE;
-        y yVar = y.b;
+        z zVar = z.b;
         kotlin.jvm.internal.j.e(appId, "appId");
         kotlin.jvm.internal.j.e(deviceModel, "deviceModel");
         kotlin.jvm.internal.j.e(osVersion, "osVersion");
@@ -39,15 +39,15 @@ public final class b {
         if (!kotlin.jvm.internal.j.a(str2, str2)) {
             return false;
         }
-        y yVar = y.b;
+        z zVar = z.b;
         return this.b.equals(bVar.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + ((y.b.hashCode() + e2.h((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 48517567) * 31, 31, Build.VERSION.RELEASE)) * 31);
+        return this.b.hashCode() + ((z.b.hashCode() + e2.h((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 48517567) * 31, 31, Build.VERSION.RELEASE)) * 31);
     }
 
     public final String toString() {
-        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=3.0.8, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + y.b + ", androidAppInfo=" + this.b + ')';
+        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=3.0.8, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + z.b + ", androidAppInfo=" + this.b + ')';
     }
 }

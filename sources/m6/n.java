@@ -1,7 +1,7 @@
 package m6;
 
-import a8.l1;
-import a8.la;
+import a8.m1;
+import a8.ma;
 import a8.r7;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.dd;
+import c8.ed;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.m0;
 import com.google.android.gms.internal.cast.q5;
@@ -34,12 +34,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.m6;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -85,7 +85,7 @@ public final class n implements OnSuccessListener, te.i {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
-        if (!l1.b(this.a)) {
+        if (!m1.b(this.a)) {
             StringBuilder sb2 = new StringBuilder("Authenticator combination is unsupported on API ");
             sb2.append(Build.VERSION.SDK_INT);
             sb2.append(": ");
@@ -94,7 +94,7 @@ public final class n implements OnSuccessListener, te.i {
             throw new IllegalArgumentException(sb2.toString());
         }
         int i10 = this.a;
-        boolean a10 = i10 != 0 ? l1.a(i10) : false;
+        boolean a10 = i10 != 0 ? m1.a(i10) : false;
         if (TextUtils.isEmpty((String) this.d) && !a10) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
@@ -126,7 +126,7 @@ public final class n implements OnSuccessListener, te.i {
         synchronized (this.b) {
             try {
                 if (((Looper) this.c) == null) {
-                    la.p(this.a == 0 && ((HandlerThread) this.d) == null);
+                    ma.p(this.a == 0 && ((HandlerThread) this.d) == null);
                     HandlerThread handlerThread = new HandlerThread("ExoPlayer:Playback", -16);
                     this.d = handlerThread;
                     handlerThread.start();
@@ -152,16 +152,11 @@ public final class n implements OnSuccessListener, te.i {
         ((vf) this.c).run();
     }
 
-    @Override // te.i
-    public void f(te.j jVar) {
-        e();
-    }
-
-    public void g() {
+    public void f() {
         HandlerThread handlerThread;
         synchronized (this.b) {
             try {
-                la.p(this.a > 0);
+                ma.p(this.a > 0);
                 int i7 = this.a - 1;
                 this.a = i7;
                 if (i7 == 0 && (handlerThread = (HandlerThread) this.d) != null) {
@@ -175,9 +170,14 @@ public final class n implements OnSuccessListener, te.i {
         }
     }
 
+    @Override // te.i
+    public void g(te.j jVar) {
+        e();
+    }
+
     public void h(int i7, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = dd.b(this.a, 1 << i7, z10);
+        int b10 = ed.b(this.a, 1 << i7, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -188,7 +188,7 @@ public final class n implements OnSuccessListener, te.i {
     public void j(Throwable th2) {
         w wVar = (w) this.d;
         if (th2 instanceof TimeoutException) {
-            wVar.G(ls.n1, 28, z.p);
+            wVar.G(ks.n1, 28, z.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
             wVar.G(95, 28, z.p);
@@ -265,12 +265,12 @@ public final class n implements OnSuccessListener, te.i {
     public n(int i7) {
         switch (i7) {
             case 5:
-                n6 n6Var = new n6(true, true, true);
-                this.d = n6Var;
+                m6 m6Var = new m6(true, true, true);
+                this.d = m6Var;
                 Paint paint = new Paint(1);
-                n6Var.w(g0.L(13.0f));
-                n6Var.u(-1);
-                n6Var.x(g0.o());
+                m6Var.w(g0.L(13.0f));
+                m6Var.u(-1);
+                m6Var.x(g0.o());
                 paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;

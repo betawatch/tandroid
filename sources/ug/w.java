@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.ui.Components.sj0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements org.telegram.ui.ActionBar.q1, sj0 {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class w implements org.telegram.ui.ActionBar.q1, sj
     }
 
     @Override // org.telegram.ui.Components.sj0
-    public boolean c(int i7, View view) {
+    public boolean b(int i7, View view) {
         k0 k0Var = this.b;
-        k0Var.o1.getOnItemClickListener().c(i7, view);
+        k0Var.o1.getOnItemClickListener().b(i7, view);
         if (k0Var.d2 != 19) {
             try {
                 view.performHapticFeedback(0);
@@ -29,7 +29,7 @@ public final /* synthetic */ class w implements org.telegram.ui.ActionBar.q1, sj
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 k0 k0Var = this.b;

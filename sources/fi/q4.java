@@ -3,12 +3,12 @@ package fi;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class q4 extends k.a {
     public final /* synthetic */ r4 c;
@@ -20,7 +20,7 @@ public final class q4 extends k.a {
     }
 
     @Override // k.a
-    public final void l(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final void k(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         final int i7 = 1;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(i0.a.f(0.18f, -16777216, -1));
         r4 r4Var = this.c;
@@ -28,7 +28,7 @@ public final class q4 extends k.a {
         a5 a5Var = b5Var.F;
         final int i10 = 0;
         boolean z10 = a5Var != null && a5Var.f;
-        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : b5Var.P.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, hd.N0(z10 ? 2131745093 : 2131745094, null), false, b5Var.s);
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : b5Var.P.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, gd.N0(z10 ? 2131745093 : 2131745094, null), false, b5Var.s);
         if (!b5Var.P.a) {
             c10.setAlpha(0.5f);
         }
@@ -87,7 +87,7 @@ public final class q4 extends k.a {
                 }
             }
         });
-        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !b5Var.P.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, hd.N0(2131745092, null), false, b5Var.s);
+        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !b5Var.P.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, gd.N0(2131745092, null), false, b5Var.s);
         if (b5Var.P.a) {
             c11.setAlpha(0.5f);
         }
@@ -146,22 +146,22 @@ public final class q4 extends k.a {
                 }
             }
         });
-        View d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, r4Var.getContext(), b5Var.s);
+        View d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.n6.H8, r4Var.getContext(), b5Var.s);
         d1Var.setTag(R.id.fit_width_tag, 1);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, ma.o(-1, 8));
-        String N0 = hd.N0(z10 ? 2131744259 : 2131744202, null);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, na.o(-1, 8));
+        String N0 = gd.N0(z10 ? 2131744258 : 2131744201, null);
         b bVar = b5Var.s;
         TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, bVar);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, bVar);
         textView.setPadding(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
         textView.setText(N0);
         textView.setTag(R.id.fit_width_tag, 1);
         textView.setMaxWidth(org.telegram.messenger.g0.L(200.0f));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, ma.o(-1, -2));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, na.o(-1, -2));
     }
 
     @Override // k.a
-    public final void m() {
+    public final void l() {
     }
 }

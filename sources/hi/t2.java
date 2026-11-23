@@ -1,33 +1,49 @@
 package hi;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class t2 extends v4.u0 {
+public final class t2 extends View {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d3 b;
+    public final /* synthetic */ w2 b;
 
-    public /* synthetic */ t2(d3 d3Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t2(w2 w2Var, Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = d3Var;
+        this.b = w2Var;
     }
 
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        org.telegram.ui.ActionBar.q0 q0Var;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                d3 d3Var = this.b;
-                d3Var.getClass();
-                d3Var.invalidate();
+                w2 w2Var = this.b;
+                w2Var.q.reset();
+                w2Var.b(canvas, true);
                 break;
             default:
-                d3 d3Var2 = this.b;
-                if (d3Var2.n.J1 && (q0Var = d3Var2.H) != null && q0Var.getSearchField() != null) {
-                    org.telegram.messenger.g0.v1(d3Var2.H.getSearchContainer());
-                    break;
-                }
+                w2 w2Var2 = this.b;
+                w2Var2.q.reset();
+                w2Var2.q.postTranslate(-getX(), (-getY()) + org.telegram.messenger.g0.m);
+                w2Var2.q.postScale(1.0f / getScaleX(), 1.0f / getScaleY(), getPivotX(), getPivotY());
+                w2Var2.b(canvas, false);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, i10);
+                this.b.g();
+                break;
+            default:
+                super.onMeasure(i7, i10);
                 break;
         }
     }

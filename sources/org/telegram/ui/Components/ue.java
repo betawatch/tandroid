@@ -1,112 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.Bitmap;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.animation.AnimatorSet;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ue extends AnimatorListenerAdapter {
+public final class ue implements Runnable {
     public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ ChatActivityEnterView c;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ ue(ChatActivityEnterView chatActivityEnterView, boolean z10, int i7) {
+    public /* synthetic */ ue(ChatActivityEnterView chatActivityEnterView, int i7) {
         this.a = i7;
-        this.c = chatActivityEnterView;
-        this.b = z10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j3;
+        long j10;
         switch (this.a) {
-            case 1:
-                this.b = true;
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.i3)) {
-                    chatActivityEnterView.i3 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        se seVar;
-        int i7 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        switch (i7) {
             case 0:
-                if (chatActivityEnterView.p7) {
-                    chatActivityEnterView.m2.setVisibility(this.b ? 0 : 8);
-                    break;
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                ue ueVar = chatActivityEnterView.h4;
+                if ((chatActivityEnterView.H0() && chatActivityEnterView.A()) || org.telegram.ui.ActionBar.g2.hasSheets(chatActivityEnterView.F3) || chatActivityEnterView.O2 || chatActivityEnterView.F0 == null || !chatActivityEnterView.a4 || chatActivityEnterView.p3 || org.telegram.messenger.g0.D || org.telegram.messenger.g0.E) {
+                    return;
                 }
-                break;
+                mg mgVar = chatActivityEnterView.P3;
+                if (mgVar != null) {
+                    mgVar.o1();
+                }
+                chatActivityEnterView.F0.requestFocus();
+                org.telegram.messenger.g0.I3(chatActivityEnterView.F0);
+                org.telegram.messenger.g0.r(ueVar);
+                org.telegram.messenger.g0.h3(ueVar, 100L);
+                return;
             case 1:
-                if (!this.b) {
-                    int i10 = ChatActivityEnterView.s7;
-                    chatActivityEnterView.u(1.0f);
-                }
-                chatActivityEnterView.R0.setRotation(0.0f);
-                chatActivityEnterView.P5 = false;
-                wg wgVar = chatActivityEnterView.Z0;
-                if (wgVar != null) {
-                    wgVar.setScaleX(1.0f);
-                    chatActivityEnterView.Z0.setScaleY(1.0f);
-                }
-                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
-                if (recordCircle != null) {
-                    recordCircle.P = false;
-                    recordCircle.invalidate();
-                }
-                yu0 yu0Var = chatActivityEnterView.F5;
-                if (yu0Var != null) {
-                    yu0Var.a();
-                }
-                Bitmap bitmap = chatActivityEnterView.G5;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    chatActivityEnterView.G5 = null;
-                    break;
-                }
-                break;
-            case 2:
-                if (animator.equals(chatActivityEnterView.i3)) {
-                    chatActivityEnterView.f2.setVisibility(8);
-                    if (this.b && (seVar = chatActivityEnterView.z2) != null) {
-                        seVar.setVisibility(8);
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                ai.j1 j1Var = chatActivityEnterView2.o6;
+                if (j1Var == null || !j1Var.d) {
+                    j3 = 0;
+                } else {
+                    long j11 = j1Var.e;
+                    if (j11 == 0) {
+                        j10 = 0;
+                    } else {
+                        j10 = j11 + j1Var.a + (j1Var.C ? 180L : 0L);
                     }
-                    chatActivityEnterView.i3 = null;
-                    break;
+                    j3 = j10 - SystemClock.uptimeMillis();
                 }
-                break;
-            case 3:
-                chatActivityEnterView.C2 = null;
-                if (!this.b) {
-                    chatActivityEnterView.z2.setVisibility(8);
-                    break;
+                if (j3 > 0) {
+                    org.telegram.messenger.g0.h3(this, j3 + 16);
+                    return;
                 }
-                break;
+                chatActivityEnterView2.s6 = null;
+                chatActivityEnterView2.q6 = false;
+                chatActivityEnterView2.r6 = true;
+                chatActivityEnterView2.t6 = SystemClock.uptimeMillis();
+                ai.j1 j1Var2 = chatActivityEnterView2.o6;
+                if (j1Var2 != null) {
+                    j1Var2.c();
+                }
+                try {
+                    chatActivityEnterView2.w1();
+                    return;
+                } finally {
+                    chatActivityEnterView2.r6 = false;
+                    org.telegram.messenger.g0.h3(new td(chatActivityEnterView2, 17), 450L);
+                }
+            case 2:
+                mg mgVar2 = this.b.P3;
+                if (mgVar2 != null) {
+                    mgVar2.o2(0, 0, 0, 0L, 0L, true);
+                    return;
+                }
+                return;
             default:
-                chatActivityEnterView.x0 = this.b ? 1.0f : 0.0f;
-                fg fgVar = chatActivityEnterView.V0;
-                if (fgVar != null) {
-                    fgVar.Z();
-                    break;
+                ChatActivityEnterView chatActivityEnterView3 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView3.W0;
+                if (animatorSet == null || animatorSet.isRunning()) {
+                    return;
                 }
-                break;
+                chatActivityEnterView3.W0.start();
+                return;
         }
-    }
-
-    public ue(ChatActivityEnterView chatActivityEnterView) {
-        this.a = 1;
-        this.c = chatActivityEnterView;
     }
 }

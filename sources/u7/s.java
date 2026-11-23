@@ -1,8 +1,8 @@
 package u7;
 
-import c8.tc;
+import c8.uc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s extends r {
     public static final s e = new s(0, new Object[0]);
@@ -24,7 +24,7 @@ public final class s extends r {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        tc.a(i7, this.d);
+        uc.a(i7, this.d);
         Object obj = this.c[i7];
         obj.getClass();
         return obj;

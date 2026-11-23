@@ -1,43 +1,57 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import java.util.Collections;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class su implements org.telegram.messenger.y10 {
+public final /* synthetic */ class su implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+    public final /* synthetic */ bx b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ su(Activity activity, int i7) {
+    public /* synthetic */ su(bx bxVar, long j3, boolean z10, int i7) {
         this.a = i7;
-        this.b = activity;
+        this.b = bxVar;
+        this.c = j3;
+        this.d = z10;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        Boolean bool = (Boolean) obj;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        TLRPC.Chat chat;
+        int i7 = this.a;
+        boolean z10 = this.d;
+        long j3 = this.c;
+        bx bxVar = this.b;
+        switch (i7) {
             case 0:
-                if (bool.booleanValue()) {
-                    if (!c8.na.a()) {
-                        c8.na.f();
-                        break;
-                    } else {
-                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
-                        break;
-                    }
+                bx bxVar2 = this.b;
+                fi.p6 R1 = bxVar2.getMessagesController().R1();
+                long j10 = this.c;
+                boolean z11 = this.d;
+                R1.l0(j10, z11, false);
+                jb.m mVar = new jb.m(16, false);
+                mVar.b = new su(bxVar2, j10, z11, 1);
+                mVar.c = new su(bxVar2, j10, z11, 2);
+                if (j10 >= 0) {
+                    TLRPC.User c22 = bxVar2.getMessagesController().c2(Long.valueOf(j10));
+                    str = org.telegram.messenger.i5.m(15, c22.first_name, null);
+                    chat = c22;
+                } else {
+                    TLRPC.Chat O0 = bxVar2.getMessagesController().O0(Long.valueOf(-j10));
+                    str = O0.title;
+                    chat = O0;
                 }
+                bxVar2.T = org.telegram.ui.Components.kc.Y().V(Collections.singletonList(chat), bxVar2.t4() ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("StoriesMovedToDialogs", null, 2131744517, str)) : org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("StoriesMovedToContacts", null, 2131744518, org.telegram.messenger.i5.m(15, str, null))), null, mVar).j();
+                break;
+            case 1:
+                bxVar.getMessagesController().R1().l0(j3, !z10, false);
                 break;
             default:
-                if (bool.booleanValue()) {
-                    if (!c8.na.a()) {
-                        c8.na.f();
-                        break;
-                    } else {
-                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
-                        break;
-                    }
-                }
+                bxVar.getMessagesController().R1().l0(j3, z10, true);
                 break;
         }
     }

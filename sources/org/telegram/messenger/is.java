@@ -1,77 +1,39 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class is extends ArrayList {
-    public HashSet a;
+public final class is implements fs {
+    public final ks a;
+    public final WeakReference b;
+    public final int c;
 
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        if (this.a.add(obj)) {
-            return super.add(obj);
-        }
-        return false;
+    public is(ks ksVar, fs fsVar) {
+        this.a = ksVar;
+        this.b = new WeakReference(fsVar);
+        this.c = System.identityHashCode(fsVar);
     }
 
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        Iterator it = collection.iterator();
-        boolean z10 = false;
-        while (it.hasNext()) {
-            if (add(it.next())) {
-                z10 = true;
-            }
-        }
-        return z10;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        this.a.clear();
-        super.clear();
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return this.a.contains(obj);
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final Object remove(int i7) {
-        Object remove = super.remove(i7);
-        if (remove != null) {
-            this.a.remove(remove);
-        }
-        return remove;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final void add(int i7, Object obj) {
-        if (this.a.add(obj)) {
-            super.add(i7, obj);
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        fs fsVar = (fs) this.b.get();
+        if (fsVar != null) {
+            fsVar.didReceivedNotification(i7, i10, objArr);
+        } else {
+            this.a.n(this, i7);
         }
     }
 
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i7, Collection collection) {
-        throw new UnsupportedOperationException();
+    public final boolean equals(Object obj) {
+        fs fsVar;
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof is) && (fsVar = (fs) this.b.get()) != null && fsVar == ((is) obj).b.get();
     }
 
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        if (this.a.remove(obj)) {
-            return super.remove(obj);
-        }
-        return false;
+    public final int hashCode() {
+        return this.c;
     }
 }

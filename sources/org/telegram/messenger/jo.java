@@ -1,76 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jo implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
+public final class jo extends y2 {
+    public final /* synthetic */ mp e;
 
-    public /* synthetic */ jo(x2 x2Var, int i7) {
-        this.a = i7;
-        this.b = x2Var;
+    public jo(mp mpVar) {
+        this.e = mpVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        String str;
-        int i7;
-        String str2;
-        int i10;
-        switch (this.a) {
-            case 0:
-                boolean z10 = tLObject instanceof TLRPC.TL_help_appConfigNotModified;
-                x2 x2Var = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_help_appConfig)) {
-                        StringBuilder sb2 = new StringBuilder("getting appconfig error ");
-                        if (tL_error != null) {
-                            str = tL_error.code + " " + tL_error.text;
-                        } else {
-                            str = "";
-                        }
-                        sb2.append(str);
-                        a8.d(sb2.toString());
-                        x2Var.a(Boolean.FALSE, null, 0L, Boolean.valueOf(tL_error == null || !((i7 = tL_error.code) == -2000 || i7 == -2001)));
-                        break;
-                    } else {
-                        x2Var.a(Boolean.FALSE, (TLRPC.TL_help_appConfig) tLObject, Long.valueOf(r6.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    x2Var.a(bool, null, 0L, bool);
-                    break;
-                }
-                break;
-            default:
-                boolean z11 = tLObject instanceof TLRPC.TL_messages_availableEffectsNotModified;
-                x2 x2Var2 = this.b;
-                if (!z11) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_availableEffects)) {
-                        StringBuilder sb3 = new StringBuilder("getting available effects error ");
-                        if (tL_error != null) {
-                            str2 = tL_error.code + " " + tL_error.text;
-                        } else {
-                            str2 = "";
-                        }
-                        sb3.append(str2);
-                        a8.d(sb3.toString());
-                        x2Var2.a(Boolean.FALSE, null, 0L, Boolean.valueOf(tL_error == null || !((i10 = tL_error.code) == -2000 || i10 == -2001)));
-                        break;
-                    } else {
-                        x2Var2.a(Boolean.FALSE, (TLRPC.TL_messages_availableEffects) tLObject, Long.valueOf(r6.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    x2Var2.a(bool2, null, 0L, bool2);
-                    break;
-                }
-        }
+    @Override // org.telegram.messenger.y2
+    public final void e(int i7, Object obj, p10 p10Var) {
+        this.e.getMessagesStorage().a.c(new ho(i7, (w2) p10Var, 0));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final void f(int i7, Object obj, long j3, x2 x2Var) {
+        TLRPC.TL_help_getAppConfig tL_help_getAppConfig = new TLRPC.TL_help_getAppConfig();
+        tL_help_getAppConfig.hash = (int) j3;
+        this.e.getConnectionsManager().sendRequest(tL_help_getAppConfig, new io(x2Var, 0));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final void g(int i7, Object obj, Object obj2) {
+        tr.a0(i7).a.c(new x0(i7, (TLRPC.TL_help_appConfig) obj2, 5));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
+        return false;
     }
 }

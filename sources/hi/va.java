@@ -1,98 +1,63 @@
 package hi;
 
-import android.media.MediaExtractor;
-import android.media.MediaFormat;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class va {
-    public final org.telegram.ui.Components.d6 a;
-    public final int b;
-    public final short[] d;
-    public short e;
-    public final MediaExtractor f;
-    public final MediaFormat g;
-    public final long h;
-    public final FfmpegAudioWaveformLoader k;
-    public final /* synthetic */ cb l;
-    public int c = 0;
-    public final Object i = new Object();
-    public boolean j = false;
+public final class va extends View {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Canvas b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Paint f;
+    public final /* synthetic */ Bitmap h;
+    public final /* synthetic */ Paint n;
+    public final /* synthetic */ float r;
+    public final /* synthetic */ float s;
+    public final /* synthetic */ nb w;
 
-    public va(cb cbVar, String str, int i7) {
-        this.l = cbVar;
-        this.a = new org.telegram.ui.Components.d6(cbVar, 0L, 600L, nr.h);
-        int i10 = 0;
-        MediaExtractor mediaExtractor = new MediaExtractor();
-        this.f = mediaExtractor;
-        String str2 = null;
-        try {
-            mediaExtractor.setDataSource(str);
-            int trackCount = mediaExtractor.getTrackCount();
-            while (true) {
-                if (i10 < trackCount) {
-                    MediaFormat trackFormat = this.f.getTrackFormat(i10);
-                    str2 = trackFormat.getString("mime");
-                    if (str2 != null && str2.startsWith("audio/")) {
-                        this.f.selectTrack(i10);
-                        this.g = trackFormat;
-                        break;
-                    }
-                    i10++;
-                } else {
-                    break;
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public va(nb nbVar, Context context, boolean z10, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14) {
+        super(context);
+        this.w = nbVar;
+        this.a = z10;
+        this.b = canvas;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
+        this.f = paint;
+        this.h = bitmap;
+        this.n = paint2;
+        this.r = f13;
+        this.s = f14;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        boolean z10 = this.a;
+        Paint paint = this.n;
+        float f10 = this.e;
+        float f11 = this.d;
+        float f12 = this.c;
+        nb nbVar = this.w;
+        if (z10) {
+            float f13 = nbVar.E2;
+            if (f13 > 0.0f) {
+                this.b.drawCircle(f12, f11, f10 * f13, this.f);
             }
-            MediaFormat mediaFormat = this.g;
-            if (mediaFormat != null) {
-                this.h = mediaFormat.getLong("durationUs") / 1000000;
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        int min = Math.min(Math.round((((this.h * 1000) / Math.min(cbVar.h != null ? r8.e : !cbVar.s.isEmpty() ? cbVar.getBaseDuration() : cbVar.F ? cbVar.I : this.h * 1000, cbVar.getMaxScrollDuration())) * i7) / Math.round(org.telegram.messenger.g0.N(3.3333f))), 4000);
-        this.b = min;
-        this.d = new short[min];
-        if (this.h <= 0 || this.g == null) {
-            return;
-        }
-        if ("audio/mpeg".equals(str2) || "audio/mp3".equals(str2) || "audio/mp4a".equals(str2) || "audio/mp4a-latm".equals(str2)) {
-            this.k = new FfmpegAudioWaveformLoader(str, min, new d7(this, 2));
+            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
         } else {
-            Utilities.h.c(new l(this, 22));
+            canvas.drawCircle(f12, f11, (1.0f - nbVar.E2) * f10, paint);
         }
-    }
-
-    public final void a() {
-        FfmpegAudioWaveformLoader ffmpegAudioWaveformLoader = this.k;
-        if (ffmpegAudioWaveformLoader != null) {
-            ffmpegAudioWaveformLoader.destroy();
-        }
-        Utilities.h.a(new l(this, 22));
-        synchronized (this.i) {
-            this.j = true;
-        }
-    }
-
-    public final void b(short[] sArr, int i7) {
-        for (int i10 = 0; i10 < i7; i10++) {
-            int i11 = this.c;
-            int i12 = i11 + i10;
-            short[] sArr2 = this.d;
-            if (i12 >= sArr2.length) {
-                break;
-            }
-            sArr2[i11 + i10] = sArr[i10];
-            short s5 = this.e;
-            short s9 = sArr[i10];
-            if (s5 < s9) {
-                this.e = s9;
-            }
-        }
-        this.c += i7;
-        this.l.invalidate();
+        canvas.save();
+        canvas.translate(this.r, this.s);
+        nbVar.j1.draw(canvas);
+        canvas.restore();
     }
 }

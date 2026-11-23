@@ -1,12 +1,12 @@
 package m4;
 
-import a8.la;
+import a8.ma;
 import e2.s0;
-import f3.i0;
+import f3.j0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class h implements i {
     public h(List list) {
         this.a = 0;
         this.f = list;
-        this.g = new i0[list.size()];
+        this.g = new j0[list.size()];
         this.c = -9223372036854775807L;
     }
 
@@ -59,9 +59,9 @@ public final class h implements i {
                     }
                     int i7 = xVar.b;
                     int a10 = xVar.a();
-                    for (i0 i0Var : (i0[]) this.g) {
+                    for (j0 j0Var : (j0[]) this.g) {
                         xVar.N(i7);
-                        i0Var.b(a10, xVar);
+                        j0Var.b(a10, xVar);
                     }
                     this.e += a10;
                     break;
@@ -69,7 +69,7 @@ public final class h implements i {
                 break;
             default:
                 h2.x xVar2 = (h2.x) this.f;
-                ((i0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b) {
                     int a11 = xVar.a();
                     int i10 = this.e;
@@ -89,7 +89,7 @@ public final class h implements i {
                         }
                     }
                     int min2 = Math.min(a11, this.d - this.e);
-                    ((i0) this.g).b(min2, xVar);
+                    ((j0) this.g).b(min2, xVar);
                     this.e += min2;
                     break;
                 }
@@ -117,19 +117,19 @@ public final class h implements i {
         switch (this.a) {
             case 0:
                 if (this.b) {
-                    la.p(this.c != -9223372036854775807L);
-                    for (i0 i0Var : (i0[]) this.g) {
-                        i0Var.c(this.c, 1, this.e, 0, null);
+                    ma.p(this.c != -9223372036854775807L);
+                    for (j0 j0Var : (j0[]) this.g) {
+                        j0Var.c(this.c, 1, this.e, 0, null);
                     }
                     this.b = false;
                     break;
                 }
                 break;
             default:
-                ((i0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b && (i7 = this.d) != 0 && this.e == i7) {
-                    la.p(this.c != -9223372036854775807L);
-                    ((i0) this.g).c(this.c, 1, this.d, 0, null);
+                    ma.p(this.c != -9223372036854775807L);
+                    ((j0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
                 }
@@ -165,12 +165,12 @@ public final class h implements i {
     public final void g(f3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
-                i0[] i0VarArr = (i0[]) this.g;
-                for (int i7 = 0; i7 < i0VarArr.length; i7++) {
+                j0[] j0VarArr = (j0[]) this.g;
+                for (int i7 = 0; i7 < j0VarArr.length; i7++) {
                     e0 e0Var = (e0) ((List) this.f).get(i7);
                     f0Var.b();
                     f0Var.c();
-                    i0 d2 = qVar.d2(f0Var.c, 3);
+                    j0 d2 = qVar.d2(f0Var.c, 3);
                     e2.t tVar = new e2.t();
                     f0Var.c();
                     tVar.a = (String) f0Var.e;
@@ -179,13 +179,13 @@ public final class h implements i {
                     tVar.u = Collections.singletonList(e0Var.b);
                     tVar.d = e0Var.a;
                     p5.c.r(tVar, d2);
-                    i0VarArr[i7] = d2;
+                    j0VarArr[i7] = d2;
                 }
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
-                i0 d22 = qVar.d2(f0Var.c, 5);
+                j0 d22 = qVar.d2(f0Var.c, 5);
                 this.g = d22;
                 e2.t tVar2 = new e2.t();
                 f0Var.c();

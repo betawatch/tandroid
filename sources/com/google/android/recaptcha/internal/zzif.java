@@ -1,19 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import b5.a;
 import b7.h;
+import c8.z;
 import gd.c;
+import jd.a;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i7 = zzby.zza;
-        this.zza = a.c(zzie.zza);
+        this.zza = h.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -34,16 +35,16 @@ public final class zzif {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzicVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                jd.a aVar = jd.a.a;
+                a aVar = a.a;
                 i7 = zzicVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    h.b(obj);
+                    z.b(obj);
                     return obj;
                 }
-                h.b(obj);
+                z.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
                 Object e10 = b0.e(zzidVar, zzicVar);
@@ -52,7 +53,7 @@ public final class zzif {
         }
         zzicVar = new zzic(zzifVar, cVar);
         Object obj2 = zzicVar.zza;
-        jd.a aVar2 = jd.a.a;
+        a aVar2 = a.a;
         i7 = zzicVar.zzc;
         if (i7 == 0) {
         }

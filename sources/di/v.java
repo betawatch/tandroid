@@ -3,9 +3,9 @@ package di;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mf0;
+import org.telegram.ui.lf0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,16 +31,16 @@ public final /* synthetic */ class v implements RequestDelegate {
             case 1:
                 hi.e eVar = (hi.e) this.d;
                 org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.e;
-                org.telegram.messenger.g0.g3(new bi.u3(this.b, 2, this.c, eVar, w2VarArr));
+                org.telegram.messenger.g0.g3(new bi.w3(this.b, 2, this.c, eVar, w2VarArr));
                 break;
             case 2:
                 org.telegram.messenger.g0.g3(new bi.e0((fi.p6) this.d, tLObject, this.b, (String) this.e, this.c, 5));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new bi.p4(tLObject, this.b, (hi.e) this.d, (org.telegram.ui.ActionBar.w2) this.e, this.c, tL_error));
+                org.telegram.messenger.g0.g3(new bi.s4(tLObject, this.b, (hi.e) this.d, (org.telegram.ui.ActionBar.w2) this.e, this.c, tL_error));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new bi.p4((mf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 7));
+                org.telegram.messenger.g0.g3(new bi.s4((lf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 7));
                 break;
         }
     }
@@ -61,9 +61,9 @@ public final /* synthetic */ class v implements RequestDelegate {
         this.c = j3;
     }
 
-    public /* synthetic */ v(mf0 mf0Var, long j3, int i7, TLRPC.Chat chat) {
+    public /* synthetic */ v(lf0 lf0Var, long j3, int i7, TLRPC.Chat chat) {
         this.a = 4;
-        this.d = mf0Var;
+        this.d = lf0Var;
         this.c = j3;
         this.b = i7;
         this.e = chat;

@@ -1,10 +1,10 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u0 extends d1 {
     public static final String c;
@@ -44,7 +44,7 @@ public final class u0 extends d1 {
     }
 
     public u0(float f10) {
-        la.e("percent must be in the range of [0, 100]", f10 >= 0.0f && f10 <= 100.0f);
+        ma.e("percent must be in the range of [0, 100]", f10 >= 0.0f && f10 <= 100.0f);
         this.b = f10;
     }
 }

@@ -4,10 +4,10 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class q2 extends n3 {
-    @Override // android.view.View
+public final class q2 extends org.telegram.ui.ActionBar.k {
+    @Override // org.telegram.ui.ActionBar.k, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
             Point point = org.telegram.messenger.g0.q;

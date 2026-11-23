@@ -1,19 +1,19 @@
 package f3;
 
-import a8.y9;
+import a8.z9;
 import android.net.Uri;
-import h9.t1;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
     public static final q4.q n = new q4.q(new ci.v(23));
     public static final q4.q r = new q4.q(new ci.v(24));
-    public t1 a;
+    public s1 a;
     public int e;
     public int f;
     public nb.a c = new nb.a(6);
@@ -56,7 +56,7 @@ public final class m implements r {
                 nb.a aVar = this.c;
                 int g10 = z3.h.g(this.d) | (this.b ? 0 : 32);
                 h9.g0 g0Var = h9.i0.b;
-                arrayList.add(new z3.h(aVar, g10, null, t1.e, null));
+                arrayList.add(new z3.h(aVar, g10, null, s1.e, null));
                 nb.a aVar2 = this.c;
                 int i10 = this.d;
                 int i11 = (i10 & 1) == 0 ? 0 : 32;
@@ -74,7 +74,7 @@ public final class m implements r {
             case 11:
                 if (this.a == null) {
                     h9.g0 g0Var2 = h9.i0.b;
-                    this.a = t1.e;
+                    this.a = s1.e;
                 }
                 arrayList.add(new m4.d0(1, !this.b ? 1 : 0, this.c, new h2.k0(0L), new m4.f(0, this.a)));
                 break;
@@ -123,7 +123,7 @@ public final class m implements r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized o[] e(Uri uri, Map map) {
+    public final synchronized o[] c(Uri uri, Map map) {
         ArrayList arrayList;
         String str;
         int a10;
@@ -135,11 +135,11 @@ public final class m implements r {
             List list = (List) map.get("Content-Type");
             if (list != null && !list.isEmpty()) {
                 str = (String) list.get(0);
-                a10 = y9.a(str);
+                a10 = z9.a(str);
                 if (a10 != -1) {
                     a(a10, arrayList);
                 }
-                b10 = y9.b(uri);
+                b10 = z9.b(uri);
                 if (b10 != -1 && b10 != a10) {
                     a(b10, arrayList);
                 }
@@ -151,10 +151,10 @@ public final class m implements r {
                 }
             }
             str = null;
-            a10 = y9.a(str);
+            a10 = z9.a(str);
             if (a10 != -1) {
             }
-            b10 = y9.b(uri);
+            b10 = z9.b(uri);
             if (b10 != -1) {
                 a(b10, arrayList);
             }

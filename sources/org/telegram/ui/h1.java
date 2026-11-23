@@ -12,9 +12,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
+public final class h1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
     public final di.b1 a;
     public final e1 b;
     public z2 c;
@@ -44,11 +44,11 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
         e1 e1Var = new e1(this);
         this.b = e1Var;
         b1Var.setAdapter(e1Var);
-        addView(b1Var, c8.ma.c(-2.0f, -1));
+        addView(b1Var, c8.na.c(-2.0f, -1));
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -115,7 +115,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131754895, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754895, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -150,7 +150,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
                 int L2 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(r15 * 14);
                 this.e = L2;
                 this.f = L2;
-                i11 = org.telegram.messenger.o10.x(18.0f, L2, size);
+                i11 = org.telegram.messenger.m10.x(18.0f, L2, size);
                 L = i11;
             } else {
                 this.e = 0;
@@ -186,7 +186,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
             TL_iv.pageBlockCollage pageblockcollage3 = h1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (h1Var.x.H) {
-                alignment = org.telegram.ui.Components.zu0.a();
+                alignment = org.telegram.ui.Components.yu0.a();
             }
             z2 n11 = g4.n(g4Var, h1Var, null, richText2, L, 0, pageblockcollage3, alignment, 0, h1Var.x);
             h1Var.d = n11;

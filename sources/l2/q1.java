@@ -1,59 +1,77 @@
 package l2;
 
-import android.os.SystemClock;
+import a8.ma;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class q1 implements t0 {
-    public long a;
-    public long b;
-    public boolean c;
-    public Object d;
-    public Object e;
+public final class q1 {
+    public static final q1 c;
+    public static final q1 d;
+    public static final q1 e;
+    public static final q1 f;
+    public final long a;
+    public final long b;
 
-    @Override // l2.t0
-    public long a() {
-        long j3 = this.a;
-        if (!this.c) {
-            return j3;
-        }
-        ((h2.g0) this.d).getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
-        return (((e2.w0) this.e).a == 1.0f ? h2.l0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j3;
+    static {
+        q1 q1Var = new q1(0L, 0L);
+        c = q1Var;
+        d = new q1(Long.MAX_VALUE, Long.MAX_VALUE);
+        e = new q1(Long.MAX_VALUE, 0L);
+        new q1(0L, Long.MAX_VALUE);
+        f = q1Var;
     }
 
-    @Override // l2.t0
-    public /* synthetic */ boolean b() {
+    public q1(long j3, long j10) {
+        ma.f(j3 >= 0);
+        ma.f(j10 >= 0);
+        this.a = j3;
+        this.b = j10;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0082 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final long a(long j3, long j10, long j11) {
+        long j12 = this.a;
+        long j13 = this.b;
+        if (j12 == 0 && j13 == 0) {
+            return j3;
+        }
+        String str = h2.l0.a;
+        long j14 = j3 - j12;
+        long j15 = (((j12 ^ j3) > 0L ? 1 : ((j12 ^ j3) == 0L ? 0 : -1)) >= 0) | (((j3 ^ j14) > 0L ? 1 : ((j3 ^ j14) == 0L ? 0 : -1)) >= 0) ? j14 : ((j14 >>> 63) ^ 1) + Long.MAX_VALUE;
+        if ((j15 == Long.MIN_VALUE && j14 != Long.MIN_VALUE) || (j15 == Long.MAX_VALUE && j14 != Long.MAX_VALUE)) {
+            j15 = Long.MIN_VALUE;
+        }
+        long a10 = h2.l0.a(j3, j13);
+        boolean z10 = j15 <= j10 && j10 <= a10;
+        boolean z11 = j15 <= j11 && j11 <= a10;
+        if (!z10 || !z11) {
+            if (!z10) {
+                return z11 ? j11 : j15;
+            }
+            return j10;
+        }
+        if (Math.abs(j10 - j3) <= Math.abs(j11 - j3)) {
+            return j10;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && q1.class == obj.getClass()) {
+            q1 q1Var = (q1) obj;
+            if (this.a == q1Var.a && this.b == q1Var.b) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public void c(long j3) {
-        this.a = j3;
-        if (this.c) {
-            ((h2.g0) this.d).getClass();
-            this.b = SystemClock.elapsedRealtime();
-        }
-    }
-
-    public void d() {
-        if (this.c) {
-            return;
-        }
-        ((h2.g0) this.d).getClass();
-        this.b = SystemClock.elapsedRealtime();
-        this.c = true;
-    }
-
-    @Override // l2.t0
-    public void e(e2.w0 w0Var) {
-        if (this.c) {
-            c(a());
-        }
-        this.e = w0Var;
-    }
-
-    @Override // l2.t0
-    public e2.w0 j() {
-        return (e2.w0) this.e;
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
     }
 }

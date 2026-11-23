@@ -6,17 +6,17 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class j5 extends FrameLayout {
     public long E;
@@ -50,7 +50,7 @@ public final class j5 extends FrameLayout {
         this.h = c5Var;
         Drawable g10 = i5.c.g(context, R.drawable.sheet_shadow_round);
         this.s = g10;
-        org.telegram.ui.ActionBar.t6.x(this, g10, org.telegram.ui.ActionBar.m6.h5, bVar, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.u6.x(this, g10, org.telegram.ui.ActionBar.n6.h5, bVar, PorterDuff.Mode.MULTIPLY);
         h5 h5Var = new h5(this, context);
         this.e = h5Var;
         d5 d5Var = new d5(this, context);
@@ -59,8 +59,8 @@ public final class j5 extends FrameLayout {
         g5 g5Var = new g5(context, this, f9Var);
         this.a = g5Var;
         d5Var.setAdapter(g5Var);
-        h5Var.addView(d5Var, ma.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(c5Var, ma.c(-1.0f, -1));
+        h5Var.addView(d5Var, na.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(c5Var, na.c(-1.0f, -1));
         addView(h5Var);
         setVisibility(4);
     }
@@ -82,7 +82,7 @@ public final class j5 extends FrameLayout {
             i5Var.a = storyItem;
             arrayList2.add(i5Var);
         }
-        ArrayList F = np.u1(this.r.h).i0.F(k10.i(k10.t0).e());
+        ArrayList F = mp.u1(this.r.h).i0.F(i10.i(i10.t0).e());
         if (F != null) {
             for (int i11 = 0; i11 < F.size(); i11++) {
                 o6 o6Var = (o6) F.get(i11);
@@ -186,7 +186,7 @@ public final class j5 extends FrameLayout {
         currentPage.r.dispatchTouchEvent(org.telegram.messenger.g0.R());
         FrameLayout frameLayout = currentPage.c;
         if (frameLayout.getTranslationY() != 0.0f) {
-            currentPage.d.z((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.i1.w);
+            currentPage.d.y((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.i1.w);
         }
     }
 
@@ -207,15 +207,15 @@ public final class j5 extends FrameLayout {
         c5 c5Var = this.h;
         if (f11 == 1.0f && this.f != 1.0f) {
             if (f9Var.O0 != null) {
-                gj gjVar = (gj) f9Var.O0.i.get(Utilities.j(c5Var.getClosestPosition(), f9Var.O0.i.size() - 1, 0));
-                long b10 = h6.b(gjVar);
+                fj fjVar = (fj) f9Var.O0.i.get(Utilities.j(c5Var.getClosestPosition(), f9Var.O0.i.size() - 1, 0));
+                long b10 = h6.b(fjVar);
                 ImageReceiver imageReceiver = c9Var.c;
                 if (imageReceiver != null) {
-                    imageReceiver.O0(true, true);
+                    imageReceiver.P0(true, true);
                     c9Var.c = null;
                 }
                 v8 v8Var = f9Var.o0;
-                int i10 = gjVar.l.id;
+                int i10 = fjVar.l.id;
                 f9 f9Var2 = v8Var.O0;
                 int i11 = 0;
                 while (true) {

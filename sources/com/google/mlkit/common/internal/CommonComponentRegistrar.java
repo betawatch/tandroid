@@ -1,6 +1,6 @@
 package com.google.mlkit.common.internal;
 
-import c8.hd;
+import c8.id;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.List;
@@ -14,7 +14,7 @@ import u9.a;
 import u9.i;
 import w7.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -52,7 +52,7 @@ public class CommonComponentRegistrar implements ComponentRegistrar {
         a b17 = a17.b();
         w7.b bVar = w7.d.b;
         Object[] objArr = {k.b, b10, b11, b12, b13, b14, b15, b16, b17};
-        hd.a(9, objArr);
+        id.a(9, objArr);
         return new w7.g(9, objArr);
     }
 }

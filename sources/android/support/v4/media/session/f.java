@@ -11,9 +11,9 @@ import e2.t0;
 import h9.f0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.telegram.ui.Components.qf;
+import org.telegram.ui.Cells.aa;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -49,9 +49,9 @@ public final class f extends Handler {
                     return false;
                 }
                 synchronized (((q2.b) this.c).o) {
-                    qf qfVar = ((q2.b) this.c).y;
-                    if (qfVar != null) {
-                        ((f0) qfVar.b).c(uVar);
+                    aa aaVar = ((q2.b) this.c).y;
+                    if (aaVar != null) {
+                        ((f0) aaVar.b).c(uVar);
                     }
                 }
                 synchronized (this) {
@@ -134,9 +134,9 @@ public final class f extends Handler {
                         q2.v m10 = bVar.k.m(bVar.l, (q2.o) aVar.d);
                         synchronized (((q2.b) this.c).o) {
                             try {
-                                qf qfVar = ((q2.b) this.c).y;
-                                if (qfVar != null && (uVar = m10.b) != null) {
-                                    ((f0) qfVar.b).c(new x2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
+                                aa aaVar = ((q2.b) this.c).y;
+                                if (aaVar != null && (uVar = m10.b) != null) {
+                                    ((f0) aaVar.b).c(new x2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
                                 }
                             } finally {
                             }

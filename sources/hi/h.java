@@ -13,57 +13,57 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.ot;
-import org.telegram.ui.Components.ty;
-import org.telegram.ui.Components.ut;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.cu0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.st;
+import org.telegram.ui.Components.wt;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.yt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class h extends yt {
-    public org.telegram.ui.Components.ga W;
+public final class h extends wt {
+    public org.telegram.ui.Components.fa W;
     public fh.g a0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 b0;
-    public final /* synthetic */ org.telegram.ui.Components.ca c0;
-    public final /* synthetic */ o d0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 b0;
+    public final /* synthetic */ org.telegram.ui.Components.ba c0;
+    public final /* synthetic */ n d0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(o oVar, Context context, du0 du0Var, int i7, fi.b bVar, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.Components.ca caVar) {
-        super(context, du0Var, null, i7, true, bVar);
-        this.d0 = oVar;
-        this.b0 = h6Var;
-        this.c0 = caVar;
+    public h(n nVar, Context context, cu0 cu0Var, int i7, fi.b bVar, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.Components.ba baVar) {
+        super(context, cu0Var, null, i7, true, bVar);
+        this.d0 = nVar;
+        this.b0 = i6Var;
+        this.c0 = baVar;
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final boolean b() {
         return true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        o oVar = this.d0;
-        if ((oVar instanceof t) && ((t) oVar).O1) {
+        n nVar = this.d0;
+        if ((nVar instanceof s) && ((s) nVar).O1) {
             return false;
         }
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final void f() {
         super.f();
-        ty emojiView = getEmojiView();
+        qy emojiView = getEmojiView();
         if (emojiView != null) {
-            o oVar = this.d0;
-            if (oVar.getEditTextStyle() == 2 || oVar.getEditTextStyle() == 3) {
+            n nVar = this.d0;
+            if (nVar.getEditTextStyle() == 2 || nVar.getEditTextStyle() == 3) {
                 emojiView.x0 = false;
                 emojiView.y2 = false;
                 emojiView.setShouldDrawBackground(false);
-                if (oVar instanceof yc) {
+                if (nVar instanceof yc) {
                     emojiView.setPadding(0, 0, 0, org.telegram.messenger.g0.n);
                     emojiView.c = 3;
                 }
@@ -77,18 +77,18 @@ public final class h extends yt {
         }
     }
 
-    @Override // org.telegram.ui.Components.yt
-    public final void g(Canvas canvas, ut utVar) {
+    @Override // org.telegram.ui.Components.wt
+    public final void g(Canvas canvas, st stVar) {
         Bitmap bitmap;
         int i7;
         int i10;
         WindowInsets rootWindowInsets;
-        View view = utVar;
-        o oVar = this.d0;
-        dh.j jVar = oVar.d;
-        RectF rectF = oVar.z0;
+        View view = stVar;
+        n nVar = this.d0;
+        dh.j jVar = nVar.d;
+        RectF rectF = nVar.z0;
         rectF.set(0.0f, 0.0f, view.getWidth(), org.telegram.messenger.g0.L(29.0f) + view.getHeight());
-        if (oVar.h0 != null) {
+        if (nVar.h0 != null) {
             if (this.a0 == null) {
                 if (Build.VERSION.SDK_INT < 31 || (rootWindowInsets = getRootWindowInsets()) == null) {
                     i7 = 0;
@@ -99,8 +99,8 @@ public final class h extends yt {
                     i10 = roundedCorner == null ? 0 : roundedCorner.getRadius();
                     i7 = roundedCorner2 == null ? 0 : roundedCorner2.getRadius();
                 }
-                fh.g c10 = oVar.h0.c(view, null, false);
-                c10.p(c8.i0.j(this.b0));
+                fh.g c10 = nVar.h0.c(view, null, false);
+                c10.p(c8.j0.j(this.b0));
                 this.a0 = c10;
                 c10.t(org.telegram.messenger.g0.L(29.0f), org.telegram.messenger.g0.L(29.0f), i7, i10, true);
                 fh.g gVar = this.a0;
@@ -116,21 +116,21 @@ public final class h extends yt {
             this.a0.draw(canvas);
             return;
         }
-        if (oVar.g()) {
+        if (nVar.g()) {
             if (this.W == null) {
-                this.W = new org.telegram.ui.Components.ga(this.c0, view, 7, false);
+                this.W = new org.telegram.ui.Components.fa(this.c0, view, 7, false);
             }
-            oVar.h(this.W, canvas, oVar.z0, org.telegram.messenger.g0.L(29.0f), false, 0.0f, -view.getY(), false);
+            nVar.h(this.W, canvas, nVar.z0, org.telegram.messenger.g0.L(29.0f), false, 0.0f, -view.getY(), false);
             jVar.m = org.telegram.messenger.g0.L(29.0f);
             jVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, org.telegram.messenger.g0.L(29.0f) + ((int) rectF.bottom));
             jVar.draw(canvas);
             return;
         }
-        Paint paint = oVar.e;
-        FrameLayout frameLayout = oVar.K;
-        if (oVar.o0 > 0.0f && oVar.u0 != null && oVar.s0 != null && (bitmap = oVar.r0) != null && !bitmap.isRecycled()) {
-            oVar.t0.reset();
-            oVar.t0.postScale(frameLayout.getWidth() / oVar.r0.getWidth(), frameLayout.getHeight() / oVar.r0.getHeight());
+        Paint paint = nVar.e;
+        FrameLayout frameLayout = nVar.K;
+        if (nVar.o0 > 0.0f && nVar.u0 != null && nVar.s0 != null && (bitmap = nVar.r0) != null && !bitmap.isRecycled()) {
+            nVar.t0.reset();
+            nVar.t0.postScale(frameLayout.getWidth() / nVar.r0.getWidth(), frameLayout.getHeight() / nVar.r0.getHeight());
             float f10 = 0.0f;
             float f11 = 0.0f;
             for (int i11 = 0; i11 < 8 && view != null; i11++) {
@@ -139,68 +139,68 @@ public final class h extends yt {
                 Object parent = view.getParent();
                 view = parent instanceof View ? (View) parent : null;
             }
-            oVar.t0.postTranslate(-f10, -f11);
-            oVar.s0.setLocalMatrix(oVar.t0);
-            oVar.u0.setAlpha((int) (oVar.o0 * 255.0f * 0.95f));
-            canvas.drawRoundRect(rectF, 0.0f, 0.0f, oVar.u0);
+            nVar.t0.postTranslate(-f10, -f11);
+            nVar.s0.setLocalMatrix(nVar.t0);
+            nVar.u0.setAlpha((int) (nVar.o0 * 255.0f * 0.95f));
+            canvas.drawRoundRect(rectF, 0.0f, 0.0f, nVar.u0);
         }
-        paint.setAlpha((int) (oVar.u0 == null ? 128.0f : org.telegram.messenger.g0.W1(oVar.o0, 128, ls.j2) * 0.95f));
+        paint.setAlpha((int) (nVar.u0 == null ? 128.0f : org.telegram.messenger.g0.W1(nVar.o0, 128, ks.j2) * 0.95f));
         canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final void p() {
         this.d0.M.a();
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final void q(int i7, int i10) {
         this.d0.s(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final boolean t(int i7) {
-        o oVar = this.d0;
-        h hVar = oVar.f;
-        ObjectAnimator objectAnimator = oVar.g0;
-        if (objectAnimator != null && objectAnimator.isRunning() && i7 == oVar.c0) {
+        n nVar = this.d0;
+        h hVar = nVar.f;
+        ObjectAnimator objectAnimator = nVar.g0;
+        if (objectAnimator != null && objectAnimator.isRunning() && i7 == nVar.c0) {
             return false;
         }
-        oVar.invalidate();
-        if (!oVar.a0) {
+        nVar.invalidate();
+        if (!nVar.a0) {
             return true;
         }
-        oVar.a0 = false;
-        if (oVar.b0 == i7) {
+        nVar.a0 = false;
+        if (nVar.b0 == i7) {
             return true;
         }
-        ObjectAnimator objectAnimator2 = oVar.g0;
-        if (objectAnimator2 != null && objectAnimator2.isRunning() && i7 == oVar.c0) {
+        ObjectAnimator objectAnimator2 = nVar.g0;
+        if (objectAnimator2 != null && objectAnimator2.isRunning() && i7 == nVar.c0) {
             return true;
         }
-        ObjectAnimator objectAnimator3 = oVar.g0;
+        ObjectAnimator objectAnimator3 = nVar.g0;
         if (objectAnimator3 != null) {
             objectAnimator3.cancel();
         }
-        hVar.getEditText().setScrollY(oVar.b0);
-        ot editText = hVar.getEditText();
-        int i10 = oVar.b0;
-        oVar.c0 = i7;
+        hVar.getEditText().setScrollY(nVar.b0);
+        mt editText = hVar.getEditText();
+        int i10 = nVar.b0;
+        nVar.c0 = i7;
         ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", i10, i7);
-        oVar.g0 = ofInt;
+        nVar.g0 = ofInt;
         ofInt.setDuration(240L);
-        oVar.g0.setInterpolator(nr.h);
-        oVar.g0.addListener(new ai.k0(this, 18));
-        oVar.g0.start();
+        nVar.g0.setInterpolator(kr.h);
+        nVar.g0.addListener(new ai.g0(this, 18));
+        nVar.g0.start();
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final void u() {
         this.d0.M.e = true;
     }
 
-    @Override // org.telegram.ui.Components.yt
+    @Override // org.telegram.ui.Components.wt
     public final void y() {
         this.d0.M.a();
     }

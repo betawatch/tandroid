@@ -5,27 +5,27 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final Context a;
     public final int b;
-    public final h6 c;
+    public final i6 c;
     public final g2 d;
     public final Runnable e;
     public int f;
@@ -49,10 +49,10 @@ public final class b0 {
         this.c = g2Var.getResourceProvider();
     }
 
-    public final void a(ArrayList arrayList, c51 c51Var, boolean z10) {
+    public final void a(ArrayList arrayList, b51 b51Var, boolean z10) {
         String str;
         String str2;
-        c51Var.V();
+        b51Var.V();
         int d = d();
         str = "";
         if (!this.h) {
@@ -83,7 +83,7 @@ public final class b0 {
             if (!arrayList2.isEmpty()) {
                 if (TextUtils.isEmpty(str2)) {
                     StringBuilder m10 = e2.m(str2);
-                    m10.append(hd.H(',', "Chats", arrayList2.size()));
+                    m10.append(gd.H(',', "Chats", arrayList2.size()));
                     str2 = m10.toString();
                 } else {
                     StringBuilder n10 = p5.c.n(str2, " + ");
@@ -92,9 +92,9 @@ public final class b0 {
                 }
             }
             if (TextUtils.isEmpty(str2)) {
-                str2 = hd.N0(2131752765, null);
+                str2 = gd.N0(2131752765, null);
             }
-            o41 f10 = o41.f(hd.N0(2131752766, null), str2, 101);
+            n41 f10 = n41.f(gd.N0(2131752766, null), str2, 101);
             f10.g = z10;
             arrayList.add(f10);
         }
@@ -127,7 +127,7 @@ public final class b0 {
             if (!arrayList3.isEmpty()) {
                 if (TextUtils.isEmpty(str)) {
                     StringBuilder m11 = e2.m(str);
-                    m11.append(hd.H(',', "Chats", arrayList3.size()));
+                    m11.append(gd.H(',', "Chats", arrayList3.size()));
                     str = m11.toString();
                 } else {
                     StringBuilder n11 = p5.c.n(str, " + ");
@@ -136,13 +136,13 @@ public final class b0 {
                 }
             }
             if (TextUtils.isEmpty(str)) {
-                str = hd.N0(2131752767, null);
+                str = gd.N0(2131752767, null);
             }
-            o41 f11 = o41.f(hd.N0(2131752768, null), str, ls.o1);
+            n41 f11 = n41.f(gd.N0(2131752768, null), str, ks.o1);
             f11.g = z10;
             arrayList.add(f11);
         }
-        c51Var.U();
+        b51Var.U();
     }
 
     public final TL_account.TL_inputBusinessBotRecipients b() {
@@ -158,7 +158,7 @@ public final class b0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            np u12 = np.u1(k10.t0);
+            mp u12 = mp.u1(i10.t0);
             tL_inputBusinessBotRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList2.size(); i7++) {
                 Long l10 = (Long) arrayList2.get(i7);
@@ -167,7 +167,7 @@ public final class b0 {
             }
         }
         if (!this.h) {
-            np u13 = np.u1(k10.t0);
+            mp u13 = mp.u1(i10.t0);
             tL_inputBusinessBotRecipients.flags |= 64;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l11 = (Long) arrayList.get(i10);
@@ -191,7 +191,7 @@ public final class b0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            np u12 = np.u1(k10.t0);
+            mp u12 = mp.u1(i10.t0);
             tL_businessBotRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList2.size(); i7++) {
                 Long l10 = (Long) arrayList2.get(i7);
@@ -201,7 +201,7 @@ public final class b0 {
             }
         }
         if (!this.h) {
-            np u13 = np.u1(k10.t0);
+            mp u13 = mp.u1(i10.t0);
             tL_businessBotRecipients.flags |= 64;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l11 = (Long) arrayList.get(i10);
@@ -229,7 +229,7 @@ public final class b0 {
         tL_inputBusinessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            np u12 = np.u1(k10.t0);
+            mp u12 = mp.u1(i10.t0);
             tL_inputBusinessRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
                 Long l10 = (Long) arrayList.get(i7);
@@ -252,7 +252,7 @@ public final class b0 {
         tL_businessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            np u12 = np.u1(k10.t0);
+            mp u12 = mp.u1(i10.t0);
             tL_businessRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
                 Long l10 = (Long) arrayList.get(i7);
@@ -293,8 +293,8 @@ public final class b0 {
         return false;
     }
 
-    public final boolean h(o41 o41Var) {
-        int i7 = o41Var.d;
+    public final boolean h(n41 n41Var) {
+        int i7 = n41Var.d;
         int i10 = 2;
         g2 g2Var = this.d;
         boolean z10 = false;
@@ -334,18 +334,18 @@ public final class b0 {
             runnable.run();
             return true;
         }
-        if (o41Var.a != 11) {
+        if (n41Var.a != 11) {
             return false;
         }
-        boolean z13 = o41Var.x;
-        String D1 = np.u1(this.b).D1(o41Var.y, false);
+        boolean z13 = n41Var.x;
+        String D1 = mp.u1(this.b).D1(n41Var.y, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
-        String N0 = hd.N0(!z13 ? 2131752674 : 2131752672, null);
+        String N0 = gd.N0(!z13 ? 2131752674 : 2131752672, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = hd.a0(null, null, !z13 ? 2131752675 : 2131752673, D1);
-        alertDialog$Builder.k(hd.N0(2131746125, null), new ab.j(this, z13, o41Var, i10));
-        alertDialog$Builder.h(hd.N0(2131752577, null), null);
+        t1Var.U = gd.a0(null, null, !z13 ? 2131752675 : 2131752673, D1);
+        alertDialog$Builder.k(gd.N0(2131746125, null), new ab.j(this, z13, n41Var, i10));
+        alertDialog$Builder.h(gd.N0(2131752577, null), null);
         if (g2Var != null) {
             g2Var.showDialog(t1Var);
             return true;
@@ -429,20 +429,20 @@ public final class b0 {
         arrayList2.addAll(this.l.exclude_users);
     }
 
-    public final boolean k(h51 h51Var) {
+    public final boolean k(g51 g51Var) {
         if (this.h || !this.j.isEmpty() || this.f != 0) {
             return true;
         }
         q2.E.a();
-        View B1 = h51Var.B1(101);
+        View B1 = g51Var.B1(101);
         int i7 = -this.m;
         this.m = i7;
         org.telegram.messenger.g0.E3(i7, B1, null);
-        h51Var.y0(h51Var.A1(101));
+        g51Var.y0(g51Var.A1(101));
         return false;
     }
 
-    public b0(Context context, int i7, i0 i0Var, h6 h6Var) {
+    public b0(Context context, int i7, i0 i0Var, i6 i6Var) {
         this.j = new ArrayList();
         this.k = new ArrayList();
         this.m = -4;
@@ -450,6 +450,6 @@ public final class b0 {
         this.b = i7;
         this.d = null;
         this.e = i0Var;
-        this.c = h6Var;
+        this.c = i6Var;
     }
 }

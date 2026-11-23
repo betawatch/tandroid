@@ -2,10 +2,10 @@ package oi;
 
 import android.content.Context;
 import android.widget.FrameLayout;
-import c8.ea;
-import org.telegram.messenger.hd;
+import c8.fa;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout implements j4 {
     public a a;
@@ -25,7 +25,7 @@ public abstract class y extends FrameLayout implements j4 {
     }
 
     public final void c(a aVar) {
-        this.b.a(aVar, new kg.x1(this, 19));
+        this.b.a(aVar, new kg.f1(this, 21));
     }
 
     public int d() {
@@ -34,7 +34,7 @@ public abstract class y extends FrameLayout implements j4 {
 
     public void e(int i7) {
         int i10;
-        int d = ea.d(this.a);
+        int d = fa.d(this.a);
         int i11 = 0;
         int d2 = (i7 > 0 || d > 0) ? d() : 0;
         a aVar = this.a;
@@ -55,7 +55,7 @@ public abstract class y extends FrameLayout implements j4 {
         int i13 = d + d2;
         int i14 = this.d;
         int i15 = this.f;
-        if (hd.a0) {
+        if (gd.a0) {
             setPadding(i14 + i13, i10, i15 + i12, i11);
         } else {
             setPadding(i14 + i12, i10, i15 + i13, i11);
@@ -68,7 +68,7 @@ public abstract class y extends FrameLayout implements j4 {
         this.f = i11;
         this.h = i12;
         int i13 = this.c;
-        if (hd.a0) {
+        if (gd.a0) {
             setPadding(i7, i10, i11 + i13, i12);
         } else {
             setPadding(i7 + i13, i10, i11, i12);

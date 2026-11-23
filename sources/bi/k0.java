@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k0 extends di.z5 {
     public final Path H0;
@@ -13,8 +13,8 @@ public final class k0 extends di.z5 {
     public final /* synthetic */ m0 J0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(m0 m0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, b0 b0Var, o oVar, o oVar2, o oVar3, o oVar4, o oVar5, o oVar6) {
-        super(context, h6Var, b0Var, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
+    public k0(m0 m0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, b0 b0Var, o oVar, o oVar2, o oVar3, o oVar4, o oVar5, o oVar6) {
+        super(context, i6Var, b0Var, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
         this.J0 = m0Var;
         this.H0 = new Path();
         this.I0 = new float[8];
@@ -42,7 +42,7 @@ public final class k0 extends di.z5 {
     public final void k(int i7) {
         m0 m0Var = this.J0;
         TextView textView = m0Var.X1;
-        if (textView == null || !org.telegram.ui.ActionBar.m6.H1(textView.getBackground(), i7, false)) {
+        if (textView == null || !org.telegram.ui.ActionBar.n6.H1(textView.getBackground(), i7, false)) {
             return;
         }
         m0Var.X1.invalidate();

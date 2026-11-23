@@ -1,67 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class co0 extends ek0 {
-    public final /* synthetic */ int f3;
-    public final /* synthetic */ ap0 g3;
+public final class co0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ zo0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ co0(ap0 ap0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.f3 = i7;
-        this.g3 = ap0Var;
+    public /* synthetic */ co0(zo0 zo0Var, int i7) {
+        this.c = i7;
+        this.d = zo0Var;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final boolean E0(float f10) {
-        switch (this.f3) {
+    @Override // g.p
+    public final int i(int i7) {
+        switch (this.c) {
             case 0:
-                ap0 ap0Var = this.g3;
-                if (f10 >= org.telegram.messenger.g0.L((!ap0Var.d2 || ap0Var.k2[1] == null) ? 58.0f : 111.0f) + ap0Var.C2.b) {
+                if (i7 == 0) {
+                    return this.d.D1.J;
                 }
-                break;
+                return 1;
+            case 1:
+                wo0 wo0Var = this.d.I1;
+                return (i7 == wo0Var.x || i7 == wo0Var.y || i7 == wo0Var.E || i7 == wo0Var.G || wo0Var.d(i7) == 0) ? 4 : 1;
             default:
-                ap0 ap0Var2 = this.g3;
-                if (f10 >= org.telegram.messenger.g0.L((!ap0Var2.d2 || ap0Var2.k2[1] == null) ? 58.0f : 111.0f) + ap0Var2.C2.b) {
+                if (i7 == 0) {
+                    return this.d.E1.J;
                 }
-                break;
-        }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.f3) {
-            case 0:
-                ap0 ap0Var = this.g3;
-                ek0 ek0Var = ap0Var.A1;
-                if (ek0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, org.telegram.messenger.g0.L((!ap0Var.d2 || ap0Var.k2[1] == null) ? 58.0f : 111.0f) + ap0Var.l2, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (ek0Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                ap0 ap0Var2 = this.g3;
-                ek0 ek0Var2 = ap0Var2.A1;
-                if (ek0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, org.telegram.messenger.g0.L((!ap0Var2.d2 || ap0Var2.k2[1] == null) ? 58.0f : 111.0f) + ap0Var2.l2, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (ek0Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
+                return 1;
         }
     }
 }

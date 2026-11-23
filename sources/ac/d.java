@@ -1,6 +1,6 @@
 package ac;
 
-import a8.d8;
+import a8.e8;
 import a8.r7;
 import a8.xa;
 import ab.c0;
@@ -28,7 +28,7 @@ import q6.m;
 import r0.l0;
 import r0.m0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements tf {
     public long a;
@@ -137,7 +137,7 @@ public final /* synthetic */ class d implements tf {
             g gVar = c8.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            d8.a(length, array);
+            e8.a(length, array);
             r7Var.f = c8.i.m(length, array);
             List<fg> list2 = ggVar.a;
             if (!list2.isEmpty()) {
@@ -169,9 +169,9 @@ public final /* synthetic */ class d implements tf {
                 r7Var.e = c8.i.m(i12, objArr2);
             }
         }
-        ga.d dVar = new ga.d(1);
-        dVar.d = db.b;
-        dVar.h = new ce(r7Var);
+        ga.d dVar = new ga.d();
+        dVar.c = db.b;
+        dVar.f = new ce(r7Var);
         return new xa(dVar, 0);
     }
 

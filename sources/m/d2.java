@@ -17,7 +17,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.b0 {
     public static final Method Q;
@@ -93,7 +93,7 @@ public abstract class d2 implements l.b0 {
         if (obtainStyledAttributes2.hasValue(2)) {
             xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : c8.z.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : c8.a0.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.P = xVar;
         xVar.setInputMethodMode(1);
@@ -121,13 +121,13 @@ public abstract class d2 implements l.b0 {
         this.L.removeCallbacks(this.H);
     }
 
-    public final Drawable e() {
-        return this.P.getBackground();
+    @Override // l.b0
+    public final r1 e() {
+        return this.c;
     }
 
-    @Override // l.b0
-    public final r1 f() {
-        return this.c;
+    public final Drawable f() {
+        return this.P.getBackground();
     }
 
     @Override // l.b0
@@ -140,9 +140,9 @@ public abstract class d2 implements l.b0 {
         Context context = this.a;
         x xVar = this.P;
         if (r1Var2 == null) {
-            r1 q10 = q(context, !this.O);
-            this.c = q10;
-            q10.setAdapter(this.b);
+            r1 p10 = p(context, !this.O);
+            this.c = p10;
+            p10.setAdapter(this.b);
             this.c.setOnItemClickListener(this.G);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -279,7 +279,7 @@ public abstract class d2 implements l.b0 {
         this.L.post(this.K);
     }
 
-    public final void j(Drawable drawable) {
+    public final void i(Drawable drawable) {
         this.P.setBackgroundDrawable(drawable);
     }
 
@@ -288,14 +288,14 @@ public abstract class d2 implements l.b0 {
         this.r = true;
     }
 
-    public final int o() {
+    public final int n() {
         if (this.r) {
             return this.h;
         }
         return 0;
     }
 
-    public void p(ListAdapter listAdapter) {
+    public void o(ListAdapter listAdapter) {
         c5.i iVar = this.E;
         if (iVar == null) {
             this.E = new c5.i(this, 2);
@@ -315,11 +315,11 @@ public abstract class d2 implements l.b0 {
         }
     }
 
-    public r1 q(Context context, boolean z10) {
+    public r1 p(Context context, boolean z10) {
         return new r1(context, z10);
     }
 
-    public final void r(int i7) {
+    public final void q(int i7) {
         Drawable background = this.P.getBackground();
         if (background == null) {
             this.e = i7;

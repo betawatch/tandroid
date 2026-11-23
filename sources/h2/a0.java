@@ -5,7 +5,7 @@ import e2.i1;
 import e2.l1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a0 {
     public long a;
@@ -27,28 +27,28 @@ public final class a0 {
         int i7 = this.d;
         e0 e0Var = (e0) this.i;
         i0 i0Var = (i0) e0Var.f;
-        l2.f0 f0Var = (l2.f0) e0Var.a;
-        if (f0Var.i() != 2 || !f0Var.u() || f0Var.w0() != 0) {
+        l2.g0 g0Var = (l2.g0) e0Var.a;
+        if (g0Var.i() != 2 || !g0Var.v() || g0Var.x0() != 0) {
             if (this.e) {
                 i0Var.e(1);
             }
             this.e = false;
             return;
         }
-        l1 y02 = f0Var.y0();
-        Object l10 = y02.p() ? null : y02.l(f0Var.B());
-        int n02 = f0Var.n0();
-        int O = f0Var.O();
-        long d02 = f0Var.d0();
-        long max = Math.max(0L, f0Var.r() - Math.max(0L, d02 - f0Var.l()));
-        if (l10 != null && n02 == -1) {
-            d02 -= l0.h0(y02.g(l10, (i1) e0Var.e).e);
+        l1 z02 = g0Var.z0();
+        Object l10 = z02.p() ? null : z02.l(g0Var.C());
+        int o02 = g0Var.o0();
+        int P = g0Var.P();
+        long e02 = g0Var.e0();
+        long max = Math.max(0L, g0Var.s() - Math.max(0L, e02 - g0Var.n()));
+        if (l10 != null && o02 == -1) {
+            e02 -= l0.h0(z02.g(l10, (i1) e0Var.e).e);
         }
         ((g0) e0Var.d).getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.e && Objects.equals(l10, this.h) && n02 == this.f && O == this.g && d02 == this.a && max == this.b) {
+        if (this.e && Objects.equals(l10, this.h) && o02 == this.f && P == this.g && e02 == this.a && max == this.b) {
             if (elapsedRealtime - this.c >= i7) {
-                ((l2.z) e0Var.c).a.A1(new l2.l(2, new f0(1, i7), 1003));
+                ((l2.a0) e0Var.c).a.A1(new l2.m(2, new f0(1, i7), 1003));
                 return;
             }
             return;
@@ -56,9 +56,9 @@ public final class a0 {
         this.e = true;
         this.c = elapsedRealtime;
         this.h = l10;
-        this.f = n02;
-        this.g = O;
-        this.a = d02;
+        this.f = o02;
+        this.g = P;
+        this.a = e02;
         this.b = max;
         i0Var.e(1);
         i0Var.a.sendEmptyMessageDelayed(1, i7);

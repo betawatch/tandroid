@@ -6,17 +6,17 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import com.google.android.gms.internal.vision.e2;
 import fi.t3;
-import hi.d7;
+import hi.y7;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.mz;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.g20;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.kz;
 import org.telegram.messenger.q2;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLRPC;
@@ -24,28 +24,28 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.bq;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c1 extends g2 implements gs {
+public final class c1 extends g2 implements fs {
     public boolean E;
     public int F;
     public boolean G;
-    public h51 a;
+    public g51 a;
     public c5 b;
     public boolean c;
     public FrameLayout d;
     public z0 e;
     public FrameLayout f;
     public b1 h;
-    public eq n;
+    public bq n;
     public t3 r;
     public boolean s;
     public TLRPC.TL_businessLocation w;
@@ -62,8 +62,8 @@ public final class c1 extends g2 implements gs {
             return;
         }
         this.b.a(a0(), z10);
-        h51 h51Var = this.a;
-        if (h51Var == null || h51Var.g3 == null) {
+        g51 g51Var = this.a;
+        if (g51Var == null || g51Var.g3 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -151,7 +151,7 @@ public final class c1 extends g2 implements gs {
     }
 
     public final void c0() {
-        c51 c51Var;
+        b51 b51Var;
         if (this.s) {
             return;
         }
@@ -178,9 +178,9 @@ public final class c1 extends g2 implements gs {
             this.c = false;
         }
         d0();
-        h51 h51Var = this.a;
-        if (h51Var != null && (c51Var = h51Var.g3) != null) {
-            c51Var.O(true);
+        g51 g51Var = this.a;
+        if (g51Var != null && (b51Var = g51Var.g3) != null) {
+            b51Var.O(true);
         }
         this.s = true;
     }
@@ -190,27 +190,27 @@ public final class c1 extends g2 implements gs {
         int i7 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.N0(2131752686, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 10));
-        this.b = this.simpleActionBar.s(hd.N0(2131745750, null));
+        this.simpleActionBar.setTitle(gd.N0(2131752686, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.w1(this, 10));
+        this.b = this.simpleActionBar.s(gd.N0(2131745750, null));
         int i10 = 0;
         Z(false);
         FrameLayout frameLayout = new FrameLayout(context);
         z0 z0Var = new z0(this, getParentActivity());
         this.e = z0Var;
         z0Var.setTextSize(1, 17.0f);
-        t6.D(this.e, m6.H6, null);
+        u6.D(this.e, n6.H6, null);
         z0 z0Var2 = this.e;
-        int i11 = m6.G6;
-        t6.U(z0Var2, i11, null);
+        int i11 = n6.G6;
+        u6.U(z0Var2, i11, null);
         this.e.setBackgroundDrawable(null);
         this.e.setMaxLines(5);
         this.e.setSingleLine(false);
         this.e.setPadding(0, 0, org.telegram.messenger.g0.L(42.0f), 0);
-        this.e.setGravity((hd.a0 ? 5 : 3) | 48);
+        this.e.setGravity((gd.a0 ? 5 : 3) | 48);
         this.e.setInputType(180225);
-        this.e.setHint(hd.N0(2131752685, null));
-        t6.v(this.e, i11, null);
+        this.e.setHint(gd.N0(2131752685, null));
+        u6.v(this.e, i11, null);
         this.e.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.e.setCursorWidth(1.5f);
         int i12 = 12;
@@ -218,10 +218,10 @@ public final class c1 extends g2 implements gs {
         this.e.setFilters(new InputFilter[]{new a1(0)});
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
-        frameLayout2.addView(this.e, ma.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.e, na.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.d;
-        int i13 = m6.d6;
-        t6.h(i13, frameLayout3, getResourceProvider());
+        int i13 = n6.d6;
+        u6.h(i13, frameLayout3, getResourceProvider());
         z0 z0Var3 = this.e;
         if (z0Var3 != null) {
             this.c = true;
@@ -231,29 +231,29 @@ public final class c1 extends g2 implements gs {
             this.c = false;
         }
         this.r = new t3(i7, context, this);
-        mz c10 = u5.c(0.2f, m6.Gc);
-        h6 resourceProvider = getResourceProvider();
+        kz c10 = u5.c(0.2f, n6.Gc);
+        i6 resourceProvider = getResourceProvider();
         c10.m = i11;
         c10.o = resourceProvider;
         c10.t = true;
         c10.k = this.r.getImageReceiver();
-        eq eqVar = new eq(c10);
-        this.n = eqVar;
-        eqVar.setCallback(this.r);
-        t6.h(i13, this.r, getResourceProvider());
+        bq bqVar = new bq(c10);
+        this.n = bqVar;
+        bqVar.setCallback(this.r);
+        u6.h(i13, this.r, getResourceProvider());
         this.h = new b1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.f = frameLayout4;
-        frameLayout4.addView(this.r, ma.c(-1.0f, -1));
-        this.f.addView(this.h, ma.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
+        frameLayout4.addView(this.r, na.c(-1.0f, -1));
+        this.f.addView(this.h, na.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         d0();
-        h51 h51Var = new h51(this, new d7(this, i12), new x0(this, i10), null);
-        this.a = h51Var;
-        h51Var.r1();
+        g51 g51Var = new g51(this, new y7(this, i12), new x0(this, i10), null);
+        this.a = g51Var;
+        g51Var.r1();
         this.a.setSectionsDrawBackground(true);
-        h51 h51Var2 = this.a;
-        h51Var2.g3.r = false;
-        frameLayout.addView(h51Var2, ma.c(-1.0f, -1));
+        g51 g51Var2 = this.a;
+        g51Var2.g3.r = false;
+        frameLayout.addView(g51Var2, na.c(-1.0f, -1));
         c0();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -277,12 +277,12 @@ public final class c1 extends g2 implements gs {
         int min = Math.min(2, (int) Math.ceil(f10));
         t3 t3Var2 = this.r;
         TLRPC.GeoPoint geoPoint = this.x;
-        t3Var2.p(gc.p(i20.a(geoPoint.lat, geoPoint._long, 0L, min * i7, min * ls.P3, 15, min)), e2.i(i7, "_240"), this.n, null);
+        t3Var2.p(fc.p(g20.a(geoPoint.lat, geoPoint._long, 0L, min * i7, min * ks.P3, 15, min)), e2.i(i7, "_240"), this.n, null);
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.E0) {
+        if (i7 == ks.E0) {
             c0();
         }
     }
@@ -311,12 +311,12 @@ public final class c1 extends g2 implements gs {
         }
         if (z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = hd.N0(2131743590, null);
+            String N0 = gd.N0(2131743588, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = hd.N0(2131752678, null);
-            alertDialog$Builder.k(hd.N0(2131754213, null), new x0(this, i7));
-            alertDialog$Builder.h(hd.N0(2131747386, null), new x0(this, 2));
+            t1Var.U = gd.N0(2131752678, null);
+            alertDialog$Builder.k(gd.N0(2131754213, null), new x0(this, i7));
+            alertDialog$Builder.h(gd.N0(2131747386, null), new x0(this, 2));
             showDialog(t1Var);
         }
         return false;
@@ -324,13 +324,13 @@ public final class c1 extends g2 implements gs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ls.E0);
+        getNotificationCenter().c(this, ks.E0);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ls.E0);
+        getNotificationCenter().n(this, ks.E0);
         super.onFragmentDestroy();
     }
 

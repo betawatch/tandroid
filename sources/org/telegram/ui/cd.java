@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cd implements Runnable {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final /* synthetic */ class cd implements Runnable {
         xd xdVar = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(xdVar.getContext(), org.telegram.messenger.hd.N0(2131748211, null));
+                vf.c.t(xdVar.getContext(), org.telegram.messenger.gd.N0(2131748211, null));
                 break;
             case 1:
-                vf.c.t(xdVar.getContext(), org.telegram.messenger.hd.N0(2131748177, null));
+                vf.c.t(xdVar.getContext(), org.telegram.messenger.gd.N0(2131748177, null));
                 break;
             case 2:
-                org.telegram.ui.Components.h51 h51Var = xdVar.Y0;
-                if (h51Var != null) {
+                org.telegram.ui.Components.g51 g51Var = xdVar.Y0;
+                if (g51Var != null) {
                     boolean z10 = xdVar.f0;
-                    h51Var.g3.O((xdVar.S0 != -1) == xdVar.b1.a());
+                    g51Var.g3.O((xdVar.S0 != -1) == xdVar.b1.a());
                     if (z10 && xdVar.S0 != -1) {
                         xdVar.a();
                         break;
@@ -55,7 +55,7 @@ public final /* synthetic */ class cd implements Runnable {
                 org.telegram.messenger.g0.r(xdVar.t1);
                 if (xdVar.k1 != xdVar.l1) {
                     TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.np.u1(i10).j1(-xdVar.q0);
+                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.mp.u1(i10).j1(-xdVar.q0);
                     tL_channels_restrictSponsoredMessages.restricted = xdVar.k1;
                     ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new jd(xdVar, objArr == true ? 1 : 0));
                     break;

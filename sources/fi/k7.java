@@ -4,23 +4,23 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.gj;
-import org.telegram.ui.Components.c50;
+import org.telegram.messenger.fj;
 import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.z40;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class k7 extends c5.a {
     public final /* synthetic */ Context c;
     public final /* synthetic */ f9 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 e;
     public final /* synthetic */ w f;
 
-    public k7(w wVar, Context context, f9 f9Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public k7(w wVar, Context context, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
         this.f = wVar;
         this.c = context;
         this.d = f9Var;
-        this.e = h6Var;
+        this.e = i6Var;
     }
 
     @Override // c5.a
@@ -52,9 +52,9 @@ public final class k7 extends c5.a {
             j7Var = new j7(this, this.c, f9Var, wVar.I0, this.e);
         } else {
             j7Var = (z3) arrayList.remove(0);
-            j7Var.Y0.a.getImageReceiver().O0(true, true);
+            j7Var.Y0.a.getImageReceiver().P0(true, true);
             if (j7Var.O1 != null) {
-                j7Var.L1.q1();
+                j7Var.L1.r1();
                 j7Var.L1.setAlpha(1.0f - j7Var.O3);
             }
             xi0 xi0Var = j7Var.P1;
@@ -65,9 +65,9 @@ public final class k7 extends c5.a {
             if (xi0Var2 != null) {
                 xi0Var2.n();
             }
-            c50 c50Var = j7Var.t2;
-            if (c50Var != null) {
-                org.telegram.messenger.g0.E2(c50Var);
+            z40 z40Var = j7Var.t2;
+            if (z40Var != null) {
+                org.telegram.messenger.g0.E2(z40Var);
                 j7Var.t2.d(true);
                 j7Var.t2 = null;
             }
@@ -93,8 +93,8 @@ public final class k7 extends c5.a {
             m7Var.c = arrayList3;
             h6 h6Var = f9Var.O0;
             if ((h6Var instanceof b6) || (h6Var instanceof k6)) {
-                gj f10 = h6Var.f(((Integer) arrayList3.get(0)).intValue());
-                m7Var.b = f10 == null ? wVar.x0 : gj.B0(f10.k);
+                fj f10 = h6Var.f(((Integer) arrayList3.get(0)).intValue());
+                m7Var.b = f10 == null ? wVar.x0 : fj.B0(f10.k);
             } else {
                 m7Var.b = wVar.x0;
             }

@@ -1,87 +1,29 @@
 package org.telegram.ui.Wallet;
 
-import org.json.JSONArray;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.r10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.p51;
+import org.telegram.ui.a31;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l1 implements r10 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ l2 b;
-    public final /* synthetic */ TL_wallet.tonConnectSession c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ byte[] e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class l1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a31 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ l1(l2 l2Var, p51 p51Var, r0 r0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, g2 g2Var) {
-        this.b = l2Var;
-        this.f = p51Var;
-        this.g = r0Var;
-        this.c = tonconnectsession;
-        this.d = str;
-        this.e = bArr;
-        this.h = g2Var;
+    public /* synthetic */ l1(a31 a31Var, String str, int i7) {
+        this.a = i7;
+        this.b = a31Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.r10
-    public final void a(Object obj, Object obj2) {
-        int i7 = this.a;
-        l2 l2Var = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                p51 p51Var = (p51) this.f;
-                r0 r0Var = (r0) this.g;
-                TL_wallet.tonConnectSession tonconnectsession = this.c;
-                String str = this.d;
-                byte[] bArr = this.e;
-                g2 g2Var = (g2) this.h;
-                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                l2Var.getClass();
-                if (tL_error == null && tonconnectchallenge != null) {
-                    Utilities.e.c(new di.j7(l2Var, r0Var, tonconnectsession, str, bArr, g2Var, tonconnectchallenge, p51Var, 7));
-                    break;
-                } else {
-                    p51Var.a(l2.z(tL_error, "registerKey"));
-                    break;
-                }
+                this.b.a(this.c);
+                break;
             default:
-                e0 e0Var = (e0) this.f;
-                TL_wallet.tonConnectSession tonconnectsession2 = this.c;
-                String str2 = this.d;
-                byte[] bArr2 = this.e;
-                JSONArray jSONArray = (JSONArray) this.g;
-                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.h;
-                r0 r0Var2 = (r0) obj;
-                String str3 = (String) obj2;
-                l2Var.getClass();
-                if (str3 == null && r0Var2 != null) {
-                    r0 b10 = r0Var2.b();
-                    Utilities.e.c(new di.j7(l2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new e0(5, b10, e0Var), 8));
-                    break;
-                } else {
-                    if (str3 == null) {
-                        str3 = "Recovery phrase is unavailable";
-                    }
-                    e0Var.a(null, str3);
-                    break;
-                }
+                this.b.a(this.c);
+                break;
         }
-    }
-
-    public /* synthetic */ l1(l2 l2Var, e0 e0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
-        this.b = l2Var;
-        this.f = e0Var;
-        this.c = tonconnectsession;
-        this.d = str;
-        this.e = bArr;
-        this.g = jSONArray;
-        this.h = tL_urlAuthResultRequest;
     }
 }

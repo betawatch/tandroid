@@ -2,12 +2,12 @@ package fi;
 
 import android.view.KeyEvent;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.ui.Components.ia;
-import org.telegram.ui.ws0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.ui.Components.ha;
+import org.telegram.ui.vs0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class l7 implements c5.h {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final class l7 implements c5.h {
                     if (b9Var != null) {
                         if (i7 >= 3) {
                             if (i7 > wVar.A0.b() - 4) {
-                                f9Var.u0.b(true);
+                                f9Var.u0.c(true);
                                 break;
                             }
                         } else {
-                            b9Var.b(false);
+                            b9Var.c(false);
                             break;
                         }
                     }
@@ -49,17 +49,17 @@ public final class l7 implements c5.h {
             default:
                 ug.y0 y0Var = (ug.y0) callback;
                 ArrayList arrayList = y0Var.o1;
-                if (((ws0) arrayList.get(i7)).a == 0) {
-                    y0Var.I1.setTitle(hd.N0(2131751337, null));
+                if (((vs0) arrayList.get(i7)).a == 0) {
+                    y0Var.I1.setTitle(gd.N0(2131751337, null));
                     y0Var.I1.requestLayout();
-                } else if (((ws0) arrayList.get(i7)).a == 14) {
-                    y0Var.I1.setTitle(hd.N0(2131743560, null));
+                } else if (((vs0) arrayList.get(i7)).a == 14) {
+                    y0Var.I1.setTitle(gd.N0(2131743558, null));
                     y0Var.I1.requestLayout();
-                } else if (((ws0) arrayList.get(i7)).a == 40) {
-                    y0Var.I1.setTitle(hd.N0(2131750825, null));
+                } else if (((vs0) arrayList.get(i7)).a == 40) {
+                    y0Var.I1.setTitle(gd.N0(2131750825, null));
                     y0Var.I1.requestLayout();
-                } else if (((ws0) arrayList.get(i7)).a == 28) {
-                    y0Var.I1.setTitle(hd.N0(2131744009, null));
+                } else if (((vs0) arrayList.get(i7)).a == 28) {
+                    y0Var.I1.setTitle(gd.N0(2131744007, null));
                     y0Var.I1.requestLayout();
                 }
                 d();
@@ -75,7 +75,7 @@ public final class l7 implements c5.h {
                 wVar.J0 = i7;
                 wVar.K0 = i10 > 0 ? i7 + 1 : i7 - 1;
                 wVar.L0 = f10;
-                long j3 = k10.i(wVar.z0).n;
+                long j3 = i10.i(wVar.z0).n;
                 int i11 = wVar.J0;
                 if (i11 >= 0 && (wVar.y0 != null ? wVar.x0 == j3 : !(i11 >= wVar.B0.size() || ((Long) wVar.B0.get(wVar.J0)).longValue() != j3))) {
                     ((w8) wVar.C0).d(1.0f - wVar.L0);
@@ -92,10 +92,10 @@ public final class l7 implements c5.h {
                 }
                 break;
             default:
-                ia iaVar = (ia) this.b;
-                iaVar.b = f10;
-                iaVar.c = i7;
-                iaVar.invalidate();
+                ha haVar = (ha) this.b;
+                haVar.b = f10;
+                haVar.c = i7;
+                haVar.invalidate();
                 ug.y0 y0Var = (ug.y0) this.c;
                 y0Var.B1 = i7;
                 y0Var.C1 = i10 > 0 ? i7 + 1 : i7 - 1;
@@ -160,9 +160,9 @@ public final class l7 implements c5.h {
             i11++;
         }
         int i13 = y0Var.B1;
-        boolean z10 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((ws0) arrayList.get(y0Var.B1)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z10 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((vs0) arrayList.get(y0Var.B1)).a) == 0 || i10 == 14 || i10 == 28);
         int i14 = y0Var.C1;
-        boolean z11 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((ws0) arrayList.get(y0Var.C1)).a) == 0 || i7 == 14 || i7 == 28);
+        boolean z11 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((vs0) arrayList.get(y0Var.C1)).a) == 0 || i7 == 14 || i7 == 28);
         if (z10 && z11) {
             y0Var.q1 = 1.0f;
             float f11 = y0Var.D1;
@@ -190,7 +190,7 @@ public final class l7 implements c5.h {
         if (i15 != y0Var.F1) {
             y0Var.F1 = i15;
             y0Var.t1.invalidate();
-            org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 26));
+            org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 27));
         }
     }
 

@@ -4,25 +4,25 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.w4;
 import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.vz;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class s0 extends c {
     public final Context x;
-    public final h6 y;
+    public final i6 y;
 
-    public s0(Context context, h6 h6Var, boolean z10, boolean z11) {
+    public s0(Context context, i6 i6Var, boolean z10, boolean z11) {
         super(z10, z11);
         this.x = context;
-        this.y = h6Var;
-        new yz(context, null).setIsSingleCell(true);
+        this.y = i6Var;
+        new vz(context, null).setIsSingleCell(true);
     }
 
     @Override // org.telegram.ui.Components.dk0
@@ -58,14 +58,14 @@ public abstract class s0 extends c {
             TLRPC.TL_messageMediaVenue H = H(i7);
             ((w4) view).a(H, H != null ? 2 : i7, i7 != b() - 1, false);
         } else if (i10 == 1) {
-            ((y3) view).setText(hd.N0(2131748559, null));
+            ((y3) view).setText(gd.N0(2131748559, null));
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        h6 h6Var = this.y;
+        i6 i6Var = this.y;
         Context context = this.x;
-        return new mj0(i7 == 0 ? new w4(context, h6Var) : new y3(context, h6Var));
+        return new mj0(i7 == 0 ? new w4(context, i6Var) : new y3(context, i6Var));
     }
 }

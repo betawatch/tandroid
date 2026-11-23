@@ -1,6 +1,6 @@
 package k7;
 
-import a8.l8;
+import a8.m8;
 import a8.q;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -8,7 +8,7 @@ import j7.m;
 import j7.r;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends q implements a {
     public final /* synthetic */ int b;
@@ -27,7 +27,7 @@ public final class f extends q implements a {
         switch (this.b) {
             case 1:
                 j.e(status, "status");
-                l8.a(status, mVar, this.c);
+                m8.a(status, mVar, this.c);
                 return;
             default:
                 j.e(status, "status");
@@ -52,7 +52,7 @@ public final class f extends q implements a {
         switch (this.b) {
             case 0:
                 j.e(status, "status");
-                l8.a(status, fVar, this.c);
+                m8.a(status, fVar, this.c);
                 return;
             default:
                 j.e(status, "status");

@@ -16,15 +16,14 @@ import f5.x;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import tg.y;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import wf.b;
 import zf.c;
 import zf.d;
 import zf.e;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -36,7 +35,7 @@ public final class a implements ServiceConnection {
 
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        y yVar;
+        t1.a aVar;
         e eVar = null;
         g gVar = null;
         switch (this.a) {
@@ -52,12 +51,12 @@ public final class a implements ServiceConnection {
                         eVar = (e) queryLocalInterface;
                     }
                 }
-                y yVar2 = new y(10, eVar, componentName);
+                t1.a aVar2 = new t1.a(11, eVar, componentName);
                 if (((vf.a) ((WeakReference) this.b).get()) != null) {
-                    vf.c.b = yVar2;
-                    if (np.u1(k10.t0).U2() && (yVar = vf.c.b) != null) {
+                    vf.c.b = aVar2;
+                    if (mp.u1(i10.t0).U2() && (aVar = vf.c.b) != null) {
                         try {
-                            ((c) ((e) yVar.b)).i1();
+                            ((c) ((e) aVar.b)).i1();
                             break;
                         } catch (RemoteException unused) {
                             return;
@@ -89,7 +88,7 @@ public final class a implements ServiceConnection {
                 b bVar = wVar.h;
                 bVar.getClass();
                 try {
-                    bVar.e0(c10, (p3) bVar.b);
+                    bVar.g0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     u.i("BillingLogger", "Unable to log.", th2);

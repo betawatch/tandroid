@@ -7,34 +7,34 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ScrollView;
-import bi.l4;
+import bi.o4;
 import di.a8;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.si;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.qo;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.no;
 import org.telegram.ui.bn;
 import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -51,13 +51,13 @@ public final /* synthetic */ class q implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        i61 i61Var;
+        h61 h61Var;
         switch (this.a) {
             case 0:
                 int i7 = this.b;
                 f0 f0Var = (f0) this.d;
                 try {
-                    SQLiteCursor queryFinalized = ur.a0(i7).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = tr.a0(i7).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
@@ -103,7 +103,7 @@ public final /* synthetic */ class q implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     if (!arrayList3.isEmpty()) {
                         ArrayList arrayList6 = new ArrayList();
-                        ur.a0(i7).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
+                        tr.a0(i7).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i12 = 0; i12 < arrayList6.size(); i12++) {
                             g0 g0Var3 = (g0) hVar.f(n5.F(((TLRPC.EncryptedChat) arrayList6.get(i12)).id));
                             if (g0Var3 != null) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class q implements Runnable {
                     }
                     if (!arrayList2.isEmpty()) {
                         ArrayList arrayList7 = new ArrayList();
-                        ur.a0(i7).Q(TextUtils.join(",", arrayList2), arrayList7);
+                        tr.a0(i7).Q(TextUtils.join(",", arrayList2), arrayList7);
                         for (int i13 = 0; i13 < arrayList7.size(); i13++) {
                             TLRPC.Chat chat = (TLRPC.Chat) arrayList7.get(i13);
                             long j10 = -chat.id;
@@ -132,7 +132,7 @@ public final /* synthetic */ class q implements Runnable {
                         }
                     }
                     if (!arrayList.isEmpty()) {
-                        ur.a0(i7).n0(arrayList, arrayList5, false);
+                        tr.a0(i7).n0(arrayList, arrayList5, false);
                         for (int i14 = 0; i14 < arrayList5.size(); i14++) {
                             TLRPC.User user = (TLRPC.User) arrayList5.get(i14);
                             g0 g0Var6 = (g0) hVar.f(user.id);
@@ -142,7 +142,7 @@ public final /* synthetic */ class q implements Runnable {
                         }
                     }
                     Collections.sort(arrayList4, new w(0));
-                    org.telegram.messenger.g0.g3(new a8(f0Var, arrayList4, hVar, 22));
+                    org.telegram.messenger.g0.g3(new a8(f0Var, arrayList4, hVar, 23));
                     break;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
@@ -150,21 +150,21 @@ public final /* synthetic */ class q implements Runnable {
                 }
                 break;
             case 1:
-                l2.f0 f0Var2 = (l2.f0) this.d;
-                h2.r rVar = f0Var2.m;
+                l2.g0 g0Var7 = (l2.g0) this.d;
+                h2.r rVar = g0Var7.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 rVar.e(24, new gh.c(i15, i16, 2));
-                f0Var2.t1(2, 14, new h2.y(i15, i16));
+                g0Var7.t1(2, 14, new h2.y(i15, i16));
                 break;
             case 2:
-                ((l2.z) this.d).a.q1(this.b, this.c);
+                ((l2.a0) this.d).a.q1(this.b, this.c);
                 break;
             case 3:
                 MediaController mediaController = (MediaController) ((b3.j) this.d).c;
-                if (this.b == mediaController.l0 && this.c == 4 && (i61Var = mediaController.k0) != null) {
+                if (this.b == mediaController.l0 && this.c == 4 && (h61Var = mediaController.k0) != null) {
                     try {
-                        i61Var.m0();
+                        h61Var.m0();
                         mediaController.k0 = null;
                         break;
                     } catch (Exception e11) {
@@ -174,7 +174,7 @@ public final /* synthetic */ class q implements Runnable {
                 }
                 break;
             case 4:
-                ((si) this.d).Z[this.b] = this.c;
+                ((ri) this.d).Z[this.b] = this.c;
                 break;
             case 5:
                 PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
@@ -197,7 +197,7 @@ public final /* synthetic */ class q implements Runnable {
             case 10:
                 g2 g2Var = (g2) this.d;
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", k10.i(this.b).e());
+                bundle.putLong("user_id", i10.i(this.b).e());
                 bundle.putInt("message_id", this.c);
                 g2Var.presentFragment(new bn(bundle));
                 break;
@@ -205,27 +205,27 @@ public final /* synthetic */ class q implements Runnable {
                 ((ScrollView) this.d).scrollTo(0, Math.max(0, (org.telegram.messenger.g0.L(44.0f) * this.b) - (this.c / 2)));
                 break;
             case 12:
-                qo qoVar = (qo) this.d;
+                no noVar = (no) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
-                    SharedPreferences sharedPreferences = np.u1(this.c).g7;
+                    SharedPreferences sharedPreferences = mp.u1(this.c).g7;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                qoVar.B(i18);
+                noVar.Q(i18);
                 break;
             case 13:
-                l4 l4Var = (l4) this.d;
+                o4 o4Var = (o4) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
-                    SharedPreferences sharedPreferences2 = np.u1(this.c).g7;
+                    SharedPreferences sharedPreferences2 = mp.u1(this.c).g7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                l4Var.a(Integer.valueOf(i19));
+                o4Var.a(Integer.valueOf(i19));
                 break;
             case 14:
-                qa0 qa0Var = (qa0) ((di.b1) this.d).g3;
-                View d = qa0Var.d();
-                di.b1 b1Var = qa0Var.f;
+                na0 na0Var = (na0) ((di.b1) this.d).g3;
+                View d = na0Var.d();
+                di.b1 b1Var = na0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
@@ -265,9 +265,9 @@ public final /* synthetic */ class q implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ q(l2.z zVar, SurfaceTexture surfaceTexture, int i7, int i10) {
+    public /* synthetic */ q(l2.a0 a0Var, SurfaceTexture surfaceTexture, int i7, int i10) {
         this.a = 2;
-        this.d = zVar;
+        this.d = a0Var;
         this.b = i7;
         this.c = i10;
     }

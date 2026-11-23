@@ -1,10 +1,11 @@
 package kd;
 
+import c8.z;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a implements id.c, d, Serializable {
     private final id.c completion;
@@ -98,7 +99,7 @@ public abstract class a implements id.c, d, Serializable {
                     return;
                 }
             } catch (Throwable th2) {
-                obj = b7.h.a(th2);
+                obj = z.a(th2);
             }
             aVar.releaseIntercepted();
             if (!(cVar2 instanceof a)) {

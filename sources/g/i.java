@@ -12,12 +12,12 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import m.r3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i implements r0.m, l.w {
     public final /* synthetic */ s a;
@@ -27,21 +27,42 @@ public final class i implements r0.m, l.w {
     }
 
     @Override // l.w
-    public boolean C(l.k kVar) {
-        Window.Callback callback;
-        if (kVar != kVar.k()) {
-            return true;
+    public void f(l.k kVar, boolean z10) {
+        r rVar;
+        l.k k10 = kVar.k();
+        int i7 = 0;
+        boolean z11 = k10 != kVar;
+        if (z11) {
+            kVar = k10;
         }
         s sVar = this.a;
-        if (!sVar.P || (callback = sVar.f.getCallback()) == null || sVar.a0) {
-            return true;
+        r[] rVarArr = sVar.V;
+        int length = rVarArr != null ? rVarArr.length : 0;
+        while (true) {
+            if (i7 < length) {
+                rVar = rVarArr[i7];
+                if (rVar != null && rVar.h == kVar) {
+                    break;
+                } else {
+                    i7++;
+                }
+            } else {
+                rVar = null;
+                break;
+            }
         }
-        callback.onMenuOpened(ls.t1, kVar);
-        return true;
+        if (rVar != null) {
+            if (!z11) {
+                sVar.h(rVar, z10);
+            } else {
+                sVar.f(rVar.a, rVar, k10);
+                sVar.h(rVar, true);
+            }
+        }
     }
 
     @Override // r0.m
-    public l1 P0(View view, l1 l1Var) {
+    public l1 l1(View view, l1 l1Var) {
         boolean z10;
         boolean z11;
         int d = l1Var.d();
@@ -138,37 +159,16 @@ public final class i implements r0.m, l.w {
     }
 
     @Override // l.w
-    public void d(l.k kVar, boolean z10) {
-        r rVar;
-        l.k k10 = kVar.k();
-        int i7 = 0;
-        boolean z11 = k10 != kVar;
-        if (z11) {
-            kVar = k10;
+    public boolean u(l.k kVar) {
+        Window.Callback callback;
+        if (kVar != kVar.k()) {
+            return true;
         }
         s sVar = this.a;
-        r[] rVarArr = sVar.V;
-        int length = rVarArr != null ? rVarArr.length : 0;
-        while (true) {
-            if (i7 < length) {
-                rVar = rVarArr[i7];
-                if (rVar != null && rVar.h == kVar) {
-                    break;
-                } else {
-                    i7++;
-                }
-            } else {
-                rVar = null;
-                break;
-            }
+        if (!sVar.P || (callback = sVar.f.getCallback()) == null || sVar.a0) {
+            return true;
         }
-        if (rVar != null) {
-            if (!z11) {
-                sVar.j(rVar, z10);
-            } else {
-                sVar.g(rVar.a, rVar, k10);
-                sVar.j(rVar, true);
-            }
-        }
+        callback.onMenuOpened(ks.t1, kVar);
+        return true;
     }
 }

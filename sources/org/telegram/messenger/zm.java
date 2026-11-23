@@ -2,34 +2,28 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zm implements or {
-    public final /* synthetic */ np a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ TLRPC.InputPeer e;
-    public final /* synthetic */ long f;
+public final /* synthetic */ class zm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xo b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ zm(np npVar, long j3, int i7, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
-        this.a = npVar;
-        this.b = j3;
-        this.c = i7;
-        this.d = z10;
-        this.e = inputPeer;
-        this.f = j10;
+    public /* synthetic */ zm(xo xoVar, TLRPC.TL_error tL_error, int i7) {
+        this.a = i7;
+        this.b = xoVar;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.messenger.or
-    public final void a(int i7) {
-        np npVar = this.a;
-        long e10 = npVar.getUserConfig().e();
-        long j3 = this.b;
-        if (j3 == e10) {
-            npVar.I1().b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d(this.c);
+                break;
+            default:
+                this.b.d(this.c);
+                break;
         }
-        npVar.Y(j3, 2, this.c, Math.max(0, i7), this.d, this.e, this.f);
-        npVar.J(1);
     }
 }

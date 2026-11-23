@@ -2,11 +2,11 @@ package fi;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class k6 extends h6 {
     public final ArrayList C;
@@ -32,23 +32,23 @@ public final class k6 extends h6 {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i10);
             if (storyItem != null) {
                 storyItem.messageId = arrayList2.size();
-                gj gjVar = new gj(i7, storyItem);
-                gjVar.r0(false);
+                fj fjVar = new fj(i7, storyItem);
+                fjVar.r0(false);
                 ArrayList arrayList3 = new ArrayList();
                 arrayList3.add(Integer.valueOf(arrayList2.size()));
                 this.C.add(arrayList3);
-                arrayList2.add(gjVar);
+                arrayList2.add(fjVar);
                 i11++;
             }
             i10++;
         }
         if (i11 > 0) {
-            ls.f(i7).k(ls.A5, this);
+            ks.f(i7).k(ks.A5, this);
         }
     }
 
     @Override // fi.h6
-    public final gj f(int i7) {
+    public final fj f(int i7) {
         if (i7 < 0) {
             return null;
         }
@@ -56,7 +56,7 @@ public final class k6 extends h6 {
         if (i7 >= arrayList.size()) {
             return null;
         }
-        return (gj) arrayList.get(i7);
+        return (fj) arrayList.get(i7);
     }
 
     @Override // fi.h6

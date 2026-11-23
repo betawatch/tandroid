@@ -11,7 +11,7 @@ import java.io.File;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements tf {
     public final long a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class e implements tf {
     public xa zza() {
         f fVar = (f) this.b;
         eb ebVar = (eb) this.c;
-        ga.d dVar = new ga.d(1);
-        dVar.d = db.b;
+        ga.d dVar = new ga.d();
+        dVar.c = db.b;
         a0 a0Var = new a0(18, false);
         a0Var.d = fVar.e.a();
         a0Var.b = ebVar;
         a0Var.c = Long.valueOf((SystemClock.elapsedRealtime() - this.a) & Long.MAX_VALUE);
-        dVar.f = new de(a0Var);
+        dVar.e = new de(a0Var);
         return new xa(dVar, 0);
     }
 

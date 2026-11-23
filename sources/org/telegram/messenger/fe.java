@@ -1,42 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.Components.a70;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ gs c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ w10 b;
+    public final /* synthetic */ Uri c;
 
-    public /* synthetic */ fe(gs gsVar, Object obj, float f10, int i7) {
+    public /* synthetic */ fe(w10 w10Var, Uri uri, int i7) {
         this.a = i7;
-        this.c = gsVar;
-        this.d = obj;
-        this.b = f10;
+        this.b = w10Var;
+        this.c = uri;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        Uri uri = this.c;
+        w10 w10Var = this.b;
+        switch (i7) {
             case 0:
-                MediaController mediaController = (MediaController) this.c;
-                gj gjVar = (gj) this.d;
-                if (mediaController.j0 != null && mediaController.v0 != null && !mediaController.h0) {
-                    if (mediaController.L(gjVar)) {
-                        mediaController.i0(mediaController.v0, this.b);
-                    }
-                    mediaController.j0.h0();
-                    break;
-                }
+                String[] strArr = MediaController.W1;
+                w10Var.a(uri);
                 break;
             default:
-                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.c;
-                a70 a70Var = (a70) this.d;
-                g4Var.i0.N.c(true, 0.0f);
-                a70Var.p = new org.telegram.ui.a0(g4Var, this.b, 0);
-                a70Var.a0();
+                String[] strArr2 = MediaController.W1;
+                w10Var.a(uri);
                 break;
         }
     }

@@ -1,82 +1,46 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zr0 implements jg.y1, org.telegram.ui.Cells.a5 {
-    public final /* synthetic */ bs0 a;
+public final /* synthetic */ class zr0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bs0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ zr0(bs0 bs0Var) {
-        this.a = bs0Var;
+    public /* synthetic */ zr0(bs0 bs0Var, String str, int i7) {
+        this.a = i7;
+        this.b = bs0Var;
+        this.c = str;
     }
 
-    @Override // jg.y1
-    public /* synthetic */ a0.h K0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.a5
-    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        bs0 bs0Var = this.a;
-        TLObject E = bs0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = org.telegram.messenger.gj.B1(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return bs0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, b5Var);
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ a0.h d1() {
-        return null;
-    }
-
-    @Override // jg.y1
-    public void r(int i7) {
-        bs0 bs0Var = this.a;
-        bs0Var.f();
-        if (i7 != 1) {
-            return;
-        }
-        int i10 = bs0Var.r - 1;
-        bs0Var.r = i10;
-        if (i10 != 0) {
-            return;
-        }
-        int i11 = 0;
-        while (true) {
-            jt0 jt0Var = bs0Var.s;
-            ds0[] ds0VarArr = jt0Var.n0;
-            if (i11 >= ds0VarArr.length) {
-                return;
-            }
-            ds0 ds0Var = ds0VarArr[i11];
-            if (ds0Var.F == 7) {
-                if (bs0Var.h == 0) {
-                    ds0Var.w.e(false, true);
-                } else {
-                    jt0Var.D(ds0Var.h, 0, null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bs0 bs0Var = this.b;
+                String str = this.c;
+                bs0Var.getClass();
+                org.telegram.messenger.g0.g3(new zr0(bs0Var, str, 1));
+                break;
+            default:
+                bs0 bs0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                bs0Var2.f = null;
+                if (!org.telegram.messenger.v3.T(bs0Var2.n) && bs0Var2.s.g1 != null) {
+                    arrayList = new ArrayList(bs0Var2.s.g1.participants.participants);
                 }
-            }
-            i11++;
+                bs0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.g.c(new org.telegram.ui.Cells.fa(bs0Var2, str2, arrayList, 29));
+                } else {
+                    bs0Var2.r = 1;
+                }
+                bs0Var2.e.g(str2, false, false, true, false, org.telegram.messenger.v3.T(bs0Var2.n) ? bs0Var2.n.id : 0L, false, 2, 1);
+                break;
         }
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ boolean v1(int i7) {
-        return true;
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ void P1(ArrayList arrayList) {
     }
 }

@@ -1,46 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class yu0 implements kp {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ ProfileActivity c;
-
-    public yu0(ProfileActivity profileActivity, TLRPC.Chat chat, np npVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = npVar;
+public final class yu0 extends vv0 {
+    public yu0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.kp
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.M.m(-profileActivity.f1, user, profileActivity.F2.megagroup ? 10 : 9);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        fi.s2 s2Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.o5 o5Var = this.e;
+        if (o5Var == null || (s2Var = o5Var.k) == null) {
+            return;
+        }
+        s2Var.Q0(false);
     }
 
-    @Override // org.telegram.ui.kp
-    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User c22 = profileActivity.getMessagesController().c2(Long.valueOf(profileActivity.e1));
-        if (c22 == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().M()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
             return;
         }
-        np npVar = this.b;
-        if (!npVar.R || npVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.g2 g2Var : npVar.getParentLayout().getFragmentStack()) {
-            if (g2Var instanceof lb) {
-                lb lbVar = (lb) g2Var;
-                lbVar.a1();
-                org.telegram.messenger.g0.g3(new mc0(lbVar, c22, chat, 28));
-                return;
-            }
-        }
+        accessibilityNodeInfo.setText(org.telegram.messenger.gd.N0(2131754797, null));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.gd.N0(2131747623, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.gd.N0(2131754817, null)));
     }
 }

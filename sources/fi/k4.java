@@ -5,17 +5,17 @@ import android.text.TextUtils;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.kc;
 import org.telegram.ui.Components.sj0;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class k4 implements sj0 {
     public final /* synthetic */ f9 a;
@@ -27,24 +27,24 @@ public final class k4 implements sj0 {
     }
 
     @Override // org.telegram.ui.Components.sj0
-    public final boolean c(int i7, View view) {
+    public final boolean b(int i7, View view) {
         final TL_stories.StoryView storyView;
-        final np u12;
+        final mp u12;
         final TLRPC.User c22;
         boolean z10;
         TLRPC.InputStickerSet c10;
         b5 b5Var = this.b;
         b bVar = b5Var.s;
         int i10 = b5Var.w;
-        if (view instanceof org.telegram.ui.Cells.n6) {
-            final org.telegram.ui.Cells.n6 n6Var = (org.telegram.ui.Cells.n6) view;
+        if (view instanceof org.telegram.ui.Cells.m6) {
+            final org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) view;
             f9 f9Var = this.a;
-            if (f9Var.w != null && (storyView = ((s4) b5Var.x.c.get(i7)).b) != null && (c22 = (u12 = np.u1(i10)).c2(Long.valueOf(storyView.user_id))) != null) {
+            if (f9Var.w != null && (storyView = ((s4) b5Var.x.c.get(i7)).b) != null && (c22 = (u12 = mp.u1(i10)).c2(Long.valueOf(storyView.user_id))) != null) {
                 boolean z11 = u12.H0.indexOfKey(c22.id) >= 0;
                 boolean z12 = c22.contact || org.telegram.messenger.i5.r(i10).g0.get(Long.valueOf(c22.id)) != null;
                 boolean d = b5Var.d(storyView);
                 boolean N = u12.R1().N(storyView);
-                boolean C = p10.C(c22);
+                boolean C = n10.C(c22);
                 String str = TextUtils.isEmpty(c22.first_name) ? TextUtils.isEmpty(c22.last_name) ? "" : c22.last_name : c22.first_name;
                 int indexOf = str.indexOf(" ");
                 if (indexOf > 2) {
@@ -53,15 +53,15 @@ public final class k4 implements sj0 {
                 if (C) {
                     return false;
                 }
-                a70 G = a70.G(f9Var.w, bVar, view);
+                x60 G = x60.G(f9Var.w, bVar, view);
                 G.i = 3;
                 G.j = true;
-                G.X(new ColorDrawable(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, bVar)));
+                G.X(new ColorDrawable(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, bVar)));
                 G.s = 133;
                 boolean z13 = (!d || N || z11 || C) ? false : true;
                 final int i11 = 0;
                 final String str2 = str;
-                G.l(R.drawable.msg_stories_myhide, hd.a0(null, null, 2131744419, str), new Runnable(this) { // from class: fi.i4
+                G.l(R.drawable.msg_stories_myhide, gd.a0(null, null, 2131744418, str), new Runnable(this) { // from class: fi.i4
                     public final /* synthetic */ k4 b;
 
                     {
@@ -72,23 +72,23 @@ public final class k4 implements sj0 {
                     public final void run() {
                         int i12 = i11;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.n6 n6Var2 = n6Var;
+                        org.telegram.ui.Cells.m6 m6Var2 = m6Var;
                         String str3 = str2;
                         TLRPC.User user = c22;
-                        np npVar = u12;
+                        mp mpVar = u12;
                         k4 k4Var = this.b;
                         switch (i12) {
                             case 0:
-                                npVar.R1().m0(user.id, true, true);
+                                mpVar.R1().m0(user.id, true, true);
                                 b5 b5Var2 = k4Var.b;
-                                new lc(b5Var2, b5Var2.s).Q(R.raw.ic_ban, 36, hd.a0(null, null, 2131744420, str3)).j();
-                                n6Var2.a(true, b5Var2.d(storyView2) ? 1.0f : 0.5f);
+                                new kc(b5Var2, b5Var2.s).Q(R.raw.ic_ban, 36, gd.a0(null, null, 2131744419, str3)).j();
+                                m6Var2.a(true, b5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
-                                npVar.R1().m0(user.id, false, true);
+                                mpVar.R1().m0(user.id, false, true);
                                 b5 b5Var3 = k4Var.b;
-                                new lc(b5Var3, b5Var3.s).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131744218, str3)).j();
-                                n6Var2.a(true, b5Var3.d(storyView2) ? 1.0f : 0.5f);
+                                new kc(b5Var3, b5Var3.s).Q(R.raw.contact_check, 36, gd.a0(null, null, 2131744217, str3)).j();
+                                m6Var2.a(true, b5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
@@ -96,7 +96,7 @@ public final class k4 implements sj0 {
                 G.F();
                 G.u();
                 final int i12 = 1;
-                G.l(R.drawable.msg_menu_stories, hd.a0(null, null, 2131744219, str2), new Runnable(this) { // from class: fi.i4
+                G.l(R.drawable.msg_menu_stories, gd.a0(null, null, 2131744218, str2), new Runnable(this) { // from class: fi.i4
                     public final /* synthetic */ k4 b;
 
                     {
@@ -107,23 +107,23 @@ public final class k4 implements sj0 {
                     public final void run() {
                         int i122 = i12;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.n6 n6Var2 = n6Var;
+                        org.telegram.ui.Cells.m6 m6Var2 = m6Var;
                         String str3 = str2;
                         TLRPC.User user = c22;
-                        np npVar = u12;
+                        mp mpVar = u12;
                         k4 k4Var = this.b;
                         switch (i122) {
                             case 0:
-                                npVar.R1().m0(user.id, true, true);
+                                mpVar.R1().m0(user.id, true, true);
                                 b5 b5Var2 = k4Var.b;
-                                new lc(b5Var2, b5Var2.s).Q(R.raw.ic_ban, 36, hd.a0(null, null, 2131744420, str3)).j();
-                                n6Var2.a(true, b5Var2.d(storyView2) ? 1.0f : 0.5f);
+                                new kc(b5Var2, b5Var2.s).Q(R.raw.ic_ban, 36, gd.a0(null, null, 2131744419, str3)).j();
+                                m6Var2.a(true, b5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
-                                npVar.R1().m0(user.id, false, true);
+                                mpVar.R1().m0(user.id, false, true);
                                 b5 b5Var3 = k4Var.b;
-                                new lc(b5Var3, b5Var3.s).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131744218, str3)).j();
-                                n6Var2.a(true, b5Var3.d(storyView2) ? 1.0f : 0.5f);
+                                new kc(b5Var3, b5Var3.s).Q(R.raw.contact_check, 36, gd.a0(null, null, 2131744217, str3)).j();
+                                m6Var2.a(true, b5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
@@ -144,24 +144,24 @@ public final class k4 implements sj0 {
                             case 0:
                                 u12.w(c22.id);
                                 b5 b5Var2 = this.b.b;
-                                new lc(b5Var2, b5Var2.s).e(true).j();
-                                n6Var.a(true, b5Var2.d(storyView) ? 1.0f : 0.5f);
+                                new kc(b5Var2, b5Var2.s).e(true).j();
+                                m6Var.a(true, b5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
-                                np npVar = u12;
-                                p6 R1 = npVar.R1();
+                                mp mpVar = u12;
+                                p6 R1 = mpVar.R1();
                                 TLRPC.User user = c22;
                                 R1.m0(user.id, false, true);
-                                npVar.r5(null, user.id);
+                                mpVar.r5(null, user.id);
                                 b5 b5Var3 = this.b.b;
-                                new lc(b5Var3, b5Var3.s).e(false).j();
-                                n6Var.a(true, b5Var3.d(storyView) ? 1.0f : 0.5f);
+                                new kc(b5Var3, b5Var3.s).e(false).j();
+                                m6Var.a(true, b5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
-                }, hd.N0(2131753689, null), (z12 || z11 || C) ? false : true, true);
+                }, gd.N0(2131753689, null), (z12 || z11 || C) ? false : true, true);
                 final int i14 = 1;
-                G.l(R.drawable.msg_block, hd.N0(2131743666, null), new Runnable(this) { // from class: fi.j4
+                G.l(R.drawable.msg_block, gd.N0(2131743664, null), new Runnable(this) { // from class: fi.j4
                     public final /* synthetic */ k4 b;
 
                     {
@@ -174,33 +174,33 @@ public final class k4 implements sj0 {
                             case 0:
                                 u12.w(c22.id);
                                 b5 b5Var2 = this.b.b;
-                                new lc(b5Var2, b5Var2.s).e(true).j();
-                                n6Var.a(true, b5Var2.d(storyView) ? 1.0f : 0.5f);
+                                new kc(b5Var2, b5Var2.s).e(true).j();
+                                m6Var.a(true, b5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
-                                np npVar = u12;
-                                p6 R1 = npVar.R1();
+                                mp mpVar = u12;
+                                p6 R1 = mpVar.R1();
                                 TLRPC.User user = c22;
                                 R1.m0(user.id, false, true);
-                                npVar.r5(null, user.id);
+                                mpVar.r5(null, user.id);
                                 b5 b5Var3 = this.b.b;
-                                new lc(b5Var3, b5Var3.s).e(false).j();
-                                n6Var.a(true, b5Var3.d(storyView) ? 1.0f : 0.5f);
+                                new kc(b5Var3, b5Var3.s).e(false).j();
+                                m6Var.a(true, b5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
                 }, (z12 || !z11 || C) ? false : true);
-                G.m(R.drawable.msg_user_remove, new ai.b(this, c22, str2, n6Var, storyView, 14), hd.N0(2131744444, null), z12 && !C, true);
+                G.m(R.drawable.msg_user_remove, new bi.s1(this, c22, str2, m6Var, storyView, 13), gd.N0(2131744443, null), z12 && !C, true);
                 TLRPC.Reaction reaction = storyView.reaction;
-                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.p5.g(i10).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
+                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.o5.g(i10).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
                     z10 = false;
                 } else {
                     G.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    aa0 aa0Var = new aa0(b5Var.w, 3, b5Var.getContext(), arrayList, bVar);
-                    aa0Var.setOnClickListener(new ah.h(this, arrayList, G, 12));
-                    G.q(aa0Var);
+                    x90 x90Var = new x90(b5Var.w, 3, b5Var.getContext(), arrayList, bVar);
+                    x90Var.setOnClickListener(new ah.h(this, arrayList, G, 12));
+                    G.q(x90Var);
                     z10 = true;
                 }
                 if (G.y() <= 0 && !z10) {

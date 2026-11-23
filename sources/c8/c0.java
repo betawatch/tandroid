@@ -1,31 +1,25 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+import android.content.SharedPreferences;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static gb.d1 a;
+    public static SharedPreferences a;
 
-    public static final void a() {
-        try {
-            if (a == null) {
-                gb.d1 d1Var = (gb.d1) ((gb.i) ((gb.r) o9.g.c().b(gb.r.class))).o.get();
-                kotlin.jvm.internal.j.e(d1Var, "<set-?>");
-                a = d1Var;
-            }
-            gb.d1 d1Var2 = a;
-            if (d1Var2 == null) {
-                kotlin.jvm.internal.j.h("sharedSessionRepository");
-                throw null;
-            }
-            if (d1Var2.i) {
-                if (d1Var2 != null) {
-                    d1Var2.b();
-                } else {
-                    kotlin.jvm.internal.j.h("sharedSessionRepository");
-                    throw null;
+    public static SharedPreferences a(Context context) {
+        SharedPreferences sharedPreferences;
+        synchronized (SharedPreferences.class) {
+            try {
+                if (a == null) {
+                    a = (SharedPreferences) ec.a(new a2.b(context, 4));
                 }
+                sharedPreferences = a;
+            } catch (Throwable th2) {
+                throw th2;
             }
-        } catch (Exception unused) {
         }
+        return sharedPreferences;
     }
 }

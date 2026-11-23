@@ -3,13 +3,13 @@ package x2;
 import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y0 extends a {
     public final j2.g h;
-    public final tg.o1 i;
+    public final tg.s i;
     public final q2.m j;
     public final qb.a k;
     public final int l;
@@ -22,10 +22,10 @@ public final class y0 extends a {
     public j2.c0 s;
     public e2.l0 t;
 
-    public y0(e2.l0 l0Var, j2.g gVar, tg.o1 o1Var, q2.m mVar, qb.a aVar, int i7, e2.u uVar) {
+    public y0(e2.l0 l0Var, j2.g gVar, tg.s sVar, q2.m mVar, qb.a aVar, int i7, e2.u uVar) {
         this.t = l0Var;
         this.h = gVar;
-        this.i = o1Var;
+        this.i = sVar;
         this.j = mVar;
         this.k = aVar;
         this.l = i7;
@@ -51,7 +51,7 @@ public final class y0 extends a {
         g0Var2.getClass();
         Uri uri = g0Var2.a;
         this.g.getClass();
-        return new w0(uri, createDataSource, new md0((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.l0.S(g0Var2.h), null);
+        return new w0(uri, createDataSource, new i61((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.l0.S(g0Var2.h), null);
     }
 
     @Override // x2.a
@@ -114,15 +114,15 @@ public final class y0 extends a {
         n(j1Var);
     }
 
-    public final void v(long j3, f3.b0 b0Var, boolean z10) {
-        if (this.r && b0Var.e()) {
+    public final void v(long j3, f3.c0 c0Var, boolean z10) {
+        if (this.r && c0Var.e()) {
             return;
         }
-        this.r = !b0Var.e();
+        this.r = !c0Var.e();
         if (j3 == -9223372036854775807L) {
             j3 = this.o;
         }
-        boolean d = b0Var.d();
+        boolean d = c0Var.d();
         if (!this.n && this.o == j3 && this.p == d && this.q == z10) {
             return;
         }

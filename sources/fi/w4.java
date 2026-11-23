@@ -2,37 +2,37 @@ package fi;
 
 import android.content.Context;
 import android.widget.TextView;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mk;
-import org.telegram.ui.Components.nv0;
-import org.telegram.ui.Components.yz;
-import org.telegram.ui.y91;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.mv0;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class w4 extends nv0 {
+public final class w4 extends mv0 {
     public final /* synthetic */ int L = 0;
     public final /* synthetic */ Object M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w4(mk mkVar, Context context, yz yzVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, yzVar, 1, h6Var);
-        this.M = mkVar;
+    public w4(kk kkVar, Context context, vz vzVar, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, vzVar, 1, i6Var);
+        this.M = kkVar;
     }
 
-    @Override // org.telegram.ui.Components.nv0
+    @Override // org.telegram.ui.Components.mv0
     public void e(boolean z10, boolean z11) {
         switch (this.L) {
             case 2:
-                y91 y91Var = (y91) this.M;
+                w91 w91Var = (w91) this.M;
                 super.e(z10, z11);
                 if (!z11) {
-                    ((TextView) y91Var.n.d).animate().cancel();
-                    ((TextView) y91Var.n.d).setAlpha(z10 ? 0.0f : 1.0f);
+                    ((TextView) w91Var.n.d).animate().cancel();
+                    ((TextView) w91Var.n.d).setAlpha(z10 ? 0.0f : 1.0f);
                     break;
                 } else {
-                    ((TextView) y91Var.n.d).animate().alpha(z10 ? 0.0f : 1.0f).start();
+                    ((TextView) w91Var.n.d).animate().alpha(z10 ? 0.0f : 1.0f).start();
                     break;
                 }
             default:
@@ -45,7 +45,7 @@ public final class w4 extends nv0 {
     public float getTranslationY() {
         switch (this.L) {
             case 1:
-                return super.getTranslationY() - ((mk) this.M).N;
+                return super.getTranslationY() - ((kk) this.M).N;
             default:
                 return super.getTranslationY();
         }
@@ -56,7 +56,7 @@ public final class w4 extends nv0 {
         switch (this.L) {
             case 0:
                 b5 b5Var = ((x4) this.M).d;
-                super.onMeasure(i7, o10.c(b5Var.e, b5Var.n - b5Var.r.getPaddingTop(), TLObject.FLAG_30));
+                super.onMeasure(i7, m10.c(b5Var.e, b5Var.n - b5Var.r.getPaddingTop(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -68,7 +68,7 @@ public final class w4 extends nv0 {
     public void setTranslationY(float f10) {
         switch (this.L) {
             case 1:
-                super.setTranslationY(f10 + ((mk) this.M).N);
+                super.setTranslationY(f10 + ((kk) this.M).N);
                 break;
             default:
                 super.setTranslationY(f10);
@@ -83,8 +83,8 @@ public final class w4 extends nv0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w4(y91 y91Var, Context context, yz yzVar) {
-        super(context, yzVar, 0, null);
-        this.M = y91Var;
+    public w4(w91 w91Var, Context context, vz vzVar) {
+        super(context, vzVar, 0, null);
+        this.M = w91Var;
     }
 }

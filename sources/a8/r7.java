@@ -55,27 +55,27 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.an0;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.wi0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.bz0;
-import org.telegram.ui.dz0;
-import org.telegram.ui.md0;
-import org.telegram.ui.qm0;
-import org.telegram.ui.yc1;
+import org.telegram.ui.az0;
+import org.telegram.ui.cz0;
+import org.telegram.ui.om0;
+import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.ya, an0, q5.b, u9.b {
+public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.xa, zm0, q5.b, u9.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -103,7 +103,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         r6Var.b.add(s6Var);
     }
 
-    public static r7 l(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+    public static r7 s(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
         r7 r7Var = new r7(sharedPreferences, scheduledThreadPoolExecutor);
         synchronized (((ArrayDeque) r7Var.e)) {
             try {
@@ -127,16 +127,105 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         }
     }
 
-    public static Exception u(Task task) {
+    public static Exception y(Task task) {
         return task.getException() != null ? task.getException() : new ExecutionException(new RuntimeException("Unexpected Error"));
     }
 
-    public void A() {
-        m.o3 o3Var = (m.o3) ((ai.l0) this.b).b;
-        h6.m mVar = (h6.m) o3Var.b;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
+    
+        if (r10 == null) goto L24;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x007e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void A(int i7, int i10, Intent intent) {
+        FileOutputStream fileOutputStream;
+        p71 p71Var = (p71) this.e;
+        if (i10 == -1) {
+            FileOutputStream fileOutputStream2 = null;
+            if (i7 != 10) {
+                if (i7 != 11 || intent == null || intent.getData() == null) {
+                    return;
+                }
+                try {
+                    this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
+                    Point c12 = org.telegram.messenger.g0.c1();
+                    Bitmap K = ec.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
+                    K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) this.f));
+                    p71Var.b((File) this.f, K, false);
+                    return;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            }
+            org.telegram.messenger.g0.e((String) this.b);
+            try {
+                this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
+                Point c13 = org.telegram.messenger.g0.c1();
+                Bitmap K2 = ec.K((String) this.b, null, (float) c13.x, (float) c13.y, true);
+                fileOutputStream = new FileOutputStream((File) this.f);
+                try {
+                    try {
+                        K2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+                        p71Var.b((File) this.f, K2, false);
+                    } catch (Exception e11) {
+                        e = e11;
+                        org.telegram.messenger.a8.g(e, true);
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream2 = fileOutputStream;
+                    if (fileOutputStream2 != null) {
+                        try {
+                            fileOutputStream2.close();
+                        } catch (Exception e12) {
+                            org.telegram.messenger.a8.g(e12, true);
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Exception e13) {
+                e = e13;
+                fileOutputStream = null;
+            } catch (Throwable th3) {
+                th = th3;
+                if (fileOutputStream2 != null) {
+                }
+                throw th;
+            }
+            try {
+                fileOutputStream.close();
+            } catch (Exception e14) {
+                org.telegram.messenger.a8.g(e14, true);
+            }
+            this.b = null;
+        }
+    }
+
+    public void B() {
+        ai.h0 h0Var = (ai.h0) this.b;
+        ga.d dVar = (ga.d) h0Var.b;
+        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(threadPolicy).permitAll().build());
+        try {
+            dVar.getClass();
+            dVar.g(new a7.c(dVar, 0));
+            if (((h6.m) dVar.a) == null) {
+                ga.d.f(h0Var);
+            }
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicy);
+        }
+    }
+
+    public void C() {
+        ga.d dVar = (ga.d) ((ai.h0) this.b).b;
+        h6.m mVar = (h6.m) dVar.a;
         if (mVar == null) {
-            while (!((LinkedList) o3Var.c).isEmpty() && ((a7.c) ((LinkedList) o3Var.c).getLast()).a() >= 1) {
-                ((LinkedList) o3Var.c).removeLast();
+            while (!((LinkedList) dVar.b).isEmpty() && ((a7.c) ((LinkedList) dVar.b).getLast()).a() >= 1) {
+                ((LinkedList) dVar.b).removeLast();
             }
         } else {
             try {
@@ -148,12 +237,12 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         }
     }
 
-    public void B() {
-        m.o3 o3Var = (m.o3) ((ai.l0) this.b).b;
-        h6.m mVar = (h6.m) o3Var.b;
+    public void D() {
+        ga.d dVar = (ga.d) ((ai.h0) this.b).b;
+        h6.m mVar = (h6.m) dVar.a;
         if (mVar == null) {
-            while (!((LinkedList) o3Var.c).isEmpty() && ((a7.c) ((LinkedList) o3Var.c).getLast()).a() >= 5) {
-                ((LinkedList) o3Var.c).removeLast();
+            while (!((LinkedList) dVar.b).isEmpty() && ((a7.c) ((LinkedList) dVar.b).getLast()).a() >= 5) {
+                ((LinkedList) dVar.b).removeLast();
             }
         } else {
             try {
@@ -165,18 +254,13 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         }
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public boolean E() {
-        return true;
+    public void E() {
+        ga.d dVar = (ga.d) ((ai.h0) this.b).b;
+        dVar.getClass();
+        dVar.g(new a7.c(dVar, 1));
     }
 
     public void F() {
-        m.o3 o3Var = (m.o3) ((ai.l0) this.b).b;
-        o3Var.getClass();
-        o3Var.b(new a7.c(o3Var, 1));
-    }
-
-    public void G() {
         org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
         if (g2Var == null) {
             Intent intent = new Intent("android.intent.action.PICK");
@@ -196,19 +280,13 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                 return;
             }
         }
-        qm0 qm0Var = new qm0(2, false, false, null);
-        qm0Var.y = false;
-        qm0Var.W = new jn(this, 7);
-        g2Var.presentFragment(qm0Var);
+        om0 om0Var = new om0(2, false, false, null);
+        om0Var.y = false;
+        om0Var.W = new nd0(this, 4);
+        g2Var.presentFragment(om0Var);
     }
 
-    @Override // te.b
-    public void H(int i7, float f10, float f11, te.c cVar) {
-        ((TextView) this.c).setAlpha(org.telegram.messenger.g0.T1(0.5f, 1.0f, ((te.a) this.e).e));
-        ((lh.c) this.f).b(this);
-    }
-
-    public String I() {
+    public String H() {
         String str;
         synchronized (((ArrayDeque) this.e)) {
             str = (String) ((ArrayDeque) this.e).peek();
@@ -216,11 +294,11 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         return str;
     }
 
-    public Task J() {
+    public Task I() {
         Task forException;
         int i7;
-        boolean v = v();
-        if (v && ((ab.v) this.f).c() >= 261200000) {
+        boolean z10 = z();
+        if (z10 && ((ab.v) this.f).c() >= 261200000) {
             final ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new f5.s("Firebase-Messaging-Network-Io"));
             final int i10 = 1;
             Task continueWithTask = ((va.c) ((va.d) this.d)).f().continueWithTask(newSingleThreadExecutor, new Continuation(this) { // from class: ab.s
@@ -230,6 +308,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                     this.b = this;
                 }
 
+                /* JADX WARN: Multi-variable type inference failed */
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task) {
                     int i11 = i10;
@@ -238,7 +317,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                     switch (i11) {
                         case 0:
                             if (!task.isSuccessful()) {
-                                return Tasks.forException(r7.u(task));
+                                return Tasks.forException(r7.y(task));
                             }
                             String str = (String) ((Pair) task.getResult()).first;
                             String str2 = (String) ((Pair) task.getResult()).second;
@@ -252,11 +331,11 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                             dVar.getClass();
                             com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
                             b10.d = new n6.c[]{m6.i.a};
-                            b10.c = new ji.l(7, dVar, bVar);
+                            b10.c = new j6.k(dVar, bVar, false, 8);
                             b10.a = 39001;
-                            return dVar.e(0, b10.a()).continueWith(executorService, new t(str, 0));
+                            return dVar.e(0, b10.a()).continueWith(executorService, new t(str, (int) (0 == true ? 1 : 0)));
                         default:
-                            return !task.isSuccessful() ? Tasks.forException(r7.u(task)) : ((va.c) ((va.d) r7Var.d)).e().continueWithTask(executorService, new t(r7Var, ((va.a) task.getResult()).a));
+                            return !task.isSuccessful() ? Tasks.forException(r7.y(task)) : ((va.c) ((va.d) r7Var.d)).e().continueWithTask(executorService, new t(r7Var, ((va.a) task.getResult()).a));
                     }
                 }
             });
@@ -268,6 +347,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                     this.b = this;
                 }
 
+                /* JADX WARN: Multi-variable type inference failed */
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task) {
                     int i112 = i11;
@@ -276,7 +356,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                     switch (i112) {
                         case 0:
                             if (!task.isSuccessful()) {
-                                return Tasks.forException(r7.u(task));
+                                return Tasks.forException(r7.y(task));
                             }
                             String str = (String) ((Pair) task.getResult()).first;
                             String str2 = (String) ((Pair) task.getResult()).second;
@@ -290,11 +370,11 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
                             dVar.getClass();
                             com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
                             b10.d = new n6.c[]{m6.i.a};
-                            b10.c = new ji.l(7, dVar, bVar);
+                            b10.c = new j6.k(dVar, bVar, false, 8);
                             b10.a = 39001;
-                            return dVar.e(0, b10.a()).continueWith(executorService, new t(str, 0));
+                            return dVar.e(0, b10.a()).continueWith(executorService, new t(str, (int) (0 == true ? 1 : 0)));
                         default:
-                            return !task.isSuccessful() ? Tasks.forException(r7.u(task)) : ((va.c) ((va.d) r7Var.d)).e().continueWithTask(executorService, new t(r7Var, ((va.a) task.getResult()).a));
+                            return !task.isSuccessful() ? Tasks.forException(r7.y(task)) : ((va.c) ((va.d) r7Var.d)).e().continueWithTask(executorService, new t(r7Var, ((va.a) task.getResult()).a));
                     }
                 }
             });
@@ -303,19 +383,21 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         String b10 = ab.v.b((o9.g) b8Var.a);
         Bundle bundle = new Bundle();
         try {
-            b8Var.l(b10, bundle, v);
+            b8Var.l(b10, bundle, z10);
             m6.c cVar = (m6.c) b8Var.c;
             m6.d dVar = m6.d.b;
             cc.c cVar2 = cVar.c;
-            if (cVar2.i() < 12000000) {
-                forException = cVar2.h() != 0 ? cVar.d(bundle).continueWithTask(dVar, new ji.l(5, cVar, bundle)) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
-            } else {
+            if (cVar2.i() >= 12000000) {
                 m6.n i12 = m6.n.i(cVar.b);
                 synchronized (i12) {
                     i7 = i12.a;
                     i12.a = i7 + 1;
                 }
                 forException = i12.k(new m6.m(i7, 1, bundle, 1)).continueWith(dVar, nb.a.b);
+            } else if (cVar2.h() != 0) {
+                forException = cVar.d(bundle).continueWithTask(dVar, new j6.k(cVar, bundle, false, 6));
+            } else {
+                forException = Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
             }
         } catch (InterruptedException | ExecutionException e10) {
             forException = Tasks.forException(e10);
@@ -323,7 +405,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         return forException.continueWith(new d3.b(3), new a1.c(b8Var, 4));
     }
 
-    public boolean K(Object obj) {
+    public boolean J(Object obj) {
         boolean remove;
         synchronized (((ArrayDeque) this.e)) {
             remove = ((ArrayDeque) this.e).remove(obj);
@@ -334,8 +416,14 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         return remove;
     }
 
+    @Override // te.b
+    public void K(int i7, float f10, float f11, te.c cVar) {
+        ((TextView) this.c).setAlpha(org.telegram.messenger.g0.T1(0.5f, 1.0f, ((te.a) this.e).e));
+        ((lh.c) this.f).b(this);
+    }
+
     public Set L(Class cls) {
-        return i(u9.q.a(cls));
+        return g(u9.q.a(cls));
     }
 
     public void M(Uri uri) {
@@ -709,7 +797,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
             com.google.android.gms.internal.cast.v1 v1Var = (com.google.android.gms.internal.cast.v1) l11.a();
             o1Var.c();
             com.google.android.gms.internal.cast.p1.q((com.google.android.gms.internal.cast.p1) o1Var.b, v1Var);
-            r6Var.f.a((com.google.android.gms.internal.cast.p1) o1Var.a(), ls.J3);
+            r6Var.f.a((com.google.android.gms.internal.cast.p1) o1Var.a(), ks.J3);
             this.e = null;
         }
     }
@@ -724,6 +812,11 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
             return a10;
         }
         return new u9.r();
+    }
+
+    @Override // org.telegram.ui.Components.zm0
+    public /* synthetic */ int a0() {
+        return 0;
     }
 
     @Override // u9.b
@@ -765,118 +858,80 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         throw new androidx.car.app.j("Attempting to request an undeclared dependency Provider<" + qVar + ">.");
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public void g(View view, ch.p0 p0Var, boolean z10, boolean z11) {
-        hi.k5 k5Var = (hi.k5) this.f;
-        tg.s1 s1Var = k5Var.K1;
-        if (s1Var == null) {
-            return;
+    @Override // u9.b
+    public Set g(u9.q qVar) {
+        if (((Set) this.e).contains(qVar)) {
+            return ((u9.b) this.f).g(qVar);
         }
-        s1Var.s(p0Var, true);
-        k5Var.L0(false);
+        throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + qVar + ">.");
     }
 
     @Override // fd.a
     public Object get() {
         switch (this.a) {
             case 6:
-                return new gb.t0((o9.g) ((d9.o) this.b).a, (va.d) ((ib.c) this.c).get(), (jb.l) ((ib.c) this.d).get(), (gb.l) ((ib.c) this.e).get(), (id.h) ((ib.c) this.f).get());
+                return new gb.u0((o9.g) ((e.a) this.b).a, (va.d) ((ib.c) this.c).get(), (jb.l) ((ib.c) this.d).get(), (gb.l) ((ib.c) this.e).get(), (id.h) ((ib.c) this.f).get());
             case 10:
-                return new jb.d((gb.h1) ((ib.c) this.b).get(), (va.d) ((ib.c) this.c).get(), (gb.b) ((ib.c) this.d).get(), (jb.f) ((ib.c) this.e).get(), (jb.p) ((ib.c) this.f).get());
+                return new jb.d((gb.i1) ((ib.c) this.b).get(), (va.d) ((ib.c) this.c).get(), (gb.b) ((ib.c) this.d).get(), (jb.f) ((ib.c) this.e).get(), (jb.q) ((ib.c) this.f).get());
             default:
-                return new t5.a((Executor) ((fd.a) this.b).get(), (p5.e) ((fd.a) this.c).get(), (md0) ((md0) this.d).get(), (v5.d) ((fd.a) this.e).get(), (w5.c) ((fd.a) this.f).get());
+                return new t5.a((Executor) ((fd.a) this.b).get(), (p5.e) ((fd.a) this.c).get(), (i61) ((i61) this.d).get(), (v5.d) ((fd.a) this.e).get(), (w5.c) ((fd.a) this.f).get());
         }
     }
 
-    @Override // org.telegram.ui.Components.an0
+    @Override // org.telegram.ui.Components.zm0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
+    @Override // org.telegram.ui.Components.wi0
+    public void h(View view, ch.p0 p0Var, boolean z10, boolean z11) {
+        hi.v5 v5Var = (hi.v5) this.f;
+        tg.v1 v1Var = v5Var.K1;
+        if (v1Var == null) {
+            return;
+        }
+        v1Var.s(p0Var, true);
+        v5Var.O0(false);
+    }
+
     @Override // c4.d
-    public long h(int i7) {
+    public long i(int i7) {
         return ((long[]) this.c)[i7];
     }
 
-    @Override // u9.b
-    public Set i(u9.q qVar) {
-        if (((Set) this.e).contains(qVar)) {
-            return ((u9.b) this.f).i(qVar);
+    @Override // org.telegram.ui.Components.zm0
+    public void j(boolean z10, float f10) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = ((az0) this.f).d;
+        cz0 cz0Var = (cz0) this.e;
+        cz0 cz0Var2 = (cz0) this.c;
+        cz0 cz0Var3 = (cz0) this.d;
+        boolean isAttachedToWindow = ((an0) this.b).isAttachedToWindow();
+        long j3 = f10 > 0.7f ? (long) ((4089446400L * ((f10 - 0.7f) / 0.3f)) + 104857600) : (long) ((104333312 * (f10 / 0.7f)) + 524288.0f);
+        if (f10 >= 1.0f) {
+            cz0Var2.e(false, isAttachedToWindow);
+            cz0Var3.e(false, isAttachedToWindow);
+            cz0Var.e(true, isAttachedToWindow);
+            org.telegram.messenger.g0.X3(cz0Var3, false, 0.8f, true, isAttachedToWindow);
+        } else if (f10 == 0.0f) {
+            cz0Var2.e(true, isAttachedToWindow);
+            cz0Var3.e(false, isAttachedToWindow);
+            cz0Var.e(false, isAttachedToWindow);
+            org.telegram.messenger.g0.X3(cz0Var3, false, 0.8f, true, isAttachedToWindow);
+        } else {
+            cz0Var3.c(gd.a0("UpToFileSize", null, 2131743576, org.telegram.messenger.g0.i0(j3, true, false)), false, true);
+            cz0Var2.e(false, isAttachedToWindow);
+            cz0Var3.e(true, isAttachedToWindow);
+            cz0Var.e(false, isAttachedToWindow);
+            org.telegram.messenger.g0.X3(cz0Var3, true, 0.8f, true, isAttachedToWindow);
         }
-        throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + qVar + ">.");
-    }
-
-    public byte[] j() {
-        byte[] bArr = (byte[]) this.c;
-        byte[] bArr2 = (byte[]) this.b;
-        SecureRandom secureRandom = new SecureRandom();
-        BigInteger bigInteger = new BigInteger(2048, secureRandom);
-        BigInteger bigInteger2 = yc1.b;
-        BigInteger bigInteger3 = yc1.a;
-        BigInteger modPow = bigInteger2.modPow(bigInteger, bigInteger3);
-        BigInteger bigInteger4 = BigInteger.ONE;
-        if (modPow.compareTo(bigInteger4) <= 0 || modPow.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
-            throw new IllegalStateException("our pubkey invalid (extremely unlikely)");
-        }
-        byte[] a10 = yc1.a(modPow);
-        BigInteger bigInteger5 = new BigInteger(1, bArr);
-        if (bigInteger5.compareTo(bigInteger4) <= 0 || bigInteger5.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
-            throw new IllegalArgumentException("peer pubkey out of range");
-        }
-        byte[] a11 = yc1.a(bigInteger5.modPow(bigInteger, bigInteger3));
-        byte[] bArr3 = new byte[16];
-        secureRandom.nextBytes(bArr3);
-        byte[] b10 = yc1.b(new byte[][]{a11, bArr2, bArr3});
-        byte[] b11 = yc1.b(new byte[][]{a11, bArr});
-        this.e = b10;
-        String[] strArr = {"👋", "👍", "👎", "👌", "👊", "🤟", "🫵", "👏", "🤝", "✍", "💪", "👀", "👅", "🥶", "🤡", "💀", "👽", "😈", "😎", "🤠", "🤩", "😍", "🤯", "🦄", "🐶", "🐷", "🐔", "🐥", "🦊", "🐙", "🐸", "🐳", "🦉", "🦆", "🐢", "🦖", "🐵", "🐝", "🦁", "🐧", "🦋", "🐬", "🦀", "🐌", "🦠", "🐠", "🌵", "💐", "💐", "🎄", "🍄", "🍔", "🍕", "☕", "🍩", "🍪", "🎂", "🍫", "🍭", "🍎", "🥥", "🍒", "🌶", "🥒", "🥦", "🍇", "🍋", "🍓", "🍌", "🍍", "🍆", "🌽", "🍺", "🍷", "🍾", "🍦", "🍰", "🍞", "🍖", "🌭", "🧊", "🍳", "⭐", "☁", "🚀", "🎈", "💎", "💡", "🔑", "❄", "🔎", "👠", "👕", "👗", "👖", "👙", "👜", "👓", "🎀", "💄", "💍", "♠", "❤", "♦", "♣", "🌈", "🌊", "🎃", "👻", "🎁", "🔮", "🎥", "💿", "💻", "📡", "🔉", "⏳", "🔒", "🚗", "🔱", "🔗", "🎲", "🎮", "⚽", "🎳", "🏁", "🏆", "🎸", "💣", "🚽", "🎹", "🎤", "🎨", "🔫", "💊", "💰", "📦", "📅", "📚", "❗", "❓", "💯", "💦", "💤", "🌍", "🏝", "🚂", "🛢", "🛹", "🚢", "✈", "🛎", "🧳", "🌖", "🌞", "🔥", "🏓", "🎰", "🧸", "🪩", "🎭", "👑", "🎩", "🧢", "🔈", "🔋", "🕯", "✏", "💼", "📌", "✂", "🗑", "🛡", "⚙", "🧲", "🪏", "⚖", "🧪", "🚪", "🫧", "🛒", "🪑", "🗿", "🏁", "🏴\u200d☠", "📊", "🥁", "🎧", "🎵", "🧩", "⛳", "🥇", "🥈", "🥈", "🌪", "⛺", "🧭", "🫆", "🧠", "💋"};
-        ArrayList arrayList = new ArrayList(4);
-        for (int i7 = 0; i7 < 4; i7++) {
-            int i10 = i7 * 8;
-            arrayList.add(strArr[(int) (((b11[i10 + 7] & 255) | ((((((((b11[i10] & 127) << 56) | ((b11[i10 + 1] & 255) << 48)) | ((b11[i10 + 2] & 255) << 40)) | ((b11[i10 + 3] & 255) << 32)) | ((b11[i10 + 4] & 255) << 24)) | ((b11[i10 + 5] & 255) << 16)) | ((b11[i10 + 6] & 255) << 8))) % ls.e3)]);
-        }
-        this.f = arrayList;
-        org.telegram.messenger.a8.b("wear-auth: built answer; session " + yc1.d(bArr2) + " emojis=" + ((ArrayList) this.f));
-        byte[] bArr4 = new byte[ls.L4];
-        System.arraycopy(bArr2, 0, bArr4, 0, 16);
-        System.arraycopy(bArr3, 0, bArr4, 16, 16);
-        System.arraycopy(a10, 0, bArr4, 32, 256);
-        return bArr4;
-    }
-
-    public void k(Canvas canvas, boolean z10, boolean z11, int i7, float f10) {
-        RectF rectF = (RectF) this.c;
-        float[] fArr = (float[]) this.d;
-        Paint paint = (Paint) this.f;
-        org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
-        Path path = (Path) this.e;
-        int i10 = (int) ((z11 ? 0 : (int) f3Var.H) * f10);
-        int L = org.telegram.messenger.g0.L(10.0f) * Math.min(1, i10 / org.telegram.messenger.g0.L(60.0f));
-        if (i10 <= 0) {
-            return;
-        }
-        fArr[3] = 0.0f;
-        fArr[2] = 0.0f;
-        fArr[1] = 0.0f;
-        fArr[0] = 0.0f;
-        float f11 = L;
-        fArr[7] = f11;
-        fArr[6] = f11;
-        fArr[5] = f11;
-        fArr[4] = f11;
-        path.rewind();
-        rectF.set(0.0f, 0.0f, i7, (f3Var.getY() + f3Var.getHeight()) - i10);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        paint.setAlpha(0);
         if (z10) {
-            paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(1.0f), TLObject.FLAG_28);
-            canvas.drawPath(path, paint);
+            saveToGallerySettingsActivity.c0().c = j3;
+            saveToGallerySettingsActivity.d0();
         }
-        canvas.clipPath(path);
     }
 
     @Override // c4.d
-    public List m(long j3) {
+    public List k(long j3) {
         i4.c cVar = (i4.c) this.b;
         Map map = (Map) this.d;
         HashMap hashMap = (HashMap) this.e;
@@ -967,88 +1022,168 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         return arrayList2;
     }
 
-    @Override // org.telegram.ui.Components.an0
-    public void n(boolean z10, float f10) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = ((bz0) this.f).d;
-        dz0 dz0Var = (dz0) this.e;
-        dz0 dz0Var2 = (dz0) this.c;
-        dz0 dz0Var3 = (dz0) this.d;
-        boolean isAttachedToWindow = ((bn0) this.b).isAttachedToWindow();
-        long j3 = f10 > 0.7f ? (long) ((4089446400L * ((f10 - 0.7f) / 0.3f)) + 104857600) : (long) ((104333312 * (f10 / 0.7f)) + 524288.0f);
-        if (f10 >= 1.0f) {
-            dz0Var2.e(false, isAttachedToWindow);
-            dz0Var3.e(false, isAttachedToWindow);
-            dz0Var.e(true, isAttachedToWindow);
-            org.telegram.messenger.g0.X3(dz0Var3, false, 0.8f, true, isAttachedToWindow);
-        } else if (f10 == 0.0f) {
-            dz0Var2.e(true, isAttachedToWindow);
-            dz0Var3.e(false, isAttachedToWindow);
-            dz0Var.e(false, isAttachedToWindow);
-            org.telegram.messenger.g0.X3(dz0Var3, false, 0.8f, true, isAttachedToWindow);
-        } else {
-            dz0Var3.c(hd.a0("UpToFileSize", null, 2131743578, org.telegram.messenger.g0.i0(j3, true, false)), false, true);
-            dz0Var2.e(false, isAttachedToWindow);
-            dz0Var3.e(true, isAttachedToWindow);
-            dz0Var.e(false, isAttachedToWindow);
-            org.telegram.messenger.g0.X3(dz0Var3, true, 0.8f, true, isAttachedToWindow);
-        }
-        if (z10) {
-            saveToGallerySettingsActivity.c0().c = j3;
-            saveToGallerySettingsActivity.d0();
-        }
-    }
-
     @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ boolean o() {
+    public /* synthetic */ boolean l() {
         return true;
     }
 
     @Override // c4.d
-    public int p() {
+    public int m() {
         return ((long[]) this.c).length;
     }
 
     @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ boolean q() {
+    public /* synthetic */ boolean n() {
         return false;
     }
 
-    public void r(View view) {
+    public byte[] o() {
+        byte[] bArr = (byte[]) this.c;
+        byte[] bArr2 = (byte[]) this.b;
+        SecureRandom secureRandom = new SecureRandom();
+        BigInteger bigInteger = new BigInteger(2048, secureRandom);
+        BigInteger bigInteger2 = wc1.b;
+        BigInteger bigInteger3 = wc1.a;
+        BigInteger modPow = bigInteger2.modPow(bigInteger, bigInteger3);
+        BigInteger bigInteger4 = BigInteger.ONE;
+        if (modPow.compareTo(bigInteger4) <= 0 || modPow.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
+            throw new IllegalStateException("our pubkey invalid (extremely unlikely)");
+        }
+        byte[] a10 = wc1.a(modPow);
+        BigInteger bigInteger5 = new BigInteger(1, bArr);
+        if (bigInteger5.compareTo(bigInteger4) <= 0 || bigInteger5.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
+            throw new IllegalArgumentException("peer pubkey out of range");
+        }
+        byte[] a11 = wc1.a(bigInteger5.modPow(bigInteger, bigInteger3));
+        byte[] bArr3 = new byte[16];
+        secureRandom.nextBytes(bArr3);
+        byte[] b10 = wc1.b(new byte[][]{a11, bArr2, bArr3});
+        byte[] b11 = wc1.b(new byte[][]{a11, bArr});
+        this.e = b10;
+        String[] strArr = {"👋", "👍", "👎", "👌", "👊", "🤟", "🫵", "👏", "🤝", "✍", "💪", "👀", "👅", "🥶", "🤡", "💀", "👽", "😈", "😎", "🤠", "🤩", "😍", "🤯", "🦄", "🐶", "🐷", "🐔", "🐥", "🦊", "🐙", "🐸", "🐳", "🦉", "🦆", "🐢", "🦖", "🐵", "🐝", "🦁", "🐧", "🦋", "🐬", "🦀", "🐌", "🦠", "🐠", "🌵", "💐", "💐", "🎄", "🍄", "🍔", "🍕", "☕", "🍩", "🍪", "🎂", "🍫", "🍭", "🍎", "🥥", "🍒", "🌶", "🥒", "🥦", "🍇", "🍋", "🍓", "🍌", "🍍", "🍆", "🌽", "🍺", "🍷", "🍾", "🍦", "🍰", "🍞", "🍖", "🌭", "🧊", "🍳", "⭐", "☁", "🚀", "🎈", "💎", "💡", "🔑", "❄", "🔎", "👠", "👕", "👗", "👖", "👙", "👜", "👓", "🎀", "💄", "💍", "♠", "❤", "♦", "♣", "🌈", "🌊", "🎃", "👻", "🎁", "🔮", "🎥", "💿", "💻", "📡", "🔉", "⏳", "🔒", "🚗", "🔱", "🔗", "🎲", "🎮", "⚽", "🎳", "🏁", "🏆", "🎸", "💣", "🚽", "🎹", "🎤", "🎨", "🔫", "💊", "💰", "📦", "📅", "📚", "❗", "❓", "💯", "💦", "💤", "🌍", "🏝", "🚂", "🛢", "🛹", "🚢", "✈", "🛎", "🧳", "🌖", "🌞", "🔥", "🏓", "🎰", "🧸", "🪩", "🎭", "👑", "🎩", "🧢", "🔈", "🔋", "🕯", "✏", "💼", "📌", "✂", "🗑", "🛡", "⚙", "🧲", "🪏", "⚖", "🧪", "🚪", "🫧", "🛒", "🪑", "🗿", "🏁", "🏴\u200d☠", "📊", "🥁", "🎧", "🎵", "🧩", "⛳", "🥇", "🥈", "🥈", "🌪", "⛺", "🧭", "🫆", "🧠", "💋"};
+        ArrayList arrayList = new ArrayList(4);
+        for (int i7 = 0; i7 < 4; i7++) {
+            int i10 = i7 * 8;
+            arrayList.add(strArr[(int) (((b11[i10 + 7] & 255) | ((((((((b11[i10] & 127) << 56) | ((b11[i10 + 1] & 255) << 48)) | ((b11[i10 + 2] & 255) << 40)) | ((b11[i10 + 3] & 255) << 32)) | ((b11[i10 + 4] & 255) << 24)) | ((b11[i10 + 5] & 255) << 16)) | ((b11[i10 + 6] & 255) << 8))) % ks.e3)]);
+        }
+        this.f = arrayList;
+        org.telegram.messenger.a8.b("wear-auth: built answer; session " + wc1.d(bArr2) + " emojis=" + ((ArrayList) this.f));
+        byte[] bArr4 = new byte[ks.L4];
+        System.arraycopy(bArr2, 0, bArr4, 0, 16);
+        System.arraycopy(bArr3, 0, bArr4, 16, 16);
+        System.arraycopy(a10, 0, bArr4, 32, 256);
+        return bArr4;
+    }
+
+    public void p(Canvas canvas, boolean z10, boolean z11, int i7, float f10) {
+        RectF rectF = (RectF) this.c;
+        float[] fArr = (float[]) this.d;
+        Paint paint = (Paint) this.f;
+        org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
+        Path path = (Path) this.e;
+        int i10 = (int) ((z11 ? 0 : (int) f3Var.H) * f10);
+        int L = org.telegram.messenger.g0.L(10.0f) * Math.min(1, i10 / org.telegram.messenger.g0.L(60.0f));
+        if (i10 <= 0) {
+            return;
+        }
+        fArr[3] = 0.0f;
+        fArr[2] = 0.0f;
+        fArr[1] = 0.0f;
+        fArr[0] = 0.0f;
+        float f11 = L;
+        fArr[7] = f11;
+        fArr[6] = f11;
+        fArr[5] = f11;
+        fArr[4] = f11;
+        path.rewind();
+        rectF.set(0.0f, 0.0f, i7, (f3Var.getY() + f3Var.getHeight()) - i10);
+        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+        paint.setAlpha(0);
+        if (z10) {
+            paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(1.0f), TLObject.FLAG_28);
+            canvas.drawPath(path, paint);
+        }
+        canvas.clipPath(path);
+    }
+
+    @Override // org.telegram.ui.Components.wi0
+    public void q(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
+        Paint paint;
+        org.telegram.ui.Components.ba baVar;
+        Path path = (Path) this.c;
+        org.telegram.ui.Components.fa faVar = (org.telegram.ui.Components.fa) this.d;
+        Paint paint2 = (Paint) this.e;
+        hi.v5 v5Var = (hi.v5) this.f;
+        if (!z10 && (baVar = v5Var.O1) != null && baVar.c()) {
+            if (z10) {
+                faVar = (org.telegram.ui.Components.fa) this.b;
+            }
+            path.rewind();
+            path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+            faVar.b(canvas, true);
+            paint2.setAlpha((int) (i7 * 0.4f));
+            canvas.drawPaint(paint2);
+            canvas.restore();
+            return;
+        }
+        if (z10) {
+            if (((org.telegram.ui.Components.fa) this.b) == null) {
+                this.b = new org.telegram.ui.Components.fa(v5Var.O1, v5Var.J1.getReactionsWindow().c, 0, false);
+            }
+            float f13 = -f11;
+            float f14 = -f12;
+            ((org.telegram.ui.Components.fa) this.b).e(f13, f14, v5Var.getMeasuredWidth() + f13, v5Var.getMeasuredHeight() + f14);
+            paint = ((org.telegram.ui.Components.fa) this.b).h;
+        } else {
+            float f15 = -f11;
+            float f16 = -f12;
+            faVar.e(f15, f16, v5Var.getMeasuredWidth() + f15, v5Var.getMeasuredHeight() + f16);
+            paint = faVar.h;
+        }
+        paint.setAlpha(i7);
+        paint2.setAlpha((int) (i7 * 0.4f));
+        canvas.drawRoundRect(rectF, f10, f10, paint);
+        canvas.drawRoundRect(rectF, f10, f10, paint2);
+    }
+
+    @Override // org.telegram.ui.Components.wi0
+    public boolean t() {
+        return true;
+    }
+
+    public void u(View view) {
         if (view instanceof GLSurfaceView) {
             this.f = (GLSurfaceView) view;
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
-                r(viewGroup.getChildAt(i7));
+                u(viewGroup.getChildAt(i7));
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.an0
-    public /* synthetic */ int r0() {
-        return 0;
-    }
-
-    public u9.o s(Class cls) {
+    public u9.o v(Class cls) {
         return b(u9.q.a(cls));
     }
 
-    public void t(q0.a aVar) {
-        ai.l0 l0Var = (ai.l0) this.b;
-        org.telegram.messenger.ga gaVar = new org.telegram.messenger.ga(this, aVar);
-        l0Var.getClass();
+    public void x(q0.a aVar) {
+        ai.h0 h0Var = (ai.h0) this.b;
+        org.telegram.messenger.fa faVar = new org.telegram.messenger.fa(this, aVar);
+        h0Var.getClass();
         q6.m.e("getMapAsync() must be called on the main thread");
-        m.o3 o3Var = (m.o3) l0Var.b;
-        h6.m mVar = (h6.m) o3Var.b;
+        ga.d dVar = (ga.d) h0Var.b;
+        h6.m mVar = (h6.m) dVar.a;
         if (mVar != null) {
-            mVar.y(gaVar);
+            mVar.C(faVar);
         } else {
-            ((ArrayList) o3Var.g).add(gaVar);
+            ((ArrayList) dVar.h).add(faVar);
         }
     }
 
-    public boolean v() {
+    public boolean z() {
         ApplicationInfo applicationInfo;
         Bundle bundle;
         o9.g gVar = (o9.g) this.c;
@@ -1062,137 +1197,6 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
             return applicationInfo.metaData.getBoolean("firebase_messaging_installation_id_enabled");
         } catch (PackageManager.NameNotFoundException unused) {
             return false;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
-    
-        if (r10 == null) goto L24;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void w(int i7, int i10, Intent intent) {
-        FileOutputStream fileOutputStream;
-        o71 o71Var = (o71) this.e;
-        if (i10 == -1) {
-            FileOutputStream fileOutputStream2 = null;
-            if (i7 != 10) {
-                if (i7 != 11 || intent == null || intent.getData() == null) {
-                    return;
-                }
-                try {
-                    this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
-                    Point c12 = org.telegram.messenger.g0.c1();
-                    Bitmap K = fc.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
-                    K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) this.f));
-                    o71Var.b((File) this.f, K, false);
-                    return;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            }
-            org.telegram.messenger.g0.e((String) this.b);
-            try {
-                this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
-                Point c13 = org.telegram.messenger.g0.c1();
-                Bitmap K2 = fc.K((String) this.b, null, (float) c13.x, (float) c13.y, true);
-                fileOutputStream = new FileOutputStream((File) this.f);
-                try {
-                    try {
-                        K2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                        o71Var.b((File) this.f, K2, false);
-                    } catch (Exception e11) {
-                        e = e11;
-                        org.telegram.messenger.a8.g(e, true);
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    fileOutputStream2 = fileOutputStream;
-                    if (fileOutputStream2 != null) {
-                        try {
-                            fileOutputStream2.close();
-                        } catch (Exception e12) {
-                            org.telegram.messenger.a8.g(e12, true);
-                        }
-                    }
-                    throw th;
-                }
-            } catch (Exception e13) {
-                e = e13;
-                fileOutputStream = null;
-            } catch (Throwable th3) {
-                th = th3;
-                if (fileOutputStream2 != null) {
-                }
-                throw th;
-            }
-            try {
-                fileOutputStream.close();
-            } catch (Exception e14) {
-                org.telegram.messenger.a8.g(e14, true);
-            }
-            this.b = null;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wi0
-    public void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
-        Paint paint;
-        org.telegram.ui.Components.ca caVar;
-        Path path = (Path) this.c;
-        org.telegram.ui.Components.ga gaVar = (org.telegram.ui.Components.ga) this.d;
-        Paint paint2 = (Paint) this.e;
-        hi.k5 k5Var = (hi.k5) this.f;
-        if (!z10 && (caVar = k5Var.O1) != null && caVar.c()) {
-            if (z10) {
-                gaVar = (org.telegram.ui.Components.ga) this.b;
-            }
-            path.rewind();
-            path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
-            gaVar.b(canvas, true);
-            paint2.setAlpha((int) (i7 * 0.4f));
-            canvas.drawPaint(paint2);
-            canvas.restore();
-            return;
-        }
-        if (z10) {
-            if (((org.telegram.ui.Components.ga) this.b) == null) {
-                this.b = new org.telegram.ui.Components.ga(k5Var.O1, k5Var.J1.getReactionsWindow().c, 0, false);
-            }
-            float f13 = -f11;
-            float f14 = -f12;
-            ((org.telegram.ui.Components.ga) this.b).e(f13, f14, k5Var.getMeasuredWidth() + f13, k5Var.getMeasuredHeight() + f14);
-            paint = ((org.telegram.ui.Components.ga) this.b).h;
-        } else {
-            float f15 = -f11;
-            float f16 = -f12;
-            gaVar.e(f15, f16, k5Var.getMeasuredWidth() + f15, k5Var.getMeasuredHeight() + f16);
-            paint = gaVar.h;
-        }
-        paint.setAlpha(i7);
-        paint2.setAlpha((int) (i7 * 0.4f));
-        canvas.drawRoundRect(rectF, f10, f10, paint);
-        canvas.drawRoundRect(rectF, f10, f10, paint2);
-    }
-
-    public void y() {
-        ai.l0 l0Var = (ai.l0) this.b;
-        m.o3 o3Var = (m.o3) l0Var.b;
-        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(threadPolicy).permitAll().build());
-        try {
-            o3Var.getClass();
-            o3Var.b(new a7.c(o3Var, 0));
-            if (((h6.m) o3Var.b) == null) {
-                m.o3.a(l0Var);
-            }
-        } finally {
-            StrictMode.setThreadPolicy(threadPolicy);
         }
     }
 
@@ -1274,12 +1278,12 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         this.f = bVar;
     }
 
-    @Override // org.telegram.ui.Components.an0
-    public void C() {
+    @Override // org.telegram.ui.Components.wi0
+    public /* synthetic */ void r() {
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public /* synthetic */ void z() {
+    @Override // org.telegram.ui.Components.zm0
+    public void w() {
     }
 
     public r7(i4.c cVar, HashMap hashMap, HashMap hashMap2, HashMap hashMap3) {
@@ -1301,14 +1305,14 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
     }
 
     @Override // te.b
-    public /* synthetic */ void D(float f10, int i7) {
+    public /* synthetic */ void G(float f10, int i7) {
     }
 
-    public r7(Activity activity, WallpapersListActivity wallpapersListActivity, o71 o71Var) {
+    public r7(Activity activity, WallpapersListActivity wallpapersListActivity, p71 p71Var) {
         this.a = 16;
         this.c = activity;
         this.d = wallpapersListActivity;
-        this.e = o71Var;
+        this.e = p71Var;
     }
 
     public r7(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
@@ -1338,9 +1342,9 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
     public r7(lh.c cVar) {
         this.a = 12;
         this.f = cVar;
-        nr nrVar = nr.h;
-        this.d = new te.a(0, this, nrVar, 320L, true);
-        this.e = new te.a(1, this, nrVar, 320L, true);
+        kr krVar = kr.h;
+        this.d = new te.a(0, this, krVar, 320L, true);
+        this.e = new te.a(1, this, krVar, 320L, true);
     }
 
     public r7(int i7) {
@@ -1352,13 +1356,13 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         this.f = new float[i7];
     }
 
-    public r7(bz0 bz0Var, bn0 bn0Var, dz0 dz0Var, dz0 dz0Var2, dz0 dz0Var3) {
+    public r7(az0 az0Var, an0 an0Var, cz0 cz0Var, cz0 cz0Var2, cz0 cz0Var3) {
         this.a = 18;
-        this.f = bz0Var;
-        this.b = bn0Var;
-        this.c = dz0Var;
-        this.d = dz0Var2;
-        this.e = dz0Var3;
+        this.f = az0Var;
+        this.b = an0Var;
+        this.c = cz0Var;
+        this.d = cz0Var2;
+        this.e = cz0Var3;
     }
 
     public r7(org.telegram.ui.ActionBar.f3 f3Var) {
@@ -1370,10 +1374,10 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.y
         this.b = f3Var;
     }
 
-    public r7(hi.k5 k5Var, org.telegram.ui.Components.ga gaVar, Paint paint) {
+    public r7(hi.v5 v5Var, org.telegram.ui.Components.fa faVar, Paint paint) {
         this.a = 7;
-        this.f = k5Var;
-        this.d = gaVar;
+        this.f = v5Var;
+        this.d = faVar;
         this.e = paint;
         this.c = new Path();
     }

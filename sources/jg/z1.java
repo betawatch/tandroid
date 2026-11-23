@@ -7,18 +7,18 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.telegram.messenger.i10;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.po0;
+import org.telegram.ui.Components.oo0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class z1 {
     public y1 a;
@@ -37,7 +37,7 @@ public class z1 {
     public final a0.h h = new a0.h();
     public final a0.h i = new a0.h();
     public final ArrayList j = new ArrayList();
-    public final int m = k10.t0;
+    public final int m = i10.t0;
     public boolean p = true;
     public boolean s = false;
 
@@ -75,7 +75,7 @@ public class z1 {
             z10 = true;
         }
         if (z10) {
-            ur.a0(this.m).a.c(new hi.c(27, this, this.q));
+            tr.a0(this.m).a.c(new hi.c(29, this, this.q));
         }
     }
 
@@ -88,7 +88,7 @@ public class z1 {
     public final void c() {
         this.q = new ArrayList();
         this.r = new HashMap();
-        ur.a0(this.m).a.c(new w1(this, 0));
+        tr.a0(this.m).a.c(new w1(this, 0));
     }
 
     public boolean d(TLObject tLObject) {
@@ -116,8 +116,8 @@ public class z1 {
                 if (obj instanceof g0) {
                     obj = ((g0) obj).a;
                 }
-                if (obj instanceof po0) {
-                    obj = ((po0) obj).b;
+                if (obj instanceof oo0) {
+                    obj = ((oo0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -205,7 +205,7 @@ public class z1 {
             arrayList2.clear();
             arrayList5.clear();
             hVar3.b();
-            this.a.r(i10);
+            this.a.v(i10);
             return;
         }
         ArrayList arrayList6 = new ArrayList();
@@ -224,7 +224,7 @@ public class z1 {
                 tL_channels_getParticipants.filter.q = str;
                 tL_channels_getParticipants.limit = 50;
                 tL_channels_getParticipants.offset = 0;
-                tL_channels_getParticipants.channel = np.u1(i11).j1(j3);
+                tL_channels_getParticipants.channel = mp.u1(i11).j1(j3);
                 z17 = z13;
                 arrayList6.add(new Pair(tL_channels_getParticipants, new o8(this, str, z17, 2)));
             } else {
@@ -254,7 +254,7 @@ public class z1 {
                     size = arrayList7.size();
                     z20 = false;
                     for (i13 = 0; i13 < size; i13++) {
-                        TLRPC.User c22 = np.u1(i11).c2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
+                        TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
                         if (c22 != null && (str2 = c22.phone) != null && str2.startsWith(d)) {
                             if (!z20) {
                                 z20 = c22.phone.length() == d.length() ? z16 : false;
@@ -322,11 +322,11 @@ public class z1 {
                                             a0.h hVar4 = z1Var2.f;
                                             y1 y1Var = z1Var2.a;
                                             if (y1Var != null) {
-                                                a0.h d12 = y1Var.d1();
-                                                if (d12 != null) {
-                                                    int m10 = d12.m();
+                                                a0.h u12 = y1Var.u1();
+                                                if (u12 != null) {
+                                                    int m10 = u12.m();
                                                     for (int i19 = 0; i19 < m10; i19++) {
-                                                        TLRPC.User user = (TLRPC.User) hVar4.f(d12.j(i19));
+                                                        TLRPC.User user = (TLRPC.User) hVar4.f(u12.j(i19));
                                                         if (user != null) {
                                                             arrayList18.remove(user);
                                                             arrayList17.remove(user);
@@ -334,11 +334,11 @@ public class z1 {
                                                         }
                                                     }
                                                 }
-                                                a0.h K0 = z1Var2.a.K0();
-                                                if (K0 != null) {
-                                                    int m11 = K0.m();
+                                                a0.h Y0 = z1Var2.a.Y0();
+                                                if (Y0 != null) {
+                                                    int m11 = Y0.m();
                                                     for (int i20 = 0; i20 < m11; i20++) {
-                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(K0.j(i20));
+                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(Y0.j(i20));
                                                         if (user2 != null) {
                                                             arrayList18.remove(user2);
                                                             arrayList17.remove(user2);
@@ -347,7 +347,7 @@ public class z1 {
                                                     }
                                                 }
                                             }
-                                            z1Var2.a.r(i17);
+                                            z1Var2.a.v(i17);
                                             Runnable runnable3 = runnable2;
                                             if (runnable3 != null) {
                                                 runnable3.run();
@@ -367,7 +367,7 @@ public class z1 {
                 if (z19) {
                     return;
                 }
-                this.a.r(i10);
+                this.a.v(i10);
                 return;
             }
             TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
@@ -412,14 +412,14 @@ public class z1 {
                     ArrayList arrayList12 = z1Var.d;
                     ArrayList arrayList13 = z1Var.e;
                     a0.h hVar7 = z1Var.f;
-                    if (z1Var.a.v1(i10) && tL_error == null) {
+                    if (z1Var.a.W1(i10) && tL_error == null) {
                         TLRPC.TL_contacts_found tL_contacts_found2 = (TLRPC.TL_contacts_found) tLObject2;
                         arrayList13.clear();
                         hVar7.b();
                         arrayList12.clear();
-                        np.u1(i16).Z3(tL_contacts_found2.chats, false);
-                        np.u1(i16).f4(tL_contacts_found2.users, false);
-                        ur.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                        mp.u1(i16).Z3(tL_contacts_found2.chats, false);
+                        mp.u1(i16).f4(tL_contacts_found2.users, false);
+                        tr.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         a0.h hVar8 = new a0.h();
                         a0.h hVar9 = new a0.h();
                         for (int i17 = 0; i17 < tL_contacts_found2.chats.size(); i17++) {

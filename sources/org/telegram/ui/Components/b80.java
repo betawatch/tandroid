@@ -1,30 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class b80 extends ap0 {
-    public final /* synthetic */ g80 V2;
+public final class b80 extends d9 {
+    public final /* synthetic */ di.d1 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b80(g80 g80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, null, str, false, str2, false, h6Var);
-        this.V2 = g80Var;
+    public b80(di.d1 d1Var, Context context) {
+        super(context, false);
+        this.e = d1Var;
     }
 
-    @Override // org.telegram.ui.Components.ap0
-    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.hd.a0(null, null, 2131748994, org.telegram.messenger.hd.G(i7, "Chats", new Object[0]));
-            } else {
-                long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == org.telegram.messenger.k10.i(this.a).e()) ? org.telegram.messenger.hd.N0(2131748992, null) : org.telegram.messenger.hd.a0(null, null, 2131748991, org.telegram.messenger.np.u1(this.a).D1(j3, true));
-            }
-            this.V2.e(org.telegram.messenger.g0.W2(a02));
-        }
+    @Override // org.telegram.ui.Components.d9, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(Math.min(3, ((d80) this.e.d).x) == 0 ? 0 : com.google.android.gms.internal.vision.e2.v(r4, 1, 20, 32)), TLObject.FLAG_30), i10);
     }
 }

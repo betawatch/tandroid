@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qp implements org.telegram.messenger.pr, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0 {
+public final /* synthetic */ class qp implements org.telegram.messenger.or, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ rq b;
 
@@ -14,12 +14,12 @@ public final /* synthetic */ class qp implements org.telegram.messenger.pr, org.
     }
 
     @Override // org.telegram.ui.Components.rj0
-    public /* synthetic */ boolean b1(View view) {
+    public /* synthetic */ boolean U0(View view) {
         return false;
     }
 
     @Override // org.telegram.ui.Components.sj0
-    public boolean c(int i7, View view) {
+    public boolean b(int i7, View view) {
         rq rqVar = this.b;
         if (rqVar.getParentActivity() != null) {
             v4.i0 adapter = rqVar.c.getAdapter();
@@ -32,12 +32,12 @@ public final /* synthetic */ class qp implements org.telegram.messenger.pr, org.
     }
 
     @Override // org.telegram.ui.Components.rj0
-    public void f(float f10, float f11, int i7, View view) {
+    public void g(float f10, float f11, int i7, View view) {
         rq.a0(this.b, view, i7);
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.z0();
@@ -48,12 +48,12 @@ public final /* synthetic */ class qp implements org.telegram.messenger.pr, org.
         }
     }
 
-    @Override // org.telegram.messenger.pr
+    @Override // org.telegram.messenger.or
     public void run(long j3) {
         rq.Z(this.b, j3);
     }
 
     @Override // org.telegram.ui.Components.rj0
-    public /* synthetic */ void s0(View view, float f10, float f11) {
+    public /* synthetic */ void f0(View view, float f10, float f11) {
     }
 }

@@ -1,60 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class dy extends FrameLayout {
-    public float[] E;
-    public FrameLayout a;
-    public org.telegram.ui.ActionBar.m5 b;
-    public org.telegram.ui.ActionBar.m5 c;
-    public ImageView d;
-    public cy e;
-    public di.xb f;
-    public di.xb h;
-    public TextView n;
-    public org.telegram.ui.ActionBar.g2 r;
-    public String s;
-    public float w;
-    public ValueAnimator x;
-    public org.telegram.ui.ActionBar.g1 y;
+public final /* synthetic */ class dy implements org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
-    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        while (frameLayout != frameLayout2) {
-            float y10 = frameLayout.getY() + f10;
-            f11 += frameLayout.getX();
-            if (frameLayout instanceof ScrollView) {
-                y10 -= frameLayout.getScrollY();
-            }
-            f10 = y10;
-            if (!(frameLayout.getParent() instanceof View)) {
-                break;
-            }
-            frameLayout = (View) frameLayout.getParent();
-            if (!(frameLayout instanceof ViewGroup)) {
-                return;
-            }
-        }
-        fArr[0] = f11 - frameLayout2.getPaddingLeft();
-        fArr[1] = f10 - frameLayout2.getPaddingTop();
+    public /* synthetic */ dy(EditTextBoldCursor editTextBoldCursor, int i7) {
+        this.a = i7;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(127.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.v1(this.b);
+                break;
+            case 1:
+                org.telegram.messenger.g0.v1(this.b);
+                break;
+            default:
+                org.telegram.messenger.g0.v1(this.b);
+                break;
+        }
     }
 }

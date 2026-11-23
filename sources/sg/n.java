@@ -11,11 +11,11 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import c8.l9;
+import c8.m9;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n extends View {
     public final Paint a;
@@ -79,9 +79,9 @@ public final class n extends View {
         int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
         int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
         float f10 = width;
-        float a10 = l9.a(this.d * f10, L2, f10 - L2) + getPaddingLeft();
+        float a10 = m9.a(this.d * f10, L2, f10 - L2) + getPaddingLeft();
         float f11 = height;
-        float a11 = l9.a(this.e * f11, L2, f11 - L2) + getPaddingTop();
+        float a11 = m9.a(this.e * f11, L2, f11 - L2) + getPaddingTop();
         Rect rect = org.telegram.messenger.g0.Q;
         Drawable drawable = this.f;
         drawable.getPadding(rect);
@@ -91,7 +91,7 @@ public final class n extends View {
         drawable.setBounds(i7, i10, (int) (a10 + L + i11), (int) (a11 + L + i11));
         drawable.draw(canvas);
         canvas.drawCircle(a10, a11, L, paint);
-        tg.z0.A1(a10, a11, strokeWidth, i0.a.o(this.n.q1, ls.e4), canvas);
+        tg.d1.A1(a10, a11, strokeWidth, i0.a.o(this.n.q1, ks.e4), canvas);
     }
 
     @Override // android.view.View

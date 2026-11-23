@@ -24,20 +24,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.si;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
-import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class w7 extends View implements s9 {
+public final class w7 extends View implements r9 {
     public final boolean E;
     public int F;
     public int G;
@@ -96,10 +96,10 @@ public final class w7 extends View implements s9 {
             return new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i7).setBreakStrategy(0).setHyphenationFrequency(0);
-        if (hd.a0) {
-            alignment = zu0.a();
+        if (gd.a0) {
+            alignment = yu0.a();
         } else {
-            Layout.Alignment[] alignmentArr = zu0.a;
+            Layout.Alignment[] alignmentArr = yu0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -111,8 +111,8 @@ public final class w7 extends View implements s9 {
         }
         v7[] v7VarArr = this.r;
         CharSequence charSequence2 = v7VarArr[0].n;
-        Pattern pattern = si.U1;
-        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : si.M(si.d0(k10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), si.d0(k10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
+        Pattern pattern = ri.U1;
+        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : ri.M(ri.d0(i10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), ri.d0(i10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
             v7 v7Var = v7VarArr[0];
             if (v7Var.o == s7Var && v7Var.p == s7Var2) {
                 v7Var.q = z10;
@@ -156,9 +156,9 @@ public final class w7 extends View implements s9 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.H, 0.0f);
         this.J = ofFloat;
         ofFloat.addUpdateListener(new ah.g(this, 24));
-        this.J.addListener(new ai.k0(this, 17));
+        this.J.addListener(new ai.g0(this, 17));
         this.J.setDuration(180L);
-        this.J.setInterpolator(nr.g);
+        this.J.setInterpolator(kr.g);
         this.J.start();
     }
 
@@ -201,7 +201,7 @@ public final class w7 extends View implements s9 {
         s7 s7Var;
         boolean z14;
         x7 x7Var = this.K;
-        t9 t9Var = x7Var.a0;
+        s9 s9Var = x7Var.a0;
         if (motionEvent.getAction() == 0) {
             x7Var.h0 = motionEvent.getX();
             x7Var.i0 = motionEvent.getY();
@@ -297,32 +297,32 @@ public final class w7 extends View implements s9 {
                 if (z10 && (x7Var.w0 || (v7Var2 = v7VarArr[0]) == null || v7Var2.g == null)) {
                     float f12 = this.F;
                     float f13 = this.G + i7;
-                    Rect rect = t9Var.B;
-                    s9 s9Var = t9Var.p0;
-                    staticTextLayout = s9Var.getStaticTextLayout();
+                    Rect rect = s9Var.B;
+                    r9 r9Var = s9Var.p0;
+                    staticTextLayout = r9Var.getStaticTextLayout();
                     if (staticTextLayout != null) {
                         rect.setEmpty();
-                        t9Var.X = null;
+                        s9Var.X = null;
                     } else {
-                        t9Var.X = s9Var;
+                        s9Var.X = r9Var;
                         int i13 = (int) f12;
-                        t9Var.c = i13;
+                        s9Var.c = i13;
                         int i14 = (int) f13;
-                        t9Var.d = i14;
-                        org.telegram.ui.Cells.m9 m9Var = t9Var.a0;
-                        m9Var.d = staticTextLayout;
-                        m9Var.c = f12;
-                        m9Var.b = f13;
-                        m9Var.a = 0;
+                        s9Var.d = i14;
+                        org.telegram.ui.Cells.l9 l9Var = s9Var.a0;
+                        l9Var.d = staticTextLayout;
+                        l9Var.c = f12;
+                        l9Var.b = f13;
+                        l9Var.a = 0;
                         rect.set(i13, i14, (int) (f12 + staticTextLayout.getWidth()), (int) (f13 + staticTextLayout.getHeight()));
                     }
-                    t9Var.M(motionEvent);
+                    s9Var.M(motionEvent);
                 }
-                if (t9Var.x() && z10 && this.E) {
+                if (s9Var.x() && z10 && this.E) {
                     z13 = false;
-                    if (((GestureDetector) ((jn) v7VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
+                    if (((GestureDetector) ((nd0) v7VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
-                        t9Var.f(false);
+                        s9Var.f(false);
                         return true;
                     }
                     z12 = true;
@@ -361,14 +361,14 @@ public final class w7 extends View implements s9 {
         if (z10) {
             float f122 = this.F;
             float f132 = this.G + i7;
-            Rect rect2 = t9Var.B;
-            s9 s9Var2 = t9Var.p0;
-            staticTextLayout = s9Var2.getStaticTextLayout();
+            Rect rect2 = s9Var.B;
+            r9 r9Var2 = s9Var.p0;
+            staticTextLayout = r9Var2.getStaticTextLayout();
             if (staticTextLayout != null) {
             }
-            t9Var.M(motionEvent);
+            s9Var.M(motionEvent);
         }
-        if (t9Var.x()) {
+        if (s9Var.x()) {
         }
         z12 = true;
         z13 = false;
@@ -388,12 +388,12 @@ public final class w7 extends View implements s9 {
         return this.c;
     }
 
-    @Override // org.telegram.ui.Cells.s9
+    @Override // org.telegram.ui.Cells.r9
     public Layout getStaticTextLayout() {
         return this.r[0].e;
     }
 
-    @Override // org.telegram.ui.Cells.s9
+    @Override // org.telegram.ui.Cells.r9
     public CharSequence getText() {
         return this.r[0].n;
     }
@@ -404,8 +404,8 @@ public final class w7 extends View implements s9 {
         int i7 = 0;
         v7 v7Var = this.r[0];
         w7 w7Var = v7Var.v;
-        org.telegram.ui.Components.y5.release(w7Var, v7Var.d);
-        org.telegram.ui.Components.y5.release(w7Var, v7Var.f);
+        org.telegram.ui.Components.x5.release(w7Var, v7Var.d);
+        org.telegram.ui.Components.x5.release(w7Var, v7Var.f);
         if (v7Var.h == null) {
             return;
         }
@@ -416,7 +416,7 @@ public final class w7 extends View implements s9 {
             }
             t7 t7Var = t7VarArr[i7];
             if (t7Var != null) {
-                org.telegram.ui.Components.y5.release(w7Var, t7Var.a);
+                org.telegram.ui.Components.x5.release(w7Var, t7Var.a);
             }
             i7++;
         }
@@ -426,7 +426,7 @@ public final class w7 extends View implements s9 {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.w != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
@@ -611,9 +611,9 @@ public final class w7 extends View implements s9 {
     
         r3.f(true);
         r1.b = null;
-        r13 = new org.telegram.ui.Components.n80(r9[0], null, r20.getX(), r20.getY(), 0);
+        r13 = new org.telegram.ui.Components.k80(r9[0], null, r20.getX(), r20.getY(), 0);
         r1.a = r13;
-        r13.d(org.telegram.ui.ActionBar.m6.r1(0.2f, -1));
+        r13.d(org.telegram.ui.ActionBar.n6.r1(0.2f, -1));
         r3.b(r1.a, null);
         r9 = r5.getSpanStart(r1.a.i);
         r12 = r5.getSpanEnd(r1.a.i);
@@ -635,7 +635,7 @@ public final class w7 extends View implements s9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0179, code lost:
     
-        r5 = (org.telegram.ui.Components.y5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.y5.class);
+        r5 = (org.telegram.ui.Components.x5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.x5.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0181, code lost:
     
@@ -720,7 +720,7 @@ public final class w7 extends View implements s9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.r41.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.q41.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0198, code lost:
     
@@ -749,7 +749,7 @@ public final class w7 extends View implements s9 {
         if (!this.K.t0 && (v7VarArr = this.r) != null) {
             v7 v7Var = v7VarArr[0];
             if (v7Var.e != null) {
-                n2.o0 o0Var = v7Var.c;
+                n2.p0 p0Var = v7Var.c;
                 w7 w7Var = v7Var.v;
                 StaticLayout staticLayout = w7Var.w;
                 x7 x7Var = w7Var.K;

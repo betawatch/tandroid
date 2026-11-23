@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class fm extends vf.b {
     public final /* synthetic */ int d;
@@ -54,7 +54,7 @@ public final class fm extends vf.b {
                 break;
             default:
                 if (!z10) {
-                    org.telegram.messenger.g0.h3(new eh(3, this, (org.telegram.ui.Cells.v0) this.e), 250L);
+                    org.telegram.messenger.g0.h3(new ah(5, this, (org.telegram.ui.Cells.v0) this.e), 250L);
                     break;
                 }
                 break;

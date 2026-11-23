@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a3 extends Dialog {
     public final j3 a;
@@ -32,11 +32,11 @@ public final class a3 extends Dialog {
         k3 d = j3Var.d();
         y2 y2Var = new y2(this, getContext());
         this.c = y2Var;
-        paint.setColor(m6.x0(null, m6.a7, false));
+        paint.setColor(n6.x0(null, n6.a7, false));
         z2 z2Var = new z2(d);
         this.b = z2Var;
         setContentView(z2Var, new ViewGroup.LayoutParams(-1, -1));
-        z2Var.addView(y2Var, ma.e(-1, -2, 80));
+        z2Var.addView(y2Var, na.e(-1, -2, 80));
         z2Var.setClipToPadding(false);
     }
 
@@ -56,7 +56,7 @@ public final class a3 extends Dialog {
                 z2 z2Var = a3Var.b;
                 View view = (View) z2Var.a;
                 org.telegram.messenger.g0.E2(view);
-                z2Var.addView(view, ma.e(-1, -1, ls.E1));
+                z2Var.addView(view, na.e(-1, -1, ks.E1));
             }
         }
     }

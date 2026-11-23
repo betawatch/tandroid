@@ -17,18 +17,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.cu0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.rh0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class t8 extends du0 {
+public final class t8 extends cu0 {
     public float g0;
     public float h0;
     public float i0;
@@ -66,7 +66,7 @@ public final class t8 extends du0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -105,7 +105,7 @@ public final class t8 extends du0 {
         e7 e7Var3;
         int i11;
         z3 z11;
-        sh0 sh0Var;
+        rh0 rh0Var;
         boolean z12;
         float f24;
         f9 f9Var = this.s0;
@@ -130,9 +130,9 @@ public final class t8 extends du0 {
         if (currentPeerView2 != null) {
             v3 v3Var2 = currentPeerView2.Y0;
             if (f9Var.V0) {
-                v3Var2.a.getImageReceiver().O0(f9Var.V == 1.0f, true);
+                v3Var2.a.getImageReceiver().P0(f9Var.V == 1.0f, true);
             } else {
-                v3Var2.a.getImageReceiver().O0(true, false);
+                v3Var2.a.getImageReceiver().P0(true, false);
             }
             if (f9Var.h1) {
                 f9Var.h1 = false;
@@ -316,24 +316,24 @@ public final class t8 extends du0 {
                             float f40 = imageReceiver.M0;
                             float f41 = imageReceiver.N0;
                             float f42 = imageReceiver.O0;
-                            imageReceiver.A0(rectF11);
+                            imageReceiver.B0(rectF11);
                             float f43 = 1.0f - f29;
                             c9Var.c.setAlpha(f43);
                             f20 = f29;
                             rectF4 = rectF3;
-                            c9Var.c.O0(z10, false);
+                            c9Var.c.P0(z10, false);
                             int saveCount = canvas.getSaveCount();
                             z8 z8Var2 = c9Var.f;
                             if (z8Var2 != null) {
-                                z8Var2.o(f43, canvas, rectF11, f9Var.F);
+                                z8Var2.n(f43, canvas, rectF11, f9Var.F);
                             }
                             c9Var.c.h(canvas, null);
                             a9 a9Var2 = c9Var.e;
                             if (a9Var2 != null) {
                                 a9Var2.m(canvas, rectF11, f43);
                             }
-                            c9Var.c.O0(z16, false);
-                            c9Var.c.y0(f39, f40, f41, f42);
+                            c9Var.c.P0(z16, false);
+                            c9Var.c.z0(f39, f40, f41, f42);
                             canvas.restoreToCount(saveCount);
                         }
                         canvas.restore();
@@ -362,7 +362,7 @@ public final class t8 extends du0 {
                             org.telegram.messenger.g0.Z1(rectF4, rectF9, f9Var.V, rectF11);
                             int saveCount2 = canvas.getSaveCount();
                             if (c9Var != null && (z8Var = c9Var.f) != null) {
-                                z8Var.o(1.0f - f20, canvas, rectF11, f9Var.F);
+                                z8Var.n(1.0f - f20, canvas, rectF11, f9Var.F);
                             }
                             if (f9Var.V0) {
                                 boolean z17 = (c9Var == null || c9Var.l == null) ? false : true;
@@ -370,11 +370,11 @@ public final class t8 extends du0 {
                                     f21 = f20;
                                 } else {
                                     if (c9Var != null && (e7Var2 = c9Var.m) != null && e7Var2.w) {
-                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.g0.L(4.0f), rectF11.top - org.telegram.messenger.g0.L(4.0f), rectF11.right + org.telegram.messenger.g0.L(4.0f), rectF11.bottom + org.telegram.messenger.g0.L(4.0f), ls.e4, 31);
+                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.g0.L(4.0f), rectF11.top - org.telegram.messenger.g0.L(4.0f), rectF11.right + org.telegram.messenger.g0.L(4.0f), rectF11.bottom + org.telegram.messenger.g0.L(4.0f), ks.e4, 31);
                                     }
-                                    t3Var2.getImageReceiver().A0(rectF11);
-                                    t3Var2.getImageReceiver().J0((int) org.telegram.messenger.g0.T1(rectF11.width() / 2.0f, ((c9Var == null || c9Var.b == null) ? null : Integer.valueOf((int) (c9Var.b.X0[0] * ((!c9Var.n || (view = c9Var.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) c9Var.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - f9Var.V));
-                                    t3Var2.getImageReceiver().O0(true, false);
+                                    t3Var2.getImageReceiver().B0(rectF11);
+                                    t3Var2.getImageReceiver().K0((int) org.telegram.messenger.g0.T1(rectF11.width() / 2.0f, ((c9Var == null || c9Var.b == null) ? null : Integer.valueOf((int) (c9Var.b.X0[0] * ((!c9Var.n || (view = c9Var.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) c9Var.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - f9Var.V));
+                                    t3Var2.getImageReceiver().P0(true, false);
                                     float f46 = z17 ? f9Var.V : 1.0f;
                                     if (c9Var == null || c9Var.k >= 1.0f || (paint = c9Var.j) == null) {
                                         f21 = f20;
@@ -389,7 +389,7 @@ public final class t8 extends du0 {
                                     v3Var.b(f9Var.V, canvas, rectF11, !f9.A1);
                                     t3Var2.getImageReceiver().h(canvas, null);
                                     t3Var2.getImageReceiver().setAlpha(f46);
-                                    t3Var2.getImageReceiver().O0(false, false);
+                                    t3Var2.getImageReceiver().P0(false, false);
                                     if (c9Var != null && (e7Var = c9Var.m) != null && e7Var.w) {
                                         RectF rectF12 = org.telegram.messenger.g0.P;
                                         rectF12.set(rectF11);
@@ -399,19 +399,19 @@ public final class t8 extends du0 {
                                         if (f9Var.V != f23 && z17) {
                                             ImageReceiver imageReceiver2 = c9Var.l;
                                             RectF rectF13 = rectF2;
-                                            rectF13.set(imageReceiver2.L0, imageReceiver2.M0, imageReceiver2.y(), c9Var.l.A());
+                                            rectF13.set(imageReceiver2.L0, imageReceiver2.M0, imageReceiver2.z(), c9Var.l.B());
                                             ImageReceiver imageReceiver3 = c9Var.l;
                                             int i15 = imageReceiver3.X0[0];
                                             boolean z18 = imageReceiver3.R0;
-                                            imageReceiver3.A0(rectF11);
-                                            c9Var.l.J0((int) (rectF11.width() / 2.0f));
-                                            c9Var.l.O0(true, false);
+                                            imageReceiver3.B0(rectF11);
+                                            c9Var.l.K0((int) (rectF11.width() / 2.0f));
+                                            c9Var.l.P0(true, false);
                                             canvas.saveLayerAlpha(rectF11, (int) ((1.0f - f9Var.V) * f11), 31);
                                             c9Var.l.h(canvas, null);
                                             canvas.restore();
-                                            c9Var.l.O0(z18, false);
-                                            c9Var.l.A0(rectF13);
-                                            c9Var.l.J0(i15);
+                                            c9Var.l.P0(z18, false);
+                                            c9Var.l.B0(rectF13);
+                                            c9Var.l.K0(i15);
                                         }
                                         if (c9Var != null && (a9Var = c9Var.e) != null) {
                                             a9Var.m(canvas, rectF11, 1.0f - f21);
@@ -422,19 +422,19 @@ public final class t8 extends du0 {
                                 if (f9Var.V != f23) {
                                     ImageReceiver imageReceiver22 = c9Var.l;
                                     RectF rectF132 = rectF2;
-                                    rectF132.set(imageReceiver22.L0, imageReceiver22.M0, imageReceiver22.y(), c9Var.l.A());
+                                    rectF132.set(imageReceiver22.L0, imageReceiver22.M0, imageReceiver22.z(), c9Var.l.B());
                                     ImageReceiver imageReceiver32 = c9Var.l;
                                     int i152 = imageReceiver32.X0[0];
                                     boolean z182 = imageReceiver32.R0;
-                                    imageReceiver32.A0(rectF11);
-                                    c9Var.l.J0((int) (rectF11.width() / 2.0f));
-                                    c9Var.l.O0(true, false);
+                                    imageReceiver32.B0(rectF11);
+                                    c9Var.l.K0((int) (rectF11.width() / 2.0f));
+                                    c9Var.l.P0(true, false);
                                     canvas.saveLayerAlpha(rectF11, (int) ((1.0f - f9Var.V) * f11), 31);
                                     c9Var.l.h(canvas, null);
                                     canvas.restore();
-                                    c9Var.l.O0(z182, false);
-                                    c9Var.l.A0(rectF132);
-                                    c9Var.l.J0(i152);
+                                    c9Var.l.P0(z182, false);
+                                    c9Var.l.B0(rectF132);
+                                    c9Var.l.K0(i152);
                                 }
                                 if (c9Var != null) {
                                     a9Var.m(canvas, rectF11, 1.0f - f21);
@@ -456,7 +456,7 @@ public final class t8 extends du0 {
                                     canvas.save();
                                 }
                                 canvas.translate(f9Var.L, f9Var.M);
-                                ((org.telegram.ui.Cells.u2) f9Var.N).G(canvas);
+                                ((org.telegram.ui.Cells.u2) f9Var.N).I(canvas);
                                 canvas.restore();
                             }
                         }
@@ -469,13 +469,13 @@ public final class t8 extends du0 {
                             f9Var.d = false;
                             f9.x1 = true;
                             f9Var.c0 = f9Var.X;
-                            if (c9Var.d != null && (z11 = f9Var.z()) != null && (sh0Var = z11.Y0.d) != null) {
-                                sh0 sh0Var2 = c9Var.d;
-                                sh0Var.c = sh0Var2.c;
-                                sh0Var.f = sh0Var2.f;
-                                sh0Var.b = sh0Var2.b;
-                                sh0Var.a = System.currentTimeMillis();
-                                sh0Var.c();
+                            if (c9Var.d != null && (z11 = f9Var.z()) != null && (rh0Var = z11.Y0.d) != null) {
+                                rh0 rh0Var2 = c9Var.d;
+                                rh0Var.c = rh0Var2.c;
+                                rh0Var.f = rh0Var2.f;
+                                rh0Var.b = rh0Var2.b;
+                                rh0Var.a = System.currentTimeMillis();
+                                rh0Var.c();
                             }
                             f9Var.F = true;
                             float[] fArr3 = new float[i10];
@@ -497,7 +497,7 @@ public final class t8 extends du0 {
                             f9Var.G.addListener(new o8(f9Var, i11));
                             f9Var.G.setStartDelay(40L);
                             f9Var.G.setDuration(250L);
-                            f9Var.G.setInterpolator(nr.f);
+                            f9Var.G.setInterpolator(kr.f);
                             f9Var.G.start();
                             if (!arrayList.isEmpty()) {
                                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
@@ -642,7 +642,7 @@ public final class t8 extends du0 {
                 ofFloat.addUpdateListener(new q8(this, i10));
                 f9Var.H.addListener(new r8(this, i10));
                 f9Var.H.setDuration(250L);
-                f9Var.H.setInterpolator(nr.f);
+                f9Var.H.setInterpolator(kr.f);
                 f9Var.H.start();
             }
             if (f9Var.W >= 0.3f) {
@@ -657,15 +657,15 @@ public final class t8 extends du0 {
         if (motionEvent.getAction() == 0) {
             f9Var.b0 = false;
             if (currentPeerView != null) {
-                bi.t2 t2Var = currentPeerView.i0;
+                bi.v2 v2Var = currentPeerView.i0;
                 k8 k8Var = currentPeerView.m0;
                 c3 c3Var = currentPeerView.M0;
-                hi.l3 l3Var = currentPeerView.p0;
-                if (l3Var != null && l3Var.W && k8Var != null && !l3Var.D0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(k8Var, motionEvent)) {
+                hi.u3 u3Var = currentPeerView.p0;
+                if (u3Var != null && u3Var.W && k8Var != null && !u3Var.D0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(k8Var, motionEvent)) {
                     currentPeerView.p0.f(true);
                 }
-                hi.l3 l3Var2 = currentPeerView.q0;
-                if (l3Var2 != null && l3Var2.W && t2Var != null && !l3Var2.D0.contains(motionEvent.getX() - (currentPeerView.q0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.q0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(t2Var, motionEvent)) {
+                hi.u3 u3Var2 = currentPeerView.q0;
+                if (u3Var2 != null && u3Var2.W && v2Var != null && !u3Var2.D0.contains(motionEvent.getX() - (currentPeerView.q0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.q0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(v2Var, motionEvent)) {
                     currentPeerView.q0.f(true);
                 }
             }
@@ -750,7 +750,7 @@ public final class t8 extends du0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         f9 f9Var = this.s0;
@@ -759,23 +759,23 @@ public final class t8 extends du0 {
             org.telegram.messenger.g0.Z2(g2Var.getParentActivity(), g2Var.getClassGuid());
         }
         setTag(R.id.bulletin_delegate_tag, new s8(this));
-        ls.f(f9Var.h).c(f9Var, ls.A5);
-        ls.f(f9Var.h).c(f9Var, ls.y5);
-        ls.f(f9Var.h).c(f9Var, ls.d1);
-        ls.f(f9Var.h).c(f9Var, ls.c1);
-        ls.f(f9Var.h).c(f9Var, ls.z5);
+        ks.f(f9Var.h).c(f9Var, ks.A5);
+        ks.f(f9Var.h).c(f9Var, ks.y5);
+        ks.f(f9Var.h).c(f9Var, ks.d1);
+        ks.f(f9Var.h).c(f9Var, ks.c1);
+        ks.f(f9Var.h).c(f9Var, ks.z5);
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
         f9 f9Var = this.s0;
-        ls.f(f9Var.h).n(f9Var, ls.A5);
-        ls.f(f9Var.h).n(f9Var, ls.y5);
-        ls.f(f9Var.h).n(f9Var, ls.d1);
-        ls.f(f9Var.h).n(f9Var, ls.c1);
-        ls.f(f9Var.h).n(f9Var, ls.z5);
+        ks.f(f9Var.h).n(f9Var, ks.A5);
+        ks.f(f9Var.h).n(f9Var, ks.y5);
+        ks.f(f9Var.h).n(f9Var, ks.d1);
+        ks.f(f9Var.h).n(f9Var, ks.c1);
+        ks.f(f9Var.h).n(f9Var, ks.z5);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:129:0x0188  */
@@ -815,7 +815,7 @@ public final class t8 extends du0 {
                 a2Var2.setAllowTouches(false);
             }
             if (f9Var.g0 && !f9Var.I0 && f9Var.m1) {
-                f2.a aVar2 = new f2.a(this, 23);
+                f2.a aVar2 = new f2.a(this, 22);
                 f9Var.n1 = aVar2;
                 org.telegram.messenger.g0.h3(aVar2, 150L);
             }
@@ -829,7 +829,7 @@ public final class t8 extends du0 {
             if (f9Var.a1 && f9Var.l0 && !f9Var.f1 && !f9Var.k0 && (y3Var = f9Var.G0) != null && ((e9) y3Var.c) != null && (currentPeerView2 = f9Var.o0.getCurrentPeerView()) != null && (x3Var = currentPeerView2.y1) != null && x3Var.b == null && x3Var.e) {
                 long j3 = currentPeerView2.B2;
                 if (j3 <= 0 && (storyItem = x3Var.a) != null && (messageMedia = storyItem.media) != null && (document = messageMedia.document) != null) {
-                    j3 = (long) (gj.H0(document) * 1000.0d);
+                    j3 = (long) (fj.H0(document) * 1000.0d);
                 }
                 if (j3 > 0) {
                     float x11 = motionEvent.getX();
@@ -960,7 +960,7 @@ public final class t8 extends du0 {
                 ofFloat.addUpdateListener(new q8(this, i7));
                 f9Var.H.addListener(new r8(this, i7));
                 f9Var.H.setDuration(150L);
-                f9Var.H.setInterpolator(nr.f);
+                f9Var.H.setInterpolator(kr.f);
                 f9Var.H.start();
             }
             z3 z10 = f9Var.z();

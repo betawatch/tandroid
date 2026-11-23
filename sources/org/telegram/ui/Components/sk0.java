@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class sk0 extends bv0 {
+public final class sk0 extends av0 {
     public float d;
     public final Paint f;
     public boolean a = false;
@@ -20,7 +20,7 @@ public final class sk0 extends bv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bv0
+    @Override // org.telegram.ui.Components.av0
     public final void b(int i7) {
         Paint paint = this.f;
         if (paint != null) {
@@ -28,12 +28,12 @@ public final class sk0 extends bv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bv0
+    @Override // org.telegram.ui.Components.av0
     public final void c(boolean z10) {
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.bv0
+    @Override // org.telegram.ui.Components.av0
     public final void d() {
         this.b = System.currentTimeMillis();
         this.c = true;
@@ -44,7 +44,7 @@ public final class sk0 extends bv0 {
     public final void draw(Canvas canvas) {
         Paint paint = this.f;
         if (paint == null) {
-            paint = org.telegram.ui.ActionBar.m6.c2;
+            paint = org.telegram.ui.ActionBar.n6.c2;
         }
         paint.setAlpha(((int) (this.d * 200.0f)) + 55);
         canvas.drawCircle(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(this.a ? 8.0f : 9.0f), org.telegram.messenger.g0.L(4.0f), paint);
@@ -70,7 +70,7 @@ public final class sk0 extends bv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bv0
+    @Override // org.telegram.ui.Components.av0
     public final void e() {
         this.c = false;
     }

@@ -4,15 +4,15 @@ import android.content.SharedPreferences;
 import android.view.ScaleGestureDetector;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import c8.l9;
+import c8.m9;
 import java.util.ArrayList;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
+import org.telegram.ui.Cells.aa;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.jn;
-import v4.p;
+import ug.u1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
         layoutParams.width = h;
         hVar.x = h;
         wi.l lVar = hVar.b;
-        int J = lVar.J();
-        int a02 = lVar.a0();
-        float f10 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
+        int b12 = lVar.b1();
+        int V1 = lVar.V1();
+        float f10 = (b12 <= 0 || V1 <= 0) ? 0.5625f : V1 / b12;
         int i7 = (int) (((int) (wi.h.i(f10) * f10)) * hVar.z);
         layoutParams.height = i7;
         hVar.y = i7;
@@ -64,14 +64,14 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 return true;
             default:
                 wi.h hVar = (wi.h) this.b;
-                hVar.z = l9.a(scaleGestureDetector.getScaleFactor() * hVar.z, 0.75f, hVar.A);
+                hVar.z = m9.a(scaleGestureDetector.getScaleFactor() * hVar.z, 0.75f, hVar.A);
                 hVar.x = (int) (hVar.h() * hVar.z);
                 wi.l lVar = hVar.b;
-                int J = lVar.J();
-                int a02 = lVar.a0();
-                float f11 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
+                int b12 = lVar.b1();
+                int V1 = lVar.V1();
+                float f11 = (b12 <= 0 || V1 <= 0) ? 0.5625f : V1 / b12;
                 hVar.y = (int) (((int) (wi.h.i(f11) * f11)) * hVar.z);
-                g0.g3(new p(this, 10));
+                g0.g3(new u1(this, 11));
                 float m10 = scaleGestureDetector.getFocusX() >= ((float) g0.q.x) / 2.0f ? (r2 - hVar.x) - wi.h.m() : wi.h.m();
                 r1.g gVar = hVar.D;
                 if (gVar.f) {
@@ -110,14 +110,14 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 if (hVar.r) {
                     hVar.r = false;
                     hVar.L = false;
-                    lVar.H();
+                    lVar.T0();
                     g0.r(hVar.N);
                 }
                 hVar.s = true;
                 layoutParams.width = (int) (hVar.h() * hVar.A);
-                int J = lVar.J();
-                int a02 = lVar.a0();
-                float f10 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
+                int b12 = lVar.b1();
+                int V1 = lVar.V1();
+                float f10 = (b12 <= 0 || V1 <= 0) ? 0.5625f : V1 / b12;
                 layoutParams.height = (int) (((int) (wi.h.i(f10) * f10)) * hVar.A);
                 hVar.r();
                 break;
@@ -131,9 +131,9 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
             case 0:
                 break;
             default:
-                jn m10 = jn.m();
+                aa F2 = aa.F2();
                 wi.h hVar = (wi.h) this.b;
-                ((SharedPreferences) m10.b).edit().putFloat("scale_factor", hVar.z).apply();
+                ((SharedPreferences) F2.b).edit().putFloat("scale_factor", hVar.z).apply();
                 if (!hVar.D.f && !hVar.E.f) {
                     b();
                     break;

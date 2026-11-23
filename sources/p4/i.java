@@ -1,9 +1,9 @@
 package p4;
 
-import a8.la;
+import a8.ma;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i {
     public static final String f;
@@ -42,7 +42,7 @@ public final class i {
         String string = bundle.getString(g);
         string.getClass();
         String str = h;
-        la.f(bundle.containsKey(str));
+        ma.f(bundle.containsKey(str));
         int i11 = bundle.getInt(str);
         Bundle bundle2 = bundle.getBundle(i);
         int i12 = bundle.getInt(k, 0);

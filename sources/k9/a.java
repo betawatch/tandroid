@@ -1,6 +1,6 @@
 package k9;
 
-import a8.ja;
+import a8.ka;
 import a8.xa;
 import cb.c;
 import f5.g;
@@ -11,17 +11,16 @@ import g9.i;
 import h9.c0;
 import h9.f0;
 import h9.g0;
-import h9.g1;
+import h9.h1;
 import h9.i0;
-import h9.i1;
 import h9.j0;
-import h9.m1;
+import h9.l1;
 import h9.o;
 import h9.q;
 import h9.s;
-import h9.t1;
+import h9.s1;
 import h9.y;
-import hi.e9;
+import hi.z9;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.AbstractCollection;
@@ -32,7 +31,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a {
     public static final j0 f;
@@ -48,7 +47,7 @@ public final class a {
 
     static {
         j0 j0Var;
-        String c10 = ja.c(StandardCharsets.UTF_8.name());
+        String c10 = ka.c(StandardCharsets.UTF_8.name());
         o.f("charset", c10);
         s b10 = s.b();
         c0 c0Var = (c0) b10.get("charset");
@@ -70,8 +69,8 @@ public final class a {
             while (it.hasNext()) {
                 Map.Entry entry = (Map.Entry) it.next();
                 Object key = entry.getKey();
-                t1 f10 = ((f0) entry.getValue()).f();
-                xaVar.w(key, f10);
+                s1 f10 = ((f0) entry.getValue()).f();
+                xaVar.u(key, f10);
                 i7 += f10.d;
             }
             j0Var = new j0(xaVar.c(true), i7);
@@ -202,7 +201,7 @@ public final class a {
         a("font", "ttf");
         a("font", "woff");
         a("font", "woff2");
-        j = new c(new g("; "), 26);
+        j = new c(new g("; "), 27);
     }
 
     public a(String str, String str2, j0 j0Var) {
@@ -223,8 +222,8 @@ public final class a {
         return aVar;
     }
 
-    public final i1 c() {
-        return new i1(this.c.b(), new g1(new e9(11), 0));
+    public final h1 c() {
+        return new h1(this.c.b(), new h6.o(new z9(11), 1));
     }
 
     public final boolean equals(Object obj) {
@@ -260,11 +259,11 @@ public final class a {
         j0 j0Var = this.c;
         if (j0Var.f != 0) {
             sb2.append("; ");
-            Collection a10 = new m1(j0Var, new g1(new e9(10), 0)).a();
+            Collection a10 = new l1(j0Var, new h6.o(new z9(10), 1)).a();
             c cVar = j;
             cVar.getClass();
             try {
-                cVar.e(sb2, a10.iterator());
+                cVar.f(sb2, a10.iterator());
             } catch (IOException e10) {
                 throw new AssertionError(e10);
             }

@@ -1,42 +1,81 @@
 package h9;
 
-import java.io.Serializable;
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class b2 extends r1 implements Serializable {
-    public final r1 a;
+public final class b2 extends AbstractSet {
+    public final /* synthetic */ Set a;
+    public final /* synthetic */ Set b;
 
-    public b2(r1 r1Var) {
-        this.a = r1Var;
+    public b2(Set set, Set set2) {
+        this.a = set;
+        this.b = set2;
     }
 
-    @Override // h9.r1
-    public final r1 a() {
-        return this.a;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return this.a.compare(obj2, obj);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.a.contains(obj) && this.b.contains(obj);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        return this.a.containsAll(collection) && this.b.containsAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return Collections.disjoint(this.b, this.a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new v0(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        Iterator it = this.a.iterator();
+        int i7 = 0;
+        while (it.hasNext()) {
+            if (this.b.contains(it.next())) {
+                i7++;
+            }
         }
-        if (obj instanceof b2) {
-            return this.a.equals(((b2) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return -this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a + ".reverse()";
+        return i7;
     }
 }

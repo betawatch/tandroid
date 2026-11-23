@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class AudioBufferConverter {
     private static final int BYTES_PER_SHORT = 2;
@@ -40,10 +40,10 @@ public class AudioBufferConverter {
         checkChannels(i10, i12);
         int M1 = this.mRemixer.M1(shortBuffer.remaining(), i10, i12);
         ShortBuffer createBuffer = createBuffer(M1);
-        this.mRemixer.P0(shortBuffer, i10, createBuffer, i12);
+        this.mRemixer.E0(shortBuffer, i10, createBuffer, i12);
         createBuffer.rewind();
         ShortBuffer createBuffer2 = createBuffer(((int) Math.ceil((M1 * i11) / i7)) + 10);
-        this.mResampler.r0(createBuffer, i7, createBuffer2, i11, i12);
+        this.mResampler.f0(createBuffer, i7, createBuffer2, i11, i12);
         createBuffer2.limit(createBuffer2.position());
         createBuffer2.rewind();
         return createBuffer2;

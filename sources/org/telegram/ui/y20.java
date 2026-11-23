@@ -1,23 +1,36 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y20 extends Paint {
-    public final /* synthetic */ f40 a;
+public final class y20 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e40 b;
 
-    public y20(f40 f40Var) {
-        this.a = f40Var;
+    public /* synthetic */ y20(e40 e40Var, int i7) {
+        this.a = i7;
+        this.b = e40Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i7) {
-        super.setAlpha(i7);
-        ViewGroup viewGroup = this.a.b;
-        if (viewGroup != null) {
-            viewGroup.invalidate();
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                e40 e40Var = this.b;
+                e40Var.L1.getViewTreeObserver().removeOnPreDrawListener(this);
+                e40Var.Z3.j(null);
+                org.telegram.messenger.g0.Z3(e40Var.l4);
+                e40Var.b.requestLayout();
+                break;
+            default:
+                e40 e40Var2 = this.b;
+                e40Var2.L1.getViewTreeObserver().removeOnPreDrawListener(this);
+                e40Var2.Z3.j(null);
+                org.telegram.messenger.g0.Z3(e40Var2.l4);
+                e40Var2.b.requestLayout();
+                break;
         }
+        return false;
     }
 }

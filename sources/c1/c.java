@@ -1,8 +1,8 @@
 package c1;
 
 import android.util.Log;
-import gb.j0;
 import gb.k0;
+import gb.l0;
 import gd.k;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
@@ -11,7 +11,7 @@ import rd.l;
 import sa.h;
 import w0.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements l {
     public final /* synthetic */ int a;
@@ -54,11 +54,11 @@ public final /* synthetic */ class c implements l {
                 j.h("executor");
                 throw null;
             case 3:
-                k0 k0Var = (k0) this.b;
+                l0 l0Var = (l0) this.b;
                 m1.b ex = (m1.b) obj;
                 j.e(ex, "ex");
                 Log.w("FirebaseSessions", "CorruptionException in session data DataStore", ex);
-                return new j0(k0Var.a.a(null), null, null);
+                return new k0(l0Var.a.a(null), null, null);
             case 4:
                 return obj == ((hd.c) this.b) ? "(this Collection)" : String.valueOf(obj);
             case 5:

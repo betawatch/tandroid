@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.yt;
+import org.telegram.ui.Components.wt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k extends ImageView {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final class k extends ImageView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(yt ytVar, Context context) {
+    public k(wt wtVar, Context context) {
         super(context);
         this.a = 1;
     }

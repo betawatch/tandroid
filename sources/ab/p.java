@@ -4,7 +4,7 @@ import a8.b1;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements OnSuccessListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class p implements OnSuccessListener {
         switch (this.a) {
             case 0:
                 j0 j0Var = (j0) obj;
-                if (!this.b.f.s() || j0Var.g.a() == null) {
+                if (!this.b.f.t() || j0Var.g.a() == null) {
                     return;
                 }
                 synchronized (j0Var) {

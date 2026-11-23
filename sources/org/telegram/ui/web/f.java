@@ -3,13 +3,13 @@ package org.telegram.ui.web;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class f extends Drawable {
     public final /* synthetic */ int a;
-    public final xy0 b;
+    public final wy0 b;
     public final /* synthetic */ h c;
 
     public f(h hVar, String str, int i7) {
@@ -17,11 +17,11 @@ public final class f extends Drawable {
         switch (i7) {
             case 1:
                 this.c = hVar;
-                this.b = new xy0(str, 14.0f, org.telegram.messenger.g0.o());
+                this.b = new wy0(str, 14.0f, org.telegram.messenger.g0.o());
                 break;
             default:
                 this.c = hVar;
-                this.b = new xy0(str, 14.0f, org.telegram.messenger.g0.o());
+                this.b = new wy0(str, 14.0f, org.telegram.messenger.g0.o());
                 break;
         }
     }

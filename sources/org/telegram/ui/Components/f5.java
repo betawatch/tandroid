@@ -1,106 +1,94 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Picture;
-import android.text.TextUtils;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class f5 extends i80 implements te.b {
-    public final te.c Q0;
-    public Picture R0;
-    public float S0;
-    public int T0;
-    public Paint U0;
+public final class f5 {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public f5(Context context) {
-        super(context);
-        this.Q0 = new te.c(0, this, nr.h, 320L, 1.0f);
-        this.T0 = 0;
+    public f5(View view) {
+        this.f = 200L;
+        this.g = kr.f;
+        this.a = view;
+        this.e = true;
     }
 
-    @Override // te.b
-    public final void D(float f10, int i7) {
-        if (f10 == 1.0f) {
-            if (this.R0 != null) {
-                this.R0 = null;
-                super.setLayerType(this.T0, this.U0);
+    public final int a(int i7, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.f;
+        if (z10 || j3 <= 0 || this.e) {
+            this.d = i7;
+            this.c = i7;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i7) {
+            this.h = true;
+            this.d = i7;
+            this.j = this.c;
+            this.i = elapsedRealtime;
+        }
+        if (this.h) {
+            float a10 = c8.m9.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.a.f(a10, this.j, this.d);
+                } else {
+                    this.c = i0.a.f(timeInterpolator.getInterpolation(a10), this.j, this.d);
+                }
             }
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public int getLayerType() {
-        return this.T0;
-    }
-
-    public final void n(Canvas canvas, float f10, float f11) {
-        if (f10 >= 1.0f && f11 == 0.0f) {
-            super.onDraw(canvas);
-            return;
-        }
-        canvas.save();
-        canvas.translate(0.0f, f11);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f10 * 255.0f));
-        super.onDraw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    public final boolean o(CharSequence charSequence, boolean z10) {
-        CharSequence text = getText();
-        if (TextUtils.equals(text, charSequence)) {
-            return l(charSequence, false);
-        }
-        te.c cVar = this.Q0;
-        if (!z10 || !isAttachedToWindow() || !isLaidOut() || getVisibility() != 0 || getAlpha() <= 0.0f || getWidth() <= 0 || getHeight() <= 0 || TextUtils.isEmpty(text)) {
-            cVar.c(1.0f);
-            if (this.R0 != null) {
-                this.R0 = null;
-                super.setLayerType(this.T0, this.U0);
+            if (a10 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
             }
-            invalidate();
-        } else {
-            Picture picture = new Picture();
-            n(picture.beginRecording(getWidth(), getHeight()), 1.0f, 0.0f);
-            picture.endRecording();
-            cVar.c(0.0f);
-            this.R0 = picture;
-            this.S0 = getTranslationX();
-            super.setLayerType(0, null);
-            cVar.a(1.0f);
         }
-        invalidate();
-        return l(charSequence, false);
+        return this.c;
     }
 
-    @Override // org.telegram.ui.Components.i80, org.telegram.ui.ActionBar.m5, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.R0 == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        float f10 = this.Q0.f;
-        int L = org.telegram.messenger.g0.L(6.0f);
-        canvas.save();
-        canvas.translate(this.S0 - getTranslationX(), (-L) * f10);
-        float f11 = 1.0f - f10;
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.R0.getWidth(), this.R0.getHeight(), (int) (255.0f * f11));
-        canvas.drawPicture(this.R0);
-        canvas.restore();
-        canvas.restore();
-        n(canvas, f10, L * f11);
+    public f5(View view, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        kr krVar = kr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 
-    @Override // android.view.View
-    public final void setLayerType(int i7, Paint paint) {
-        this.T0 = i7;
-        this.U0 = paint;
-        if (this.R0 == null) {
-            super.setLayerType(i7, paint);
-        }
+    public f5(View view, long j3, TimeInterpolator timeInterpolator, int i7) {
+        this.f = 200L;
+        kr krVar = kr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public f5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        kr krVar = kr.f;
+        this.b = runnable;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

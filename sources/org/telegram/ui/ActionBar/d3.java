@@ -4,9 +4,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d3 extends k1.b {
     public static final /* synthetic */ int r = 0;
@@ -102,9 +102,9 @@ public final class d3 extends k1.b {
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             cVar.h(rect);
             if (TextUtils.isEmpty(b10)) {
-                str = hd.N0(2131747623, null);
+                str = gd.N0(2131747623, null);
             } else {
-                str = hd.N0(2131747623, null) + ", " + b10;
+                str = gd.N0(2131747623, null) + ", " + b10;
             }
             cVar.j(str);
             return;
@@ -113,9 +113,9 @@ public final class d3 extends k1.b {
         rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
         cVar.h(rect);
         if (TextUtils.isEmpty(b10)) {
-            str2 = hd.N0(2131752029, null);
+            str2 = gd.N0(2131752029, null);
         } else {
-            str2 = hd.N0(2131752029, null) + ", " + b10;
+            str2 = gd.N0(2131752029, null) + ", " + b10;
         }
         cVar.j(str2);
     }

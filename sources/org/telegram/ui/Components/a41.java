@@ -1,50 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class a41 extends ek0 {
-    public final /* synthetic */ h41 f3;
-    public final /* synthetic */ k41 g3;
+public final class a41 extends uy {
+    public final /* synthetic */ j41 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a41(k41 k41Var, Context context, h41 h41Var) {
-        super(context, null);
-        this.g3 = k41Var;
-        this.f3 = h41Var;
+    public a41(j41 j41Var, int i7, z31 z31Var) {
+        super(5, i7, z31Var);
+        this.Y = j41Var;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final boolean E0(float f10) {
-        return f10 >= ((float) (org.telegram.messenger.g0.L(58.0f) + this.g3.F));
+    @Override // org.telegram.ui.Components.uy
+    public final boolean D1() {
+        j41 j41Var = this.Y;
+        return j41Var.n.getAdapter() == j41Var.w;
     }
 
-    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.g3.G = true;
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // v4.c0
+    public final boolean Y0() {
+        return org.telegram.messenger.gd.a0;
     }
 
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.f3.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.g3.M != null) {
-            return false;
+    @Override // v4.t, v4.c0, v4.p0
+    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
+        int i10;
+        View m10;
+        j41 j41Var = this.Y;
+        if (j41Var.O) {
+            return super.o0(i7, x0Var, c1Var);
         }
-        return super.onTouchEvent(motionEvent);
+        int i11 = 0;
+        if (j41Var.M != null) {
+            return 0;
+        }
+        if (j41Var.N) {
+            while (true) {
+                i10 = 1;
+                if (i11 >= r()) {
+                    break;
+                }
+                z31 z31Var = j41Var.n;
+                View q10 = q(i11);
+                z31Var.getClass();
+                int R = RecyclerView.R(q10);
+                if (R < 1) {
+                    i10 = R;
+                    break;
+                }
+                i11++;
+            }
+            if (i10 == 0 && (m10 = j41Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
+                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
+            }
+        }
+        return super.o0(i7, x0Var, c1Var);
     }
 
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.g3.I) {
-            return;
-        }
-        super.requestLayout();
+    @Override // v4.t, v4.c0, v4.p0
+    public final boolean y0() {
+        return false;
     }
 }

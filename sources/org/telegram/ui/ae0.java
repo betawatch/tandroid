@@ -6,7 +6,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ae0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ int b2;
@@ -27,11 +27,11 @@ public final class ae0 extends AnimatedPhoneNumberEditText {
         switch (i10) {
             case 0:
                 super.onFocusChanged(z10, i7, rect);
-                org.telegram.ui.Components.yb0 yb0Var = ce0Var.f;
+                org.telegram.ui.Components.vb0 vb0Var = ce0Var.f;
                 if (!z10 && !ce0Var.b.isFocused()) {
                     f10 = 0.0f;
                 }
-                yb0Var.b(f10, f10, true);
+                vb0Var.b(f10, f10, true);
                 if (z10) {
                     ce0Var.h0.c.setEditText(this);
                     break;
@@ -40,11 +40,11 @@ public final class ae0 extends AnimatedPhoneNumberEditText {
             default:
                 super.onFocusChanged(z10, i7, rect);
                 de0 de0Var = ce0Var.h0;
-                org.telegram.ui.Components.yb0 yb0Var2 = ce0Var.f;
+                org.telegram.ui.Components.vb0 vb0Var2 = ce0Var.f;
                 if (!z10 && !ce0Var.a.isFocused()) {
                     f10 = 0.0f;
                 }
-                yb0Var2.b(f10, f10, true);
+                vb0Var2.b(f10, f10, true);
                 if (!z10) {
                     if (ce0Var.F == 2) {
                         ce0Var.setCountryButtonText(null);
@@ -54,7 +54,7 @@ public final class ae0 extends AnimatedPhoneNumberEditText {
                     de0Var.c.setEditText(this);
                     de0Var.c.setDispatchBackWhenEmpty(true);
                     if (ce0Var.F == 2) {
-                        ce0Var.setCountryButtonText(org.telegram.messenger.hd.N0(2131742593, null));
+                        ce0Var.setCountryButtonText(org.telegram.messenger.gd.N0(2131742588, null));
                         break;
                     }
                 }

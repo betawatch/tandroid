@@ -3,7 +3,7 @@ package f6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d0 extends j6.g {
     public final /* synthetic */ e0 b;
@@ -32,12 +32,12 @@ public final class d0 extends j6.g {
         e0 e0Var = this.b;
         e0Var.u = dVar;
         e0Var.v = str;
-        j6.u uVar = new j6.u(new Status(0, null, null, null), dVar, str, str2, z10);
+        j6.v vVar = new j6.v(new Status(0, null, null, null), dVar, str, str2, z10);
         synchronized (e0Var.s) {
             try {
                 TaskCompletionSource taskCompletionSource = e0Var.p;
                 if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(uVar);
+                    taskCompletionSource.setResult(vVar);
                 }
                 e0Var.p = null;
             } catch (Throwable th2) {

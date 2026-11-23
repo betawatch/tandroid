@@ -16,7 +16,7 @@ import rd.l;
 import v0.g;
 import w0.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements l {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class d implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal)) {
-                            fVar.g().execute(new a3.f(fVar, 29));
+                            fVar.g().execute(new a3.f(fVar, 28));
                         }
                     }
                 }

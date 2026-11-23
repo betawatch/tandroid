@@ -1,19 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class h6 extends Paint {
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final g5 b;
+public final class h6 extends r1.e {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h6(View view, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(3);
-        nr nrVar = nr.h;
-        this.a = h6Var;
-        this.b = new g5(view, 320L, nrVar);
+    public /* synthetic */ h6(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // r1.e
+    public final float a(Object obj) {
+        switch (this.a) {
+            case 0:
+                Integer num = (Integer) obj;
+                int intValue = num.intValue();
+                ArrayList arrayList = ((AnimatedPhoneNumberEditText) this.b).W1;
+                if (intValue < arrayList.size()) {
+                    return ((Float) arrayList.get(num.intValue())).floatValue() * 100.0f;
+                }
+                return 0.0f;
+            default:
+                return ((r1.f) this.b).a;
+        }
+    }
+
+    @Override // r1.e
+    public final void b(Object obj, float f10) {
+        switch (this.a) {
+            case 0:
+                Integer num = (Integer) obj;
+                int intValue = num.intValue();
+                AnimatedPhoneNumberEditText animatedPhoneNumberEditText = (AnimatedPhoneNumberEditText) this.b;
+                ArrayList arrayList = animatedPhoneNumberEditText.W1;
+                if (intValue < arrayList.size()) {
+                    arrayList.set(num.intValue(), Float.valueOf(f10 / 100.0f));
+                    animatedPhoneNumberEditText.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((r1.f) this.b).a = f10;
+                break;
+        }
     }
 }

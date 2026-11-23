@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class f4 extends View {
     public float E;
@@ -46,14 +46,14 @@ public abstract class f4 extends View {
         int i7 = storyViews == null ? 0 : storyViews.views_count;
         if (i7 > 0) {
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new nq(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new kq(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(i7, 0));
             if (storyViews == null || storyViews.reactions_count <= 0) {
                 return;
             }
             spannableStringBuilder.append((CharSequence) (z10 ? "\n" : "  "));
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new nq(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new kq(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(storyViews.reactions_count, 0));
         }
     }
@@ -87,8 +87,8 @@ public abstract class f4 extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, f10);
             this.N = ofFloat;
             ofFloat.addUpdateListener(new d4(this, 0));
-            this.N.addListener(new ai.k0(this, 14));
-            this.N.setInterpolator(nr.f);
+            this.N.addListener(new ai.g0(this, 14));
+            this.N.setInterpolator(kr.f);
             this.N.setDuration(200L);
             this.N.start();
         }
@@ -131,7 +131,7 @@ public abstract class f4 extends View {
         super.onDetachedFromWindow();
         this.w = false;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ((e4) arrayList.get(i7)).a.R();
+            ((e4) arrayList.get(i7)).a.S();
         }
         arrayList.clear();
     }
@@ -220,13 +220,13 @@ public abstract class f4 extends View {
                     arrayList = arrayList4;
                     f13 = f16;
                     i10 = i13;
-                    e4Var.a.y0(y10, y11, f21, f23);
+                    e4Var.a.z0(y10, y11, f21, f23);
                 } else {
                     f13 = f16;
                     i10 = i13;
                     arrayList = arrayList4;
                     arrayList2 = arrayList3;
-                    e4Var.a.y0(org.telegram.messenger.g0.T1(getMeasuredWidth() * (i14 - i11), y10, this.E), org.telegram.messenger.g0.T1(this.a, y11, this.E), org.telegram.messenger.g0.T1(this.b, f21, this.E), org.telegram.messenger.g0.T1(this.c, f23, this.E));
+                    e4Var.a.z0(org.telegram.messenger.g0.T1(getMeasuredWidth() * (i14 - i11), y10, this.E), org.telegram.messenger.g0.T1(this.a, y11, this.E), org.telegram.messenger.g0.T1(this.b, f21, this.E), org.telegram.messenger.g0.T1(this.c, f23, this.E));
                 }
                 if (this.E == 1.0f || i14 != this.L) {
                     ImageReceiver imageReceiver = e4Var.a;
@@ -234,11 +234,11 @@ public abstract class f4 extends View {
                     if (e4Var.c != null) {
                         int B = (int) com.google.android.gms.internal.vision.e2.B(f11, 0.3f, 0.7f, 255.0f);
                         gradientDrawable.setAlpha(B);
-                        gradientDrawable.setBounds((int) imageReceiver.L0, (int) (imageReceiver.A() - org.telegram.messenger.g0.L(24.0f)), (int) imageReceiver.y(), ((int) imageReceiver.A()) + 2);
+                        gradientDrawable.setBounds((int) imageReceiver.L0, (int) (imageReceiver.B() - org.telegram.messenger.g0.L(24.0f)), (int) imageReceiver.z(), ((int) imageReceiver.B()) + 2);
                         gradientDrawable.draw(canvas);
                         canvas.save();
                         f14 = 2.0f;
-                        canvas.translate(imageReceiver.r() - (this.K / 2.0f), (imageReceiver.A() - org.telegram.messenger.g0.L(8.0f)) - e4Var.c.getHeight());
+                        canvas.translate(imageReceiver.r() - (this.K / 2.0f), (imageReceiver.B() - org.telegram.messenger.g0.L(8.0f)) - e4Var.c.getHeight());
                         e4Var.d.setAlpha(B);
                         e4Var.c.draw(canvas);
                         canvas.restore();
@@ -266,7 +266,7 @@ public abstract class f4 extends View {
             b(i13);
         }
         for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-            ((e4) arrayList5.get(i16)).a.R();
+            ((e4) arrayList5.get(i16)).a.S();
         }
         arrayList5.clear();
     }

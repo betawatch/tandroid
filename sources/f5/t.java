@@ -16,9 +16,9 @@ import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.z3;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t implements ServiceConnection {
     public final c a;
@@ -91,7 +91,7 @@ public final class t implements ServiceConnection {
                     p10.c();
                     a4.o((a4) p10.b, longValue);
                 }
-                bVar.h.b0((a4) p10.a());
+                bVar.h.d0((a4) p10.a());
                 return;
             }
             c4 r10 = d4.r();
@@ -144,7 +144,7 @@ public final class t implements ServiceConnection {
                 g3.t((g3) u10.b, 6);
                 j3 s5 = k3.s();
                 s5.c();
-                k3.q((k3) s5.b, ls.v1);
+                k3.q((k3) s5.b, ks.v1);
                 u10.d(s5);
                 c4 r10 = d4.r();
                 int i7 = this.d;
@@ -153,7 +153,7 @@ public final class t implements ServiceConnection {
                 u10.e(r10);
                 bVar2.W((g3) u10.a());
             } else {
-                bVar.h.a0(l3.n());
+                bVar.h.c0(l3.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -214,7 +214,7 @@ public final class t implements ServiceConnection {
                 g3.t((g3) u10.b, 6);
                 j3 s5 = k3.s();
                 s5.c();
-                k3.q((k3) s5.b, ls.u1);
+                k3.q((k3) s5.b, ks.u1);
                 u10.d(s5);
                 c4 r10 = d4.r();
                 int i7 = this.d;
@@ -223,7 +223,7 @@ public final class t implements ServiceConnection {
                 u10.e(r10);
                 bVar2.W((g3) u10.a());
             } else {
-                bVar.h.c0(b4.n());
+                bVar.h.e0(b4.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);

@@ -6,13 +6,13 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
+import org.telegram.messenger.fc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.s10;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.q10;
+import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class e4 {
     public final ImageReceiver a;
@@ -29,7 +29,7 @@ public final class e4 {
         TextPaint textPaint = new TextPaint(1);
         this.d = textPaint;
         imageReceiver.A1 = true;
-        imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
+        imageReceiver.K0(org.telegram.messenger.g0.L(6.0f));
         textPaint.setColor(-1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
     }
@@ -44,7 +44,7 @@ public final class e4 {
         boolean z10 = f4Var.w;
         ImageReceiver imageReceiver = this.a;
         if (z10) {
-            imageReceiver.P();
+            imageReceiver.Q();
         }
         i5 i5Var = this.e;
         TL_stories.StoryItem storyItem = i5Var.a;
@@ -52,11 +52,11 @@ public final class e4 {
             i7.x(imageReceiver, storyItem);
         } else {
             o6 o6Var = i5Var.b;
-            s10[] s10VarArr = i7.a;
+            q10[] q10VarArr = i7.a;
             if (o6Var.c.K) {
-                imageReceiver.r0(gc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
+                imageReceiver.s0(fc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {
-                imageReceiver.r0(gc.g(o6Var.e), "320_180", null, null, null, 0L, null, null, 0);
+                imageReceiver.s0(fc.g(o6Var.e), "320_180", null, null, null, 0L, null, null, 0);
             }
         }
         b();
@@ -76,12 +76,12 @@ public final class e4 {
         int i7 = (int) (f4Var.K + 1.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = this.d;
-        StaticLayout c10 = zu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        StaticLayout c10 = yu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         this.c = c10;
         if (c10.getLineCount() > 1) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
             f4.a(f4Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = zu0.c(spannableStringBuilder2, textPaint, (int) (f4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+            this.c = yu0.c(spannableStringBuilder2, textPaint, (int) (f4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

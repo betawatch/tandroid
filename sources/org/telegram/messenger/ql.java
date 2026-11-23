@@ -1,48 +1,166 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ql implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ bg.v c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ ql(np npVar, bg.v vVar, int i7) {
-        this.a = i7;
-        this.b = npVar;
-        this.c = vVar;
+    public /* synthetic */ ql(t7 t7Var, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, x8 x8Var) {
+        this.e = t7Var;
+        this.b = z10;
+        this.c = str;
+        this.d = z11;
+        this.f = inputFile;
+        this.h = inputEncryptedFile;
+        this.n = bArr;
+        this.r = bArr2;
+        this.s = x8Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        bg.v vVar = this.c;
-        np npVar = this.b;
-        switch (i7) {
+        x8 x8Var;
+        x8 x8Var2;
+        switch (this.a) {
             case 0:
-                a0.h hVar = vVar.c;
-                int m10 = hVar.m();
-                for (int i10 = 0; i10 < m10; i10++) {
-                    npVar.getNotificationCenter().k(49, Long.valueOf(hVar.j(i10)), hVar.n(i10), Boolean.FALSE);
+                mp mpVar = (mp) this.e;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.f;
+                vf.b bVar = (vf.b) this.h;
+                boolean[] zArr = (boolean[]) this.n;
+                TLRPC.User user = (TLRPC.User) this.r;
+                String str = this.c;
+                boolean z10 = this.b;
+                boolean z11 = this.d;
+                TL_bots.BotInfo[] botInfoArr = (TL_bots.BotInfo[]) this.s;
+                if (g2Var == null) {
+                    g2Var = LaunchActivity.T();
                 }
-                break;
-            case 1:
-                a0.h hVar2 = vVar.c;
-                int m11 = hVar2.m();
-                for (int i11 = 0; i11 < m11; i11++) {
-                    npVar.getNotificationCenter().k(49, Long.valueOf(hVar2.j(i11)), hVar2.n(i11), Boolean.FALSE);
+                if (g2Var != null) {
+                    if (bVar != null) {
+                        bVar.b();
+                    }
+                    if (!zArr[0]) {
+                        String H1 = mpVar.H1(user.restriction_reason);
+                        if (!TextUtils.isEmpty(H1)) {
+                            mp.d5(H1, g2Var);
+                            break;
+                        } else if (!user.bot_has_main_app) {
+                            TL_bots.BotInfo botInfo = botInfoArr[0];
+                            if (botInfo != null && (botInfo.menu_button instanceof TL_bots.TL_botMenuButton)) {
+                                if (g2Var.getParentLayout() instanceof ActionBarLayout) {
+                                    g2Var = ((ActionBarLayout) g2Var.getParentLayout()).getSheetFragment();
+                                }
+                                TL_bots.TL_botMenuButton tL_botMenuButton = (TL_bots.TL_botMenuButton) botInfoArr[0].menu_button;
+                                g0.v1(g2Var.getFragmentView());
+                                int i7 = mpVar.currentAccount;
+                                long j3 = user.id;
+                                ki.f4 b10 = ki.f4.b(i7, j3, j3, tL_botMenuButton.text, tL_botMenuButton.url, 2, 0, 0L, null, false, str, user, 0, z10, z11);
+                                LaunchActivity launchActivity = LaunchActivity.H1;
+                                if (launchActivity == null || launchActivity.N() == null || LaunchActivity.H1.N().k(b10) == null) {
+                                    ki.t2 t2Var = new ki.t2(g2Var.getContext(), g2Var.getResourceProvider());
+                                    t2Var.B(false);
+                                    t2Var.C0 = true;
+                                    t2Var.m0 = g2Var.getParentActivity();
+                                    t2Var.x(g2Var, b10);
+                                    t2Var.show();
+                                    break;
+                                }
+                            } else {
+                                g2Var.presentFragment(org.telegram.ui.bn.ua(user.id));
+                                break;
+                            }
+                        } else {
+                            long j10 = user.id;
+                            if (g2Var instanceof org.telegram.ui.bn) {
+                                j10 = ((org.telegram.ui.bn) g2Var).a();
+                            } else if (g2Var instanceof ProfileActivity) {
+                                j10 = ((ProfileActivity) g2Var).a();
+                            }
+                            if (g2Var.getParentLayout() instanceof ActionBarLayout) {
+                                g2Var = ((ActionBarLayout) g2Var.getParentLayout()).getSheetFragment();
+                            }
+                            g0.v1(g2Var.getFragmentView());
+                            ki.f4 b11 = ki.f4.b(mpVar.currentAccount, j10, user.id, null, null, 4, 0, 0L, null, false, str, user, 0, z10, z11);
+                            LaunchActivity launchActivity2 = LaunchActivity.H1;
+                            if (launchActivity2 == null || launchActivity2.N() == null || LaunchActivity.H1.N().k(b11) == null) {
+                                ki.t2 t2Var2 = new ki.t2(g2Var.getContext(), g2Var.getResourceProvider());
+                                t2Var2.B(true);
+                                t2Var2.C0 = false;
+                                t2Var2.m0 = g2Var.getParentActivity();
+                                t2Var2.x(g2Var, b11);
+                                t2Var2.show();
+                                break;
+                            }
+                        }
+                    }
                 }
                 break;
             default:
-                a0.h hVar3 = vVar.c;
-                if (!hVar3.i()) {
-                    int m12 = hVar3.m();
-                    for (int i12 = 0; i12 < m12; i12++) {
-                        npVar.getNotificationCenter().k(1, Long.valueOf(hVar3.j(i12)), hVar3.n(i12), Boolean.FALSE, 0);
+                t7 t7Var = (t7) this.e;
+                boolean z12 = this.b;
+                String str2 = this.c;
+                boolean z13 = this.d;
+                TLRPC.InputFile inputFile = (TLRPC.InputFile) this.f;
+                TLRPC.InputEncryptedFile inputEncryptedFile = (TLRPC.InputEncryptedFile) this.h;
+                byte[] bArr = (byte[]) this.n;
+                byte[] bArr2 = (byte[]) this.r;
+                x8 x8Var3 = (x8) this.s;
+                if (z12) {
+                    t7Var.d.n.remove(str2);
+                } else {
+                    t7Var.d.h.remove(str2);
+                }
+                if (z13) {
+                    w7 w7Var = t7Var.d;
+                    int i10 = w7Var.s - 1;
+                    w7Var.s = i10;
+                    if (i10 < 1 && (x8Var2 = (x8) w7Var.f.poll()) != null) {
+                        t7Var.d.s++;
+                        x8Var2.c();
                     }
+                } else {
+                    w7 w7Var2 = t7Var.d;
+                    int i11 = w7Var2.r - 1;
+                    w7Var2.r = i11;
+                    if (i11 < 1 && (x8Var = (x8) w7Var2.e.poll()) != null) {
+                        t7Var.d.r++;
+                        x8Var.c();
+                    }
+                }
+                ob obVar = t7Var.d.F;
+                if (obVar != null) {
+                    Utilities.d.c(new ii.i(obVar, obVar.a, str2, inputFile, inputEncryptedFile, bArr, bArr2, x8Var3.t));
                     break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ ql(mp mpVar, org.telegram.ui.ActionBar.g2 g2Var, vf.b bVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
+        this.e = mpVar;
+        this.f = g2Var;
+        this.h = bVar;
+        this.n = zArr;
+        this.r = user;
+        this.c = str;
+        this.b = z10;
+        this.d = z11;
+        this.s = botInfoArr;
     }
 }

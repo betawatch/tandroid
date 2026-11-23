@@ -1,13 +1,13 @@
 package e2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k1 {
     public static final String A;
@@ -47,17 +47,17 @@ public final class k1 {
         z zVar = new z();
         c0 c0Var = new c0();
         List list = Collections.EMPTY_LIST;
-        h9.t1 t1Var = h9.t1.e;
+        h9.s1 s1Var = h9.s1.e;
         e0 e0Var = new e0();
         h0 h0Var = h0.d;
         Uri uri = Uri.EMPTY;
-        la.p(c0Var.b == null || c0Var.a != null);
+        ma.p(c0Var.b == null || c0Var.a != null);
         d0 d0Var = null;
         if (uri != null) {
             if (c0Var.a != null) {
                 d0Var = new d0(c0Var);
             }
-            g0Var = new g0(uri, null, d0Var, null, list, null, t1Var, -9223372036854775807L);
+            g0Var = new g0(uri, null, d0Var, null, list, null, s1Var, -9223372036854775807L);
         } else {
             g0Var = null;
         }
@@ -115,7 +115,7 @@ public final class k1 {
     }
 
     public final int hashCode() {
-        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + ls.u3) * 31)) * 31;
+        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + ks.u3) * 31)) * 31;
         Object obj = this.d;
         int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
         f0 f0Var = this.j;

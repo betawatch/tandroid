@@ -2,10 +2,10 @@ package androidx.car.app.utils;
 
 import a8.p0;
 import aa.r;
+import ai.j;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.j;
 import androidx.car.app.k;
 import androidx.lifecycle.o;
 import j$.util.DesugarCollections;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -38,7 +38,7 @@ public abstract class g {
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new ai.r((Object) oVar, (Object) iOnDoneCallback, str, (Object) aVar, 1));
+        h.a(new j(oVar, iOnDoneCallback, str, aVar, 2));
     }
 
     public static void d(String str, b bVar) {
@@ -58,7 +58,7 @@ public abstract class g {
         } catch (SecurityException e10) {
             throw e10;
         } catch (RuntimeException e11) {
-            throw new j(p0.p("Remote ", str, " call failed"), e11);
+            throw new androidx.car.app.j(p0.p("Remote ", str, " call failed"), e11);
         }
     }
 

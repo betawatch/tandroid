@@ -1,46 +1,35 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o40 implements View.OnClickListener {
+public final /* synthetic */ class o40 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z40 b;
+    public final /* synthetic */ y40 b;
 
-    public /* synthetic */ o40(z40 z40Var, int i7) {
+    public /* synthetic */ o40(y40 y40Var, int i7) {
         this.a = i7;
-        this.b = z40Var;
+        this.b = y40Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                z40 z40Var = this.b;
-                z40Var.Y = null;
-                z40Var.a0.b();
-                z40Var.h.b();
-                z40Var.p0();
-                z40Var.w0();
-                z40Var.x0();
+                this.b.finishFragment();
                 break;
             case 1:
-                z40 z40Var2 = this.b;
-                z40Var2.f.r.clearFocus();
-                z40Var2.f.r.requestFocus();
-                org.telegram.messenger.g0.I3(z40Var2.f.r);
+                y40 y40Var = this.b;
+                y40Var.n0();
+                y40Var.j0();
                 break;
             case 2:
-                this.b.t0();
-                break;
-            case 3:
-                z40 z40Var3 = this.b;
-                z40Var3.s0(z40Var3.q0());
+                y40 y40Var2 = this.b;
+                y40Var2.getClass();
+                y40Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                z40 z40Var4 = this.b;
-                z40Var4.s0(z40Var4.q0());
+                y40 y40Var3 = this.b;
+                y40Var3.n.postOnAnimation(new o40(y40Var3, 1));
                 break;
         }
     }

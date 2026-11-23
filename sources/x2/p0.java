@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final /* synthetic */ class p0 implements Runnable {
                 this.b.c0 = true;
                 break;
             case 1:
-                this.b.x();
+                this.b.y();
                 break;
             default:
                 w0 w0Var = this.b;
                 if (!w0Var.i0) {
                     d0 d0Var = w0Var.J;
                     d0Var.getClass();
-                    d0Var.c0(w0Var);
+                    d0Var.i2(w0Var);
                     break;
                 }
                 break;

@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
+import a8.d7;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import v4.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g0 extends f1 {
     public s4.v A;
@@ -29,7 +29,7 @@ public final class g0 extends f1 {
         this.x = progressBar;
         this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
         n0 n0Var = l0Var.x;
-        this.z = c7.c(n0Var.E);
-        c7.i(n0Var.E, progressBar);
+        this.z = d7.c(n0Var.E);
+        d7.i(n0Var.E, progressBar);
     }
 }

@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.bc;
+import c8.cc;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import m6.e;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
     public static final Parcelable.Creator<DataHolder> CREATOR = new e(12);
@@ -72,7 +72,7 @@ public final class DataHolder extends a implements Closeable {
                 if (!z10) {
                     close();
                     String obj = toString();
-                    StringBuilder sb2 = new StringBuilder(String.valueOf(obj).length() + ls.I2);
+                    StringBuilder sb2 = new StringBuilder(String.valueOf(obj).length() + ks.I2);
                     sb2.append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ");
                     sb2.append(obj);
                     sb2.append(")");
@@ -86,15 +86,15 @@ public final class DataHolder extends a implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.m(parcel, 1, this.b);
-        bc.o(parcel, 2, this.d, i7);
-        bc.q(parcel, 3, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.m(parcel, 1, this.b);
+        cc.o(parcel, 2, this.d, i7);
+        cc.q(parcel, 3, 4);
         parcel.writeInt(this.e);
-        bc.b(parcel, 4, this.f);
-        bc.q(parcel, 1000, 4);
+        cc.b(parcel, 4, this.f);
+        cc.q(parcel, 1000, 4);
         parcel.writeInt(this.a);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
         if ((i7 & 1) != 0) {
             close();
         }

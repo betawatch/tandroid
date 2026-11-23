@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sr implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class sr implements Runnable {
                 }
                 contactsActivity.b.Y(contactsActivity.r ? 1 : 2, false);
                 contactsActivity.d.v0(0);
-                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(org.telegram.ui.Components.nr.h).withEndAction(new sr(contactsActivity, 1));
+                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(org.telegram.ui.Components.kr.h).withEndAction(new sr(contactsActivity, 1));
                 contactsActivity.f0 = withEndAction;
                 withEndAction.start();
                 if (contactsActivity.r) {

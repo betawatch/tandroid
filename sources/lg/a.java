@@ -3,10 +3,10 @@ package lg;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a extends g {
     @Override // lg.g
@@ -149,7 +149,7 @@ public final class a extends g {
                         paint2.setStrokeWidth(f26);
                         paint2.setAlpha(i25);
                         canvas2.drawLine(f34, f29, f34, getMeasuredHeight() - this.s, paint2);
-                        paint2.setAlpha(ls.e4);
+                        paint2.setAlpha(ks.e4);
                     }
                 } else {
                     i10 = i7;
@@ -240,7 +240,7 @@ public final class a extends g {
                                 arrayList2 = arrayList3;
                                 f11 = bVar.e;
                             }
-                            float w10 = o10.w(j3, f11, f13, 1.0f) * (i11 - measuredHeight2);
+                            float w10 = m10.w(j3, f11, f13, 1.0f) * (i11 - measuredHeight2);
                             fArr[i16] = f10;
                             fArr[i16 + 1] = w10;
                             int i18 = i16 + 3;

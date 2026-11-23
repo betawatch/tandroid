@@ -1,7 +1,7 @@
 package gf;
 
 import a8.p0;
-import c8.a1;
+import c8.b1;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import kf.r;
 import kf.t;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(kf.b.class, kf.i.class, kf.h.class, kf.j.class, t.class, kf.n.class, kf.l.class));
@@ -254,7 +254,7 @@ public final class g {
         c cVar2;
         i iVar;
         int i13;
-        StringBuilder K;
+        StringBuilder z11;
         int i14;
         m mVar;
         char charAt2;
@@ -310,14 +310,14 @@ public final class g {
         ArrayList arrayList2 = new ArrayList(arrayList.subList(i19, arrayList.size()));
         mf.a aVar3 = (mf.a) arrayList.get(i19 - 1);
         boolean isEmpty = arrayList2.isEmpty();
-        boolean z11 = (aVar3.e() instanceof r) || aVar3.f();
+        boolean z12 = (aVar3.e() instanceof r) || aVar3.f();
         while (true) {
-            if (z11) {
+            if (z12) {
                 g();
                 if (!this.h) {
                     int i22 = 4;
                     if (this.g >= 4 || !Character.isLetter(Character.codePointAt(this.a, this.e))) {
-                        ob.c cVar3 = new ob.c(aVar3, 26);
+                        ob.c cVar3 = new ob.c(aVar3, 25);
                         Iterator it = this.i.iterator();
                         while (true) {
                             if (it.hasNext()) {
@@ -327,8 +327,8 @@ public final class g {
                                     case 0:
                                         aVar = aVar3;
                                         CharSequence charSequence = this.a;
-                                        StringBuilder K2 = cVar3.K();
-                                        if (K2 != null && K2.toString().contains("|") && !K2.toString().contains("\n")) {
+                                        StringBuilder z13 = cVar3.z();
+                                        if (z13 != null && z13.toString().contains("|") && !z13.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence.subSequence(this.b, charSequence.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             int i23 = i7;
@@ -376,7 +376,7 @@ public final class g {
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i27 = ff.b.i(K2);
+                                                ArrayList i27 = ff.b.i(z13);
                                                 if (arrayList3.size() >= i27.size()) {
                                                     ff.b bVar = new ff.b(arrayList3, i27);
                                                     mf.a[] aVarArr = new mf.a[1];
@@ -479,7 +479,7 @@ public final class g {
                                         if (this.g < 4) {
                                             CharSequence charSequence4 = this.a;
                                             int i39 = this.e;
-                                            int b10 = a1.b('#', i39, charSequence4.length(), charSequence4) - i39;
+                                            int b10 = b1.b('#', i39, charSequence4.length(), charSequence4) - i39;
                                             if (b10 != 0 && b10 <= 6) {
                                                 int i40 = i39 + b10;
                                                 if (i40 >= charSequence4.length()) {
@@ -533,10 +533,10 @@ public final class g {
                                                     char charAt9 = charSequence4.charAt(i39);
                                                     if (charAt9 != '-') {
                                                         if (charAt9 == '=') {
-                                                            if (a1.c(a1.b('=', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                            if (b1.c(b1.b('=', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                                 i13 = 1;
-                                                                if (i13 > 0 && (K = cVar3.K()) != null) {
-                                                                    i iVar2 = new i(i13, K.toString());
+                                                                if (i13 > 0 && (z11 = cVar3.z()) != null) {
+                                                                    i iVar2 = new i(i13, z11.toString());
                                                                     mf.a[] aVarArr5 = new mf.a[1];
                                                                     aVarArr5[i7] = iVar2;
                                                                     cVar2 = new c(aVarArr5);
@@ -547,7 +547,7 @@ public final class g {
                                                         }
                                                         i13 = i7;
                                                         if (i13 > 0) {
-                                                            i iVar22 = new i(i13, K.toString());
+                                                            i iVar22 = new i(i13, z11.toString());
                                                             mf.a[] aVarArr52 = new mf.a[1];
                                                             aVarArr52[i7] = iVar22;
                                                             cVar2 = new c(aVarArr52);
@@ -555,7 +555,7 @@ public final class g {
                                                             cVar2.b = true;
                                                         }
                                                     }
-                                                    if (a1.c(a1.b('-', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                    if (b1.c(b1.b('-', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                         i13 = 2;
                                                         if (i13 > 0) {
                                                         }
@@ -618,7 +618,7 @@ public final class g {
                                         } else {
                                             int i47 = this.e;
                                             int i48 = this.c + i46;
-                                            int i49 = cVar3.K() != null ? 1 : i7;
+                                            int i49 = cVar3.z() != null ? 1 : i7;
                                             CharSequence charSequence6 = this.a;
                                             char charAt10 = charSequence6.charAt(i47);
                                             if (charAt10 == '*' || charAt10 == '+' || charAt10 == '-') {
@@ -704,13 +704,13 @@ public final class g {
                                                                 case '0':
                                                                 case '1':
                                                                 case '2':
-                                                                case ls.o0 /* 51 */:
-                                                                case ls.p0 /* 52 */:
-                                                                case ls.q0 /* 53 */:
-                                                                case ls.r0 /* 54 */:
-                                                                case ls.s0 /* 55 */:
-                                                                case ls.t0 /* 56 */:
-                                                                case ls.u0 /* 57 */:
+                                                                case ks.o0 /* 51 */:
+                                                                case ks.p0 /* 52 */:
+                                                                case ks.q0 /* 53 */:
+                                                                case ks.r0 /* 54 */:
+                                                                case ks.s0 /* 55 */:
+                                                                case ks.t0 /* 56 */:
+                                                                case ks.u0 /* 57 */:
                                                                     i56++;
                                                                     if (i56 > 9) {
                                                                         break;
@@ -794,7 +794,7 @@ public final class g {
                                                     i65++;
                                                 }
                                             }
-                                            if (i16 >= 2 && a1.b(' ', i64 + i16, length8, charSequence8) == length8) {
+                                            if (i16 >= 2 && b1.b(' ', i64 + i16, length8, charSequence8) == length8) {
                                                 mf.a[] aVarArr11 = new mf.a[1];
                                                 aVarArr11[i7] = new zc.b(i16);
                                                 cVar = new c(aVarArr11);
@@ -852,7 +852,7 @@ public final class g {
                             while (i68 < length9) {
                                 mf.a aVar5 = aVarArr12[i68];
                                 a(aVar5);
-                                z11 = aVar5.f();
+                                z12 = aVar5.f();
                                 i68++;
                                 aVar = aVar5;
                             }

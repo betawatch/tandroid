@@ -1,9 +1,9 @@
 package z7;
 
-import c8.le;
+import c8.me;
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class wa extends ta {
     public final /* synthetic */ xa c;
@@ -15,7 +15,7 @@ public final class wa extends ta {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i7) {
         xa xaVar = this.c;
-        le.a(i7, xaVar.e);
+        me.a(i7, xaVar.e);
         Object[] objArr = xaVar.d;
         int i10 = i7 + i7;
         Object obj = objArr[i10];

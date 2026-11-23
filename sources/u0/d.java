@@ -8,10 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.r1;
+import org.telegram.ui.Wallet.o5;
 import r0.i0;
-import s4.s0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int I = ViewConfiguration.getTapTimeout();
@@ -22,7 +22,7 @@ public final class d implements View.OnTouchListener {
     public final a a;
     public final AccelerateInterpolator b;
     public final r1 c;
-    public s0 d;
+    public o5 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -196,17 +196,17 @@ public final class d implements View.OnTouchListener {
             aVar.d = a11;
             if (!this.F && e()) {
                 if (this.d == null) {
-                    this.d = new s0(this, 4);
+                    this.d = new o5(this, 8);
                 }
                 this.F = true;
                 this.y = true;
                 if (this.x || (i7 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    s0 s0Var = this.d;
+                    o5 o5Var = this.d;
                     long j3 = i7;
                     WeakHashMap weakHashMap = i0.a;
-                    r1Var.postOnAnimationDelayed(s0Var, j3);
+                    r1Var.postOnAnimationDelayed(o5Var, j3);
                 }
                 this.x = true;
             }

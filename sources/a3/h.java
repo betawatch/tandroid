@@ -1,7 +1,7 @@
 package a3;
 
 import ab.d0;
-import ai.l1;
+import ai.g1;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,13 +34,12 @@ import fi.r3;
 import fi.z3;
 import h9.f0;
 import h9.i0;
-import h9.t1;
-import hi.n8;
-import hi.o1;
-import hi.p8;
-import hi.w4;
-import hi.x1;
-import hi.y1;
+import h9.s1;
+import hi.f2;
+import hi.g2;
+import hi.i9;
+import hi.k9;
+import hi.w1;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,69 +49,71 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import jg.h1;
 import kg.z0;
-import ki.n2;
-import ki.s3;
+import ki.o2;
 import oi.b2;
 import oi.c4;
-import oi.g2;
+import oi.l1;
 import oi.q3;
 import oi.t3;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.az;
 import org.telegram.messenger.f4;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.h6;
 import org.telegram.messenger.j6;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
+import org.telegram.messenger.ni;
 import org.telegram.messenger.oi;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.pi;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.rr;
 import org.telegram.messenger.sr;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.l0;
 import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.d2;
-import org.telegram.ui.Cells.p7;
+import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.a4;
 import org.telegram.ui.Components.b4;
-import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.i4;
 import org.telegram.ui.Components.j4;
 import org.telegram.ui.Components.jj0;
-import org.telegram.ui.Components.k4;
-import org.telegram.ui.Components.ll;
-import org.telegram.ui.Components.ml;
-import org.telegram.ui.Components.rb0;
-import org.telegram.ui.Components.tb0;
-import org.telegram.ui.Components.tn;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.zb0;
-import org.telegram.ui.Components.zk;
+import org.telegram.ui.Components.jl;
+import org.telegram.ui.Components.kl;
+import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.qb0;
+import org.telegram.ui.Components.qn;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.wb0;
+import org.telegram.ui.Components.xk;
+import org.telegram.ui.Components.z4;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.bn;
-import org.telegram.ui.cx;
-import org.telegram.ui.ll0;
-import org.telegram.ui.u7;
-import org.telegram.ui.ww;
-import org.telegram.ui.y91;
+import org.telegram.ui.bx;
+import org.telegram.ui.jl0;
+import org.telegram.ui.v7;
+import org.telegram.ui.vw;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, l1, androidx.car.app.utils.b, Continuation, ww, sr, a9, OnFailureListener, pi, q1, ll0, ll, l0, rb0, a5 {
+public final /* synthetic */ class h implements p, SuccessContinuation, g1, androidx.car.app.utils.b, Continuation, vw, rr, a9, OnFailureListener, oi, q1, jl0, jl, l0, ob0, z4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -125,107 +126,49 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         this.d = gVar;
     }
 
-    @Override // org.telegram.ui.ww
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.vw
+    public /* synthetic */ boolean F() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.a5
-    public void O(int i7, int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.z4
+    public void I(int i7, int i10, boolean z10) {
         switch (this.a) {
             case 28:
-                ml mlVar = (ml) this.c;
-                mlVar.o0.b((TLRPC.TL_messageMediaGeo) this.b, mlVar.p0, z10, i7, ((Long) this.d).longValue());
-                mlVar.b.a(true);
+                kl klVar = (kl) this.c;
+                klVar.o0.d((TLRPC.TL_messageMediaGeo) this.b, klVar.p0, z10, i7, ((Long) this.d).longValue());
+                klVar.b.a(true);
                 break;
             default:
-                tn tnVar = (tn) this.c;
-                tnVar.k0.d((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z10, i7, ((Long) this.d).longValue());
-                tnVar.b.a(true);
+                qn qnVar = (qn) this.c;
+                qnVar.k0.c((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z10, i7, ((Long) this.d).longValue());
+                qnVar.b.a(true);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ww
-    public /* synthetic */ boolean P(cx cxVar) {
+    @Override // org.telegram.ui.vw
+    public /* synthetic */ boolean O(bx bxVar) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.messenger.sr
+    @Override // org.telegram.messenger.rr
     public void a(String str) {
         r3 r3Var = (r3) this.c;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.b;
-        h6 h6Var = (h6) this.d;
+        i6 i6Var = (i6) this.d;
         z3 z3Var = r3Var.x;
-        z3Var.getStoriesController().r(z3Var.l1, str, new bi.j(r3Var, storyItem, h6Var, 8));
+        z3Var.getStoriesController().r(z3Var.l1, str, new bi.j(r3Var, storyItem, i6Var, 8));
     }
 
-    @Override // org.telegram.ui.Components.ll
-    public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
-        switch (this.a) {
-            case 15:
-                oi.o oVar = (oi.o) this.c;
-                oi.a aVar = (oi.a) this.b;
-                ui uiVar = (ui) this.d;
-                t3 t3Var = oVar.r;
-                if (messageMedia != null && messageMedia.geo != null) {
-                    g2 g2Var = t3Var.R3;
-                    if (g2Var != null) {
-                        g2Var.d();
-                    }
-                    TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) aVar.b;
-                    pageblockmap.geo = messageMedia.geo;
-                    pageblockmap.zoom = 15;
-                    if (pageblockmap.w <= 0 || pageblockmap.h <= 0) {
-                        pageblockmap.w = 600;
-                        pageblockmap.h = 400;
-                    }
-                    g2 g2Var2 = t3Var.R3;
-                    if (g2Var2 != null) {
-                        g2Var2.h();
-                    }
-                    oVar.a0(true);
-                    uiVar.a(true);
-                    t3Var.post(new oi.f(oVar, aVar, 0));
-                    break;
-                }
-                break;
-            default:
-                b2 b2Var = (b2) this.c;
-                oi.a aVar2 = (oi.a) this.b;
-                ui uiVar2 = (ui) this.d;
-                if (messageMedia != null && messageMedia.geo != null) {
-                    g2 g2Var3 = b2Var.Q.R3;
-                    if (g2Var3 != null) {
-                        g2Var3.d();
-                    }
-                    TL_iv.pageBlockMap pageblockmap2 = (TL_iv.pageBlockMap) aVar2.b;
-                    pageblockmap2.geo = messageMedia.geo;
-                    pageblockmap2.zoom = 15;
-                    if (pageblockmap2.w <= 0 || pageblockmap2.h <= 0) {
-                        pageblockmap2.w = 600;
-                        pageblockmap2.h = 400;
-                    }
-                    g2 g2Var4 = b2Var.Q.R3;
-                    if (g2Var4 != null) {
-                        g2Var4.h();
-                    }
-                    uiVar2.a(true);
-                    b2Var.Q.post(new oi.l1(b2Var, aVar2, 9));
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // ai.l1
-    public void c(long j3, long j10) {
+    @Override // ai.g1
+    public void b(long j3, long j10) {
         String str = (String) this.b;
-        ai.t tVar = (ai.t) this.c;
+        ai.q qVar = (ai.q) this.c;
         long[] jArr = (long[]) this.d;
         long[] jArr2 = (long[]) DictationAsr.h.get(str);
         if (jArr2 != null) {
@@ -237,13 +180,158 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         if (j10 <= 0) {
             return;
         }
-        if (tVar != null) {
-            tVar.k = Math.min(1.0f, j3 / j10);
+        if (qVar != null) {
+            qVar.k = Math.min(1.0f, j3 / j10);
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (elapsedRealtime - jArr[0] > 100) {
             jArr[0] = elapsedRealtime;
-            DictationAsr.p();
+            DictationAsr.q();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.messenger.oi
+    public void c(String str, ArrayList arrayList) {
+        int i7;
+        int i10;
+        ArrayList<TLRPC.Document> arrayList2;
+        int i11;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        ArrayList arrayList5 = arrayList;
+        f2 f2Var = (f2) this.c;
+        String str2 = (String) this.b;
+        ri riVar = (ri) this.d;
+        ArrayList arrayList6 = f2Var.h;
+        SparseIntArray sparseIntArray = f2Var.E;
+        ArrayList arrayList7 = f2Var.n;
+        g2 g2Var = f2Var.O;
+        ArrayList arrayList8 = f2Var.w;
+        HashSet hashSet = f2Var.M;
+        ArrayList arrayList9 = f2Var.s;
+        if (TextUtils.equals(str2, f2Var.I)) {
+            ArrayList j3 = j6.j(f2Var.I, null);
+            int i12 = 0;
+            for (int i13 = 0; i13 < j3.size(); i13++) {
+                try {
+                    ni niVar = new ni();
+                    niVar.a = ((h6) j3.get(i13)).c.toString();
+                    arrayList5.add(niVar);
+                } catch (Exception unused) {
+                }
+            }
+            f2Var.y = 0;
+            arrayList9.clear();
+            arrayList8.clear();
+            sparseIntArray.clear();
+            arrayList7.clear();
+            int i14 = 1;
+            f2Var.y++;
+            arrayList9.add(null);
+            arrayList8.add(0L);
+            if (g2Var.a == 0) {
+                hashSet.clear();
+                for (int i15 = 0; i15 < arrayList5.size(); i15++) {
+                    ni niVar2 = (ni) arrayList5.get(i15);
+                    String str3 = niVar2.a;
+                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) f2Var.d.get(niVar2.a)) != null) {
+                        hashSet.addAll(arrayList4);
+                    }
+                }
+                arrayList8.addAll(hashSet);
+                for (int i16 = 0; i16 < hashSet.size(); i16++) {
+                    arrayList9.add(null);
+                }
+                f2Var.y = hashSet.size() + f2Var.y;
+                i7 = 1;
+                i10 = 0;
+            } else {
+                HashMap hashMap = riVar.e0;
+                int i17 = 0;
+                while (i17 < arrayList5.size()) {
+                    ni niVar3 = (ni) arrayList5.get(i17);
+                    int i18 = i12;
+                    String str4 = niVar3.a;
+                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(niVar3.a)) == null || arrayList3.isEmpty()) {
+                        i11 = i14;
+                    } else {
+                        i11 = i14;
+                        for (int i19 = i18; i19 < arrayList3.size(); i19++) {
+                            TLRPC.Document document = (TLRPC.Document) arrayList3.get(i19);
+                            if (document != null && !arrayList9.contains(document)) {
+                                arrayList9.add(document);
+                                f2Var.y++;
+                            }
+                        }
+                    }
+                    i17++;
+                    i12 = i18;
+                    i14 = i11;
+                }
+                i7 = i14;
+                i10 = i12;
+                ArrayList arrayList10 = riVar.t0[i10];
+                int i20 = i10;
+                while (i20 < arrayList5.size()) {
+                    ni niVar4 = (ni) arrayList5.get(i20);
+                    String str5 = niVar4.a;
+                    if (str5 != null && !str5.startsWith("animated_")) {
+                        for (int i21 = i10; i21 < arrayList10.size(); i21++) {
+                            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList10.get(i21);
+                            if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                                arrayList2 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+                            } else if (!stickerSetCovered.covers.isEmpty()) {
+                                arrayList2 = stickerSetCovered.covers;
+                            } else if (stickerSetCovered.cover != null) {
+                                ArrayList<TLRPC.Document> arrayList11 = new ArrayList<>();
+                                arrayList11.add(stickerSetCovered.cover);
+                                arrayList2 = arrayList11;
+                            }
+                            for (int i22 = i10; i22 < arrayList2.size(); i22++) {
+                                String V = fj.V(arrayList2.get(i22), null, null);
+                                if (V != null && V.contains(niVar4.a)) {
+                                    arrayList9.add(arrayList2.get(i22));
+                                    f2Var.y++;
+                                }
+                            }
+                        }
+                    }
+                    i20++;
+                    arrayList5 = arrayList;
+                }
+            }
+            String M3 = g0.M3((f2Var.I + "").toLowerCase());
+            for (int i23 = i10; i23 < arrayList6.size(); i23++) {
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i23);
+                if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
+                    String M32 = g0.M3((tL_messages_stickerSet.set.title + "").toLowerCase());
+                    if (M32.startsWith(M3) || M32.contains(" ".concat(M3))) {
+                        int size = arrayList7.size();
+                        arrayList7.add(tL_messages_stickerSet);
+                        sparseIntArray.put(f2Var.y, size);
+                        arrayList9.add(null);
+                        f2Var.y++;
+                        arrayList9.addAll(tL_messages_stickerSet.documents);
+                        f2Var.y = tL_messages_stickerSet.documents.size() + f2Var.y;
+                    }
+                }
+            }
+            int i24 = i7;
+            boolean z10 = (arrayList8.size() > i24 || arrayList9.size() > i24) ? i10 : i24;
+            f2Var.x = z10;
+            if (z10 != 0) {
+                f2Var.y += i24;
+            }
+            if (z10 == 0) {
+                f2Var.L += i24;
+            }
+            f2Var.J = f2Var.I;
+            f2Var.f();
+            boolean z11 = i10;
+            w1.z1(g2Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
+            g2Var.f.c(z11);
+            g2Var.e.n(z11);
         }
     }
 
@@ -280,177 +368,90 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         }
     }
 
-    @Override // org.telegram.ui.ll0
-    public void d(int i7) {
+    @Override // org.telegram.ui.Components.jl
+    public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         switch (this.a) {
-            case 14:
-                n2 n2Var = (n2) this.c;
-                zb0 zb0Var = (zb0) this.d;
-                String str = (String) this.b;
-                if (i7 != 3) {
-                    zb0Var.dismiss();
+            case 15:
+                oi.p pVar = (oi.p) this.c;
+                oi.a aVar = (oi.a) this.b;
+                ti tiVar = (ti) this.d;
+                t3 t3Var = pVar.r;
+                if (messageMedia != null && messageMedia.geo != null) {
+                    oi.g2 g2Var = t3Var.R3;
+                    if (g2Var != null) {
+                        g2Var.d();
+                    }
+                    TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) aVar.b;
+                    pageblockmap.geo = messageMedia.geo;
+                    pageblockmap.zoom = 15;
+                    if (pageblockmap.w <= 0 || pageblockmap.h <= 0) {
+                        pageblockmap.w = 600;
+                        pageblockmap.h = 400;
+                    }
+                    oi.g2 g2Var2 = t3Var.R3;
+                    if (g2Var2 != null) {
+                        g2Var2.h();
+                    }
+                    pVar.a0(true);
+                    tiVar.a(true);
+                    t3Var.post(new oi.f(pVar, aVar, 0));
+                    break;
                 }
-                n2Var.d.E.G(str, c0.D(i7).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                zb0 zb0Var2 = (zb0) this.c;
-                s3 s3Var = (s3) this.d;
-                String str2 = (String) this.b;
-                if (i7 != 3) {
-                    zb0Var2.dismiss();
+                b2 b2Var = (b2) this.c;
+                oi.a aVar2 = (oi.a) this.b;
+                ti tiVar2 = (ti) this.d;
+                if (messageMedia != null && messageMedia.geo != null) {
+                    oi.g2 g2Var3 = b2Var.Q.R3;
+                    if (g2Var3 != null) {
+                        g2Var3.d();
+                    }
+                    TL_iv.pageBlockMap pageblockmap2 = (TL_iv.pageBlockMap) aVar2.b;
+                    pageblockmap2.geo = messageMedia.geo;
+                    pageblockmap2.zoom = 15;
+                    if (pageblockmap2.w <= 0 || pageblockmap2.h <= 0) {
+                        pageblockmap2.w = 600;
+                        pageblockmap2.h = 400;
+                    }
+                    oi.g2 g2Var4 = b2Var.Q.R3;
+                    if (g2Var4 != null) {
+                        g2Var4.h();
+                    }
+                    tiVar2.a(true);
+                    b2Var.Q.post(new l1(b2Var, aVar2, 9));
+                    break;
                 }
-                s3Var.getWebViewContainer().G(str2, c0.D(i7).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.pi
-    public void e(String str, ArrayList arrayList) {
-        int i7;
-        int i10;
-        ArrayList<TLRPC.Document> arrayList2;
-        int i11;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        ArrayList arrayList5 = arrayList;
-        x1 x1Var = (x1) this.c;
-        String str2 = (String) this.b;
-        si siVar = (si) this.d;
-        ArrayList arrayList6 = x1Var.h;
-        SparseIntArray sparseIntArray = x1Var.E;
-        ArrayList arrayList7 = x1Var.n;
-        y1 y1Var = x1Var.O;
-        ArrayList arrayList8 = x1Var.w;
-        HashSet hashSet = x1Var.M;
-        ArrayList arrayList9 = x1Var.s;
-        if (TextUtils.equals(str2, x1Var.I)) {
-            ArrayList j3 = j6.j(x1Var.I, null);
-            int i12 = 0;
-            for (int i13 = 0; i13 < j3.size(); i13++) {
-                try {
-                    oi oiVar = new oi();
-                    oiVar.a = ((org.telegram.messenger.h6) j3.get(i13)).c.toString();
-                    arrayList5.add(oiVar);
-                } catch (Exception unused) {
+    @Override // org.telegram.ui.jl0
+    public void e(int i7) {
+        switch (this.a) {
+            case 14:
+                o2 o2Var = (o2) this.c;
+                wb0 wb0Var = (wb0) this.d;
+                String str = (String) this.b;
+                if (i7 != 3) {
+                    wb0Var.dismiss();
                 }
-            }
-            x1Var.y = 0;
-            arrayList9.clear();
-            arrayList8.clear();
-            sparseIntArray.clear();
-            arrayList7.clear();
-            int i14 = 1;
-            x1Var.y++;
-            arrayList9.add(null);
-            arrayList8.add(0L);
-            if (y1Var.a == 0) {
-                hashSet.clear();
-                for (int i15 = 0; i15 < arrayList5.size(); i15++) {
-                    oi oiVar2 = (oi) arrayList5.get(i15);
-                    String str3 = oiVar2.a;
-                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) x1Var.d.get(oiVar2.a)) != null) {
-                        hashSet.addAll(arrayList4);
-                    }
+                o2Var.d.E.G(str, c0.D(i7).toLowerCase(Locale.ROOT), false);
+                break;
+            default:
+                wb0 wb0Var2 = (wb0) this.c;
+                ki.t3 t3Var = (ki.t3) this.d;
+                String str2 = (String) this.b;
+                if (i7 != 3) {
+                    wb0Var2.dismiss();
                 }
-                arrayList8.addAll(hashSet);
-                for (int i16 = 0; i16 < hashSet.size(); i16++) {
-                    arrayList9.add(null);
-                }
-                x1Var.y = hashSet.size() + x1Var.y;
-                i7 = 1;
-                i10 = 0;
-            } else {
-                HashMap hashMap = siVar.e0;
-                int i17 = 0;
-                while (i17 < arrayList5.size()) {
-                    oi oiVar3 = (oi) arrayList5.get(i17);
-                    int i18 = i12;
-                    String str4 = oiVar3.a;
-                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(oiVar3.a)) == null || arrayList3.isEmpty()) {
-                        i11 = i14;
-                    } else {
-                        i11 = i14;
-                        for (int i19 = i18; i19 < arrayList3.size(); i19++) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList3.get(i19);
-                            if (document != null && !arrayList9.contains(document)) {
-                                arrayList9.add(document);
-                                x1Var.y++;
-                            }
-                        }
-                    }
-                    i17++;
-                    i12 = i18;
-                    i14 = i11;
-                }
-                i7 = i14;
-                i10 = i12;
-                ArrayList arrayList10 = siVar.t0[i10];
-                int i20 = i10;
-                while (i20 < arrayList5.size()) {
-                    oi oiVar4 = (oi) arrayList5.get(i20);
-                    String str5 = oiVar4.a;
-                    if (str5 != null && !str5.startsWith("animated_")) {
-                        for (int i21 = i10; i21 < arrayList10.size(); i21++) {
-                            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList10.get(i21);
-                            if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-                                arrayList2 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-                            } else if (!stickerSetCovered.covers.isEmpty()) {
-                                arrayList2 = stickerSetCovered.covers;
-                            } else if (stickerSetCovered.cover != null) {
-                                ArrayList<TLRPC.Document> arrayList11 = new ArrayList<>();
-                                arrayList11.add(stickerSetCovered.cover);
-                                arrayList2 = arrayList11;
-                            }
-                            for (int i22 = i10; i22 < arrayList2.size(); i22++) {
-                                String V = gj.V(arrayList2.get(i22), null, null);
-                                if (V != null && V.contains(oiVar4.a)) {
-                                    arrayList9.add(arrayList2.get(i22));
-                                    x1Var.y++;
-                                }
-                            }
-                        }
-                    }
-                    i20++;
-                    arrayList5 = arrayList;
-                }
-            }
-            String M3 = g0.M3((x1Var.I + "").toLowerCase());
-            for (int i23 = i10; i23 < arrayList6.size(); i23++) {
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i23);
-                if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
-                    String M32 = g0.M3((tL_messages_stickerSet.set.title + "").toLowerCase());
-                    if (M32.startsWith(M3) || M32.contains(" ".concat(M3))) {
-                        int size = arrayList7.size();
-                        arrayList7.add(tL_messages_stickerSet);
-                        sparseIntArray.put(x1Var.y, size);
-                        arrayList9.add(null);
-                        x1Var.y++;
-                        arrayList9.addAll(tL_messages_stickerSet.documents);
-                        x1Var.y = tL_messages_stickerSet.documents.size() + x1Var.y;
-                    }
-                }
-            }
-            int i24 = i7;
-            boolean z10 = (arrayList8.size() > i24 || arrayList9.size() > i24) ? i10 : i24;
-            x1Var.x = z10;
-            if (z10 != 0) {
-                x1Var.y += i24;
-            }
-            if (z10 == 0) {
-                x1Var.L += i24;
-            }
-            x1Var.J = x1Var.I;
-            x1Var.f();
-            boolean z11 = i10;
-            o1.z1(y1Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
-            y1Var.f.c(z11);
-            y1Var.e.n(z11);
+                t3Var.getWebViewContainer().G(str2, c0.D(i7).toLowerCase(Locale.ROOT), false);
+                break;
         }
     }
 
     @Override // a3.p
-    public t1 f(int i7, m1 m1Var, int[] iArr) {
+    public s1 f(int i7, m1 m1Var, int[] iArr) {
         n nVar = (n) this.c;
         String str = (String) this.b;
         String str2 = (String) this.d;
@@ -462,21 +463,21 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
     }
 
     @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
-        a5 a5Var = (a5) this.c;
+    public void h(int i7) {
+        z4 z4Var = (z4) this.c;
         boolean[] zArr = (boolean[]) this.b;
-        w4 w4Var = (w4) this.d;
+        h6.o oVar = (h6.o) this.d;
         if (i7 == 1) {
-            a5Var.O(2147483646, 0, zArr[0]);
-            ((w2) w4Var.b).y0.run();
+            z4Var.I(2147483646, 0, zArr[0]);
+            ((w2) oVar.b).y0.run();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(t1 t1Var, int i7) {
         switch (this.a) {
             case 11:
-                ((p8) this.c).O0((n8) this.b, (Runnable) this.d, true);
+                ((k9) this.c).O0((i9) this.b, (Runnable) this.d, true);
                 break;
             case 12:
                 h1 h1Var = (h1) this.c;
@@ -485,7 +486,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                 h1Var.getClass();
                 zArr[0] = true;
                 if (user != null) {
-                    np.u1(h1Var.f).g7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
+                    mp.u1(h1Var.f).g7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
                     h1Var.G();
                     break;
                 }
@@ -530,63 +531,63 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                 break;
             case 18:
                 boolean[] zArr3 = (boolean[]) this.c;
-                y10 y10Var = (y10) this.b;
-                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.d;
+                w10 w10Var = (w10) this.b;
+                t1[] t1VarArr = (t1[]) this.d;
                 zArr3[0] = true;
-                y10Var.a(Boolean.FALSE);
+                w10Var.a(Boolean.FALSE);
                 t1VarArr[0].dismiss();
                 break;
             case 22:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                gj gjVar = (gj) this.b;
+                fj fjVar = (fj) this.b;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.d;
                 Activity activity2 = chatActivityEnterView.E3;
                 if (activity2.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0) {
-                    az.C(chatActivityEnterView.R).o0(gjVar, keyboardButtonProto);
+                    zy.C(chatActivityEnterView.R).o0(fjVar, keyboardButtonProto);
                     break;
                 } else {
                     activity2.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, 2);
-                    chatActivityEnterView.Y3 = gjVar;
+                    chatActivityEnterView.Y3 = fjVar;
                     chatActivityEnterView.Z3 = keyboardButtonProto;
                     break;
                 }
             case 25:
-                ui uiVar = (ui) this.c;
+                ti tiVar = (ti) this.c;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.b;
                 TLRPC.User user2 = (TLRPC.User) this.d;
-                int i11 = uiVar.H3;
+                int i11 = tiVar.H3;
                 if (tL_attachMenuBot == null) {
-                    si.d0(i11).Q1(user2.id);
+                    ri.d0(i11).Q1(user2.id);
                     break;
                 } else {
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
-                    tL_messages_toggleBotInAttachMenu.bot = np.u1(i11).s1(user2);
+                    tL_messages_toggleBotInAttachMenu.bot = mp.u1(i11).s1(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new u7(13, uiVar, tL_attachMenuBot), 66);
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new v7(13, tiVar, tL_attachMenuBot), 66);
                     break;
                 }
             default:
-                zk zkVar = (zk) this.c;
+                xk xkVar = (xk) this.c;
                 z0 z0Var = (z0) this.b;
                 d2 d2Var = (d2) this.d;
-                TextView textView = zkVar.V;
+                TextView textView = xkVar.V;
                 if (z0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
                     String trim3 = z0Var.getText().toString().trim();
-                    zkVar.t0 = TextUtils.isEmpty(trim3) ? null : trim3;
-                    zkVar.u0 = !d2Var.b();
-                    if (TextUtils.isEmpty(zkVar.t0)) {
+                    xkVar.t0 = TextUtils.isEmpty(trim3) ? null : trim3;
+                    xkVar.u0 = !d2Var.b();
+                    if (TextUtils.isEmpty(xkVar.t0)) {
                         textView.setVisibility(8);
                     } else {
-                        textView.setText(zkVar.t0);
+                        textView.setText(xkVar.t0);
                         textView.setVisibility(0);
                     }
-                    zkVar.k0();
+                    xkVar.k0();
                     t1Var.dismiss();
-                    zkVar.a0();
+                    xkVar.a0();
                     break;
                 } else {
-                    int i12 = -zkVar.w0;
-                    zkVar.w0 = i12;
+                    int i12 = -xkVar.w0;
+                    xkVar.w0 = i12;
                     g0.E3(i12, z0Var, null);
                     break;
                 }
@@ -595,15 +596,15 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
 
     @Override // fi.a9
     public void m(Canvas canvas, RectF rectF, float f10) {
-        p7 p7Var = (p7) this.c;
+        o7 o7Var = (o7) this.c;
         jj0 jj0Var = (jj0) this.b;
         int[] iArr = (int[]) this.d;
-        p7Var.c(canvas, rectF, f10);
-        p7Var.f(canvas, rectF, f10);
-        if (p7Var.h) {
-            p7Var.b(canvas, rectF, f10);
+        o7Var.c(canvas, rectF, f10);
+        o7Var.f(canvas, rectF, f10);
+        if (o7Var.h) {
+            o7Var.b(canvas, rectF, f10);
         } else {
-            p7Var.e(canvas, rectF, f10);
+            o7Var.e(canvas, rectF, f10);
         }
         if (jj0Var != null && jj0Var.b0 && jj0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);
@@ -613,14 +614,14 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         }
     }
 
-    @Override // org.telegram.ui.Components.rb0
-    public void n(tb0 tb0Var, int i7) {
+    @Override // org.telegram.ui.Components.ob0
+    public void o(qb0 qb0Var, int i7) {
         switch (this.a) {
             case 20:
-                c5.g(null, null, 0L, 0L, 0, (tb0) this.c, (j4) this.b, (k4) this.d);
+                b5.g(null, null, 0L, 0L, 0, (qb0) this.c, (i4) this.b, (j4) this.d);
                 break;
             default:
-                c5.g(null, null, 0L, 0L, 0, (tb0) this.c, (b4) this.b, (org.telegram.ui.Components.c4) this.d);
+                b5.g(null, null, 0L, 0L, 0, (qb0) this.c, (a4) this.b, (b4) this.d);
                 break;
         }
     }
@@ -666,43 +667,43 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         return Tasks.forResult(null);
     }
 
-    @Override // org.telegram.ui.ww
-    public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.vw
+    public boolean z(bx bxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, w91 w91Var) {
         switch (this.a) {
             case 6:
                 f6 f6Var = (f6) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
-                cx cxVar2 = (cx) this.d;
+                bx bxVar2 = (bx) this.d;
                 if (!arrayList.isEmpty()) {
-                    long j3 = ((tr) arrayList.get(0)).a;
+                    long j3 = ((sr) arrayList.get(0)).a;
                     Long l10 = (Long) f4.f(f6Var.a).r.get(tL_starGiftUnique.slug);
                     long longValue = l10 != null ? l10.longValue() : 0L;
                     if (longValue == 0 || longValue == j3) {
                         f4.f(f6Var.a).s(j3, new ig.b(null, tL_starGiftUnique.slug), null, true);
-                        cxVar2.presentFragment(bn.ua(j3), true);
+                        bxVar2.presentFragment(bn.ua(j3), true);
                     } else {
-                        c5.k0(f6Var.getContext(), f6Var.J0, f6Var.a, tL_starGiftUnique, longValue, new j2(f6Var, j3, tL_starGiftUnique, cxVar2, 1));
+                        b5.k0(f6Var.getContext(), f6Var.J0, f6Var.a, tL_starGiftUnique, longValue, new j2(f6Var, j3, tL_starGiftUnique, bxVar2, 1));
                     }
                     break;
                 }
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                gj gjVar = (gj) this.b;
+                fj fjVar = (fj) this.b;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
                 bn bnVar = chatActivityEnterView.F3;
-                TLRPC.Message message = gjVar.k;
+                TLRPC.Message message = fjVar.k;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
                 if (j11 != 0) {
                     j10 = j11;
                 }
-                TLRPC.User c22 = np.u1(chatActivityEnterView.S.a).c2(Long.valueOf(j10));
+                TLRPC.User c22 = mp.u1(chatActivityEnterView.S.a).c2(Long.valueOf(j10));
                 if (c22 != null) {
-                    long j12 = ((tr) arrayList.get(0)).a;
-                    si.d0(chatActivityEnterView.R).V1(j12, 0, "@" + p10.o(c22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
+                    long j12 = ((sr) arrayList.get(0)).a;
+                    ri.d0(chatActivityEnterView.R).V1(j12, 0, "@" + n10.o(c22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
                     if (j12 == chatActivityEnterView.G3) {
-                        cxVar.finishFragment();
+                        bxVar.finishFragment();
                         break;
                     } else if (!n5.C(j12)) {
                         Bundle bundle = new Bundle();
@@ -711,9 +712,9 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (np.u1(chatActivityEnterView.S.a).E(bundle, cxVar, null, null)) {
+                        if (mp.u1(chatActivityEnterView.S.a).E(bundle, bxVar, null, null)) {
                             if (!bnVar.presentFragment(new bn(bundle), true)) {
-                                cxVar.finishFragment();
+                                bxVar.finishFragment();
                                 break;
                             } else if (!g0.Q1()) {
                                 bnVar.removeSelfFromStack();
@@ -721,11 +722,11 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                             }
                         }
                     } else {
-                        cxVar.finishFragment();
+                        bxVar.finishFragment();
                         break;
                     }
                 } else {
-                    cxVar.finishFragment();
+                    bxVar.finishFragment();
                     break;
                 }
                 break;
@@ -747,10 +748,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
         this.b = str;
     }
 
-    public /* synthetic */ h(String str, ai.t tVar, long[] jArr) {
+    public /* synthetic */ h(String str, ai.q qVar, long[] jArr) {
         this.a = 2;
         this.b = str;
-        this.c = tVar;
+        this.c = qVar;
         this.d = jArr;
     }
 
@@ -778,7 +779,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                 edit.commit();
             }
         }
-        if (firebaseMessaging.d.v() || d0Var == null || !str2.equals(d0Var.a)) {
+        if (firebaseMessaging.d.z() || d0Var == null || !str2.equals(d0Var.a)) {
             o9.g gVar2 = firebaseMessaging.a;
             gVar2.a();
             String str3 = gVar2.b;
@@ -789,10 +790,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, l1, andr
                     sb2.append(str3);
                     Log.d("FirebaseMessaging", sb2.toString());
                 }
-                boolean v = firebaseMessaging.d.v();
+                boolean z10 = firebaseMessaging.d.z();
                 Intent intent = new Intent();
                 intent.putExtra("token", str2);
-                if (v) {
+                if (z10) {
                     intent.setAction("com.google.firebase.messaging.FCM_REGISTERED");
                 } else {
                     intent.setAction("com.google.firebase.messaging.NEW_TOKEN");

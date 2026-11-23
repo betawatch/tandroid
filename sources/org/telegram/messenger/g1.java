@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g1 implements y10 {
+public final /* synthetic */ class g1 implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -15,15 +15,15 @@ public final /* synthetic */ class g1 implements y10 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                g0.g3(new zf((h1) this.b, (String) obj, (Runnable) this.c, 7));
+                g0.g3(new yf((h1) this.b, (String) obj, (Runnable) this.c, 7));
                 break;
             case 1:
                 g3 g3Var = (g3) this.b;
-                y10 y10Var = (y10) this.c;
+                w10 w10Var = (w10) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error.text.startsWith("FLOOD_WAIT")) {
                     g3Var.f = Utilities.z(tL_error.text).intValue();
@@ -31,14 +31,14 @@ public final /* synthetic */ class g1 implements y10 {
                     g3Var.b = true;
                 }
                 g3Var.a = false;
-                y10Var.a(g3Var);
+                w10Var.a(g3Var);
                 break;
             default:
-                az azVar = (az) this.b;
-                yy yyVar = (yy) this.c;
-                azVar.getClass();
-                yyVar.Q = ((Long) obj).longValue();
-                azVar.r0(yyVar);
+                zy zyVar = (zy) this.b;
+                xy xyVar = (xy) this.c;
+                zyVar.getClass();
+                xyVar.Q = ((Long) obj).longValue();
+                zyVar.r0(xyVar);
                 break;
         }
     }

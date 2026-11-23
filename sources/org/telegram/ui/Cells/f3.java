@@ -5,29 +5,29 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class f3 extends View {
     public boolean a;
     public final Paint b;
-    public final org.telegram.ui.ActionBar.h6 c;
+    public final org.telegram.ui.ActionBar.i6 c;
 
-    public f3(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public f3(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.b = new Paint();
-        this.c = h6Var;
+        this.c = i6Var;
         setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         boolean z10 = this.a;
-        org.telegram.ui.ActionBar.h6 h6Var = this.c;
+        org.telegram.ui.ActionBar.i6 i6Var = this.c;
         Paint paint = this.b;
         if (z10) {
-            paint.setColor(i0.a.f(0.2f, -16777216, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.lh, h6Var)));
+            paint.setColor(i0.a.f(0.2f, -16777216, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.lh, i6Var)));
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d7, h6Var));
+            paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d7, i6Var));
         }
         canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), paint);
     }

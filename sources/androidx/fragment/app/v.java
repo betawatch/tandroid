@@ -11,7 +11,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.l implements e0.a {
     public boolean M;
@@ -73,7 +73,7 @@ public abstract class v extends androidx.activity.l implements e0.a {
 
     public static boolean t(j0 j0Var) {
         boolean z10 = false;
-        for (s sVar : j0Var.c.w()) {
+        for (s sVar : j0Var.c.v()) {
             if (sVar != null) {
                 u uVar = sVar.L;
                 if ((uVar == null ? null : uVar.e) != null) {
@@ -143,7 +143,7 @@ public abstract class v extends androidx.activity.l implements e0.a {
         printWriter.print(" mStopped=");
         printWriter.print(this.O);
         if (getApplication() != null) {
-            new sg.h0(this, g()).c(str3, printWriter);
+            new s2.e(this, g()).c(str3, printWriter);
         }
         ((u) this.K.b).d.w(str, fileDescriptor, printWriter, strArr);
     }

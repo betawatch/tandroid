@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
-import c8.gd;
+import c8.hd;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -24,13 +24,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.nz;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.lz;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n {
     public static final String[] e0 = {"models/star.binobj"};
@@ -159,7 +159,7 @@ public final class n {
                 fArr4[1] = 0.5f;
                 fArr4[2] = 0.78f;
                 fArr4[3] = 1.0f;
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{m6.x0(null, m6.Ck, false), m6.x0(null, m6.Dk, false), m6.x0(null, m6.Ek, false), m6.x0(null, m6.Fk, false)}, fArr4, Shader.TileMode.CLAMP));
+                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{n6.x0(null, n6.Ck, false), n6.x0(null, n6.Dk, false), n6.x0(null, n6.Ek, false), n6.x0(null, n6.Fk, false)}, fArr4, Shader.TileMode.CLAMP));
                 canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
                 int[] iArr = new int[1];
                 GLES20.glGenTextures(1, iArr, 0);
@@ -267,7 +267,7 @@ public final class n {
                 GLES20.glBindTexture(3553, this.o);
                 int i31 = this.b0;
                 if (i31 == 0 || i31 == 2) {
-                    bitmap2 = nz.d(R.raw.start_texture, ls.P3, ls.P3, -1);
+                    bitmap2 = lz.d(R.raw.start_texture, ks.P3, ks.P3, -1);
                 } else {
                     try {
                         if (i31 == 1) {
@@ -310,9 +310,9 @@ public final class n {
             try {
                 dataInputStream = new DataInputStream(new BufferedInputStream(context.getAssets().open(strArr[i21]), TLObject.FLAG_14));
                 try {
-                    a10 = gd.a(dataInputStream);
-                    a11 = gd.a(dataInputStream);
-                    a12 = gd.a(dataInputStream);
+                    a10 = hd.a(dataInputStream);
+                    a11 = hd.a(dataInputStream);
+                    a12 = hd.a(dataInputStream);
                     readInt = dataInputStream.readInt();
                     i11 = i19;
                     i12 = readInt * 3;
@@ -328,11 +328,11 @@ public final class n {
                 fArr = null;
                 fArr2 = null;
                 e.printStackTrace();
-                this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                this.i[i21] = m10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                 this.i[i21].put(fArr3).position(0);
-                this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                this.j[i21] = m10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                 this.j[i21].put(fArr2).position(0);
-                this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.k[i21] = m10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.k[i21].put(fArr).position(0);
                 this.y[i21] = fArr3.length;
                 i21++;
@@ -429,11 +429,11 @@ public final class n {
                         } catch (IOException e12) {
                             e = e12;
                             e.printStackTrace();
-                            this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.i[i21] = m10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.i[i21].put(fArr3).position(0);
-                            this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.j[i21] = m10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.j[i21].put(fArr2).position(0);
-                            this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.k[i21] = m10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.k[i21].put(fArr).position(0);
                             this.y[i21] = fArr3.length;
                             i21++;
@@ -443,11 +443,11 @@ public final class n {
                             i18 = 3;
                             i20 = 0;
                         }
-                        this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                        this.i[i21] = m10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                         this.i[i21].put(fArr3).position(0);
-                        this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                        this.j[i21] = m10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                         this.j[i21].put(fArr2).position(0);
-                        this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.k[i21] = m10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.k[i21].put(fArr).position(0);
                         this.y[i21] = fArr3.length;
                         i21++;

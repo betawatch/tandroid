@@ -10,18 +10,18 @@ import android.text.TextUtils;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.a9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
@@ -45,8 +45,8 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver;
         String str;
         String str2;
-        b9 b9Var = new b9((h6) null);
-        int i7 = k10.t0;
+        a9 a9Var = new a9((i6) null);
+        int i7 = i10.t0;
         this.l = 1.0f;
         this.m = true;
         this.o = 0.0f;
@@ -57,18 +57,18 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         r1 r1Var = hVar.E;
         this.b = r1Var;
         this.d = j3;
-        b9Var.p = 1.0f;
+        a9Var.p = 1.0f;
         if (n5.E(j3)) {
-            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
-            b9Var.r(c22);
-            if (p10.C(c22)) {
-                str2 = hd.N0(2131745705, null);
-                b9Var.g(1);
-                b9Var.p = 0.75f;
+            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+            a9Var.r(c22);
+            if (n10.C(c22)) {
+                str2 = gd.N0(2131745705, null);
+                a9Var.g(1);
+                a9Var.p = 0.75f;
                 imageReceiver = imageReceiver2;
-                imageReceiver.r0(null, null, null, null, b9Var, 0L, null, c22, 0);
-                imageReceiver.J0(g0.L(g.a / 2.0f));
-                imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
+                imageReceiver.s0(null, null, null, null, a9Var, 0L, null, c22, 0);
+                imageReceiver.K0(g0.L(g.a / 2.0f));
+                imageReceiver.z0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
                 Paint a22 = r1Var.a2("paintChatActionText");
                 if (str2 != null || a22 == null) {
                 }
@@ -79,17 +79,17 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             }
             imageReceiver = imageReceiver2;
             str = c22 != null ? i5.m(0, c22.first_name, c22.last_name) : "";
-            imageReceiver.i0(c22, b9Var, null);
+            imageReceiver.j0(c22, a9Var, null);
         } else {
             imageReceiver = imageReceiver2;
-            TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
             str = O0 != null ? O0.title : "";
-            b9Var.q(O0);
-            imageReceiver.i0(O0, b9Var, null);
+            a9Var.q(O0);
+            imageReceiver.j0(O0, a9Var, null);
         }
         str2 = str;
-        imageReceiver.J0(g0.L(g.a / 2.0f));
-        imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
+        imageReceiver.K0(g0.L(g.a / 2.0f));
+        imageReceiver.z0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
         Paint a222 = r1Var.a2("paintChatActionText");
         if (str2 != null) {
         }

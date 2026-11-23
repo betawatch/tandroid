@@ -1,14 +1,14 @@
 package fi;
 
 import android.app.Activity;
-import c8.ma;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import c8.na;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,18 +32,18 @@ public final /* synthetic */ class r1 implements Runnable {
                 if (!z3Var.t0.H0) {
                     z3Var.j3 = null;
                     if (z3Var.r0 == null) {
-                        hi.l3 l3Var = new hi.l3(z3Var.getContext(), 3);
-                        l3Var.o(1.0f, -22.0f);
-                        z3Var.r0 = l3Var;
-                        l3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ls.P3));
-                        hi.l3 l3Var2 = z3Var.r0;
-                        l3Var2.V = false;
-                        l3Var2.v(hd.N0(2131746203, null));
+                        hi.u3 u3Var = new hi.u3(z3Var.getContext(), 3);
+                        u3Var.o(1.0f, -22.0f);
+                        z3Var.r0 = u3Var;
+                        u3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ks.P3));
+                        hi.u3 u3Var2 = z3Var.r0;
+                        u3Var2.V = false;
+                        u3Var2.v(gd.N0(2131746203, null));
                         z3Var.r0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
-                        z3Var.M0.addView(z3Var.r0, ma.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, z3Var.h2 ? 0.0f : 56.0f));
+                        z3Var.M0.addView(z3Var.r0, na.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, z3Var.h2 ? 0.0f : 56.0f));
                     }
                     z3Var.r0.x();
-                    cz.H(true);
+                    bz.H(true);
                     break;
                 }
                 break;
@@ -71,7 +71,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 i2 i2Var = z3Var.L1;
                 if (i2Var != null) {
                     i2Var.P(true);
-                    z3Var.L1.y2();
+                    z3Var.L1.B2();
                     z3Var.p0(true);
                     break;
                 }
@@ -102,7 +102,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 break;
             case 11:
                 z3Var.a1(false);
-                np.g1().edit().putInt("taptostorysoundhint", np.g1().getInt("taptostorysoundhint", 0) + 1).apply();
+                mp.g1().edit().putInt("taptostorysoundhint", mp.g1().getInt("taptostorysoundhint", 0) + 1).apply();
                 break;
             default:
                 z3Var.E3 = true;

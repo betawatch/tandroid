@@ -1,12 +1,12 @@
 package zi;
 
 import android.os.SystemClock;
-import c8.oe;
+import c8.pe;
 import java.io.File;
 import java.io.IOException;
-import org.telegram.ui.yn;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     } catch (IOException unused) {
                     }
-                    oe.c(xVar.a);
+                    pe.c(xVar.a);
                 }
                 if (file != null) {
-                    oe.c(file);
+                    pe.c(file);
                     return;
                 }
                 return;
@@ -79,7 +79,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 if (u0Var4.A) {
                     u0Var4.A = false;
-                    u0Var4.j.execute(new yn(u0Var4, u0Var4.U, u0Var4.B, u0Var4.T, 18));
+                    u0Var4.j.execute(new xn(u0Var4, u0Var4.U, u0Var4.B, u0Var4.T, 18));
                     return;
                 }
                 if (u0Var4.a0 != 4) {
@@ -90,7 +90,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     u0Var4.V = d;
                     u0Var4.N = System.nanoTime();
                     u0Var4.m.b("preview snapshot started: file=" + d.getName());
-                    u0Var4.j.execute(new wg.p(u0Var4, u0Var4.U, d, 8));
+                    u0Var4.j.execute(new wg.p(u0Var4, u0Var4.U, d, 9));
                     return;
                 } catch (IOException e10) {
                     u0Var4.h(e10);

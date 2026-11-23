@@ -1,6 +1,6 @@
 package android.support.v4.media.session;
 
-import a8.j1;
+import a8.k1;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -87,7 +87,7 @@ public final class g extends Binder implements b {
         switch (i7) {
             case 1:
                 String readString = parcel.readString();
-                Bundle bundle = (Bundle) j1.a(parcel, Bundle.CREATOR);
+                Bundle bundle = (Bundle) k1.a(parcel, Bundle.CREATOR);
                 androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) weakReference.get();
                 if (qVar != null) {
                     qVar.e(1, readString, bundle);
@@ -97,22 +97,22 @@ public final class g extends Binder implements b {
                 m0();
                 return true;
             case 3:
-                e1((PlaybackStateCompat) j1.a(parcel, PlaybackStateCompat.CREATOR));
+                e1((PlaybackStateCompat) k1.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                o0((MediaMetadataCompat) j1.a(parcel, MediaMetadataCompat.CREATOR));
+                o0((MediaMetadataCompat) k1.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
                 L(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                k0((CharSequence) j1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                k0((CharSequence) k1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                E((Bundle) j1.a(parcel, Bundle.CREATOR));
+                E((Bundle) k1.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                g1((ParcelableVolumeInfo) j1.a(parcel, ParcelableVolumeInfo.CREATOR));
+                g1((ParcelableVolumeInfo) k1.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 e(parcel.readInt());

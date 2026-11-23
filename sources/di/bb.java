@@ -5,44 +5,44 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.o80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class bb extends n41 {
+public final class bb extends m41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        n41.h(new bb());
+        m41.h(new bb());
     }
 
-    public static o41 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        o41 K = o41.K(bb.class);
+    public static n41 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        n41 K = n41.K(bb.class);
         K.d = i7;
         K.A = i10;
         long j3 = tL_starsTopupOption.stars;
         K.C = j3;
-        K.m = hd.H(' ', "StarsCount", (int) j3);
+        K.m = gd.H(' ', "StarsCount", (int) j3);
         K.n = tL_starsTopupOption.loadingStorePrice ? null : org.telegram.messenger.r1.i().f(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
         K.H = tL_starsTopupOption;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
         cb cbVar = (cb) view;
-        int i7 = o41Var.A;
-        CharSequence charSequence = o41Var.m;
-        CharSequence charSequence2 = o41Var.n;
-        org.telegram.ui.Components.o6 o6Var = cbVar.e;
+        int i7 = n41Var.A;
+        CharSequence charSequence = n41Var.m;
+        CharSequence charSequence2 = n41Var.n;
+        org.telegram.ui.Components.n6 n6Var = cbVar.e;
         TextView textView = cbVar.d;
         boolean equals = TextUtils.equals(textView.getText(), charSequence);
         cbVar.n = i7;
@@ -54,14 +54,14 @@ public final class bb extends n41 {
             if (cbVar.f == null) {
                 SpannableString spannableString = new SpannableString("x");
                 cbVar.f = spannableString;
-                spannableString.setSpan(new r80(org.telegram.messenger.g0.L(55.0f), o6Var), 0, cbVar.f.length(), 33);
+                spannableString.setSpan(new o80(org.telegram.messenger.g0.L(55.0f), n6Var), 0, cbVar.f.length(), 33);
             }
             charSequence2 = cbVar.f;
         }
-        o6Var.setText(charSequence2);
-        float f10 = hd.a0 ? -1.0f : 1.0f;
+        n6Var.setText(charSequence2);
+        float f10 = gd.a0 ? -1.0f : 1.0f;
         if (equals) {
-            textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(nr.h).start();
+            textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(kr.h).start();
         } else {
             textView.setTranslationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f));
         }
@@ -69,18 +69,18 @@ public final class bb extends n41 {
         cbVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean c(o41 o41Var, o41 o41Var2) {
-        return o41Var.A == o41Var2.A && o41Var.d == o41Var2.d && TextUtils.equals(o41Var.n, o41Var2.n);
+    @Override // org.telegram.ui.Components.m41
+    public final boolean c(n41 n41Var, n41 n41Var2) {
+        return n41Var.A == n41Var2.A && n41Var.d == n41Var2.d && TextUtils.equals(n41Var.n, n41Var2.n);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new cb(context, h6Var);
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new cb(context, i6Var);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean e(o41 o41Var, o41 o41Var2) {
-        return o41Var.d == o41Var2.d;
+    @Override // org.telegram.ui.Components.m41
+    public final boolean e(n41 n41Var, n41 n41Var2) {
+        return n41Var.d == n41Var2.d;
     }
 }

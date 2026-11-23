@@ -24,9 +24,9 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public int E;
     public int F;
     public int G;
@@ -129,8 +129,8 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                     } else {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(g4Var.h0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, g4.f1, 0.0f));
                     }
-                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.ls.Z3));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.nr.h);
+                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.ks.Z3));
+                    animatorSet.setInterpolator(org.telegram.ui.Components.kr.h);
                     animatorSet.addListener(new f4(this, z11));
                     animatorSet.start();
                     g4Var.V0 = true;
@@ -153,8 +153,8 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                     velocityTracker3.recycle();
                     this.s = null;
                 }
-                org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
-                if (j9Var != null && !j9Var.x()) {
+                org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
+                if (i9Var != null && !i9Var.x()) {
                     g4Var.Q0.f(false);
                 }
             }
@@ -165,18 +165,18 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Gl));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.y6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.J6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.K6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.k6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.M6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Ld));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Gl));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.y6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.J6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.K6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.k6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.M6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Ld));
     }
 
     public final void b(MotionEvent motionEvent) {
@@ -283,7 +283,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
             motionEvent.offsetLocation(-g4Var.h0.getX(), -g4Var.h0.getY());
             return g4Var.S0.g(motionEvent);
         }
-        org.telegram.ui.Cells.v9 n10 = g4Var.Q0.n(getContext());
+        org.telegram.ui.Cells.u9 n10 = g4Var.Q0.n(getContext());
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.offsetLocation(-g4Var.h0.getX(), -g4Var.h0.getY());
         if (!g4Var.Q0.x() || !g4Var.Q0.n(getContext()).onTouchEvent(obtain)) {
@@ -518,9 +518,9 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        hi.x xVar;
+        hi.e0 e0Var;
         org.telegram.ui.ActionBar.a3 a3Var;
         org.telegram.ui.ActionBar.z2 z2Var;
         Paint paint;
@@ -531,7 +531,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         g4 g4Var = this.I;
         t3 t3Var = g4Var.L;
         try {
-            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false);
+            int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Gl, false);
             if (g4Var.v0 != null) {
                 int i10 = 0;
                 while (true) {
@@ -558,17 +558,17 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
             l0 l0Var = g4Var.i0;
             if (l0Var != null) {
                 k3[] k3VarArr2 = g4Var.v0;
-                l0Var.setMenuColors((k3VarArr2 == null || (k3Var2 = k3VarArr2[0]) == null || !org.telegram.messenger.cz.v0) ? x02 : k3Var2.getBackgroundColor());
+                l0Var.setMenuColors((k3VarArr2 == null || (k3Var2 = k3VarArr2[0]) == null || !org.telegram.messenger.bz.v0) ? x02 : k3Var2.getBackgroundColor());
                 l0 l0Var2 = g4Var.i0;
                 k3[] k3VarArr3 = g4Var.v0;
-                l0Var2.d((k3VarArr3 == null || (k3Var = k3VarArr3[0]) == null || !org.telegram.messenger.cz.v0) ? x02 : k3Var.getActionBarColor(), false);
+                l0Var2.d((k3VarArr3 == null || (k3Var = k3VarArr3[0]) == null || !org.telegram.messenger.bz.v0) ? x02 : k3Var.getActionBarColor(), false);
             }
             Paint paint2 = g4Var.m0;
             if (paint2 != null) {
                 paint2.setColor(x02);
             }
             if (g4Var.A0 && (paint = g4Var.z0) != null) {
-                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, true) : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false));
+                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, true) : org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, false));
             }
             if (t3Var != null && (a3Var = t3Var.e) != null && (z2Var = a3Var.b) != null) {
                 org.telegram.messenger.g0.q3(z2Var, t3Var.f());
@@ -584,9 +584,9 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                         break;
                     }
                     k3 k3Var4 = k3VarArr4[i11];
-                    if (k3Var4 != null && (xVar = k3Var4.b) != null) {
-                        for (int i12 = 0; i12 < xVar.getChildCount(); i12++) {
-                            View childAt = xVar.getChildAt(i12);
+                    if (k3Var4 != null && (e0Var = k3Var4.b) != null) {
+                        for (int i12 = 0; i12 < e0Var.getChildCount(); i12++) {
+                            View childAt = e0Var.getChildAt(i12);
                             if ((childAt instanceof s2) && ((s2) childAt).e != null) {
                                 ((s2) childAt).e.invalidate();
                             }

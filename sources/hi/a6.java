@@ -1,82 +1,117 @@
 package hi;
 
-import android.os.SystemClock;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.SpannableString;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d6 b;
+public final class a6 extends FrameLayout {
+    public final int a;
+    public int b;
+    public final di.d1 c;
+    public final FrameLayout d;
+    public final fi.x7 e;
+    public boolean f;
+    public boolean h;
 
-    public /* synthetic */ a6(d6 d6Var, int i7) {
+    public a6(Activity activity, int i7, fi.b bVar) {
+        super(activity);
+        this.b = 1;
+        this.f = false;
+        this.h = false;
         this.a = i7;
-        this.b = d6Var;
+        TLRPC.User f10 = i10.i(i7).f();
+        di.d1 d1Var = new di.d1(this, getContext());
+        this.c = d1Var;
+        fi.v3 v3Var = new fi.v3(getContext(), null);
+        fi.t3 t3Var = v3Var.a;
+        t3Var.getAvatarDrawable().r(f10);
+        t3Var.f(f10, t3Var.getAvatarDrawable());
+        String q10 = n10.q(f10);
+        fi.u3 u3Var = v3Var.b;
+        u3Var.l(org.telegram.messenger.j6.m(q10, u3Var.getPaint().getFontMetricsInt(), false, null, 0), false);
+        v3Var.c(gd.N0(2131745802, null), false);
+        d1Var.addView(v3Var, c8.na.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(activity);
+        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
+        imageView.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
+        d1Var.addView(imageView, c8.na.d(40, 40.0f, 53, 12.0f, 15.0f, 12.0f, 0.0f));
+        addView(d1Var, c8.na.c(-2.0f, -1));
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        this.d = frameLayout;
+        fi.x7 x7Var = new fi.x7(getContext(), bVar);
+        this.e = x7Var;
+        x7Var.t0 = true;
+        x7Var.setTranslationY(org.telegram.messenger.g0.L(8.0f));
+        frameLayout.addView(x7Var, c8.na.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
+        ImageView imageView2 = new ImageView(activity);
+        imageView2.setImageResource(R.drawable.msg_share);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        frameLayout.addView(imageView2, c8.na.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(22.0f), i0.a.o(-16777216, ks.G1)));
+        TextView textView = new TextView(activity);
+        textView.setTextSize(1, 18.0f);
+        textView.setTextColor(1694498815);
+        textView.setText(gd.N0(2131746059, null));
+        frameLayout2.addView(textView, c8.na.d(-2, -2.0f, 19, 24.0f, 0.0f, 24.0f, 0.0f));
+        ImageView imageView3 = new ImageView(activity);
+        imageView3.setImageResource(R.drawable.input_attach);
+        imageView3.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        frameLayout2.addView(imageView3, c8.na.d(28, 28.0f, 21, 0.0f, 0.0f, 9.0f, 0.0f));
+        frameLayout.addView(frameLayout2, c8.na.d(-1, 44.0f, 87, 9.0f, 8.0f, 55.0f, 8.0f));
+        addView(frameLayout, c8.na.c(-1.0f, -1));
+        d1Var.setAlpha(0.0f);
+        frameLayout.setAlpha(0.0f);
+        setImportantForAccessibility(4);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d6 d6Var = this.b;
-                d6Var.s0 = false;
-                d6Var.A0 = false;
-                d6Var.w0 = SystemClock.elapsedRealtime();
-                d6Var.v0 = true;
-                d6Var.x0 = false;
-                d6Var.K.c(false);
-                d6Var.L.c(false);
-                d6Var.M.c(false);
-                ((p9) d6Var.a).e(true);
-                break;
-            case 1:
-                long currentTimeMillis = System.currentTimeMillis();
-                d6 d6Var2 = this.b;
-                d6Var2.R = currentTimeMillis;
-                d6Var2.S = 0L;
-                d6Var2.s0 = true;
-                ((p9) d6Var2.a).a.K0.a(0L, true);
-                break;
-            case 2:
-                d6 d6Var3 = this.b;
-                if (!d6Var3.s0 && !d6Var3.b()) {
-                    if (!sa.c(((p9) d6Var3.a).a)) {
-                        d6Var3.x0 = false;
-                        d6Var3.K.c(false);
-                        d6Var3.L.c(false);
-                        d6Var3.M.c(false);
-                        break;
-                    } else {
-                        d6Var3.A0 = true;
-                        d6Var3.B0 = true;
-                        ((p9) d6Var3.a).f(new a6(d6Var3, 4), true);
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                d6 d6Var4 = this.b;
-                if (!d6Var4.s0 && !d6Var4.b()) {
-                    v9 v9Var = ((p9) d6Var4.a).a.C0;
-                    if (v9Var != null) {
-                        v9Var.toggleDual();
-                    }
-                    d6Var4.d(360.0f);
-                    d6Var4.x0 = false;
-                    d6Var4.K.c(false);
-                    d6Var4.L.c(false);
-                    d6Var4.M.c(false);
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis2 = System.currentTimeMillis();
-                d6 d6Var5 = this.b;
-                d6Var5.R = currentTimeMillis2;
-                d6Var5.s0 = true;
-                b6 b6Var = d6Var5.a;
-                d6Var5.S = 0L;
-                ((p9) b6Var).a.K0.a(0L, true);
-                break;
+    public final void a(boolean z10, boolean z11, FrameLayout frameLayout) {
+        if (z10) {
+            if (this.f == z11) {
+                return;
+            } else {
+                this.f = z11;
+            }
+        } else if (this.h == z11) {
+            return;
+        } else {
+            this.h = z11;
         }
+        View view = z10 ? this.c : this.d;
+        view.clearAnimation();
+        view.animate().alpha(z11 ? z10 ? 0.5f : 0.2f : 0.0f).start();
+        if (frameLayout != null) {
+            frameLayout.clearAnimation();
+            frameLayout.animate().alpha(z11 ? 0.0f : 1.0f).start();
+        }
+    }
+
+    public final void b(CharSequence charSequence) {
+        this.e.c0.b(org.telegram.ui.Components.x5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

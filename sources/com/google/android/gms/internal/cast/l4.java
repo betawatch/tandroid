@@ -4,7 +4,7 @@ import a8.r7;
 import a8.xa;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l4 implements g6.h {
     public final /* synthetic */ r7 a;
@@ -14,7 +14,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void a(g6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z10) {
         s6 s6Var = new s6(new xa(4, 4));
         r7 r7Var = this.a;
         r7.O(r7Var, s6Var);
@@ -24,7 +24,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void b(g6.f fVar, int i7) {
+    public void c(g6.f fVar, int i7) {
         xa xaVar = new xa(6, 4);
         xaVar.c = Integer.valueOf(i7);
         s6 s6Var = new s6(xaVar);
@@ -36,7 +36,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void e(g6.f fVar, int i7) {
+    public void d(g6.f fVar, int i7) {
         xa xaVar = new xa(5, 4);
         xaVar.c = Integer.valueOf(i7);
         s6 s6Var = new s6(xaVar);
@@ -46,7 +46,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void f(g6.f fVar, int i7) {
+    public void g(g6.f fVar, int i7) {
         xa xaVar = new xa(8, 4);
         xaVar.c = Integer.valueOf(i7);
         s6 s6Var = new s6(xaVar);
@@ -56,7 +56,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void h(g6.f fVar, String str) {
+    public void i(g6.f fVar, String str) {
         s6 s6Var = new s6(new xa(4, 4));
         r7 r7Var = this.a;
         r7.O(r7Var, s6Var);
@@ -77,7 +77,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void k(g6.f fVar, int i7) {
+    public void j(g6.f fVar, int i7) {
         xa xaVar = new xa(9, 4);
         xaVar.c = Integer.valueOf(i7);
         r7 r7Var = this.a;
@@ -87,7 +87,7 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void l(g6.f fVar, String str) {
+    public void k(g6.f fVar, String str) {
         s6 s6Var = new s6(new xa(7, 4));
         r7 r7Var = this.a;
         r7.O(r7Var, s6Var);

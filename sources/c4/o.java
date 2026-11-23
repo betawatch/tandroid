@@ -1,20 +1,20 @@
 package c4;
 
-import a8.la;
+import a8.ma;
 import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import e2.t;
 import e2.u;
-import f3.h0;
 import f3.i0;
+import f3.j0;
 import h2.l0;
 import h2.x;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class o implements i0 {
-    public final i0 a;
+public final class o implements j0 {
+    public final j0 a;
     public final k b;
     public m g;
     public u h;
@@ -24,12 +24,12 @@ public final class o implements i0 {
     public byte[] f = l0.b;
     public final x c = new x();
 
-    public o(i0 i0Var, k kVar) {
-        this.a = i0Var;
+    public o(j0 j0Var, k kVar) {
+        this.a = j0Var;
         this.b = kVar;
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final void a(x xVar, int i7, int i10) {
         if (this.g == null) {
             this.a.a(xVar, i7, i10);
@@ -40,7 +40,7 @@ public final class o implements i0 {
         this.e += i7;
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final /* synthetic */ void b(int i7, x xVar) {
         e2.a(this, xVar, i7);
     }
@@ -49,11 +49,11 @@ public final class o implements i0 {
     /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0060  */
-    @Override // f3.i0
+    @Override // f3.j0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(long j3, int i7, int i10, int i11, h0 h0Var) {
+    public final void c(long j3, int i7, int i10, int i11, i0 i0Var) {
         o oVar;
         int i12;
         int i13;
@@ -62,11 +62,11 @@ public final class o implements i0 {
         l lVar;
         n nVar;
         if (this.g == null) {
-            this.a.c(j3, i7, i10, i11, h0Var);
+            this.a.c(j3, i7, i10, i11, i0Var);
             return;
         }
         int i14 = i10;
-        la.e("DRM on subtitles is not supported", h0Var == null);
+        ma.e("DRM on subtitles is not supported", i0Var == null);
         int i15 = (this.e - i11) - i14;
         try {
             mVar = this.g;
@@ -95,7 +95,7 @@ public final class o implements i0 {
             }
         }
         try {
-            mVar.v(bArr, i12, i14, lVar, nVar);
+            mVar.E(bArr, i12, i14, lVar, nVar);
             i14 = i14;
         } catch (RuntimeException e12) {
             e = e12;
@@ -112,12 +112,12 @@ public final class o implements i0 {
         }
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final int e(e2.n nVar, int i7, boolean z10) {
         return f(nVar, i7, z10);
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final int f(e2.n nVar, int i7, boolean z10) {
         if (this.g == null) {
             return this.a.f(nVar, i7, z10);
@@ -134,29 +134,29 @@ public final class o implements i0 {
         throw new EOFException();
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final void g(u uVar) {
         uVar.s.getClass();
         String str = uVar.s;
-        la.f(s0.h(str) == 3);
+        ma.f(s0.h(str) == 3);
         boolean equals = uVar.equals(this.h);
         k kVar = this.b;
         if (!equals) {
             this.h = uVar;
-            this.g = kVar.H(uVar) ? kVar.j(uVar) : null;
+            this.g = kVar.G(uVar) ? kVar.f(uVar) : null;
         }
         m mVar = this.g;
-        i0 i0Var = this.a;
+        j0 j0Var = this.a;
         if (mVar == null) {
-            i0Var.g(uVar);
+            j0Var.g(uVar);
             return;
         }
         t a10 = uVar.a();
         a10.r = s0.n("application/x-media3-cues");
         a10.j = str;
         a10.w = Long.MAX_VALUE;
-        a10.P = kVar.O(uVar);
-        p5.c.r(a10, i0Var);
+        a10.P = kVar.I(uVar);
+        p5.c.r(a10, j0Var);
     }
 
     public final void h(int i7) {
@@ -175,7 +175,7 @@ public final class o implements i0 {
         this.f = bArr2;
     }
 
-    @Override // f3.i0
+    @Override // f3.j0
     public final /* synthetic */ void d(long j3) {
     }
 }

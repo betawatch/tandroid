@@ -2,26 +2,26 @@ package org.telegram.ui.web;
 
 import android.content.Context;
 import android.os.Bundle;
-import bi.m2;
+import bi.o2;
 import di.n6;
 import fi.f7;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.vg0;
+import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements r10 {
+public final /* synthetic */ class s implements p10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
     public final /* synthetic */ f7 c;
@@ -34,10 +34,10 @@ public final /* synthetic */ class s implements r10 {
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.p10
     public final void a(Object obj, Object obj2) {
         int i7;
-        vg0 vg0Var;
+        tg0 tg0Var;
         int i10 = this.a;
         String str = this.d;
         f7 f7Var = this.c;
@@ -46,17 +46,17 @@ public final /* synthetic */ class s implements r10 {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 v0 v0Var2 = this.b;
-                h6 h6Var = v0Var2.e;
+                i6 i6Var = v0Var2.e;
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) cg.c.a((TL_keyboard.KeyboardButton) obj, TL_keyboard.TL_buttonTypeRequestPeer.class);
                 f7 f7Var2 = this.c;
                 String str2 = this.d;
                 if (tL_buttonTypeRequestPeer == null) {
                     if (tL_error == null) {
-                        new lc(v0Var2, h6Var).f0("UNKNOWN_BUTTON", false);
+                        new kc(v0Var2, i6Var).f0("UNKNOWN_BUTTON", false);
                         v0Var2.x(f7Var2, "requested_chat_failed", v0.A(str2, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var2, h6Var).g0(tL_error, false);
+                        new kc(v0Var2, i6Var).g0(tL_error, false);
                         v0Var2.x(f7Var2, "requested_chat_failed", v0.A(str2, "req_id"));
                         break;
                     }
@@ -69,21 +69,21 @@ public final /* synthetic */ class s implements r10 {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             y yVar = new y(v0Var2, zArr, str2, tL_buttonTypeRequestPeer, f7Var2);
-                            vg0 vg0Var2 = vg0.q2;
+                            tg0 tg0Var2 = tg0.q2;
                             g2 Q = LaunchActivity.Q();
                             if (Q == null) {
-                                vg0Var = null;
+                                tg0Var = null;
                             } else {
-                                vg0Var = vg0.q2;
-                                if (vg0Var == null) {
-                                    vg0 vg0Var3 = new vg0(Q, i7, bool, bool2, yVar);
-                                    vg0Var3.show();
-                                    vg0.q2 = vg0Var3;
-                                    vg0Var = vg0Var3;
+                                tg0Var = tg0.q2;
+                                if (tg0Var == null) {
+                                    tg0 tg0Var3 = new tg0(Q, i7, bool, bool2, yVar);
+                                    tg0Var3.show();
+                                    tg0.q2 = tg0Var3;
+                                    tg0Var = tg0Var3;
                                 }
                             }
-                            if (vg0Var != null) {
-                                vg0Var.setOnDismissListener(new n6(v0Var2, zArr, f7Var2, str2));
+                            if (tg0Var != null) {
+                                tg0Var.setOnDismissListener(new n6(v0Var2, zArr, f7Var2, str2));
                                 break;
                             }
                         } else {
@@ -112,9 +112,9 @@ public final /* synthetic */ class s implements r10 {
                         Context context = v0Var2.getContext();
                         int i11 = v0Var2.N;
                         TLRPC.User user = v0Var2.V;
-                        m2 m2Var = new m2(v0Var2, f7Var2, str2, tL_buttonTypeRequestPeer, 15);
-                        h6 h6Var2 = v0Var2.e;
-                        br.e(context, i11, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, m2Var, h6Var2, new lc(v0Var2, h6Var2));
+                        o2 o2Var = new o2(v0Var2, f7Var2, str2, tL_buttonTypeRequestPeer, 15);
+                        i6 i6Var2 = v0Var2.e;
+                        yq.e(context, i11, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, o2Var, i6Var2, new kc(v0Var2, i6Var2));
                         break;
                     }
                 }
@@ -122,38 +122,38 @@ public final /* synthetic */ class s implements r10 {
             case 1:
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                h6 h6Var3 = v0Var.e;
+                i6 i6Var3 = v0Var.e;
                 if (updates == null) {
                     if (tL_error2 == null) {
-                        new lc(v0Var, h6Var3).f0("UNKNOWN_BUTTON", false);
+                        new kc(v0Var, i6Var3).f0("UNKNOWN_BUTTON", false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var, h6Var3).g0(tL_error2, false);
+                        new kc(v0Var, i6Var3).g0(tL_error2, false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     }
                 } else {
-                    np.u1(v0Var.N).V3(updates, false);
+                    mp.u1(v0Var.N).V3(updates, false);
                     v0Var.x(f7Var, "requested_chat_sent", v0.A(str, "req_id"));
                     break;
                 }
             default:
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                h6 h6Var4 = v0Var.e;
+                i6 i6Var4 = v0Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new lc(v0Var, h6Var4).f0("UNKNOWN_BUTTON", false);
+                        new kc(v0Var, i6Var4).f0("UNKNOWN_BUTTON", false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var, h6Var4).g0(tL_error3, false);
+                        new kc(v0Var, i6Var4).g0(tL_error3, false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     }
                 } else {
-                    np.u1(v0Var.N).V3(updates2, false);
+                    mp.u1(v0Var.N).V3(updates2, false);
                     v0Var.x(f7Var, "requested_chat_sent", v0.A(str, "req_id"));
                     break;
                 }

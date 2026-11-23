@@ -4,9 +4,9 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lq extends v4.o {
+public final class lq extends v4.p {
     public int b;
     public int e;
     public int f;
@@ -31,12 +31,12 @@ public final class lq extends v4.o {
         }
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final boolean a(int i7, int i10) {
         return b(i7, i10) && this.n.D0 != i10;
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final boolean b(int i7, int i10) {
         int i11 = this.i;
         rq rqVar = this.n;
@@ -51,12 +51,12 @@ public final class lq extends v4.o {
         return (i7 < i13 || i7 >= this.f || i10 < rqVar.E0 || i10 >= rqVar.F0) ? this.c.get(i7) == this.d.get(i10) : ((TLObject) this.k.get(i7 - i13)).equals(rqVar.F.get(i10 - rqVar.E0));
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final int d() {
         return this.n.d1;
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final int e() {
         return this.b;
     }

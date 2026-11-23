@@ -4,7 +4,7 @@ import android.os.Build;
 import java.util.Locale;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final /* synthetic */ int a = 0;
@@ -12,16 +12,16 @@ public abstract class a {
     static {
         int i7 = Build.VERSION.SDK_INT;
         if (i7 >= 30) {
-            g0.f.f(30);
+            g0.g.f(30);
         }
         if (i7 >= 30) {
-            g0.f.f(31);
+            g0.g.f(31);
         }
         if (i7 >= 30) {
-            g0.f.f(33);
+            g0.g.f(33);
         }
         if (i7 >= 30) {
-            g0.f.f(1000000);
+            g0.g.f(1000000);
         }
     }
 

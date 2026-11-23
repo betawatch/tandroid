@@ -4,7 +4,7 @@ import a8.p0;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -18,7 +18,7 @@ public final class i {
     }
 
     public static h6.m a() {
-        h6.m mVar = new h6.m(16, false);
+        h6.m mVar = new h6.m(17);
         mVar.d = l5.d.a;
         return mVar;
     }
@@ -31,7 +31,7 @@ public final class i {
         }
         a10.d = dVar;
         a10.c = this.b;
-        return a10.j();
+        return a10.u();
     }
 
     public final boolean equals(Object obj) {

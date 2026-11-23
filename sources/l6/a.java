@@ -3,7 +3,7 @@ package l6;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import b9.k0;
+import b9.j0;
 import com.google.android.gms.common.api.d;
 import com.google.android.gms.common.api.e;
 import com.google.android.gms.internal.clearcut.a2;
@@ -19,12 +19,12 @@ public final class a {
     public final String d;
     public final int e;
     public final o1 f;
-    public final k0 g;
+    public final j0 g;
     public final x6.a h;
     public final a2 i;
 
     public a(Context context) {
-        k0 k0Var = new k0(context, j, null, new s(6));
+        j0 j0Var = new j0(context, j, null, new s(6));
         a2 a2Var = new a2(context);
         this.e = -1;
         o1 o1Var = o1.b;
@@ -40,7 +40,7 @@ public final class a {
         this.c = i7;
         this.e = -1;
         this.d = "VISION";
-        this.g = k0Var;
+        this.g = j0Var;
         this.h = x6.a.a;
         this.f = o1Var;
         this.i = a2Var;

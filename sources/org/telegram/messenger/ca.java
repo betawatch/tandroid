@@ -1,25 +1,59 @@
 package org.telegram.messenger;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.RemoteException;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class ca implements va {
-    public LatLngBounds a;
+public final class ca {
+    public final m8.f a;
 
-    public final bb a() {
-        LatLngBounds latLngBounds = this.a;
-        LatLng latLng = latLngBounds.a;
-        double d = latLng.a;
-        LatLng latLng2 = latLngBounds.b;
-        double d2 = (d + latLng2.a) / 2.0d;
-        double d10 = latLng2.b;
-        double d11 = latLng.b;
-        if (d11 > d10) {
-            d10 += 360.0d;
+    public ca(m8.f fVar) {
+        this.a = fVar;
+    }
+
+    public final ab a() {
+        m8.f fVar = this.a;
+        fVar.getClass();
+        try {
+            v7.i iVar = (v7.i) fVar.a;
+            Parcel o12 = iVar.o1(iVar.p1(), 4);
+            Parcelable.Creator<LatLng> creator = LatLng.CREATOR;
+            int i7 = v7.b.a;
+            LatLng createFromParcel = o12.readInt() == 0 ? null : creator.createFromParcel(o12);
+            o12.recycle();
+            return new ab(createFromParcel.a, createFromParcel.b);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
-        LatLng latLng3 = new LatLng(d2, (d10 + d11) / 2.0d);
-        return new bb(latLng3.a, latLng3.b);
+    }
+
+    public final void b(ab abVar) {
+        LatLng latLng = new LatLng(abVar.a, abVar.b);
+        m8.f fVar = this.a;
+        fVar.getClass();
+        try {
+            v7.i iVar = (v7.i) fVar.a;
+            Parcel p12 = iVar.p1();
+            v7.b.b(p12, latLng);
+            iVar.t1(p12, 3);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
+        }
+    }
+
+    public final void c(float f10) {
+        m8.f fVar = this.a;
+        fVar.getClass();
+        try {
+            v7.i iVar = (v7.i) fVar.a;
+            Parcel p12 = iVar.p1();
+            p12.writeFloat(f10);
+            iVar.t1(p12, 22);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
+        }
     }
 }

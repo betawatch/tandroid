@@ -1,69 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class pc0 extends Drawable implements Drawable.Callback {
-    public final fh.g a;
-    public final RectF b = new RectF();
-    public int c = org.telegram.messenger.ls.e4;
+public final class pc0 extends oc0 {
+    public final /* synthetic */ qc0 k0;
 
-    public pc0(fh.g gVar) {
-        this.a = gVar;
-        gVar.setCallback(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pc0(qc0 qc0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.k0 = qc0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        this.a.draw(canvas);
-        Rect bounds = getBounds();
-        RectF rectF = this.b;
-        rectF.set(bounds);
-        float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
-        float f10 = this.c / 255.0f;
-        ci.u.c(canvas, rectF, min, f10);
-        ci.u.a(min, f10, 0, canvas, rectF);
+    @Override // org.telegram.ui.Components.oc0
+    public final void h(float f10) {
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.o3 o3Var = launchActivity.y0;
+        o3Var.setScaleX(org.telegram.messenger.g0.T1(1.0f, 1.25f, f10));
+        o3Var.setScaleY(org.telegram.messenger.g0.T1(1.0f, 1.25f, f10));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.c = i7;
-        this.a.setAlpha(i7);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.getClass();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
+    @Override // org.telegram.ui.Components.oc0
+    public final void j() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.o3 o3Var = launchActivity.y0;
+        o3Var.setScaleX(1.0f);
+        o3Var.setScaleY(1.0f);
     }
 }

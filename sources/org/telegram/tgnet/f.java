@@ -11,44 +11,54 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.f4;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.kc;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.jc;
 import org.telegram.messenger.t0;
+import org.telegram.messenger.w10;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.y10;
-import org.telegram.messenger.zf;
+import org.telegram.messenger.yf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, kc {
+public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, jc {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ f(int i7, int i10, long j3, y10 y10Var) {
+    public /* synthetic */ f(int i7, int i10, long j3, w10 w10Var) {
         this.a = i7;
-        this.d = y10Var;
+        this.d = w10Var;
         this.c = i10;
         this.b = j3;
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        ConnectionsManager.lambda$onIntegrityCheckClassic$26(this.a, this.b, this.c, (String) this.d, exc);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        ConnectionsManager.lambda$onIntegrityCheckClassic$25(this.a, this.b, this.c, (String) this.d, (IntegrityTokenResponse) obj);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
-    @Override // org.telegram.messenger.kc
+    @Override // org.telegram.messenger.jc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    public void y(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         List list;
         Bitmap bitmap;
         int i7 = this.a;
-        y10 y10Var = (y10) this.d;
+        w10 w10Var = (w10) this.d;
         int i10 = this.c;
         long j3 = this.b;
-        ic p10 = imageReceiver.p();
-        ic u10 = imageReceiver.u();
+        hc p10 = imageReceiver.p();
+        hc u10 = imageReceiver.u();
         if (!z10 || p10 == null) {
             return;
         }
@@ -63,7 +73,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                y10Var.a(new gg.a(bitmap, i7, list));
+                w10Var.a(new gg.a(bitmap, i7, list));
                 f4 f10 = f4.f(i10);
                 if (i7 != 0) {
                     f4.s.c(new w3(24, f10.g(j3), bitmap));
@@ -72,7 +82,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                     if (i7 == 1) {
                         File i11 = t0.i();
                         Locale locale = Locale.US;
-                        f4.s.c(new zf(new File(i11, p5.c.j(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
+                        f4.s.c(new yf(new File(i11, p5.c.j(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
                         return;
                     }
                     return;
@@ -83,20 +93,10 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = p10.c;
         if (bitmap == null) {
         }
-        y10Var.a(new gg.a(bitmap, i7, list));
+        w10Var.a(new gg.a(bitmap, i7, list));
         f4 f102 = f4.f(i10);
         if (i7 != 0) {
         }
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        ConnectionsManager.lambda$onIntegrityCheckClassic$26(this.a, this.b, this.c, (String) this.d, exc);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        ConnectionsManager.lambda$onIntegrityCheckClassic$25(this.a, this.b, this.c, (String) this.d, (IntegrityTokenResponse) obj);
     }
 
     public /* synthetic */ f(int i7, long j3, String str, int i10) {
@@ -106,11 +106,11 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void V(ImageReceiver imageReceiver) {
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void r(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void G0(int i7, Drawable drawable) {
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void J(int i7, Drawable drawable) {
     }
 }

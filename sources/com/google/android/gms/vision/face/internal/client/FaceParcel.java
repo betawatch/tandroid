@@ -2,11 +2,11 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import r6.a;
 import u8.o;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class FaceParcel extends a {
     public static final Parcelable.Creator<FaceParcel> CREATOR = new o(16);
@@ -46,36 +46,36 @@ public class FaceParcel extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 1, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        bc.q(parcel, 2, 4);
+        cc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        bc.q(parcel, 3, 4);
+        cc.q(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        bc.q(parcel, 4, 4);
+        cc.q(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        bc.q(parcel, 5, 4);
+        cc.q(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        bc.q(parcel, 6, 4);
+        cc.q(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        bc.q(parcel, 7, 4);
+        cc.q(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        bc.q(parcel, 8, 4);
+        cc.q(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        bc.o(parcel, 9, this.s, i7);
-        bc.q(parcel, 10, 4);
+        cc.o(parcel, 9, this.s, i7);
+        cc.q(parcel, 10, 4);
         parcel.writeFloat(this.w);
-        bc.q(parcel, 11, 4);
+        cc.q(parcel, 11, 4);
         parcel.writeFloat(this.x);
-        bc.q(parcel, 12, 4);
+        cc.q(parcel, 12, 4);
         parcel.writeFloat(this.y);
-        bc.o(parcel, 13, this.E, i7);
-        bc.q(parcel, 14, 4);
+        cc.o(parcel, 13, this.E, i7);
+        cc.q(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        bc.q(parcel, 15, 4);
+        cc.q(parcel, 15, 4);
         parcel.writeFloat(this.F);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
     }
 
     public FaceParcel(int i7, int i10, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {

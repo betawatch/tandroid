@@ -3,15 +3,15 @@ package j6;
 import android.os.Looper;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p {
     public static final Object i = new Object();
     public final b a;
     public final long b;
     public final String c;
-    public n g;
-    public o h;
+    public o g;
+    public i6.g h;
     public long e = -1;
     public long f = 0;
     public final com.google.android.gms.internal.cast.y d = new com.google.android.gms.internal.cast.y(Looper.getMainLooper(), 0);
@@ -22,44 +22,44 @@ public final class p {
         this.a = new b("RequestTracker", str);
     }
 
-    public final void a(long j3, n nVar) {
-        n nVar2;
+    public final void a(long j3, o oVar) {
+        o oVar2;
         long j10;
         long j11;
         long currentTimeMillis = System.currentTimeMillis();
         Object obj = i;
         synchronized (obj) {
-            nVar2 = this.g;
+            oVar2 = this.g;
             j10 = this.e;
             j11 = this.f;
             this.e = j3;
-            this.g = nVar;
+            this.g = oVar;
             this.f = currentTimeMillis;
         }
-        if (nVar2 != null) {
-            nVar2.g(this.c, j10, j11, currentTimeMillis);
+        if (oVar2 != null) {
+            oVar2.C(this.c, j10, j11, currentTimeMillis);
         }
         synchronized (obj) {
             try {
-                o oVar = this.h;
-                if (oVar != null) {
-                    this.d.removeCallbacks(oVar);
+                i6.g gVar = this.h;
+                if (gVar != null) {
+                    this.d.removeCallbacks(gVar);
                 }
-                o oVar2 = new o(this, 0);
-                this.h = oVar2;
-                this.d.postDelayed(oVar2, this.b);
+                i6.g gVar2 = new i6.g(this, 1);
+                this.h = gVar2;
+                this.d.postDelayed(gVar2, this.b);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
     }
 
-    public final void b(long j3, int i7, l lVar) {
+    public final void b(long j3, int i7, m mVar) {
         synchronized (i) {
             try {
                 if (c(j3)) {
                     Locale locale = Locale.ROOT;
-                    e("request " + j3 + " completed", i7, lVar);
+                    e("request " + j3 + " completed", i7, mVar);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -94,16 +94,16 @@ public final class p {
             try {
                 if (this.g != null) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    n nVar = this.g;
-                    q6.m.h(nVar);
-                    nVar.j(this.c, this.e, i7, obj, this.f, currentTimeMillis);
+                    o oVar = this.g;
+                    q6.m.h(oVar);
+                    oVar.Z(this.c, this.e, i7, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;
                 synchronized (obj2) {
-                    o oVar = this.h;
-                    if (oVar != null) {
-                        this.d.removeCallbacks(oVar);
+                    i6.g gVar = this.h;
+                    if (gVar != null) {
+                        this.d.removeCallbacks(gVar);
                         this.h = null;
                     }
                 }

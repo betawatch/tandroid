@@ -1,23 +1,20 @@
 package h9;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public interface j1 {
-    Collection a();
+public final class j1 implements g9.t, Serializable {
+    public final int a;
 
-    Map b();
+    public j1() {
+        o.g(2, "expectedValuesPerKey");
+        this.a = 2;
+    }
 
-    void clear();
-
-    Collection get(Object obj);
-
-    Set keySet();
-
-    boolean remove(Object obj, Object obj2);
-
-    int size();
+    @Override // g9.t
+    public final Object get() {
+        return new ArrayList(this.a);
+    }
 }

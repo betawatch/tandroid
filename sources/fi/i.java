@@ -8,19 +8,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.tv;
+import org.telegram.ui.sv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i extends ek0 {
     public final /* synthetic */ int f3;
-    public final /* synthetic */ tv g3;
+    public final /* synthetic */ sv g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(tv tvVar, Context context, int i7) {
+    public /* synthetic */ i(sv svVar, Context context, int i7) {
         super(context, null);
         this.f3 = i7;
-        this.g3 = tvVar;
+        this.g3 = svVar;
     }
 
     @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
@@ -28,8 +28,8 @@ public final class i extends ek0 {
         Canvas canvas2;
         switch (this.f3) {
             case 1:
-                tv tvVar = this.g3;
-                ArrayList arrayList = tvVar.Q;
+                sv svVar = this.g3;
+                ArrayList arrayList = svVar.Q;
                 arrayList.clear();
                 int i7 = 0;
                 for (int i10 = 0; i10 < getChildCount(); i10++) {
@@ -39,13 +39,13 @@ public final class i extends ek0 {
                     boolean z10 = true;
                     pVar.a = true;
                     pVar.d = R == 0;
-                    if (R != tvVar.E.size() - 1) {
+                    if (R != svVar.E.size() - 1) {
                         z10 = false;
                     }
                     pVar.c = z10;
                     arrayList.add(pVar);
                 }
-                Collections.sort(arrayList, tvVar.x0);
+                Collections.sort(arrayList, svVar.x0);
                 while (i7 < arrayList.size()) {
                     p pVar2 = (p) arrayList.get(i7);
                     int save = canvas.save();
@@ -74,8 +74,8 @@ public final class i extends ek0 {
         switch (this.f3) {
             case 0:
                 if (motionEvent.getAction() == 0) {
-                    tv tvVar = this.g3;
-                    if (tvVar.d0 > 0.2f || tvVar.getAlpha() == 0.0f) {
+                    sv svVar = this.g3;
+                    if (svVar.d0 > 0.2f || svVar.getAlpha() == 0.0f) {
                         return false;
                     }
                 }
@@ -101,9 +101,9 @@ public final class i extends ek0 {
     public void l0(int i7) {
         switch (this.f3) {
             case 1:
-                hi.l3 l3Var = this.g3.K;
-                if (l3Var != null) {
-                    l3Var.f(true);
+                hi.u3 u3Var = this.g3.K;
+                if (u3Var != null) {
+                    u3Var.f(true);
                     break;
                 }
                 break;

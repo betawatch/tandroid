@@ -10,7 +10,7 @@ import f6.e0;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j extends a8.q {
     public final /* synthetic */ int b = 2;
@@ -128,12 +128,12 @@ public final class j extends a8.q {
                                 cVar3.k = b10;
                                 c.m.b("update to device (%s) with name %s", b10, true != objArr ? "unchanged" : "changed");
                                 if (objArr != false && (castDevice = cVar3.k) != null) {
-                                    i6.h hVar2 = cVar3.h;
-                                    if (hVar2 != null) {
-                                        j6.b bVar3 = i6.h.v;
+                                    i6.i iVar = cVar3.h;
+                                    if (iVar != null) {
+                                        j6.b bVar3 = i6.i.v;
                                         Log.i(bVar3.a, bVar3.d("update Cast device to %s", castDevice));
-                                        hVar2.o = castDevice;
-                                        hVar2.b();
+                                        iVar.o = castDevice;
+                                        iVar.b();
                                     }
                                     Iterator it = new HashSet(cVar3.d).iterator();
                                     while (it.hasNext()) {
@@ -151,7 +151,7 @@ public final class j extends a8.q {
                 if (i7 == 1) {
                     String readString = parcel.readString();
                     com.google.android.gms.internal.cast.t.b(parcel);
-                    a7.a f10 = new c(eVar.a, eVar.b, readString, eVar.d, eVar.e, new i6.h(eVar.a, bVar4, eVar.e)).f();
+                    a7.a f10 = new c(eVar.a, eVar.b, readString, eVar.d, eVar.e, new i6.i(eVar.a, bVar4, eVar.e)).f();
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.t.d(parcel2, f10);
                     break;
@@ -184,20 +184,20 @@ public final class j extends a8.q {
                         com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
                         b11.c = new f6.b0(e0Var, readString2, readString3, i11);
                         b11.a = 8407;
-                        e0Var.e(1, b11.a()).addOnCompleteListener(new d6.i(this, 24));
+                        e0Var.e(1, b11.a()).addOnCompleteListener(new d6.i(this, 25));
                     }
                     parcel2.writeNoException();
                     break;
                 } else if (i7 == 2) {
                     String readString4 = parcel.readString();
-                    f6.i iVar = (f6.i) com.google.android.gms.internal.cast.t.a(parcel, f6.i.CREATOR);
+                    f6.i iVar2 = (f6.i) com.google.android.gms.internal.cast.t.a(parcel, f6.i.CREATOR);
                     com.google.android.gms.internal.cast.t.b(parcel);
                     e0 e0Var2 = cVar4.i;
                     if (e0Var2 != null && e0Var2.G == 2) {
                         com.google.android.gms.common.api.internal.t b12 = com.google.android.gms.common.api.internal.u.b();
-                        b12.c = new android.support.v4.media.session.a0(e0Var2, readString4, iVar, false, 23);
+                        b12.c = new android.support.v4.media.session.a0(e0Var2, readString4, iVar2, false, 23);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new cb.c(this, 25));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new cb.c(this, 26));
                     }
                     parcel2.writeNoException();
                     break;

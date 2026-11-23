@@ -1,8 +1,8 @@
 package m2;
 
 import a8.b8;
-import a8.la;
-import ai.v1;
+import a8.ma;
+import ai.n1;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.SparseArray;
@@ -15,10 +15,8 @@ import e2.l1;
 import e2.o0;
 import e2.q0;
 import e2.q1;
-import e2.s1;
 import e2.v0;
 import e2.w0;
-import e2.x1;
 import e2.y0;
 import e2.z0;
 import h2.g0;
@@ -26,20 +24,20 @@ import h2.i0;
 import h2.l0;
 import h2.o;
 import h2.r;
-import h9.t1;
-import h9.y1;
+import h9.s1;
+import h9.x1;
 import java.io.IOException;
 import java.util.List;
-import l2.f0;
-import l2.l;
-import l2.w;
-import l2.y;
+import kg.f1;
+import l2.m;
+import l2.x;
+import l2.z;
 import q2.k;
 import x2.c0;
 import x2.k0;
 import x2.u;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d implements a1, k0, k {
     public final g0 a;
@@ -64,8 +62,8 @@ public final class d implements a1, k0, k {
         b8 b8Var = new b8();
         b8Var.a = i1Var;
         h9.g0 g0Var2 = h9.i0.b;
-        b8Var.b = t1.e;
-        b8Var.c = y1.h;
+        b8Var.b = s1.e;
+        b8Var.c = x1.h;
         this.d = b8Var;
         this.e = new SparseArray();
     }
@@ -79,7 +77,7 @@ public final class d implements a1, k0, k {
     @Override // e2.a1
     public final void B(List list) {
         a Q = Q();
-        V(Q, 27, new w(Q, list));
+        V(Q, 27, new x(Q, list));
     }
 
     @Override // x2.k0
@@ -136,7 +134,7 @@ public final class d implements a1, k0, k {
         c1Var.getClass();
         b8 b8Var = this.d;
         b8Var.d = b8.f(c1Var, (h9.i0) b8Var.b, (x2.g0) b8Var.e, (i1) b8Var.a);
-        b8Var.s(c1Var.y0());
+        b8Var.s(c1Var.z0());
         a Q = Q();
         V(Q, 0, new c(Q, i7, 23));
     }
@@ -173,44 +171,44 @@ public final class d implements a1, k0, k {
         x2.g0 g0Var2 = l1Var.p() ? null : g0Var;
         this.a.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z10 = l1Var.equals(this.h.y0()) && i7 == this.h.o0();
+        boolean z10 = l1Var.equals(this.h.z0()) && i7 == this.h.p0();
         long j3 = 0;
         if (g0Var2 == null || !g0Var2.b()) {
             if (z10) {
-                j3 = this.h.a0();
+                j3 = this.h.b0();
             } else if (!l1Var.p()) {
                 j3 = l0.h0(l1Var.m(i7, this.c, 0L).l);
             }
-        } else if (z10 && this.h.n0() == g0Var2.b && this.h.O() == g0Var2.c) {
-            j3 = this.h.l();
+        } else if (z10 && this.h.o0() == g0Var2.b && this.h.P() == g0Var2.c) {
+            j3 = this.h.n();
         }
-        return new a(elapsedRealtime, l1Var, i7, g0Var2, j3, this.h.y0(), this.h.o0(), (x2.g0) this.d.d, this.h.l(), this.h.r());
+        return new a(elapsedRealtime, l1Var, i7, g0Var2, j3, this.h.z0(), this.h.p0(), (x2.g0) this.d.d, this.h.n(), this.h.s());
     }
 
     public final a S(x2.g0 g0Var) {
         this.h.getClass();
-        l1 l1Var = g0Var == null ? null : (l1) ((y1) this.d.c).get(g0Var);
+        l1 l1Var = g0Var == null ? null : (l1) ((x1) this.d.c).get(g0Var);
         if (g0Var != null && l1Var != null) {
             return R(l1Var, l1Var.g(g0Var.a, this.b).c, g0Var);
         }
-        int o02 = this.h.o0();
-        l1 y02 = this.h.y0();
-        if (o02 >= y02.o()) {
-            y02 = l1.a;
+        int p02 = this.h.p0();
+        l1 z02 = this.h.z0();
+        if (p02 >= z02.o()) {
+            z02 = l1.a;
         }
-        return R(y02, o02, null);
+        return R(z02, p02, null);
     }
 
     public final a T(int i7, x2.g0 g0Var) {
         this.h.getClass();
         if (g0Var != null) {
-            return ((l1) ((y1) this.d.c).get(g0Var)) != null ? S(g0Var) : R(l1.a, i7, g0Var);
+            return ((l1) ((x1) this.d.c).get(g0Var)) != null ? S(g0Var) : R(l1.a, i7, g0Var);
         }
-        l1 y02 = this.h.y0();
-        if (i7 >= y02.o()) {
-            y02 = l1.a;
+        l1 z02 = this.h.z0();
+        if (i7 >= z02.o()) {
+            z02 = l1.a;
         }
-        return R(y02, i7, null);
+        return R(z02, i7, null);
     }
 
     public final a U() {
@@ -222,41 +220,41 @@ public final class d implements a1, k0, k {
         this.f.e(i7, oVar);
     }
 
-    public final void W(f0 f0Var, Looper looper) {
-        la.p(this.h == null || ((h9.i0) this.d.b).isEmpty());
-        f0Var.getClass();
-        this.h = f0Var;
+    public final void W(l2.g0 g0Var, Looper looper) {
+        ma.p(this.h == null || ((h9.i0) this.d.b).isEmpty());
+        g0Var.getClass();
+        this.h = g0Var;
         this.n = this.a.a(looper, null);
         r rVar = this.f;
-        ab.g gVar = new ab.g(26, this, f0Var);
+        ab.g gVar = new ab.g(26, this, g0Var);
         rVar.getClass();
-        g0 g0Var = this.a;
-        la.p(g0Var != null);
-        this.f = new r(rVar.d, looper, looper.getThread(), g0Var, gVar, rVar.i);
+        g0 g0Var2 = this.a;
+        ma.p(g0Var2 != null);
+        this.f = new r(rVar.d, looper, looper.getThread(), g0Var2, gVar, rVar.i);
     }
 
     @Override // e2.a1
-    public final void a(x1 x1Var) {
+    public final void a(int i7) {
         a U = U();
-        V(U, 25, new y(U, x1Var));
+        V(U, 21, new c(U, i7, 5));
     }
 
-    @Override // x2.k0
-    public final void b(int i7, x2.g0 g0Var, c0 c0Var) {
-        a T = T(i7, g0Var);
-        V(T, 1004, new ab.g(27, T, c0Var));
+    @Override // e2.a1
+    public final void b(e2.x1 x1Var) {
+        a U = U();
+        V(U, 25, new z(U, x1Var));
     }
 
-    @Override // q2.k
-    public final void c(int i7, x2.g0 g0Var, nb.a aVar) {
-        a T = T(i7, g0Var);
-        V(T, 1023, new c(T, aVar, 17));
+    @Override // e2.a1
+    public final void c(boolean z10) {
+        a U = U();
+        V(U, 23, new c(U, z10, 13));
     }
 
     @Override // e2.a1
     public final void d(int i7) {
-        a U = U();
-        V(U, 21, new c(U, i7, 5));
+        a Q = Q();
+        V(Q, 6, new li.c(Q, i7, 9, (char) 0));
     }
 
     @Override // e2.a1
@@ -266,33 +264,33 @@ public final class d implements a1, k0, k {
     }
 
     @Override // e2.a1
-    public final void f(boolean z10) {
-        a U = U();
-        V(U, 23, new c(U, z10, 13));
-    }
-
-    @Override // e2.a1
-    public final void g(int i7) {
-        a Q = Q();
-        V(Q, 6, new li.c(Q, i7, 9, (char) 0));
-    }
-
-    @Override // e2.a1
-    public final void j(boolean z10) {
+    public final void h(boolean z10) {
         a Q = Q();
         V(Q, 3, new c(Q, z10, 6));
     }
 
+    @Override // x2.k0
+    public final void i(int i7, x2.g0 g0Var, c0 c0Var) {
+        a T = T(i7, g0Var);
+        V(T, 1004, new ab.g(27, T, c0Var));
+    }
+
     @Override // e2.a1
-    public final void k(int i7, boolean z10) {
+    public final void j(int i7, boolean z10) {
         a Q = Q();
         V(Q, 5, new li.c(Q, z10, i7, 13));
     }
 
     @Override // e2.a1
-    public final void l(float f10) {
+    public final void k(float f10) {
         a U = U();
         V(U, 22, new c(U, f10));
+    }
+
+    @Override // q2.k
+    public final void l(int i7, x2.g0 g0Var, nb.a aVar) {
+        a T = T(i7, g0Var);
+        V(T, 1023, new c(T, aVar, 17));
     }
 
     @Override // e2.a1
@@ -322,14 +320,14 @@ public final class d implements a1, k0, k {
     @Override // e2.a1
     public final void q(v0 v0Var) {
         x2.g0 g0Var;
-        a Q = (!(v0Var instanceof l) || (g0Var = ((l) v0Var).F) == null) ? Q() : S(g0Var);
+        a Q = (!(v0Var instanceof m) || (g0Var = ((m) v0Var).F) == null) ? Q() : S(g0Var);
         V(Q, 10, new li.c(Q, v0Var, 11));
     }
 
     @Override // x2.k0
     public final void r(int i7, x2.g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10) {
         a T = T(i7, g0Var);
-        V(T, 1003, new kg.x1(T, uVar, c0Var, iOException, z10));
+        V(T, 1003, new f1(T, uVar, c0Var, iOException, z10));
     }
 
     @Override // e2.a1
@@ -342,7 +340,7 @@ public final class d implements a1, k0, k {
         b8 b8Var = this.d;
         b8Var.d = b8.f(c1Var, (h9.i0) b8Var.b, (x2.g0) b8Var.e, (i1) b8Var.a);
         a Q = Q();
-        V(Q, 11, new v1(Q, i7, b1Var, b1Var2));
+        V(Q, 11, new n1(Q, i7, b1Var, b1Var2));
     }
 
     @Override // e2.a1
@@ -352,7 +350,7 @@ public final class d implements a1, k0, k {
     }
 
     @Override // e2.a1
-    public final void u(s1 s1Var) {
+    public final void u(e2.s1 s1Var) {
         a Q = Q();
         V(Q, 2, new li.c(Q, s1Var, 12));
     }
@@ -378,8 +376,8 @@ public final class d implements a1, k0, k {
     @Override // e2.a1
     public final void y(v0 v0Var) {
         x2.g0 g0Var;
-        a Q = (!(v0Var instanceof l) || (g0Var = ((l) v0Var).F) == null) ? Q() : S(g0Var);
-        V(Q, 10, new kg.x1(Q, v0Var, 11));
+        a Q = (!(v0Var instanceof m) || (g0Var = ((m) v0Var).F) == null) ? Q() : S(g0Var);
+        V(Q, 10, new f1(Q, v0Var, 13));
     }
 
     @Override // q2.k
@@ -397,10 +395,10 @@ public final class d implements a1, k0, k {
     }
 
     @Override // e2.a1
-    public final void h(boolean z10) {
+    public final void f(boolean z10) {
     }
 
     @Override // e2.a1
-    public final void i(int i7) {
+    public final void g(int i7) {
     }
 }

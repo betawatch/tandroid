@@ -1,7 +1,7 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
 import a8.c7;
+import a8.d7;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b0 extends g.u {
     public s4.v E;
@@ -34,9 +34,9 @@ public final class b0 extends g.u {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public b0(Context context) {
-        super(r3, r0 == 0 ? c7.e(r3) : r0);
-        ContextThemeWrapper a10 = c7.a(context, false);
-        int g10 = c7.g(a10, R.attr.mediaRouteTheme);
+        super(r3, r0 == 0 ? d7.e(r3) : r0);
+        ContextThemeWrapper a10 = d7.a(context, false);
+        int g10 = d7.g(a10, R.attr.mediaRouteTheme);
         this.r = s4.r.c;
         int i7 = 2;
         this.H = new android.support.v4.media.session.q(this, i7);
@@ -111,7 +111,7 @@ public final class b0 extends g.u {
         setContentView(R.layout.mr_picker_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.n;
-        decorView.setBackgroundColor(context.getColor(c7.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(context.getColor(d7.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         this.s = new ArrayList();
         ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new w(this, 0));
         this.w = new a0(this);
@@ -119,7 +119,7 @@ public final class b0 extends g.u {
         this.x = recyclerView;
         recyclerView.setAdapter(this.w);
         this.x.setLayoutManager(new v4.c0());
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : b7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : c7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback

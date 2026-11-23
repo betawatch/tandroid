@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c extends View {
     public static final long g0 = System.currentTimeMillis();
@@ -316,7 +316,7 @@ public final class c extends View {
                                     canvas2.restore();
                                 } else {
                                     x0 x0Var = z0Var2.n;
-                                    canvas2.drawColor(i0.a.o(x0Var != null ? i0.a.f(0.5f, x0Var.b, x0Var.c) : -12947803, ls.B3));
+                                    canvas2.drawColor(i0.a.o(x0Var != null ? i0.a.f(0.5f, x0Var.b, x0Var.c) : -12947803, ks.B3));
                                 }
                                 canvas2.translate(L, L2);
                                 canvas2.scale(f30, f30);
@@ -749,7 +749,7 @@ public final class c extends View {
                 while (i7 < arrayList2.size()) {
                     b bVar3 = (b) arrayList2.get(i7);
                     int i18 = i7;
-                    float b12 = o10.b(i17, f28, org.telegram.messenger.g0.L(f18), (width2 - (cVar.x / f10)) + org.telegram.messenger.g0.L(8.0f));
+                    float b12 = m10.b(i17, f28, org.telegram.messenger.g0.L(f18), (width2 - (cVar.x / f10)) + org.telegram.messenger.g0.L(8.0f));
                     if (!bVar3.d) {
                         i17++;
                     }
@@ -791,7 +791,7 @@ public final class c extends View {
                         }
                         float f39 = L4 * f22 * min4;
                         if (f39 >= f21) {
-                            U.setAlpha(ls.e4);
+                            U.setAlpha(ks.e4);
                             float z19 = e2.z(bVar3.b, width2, min4, width2);
                             float f40 = f39 / f10;
                             U.setBounds((int) (z19 - f40), (int) (rectF8.centerY() - f40), (int) (z19 + f40), (int) (rectF8.centerY() + f40));

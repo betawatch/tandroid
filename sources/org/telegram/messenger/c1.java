@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class c1 {
     protected final int currentAccount;
@@ -21,8 +21,8 @@ public abstract class c1 {
         return getMessagesController().A7;
     }
 
-    public final sg.k0 getColorPalette() {
-        return sg.k0.e(this.parentAccountInstance.a);
+    public final sg.j0 getColorPalette() {
+        return sg.j0.e(this.parentAccountInstance.a);
     }
 
     public final ConnectionsManager getConnectionsManager() {
@@ -41,51 +41,51 @@ public abstract class c1 {
         return w7.G(this.parentAccountInstance.a);
     }
 
-    public final r8 getFileRefController() {
-        return r8.n(this.parentAccountInstance.a);
+    public final q8 getFileRefController() {
+        return q8.n(this.parentAccountInstance.a);
     }
 
-    public final rd getLocationController() {
-        return rd.f(this.parentAccountInstance.a);
+    public final qd getLocationController() {
+        return qd.f(this.parentAccountInstance.a);
     }
 
-    public final si getMediaDataController() {
-        return si.d0(this.parentAccountInstance.a);
+    public final ri getMediaDataController() {
+        return ri.d0(this.parentAccountInstance.a);
     }
 
-    public final ti getMemberRequestsController() {
-        return ti.b(this.parentAccountInstance.a);
+    public final si getMemberRequestsController() {
+        return si.b(this.parentAccountInstance.a);
     }
 
-    public final np getMessagesController() {
-        return np.u1(this.parentAccountInstance.a);
+    public final mp getMessagesController() {
+        return mp.u1(this.parentAccountInstance.a);
     }
 
-    public final ur getMessagesStorage() {
-        return ur.a0(this.parentAccountInstance.a);
+    public final tr getMessagesStorage() {
+        return tr.a0(this.parentAccountInstance.a);
     }
 
-    public final ls getNotificationCenter() {
-        return ls.f(this.parentAccountInstance.a);
+    public final ks getNotificationCenter() {
+        return ks.f(this.parentAccountInstance.a);
     }
 
-    public final ys getNotificationsController() {
-        return ys.t(this.parentAccountInstance.a);
+    public final xs getNotificationsController() {
+        return xs.t(this.parentAccountInstance.a);
     }
 
-    public final yv getSecretChatHelper() {
-        return yv.i(this.parentAccountInstance.a);
+    public final xv getSecretChatHelper() {
+        return xv.i(this.parentAccountInstance.a);
     }
 
-    public final az getSendMessagesHelper() {
-        return az.C(this.parentAccountInstance.a);
+    public final zy getSendMessagesHelper() {
+        return zy.C(this.parentAccountInstance.a);
     }
 
-    public final dz getStatsController() {
-        return dz.e(this.parentAccountInstance.a);
+    public final cz getStatsController() {
+        return cz.e(this.parentAccountInstance.a);
     }
 
-    public final k10 getUserConfig() {
-        return k10.i(this.parentAccountInstance.a);
+    public final i10 getUserConfig() {
+        return i10.i(this.parentAccountInstance.a);
     }
 }

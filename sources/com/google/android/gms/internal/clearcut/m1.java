@@ -33,7 +33,7 @@ public abstract class m1 {
         byte[] bArr = v1Var.e;
         long j3 = v1Var.a;
         int i7 = 0;
-        int z10 = j3 != 0 ? cb.c.z(j3) + cb.c.B(1) : 0;
+        int B = j3 != 0 ? cb.c.B(j3) + cb.c.C(1) : 0;
         w1[] w1VarArr = v1Var.d;
         if (w1VarArr != null && w1VarArr.length > 0) {
             int i10 = 0;
@@ -48,36 +48,36 @@ public abstract class m1 {
         }
         byte[] bArr2 = l1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            z10 += cb.c.C(bArr.length) + bArr.length + cb.c.B(4);
+            B += cb.c.D(bArr.length) + bArr.length + cb.c.C(4);
         }
         if (!Arrays.equals(v1Var.f, bArr2)) {
             byte[] bArr3 = v1Var.f;
-            z10 += cb.c.C(bArr3.length) + bArr3.length + cb.c.B(6);
+            B += cb.c.D(bArr3.length) + bArr3.length + cb.c.C(6);
         }
         if (str4 != null && !str4.equals("")) {
-            z10 += cb.c.v(8, str4);
+            B += cb.c.x(8, str4);
         }
         int i11 = v1Var.c;
         if (i11 != 0) {
-            z10 += (i11 >= 0 ? cb.c.C(i11) : 10) + cb.c.B(11);
+            B += (i11 >= 0 ? cb.c.D(i11) : 10) + cb.c.C(11);
         }
         if (str3 != null && !str3.equals("")) {
-            z10 += cb.c.v(13, str3);
+            B += cb.c.x(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            z10 += cb.c.v(14, str2);
+            B += cb.c.x(14, str2);
         }
         long j10 = v1Var.s;
         if (j10 != 180000) {
-            z10 += cb.c.z((j10 >> 63) ^ (j10 << 1)) + cb.c.B(15);
+            B += cb.c.B((j10 >> 63) ^ (j10 << 1)) + cb.c.C(15);
         }
         long j11 = v1Var.b;
         if (j11 != 0) {
-            z10 += cb.c.z(j11) + cb.c.B(17);
+            B += cb.c.B(j11) + cb.c.C(17);
         }
         if (!Arrays.equals(v1Var.w, bArr2)) {
             byte[] bArr4 = v1Var.w;
-            z10 += cb.c.C(bArr4.length) + bArr4.length + cb.c.B(18);
+            B += cb.c.D(bArr4.length) + bArr4.length + cb.c.C(18);
         }
         int[] iArr2 = v1Var.y;
         if (iArr2 != null && iArr2.length > 0) {
@@ -88,15 +88,15 @@ public abstract class m1 {
                     break;
                 }
                 int i13 = iArr[i7];
-                i12 += i13 >= 0 ? cb.c.C(i13) : 10;
+                i12 += i13 >= 0 ? cb.c.D(i13) : 10;
                 i7++;
             }
-            z10 = z10 + i12 + (iArr.length * 2);
+            B = B + i12 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            z10 += cb.c.v(24, str);
+            B += cb.c.x(24, str);
         }
-        return v1Var.E ? cb.c.B(25) + 1 + z10 : z10;
+        return v1Var.E ? cb.c.C(25) + 1 + B : B;
     }
 
     public final m1 d() {

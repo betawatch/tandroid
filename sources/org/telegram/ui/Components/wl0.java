@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wl0 implements qj0 {
     public final /* synthetic */ int a;
@@ -20,14 +20,14 @@ public final /* synthetic */ class wl0 implements qj0 {
     }
 
     @Override // org.telegram.ui.Components.qj0
-    public final void c(int i7, View view) {
+    public final void b(int i7, View view) {
         switch (this.a) {
             case 0:
                 em0 em0Var = (em0) this.d;
                 ArrayList arrayList = em0Var.r;
                 di.b1 b1Var = em0Var.d;
                 if (i7 >= 0 && i7 < arrayList.size()) {
-                    if (!org.telegram.messenger.k10.i(this.b).q()) {
+                    if (!org.telegram.messenger.i10.i(this.b).q()) {
                         new ug.y0(this.c, 24, true).show();
                         break;
                     } else {
@@ -59,10 +59,10 @@ public final /* synthetic */ class wl0 implements qj0 {
                 break;
             default:
                 ug.h1 h1Var = (ug.h1) this.d;
-                if (view instanceof org.telegram.ui.js0) {
-                    org.telegram.ui.js0 js0Var = (org.telegram.ui.js0) view;
-                    PremiumPreviewFragment.v0(this.b, js0Var.f.a);
-                    h1Var.t(new ug.y0(this.c, js0Var.f.a, false));
+                if (view instanceof org.telegram.ui.is0) {
+                    org.telegram.ui.is0 is0Var = (org.telegram.ui.is0) view;
+                    PremiumPreviewFragment.v0(this.b, is0Var.f.a);
+                    h1Var.t(new ug.y0(this.c, is0Var.f.a, false));
                     break;
                 }
                 break;

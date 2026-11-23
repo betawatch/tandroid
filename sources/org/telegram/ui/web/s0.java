@@ -8,18 +8,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
-import c8.cb;
+import c8.hb;
 import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class s0 extends WebView {
     public static final /* synthetic */ int W = 0;
@@ -78,8 +78,8 @@ public final class s0 extends WebView {
         if (s0Var.c) {
             return;
         }
-        z1 a10 = z1.a(s0Var);
-        a2 b10 = a2.b();
+        a2 a10 = a2.a(s0Var);
+        b2 b10 = b2.b();
         if (a10 == null) {
             b10.getClass();
         } else {
@@ -97,45 +97,45 @@ public final class s0 extends WebView {
             return;
         }
         w0Var.d = a10;
-        cb.c(w0Var);
+        hb.c(w0Var);
     }
 
-    public final void b(z1 z1Var) {
+    public final void b(a2 a2Var) {
         c0 c0Var;
-        if (z1Var == null) {
+        if (a2Var == null) {
             return;
         }
         v0 v0Var = this.R;
         boolean z10 = false;
         if (v0Var != null && (c0Var = v0Var.c) != null) {
-            int i7 = z1Var.e;
+            int i7 = a2Var.e;
             if (i7 != 0) {
                 c0Var.o(i7, true);
                 this.s = true;
             }
-            int i10 = z1Var.f;
+            int i10 = a2Var.f;
             if (i10 != 0) {
                 this.R.c.o(i10, false);
                 this.w = true;
             } else {
                 i10 = -1;
             }
-            Bitmap bitmap = z1Var.i;
+            Bitmap bitmap = a2Var.i;
             if (bitmap != null) {
                 v0 v0Var2 = this.R;
                 this.P = bitmap;
                 v0Var2.getClass();
                 this.N = true;
             }
-            if (!TextUtils.isEmpty(z1Var.d)) {
-                String str = z1Var.d;
+            if (!TextUtils.isEmpty(a2Var.d)) {
+                String str = a2Var.d;
                 this.r = str;
                 v0 v0Var3 = this.R;
                 this.L = str;
                 v0Var3.I();
                 z10 = true;
             }
-            if (cz.v0) {
+            if (bz.v0) {
                 setBackgroundColor(i10);
             }
         }
@@ -179,13 +179,13 @@ public final class s0 extends WebView {
         return super.drawChild(canvas, view, j3);
     }
 
-    public final void e(String str, z1 z1Var) {
+    public final void e(String str, a2 a2Var) {
         w2 w2Var = this.G;
         if (w2Var != null) {
             w2Var.dismiss();
             this.G = null;
         }
-        b(z1Var);
+        b(a2Var);
         this.d = str;
         String b10 = v0.b(str);
         c("loadUrl " + b10 + " with cached meta");
@@ -284,7 +284,7 @@ public final class s0 extends WebView {
             this.G = null;
         }
         if (!this.c) {
-            b(a2.b().a(org.telegram.messenger.g0.K0(str, true)));
+            b(b2.b().a(org.telegram.messenger.g0.K0(str, true)));
         }
         this.d = str;
         String b10 = v0.b(str);
@@ -459,7 +459,7 @@ public final class s0 extends WebView {
             this.G = null;
         }
         if (!this.c) {
-            b(a2.b().a(org.telegram.messenger.g0.K0(str, true)));
+            b(b2.b().a(org.telegram.messenger.g0.K0(str, true)));
         }
         this.d = str;
         String b10 = v0.b(str);

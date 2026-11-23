@@ -1,13 +1,38 @@
 package org.telegram.messenger;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class xi extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(org.telegram.ui.ActionBar.m6.o2.linkColor);
+public final class xi {
+    public byte a;
+    public byte b;
+    public byte c;
+    public byte d;
+    public int e;
+    public float f;
+    public float g;
+    public boolean h;
+    public int i;
+    public int j;
+    public boolean k;
+    public int l;
+    public float[] m;
+    public int n;
+    public int o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
+
+    public final void a(float f10, int i7, int i10, int i11, int i12, int i13, int i14) {
+        this.a = (byte) i7;
+        this.b = (byte) i10;
+        this.c = (byte) i11;
+        this.d = (byte) i12;
+        this.e = i13;
+        this.i = i13;
+        this.f = f10;
+        this.l = (byte) i14;
     }
 }

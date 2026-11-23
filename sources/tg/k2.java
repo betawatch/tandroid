@@ -1,48 +1,39 @@
 package tg;
 
-import android.graphics.Insets;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
-import org.telegram.ui.Components.x01;
+import hi.c7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class k2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ l2 a;
+public final /* synthetic */ class k2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o2 b;
 
-    public k2(l2 l2Var) {
-        this.a = l2Var;
+    public /* synthetic */ k2(o2 o2Var, int i7) {
+        this.a = i7;
+        this.b = o2Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        l2 l2Var = this.a;
-        x01 x01Var = l2Var.b;
-        Rect rect = l2Var.h;
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 30) {
-            Insets insets = windowInsets.getInsets(647);
-            i7 = insets.left;
-            i10 = insets.top;
-            i11 = insets.right;
-            i12 = insets.bottom;
-            rect.set(i7, i10, i11, i12);
-        } else {
-            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 1:
+                org.telegram.messenger.g0.g3(new k2(this.b, 0));
+                break;
+            case 2:
+                this.b.dismiss();
+                break;
+            default:
+                o2 o2Var = this.b;
+                c7 c7Var = o2Var.I;
+                if (c7Var != null) {
+                    c7Var.a(null);
+                    o2Var.I = null;
+                }
+                o2Var.dismiss();
+                break;
         }
-        x01Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        x01Var.requestLayout();
-        if (i13 < 30) {
-            return windowInsets.consumeSystemWindowInsets();
-        }
-        windowInsets2 = WindowInsets.CONSUMED;
-        return windowInsets2;
     }
 }

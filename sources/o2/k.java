@@ -1,6 +1,6 @@
 package o2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k extends y2.b {
     public final j d;
@@ -11,14 +11,14 @@ public final class k extends y2.b {
     }
 
     @Override // y2.m
-    public final long O() {
+    public final long P0() {
         a();
-        return this.d.e(this.c);
+        return this.d.d(this.c);
     }
 
     @Override // y2.m
-    public final long S0() {
+    public final long U() {
         a();
-        return this.d.d(this.c);
+        return this.d.e(this.c);
     }
 }

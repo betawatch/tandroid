@@ -3,18 +3,18 @@ package vh;
 import j$.util.function.BiConsumer$-CC;
 import java.util.List;
 import java.util.function.BiConsumer;
-import org.telegram.ui.Components.sa;
-import wg.w0;
+import org.telegram.ui.Components.ra;
+import wg.v0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements BiConsumer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ ra b;
 
-    public /* synthetic */ c(sa saVar, int i7) {
+    public /* synthetic */ c(ra raVar, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = raVar;
     }
 
     @Override // java.util.function.BiConsumer
@@ -24,7 +24,7 @@ public final /* synthetic */ class c implements BiConsumer {
                 ((g) this.b).X1.addAll((List) obj2);
                 break;
             default:
-                ((w0) this.b).g2.addAll((List) obj2);
+                ((v0) this.b).g2.addAll((List) obj2);
                 break;
         }
     }

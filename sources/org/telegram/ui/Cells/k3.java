@@ -11,9 +11,9 @@ import android.util.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ec0;
+import org.telegram.ui.dc0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k3 implements TextWatcher {
     public final /* synthetic */ int a = 2;
@@ -52,16 +52,16 @@ public final class k3 implements TextWatcher {
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.b5 b5Var = (org.telegram.ui.Components.b5) this.d;
+                org.telegram.ui.Components.a5 a5Var = (org.telegram.ui.Components.a5) this.d;
                 if (!this.b) {
                     int length = editable.length();
                     int i10 = this.c;
                     if (length > i10) {
                         this.b = true;
                         editable.delete(i10, editable.length());
-                        org.telegram.messenger.g0.D3(b5Var);
+                        org.telegram.messenger.g0.D3(a5Var);
                         try {
-                            b5Var.performHapticFeedback(3, 2);
+                            a5Var.performHapticFeedback(3, 2);
                         } catch (Exception unused) {
                         }
                         this.b = false;
@@ -72,21 +72,21 @@ public final class k3 implements TextWatcher {
             case 2:
                 break;
             default:
-                ec0 ec0Var = (ec0) this.d;
-                ah.i iVar = ec0Var.c;
+                dc0 dc0Var = (dc0) this.d;
+                ah.i iVar = dc0Var.c;
                 if (!this.b) {
-                    ec0Var.p(true);
-                    org.telegram.messenger.g0.r(ec0Var.W);
-                    ec0Var.n(false);
+                    dc0Var.p(true);
+                    org.telegram.messenger.g0.r(dc0Var.W);
+                    dc0Var.n(false);
                     if (TextUtils.isEmpty(editable)) {
-                        ec0Var.E = false;
+                        dc0Var.E = false;
                     }
-                    if (!ec0Var.o(editable.toString())) {
-                        ec0Var.r(true);
+                    if (!dc0Var.o(editable.toString())) {
+                        dc0Var.r(true);
                         this.b = true;
                         boolean z10 = iVar.getSelectionEnd() >= iVar.getText().length();
-                        if (!ec0Var.E) {
-                            String str = ec0Var.L;
+                        if (!dc0Var.E) {
+                            String str = dc0Var.L;
                             iVar.setText(str.substring(0, Utilities.j(this.c, str.length(), 0)));
                             if (z10) {
                                 iVar.setSelection(iVar.getText().length());
@@ -141,8 +141,8 @@ public final class k3 implements TextWatcher {
                 }
                 break;
             default:
-                if (!this.b && charSequence != null && ((ec0) this.d).L != null) {
-                    this.c = ec0.s(charSequence.toString()).length();
+                if (!this.b && charSequence != null && ((dc0) this.d).L != null) {
+                    this.c = dc0.s(charSequence.toString()).length();
                     break;
                 }
                 break;
@@ -183,13 +183,13 @@ public final class k3 implements TextWatcher {
         this.b = z10;
     }
 
-    public k3(int i7, org.telegram.ui.Components.b5 b5Var) {
+    public k3(int i7, org.telegram.ui.Components.a5 a5Var) {
         this.c = i7;
-        this.d = b5Var;
+        this.d = a5Var;
     }
 
-    public k3(ec0 ec0Var) {
-        this.d = ec0Var;
+    public k3(dc0 dc0Var) {
+        this.d = dc0Var;
     }
 
     private final void a(Editable editable) {

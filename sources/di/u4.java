@@ -5,13 +5,13 @@ import android.graphics.RectF;
 import android.opengl.Matrix;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class u4 {
     public final v4 a;
-    public ai.r d;
+    public ai.j d;
     public int f;
     public int g;
     public float j;
@@ -32,7 +32,7 @@ public final class u4 {
     }
 
     public final void b() {
-        ai.r rVar;
+        ai.j jVar;
         boolean z10 = this.e;
         v4 v4Var = this.a;
         if (!z10) {
@@ -114,7 +114,7 @@ public final class u4 {
                 rectF.bottom = rectF.top + view.getHeight();
                 org.telegram.messenger.g0.E2(view);
                 int childCount = v4Var.getChildCount();
-                v4Var.addView(view, c8.ma.e(64, 64, 17));
+                v4Var.addView(view, c8.na.e(64, 64, 17));
                 v4Var.w.add(Integer.valueOf(i11));
                 v4Var.x.put(Integer.valueOf(childCount), Integer.valueOf(i11));
                 v4Var.y.put(Integer.valueOf(childCount), rectF);
@@ -123,18 +123,18 @@ public final class u4 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 v4Var.H = ofFloat;
                 ofFloat.addUpdateListener(new ah.g(v4Var, 7));
-                v4Var.H.addListener(new ai.k0(v4Var, 6));
+                v4Var.H.addListener(new ai.g0(v4Var, 6));
                 v4Var.H.setDuration(i12 * 16);
-                v4Var.H.setInterpolator(nr.h);
+                v4Var.H.setInterpolator(kr.h);
                 v4Var.H.start();
                 return;
             }
         }
         v4Var.I = null;
-        if (this.e || (rVar = this.d) == null) {
+        if (this.e || (jVar = this.d) == null) {
             return;
         }
-        rVar.run();
+        jVar.run();
     }
 
     public final void c(float f10, float f11) {

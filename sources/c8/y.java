@@ -9,9 +9,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class y implements na.e {
     public static final Charset f = Charset.forName("UTF-8");
@@ -226,7 +226,7 @@ public final class y implements na.e {
     public final void k(int i7) {
         while (true) {
             long j3 = i7 & (-128);
-            int i10 = i7 & ls.L1;
+            int i10 = i7 & ks.L1;
             if (j3 == 0) {
                 this.a.write(i10);
                 return;
@@ -240,7 +240,7 @@ public final class y implements na.e {
     public final void l(long j3) {
         while (true) {
             long j10 = (-128) & j3;
-            int i7 = ((int) j3) & ls.L1;
+            int i7 = ((int) j3) & ks.L1;
             if (j10 == 0) {
                 this.a.write(i7);
                 return;

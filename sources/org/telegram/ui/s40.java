@@ -1,94 +1,22 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class s40 implements View.OnKeyListener {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
-
-    public /* synthetic */ s40(int i7, org.telegram.ui.ActionBar.g2 g2Var) {
-        this.a = i7;
-        this.c = g2Var;
+public final class s40 implements Comparator {
+    public static String a(TLObject tLObject) {
+        if (!(tLObject instanceof TLRPC.User)) {
+            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        }
+        TLRPC.User user = (TLRPC.User) tLObject;
+        return org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.g2 g2Var = this.c;
-        switch (i10) {
-            case 0:
-                z40 z40Var = (z40) g2Var;
-                if (i7 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !z40Var.b0.isEmpty()) {
-                            z40Var.h.c((org.telegram.ui.Components.p20) i5.c.h(1, z40Var.b0));
-                            z40Var.x0();
-                            z40Var.p0();
-                            break;
-                        }
-                    } else {
-                        this.b = z40Var.f.r.length() == 0;
-                    }
-                }
-                break;
-            default:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) g2Var;
-                ArrayList arrayList = usersSelectActivity.Q;
-                if (i7 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
-                            org.telegram.ui.Components.p20 p20Var = (org.telegram.ui.Components.p20) i5.c.h(1, arrayList);
-                            usersSelectActivity.b.b(p20Var);
-                            if (usersSelectActivity.y == 2) {
-                                if (p20Var.getUid() == -9223372036854775800L) {
-                                    usersSelectActivity.L &= -2;
-                                } else if (p20Var.getUid() == -9223372036854775799L) {
-                                    usersSelectActivity.L &= -3;
-                                } else if (p20Var.getUid() == Long.MIN_VALUE) {
-                                    usersSelectActivity.L &= -5;
-                                } else if (p20Var.getUid() == -9223372036854775807L) {
-                                    usersSelectActivity.L &= -9;
-                                }
-                            } else if (p20Var.getUid() == Long.MIN_VALUE) {
-                                int i11 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -2;
-                            } else if (p20Var.getUid() == -9223372036854775807L) {
-                                int i12 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -3;
-                            } else if (p20Var.getUid() == -9223372036854775806L) {
-                                int i13 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -5;
-                            } else if (p20Var.getUid() == -9223372036854775805L) {
-                                int i14 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -9;
-                            } else if (p20Var.getUid() == -9223372036854775804L) {
-                                int i15 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -17;
-                            } else if (p20Var.getUid() == -9223372036854775803L) {
-                                int i16 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -33;
-                            } else if (p20Var.getUid() == -9223372036854775802L) {
-                                int i17 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -65;
-                            } else if (p20Var.getUid() == -9223372036854775801L) {
-                                int i18 = org.telegram.messenger.np.I8;
-                                usersSelectActivity.L &= -129;
-                            }
-                            usersSelectActivity.d0();
-                            usersSelectActivity.b0();
-                            break;
-                        }
-                    } else {
-                        this.b = usersSelectActivity.c.length() == 0;
-                    }
-                }
-                break;
-        }
-        return true;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return a((TLObject) obj).compareTo(a((TLObject) obj2));
     }
 }

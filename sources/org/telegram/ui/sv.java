@@ -1,42 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sv {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tv b;
-    public final /* synthetic */ View c;
+public final class sv extends fi.q {
+    public final /* synthetic */ bx P0;
 
-    public /* synthetic */ sv(tv tvVar, View view, int i7) {
-        this.a = i7;
-        this.b = tvVar;
-        this.c = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sv(bx bxVar, Context context, bx bxVar2, int i7, int i10) {
+        super(context, bxVar2, i7, i10);
+        this.P0 = bxVar;
     }
 
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                View view = this.c;
-                if (view instanceof fi.p) {
-                    this.b.P0.F0.i((fi.p) view, false);
-                    if (z10) {
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.me(22), 500L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                View view2 = this.c;
-                if (view2 instanceof fi.p) {
-                    this.b.P0.F0.i((fi.p) view2, false);
-                    if (z10) {
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.me(22), 500L);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        kVar = ((org.telegram.ui.ActionBar.g2) this.P0).actionBar;
+        return !kVar.x() && super.dispatchTouchEvent(motionEvent);
     }
 }

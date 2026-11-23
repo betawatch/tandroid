@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.y10;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.nq;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.w10;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.kq;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r implements y10 {
+public final /* synthetic */ class r implements w10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -27,15 +27,15 @@ public final /* synthetic */ class r implements y10 {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.q5 q5Var, org.telegram.ui.ActionBar.h6 h6Var, int i7, TextView textView, org.telegram.ui.Wallet.e3[] e3VarArr, ey0 ey0Var, t10 t10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
+    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.r5 r5Var, org.telegram.ui.ActionBar.i6 i6Var, int i7, TextView textView, org.telegram.ui.Wallet.f3[] f3VarArr, dy0 dy0Var, r10 r10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
         this.c = linearLayout;
-        this.d = q5Var;
-        this.e = h6Var;
+        this.d = r5Var;
+        this.e = i6Var;
         this.b = i7;
         this.f = textView;
-        this.g = e3VarArr;
-        this.h = ey0Var;
-        this.i = t10Var;
+        this.g = f3VarArr;
+        this.h = dy0Var;
+        this.i = r10Var;
         this.j = context;
         this.k = textViewArr;
         this.l = spannableStringArr;
@@ -48,25 +48,25 @@ public final /* synthetic */ class r implements y10 {
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:96)
         */
-    @Override // org.telegram.messenger.y10
-    public final void a(java.lang.Object r34) {
+    @Override // org.telegram.messenger.w10
+    public final void a(java.lang.Object r35) {
         /*
-            Method dump skipped, instructions count: 1574
+            Method dump skipped, instructions count: 1586
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: fi.r.a(java.lang.Object):void");
     }
 
-    public /* synthetic */ r(long[] jArr, hi.e eVar, nq[] nqVarArr, r0 r0Var, m0 m0Var, int i7, bi.e3 e3Var, bi.e3 e3Var2, bi.e3 e3Var3, s sVar, boolean[] zArr) {
+    public /* synthetic */ r(long[] jArr, hi.e eVar, kq[] kqVarArr, r0 r0Var, m0 m0Var, int i7, bi.g3 g3Var, bi.g3 g3Var2, bi.g3 g3Var3, s sVar, boolean[] zArr) {
         this.c = jArr;
         this.d = eVar;
-        this.e = nqVarArr;
+        this.e = kqVarArr;
         this.f = r0Var;
         this.g = m0Var;
         this.b = i7;
-        this.h = e3Var;
-        this.i = e3Var2;
-        this.j = e3Var3;
+        this.h = g3Var;
+        this.i = g3Var2;
+        this.j = g3Var3;
         this.k = sVar;
         this.l = zArr;
     }

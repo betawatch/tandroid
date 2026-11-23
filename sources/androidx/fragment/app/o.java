@@ -1,12 +1,12 @@
 package androidx.fragment.app;
 
-import a8.z6;
+import a8.a7;
 import android.app.Dialog;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class o extends z6 {
+public final class o extends a7 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ s b;
 
@@ -14,7 +14,7 @@ public final class o extends z6 {
         this.b = pVar;
     }
 
-    @Override // a8.z6
+    @Override // a8.a7
     public final View b(int i7) {
         switch (this.a) {
             case 0:
@@ -28,7 +28,7 @@ public final class o extends z6 {
         }
     }
 
-    @Override // a8.z6
+    @Override // a8.a7
     public final boolean c() {
         switch (this.a) {
             case 0:

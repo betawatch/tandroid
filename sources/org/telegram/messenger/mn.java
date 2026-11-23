@@ -1,39 +1,60 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 b;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ TLRPC.Dialog c;
 
-    public /* synthetic */ mn(int i7, org.telegram.ui.ActionBar.g2 g2Var) {
+    public /* synthetic */ mn(mp mpVar, TLRPC.Dialog dialog, int i7) {
         this.a = i7;
-        this.b = g2Var;
+        this.b = mpVar;
+        this.c = dialog;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.g2 g2Var = this.b;
-                if (g2Var != null) {
-                    ThemeActivity themeActivity = new ThemeActivity(0);
-                    themeActivity.V0 = true;
-                    g2Var.presentFragment(themeActivity);
-                    break;
+                boolean z10 = s2.a;
+                TLRPC.Dialog dialog = this.c;
+                if (z10) {
+                    a8.b("checkLastDialogMessage for " + dialog.id + " has not message");
+                }
+                mp mpVar = this.b;
+                if (mpVar.getMediaDataController().T(dialog.id, 0L) == null) {
+                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar.R.f(dialog.id);
+                    if (dialog2 != null) {
+                        if (s2.a) {
+                            StringBuilder sb2 = new StringBuilder("checkLastDialogMessage for ");
+                            sb2.append(dialog.id);
+                            sb2.append(" current dialog top message ");
+                            i5.c.t(dialog2.top_message, sb2);
+                        }
+                        if (dialog2.top_message == 0) {
+                            mpVar.X(3, dialog.id, false);
+                            break;
+                        }
+                    } else {
+                        if (s2.a) {
+                            a8.b("checkLastDialogMessage for " + dialog.id + " current dialog not found");
+                        }
+                        tr messagesStorage = mpVar.getMessagesStorage();
+                        messagesStorage.a.c(new br(messagesStorage, dialog.id, new mn(mpVar, dialog, 2), 1));
+                        break;
+                    }
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.c5.q0(7, this.b, null);
-                break;
-            case 2:
-                org.telegram.ui.Components.c5.q0(8, this.b, null);
+                this.b.e1.e(this.c.id);
                 break;
             default:
-                this.b.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
+                mp mpVar2 = this.b;
+                mpVar2.getClass();
+                mpVar2.X(3, this.c.id, false);
                 break;
         }
     }

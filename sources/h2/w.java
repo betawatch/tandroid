@@ -8,16 +8,16 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class w implements g61 {
+public final class w implements f61 {
     public static w f;
     public boolean a;
     public int b;
@@ -75,7 +75,7 @@ public final class w implements g61 {
                 Iterator it2 = ((CopyOnWriteArrayList) this.d).iterator();
                 while (it2.hasNext()) {
                     v vVar2 = (v) it2.next();
-                    vVar2.b.execute(new f2.a(vVar2, 28));
+                    vVar2.b.execute(new f2.a(vVar2, 27));
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -83,26 +83,26 @@ public final class w implements g61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public void onError(i61 i61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.f61
+    public void onError(h61 h61Var, Exception exc) {
         a8.g(exc, true);
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onStateChanged(boolean z10, int i7) {
         int i10 = this.b;
         MediaController mediaController = (MediaController) this.e;
         if (i10 != mediaController.n0) {
             return;
         }
-        MediaController.f(mediaController, (gj) this.c, (int[]) this.d, this.a, z10, i7);
+        MediaController.f(mediaController, (fj) this.c, (int[]) this.d, this.a, z10, i7);
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         MediaController mediaController = (MediaController) this.e;
         if (mediaController.F0 != null) {
@@ -154,7 +154,7 @@ public final class w implements g61 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         MediaController mediaController = (MediaController) this.e;
         float f11 = i10 == 0 ? 1.0f : (i7 * f10) / i10;
@@ -165,7 +165,7 @@ public final class w implements g61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onRenderedFirstFrame() {
         MediaController mediaController = (MediaController) this.e;
         j4 j4Var = mediaController.M0;
@@ -189,23 +189,23 @@ public final class w implements g61 {
         e10.execute(new l4(24, this, context));
     }
 
-    public w(MediaController mediaController, int i7, gj gjVar, int[] iArr, boolean z10) {
+    public w(MediaController mediaController, int i7, fj fjVar, int[] iArr, boolean z10) {
         this.e = mediaController;
         this.b = i7;
-        this.c = gjVar;
+        this.c = fjVar;
         this.d = iArr;
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

@@ -1,52 +1,58 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Rect;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class jq0 extends org.telegram.ui.nx0 {
-    public final /* synthetic */ jt0 x;
+public final class jq0 extends ds0 {
+    public final /* synthetic */ it0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jq0(jt0 jt0Var, Context context, fi.d6 d6Var, iq0 iq0Var) {
-        super(context, d6Var, iq0Var);
-        this.x = jt0Var;
+    public jq0(it0 it0Var, Context context) {
+        super(context);
+        this.Q = it0Var;
     }
 
-    @Override // org.telegram.ui.nx0
-    public final void b() {
-        nq0 nq0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.s;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        jt0 jt0Var = this.x;
-        ds0[] ds0VarArr = jt0Var.n0;
-        if (ds0VarArr != null) {
-            for (ds0 ds0Var : ds0VarArr) {
-                if (ds0Var != null && (nq0Var = ds0Var.h) != null) {
-                    int paddingTop = nq0Var.getPaddingTop();
-                    nq0 nq0Var2 = ds0Var.h;
-                    int paddingLeft = nq0Var2.getPaddingLeft();
-                    int j02 = jt0Var.j0(ds0Var.F);
-                    int paddingRight = ds0Var.h.getPaddingRight();
-                    nq0 nq0Var3 = ds0Var.h;
-                    int i02 = jt0Var.i0(jt0Var.I0());
-                    nq0Var3.i3 = i02;
-                    nq0Var2.setPadding(paddingLeft, j02, paddingRight, i02);
-                    int paddingTop2 = paddingTop - ds0Var.h.getPaddingTop();
-                    if (paddingTop2 != 0) {
-                        org.telegram.messenger.g0.J(ds0Var.h, new qp0(ds0Var, paddingTop2, 2));
-                    }
-                }
-                if (ds0Var != null && ds0Var.s != null) {
-                    jt0Var.K1(ds0Var);
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        ds0 ds0Var;
+        float translationX = getTranslationX();
+        super.setTranslationX(f10);
+        it0 it0Var = this.Q;
+        ds0[] ds0VarArr = it0Var.n0;
+        if (ds0VarArr[0] == this) {
+            float f11 = translationX - f10;
+            ri.q qVar = it0Var.h2;
+            if (qVar != null) {
+                float f12 = it0Var.i2 + f11;
+                it0Var.i2 = f12;
+                int i7 = (int) f12;
+                if (i7 != 0) {
+                    it0Var.i2 = f12 - i7;
+                    qVar.h(i7, 0);
                 }
             }
         }
-        jt0Var.U();
+        if (it0Var.j1 && (ds0Var = ds0VarArr[0]) == this) {
+            float abs = Math.abs(ds0Var.getTranslationX()) / ds0VarArr[0].getMeasuredWidth();
+            it0Var.l1(abs, ds0VarArr[1].F);
+            if (it0Var.I()) {
+                int i10 = it0Var.A0;
+                if (i10 == 2) {
+                    it0Var.r0 = 1.0f - abs;
+                } else if (i10 == 1) {
+                    it0Var.r0 = abs;
+                }
+                it0Var.M1(abs);
+                float k02 = it0Var.k0(abs);
+                it0Var.s0 = k02;
+                it0Var.u0.setVisibility((k02 == 0.0f || !it0Var.I() || it0Var.A0()) ? 4 : 0);
+            } else {
+                it0Var.r0 = 0.0f;
+            }
+            it0Var.I1(false);
+        }
+        it0Var.S();
+        it0Var.U();
     }
 }

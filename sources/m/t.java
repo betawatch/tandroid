@@ -3,18 +3,18 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import c8.lc;
-import org.telegram.ui.Components.jn;
+import c8.mc;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final jn b;
+    public final nd0 b;
 
     public t(TextView textView) {
         this.a = textView;
-        this.b = new jn(textView);
+        this.b = new nd0(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i7) {
@@ -30,10 +30,10 @@ public final class t {
     }
 
     public final void b(boolean z10) {
-        ((lc) this.b.b).b(z10);
+        ((mc) this.b.b).b(z10);
     }
 
     public final void c(boolean z10) {
-        ((lc) this.b.b).c(z10);
+        ((mc) this.b.b).c(z10);
     }
 }

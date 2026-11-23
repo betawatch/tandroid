@@ -1,8 +1,8 @@
 package zi;
 
-import org.telegram.ui.Components.sy0;
+import org.telegram.ui.Components.ry0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,22 +21,22 @@ public final /* synthetic */ class h0 implements Runnable {
             case 0:
                 u0 u0Var = this.b;
                 q0 q0Var = this.c;
-                ((sy0) u0Var.e).c(q0Var.a);
+                ((ry0) u0Var.e).c(q0Var.a);
                 return;
             case 1:
                 u0 u0Var2 = this.b;
                 q0 q0Var2 = this.c;
                 r0 r0Var = u0Var2.e;
                 long j3 = q0Var2.a;
-                sy0 sy0Var = (sy0) r0Var;
-                synchronized (sy0Var) {
-                    sy0Var.c(j3);
+                ry0 ry0Var = (ry0) r0Var;
+                synchronized (ry0Var) {
+                    ry0Var.c(j3);
                 }
                 return;
             default:
                 u0 u0Var3 = this.b;
                 q0 q0Var3 = this.c;
-                ((sy0) u0Var3.e).c(q0Var3.a);
+                ((ry0) u0Var3.e).c(q0Var3.a);
                 return;
         }
     }

@@ -2,11 +2,11 @@ package oi;
 
 import android.view.KeyEvent;
 import android.view.View;
-import c8.ha;
+import c8.ia;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class j3 extends ha {
+public final class j3 extends ia {
     public final /* synthetic */ r3 a;
     public final /* synthetic */ t3 b;
 
@@ -15,9 +15,9 @@ public final class j3 extends ha {
         this.a = r3Var;
     }
 
-    @Override // c8.ha
+    @Override // c8.ia
     public final void a(boolean z10) {
-        this.a.G();
+        this.a.y();
         t3 t3Var = this.b;
         if (z10) {
             h3 h3Var = t3Var.v3;
@@ -76,7 +76,7 @@ public final class j3 extends ha {
             return;
         }
         if (i7 >= 0) {
-            t3Var.post(new hi.d0(this, i7, i11, i10, 2));
+            t3Var.post(new hi.k0(this, i7, i11, i10, 2));
             return;
         }
         View findFocus = t3Var.findFocus();

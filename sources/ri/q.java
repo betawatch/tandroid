@@ -3,16 +3,16 @@ package ri;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import c8.xd;
+import c8.yd;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qc;
-import org.telegram.ui.Components.bt;
+import org.telegram.messenger.pc;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.oa;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.na;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class q {
     public static r F;
@@ -50,8 +50,8 @@ public final class q {
     public final ArrayList E = new ArrayList();
 
     public static r f() {
-        boolean e10 = qc.e(256);
-        boolean e11 = qc.e(262144);
+        boolean e10 = pc.e(256);
+        boolean e11 = pc.e(262144);
         r rVar = F;
         if (rVar == null || rVar.a != e10 || rVar.b != e11) {
             F = new r(e10, e11);
@@ -69,8 +69,8 @@ public final class q {
             return;
         }
         this.n.add(ek0Var);
-        ek0Var.E2.b.add(new bt() { // from class: ri.f
-            @Override // org.telegram.ui.Components.bt
+        ek0Var.E2.b.add(new ys() { // from class: ri.f
+            @Override // org.telegram.ui.Components.ys
             public final void a(int i7, boolean z10) {
                 q qVar = q.this;
                 qVar.h++;
@@ -82,15 +82,15 @@ public final class q {
             ek0Var.Q = new ArrayList();
         }
         ek0Var.Q.add(jVar);
-        ek0Var.j(new oa(this, 29));
+        ek0Var.j(new na(this, 29));
     }
 
-    public final void c(j71 j71Var) {
-        if (j71Var == null) {
+    public final void c(k71 k71Var) {
+        if (k71Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = j71Var.S;
+        ArrayList arrayList = k71Var.S;
         if (arrayList.contains(gVar)) {
             return;
         }
@@ -100,7 +100,7 @@ public final class q {
     public final ui.c d(n nVar) {
         ui.c cVar = new ui.c();
         this.E.add(new o(cVar, nVar));
-        cVar.a(nVar.e());
+        cVar.a(nVar.j());
         return cVar;
     }
 
@@ -166,7 +166,7 @@ public final class q {
                 ArrayList arrayList2 = cVar2.a;
                 if (!arrayList2.contains(hVar)) {
                     arrayList2.add(hVar);
-                    if (view.isAttachedToWindow() && (a10 = xd.a(view, cVar2)) != null) {
+                    if (view.isAttachedToWindow() && (a10 = yd.a(view, cVar2)) != null) {
                         ((xe.b) a10.a.b).add(hVar);
                     }
                 }

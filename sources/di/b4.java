@@ -2,15 +2,15 @@ package di;
 
 import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b4 implements y10 {
+public final /* synthetic */ class b4 implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ String c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class b4 implements y10 {
         this.c = str;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         int i7 = this.a;
         Object obj2 = this.f;
@@ -36,23 +36,23 @@ public final /* synthetic */ class b4 implements y10 {
         switch (i7) {
             case 0:
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 ((boolean[]) obj4)[0] = false;
                 if (arrayList != null) {
-                    new h1(context, h6Var, this.b, this.c, arrayList, false).show();
+                    new h1(context, i6Var, this.b, this.c, arrayList, false).show();
                     break;
                 }
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                np npVar = (np) obj3;
+                mp mpVar = (mp) obj3;
                 vf.b bVar = (vf.b) obj2;
                 Long l10 = (Long) obj;
                 String str = LaunchActivity.C1;
-                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0 || l10.longValue() == Long.MAX_VALUE) ? null : npVar.c2(l10);
+                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0 || l10.longValue() == Long.MAX_VALUE) ? null : mpVar.c2(l10);
                 int i10 = this.b;
-                if (c22 != null && !p10.C(c22)) {
+                if (c22 != null && !n10.C(c22)) {
                     launchActivity.Y(i10, c22, this.c, bVar);
                     break;
                 } else {
@@ -62,7 +62,7 @@ public final /* synthetic */ class b4 implements y10 {
                     if (c22 == null) {
                         org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                         if (Q != null) {
-                            org.telegram.messenger.f3.o(null, 2131747941, org.telegram.ui.Components.lc.b0(Q), null);
+                            org.telegram.messenger.f3.o(null, 2131747941, org.telegram.ui.Components.kc.b0(Q), null);
                             break;
                         }
                     } else {

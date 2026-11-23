@@ -1,45 +1,33 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class q3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w3 b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ q3(w3 w3Var, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class q3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x3 b;
+
+    public /* synthetic */ q3(x3 x3Var, int i7) {
         this.a = i7;
-        this.b = w3Var;
+        this.b = x3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                w3 w3Var = this.b;
-                if (!w3Var.T && !w3Var.S) {
-                    ih.d.c(w3Var.F, w3Var.h);
-                    w3Var.G.d();
-                    x6 x6Var = w3Var.r;
-                    q3 q3Var = new q3(w3Var, 1);
-                    s6 s6Var = x6Var.E;
-                    if (s6Var == null) {
-                        q3Var.run();
-                        break;
-                    } else if (s6Var.b == null) {
-                        s6Var.d = q3Var;
-                        break;
-                    } else {
-                        q3Var.run();
-                        break;
-                    }
-                }
+                x3 x3Var = this.b;
+                x3Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x3Var.R = floatValue;
+                x3Var.r.setUseGyroscope(floatValue);
                 break;
             default:
-                w3 w3Var2 = this.b;
-                if (!w3Var2.T && !w3Var2.S) {
-                    w3Var2.a(1.0f);
-                    break;
-                }
+                x3 x3Var2 = this.b;
+                x3Var2.getClass();
+                x3Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x3Var2.e();
                 break;
         }
     }

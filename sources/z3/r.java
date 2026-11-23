@@ -1,14 +1,14 @@
 package z3;
 
-import a8.la;
-import f3.h0;
+import a8.ma;
+import f3.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r {
     public final boolean a;
     public final String b;
-    public final h0 c;
+    public final i0 c;
     public final int d;
     public final byte[] e;
 
@@ -23,7 +23,7 @@ public final class r {
     public r(boolean z10, String str, int i7, byte[] bArr, int i10, int i11, byte[] bArr2) {
         char c10 = 0;
         int i12 = 1;
-        la.f((i7 == 0) ^ (bArr2 == null));
+        ma.f((i7 == 0) ^ (bArr2 == null));
         this.a = z10;
         this.b = str;
         this.d = i7;
@@ -70,6 +70,6 @@ public final class r {
                     break;
             }
         }
-        this.c = new h0(i12, i10, i11, bArr);
+        this.c = new i0(i12, i10, i11, bArr);
     }
 }

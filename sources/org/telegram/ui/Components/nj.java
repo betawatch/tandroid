@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj implements tj {
+public final /* synthetic */ class nj implements sj {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.f5 b;
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ nj(org.telegram.messenger.f5 f5Var, int i7) {
+    public /* synthetic */ nj(int i7, TLRPC.User user) {
         this.a = i7;
-        this.b = f5Var;
+        this.b = user;
     }
 
-    @Override // org.telegram.ui.Components.tj
+    @Override // org.telegram.ui.Components.sj
     public final String run() {
+        pf.b c10;
+        StringBuilder sb2;
+        String str;
         switch (this.a) {
             case 0:
-                ArrayList arrayList = this.b.e;
-                return arrayList.isEmpty() ? "" : pf.b.c().b((String) arrayList.get(0));
+                c10 = pf.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
             default:
-                ArrayList arrayList2 = this.b.e;
-                return arrayList2.isEmpty() ? "" : pf.b.c().b((String) arrayList2.get(0));
+                c10 = pf.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
         }
+        return org.telegram.messenger.m10.h(sb2, str, c10);
     }
 }

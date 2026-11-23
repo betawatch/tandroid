@@ -2,8 +2,7 @@ package org.telegram.messenger.voip;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
-import bi.o2;
-import di.q2;
+import bi.q2;
 import j$.util.DesugarArrays;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
@@ -13,10 +12,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -24,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -51,7 +50,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -65,7 +64,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -103,7 +102,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -122,7 +121,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static final class CallVerificationWords {
         int height;
         String[] words;
@@ -329,7 +328,7 @@ public class ConferenceCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkEmojiHash$0() {
-        ls.f(this.currentAccount).k(ls.U3, new Object[0]);
+        ks.f(this.currentAccount).k(ks.U3, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -347,7 +346,7 @@ public class ConferenceCall {
         sharedInstance.groupCall.m.clear();
         t3 t3Var3 = sharedInstance.groupCall;
         t3Var3.m.addAll(sharedInstance.conference.getShadyJoiningParticipants(t3Var3.e));
-        ls.f(this.currentAccount).k(ls.w2, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
+        ks.f(this.currentAccount).k(ks.w2, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -383,12 +382,12 @@ public class ConferenceCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String lambda$poll$9(CallParticipant callParticipant) {
-        return "[" + callParticipant.user_id + "]: " + n5.l(k10.t0, callParticipant.user_id);
+        return "[" + callParticipant.user_id + "]: " + n5.l(i10.t0, callParticipant.user_id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdates$4(TLObject tLObject) {
-        np.u1(this.currentAccount).V3((TLRPC.Updates) tLObject, false);
+        mp.u1(this.currentAccount).V3((TLRPC.Updates) tLObject, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -411,7 +410,7 @@ public class ConferenceCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestLastBlock$3(long j3, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        org.telegram.messenger.g0.g3(new o2(this, j3, tLObject, tL_error, runnable, 8));
+        org.telegram.messenger.g0.g3(new q2(this, j3, tLObject, tL_error, runnable, 8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -471,7 +470,7 @@ public class ConferenceCall {
             return false;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        ArrayList B0 = np.B0(updates, TL_update.TL_updateGroupCallChainBlocks.class);
+        ArrayList B0 = mp.B0(updates, TL_update.TL_updateGroupCallChainBlocks.class);
         int size = B0.size();
         boolean z10 = false;
         int i7 = 0;
@@ -482,7 +481,7 @@ public class ConferenceCall {
                 z10 = true;
             }
         }
-        Utilities.d.c(new oi.t(12, this, updates));
+        Utilities.d.c(new n2.c0(14, this, updates));
         return z10;
     }
 
@@ -937,7 +936,7 @@ public class ConferenceCall {
         getgroupcallchainblocks.sub_chain_id = 0;
         getgroupcallchainblocks.offset = -1;
         getgroupcallchainblocks.limit = 1;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new q2(this, currentTimeMillis, runnable, 4));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new di.q2(this, currentTimeMillis, runnable, 4));
     }
 
     public void reset() {

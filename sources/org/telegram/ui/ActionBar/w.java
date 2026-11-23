@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public boolean E;
@@ -54,7 +54,7 @@ public final class w extends FrameLayout {
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
         int paddingBottom = getPaddingBottom();
-        Paint n02 = m6.n0(i7);
+        Paint n02 = n6.n0(i7);
         p3 p3Var = p3.c;
         if (paddingLeft <= 0 || this.x == p3Var) {
             canvas2 = canvas;
@@ -135,17 +135,17 @@ public final class w extends FrameLayout {
         }
         o3 o3Var = actionBarLayout.y;
         boolean z10 = false;
-        int color = o3Var != null ? o3Var.getInternalNavbarPaint().getColor() : m6.x0(null, m6.a7, false);
+        int color = o3Var != null ? o3Var.getInternalNavbarPaint().getColor() : n6.x0(null, n6.a7, false);
         boolean z11 = true;
         if (this == actionBarLayout.x) {
-            org.telegram.ui.Components.d6 d6Var = actionBarLayout.i1;
+            org.telegram.ui.Components.c6 c6Var = actionBarLayout.i1;
             r rVar = actionBarLayout.H;
             if (rVar != null && rVar.hasSheet()) {
                 z10 = true;
             }
-            float d = d6Var.d(z10);
+            float d = c6Var.d(z10);
             if (d > 0.0f) {
-                a(canvas, this.E, m6.r1(d, color));
+                a(canvas, this.E, n6.r1(d, color));
             }
         } else {
             g2 lastFragment = actionBarLayout.getLastFragment();
@@ -162,7 +162,7 @@ public final class w extends FrameLayout {
                 a(canvas, z11, color);
                 if (z11 && this.y && actionBarLayout.w(false) <= 0 && (bVar = actionBarLayout.u1) != null && bVar.d > 0) {
                     super.dispatchDraw(canvas);
-                    canvas.drawRect(0.0f, getHeight() - actionBarLayout.u1.d, getWidth(), getHeight(), m6.n0(color));
+                    canvas.drawRect(0.0f, getHeight() - actionBarLayout.u1.d, getWidth(), getHeight(), n6.n0(color));
                     return;
                 }
             }
@@ -251,7 +251,7 @@ public final class w extends FrameLayout {
                 }
                 this.n = navigationBarColor;
                 this.h = i15;
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, i15, new int[]{m6.r1(0.1f, navigationBarColor), m6.r1(1.0f, navigationBarColor)}, new float[]{0.0f, 0.88f}, Shader.TileMode.CLAMP);
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, i15, new int[]{n6.r1(0.1f, navigationBarColor), n6.r1(1.0f, navigationBarColor)}, new float[]{0.0f, 0.88f}, Shader.TileMode.CLAMP);
                 this.r = linearGradient;
                 this.w.setShader(linearGradient);
             }
@@ -273,12 +273,12 @@ public final class w extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.c != 0) {
-            int i7 = m6.d6;
-            int x02 = m6.x0(null, i7, false);
+            int i7 = n6.d6;
+            int x02 = n6.x0(null, i7, false);
             int i10 = this.e;
             Paint paint = this.d;
             if (i10 != x02) {
-                int x03 = m6.x0(null, i7, false);
+                int x03 = n6.x0(null, i7, false);
                 this.e = x03;
                 paint.setColor(x03);
             }
@@ -352,7 +352,7 @@ public final class w extends FrameLayout {
         getWindowVisibleDisplayFrame(this.a);
         f3 f3Var = actionBarLayout.F;
         if (f3Var != null) {
-            f3Var.setCurrentAccount(k10.t0);
+            f3Var.setCurrentAccount(i10.t0);
         }
         int i12 = 0;
         while (true) {

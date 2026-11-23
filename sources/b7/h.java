@@ -3,21 +3,24 @@ package b7;
 import android.os.Looper;
 import android.util.Log;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h {
     public static ClassLoader a;
     public static Thread b;
 
-    public static final gd.f a(Throwable exception) {
-        kotlin.jvm.internal.j.e(exception, "exception");
-        return new gd.f(exception);
+    public static gd.c a(rd.a aVar) {
+        gd.d[] dVarArr = gd.d.a;
+        gd.j jVar = gd.j.a;
+        gd.h hVar = new gd.h();
+        hVar.a = aVar;
+        hVar.b = jVar;
+        return hVar;
     }
 
-    public static final void b(Object obj) {
-        if (obj instanceof gd.f) {
-            throw ((gd.f) obj).a;
-        }
+    public static gd.i b(rd.a initializer) {
+        kotlin.jvm.internal.j.e(initializer, "initializer");
+        return new gd.i(initializer);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00b0, code lost:

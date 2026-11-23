@@ -1,12 +1,12 @@
 package ah;
 
-import ai.a3;
-import ai.c1;
+import ai.r2;
+import ai.u0;
 import android.view.View;
 import android.widget.TextView;
-import bi.e2;
-import bi.l7;
+import bi.f2;
 import bi.o7;
+import bi.r7;
 import bi.t0;
 import ch.b0;
 import di.b6;
@@ -19,28 +19,28 @@ import di.h9;
 import di.o0;
 import di.pb;
 import di.r0;
-import di.u0;
 import fi.a2;
 import fi.f9;
 import fi.j8;
 import fi.n5;
 import fi.o8;
 import fi.y8;
-import hi.ia;
-import hi.v0;
+import hi.d1;
+import hi.db;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.x20;
+import org.telegram.ui.Components.x60;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import ug.y0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,10 +64,10 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 1:
-                a3 a3Var = (a3) this.b;
-                a3Var.getClass();
-                DictationAsr.Y(!DictationAsr.x());
-                a3Var.e0();
+                r2 r2Var = (r2) this.b;
+                r2Var.getClass();
+                DictationAsr.b0(!DictationAsr.z());
+                r2Var.e0();
                 break;
             case 2:
                 ((androidx.mediarouter.app.g) this.b).dismiss();
@@ -79,25 +79,25 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((t0) this.b).dismiss();
                 break;
             case 5:
-                e2 e2Var = (e2) this.b;
-                LinkedHashMap linkedHashMap = e2Var.a2;
+                f2 f2Var = (f2) this.b;
+                LinkedHashMap linkedHashMap = f2Var.a2;
                 if (!linkedHashMap.isEmpty()) {
                     ArrayList arrayList = new ArrayList(linkedHashMap.values());
-                    e2Var.dismiss();
-                    e2Var.V1.c.a(arrayList);
+                    f2Var.dismiss();
+                    f2Var.V1.c.a(arrayList);
                     break;
                 }
                 break;
             case 6:
-                if (((l7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
-                    org.telegram.ui.ActionBar.e2 e2Var2 = new org.telegram.ui.ActionBar.e2();
-                    e2Var2.a = true;
-                    Q.showAsSheet(new pb(), e2Var2);
+                if (((o7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
+                    e2 e2Var = new e2();
+                    e2Var.a = true;
+                    Q.showAsSheet(new pb(), e2Var);
                     break;
                 }
                 break;
             case 7:
-                ((o7) this.b).performClick();
+                ((r7) this.b).performClick();
                 break;
             case 8:
                 b0 b0Var = (b0) this.b;
@@ -110,12 +110,12 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((ci.n) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
                 break;
             case 10:
-                ((a30) this.b).dismiss();
+                ((x20) this.b).dismiss();
                 break;
             case 11:
                 o0 o0Var = (o0) this.b;
                 TextView textView = o0Var.u1;
-                a70 G = a70.G(o0Var.c, o0Var.J0, textView);
+                x60 G = x60.G(o0Var.c, o0Var.J0, textView);
                 int[] iArr = o0.H1;
                 int i7 = 0;
                 while (true) {
@@ -129,7 +129,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                         if (i10 != o0Var.C1) {
                             z10 = false;
                         }
-                        G.i(new c1(o0Var, i10, 5), hd.G(i10 / 3600, "GiftOfferHours", new Object[0]), z10);
+                        G.i(new u0(o0Var, i10, 6), gd.G(i10 / 3600, "GiftOfferHours", new Object[0]), z10);
                         i7++;
                     }
                 }
@@ -137,7 +137,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((r0) this.b).dismiss();
                 break;
             case 13:
-                u0 u0Var = (u0) this.b;
+                di.u0 u0Var = (di.u0) this.b;
                 cg.b bVar = u0Var.z1.a;
                 cg.b bVar2 = cg.b.b;
                 if (bVar == bVar2) {
@@ -168,9 +168,9 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 break;
             case 20:
                 if (((eb) ((a) this.b).c).e > 0 && (Q2 = LaunchActivity.Q()) != null) {
-                    org.telegram.ui.ActionBar.e2 e2Var3 = new org.telegram.ui.ActionBar.e2();
-                    e2Var3.a = true;
-                    Q2.showAsSheet(new pb(), e2Var3);
+                    e2 e2Var2 = new e2();
+                    e2Var2.a = true;
+                    Q2.showAsSheet(new pb(), e2Var2);
                     break;
                 }
                 break;
@@ -200,19 +200,19 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((f2.a) this.b).run();
                 break;
             case 27:
-                hi.o oVar = (hi.o) this.b;
-                hi.h hVar = oVar.f;
+                hi.n nVar = (hi.n) this.b;
+                hi.h hVar = nVar.f;
                 hVar.d();
                 hVar.k(true);
-                hi.f fVar = oVar.d0;
+                hi.f fVar = nVar.d0;
                 g0.r(fVar);
                 fVar.run();
                 break;
             case 28:
-                ((ia) this.b).B();
+                ((db) this.b).B();
                 break;
             default:
-                v0.a((v0) this.b);
+                d1.a((d1) this.b);
                 break;
         }
     }

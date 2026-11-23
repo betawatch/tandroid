@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i0 implements a {
     public final File a;
@@ -75,7 +75,7 @@ public final class i0 implements a {
                     jd.a aVar = jd.a.a;
                     i7 = r02.f;
                     if (i7 != 0) {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         if (this.e.get()) {
                             throw new IllegalStateException("StorageConnection has already been disposed.");
                         }
@@ -120,7 +120,7 @@ public final class i0 implements a {
                         d0Var = r02.b;
                         r02 = r02.a;
                         try {
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             i0Var = r02;
                             z10 = nVar;
                         } catch (Throwable th5) {
@@ -128,7 +128,7 @@ public final class i0 implements a {
                             try {
                                 d0Var.close();
                             } catch (Throwable th6) {
-                                af.b.a(th2, th6);
+                                b5.a.a(th2, th6);
                             }
                             throw th2;
                         }
@@ -198,7 +198,7 @@ public final class i0 implements a {
                                 aVar = jd.a.a;
                                 i7 = h0Var.h;
                                 if (i7 != 0) {
-                                    b7.h.b(obj);
+                                    c8.z.b(obj);
                                     if (this.e.get()) {
                                         throw new IllegalStateException("StorageConnection has already been disposed.");
                                     }
@@ -231,7 +231,7 @@ public final class i0 implements a {
                                     aVar2 = (ie.a) h0Var.b;
                                     i0Var2 = h0Var.a;
                                     try {
-                                        b7.h.b(obj);
+                                        c8.z.b(obj);
                                         try {
                                             k0Var2.close();
                                             th = null;
@@ -254,7 +254,7 @@ public final class i0 implements a {
                                         try {
                                             k0Var2.close();
                                         } catch (Throwable th5) {
-                                            af.b.a(th2, th5);
+                                            b5.a.a(th2, th5);
                                         }
                                         throw th2;
                                     }
@@ -262,7 +262,7 @@ public final class i0 implements a {
                                 ie.a aVar3 = (ie.a) h0Var.c;
                                 rd.p pVar2 = (rd.p) h0Var.b;
                                 i0Var = h0Var.a;
-                                b7.h.b(obj);
+                                c8.z.b(obj);
                                 aVar2 = aVar3;
                                 pVar = pVar2;
                                 file = new File(i0Var.a.getAbsolutePath() + ".tmp");

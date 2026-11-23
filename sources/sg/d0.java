@@ -3,73 +3,73 @@ package sg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.q2;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
-    public final /* synthetic */ x0 c;
+    public final /* synthetic */ h0 b;
+    public final /* synthetic */ w0 c;
 
-    public /* synthetic */ d0(i0 i0Var, x0 x0Var, int i7) {
+    public /* synthetic */ d0(h0 h0Var, w0 w0Var, int i7) {
         this.a = i7;
-        this.b = i0Var;
-        this.c = x0Var;
+        this.b = h0Var;
+        this.c = w0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        x0 x0Var = this.c;
-        i0 i0Var = this.b;
+        w0 w0Var = this.c;
+        h0 h0Var = this.b;
         switch (i7) {
             case 0:
-                i0Var.c = x0Var;
-                if (i0Var.h == null) {
-                    i0Var.h = new RectF();
+                h0Var.c = w0Var;
+                if (h0Var.h == null) {
+                    h0Var.h = new RectF();
                 }
-                i0Var.c.a(i0Var.h);
-                jn jnVar = i0Var.a;
-                if (jnVar != null) {
-                    jnVar.l();
+                h0Var.c.a(h0Var.h);
+                nd0 nd0Var = h0Var.a;
+                if (nd0Var != null) {
+                    nd0Var.p();
                     break;
                 }
                 break;
             default:
-                if (x0Var != null && i0Var.q == 0) {
-                    i0Var.q = i1.b(i0Var.g);
+                if (w0Var != null && h0Var.q == 0) {
+                    h0Var.q = h1.b(h0Var.g);
                 }
                 int i10 = 0;
-                if (i0Var.H == (x0Var != null)) {
-                    if (x0Var != i0Var.d) {
-                        i0Var.d = x0Var;
-                        jn jnVar2 = i0Var.a;
-                        if (jnVar2 != null) {
-                            jnVar2.l();
+                if (h0Var.H == (w0Var != null)) {
+                    if (w0Var != h0Var.d) {
+                        h0Var.d = w0Var;
+                        nd0 nd0Var2 = h0Var.a;
+                        if (nd0Var2 != null) {
+                            nd0Var2.p();
                             break;
                         }
                     }
                 } else {
-                    i0Var.H = x0Var != null;
-                    ValueAnimator valueAnimator = i0Var.K;
+                    h0Var.H = w0Var != null;
+                    ValueAnimator valueAnimator = h0Var.K;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
-                        i0Var.K = null;
+                        h0Var.K = null;
                     }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(i0Var.I, i0Var.H ? 1.0f : 0.0f);
-                    i0Var.K = ofFloat;
-                    ofFloat.addUpdateListener(new c0(i0Var, i10));
-                    i0Var.K.addListener(new g0(i0Var, i10));
-                    i0Var.K.setInterpolator(nr.h);
-                    i0Var.K.start();
-                    i0Var.d = x0Var;
-                    jn jnVar3 = i0Var.a;
-                    if (jnVar3 != null) {
-                        jnVar3.l();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(h0Var.I, h0Var.H ? 1.0f : 0.0f);
+                    h0Var.K = ofFloat;
+                    ofFloat.addUpdateListener(new c0(h0Var, i10));
+                    h0Var.K.addListener(new g0(h0Var, i10));
+                    h0Var.K.setInterpolator(kr.h);
+                    h0Var.K.start();
+                    h0Var.d = w0Var;
+                    nd0 nd0Var3 = h0Var.a;
+                    if (nd0Var3 != null) {
+                        nd0Var3.p();
                     }
-                    if (i0Var.H) {
+                    if (h0Var.H) {
                         q2.y.a();
                         break;
                     }

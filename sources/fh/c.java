@@ -1,15 +1,15 @@
 package fh;
 
-import a8.ea;
+import a8.fa;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c extends ea {
+public final class c extends fa {
     public final Paint a = new Paint(1);
     public final Paint b;
     public final /* synthetic */ g c;
@@ -21,7 +21,7 @@ public final class c extends ea {
         paint.setColor(0);
     }
 
-    @Override // a8.ea
+    @Override // a8.fa
     public final void b(Canvas canvas, ui.a aVar) {
         g gVar = this.c;
         f fVar = gVar.R;
@@ -29,13 +29,13 @@ public final class c extends ea {
         if (i7 == 0) {
             return;
         }
-        int r12 = m6.r1(i7 / 255.0f, gVar.y);
+        int r12 = n6.r1(i7 / 255.0f, gVar.y);
         if (Color.alpha(gVar.x) > 0 && i7 == 255) {
             float f10 = gVar.W;
             if (f10 > 0.0f) {
                 float f11 = gVar.U;
                 float f12 = gVar.V;
-                int r13 = m6.r1(f10, gVar.x);
+                int r13 = n6.r1(f10, gVar.x);
                 Paint paint = this.b;
                 paint.setShadowLayer(f11, 0.0f, f12, r13);
                 fVar.d(canvas, paint, gVar.T);
@@ -60,7 +60,7 @@ public final class c extends ea {
         canvas.clipPath(fVar.k);
         canvas.translate(rect.left, rect.top);
         canvas.translate(-f15, -f18);
-        aVar.o(f15, f18, f20, f22, canvas);
+        aVar.z(f15, f18, f20, f22, canvas);
         canvas.restore();
         if (Color.alpha(r12) > 0) {
             Paint paint2 = this.a;

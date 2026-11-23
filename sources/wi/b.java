@@ -3,7 +3,7 @@ package wi;
 import android.widget.ImageView;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class b implements Runnable {
                 h hVar2 = this.b;
                 if (hVar2.b() && hVar2.c()) {
                     float f10 = hVar2.M[0];
-                    if (hVar2.b.V(f10 >= ((float) hVar2.x) * 0.5f, f10, hVar2.G) && !hVar2.u) {
+                    if (hVar2.b.A1(f10 >= ((float) hVar2.x) * 0.5f, f10, hVar2.G) && !hVar2.u) {
                         hVar2.u = true;
                         hVar2.o(true);
                         if (!hVar2.w) {

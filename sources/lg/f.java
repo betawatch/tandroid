@@ -16,14 +16,14 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.i7;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.x7;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.m6;
 import org.telegram.ui.l0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class f {
     public int a;
@@ -96,11 +96,11 @@ public final class f {
         RectF rectF = l0Var.a;
         rectF.set(0.0f, 0.0f, f10, f11);
         canvas.saveLayerAlpha(rectF, (int) (f12 * 255.0f), 31);
-        n6 n6Var = (n6) this.d;
-        float i7 = n6Var.i();
-        n6 n6Var2 = (n6) this.e;
-        float i10 = n6Var2.i();
-        TextPaint textPaint = n6Var2.a;
+        m6 m6Var = (m6) this.d;
+        float i7 = m6Var.i();
+        m6 m6Var2 = (m6) this.e;
+        float i10 = m6Var2.i();
+        TextPaint textPaint = m6Var2.a;
         float f13 = i10 * i7;
         canvas.save();
         float f14 = 0.82f * f11;
@@ -108,15 +108,15 @@ public final class f {
         canvas.translate(0.0f, (-g0.L(4.0f)) * f13);
         float T1 = g0.T1(1.0f, 0.86f, f13) * l0Var.H;
         canvas.scale(T1, T1, 0.0f, 0.0f);
-        n6Var.o(0.0f, 0.0f, f10, f11);
-        n6Var.draw(canvas);
+        m6Var.o(0.0f, 0.0f, f10, f11);
+        m6Var.draw(canvas);
         canvas.restore();
-        float d = ((d6) this.f).d(this.c);
+        float d = ((c6) this.f).d(this.c);
         canvas.save();
         canvas.translate(0.0f, e2.t(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.H) * f14 * f13) + (-g0.L(1.0f))));
         float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.H;
         canvas.scale(T12, T12, 0.0f, 0.0f);
-        n6Var2.u(i0.a.f(d, this.a, m6.x0(null, m6.q7, false)));
+        m6Var2.u(i0.a.f(d, this.a, n6.x0(null, n6.q7, false)));
         if (d > 0.0f) {
             if (this.b != textPaint.getColor()) {
                 int color = textPaint.getColor();
@@ -127,11 +127,11 @@ public final class f {
             drawable.setBounds(0, ((int) (f11 - g0.L(16.0f))) / 2, g0.L(16.0f), ((int) (g0.L(16.0f) + f11)) / 2);
             drawable.draw(canvas);
         }
-        n6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
-        n6Var2.draw(canvas);
+        m6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
+        m6Var2.draw(canvas);
         canvas.restore();
         rectF.set(f10 - g0.L(12.0f), 0.0f, f10, f11);
-        l0Var.s0.n(canvas, rectF, 2, 1.0f);
+        l0Var.s0.u(canvas, rectF, 2, 1.0f);
         canvas.restore();
     }
 
@@ -139,7 +139,7 @@ public final class f {
         Canvas canvas;
         Paint paint = (Paint) this.g;
         RectF rectF = (RectF) this.f;
-        int w02 = m6.w0(m6.d6, (h6) this.h);
+        int w02 = n6.w0(n6.d6, (i6) this.h);
         int i11 = (i7 + i10) << 10;
         if (i11 != this.a || this.c) {
             this.c = false;
@@ -161,28 +161,28 @@ public final class f {
 
     public f(l0 l0Var) {
         this.h = l0Var;
-        n6 n6Var = new n6(true, true, true);
-        this.d = n6Var;
-        n6 n6Var2 = new n6(true, true, true);
-        this.e = n6Var2;
-        this.f = new d6(l0Var, 0L, 300L, nr.h);
+        m6 m6Var = new m6(true, true, true);
+        this.d = m6Var;
+        m6 m6Var2 = new m6(true, true, true);
+        this.e = m6Var2;
+        this.f = new c6(l0Var, 0L, 300L, kr.h);
         this.c = false;
-        n6Var.L = true;
-        n6Var.w(g0.L(18.33f));
-        n6Var.B = 0.6f;
-        n6Var.x(g0.o());
-        n6Var.q(false);
-        n6Var.setCallback(l0Var);
-        n6Var.N = 9999999;
-        n6Var2.L = true;
-        n6Var2.w(g0.L(14.0f));
-        n6Var2.q(false);
-        n6Var2.setCallback(l0Var);
-        n6Var2.N = 9999999;
+        m6Var.L = true;
+        m6Var.w(g0.L(18.33f));
+        m6Var.B = 0.6f;
+        m6Var.x(g0.o());
+        m6Var.q(false);
+        m6Var.setCallback(l0Var);
+        m6Var.N = 9999999;
+        m6Var2.L = true;
+        m6Var2.w(g0.L(14.0f));
+        m6Var2.q(false);
+        m6Var2.setCallback(l0Var);
+        m6Var2.N = 9999999;
         this.g = l0Var.getContext().getResources().getDrawable(R.drawable.warning_sign).mutate();
     }
 
-    public f(h6 h6Var) {
+    public f(i6 i6Var) {
         this.f = new RectF();
         Paint paint = new Paint(1);
         this.g = paint;
@@ -190,6 +190,6 @@ public final class f {
         this.c = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.h = h6Var;
+        this.h = i6Var;
     }
 }

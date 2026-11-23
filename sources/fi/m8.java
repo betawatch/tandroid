@@ -6,26 +6,26 @@ import android.graphics.Rect;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.nx;
+import org.telegram.ui.mx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class m8 extends h8 {
     public final ch.p0 J;
     public final l8 K;
     public final ch.g0 L;
     public final ImageReceiver M;
-    public final org.telegram.ui.Components.d6 N;
-    public final org.telegram.ui.Components.n6 O;
+    public final org.telegram.ui.Components.c6 N;
+    public final org.telegram.ui.Components.m6 O;
     public boolean P;
 
-    public m8(Context context, j8 j8Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, nx nxVar) {
+    public m8(Context context, j8 j8Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, mx mxVar) {
         super(context, j8Var, tL_mediaAreaSuggestedReaction);
         TLRPC.TL_availableReaction tL_availableReaction;
         ArrayList arrayList;
@@ -34,8 +34,8 @@ public final class m8 extends h8 {
         ch.g0 g0Var = new ch.g0(this);
         this.L = g0Var;
         this.M = new ImageReceiver(this);
-        this.N = new org.telegram.ui.Components.d6(this);
-        this.O = new org.telegram.ui.Components.n6(false, false, false);
+        this.N = new org.telegram.ui.Components.c6(this);
+        this.O = new org.telegram.ui.Components.m6(false, false, false);
         ch.p0 d = ch.p0.d(tL_mediaAreaSuggestedReaction.reaction);
         this.J = d;
         if (tL_mediaAreaSuggestedReaction.flipped) {
@@ -43,21 +43,21 @@ public final class m8 extends h8 {
         }
         l8Var.c(getScaleX());
         g0Var.e(d);
-        nxVar.getClass();
+        mxVar.getClass();
         String str = d.f;
-        str = str == null ? gj.U(org.telegram.ui.Components.p5.e(nxVar.b, d.g)) : str;
-        if (str != null && (arrayList = (ArrayList) nxVar.e.get(str)) != null && !arrayList.isEmpty()) {
+        str = str == null ? fj.U(org.telegram.ui.Components.o5.e(mxVar.b, d.g)) : str;
+        if (str != null && (arrayList = (ArrayList) mxVar.e.get(str)) != null && !arrayList.isEmpty()) {
             int min = Math.min(1, arrayList.size());
             for (int i7 = 0; i7 < min; i7++) {
-                nxVar.l((TLRPC.Document) arrayList.get(i7));
+                mxVar.l((TLRPC.Document) arrayList.get(i7));
             }
         }
-        if (this.J.f != null && (tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(this.J.f)) != null) {
-            this.M.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
+        if (this.J.f != null && (tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i10.t0).r.get(this.J.f)) != null) {
+            this.M.r0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
         }
-        org.telegram.ui.Components.n6 n6Var = this.O;
-        n6Var.b = 17;
-        n6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        org.telegram.ui.Components.m6 m6Var = this.O;
+        m6Var.b = 17;
+        m6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
         this.O.w(org.telegram.messenger.g0.L(18.0f));
         this.O.N = org.telegram.messenger.g0.q.x;
         if (tL_mediaAreaSuggestedReaction.dark) {
@@ -90,16 +90,16 @@ public final class m8 extends h8 {
         g0Var.c(rect);
         g0Var.a(canvas);
         float height2 = (l8Var.getBounds().height() * 0.839f) + l8Var.getBounds().top;
-        org.telegram.ui.Components.n6 n6Var = this.O;
-        n6Var.setBounds(l8Var.getBounds().left, (int) (height2 - org.telegram.messenger.g0.L(10.0f)), l8Var.getBounds().right, (int) (org.telegram.messenger.g0.L(10.0f) + height2));
+        org.telegram.ui.Components.m6 m6Var = this.O;
+        m6Var.setBounds(l8Var.getBounds().left, (int) (height2 - org.telegram.messenger.g0.L(10.0f)), l8Var.getBounds().right, (int) (org.telegram.messenger.g0.L(10.0f) + height2));
         canvas.save();
         canvas.scale(e10, e10, l8Var.getBounds().centerX(), height2);
-        n6Var.draw(canvas);
+        m6Var.draw(canvas);
         canvas.restore();
     }
 
     public final void c(TL_stories.StoryViews storyViews, boolean z10) {
-        org.telegram.ui.Components.d6 d6Var = this.N;
+        org.telegram.ui.Components.c6 c6Var = this.N;
         if (storyViews != null) {
             for (int i7 = 0; i7 < storyViews.reactions.size(); i7++) {
                 if (ch.s0.c(storyViews.reactions.get(i7).reaction, this.J)) {
@@ -109,7 +109,7 @@ public final class m8 extends h8 {
                     if (z10) {
                         return;
                     }
-                    d6Var.e(true, this.P ? 1.0f : 0.0f);
+                    c6Var.e(true, this.P ? 1.0f : 0.0f);
                     return;
                 }
             }
@@ -119,10 +119,10 @@ public final class m8 extends h8 {
         if (z10) {
             return;
         }
-        d6Var.e(true, this.P ? 1.0f : 0.0f);
+        c6Var.e(true, this.P ? 1.0f : 0.0f);
     }
 
-    public org.telegram.ui.Components.p5 getAnimatedEmojiDrawable() {
+    public org.telegram.ui.Components.o5 getAnimatedEmojiDrawable() {
         return this.L.b;
     }
 
@@ -138,14 +138,14 @@ public final class m8 extends h8 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.L.b(true);
-        this.M.P();
+        this.M.Q();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.L.b(false);
-        this.M.R();
+        this.M.S();
     }
 
     @Override // android.view.View

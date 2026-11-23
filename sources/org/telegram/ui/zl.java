@@ -6,7 +6,7 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h2.j {
     public final /* synthetic */ int a = 2;
@@ -31,7 +31,7 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         int i10;
         int i11 = this.a;
         Object obj = this.f;
@@ -44,40 +44,40 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h
                 mm mmVar = (mm) obj4;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                 bn bnVar = mmVar.a;
-                li.d dVar = new li.d(22, mmVar, (org.telegram.ui.Cells.r1) obj3);
+                ki.n2 n2Var = new ki.n2(23, mmVar, (org.telegram.ui.Cells.r1) obj3);
                 if (!((boolean[]) obj2)[0]) {
-                    dVar.a(Boolean.FALSE);
+                    n2Var.a(Boolean.FALSE);
                     break;
                 } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
-                    dVar.a(Boolean.TRUE);
+                    n2Var.a(Boolean.TRUE);
                     break;
                 } else {
                     Activity parentActivity = bnVar.getParentActivity();
                     i10 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                    ThemeActivity.H0(i10, parentActivity, new li.d(23, mmVar, dVar), bnVar.getResourceProvider());
+                    ThemeActivity.H0(i10, parentActivity, new ki.n2(24, mmVar, n2Var), bnVar.getResourceProvider());
                     break;
                 }
             default:
-                org.telegram.ui.Components.tb0 tb0Var = (org.telegram.ui.Components.tb0) obj4;
-                org.telegram.ui.Components.tb0 tb0Var2 = (org.telegram.ui.Components.tb0) obj3;
-                org.telegram.ui.Components.tb0 tb0Var3 = (org.telegram.ui.Components.tb0) obj2;
-                ai.u1 u1Var = (ai.u1) obj;
+                org.telegram.ui.Components.qb0 qb0Var = (org.telegram.ui.Components.qb0) obj4;
+                org.telegram.ui.Components.qb0 qb0Var2 = (org.telegram.ui.Components.qb0) obj3;
+                org.telegram.ui.Components.qb0 qb0Var3 = (org.telegram.ui.Components.qb0) obj2;
+                ai.o1 o1Var = (ai.o1) obj;
                 if (z10) {
-                    org.telegram.ui.Components.c5.d(tb0Var, tb0Var2, tb0Var3);
+                    org.telegram.ui.Components.b5.d(qb0Var, qb0Var2, qb0Var3);
                 }
-                int value = tb0Var3.getValue();
-                int value2 = tb0Var2.getValue();
-                int value3 = tb0Var.getValue();
-                hk0 hk0Var = (hk0) u1Var.c;
-                int i12 = u1Var.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) u1Var.d;
+                int value = qb0Var3.getValue();
+                int value2 = qb0Var2.getValue();
+                int value3 = qb0Var.getValue();
+                fk0 fk0Var = (fk0) o1Var.c;
+                int i12 = o1Var.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) o1Var.d;
                 if (i12 == 8) {
-                    int[] iArr = hk0Var.y;
+                    int[] iArr = fk0Var.y;
                     iArr[0] = value;
                     iArr[1] = value2 + 1;
                     iArr[2] = value3;
                 } else {
-                    hk0Var.getClass();
+                    fk0Var.getClass();
                 }
                 editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
@@ -92,11 +92,11 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h
         this.f = contentsettings;
     }
 
-    public /* synthetic */ zl(boolean z10, org.telegram.ui.Components.tb0 tb0Var, org.telegram.ui.Components.tb0 tb0Var2, org.telegram.ui.Components.tb0 tb0Var3, ai.u1 u1Var) {
+    public /* synthetic */ zl(boolean z10, org.telegram.ui.Components.qb0 qb0Var, org.telegram.ui.Components.qb0 qb0Var2, org.telegram.ui.Components.qb0 qb0Var3, ai.o1 o1Var) {
         this.b = z10;
-        this.c = tb0Var;
-        this.d = tb0Var2;
-        this.e = tb0Var3;
-        this.f = u1Var;
+        this.c = qb0Var;
+        this.d = qb0Var2;
+        this.e = qb0Var3;
+        this.f = o1Var;
     }
 }

@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import m9.y;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 import org.xmlpull.v1.XmlSerializer;
 import v4.f1;
 import v4.n0;
@@ -24,7 +24,7 @@ import v4.v;
 import v4.z;
 import zd.v0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class l implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
     
-        v9.i.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
+        v9.j.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
     
@@ -82,19 +82,19 @@ public final /* synthetic */ class l implements Runnable {
         boolean z11 = false;
         while (true) {
             try {
-                synchronized (((v9.i) this.c).b) {
+                synchronized (((v9.j) this.c).b) {
                     if (!z10) {
-                        v9.i iVar = (v9.i) this.c;
-                        if (iVar.c != 4) {
-                            iVar.d++;
-                            iVar.c = 4;
+                        v9.j jVar = (v9.j) this.c;
+                        if (jVar.c != 4) {
+                            jVar.d++;
+                            jVar.c = 4;
                             z10 = true;
                         }
                     }
-                    Runnable runnable = (Runnable) ((v9.i) this.c).b.poll();
+                    Runnable runnable = (Runnable) ((v9.j) this.c).b.poll();
                     this.b = runnable;
                     if (runnable == null) {
-                        ((v9.i) this.c).c = 1;
+                        ((v9.j) this.c).c = 1;
                     }
                 }
                 if (!z11) {
@@ -111,7 +111,7 @@ public final /* synthetic */ class l implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         Exception exc;
-        FileOutputStream J;
+        FileOutputStream P;
         boolean z10;
         switch (this.a) {
             case 0:
@@ -171,7 +171,7 @@ public final /* synthetic */ class l implements Runnable {
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    kVar.B((v4.i) obj);
+                    kVar.B((v4.j) obj);
                 }
                 arrayList.clear();
                 kVar.v.remove(arrayList);
@@ -202,8 +202,8 @@ public final /* synthetic */ class l implements Runnable {
                     a();
                     return;
                 } catch (Error e12) {
-                    synchronized (((v9.i) this.c).b) {
-                        ((v9.i) this.c).c = 1;
+                    synchronized (((v9.j) this.c).b) {
+                        ((v9.j) this.c).c = 1;
                         throw e12;
                     }
                 }
@@ -212,16 +212,16 @@ public final /* synthetic */ class l implements Runnable {
                 ArrayList arrayList3 = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList3);
                 File file = shortcutInfoCompatSaverImpl.f;
-                md0 md0Var = new md0(file);
-                File file2 = (File) md0Var.c;
+                i61 i61Var = new i61(file);
+                File file2 = (File) i61Var.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    J = md0Var.J();
+                    P = i61Var.P();
                 } catch (Exception e13) {
                     exc = e13;
                 }
                 try {
-                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(J);
+                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(P);
                     XmlSerializer newSerializer = Xml.newSerializer();
                     newSerializer.setOutput(bufferedOutputStream, "UTF_8");
                     newSerializer.startDocument(null, Boolean.TRUE);
@@ -236,9 +236,9 @@ public final /* synthetic */ class l implements Runnable {
                     newSerializer.endTag(null, "share_targets");
                     newSerializer.endDocument();
                     bufferedOutputStream.flush();
-                    J.flush();
+                    P.flush();
                     try {
-                        J.getFD().sync();
+                        P.getFD().sync();
                         z10 = true;
                     } catch (IOException unused2) {
                         z10 = false;
@@ -247,15 +247,15 @@ public final /* synthetic */ class l implements Runnable {
                         Log.e("AtomicFile", "Failed to sync file output stream");
                     }
                     try {
-                        J.close();
+                        P.close();
                     } catch (IOException e14) {
                         Log.e("AtomicFile", "Failed to close file output stream", e14);
                     }
-                    md0.G(file2, file);
+                    i61.M(file2, file);
                     return;
                 } catch (Exception e15) {
                     exc = e15;
-                    fileOutputStream = J;
+                    fileOutputStream = P;
                     Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, exc);
                     if (fileOutputStream != null) {
                         try {
@@ -334,7 +334,7 @@ public final /* synthetic */ class l implements Runnable {
                     return "SequentialExecutorWorker{running=" + runnable + "}";
                 }
                 StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
-                int i7 = ((v9.i) this.c).c;
+                int i7 = ((v9.j) this.c).c;
                 sb2.append(i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
                 sb2.append("}");
                 return sb2.toString();
@@ -349,9 +349,9 @@ public final /* synthetic */ class l implements Runnable {
         this.b = obj2;
     }
 
-    public l(v9.i iVar) {
+    public l(v9.j jVar) {
         this.a = 6;
-        this.c = iVar;
+        this.c = jVar;
     }
 
     public l(z zVar, v vVar, int i7) {

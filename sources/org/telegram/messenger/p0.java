@@ -10,83 +10,83 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final hi.w4 A;
-    public final hi.w4 B;
-    public final hi.t5 C;
-    public final hi.t5 D;
-    public final hi.t5 E;
-    public final h9.g1 F;
-    public final h9.g1 G;
-    public final h9.g1 H;
-    public final hi.w4 I;
-    public final hi.w4 J;
-    public final hi.t5 K;
-    public final hi.t5 L;
-    public final hi.t5 M;
-    public final hi.t5 N;
-    public final hi.t5 O;
-    public final hi.w4 P;
-    public final hi.t5 Q;
-    public final hi.t5 R;
-    public final hi.t5 S;
-    public final hi.t5 T;
-    public final hi.t5 U;
-    public final hi.t5 V;
-    public final hi.t5 W;
-    public final hi.t5 X;
-    public final hi.t5 Y;
-    public final h9.g1 Z;
+    public final h6.o A;
+    public final h6.o B;
+    public final hi.u0 C;
+    public final hi.u0 D;
+    public final hi.u0 E;
+    public final j6.r F;
+    public final j6.r G;
+    public final j6.r H;
+    public final h6.o I;
+    public final h6.o J;
+    public final hi.u0 K;
+    public final hi.u0 L;
+    public final hi.u0 M;
+    public final hi.u0 N;
+    public final hi.u0 O;
+    public final h6.o P;
+    public final hi.u0 Q;
+    public final hi.u0 R;
+    public final hi.u0 S;
+    public final hi.u0 T;
+    public final hi.u0 U;
+    public final hi.u0 V;
+    public final hi.u0 W;
+    public final hi.u0 X;
+    public final hi.u0 Y;
+    public final j6.r Z;
     public final HashMap a;
-    public final hi.t5 a0;
-    public final hi.t5 b;
-    public final hi.t5 b0;
-    public final hi.t5 c;
-    public final hi.t5 c0;
-    public final hi.t5 d;
-    public final hi.t5 d0;
-    public final hi.t5 e;
-    public final hi.t5 e0;
-    public final hi.t5 f;
-    public final hi.t5 f0;
-    public final h9.g1 g;
-    public final hi.t5 g0;
-    public final h9.g1 h;
-    public final hi.t5 h0;
-    public final hi.w4 i;
-    public final hi.t5 i0;
-    public final hi.w4 j;
-    public final hi.t5 j0;
-    public final hi.w4 k;
-    public final hi.t5 k0;
-    public final hi.w4 l;
-    public final h9.g1 l0;
-    public final h9.g1 m;
-    public final h9.g1 m0;
-    public final hi.t5 n;
-    public final h9.g1 n0;
-    public final hi.t5 o;
-    public final h9.g1 o0;
-    public final hi.t5 p;
-    public final h9.g1 p0;
-    public final hi.t5 q;
-    public final h9.g1 q0;
-    public final h9.g1 r;
-    public final h9.g1 r0;
-    public final h9.g1 s;
-    public final h9.g1 s0;
-    public final h9.g1 t;
-    public final hi.w4 t0;
-    public final h9.g1 u;
-    public final h9.g1 u0;
-    public final hi.t5 v;
-    public final hi.t5 v0;
-    public final hi.t5 w;
-    public final h9.g1 x;
-    public final hi.t5 y;
-    public final hi.t5 z;
+    public final hi.u0 a0;
+    public final hi.u0 b;
+    public final hi.u0 b0;
+    public final hi.u0 c;
+    public final hi.u0 c0;
+    public final hi.u0 d;
+    public final hi.u0 d0;
+    public final hi.u0 e;
+    public final hi.u0 e0;
+    public final hi.u0 f;
+    public final hi.u0 f0;
+    public final j6.r g;
+    public final hi.u0 g0;
+    public final j6.r h;
+    public final hi.u0 h0;
+    public final h6.o i;
+    public final hi.u0 i0;
+    public final h6.o j;
+    public final hi.u0 j0;
+    public final h6.o k;
+    public final hi.u0 k0;
+    public final h6.o l;
+    public final j6.r l0;
+    public final j6.r m;
+    public final j6.r m0;
+    public final hi.u0 n;
+    public final j6.r n0;
+    public final hi.u0 o;
+    public final j6.r o0;
+    public final hi.u0 p;
+    public final j6.r p0;
+    public final hi.u0 q;
+    public final j6.r q0;
+    public final j6.r r;
+    public final j6.r r0;
+    public final j6.r s;
+    public final j6.r s0;
+    public final j6.r t;
+    public final h6.o t0;
+    public final j6.r u;
+    public final j6.r u0;
+    public final hi.u0 v;
+    public final hi.u0 v0;
+    public final hi.u0 w;
+    public final j6.r x;
+    public final hi.u0 y;
+    public final hi.u0 z;
 
     public p0() {
         HashMap hashMap = new HashMap();
@@ -102,14 +102,14 @@ public final class p0 {
         this.i = h(86400L, "stars_suggested_post_age_min");
         this.j = h(300L, "stars_suggested_post_future_min");
         this.k = h(2678400L, "stars_suggested_post_future_max");
-        hi.w4 w4Var = new hi.w4(20);
-        hashMap.put("ton_usd_rate", (i0) w4Var.b);
-        this.l = w4Var;
+        h6.o oVar = new h6.o(22);
+        hashMap.put("ton_usd_rate", (i0) oVar.b);
+        this.l = oVar;
         g("stars_rating_learnmore_url", "https://telegram.org/blog/telegram-stars");
         this.m = d("need_age_video_verification", false);
         this.n = e(800, "stars_stargift_resale_commission_permille");
         this.o = e(800, "ton_stargift_resale_commission_permille");
-        this.p = e(ls.J1, "stars_stargift_resale_amount_min");
+        this.p = e(ks.J1, "stars_stargift_resale_amount_min");
         this.q = e(35000, "stars_stargift_resale_amount_max");
         this.r = f(10000000L, "ton_stargift_resale_amount_min");
         this.s = f(10000000000000L, "ton_stargift_resale_amount_max");
@@ -137,9 +137,9 @@ public final class p0 {
         this.L = e(12, "poll_answers_max");
         this.M = e(12, "poll_countries_max");
         this.N = e(100, "poll_answer_length_max");
-        e(ls.e4, "poll_question_length_max");
-        e(ls.e3, "poll_solution_length_max");
-        this.O = e(ls.X4, "poll_caption_length_max");
+        e(ks.e4, "poll_question_length_max");
+        e(ks.e3, "poll_solution_length_max");
+        this.O = e(ks.X4, "poll_caption_length_max");
         this.P = h(300L, "poll_answer_delete_period");
         this.Q = e(20, "bots_create_limit_default");
         this.R = e(40, "bots_create_limit_premium");
@@ -167,25 +167,25 @@ public final class p0 {
         this.l0 = d("android_audio_recorder_v2_disabled", false);
         this.m0 = d("android_round_video_recorder_v2_disabled", false);
         this.n0 = d("stars_spend_topup_invoice_disabled", false);
-        h9.g1 g1Var = new h9.g1("bot_allowed_suffixes", Collections.singleton("bot"));
-        hashMap.put("bot_allowed_suffixes", (o0) g1Var.b);
-        this.o0 = g1Var;
+        j6.r rVar = new j6.r("bot_allowed_suffixes", Collections.singleton("bot"));
+        hashMap.put("bot_allowed_suffixes", (o0) rVar.b);
+        this.o0 = rVar;
         this.p0 = d("wallet_available", true);
         this.q0 = d("wallet_paid_message_recipient_message_amount_check", true);
         this.r0 = f(100000000L, "wallet_transfer_min_nanos");
         f(100000000L, "wallet_gasless_min_nanos");
-        h9.g1 g1Var2 = new h9.g1("wallet_card_bg_gifts", Collections.EMPTY_SET);
-        hashMap.put("wallet_card_bg_gifts", (o0) g1Var2.b);
-        this.s0 = g1Var2;
-        hi.w4 w4Var2 = new hi.w4(21);
-        hashMap.put("agent_bot_ids", (m0) w4Var2.b);
-        this.t0 = w4Var2;
+        j6.r rVar2 = new j6.r("wallet_card_bg_gifts", Collections.EMPTY_SET);
+        hashMap.put("wallet_card_bg_gifts", (o0) rVar2.b);
+        this.s0 = rVar2;
+        h6.o oVar2 = new h6.o(23);
+        hashMap.put("agent_bot_ids", (m0) oVar2.b);
+        this.t0 = oVar2;
         this.u0 = d("widgets_disabled", false);
         this.v0 = e(6, "widgets_processes");
     }
 
-    public static String i(hi.t5 t5Var) {
-        String str = ((n0) t5Var.b).c;
+    public static String i(hi.u0 u0Var) {
+        String str = ((n0) u0Var.b).c;
         return ("visible".equals(str) || "hidden".equals(str)) ? str : "default";
     }
 
@@ -252,34 +252,34 @@ public final class p0 {
         }
     }
 
-    public final h9.g1 d(String str, boolean z10) {
-        h9.g1 g1Var = new h9.g1(str, z10);
-        this.a.put(str, (h0) g1Var.b);
-        return g1Var;
+    public final j6.r d(String str, boolean z10) {
+        j6.r rVar = new j6.r(str, z10);
+        this.a.put(str, (h0) rVar.b);
+        return rVar;
     }
 
-    public final hi.t5 e(int i7, String str) {
-        hi.t5 t5Var = new hi.t5(str, i7);
-        this.a.put(str, (j0) t5Var.b);
-        return t5Var;
+    public final hi.u0 e(int i7, String str) {
+        hi.u0 u0Var = new hi.u0(str, i7);
+        this.a.put(str, (j0) u0Var.b);
+        return u0Var;
     }
 
-    public final h9.g1 f(long j3, String str) {
-        h9.g1 g1Var = new h9.g1(str, j3);
-        this.a.put(str, (l0) g1Var.b);
-        return g1Var;
+    public final j6.r f(long j3, String str) {
+        j6.r rVar = new j6.r(str, j3);
+        this.a.put(str, (l0) rVar.b);
+        return rVar;
     }
 
-    public final hi.t5 g(String str, String str2) {
-        hi.t5 t5Var = new hi.t5(str, str2);
-        this.a.put(str, (n0) t5Var.b);
-        return t5Var;
+    public final hi.u0 g(String str, String str2) {
+        hi.u0 u0Var = new hi.u0(str, str2);
+        this.a.put(str, (n0) u0Var.b);
+        return u0Var;
     }
 
-    public final hi.w4 h(long j3, String str) {
+    public final h6.o h(long j3, String str) {
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        hi.w4 w4Var = new hi.w4(str, j3);
-        this.a.put(str, (l0) w4Var.b);
-        return w4Var;
+        h6.o oVar = new h6.o(str, j3);
+        this.a.put(str, (l0) oVar.b);
+        return oVar;
     }
 }

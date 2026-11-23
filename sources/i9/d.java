@@ -1,9 +1,9 @@
 package i9;
 
-import a8.la;
+import a8.ma;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class d {
     public static final b d;
@@ -27,22 +27,22 @@ public class d {
             byte[] bArr = aVar.g;
             if (charValue < bArr.length && bArr[charValue] != -1) {
                 z10 = false;
-                la.h(z10, "Padding character %s was already in alphabet", ch2);
+                ma.h(z10, "Padding character %s was already in alphabet", ch2);
                 this.b = ch2;
             }
         }
         z10 = true;
-        la.h(z10, "Padding character %s was already in alphabet", ch2);
+        ma.h(z10, "Padding character %s was already in alphabet", ch2);
         this.b = ch2;
     }
 
     public final void a(StringBuilder sb2, byte[] bArr, int i7, int i10) {
-        la.n(i7, i7 + i10, bArr.length);
+        ma.n(i7, i7 + i10, bArr.length);
         a aVar = this.a;
         int i11 = aVar.f;
         int i12 = aVar.d;
         int i13 = 0;
-        la.f(i10 <= i11);
+        ma.f(i10 <= i11);
         long j3 = 0;
         for (int i14 = 0; i14 < i10; i14++) {
             j3 = (j3 | (bArr[i7 + i14] & 255)) << 8;
@@ -63,7 +63,7 @@ public class d {
 
     public void b(StringBuilder sb2, byte[] bArr, int i7) {
         int i10 = 0;
-        la.n(0, i7, bArr.length);
+        ma.n(0, i7, bArr.length);
         while (i10 < i7) {
             a aVar = this.a;
             a(sb2, bArr, i10, Math.min(aVar.f, i7 - i10));

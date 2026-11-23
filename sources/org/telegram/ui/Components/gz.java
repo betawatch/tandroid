@@ -1,56 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public interface gz {
-    float getBlurAngle();
+public final /* synthetic */ class gz implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mz b;
 
-    float getBlurExcludeBlurSize();
+    public /* synthetic */ gz(mz mzVar, int i7) {
+        this.a = i7;
+        this.b = mzVar;
+    }
 
-    PointF getBlurExcludePoint();
-
-    float getBlurExcludeSize();
-
-    int getBlurType();
-
-    float getContrastValue();
-
-    float getEnhanceValue();
-
-    float getExposureValue();
-
-    float getFadeValue();
-
-    float getGrainValue();
-
-    float getHighlightsValue();
-
-    float getSaturationValue();
-
-    float getShadowsValue();
-
-    float getSharpenValue();
-
-    float getSoftenSkinValue();
-
-    int getTintHighlightsColor();
-
-    float getTintHighlightsIntensityValue();
-
-    int getTintShadowsColor();
-
-    float getTintShadowsIntensityValue();
-
-    float getVignetteValue();
-
-    float getWarmthValue();
-
-    ByteBuffer j();
-
-    boolean q();
-
-    boolean s();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mz mzVar = this.b;
+                mzVar.y = floatValue;
+                mzVar.invalidate();
+                break;
+            default:
+                mz mzVar2 = this.b;
+                mzVar2.getClass();
+                mzVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mzVar2.invalidate();
+                break;
+        }
+    }
 }

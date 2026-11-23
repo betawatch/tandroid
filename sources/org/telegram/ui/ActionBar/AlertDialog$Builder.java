@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class AlertDialog$Builder {
     public final t1 a;
@@ -21,8 +21,8 @@ public class AlertDialog$Builder {
         return this.a;
     }
 
-    public t1 b(int i7, Context context, h6 h6Var) {
-        return new t1(i7, context, h6Var);
+    public t1 b(int i7, Context context, i6 i6Var) {
+        return new t1(i7, context, i6Var);
     }
 
     public final void c() {
@@ -90,11 +90,11 @@ public class AlertDialog$Builder {
         t1Var.a0 = hashMap;
     }
 
-    public final void n(int i7, h6 h6Var) {
+    public final void n(int i7, i6 i6Var) {
         t1 t1Var = this.a;
         t1Var.e0 = i7;
-        t1Var.f0 = h6Var;
-        t1Var.d0 = m6.w0(i7, h6Var);
+        t1Var.f0 = i6Var;
+        t1Var.d0 = n6.w0(i7, i6Var);
     }
 
     public final void o(View view) {
@@ -114,7 +114,7 @@ public class AlertDialog$Builder {
                 return t1Var;
             }
             if (zArr[i7] && (textView = (TextView) t1Var.d(-(i7 + 1))) != null) {
-                t6.U(textView, m6.q7, t1Var.j1);
+                u6.U(textView, n6.q7, t1Var.j1);
             }
             i7++;
         }
@@ -128,15 +128,15 @@ public class AlertDialog$Builder {
         return this;
     }
 
-    public AlertDialog$Builder(Context context, h6 h6Var) {
-        this(0, context, h6Var);
+    public AlertDialog$Builder(Context context, i6 i6Var) {
+        this(0, context, i6Var);
     }
 
-    public AlertDialog$Builder(int i7, Context context, h6 h6Var) {
+    public AlertDialog$Builder(int i7, Context context, i6 i6Var) {
         this.b = new boolean[3];
         if (context == null && (context = org.telegram.messenger.g0.W(LaunchActivity.H1)) == null) {
             context = org.telegram.messenger.t0.b;
         }
-        this.a = b(i7, context, h6Var);
+        this.a = b(i7, context, i6Var);
     }
 }

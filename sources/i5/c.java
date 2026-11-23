@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.q1;
 import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.n41;
 import v4.q0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class c {
     public static void A(jg.m mVar, int i7, ArrayList arrayList) {
@@ -82,12 +82,12 @@ public abstract /* synthetic */ class c {
     }
 
     public static String k(int i7, String str, StringBuilder sb2) {
-        sb2.append(hd.N0(i7, str));
+        sb2.append(gd.N0(i7, str));
         return sb2.toString();
     }
 
     public static String l(long j3, char c10, StringBuilder sb2) {
-        sb2.append(hd.E(j3, c10));
+        sb2.append(gd.E(j3, c10));
         return sb2.toString();
     }
 
@@ -124,11 +124,11 @@ public abstract /* synthetic */ class c {
 
     public static void r(float f10, int i7, int i10, TextView textView, String str) {
         textView.setTextSize(i7, f10);
-        textView.setText(hd.N0(i10, str));
+        textView.setText(gd.N0(i10, str));
     }
 
     public static void s(int i7, String str, ArrayList arrayList) {
-        arrayList.add(o41.u(hd.N0(i7, str)));
+        arrayList.add(n41.u(gd.N0(i7, str)));
     }
 
     public static void t(int i7, StringBuilder sb2) {
@@ -157,7 +157,7 @@ public abstract /* synthetic */ class c {
     }
 
     public static void y(String str, int i7, AlertDialog$Builder alertDialog$Builder, q1 q1Var) {
-        alertDialog$Builder.h(hd.N0(i7, str), q1Var);
+        alertDialog$Builder.h(gd.N0(i7, str), q1Var);
         alertDialog$Builder.p();
     }
 

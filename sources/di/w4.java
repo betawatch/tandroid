@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class w4 extends View {
     public final Paint a;
-    public final org.telegram.ui.Components.d6 b;
-    public final org.telegram.ui.Components.d6 c;
+    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.c6 c;
     public float d;
     public float e;
 
@@ -20,10 +20,10 @@ public final class w4 extends View {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
-        ca.r rVar = new ca.r(this, 21);
-        nr nrVar = nr.h;
-        this.b = new org.telegram.ui.Components.d6(rVar, 420L, nrVar, 0);
-        this.c = new org.telegram.ui.Components.d6(new ca.r(this, 21), 420L, nrVar, 0);
+        ca.r rVar = new ca.r(this, 20);
+        kr krVar = kr.h;
+        this.b = new org.telegram.ui.Components.c6(rVar, 420L, krVar, 0);
+        this.c = new org.telegram.ui.Components.c6(new ca.r(this, 20), 420L, krVar, 0);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -38,12 +38,12 @@ public final class w4 extends View {
         float f10 = this.e;
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(width - f10, height - f10, width + f10, height + f10);
-        int r12 = org.telegram.ui.ActionBar.m6.r1(0.25f, -1);
+        int r12 = org.telegram.ui.ActionBar.n6.r1(0.25f, -1);
         Paint paint = this.a;
         paint.setColor(r12);
         canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
         if (d > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.m6.r1(d, -1));
+            paint.setColor(org.telegram.ui.ActionBar.n6.r1(d, -1));
             canvas.drawArc(rectF, 135.0f, e10 * 270.0f, false, paint);
         }
     }

@@ -1,6 +1,5 @@
 package zi;
 
-import ai.z0;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.os.Build;
@@ -8,22 +7,24 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.TextureView;
-import c8.oe;
+import c8.pe;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.b50;
-import org.telegram.ui.Components.ky;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.Components.sy0;
-import org.telegram.ui.Components.w40;
-import org.telegram.ui.wc1;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.ry0;
+import org.telegram.ui.Components.t40;
+import org.telegram.ui.Components.y40;
+import org.telegram.ui.Wallet.o5;
+import org.telegram.ui.uc1;
+import y7.h7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class u0 {
     public boolean A;
@@ -47,14 +48,14 @@ public final class u0 {
     public volatile q0 T;
     public volatile x U;
     public volatile File V;
-    public l2.f0 W;
+    public l2.g0 W;
     public final h2.z Z;
     public final Context a;
     public final TextureView b;
     public final File c;
-    public final qf d;
+    public final aa d;
     public final r0 e;
-    public final ky f;
+    public final hy f;
     public final k l;
     public final o m;
     public final s0 n;
@@ -72,17 +73,17 @@ public final class u0 {
     public final Object g = new Object();
     public final Matrix h = new Matrix();
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new z0(11));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new z0(12));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new ai.v0(11));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new ai.v0(12));
     public int a0 = 1;
     public int b0 = 1;
     public float v = 1.0f;
     public long M = 1;
     public final i0 X = new i0(this, 0);
-    public final s4.s0 Y = new s4.s0(this, 10);
+    public final o5 Y = new o5(this, 14);
 
     public u0(l0 l0Var) {
-        k0 k0Var = new k0(this);
+        h7 h7Var = new h7(this);
         this.Z = new h2.z(this, 3);
         v();
         Context context = l0Var.a;
@@ -127,7 +128,7 @@ public final class u0 {
         sb2.append(this.r);
         sb2.append(", maxDurationMs=60000");
         oVar.b(sb2.toString());
-        this.l = new k(context2, textureView, s0Var, i7, o0Var, p0Var, z10, oVar, k0Var);
+        this.l = new k(context2, textureView, s0Var, i7, o0Var, p0Var, z10, oVar, h7Var);
     }
 
     public static long f(long j3) {
@@ -188,9 +189,9 @@ public final class u0 {
             this.M = 1 + j3;
             q0 q0Var = new q0(j3, d);
             this.T = q0Var;
-            this.U = new x(d, this.n.a, z10, this.m, new wc1(29, this, q0Var));
+            this.U = new x(d, this.n.a, z10, this.m, new uc1(29, this, q0Var));
             this.m.b("output generation started: id=" + j3 + ", includeAudio=" + z10 + ", file=" + d.getName());
-            this.k.execute(new wg.p(this, q0Var, d, 9));
+            this.k.execute(new wg.p(this, q0Var, d, 10));
         }
     }
 
@@ -236,25 +237,25 @@ public final class u0 {
             }
             x(9);
             m("error");
-            b50 b50Var = (b50) this.d.b;
-            b50Var.C();
+            y40 y40Var = (y40) this.d.b;
+            y40Var.C();
             a8.g(exc, true);
-            sy0 sy0Var = b50Var.T;
-            if (sy0Var != null) {
-                sy0Var.d(true);
+            ry0 ry0Var = y40Var.T;
+            if (ry0Var != null) {
+                ry0Var.d(true);
             }
-            b50Var.T = null;
-            if (b50Var.a0) {
-                b50Var.a0 = false;
-                b50Var.P = null;
+            y40Var.T = null;
+            if (y40Var.a0) {
+                y40Var.a0 = false;
+                y40Var.P = null;
             } else {
                 MediaController.B().Y(false);
-                if (b50Var.h0) {
-                    b50Var.z(6);
+                if (y40Var.h0) {
+                    y40Var.z(6);
                 } else {
-                    ls.f(b50Var.f).k(ls.m2, Integer.valueOf(b50Var.h));
+                    ks.f(y40Var.f).k(ks.m2, Integer.valueOf(y40Var.h));
                 }
-                b50Var.B(false, false);
+                y40Var.B(false, false);
             }
             if (!this.E && !this.l.W()) {
                 i();
@@ -341,12 +342,12 @@ public final class u0 {
         n0 n0Var = this.r;
         n0 n0Var2 = this.s;
         m0 m0Var = new m0(n0Var, n0Var2, this.b0, this.v);
-        b50 b50Var = (b50) this.d.b;
-        b50Var.S = m0Var;
+        y40 y40Var = (y40) this.d.b;
+        y40Var.S = m0Var;
         if (n0Var2 != null) {
             aj.e.j.b(n0Var2);
         }
-        b50Var.D();
+        y40Var.D();
     }
 
     public final void o() {
@@ -358,60 +359,60 @@ public final class u0 {
         boolean z12 = this.w;
         long j11 = this.q;
         t0 t0Var = new t0(i7, j3, j10, j11, z10, z11, z12);
-        b50 b50Var = (b50) this.d.b;
-        t0 t0Var2 = b50Var.R;
-        int i10 = b50Var.f;
+        y40 y40Var = (y40) this.d.b;
+        t0 t0Var2 = y40Var.R;
+        int i10 = y40Var.f;
         int i11 = t0Var2 == null ? 0 : t0Var2.a;
-        b50Var.R = t0Var;
+        y40Var.R = t0Var;
         if (i11 == 3 && i7 != 3) {
-            b50Var.A(true);
+            y40Var.A(true);
         }
-        b50Var.w0 = Math.max(b50Var.w0, j3);
+        y40Var.w0 = Math.max(y40Var.w0, j3);
         if (i7 == 3) {
-            if (!b50Var.E0) {
-                b50Var.E0 = true;
-                ls.e().k(ls.j1, 512);
+            if (!y40Var.E0) {
+                y40Var.E0 = true;
+                ks.e().k(ks.j1, 512);
             }
-            b50.o(b50Var);
-            b50Var.setRecordingUiFrameClockActive(true);
-            b50Var.F();
-            if (!b50Var.h0) {
-                b50Var.h0 = true;
-                ls.f(i10).k(ls.l2, Integer.valueOf(b50Var.h), Boolean.FALSE);
-            } else if (b50Var.i0) {
-                b50Var.i0 = false;
-                ls.f(i10).k(ls.p2, new Object[0]);
+            y40.o(y40Var);
+            y40Var.setRecordingUiFrameClockActive(true);
+            y40Var.F();
+            if (!y40Var.h0) {
+                y40Var.h0 = true;
+                ks.f(i10).k(ks.l2, Integer.valueOf(y40Var.h), Boolean.FALSE);
+            } else if (y40Var.i0) {
+                y40Var.i0 = false;
+                ks.f(i10).k(ks.p2, new Object[0]);
             }
         } else {
-            b50Var.setRecordingUiFrameClockActive(false);
-            b50Var.w.setProgress(j3 / j11);
+            y40Var.setRecordingUiFrameClockActive(false);
+            y40Var.w.setProgress(j3 / j11);
         }
         if (i7 == 8 || i7 == 9 || i7 == 10) {
-            b50Var.s();
-            b50Var.C();
+            y40Var.s();
+            y40Var.C();
         }
         if (i11 == 3 && i7 == 4) {
-            b50Var.z(2);
+            y40Var.z(2);
         }
-        b50Var.D();
-        if (b50Var.V != null && !b50Var.W) {
-            org.telegram.messenger.g0.g3(new w40(b50Var, 1));
+        y40Var.D();
+        if (y40Var.V != null && !y40Var.W) {
+            org.telegram.messenger.g0.g3(new t40(y40Var, 1));
         }
-        if (!z10 || b50Var.getWindowVisibility() == 0) {
+        if (!z10 || y40Var.getWindowVisibility() == 0) {
             return;
         }
-        org.telegram.messenger.g0.g3(new w40(b50Var, 2));
+        org.telegram.messenger.g0.g3(new t40(y40Var, 2));
     }
 
     public final void p() {
-        l2.f0 f0Var;
+        l2.g0 g0Var;
         v();
-        if (this.a0 != 5 || (f0Var = this.W) == null) {
+        if (this.a0 != 5 || (g0Var = this.W) == null) {
             return;
         }
-        f0Var.b();
+        g0Var.b();
         z(false);
-        this.W.l();
+        this.W.n();
         this.d.getClass();
     }
 
@@ -435,14 +436,14 @@ public final class u0 {
     }
 
     public final void r() {
-        l2.f0 f0Var;
+        l2.g0 g0Var;
         v();
-        if (this.a0 != 5 || (f0Var = this.W) == null) {
+        if (this.a0 != 5 || (g0Var = this.W) == null) {
             return;
         }
-        long l10 = f0Var.l();
+        long n10 = g0Var.n();
         long j3 = this.K;
-        if (l10 < j3 || l10 >= this.L) {
+        if (n10 < j3 || n10 >= this.L) {
             this.W.Z0(5, j3);
         }
         this.W.f();
@@ -487,19 +488,19 @@ public final class u0 {
     public final void t() {
         this.i.removeCallbacks(this.Y);
         this.z = false;
-        l2.f0 f0Var = this.W;
-        if (f0Var == null) {
+        l2.g0 g0Var = this.W;
+        if (g0Var == null) {
             return;
         }
-        f0Var.h0(this.Z);
-        l2.f0 f0Var2 = this.W;
-        f0Var2.F1();
+        g0Var.i0(this.Z);
+        l2.g0 g0Var2 = this.W;
+        g0Var2.F1();
         TextureView textureView = this.b;
-        if (textureView != null && textureView == f0Var2.X) {
-            f0Var2.F1();
-            f0Var2.s1();
-            f0Var2.x1(null);
-            f0Var2.q1(0, 0);
+        if (textureView != null && textureView == g0Var2.X) {
+            g0Var2.F1();
+            g0Var2.s1();
+            g0Var2.x1(null);
+            g0Var2.q1(0, 0);
         }
         this.W.X0();
         this.W = null;
@@ -526,7 +527,7 @@ public final class u0 {
         if (i11 <= 0) {
             i11 = this.p.a;
         }
-        n2.q0 a10 = oe.a(file, xVar, j3, j10, z10, new b7.d(i12, i13, i11));
+        n2.r0 a10 = pe.a(file, xVar, j3, j10, z10, new b7.d(i12, i13, i11));
         this.U.g();
         long h = this.U.h();
         o oVar2 = this.m;
@@ -550,9 +551,9 @@ public final class u0 {
             return;
         }
         this.x = z10;
-        ky kyVar = this.f;
-        if (kyVar != null) {
-            ((b50) kyVar.b).setScreenFlashEnabled(z10);
+        hy hyVar = this.f;
+        if (hyVar != null) {
+            ((y40) hyVar.b).setScreenFlashEnabled(z10);
         }
     }
 
@@ -577,10 +578,10 @@ public final class u0 {
         }
         this.z = z10;
         Handler handler = this.i;
-        s4.s0 s0Var = this.Y;
-        handler.removeCallbacks(s0Var);
+        o5 o5Var = this.Y;
+        handler.removeCallbacks(o5Var);
         if (z10) {
-            handler.post(s0Var);
+            handler.post(o5Var);
         }
         this.d.getClass();
         o();

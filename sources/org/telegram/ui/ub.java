@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ub implements org.telegram.messenger.t10 {
+public final /* synthetic */ class ub implements org.telegram.messenger.r10 {
     public final /* synthetic */ qc a;
     public final /* synthetic */ int b;
     public final /* synthetic */ View c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class ub implements org.telegram.messenger.t10 {
         this.c = view;
     }
 
-    @Override // org.telegram.messenger.t10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2, Object obj3) {
         Long l10 = (Long) obj;
         Integer num = (Integer) obj2;
@@ -35,7 +35,7 @@ public final /* synthetic */ class ub implements org.telegram.messenger.t10 {
             if (l10.longValue() == 0) {
                 qcVar.E = null;
             } else if (tL_starGiftUnique != null) {
-                TLRPC.TL_emojiStatusCollectible r02 = org.telegram.messenger.np.r0(tL_starGiftUnique);
+                TLRPC.TL_emojiStatusCollectible r02 = org.telegram.messenger.mp.r0(tL_starGiftUnique);
                 if (num != null) {
                     r02.flags |= 1;
                     r02.until = num.intValue();

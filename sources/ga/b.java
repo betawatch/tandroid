@@ -38,7 +38,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
@@ -144,18 +144,18 @@ public final class b {
     public final ArrayList c() {
         ArrayList arrayList = new ArrayList();
         d dVar = this.b;
-        arrayList.addAll(d.i(((File) dVar.h).listFiles()));
-        arrayList.addAll(d.i(((File) dVar.n).listFiles()));
+        arrayList.addAll(d.e(((File) dVar.f).listFiles()));
+        arrayList.addAll(d.e(((File) dVar.h).listFiles()));
         a3.c cVar = h;
         Collections.sort(arrayList, cVar);
-        List i7 = d.i(((File) dVar.f).listFiles());
-        Collections.sort(i7, cVar);
-        arrayList.addAll(i7);
+        List e10 = d.e(((File) dVar.e).listFiles());
+        Collections.sort(e10, cVar);
+        arrayList.addAll(e10);
         return arrayList;
     }
 
     public final NavigableSet d() {
-        return new TreeSet(d.i(((File) this.b.e).list())).descendingSet();
+        return new TreeSet(d.e(((File) this.b.d).list())).descendingSet();
     }
 
     public final void e(q2 q2Var, String str, boolean z10) {
@@ -163,22 +163,22 @@ public final class b {
         int i7 = this.c.b().a.a;
         g.getClass();
         try {
-            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), ea.a.a.v(q2Var));
+            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), ea.a.a.F(q2Var));
         } catch (IOException e10) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e10);
         }
         h hVar = new h(4);
         dVar.getClass();
-        File file = new File((File) dVar.e, str);
+        File file = new File((File) dVar.d, str);
         file.mkdirs();
-        List<File> i10 = d.i(file.listFiles(hVar));
-        Collections.sort(i10, new a3.c(27));
-        int size = i10.size();
-        for (File file2 : i10) {
+        List<File> e11 = d.e(file.listFiles(hVar));
+        Collections.sort(e11, new a3.c(27));
+        int size = e11.size();
+        for (File file2 : e11) {
             if (size <= i7) {
                 return;
             }
-            d.h(file2);
+            d.d(file2);
             size--;
         }
     }

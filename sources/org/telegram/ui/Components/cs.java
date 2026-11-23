@@ -1,73 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class cs extends View implements org.telegram.ui.ActionBar.b6 {
-    public final te.a a;
-    public final Paint b;
-    public final RectF c;
-    public final RectF d;
-    public final RectF e;
-    public final oo f;
+public final /* synthetic */ class cs implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] b;
 
-    public cs(Context context) {
-        super(context);
-        this.a = new te.a(this, nr.h, 380L);
-        this.b = new Paint(1);
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = new RectF();
-        this.f = new oo(this, 7);
-        updateColors();
+    public /* synthetic */ cs(org.telegram.ui.ActionBar.t1[] t1VarArr, int i7) {
+        this.a = i7;
+        this.b = t1VarArr;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.messenger.g0.h3(this.f, 3000L);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.g0.r(this.f);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10 = this.a.e;
-        RectF rectF = this.d;
-        RectF rectF2 = this.c;
-        RectF rectF3 = this.e;
-        org.telegram.messenger.g0.Z1(rectF, rectF2, f10, rectF3);
-        float W1 = org.telegram.messenger.g0.W1(f10, org.telegram.messenger.g0.L(15.0f), 0);
-        canvas.drawRoundRect(rectF3, W1, W1, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int paddingTop = getPaddingTop();
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
-        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
-        this.d.set(org.telegram.messenger.g0.L(12.0f), ((currentActionBarHeight / 2) + paddingTop) - org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(30.0f) + org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(30.0f) + r6);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        this.b.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Yl, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.t1 t1Var = this.b[0];
+                if (t1Var != null) {
+                    t1Var.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.t1[] t1VarArr = this.b;
+                try {
+                    t1VarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                t1VarArr[0] = null;
+                break;
+            default:
+                org.telegram.ui.ActionBar.t1[] t1VarArr2 = this.b;
+                try {
+                    t1VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                t1VarArr2[0] = null;
+                break;
+        }
     }
 }

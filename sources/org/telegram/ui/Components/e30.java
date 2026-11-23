@@ -1,51 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ f30 c;
+public final class e30 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.i6 b;
+    public ArrayList c;
+    public final FrameLayout d;
+    public final g51 e;
+    public final b51 f;
+    public org.telegram.messenger.w10 h;
 
-    public /* synthetic */ e30(f30 f30Var, boolean z10, int i7) {
+    public e30(int i7, Activity activity, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(activity);
         this.a = i7;
-        this.c = f30Var;
-        this.b = z10;
+        this.b = i6Var;
+        g51 g51Var = new g51(activity, i7, 0, false, new d(this, 16), new d30(this), new d30(this), i6Var);
+        this.e = g51Var;
+        g51Var.setClipToPadding(false);
+        b51 b51Var = (b51) g51Var.getAdapter();
+        this.f = b51Var;
+        b51Var.r = false;
+        addView(g51Var, -1, -1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.d = frameLayout;
+        ImageView imageView = new ImageView(activity);
+        int i10 = org.telegram.ui.ActionBar.n6.m6;
+        org.telegram.ui.ActionBar.u6.s(imageView, i10, i6Var, PorterDuff.Mode.MULTIPLY);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.large_hashtags);
+        frameLayout.addView(imageView, c8.na.e(56, 56, 49));
+        TextView textView = new TextView(activity);
+        org.telegram.ui.ActionBar.u6.U(textView, i10, i6Var);
+        textView.setText(org.telegram.messenger.gd.N0(2131749160, null));
+        textView.setGravity(17);
+        frameLayout.addView(textView, c8.na.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
+        addView(frameLayout, c8.na.e(210, -2, 17));
+        g51Var.setEmptyView(frameLayout);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.cn cnVar;
-        di.b1 b1Var;
-        switch (this.a) {
-            case 0:
-                float f10 = this.b ? 1.0f : 0.0f;
-                f30 f30Var = this.c;
-                f30Var.x = f10;
-                f30Var.e.setTranslationY(f10 * org.telegram.messenger.g0.L(48.0f));
-                f30Var.e.setPadding(0, 0, 0, (int) (f30Var.x * org.telegram.messenger.g0.L(48.0f)));
-                break;
-            default:
-                boolean z10 = this.b;
-                float f11 = z10 ? 1.0f : 0.0f;
-                f30 f30Var2 = this.c;
-                f30Var2.F = f11;
-                f30Var2.n.setScaleX(org.telegram.messenger.g0.T1(0.95f, 1.0f, f11));
-                f30Var2.n.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, f30Var2.F));
-                org.telegram.ui.nj njVar = f30Var2.f;
-                if (njVar != null && (cnVar = njVar.a) != null && (b1Var = cnVar.a4) != null) {
-                    b1Var.setScaleX(org.telegram.messenger.g0.T1(1.0f, 0.95f, f30Var2.F));
-                    f30Var2.f.a.a4.setScaleY(org.telegram.messenger.g0.T1(1.0f, 0.95f, f30Var2.F));
-                }
-                f30Var2.h.setAlpha(f30Var2.F);
-                if (!z10) {
-                    f30Var2.h.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    public void setOnHashtagClickListener(org.telegram.messenger.w10 w10Var) {
+        this.h = w10Var;
+    }
+
+    public void setOnScrollListener(v4.u0 u0Var) {
+        this.e.j(u0Var);
     }
 }

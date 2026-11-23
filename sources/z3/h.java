@@ -1,6 +1,6 @@
 package z3;
 
-import a8.la;
+import a8.ma;
 import android.util.Pair;
 import android.util.SparseArray;
 import com.google.android.gms.internal.vision.e2;
@@ -8,15 +8,15 @@ import e2.q0;
 import e2.s0;
 import e2.t0;
 import e2.u;
-import f3.b0;
-import f3.f0;
-import f3.i0;
+import f3.c0;
+import f3.j0;
 import f3.w;
 import h2.k0;
 import h2.l0;
 import h2.x;
 import h9.g0;
-import h9.t1;
+import h9.i0;
+import h9.s1;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.util.ArrayDeque;
@@ -26,10 +26,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements f3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -43,8 +43,8 @@ public final class h implements f3.o {
     public boolean G;
     public boolean H;
     public f3.q I;
-    public i0[] J;
-    public i0[] K;
+    public j0[] J;
+    public j0[] K;
     public boolean L;
     public boolean M;
     public long N;
@@ -55,9 +55,9 @@ public final class h implements f3.o {
     public final x i;
     public final k0 j;
     public final h2.c o;
-    public final i0 p;
+    public final j0 p;
     public final d6.i q;
-    public t1 r;
+    public s1 r;
     public int s;
     public int t;
     public long u;
@@ -66,7 +66,7 @@ public final class h implements f3.o {
     public long x;
     public int y;
     public long z;
-    public final k8.a k = new k8.a(24);
+    public final jb.m k = new jb.m(25);
     public final x l = new x(16);
     public final x e = new x(i2.o.a);
     public final x f = new x(6);
@@ -90,16 +90,16 @@ public final class h implements f3.o {
         byte[] bArr = new byte[16];
         this.h = bArr;
         this.i = new x(bArr);
-        g0 g0Var = h9.i0.b;
-        this.r = t1.e;
+        g0 g0Var = i0.b;
+        this.r = s1.e;
         this.A = -9223372036854775807L;
         this.z = -9223372036854775807L;
         this.B = -9223372036854775807L;
         this.I = f3.q.q;
-        this.J = new i0[0];
-        this.K = new i0[0];
+        this.J = new j0[0];
+        this.K = new j0[0];
         this.o = new h2.c(new e(this));
-        this.q = new d6.i(17);
+        this.q = new d6.i(18);
         this.N = -1L;
     }
 
@@ -217,15 +217,15 @@ public final class h implements f3.o {
 
     @Override // f3.o
     public final boolean b(f3.p pVar) {
-        t1 t1Var;
-        f0 m10 = p.m(pVar, true, false);
+        s1 s1Var;
+        f3.g0 m10 = p.m(pVar, true, false);
         if (m10 != null) {
-            t1Var = h9.i0.u(m10);
+            s1Var = i0.u(m10);
         } else {
-            g0 g0Var = h9.i0.b;
-            t1Var = t1.e;
+            g0 g0Var = i0.b;
+            s1Var = s1.e;
         }
-        this.r = t1Var;
+        this.r = s1Var;
         return m10 == null;
     }
 
@@ -238,31 +238,31 @@ public final class h implements f3.o {
         }
         this.I = qVar;
         h();
-        i0[] i0VarArr = new i0[2];
-        this.J = i0VarArr;
+        j0[] j0VarArr = new j0[2];
+        this.J = j0VarArr;
         int i11 = 0;
-        i0 i0Var = this.p;
-        if (i0Var != null) {
-            i0VarArr[0] = i0Var;
+        j0 j0Var = this.p;
+        if (j0Var != null) {
+            j0VarArr[0] = j0Var;
             i7 = 1;
         } else {
             i7 = 0;
         }
         int i12 = 100;
         if ((i10 & 4) != 0) {
-            i0VarArr[i7] = this.I.d2(100, 5);
+            j0VarArr[i7] = this.I.d2(100, 5);
             i12 = 101;
             i7++;
         }
-        i0[] i0VarArr2 = (i0[]) l0.U(i7, this.J);
-        this.J = i0VarArr2;
-        for (i0 i0Var2 : i0VarArr2) {
-            i0Var2.g(P);
+        j0[] j0VarArr2 = (j0[]) l0.U(i7, this.J);
+        this.J = j0VarArr2;
+        for (j0 j0Var2 : j0VarArr2) {
+            j0Var2.g(P);
         }
         List list = this.c;
-        this.K = new i0[list.size()];
+        this.K = new j0[list.size()];
         while (i11 < this.K.length) {
-            i0 d2 = this.I.d2(i12, 3);
+            j0 d2 = this.I.d2(i12, 3);
             d2.g((u) list.get(i11));
             this.K[i11] = d2;
             i11++;
@@ -338,7 +338,7 @@ public final class h implements f3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:375:0x0121, code lost:
     
-        r33.r(r32.D);
+        r33.q(r32.D);
         r1 = r2.b();
      */
     /* JADX WARN: Code restructure failed: missing block: B:376:0x012a, code lost:
@@ -397,7 +397,7 @@ public final class h implements f3.o {
     /* JADX WARN: Code restructure failed: missing block: B:392:0x0161, code lost:
     
         r32.D -= 8;
-        r33.r(r22);
+        r33.q(r22);
      */
     /* JADX WARN: Code restructure failed: missing block: B:394:0x017a, code lost:
     
@@ -915,7 +915,7 @@ public final class h implements f3.o {
                             if (position < 0) {
                                 throw t0.a(null, "Offset to end of mdat was negative.");
                             }
-                            pVar.r(position);
+                            pVar.q(position);
                             h();
                         } else {
                             int position2 = (int) ((!gVar2.m ? gVar2.d.c[gVar2.f] : gVar2.b.f[gVar2.h]) - pVar.getPosition());
@@ -923,7 +923,7 @@ public final class h implements f3.o {
                                 h2.a.l("FragmentedMp4Extractor", "Ignoring negative offset to sample data.");
                                 position2 = 0;
                             }
-                            pVar.r(position2);
+                            pVar.q(position2);
                             this.C = gVar2;
                             gVar = gVar2;
                         }
@@ -947,7 +947,7 @@ public final class h implements f3.o {
                             if (position3 < 0) {
                                 throw t0.a(null, "Offset to encryption data was negative.");
                             }
-                            pVar.r(position3);
+                            pVar.q(position3);
                             s sVar4 = gVar4.b;
                             x xVar2 = sVar4.n;
                             pVar.readFully(xVar2.a, 0, xVar2.c);
@@ -966,14 +966,14 @@ public final class h implements f3.o {
                             ((i2.c) arrayDeque.peek()).d.add(dVar);
                         } else if (i17 == 1936286840) {
                             Pair k10 = k(pVar.getPosition(), xVar3);
-                            iVar.c((f3.j) k10.second);
+                            iVar.a((f3.j) k10.second);
                             LinkedHashMap linkedHashMap = (LinkedHashMap) iVar.b;
                             this.B = ((Long) k10.first).longValue();
                             if (this.M) {
                                 i11 = 1;
                             } else {
                                 i11 = 1;
-                                this.I.j(linkedHashMap.size() == 1 ? (b0) k10.second : iVar.v());
+                                this.I.h(linkedHashMap.size() == 1 ? (c0) k10.second : iVar.z());
                                 this.L = true;
                             }
                             if ((i13 & 256) != 0 && !this.M && linkedHashMap.size() > i11) {
@@ -1019,15 +1019,15 @@ public final class h implements f3.o {
                             String str2 = v10;
                             byte[] bArr = new byte[xVar3.a()];
                             xVar3.k(0, xVar3.a(), bArr);
-                            x xVar4 = new x(this.k.v0(new q3.a(str, str2, a02, C, bArr)));
+                            x xVar4 = new x(this.k.g0(new q3.a(str, str2, a02, C, bArr)));
                             int a10 = xVar4.a();
-                            i0[] i0VarArr = this.J;
-                            int length = i0VarArr.length;
+                            j0[] j0VarArr = this.J;
+                            int length = j0VarArr.length;
                             int i18 = 0;
                             while (i18 < length) {
-                                i0 i0Var = i0VarArr[i18];
+                                j0 j0Var = j0VarArr[i18];
                                 xVar4.N(0);
-                                i0Var.b(a10, xVar4);
+                                j0Var.b(a10, xVar4);
                                 i18++;
                                 j14 = j14;
                             }
@@ -1042,8 +1042,8 @@ public final class h implements f3.o {
                                     j10 = k0Var.a(j10);
                                 }
                                 long j17 = j10;
-                                for (i0 i0Var2 : this.J) {
-                                    i0Var2.c(j17, 1, a10, 0, null);
+                                for (j0 j0Var2 : this.J) {
+                                    j0Var2.c(j17, 1, a10, 0, null);
                                 }
                             } else {
                                 arrayDeque2.addLast(new f(a10, j10, false));
@@ -1051,7 +1051,7 @@ public final class h implements f3.o {
                             }
                         }
                     } else {
-                        pVar.r(i16);
+                        pVar.q(i16);
                     }
                     l(pVar.getPosition());
                 }
@@ -1059,7 +1059,7 @@ public final class h implements f3.o {
                 int i19 = this.v;
                 x xVar5 = this.l;
                 if (i19 == 0) {
-                    if (!pVar.c(xVar5.a, 0, 8, true)) {
+                    if (!pVar.d(xVar5.a, 0, 8, true)) {
                         long j18 = this.N;
                         if (j18 == -1) {
                             cVar.r(0);
@@ -1067,7 +1067,7 @@ public final class h implements f3.o {
                         }
                         sVar.a = j18;
                         this.N = -1L;
-                        this.I.j(iVar.v());
+                        this.I.h(iVar.z());
                         this.M = true;
                         return 1;
                     }
@@ -1104,16 +1104,16 @@ public final class h implements f3.o {
                         xVar.K((int) this.u);
                         System.arraycopy(xVar5.a, 0, xVar.a, 0, 8);
                         pVar.readFully(xVar.a, 8, (int) (this.u - this.v));
-                        iVar.c((f3.j) k(pVar.l(), xVar).second);
+                        iVar.a((f3.j) k(pVar.l(), xVar).second);
                     } else {
-                        pVar.f((int) (this.u - j21), true);
+                        pVar.j((int) (this.u - j21), true);
                     }
                     h();
                 } else {
                     long position4 = pVar.getPosition() - this.v;
                     int i21 = this.t;
                     if ((i21 == 1836019558 || i21 == 1835295092) && !this.L) {
-                        this.I.j(new f3.t(this.A, position4));
+                        this.I.h(new f3.t(this.A, position4));
                         this.L = true;
                     }
                     if (this.t == 1836019558) {
@@ -1138,8 +1138,8 @@ public final class h implements f3.o {
                             xVar.K(8);
                             pVar.b(0, 8, xVar.a);
                             c.a(xVar);
-                            pVar.r(xVar.b);
-                            pVar.n();
+                            pVar.q(xVar.b);
+                            pVar.o();
                         }
                         arrayDeque.push(new i2.c(this.t, j23));
                         if (this.u == this.v) {
@@ -1295,7 +1295,7 @@ public final class h implements f3.o {
                         int i36 = size3;
                         String str = b10;
                         long j12 = qVar.e;
-                        i0 d22 = qVar2.d2(i33, i34);
+                        j0 d22 = qVar2.d2(i33, i34);
                         d22.d(j12);
                         e2.t a10 = uVar.a();
                         int i37 = i33;
@@ -1332,10 +1332,10 @@ public final class h implements f3.o {
                         i32 = arrayList;
                         i28 = 0;
                     }
-                    this.I.d1();
+                    this.I.Z0();
                 } else {
                     ArrayList arrayList10 = i32;
-                    la.p(sparseArray.size() == size3);
+                    ma.p(sparseArray.size() == size3);
                     int i39 = 0;
                     while (i39 < size3) {
                         ArrayList arrayList11 = arrayList10;
@@ -1453,7 +1453,7 @@ public final class h implements f3.o {
                                 sVar2.g = new int[i43];
                             }
                             if (sVar2.h.length < i44) {
-                                int i45 = (i44 * ls.J1) / 100;
+                                int i45 = (i44 * ks.J1) / 100;
                                 sVar2.h = new int[i45];
                                 sVar2.i = new long[i45];
                                 sVar2.j = new boolean[i45];
@@ -1695,7 +1695,7 @@ public final class h implements f3.o {
                                         }
                                         xVar11.O(1);
                                         int A3 = xVar11.A();
-                                        int i62 = (A3 & ls.P3) >> 4;
+                                        int i62 = (A3 & ks.P3) >> 4;
                                         int i63 = A3 & 15;
                                         boolean z22 = xVar11.A() == 1;
                                         if (z22) {

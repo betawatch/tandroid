@@ -1,44 +1,20 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.io.Serializable;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f31 implements org.telegram.messenger.w10, org.telegram.messenger.x10, r0.m {
-    public final /* synthetic */ o31 a;
+public final class f31 extends uw0 {
+    public final /* synthetic */ n31 H;
 
-    public /* synthetic */ f31(o31 o31Var) {
-        this.a = o31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f31(n31 n31Var, n31 n31Var2, Context context) {
+        super(context, n31Var2);
+        this.H = n31Var;
     }
 
-    @Override // r0.m
-    public r0.l1 P0(View view, r0.l1 l1Var) {
-        i0.b I0 = org.telegram.messenger.g0.I0(l1Var, false);
-        int i7 = I0.d;
-        o31 o31Var = this.a;
-        o31Var.d0 = i7;
-        int i10 = I0.b;
-        if (o31Var.Q != null) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i10;
-            ViewGroup.LayoutParams layoutParams = o31Var.Q.getLayoutParams();
-            if (layoutParams.height != currentActionBarHeight) {
-                layoutParams.height = currentActionBarHeight;
-                o31Var.Q.setLayoutParams(layoutParams);
-            }
-        }
-        ri.a.e(o31Var.c, i10, i7, org.telegram.messenger.g0.L(12.0f), o31Var.e0);
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.messenger.x10
-    public Boolean a(org.telegram.ui.Components.o41 o41Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(o31.Z(this.a, o41Var, view));
-    }
-
-    @Override // org.telegram.messenger.w10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        o31.h0(this.a, (org.telegram.ui.Components.o41) obj);
+    @Override // v4.i0
+    public final void f() {
+        this.H.c.g3.O(true);
     }
 }

@@ -1,86 +1,66 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.widget.Scroller;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class z61 implements org.telegram.ui.Components.an0, org.telegram.ui.Components.m10 {
-    public final /* synthetic */ x71 a;
+public final class z61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v71 b;
 
-    public /* synthetic */ z61(x71 x71Var) {
-        this.a = x71Var;
+    public /* synthetic */ z61(v71 v71Var, int i7) {
+        this.a = i7;
+        this.b = v71Var;
     }
 
-    @Override // org.telegram.ui.Components.an0
-    public /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.an0
-    public void n(boolean z10, float f10) {
-        x71 x71Var = this.a;
-        x71Var.n1 = f10;
-        x71Var.p1();
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public boolean onDown(MotionEvent motionEvent) {
-        Scroller scroller = this.a.c;
-        if (scroller == null) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                v71 v71Var = this.b;
+                v71Var.z0.invalidate();
+                v71Var.y0[1].setVisibility(8);
+                v71Var.e2 = null;
+                break;
+            case 1:
+                this.b.D0 = null;
+                break;
+            case 2:
+                v71 v71Var2 = this.b;
+                if (v71Var2.F0.getTag() == null) {
+                    v71Var2.F0.setVisibility(4);
+                }
+                v71Var2.J0 = null;
+                break;
+            case 3:
+                v71 v71Var3 = this.b;
+                if (v71Var3.G0.getTag() == null) {
+                    v71Var3.G0.setVisibility(4);
+                }
+                v71Var3.K0 = null;
+                break;
+            case 4:
+                v71 v71Var4 = this.b;
+                bc bcVar = v71Var4.j2;
+                if (bcVar != null) {
+                    if (bcVar.getParent() != null) {
+                        ((ViewGroup) v71Var4.j2.getParent()).removeView(v71Var4.j2);
+                    }
+                    v71Var4.j2 = null;
+                }
+                v71Var4.l2 = null;
+                super.onAnimationEnd(animator);
+                break;
+            default:
+                v71 v71Var5 = this.b;
+                if (!v71Var5.r1.b()) {
+                    v71Var5.T1.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        scroller.abortAnimation();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        x71 x71Var = this.a;
-        Scroller scroller = x71Var.c;
-        if (scroller == null) {
-            return true;
-        }
-        scroller.abortAnimation();
-        x71Var.c.fling((int) x71Var.Z1, 0, Math.round(-f10), Math.round(f11), 0, (int) x71Var.Y1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        x71Var.z0.postInvalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        x71 x71Var = this.a;
-        Scroller scroller = x71Var.c;
-        if (scroller != null) {
-            scroller.abortAnimation();
-        }
-        x71Var.Z1 = Utilities.i(x71Var.Z1 + f10, x71Var.Y1, 0.0f);
-        x71Var.a1();
-        x71Var.z0.invalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public boolean onSingleTapUp(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.an0
-    public /* synthetic */ int r0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // org.telegram.ui.Components.an0
-    public void C() {
-    }
-
-    @Override // org.telegram.ui.Components.m10
-    public void a1() {
     }
 }

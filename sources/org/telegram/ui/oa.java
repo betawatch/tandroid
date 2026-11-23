@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements eh.a {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class oa implements eh.a {
                 ((jb) obj).X(canvas, rectF);
                 break;
             case 1:
-                qa0.Z((qa0) obj, canvas, rectF);
+                pa0.Z((pa0) obj, canvas, rectF);
                 break;
             case 2:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
@@ -47,22 +47,22 @@ public final /* synthetic */ class oa implements eh.a {
                 canvas.restore();
                 break;
             case 4:
-                zw0 zw0Var = ((ProfileActivity) obj).d1;
-                zw0Var.P = true;
-                zw0Var.draw(canvas);
-                zw0Var.P = false;
+                xw0 xw0Var = ((ProfileActivity) obj).d1;
+                xw0Var.P = true;
+                xw0Var.draw(canvas);
+                xw0Var.P = false;
                 break;
             default:
                 org.telegram.ui.Components.ek0 ek0Var2 = (org.telegram.ui.Components.ek0) obj;
-                org.telegram.ui.Components.v9 v9Var = ek0Var2.S2;
-                if (v9Var == null) {
+                org.telegram.ui.Components.u9 u9Var = ek0Var2.S2;
+                if (u9Var == null) {
                     org.telegram.ui.Components.oj0 oj0Var = ek0Var2.H2;
                     if (oj0Var != null) {
                         oj0Var.d(canvas, rectF);
                         break;
                     }
                 } else {
-                    v9Var.d(canvas, rectF);
+                    u9Var.d(canvas, rectF);
                     break;
                 }
                 break;

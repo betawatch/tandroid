@@ -1,10 +1,10 @@
 package di;
 
-import org.telegram.messenger.or;
+import org.telegram.messenger.nr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k0 implements or {
+public final /* synthetic */ class k0 implements nr {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class k0 implements or {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.nr
     public final void a(int i7) {
         switch (this.a) {
             case 0:

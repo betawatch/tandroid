@@ -6,47 +6,47 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class u5 {
-    public static mz a(int i7) {
+    public static kz a(int i7) {
         try {
-            mz mzVar = new mz();
-            ez ezVar = new ez(256.0f, 256.0f, 204.8f);
-            mzVar.a.add(ezVar);
-            mzVar.b.put(ezVar, new Paint(1));
-            mzVar.e = 512;
-            mzVar.f = 512;
-            mzVar.f(i7, null, 0.65f, false);
-            return mzVar;
+            kz kzVar = new kz();
+            dz dzVar = new dz(256.0f, 256.0f, 204.8f);
+            kzVar.a.add(dzVar);
+            kzVar.b.put(dzVar, new Paint(1));
+            kzVar.e = 512;
+            kzVar.f = 512;
+            kzVar.f(i7, null, 0.65f, false);
+            return kzVar;
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
         }
     }
 
-    public static mz b(int i7) {
+    public static kz b(int i7) {
         Path path = new Path();
         path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
         path.close();
-        mz mzVar = new mz();
-        mzVar.a.add(path);
-        mzVar.b.put(path, new Paint(1));
-        mzVar.e = 512;
-        mzVar.f = 512;
-        mzVar.f(i7, null, 1.0f, false);
-        return mzVar;
+        kz kzVar = new kz();
+        kzVar.a.add(path);
+        kzVar.b.put(path, new Paint(1));
+        kzVar.e = 512;
+        kzVar.f = 512;
+        kzVar.f(i7, null, 1.0f, false);
+        return kzVar;
     }
 
-    public static mz c(float f10, int i7) {
-        mz h = nz.h(R.raw.map_placeholder, -65536);
+    public static kz c(float f10, int i7) {
+        kz h = lz.h(R.raw.map_placeholder, -65536);
         if (h != null) {
             h.f(i7, null, f10, false);
         }
         return h;
     }
 
-    public static mz d(ArrayList arrayList, int i7, float f10, boolean z10) {
+    public static kz d(ArrayList arrayList, int i7, float f10, boolean z10) {
         int size = arrayList.size();
         int i10 = 512;
         int i11 = 512;
@@ -63,18 +63,18 @@ public abstract class u5 {
         if (tL_photoPathSize == null || i10 == 0 || i11 == 0) {
             return null;
         }
-        mz j3 = nz.j(i10, i11, tL_photoPathSize.svgPath);
+        kz j3 = lz.j(i10, i11, tL_photoPathSize.svgPath);
         if (j3 != null) {
             j3.f(i7, null, f10, false);
         }
         return j3;
     }
 
-    public static mz e(TLRPC.Document document, int i7, float f10) {
+    public static kz e(TLRPC.Document document, int i7, float f10) {
         return f(document, i7, f10, null);
     }
 
-    public static mz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static kz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.i6 i6Var) {
         int i10;
         int i11;
         if (document == null) {
@@ -98,9 +98,9 @@ public abstract class u5 {
                 if (i10 == 0 || i11 == 0) {
                     return null;
                 }
-                mz j3 = nz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
+                kz j3 = lz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
                 if (j3 != null) {
-                    j3.f(i7, h6Var, f10, false);
+                    j3.f(i7, i6Var, f10, false);
                 }
                 return j3;
             }

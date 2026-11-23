@@ -2,24 +2,24 @@ package sh;
 
 import a8.p0;
 import android.text.TextUtils;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a {
     public final int a;
     public final TLRPC.Document b;
     public final String c;
-    public final gj d;
+    public final fj d;
     public final String e;
     public boolean f;
     public boolean g;
 
-    public a(int i7, gj gjVar, TLRPC.Document document, String str) {
+    public a(int i7, fj fjVar, TLRPC.Document document, String str) {
         this.a = i7;
-        this.d = gjVar;
+        this.d = fjVar;
         this.b = document;
         this.c = str;
         this.e = TextUtils.isEmpty(str) ? w7.r(null, document) : str;

@@ -1,20 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class m7 extends org.telegram.ui.Cells.p7 {
-    public final /* synthetic */ n7 H0;
+public final class m7 extends rg.a {
+    public s6 c;
+    public ei.b d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m7(n7 n7Var, Context context, m.o3 o3Var, int i7) {
-        super(context, o3Var, i7);
-        this.H0 = n7Var;
-    }
-
-    @Override // org.telegram.ui.Cells.p7
-    public final void h() {
-        this.H0.w.G.m(null, (ei.b) getTag(), true);
+    public final boolean equals(Object obj) {
+        ei.b bVar;
+        ei.b bVar2;
+        s6 s6Var;
+        s6 s6Var2;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && m7.class == obj.getClass()) {
+            m7 m7Var = (m7) obj;
+            int i7 = this.a;
+            if (i7 == m7Var.a) {
+                if (i7 == 1 && (s6Var = this.c) != null && (s6Var2 = m7Var.c) != null) {
+                    return s6Var.a == s6Var2.a;
+                }
+                if (i7 == 2 && (bVar = this.d) != null && (bVar2 = m7Var.d) != null) {
+                    return Objects.equals(bVar.a, bVar2.a);
+                }
+            }
+        }
+        return false;
     }
 }

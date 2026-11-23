@@ -1,70 +1,57 @@
 package t1;
 
-import android.text.InputFilter;
-import android.text.Selection;
-import android.text.Spannable;
-import android.widget.TextView;
+import ab.c0;
+import android.os.Bundle;
+import android.text.Editable;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputConnectionWrapper;
+import android.widget.EditText;
 import androidx.emoji2.text.l;
-import java.lang.ref.WeakReference;
+import java.nio.ByteBuffer;
+import w7.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c extends androidx.emoji2.text.i {
-    public final WeakReference a;
-    public final WeakReference b;
+public final class c extends InputConnectionWrapper {
+    public final EditText a;
+    public final s b;
 
-    public c(TextView textView, d dVar) {
-        this.a = new WeakReference(textView);
-        this.b = new WeakReference(dVar);
-    }
-
-    @Override // androidx.emoji2.text.i
-    public final void a() {
-        InputFilter[] filters;
-        int length;
-        TextView textView = (TextView) this.a.get();
-        InputFilter inputFilter = (InputFilter) this.b.get();
-        if (inputFilter == null || textView == null || (filters = textView.getFilters()) == null) {
-            return;
-        }
-        for (InputFilter inputFilter2 : filters) {
-            if (inputFilter2 == inputFilter) {
-                if (textView.isAttachedToWindow()) {
-                    CharSequence text = textView.getText();
-                    l a10 = l.a();
-                    if (text == null) {
-                        length = 0;
-                    } else {
-                        a10.getClass();
-                        length = text.length();
-                    }
-                    CharSequence e10 = a10.e(0, length, text);
-                    if (text == e10) {
-                        return;
-                    }
-                    int selectionStart = Selection.getSelectionStart(e10);
-                    int selectionEnd = Selection.getSelectionEnd(e10);
-                    textView.setText(e10);
-                    if (e10 instanceof Spannable) {
-                        Spannable spannable = (Spannable) e10;
-                        if (selectionStart >= 0 && selectionEnd >= 0) {
-                            Selection.setSelection(spannable, selectionStart, selectionEnd);
-                            return;
-                        } else if (selectionStart >= 0) {
-                            Selection.setSelection(spannable, selectionStart);
-                            return;
-                        } else {
-                            if (selectionEnd >= 0) {
-                                Selection.setSelection(spannable, selectionEnd);
-                                return;
-                            }
-                            return;
-                        }
-                    }
-                    return;
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(EditText editText, InputConnection inputConnection, EditorInfo editorInfo) {
+        super(inputConnection, false);
+        s sVar = new s(24);
+        this.a = editText;
+        this.b = sVar;
+        if (l.j != null) {
+            l a10 = l.a();
+            if (a10.b() != 1 || editorInfo == null) {
                 return;
             }
+            if (editorInfo.extras == null) {
+                editorInfo.extras = new Bundle();
+            }
+            androidx.emoji2.text.f fVar = a10.e;
+            fVar.getClass();
+            Bundle bundle = editorInfo.extras;
+            s1.b bVar = (s1.b) ((c0) fVar.c).b;
+            int a11 = bVar.a(4);
+            bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a11 != 0 ? ((ByteBuffer) bVar.d).getInt(a11 + bVar.a) : 0);
+            editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
         }
+    }
+
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
+    public final boolean deleteSurroundingText(int i7, int i10) {
+        Editable editableText = this.a.getEditableText();
+        this.b.getClass();
+        return s.a0(this, editableText, i7, i10, false) || super.deleteSurroundingText(i7, i10);
+    }
+
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
+    public final boolean deleteSurroundingTextInCodePoints(int i7, int i10) {
+        Editable editableText = this.a.getEditableText();
+        this.b.getClass();
+        return s.a0(this, editableText, i7, i10, true) || super.deleteSurroundingTextInCodePoints(i7, i10);
     }
 }

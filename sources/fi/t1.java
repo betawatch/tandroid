@@ -6,23 +6,23 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.si;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ri;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Cells.w9;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Cells.v9;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.p9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,19 +60,19 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = z3Var.y1.a;
                 if (storyItem != null) {
                     if (z3Var.m1) {
-                        z3Var.D0(storyItem.privacy.isEmpty() ? new hi.n8(3, z3Var.m2, new ArrayList()) : new hi.n8(z3Var.m2, storyItem.privacy), storyItem);
+                        z3Var.D0(storyItem.privacy.isEmpty() ? new hi.i9(3, z3Var.m2, new ArrayList()) : new hi.i9(z3Var.m2, storyItem.privacy), storyItem);
                         break;
                     } else {
                         if (z3Var.p0 == null) {
-                            hi.l3 l3Var = new hi.l3(z3Var.getContext(), 1);
-                            l3Var.r(true);
-                            l3Var.L = Layout.Alignment.ALIGN_CENTER;
-                            l3Var.r0 = new r1(z3Var, 9);
-                            z3Var.p0 = l3Var;
-                            l3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-                            c3Var.addView(z3Var.p0, ma.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
+                            hi.u3 u3Var = new hi.u3(z3Var.getContext(), 1);
+                            u3Var.r(true);
+                            u3Var.L = Layout.Alignment.ALIGN_CENTER;
+                            u3Var.r0 = new r1(z3Var, 9);
+                            z3Var.p0 = u3Var;
+                            u3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                            c3Var.addView(z3Var.p0, na.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
-                        TLRPC.User c22 = np.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
+                        TLRPC.User c22 = mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
                         if (c22 != null) {
                             String str = c22.first_name;
                             int indexOf = str.indexOf(32);
@@ -81,14 +81,14 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                             }
                             if (storyItem.close_friends) {
                                 z3Var.p0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                W2 = org.telegram.messenger.g0.W2(hd.a0("StoryCloseFriendsHint", null, 2131744463, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryCloseFriendsHint", null, 2131744462, str));
                             } else if (storyItem.contacts) {
                                 z3Var.p0.n(11.0f, 6.0f, 11.0f, 7.0f);
-                                W2 = org.telegram.messenger.g0.W2(hd.a0("StoryContactsHint", null, 2131744459, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryContactsHint", null, 2131744458, str));
                                 z10 = false;
                                 CharSequence m10 = org.telegram.messenger.j6.m(W2, z3Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
-                                hi.l3 l3Var2 = z3Var.p0;
-                                l3Var2.h = !z10 ? hi.l3.a(m10, l3Var2.getTextPaint()) : c3Var.getMeasuredWidth();
+                                hi.u3 u3Var2 = z3Var.p0;
+                                u3Var2.h = !z10 ? hi.u3.a(m10, u3Var2.getTextPaint()) : c3Var.getMeasuredWidth();
                                 z3Var.p0.v(m10);
                                 z3Var.p0.o(1.0f, (-(c3Var.getWidth() - z3Var.m0.getCenterX())) / org.telegram.messenger.g0.p);
                                 f9 f9Var2 = ((w8) z3Var.A1).d;
@@ -101,12 +101,12 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                                 break;
                             } else if (storyItem.selected_contacts) {
                                 z3Var.p0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                W2 = org.telegram.messenger.g0.W2(hd.a0("StorySelectedContactsHint", null, 2131744236, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StorySelectedContactsHint", null, 2131744235, str));
                             }
                             z10 = true;
                             CharSequence m102 = org.telegram.messenger.j6.m(W2, z3Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
-                            hi.l3 l3Var22 = z3Var.p0;
-                            l3Var22.h = !z10 ? hi.l3.a(m102, l3Var22.getTextPaint()) : c3Var.getMeasuredWidth();
+                            hi.u3 u3Var22 = z3Var.p0;
+                            u3Var22.h = !z10 ? hi.u3.a(m102, u3Var22.getTextPaint()) : c3Var.getMeasuredWidth();
                             z3Var.p0.v(m102);
                             z3Var.p0.o(1.0f, (-(c3Var.getWidth() - z3Var.m0.getCenterX())) / org.telegram.messenger.g0.p);
                             f9 f9Var22 = ((w8) z3Var.A1).d;
@@ -180,37 +180,37 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 break;
             case 7:
                 Context context = z3Var.getContext();
-                org.telegram.ui.ActionBar.h6 h6Var = z3Var.l0;
-                org.telegram.ui.ActionBar.w2 w2Var = new org.telegram.ui.ActionBar.w2(1, context, h6Var, false);
-                w2Var.P(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
+                org.telegram.ui.ActionBar.i6 i6Var = z3Var.l0;
+                org.telegram.ui.ActionBar.w2 w2Var = new org.telegram.ui.ActionBar.w2(1, context, i6Var, false);
+                w2Var.P(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, i6Var));
                 LinearLayout linearLayout = new LinearLayout(z3Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-                q9 q9Var = new q9(z3Var.getContext());
-                q9Var.getImageReceiver().W(1);
-                si.d0(z3Var.m2).h2(q9Var, "tg_superplaceholders_android_2", "😎", "150_150");
-                linearLayout.addView(q9Var, ma.t(ls.g2, ls.g2, 1, 0, 16, 0, 16));
+                p9 p9Var = new p9(z3Var.getContext());
+                p9Var.getImageReceiver().X(1);
+                ri.d0(z3Var.m2).h2(p9Var, "tg_superplaceholders_android_2", "😎", "150_150");
+                linearLayout.addView(p9Var, na.t(ks.g2, ks.g2, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(z3Var.getContext());
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 textView.setGravity(17);
-                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
-                i5.c.r(20.0f, 1, 2131744263, textView, null);
-                linearLayout.addView(textView, ma.t(-1, -2, 1, 12, 0, 12, 0));
+                org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
+                i5.c.r(20.0f, 1, 2131744262, textView, null);
+                linearLayout.addView(textView, na.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(z3Var.getContext());
                 textView2.setGravity(17);
-                org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.r5, h6Var);
+                org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.r5, i6Var);
                 textView2.setTextSize(1, 14.0f);
-                textView2.setText(org.telegram.messenger.g0.W2(hd.N0(2131744262, null)));
-                linearLayout.addView(textView2, ma.t(-1, -2, 1, 32, 9, 32, 19));
-                hi.e eVar = new hi.e(z3Var.getContext(), h6Var, true);
-                eVar.i(hd.N0(2131744266, null), false, true);
+                textView2.setText(org.telegram.messenger.g0.W2(gd.N0(2131744261, null)));
+                linearLayout.addView(textView2, na.t(-1, -2, 1, 32, 9, 32, 19));
+                hi.e eVar = new hi.e(z3Var.getContext(), i6Var, true);
+                eVar.i(gd.N0(2131744265, null), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-                nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
-                nqVar.n = 1;
-                spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-                eVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) hd.N0(2131747577, null)), false);
-                linearLayout.addView(eVar, ma.r(-1, 48, 1));
-                eVar.setOnClickListener(new ai.y2(19, z3Var, w2Var));
+                kq kqVar = new kq(R.drawable.mini_switch_lock, 0);
+                kqVar.n = 1;
+                spannableStringBuilder.setSpan(kqVar, 0, 1, 33);
+                eVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) gd.N0(2131747577, null)), false);
+                linearLayout.addView(eVar, na.r(-1, 48, 1));
+                eVar.setOnClickListener(new ai.p2(19, z3Var, w2Var));
                 w2Var.O = linearLayout;
                 ((w8) z3Var.A1).h(w2Var);
                 r3 r3Var = z3Var.d1;
@@ -242,19 +242,19 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
             case 10:
                 g3 g3Var = z3Var.u0;
                 boolean z13 = g3Var.w0;
-                t9 t9Var = g3Var.a0;
+                s9 s9Var = g3Var.a0;
                 if (!z13) {
                     z3Var.R2 = true;
                     g3Var.E(false);
                     break;
-                } else if (!t9Var.x()) {
+                } else if (!s9Var.x()) {
                     g3Var.D();
                     break;
-                } else if (t9Var.x() && Math.abs(g3Var.h0 - g3Var.j0) < org.telegram.messenger.g0.e && Math.abs(g3Var.i0 - g3Var.k0) < org.telegram.messenger.g0.e) {
-                    w9 w9Var = t9Var.n(g3Var.getContext()).r;
-                    w9Var.l();
-                    if (!w9Var.i && w9Var.e) {
-                        w9Var.f(false);
+                } else if (s9Var.x() && Math.abs(g3Var.h0 - g3Var.j0) < org.telegram.messenger.g0.e && Math.abs(g3Var.i0 - g3Var.k0) < org.telegram.messenger.g0.e) {
+                    v9 v9Var = s9Var.n(g3Var.getContext()).r;
+                    v9Var.l();
+                    if (!v9Var.i && v9Var.e) {
+                        v9Var.f(false);
                         break;
                     }
                 }

@@ -5,7 +5,7 @@ import h9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k extends m implements o2.i {
     public final n n;
@@ -25,23 +25,18 @@ public final class k extends m implements o2.i {
         return null;
     }
 
-    @Override // p2.m
-    public final j d() {
-        return null;
-    }
-
     @Override // o2.i
-    public final long e(long j3, long j10) {
+    public final long c(long j3, long j10) {
         return this.n.e(j3, j10);
     }
 
     @Override // o2.i
-    public final long h(long j3, long j10) {
+    public final long e(long j3, long j10) {
         return this.n.c(j3, j10);
     }
 
     @Override // o2.i
-    public final long i(long j3, long j10) {
+    public final long f(long j3, long j10) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -51,27 +46,32 @@ public final class k extends m implements o2.i {
     }
 
     @Override // o2.i
-    public final j k(long j3) {
+    public final j g(long j3) {
         return this.n.h(this, j3);
     }
 
+    @Override // p2.m
+    public final j h() {
+        return null;
+    }
+
     @Override // o2.i
-    public final long o(long j3, long j10) {
+    public final long n(long j3, long j10) {
         return this.n.f(j3, j10);
     }
 
     @Override // o2.i
-    public final boolean t() {
+    public final boolean r() {
         return this.n.i();
     }
 
     @Override // o2.i
-    public final long v() {
+    public final long s() {
         return this.n.d;
     }
 
     @Override // o2.i
-    public final long y(long j3) {
+    public final long x(long j3) {
         return this.n.d(j3);
     }
 
@@ -81,7 +81,7 @@ public final class k extends m implements o2.i {
     }
 
     @Override // p2.m
-    public final o2.i c() {
+    public final o2.i d() {
         return this;
     }
 }

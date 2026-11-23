@@ -6,36 +6,36 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.k71;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class j extends j71 {
+public final class j extends k71 {
     public final Path W;
     public final Paint a0;
     public boolean b0;
     public boolean c0;
     public final boolean d0;
-    public final /* synthetic */ w0 e0;
-    public final /* synthetic */ h6 f0;
-    public final /* synthetic */ a0 g0;
+    public final /* synthetic */ v0 e0;
+    public final /* synthetic */ i6 f0;
+    public final /* synthetic */ z g0;
     public final /* synthetic */ l h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(l lVar, Context context, w0 w0Var, h6 h6Var, a0 a0Var) {
+    public j(l lVar, Context context, v0 v0Var, i6 i6Var, z zVar) {
         super(context, null);
         this.h0 = lVar;
-        this.e0 = w0Var;
-        this.f0 = h6Var;
-        this.g0 = a0Var;
+        this.e0 = v0Var;
+        this.f0 = i6Var;
+        this.g0 = zVar;
         this.W = new Path();
         this.a0 = new Paint(1);
         this.d0 = org.telegram.messenger.g0.Q1();
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.k71
     public final boolean b(MotionEvent motionEvent) {
         return this.h0.m1.getCurrentPosition() == 1;
     }
@@ -45,7 +45,7 @@ public final class j extends j71 {
         float f10;
         l lVar = this.h0;
         j jVar = lVar.m1;
-        int w02 = m6.w0(m6.h5, this.f0);
+        int w02 = n6.w0(n6.h5, this.f0);
         Paint paint = this.a0;
         paint.setColor(w02);
         if (!this.b0) {
@@ -56,10 +56,10 @@ public final class j extends j71 {
             return;
         }
         int i7 = -org.telegram.messenger.g0.L(16.0f);
-        a0 a0Var = this.g0;
-        int L = org.telegram.messenger.g0.L(10.0f) + Math.max(i7, a0Var.o2 - (a0Var.p1.getVisibility() == 0 ? org.telegram.messenger.g0.L(16.0f) + org.telegram.messenger.g0.m : 0));
-        w0 w0Var = this.e0;
-        int max = Math.max(0, w0Var.p2 - (w0Var.i2.c == 1.0f ? org.telegram.messenger.g0.m : 0));
+        z zVar = this.g0;
+        int L = org.telegram.messenger.g0.L(10.0f) + Math.max(i7, zVar.o2 - (zVar.p1.getVisibility() == 0 ? org.telegram.messenger.g0.L(16.0f) + org.telegram.messenger.g0.m : 0));
+        v0 v0Var = this.e0;
+        int max = Math.max(0, v0Var.p2 - (v0Var.i2.c == 1.0f ? org.telegram.messenger.g0.m : 0));
         int abs = Math.abs(L - max);
         if (jVar.getCurrentPosition() == 0) {
             float positionAnimated = jVar.getPositionAnimated() * abs;
@@ -82,7 +82,7 @@ public final class j extends j71 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.k71
     public final float getAvailableTranslationX() {
         return (this.d0 || this.h0.o1) ? getMeasuredWidth() : super.getAvailableTranslationX();
     }
@@ -100,14 +100,14 @@ public final class j extends j71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void q() {
+    @Override // org.telegram.ui.Components.k71
+    public final void r() {
         this.b0 = false;
         this.h0.m1.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void s(boolean z10) {
+    @Override // org.telegram.ui.Components.k71
+    public final void t(boolean z10) {
         l lVar = this.h0;
         j jVar = lVar.m1;
         float positionAnimated = jVar.getPositionAnimated();

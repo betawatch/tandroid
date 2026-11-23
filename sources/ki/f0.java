@@ -9,11 +9,11 @@ import android.util.Pair;
 import java.io.File;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class f0 {
     public Long a;
@@ -35,9 +35,9 @@ public final class f0 {
         this.n = g0Var;
         this.b = str;
         this.c = str2;
-        TLRPC.User c22 = np.u1(g0Var.b).c2(Long.valueOf(g0Var.c));
+        TLRPC.User c22 = mp.u1(g0Var.b).c2(Long.valueOf(g0Var.c));
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str));
-        request.setTitle(p10.q(c22));
+        request.setTitle(n10.q(c22));
         request.setDescription(TextUtils.isEmpty(str2) ? "Downloading file..." : a8.p0.p("Downloading ", str2, "..."));
         request.setNotificationVisibility(0);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str2);

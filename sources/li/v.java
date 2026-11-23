@@ -1,48 +1,58 @@
 package li;
 
-import android.os.Bundle;
-import org.telegram.ui.Components.e10;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v implements Runnable {
+public final class v implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d0 b;
+    public final /* synthetic */ c0 b;
 
-    public /* synthetic */ v(d0 d0Var, int i7) {
+    public /* synthetic */ v(c0 c0Var, int i7) {
         this.a = i7;
-        this.b = d0Var;
+        this.b = c0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                d0 d0Var = this.b;
-                d0Var.v1.d.f3.h1(1, d0Var.P1.b);
-                d0Var.m1.a(false, true);
-                d0Var.r0 = true;
-                e10 e10Var = d0Var.y1;
-                org.telegram.messenger.g0.v1(e10Var.r);
-                e10Var.r.clearFocus();
-                break;
-            case 1:
-                d0 d0Var2 = this.b;
-                d0Var2.x1.d.f3.h1(1, d0Var2.P1.b);
-                d0Var2.n1.a(false, true);
-                d0Var2.r0 = true;
-                e10 e10Var2 = d0Var2.z1;
-                org.telegram.messenger.g0.v1(e10Var2.r);
-                e10Var2.r.clearFocus();
+                String obj = editable.toString();
+                c0 c0Var = this.b;
+                boolean isEmpty = TextUtils.isEmpty(c0Var.M1);
+                c0Var.M1 = obj;
+                c0Var.A1.h(0L, c0Var.p1, 0L, 0L, null, false, obj, isEmpty);
                 break;
             default:
-                d0 d0Var3 = this.b;
-                d0Var3.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putLong("community_id", d0Var3.p1);
-                d0Var3.u1.presentFragment(new p(bundle));
-                d0Var3.dismiss();
+                String obj2 = editable.toString();
+                c0 c0Var2 = this.b;
+                c0Var2.N1 = obj2;
+                c0Var2.B1.g3.O(true);
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final /* synthetic */ void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

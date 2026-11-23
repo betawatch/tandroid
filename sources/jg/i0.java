@@ -3,21 +3,21 @@ package jg;
 import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.n11;
-import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.v90;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.iz;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.oz;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.x60;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.rq;
-import org.telegram.ui.tw;
+import org.telegram.ui.sw;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.c0 {
     public final /* synthetic */ int I;
@@ -42,7 +42,7 @@ public final class i0 extends v4.c0 {
                 break;
             case 8:
                 super.S(x0Var, c1Var, cVar);
-                if (((i71) this.J).W) {
+                if (((j71) this.J).W) {
                     cVar.p(false);
                     break;
                 }
@@ -57,13 +57,13 @@ public final class i0 extends v4.c0 {
     public int W0(v4.c1 c1Var) {
         switch (this.I) {
             case 6:
-                if (!((h51) this.J).i3) {
+                if (!((g51) this.J).i3) {
                     break;
                 } else {
                     break;
                 }
             case 7:
-                if (!((n11) this.J).i3) {
+                if (!((m11) this.J).i3) {
                     break;
                 } else {
                     break;
@@ -77,7 +77,7 @@ public final class i0 extends v4.c0 {
         switch (this.I) {
             case 3:
                 super.k1(z10);
-                ((v90) this.J).b.setTranslationY(org.telegram.messenger.g0.L(6.0f) * (z10 ? -1 : 1));
+                ((s90) this.J).b.setTranslationY(org.telegram.messenger.g0.L(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -89,8 +89,8 @@ public final class i0 extends v4.c0 {
     public int m0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
         switch (this.I) {
             case 2:
-                a70 a70Var = ((tw) ((rz) this.J).K).b.M0;
-                if (a70Var != null && a70Var.E()) {
+                x60 x60Var = ((sw) ((oz) this.J).K).b.M0;
+                if (x60Var != null && x60Var.E()) {
                     i7 = 0;
                 }
                 return super.m0(i7, x0Var, c1Var);
@@ -116,9 +116,9 @@ public final class i0 extends v4.c0 {
                     } else {
                         i7 = 0;
                     }
-                    ai.l0 l0Var = xi0Var.T;
-                    if (l0Var != null) {
-                        l0Var.invalidate();
+                    ai.h0 h0Var = xi0Var.T;
+                    if (h0Var != null) {
+                        h0Var.invalidate();
                     }
                     b1Var.invalidate();
                 }
@@ -137,9 +137,9 @@ public final class i0 extends v4.c0 {
                         } catch (Exception unused2) {
                         }
                     }
-                    ai.l0 l0Var2 = xi0Var.T;
-                    if (l0Var2 != null) {
-                        l0Var2.invalidate();
+                    ai.h0 h0Var2 = xi0Var.T;
+                    if (h0Var2 != null) {
+                        h0Var2.invalidate();
                     }
                     b1Var.invalidate();
                 }
@@ -157,14 +157,14 @@ public final class i0 extends v4.c0 {
                 }
                 break;
             case 5:
-                tt0 tt0Var = (tt0) this.J;
-                if (i7 > 0 && tt0Var.O != null) {
+                st0 st0Var = (st0) this.J;
+                if (i7 > 0 && st0Var.O != null) {
                     int i10 = 0;
                     while (i10 < i7) {
-                        int min = Math.min(i7 - i10, Math.max(1, Math.round((tt0Var.getHeight() - tt0Var.V) * 0.5f)));
-                        float n10 = tt0Var.n();
+                        int min = Math.min(i7 - i10, Math.max(1, Math.round((st0Var.getHeight() - st0Var.V) * 0.5f)));
+                        float n10 = st0Var.n();
                         if (!Float.isInfinite(n10)) {
-                            min = Math.min(min, Math.max(0, Math.round(n10 - tt0Var.V)));
+                            min = Math.min(min, Math.max(0, Math.round(n10 - st0Var.V)));
                         }
                         if (min == 0) {
                             break;
@@ -189,14 +189,14 @@ public final class i0 extends v4.c0 {
     public void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
         switch (this.I) {
             case 2:
-                lz lzVar = new lz(this, recyclerView.getContext());
-                lzVar.a = i7;
-                w0(lzVar);
+                iz izVar = new iz(this, recyclerView.getContext());
+                izVar.a = i7;
+                w0(izVar);
                 break;
             case 8:
-                d71 d71Var = new d71(this, recyclerView.getContext());
-                d71Var.a = i7;
-                w0(d71Var);
+                e71 e71Var = new e71(this, recyclerView.getContext());
+                e71Var.a = i7;
+                w0(e71Var);
                 break;
             default:
                 super.v0(recyclerView, c1Var, i7);
@@ -245,9 +245,9 @@ public final class i0 extends v4.c0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(h51 h51Var, int i7) {
+    public i0(g51 g51Var, int i7) {
         super(i7, false);
         this.I = 6;
-        this.J = h51Var;
+        this.J = g51Var;
     }
 }

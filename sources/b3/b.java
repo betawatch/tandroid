@@ -3,10 +3,10 @@ package b3;
 import a8.b8;
 import h2.l0;
 import h9.i0;
-import l2.z;
+import l2.a0;
 import x2.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class b implements Runnable {
                 dVar.V(S, 1006, new c4.n(S, this.b, this.c, this.d));
                 break;
             default:
-                n2.s sVar = (n2.s) ((k8.a) obj).c;
+                n2.s sVar = (n2.s) ((jb.m) obj).c;
                 String str = l0.a;
-                m2.d dVar2 = ((z) sVar).a.s;
+                m2.d dVar2 = ((a0) sVar).a.s;
                 m2.a U = dVar2.U();
                 dVar2.V(U, 1011, new m2.c(U, this.b, this.c, this.d));
                 break;

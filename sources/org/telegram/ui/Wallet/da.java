@@ -1,1423 +1,694 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Paint;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.InputFilter;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
+import android.text.Editable;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import android.text.style.RelativeSizeSpan;
+import android.text.method.DigitsKeyListener;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.view.ViewTreeObserver;
+import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r10;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.m10;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.r80;
-import org.telegram.ui.bn;
-import org.telegram.ui.hs0;
-import org.telegram.ui.m60;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.xh;
+import org.telegram.ui.i71;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class da extends e51 implements gs {
-    public LinearLayout E;
-    public ca F;
-    public ShapeDrawable G;
-    public org.telegram.ui.ActionBar.u4 H;
-    public EditTextBoldCursor I;
-    public boolean J;
-    public final Runnable K;
-    public final ViewTreeObserver.OnWindowFocusChangeListener L;
-    public SpannableString M;
-    public SpannableString N;
-    public org.telegram.ui.Components.o6 O;
-    public TextView P;
-    public TextView Q;
-    public m80 R;
-    public TextView S;
-    public SpannableString T;
-    public org.telegram.ui.ActionBar.n2 U;
-    public SpannableString V;
-    public boolean W;
-    public boolean X;
-    public float Y;
-    public ValueAnimator Z;
-    public LinearLayout a0;
-    public r1.g b0;
-    public float c0;
-    public float d0;
-    public TL_wallet.walletUserAddress e;
-    public hi.e e0;
-    public TLRPC.User f;
-    public long f0;
-    public boolean g0;
-    public String h;
-    public String h0;
-    public boolean i0;
-    public int j0;
-    public int k0;
-    public boolean l0;
-    public boolean m0;
-    public String n;
-    public DecimalFormat n0;
-    public DecimalFormat o0;
-    public int p0;
-    public boolean q0;
-    public boolean r;
-    public TL_wallet.walletTransaction r0;
-    public long s;
-    public n6 s0;
-    public ra t0;
-    public bn u0;
-    public e7 v0;
-    public g9 w;
-    public int w0;
-    public hi.x4 x;
-    public int x0;
-    public FrameLayout y;
+public final class da extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public static final kr T = kr.h;
+    public int E;
+    public final org.telegram.ui.ActionBar.i6 F;
+    public final boolean G;
+    public final ArrayList H;
+    public ValueAnimator I;
+    public float J;
+    public float K;
+    public String L;
+    public final ArrayList M;
+    public float N;
+    public float O;
+    public float P;
+    public String Q;
+    public String R;
+    public boolean S;
+    public int a;
+    public final LinearLayout b;
+    public final z9 c;
+    public final n7 d;
+    public final FrameLayout e;
+    public final TextView f;
+    public final org.telegram.ui.Cells.x3 h;
+    public ValueAnimator n;
+    public r1.g r;
+    public r1.g s;
+    public boolean w;
+    public boolean x;
+    public boolean y;
 
-    public da(TLRPC.User user) {
-        this.s = 0L;
-        this.K = new n9(this, 0);
-        this.L = new ViewTreeObserver.OnWindowFocusChangeListener() { // from class: org.telegram.ui.Wallet.o9
-            @Override // android.view.ViewTreeObserver.OnWindowFocusChangeListener
-            public final void onWindowFocusChanged(boolean z10) {
-                EditTextBoldCursor editTextBoldCursor;
-                da daVar = da.this;
-                Runnable runnable = daVar.K;
-                if (z10 && daVar.J && (editTextBoldCursor = daVar.I) != null) {
-                    editTextBoldCursor.removeCallbacks(runnable);
-                    daVar.I.post(runnable);
-                }
-            }
-        };
-        this.f0 = -1L;
-        this.i0 = true;
-        this.p0 = 6;
-        this.f = user;
-        this.h = null;
-        this.r = true;
-        u0.D(this.currentAccount).j0(user, new p9(this, 2));
-    }
-
-    public static void d0(da daVar) {
-        n6.N0(daVar.currentAccount, daVar.getParentActivity(), daVar.getResourceProvider());
-    }
-
-    public static void e0(final da daVar) {
-        hi.e eVar = daVar.e0;
-        if (!eVar.e0 || eVar.R) {
-            return;
-        }
-        final u0 D = u0.D(daVar.currentAccount);
-        long p02 = daVar.p0();
-        long A = D.A();
-        if (daVar.r || !WalletEngine2.isValidRecipientAddress(daVar.h) || p02 <= 0) {
-            return;
-        }
-        long j3 = ((org.telegram.messenger.l0) np.u1(daVar.currentAccount).A7.r0.b).c;
-        if (p02 < j3) {
-            String l02 = daVar.l0 ? daVar.l0(j3, daVar.n0()) : q0(j3);
-            daVar.F.setAmountText(l02);
-            daVar.I.setSelection(l02.length());
-            EditTextBoldCursor editTextBoldCursor = daVar.I;
-            int i7 = -daVar.p0;
-            daVar.p0 = i7;
-            org.telegram.messenger.g0.E3(i7, editTextBoldCursor, null);
-            return;
-        }
-        if (p02 > A) {
-            org.telegram.messenger.q2.E.a();
-            m80 m80Var = daVar.R;
-            int i10 = -daVar.p0;
-            daVar.p0 = i10;
-            org.telegram.messenger.g0.E3(i10, m80Var, null);
-            return;
-        }
-        long j10 = daVar.f0;
-        if (j10 >= 0 && p02 + j10 > A) {
-            p02 -= j10;
-        }
-        daVar.J = false;
-        EditTextBoldCursor editTextBoldCursor2 = daVar.I;
-        if (editTextBoldCursor2 != null) {
-            editTextBoldCursor2.removeCallbacks(daVar.K);
-            daVar.fragmentView.requestFocus();
-            org.telegram.messenger.g0.v1(daVar.I);
-        }
-        daVar.e0.setLoading(true);
-        daVar.r0 = null;
-        if (daVar.f != null && TextUtils.isEmpty(daVar.n)) {
-            daVar.q0 = true;
-            D.m0(daVar.f, daVar.h, p02, daVar.h0, daVar.i0 ? daVar.r0() : null, null, null, new r9(daVar, 0), new r9(daVar, 1));
-            return;
-        }
-        final String str = daVar.h0;
-        byte[] r02 = daVar.i0 ? daVar.r0() : null;
-        boolean z10 = r02 != null;
-        if (!D.M()) {
-            final long j11 = p02;
-            final boolean z11 = z10;
-            D.m(daVar.h, j11, str, r02, new r10() { // from class: org.telegram.ui.Wallet.t9
-                @Override // org.telegram.messenger.r10
-                public final void a(Object obj, Object obj2) {
-                    TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                    String str2 = (String) obj2;
-                    da daVar2 = da.this;
-                    if (str2 != null) {
-                        daVar2.e0.setLoading(false);
-                        lc.b0(daVar2).f0(str2, false);
-                        return;
-                    }
-                    wallettransaction.peer = u0.i(daVar2.f, daVar2.h, daVar2.n);
-                    wallettransaction.comment = str;
-                    wallettransaction.comment_encrypted = z11;
-                    wallettransaction.date = daVar2.getConnectionsManager().getCurrentTime();
-                    org.telegram.messenger.g0.v1(daVar2.I);
-                    n6.K0(daVar2.getParentActivity(), daVar2.getCurrentAccount(), wallettransaction, new s9(daVar2, D, j11, 1), new p9(daVar2, 4), daVar2.r0(), null, daVar2.getResourceProvider());
-                    org.telegram.messenger.g0.h3(new n9(daVar2, 3), 1000L);
-                }
-            });
-            return;
-        }
-        TL_wallet.walletTransaction wallettransaction = new TL_wallet.walletTransaction();
-        wallettransaction.peer = u0.i(daVar.f, daVar.h, daVar.n);
-        wallettransaction.comment = str;
-        wallettransaction.comment_encrypted = z10;
-        wallettransaction.date = daVar.getConnectionsManager().getCurrentTime();
-        wallettransaction.fee = Math.max(0L, daVar.f0);
-        wallettransaction.gasless = true;
-        wallettransaction.amount = p02;
-        org.telegram.messenger.g0.v1(daVar.I);
-        n6.K0(daVar.getParentActivity(), daVar.getCurrentAccount(), wallettransaction, new s9(daVar, D, p02, 0), new p9(daVar, 3), daVar.r0(), null, daVar.getResourceProvider());
-        org.telegram.messenger.g0.h3(new n9(daVar, 2), 1000L);
-    }
-
-    public static void f0(da daVar, String str) {
-        if (u0.L(str)) {
-            daVar.q0 = false;
-            daVar.e0.setLoading(false);
-            return;
-        }
-        if (str != null) {
-            daVar.q0 = false;
-            daVar.e0.setLoading(false);
-            lc.b0(daVar).f0(str, false);
-            return;
-        }
-        if (!daVar.g0) {
-            daVar.w0();
-            return;
-        }
-        org.telegram.ui.ActionBar.r4 parentLayout = daVar.getParentLayout();
-        if (parentLayout == null) {
-            daVar.finishFragment();
-            return;
-        }
-        long j3 = daVar.f.id;
-        ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
-        if (arrayList.isEmpty() || i5.c.h(1, arrayList) != daVar) {
-            return;
-        }
-        int size = arrayList.size() - 2;
-        while (true) {
-            if (size < 0) {
-                break;
-            }
-            org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) arrayList.get(size);
-            if ((g2Var instanceof bn) && g2Var.getCurrentAccount() == daVar.currentAccount) {
-                bn bnVar = (bn) g2Var;
-                if (bnVar.a() == j3 && bnVar.g4 == 0) {
-                    daVar.u0 = bnVar;
-                    for (int size2 = arrayList.size() - 2; size2 > size; size2--) {
-                        ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.g2) arrayList.get(size2), false);
-                    }
-                }
-            }
-            size--;
-        }
-        if (daVar.u0 == null) {
-            daVar.getNotificationCenter().k(ls.v, Long.valueOf(j3), Boolean.FALSE);
-            bn ua2 = bn.ua(j3);
-            ua2.setCurrentAccount(daVar.currentAccount);
-            if (!((ActionBarLayout) parentLayout).c(parentLayout.getFragmentStack().size() - 1, ua2)) {
-                daVar.finishFragment();
-                return;
-            }
-            daVar.u0 = ua2;
-        }
-        daVar.finishFragment();
-    }
-
-    public static void g0(da daVar, TL_wallet.walletUserAddress walletuseraddress) {
-        daVar.r = false;
-        daVar.e = walletuseraddress;
-        if (walletuseraddress != null && walletuseraddress.user_id != 0) {
-            daVar.f = np.u1(daVar.currentAccount).c2(Long.valueOf(walletuseraddress.user_id));
-        }
-        bi.f6 f6Var = daVar.a;
-        if (f6Var != null) {
-            f6Var.g3.O(true);
-        }
-        daVar.C0();
-        g9 g9Var = daVar.w;
-        if (g9Var != null) {
-            g9Var.a(daVar.h, daVar.f);
-        }
-    }
-
-    public static int m0(BigDecimal bigDecimal) {
-        if (bigDecimal.signum() <= 0) {
-            return 9;
-        }
-        BigDecimal movePointLeft = bigDecimal.movePointLeft(9);
-        int i7 = 0;
-        for (BigDecimal movePointLeft2 = BigDecimal.ONE.movePointLeft(1); movePointLeft2.compareTo(movePointLeft) >= 0; movePointLeft2 = movePointLeft2.movePointLeft(1)) {
-            i7++;
-        }
-        return i7;
-    }
-
-    public static String q0(long j3) {
-        BigDecimal scale = BigDecimal.valueOf(j3).movePointLeft(9).setScale(2, RoundingMode.HALF_UP);
-        return (scale.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : scale.stripTrailingZeros()).toPlainString();
-    }
-
-    public static BigDecimal v0(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return BigDecimal.ZERO;
-        }
-        try {
-            BigDecimal bigDecimal = new BigDecimal(str.replace(',', '.'));
-            return bigDecimal.signum() < 0 ? BigDecimal.ZERO : bigDecimal;
-        } catch (NumberFormatException unused) {
-            return BigDecimal.ZERO;
-        }
-    }
-
-    public static void z0(SpannableStringBuilder spannableStringBuilder, int i7, int i10, char c10) {
-        int i11 = i7 + 1;
-        while (true) {
-            int i12 = i11 + 1;
-            if (i12 >= i10) {
-                return;
-            }
-            if (spannableStringBuilder.charAt(i11) == c10 && Character.isDigit(spannableStringBuilder.charAt(i11 - 1)) && Character.isDigit(spannableStringBuilder.charAt(i12))) {
-                int i13 = i12;
-                while (i13 < i10 && Character.isDigit(spannableStringBuilder.charAt(i13))) {
-                    i13++;
-                }
-                spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85714287f), i12, i13, 33);
-                return;
-            }
-            i11 = i12;
-        }
-    }
-
-    public final void A0(String str) {
-        this.n = str;
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        if (kVar != null) {
-            kVar.setTitle(hd.N0(2131742750, null));
-        }
-    }
-
-    public final void B0(boolean z10) {
-        if (z10) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) hd.N0(2131742837, null));
-            spannableStringBuilder.append((CharSequence) " ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) hd.N0(2131742891, null));
-            spannableStringBuilder.append((CharSequence) " >");
-            nq nqVar = new nq(R.drawable.settings_arrow, 0);
-            float N = org.telegram.messenger.g0.N(0.66f);
-            nqVar.r = 0.0f;
-            nqVar.s = N;
-            spannableStringBuilder.setSpan(nqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.setSpan(new hi.ha(this, 9), length, spannableStringBuilder.length(), 33);
-            this.R.setText(spannableStringBuilder);
-        }
-        this.R.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setDuration(320L).setInterpolator(nr.h).start();
-    }
-
-    public final void C0() {
-        E0();
-        if (this.I == null || this.e0 == null) {
-            return;
-        }
-        u0 D = u0.D(this.currentAccount);
-        long A = D.A();
-        long p02 = p0();
-        long j3 = ((org.telegram.messenger.l0) np.u1(this.currentAccount).A7.r0.b).c;
-        if (p02 > 0 && p02 < j3) {
-            String l02 = this.l0 ? l0(j3, n0()) : q0(j3);
-            this.F.setAmountText(l02);
-            this.I.setSelection(l02.length());
-            EditTextBoldCursor editTextBoldCursor = this.I;
-            int i7 = -this.p0;
-            this.p0 = i7;
-            org.telegram.messenger.g0.E3(i7, editTextBoldCursor, null);
-            return;
-        }
-        boolean z10 = WalletEngine2.isValidRecipientAddress(this.h) && !this.r && p02 > 0 && p02 <= A;
-        B0(!TextUtils.isEmpty(this.I.getText()) && p02 > A);
-        long p03 = p0();
-        if (this.n0 == null) {
-            this.n0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
-        }
-        String format = p03 > 0 ? this.n0.format(BigDecimal.valueOf(p03, 9)) : "";
-        this.e0.setLoading(this.r || this.q0);
-        this.e0.i(TextUtils.isEmpty(format) ? hd.N0(2131742754, null) : hd.V(null, null, 2131742755, u0.q("Grams", format, 2131749314)), true, true);
-        this.e0.setEnabled(z10);
-        D0();
-        F0();
-        if (!this.l0) {
-            this.O.setText(o0(D, p02));
-            return;
-        }
-        org.telegram.ui.Components.o6 o6Var = this.O;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) this.N).append((CharSequence) " ");
-        int length = spannableStringBuilder.length();
-        if (this.o0 == null) {
-            DecimalFormat decimalFormat = new DecimalFormat("#,##0.##", new DecimalFormatSymbols(Locale.US));
-            this.o0 = decimalFormat;
-            decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
-        }
-        spannableStringBuilder.append((CharSequence) this.o0.format(BigDecimal.valueOf(p02).movePointLeft(9)));
-        z0(spannableStringBuilder, length, spannableStringBuilder.length(), '.');
-        spannableStringBuilder.append((CharSequence) " ");
-        int length2 = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) hd.N0(2131749340, null));
-        spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85714287f), length2, spannableStringBuilder.length(), 33);
-        o6Var.setText(spannableStringBuilder.append((CharSequence) " ").append((CharSequence) this.M));
-    }
-
-    public final void D0() {
-        if (this.S == null) {
-            return;
-        }
-        u0 D = u0.D(this.currentAccount);
-        this.S.setText(hd.V(null, null, 2131742939, u0.q("Grams", u0.u(D.A(), false), 2131749314)));
-        boolean z10 = this.X;
-        EditTextBoldCursor editTextBoldCursor = this.I;
-        this.X = z10 | ((editTextBoldCursor == null || TextUtils.isEmpty(editTextBoldCursor.getText())) ? false : true);
-        boolean z11 = (!D.M() || u0.c(D.y(), this.h)) && this.X;
-        if (z11) {
-            long j3 = this.f0;
-            if (j3 >= 0) {
-                this.U.setText(hd.V(null, null, 2131742825, u0.x(j3, false)));
-            } else {
-                this.U.setText(hd.V(null, null, 2131742825, this.V));
-            }
-        }
-        if (this.W == z11) {
-            return;
-        }
-        this.W = z11;
-        ValueAnimator valueAnimator = this.Z;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.Z = null;
-        }
-        float f10 = z11 ? 1.0f : 0.0f;
-        if (!this.U.isAttachedToWindow()) {
-            y0(f10);
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Y, f10);
-        this.Z = ofFloat;
-        ofFloat.setDuration(320L);
-        this.Z.setInterpolator(nr.h);
-        this.Z.addUpdateListener(new z3(this, 8));
-        this.Z.start();
-    }
-
-    public final void E0() {
-        if (this.E == null || this.P == null) {
-            return;
-        }
-        final boolean z10 = p0() > 0 || this.Q.getVisibility() == 0;
-        if (z10 == this.m0) {
-            return;
-        }
-        this.m0 = z10;
-        this.E.setVisibility(0);
-        this.P.setVisibility(0);
-        final int i7 = 0;
-        ViewPropertyAnimator duration = this.E.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.8f).scaleY(z10 ? 1.0f : 0.8f).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Wallet.u9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i7) {
-                    case 0:
-                        this.b.E.setVisibility(z10 ? 0 : 4);
-                        break;
-                    default:
-                        this.b.P.setVisibility(!z10 ? 0 : 4);
-                        break;
-                }
-            }
-        }).setDuration(320L);
-        nr nrVar = nr.h;
-        duration.setInterpolator(nrVar).start();
-        final int i10 = 1;
-        this.P.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(!z10 ? 1.0f : 0.8f).scaleY(z10 ? 0.8f : 1.0f).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Wallet.u9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        this.b.E.setVisibility(z10 ? 0 : 4);
-                        break;
-                    default:
-                        this.b.P.setVisibility(!z10 ? 0 : 4);
-                        break;
-                }
-            }
-        }).setDuration(320L).setInterpolator(nrVar).start();
-    }
-
-    public final void F0() {
-        this.F.d(u0.D(this.currentAccount), this.l0);
-    }
-
-    public final void G0() {
-        float f10 = this.c0;
-        float f11 = 1.0f - f10;
-        float max = Math.max(this.d0, Math.max(0.0f, Math.min(1.0f, f10)));
-        this.d0 = max;
-        float f12 = 1.0f - max;
-        ca caVar = this.F;
-        float f13 = this.c0;
-        caVar.e(f13, max, this.b0 == null && f13 == 1.0f);
-        this.F.setTranslationY((((this.x.getHeight() / 2.0f) - this.F.getTop()) - (this.F.getHeight() / 2.0f)) * f11);
-        this.O.setAlpha(this.d0);
-        this.O.setTranslationY(org.telegram.messenger.g0.L(16.0f) * f12);
-        this.y.setAlpha(this.d0);
-        this.y.setTranslationY(org.telegram.messenger.g0.L(16.0f) * f12);
-        this.a0.setAlpha(this.d0);
-        for (int i7 = 0; i7 < this.a0.getChildCount(); i7++) {
-            this.a0.getChildAt(i7).setTranslationY(org.telegram.messenger.g0.L(24.0f) * f12);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public final CharSequence a0() {
-        return hd.N0(2131742750, null);
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public final boolean c0(o41 o41Var, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.e51, org.telegram.ui.ActionBar.g2
-    public final View createView(Context context) {
-        View createView = super.createView(context);
-        this.fragmentView = createView;
-        final int i7 = 1;
-        createView.setFocusableInTouchMode(true);
-        this.a.setVisibility(8);
-        View view = this.fragmentView;
-        int i10 = org.telegram.ui.ActionBar.m6.d6;
-        org.telegram.ui.ActionBar.t6.h(i10, view, getResourceProvider());
-        org.telegram.ui.ActionBar.t6.h(i10, this.actionBar, getResourceProvider());
-        final int i11 = 0;
-        this.actionBar.setCastShadows(false);
-        org.telegram.ui.ActionBar.q0 a10 = this.actionBar.s().a(1, R.drawable.ic_ab_other);
-        a10.setContentDescription(hd.N0(2131754838, null));
-        final int i12 = 2;
-        a10.e(2, R.drawable.msg_addbot, hd.N0(2131742891, null));
-        a10.e(3, R.drawable.menu_comments, hd.N0(2131742959, null));
-        this.actionBar.setActionBarMenuOnItemClick(new hs0(this, 23));
-        FrameLayout frameLayout = (FrameLayout) this.fragmentView;
+    public da(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        int i7 = org.telegram.ui.ActionBar.n6.Fi;
+        this.a = i7;
+        this.H = new ArrayList();
+        this.J = 1.0f;
+        this.L = "";
+        this.M = new ArrayList();
+        this.P = 0.5f;
+        this.Q = ",";
+        this.R = ".";
+        this.F = i6Var;
+        this.G = true;
+        setClipChildren(false);
+        setClipToPadding(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(16);
+        linearLayout.setLayoutDirection(0);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        addView(linearLayout, c8.na.e(-2, -1, 17));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.e = frameLayout;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        g9 g9Var = new g9(context, new n9(this, 5), new n9(this, 6), this.resourceProvider);
-        this.w = g9Var;
-        frameLayout.addView(g9Var, c8.ma.d(-2, 64.0f, 49, 16.0f, 5.0f, 16.0f, 0.0f));
-        g9 g9Var2 = this.w;
-        if (g9Var2 != null) {
-            g9Var2.a(this.h, this.f);
-        }
-        hi.x4 x4Var = new hi.x4(this, context);
-        this.x = x4Var;
-        x4Var.setOrientation(1);
-        this.x.setClipChildren(false);
-        this.x.setClipToPadding(false);
-        frameLayout.addView(this.x, c8.ma.e(-1, -2, 17));
-        ca caVar = new ca(context, getResourceProvider());
-        this.F = caVar;
-        if (caVar.getDiamondView().f == null) {
-            this.d0 = 1.0f;
-            this.c0 = 1.0f;
-        }
-        this.x.addView(this.F, c8.ma.t(-1, 64, 49, 16, 0, 16, 0));
-        EditTextBoldCursor editText = this.F.getEditText();
-        this.I = editText;
-        editText.setFilters(new InputFilter[]{new InputFilter() { // from class: org.telegram.ui.Wallet.w9
-            @Override // android.text.InputFilter
-            public final CharSequence filter(CharSequence charSequence, int i13, int i14, Spanned spanned, int i15, int i16) {
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(spanned.subSequence(0, i15).toString());
-                sb2.append((Object) charSequence.subSequence(i13, i14));
-                sb2.append((Object) spanned.subSequence(i16, spanned.length()));
-                String sb3 = sb2.toString();
-                int i17 = 9;
-                BigDecimal valueOf = BigDecimal.valueOf(Long.MAX_VALUE, 9);
-                da daVar = da.this;
-                if (daVar.l0) {
-                    BigDecimal n02 = daVar.n0();
-                    valueOf = valueOf.multiply(n02);
-                    i17 = da.m0(n02);
-                }
-                int max = Math.max(sb3.indexOf(46), sb3.indexOf(44));
-                if (max >= 0 && (sb3.length() - max) - 1 > i17) {
-                    return spanned.subSequence(i15, i16);
-                }
-                if (da.v0(sb3).compareTo(valueOf) > 0) {
-                    return spanned.subSequence(i15, i16);
-                }
-                if (i13 == i14) {
-                    return null;
-                }
-                boolean z10 = false;
-                for (int i18 = 0; i18 < sb3.length(); i18++) {
-                    char charAt = sb3.charAt(i18);
-                    if (charAt == '.' || charAt == ',') {
-                        if (z10) {
-                            return spanned.subSequence(i15, i16);
-                        }
-                        z10 = true;
-                    }
-                }
-                if (i15 == 0 && (sb3.startsWith(".") || sb3.startsWith(","))) {
-                    return "0" + ((Object) charSequence.subSequence(i13, i14));
-                }
-                if (sb3.startsWith("00")) {
-                    return spanned.subSequence(i15, i16);
-                }
-                return null;
-            }
-        }});
-        this.I.setImeOptions(33554438);
-        this.I.setOnEditorActionListener(new h9(this, i7));
-        this.I.addTextChangedListener(new i9(this, i7));
-        long j3 = this.s;
-        if (j3 > 0) {
-            ca caVar2 = this.F;
-            BigDecimal valueOf = BigDecimal.valueOf(j3, 9);
-            caVar2.setAmountText((valueOf.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : valueOf.stripTrailingZeros()).toPlainString());
-            EditTextBoldCursor editTextBoldCursor = this.I;
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        }
-        this.M = new SpannableString("⇅");
-        nq nqVar = new nq(R.drawable.wallet_currency_exchange, 0);
-        nqVar.x = 0.72f;
-        SpannableString spannableString = this.M;
-        spannableString.setSpan(nqVar, 0, spannableString.length(), 33);
-        this.N = new SpannableString("G");
-        nq nqVar2 = new nq(R.drawable.wallet_gram_small, 0);
-        nqVar2.d = false;
-        SpannableString spannableString2 = this.N;
-        spannableString2.setSpan(nqVar2, 0, spannableString2.length(), 33);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, true, true, true);
-        this.O = o6Var;
-        o6Var.c.m(0.35f, 320L, 3.5f, nr.h);
-        this.O.setScaleProperty(0.25f);
-        this.O.setText(o0(u0.D(this.currentAccount), 0L));
-        org.telegram.ui.Components.o6 o6Var2 = this.O;
-        int i13 = org.telegram.ui.ActionBar.m6.z6;
-        org.telegram.ui.ActionBar.p6 p10 = org.telegram.ui.ActionBar.t6.p(i10, i13);
-        org.telegram.ui.ActionBar.t6.m(o6Var2, p10.a, p10.b, 4, 0.0f, getResourceProvider());
-        this.O.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        this.O.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
-        this.O.setGravity(17);
-        this.O.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-        this.O.setAllowCancel(true);
-        int r12 = org.telegram.ui.ActionBar.m6.r1(0.08f, getThemedColor(i13));
-        org.telegram.ui.Components.o6 o6Var3 = this.O;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(14.0f), r12);
-        this.G = d02;
-        o6Var3.setSizeableBackground(d02);
-        this.x.addView(this.O, c8.ma.t(-2, 28, 49, 0, 8, 0, 0));
-        c8.ra.a(this.O);
-        this.O.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.m9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i12) {
-                    case 0:
-                        this.b.u0();
-                        break;
-                    case 1:
-                        da.e0(this.b);
-                        break;
-                    case 2:
-                        da daVar = this.b;
-                        BigDecimal n02 = daVar.n0();
-                        if (daVar.l0 || n02.signum() > 0) {
-                            long p02 = daVar.p0();
-                            daVar.l0 = !daVar.l0;
-                            daVar.F0();
-                            String l02 = p02 <= 0 ? "" : daVar.l0 ? daVar.l0(p02, n02) : da.q0(p02);
-                            daVar.F.setAmountText(l02);
-                            daVar.I.setSelection(l02.length());
-                            break;
-                        }
-                        break;
-                    default:
-                        da.d0(this.b);
-                        break;
-                }
-            }
-        });
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.y = frameLayout2;
-        this.x.addView(frameLayout2, c8.ma.r(-2, -2, 49));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.E = linearLayout;
-        linearLayout.setOrientation(1);
-        this.y.addView(this.E, c8.ma.e(-2, -2, 49));
+        frameLayout.setTranslationZ(org.telegram.messenger.g0.L(1.0f));
+        linearLayout.addView(frameLayout, c8.na.r(59, 60, 16));
+        this.E = org.telegram.messenger.g0.L(59.0f);
+        n7 n7Var = new n7(60, context, true);
+        this.d = n7Var;
+        n7Var.i();
+        frameLayout.addView(n7Var, c8.na.d(60, 60.0f, 19, 0.0f, -5.0f, -2.0f, 0.0f));
         TextView textView = new TextView(context);
-        this.P = textView;
-        textView.setTextSize(1, 14.0f);
-        TextView textView2 = this.P;
-        int i14 = org.telegram.ui.ActionBar.m6.Fi;
-        org.telegram.ui.ActionBar.t6.U(textView2, i14, getResourceProvider());
-        org.telegram.ui.ActionBar.t6.Q(this.P, org.telegram.ui.ActionBar.m6.b0(org.telegram.ui.ActionBar.m6.r1(0.1f, getThemedColor(i14)), org.telegram.ui.ActionBar.m6.r1(0.25f, getThemedColor(i14)), 14, 14), org.telegram.ui.ActionBar.t6.K(0.1f, i14), org.telegram.ui.ActionBar.t6.K(0.25f, i14), getResourceProvider());
-        this.P.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-        this.P.setGravity(17);
-        this.P.setTypeface(org.telegram.messenger.g0.o());
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131742891, null));
-        spannableStringBuilder.append((CharSequence) " >");
-        nq nqVar3 = new nq(R.drawable.settings_arrow, 0);
-        float N = org.telegram.messenger.g0.N(0.66f);
-        nqVar3.r = 0.0f;
-        nqVar3.s = N;
-        spannableStringBuilder.setSpan(nqVar3, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-        this.P.setText(spannableStringBuilder);
-        this.y.addView(this.P, c8.ma.d(-2, 28.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
-        c8.ra.a(this.P);
-        final int i15 = 3;
-        this.P.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.m9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i15) {
-                    case 0:
-                        this.b.u0();
-                        break;
-                    case 1:
-                        da.e0(this.b);
-                        break;
-                    case 2:
-                        da daVar = this.b;
-                        BigDecimal n02 = daVar.n0();
-                        if (daVar.l0 || n02.signum() > 0) {
-                            long p02 = daVar.p0();
-                            daVar.l0 = !daVar.l0;
-                            daVar.F0();
-                            String l02 = p02 <= 0 ? "" : daVar.l0 ? daVar.l0(p02, n02) : da.q0(p02);
-                            daVar.F.setAmountText(l02);
-                            daVar.I.setSelection(l02.length());
-                            break;
-                        }
-                        break;
-                    default:
-                        da.d0(this.b);
-                        break;
-                }
-            }
-        });
-        this.E.setVisibility(4);
-        this.E.setAlpha(0.0f);
-        this.E.setScaleX(0.8f);
-        this.E.setScaleY(0.8f);
-        this.P.setVisibility(0);
-        this.P.setAlpha(1.0f);
-        this.P.setScaleX(1.0f);
-        this.P.setScaleY(1.0f);
-        this.m0 = false;
-        this.Q = new TextView(context);
-        org.telegram.ui.ActionBar.u4 u4Var = new org.telegram.ui.ActionBar.u4(0, true, false, null);
-        u4Var.x = false;
-        Paint.Style style = Paint.Style.STROKE;
-        Paint paint = u4Var.c;
-        paint.setStyle(style);
-        paint.setStrokeWidth(Math.max(1.0f, org.telegram.messenger.g0.N(0.5f)));
-        int i16 = org.telegram.ui.ActionBar.m6.bm;
-        paint.setColor(getThemedColor(i16));
-        u4Var.w = Integer.valueOf(getThemedColor(i16));
-        this.Q.setPadding(org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(8.0f));
-        this.Q.setBackground(u4Var);
-        this.H = u4Var;
-        this.Q.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(this.Q, i13, getResourceProvider());
-        this.Q.setTypeface(org.telegram.messenger.g0.o());
-        this.Q.setEllipsize(TextUtils.TruncateAt.END);
-        this.Q.setMaxLines(4);
-        if (TextUtils.isEmpty(this.h0)) {
-            this.Q.setVisibility(8);
-        } else {
-            this.Q.setText(this.h0);
-            this.Q.setVisibility(0);
-        }
-        this.E.addView(this.Q, c8.ma.t(-2, -2, 49, 32, 12, 32, 0));
-        this.Q.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.m9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i11) {
-                    case 0:
-                        this.b.u0();
-                        break;
-                    case 1:
-                        da.e0(this.b);
-                        break;
-                    case 2:
-                        da daVar = this.b;
-                        BigDecimal n02 = daVar.n0();
-                        if (daVar.l0 || n02.signum() > 0) {
-                            long p02 = daVar.p0();
-                            daVar.l0 = !daVar.l0;
-                            daVar.F0();
-                            String l02 = p02 <= 0 ? "" : daVar.l0 ? daVar.l0(p02, n02) : da.q0(p02);
-                            daVar.F.setAmountText(l02);
-                            daVar.I.setSelection(l02.length());
-                            break;
-                        }
-                        break;
-                    default:
-                        da.d0(this.b);
-                        break;
-                }
-            }
-        });
-        c8.ra.b(this.Q, 0.02f, 1.2f);
-        E0();
-        m80 m80Var = new m80(context, this.resourceProvider);
-        this.R = m80Var;
-        org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.q7, getResourceProvider());
-        org.telegram.ui.ActionBar.t6.G(this.R, i14, getResourceProvider());
-        this.R.setTextSize(1, 14.0f);
-        this.R.setGravity(17);
-        this.R.setTypeface(org.telegram.messenger.g0.o());
-        this.R.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-        B0(false);
-        this.E.addView(this.R, c8.ma.t(-2, -2, 49, 0, 10, 0, 0));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.a0 = linearLayout2;
-        linearLayout2.setOrientation(1);
-        this.a0.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
-        this.a0.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, getThemedColor(i10)), getThemedColor(i10), getThemedColor(i10)}));
-        TextView textView3 = new TextView(context);
-        this.S = textView3;
-        org.telegram.ui.ActionBar.t6.U(textView3, i13, getResourceProvider());
-        this.S.setTextSize(1, 14.0f);
-        this.S.setGravity(17);
-        this.a0.addView(this.S, c8.ma.t(-1, -2, 55, 16, 0, 16, 0));
-        this.T = new SpannableString(">");
-        nq nqVar4 = new nq(R.drawable.settings_arrow, 0);
-        float L = org.telegram.messenger.g0.L(1.0f);
-        nqVar4.r = 0.0f;
-        nqVar4.s = L;
-        SpannableString spannableString3 = this.T;
-        spannableString3.setSpan(nqVar4, 0, spannableString3.length(), 33);
-        org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2(10, context, this);
-        this.U = n2Var;
-        org.telegram.ui.ActionBar.t6.U(n2Var, i13, getResourceProvider());
-        this.U.setTextSize(1, 14.0f);
-        this.U.setGravity(17);
-        this.U.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
-        this.U.setVisibility(8);
-        this.a0.addView(this.U, c8.ma.t(-1, -2, 55, 16, 0, 16, 0));
-        SpannableString spannableString4 = new SpannableString(hd.N0(2131748586, null));
-        this.V = spannableString4;
-        spannableString4.setSpan(new r80(org.telegram.messenger.g0.L(80.0f), this.U), 0, this.V.length(), 33);
-        hi.e eVar = new hi.e(context, getResourceProvider(), true);
-        eVar.setRoundRadius(24);
-        this.e0 = eVar;
-        eVar.setText(hd.N0(2131742754, null));
-        this.e0.setEnabled(false);
-        this.e0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.m9
-            public final /* synthetic */ da b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i7) {
-                    case 0:
-                        this.b.u0();
-                        break;
-                    case 1:
-                        da.e0(this.b);
-                        break;
-                    case 2:
-                        da daVar = this.b;
-                        BigDecimal n02 = daVar.n0();
-                        if (daVar.l0 || n02.signum() > 0) {
-                            long p02 = daVar.p0();
-                            daVar.l0 = !daVar.l0;
-                            daVar.F0();
-                            String l02 = p02 <= 0 ? "" : daVar.l0 ? daVar.l0(p02, n02) : da.q0(p02);
-                            daVar.F.setAmountText(l02);
-                            daVar.I.setSelection(l02.length());
-                            break;
-                        }
-                        break;
-                    default:
-                        da.d0(this.b);
-                        break;
-                }
-            }
-        });
-        this.a0.addView(this.e0, c8.ma.t(-1, 48, 87, 0, 14, 0, 0));
-        frameLayout.addView(this.a0, c8.ma.e(-1, -2, 87));
-        C0();
-        G0();
-        return this.fragmentView;
+        this.f = textView;
+        int i10 = org.telegram.ui.ActionBar.n6.z6;
+        org.telegram.ui.ActionBar.u6.U(textView, i10, i6Var);
+        textView.setTextSize(1, 44.0f);
+        textView.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
+        textView.setGravity(16);
+        textView.setIncludeFontPadding(false);
+        textView.setSingleLine(true);
+        textView.setVisibility(4);
+        textView.setAlpha(0.0f);
+        frameLayout.addView(textView, c8.na.e(-2, 60, 19));
+        z9 z9Var = new z9(this, context);
+        this.c = z9Var;
+        org.telegram.ui.ActionBar.u6.U(z9Var, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        org.telegram.ui.ActionBar.u6.D(z9Var, i10, i6Var);
+        z9Var.setHint("0");
+        z9Var.setTextSize(1, 44.0f);
+        z9Var.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
+        z9Var.setIncludeFontPadding(false);
+        z9Var.setSingleLine(true);
+        z9Var.setGravity(21);
+        z9Var.setBackground(null);
+        z9Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
+        z9Var.setMinWidth(org.telegram.messenger.g0.L(24.0f));
+        z9Var.setHorizontallyScrolling(true);
+        z9Var.setCursorWidth(3.0f);
+        z9Var.setCursorSize(org.telegram.messenger.g0.L(48.0f));
+        org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
+        org.telegram.ui.ActionBar.u6.l(z9Var, 30, i7, i6Var);
+        org.telegram.ui.ActionBar.u6.l(z9Var, 36, i7, i6Var);
+        org.telegram.ui.ActionBar.q6 K = org.telegram.ui.ActionBar.u6.K(0.3f, i7);
+        org.telegram.ui.ActionBar.u6.n(z9Var, 3, K.a, -1, 2, K.d, i6Var);
+        z9Var.setAllowDrawCursor(true);
+        z9Var.setInputType(8194);
+        z9Var.setKeyListener(DigitsKeyListener.getInstance("0123456789.,"));
+        z9Var.setImeOptions(33554438);
+        linearLayout.addView(z9Var, c8.na.r(-2, 60, 16));
+        org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(context, false, true, false, true, true);
+        this.h = x3Var;
+        x3Var.c.m(0.35f, 420L, 3.5f, kr.h);
+        x3Var.setScaleProperty(0.2f);
+        x3Var.setAllowCancel(true);
+        x3Var.getDrawable().c0 = new m(x3Var, 13);
+        x3Var.setTextColor(org.telegram.ui.ActionBar.n6.w0(this.a, i6Var));
+        x3Var.setTextSize(org.telegram.messenger.g0.L(28.0f));
+        x3Var.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
+        x3Var.setGravity(3);
+        x3Var.getDrawable().T = false;
+        x3Var.c(gd.N0(2131749340, null), false, true);
+        linearLayout.addView(x3Var, c8.na.t(-2, 60, 16, 4, 0, 0, 0));
+        setOnClickListener(new p3(this, 7));
+        z9Var.addTextChangedListener(new xh(this, 1));
     }
 
-    @Override // org.telegram.messenger.gs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.d4) {
-            D0();
-            C0();
+    public final void a(boolean z10) {
+        ValueAnimator valueAnimator = this.n;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.n.cancel();
+            this.n = null;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    public final void j0() {
-        try {
-            ShapeDrawable shapeDrawable = this.G;
-            if (shapeDrawable != null) {
-                shapeDrawable.getPaint().setColor(org.telegram.ui.ActionBar.m6.r1(0.08f, getThemedColor(org.telegram.ui.ActionBar.m6.z6)));
-                this.G.invalidateSelf();
-                org.telegram.ui.Components.o6 o6Var = this.O;
-                if (o6Var != null) {
-                    o6Var.invalidate();
-                }
-            }
-            if (this.H != null) {
-                int themedColor = getThemedColor(org.telegram.ui.ActionBar.m6.bm);
-                this.H.c.setColor(themedColor);
-                this.H.w = Integer.valueOf(themedColor);
-                this.H.invalidateSelf();
-                TextView textView = this.Q;
-                if (textView != null) {
-                    textView.invalidate();
-                }
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    public final void k0() {
-        ca caVar = this.F;
-        if (caVar != null) {
-            caVar.getDiamondView().l(null);
-        }
-        r1.g gVar = this.b0;
+        r1.g gVar = this.r;
         if (gVar != null) {
             gVar.d();
         }
-        this.c0 = 1.0f;
-        if (this.F != null) {
-            G0();
+        r1.g gVar2 = this.s;
+        if (gVar2 != null) {
+            gVar2.d();
         }
-    }
-
-    public final String l0(long j3, BigDecimal bigDecimal) {
-        BigDecimal movePointLeft = BigDecimal.valueOf(j3).multiply(bigDecimal).movePointLeft(9);
-        TL_wallet.currencyRate s02 = s0();
-        int max = Math.max(0, Math.min(s02 != null ? s02.exp : TextUtils.equals(u0.D(this.currentAccount).h.g(), "USD") ? 2 : 0, 20));
-        RoundingMode roundingMode = RoundingMode.HALF_UP;
-        BigDecimal scale = movePointLeft.setScale(max, roundingMode);
-        if (scale.signum() == 0 && movePointLeft.signum() != 0) {
-            scale = movePointLeft.setScale(Math.min(20, Math.max(max, movePointLeft.scale())), roundingMode);
-        }
-        int m0 = m0(bigDecimal);
-        if (scale.scale() > m0) {
-            scale = scale.setScale(m0, RoundingMode.DOWN);
-        }
-        BigDecimal multiply = BigDecimal.valueOf(Long.MAX_VALUE, 9).multiply(bigDecimal);
-        if (scale.compareTo(multiply) > 0) {
-            scale = multiply.setScale(scale.scale(), RoundingMode.DOWN);
-        }
-        return (scale.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : scale.stripTrailingZeros()).toPlainString();
-    }
-
-    public final BigDecimal n0() {
-        g gVar = u0.D(this.currentAccount).h;
-        gVar.f();
-        double h = gVar.h();
-        double d = ((org.telegram.messenger.i0) np.u1(this.currentAccount).A7.l.b).a;
-        return (h <= 0.0d || d <= 0.0d || Double.isNaN(h) || Double.isInfinite(h) || Double.isNaN(d) || Double.isInfinite(d)) ? BigDecimal.ZERO : BigDecimal.valueOf(h).multiply(BigDecimal.valueOf(d));
-    }
-
-    public final SpannableStringBuilder o0(u0 u0Var, long j3) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("≈ ");
-        int length = spannableStringBuilder.length();
-        spannableStringBuilder.append(u0Var.r(j3, false));
-        int length2 = spannableStringBuilder.length();
-        TL_wallet.currencyRate s02 = s0();
-        z0(spannableStringBuilder, length, length2, (s02 == null || TextUtils.isEmpty(s02.decimalSeparator)) ? '.' : s02.decimalSeparator.charAt(0));
-        return spannableStringBuilder.append((CharSequence) " ").append((CharSequence) this.M);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final AnimatorSet onCustomTransitionAnimation(boolean z10, Runnable runnable) {
-        View view;
-        TL_wallet.walletTransaction wallettransaction;
-        ca caVar;
-        View view2;
-        if (!z10 && this.u0 != null && (wallettransaction = this.r0) != null && wallettransaction.localMessageId != 0 && (caVar = this.F) != null) {
-            m7 diamondView = caVar.getDiamondView();
-            if (diamondView.f != null && diamondView.isShown() && diamondView.getAlpha() > 0.01f && (view2 = this.fragmentView) != null && (view2.getParent() instanceof View) && getParentLayout() != null) {
-                e7 e7Var = new e7(getParentLayout().getView(), (View) this.fragmentView.getParent(), this.F.getDiamondView(), this.u0, this.r0, runnable, null);
-                this.v0 = e7Var;
-                return e7Var.m;
-            }
-        }
-        if (z10 || this.s0 == null || this.r0 == null || this.F == null || (view = this.fragmentView) == null || !(view.getParent() instanceof View) || getParentLayout() == null) {
-            return super.onCustomTransitionAnimation(z10, runnable);
-        }
-        ra raVar = new ra(getParentLayout().getView(), (View) this.fragmentView.getParent(), this.F.getDiamondView(), this.s0, this.r0, runnable, null);
-        this.t0 = raVar;
-        return raVar.m;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ls.d4);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onFragmentDestroy() {
-        this.J = false;
-        k0();
-        e7 e7Var = this.v0;
-        if (e7Var != null) {
-            AnimatorSet animatorSet = e7Var.m;
-            if (!e7Var.v) {
-                if (animatorSet.isStarted()) {
-                    animatorSet.cancel();
-                } else {
-                    e7Var.a(false);
-                }
-            }
-            this.v0 = null;
-        }
-        ra raVar = this.t0;
-        if (raVar != null) {
-            AnimatorSet animatorSet2 = raVar.m;
-            if (!raVar.s) {
-                if (animatorSet2.isStarted()) {
-                    animatorSet2.cancel();
-                } else {
-                    raVar.b();
-                }
-            }
-            this.t0 = null;
-        }
-        ValueAnimator valueAnimator = this.Z;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.Z = null;
-        }
-        EditTextBoldCursor editTextBoldCursor = this.I;
-        if (editTextBoldCursor != null) {
-            editTextBoldCursor.removeCallbacks(this.K);
-        }
-        getNotificationCenter().n(this, ls.d4);
-        super.onFragmentDestroy();
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onInsets(int i7, int i10, int i11, int i12) {
-        this.j0 = i12;
-        if (this.a0 == null) {
+        FrameLayout frameLayout = this.e;
+        TextView textView = this.f;
+        n7 n7Var = this.d;
+        if (!z10) {
+            n7Var.setAlpha(this.x ? 0.0f : 1.0f);
+            textView.setAlpha(this.y ? 1.0f : 0.0f);
+            n7Var.setConversionWobble(0.0f);
+            textView.setRotation(0.0f);
+            n7Var.setEnabled(!this.x);
+            n7Var.setVisibility(this.x ? 4 : 0);
+            textView.setVisibility(this.y ? 0 : 4);
+            frameLayout.getLayoutParams().width = this.E;
+            frameLayout.requestLayout();
             return;
         }
-        int max = Math.max(0, this.k0 - i12);
-        this.a0.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f) + this.j0);
-        if (this.w0 != max) {
-            this.a0.animate().cancel();
-            this.a0.animate().translationY(-max).setDuration(320L).setInterpolator(nr.h).start();
-            this.w0 = max;
+        int i7 = frameLayout.getLayoutParams().width;
+        float alpha = n7Var.getAlpha();
+        float alpha2 = textView.getAlpha();
+        float f10 = this.x ? 0.0f : 1.0f;
+        float f11 = this.y ? 1.0f : 0.0f;
+        if (alpha > 0.0f || f10 > 0.0f) {
+            n7Var.setVisibility(0);
+        }
+        if (alpha2 > 0.0f || f11 > 0.0f) {
+            textView.setVisibility(0);
+        }
+        n7Var.setEnabled(!this.x);
+        float f12 = this.x ? 24.0f : -24.0f;
+        if (n7Var.getAlpha() < 0.01f) {
+            n7Var.setConversionWobble(f12);
+        }
+        r1.g gVar3 = new r1.g(new r1.f(n7Var.getConversionWobble()));
+        r1.h hVar = new r1.h(0.0f);
+        hVar.a(0.3f);
+        hVar.b(180.0f);
+        gVar3.m = hVar;
+        gVar3.f(0.1f);
+        gVar3.a = (-f12) * 10.0f;
+        gVar3.b(new z3(this, 3));
+        gVar3.h();
+        this.s = gVar3;
+        float f13 = this.x ? 18.0f : -18.0f;
+        textView.setPivotX(textView.getLayoutParams().width / 2.0f);
+        textView.setPivotY(0.0f);
+        if (textView.getAlpha() < 0.01f) {
+            textView.setRotation(f13);
+        }
+        r1.g gVar4 = new r1.g(textView, r1.g.s);
+        r1.h hVar2 = new r1.h(0.0f);
+        hVar2.a(0.3f);
+        hVar2.b(180.0f);
+        gVar4.m = hVar2;
+        gVar4.a = (-f13) * 10.0f;
+        gVar4.h();
+        this.r = gVar4;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.n = ofFloat;
+        ofFloat.setDuration(320L);
+        this.n.setInterpolator(new LinearInterpolator());
+        this.n.addUpdateListener(new y9(this, alpha, f10, alpha2, f11, i7, 0));
+        this.n.addListener(new i71(this, 12));
+        this.n.start();
+    }
+
+    public final void b() {
+        ValueAnimator valueAnimator = this.I;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.I = null;
+            this.J = 1.0f;
+            c();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final r0.l1 onInsetsInternal(View view, r0.l1 l1Var) {
-        this.k0 = l1Var.a.f(8).d;
-        return super.onInsetsInternal(view, l1Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onPause() {
-        k0();
-        this.J = false;
-        EditTextBoldCursor editTextBoldCursor = this.I;
-        if (editTextBoldCursor != null) {
-            editTextBoldCursor.removeCallbacks(this.K);
-            this.fragmentView.requestFocus();
-            org.telegram.messenger.g0.v1(this.I);
+    public final void c() {
+        z9 z9Var = this.c;
+        Editable text = z9Var.getText();
+        boolean z10 = this.G;
+        if (z10) {
+            CharSequence charSequence = text.length() == 0 ? "0" : null;
+            if (!TextUtils.equals(z9Var.getHint(), charSequence)) {
+                z9Var.setHint(charSequence);
+            }
         }
-        super.onPause();
+        float f10 = 0.0f;
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.H;
+            if (i7 >= arrayList.size()) {
+                break;
+            }
+            aa aaVar = (aa) arrayList.get(i7);
+            aaVar.d = f10;
+            f10 += aaVar.a();
+            if (text.getSpanStart(aaVar) >= 0) {
+                text.setSpan(aaVar, text.getSpanStart(aaVar), text.getSpanEnd(aaVar), 33);
+            }
+            i7++;
+        }
+        if (text.length() != 0 || this.J >= 1.0f) {
+            z9Var.setMinWidth((!z10 || text.length() <= 0) ? org.telegram.messenger.g0.L(24.0f) : org.telegram.messenger.g0.L(3.0f) + z9Var.getPaddingRight() + z9Var.getPaddingLeft());
+        } else {
+            float measureText = z9Var.getPaint().measureText("0");
+            int L = org.telegram.messenger.g0.L(24.0f);
+            float f11 = this.N;
+            z9Var.setMinWidth(Math.max(L, z9Var.getPaddingRight() + z9Var.getPaddingLeft() + Math.round((T.getInterpolation(this.J) * (measureText - f11)) + f11)));
+        }
+        z9Var.requestLayout();
+        z9Var.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onResume() {
-        super.onResume();
-        t0();
+    public final void d(v0 v0Var, boolean z10) {
+        TL_wallet.currencyRate currencyrate;
+        int i7;
+        TL_wallet.currencyRate currencyrate2;
+        String str;
+        g gVar = v0Var.h;
+        boolean z11 = this.w && isAttachedToWindow() && isShown();
+        boolean z12 = this.G;
+        z9 z9Var = this.c;
+        org.telegram.ui.Cells.x3 x3Var = this.h;
+        TextView textView = this.f;
+        if (z12) {
+            int i10 = z10 ? org.telegram.ui.ActionBar.n6.cm : org.telegram.ui.ActionBar.n6.Fi;
+            this.a = i10;
+            org.telegram.ui.ActionBar.i6 i6Var = this.F;
+            int w02 = org.telegram.ui.ActionBar.n6.w0(i10, i6Var);
+            org.telegram.ui.ActionBar.u6.U(textView, z10 ? org.telegram.ui.ActionBar.n6.cm : org.telegram.ui.ActionBar.n6.Fi, i6Var);
+            x3Var.c.v(w02, z11);
+            x3Var.invalidate();
+            org.telegram.ui.ActionBar.u6.v(z9Var, this.a, i6Var);
+            org.telegram.ui.ActionBar.u6.l(z9Var, 36, this.a, i6Var);
+            org.telegram.ui.ActionBar.q6 K = org.telegram.ui.ActionBar.u6.K(0.3f, z10 ? org.telegram.ui.ActionBar.n6.cm : org.telegram.ui.ActionBar.n6.Fi);
+            org.telegram.ui.ActionBar.u6.n(z9Var, 3, K.a, -1, 2, K.d, i6Var);
+        }
+        TL_wallet.currencyRate j3 = gVar.j();
+        String g10 = gVar.g();
+        boolean equals = TextUtils.equals(g10, "USD");
+        String str2 = (j3 == null || TextUtils.isEmpty(j3.symbol)) ? equals ? "$" : g10 : j3.symbol;
+        boolean z13 = z10 && (j3 == null ? equals : j3.symbolLeft);
+        boolean z14 = j3 != null && j3.spaceBetween;
+        boolean z15 = (this.x == z10 && this.y == z13 && (!z13 || TextUtils.equals(textView.getText(), str2))) ? false : true;
+        if (z13) {
+            textView.setText(str2);
+            currencyrate = j3;
+            textView.getLayoutParams().width = (int) Math.ceil(textView.getPaint().measureText(str2));
+            textView.requestLayout();
+        } else {
+            currencyrate = j3;
+        }
+        this.x = z10;
+        this.y = z13;
+        if (!z10) {
+            i7 = org.telegram.messenger.g0.L(59.0f);
+        } else if (z13) {
+            i7 = ((int) Math.ceil(textView.getPaint().measureText(str2))) + (z14 ? org.telegram.messenger.g0.L(8.0f) : 0);
+        } else {
+            i7 = 0;
+        }
+        this.E = i7;
+        if (z15 || !this.w) {
+            a(z11 && z15);
+        }
+        this.w = true;
+        if (!z10) {
+            g10 = gd.N0(2131749340, null);
+        } else if (!z13) {
+            g10 = str2;
+        }
+        x3Var.c(g10, z11, true);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) x3Var.getLayoutParams();
+        layoutParams.leftMargin = (!z10 || z13 || z14) ? org.telegram.messenger.g0.L(4.0f) : 0;
+        x3Var.setLayoutParams(layoutParams);
+        if (!z10 || currencyrate == null) {
+            currencyrate2 = currencyrate;
+            str = ",";
+        } else {
+            currencyrate2 = currencyrate;
+            str = currencyrate2.thousandsSeparator;
+            if (str == null) {
+                str = "";
+            }
+        }
+        String str3 = (!z10 || currencyrate2 == null || TextUtils.isEmpty(currencyrate2.decimalSeparator)) ? "." : currencyrate2.decimalSeparator;
+        if (TextUtils.equals(this.Q, str) && TextUtils.equals(this.R, str3)) {
+            return;
+        }
+        b();
+        this.Q = str;
+        this.R = str3;
+        f(z9Var.getText());
+        b();
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onThemeColorsChanged() {
+    public final void e(float f10, float f11, boolean z10) {
+        float f12 = 1.0f - f10;
+        LinearLayout linearLayout = this.b;
+        float width = (getWidth() / 2.0f) - linearLayout.getLeft();
+        FrameLayout frameLayout = this.e;
+        n7 n7Var = this.d;
+        frameLayout.setTranslationX((((width - frameLayout.getLeft()) - n7Var.getLeft()) - (n7Var.getWidth() / 2.0f)) * f12);
+        frameLayout.setTranslationY(m10.y(n7Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - n7Var.getTop(), f12) - (org.telegram.messenger.g0.L(36.0f) * ((float) Math.sin(f10 * 3.141592653589793d))));
+        org.telegram.ui.Cells.x3 x3Var = this.h;
+        int visibility = x3Var.getVisibility();
+        z9 z9Var = this.c;
+        float left = (1.0f - f11) * (width - ((z9Var.getLeft() + (visibility == 8 ? z9Var.getRight() : x3Var.getRight())) / 2.0f));
+        z9Var.setTranslationX(left);
+        x3Var.setTranslationX(left);
+        z9Var.setAlpha(f11);
+        x3Var.setAlpha(f11);
+        n7Var.setEnabled(z10 && !this.x);
+        n7Var.setIntroProgress(f10);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:130:0x02d2  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02f4  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0379  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0381  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x037b  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x018a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void f(Editable editable) {
+        float f10;
+        int max;
+        z9 z9Var;
+        int i7;
+        boolean z10;
+        boolean z11;
+        int i10;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        int i11;
+        boolean z12;
+        String obj = editable.toString();
+        int i12 = 0;
+        while (i12 < Math.min(obj.length(), this.L.length()) && obj.charAt(i12) == this.L.charAt(i12)) {
+            i12++;
+        }
+        int i13 = 0;
+        while (i13 < Math.min(obj.length(), this.L.length()) - i12) {
+            char charAt = obj.charAt((obj.length() - i13) - 1);
+            String str = this.L;
+            if (charAt != str.charAt((str.length() - i13) - 1)) {
+                break;
+            } else {
+                i13++;
+            }
+        }
+        int length = (this.L.length() - i12) - i13;
+        int length2 = (obj.length() - i12) - i13;
+        ArrayList arrayList3 = this.H;
+        ArrayList arrayList4 = new ArrayList(arrayList3);
+        ca caVar = (arrayList4.isEmpty() && this.L.isEmpty() && obj.startsWith("0")) ? new ca(this, 0.0f) : null;
+        ArrayList arrayList5 = new ArrayList();
+        ArrayList arrayList6 = new ArrayList();
+        ArrayList arrayList7 = new ArrayList();
+        ArrayList arrayList8 = new ArrayList();
+        int size = arrayList4.size();
+        float f11 = 0.0f;
+        int i14 = 0;
+        while (i14 < size) {
+            Object obj2 = arrayList4.get(i14);
+            i14++;
+            int i15 = size;
+            aa aaVar = (aa) obj2;
+            int i16 = length2;
+            arrayList5.add(aaVar.h.c());
+            arrayList8.add(Integer.valueOf(aaVar.a()));
+            f11 += aaVar.a();
+            ca caVar2 = aaVar.n;
+            if (caVar2 != null) {
+                arrayList6.add(caVar2.c());
+                arrayList7.add(aaVar.b);
+            }
+            length2 = i16;
+            size = i15;
+        }
+        int i17 = length2;
+        ValueAnimator valueAnimator = this.I;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.I = null;
+        }
+        Object[] objArr = (aa[]) editable.getSpans(0, editable.length(), aa.class);
+        int i18 = 0;
+        for (int length3 = objArr.length; i18 < length3; length3 = length3) {
+            editable.removeSpan(objArr[i18]);
+            i18++;
+        }
+        arrayList3.clear();
+        ArrayList arrayList9 = this.M;
+        arrayList9.clear();
+        int max2 = Math.max(obj.indexOf(46), obj.indexOf(44));
+        int length4 = max2 < 0 ? obj.length() : max2;
+        ca caVar3 = caVar;
+        if (this.Q.isEmpty()) {
+            f10 = f11;
+            max = 0;
+        } else {
+            f10 = f11;
+            max = Math.max(0, (length4 - 1) / 3);
+        }
+        this.K = 0.0f;
+        boolean isAttachedToWindow = isAttachedToWindow();
+        z9 z9Var2 = this.c;
+        if (isAttachedToWindow) {
+            z9Var = z9Var2;
+            i7 = max;
+            if (z9Var.getSelectionStart() == z9Var.getSelectionEnd()) {
+                z10 = true;
+                boolean[] zArr = new boolean[arrayList4.size()];
+                z11 = z10;
+                boolean[] zArr2 = new boolean[arrayList6.size()];
+                i10 = 0;
+                int i19 = 0;
+                int i20 = 0;
+                while (i10 < obj.length()) {
+                    int i21 = i10 < i12 ? i10 : i10 >= i12 + i17 ? (i10 - i17) + length : -1;
+                    ArrayList arrayList10 = arrayList7;
+                    boolean z13 = i21 >= 0 && i21 < arrayList4.size();
+                    if (z13) {
+                        zArr[i21] = true;
+                    }
+                    boolean z14 = z13;
+                    boolean z15 = !this.Q.isEmpty() && i10 > 0 && i10 < length4 && (length4 - i10) % 3 == 0;
+                    int i22 = length4;
+                    ArrayList arrayList11 = arrayList9;
+                    String valueOf = i10 == max2 ? this.R : String.valueOf(obj.charAt(i10));
+                    if (max2 < 0 || i10 < max2) {
+                        i11 = max2;
+                        z12 = false;
+                    } else {
+                        i11 = max2;
+                        z12 = true;
+                    }
+                    aa aaVar2 = new aa(this, valueOf, z15, z12);
+                    float measureText = z15 ? z9Var.getPaint().measureText(this.Q) : 0.0f;
+                    TextPaint paint = z9Var.getPaint();
+                    float f12 = measureText;
+                    float textSize = paint.getTextSize();
+                    boolean z16 = z15;
+                    if (aaVar2.c) {
+                        paint.setTextSize((28.0f * textSize) / 44.0f);
+                    }
+                    float measureText2 = paint.measureText(aaVar2.b) + paint.measureText(aaVar2.a);
+                    paint.setTextSize(textSize);
+                    aaVar2.f = (int) Math.ceil(measureText2);
+                    aaVar2.e = z14 ? ((Integer) arrayList8.get(i21)).intValue() : 0;
+                    if (i10 == 0 && caVar3 != null) {
+                        aaVar2.e = aaVar2.f;
+                    }
+                    if (this.G && i10 == 0 && this.L.isEmpty() && arrayList4.isEmpty()) {
+                        aaVar2.e = (int) Math.ceil(z9Var.getPaint().measureText("0"));
+                    }
+                    i19 += aaVar2.e;
+                    aaVar2.h = new ca(this, z14 ? (ca) arrayList5.get(i21) : i10 == 0 ? caVar3 : null, this.K + f12, false);
+                    if (z16) {
+                        int i23 = i20 + 1;
+                        int size2 = (arrayList6.size() - i7) + i20;
+                        if (size2 >= 0) {
+                            zArr2[size2] = true;
+                        }
+                        aaVar2.n = new ca(this, size2 >= 0 ? (ca) arrayList6.get(size2) : null, this.K, false);
+                        i20 = i23;
+                    }
+                    arrayList3.add(aaVar2);
+                    this.K += aaVar2.f;
+                    int i24 = i10 + 1;
+                    editable.setSpan(aaVar2, i10, i24, 33);
+                    i10 = i24;
+                    arrayList7 = arrayList10;
+                    length4 = i22;
+                    arrayList9 = arrayList11;
+                    max2 = i11;
+                }
+                ArrayList arrayList12 = arrayList9;
+                ArrayList arrayList13 = arrayList7;
+                if (!arrayList3.isEmpty()) {
+                    ((aa) arrayList3.get(Math.min(i12, arrayList3.size() - 1))).e += Math.max(0, Math.round(f10) - i19);
+                }
+                if (z11) {
+                    int i25 = 0;
+                    while (i25 < arrayList4.size()) {
+                        if (zArr[i25] || (obj.isEmpty() && i25 == 0 && ((aa) arrayList4.get(i25)).a.equals("0"))) {
+                            arrayList2 = arrayList12;
+                        } else {
+                            aa aaVar3 = (aa) arrayList4.get(i25);
+                            ba baVar = new ba(this, aaVar3.a, aaVar3.c, (ca) arrayList5.get(i25));
+                            arrayList2 = arrayList12;
+                            arrayList2.add(baVar);
+                        }
+                        i25++;
+                        arrayList12 = arrayList2;
+                    }
+                    ArrayList arrayList14 = arrayList12;
+                    int i26 = 0;
+                    while (i26 < arrayList6.size()) {
+                        if (zArr2[i26]) {
+                            arrayList = arrayList13;
+                        } else {
+                            arrayList = arrayList13;
+                            arrayList14.add(new ba(this, (String) arrayList.get(i26), false, (ca) arrayList6.get(i26)));
+                        }
+                        i26++;
+                        arrayList13 = arrayList;
+                    }
+                    if (obj.isEmpty() && !arrayList4.isEmpty()) {
+                        this.N = f10;
+                    }
+                }
+                this.L = obj;
+                this.J = !z11 ? 0.0f : 1.0f;
+                if (z11) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    this.I = ofFloat;
+                    ofFloat.setDuration(320L);
+                    this.I.setInterpolator(new LinearInterpolator());
+                    this.I.addUpdateListener(new a4(this, 9));
+                    this.I.start();
+                }
+                c();
+            }
+        } else {
+            z9Var = z9Var2;
+            i7 = max;
+        }
+        z10 = false;
+        boolean[] zArr3 = new boolean[arrayList4.size()];
+        z11 = z10;
+        boolean[] zArr22 = new boolean[arrayList6.size()];
+        i10 = 0;
+        int i192 = 0;
+        int i202 = 0;
+        while (i10 < obj.length()) {
+        }
+        ArrayList arrayList122 = arrayList9;
+        ArrayList arrayList132 = arrayList7;
+        if (!arrayList3.isEmpty()) {
+        }
+        if (z11) {
+        }
+        this.L = obj;
+        this.J = !z11 ? 0.0f : 1.0f;
+        if (z11) {
+        }
+        c();
+    }
+
+    public org.telegram.ui.Components.n6 getCurrencyView() {
+        return this.h;
+    }
+
+    public n7 getDiamondView() {
+        return this.d;
+    }
+
+    public EditTextBoldCursor getEditText() {
+        return this.c;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        b();
+        a(false);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        z9 z9Var = this.c;
+        int baseline = z9Var.getBaseline() + z9Var.getTop();
+        TextView textView = this.f;
+        if (textView.getVisibility() == 0) {
+            textView.setTranslationY(((baseline - this.e.getTop()) - textView.getTop()) - textView.getBaseline());
+        }
+        this.h.setTranslationY((baseline - r3.getTop()) - r3.getBaseline());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
+        LinearLayout linearLayout = this.b;
+        linearLayout.measure(makeMeasureSpec, makeMeasureSpec2);
+        float min = Math.min(1.0f, getMeasuredWidth() / Math.max(1, linearLayout.getMeasuredWidth()));
+        linearLayout.setPivotX(linearLayout.getMeasuredWidth() / 2.0f);
+        linearLayout.setPivotY(linearLayout.getMeasuredHeight() / 2.0f);
+        linearLayout.setScaleX(min);
+        linearLayout.setScaleY(min);
+    }
+
+    public void setAmountText(String str) {
+        this.S = true;
         try {
-            super.onThemeColorsChanged();
-            j0();
-            int themedColor = getThemedColor(org.telegram.ui.ActionBar.m6.d6);
-            LinearLayout linearLayout = this.a0;
-            if (linearLayout == null || themedColor == this.x0 || !(linearLayout.getBackground() instanceof GradientDrawable)) {
+            this.c.setText(str);
+        } finally {
+            this.S = false;
+        }
+    }
+
+    public void setScaleProperty(float f10) {
+        this.P = 1.0f - Math.max(0.0f, Math.min(1.0f, f10));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        org.telegram.ui.Cells.x3 x3Var;
+        z9 z9Var = this.c;
+        if (z9Var == null) {
+            return;
+        }
+        try {
+            int w02 = org.telegram.ui.ActionBar.n6.w0(this.a, this.F);
+            z9Var.setCursorColor(w02);
+            z9Var.setHandlesColor(w02);
+            if (!this.G || (x3Var = this.h) == null) {
                 return;
             }
-            this.x0 = themedColor;
-            ((GradientDrawable) this.a0.getBackground()).setColors(new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, themedColor), themedColor, themedColor});
+            x3Var.c.v(w02, false);
+            x3Var.invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        EditTextBoldCursor editTextBoldCursor;
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || z11 || !this.J || (editTextBoldCursor = this.I) == null) {
-            return;
-        }
-        Runnable runnable = this.K;
-        editTextBoldCursor.removeCallbacks(runnable);
-        this.I.post(runnable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        EditTextBoldCursor editTextBoldCursor;
-        ca caVar;
-        super.onTransitionAnimationStart(z10, z11);
-        if (z10 && !z11 && (caVar = this.F) != null && this.c0 < 1.0f) {
-            caVar.getDiamondView().l(new n9(this, 1));
-        }
-        if (!z10 || z11 || (editTextBoldCursor = this.I) == null) {
-            return;
-        }
-        Runnable runnable = this.K;
-        editTextBoldCursor.removeCallbacks(runnable);
-        if (this.s > 0) {
-            EditTextBoldCursor editTextBoldCursor2 = this.I;
-            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-        } else {
-            this.J = true;
-            this.I.requestFocus();
-            this.I.post(runnable);
-        }
-    }
-
-    public final long p0() {
-        EditTextBoldCursor editTextBoldCursor = this.I;
-        if (editTextBoldCursor == null) {
-            return 0L;
-        }
-        BigDecimal v02 = v0(editTextBoldCursor.getText().toString());
-        if (this.l0) {
-            BigDecimal n02 = n0();
-            if (n02.signum() <= 0) {
-                return 0L;
-            }
-            v02 = v02.divide(n02, 9, RoundingMode.DOWN).setScale(2, RoundingMode.HALF_UP);
-        }
-        BigInteger bigInteger = v02.movePointRight(9).toBigInteger();
-        if (bigInteger.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0) {
-            return Long.MAX_VALUE;
-        }
-        return bigInteger.longValue();
-    }
-
-    public final byte[] r0() {
-        TL_wallet.walletUserAddress walletuseraddress = this.e;
-        if (walletuseraddress == null || walletuseraddress.public_key == null) {
-            return null;
-        }
-        int i7 = 0;
-        while (true) {
-            byte[] bArr = this.e.public_key;
-            if (i7 >= bArr.length) {
-                return null;
-            }
-            if (bArr[i7] != 0) {
-                return bArr;
-            }
-            i7++;
-        }
-    }
-
-    public final TL_wallet.currencyRate s0() {
-        g gVar = u0.D(this.currentAccount).h;
-        TL_wallet.currencyRates f10 = gVar.f();
-        if (f10 == null) {
-            return null;
-        }
-        ArrayList<TL_wallet.currencyRate> arrayList = f10.rates;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            TL_wallet.currencyRate currencyrate = arrayList.get(i7);
-            i7++;
-            TL_wallet.currencyRate currencyrate2 = currencyrate;
-            if (currencyrate2 != null && TextUtils.equals(currencyrate2.currency, gVar.g())) {
-                return currencyrate2;
-            }
-        }
-        return null;
-    }
-
-    public final void t0() {
-        if (WalletEngine2.isValidRecipientAddress(this.h)) {
-            this.f0 = -1L;
-            D0();
-            u0 D = u0.D(this.currentAccount);
-            if (!D.M() || u0.c(D.y(), this.h) || this.f == null || !TextUtils.isEmpty(this.n)) {
-                D.m(this.h, 0L, this.h0, this.i0 ? r0() : null, new p9(this, 1));
-            }
-        }
-    }
-
-    public final void u0() {
-        Activity parentActivity = getParentActivity();
-        if (parentActivity == null) {
-            return;
-        }
-        boolean z10 = this.k0 - this.j0 > org.telegram.messenger.g0.L(20.0f);
-        AlertDialog$Builder v1Var = z10 ? new org.telegram.ui.ActionBar.v1(0, parentActivity, getResourceProvider()) : new AlertDialog$Builder(0, parentActivity, getResourceProvider());
-        String N0 = hd.N0(2131742959, null);
-        org.telegram.ui.ActionBar.t1 t1Var = v1Var.a;
-        t1Var.S = N0;
-        final kg.z0 z0Var = new kg.z0(this, parentActivity);
-        z0Var.setTextSize(1, 18.0f);
-        org.telegram.ui.ActionBar.t6.U(z0Var, org.telegram.ui.ActionBar.m6.j5, getResourceProvider());
-        org.telegram.ui.ActionBar.t6.D(z0Var, org.telegram.ui.ActionBar.m6.t5, getResourceProvider());
-        z0Var.setHint(hd.N0(2131742923, null));
-        z0Var.setText(this.h0);
-        z0Var.setSelection(z0Var.length());
-        z0Var.setInputType(147457);
-        z0Var.setMaxLines(5);
-        int i7 = 6;
-        z0Var.setImeOptions(6);
-        org.telegram.ui.ActionBar.t6.F(z0Var, org.telegram.ui.ActionBar.m6.k6, org.telegram.ui.ActionBar.m6.l6, org.telegram.ui.ActionBar.m6.p7, getResourceProvider());
-        z0Var.setBackground(null);
-        z0Var.setPadding(0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(10.0f));
-        org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, parentActivity, getResourceProvider());
-        int i10 = org.telegram.ui.ActionBar.m6.i6;
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i10, this.resourceProvider), 7, org.telegram.messenger.g0.L(12.0f));
-        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i10);
-        org.telegram.ui.ActionBar.h6 h6Var = this.resourceProvider;
-        d2Var.setBackground(h02);
-        org.telegram.ui.ActionBar.t6.j(d2Var, h02, null, M, h6Var);
-        d2Var.e(hd.N0(2131742830, null), "", !this.i0 || r0() == null, false, false);
-        d2Var.setMultiline(true);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
-        layoutParams.topMargin = 0;
-        layoutParams.gravity = (hd.a0 ? 5 : 3) | 16;
-        d2Var.getCheckBoxView().setLayoutParams(layoutParams);
-        d2Var.setPadding(hd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
-        d2Var.setEnabled(r0() != null);
-        d2Var.setOnClickListener(new o3(d2Var, i7));
-        LinearLayout linearLayout = new LinearLayout(parentActivity);
-        linearLayout.setOrientation(1);
-        linearLayout.addView(z0Var, c8.ma.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
-        linearLayout.addView(d2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
-        t1Var.H = 6;
-        v1Var.o(linearLayout);
-        t1Var.a = org.telegram.messenger.g0.L(292.0f);
-        v1Var.h(hd.N0(2131752577, null), new m60(20));
-        int i11 = 2;
-        v1Var.k(hd.N0(2131754483, null), new x8(this, z0Var, d2Var, i11));
-        t1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Wallet.q9
-            @Override // android.content.DialogInterface.OnShowListener
-            public final void onShow(DialogInterface dialogInterface) {
-                kg.z0 z0Var2 = kg.z0.this;
-                z0Var2.requestFocus();
-                org.telegram.messenger.g0.I3(z0Var2);
-            }
-        });
-        t1Var.setOnDismissListener(new q2(this, i11));
-        if (z10) {
-            t1Var.r(250L);
-        } else {
-            t1Var.show();
-        }
-        t1Var.k0 = false;
-        View d = t1Var.d(-1);
-        if (!(d instanceof TextView) || TextUtils.isEmpty(this.h0)) {
-            return;
-        }
-        z0Var.addTextChangedListener(new bi.v5(z0Var, (TextView) d));
-    }
-
-    public final void w0() {
-        org.telegram.ui.ActionBar.r4 parentLayout = getParentLayout();
-        if (parentLayout == null) {
-            finishFragment();
-            return;
-        }
-        ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
-        if (arrayList.isEmpty() || i5.c.h(1, arrayList) != this) {
-            return;
-        }
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
-            if (g2Var instanceof na) {
-                ((ActionBarLayout) parentLayout).d0(g2Var, false);
-            }
-        }
-        List fragmentStack = parentLayout.getFragmentStack();
-        if (fragmentStack.size() >= 2 && (p5.c.h(2, fragmentStack) instanceof n6) && ((org.telegram.ui.ActionBar.g2) p5.c.h(2, fragmentStack)).getCurrentAccount() == this.currentAccount) {
-            this.s0 = (n6) p5.c.h(2, fragmentStack);
-        } else {
-            n6 n6Var = new n6();
-            n6Var.setCurrentAccount(this.currentAccount);
-            if (((ActionBarLayout) parentLayout).c(fragmentStack.size() - 1, n6Var)) {
-                this.s0 = n6Var;
-            }
-        }
-        finishFragment();
-    }
-
-    public final void x0() {
-        this.g0 = true;
-    }
-
-    public final void y0(float f10) {
-        this.Y = f10;
-        this.U.setAlpha(f10);
-        this.U.setVisibility(f10 > 0.0f ? 0 : 8);
-        ((LinearLayout.LayoutParams) this.U.getLayoutParams()).topMargin = Math.round(org.telegram.messenger.g0.L(4.0f) * f10);
-        this.U.requestLayout();
-    }
-
-    public da(String str) {
-        this(k10.t0, str);
-    }
-
-    public da(int i7, String str) {
-        this.s = 0L;
-        this.K = new n9(this, 0);
-        this.L = new ViewTreeObserver.OnWindowFocusChangeListener() { // from class: org.telegram.ui.Wallet.o9
-            @Override // android.view.ViewTreeObserver.OnWindowFocusChangeListener
-            public final void onWindowFocusChanged(boolean z10) {
-                EditTextBoldCursor editTextBoldCursor;
-                da daVar = da.this;
-                Runnable runnable = daVar.K;
-                if (z10 && daVar.J && (editTextBoldCursor = daVar.I) != null) {
-                    editTextBoldCursor.removeCallbacks(runnable);
-                    daVar.I.post(runnable);
-                }
-            }
-        };
-        this.f0 = -1L;
-        this.i0 = true;
-        this.p0 = 6;
-        setCurrentAccount(i7);
-        this.f = null;
-        this.h = str;
-        t0();
-        this.r = true;
-        u0.D(this.currentAccount).i0(new p9(this, 0), str);
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public final void Z(ArrayList arrayList, c51 c51Var) {
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public final void b0(o41 o41Var, View view) {
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

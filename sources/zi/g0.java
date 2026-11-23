@@ -2,16 +2,16 @@ package zi;
 
 import java.io.File;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.f20;
-import org.telegram.messenger.ff;
-import org.telegram.ui.Components.a50;
-import org.telegram.ui.Components.b50;
-import org.telegram.ui.Components.qf;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.ef;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.py0;
 import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.ry0;
-import org.telegram.ui.Components.sy0;
+import org.telegram.ui.Components.x40;
+import org.telegram.ui.Components.y40;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g0 implements Runnable {
         synchronized (u0Var.g) {
             if (!u0Var.H && !q0Var.d && !q0Var.e) {
                 q0Var.e = true;
-                ((sy0) u0Var.e).b(q0Var.a, file.length(), file);
+                ((ry0) u0Var.e).b(q0Var.a, file.length(), file);
                 u0Var.i.post(new g0(u0Var, q0Var, j3, file, z10));
             }
         }
@@ -46,8 +46,8 @@ public final /* synthetic */ class g0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ry0 ry0Var;
-        ry0 ry0Var2;
+        qy0 qy0Var;
+        qy0 qy0Var2;
         switch (this.a) {
             case 0:
                 a();
@@ -65,27 +65,27 @@ public final /* synthetic */ class g0 implements Runnable {
                 u0Var.x(8);
                 u0Var.m.b("output completed: generation=" + q0Var.a + ", durationMs=" + j3 + ", size=" + file.length() + ", hasAudio=" + z10);
                 u0Var.m("completed");
-                qf qfVar = u0Var.d;
+                aa aaVar = u0Var.d;
                 long j10 = q0Var.a;
-                b50 b50Var = (b50) qfVar.b;
-                a50 a50Var = b50Var.V;
-                if (a50Var != null) {
-                    b50Var.V = null;
-                    b50Var.l0 = true;
-                    sy0 sy0Var = b50Var.T;
-                    if (sy0Var == null) {
-                        ry0Var2 = null;
+                y40 y40Var = (y40) aaVar.b;
+                x40 x40Var = y40Var.V;
+                if (x40Var != null) {
+                    y40Var.V = null;
+                    y40Var.l0 = true;
+                    ry0 ry0Var = y40Var.T;
+                    if (ry0Var == null) {
+                        qy0Var2 = null;
                     } else {
-                        synchronized (sy0Var) {
+                        synchronized (ry0Var) {
                             try {
                                 try {
-                                    qy0 qy0Var = (qy0) sy0Var.c.get(Long.valueOf(j10));
-                                    if (qy0Var == null || qy0Var.e) {
-                                        ry0Var = new ry0(file.length(), null, null, null, null);
+                                    py0 py0Var = (py0) ry0Var.c.get(Long.valueOf(j10));
+                                    if (py0Var == null || py0Var.e) {
+                                        qy0Var = new qy0(file.length(), null, null, null, null);
                                     } else {
-                                        ry0Var = new ry0(Math.max(qy0Var.c, file.length()), qy0Var.f, qy0Var.g, qy0Var.h, qy0Var.i);
+                                        qy0Var = new qy0(Math.max(py0Var.c, file.length()), py0Var.f, py0Var.g, py0Var.h, py0Var.i);
                                     }
-                                    ry0Var2 = ry0Var;
+                                    qy0Var2 = qy0Var;
                                 } catch (Throwable th2) {
                                     th = th2;
                                     throw th;
@@ -96,21 +96,21 @@ public final /* synthetic */ class g0 implements Runnable {
                             }
                         }
                     }
-                    f20 t6 = b50Var.t(file, j3, ry0Var2);
+                    d20 t6 = y40Var.t(file, j3, qy0Var2);
                     t6.t = !z10;
-                    ff ffVar = new ff(0, file.getAbsolutePath(), 0, true, 0, 0);
-                    ffVar.x = a50Var.c;
-                    ffVar.y = a50Var.d;
-                    b50Var.e.u(ffVar, t6, a50Var.a, a50Var.b, 0, false, a50Var.e);
-                    sy0 sy0Var2 = b50Var.T;
-                    if (sy0Var2 != null) {
-                        sy0Var2.d(false);
+                    ef efVar = new ef(0, file.getAbsolutePath(), 0, true, 0, 0);
+                    efVar.x = x40Var.c;
+                    efVar.y = x40Var.d;
+                    y40Var.e.u(efVar, t6, x40Var.a, x40Var.b, 0, false, x40Var.e);
+                    ry0 ry0Var2 = y40Var.T;
+                    if (ry0Var2 != null) {
+                        ry0Var2.d(false);
                     }
-                    b50Var.T = null;
+                    y40Var.T = null;
                     MediaController.B().Y(false);
-                    if (b50Var.a0) {
-                        b50Var.a0 = false;
-                        b50Var.P = null;
+                    if (y40Var.a0) {
+                        y40Var.a0 = false;
+                        y40Var.P = null;
                     }
                 }
                 if (u0Var.G) {

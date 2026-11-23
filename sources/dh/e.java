@@ -5,9 +5,9 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.support.v4.media.session.w;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class e {
     public final RenderNode a = w.c();
@@ -60,7 +60,7 @@ public final class e {
         int i10 = gVar.d;
         float f16 = (f10 * i10) / f12;
         float f17 = (f11 * i10) / f14;
-        long r10 = si.r(si.r(si.r(si.r(si.r(0L, renderNode.getUniqueId()), round), round2), width), height);
+        long r10 = ri.r(ri.r(ri.r(ri.r(ri.r(0L, renderNode.getUniqueId()), round), round2), width), height);
         boolean z11 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
         int i11 = 0;
         while (true) {

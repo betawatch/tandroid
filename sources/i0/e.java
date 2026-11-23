@@ -10,11 +10,11 @@ import android.os.Looper;
 import android.os.Trace;
 import android.util.Log;
 import androidx.biometric.o;
-import c8.ke;
-import c8.m0;
+import c8.le;
+import c8.n0;
 import fi.l4;
 import h2.j0;
-import hi.t5;
+import hi.u0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.lang.reflect.Method;
@@ -24,16 +24,17 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import jb.m;
 import m9.u;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final m0 a;
+    public static final n0 a;
     public static final a0.j b;
 
     static {
-        ke.a("TypefaceCompat static init");
+        le.a("TypefaceCompat static init");
         int i7 = Build.VERSION.SDK_INT;
         if (i7 >= 29) {
             a = new j();
@@ -57,9 +58,9 @@ public abstract class e {
         Trace.endSection();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0029, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x002a, code lost:
     
-        if (r1.equals(r5) == false) goto L15;
+        if (r2.equals(r7) == false) goto L15;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -72,8 +73,7 @@ public abstract class e {
         if (dVar instanceof h0.g) {
             h0.g gVar = (h0.g) dVar;
             String str2 = gVar.e;
-            a10 = null;
-            boolean z10 = false;
+            Typeface typeface2 = null;
             if (str2 != null && !str2.isEmpty()) {
                 typeface = Typeface.create(str2, 0);
                 Typeface create = Typeface.create(Typeface.DEFAULT, 0);
@@ -85,12 +85,12 @@ public abstract class e {
                 new Handler(Looper.getMainLooper()).post(new l4(i12, j0Var, typeface));
                 return typeface;
             }
-            int i13 = 1;
-            boolean z11 = gVar.d == 0;
-            int i14 = gVar.c;
+            boolean z10 = gVar.d == 0;
+            int i13 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            t5 t5Var = new t5(i13);
-            t5Var.b = j0Var;
+            int i14 = 3;
+            u0 u0Var = new u0(i14);
+            u0Var.b = j0Var;
             o0.d dVar2 = gVar.b;
             int i15 = 2;
             if (dVar2 != null) {
@@ -111,16 +111,16 @@ public abstract class e {
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
             o oVar = new o(handler, 4);
-            k8.a aVar = new k8.a(t5Var, oVar, z10, 6);
+            m mVar = new m(7, u0Var, oVar);
             int i17 = 24;
-            if (!z11) {
+            if (!z10) {
                 String a11 = o0.g.a(i11, unmodifiableList);
-                Typeface typeface2 = (Typeface) o0.g.a.a(a11);
-                if (typeface2 != null) {
-                    oVar.execute(new u(i17, t5Var, typeface2));
-                    a10 = typeface2;
+                Typeface typeface3 = (Typeface) o0.g.a.a(a11);
+                if (typeface3 != null) {
+                    oVar.execute(new u(i17, u0Var, typeface3));
+                    typeface2 = typeface3;
                 } else {
-                    f5.u uVar = new f5.u(aVar, i15);
+                    f5.u uVar = new f5.u(mVar, i15);
                     synchronized (o0.g.c) {
                         try {
                             l lVar = o0.g.d;
@@ -133,7 +133,7 @@ public abstract class e {
                                 lVar.put(a11, arrayList4);
                                 o0.e eVar = new o0.e(a11, context, unmodifiableList, i11, 1);
                                 ThreadPoolExecutor threadPoolExecutor = o0.g.b;
-                                f5.u uVar2 = new f5.u(a11, 3);
+                                f5.u uVar2 = new f5.u(a11, i14);
                                 Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
                                 a9.h hVar = new a9.h();
                                 hVar.b = eVar;
@@ -156,37 +156,40 @@ public abstract class e {
                 Objects.requireNonNull(obj3);
                 arrayList5.add(obj3);
                 String a12 = o0.g.a(i11, DesugarCollections.unmodifiableList(arrayList5));
-                Typeface typeface3 = (Typeface) o0.g.a.a(a12);
-                if (typeface3 != null) {
-                    oVar.execute(new u(i17, t5Var, typeface3));
-                    a10 = typeface3;
-                } else if (i14 == -1) {
+                Typeface typeface4 = (Typeface) o0.g.a.a(a12);
+                if (typeface4 != null) {
+                    oVar.execute(new u(i17, u0Var, typeface4));
+                    typeface2 = typeface4;
+                } else if (i13 == -1) {
                     Object[] objArr3 = {dVar3};
                     ArrayList arrayList6 = new ArrayList(1);
                     Object obj4 = objArr3[0];
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.f b10 = o0.g.b(a12, context, DesugarCollections.unmodifiableList(arrayList6), i11);
-                    aVar.P0(b10);
-                    a10 = b10.a;
+                    mVar.E0(b10);
+                    typeface2 = b10.a;
                 } else {
                     try {
                         try {
-                            o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a12, context, dVar3, i11, 0)).get(i14, TimeUnit.MILLISECONDS);
-                            aVar.P0(fVar);
-                            a10 = fVar.a;
-                        } catch (InterruptedException e10) {
-                            throw e10;
+                            try {
+                                o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a12, context, dVar3, i11, 0)).get(i13, TimeUnit.MILLISECONDS);
+                                mVar.E0(fVar);
+                                typeface2 = fVar.a;
+                            } catch (InterruptedException e10) {
+                                throw e10;
+                            }
                         } catch (ExecutionException e11) {
                             throw new RuntimeException(e11);
                         } catch (TimeoutException unused) {
                             throw new InterruptedException("timeout");
                         }
                     } catch (InterruptedException unused2) {
-                        ((o) aVar.c).execute(new j6.o((t5) aVar.b, -3));
+                        ((o) mVar.c).execute(new i6.g((u0) mVar.b, -3));
                     }
                 }
             }
+            a10 = typeface2;
         } else {
             a10 = a.a(context, (h0.e) dVar, resources, i11);
             if (a10 != null) {

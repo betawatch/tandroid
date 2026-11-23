@@ -8,58 +8,58 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.g7;
-import bi.p5;
-import c8.ma;
+import bi.j7;
+import bi.s5;
+import c8.na;
 import di.i4;
 import di.v6;
 import fi.a6;
 import fi.o6;
 import fi.p6;
-import hi.c7;
+import hi.x7;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.p7;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.fq0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.eq0;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public abstract class q extends FrameLayout implements b6, gs {
+public abstract class q extends FrameLayout implements c6, fs {
     public static LongSparseArray F;
     public static LongSparseArray G;
     public int E;
     public final g2 a;
     public final int b;
-    public final h6 c;
+    public final i6 c;
     public final long d;
     public final a6 e;
     public final ArrayList f;
     public final ArrayList h;
-    public final p5 n;
-    public final i71 r;
+    public final s5 n;
+    public final j71 r;
     public Boolean s;
     public int w;
     public float x;
@@ -71,14 +71,14 @@ public abstract class q extends FrameLayout implements b6, gs {
         this.h = new ArrayList();
         this.s = null;
         this.w = g0.q.y;
-        this.E = Utilities.j(cz.u1, 6, 2);
+        this.E = Utilities.j(bz.u1, 6, 2);
         this.a = g2Var;
         int currentAccount = g2Var.getCurrentAccount();
         this.b = currentAccount;
-        h6 resourceProvider = g2Var.getResourceProvider();
+        i6 resourceProvider = g2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
-        setBackgroundColor(m6.w(m6.w0(m6.d6, resourceProvider), m6.r1(0.04f, m6.w0(m6.G6, resourceProvider))));
+        setBackgroundColor(n6.w(n6.w0(n6.d6, resourceProvider), n6.r1(0.04f, n6.w0(n6.G6, resourceProvider))));
         if (G == null) {
             G = new LongSparseArray();
         }
@@ -97,17 +97,17 @@ public abstract class q extends FrameLayout implements b6, gs {
             a6Var = a6Var2;
         }
         this.e = a6Var;
-        fq0 fq0Var = (fq0) this;
-        p5 p5Var = new p5(fq0Var, context);
-        this.n = p5Var;
-        p5Var.setAllowDisallowInterceptTouch(true);
-        p5Var.setAdapter(new i4(1, context, fq0Var));
-        addView(p5Var, ma.e(-1, -1, ls.E1));
-        i71 i7 = p5Var.i(9, true);
-        this.r = i7;
-        i7.r = 12;
-        i7.setPreTabClick(new v6(fq0Var, 14));
-        addView(i7, ma.e(-1, 42, 48));
+        eq0 eq0Var = (eq0) this;
+        s5 s5Var = new s5(eq0Var, context);
+        this.n = s5Var;
+        s5Var.setAllowDisallowInterceptTouch(true);
+        s5Var.setAdapter(new i4(1, context, eq0Var));
+        addView(s5Var, na.e(-1, -1, ks.E1));
+        j71 k10 = s5Var.k(9, true);
+        this.r = k10;
+        k10.r = 12;
+        k10.setPreTabClick(new v6(eq0Var, 14));
+        addView(k10, na.e(-1, 42, 48));
         i(false);
     }
 
@@ -116,15 +116,15 @@ public abstract class q extends FrameLayout implements b6, gs {
         if (g2Var == null || g2Var.getParentActivity() == null) {
             return;
         }
-        ui uiVar = new ui(g2Var.getParentActivity(), this.a, false, false, false, this.c);
-        uiVar.z1(1, false);
-        uiVar.R2 = true;
-        uiVar.Q2 = false;
-        uiVar.h3.setText(hd.N0(2131752109, null));
-        uiVar.e2.i0();
-        uiVar.X3 = new a0(this, uiVar, str);
-        uiVar.f1();
-        uiVar.show();
+        ti tiVar = new ti(g2Var.getParentActivity(), this.a, false, false, false, this.c);
+        tiVar.z1(1, false);
+        tiVar.R2 = true;
+        tiVar.Q2 = false;
+        tiVar.h3.setText(gd.N0(2131752109, null));
+        tiVar.e2.i0();
+        tiVar.X3 = new a0(this, tiVar, str);
+        tiVar.f1();
+        tiVar.show();
     }
 
     public final void b(String str) {
@@ -153,12 +153,12 @@ public abstract class q extends FrameLayout implements b6, gs {
             ArrayList arrayList2 = a6Var.i;
             TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
             int i10 = this.b;
-            deletepreviewmedia.bot = np.u1(i10).q1(this.d);
+            deletepreviewmedia.bot = mp.u1(i10).q1(this.d);
             deletepreviewmedia.lang_code = str;
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                TL_stories.StoryItem storyItem = ((gj) arrayList2.get(i11)).l;
+                TL_stories.StoryItem storyItem = ((fj) arrayList2.get(i11)).l;
                 if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                    deletepreviewmedia.media.add(np.l5(messageMedia));
+                    deletepreviewmedia.media.add(mp.l5(messageMedia));
                 }
             }
             ConnectionsManager.getInstance(i10).sendRequest(deletepreviewmedia, null);
@@ -167,7 +167,7 @@ public abstract class q extends FrameLayout implements b6, gs {
         this.r.e(-1, 0);
     }
 
-    public abstract boolean c(gj gjVar);
+    public abstract boolean c(fj fjVar);
 
     public final boolean d() {
         a6 a6Var;
@@ -177,22 +177,22 @@ public abstract class q extends FrameLayout implements b6, gs {
         }
         ArrayList arrayList = a6Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (!c((gj) arrayList.get(i7))) {
+            if (!c((fj) arrayList.get(i7))) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ls.A5;
-        p5 p5Var = this.n;
+        int i11 = ks.A5;
+        s5 s5Var = this.n;
         int i12 = 0;
         if (i7 != i11) {
-            if (i7 == ls.y5) {
+            if (i7 == ks.y5) {
                 i(true);
-                View[] viewPages = p5Var.getViewPages();
+                View[] viewPages = s5Var.getViewPages();
                 int length = viewPages.length;
                 while (i12 < length) {
                     View view = viewPages[i12];
@@ -209,7 +209,7 @@ public abstract class q extends FrameLayout implements b6, gs {
         a6 a6Var = this.e;
         if (obj == a6Var) {
             i(true);
-            View[] viewPages2 = p5Var.getViewPages();
+            View[] viewPages2 = s5Var.getViewPages();
             int length2 = viewPages2.length;
             while (i12 < length2) {
                 View view2 = viewPages2[i12];
@@ -224,7 +224,7 @@ public abstract class q extends FrameLayout implements b6, gs {
             return;
         }
         if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = p5Var.getViewPages();
+            View[] viewPages3 = s5Var.getViewPages();
             for (View view3 : viewPages3) {
                 if (view3 instanceof m) {
                     m mVar2 = (m) view3;
@@ -236,7 +236,7 @@ public abstract class q extends FrameLayout implements b6, gs {
         }
     }
 
-    public abstract boolean e(gj gjVar);
+    public abstract boolean e(fj fjVar);
 
     public final void f() {
         a6 a6Var;
@@ -246,13 +246,13 @@ public abstract class q extends FrameLayout implements b6, gs {
         }
         ArrayList arrayList = a6Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (!c((gj) arrayList.get(i7))) {
-                e((gj) arrayList.get(i7));
+            if (!c((fj) arrayList.get(i7))) {
+                e((fj) arrayList.get(i7));
             }
         }
     }
 
-    public abstract boolean g(gj gjVar);
+    public abstract boolean g(fj fjVar);
 
     public String getBotPreviewsSubtitle() {
         int i7;
@@ -267,12 +267,12 @@ public abstract class q extends FrameLayout implements b6, gs {
                 i7 = 0;
                 i10 = 0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    gj gjVar = (gj) arrayList.get(i11);
-                    TL_stories.StoryItem storyItem = gjVar.l;
+                    fj fjVar = (fj) arrayList.get(i11);
+                    TL_stories.StoryItem storyItem = fjVar.l;
                     if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                        if (gj.K4(messageMedia.document)) {
+                        if (fj.K4(messageMedia.document)) {
                             i10++;
-                        } else if (gjVar.l.media.photo != null) {
+                        } else if (fjVar.l.media.photo != null) {
                             i7++;
                         }
                     }
@@ -282,16 +282,16 @@ public abstract class q extends FrameLayout implements b6, gs {
                 i10 = 0;
             }
             if (i7 == 0 && i10 == 0) {
-                return hd.N0(2131753002, null);
+                return gd.N0(2131753002, null);
             }
             if (i7 > 0) {
-                sb2.append(hd.G(i7, "Images", new Object[0]));
+                sb2.append(gd.G(i7, "Images", new Object[0]));
             }
             if (i10 > 0) {
                 if (sb2.length() > 0) {
                     sb2.append(", ");
                 }
-                sb2.append(hd.G(i10, "Videos", new Object[0]));
+                sb2.append(gd.G(i10, "Videos", new Object[0]));
             }
         }
         return sb2.toString();
@@ -300,9 +300,9 @@ public abstract class q extends FrameLayout implements b6, gs {
     public String getCurrentLang() {
         View view;
         a6 a6Var;
-        p5 p5Var = this.n;
-        View[] viewPages = p5Var.getViewPages();
-        if (Math.abs(p5Var.getCurrentPosition() - p5Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
+        s5 s5Var = this.n;
+        View[] viewPages = s5Var.getViewPages();
+        if (Math.abs(s5Var.getCurrentPosition() - s5Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
         if (!(view instanceof m) || (a6Var = ((m) view).a) == null) {
@@ -349,15 +349,15 @@ public abstract class q extends FrameLayout implements b6, gs {
         }
         ArrayList arrayList = a6Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (c((gj) arrayList.get(i7))) {
-                g((gj) arrayList.get(i7));
+            if (c((fj) arrayList.get(i7))) {
+                g((fj) arrayList.get(i7));
             }
         }
     }
 
     public final void i(boolean z10) {
         a6 a6Var;
-        c7 c7Var;
+        x7 x7Var;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
         int size = arrayList2.size();
@@ -370,7 +370,7 @@ public abstract class q extends FrameLayout implements b6, gs {
                 arrayList.add(str);
             }
         }
-        p6 R1 = np.u1(this.b).R1();
+        p6 R1 = mp.u1(this.b).R1();
         long j3 = this.d;
         ArrayList F2 = R1.F(j3);
         if (F2 != null) {
@@ -380,8 +380,8 @@ public abstract class q extends FrameLayout implements b6, gs {
                 Object obj2 = F2.get(i10);
                 i10++;
                 o6 o6Var = (o6) obj2;
-                if (o6Var != null && (c7Var = o6Var.c) != null && c7Var.J0 == j3 && !TextUtils.isEmpty(c7Var.K0) && !arrayList.contains(c7Var.K0)) {
-                    arrayList.add(c7Var.K0);
+                if (o6Var != null && (x7Var = o6Var.c) != null && x7Var.J0 == j3 && !TextUtils.isEmpty(x7Var.K0) && !arrayList.contains(x7Var.K0)) {
+                    arrayList.add(x7Var.K0);
                 }
             }
         }
@@ -414,17 +414,17 @@ public abstract class q extends FrameLayout implements b6, gs {
             }
             arrayList3.add(a6Var);
         }
-        p5 p5Var = this.n;
-        p5Var.j(true);
+        s5 s5Var = this.n;
+        s5Var.l(true);
         SpannableString spannableString = new SpannableString(i5.c.k(2131746515, null, new StringBuilder("+ ")));
-        nq nqVar = new nq(R.drawable.msg_filled_plus, 0);
-        nqVar.I = 0.9f;
-        nqVar.J = 0.9f;
-        nqVar.H = 0.85f;
-        spannableString.setSpan(nqVar, 0, 1, 33);
-        i71 i71Var = this.r;
-        i71Var.a(-1, spannableString);
-        i71Var.y.f();
+        kq kqVar = new kq(R.drawable.msg_filled_plus, 0);
+        kqVar.I = 0.9f;
+        kqVar.J = 0.9f;
+        kqVar.H = 0.85f;
+        spannableString.setSpan(kqVar, 0, 1, 33);
+        j71 j71Var = this.r;
+        j71Var.a(-1, spannableString);
+        j71Var.y.f();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -435,16 +435,16 @@ public abstract class q extends FrameLayout implements b6, gs {
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.x = z11 ? 1.0f : 0.0f;
-                i71Var.setTranslationY(g0.L(z11 ? 0.0f : -42.0f));
-                p5Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
+                j71Var.setTranslationY(g0.L(z11 ? 0.0f : -42.0f));
+                s5Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z11 ? 1.0f : 0.0f);
             this.y = ofFloat;
             ofFloat.addUpdateListener(new ah.g(this, 25));
-            this.y.addListener(new g7(5, this, z11));
+            this.y.addListener(new j7(5, this, z11));
             this.y.setDuration(320L);
-            this.y.setInterpolator(nr.h);
+            this.y.setInterpolator(kr.h);
             this.y.start();
         }
     }
@@ -456,9 +456,9 @@ public abstract class q extends FrameLayout implements b6, gs {
             e eVar = mVar.f;
             for (int i7 = 0; i7 < eVar.getChildCount(); i7++) {
                 View childAt = eVar.getChildAt(i7);
-                if (childAt instanceof p7) {
-                    p7 p7Var = (p7) childAt;
-                    p7Var.i(mVar.a0.c(p7Var.getMessageObject()), true);
+                if (childAt instanceof o7) {
+                    o7 o7Var = (o7) childAt;
+                    o7Var.i(mVar.a0.c(o7Var.getMessageObject()), true);
                 }
             }
         }
@@ -481,8 +481,8 @@ public abstract class q extends FrameLayout implements b6, gs {
             longSparseArray2 = longSparseArray4;
         }
         longSparseArray2.put(this.d, this);
-        ls.f(i7).c(this, ls.A5);
-        ls.f(i7).c(this, ls.y5);
+        ks.f(i7).c(this, ks.A5);
+        ks.f(i7).c(this, ks.y5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -497,8 +497,8 @@ public abstract class q extends FrameLayout implements b6, gs {
         if (longSparseArray2 != null) {
             longSparseArray2.remove(this.d);
         }
-        ls.f(i7).n(this, ls.A5);
-        ls.f(i7).n(this, ls.y5);
+        ks.f(i7).n(this, ks.A5);
+        ks.f(i7).n(this, ks.y5);
     }
 
     public void setVisibleHeight(int i7) {
@@ -513,18 +513,18 @@ public abstract class q extends FrameLayout implements b6, gs {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        h6 h6Var = this.c;
+        i6 i6Var = this.c;
         try {
-            setBackgroundColor(m6.w(m6.w0(m6.d6, h6Var), m6.r1(0.04f, m6.w0(m6.G6, h6Var))));
+            setBackgroundColor(n6.w(n6.w0(n6.d6, i6Var), n6.r1(0.04f, n6.w0(n6.G6, i6Var))));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

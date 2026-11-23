@@ -4,13 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.y8;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.q8;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.x8;
 import org.telegram.ui.de0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final class g extends AnimatorListenerAdapter {
                 super.onAnimationCancel(animator);
                 break;
             case 3:
-                ui uiVar = (ui) this.d;
-                if (animator.equals(uiVar.K2)) {
-                    uiVar.K2 = null;
+                ti tiVar = (ti) this.d;
+                if (animator.equals(tiVar.K2)) {
+                    tiVar.K2 = null;
                     break;
                 }
                 break;
@@ -61,16 +61,16 @@ public final class g extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        mi miVar;
+        li liVar;
         switch (this.a) {
             case 0:
                 k kVar = (k) this.d;
-                m5[] m5VarArr = kVar.n;
-                m5 m5Var = m5VarArr[1];
-                if (m5Var != null && m5Var.getParent() != null) {
-                    ((ViewGroup) m5VarArr[1].getParent()).removeView(m5VarArr[1]);
+                n5[] n5VarArr = kVar.n;
+                n5 n5Var = n5VarArr[1];
+                if (n5Var != null && n5Var.getParent() != null) {
+                    ((ViewGroup) n5VarArr[1].getParent()).removeView(n5VarArr[1]);
                 }
-                m5VarArr[1] = null;
+                n5VarArr[1] = null;
                 kVar.y0 = false;
                 if (this.b && this.c) {
                     kVar.r.setVisibility(8);
@@ -88,34 +88,34 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                y8 y8Var = (y8) this.d;
-                y8Var.H = null;
+                x8 x8Var = (x8) this.d;
+                x8Var.H = null;
                 boolean z10 = this.b;
-                y8Var.n0(false, z10 ? 1.0f : 0.0f);
+                x8Var.n0(false, z10 ? 1.0f : 0.0f);
                 if (this.c) {
-                    r8 r8Var = y8Var.a;
-                    r8Var.x = -1.0f;
-                    r8Var.setExpanded(z10);
+                    q8 q8Var = x8Var.a;
+                    q8Var.x = -1.0f;
+                    q8Var.setExpanded(z10);
                     break;
                 }
                 break;
             case 3:
                 boolean z11 = this.b;
-                ui uiVar = (ui) this.d;
-                if (animator.equals(uiVar.K2)) {
+                ti tiVar = (ti) this.d;
+                if (animator.equals(tiVar.K2)) {
                     if (!z11) {
-                        if (!uiVar.I1) {
-                            uiVar.B2.setVisibility(4);
+                        if (!tiVar.I1) {
+                            tiVar.B2.setVisibility(4);
                         }
-                        uiVar.F2.setVisibility(4);
-                    } else if (uiVar.Q2 && ((miVar = uiVar.w2) == null || miVar.N())) {
-                        uiVar.v3.setVisibility(4);
+                        tiVar.F2.setVisibility(4);
+                    } else if (tiVar.Q2 && ((liVar = tiVar.w2) == null || liVar.N())) {
+                        tiVar.v3.setVisibility(4);
                     }
                     if (this.c) {
-                        uiVar.R1();
-                        uiVar.M2.setVisibility(z11 ? 0 : 8);
+                        tiVar.R1();
+                        tiVar.M2.setVisibility(z11 ? 0 : 8);
                     }
-                    uiVar.K2 = null;
+                    tiVar.K2 = null;
                     break;
                 }
                 break;

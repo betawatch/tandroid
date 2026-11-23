@@ -7,21 +7,21 @@ import android.net.Uri;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.nc;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.jq;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.or;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 int i7 = y.w2;
                 break;
             case 1:
-                nc[] ncVarArr = m0.l2;
+                mc[] mcVarArr = m0.l2;
                 break;
             case 2:
                 int i10 = t0.c2;
@@ -45,14 +45,14 @@ public final /* synthetic */ class o implements View.OnClickListener {
             case 3:
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
-                    T.presentFragment(new org.telegram.ui.Wallet.n6());
+                    T.presentFragment(new org.telegram.ui.Wallet.o6());
                     break;
                 }
                 break;
             case 4:
                 org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    T2.presentFragment(new org.telegram.ui.Wallet.n6());
+                    T2.presentFragment(new org.telegram.ui.Wallet.o6());
                     break;
                 }
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 int i12 = di.h1.w2;
                 break;
             case 7:
-                int i13 = hi.p3.e;
+                int i13 = hi.y3.e;
                 break;
             case 8:
                 PhotoViewer.p1().c0(1.0f, 0.0f, 0.0f, false);
@@ -98,25 +98,25 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             case 15:
-                int i17 = mq.g0;
+                int i17 = jq.g0;
                 break;
             case 16:
-                int i18 = rr.x;
+                int i18 = or.x;
                 break;
             case 17:
                 float[] fArr = FragmentContextView.X0;
                 MediaController B = MediaController.B();
-                i61 i61Var = B.F0;
-                if (i61Var != null) {
-                    i61Var.s0(false);
+                h61 h61Var = B.F0;
+                if (h61Var != null) {
+                    h61Var.s0(false);
                 }
                 B.n0();
                 B.m();
-                gj gjVar = B.v0;
-                if (gjVar != null) {
-                    ls f10 = ls.f(gjVar.K1);
-                    gj gjVar2 = B.v0;
-                    f10.k(ls.g2, Integer.valueOf(gjVar2 != null ? gjVar2.e1() : 0));
+                fj fjVar = B.v0;
+                if (fjVar != null) {
+                    ks f10 = ks.f(fjVar.K1);
+                    fj fjVar2 = B.v0;
+                    f10.k(ks.g2, Integer.valueOf(fjVar2 != null ? fjVar2.e1() : 0));
                     break;
                 }
                 break;
@@ -126,14 +126,14 @@ public final /* synthetic */ class o implements View.OnClickListener {
             case 19:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 if (sharedInstance == null) {
-                    org.telegram.ui.Components.voip.h2.b();
+                    org.telegram.ui.Components.voip.i2.b();
                     break;
                 } else {
                     sharedInstance.hangUp();
                     break;
                 }
             case 20:
-                e2.l1(false, null);
+                f2.l1(false, null);
                 break;
             case 21:
                 ArrayList arrayList = ExternalActionActivity.y;
@@ -155,7 +155,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                     return;
                 }
             case 26:
-                int i19 = org.telegram.ui.Wallet.w3.X;
+                int i19 = org.telegram.ui.Wallet.x3.X;
                 break;
             default:
                 PhotoViewer.p1().c0(1.0f, 0.0f, 0.0f, false);

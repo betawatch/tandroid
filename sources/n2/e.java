@@ -8,15 +8,15 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import h9.t1;
+import h9.s1;
 import java.util.List;
-import kg.x1;
+import kg.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
-    public final x1 b;
+    public final f1 b;
     public final Handler c;
     public final c d;
     public final androidx.mediarouter.app.f e;
@@ -27,10 +27,10 @@ public final class e {
     public e2.e j;
     public boolean k;
 
-    public e(Context context, x1 x1Var, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
+    public e(Context context, f1 f1Var, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
         Context applicationContext = context.getApplicationContext();
         this.a = applicationContext;
-        this.b = x1Var;
+        this.b = f1Var;
         this.j = eVar;
         this.i = audioDeviceInfo;
         String str = h2.l0.a;
@@ -39,7 +39,7 @@ public final class e {
         this.c = handler;
         this.d = new c(this);
         this.e = new androidx.mediarouter.app.f(this, 4);
-        t1 t1Var = b.e;
+        s1 s1Var = b.e;
         String str2 = Build.MANUFACTURER;
         Uri uriFor = (str2.equals("Amazon") || str2.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
         this.f = uriFor != null ? new d(this, handler, applicationContext.getContentResolver(), uriFor) : null;
@@ -51,7 +51,7 @@ public final class e {
             return dVar.b();
         }
         h9.g0 g0Var = h9.i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     public final void b(b bVar) {
@@ -59,14 +59,14 @@ public final class e {
             return;
         }
         this.h = bVar;
-        i0 i0Var = (i0) this.b.b;
-        i0Var.f();
-        b bVar2 = i0Var.h;
+        j0 j0Var = (j0) this.b.b;
+        j0Var.f();
+        b bVar2 = j0Var.h;
         if (bVar2 == null || bVar.equals(bVar2)) {
             return;
         }
-        i0Var.h = bVar;
-        h2.r rVar = i0Var.f;
+        j0Var.h = bVar;
+        h2.r rVar = j0Var.f;
         if (rVar != null) {
             rVar.e(-1, new a0(4));
         }
@@ -76,7 +76,7 @@ public final class e {
         List a10 = a();
         e2.e eVar = this.j;
         AudioDeviceInfo audioDeviceInfo = this.i;
-        t1 t1Var = b.e;
+        s1 s1Var = b.e;
         IntentFilter intentFilter = new IntentFilter("android.media.action.HDMI_AUDIO_PLUG");
         Context context = this.a;
         b(b.b(context, context.registerReceiver(null, intentFilter), eVar, audioDeviceInfo, a10));

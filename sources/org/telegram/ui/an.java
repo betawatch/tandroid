@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class an extends org.telegram.ui.ActionBar.m5 {
+public final class an extends org.telegram.ui.ActionBar.n5 {
     public boolean N0;
     public final /* synthetic */ bn O0;
 
@@ -16,7 +16,7 @@ public final class an extends org.telegram.ui.ActionBar.m5 {
         this.N0 = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.m5
+    @Override // org.telegram.ui.ActionBar.n5
     public final void d(int i7) {
         super.d(i7);
         if (this.N0 && getVisibility() == 0) {

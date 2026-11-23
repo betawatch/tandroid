@@ -2,21 +2,21 @@ package fi;
 
 import android.content.SharedPreferences;
 import android.net.Uri;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.as;
-import org.telegram.ui.Components.fs;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.cs;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.xr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p50;
-import org.telegram.ui.wf0;
+import org.telegram.ui.vf0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ y7(int i7, wf0 wf0Var, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ y7(int i7, vf0 vf0Var, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 7;
         this.b = i7;
-        this.c = wf0Var;
+        this.c = vf0Var;
         this.d = g2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
@@ -46,15 +46,15 @@ public final /* synthetic */ class y7 implements RequestDelegate {
             case 0:
                 TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
                 bg.l0 l0Var = (bg.l0) obj;
-                if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && obj3 != null) {
-                    org.telegram.messenger.r8.n(i11).u(new Object[]{tL_messages_getAttachedStickers, l0Var}, obj3);
+                if (tL_error != null && org.telegram.messenger.q8.r(tL_error.text) && obj3 != null) {
+                    org.telegram.messenger.q8.n(i11).u(new Object[]{tL_messages_getAttachedStickers, l0Var}, obj3);
                     break;
                 } else {
                     l0Var.run(tLObject, tL_error);
                     break;
                 }
             case 1:
-                org.telegram.messenger.g0.g3(new ai.i1(tLObject, (boolean[]) obj3, (y10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
+                org.telegram.messenger.g0.g3(new ai.d1(tLObject, (boolean[]) obj3, (w10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
                 break;
             case 2:
                 org.telegram.messenger.g0.g3(new bg.m0((p50) obj3, (org.telegram.ui.e4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.a1) obj));
@@ -64,43 +64,43 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj2;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.j2(t1Var, i12));
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.i2(t1Var, i12));
                     break;
                 } else {
-                    org.telegram.messenger.g0.g3(new ai.i1(sharedPreferences, (TLRPC.TL_help_support) tLObject, t1Var, this.b, g2Var, 16));
+                    org.telegram.messenger.g0.g3(new ai.d1(sharedPreferences, (TLRPC.TL_help_support) tLObject, t1Var, this.b, g2Var, 16));
                     break;
                 }
             case 4:
-                org.telegram.messenger.g0.g3(new ai.i1((as) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj));
+                org.telegram.messenger.g0.g3(new ai.d1((xr) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj));
                 break;
             case 5:
-                jt0 jt0Var = (jt0) obj3;
+                it0 it0Var = (it0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
-                org.telegram.messenger.g0.g3(new fs((org.telegram.ui.ActionBar.t1[]) obj2, i10));
+                org.telegram.messenger.g0.g3(new cs((org.telegram.ui.ActionBar.t1[]) obj2, i10));
                 int i13 = this.b;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.g3(new lp0(jt0Var, i13, tL_error, tL_messages_editMessage, 2));
+                    org.telegram.messenger.g0.g3(new kp0(it0Var, i13, tL_error, tL_messages_editMessage, 2));
                     break;
                 } else {
-                    np.u1(i13).V3((TLRPC.Updates) tLObject, false);
+                    mp.u1(i13).V3((TLRPC.Updates) tLObject, false);
                     break;
                 }
             case 6:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.h3(new ai.i1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.t1) obj, 20), 2L);
+                org.telegram.messenger.g0.h3(new ai.d1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.t1) obj, 20), 2L);
                 break;
             case 7:
-                wf0 wf0Var = (wf0) obj3;
+                vf0 vf0Var = (vf0) obj3;
                 org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
-                        org.telegram.messenger.g0.g3(new lp0(i11, tL_error, g2Var2, tL_payments_assignPlayMarketTransaction));
+                        org.telegram.messenger.g0.g3(new kp0(i11, tL_error, g2Var2, tL_payments_assignPlayMarketTransaction));
                         break;
                     }
                 } else {
-                    np.u1(i11).V3((TLRPC.Updates) tLObject, false);
-                    org.telegram.messenger.g0.g3(wf0Var);
+                    mp.u1(i11).V3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.g0.g3(vf0Var);
                     break;
                 }
                 break;

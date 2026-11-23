@@ -1,73 +1,42 @@
 package a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+import android.content.Intent;
+import android.os.Looper;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class w7 {
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
-    
-        if (r5 != (-1)) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x002c, code lost:
-    
-        d(r1, r7, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x002f, code lost:
-    
-        return r2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0030, code lost:
-    
-        r12[r5] = (r12[r5] & r4) | (r7 & r10);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0038, code lost:
-    
-        return r2;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int a(Object obj, Object obj2, int i7, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
-        int a10 = x7.a(obj);
-        int i10 = a10 & i7;
-        int b10 = b(i10, obj3);
-        if (b10 != 0) {
-            int i11 = ~i7;
-            int i12 = a10 & i11;
-            int i13 = -1;
-            while (true) {
-                int i14 = b10 - 1;
-                int i15 = iArr[i14];
-                int i16 = i15 & i7;
-                if ((i15 & i11) != i12 || !f8.a(obj, objArr[i14]) || (objArr2 != null && !f8.a(obj2, objArr2[i14]))) {
-                    if (i16 == 0) {
-                        break;
-                    }
-                    i13 = i14;
-                    b10 = i16;
+    public static b9.j0 a(Context context, GoogleSignInOptions googleSignInOptions) {
+        q6.m.h(googleSignInOptions);
+        return new b9.j0(context, z5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new w7.s(6), Looper.getMainLooper()));
+    }
+
+    public static Task b(Intent intent) {
+        c6.b bVar;
+        GoogleSignInAccount googleSignInAccount;
+        org.telegram.messenger.d1 d1Var = d6.h.a;
+        Status status = Status.h;
+        if (intent == null) {
+            bVar = new c6.b(null, status);
+        } else {
+            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
+            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
+            if (googleSignInAccount2 == null) {
+                if (status2 != null) {
+                    status = status2;
                 }
+                bVar = new c6.b(null, status);
+            } else {
+                bVar = new c6.b(googleSignInAccount2, Status.e);
             }
         }
-        return -1;
-    }
-
-    public static int b(int i7, Object obj) {
-        return obj instanceof byte[] ? ((byte[]) obj)[i7] & 255 : obj instanceof short[] ? (char) ((short[]) obj)[i7] : ((int[]) obj)[i7];
-    }
-
-    public static Object c(int i7) {
-        if (i7 < 2 || i7 > 1073741824 || Integer.highestOneBit(i7) != i7) {
-            throw new IllegalArgumentException(i5.c.i(i7, "must be power of 2 between 2^1 and 2^30: "));
-        }
-        return i7 <= 256 ? new byte[i7] : i7 <= 65536 ? new short[i7] : new int[i7];
-    }
-
-    public static void d(int i7, int i10, Object obj) {
-        if (obj instanceof byte[]) {
-            ((byte[]) obj)[i7] = (byte) i10;
-        } else if (obj instanceof short[]) {
-            ((short[]) obj)[i7] = (short) i10;
-        } else {
-            ((int[]) obj)[i7] = i10;
-        }
+        Status status3 = bVar.a;
+        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(q6.m.m(status3)) : Tasks.forResult(googleSignInAccount);
     }
 }

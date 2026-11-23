@@ -1,42 +1,35 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yo implements org.telegram.messenger.y10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
+public final class yo implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ h01 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ kp e;
 
-    public /* synthetic */ yo(np npVar, int i7) {
-        this.a = i7;
-        this.b = npVar;
+    public yo(kp kpVar, h01 h01Var, float f10, boolean z10) {
+        this.e = kpVar;
+        this.b = h01Var;
+        this.c = f10;
+        this.d = z10;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                np npVar = this.b;
-                npVar.Z1 = (TL_stories.TL_premium_boostsStatus) obj;
-                npVar.Y1 = true;
-                npVar.a1(true);
-                npVar.X1 = false;
-                break;
-            default:
-                org.telegram.messenger.g3 g3Var = (org.telegram.messenger.g3) obj;
-                np npVar2 = this.b;
-                if (npVar2.getContext() != null) {
-                    org.telegram.ui.bn bnVar = npVar2.v1;
-                    ug.k0 k0Var = new ug.k0(22, npVar2.a, npVar2.getContext(), bnVar, npVar2.J0);
-                    k0Var.B1(g3Var);
-                    k0Var.A1(npVar2.Z1, true);
-                    k0Var.C1(npVar2.v1.a());
-                    k0Var.M2 = new wo(npVar2, 2);
-                    k0Var.show();
-                    break;
-                }
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        kp kpVar = this.e;
+        kpVar.M1 = floatValue;
+        if (!this.d) {
+            floatValue = 1.0f - floatValue;
         }
+        this.b.setRadius(this.c * floatValue);
+        if (this.a || kpVar.M1 <= 0.5f) {
+            return;
+        }
+        this.a = true;
     }
 }

@@ -2,34 +2,34 @@ package jb;
 
 import android.os.Build;
 import android.util.Log;
-import c8.he;
-import gb.h1;
-import gb.u;
-import gb.x;
-import hd.r;
+import c8.ie;
+import c8.z;
+import gb.i1;
+import gb.v;
+import gb.y;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class d implements q {
+public final class d implements r {
     public static final int g;
     public static final xd.c h;
-    public final h1 a;
+    public final i1 a;
     public final va.d b;
     public final gb.b c;
     public final f d;
-    public final p e;
+    public final q e;
     public final ie.d f;
 
     static {
         int i7 = yd.a.d;
-        g = (int) yd.a.d(he.c(24, yd.c.f), yd.c.d);
+        g = (int) yd.a.d(ie.c(24, yd.c.f), yd.c.d);
         h = new xd.c("com/google/firebase/sessions//");
     }
 
-    public d(h1 timeProvider, va.d firebaseInstallationsApi, gb.b appInfo, f configsFetcher, p settingsCache) {
+    public d(i1 timeProvider, va.d firebaseInstallationsApi, gb.b appInfo, f configsFetcher, q settingsCache) {
         kotlin.jvm.internal.j.e(timeProvider, "timeProvider");
         kotlin.jvm.internal.j.e(firebaseInstallationsApi, "firebaseInstallationsApi");
         kotlin.jvm.internal.j.e(appInfo, "appInfo");
@@ -52,7 +52,7 @@ public final class d implements q {
         return replaceAll;
     }
 
-    @Override // jb.q
+    @Override // jb.r
     public final Boolean a() {
         return this.e.a().a;
     }
@@ -64,14 +64,14 @@ public final class d implements q {
     /* JADX WARN: Removed duplicated region for block: B:46:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0030  */
     /* JADX WARN: Type inference failed for: r4v0, types: [int] */
-    @Override // jb.q
+    @Override // jb.r
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object b(id.c cVar) {
         b bVar;
         ?? r42;
-        p pVar;
+        q qVar;
         ie.a aVar;
         ie.a aVar2;
         String str;
@@ -84,13 +84,13 @@ public final class d implements q {
                     Object obj = bVar.b;
                     jd.a aVar3 = jd.a.a;
                     r42 = bVar.d;
-                    pVar = this.e;
+                    qVar = this.e;
                     gd.k kVar = gd.k.a;
                     id.c cVar2 = null;
                     if (r42 != 0) {
-                        b7.h.b(obj);
+                        z.b(obj);
                         ie.d dVar = this.f;
-                        if (!dVar.c() && !pVar.b()) {
+                        if (!dVar.c() && !qVar.b()) {
                             return kVar;
                         }
                         bVar.a = dVar;
@@ -107,7 +107,7 @@ public final class d implements q {
                             }
                             aVar = bVar.a;
                             try {
-                                b7.h.b(obj);
+                                z.b(obj);
                                 ((ie.d) aVar).f(null);
                                 return kVar;
                             } catch (Throwable th2) {
@@ -117,8 +117,8 @@ public final class d implements q {
                             }
                         }
                         aVar2 = bVar.a;
-                        b7.h.b(obj);
-                        str = ((x) obj).a;
+                        z.b(obj);
+                        str = ((y) obj).a;
                         if (!str.equals("")) {
                             Log.w("FirebaseSessions", "Error getting Firebase Installation ID. Skipping this Session Event.");
                             ((ie.d) aVar2).f(null);
@@ -133,7 +133,7 @@ public final class d implements q {
                         kotlin.jvm.internal.j.d(RELEASE, "RELEASE");
                         gd.e eVar4 = new gd.e("X-Crashlytics-OS-Display-Version", e(RELEASE));
                         this.c.getClass();
-                        Map d = r.d(eVar, eVar2, eVar3, eVar4, new gd.e("X-Crashlytics-API-Client-Version", "3.0.8"));
+                        Map d = hd.r.d(eVar, eVar2, eVar3, eVar4, new gd.e("X-Crashlytics-API-Client-Version", "3.0.8"));
                         Log.d("FirebaseSessions", "Fetching settings from server.");
                         f fVar = this.d;
                         be.l lVar = new be.l(this, cVar2, 6);
@@ -152,28 +152,28 @@ public final class d implements q {
                         return aVar3;
                     }
                     aVar2 = bVar.a;
-                    b7.h.b(obj);
-                    if (pVar.b()) {
+                    z.b(obj);
+                    if (qVar.b()) {
                         Log.d("FirebaseSessions", "Remote settings cache not expired. Using cached values.");
                         ((ie.d) aVar2).f(null);
                         return kVar;
                     }
-                    u uVar = x.c;
+                    v vVar = y.c;
                     va.d dVar2 = this.b;
                     bVar.a = aVar2;
                     bVar.d = 2;
-                    obj = uVar.a(dVar2, bVar);
+                    obj = vVar.a(dVar2, bVar);
                     if (obj == aVar3) {
                         return aVar3;
                     }
-                    str = ((x) obj).a;
+                    str = ((y) obj).a;
                     if (!str.equals("")) {
                     }
                 }
             }
             if (r42 != 0) {
             }
-            if (pVar.b()) {
+            if (qVar.b()) {
             }
         } catch (Throwable th3) {
             th = th3;
@@ -183,22 +183,22 @@ public final class d implements q {
         Object obj2 = bVar.b;
         jd.a aVar32 = jd.a.a;
         r42 = bVar.d;
-        pVar = this.e;
+        qVar = this.e;
         gd.k kVar2 = gd.k.a;
         id.c cVar22 = null;
     }
 
-    @Override // jb.q
+    @Override // jb.r
     public final yd.a c() {
         Integer num = this.e.a().c;
         if (num == null) {
             return null;
         }
         int i7 = yd.a.d;
-        return new yd.a(he.c(num.intValue(), yd.c.d));
+        return new yd.a(ie.c(num.intValue(), yd.c.d));
     }
 
-    @Override // jb.q
+    @Override // jb.r
     public final Double d() {
         return this.e.a().b;
     }

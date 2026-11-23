@@ -5,12 +5,13 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 import ki.j2;
-import ki.r3;
-import ki.s2;
+import ki.s3;
+import ki.t2;
+import m.r3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.h2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class m implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -31,23 +32,23 @@ public final class m implements View.OnLayoutChangeListener {
                 break;
             case 1:
                 view.removeOnLayoutChangeListener(this);
-                s2 s2Var = (s2) obj;
-                h2 h2Var = s2Var.o0;
-                j2 j2Var = s2Var.x;
+                t2 t2Var = (t2) obj;
+                h2 h2Var = t2Var.o0;
+                j2 j2Var = t2Var.x;
                 j2Var.setSwipeOffsetY(j2Var.getHeight());
-                s2Var.f.setAlpha(1.0f);
-                if (s2Var.I0 != Float.MAX_VALUE) {
+                t2Var.f.setAlpha(1.0f);
+                if (t2Var.I0 != Float.MAX_VALUE) {
                     j2Var.setSwipeOffsetAnimationDisallowed(true);
-                    j2Var.setOffsetY(s2Var.I0);
+                    j2Var.setOffsetY(t2Var.I0);
                     j2Var.setSwipeOffsetAnimationDisallowed(false);
                 }
-                s2Var.E.n(true, true);
+                t2Var.E.n(true, true);
                 h2.f fVar = new h2.f((int[]) null);
                 fVar.d();
-                if (s2Var.H0 || s2Var.r()) {
+                if (t2Var.H0 || t2Var.r()) {
                     j2Var.f(j2Var.getTopActionBarOffsetY() + (-j2Var.getOffsetY()), false, new i0(fVar, 14));
                 } else {
-                    r1.g gVar = new r1.g((Object) j2Var, (r1.e) r3.c0, 0.0f);
+                    r1.g gVar = new r1.g((Object) j2Var, (r1.e) s3.c0, 0.0f);
                     r1.h hVar = new r1.h(0.0f);
                     hVar.a(0.75f);
                     hVar.b(500.0f);
@@ -56,7 +57,7 @@ public final class m implements View.OnLayoutChangeListener {
                     gVar.h();
                 }
                 j2Var.L = true;
-                if (s2Var.f0 && h2Var != null) {
+                if (t2Var.f0 && h2Var != null) {
                     h2Var.setAlpha(0.0f);
                     h2Var.animate().alpha(1.0f).setDuration(220L).start();
                     break;
@@ -70,7 +71,7 @@ public final class m implements View.OnLayoutChangeListener {
                     Resources resources = searchView.getContext().getResources();
                     int paddingLeft = searchView.I.getPaddingLeft();
                     Rect rect = new Rect();
-                    boolean a10 = m.r3.a(searchView);
+                    boolean a10 = r3.a(searchView);
                     int dimensionPixelSize = searchView.g0 ? resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_icon_width) + resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_text_padding_left) : 0;
                     searchAutoComplete.getDropDownBackground().getPadding(rect);
                     searchAutoComplete.setDropDownHorizontalOffset(a10 ? -rect.left : paddingLeft - (rect.left + dimensionPixelSize));

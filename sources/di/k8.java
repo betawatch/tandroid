@@ -5,22 +5,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.de;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.ce;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.rf;
+import org.telegram.ui.Components.qf;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.de0;
-import org.telegram.ui.h60;
-import org.telegram.ui.hk0;
+import org.telegram.ui.fk0;
+import org.telegram.ui.i50;
 import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,17 +34,17 @@ public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ k8(y8 y8Var, boolean[] zArr, gj gjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i7, y10 y10Var, y10 y10Var2) {
+    public /* synthetic */ k8(y8 y8Var, boolean[] zArr, fj fjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i7, w10 w10Var, w10 w10Var2) {
         this.a = 0;
         this.c = y8Var;
         this.d = zArr;
-        this.f = gjVar;
+        this.f = fjVar;
         this.h = inputInvoice;
         this.n = tL_payments_paymentFormStars;
         this.e = zArr2;
         this.b = i7;
-        this.r = y10Var;
-        this.s = y10Var2;
+        this.r = w10Var;
+        this.s = w10Var2;
     }
 
     @Override // java.lang.Runnable
@@ -63,27 +63,27 @@ public final /* synthetic */ class k8 implements Runnable {
             case 0:
                 y8 y8Var = (y8) obj8;
                 ((boolean[]) obj7)[0] = true;
-                y8Var.Y((gj) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new u6(y8Var, (boolean[]) obj6, this.b, (y10) obj2, (y10) obj));
+                y8Var.Y((fj) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new u6(y8Var, (boolean[]) obj6, this.b, (w10) obj2, (w10) obj));
                 break;
             case 1:
-                rf rfVar = (rf) obj8;
+                qf qfVar = (qf) obj8;
                 FrameLayout frameLayout = (FrameLayout) obj6;
                 View view = (View) obj5;
                 RectF rectF = (RectF) obj4;
-                rfVar.getClass();
+                qfVar.getClass();
                 ((ji.e) obj7).getLocationInWindow(new int[2]);
                 frameLayout.getLocationInWindow(new int[2]);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
                 layoutParams.leftMargin = Math.round((rectF.left + r2[0]) - r0[0]);
                 layoutParams.topMargin = Math.round((rectF.top + r2[1]) - r0[1]);
                 view.setLayoutParams(layoutParams);
-                view.post(new de(rfVar, view, frameLayout, layoutParams, (ArrayList) obj3, (ArrayList) obj2, this.b, (ji.f) obj));
+                view.post(new ce(qfVar, view, frameLayout, layoutParams, (ArrayList) obj3, (ArrayList) obj2, this.b, (ji.g) obj));
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj8;
                 TLObject tLObject = (TLObject) obj7;
                 int[] iArr = (int[]) obj6;
-                h60 h60Var = (h60) obj5;
+                i50 i50Var = (i50) obj5;
                 Integer num = (Integer) obj4;
                 Integer num2 = (Integer) obj3;
                 Long l10 = (Long) obj2;
@@ -92,21 +92,21 @@ public final /* synthetic */ class k8 implements Runnable {
                 if (tLObject instanceof TLRPC.TL_messages_chats) {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
                     if (!tL_messages_chats.chats.isEmpty()) {
-                        np.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
-                        iArr[0] = launchActivity.z0(this.b, h60Var, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
+                        mp.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
+                        iArr[0] = launchActivity.z0(this.b, i50Var, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
                         break;
                     }
                 }
                 try {
-                    h60Var.run();
+                    i50Var.run();
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
-                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, hd.N0(2131751442, null), hd.N0(2131748702, null)));
+                launchActivity.F0(org.telegram.ui.Components.b5.E(launchActivity, gd.N0(2131751442, null), gd.N0(2131748702, null)));
                 break;
             case 3:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj8;
-                h60 h60Var2 = (h60) obj7;
+                i50 i50Var2 = (i50) obj7;
                 TLObject tLObject2 = (TLObject) obj6;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
@@ -115,13 +115,13 @@ public final /* synthetic */ class k8 implements Runnable {
                 String str4 = (String) obj;
                 String str5 = LaunchActivity.C1;
                 try {
-                    h60Var2.run();
+                    i50Var2.run();
                 } catch (Exception e11) {
                     org.telegram.messenger.a8.g(e11, true);
                 }
                 if (tLObject2 != null) {
-                    np.u1(i10).f4(authorizationform.users, false);
-                    launchActivity2.t0(new hk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str2, str3, str4, authorizationform, (TL_account.Password) tLObject2));
+                    mp.u1(i10).f4(authorizationform.users, false);
+                    launchActivity2.t0(new fk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str2, str3, str4, authorizationform, (TL_account.Password) tLObject2));
                     break;
                 }
                 break;
@@ -141,17 +141,17 @@ public final /* synthetic */ class k8 implements Runnable {
                     if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
                         if (tL_error != null) {
                             ld0Var.e = tL_error.text;
-                            new org.telegram.ui.Components.lc(de0Var.a0, null).g0(tL_error, false);
+                            new org.telegram.ui.Components.kc(de0Var.a0, null).g0(tL_error, false);
                             break;
                         }
                     } else {
                         ld0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.lc(de0Var.a0, null).H(R.raw.error, hd.a0(null, null, 2131743633, "RESPONSE_FALSE"));
+                        new org.telegram.ui.Components.kc(de0Var.a0, null).H(R.raw.error, gd.a0(null, null, 2131743631, "RESPONSE_FALSE"));
                         break;
                     }
                 } else {
-                    eVar.i(hd.a0(null, null, 2131745771, iVar.a), false, true);
-                    eVar.g(i10 == 7 ? hd.N0(2131745775, null) : hd.H(',', "SMSFeePurchaseTextDays", i10), false);
+                    eVar.i(gd.a0(null, null, 2131745771, iVar.a), false, true);
+                    eVar.g(i10 == 7 ? gd.N0(2131745775, null) : gd.H(',', "SMSFeePurchaseTextDays", i10), false);
                     eVar.setLoading(false);
                     eVar.setOnClickListener(new fi.d0(ld0Var, mVar, tL_inputStorePaymentAuthCode, str6, tL_payments_canPurchaseStore, 14));
                     break;
@@ -160,9 +160,9 @@ public final /* synthetic */ class k8 implements Runnable {
         }
     }
 
-    public /* synthetic */ k8(rf rfVar, ji.e eVar, FrameLayout frameLayout, View view, RectF rectF, ArrayList arrayList, ArrayList arrayList2, int i7, ji.f fVar) {
+    public /* synthetic */ k8(qf qfVar, ji.e eVar, FrameLayout frameLayout, View view, RectF rectF, ArrayList arrayList, ArrayList arrayList2, int i7, ji.g gVar) {
         this.a = 1;
-        this.c = rfVar;
+        this.c = qfVar;
         this.d = eVar;
         this.e = frameLayout;
         this.f = view;
@@ -170,7 +170,7 @@ public final /* synthetic */ class k8 implements Runnable {
         this.n = arrayList;
         this.r = arrayList2;
         this.b = i7;
-        this.s = fVar;
+        this.s = gVar;
     }
 
     public /* synthetic */ k8(LaunchActivity launchActivity, Object obj, Object obj2, int i7, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, int i10) {

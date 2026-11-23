@@ -1,6 +1,6 @@
 package b3;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.os.SystemClock;
 import h2.g0;
@@ -8,22 +8,22 @@ import h2.v;
 import h2.w;
 import h9.i0;
 import h9.l0;
-import h9.t1;
+import h9.s1;
 import j2.c0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g implements d, c0 {
-    public static final t1 p = i0.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
-    public static final t1 q = i0.t(1500000L, 980000L, 750000L, 520000L, 290000L);
-    public static final t1 r = i0.t(2000000L, 1300000L, 1000000L, 860000L, 610000L);
-    public static final t1 s = i0.t(2500000L, 1700000L, 1200000L, 970000L, 680000L);
-    public static final t1 t = i0.t(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
-    public static final t1 u = i0.t(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
+    public static final s1 p = i0.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
+    public static final s1 q = i0.t(1500000L, 980000L, 750000L, 520000L, 290000L);
+    public static final s1 r = i0.t(2000000L, 1300000L, 1000000L, 860000L, 610000L);
+    public static final s1 s = i0.t(2500000L, 1700000L, 1200000L, 970000L, 680000L);
+    public static final s1 t = i0.t(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
+    public static final s1 u = i0.t(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
     public static g v;
     public final Context a;
     public final l0 b;
@@ -75,7 +75,7 @@ public final class g implements d, c0 {
             z10 = a10.a;
         }
         if (z10) {
-            vVar2.b.execute(new f2.a(vVar2, 28));
+            vVar2.b.execute(new f2.a(vVar2, 27));
         }
     }
 
@@ -799,7 +799,7 @@ public final class g implements d, c0 {
                     return;
                 }
                 try {
-                    la.p(this.g > 0);
+                    ma.p(this.g > 0);
                     this.d.getClass();
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i7 = (int) (elapsedRealtime - this.h);

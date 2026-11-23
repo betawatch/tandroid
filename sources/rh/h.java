@@ -3,17 +3,17 @@ package rh;
 import android.graphics.Typeface;
 import android.provider.Settings;
 import android.view.View;
-import hi.s6;
+import hi.c7;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.Components.uz;
+import org.telegram.ui.Components.rz;
 import org.telegram.ui.web.z0;
 import r0.l1;
 import te.k;
 import te.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class h implements f, e, c {
     public d E;
@@ -25,7 +25,7 @@ public class h implements f, e, c {
     public final l c = new l();
     public final l d = new l();
     public final h2.f e = new h2.f((int[]) null);
-    public final uz f;
+    public final rz f;
     public final Runnable h;
     public boolean n;
     public l1 r;
@@ -34,29 +34,28 @@ public class h implements f, e, c {
     public int x;
     public final g y;
 
-    /* JADX WARN: Multi-variable type inference failed */
     public h(Runnable runnable) {
-        s6 s6Var = new s6(this, 25);
-        uz uzVar = new uz();
-        uzVar.c = b.a;
-        uzVar.d = new z0(uzVar, 7);
-        uzVar.b = s6Var;
+        c7 c7Var = new c7(this, 25);
+        rz rzVar = new rz();
+        rzVar.c = b.a;
+        rzVar.d = new z0(rzVar, 7);
+        rzVar.b = c7Var;
         Typeface typeface = g0.a;
         float f10 = 1.0f;
         try {
             f10 = Settings.Global.getFloat(t0.b.getContentResolver(), "animator_duration_scale", 1.0f);
         } catch (Exception unused) {
         }
-        uzVar.a = (long) (f10 * 250.0f * 1.1f);
-        this.f = uzVar;
+        rzVar.a = (long) (f10 * 250.0f * 1.1f);
+        this.f = rzVar;
         this.s = 1;
         this.y = new g(this, 0);
         this.h = runnable;
-        this.a = new te.c(0, new ji.l(this, runnable, 0 == true ? 1 : 0, 27), i1.w, 250L);
+        this.a = new te.c(0, new j6.k(28, this, runnable), i1.w, 250L);
     }
 
     @Override // rh.c
-    public final void O() {
+    public final void Q() {
         View view = this.F;
         if (view != null) {
             view.postOnAnimation(new g(this, 1));
@@ -156,12 +155,12 @@ public class h implements f, e, c {
         if (b10 != null) {
             bVar2 = b10.a.f(8);
         }
-        uz uzVar = this.f;
-        b bVar3 = (b) uzVar.c;
+        rz rzVar = this.f;
+        b bVar3 = (b) rzVar.c;
         boolean z11 = bVar2.d > 0;
         b bVar4 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
         if (bVar3 != bVar4) {
-            uzVar.a(bVar4, false);
+            rzVar.a(bVar4, false);
         }
         int i10 = this.s;
         if (i10 == 2) {

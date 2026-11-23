@@ -24,17 +24,17 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.z80;
+import org.telegram.ui.y80;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean E = true;
     public static volatile boolean F = true;
     public static boolean G = false;
     public static volatile long H = 0;
-    public static ot I = null;
+    public static nt I = null;
     public static pb.b J = null;
     public static h6.m K = null;
     public static t0 a = null;
@@ -157,7 +157,7 @@ public abstract class t0 extends Application {
     public static ILocationServiceProvider j() {
         if (K == null) {
             a.getClass();
-            h6.m mVar = new h6.m(20);
+            h6.m mVar = new h6.m();
             K = mVar;
             mVar.init(b);
         }
@@ -175,7 +175,7 @@ public abstract class t0 extends Application {
     public static PushListenerController.IPushListenerServiceProvider l() {
         if (I == null) {
             a.getClass();
-            I = ot.b;
+            I = nt.b;
         }
         return I;
     }
@@ -278,9 +278,9 @@ public abstract class t0 extends Application {
             return;
         }
         f = true;
-        wr.f(b);
+        vr.f(b);
         try {
-            hd.E0();
+            gd.E0();
         } catch (Exception e10) {
             e10.printStackTrace();
         }
@@ -298,7 +298,7 @@ public abstract class t0 extends Application {
             e12.printStackTrace();
         }
         try {
-            qc.h(b.registerReceiver(new q0(1), new IntentFilter("android.intent.action.BATTERY_CHANGED")));
+            pc.h(b.registerReceiver(new q0(1), new IntentFilter("android.intent.action.BATTERY_CHANGED")));
         } catch (Throwable th2) {
             a8.g(th2, true);
         }
@@ -310,25 +310,25 @@ public abstract class t0 extends Application {
         } catch (Exception e13) {
             e13.printStackTrace();
         }
-        cz.t();
+        bz.t();
         c6.g = b.getSharedPreferences("webview_bots", 0);
         for (int i7 = 0; i7 < 4; i7++) {
-            k10.i(i7).s();
-            np.u1(i7);
+            i10.i(i7).s();
+            mp.u1(i7);
             if (i7 == 0) {
-                cz.h = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i7).getCurrentTime() + "__";
+                bz.h = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i7).getCurrentTime() + "__";
             } else {
                 ConnectionsManager.getInstance(i7);
             }
-            TLRPC.User f10 = k10.i(i7).f();
+            TLRPC.User f10 = i10.i(i7).f();
             if (f10 != null) {
-                np.u1(i7).e4(f10, true, false);
-                ur messagesStorage = az.C(i7).getMessagesStorage();
-                messagesStorage.a.c(new qq(messagesStorage, 22));
+                mp.u1(i7).e4(f10, true, false);
+                tr messagesStorage = zy.C(i7).getMessagesStorage();
+                messagesStorage.a.c(new pq(messagesStorage, 22));
             }
         }
         ((t0) b).getClass();
-        g0.h3(new ai.n(29), 1000L);
+        g0.h3(new ai.k(29), 1000L);
         if (s2.a) {
             a8.b("app initied");
         }
@@ -340,12 +340,12 @@ public abstract class t0 extends Application {
             a6.q(i10);
         }
         r1.i().q();
-        g0.h3(new ai.n(25), 3000L);
+        g0.h3(new ai.k(25), 3000L);
     }
 
     public static void x() {
-        SharedPreferences h12 = np.h1();
-        if (!(h12.contains("pushService") ? h12.getBoolean("pushService", true) : np.u1(k10.t0).h7.getBoolean("keepAliveService", false))) {
+        SharedPreferences h12 = mp.h1();
+        if (!(h12.contains("pushService") ? h12.getBoolean("pushService", true) : mp.u1(i10.t0).h7.getBoolean("keepAliveService", false))) {
             b.stopService(new Intent(b, (Class<?>) NotificationsService.class));
         } else {
             try {
@@ -368,7 +368,7 @@ public abstract class t0 extends Application {
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         try {
-            hd.E0().X0(configuration);
+            gd.E0().X0(configuration);
             g0.v(b, configuration);
             VideoCapturerDevice.checkScreenCapturerSize();
             g0.c3();
@@ -424,37 +424,37 @@ public abstract class t0 extends Application {
         if (b == null) {
             b = getApplicationContext();
         }
-        wr.f(b);
+        vr.f(b);
         try {
             ConnectionsManager.native_setJava(false);
             new r0(this);
-            new b(new ai.n(26));
+            new b(new ai.k(26));
             if (s2.a) {
                 a8.b("load libs time = " + (SystemClock.elapsedRealtime() - s));
             }
             d = new Handler(b.getMainLooper());
-            g0.g3(new ai.n(27));
-            z80[] values = z80.values();
+            g0.g3(new ai.k(27));
+            y80[] values = y80.values();
             int length = values.length;
             int i11 = 0;
             while (true) {
                 if (i11 >= length) {
-                    c8.ya.b(z80.h);
+                    c8.za.b(y80.h);
                     break;
-                } else if (c8.ya.a(values[i11])) {
+                } else if (c8.za.a(values[i11])) {
                     break;
                 } else {
                     i11++;
                 }
             }
-            lt ltVar = lt.c;
+            kt ktVar = kt.c;
             for (int i12 = 0; i12 < 4; i12++) {
-                ls.f(i12).b(ltVar, ls.T1);
+                ks.f(i12).b(ktVar, ks.T1);
             }
-            ls.e().b(ltVar, ls.E4);
-            ls.e().b(ltVar, ls.D4);
+            ks.e().b(ktVar, ks.E4);
+            ks.e().b(ktVar, ks.D4);
         } catch (UnsatisfiedLinkError unused2) {
-            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + wr.d());
+            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + vr.d());
         }
     }
 

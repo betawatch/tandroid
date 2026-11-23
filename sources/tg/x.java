@@ -1,49 +1,46 @@
 package tg;
 
-import android.app.Activity;
-import org.telegram.messenger.k10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.bn;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class x extends bn {
-    public final /* synthetic */ h0 vd;
+public final /* synthetic */ class x implements r1.c {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(h0 h0Var) {
-        super(null);
-        this.vd = h0Var;
+    public /* synthetic */ x(l0 l0Var, boolean z10, int i7) {
+        this.a = i7;
+        this.b = l0Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.bn
-    public final boolean V9() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bn, org.telegram.ui.Components.bh, org.telegram.ui.Components.p40
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final Activity getParentActivity() {
-        return org.telegram.messenger.g0.W(this.vd.getContext());
-    }
-
-    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
-    public final h6 getResourceProvider() {
-        return this.vd.A1;
-    }
-
-    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
-    public final boolean isLightStatusBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bn, org.telegram.ui.Components.bh
-    public final TLRPC.User j() {
-        return k10.i(this.currentAccount).f();
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                l0 l0Var = this.b;
+                o1 o1Var = l0Var.f1;
+                if (gVar == l0Var.p1) {
+                    l0Var.p1 = null;
+                    if (!this.c) {
+                        o1Var.setVisibility(8);
+                    }
+                    o1Var.setMaskProvider(null);
+                    break;
+                }
+                break;
+            default:
+                l0 l0Var2 = this.b;
+                i0 i0Var = l0Var2.q1;
+                if (gVar == l0Var2.w1) {
+                    l0Var2.w1 = null;
+                    if (!this.c) {
+                        i0Var.setVisibility(8);
+                        sg.j0.e(l0Var2.z1).g();
+                        i0Var.getAdapter().f();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

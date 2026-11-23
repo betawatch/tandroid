@@ -1,23 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class mv0 extends org.telegram.ui.ActionBar.z4 {
-    public final /* synthetic */ ProfileActivity w0;
+public final class mv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mv0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.w0 = profileActivity;
+    public /* synthetic */ mv0(ProfileActivity profileActivity, boolean z10, int i7) {
+        this.a = i7;
+        this.c = profileActivity;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.z4, te.b
-    public final void H(int i7, float f10, float f11, te.c cVar) {
-        super.H(i7, f10, f11, cVar);
-        RectF rectF = ProfileActivity.Z6;
-        this.w0.A5();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.c.g0 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        org.telegram.ui.Cells.c4 c4Var;
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.c;
+                boolean z10 = this.b;
+                ProfileActivity.y1(profileActivity, z10);
+                profileActivity.Y.setClickable(true);
+                if (z10) {
+                    org.telegram.ui.ActionBar.g5 g5Var = profileActivity.U0;
+                    if (g5Var.G.getWidth() != 0 && !g5Var.e.isFocused()) {
+                        g5Var.e.requestFocus();
+                        org.telegram.messenger.g0.I3(g5Var.e);
+                    }
+                }
+                profileActivity.B4(true);
+                profileActivity.W1 = null;
+                profileActivity.fragmentView.invalidate();
+                if (z10) {
+                    profileActivity.Y4 = true;
+                    profileActivity.W4();
+                    Activity parentActivity = profileActivity.getParentActivity();
+                    i7 = ((org.telegram.ui.ActionBar.g2) profileActivity).classGuid;
+                    org.telegram.messenger.g0.Z2(parentActivity, i7);
+                    profileActivity.P.setPreventMoving(false);
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.c;
+                if (profileActivity2.g0 != null && (c4Var = profileActivity2.h0) != null) {
+                    if (!this.b) {
+                        c4Var.setVisibility(4);
+                    }
+                    profileActivity2.g0 = null;
+                    break;
+                }
+                break;
+        }
     }
 }

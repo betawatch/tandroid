@@ -1,81 +1,65 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sa1 implements Runnable {
+public final /* synthetic */ class sa1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bb1 b;
+    public final /* synthetic */ za1 b;
 
-    public /* synthetic */ sa1(bb1 bb1Var, int i7) {
+    public /* synthetic */ sa1(za1 za1Var, int i7) {
         this.a = i7;
-        this.b = bb1Var;
+        this.b = za1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i7 = 0;
-                while (true) {
-                    er[] erVarArr = this.b.x.f;
-                    if (i7 >= erVarArr.length) {
-                        break;
-                    } else {
-                        erVarArr[i7].A(0.0f);
-                        i7++;
+                final int i7 = 0;
+                final za1 za1Var = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.ua1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                za1.g0(za1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                za1.m0(za1Var, tL_error, tLObject);
+                                break;
+                        }
                     }
-                }
+                });
+                break;
             case 1:
-                bb1 bb1Var = this.b;
-                EditTextBoldCursor editTextBoldCursor = bb1Var.n;
-                if (editTextBoldCursor != null) {
-                    if (editTextBoldCursor.length() != 0) {
-                        bb1Var.g0[2].P(49);
-                        bb1Var.g0[2].T(false, 0.0f);
-                        bb1Var.a.d();
-                        break;
-                    } else {
-                        bb1Var.K0(true);
-                        break;
-                    }
-                }
+                org.telegram.messenger.g0.g3(new va1(this.b, tL_error, 0));
                 break;
             case 2:
-                bb1 bb1Var2 = this.b;
-                EditTextBoldCursor editTextBoldCursor2 = bb1Var2.n;
-                if (editTextBoldCursor2 != null && editTextBoldCursor2.getVisibility() == 0) {
-                    bb1Var2.n.requestFocus();
-                    org.telegram.messenger.g0.I3(bb1Var2.n);
-                    break;
-                }
+                org.telegram.messenger.g0.g3(new va1(this.b, tL_error, 1));
                 break;
             case 3:
-                bb1 bb1Var3 = this.b;
-                mb0 mb0Var = bb1Var3.x;
-                if (mb0Var != null && mb0Var.getVisibility() == 0) {
-                    bb1Var3.x.f[0].requestFocus();
-                    break;
-                }
-                break;
-            case 4:
-                bb1 bb1Var4 = this.b;
-                if (bb1Var4.h0 != null) {
-                    bb1Var4.K0(false);
-                    break;
-                }
-                break;
-            case 5:
-                bb1.k0(this.b);
-                break;
-            case 6:
-                org.telegram.messenger.g0.h3(new sa1(this.b, 7), 150L);
+                org.telegram.messenger.g0.g3(new va1(this.b, tL_error, 2));
                 break;
             default:
-                for (er erVar : this.b.x.f) {
-                    erVar.A(0.0f);
-                }
+                final int i10 = 1;
+                final za1 za1Var2 = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.ua1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                za1.g0(za1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                za1.m0(za1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

@@ -1,14 +1,15 @@
 package j2;
 
-import a8.la;
+import a8.ma;
 import a8.p0;
 import android.net.Uri;
 import e2.m0;
 import j$.util.DesugarCollections;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ int i = 0;
@@ -25,19 +26,8 @@ public final class m {
         m0.a("media3.datasource");
     }
 
-    public m(Uri uri, int i7, byte[] bArr, Map map, long j3, long j10, String str, int i10) {
-        la.f(j3 >= 0);
-        la.f(j3 >= 0);
-        la.f(j10 > 0 || j10 == -1);
-        uri.getClass();
-        this.a = uri;
-        this.b = i7;
-        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
-        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
-        this.e = j3;
-        this.f = j10;
-        this.g = str;
-        this.h = i10;
+    public m(long j3, Uri uri) {
+        this(uri, 1, null, Collections.EMPTY_MAP, j3, -1L, null, 0);
     }
 
     public final l a() {
@@ -87,5 +77,20 @@ public final class m {
         sb2.append(this.g);
         sb2.append(", ");
         return p0.n(this.h, "]", sb2);
+    }
+
+    public m(Uri uri, int i7, byte[] bArr, Map map, long j3, long j10, String str, int i10) {
+        ma.f(j3 >= 0);
+        ma.f(j3 >= 0);
+        ma.f(j10 > 0 || j10 == -1);
+        uri.getClass();
+        this.a = uri;
+        this.b = i7;
+        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
+        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
+        this.e = j3;
+        this.f = j10;
+        this.g = str;
+        this.h = i10;
     }
 }

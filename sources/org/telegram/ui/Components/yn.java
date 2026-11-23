@@ -1,73 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.y91;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class yn extends q9 {
-    public final org.telegram.ui.Cells.l6 H;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 I;
-    public final /* synthetic */ boolean J;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 K;
-    public final /* synthetic */ co L;
+public final class yn extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yn(co coVar, Context context, org.telegram.ui.ActionBar.g2 g2Var, boolean z10, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.L = coVar;
-        this.I = g2Var;
-        this.J = z10;
-        this.K = h6Var;
-        this.H = new org.telegram.ui.Cells.l6(this);
+    public /* synthetic */ yn(zn znVar, int i7) {
+        this.a = i7;
+        this.b = znVar;
     }
 
-    @Override // org.telegram.ui.Components.q9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        long j3;
-        co coVar = this.L;
-        if (!coVar.b || this.e != null) {
-            super.onDraw(canvas);
-            return;
-        }
-        org.telegram.ui.Cells.l6 l6Var = this.H;
-        l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        l6Var.a = true;
-        l6Var.v = true;
-        l6Var.J = this.K;
-        Integer num = coVar.c;
-        if (num != null) {
-            l6Var.z = num.intValue();
-        }
-        org.telegram.ui.bn bnVar = coVar.H;
-        if (bnVar != null) {
-            j3 = bnVar.a();
-        } else {
-            org.telegram.ui.ActionBar.g2 g2Var = this.I;
-            j3 = g2Var instanceof y91 ? -((y91) g2Var).a : 0L;
-        }
-        fi.i7.h(j3, canvas, this.a, l6Var);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!this.J || !getImageReceiver().L()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-        } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.hd.N0(2131754797, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.N0(2131747623, null)));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.R = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.L.b && this.H.a(this, motionEvent)) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                zn znVar = this.b;
+                if (znVar.R == animator) {
+                    znVar.getSubtitleTextView().setVisibility(4);
+                    znVar.R = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.R = null;
+                break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

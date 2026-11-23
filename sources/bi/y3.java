@@ -1,34 +1,36 @@
 package bi;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import org.telegram.messenger.w10;
+import org.telegram.ui.Components.kc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y3 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class y3 implements w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+    public final /* synthetic */ u3 e;
 
-    public /* synthetic */ y3(boolean[] zArr, long j3, int i7) {
-        this.a = i7;
-        this.b = zArr;
-        this.c = j3;
+    public /* synthetic */ y3(Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, u3 u3Var, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = i7;
+        this.d = i6Var;
+        this.e = u3Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                if (!this.b[0]) {
-                    i4.g(this.c);
-                    break;
-                }
+                kc k10 = this.e.k();
+                a5.q(this.b, this.c, this.d, k10, (String) obj, null);
                 break;
             default:
-                if (!this.b[0]) {
-                    i4.g(this.c);
-                    break;
-                }
+                kc k11 = this.e.k();
+                a5.q(this.b, this.c, this.d, k11, (String) obj, null);
                 break;
         }
     }

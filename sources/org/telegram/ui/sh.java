@@ -8,19 +8,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class sh implements View.OnClickListener {
-    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ lf0 a;
     public final /* synthetic */ org.telegram.ui.Components.ek0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ bn f;
 
-    public sh(bn bnVar, mf0 mf0Var, org.telegram.ui.Components.ek0 ek0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public sh(bn bnVar, lf0 lf0Var, org.telegram.ui.Components.ek0 ek0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = bnVar;
-        this.a = mf0Var;
+        this.a = lf0Var;
         this.b = ek0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -29,9 +29,9 @@ public final class sh implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        mf0 mf0Var = this.a;
-        ArrayList arrayList = mf0Var.b;
-        ArrayList arrayList2 = mf0Var.c;
+        lf0 lf0Var = this.a;
+        ArrayList arrayList = lf0Var.b;
+        ArrayList arrayList2 = lf0Var.c;
         bn bnVar = this.f;
         if (bnVar.g9 == null || arrayList2.isEmpty()) {
             return;
@@ -51,12 +51,12 @@ public final class sh implements View.OnClickListener {
             bnVar.P7(true);
             return;
         }
-        if (org.telegram.messenger.cz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(bnVar.getParentActivity()), bnVar.Ba).t(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131748295, null)), null);
+        if (org.telegram.messenger.bz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.fc t6 = new org.telegram.ui.Components.kc(org.telegram.ui.Components.bb.a(bnVar.getParentActivity()), bnVar.Ba).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131748295, null)), null);
             bnVar.C1 = t6;
             t6.j = 4000;
             t6.j();
-            org.telegram.messenger.cz.S(org.telegram.messenger.cz.c1 - 1);
+            org.telegram.messenger.bz.S(org.telegram.messenger.bz.c1 - 1);
         }
         org.telegram.ui.Components.ek0 ek0Var = this.b;
         ek0Var.requestLayout();

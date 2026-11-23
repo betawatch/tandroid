@@ -1,15 +1,15 @@
 package ki;
 
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.o5;
+import org.telegram.ui.ActionBar.p5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,21 +36,21 @@ public final /* synthetic */ class b2 implements RequestDelegate {
                 VoIPPreNotificationService.lambda$decline$4(i11, tLObject, tL_error);
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new o5(i11, tLObject));
+                org.telegram.messenger.g0.g3(new p5(i11, tLObject));
                 break;
             case 4:
                 if (tLObject instanceof TLRPC.TL_updates) {
-                    np.u1(i11).V3((TLRPC.TL_updates) tLObject, false);
+                    mp.u1(i11).V3((TLRPC.TL_updates) tLObject, false);
                     break;
                 }
                 break;
             case 5:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new o5(i11, 2, tLObject));
+                org.telegram.messenger.g0.g3(new p5(i11, 2, tLObject));
                 break;
             default:
                 String str2 = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new o5(i11, i10, tLObject));
+                org.telegram.messenger.g0.g3(new p5(i11, i10, tLObject));
                 break;
         }
     }

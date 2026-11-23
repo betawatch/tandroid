@@ -7,13 +7,13 @@ import android.view.View;
 import com.google.android.gms.internal.vision.e2;
 import fi.s2;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l extends View {
     public final int a;
-    public p5 b;
+    public o5 b;
     public final Paint c;
     public long d;
     public TLRPC.Document e;
@@ -39,18 +39,18 @@ public final class l extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        p5 p5Var = this.b;
-        if (p5Var != null) {
-            p5Var.a(this);
+        o5 o5Var = this.b;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        p5 p5Var = this.b;
-        if (p5Var != null) {
-            p5Var.n(this);
+        o5 o5Var = this.b;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
     }
 
@@ -74,14 +74,14 @@ public final class l extends View {
         float width = getWidth() * 0.78f * f13;
         float width2 = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
-        p5 p5Var = this.b;
-        if (p5Var == null || (s2Var = p5Var.k) == null || !s2Var.I()) {
+        o5 o5Var = this.b;
+        if (o5Var == null || (s2Var = o5Var.k) == null || !s2Var.J()) {
             canvas.drawCircle(width2, height, 0.42f * width, this.c);
         }
-        p5 p5Var2 = this.b;
-        if (p5Var2 != null) {
+        o5 o5Var2 = this.b;
+        if (o5Var2 != null) {
             float f14 = width / 2.0f;
-            p5Var2.setBounds((int) (width2 - f14), (int) (height - f14), (int) (width2 + f14), (int) (height + f14));
+            o5Var2.setBounds((int) (width2 - f14), (int) (height - f14), (int) (width2 + f14), (int) (height + f14));
             s.b(canvas, this.b);
         }
     }
@@ -112,7 +112,7 @@ public final class l extends View {
             this.d = document.id;
             this.e = document;
             this.f = "c:" + document.id;
-            this.b = p5.l(this.a, 2, document);
+            this.b = o5.l(this.a, 2, document);
             if (isAttachedToWindow()) {
                 this.b.a(this);
             }

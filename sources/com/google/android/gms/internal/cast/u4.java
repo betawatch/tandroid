@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.cast;
 
-import a8.b9;
+import a8.c9;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class u4 implements Iterable, Serializable {
     public static final u4 c = new u4(h5.b);
@@ -106,10 +106,10 @@ public class u4 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int j3 = j();
         if (j() <= 50) {
-            concat = b9.a(this);
+            concat = c9.a(this);
         } else {
             k(j());
-            concat = b9.a(new t4(this.b)).concat("...");
+            concat = c9.a(new t4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

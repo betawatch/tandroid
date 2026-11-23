@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oq implements Runnable {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class oq implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.messenger.camera.i iVar;
+        oi.h hVar;
         switch (this.a) {
             case 0:
                 qq qqVar = this.b;
@@ -36,11 +36,11 @@ public final /* synthetic */ class oq implements Runnable {
                 String str = this.c;
                 if (arrayList == null && arrayList2 == null) {
                     qqVar2.s = false;
-                    iVar = null;
+                    hVar = null;
                 } else {
-                    iVar = new org.telegram.messenger.camera.i(qqVar2, str, arrayList, arrayList2, 18);
+                    hVar = new oi.h(qqVar2, str, arrayList, arrayList2, 19);
                 }
-                qqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.v3.T(rqVar.n) ? rqVar.N : 0L, false, rqVar.O, 1, 0L, iVar);
+                qqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.v3.T(rqVar.n) ? rqVar.N : 0L, false, rqVar.O, 1, 0L, hVar);
                 break;
         }
     }

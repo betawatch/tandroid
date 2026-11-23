@@ -20,7 +20,7 @@ import androidx.fragment.app.f0;
 import androidx.fragment.app.l0;
 import androidx.fragment.app.o0;
 import androidx.versionedparcelable.ParcelImpl;
-import c8.ac;
+import c8.bc;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
@@ -33,7 +33,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class a implements Parcelable.Creator {
                 Objects.requireNonNull(readBundle);
                 return new b(readBundle);
             case 1:
-                int z13 = ac.z(inParcel);
+                int z13 = bc.z(inParcel);
                 boolean z14 = false;
                 int i10 = 0;
                 boolean z15 = false;
@@ -76,50 +76,50 @@ public final class a implements Parcelable.Creator {
                     int readInt = inParcel.readInt();
                     switch ((char) readInt) {
                         case 1:
-                            dVar = (a6.d) ac.g(inParcel, readInt, a6.d.CREATOR);
+                            dVar = (a6.d) bc.g(inParcel, readInt, a6.d.CREATOR);
                             break;
                         case 2:
-                            aVar = (a6.a) ac.g(inParcel, readInt, a6.a.CREATOR);
+                            aVar = (a6.a) bc.g(inParcel, readInt, a6.a.CREATOR);
                             break;
                         case 3:
-                            str4 = ac.h(inParcel, readInt);
+                            str4 = bc.h(inParcel, readInt);
                             break;
                         case 4:
-                            z14 = ac.n(inParcel, readInt);
+                            z14 = bc.n(inParcel, readInt);
                             break;
                         case 5:
-                            i10 = ac.u(inParcel, readInt);
+                            i10 = bc.u(inParcel, readInt);
                             break;
                         case 6:
-                            cVar = (a6.c) ac.g(inParcel, readInt, a6.c.CREATOR);
+                            cVar = (a6.c) bc.g(inParcel, readInt, a6.c.CREATOR);
                             break;
                         case 7:
-                            bVar2 = (a6.b) ac.g(inParcel, readInt, a6.b.CREATOR);
+                            bVar2 = (a6.b) bc.g(inParcel, readInt, a6.b.CREATOR);
                             break;
                         case '\b':
-                            z15 = ac.n(inParcel, readInt);
+                            z15 = bc.n(inParcel, readInt);
                             break;
                         default:
-                            ac.y(inParcel, readInt);
+                            bc.y(inParcel, readInt);
                             break;
                     }
                 }
-                ac.m(inParcel, z13);
+                bc.m(inParcel, z13);
                 return new a6.e(dVar, aVar, str4, z14, i10, cVar, bVar2, z15);
             case 2:
-                int z16 = ac.z(inParcel);
+                int z16 = bc.z(inParcel);
                 while (inParcel.dataPosition() < z16) {
                     int readInt2 = inParcel.readInt();
                     if (((char) readInt2) != 1) {
-                        ac.y(inParcel, readInt2);
+                        bc.y(inParcel, readInt2);
                     } else {
-                        pendingIntent = (PendingIntent) ac.g(inParcel, readInt2, PendingIntent.CREATOR);
+                        pendingIntent = (PendingIntent) bc.g(inParcel, readInt2, PendingIntent.CREATOR);
                     }
                 }
-                ac.m(inParcel, z16);
+                bc.m(inParcel, z16);
                 return new a6.f(pendingIntent);
             case 3:
-                int z17 = ac.z(inParcel);
+                int z17 = bc.z(inParcel);
                 boolean z18 = false;
                 boolean z19 = false;
                 boolean z20 = false;
@@ -131,80 +131,80 @@ public final class a implements Parcelable.Creator {
                     int readInt3 = inParcel.readInt();
                     switch ((char) readInt3) {
                         case 1:
-                            z18 = ac.n(inParcel, readInt3);
+                            z18 = bc.n(inParcel, readInt3);
                             break;
                         case 2:
-                            str5 = ac.h(inParcel, readInt3);
+                            str5 = bc.h(inParcel, readInt3);
                             break;
                         case 3:
-                            str6 = ac.h(inParcel, readInt3);
+                            str6 = bc.h(inParcel, readInt3);
                             break;
                         case 4:
-                            z19 = ac.n(inParcel, readInt3);
+                            z19 = bc.n(inParcel, readInt3);
                             break;
                         case 5:
-                            str7 = ac.h(inParcel, readInt3);
+                            str7 = bc.h(inParcel, readInt3);
                             break;
                         case 6:
-                            arrayList2 = ac.j(inParcel, readInt3);
+                            arrayList2 = bc.j(inParcel, readInt3);
                             break;
                         case 7:
-                            z20 = ac.n(inParcel, readInt3);
+                            z20 = bc.n(inParcel, readInt3);
                             break;
                         default:
-                            ac.y(inParcel, readInt3);
+                            bc.y(inParcel, readInt3);
                             break;
                     }
                 }
-                ac.m(inParcel, z17);
+                bc.m(inParcel, z17);
                 return new a6.a(z18, str5, str6, z19, str7, arrayList2, z20);
             case 4:
-                int z21 = ac.z(inParcel);
+                int z21 = bc.z(inParcel);
                 while (inParcel.dataPosition() < z21) {
                     int readInt4 = inParcel.readInt();
                     char c10 = (char) readInt4;
                     if (c10 == 1) {
-                        z10 = ac.n(inParcel, readInt4);
+                        z10 = bc.n(inParcel, readInt4);
                     } else if (c10 != 2) {
-                        ac.y(inParcel, readInt4);
+                        bc.y(inParcel, readInt4);
                     } else {
-                        str3 = ac.h(inParcel, readInt4);
+                        str3 = bc.h(inParcel, readInt4);
                     }
                 }
-                ac.m(inParcel, z21);
+                bc.m(inParcel, z21);
                 return new a6.b(str3, z10);
             case 5:
-                int z22 = ac.z(inParcel);
+                int z22 = bc.z(inParcel);
                 String str8 = null;
                 while (inParcel.dataPosition() < z22) {
                     int readInt5 = inParcel.readInt();
                     char c11 = (char) readInt5;
                     if (c11 == 1) {
-                        z12 = ac.n(inParcel, readInt5);
+                        z12 = bc.n(inParcel, readInt5);
                     } else if (c11 == 2) {
-                        bArr = ac.b(inParcel, readInt5);
+                        bArr = bc.b(inParcel, readInt5);
                     } else if (c11 != 3) {
-                        ac.y(inParcel, readInt5);
+                        bc.y(inParcel, readInt5);
                     } else {
-                        str8 = ac.h(inParcel, readInt5);
+                        str8 = bc.h(inParcel, readInt5);
                     }
                 }
-                ac.m(inParcel, z22);
+                bc.m(inParcel, z22);
                 return new a6.c(z12, bArr, str8);
             case 6:
-                int z23 = ac.z(inParcel);
+                int z23 = bc.z(inParcel);
                 while (inParcel.dataPosition() < z23) {
                     int readInt6 = inParcel.readInt();
                     if (((char) readInt6) != 1) {
-                        ac.y(inParcel, readInt6);
+                        bc.y(inParcel, readInt6);
                     } else {
-                        z11 = ac.n(inParcel, readInt6);
+                        z11 = bc.n(inParcel, readInt6);
                     }
                 }
-                ac.m(inParcel, z23);
+                bc.m(inParcel, z23);
                 return new a6.d(z11);
             case 7:
-                int z24 = ac.z(inParcel);
+                int z24 = bc.z(inParcel);
                 String str9 = null;
                 String str10 = null;
                 String str11 = null;
@@ -218,41 +218,41 @@ public final class a implements Parcelable.Creator {
                     int readInt7 = inParcel.readInt();
                     switch ((char) readInt7) {
                         case 1:
-                            str9 = ac.h(inParcel, readInt7);
+                            str9 = bc.h(inParcel, readInt7);
                             break;
                         case 2:
-                            str10 = ac.h(inParcel, readInt7);
+                            str10 = bc.h(inParcel, readInt7);
                             break;
                         case 3:
-                            str11 = ac.h(inParcel, readInt7);
+                            str11 = bc.h(inParcel, readInt7);
                             break;
                         case 4:
-                            str12 = ac.h(inParcel, readInt7);
+                            str12 = bc.h(inParcel, readInt7);
                             break;
                         case 5:
-                            uri = (Uri) ac.g(inParcel, readInt7, Uri.CREATOR);
+                            uri = (Uri) bc.g(inParcel, readInt7, Uri.CREATOR);
                             break;
                         case 6:
-                            str13 = ac.h(inParcel, readInt7);
+                            str13 = bc.h(inParcel, readInt7);
                             break;
                         case 7:
-                            str14 = ac.h(inParcel, readInt7);
+                            str14 = bc.h(inParcel, readInt7);
                             break;
                         case '\b':
-                            str15 = ac.h(inParcel, readInt7);
+                            str15 = bc.h(inParcel, readInt7);
                             break;
                         case '\t':
-                            uVar = (u) ac.g(inParcel, readInt7, u.CREATOR);
+                            uVar = (u) bc.g(inParcel, readInt7, u.CREATOR);
                             break;
                         default:
-                            ac.y(inParcel, readInt7);
+                            bc.y(inParcel, readInt7);
                             break;
                     }
                 }
-                ac.m(inParcel, z24);
+                bc.m(inParcel, z24);
                 return new a6.g(str9, str10, str11, str12, uri, str13, str14, str15, uVar);
             case 8:
-                int z25 = ac.z(inParcel);
+                int z25 = bc.z(inParcel);
                 int i11 = 0;
                 int i12 = 0;
                 boolean z26 = false;
@@ -269,59 +269,59 @@ public final class a implements Parcelable.Creator {
                     int readInt8 = inParcel.readInt();
                     switch ((char) readInt8) {
                         case 2:
-                            str16 = ac.h(inParcel, readInt8);
+                            str16 = bc.h(inParcel, readInt8);
                             break;
                         case 3:
-                            str17 = ac.h(inParcel, readInt8);
+                            str17 = bc.h(inParcel, readInt8);
                             break;
                         case 4:
-                            i11 = ac.u(inParcel, readInt8);
+                            i11 = bc.u(inParcel, readInt8);
                             break;
                         case 5:
-                            i12 = ac.u(inParcel, readInt8);
+                            i12 = bc.u(inParcel, readInt8);
                             break;
                         case 6:
-                            z26 = ac.n(inParcel, readInt8);
+                            z26 = bc.n(inParcel, readInt8);
                             break;
                         case 7:
-                            z27 = ac.n(inParcel, readInt8);
+                            z27 = bc.n(inParcel, readInt8);
                             break;
                         case '\b':
-                            str18 = ac.h(inParcel, readInt8);
+                            str18 = bc.h(inParcel, readInt8);
                             break;
                         case '\t':
-                            z28 = ac.n(inParcel, readInt8);
+                            z28 = bc.n(inParcel, readInt8);
                             break;
                         case '\n':
-                            str19 = ac.h(inParcel, readInt8);
+                            str19 = bc.h(inParcel, readInt8);
                             break;
                         case 11:
-                            str20 = ac.h(inParcel, readInt8);
+                            str20 = bc.h(inParcel, readInt8);
                             break;
                         case '\f':
-                            i13 = ac.u(inParcel, readInt8);
+                            i13 = bc.u(inParcel, readInt8);
                             break;
                         case '\r':
-                            arrayList3 = ac.j(inParcel, readInt8);
+                            arrayList3 = bc.j(inParcel, readInt8);
                             break;
                         default:
-                            ac.y(inParcel, readInt8);
+                            bc.y(inParcel, readInt8);
                             break;
                     }
                 }
-                ac.m(inParcel, z25);
+                bc.m(inParcel, z25);
                 return new ConnectionConfiguration(str16, str17, i11, i12, z26, z27, str18, z28, str19, str20, i13, arrayList3);
             case 9:
-                int z29 = ac.z(inParcel);
+                int z29 = bc.z(inParcel);
                 while (inParcel.dataPosition() < z29) {
                     int readInt9 = inParcel.readInt();
                     if (((char) readInt9) != 2) {
-                        ac.y(inParcel, readInt9);
+                        bc.y(inParcel, readInt9);
                     } else {
-                        bundle = ac.a(inParcel, readInt9);
+                        bundle = bc.a(inParcel, readInt9);
                     }
                 }
-                ac.m(inParcel, z29);
+                bc.m(inParcel, z29);
                 return new a0(bundle);
             case 10:
                 return new Parcelable(inParcel) { // from class: android.support.v4.media.MediaBrowserCompat$MediaItem
@@ -406,7 +406,7 @@ public final class a implements Parcelable.Creator {
                 dVar2.a = bVar;
                 return dVar2;
             case 23:
-                int z30 = ac.z(inParcel);
+                int z30 = bc.z(inParcel);
                 long j3 = 0;
                 String str21 = null;
                 String str22 = null;
@@ -422,47 +422,47 @@ public final class a implements Parcelable.Creator {
                     int readInt10 = inParcel.readInt();
                     switch ((char) readInt10) {
                         case 2:
-                            str21 = ac.h(inParcel, readInt10);
+                            str21 = bc.h(inParcel, readInt10);
                             break;
                         case 3:
-                            str22 = ac.h(inParcel, readInt10);
+                            str22 = bc.h(inParcel, readInt10);
                             break;
                         case 4:
-                            str23 = ac.h(inParcel, readInt10);
+                            str23 = bc.h(inParcel, readInt10);
                             break;
                         case 5:
-                            str24 = ac.h(inParcel, readInt10);
+                            str24 = bc.h(inParcel, readInt10);
                             break;
                         case 6:
-                            uri2 = (Uri) ac.g(inParcel, readInt10, Uri.CREATOR);
+                            uri2 = (Uri) bc.g(inParcel, readInt10, Uri.CREATOR);
                             break;
                         case 7:
-                            str25 = ac.h(inParcel, readInt10);
+                            str25 = bc.h(inParcel, readInt10);
                             break;
                         case '\b':
-                            j3 = ac.w(inParcel, readInt10);
+                            j3 = bc.w(inParcel, readInt10);
                             break;
                         case '\t':
-                            str26 = ac.h(inParcel, readInt10);
+                            str26 = bc.h(inParcel, readInt10);
                             break;
                         case '\n':
-                            arrayList4 = ac.l(inParcel, readInt10, Scope.CREATOR);
+                            arrayList4 = bc.l(inParcel, readInt10, Scope.CREATOR);
                             break;
                         case 11:
-                            str27 = ac.h(inParcel, readInt10);
+                            str27 = bc.h(inParcel, readInt10);
                             break;
                         case '\f':
-                            str28 = ac.h(inParcel, readInt10);
+                            str28 = bc.h(inParcel, readInt10);
                             break;
                         default:
-                            ac.y(inParcel, readInt10);
+                            bc.y(inParcel, readInt10);
                             break;
                     }
                 }
-                ac.m(inParcel, z30);
+                bc.m(inParcel, z30);
                 return new GoogleSignInAccount(str21, str22, str23, str24, uri2, str25, j3, str26, arrayList4, str27, str28);
             case 24:
-                int z31 = ac.z(inParcel);
+                int z31 = bc.z(inParcel);
                 int i15 = 0;
                 boolean z32 = false;
                 boolean z33 = false;
@@ -476,95 +476,95 @@ public final class a implements Parcelable.Creator {
                     int readInt11 = inParcel.readInt();
                     switch ((char) readInt11) {
                         case 1:
-                            i15 = ac.u(inParcel, readInt11);
+                            i15 = bc.u(inParcel, readInt11);
                             break;
                         case 2:
-                            arrayList5 = ac.l(inParcel, readInt11, Scope.CREATOR);
+                            arrayList5 = bc.l(inParcel, readInt11, Scope.CREATOR);
                             break;
                         case 3:
-                            account = (Account) ac.g(inParcel, readInt11, Account.CREATOR);
+                            account = (Account) bc.g(inParcel, readInt11, Account.CREATOR);
                             break;
                         case 4:
-                            z32 = ac.n(inParcel, readInt11);
+                            z32 = bc.n(inParcel, readInt11);
                             break;
                         case 5:
-                            z33 = ac.n(inParcel, readInt11);
+                            z33 = bc.n(inParcel, readInt11);
                             break;
                         case 6:
-                            z34 = ac.n(inParcel, readInt11);
+                            z34 = bc.n(inParcel, readInt11);
                             break;
                         case 7:
-                            str29 = ac.h(inParcel, readInt11);
+                            str29 = bc.h(inParcel, readInt11);
                             break;
                         case '\b':
-                            str30 = ac.h(inParcel, readInt11);
+                            str30 = bc.h(inParcel, readInt11);
                             break;
                         case '\t':
-                            arrayList = ac.l(inParcel, readInt11, d6.a.CREATOR);
+                            arrayList = bc.l(inParcel, readInt11, d6.a.CREATOR);
                             break;
                         case '\n':
-                            str31 = ac.h(inParcel, readInt11);
+                            str31 = bc.h(inParcel, readInt11);
                             break;
                         default:
-                            ac.y(inParcel, readInt11);
+                            bc.y(inParcel, readInt11);
                             break;
                     }
                 }
-                ac.m(inParcel, z31);
+                bc.m(inParcel, z31);
                 return new GoogleSignInOptions(i15, arrayList5, account, z32, z33, z34, str29, str30, GoogleSignInOptions.c(arrayList), str31);
             case 25:
-                int z35 = ac.z(inParcel);
+                int z35 = bc.z(inParcel);
                 String str32 = "";
                 String str33 = "";
                 while (inParcel.dataPosition() < z35) {
                     int readInt12 = inParcel.readInt();
                     char c12 = (char) readInt12;
                     if (c12 == 4) {
-                        str32 = ac.h(inParcel, readInt12);
+                        str32 = bc.h(inParcel, readInt12);
                     } else if (c12 == 7) {
-                        googleSignInAccount = (GoogleSignInAccount) ac.g(inParcel, readInt12, GoogleSignInAccount.CREATOR);
+                        googleSignInAccount = (GoogleSignInAccount) bc.g(inParcel, readInt12, GoogleSignInAccount.CREATOR);
                     } else if (c12 != '\b') {
-                        ac.y(inParcel, readInt12);
+                        bc.y(inParcel, readInt12);
                     } else {
-                        str33 = ac.h(inParcel, readInt12);
+                        str33 = bc.h(inParcel, readInt12);
                     }
                 }
-                ac.m(inParcel, z35);
+                bc.m(inParcel, z35);
                 return new SignInAccount(str32, googleSignInAccount, str33);
             case 26:
-                int z36 = ac.z(inParcel);
+                int z36 = bc.z(inParcel);
                 Bundle bundle2 = null;
                 int i16 = 0;
                 while (inParcel.dataPosition() < z36) {
                     int readInt13 = inParcel.readInt();
                     char c13 = (char) readInt13;
                     if (c13 == 1) {
-                        i7 = ac.u(inParcel, readInt13);
+                        i7 = bc.u(inParcel, readInt13);
                     } else if (c13 == 2) {
-                        i16 = ac.u(inParcel, readInt13);
+                        i16 = bc.u(inParcel, readInt13);
                     } else if (c13 != 3) {
-                        ac.y(inParcel, readInt13);
+                        bc.y(inParcel, readInt13);
                     } else {
-                        bundle2 = ac.a(inParcel, readInt13);
+                        bundle2 = bc.a(inParcel, readInt13);
                     }
                 }
-                ac.m(inParcel, z36);
+                bc.m(inParcel, z36);
                 return new d6.a(i7, i16, bundle2);
             case 27:
-                int z37 = ac.z(inParcel);
+                int z37 = bc.z(inParcel);
                 GoogleSignInOptions googleSignInOptions = null;
                 while (inParcel.dataPosition() < z37) {
                     int readInt14 = inParcel.readInt();
                     char c14 = (char) readInt14;
                     if (c14 == 2) {
-                        str2 = ac.h(inParcel, readInt14);
+                        str2 = bc.h(inParcel, readInt14);
                     } else if (c14 != 5) {
-                        ac.y(inParcel, readInt14);
+                        bc.y(inParcel, readInt14);
                     } else {
-                        googleSignInOptions = (GoogleSignInOptions) ac.g(inParcel, readInt14, GoogleSignInOptions.CREATOR);
+                        googleSignInOptions = (GoogleSignInOptions) bc.g(inParcel, readInt14, GoogleSignInOptions.CREATOR);
                     }
                 }
-                ac.m(inParcel, z37);
+                bc.m(inParcel, z37);
                 return new SignInConfiguration(str2, googleSignInOptions);
             case 28:
                 try {
@@ -573,16 +573,16 @@ public final class a implements Parcelable.Creator {
                     throw new RuntimeException(e10);
                 }
             default:
-                int z38 = ac.z(inParcel);
+                int z38 = bc.z(inParcel);
                 while (inParcel.dataPosition() < z38) {
                     int readInt15 = inParcel.readInt();
                     if (((char) readInt15) != 1) {
-                        ac.y(inParcel, readInt15);
+                        bc.y(inParcel, readInt15);
                     } else {
-                        str = ac.h(inParcel, readInt15);
+                        str = bc.h(inParcel, readInt15);
                     }
                 }
-                ac.m(inParcel, z38);
+                bc.m(inParcel, z38);
                 return new db.g(str);
         }
     }

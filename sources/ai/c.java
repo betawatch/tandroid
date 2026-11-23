@@ -1,33 +1,24 @@
 package ai;
 
-import android.speech.RecognitionSupport;
-import android.speech.RecognitionSupportCallback;
-import android.util.Log;
+import org.telegram.messenger.gd;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c implements RecognitionSupportCallback {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ b b;
+public final class c {
+    public final String a;
+    public final long b;
+    public final TL_aicompose.AiComposeTone c;
+    public final boolean d;
 
-    public c(boolean[] zArr, b bVar) {
-        this.a = zArr;
-        this.b = bVar;
+    public c(String str, long j3, TL_aicompose.AiComposeTone aiComposeTone, boolean z10) {
+        this.a = str;
+        this.b = j3;
+        this.c = aiComposeTone;
+        this.d = z10;
     }
 
-    public final void onError(int i7) {
-        Log.d("Dictation", "support probe: error " + i7);
-        if (i7 == 14) {
-            this.a[0] = true;
-        }
-        this.b.run();
-    }
-
-    public final void onSupportResult(RecognitionSupport recognitionSupport) {
-        Log.d("Dictation", "support probe: installed=" + recognitionSupport.getInstalledOnDeviceLanguages().size() + " pending=" + recognitionSupport.getPendingOnDeviceLanguages().size() + " onDevice=" + recognitionSupport.getSupportedOnDeviceLanguages().size() + " online=" + recognitionSupport.getOnlineLanguages().size());
-        if (!recognitionSupport.getInstalledOnDeviceLanguages().isEmpty() || !recognitionSupport.getPendingOnDeviceLanguages().isEmpty() || !recognitionSupport.getSupportedOnDeviceLanguages().isEmpty() || !recognitionSupport.getOnlineLanguages().isEmpty()) {
-            this.a[0] = true;
-        }
-        this.b.run();
+    public final String a() {
+        return this.d ? gd.N0(2131745060, null) : this.a;
     }
 }

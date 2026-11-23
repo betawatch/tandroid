@@ -1,49 +1,30 @@
 package gb;
 
-import com.google.android.gms.internal.vision.e2;
+import java.util.Locale;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v0 {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
-    public final k e;
-    public final String f;
-    public final String g;
+    public final i1 a;
+    public final j1 b;
 
-    public v0(String sessionId, String firstSessionId, int i7, long j3, k kVar, String str, String firebaseAuthenticationToken) {
-        kotlin.jvm.internal.j.e(sessionId, "sessionId");
-        kotlin.jvm.internal.j.e(firstSessionId, "firstSessionId");
-        kotlin.jvm.internal.j.e(firebaseAuthenticationToken, "firebaseAuthenticationToken");
-        this.a = sessionId;
-        this.b = firstSessionId;
-        this.c = i7;
-        this.d = j3;
-        this.e = kVar;
-        this.f = str;
-        this.g = firebaseAuthenticationToken;
+    public v0(i1 timeProvider, j1 uuidGenerator) {
+        kotlin.jvm.internal.j.e(timeProvider, "timeProvider");
+        kotlin.jvm.internal.j.e(uuidGenerator, "uuidGenerator");
+        this.a = timeProvider;
+        this.b = uuidGenerator;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v0)) {
-            return false;
-        }
-        v0 v0Var = (v0) obj;
-        return kotlin.jvm.internal.j.a(this.a, v0Var.a) && kotlin.jvm.internal.j.a(this.b, v0Var.b) && this.c == v0Var.c && this.d == v0Var.d && kotlin.jvm.internal.j.a(this.e, v0Var.e) && kotlin.jvm.internal.j.a(this.f, v0Var.f) && kotlin.jvm.internal.j.a(this.g, v0Var.g);
-    }
-
-    public final int hashCode() {
-        int h = (e2.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j3 = this.d;
-        return this.g.hashCode() + e2.h((this.e.hashCode() + ((h + ((int) (j3 ^ (j3 >>> 32)))) * 31)) * 31, 31, this.f);
-    }
-
-    public final String toString() {
-        return "SessionInfo(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", eventTimestampUs=" + this.d + ", dataCollectionStatus=" + this.e + ", firebaseInstallationId=" + this.f + ", firebaseAuthenticationToken=" + this.g + ')';
+    public final o0 a(o0 o0Var) {
+        String str;
+        this.b.getClass();
+        UUID randomUUID = UUID.randomUUID();
+        kotlin.jvm.internal.j.d(randomUUID, "randomUUID(...)");
+        String uuid = randomUUID.toString();
+        kotlin.jvm.internal.j.d(uuid, "toString(...)");
+        String lowerCase = xd.l.c(uuid, "-", "").toLowerCase(Locale.ROOT);
+        kotlin.jvm.internal.j.d(lowerCase, "toLowerCase(...)");
+        return new o0(this.a.a().b, lowerCase, (o0Var == null || (str = o0Var.b) == null) ? lowerCase : str, o0Var != null ? o0Var.c + 1 : 0);
     }
 }

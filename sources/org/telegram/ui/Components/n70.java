@@ -1,40 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n70 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+public final class n70 extends org.telegram.ui.bn {
+    public boolean vd;
+    public final /* synthetic */ boolean wd;
+    public final /* synthetic */ long xd;
+    public final /* synthetic */ o70 yd;
 
-    public /* synthetic */ n70(int i7, Object obj, boolean z10) {
-        this.a = i7;
-        this.b = obj;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n70(o70 o70Var, Bundle bundle, boolean z10, long j3) {
+        super(bundle);
+        this.yd = o70Var;
+        this.wd = z10;
+        this.xd = j3;
+        this.vd = false;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                r70 r70Var = (r70) this.b;
-                r70.K0(r70Var.getContext(), r70Var.o1, r70Var.t1, this.c);
-                break;
-            case 1:
-                r70 r70Var2 = (r70) this.b;
-                r70.K0(r70Var2.getContext(), r70Var2.o1, r70Var2.t1, this.c);
-                break;
-            default:
-                hi.sa saVar = (hi.sa) this.b;
-                saVar.A2 = false;
-                saVar.Y0.x(7, true);
-                if (this.c) {
-                    saVar.p(true);
-                    break;
-                }
-                break;
+    public static void Hd(n70 n70Var, long j3, TLRPC.Chat chat) {
+        if (org.telegram.messenger.g0.E1(n70Var.getParentActivity())) {
+            oy0.c(n70Var.getParentActivity(), n70Var.currentAccount, -j3, n70Var.getUserConfig().f(), null, chat.admin_rights != null, chat.creator, n70Var.yd.J0);
+        }
+    }
+
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.vd || !this.wd) {
+            return;
+        }
+        this.vd = true;
+        org.telegram.messenger.mp messagesController = getMessagesController();
+        long j3 = this.xd;
+        TLRPC.Chat O0 = messagesController.O0(Long.valueOf(j3));
+        if (org.telegram.messenger.v3.h(O0)) {
+            fc K = kc.b0(this).K(R.raw.contact_check, org.telegram.messenger.gd.N0(2131748878, null), org.telegram.messenger.gd.N0(2131748877, null), new bi.s2(this, j3, O0, 24));
+            K.r = false;
+            K.k(true);
+        } else {
+            fc Q = kc.b0(this).Q(R.raw.contact_check, 36, org.telegram.messenger.gd.N0(2131748878, null));
+            Q.r = false;
+            Q.k(true);
         }
     }
 }

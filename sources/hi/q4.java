@@ -1,229 +1,80 @@
 package hi;
 
-import android.content.Context;
-import android.util.SparseIntArray;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.eh;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.qh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q4 implements z10 {
+public final /* synthetic */ class q4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ q4(Object obj, Object obj2, Object obj3, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ q4(Object obj, int i7, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final Object a(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         int i7 = this.a;
-        int i10 = 17;
-        final int i11 = 0;
-        final int i12 = 1;
-        char c10 = 1;
-        char c11 = 1;
-        char c12 = 1;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
+        int i10 = this.c;
+        int i11 = this.b;
+        Object obj = this.d;
         switch (i7) {
             case 0:
-                k5 k5Var = (k5) obj4;
-                boolean[] zArr = (boolean[]) obj3;
-                y4 y4Var = (y4) obj2;
-                org.telegram.ui.ActionBar.m2 m2Var = y4Var.c;
-                Integer num = (Integer) obj;
-                f5 f5Var = k5Var.B0;
-                c5 c5Var = k5Var.q1;
-                int i13 = 28;
-                if (num.intValue() == 0) {
-                    zArr[0] = false;
-                    k5Var.I0(null, new bi.b(k5Var, i13));
-                    return Boolean.TRUE;
-                }
-                int i14 = 4;
-                int i15 = 3;
-                if (num.intValue() == 5) {
-                    zArr[0] = false;
-                    c8.na.c(R.raw.permission_request_location, 2131747108, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.x2(i14, new ai.x2(i15, new ai.y1(i10, k5Var, y4Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
-                    return Boolean.FALSE;
-                }
-                int i16 = 2;
-                if (num.intValue() == 2) {
-                    y4Var.dismiss();
-                    sa saVar = ((u9) k5Var).k2;
-                    saVar.d1.M.b(true);
-                    saVar.v();
-                    saVar.s(true);
-                    saVar.e(true);
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() == 1) {
-                    zArr[0] = false;
-                    u6 u6Var = new u6(k5Var.getContext(), false, null, new ai.h0(k5Var, i13), new fi.b());
-                    u6Var.n(new h4(k5Var, i16));
-                    u6Var.show();
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() == 3) {
-                    k5Var.V1 = true;
-                    k5Var.b0(k5Var.i0(true));
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() != 4) {
-                    return Boolean.FALSE;
-                }
-                if (!k10.i(k5Var.p1).q()) {
-                    try {
-                        m2Var.performHapticFeedback(3);
-                    } catch (Exception unused) {
-                    }
-                    new lc(m2Var, c5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(hd.N0(2131744392, null), new h4(k5Var, c10 == true ? 1 : 0))).k(true);
-                    return Boolean.FALSE;
-                }
-                int i17 = 0;
-                for (int i18 = 0; i18 < f5Var.getChildCount(); i18++) {
-                    if (f5Var.getChildAt(i18) instanceof tg.l0) {
-                        i17++;
-                    }
-                }
-                if (i17 >= 3) {
-                    new lc(m2Var, c5Var).I(R.raw.linkbroken, hd.N0(2131744395, null), hd.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
-                    return Boolean.FALSE;
-                }
-                zArr[0] = false;
-                k5Var.H0(null);
-                y4Var.dismiss();
-                return Boolean.TRUE;
+                v5 v5Var = (v5) obj;
+                v5Var.k1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                v5Var.D0.invalidate();
+                break;
             case 1:
-                final org.telegram.ui.Components.n0 n0Var = (org.telegram.ui.Components.n0) obj4;
-                final org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj3;
-                Context context = (Context) obj2;
-                org.telegram.ui.Components.l0 l0Var = (org.telegram.ui.Components.l0) obj;
-                TL_aicompose.AiComposeTone aiComposeTone = l0Var.e;
-                if (!(aiComposeTone instanceof TL_aicompose.TL_aiComposeTone)) {
-                    return Boolean.FALSE;
-                }
-                final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                a70 G = a70.G(n0Var.c, h6Var, l0Var);
-                G.X(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, h6Var)));
-                G.l(R.drawable.msg_edit, hd.N0(2131754996, null), new Runnable() { // from class: org.telegram.ui.Components.e
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i19 = i11;
-                        TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                        org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
-                        n0 n0Var2 = n0Var;
-                        switch (i19) {
-                            case 0:
-                                i0 i0Var = new i0(n0Var2.getContext(), h6Var2);
-                                i0Var.f2 = tL_aiComposeTone2;
-                                i0Var.d2 = Long.valueOf(tL_aiComposeTone2.emoji_id);
-                                i0Var.g1();
-                                i0Var.W1.setText(i0Var.f2.title);
-                                i0Var.X1.setText(i0Var.f2.prompt);
-                                i0Var.Z1.a(i0Var.f2.author_id != 0, false);
-                                i0Var.p1.setTitle(org.telegram.messenger.hd.N0(2131754996, null));
-                                i0Var.c2.setText(org.telegram.messenger.hd.N0(2131754979, null));
-                                i0Var.f1();
-                                i0Var.j2.O(false);
-                                i0Var.h2 = new f(n0Var2, 2);
-                                i0Var.show();
-                                break;
-                            default:
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n0Var2.getContext(), h6Var2);
-                                String N0 = org.telegram.messenger.hd.N0(2131754998, null);
-                                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                                t1Var.S = N0;
-                                t1Var.U = org.telegram.messenger.hd.N0(2131754997, null);
-                                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
-                                alertDialog$Builder.d(-1);
-                                alertDialog$Builder.p();
-                                break;
-                        }
-                    }
-                }, tL_aiComposeTone.creator);
-                G.c(R.drawable.msg_share, hd.N0(2131754983, null), new org.telegram.messenger.camera.i(n0Var, tL_aiComposeTone, context, h6Var, 19), false);
-                G.m(R.drawable.msg_delete, new eh(i10, n0Var, tL_aiComposeTone), hd.N0(2131754985, null), !tL_aiComposeTone.creator, true);
-                G.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.Components.e
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i19 = i12;
-                        TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                        org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
-                        n0 n0Var2 = n0Var;
-                        switch (i19) {
-                            case 0:
-                                i0 i0Var = new i0(n0Var2.getContext(), h6Var2);
-                                i0Var.f2 = tL_aiComposeTone2;
-                                i0Var.d2 = Long.valueOf(tL_aiComposeTone2.emoji_id);
-                                i0Var.g1();
-                                i0Var.W1.setText(i0Var.f2.title);
-                                i0Var.X1.setText(i0Var.f2.prompt);
-                                i0Var.Z1.a(i0Var.f2.author_id != 0, false);
-                                i0Var.p1.setTitle(org.telegram.messenger.hd.N0(2131754996, null));
-                                i0Var.c2.setText(org.telegram.messenger.hd.N0(2131754979, null));
-                                i0Var.f1();
-                                i0Var.j2.O(false);
-                                i0Var.h2 = new f(n0Var2, 2);
-                                i0Var.show();
-                                break;
-                            default:
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n0Var2.getContext(), h6Var2);
-                                String N0 = org.telegram.messenger.hd.N0(2131754998, null);
-                                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                                t1Var.S = N0;
-                                t1Var.U = org.telegram.messenger.hd.N0(2131754997, null);
-                                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
-                                alertDialog$Builder.d(-1);
-                                alertDialog$Builder.p();
-                                break;
-                        }
-                    }
-                }, hd.N0(2131754998, null), tL_aiComposeTone.creator, true);
-                G.a0();
-                return Boolean.TRUE;
+                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) obj;
+                g4Var.getClass();
+                int S0 = org.telegram.messenger.g0.S0(valueAnimator.getAnimatedFraction(), 1.0f, i11, i10);
+                qh0 qh0Var = g4Var.f;
+                qh0Var.setColorFilter(new PorterDuffColorFilter(S0, PorterDuff.Mode.SRC_IN));
+                org.telegram.ui.ActionBar.n6.H1(qh0Var.getDrawable(), S0 & 620756991, true);
+                break;
             case 2:
-                View view = (View) obj;
-                gj gjVar = ((th.g) obj2).b;
-                return th.c.d(view, (String) obj4, (String) obj3, gjVar.F0(), gjVar);
-            default:
-                ek0 ek0Var = (ek0) obj4;
-                z10 z10Var = (z10) obj3;
-                SparseIntArray sparseIntArray = (SparseIntArray) obj2;
-                View view2 = (View) obj;
-                try {
-                    if (view2.getParent() != ek0Var) {
-                        return Boolean.FALSE;
-                    }
-                    Boolean bool = (Boolean) z10Var.a(view2);
-                    boolean booleanValue = bool.booleanValue();
-                    v4.f1 T = ek0Var.T(view2);
-                    if (T != null) {
-                        sparseIntArray.put(T.f, booleanValue ? 1 : 0);
-                    }
-                    return bool;
-                } catch (Exception unused2) {
-                    return Boolean.FALSE;
+                org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) obj;
+                m6Var.getClass();
+                m6Var.u(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10));
+                m6Var.invalidateSelf();
+                break;
+            case 3:
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
+                int i12 = ScrollSlidingTextTabStrip.p0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                scrollSlidingTextTabStrip.a0 = i11 * floatValue;
+                scrollSlidingTextTabStrip.b0 = i10 * floatValue;
+                scrollSlidingTextTabStrip.a.invalidate();
+                scrollSlidingTextTabStrip.invalidate();
+                break;
+            case 4:
+                float animatedFraction = valueAnimator.getAnimatedFraction();
+                jw0 jw0Var = (jw0) ((cl0) obj).b;
+                jw0Var.n1.setAlpha(animatedFraction);
+                jw0Var.r1.setAlpha(animatedFraction);
+                if (i11 != 0) {
+                    int i13 = (int) ((1.0f - animatedFraction) * i11);
+                    jw0Var.X0(i10 + i13);
+                    jw0Var.n1.setTranslationY(i13);
+                    break;
                 }
+                break;
+            default:
+                tg.l0 l0Var = (tg.l0) obj;
+                l0Var.u1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                l0Var.M0.invalidate();
+                break;
         }
     }
 }

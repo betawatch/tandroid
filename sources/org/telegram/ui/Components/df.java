@@ -1,32 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class df extends org.telegram.ui.eg0 {
-    public final /* synthetic */ int E0;
-    public final /* synthetic */ Object F0;
+public final class df extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ ChatActivityEnterView o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ df(Object obj, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.E0 = i7;
-        this.F0 = obj;
+    public df(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.eg0
-    public final void m(long j3) {
-        switch (this.E0) {
-            case 0:
-                ((ChatActivityEnterView) this.F0).setEffectId(j3);
-                break;
-            default:
-                ui uiVar = (ui) this.F0;
-                ci ciVar = uiVar.G2;
-                uiVar.L2 = j3;
-                ciVar.setEffect(j3);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.K0.invalidate();
     }
 }

@@ -1,23 +1,60 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public abstract class mv {
-    public boolean a;
-    public boolean b;
-    public long c = 104857600;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
 
-    public final boolean a() {
-        return this.a || this.b;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final class mv extends lv {
+    public int d;
+
+    public static void c(mv mvVar, String str, SharedPreferences sharedPreferences) {
+        mvVar.getClass();
+        sharedPreferences.edit().putBoolean(str.concat("_save_gallery_photo"), mvVar.a).putBoolean(str.concat("_save_gallery_video"), mvVar.b).putLong(str.concat("_save_gallery_limitVideo"), mvVar.c).apply();
     }
 
-    public void b() {
+    public static mv d(String str, SharedPreferences sharedPreferences) {
+        mv mvVar = new mv();
+        mvVar.a = sharedPreferences.getBoolean(str.concat("_save_gallery_photo"), false);
+        mvVar.b = sharedPreferences.getBoolean(str.concat("_save_gallery_video"), false);
+        mvVar.c = sharedPreferences.getLong(str.concat("_save_gallery_limitVideo"), 104857600L);
+        return mvVar;
+    }
+
+    @Override // org.telegram.messenger.lv
+    public final void b() {
+        super.b();
+        c6.o(this.d);
+    }
+
+    public final CharSequence e(int i7) {
+        StringBuilder sb2 = new StringBuilder();
         if (a()) {
-            this.b = false;
-            this.a = false;
+            if (this.a) {
+                sb2.append(gd.N0(2131745724, null));
+            }
+            if (this.b) {
+                if (sb2.length() != 0) {
+                    sb2.append(", ");
+                }
+                sb2.append(gd.N0(2131745717, null));
+                long j3 = this.c;
+                if (j3 > 0 && j3 < 4194304000L) {
+                    sb2.append(" (");
+                    sb2.append(g0.i0(this.c, true, false));
+                    sb2.append(")");
+                }
+            }
         } else {
-            this.a = true;
-            this.b = true;
+            sb2.append(gd.N0(2131745725, null));
         }
+        LongSparseArray m10 = i10.i(i7).m(this.d);
+        if (m10.size() != 0) {
+            if (sb2.length() != 0) {
+                sb2.append(", ");
+            }
+            sb2.append(gd.G(m10.size(), "Exception", Integer.valueOf(m10.size())));
+        }
+        return sb2;
     }
 }

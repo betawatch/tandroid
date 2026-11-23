@@ -2,12 +2,12 @@ package kg;
 
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.w10;
-import org.telegram.ui.Components.o41;
+import org.telegram.messenger.u10;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, w10 {
+public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, u10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ s0 b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, w
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 this.b.f0();
@@ -31,8 +31,8 @@ public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, w
         }
     }
 
-    @Override // org.telegram.messenger.w10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        s0.b0(this.b, (o41) obj, (View) obj2);
+    @Override // org.telegram.messenger.u10
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        s0.b0(this.b, (n41) obj, (View) obj2);
     }
 }

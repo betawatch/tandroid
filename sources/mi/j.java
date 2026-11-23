@@ -7,24 +7,24 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import java.util.HashSet;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.ra0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.oa0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class j extends LinearLayout implements b6 {
-    public final h6 a;
-    public final ra0 b;
+public final class j extends LinearLayout implements c6 {
+    public final i6 a;
+    public final oa0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -32,38 +32,38 @@ public final class j extends LinearLayout implements b6 {
     public final boolean h;
     public boolean n;
 
-    public j(Context context, h6 h6Var, boolean z10) {
+    public j(Context context, i6 i6Var, boolean z10) {
         super(context);
-        this.a = h6Var;
+        this.a = i6Var;
         this.h = z10;
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        ra0 ra0Var = new ra0(1);
-        this.b = ra0Var;
-        frameLayout.setBackground(ra0Var);
+        oa0 oa0Var = new oa0(1);
+        this.b = oa0Var;
+        frameLayout.setBackground(oa0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, ma.e(24, 24, 17));
+        frameLayout.addView(imageView, na.e(24, 24, 17));
         LinearLayout g10 = f3.g(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView f10 = o10.f(g10, textView, ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView f10 = m10.f(g10, textView, na.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = f10;
         f10.setGravity(17);
         f10.setMinWidth(g0.L(20.66f));
         f10.setPadding(g0.L(6.33f), 0, g0.L(6.33f), 0);
         f10.setTextSize(1, 16.0f);
-        if (hd.a0) {
-            addView(f10, ma.j(13.33f, 0.0f));
-            addView(g10, ma.q(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
-            addView(frameLayout, ma.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+        if (gd.a0) {
+            addView(f10, na.j(13.33f, 0.0f));
+            addView(g10, na.q(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, na.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
-            addView(frameLayout, ma.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(g10, ma.q(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
-            addView(f10, ma.j(0.0f, 13.33f));
+            addView(frameLayout, na.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(g10, na.q(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(f10, na.j(0.0f, 13.33f));
         }
         updateColors();
         setUnreadMode(true);
@@ -79,10 +79,10 @@ public final class j extends LinearLayout implements b6 {
         setUnreadMode(z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.G6));
-        hashSet.add(Integer.valueOf(m6.U8));
+        hashSet.add(Integer.valueOf(n6.G6));
+        hashSet.add(Integer.valueOf(n6.U8));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -101,10 +101,10 @@ public final class j extends LinearLayout implements b6 {
             TextView textView = this.f;
             textView.setTextSize(1, f10);
             textView.setTypeface(z10 ? g0.o() : null);
-            int i7 = z10 ? m6.W8 : m6.n6;
-            h6 h6Var = this.a;
-            t6.U(textView, i7, h6Var);
-            textView.setBackground(z10 ? m6.d0(g0.L(10.33f), m6.w0(m6.U8, h6Var)) : null);
+            int i7 = z10 ? n6.W8 : n6.n6;
+            i6 i6Var = this.a;
+            u6.U(textView, i7, i6Var);
+            textView.setBackground(z10 ? n6.d0(g0.L(10.33f), n6.w0(n6.U8, i6Var)) : null);
         }
     }
 
@@ -115,15 +115,15 @@ public final class j extends LinearLayout implements b6 {
         textView.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = m6.G6;
-        h6 h6Var = this.a;
-        this.e.setTextColor(m6.w0(i7, h6Var));
-        int w02 = m6.w0(this.n ? m6.W8 : m6.n6, h6Var);
+        int i7 = n6.G6;
+        i6 i6Var = this.a;
+        this.e.setTextColor(n6.w0(i7, i6Var));
+        int w02 = n6.w0(this.n ? n6.W8 : n6.n6, i6Var);
         TextView textView = this.f;
         textView.setTextColor(w02);
-        textView.setBackground(this.n ? m6.d0(g0.L(10.33f), m6.w0(m6.U8, h6Var)) : null);
-        this.b.b = h6Var != null ? h6Var.d() : m6.I.q();
+        textView.setBackground(this.n ? n6.d0(g0.L(10.33f), n6.w0(n6.U8, i6Var)) : null);
+        this.b.b = i6Var != null ? i6Var.b() : n6.I.q();
     }
 }

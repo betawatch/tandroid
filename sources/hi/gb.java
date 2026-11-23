@@ -1,80 +1,63 @@
 package hi;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.o10;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class gb extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.n6 b;
-    public boolean c;
+public final class gb extends ib {
+    public final /* synthetic */ int g;
+    public final /* synthetic */ Object h;
 
-    public gb(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = true;
-        paint.setColor(TLObject.FLAG_31);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
-        this.b = n6Var;
-        n6Var.n(0.2f, 200L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(13.0f));
-        n6Var.u(-1);
-        n6Var.x(org.telegram.messenger.g0.o());
-        n6Var.setCallback(this);
-        n6Var.b = 1;
-        StringBuilder sb2 = new StringBuilder(8);
-        sb2.append("00:00:00");
-        if (TextUtils.equals(sb2, n6Var.i)) {
-            return;
-        }
-        n6Var.a();
-        n6Var.t(sb2, false, true);
+    public /* synthetic */ gb(Object obj, int i7) {
+        this.g = i7;
+        this.h = obj;
     }
 
-    public final void a(boolean z10) {
-        if (this.c || !z10) {
-            this.c = false;
-            animate().cancel();
-            if (z10) {
-                o10.o(animate().translationY(org.telegram.messenger.g0.L(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), nr.h, 220L);
-                return;
-            }
-            setTranslationY(org.telegram.messenger.g0.L(6.0f));
-            setScaleX(0.8f);
-            setScaleY(0.8f);
-            setAlpha(0.0f);
+    @Override // hi.ib
+    public final void e() {
+        switch (this.g) {
+            case 0:
+                vv0 vv0Var = (vv0) this.h;
+                vv0Var.R = false;
+                vv0Var.invalidate();
+                break;
+            case 1:
+                fi.z3 z10 = ((fi.f9) this.h).z();
+                if (z10 != null) {
+                    z10.k0(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Components.p9 p9Var = (org.telegram.ui.Components.p9) this.h;
+                p9Var.post(new w(p9Var, 21));
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        org.telegram.ui.Components.n6 n6Var = this.b;
-        float c10 = n6Var.c();
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(((getWidth() - c10) / 2.0f) - org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(2.0f), ((getWidth() + c10) / 2.0f) + org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(23.0f));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), this.a);
-        n6Var.setBounds((int) rectF.left, ((int) rectF.top) - org.telegram.messenger.g0.L(1.0f), (int) rectF.right, (int) rectF.bottom);
-        n6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(25.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || super.verifyDrawable(drawable);
+    @Override // hi.ib
+    public final void f(boolean z10) {
+        switch (this.g) {
+            case 0:
+                vv0 vv0Var = (vv0) this.h;
+                vv0Var.R = true;
+                vv0Var.invalidate();
+                break;
+            case 1:
+                fi.z3 z11 = ((fi.f9) this.h).z();
+                if (z11 != null) {
+                    z11.k0(false);
+                }
+                fi.c3 c3Var = this.f;
+                if (c3Var != null) {
+                    c3Var.setTranslationX(0.0f);
+                    this.f.setTranslationY(0.0f);
+                    break;
+                }
+                break;
+            default:
+                ((org.telegram.ui.Components.p9) this.h).setVisibility(0);
+                break;
+        }
     }
 }

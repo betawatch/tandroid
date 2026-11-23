@@ -1,124 +1,73 @@
 package b9;
 
+import a8.i7;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.internal.vision.e2;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c1 extends r6.a {
-    public static final Parcelable.Creator<c1> CREATOR = new o0(9);
-    public final int a;
+    public static final Parcelable.Creator<c1> CREATOR = new n0(10);
+    public final String a;
     public final String b;
-    public final String c;
+    public final a1 c;
     public final String d;
     public final String e;
-    public final String f;
-    public final String h;
-    public final byte n;
-    public final byte r;
-    public final byte s;
-    public final byte w;
-    public final String x;
+    public final Float f;
+    public final e1 h;
 
-    public c1(int i7, String str, String str2, String str3, String str4, String str5, String str6, byte b10, byte b11, byte b12, byte b13, String str7) {
-        this.a = i7;
-        this.b = str;
-        this.c = str2;
+    public c1(String str, String str2, a1 a1Var, String str3, String str4, Float f10, e1 e1Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = a1Var;
         this.d = str3;
         this.e = str4;
-        this.f = str5;
-        this.h = str6;
-        this.n = b10;
-        this.r = b11;
-        this.s = b12;
-        this.w = b13;
-        this.x = str7;
+        this.f = f10;
+        this.h = e1Var;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || c1.class != obj.getClass()) {
-            return false;
+        if (obj != null && c1.class == obj.getClass()) {
+            c1 c1Var = (c1) obj;
+            if (i7.a(this.a, c1Var.a) && i7.a(this.b, c1Var.b) && i7.a(this.c, c1Var.c) && i7.a(this.d, c1Var.d) && i7.a(this.e, c1Var.e) && i7.a(this.f, c1Var.f) && i7.a(this.h, c1Var.h)) {
+                return true;
+            }
         }
-        c1 c1Var = (c1) obj;
-        String str = c1Var.x;
-        String str2 = c1Var.h;
-        String str3 = c1Var.c;
-        if (this.a != c1Var.a || this.n != c1Var.n || this.r != c1Var.r || this.s != c1Var.s || this.w != c1Var.w || !this.b.equals(c1Var.b)) {
-            return false;
-        }
-        String str4 = this.c;
-        if (str4 == null ? str3 != null : !str4.equals(str3)) {
-            return false;
-        }
-        if (!this.d.equals(c1Var.d) || !this.e.equals(c1Var.e) || !this.f.equals(c1Var.f)) {
-            return false;
-        }
-        String str5 = this.h;
-        if (str5 == null ? str2 != null : !str5.equals(str2)) {
-            return false;
-        }
-        String str6 = this.x;
-        return str6 != null ? str6.equals(str) : str == null;
+        return false;
     }
 
     public final int hashCode() {
-        int h = e2.h((this.a + 31) * 31, 31, this.b);
-        String str = this.c;
-        int h7 = e2.h(e2.h(e2.h((h + (str != null ? str.hashCode() : 0)) * 31, 31, this.d), 31, this.e), 31, this.f);
-        String str2 = this.h;
-        int hashCode = (((((((((h7 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.n) * 31) + this.r) * 31) + this.s) * 31) + this.w) * 31;
-        String str3 = this.x;
-        return hashCode + (str3 != null ? str3.hashCode() : 0);
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f, this.h});
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("AncsNotificationParcelable{, id=");
-        sb2.append(this.a);
-        sb2.append(", appId='");
-        sb2.append(this.b);
-        sb2.append("', dateTime='");
-        sb2.append(this.c);
-        sb2.append("', eventId=");
-        sb2.append((int) this.n);
-        sb2.append(", eventFlags=");
-        i5.c.z(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
-        sb2.append((int) this.w);
-        sb2.append(", packageName='");
-        sb2.append(this.x);
-        sb2.append("'}");
-        return sb2.toString();
+        String valueOf = String.valueOf(this.h);
+        String valueOf2 = String.valueOf(this.c);
+        StringBuilder n10 = e2.n("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
+        n10.append(this.e);
+        n10.append("', starRating=");
+        n10.append(this.f);
+        n10.append(", wearDetails=");
+        e2.r(n10, valueOf, ", deepLinkUri='", this.a, "', icon=");
+        return a8.p0.s(n10, valueOf2, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        String str = this.b;
-        bc.l(parcel, 3, str);
-        bc.l(parcel, 4, this.c);
-        bc.l(parcel, 5, this.d);
-        bc.l(parcel, 6, this.e);
-        bc.l(parcel, 7, this.f);
-        String str2 = this.h;
-        if (str2 != null) {
-            str = str2;
-        }
-        bc.l(parcel, 8, str);
-        bc.q(parcel, 9, 4);
-        parcel.writeInt(this.n);
-        bc.q(parcel, 10, 4);
-        parcel.writeInt(this.r);
-        bc.q(parcel, 11, 4);
-        parcel.writeInt(this.s);
-        bc.q(parcel, 12, 4);
-        parcel.writeInt(this.w);
-        bc.l(parcel, 13, this.x);
-        bc.s(parcel, r10);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 1, this.a);
+        cc.l(parcel, 2, this.b);
+        cc.k(parcel, 3, this.c, i7);
+        cc.l(parcel, 4, this.d);
+        cc.l(parcel, 5, this.e);
+        cc.e(parcel, 6, this.f);
+        cc.k(parcel, 7, this.h, i7);
+        cc.s(parcel, r10);
     }
 }

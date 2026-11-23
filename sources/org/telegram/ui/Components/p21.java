@@ -1,21 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p21 extends v4.k {
-    public final /* synthetic */ b31 F;
+public final /* synthetic */ class p21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.p10 b;
+    public final /* synthetic */ String c;
 
-    public p21(b31 b31Var) {
-        this.F = b31Var;
+    public /* synthetic */ p21(String str, int i7, org.telegram.messenger.p10 p10Var) {
+        this.a = i7;
+        this.b = p10Var;
+        this.c = str;
     }
 
-    @Override // v4.k
-    public final void O() {
-        this.F.b.invalidate();
-    }
-
-    @Override // v4.k
-    public final void P(v4.f1 f1Var) {
-        this.F.b.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.p10 p10Var = this.b;
+                if (p10Var != null) {
+                    p10Var.a(this.c, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.a(null, this.c);
+                break;
+            case 2:
+                this.b.a(null, this.c);
+                break;
+            default:
+                this.b.a(null, this.c);
+                break;
+        }
     }
 }

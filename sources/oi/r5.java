@@ -2,18 +2,17 @@ package oi;
 
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
-import org.telegram.messenger.dj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.cj;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,24 +59,24 @@ public final /* synthetic */ class r5 implements View.OnClickListener {
                         ArrayList arrayList = new ArrayList(set);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        a70 G0 = t3Var2.p3.G0(view);
-                        G0.X(m6.d0(org.telegram.messenger.g0.L(3.0f), m6.w0(m6.d6, t3Var2.o3)));
-                        G0.c0 = true;
-                        G0.a0 = org.telegram.messenger.g0.L(350.0f);
-                        G0.i(new n2(t3Var2, aVar3, 25), hd.N0(2131753996, null), TextUtils.isEmpty(pageblockpreformatted.language));
+                        x60 i02 = t3Var2.p3.i0(view);
+                        i02.X(n6.d0(org.telegram.messenger.g0.L(3.0f), n6.w0(n6.d6, t3Var2.o3)));
+                        i02.c0 = true;
+                        i02.a0 = org.telegram.messenger.g0.L(350.0f);
+                        i02.i(new n2(t3Var2, aVar3, 25), gd.N0(2131753996, null), TextUtils.isEmpty(pageblockpreformatted.language));
                         if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
-                            G0.i(null, dj.b(pageblockpreformatted.language), true);
+                            i02.i(null, cj.b(pageblockpreformatted.language), true);
                         }
-                        G0.k();
+                        i02.k();
                         int size = arrayList.size();
                         int i7 = 0;
                         while (i7 < size) {
                             Object obj = arrayList.get(i7);
                             i7++;
                             String str = (String) obj;
-                            G0.i(new kg.y((ViewGroup) t3Var2, (Object) aVar3, str, 17), dj.b(str), TextUtils.equals(str, pageblockpreformatted.language));
+                            i02.i(new kg.x(t3Var2, aVar3, str, 18), cj.b(str), TextUtils.equals(str, pageblockpreformatted.language));
                         }
-                        G0.a0();
+                        i02.a0();
                         break;
                     }
                 }

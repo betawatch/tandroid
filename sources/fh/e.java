@@ -1,6 +1,6 @@
 package fh;
 
-import a8.ea;
+import a8.fa;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -11,11 +11,11 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.os.Build;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e extends ea {
+public final class e extends fa {
     public final float a = g0.N(0.55f);
     public final Outline b = new Outline();
     public final Rect c = new Rect();
@@ -43,28 +43,28 @@ public final class e extends ea {
         paint.setColor(0);
     }
 
-    @Override // a8.ea
+    @Override // a8.fa
     public final void a() {
         this.d.discardDisplayList();
         this.e.discardDisplayList();
         this.h = true;
     }
 
-    @Override // a8.ea
+    @Override // a8.fa
     public final void b(Canvas canvas, ui.a aVar) {
         g gVar = this.k;
         f fVar = gVar.R;
         if (!this.d.hasDisplayList() || this.h) {
             e();
         }
-        int r12 = m6.r1(this.d.getAlpha() * gVar.W, gVar.x);
+        int r12 = n6.r1(this.d.getAlpha() * gVar.W, gVar.x);
         int alpha = Color.alpha(r12);
         Paint paint = this.f;
         if (alpha != 0) {
             paint.setShadowLayer(gVar.U, 0.0f, gVar.V, r12);
             fVar.d(canvas, paint, gVar.T);
         }
-        int r13 = m6.r1(this.d.getAlpha() * gVar.W, gVar.G);
+        int r13 = n6.r1(this.d.getAlpha() * gVar.W, gVar.G);
         if (Color.alpha(r13) != 0) {
             paint.setShadowLayer(this.a, 0.0f, 0.0f, r13);
             fVar.d(canvas, paint, gVar.T);
@@ -238,7 +238,7 @@ public final class e extends ea {
                     } else {
                         beginRecording.save();
                         beginRecording.translate(-f17, -f20);
-                        gVar2.r.o(f17, f20, f21, f22, beginRecording);
+                        gVar2.r.z(f17, f20, f21, f22, beginRecording);
                         beginRecording.restore();
                     }
                     this.e.endRecording();

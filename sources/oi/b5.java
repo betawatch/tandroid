@@ -2,11 +2,11 @@ package oi;
 
 import android.graphics.Rect;
 import android.text.Layout;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.t9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class b5 implements u9 {
+public final class b5 implements t9 {
     public final /* synthetic */ int a;
     public final Object b;
     public final int c;
@@ -19,7 +19,7 @@ public final class b5 implements u9 {
         this.d = i10;
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final Layout a() {
         switch (this.a) {
             case 0:
@@ -29,18 +29,18 @@ public final class b5 implements u9 {
             case 2:
                 return (Layout) this.b;
             default:
-                return ((u9) this.b).a();
+                return ((t9) this.b).a();
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final /* synthetic */ Rect c() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final CharSequence getPrefix() {
         switch (this.a) {
             case 0:
@@ -50,11 +50,11 @@ public final class b5 implements u9 {
             case 2:
                 return null;
             default:
-                return ((u9) this.b).getPrefix();
+                return ((t9) this.b).getPrefix();
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getRow() {
         switch (this.a) {
             case 0:
@@ -64,11 +64,11 @@ public final class b5 implements u9 {
             case 2:
                 return 1;
             default:
-                return ((u9) this.b).getRow();
+                return ((t9) this.b).getRow();
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final CharSequence getText() {
         switch (this.a) {
             case 0:
@@ -78,11 +78,11 @@ public final class b5 implements u9 {
             case 2:
                 return ((Layout) this.b).getText();
             default:
-                return ((u9) this.b).getText();
+                return ((t9) this.b).getText();
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getX() {
         switch (this.a) {
             case 0:
@@ -92,11 +92,11 @@ public final class b5 implements u9 {
             case 2:
                 return this.c;
             default:
-                return ((u9) this.b).getX() + this.c;
+                return ((t9) this.b).getX() + this.c;
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getY() {
         switch (this.a) {
             case 0:
@@ -106,7 +106,7 @@ public final class b5 implements u9 {
             case 2:
                 return this.d;
             default:
-                return ((u9) this.b).getY() + this.d;
+                return ((t9) this.b).getY() + this.d;
         }
     }
 }

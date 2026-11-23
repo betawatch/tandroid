@@ -1,21 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class to0 implements Runnable {
+public final class to0 implements org.telegram.ui.Components.v20 {
     public final /* synthetic */ PhotoViewer a;
 
     public to0(PhotoViewer photoViewer) {
         this.a = photoViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final void a(int i7) {
         PhotoViewer photoViewer = this.a;
-        org.telegram.messenger.gj gjVar = photoViewer.T4;
-        if (gjVar == null) {
-            return;
+        photoViewer.P4 = -1;
+        org.telegram.messenger.hc hcVar = photoViewer.j5;
+        if (hcVar != null) {
+            hcVar.a();
+            photoViewer.j5 = null;
         }
-        org.telegram.messenger.w7.G(gjVar.K1).b0(photoViewer.T4.F0(), true, false);
+        photoViewer.l5 = true;
+        photoViewer.A2(i7);
+        photoViewer.l5 = false;
     }
 }

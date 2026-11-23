@@ -1,117 +1,91 @@
 package org.telegram.messenger;
 
+import android.content.SharedPreferences;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vf implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ri b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ArrayList d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ c1 f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ vf(si siVar, boolean z10, int i7, ArrayList arrayList, boolean z11, int i10) {
-        this.f = siVar;
+    public /* synthetic */ vf(ri riVar, boolean z10, int i7, ArrayList arrayList) {
+        this.b = riVar;
         this.c = z10;
-        this.b = i7;
-        this.h = arrayList;
-        this.d = z11;
-        this.e = i10;
+        this.e = i7;
+        this.d = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7;
-        int i10 = this.a;
-        int i11 = 3;
-        int i12 = this.e;
-        boolean z10 = this.d;
-        boolean z11 = this.c;
-        Object obj = this.h;
-        int i13 = this.b;
-        c1 c1Var = this.f;
-        switch (i10) {
+        int i7 = this.a;
+        int i10 = this.e;
+        ArrayList arrayList = this.d;
+        boolean z10 = this.c;
+        ri riVar = this.b;
+        switch (i7) {
             case 0:
-                si siVar = (si) c1Var;
-                ArrayList arrayList = (ArrayList) obj;
-                try {
-                    SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
-                    if (z11) {
-                        i7 = siVar.getMessagesController().i3;
+                SharedPreferences.Editor edit = mp.u1(riVar.currentAccount).i7.edit();
+                if (z10) {
+                    riVar.k0 = false;
+                    riVar.l0 = true;
+                    edit.putLong("lastGifLoadTime", System.currentTimeMillis()).apply();
+                } else {
+                    riVar.h0[i10] = false;
+                    riVar.i0[i10] = true;
+                    if (i10 == 0) {
+                        edit.putLong("lastStickersLoadTime", System.currentTimeMillis()).apply();
+                    } else if (i10 == 1) {
+                        edit.putLong("lastStickersLoadTimeMask", System.currentTimeMillis()).apply();
+                    } else if (i10 == 3) {
+                        edit.putLong("lastStickersLoadTimeGreet", System.currentTimeMillis()).apply();
+                    } else if (i10 == 5) {
+                        edit.putLong("lastStickersLoadTimeEmojiPacks", System.currentTimeMillis()).apply();
+                    } else if (i10 == 7) {
+                        edit.putLong("lastStickersLoadTimePremiumStickers", System.currentTimeMillis()).apply();
                     } else {
-                        if (i13 != 3 && i13 != 7) {
-                            i7 = i13 == 2 ? siVar.getMessagesController().h3 : siVar.getMessagesController().g3;
-                        }
-                        i7 = ls.e3;
+                        edit.putLong("lastStickersLoadTimeFavs", System.currentTimeMillis()).apply();
                     }
-                    sQLiteDatabase.beginTransaction();
-                    SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    int size = arrayList.size();
-                    int i14 = z11 ? 2 : i13 == 0 ? 3 : i13 == 1 ? 4 : i13 == 3 ? 6 : i13 == 5 ? 7 : i13 == 7 ? 8 : 5;
+                }
+                if (arrayList != null) {
                     if (z10) {
-                        sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE type = " + i14).stepThis().dispose();
+                        riVar.j0 = arrayList;
+                    } else {
+                        riVar.g0[i10] = arrayList;
                     }
-                    int i15 = 0;
-                    while (i15 < size && i15 != i7) {
-                        TLRPC.Document document = (TLRPC.Document) arrayList.get(i15);
-                        executeFast.requery();
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append("");
-                        int i16 = i12;
-                        sb2.append(document.id);
-                        executeFast.bindString(1, sb2.toString());
-                        executeFast.bindInteger(2, i14);
-                        executeFast.bindString(i11, "");
-                        executeFast.bindString(4, "");
-                        executeFast.bindString(5, "");
-                        executeFast.bindInteger(6, 0);
-                        executeFast.bindInteger(7, 0);
-                        executeFast.bindInteger(8, 0);
-                        executeFast.bindInteger(9, i16 != 0 ? i16 : size - i15);
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                        document.serializeToStream(nativeByteBuffer);
-                        executeFast.bindByteBuffer(10, nativeByteBuffer);
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
-                        i15++;
-                        i12 = i16;
-                        i11 = 3;
+                    if (i10 == 3) {
+                        riVar.q1();
                     }
-                    executeFast.dispose();
-                    sQLiteDatabase.commitTransaction();
-                    if (!z10 && arrayList.size() >= i7) {
-                        sQLiteDatabase.beginTransaction();
-                        while (i7 < arrayList.size()) {
-                            sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE id = '" + ((TLRPC.Document) arrayList.get(i7)).id + "' AND type = " + i14).stepThis().dispose();
-                            i7++;
-                        }
-                        sQLiteDatabase.commitTransaction();
-                        break;
-                    }
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
+                    riVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
+                    break;
                 }
                 break;
             default:
-                ((np) c1Var).getNotificationCenter().k(18, Integer.valueOf(i13), Integer.valueOf(((TLRPC.messages_Messages) obj).messages.size()), Boolean.valueOf(z11), Boolean.valueOf(z10), Integer.valueOf(i12));
+                if (z10) {
+                    riVar.j0 = arrayList;
+                    riVar.k0 = false;
+                    riVar.l0 = true;
+                } else {
+                    riVar.g0[i10] = arrayList;
+                    riVar.h0[i10] = false;
+                    riVar.i0[i10] = true;
+                }
+                if (i10 == 3) {
+                    riVar.q1();
+                }
+                riVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
+                riVar.Y0(i10, z10, false, false);
                 break;
         }
     }
 
-    public /* synthetic */ vf(np npVar, int i7, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i10) {
-        this.f = npVar;
-        this.b = i7;
-        this.h = messages_messages;
+    public /* synthetic */ vf(ri riVar, boolean z10, ArrayList arrayList, int i7) {
+        this.b = riVar;
         this.c = z10;
-        this.d = z11;
-        this.e = i10;
+        this.d = arrayList;
+        this.e = i7;
     }
 }

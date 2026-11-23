@@ -1,61 +1,37 @@
 package tg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class i0 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class i0 extends d1 {
+    public final Path o3;
+    public final /* synthetic */ vp0 p3;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z10);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z10);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z10);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i0(vp0 vp0Var, Context context) {
+        super(context);
+        this.p3 = vp0Var;
+        this.o3 = new Path();
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i7 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i7;
-        int i10 = this.e ? i7 | 8 : i7 & (-9);
-        this.a = i10;
-        int i11 = this.f ? i10 | 16 : i10 & (-17);
-        this.a = i11;
-        outputSerializedData.writeInt32(i11);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
-        }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
-        }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.p3.getBarView();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(org.telegram.messenger.g0.W1(r0.x1, barView.getLeft() - getLeft(), 0), org.telegram.messenger.g0.W1(r0.x1, barView.getTop() - getTop(), 0), org.telegram.messenger.g0.W1(r0.x1, barView.getRight() - getLeft(), getWidth()), org.telegram.messenger.g0.W1(r0.x1, barView.getBottom() - getTop(), getHeight()));
+        Path path = this.o3;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

@@ -7,22 +7,22 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import fi.u;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.d9;
+import org.telegram.ui.Components.c9;
 import org.telegram.ui.ee;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class d {
     public final g2 a;
@@ -54,7 +54,7 @@ public final class d {
             g2 g2Var = this.a;
             TLRPC.Chat chat = this.b;
             if (i7 == -1 && chat != null) {
-                np messagesController = g2Var.getMessagesController();
+                mp messagesController = g2Var.getMessagesController();
                 long j3 = chat.id;
                 this.l = messagesController.h7.getInt("chatPendingRequests" + j3, 0);
             }
@@ -69,7 +69,7 @@ public final class d {
         }
         c cVar = this.m;
         if (cVar != null) {
-            cVar.g(z10, z11);
+            cVar.e(z10, z11);
         }
     }
 
@@ -80,7 +80,7 @@ public final class d {
             FrameLayout frameLayout = new FrameLayout(g2Var.getParentActivity());
             this.d = frameLayout;
             final int i7 = 0;
-            frameLayout.setBackground(m6.N0(false));
+            frameLayout.setBackground(n6.N0(false));
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: zh.a
                 public final /* synthetic */ d b;
 
@@ -111,36 +111,36 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(g2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, ma.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
+            this.d.addView(this.f, na.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             final int i10 = 1;
             u uVar = new u(i10, g2Var.getParentActivity(), 0 == true ? 1 : 0);
             this.e = uVar;
             uVar.setAvatarsTextSize(g0.L(18.0f));
-            d9 d9Var = this.e.a;
-            for (int i11 = 0; i11 < d9Var.c.length; i11++) {
-                d9Var.j(0, 0, null);
+            c9 c9Var = this.e.a;
+            for (int i11 = 0; i11 < c9Var.c.length; i11++) {
+                c9Var.j(0, 0, null);
             }
-            this.f.addView(this.e, ma.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            this.f.addView(this.e, na.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(g2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            t6.U(this.g, m6.We, g2Var.getResourceProvider());
+            u6.U(this.g, n6.We, g2Var.getResourceProvider());
             this.g.setTypeface(g0.o());
-            this.f.addView(this.g, ma.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.f.addView(this.g, na.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.h = new ImageView(g2Var.getParentActivity());
-            int i12 = m6.x7;
+            int i12 = n6.x7;
             int themedColor = g2Var.getThemedColor(i12);
-            y h02 = m6.h0(436207615 & themedColor, 1, g0.L(14.0f));
+            y h02 = n6.h0(436207615 & themedColor, 1, g0.L(14.0f));
             if ((themedColor >>> 24) == 255) {
-                t6.Q(this.h, h02, null, t6.g(i12, 25), g2Var.getResourceProvider());
+                u6.Q(this.h, h02, null, u6.g(i12, 25), g2Var.getResourceProvider());
             } else {
                 this.h.setBackground(h02);
             }
-            t6.s(this.h, m6.Ue, g2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-            this.h.setContentDescription(hd.N0(2131752029, null));
+            u6.s(this.h, n6.Ue, g2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+            this.h.setContentDescription(gd.N0(2131752029, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: zh.a
@@ -170,7 +170,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, ma.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
+            this.d.addView(this.h, na.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 d(chatFull.requests_pending, chatFull.recent_requesters, false);
@@ -200,7 +200,7 @@ public final class d {
         }
         if (this.k != i7) {
             this.k = i7;
-            this.g.setText(hd.G(i7, "JoinUsersRequests", new Object[0]));
+            this.g.setText(gd.G(i7, "JoinUsersRequests", new Object[0]));
             a(true, z10);
             if (list == null || list.isEmpty()) {
                 return;

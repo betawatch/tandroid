@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class i3 extends org.telegram.ui.web.v0 {
     public final /* synthetic */ k3 U0;
@@ -23,21 +23,21 @@ public final class i3 extends org.telegram.ui.web.v0 {
                 h3 h3Var = k3Var.e;
                 b3 b3Var = new b3(k3Var.getContext());
                 k3Var.r = b3Var;
-                h3Var.addView(b3Var, c8.ma.c(-1.0f, -1));
+                h3Var.addView(b3Var, c8.na.c(-1.0f, -1));
                 k3Var.r.h.setOnClickListener(new a(k3Var, 2));
                 org.telegram.messenger.g0.X3(k3Var.r, k3Var.n, 1.0f, true, false);
             }
             b3 b3Var2 = k3Var.r;
             String url = getWebView() != null ? getWebView().getUrl() : null;
             TextView textView = b3Var2.e;
-            b3Var2.d.setText(org.telegram.messenger.hd.N0(2131742656, null));
+            b3Var2.d.setText(org.telegram.messenger.gd.N0(2131742651, null));
             String u10 = org.telegram.ui.web.v0.u(url);
-            textView.setText(org.telegram.messenger.j6.m(org.telegram.messenger.g0.W2((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? org.telegram.messenger.hd.N0(2131742659, null) : org.telegram.messenger.hd.a0(null, null, 2131742657, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false, null, 0));
+            textView.setText(org.telegram.messenger.j6.m(org.telegram.messenger.g0.W2((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? org.telegram.messenger.gd.N0(2131742654, null) : org.telegram.messenger.gd.a0(null, null, 2131742652, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false, null, 0));
             b3Var2.f.setText(str);
             b3 b3Var3 = k3Var.r;
-            int i7 = org.telegram.ui.ActionBar.m6.Gl;
-            b3Var3.b(org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.x0(null, i7, false)) <= 0.721f, false);
-            org.telegram.ui.ActionBar.t6.h(i7, k3Var.r, null);
+            int i7 = org.telegram.ui.ActionBar.n6.Gl;
+            b3Var3.b(org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.x0(null, i7, false)) <= 0.721f, false);
+            org.telegram.ui.ActionBar.u6.h(i7, k3Var.r, null);
         }
         b3 b3Var4 = k3Var.r;
         k3Var.n = z10;
@@ -91,10 +91,10 @@ public final class i3 extends org.telegram.ui.web.v0 {
 
     @Override // org.telegram.ui.web.v0
     public final void U(String str, boolean z10) {
-        org.telegram.ui.web.t1 t1Var;
+        org.telegram.ui.web.u1 u1Var;
         k3 k3Var = this.U0;
         g4 g4Var = k3Var.M;
-        if (g4Var.i0 != null && k3Var == g4Var.v0[0] && (t1Var = k3Var.F) != null && t1Var.b() == null) {
+        if (g4Var.i0 != null && k3Var == g4Var.v0[0] && (u1Var = k3Var.F) != null && u1Var.b() == null) {
             k3Var.F.d(getWebView());
         }
         super.U(str, z10);

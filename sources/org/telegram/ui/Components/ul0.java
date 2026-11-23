@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ul0 extends Drawable {
     public final Paint b;
@@ -19,7 +19,7 @@ public final class ul0 extends Drawable {
     public float p;
     public float q;
     public float r;
-    public int a = org.telegram.messenger.ls.e4;
+    public int a = org.telegram.messenger.ks.e4;
     public final Path c = new Path();
     public final RectF d = new RectF();
     public long e = -1;
@@ -28,7 +28,7 @@ public final class ul0 extends Drawable {
     public final float[] i = new float[2];
     public int k = 0;
     public boolean l = false;
-    public final d6 n = new d6(1.0f, new hb0(this, 20), 0, 350, nr.h);
+    public final c6 n = new c6(1.0f, new eb0(this, 20), 0, 350, kr.h);
 
     public ul0() {
         Paint paint = new Paint(1);
@@ -44,7 +44,7 @@ public final class ul0 extends Drawable {
         Paint paint = this.b;
         paint.setColor(i7);
         this.a = paint.getAlpha();
-        paint.setAlpha(org.telegram.messenger.ls.e4);
+        paint.setAlpha(org.telegram.messenger.ks.e4);
     }
 
     public final void b(int i7) {
@@ -73,9 +73,9 @@ public final class ul0 extends Drawable {
         if (x7Var2 != null) {
             org.telegram.messenger.g0.r(x7Var2);
         }
-        d6 d6Var = this.n;
+        c6 c6Var = this.n;
         boolean z12 = false;
-        if (d6Var.c < 1.0f && z10) {
+        if (c6Var.c < 1.0f && z10) {
             c(this.k, false, false);
         }
         if (i7 == 2) {
@@ -96,12 +96,12 @@ public final class ul0 extends Drawable {
                 z12 = true;
             }
             this.l = z12;
-            d6Var.e(true, 0.0f);
+            c6Var.e(true, 0.0f);
         } else {
             this.k = i7;
             this.j = i7;
             this.l = false;
-            d6Var.e(true, 1.0f);
+            c6Var.e(true, 1.0f);
         }
         invalidateSelf();
     }
@@ -174,7 +174,7 @@ public final class ul0 extends Drawable {
             r23 = 0;
             float d2 = ((this.j == 2 ? d(0.75f) : d(0.2409f)) * f21) + (d(0.2409f) * f20) + (d(0.658f) * f19);
             float e12 = e(0.5f);
-            if (a8.w9.a(d, e11, d2, e12) <= this.p * 0.075f) {
+            if (a8.x9.a(d, e11, d2, e12) <= this.p * 0.075f) {
                 f11 = f21;
                 f12 = 0.0f;
                 f13 = 0.5f;
@@ -204,7 +204,7 @@ public final class ul0 extends Drawable {
             float e13 = e(f13);
             float d11 = (d(0.2452f) * f20) + T14;
             float T16 = org.telegram.messenger.g0.T1(e(f13), e(0.75f), f20);
-            if (Math.max(a8.w9.a(d10, T15, T14, e13), a8.w9.a(d11, T16, T14, e13)) > this.p * 0.075f) {
+            if (Math.max(a8.x9.a(d10, T15, T14, e13), a8.x9.a(d11, T16, T14, e13)) > this.p * 0.075f) {
                 Path path = this.c;
                 path.rewind();
                 path.moveTo(d10, T15);
@@ -221,7 +221,7 @@ public final class ul0 extends Drawable {
             }
             if (this.e > 0) {
                 float[] fArr = this.i;
-                up.a((System.currentTimeMillis() - this.e) % 5400.0f, fArr);
+                rp.a((System.currentTimeMillis() - this.e) % 5400.0f, fArr);
                 float f22 = fArr[r23];
                 float f23 = fArr[r19];
                 if (this.k != 2 && !this.l) {

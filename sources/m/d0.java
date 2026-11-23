@@ -8,7 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -33,24 +33,24 @@ public final class d0 extends y {
         c0 c0Var = this.e;
         Context context = c0Var.getContext();
         int[] iArr = f.a.g;
-        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) D.c;
-        r0.i0.i(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
-        Drawable v = D.v(0);
-        if (v != null) {
-            c0Var.setThumb(v);
+        h6.m E = h6.m.E(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) E.c;
+        r0.i0.i(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) E.c, i7);
+        Drawable A = E.A(0);
+        if (A != null) {
+            c0Var.setThumb(A);
         }
-        Drawable t6 = D.t(1);
+        Drawable z10 = E.z(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = t6;
-        if (t6 != null) {
-            t6.setCallback(c0Var);
-            t6.setLayoutDirection(c0Var.getLayoutDirection());
-            if (t6.isStateful()) {
-                t6.setState(c0Var.getDrawableState());
+        this.f = z10;
+        if (z10 != null) {
+            z10.setCallback(c0Var);
+            z10.setLayoutDirection(c0Var.getLayoutDirection());
+            if (z10.isStateful()) {
+                z10.setState(c0Var.getDrawableState());
             }
             f();
         }
@@ -60,10 +60,10 @@ public final class d0 extends y {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = D.s(2);
+            this.g = E.y(2);
             this.i = true;
         }
-        D.G();
+        E.G();
         f();
     }
 

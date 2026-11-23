@@ -1,6 +1,5 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -9,7 +8,7 @@ import kd.j;
 import rd.p;
 import zd.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzm extends j implements p {
     Object zza;
@@ -46,10 +45,10 @@ final class zzm extends j implements p {
         int i7 = this.zzb;
         try {
         } catch (zzcg e10) {
-            a10 = h.a(e10);
+            a10 = c8.z.a(e10);
         }
         if (i7 == 0) {
-            h.b(obj);
+            c8.z.b(obj);
             zzgrVar = this.zzc;
             zzg zzgVar = this.zzd;
             long j3 = this.zze;
@@ -63,12 +62,12 @@ final class zzm extends j implements p {
             return aVar;
         }
         if (i7 != 1) {
-            h.b(obj);
+            c8.z.b(obj);
             a10 = k.a;
             return new g(a10);
         }
         zzgrVar = (zzgr) this.zza;
-        h.b(obj);
+        c8.z.b(obj);
         this.zza = null;
         this.zzb = 2;
         if (((zzhf) obj).zza(zzgrVar.zza(), this) == aVar) {

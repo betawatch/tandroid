@@ -2,26 +2,26 @@ package bi;
 
 import android.content.Context;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import java.util.List;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.r9;
-import org.telegram.ui.Components.c51;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.q9;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.ra;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e extends sa {
+public final class e extends ra {
     public static final /* synthetic */ int W1 = 0;
     public final List T1;
-    public final r9 U1;
-    public c51 V1;
+    public final q9 U1;
+    public b51 V1;
 
-    public e(Context context, org.telegram.ui.ActionBar.h6 h6Var, r9 r9Var, List list) {
-        super(context, null, false, false, 2, h6Var);
-        this.U1 = r9Var;
+    public e(Context context, org.telegram.ui.ActionBar.i6 i6Var, q9 q9Var, List list) {
+        super(context, null, false, false, 2, i6Var);
+        this.U1 = q9Var;
         this.T1 = list;
         this.v1 = 0.2f;
         this.G1 = false;
@@ -31,10 +31,10 @@ public final class e extends sa {
         this.o1.setPadding(this.u0, org.telegram.messenger.g0.L(9.0f), this.u0, org.telegram.messenger.g0.L(64.0f));
         this.o1.setOnItemClickListener(new a(0));
         this.o1.setOverScrollMode(2);
-        hi.e eVar = new hi.e(context, h6Var, true);
+        hi.e eVar = new hi.e(context, i6Var, true);
         eVar.setOnClickListener(new ah.d(this, 3));
-        eVar.i(hd.N0(2131747637, null), false, true);
-        FrameLayout.LayoutParams d = ma.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
+        eVar.i(gd.N0(2131747637, null), false, true);
+        FrameLayout.LayoutParams d = na.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
         int i7 = d.leftMargin;
         int i10 = this.u0;
         d.leftMargin = i7 + i10;
@@ -43,20 +43,20 @@ public final class e extends sa {
         this.V1.O(false);
     }
 
-    @Override // org.telegram.ui.Components.sa
+    @Override // org.telegram.ui.Components.ra
     public final dk0 M0(ek0 ek0Var) {
-        c51 c51Var = new c51(this.o1, getContext(), this.a, 0, true, new b(this, 0), this.J0);
-        this.V1 = c51Var;
-        c51Var.r = false;
-        return c51Var;
+        b51 b51Var = new b51(this.o1, getContext(), this.a, 0, true, new b(this, 0), this.J0);
+        this.V1 = b51Var;
+        b51Var.r = false;
+        return b51Var;
     }
 
-    @Override // org.telegram.ui.Components.sa
+    @Override // org.telegram.ui.Components.ra
     public final CharSequence P0() {
         List list = this.T1;
         if (list == null) {
             return null;
         }
-        return hd.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
+        return gd.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
     }
 }

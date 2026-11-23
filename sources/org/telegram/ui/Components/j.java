@@ -1,72 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j implements Runnable {
+public final /* synthetic */ class j implements org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ m0 b;
+    public final /* synthetic */ l0 c;
 
-    public /* synthetic */ j(EditTextBoldCursor editTextBoldCursor, int i7) {
+    public /* synthetic */ j(m0 m0Var, l0 l0Var, int i7) {
         this.a = i7;
-        this.b = editTextBoldCursor;
+        this.b = m0Var;
+        this.c = l0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                int i7 = 0;
-                editTextBoldCursor.y = false;
-                editTextBoldCursor.d = false;
-                editTextBoldCursor.h();
-                ArrayList arrayList = editTextBoldCursor.a;
-                if (!arrayList.isEmpty()) {
-                    ((xh.f) arrayList.get(0)).q = new j(editTextBoldCursor, 2);
-                    float sqrt = (float) Math.sqrt(Math.pow(editTextBoldCursor.getHeight(), 2.0d) + Math.pow(editTextBoldCursor.getWidth(), 2.0d));
-                    int size = arrayList.size();
-                    while (i7 < size) {
-                        Object obj = arrayList.get(i7);
-                        i7++;
-                        ((xh.f) obj).j(editTextBoldCursor.w, editTextBoldCursor.x, sqrt, true);
-                    }
+                m0 m0Var = this.b;
+                if (m0Var.q2 != null) {
+                    this.c.c(0, true);
+                    m0Var.y1(null);
                     break;
                 }
                 break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor2 = this.b;
-                editTextBoldCursor2.post(new j(editTextBoldCursor2, 3));
-                break;
-            case 3:
-                this.b.j(false, true);
-                break;
-            case 4:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 5:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 6:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 7:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 8:
-                EditTextBoldCursor editTextBoldCursor3 = this.b;
-                editTextBoldCursor3.requestFocus();
-                org.telegram.messenger.g0.I3(editTextBoldCursor3);
-                break;
             default:
-                EditTextBoldCursor editTextBoldCursor4 = this.b;
-                editTextBoldCursor4.requestFocus();
-                editTextBoldCursor4.setSelection(0, editTextBoldCursor4.length());
-                org.telegram.messenger.g0.I3(editTextBoldCursor4);
+                TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
+                m0 m0Var2 = this.b;
+                if (m0Var2.q2 != aiComposeTone) {
+                    this.c.d(aiComposeTone, true);
+                    m0Var2.y1(aiComposeTone);
+                    break;
+                }
                 break;
         }
     }

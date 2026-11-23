@@ -20,18 +20,18 @@ import android.view.ViewConfiguration;
 import ch.w;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import ki.m3;
+import ki.n3;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.m41;
-import org.telegram.ui.qi0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.l41;
+import org.telegram.ui.oi0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean B1;
@@ -64,7 +64,7 @@ public abstract class g extends View implements i {
     public final TextPaint O;
     public final d O0;
     public final TextPaint P;
-    public final m3 P0;
+    public final n3 P0;
     public final TextPaint Q;
     public boolean Q0;
     public final Paint R;
@@ -79,7 +79,7 @@ public abstract class g extends View implements i {
     public float V0;
     public final Rect W;
     public float W0;
-    public final h6 X0;
+    public final i6 X0;
     public int Y0;
     public int Z0;
     public f a;
@@ -157,7 +157,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [lg.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [lg.b] */
-    public g(Context context, h6 h6Var) {
+    public g(Context context, i6 i6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -259,7 +259,7 @@ public abstract class g extends View implements i {
             }
         };
         this.O0 = new d(this, 2);
-        this.P0 = new m3(this, i7);
+        this.P0 = new n3(this, i7);
         this.Q0 = false;
         this.Y0 = 0;
         this.Z0 = 0;
@@ -270,7 +270,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.c1 = 0L;
         this.j1 = false;
-        this.X0 = h6Var;
+        this.X0 = i6Var;
         t();
         this.B0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -405,9 +405,9 @@ public abstract class g extends View implements i {
             e eVar = this.R0;
             if (eVar != null) {
                 getSelectedDate();
-                m41 m41Var = (m41) ((qi0) eVar).b;
-                m41Var.f();
-                m41Var.b.u0.d(false, false);
+                l41 l41Var = (l41) ((oi0) eVar).b;
+                l41Var.f();
+                l41Var.b.u0.d(false, false);
             }
             B();
             invalidate();
@@ -538,7 +538,7 @@ public abstract class g extends View implements i {
                 this.x = f16;
                 arrayList.clear();
                 arrayList.add(f10);
-                f10.f = ls.e4;
+                f10.f = ks.e4;
                 return;
             }
             arrayList.add(f10);
@@ -586,7 +586,7 @@ public abstract class g extends View implements i {
                 this.w = f12;
             } else {
                 float f14 = this.U0;
-                this.w = (nr.g.getInterpolation(f13) * (f12 - f14)) + f14;
+                this.w = (kr.g.getInterpolation(f13) * (f12 - f14)) + f14;
             }
             invalidate();
         }
@@ -601,7 +601,7 @@ public abstract class g extends View implements i {
                     this.x = f16;
                 } else {
                     float f18 = this.V0;
-                    this.x = (nr.g.getInterpolation(f17) * (f16 - f18)) + f18;
+                    this.x = (kr.g.getInterpolation(f17) * (f16 - f18)) + f18;
                 }
                 invalidate();
             }
@@ -609,23 +609,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i7 = this.y0 ? m6.Qj : m6.Pj;
-        h6 h6Var = this.X0;
-        int w02 = m6.w0(i7, h6Var);
+        int i7 = this.y0 ? n6.Qj : n6.Pj;
+        i6 i6Var = this.X0;
+        int w02 = n6.w0(i7, i6Var);
         this.O.setColor(w02);
-        this.P.setColor(m6.w0(this.y0 ? m6.Qj : m6.Pj, h6Var));
-        int w03 = m6.w0(m6.Pj, h6Var);
+        this.P.setColor(n6.w0(this.y0 ? n6.Qj : n6.Pj, i6Var));
+        int w03 = n6.w0(n6.Pj, i6Var);
         this.Q.setColor(w03);
-        int w04 = m6.w0(m6.Rj, h6Var);
+        int w04 = n6.w0(n6.Rj, i6Var);
         Paint paint = this.M;
         paint.setColor(w04);
-        int w05 = m6.w0(m6.Sj, h6Var);
+        int w05 = n6.w0(n6.Sj, i6Var);
         Paint paint2 = this.N;
         paint2.setColor(w05);
-        this.R.setColor(m6.w0(m6.Uj, h6Var));
-        this.S.setColor(m6.w0(m6.Tj, h6Var));
-        this.T.setColor(m6.w0(m6.d6, h6Var));
-        this.U.setColor(m6.w0(m6.Vj, h6Var));
+        this.R.setColor(n6.w0(n6.Uj, i6Var));
+        this.S.setColor(n6.w0(n6.Tj, i6Var));
+        this.T.setColor(n6.w0(n6.d6, i6Var));
+        this.U.setColor(n6.w0(n6.Vj, i6Var));
         this.u0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -693,12 +693,12 @@ public abstract class g extends View implements i {
                     double d = highestOneBit;
                     double d2 = 0.2d * d;
                     ng.b bVar4 = new ng.b(highestOneBit, (int) (d + d2), (int) (d - d2));
-                    bVar4.d = ls.e4;
+                    bVar4.d = ks.e4;
                     ng.b bVar5 = this.j0;
                     ArrayList arrayList = this.c;
                     if (bVar5 == null) {
                         this.j0 = bVar4;
-                        bVar4.d = ls.e4;
+                        bVar4.d = ks.e4;
                         arrayList.add(bVar4);
                         return;
                     }
@@ -1652,9 +1652,9 @@ public abstract class g extends View implements i {
         long j3 = 0;
         for (int i11 = 0; i11 < size; i11++) {
             if (((ng.f) arrayList.get(i11)).n) {
-                long U0 = ((ng.f) arrayList.get(i11)).a.b.U0(i7, i10);
-                if (U0 > j3) {
-                    j3 = U0;
+                long P0 = ((ng.f) arrayList.get(i11)).a.b.P0(i7, i10);
+                if (P0 > j3) {
+                    j3 = P0;
                 }
             }
         }
@@ -1667,9 +1667,9 @@ public abstract class g extends View implements i {
         long j3 = Long.MAX_VALUE;
         for (int i11 = 0; i11 < size; i11++) {
             if (((ng.f) arrayList.get(i11)).n) {
-                long Z0 = ((ng.f) arrayList.get(i11)).a.b.Z0(i7, i10);
-                if (Z0 < j3) {
-                    j3 = Z0;
+                long T0 = ((ng.f) arrayList.get(i11)).a.b.T0(i7, i10);
+                if (T0 < j3) {
+                    j3 = T0;
                 }
             }
         }

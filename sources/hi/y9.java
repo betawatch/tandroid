@@ -1,22 +1,44 @@
 package hi;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class y9 implements m2 {
-    public final /* synthetic */ sa a;
+public final /* synthetic */ class y9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nb b;
 
-    public y9(sa saVar) {
-        this.a = saVar;
+    public /* synthetic */ y9(nb nbVar, int i7) {
+        this.a = i7;
+        this.b = nbVar;
     }
 
-    @Override // hi.m2
-    public final void setInvert(float f10) {
-        sa saVar = this.a;
-        org.telegram.messenger.g0.n3(saVar.n, f10 > 0.5f);
-        org.telegram.messenger.g0.q3(saVar.n, f10 > 0.5f);
-    }
-
-    @Override // hi.m2
-    public final void invalidate() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.N0.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 2:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 3:
+                this.b.t1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                this.b.t1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                nb nbVar = this.b;
+                nbVar.getClass();
+                nbVar.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nbVar.n();
+                nbVar.r.invalidate();
+                nbVar.n.invalidate();
+                break;
+        }
     }
 }

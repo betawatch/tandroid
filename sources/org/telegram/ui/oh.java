@@ -8,16 +8,16 @@ import java.util.List;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class oh extends c5.a {
     public final /* synthetic */ int c;
     public final /* synthetic */ SparseArray d;
     public final /* synthetic */ boolean e;
     public final /* synthetic */ List f;
-    public final /* synthetic */ org.telegram.messenger.gj g;
+    public final /* synthetic */ org.telegram.messenger.fj g;
     public final /* synthetic */ org.telegram.ui.Components.wh0 h;
-    public final /* synthetic */ org.telegram.messenger.gj i;
+    public final /* synthetic */ org.telegram.messenger.fj i;
     public final /* synthetic */ SparseIntArray j;
     public final /* synthetic */ int k;
     public final /* synthetic */ c5.l l;
@@ -26,15 +26,15 @@ public final class oh extends c5.a {
     public final /* synthetic */ int o;
     public final /* synthetic */ bn p;
 
-    public oh(bn bnVar, int i7, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.gj gjVar, org.telegram.ui.Components.wh0 wh0Var, org.telegram.messenger.gj gjVar2, SparseIntArray sparseIntArray, int i10, c5.l lVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i11) {
+    public oh(bn bnVar, int i7, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.fj fjVar, org.telegram.ui.Components.wh0 wh0Var, org.telegram.messenger.fj fjVar2, SparseIntArray sparseIntArray, int i10, c5.l lVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i11) {
         this.p = bnVar;
         this.c = i7;
         this.d = sparseArray;
         this.e = z10;
         this.f = list;
-        this.g = gjVar;
+        this.g = fjVar;
         this.h = wh0Var;
-        this.i = gjVar2;
+        this.i = fjVar2;
         this.j = sparseIntArray;
         this.k = i10;
         this.l = lVar;
@@ -73,7 +73,7 @@ public final class oh extends c5.a {
         gi0Var.h(wh0Var.getSeenUsers());
         gi0Var.H = new w0(this, 18);
         gi0Var.F = new oi.f0(15, this, this.i);
-        gi0Var.E = new ki.v3(this.j, i7, this.k, this.l, this.m, this.n);
+        gi0Var.E = new ki.w3(this.j, i7, this.k, this.l, this.m, this.n);
         if (i11 < 0) {
             gi0Var.setPredictiveCount(this.o);
             wh0Var.setSeenCallback(new f3(gi0Var, 1));

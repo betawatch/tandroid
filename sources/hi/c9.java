@@ -1,43 +1,29 @@
 package hi;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c9 implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ c9(Object obj, float f10, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class c9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d9 b;
+
+    public /* synthetic */ c9(d9 d9Var, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = f10;
+        this.b = d9Var;
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                sa saVar = (sa) this.c;
-                if (!z10) {
-                    saVar.N0.setTranslationY(this.b);
-                    saVar.N0.L = false;
-                    saVar.p2 = null;
-                    saVar.q2 = null;
-                    break;
-                }
+                d9.a(this.b, valueAnimator);
                 break;
             default:
-                ki.r3 r3Var = (ki.r3) this.c;
-                r3Var.w = null;
-                float f12 = this.b;
-                if (!z10) {
-                    r3Var.f = f12;
-                    r3Var.c();
-                    break;
-                } else {
-                    r3Var.h = f12;
-                    break;
-                }
+                d9 d9Var = this.b;
+                d9Var.getClass();
+                d9Var.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bb extends jb {
     public final jh.l h0;
@@ -21,10 +21,10 @@ public final class bb extends jb {
         this.h0 = new jh.l();
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.cu0
     public final void T(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.cb0) {
-            ((org.telegram.ui.Components.cb0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.za0) {
+            ((org.telegram.ui.Components.za0) drawable).p();
         }
         jh.l lVar = this.h0;
         ui.a c10 = lVar.c(drawable);
@@ -43,7 +43,7 @@ public final class bb extends jb {
         if (qVar == null || !qVar.a) {
             return super.dispatchTouchEvent(motionEvent);
         }
-        r4 r4Var = (r4) ab.q.o().d;
+        r4 r4Var = (r4) ab.q.p().d;
         if (r4Var == null) {
             return true;
         }
@@ -51,14 +51,14 @@ public final class bb extends jb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.gj gjVar = MediaController.B().v0;
-        if (gjVar == null || !gjVar.h4() || gjVar.T == 0) {
+        org.telegram.messenger.fj fjVar = MediaController.B().v0;
+        if (fjVar == null || !fjVar.h4() || fjVar.T == 0) {
             return;
         }
-        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
+        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
         lb lbVar = this.i0;
         if (B0 == (-lbVar.f.id)) {
             MediaController.B().p0(lbVar.V0(false), lbVar.f0, lbVar.e0, true);
@@ -69,7 +69,7 @@ public final class bb extends jb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -105,7 +105,7 @@ public final class bb extends jb {
                 if (i21 == -1) {
                     i21 = 51;
                 }
-                int i22 = i21 & org.telegram.messenger.ls.x1;
+                int i22 = i21 & org.telegram.messenger.ks.x1;
                 int i23 = i21 & 7;
                 if (i23 == 1) {
                     i13 = (((i11 - i7) - measuredWidth) / 2) + layoutParams.leftMargin;

@@ -10,10 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.o10;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.m10;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final Paint a;
@@ -49,7 +49,7 @@ public final class o extends View {
                 if (i10 == 0) {
                     this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i0.a.f(i7 / 11.0f, -1, -16777216)));
                 } else {
-                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(o10.w(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
+                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(m10.w(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
                 }
             }
         }
@@ -142,7 +142,7 @@ public final class o extends View {
             if (num2 != null) {
                 paint2.setColor(org.telegram.messenger.g0.B(num2.intValue()) > 0.721f ? -15658735 : -1);
             }
-            paint2.setStrokeWidth(nr.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
+            paint2.setStrokeWidth(kr.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
             Path path2 = this.f;
             path2.rewind();
             RectF rectF3 = org.telegram.messenger.g0.P;

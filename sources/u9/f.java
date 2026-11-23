@@ -1,8 +1,8 @@
 package u9;
 
 import android.util.Log;
-import c8.vc;
 import c8.wc;
+import c8.xc;
 import com.google.firebase.components.ComponentRegistrar;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayDeque;
@@ -16,9 +16,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import p4.z;
+import org.telegram.ui.web.t1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f implements b {
     public static final ab.m n = new ab.m(1);
@@ -64,7 +64,7 @@ public final class f implements b {
                 try {
                     ComponentRegistrar componentRegistrar = (ComponentRegistrar) ((ua.b) it.next()).get();
                     if (componentRegistrar != null) {
-                        arrayList3.addAll(this.h.k(componentRegistrar));
+                        arrayList3.addAll(this.h.j(componentRegistrar));
                         it.remove();
                     }
                 } catch (l e10) {
@@ -92,11 +92,11 @@ public final class f implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                vc.a(arrayList3);
+                wc.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                vc.a(arrayList6);
+                wc.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i14 = 0;
@@ -108,7 +108,7 @@ public final class f implements b {
             }
             arrayList5.addAll(j(arrayList3));
             arrayList5.addAll(k());
-            h();
+            i();
         }
         int size4 = arrayList5.size();
         while (i10 < size4) {
@@ -181,11 +181,23 @@ public final class f implements b {
 
     @Override // u9.b
     public final synchronized ua.b f(q qVar) {
-        wc.a(qVar, "Null interface requested.");
+        xc.a(qVar, "Null interface requested.");
         return (ua.b) this.b.get(qVar);
     }
 
-    public final void g(boolean z10) {
+    @Override // u9.b
+    public final Set g(q qVar) {
+        ua.b bVar;
+        synchronized (this) {
+            bVar = (n) this.c.get(qVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
+    }
+
+    public final void h(boolean z10) {
         HashMap hashMap;
         AtomicReference atomicReference = this.f;
         Boolean valueOf = Boolean.valueOf(z10);
@@ -200,7 +212,7 @@ public final class f implements b {
         d(hashMap, z10);
     }
 
-    public final void h() {
+    public final void i() {
         HashMap hashMap = this.b;
         HashMap hashMap2 = this.c;
         for (a aVar : this.a.keySet()) {
@@ -229,18 +241,6 @@ public final class f implements b {
         }
     }
 
-    @Override // u9.b
-    public final Set i(q qVar) {
-        ua.b bVar;
-        synchronized (this) {
-            bVar = (n) this.c.get(qVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
-    }
-
     public final ArrayList j(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
@@ -254,7 +254,7 @@ public final class f implements b {
                 for (q qVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(qVar)) {
-                        arrayList2.add(new z(18, (o) ((ua.b) hashMap.get(qVar)), bVar));
+                        arrayList2.add(new t1(22, (o) ((ua.b) hashMap.get(qVar)), bVar));
                     } else {
                         hashMap.put(qVar, bVar);
                     }
@@ -285,7 +285,7 @@ public final class f implements b {
                 n nVar = (n) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new z(19, nVar, (ua.b) it.next()));
+                    arrayList.add(new t1(23, nVar, (ua.b) it.next()));
                 }
             } else {
                 q qVar2 = (q) entry2.getKey();

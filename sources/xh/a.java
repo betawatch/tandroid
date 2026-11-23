@@ -4,15 +4,15 @@ import android.animation.ValueAnimator;
 import android.graphics.Path;
 import android.text.Layout;
 import android.view.View;
-import c8.l9;
+import c8.m9;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.ws;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -46,8 +46,8 @@ public final class a extends Path {
                 if (i7 >= arrayList.size()) {
                     break;
                 }
-                fh0 fh0Var = (fh0) arrayList.get(i7);
-                if (f14 >= fh0Var.b && f14 <= fh0Var.c) {
+                eh0 eh0Var = (eh0) arrayList.get(i7);
+                if (f14 >= eh0Var.b && f14 <= eh0Var.c) {
                     fVar.y = true;
                     break;
                 }
@@ -65,10 +65,10 @@ public final class a extends Path {
         int i11 = this.f;
         fVar.setBounds(max, i10, (int) Math.min(f12, i11 <= 0 ? 2.1474836E9f : i11), (int) f13);
         fVar.h(this.b.getPaint().getColor());
-        fVar.t = zs.c;
+        fVar.t = ws.c;
         int width = fVar.getBounds().width() / g0.L(6.0f);
         int i12 = f.B;
-        int b10 = l9.b(width * i12, i12, f.A);
+        int b10 = m9.b(width * i12, i12, f.A);
         Stack stack2 = fVar.c;
         fVar.d = b10;
         while (fVar.h.size() + stack2.size() < b10) {

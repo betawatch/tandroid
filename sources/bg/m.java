@@ -9,10 +9,10 @@ import android.location.Location;
 import android.os.SystemClock;
 import android.view.WindowManager;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ls;
-import org.telegram.ui.da0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ca0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m implements SensorEventListener {
     public float E;
@@ -20,7 +20,7 @@ public final class m implements SensorEventListener {
     public float G;
     public boolean H;
     public long I;
-    public final da0 a;
+    public final ca0 a;
     public SensorManager b;
     public Sensor c;
     public Sensor d;
@@ -34,8 +34,8 @@ public final class m implements SensorEventListener {
     public boolean x;
     public float y;
 
-    public m(da0 da0Var) {
-        this.a = da0Var;
+    public m(ca0 ca0Var) {
+        this.a = ca0Var;
     }
 
     public final void a(Location location) {
@@ -97,9 +97,9 @@ public final class m implements SensorEventListener {
         }
         if (windowManager != null && windowManager.getDefaultDisplay() != null) {
             i7 = windowManager.getDefaultDisplay().getRotation();
-            i10 = ls.N1;
+            i10 = ks.N1;
             if (i7 == 1) {
-                i11 = ls.O1;
+                i11 = ks.O1;
                 if (i7 != 2) {
                     if (i7 != 3) {
                         i11 = 2;
@@ -163,7 +163,7 @@ public final class m implements SensorEventListener {
             return;
         }
         i7 = 0;
-        i10 = ls.N1;
+        i10 = ks.N1;
         if (i7 == 1) {
         }
         if (SensorManager.remapCoordinateSystem(this.h, i10, i11, this.n)) {

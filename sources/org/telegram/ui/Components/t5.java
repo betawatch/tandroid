@@ -1,40 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t5 implements v5 {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public y5 d;
-    public Rect e;
-    public p5 f;
-    public org.telegram.messenger.f6 h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
+public final class t5 {
+    public ArrayList a;
+    public HashMap b;
+    public ArrayList c;
 
-    public t5(View view, boolean z10) {
-        this.a = new WeakReference(view);
-        this.b = z10;
+    public final void a() {
+        ArrayList arrayList = this.a;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            ((s5) arrayList.get(i7)).d.spanDrawn = false;
+        }
     }
 
-    @Override // org.telegram.ui.Components.v5
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
+    public final void b(int i7) {
+        s5 s5Var = (s5) this.a.remove(i7);
+        HashMap hashMap = this.b;
+        v5 v5Var = (v5) hashMap.get(s5Var.c);
+        if (v5Var == null) {
+            throw new RuntimeException("!!!");
         }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+        ArrayList arrayList = v5Var.b;
+        arrayList.remove(s5Var);
+        v5Var.a();
+        if (arrayList.isEmpty()) {
+            hashMap.remove(s5Var.c);
+            this.c.remove(v5Var);
+        }
+        o5 o5Var = s5Var.f;
+        if (o5Var != null) {
+            o5Var.o(s5Var);
         }
     }
 }

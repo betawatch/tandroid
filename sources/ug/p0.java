@@ -4,32 +4,32 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.z80;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.y80;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout implements n0 {
-    public final h6 a;
+    public final i6 a;
     public final ArrayList b;
     public final o0 c;
     public final o0 d;
     public final o0 e;
     public final boolean f;
 
-    public p0(Context context, h6 h6Var) {
+    public p0(Context context, i6 i6Var) {
         super(context);
         this.b = new ArrayList();
-        this.a = h6Var;
-        for (z80 z80Var : z80.values()) {
-            if (z80Var.e) {
-                this.b.add(z80Var);
+        this.a = i6Var;
+        for (y80 y80Var : y80.values()) {
+            if (y80Var.e) {
+                this.b.add(y80Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -47,7 +47,7 @@ public final class p0 extends FrameLayout implements n0 {
     }
 
     public final o0 a(Context context, int i7) {
-        z80 z80Var = (z80) this.b.get(i7);
+        y80 y80Var = (y80) this.b.get(i7);
         o0 o0Var = new o0(context);
         s1 s1Var = new s1(20);
         o0Var.e = s1Var;
@@ -63,12 +63,12 @@ public final class p0 extends FrameLayout implements n0 {
             s1Var.O = 1002;
         }
         s1Var.P = this.a;
-        s1Var.Q = m6.Qk;
+        s1Var.Q = n6.Qk;
         s1Var.c();
         paint.setColor(-1);
-        o0Var.setLayoutParams(ma.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        o0Var.setForeground(z80Var.c);
-        o0Var.setBackgroundResource(z80Var.b);
+        o0Var.setLayoutParams(na.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        o0Var.setForeground(y80Var.c);
+        o0Var.setBackgroundResource(y80Var.b);
         o0Var.setPadding(org.telegram.messenger.g0.L(8.0f));
         o0Var.setBackgroundOuterPadding(org.telegram.messenger.g0.L(32.0f));
         addView(o0Var);
@@ -105,7 +105,7 @@ public final class p0 extends FrameLayout implements n0 {
             return;
         }
         float abs = Math.abs(f10 / getMeasuredWidth());
-        float interpolation = nr.i.getInterpolation(abs);
+        float interpolation = kr.i.getInterpolation(abs);
         int right = getRight();
         o0 o0Var = this.e;
         o0Var.setTranslationX(((o0Var.getWidth() * 1.5f) + (right - o0Var.getRight()) + org.telegram.messenger.g0.L(32.0f)) * interpolation);
@@ -120,7 +120,7 @@ public final class p0 extends FrameLayout implements n0 {
         float i10 = Utilities.i(org.telegram.messenger.g0.T1(1.0f, 1.8f, abs), 1.0f, 0.0f);
         o0Var2.setScaleX(i10);
         o0Var2.setScaleY(i10);
-        float interpolation2 = nr.g.getInterpolation(abs);
+        float interpolation2 = kr.g.getInterpolation(abs);
         int left = getLeft();
         o0 o0Var3 = this.d;
         o0Var3.setTranslationX((((left - o0Var3.getLeft()) - (o0Var3.getWidth() * 2.5f)) + org.telegram.messenger.g0.L(32.0f)) * interpolation2);

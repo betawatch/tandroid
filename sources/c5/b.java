@@ -8,10 +8,10 @@ import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.util.Comparator;
 import java.util.Map;
-import v4.n;
+import v4.o;
 import v4.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements Comparator {
     public static final /* synthetic */ b b = new b(2);
@@ -78,10 +78,10 @@ public final class b implements Comparator {
             case 7:
                 return ((t4.a) obj2).b() - ((t4.a) obj).b();
             case 8:
-                n nVar = (n) obj;
-                n nVar2 = (n) obj2;
-                int i7 = nVar.a - nVar2.a;
-                return i7 == 0 ? nVar.b - nVar2.b : i7;
+                o oVar = (o) obj;
+                o oVar2 = (o) obj2;
+                int i7 = oVar.a - oVar2.a;
+                return i7 == 0 ? oVar.b - oVar2.b : i7;
             case 9:
                 q qVar = (q) obj;
                 q qVar2 = (q) obj2;

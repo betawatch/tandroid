@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final long a;
@@ -19,15 +19,15 @@ public final class s0 {
     public int g = -1;
     public RadialGradient h;
     public Paint i;
-    public org.telegram.ui.Components.p5 j;
-    public org.telegram.ui.Components.d6 k;
+    public org.telegram.ui.Components.o5 j;
+    public org.telegram.ui.Components.c6 k;
     public final RectF l;
-    public final org.telegram.ui.Components.mc m;
+    public final org.telegram.ui.Components.lc m;
 
     public s0(t0 t0Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         new Matrix();
         this.l = new RectF();
-        this.m = new org.telegram.ui.Components.mc(t0Var);
+        this.m = new org.telegram.ui.Components.lc(t0Var);
         this.a = tL_starGiftUnique.id;
         TLRPC.Document document = tL_starGiftUnique.getDocument();
         this.b = document;

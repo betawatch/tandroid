@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 e0 e0Var = this.b;
                 String str = this.c;
                 String str2 = this.d;
-                j6.x xVar = (j6.x) obj;
+                j6.y yVar = (j6.y) obj;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
                 q6.m.j("Not connected to device", e0Var.G == 2);
-                j6.f fVar = (j6.f) xVar.n();
+                j6.f fVar = (j6.f) yVar.n();
                 Parcel p12 = fVar.p1();
                 p12.writeString(str);
                 p12.writeString(str2);
@@ -52,14 +52,14 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 e0 e0Var2 = this.b;
                 String str3 = this.c;
                 String str4 = this.d;
-                j6.x xVar2 = (j6.x) obj;
+                j6.y yVar2 = (j6.y) obj;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) obj2;
                 HashMap hashMap = e0Var2.C;
                 long incrementAndGet = e0Var2.r.incrementAndGet();
                 q6.m.j("Not connected to device", e0Var2.G == 2);
                 try {
                     hashMap.put(Long.valueOf(incrementAndGet), taskCompletionSource2);
-                    j6.f fVar2 = (j6.f) xVar2.n();
+                    j6.f fVar2 = (j6.f) yVar2.n();
                     Parcel p13 = fVar2.p1();
                     p13.writeString(str3);
                     p13.writeString(str4);

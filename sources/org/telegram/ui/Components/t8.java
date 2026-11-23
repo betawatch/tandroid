@@ -1,39 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class t8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ y8 d;
+public final class t8 {
+    public int a;
+    public boolean b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
 
-    public t8(y8 y8Var, float f10, float f11, boolean z10) {
-        this.d = y8Var;
-        this.a = f10;
-        this.b = f11;
-        this.c = z10;
+    public final t8 a() {
+        t8 t8Var = new t8();
+        t8Var.c = this.c;
+        t8Var.d = this.d;
+        t8Var.e = this.e;
+        t8Var.f = this.f;
+        t8Var.b = this.b;
+        return t8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        y8 y8Var = this.d;
-        y8Var.O = floatValue;
-        float T1 = org.telegram.messenger.g0.T1(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
-        kVar.getTitleTextView().setAlpha(y8Var.O);
-        if (y8Var.G && !this.c) {
-            y8Var.n0(false, 1.0f - y8Var.O);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        y8Var.r.setTranslationY(T1);
-        y8Var.y.setTranslationY(T1);
-        y8Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
-        kVar2.invalidate();
+        if (!(obj instanceof t8)) {
+            return false;
+        }
+        t8 t8Var = (t8) obj;
+        return this.c == t8Var.c && this.d == t8Var.d && this.e == t8Var.e && this.f == t8Var.f;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
     }
 }

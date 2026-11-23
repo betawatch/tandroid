@@ -5,15 +5,15 @@ import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.i1;
 import org.telegram.ui.ActionBar.r4;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l extends i1 {
-    public final /* synthetic */ ai.l0 x;
+    public final /* synthetic */ ai.h0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(ai.l0 l0Var, ai.l0 l0Var2) {
-        super(l0Var2);
-        this.x = l0Var;
+    public l(ai.h0 h0Var, ai.h0 h0Var2) {
+        super(h0Var2);
+        this.x = h0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.i1

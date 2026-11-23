@@ -1,6 +1,6 @@
 package u2;
 
-import a8.la;
+import a8.ma;
 import android.media.MediaCodec;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
@@ -13,11 +13,11 @@ import android.view.Surface;
 import h2.l0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.web.t1;
 import org.telegram.ui.web.z0;
-import p4.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -39,7 +39,7 @@ public final class c implements l {
         f fVar = cVar.b;
         MediaCodec mediaCodec = cVar.a;
         HandlerThread handlerThread = fVar.b;
-        la.p(fVar.c == null);
+        ma.p(fVar.c == null);
         handlerThread.start();
         Handler handler = new Handler(handlerThread.getLooper());
         mediaCodec.setCallback(fVar, handler);
@@ -57,7 +57,7 @@ public final class c implements l {
         cVar.f = 1;
     }
 
-    public static String p(int i7, String str) {
+    public static String b(int i7, String str) {
         StringBuilder sb2 = new StringBuilder(str);
         if (i7 == 1) {
             sb2.append("Audio");
@@ -72,36 +72,6 @@ public final class c implements l {
     }
 
     @Override // u2.l
-    public final void b(int i7, int i10, int i11, long j3) {
-        this.c.b(i7, i10, i11, j3);
-    }
-
-    @Override // u2.l
-    public final void c(int i7, k2.d dVar, long j3, int i10) {
-        this.c.c(i7, dVar, j3, i10);
-    }
-
-    @Override // u2.l
-    public final void d(z zVar) {
-        f fVar = this.b;
-        z zVar2 = new z(15, this, zVar);
-        synchronized (fVar.a) {
-            fVar.b();
-            zVar2.run();
-        }
-    }
-
-    @Override // u2.l
-    public final void e(int i7) {
-        this.a.releaseOutputBuffer(i7, false);
-    }
-
-    @Override // u2.l
-    public final void f() {
-        this.a.detachOutputSurface();
-    }
-
-    @Override // u2.l
     public final void flush() {
         this.c.flush();
         this.a.flush();
@@ -110,14 +80,14 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = l0.a;
-            handler.post(new z0(fVar, 22));
+            handler.post(new z0(fVar, 23));
         }
         this.a.start();
     }
 
     @Override // u2.l
-    public final void g(int i7, long j3) {
-        this.a.releaseOutputBuffer(i7, j3);
+    public final void g(int i7, int i10, int i11, long j3) {
+        this.c.g(i7, i10, i11, j3);
     }
 
     @Override // u2.l
@@ -147,15 +117,35 @@ public final class c implements l {
         return mediaFormat;
     }
 
+    @Override // u2.l
+    public final void h(int i7, k2.d dVar, long j3, int i10) {
+        this.c.h(i7, dVar, j3, i10);
+    }
+
+    @Override // u2.l
+    public final void i(int i7) {
+        this.a.releaseOutputBuffer(i7, false);
+    }
+
+    @Override // u2.l
+    public final void j() {
+        this.a.detachOutputSurface();
+    }
+
+    @Override // u2.l
+    public final void k(int i7, long j3) {
+        this.a.releaseOutputBuffer(i7, j3);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:12:0x0022 A[Catch: all -> 0x0024, DONT_GENERATE, TryCatch #0 {all -> 0x0024, blocks: (B:4:0x000a, B:6:0x0017, B:12:0x0022, B:15:0x0026, B:20:0x003e, B:23:0x0034, B:24:0x0040, B:25:0x0045), top: B:3:0x000a }] */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0026 A[Catch: all -> 0x0024, TryCatch #0 {all -> 0x0024, blocks: (B:4:0x000a, B:6:0x0017, B:12:0x0022, B:15:0x0026, B:20:0x003e, B:23:0x0034, B:24:0x0040, B:25:0x0045), top: B:3:0x000a }] */
     @Override // u2.l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int h() {
+    public final int l() {
         boolean z10;
-        this.c.j();
+        this.c.w1();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {
@@ -188,12 +178,13 @@ public final class c implements l {
     }
 
     @Override // u2.l
-    public final boolean i(c5 c5Var) {
+    public final void m(t1 t1Var) {
         f fVar = this.b;
+        t1 t1Var2 = new t1(19, this, t1Var);
         synchronized (fVar.a) {
-            fVar.o = c5Var;
+            fVar.b();
+            t1Var2.run();
         }
-        return true;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0022 A[Catch: all -> 0x0024, DONT_GENERATE, TryCatch #0 {all -> 0x0024, blocks: (B:4:0x000a, B:6:0x0017, B:12:0x0022, B:15:0x0027, B:19:0x0032, B:22:0x0036, B:24:0x0042, B:25:0x0069, B:29:0x005f, B:30:0x006b, B:31:0x0070), top: B:3:0x000a }] */
@@ -202,9 +193,9 @@ public final class c implements l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int j(MediaCodec.BufferInfo bufferInfo) {
+    public final int n(MediaCodec.BufferInfo bufferInfo) {
         boolean z10;
-        this.c.j();
+        this.c.w1();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {
@@ -243,28 +234,27 @@ public final class c implements l {
     }
 
     @Override // u2.l
-    public final void k(d3.k kVar, Handler handler) {
+    public final void o(d3.k kVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, kVar, 0), handler);
     }
 
     @Override // u2.l
-    public final void l(int i7) {
+    public final boolean p(nd0 nd0Var) {
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            fVar.o = nd0Var;
+        }
+        return true;
+    }
+
+    @Override // u2.l
+    public final void q(int i7) {
         this.a.setVideoScalingMode(i7);
     }
 
     @Override // u2.l
-    public final void m(Surface surface) {
+    public final void r(Surface surface) {
         this.a.setOutputSurface(surface);
-    }
-
-    @Override // u2.l
-    public final void n(ArrayList arrayList) {
-        this.a.subscribeToVendorParameters(arrayList);
-    }
-
-    @Override // u2.l
-    public final void o(ArrayList arrayList) {
-        this.a.unsubscribeFromVendorParameters(arrayList);
     }
 
     @Override // u2.l
@@ -317,7 +307,17 @@ public final class c implements l {
     }
 
     @Override // u2.l
+    public final void s(ArrayList arrayList) {
+        this.a.subscribeToVendorParameters(arrayList);
+    }
+
+    @Override // u2.l
     public final void setParameters(Bundle bundle) {
         this.c.setParameters(bundle);
+    }
+
+    @Override // u2.l
+    public final void t(ArrayList arrayList) {
+        this.a.unsubscribeFromVendorParameters(arrayList);
     }
 }

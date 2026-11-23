@@ -1,175 +1,292 @@
 package hi;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ee0;
-import org.telegram.ui.Components.w60;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.text.TextUtils;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.w10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class ka extends FrameLayout {
-    public float a;
-    public float b;
-    public final Paint c;
-    public LinearGradient d;
-    public final /* synthetic */ sa e;
+public final class ka implements l6 {
+    public final /* synthetic */ nb a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka(sa saVar, Activity activity) {
-        super(activity);
-        this.e = saVar;
-        this.c = new Paint(1);
+    public ka(nb nbVar) {
+        this.a = nbVar;
     }
 
-    public static void a(View view, int i7, int i10) {
-        view.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30));
+    public final void a() {
+        nb nbVar = this.a;
+        ArrayList<x7> content = nbVar.B0.getContent();
+        int i7 = 0;
+        if (content.size() == 1) {
+            nbVar.L1 = content.get(0);
+        } else {
+            nbVar.L1 = x7.a(nbVar.B0.getLayout(), nbVar.B0.getContent());
+        }
+        x7 x7Var = nbVar.L1;
+        if (x7Var != null && x7Var.K) {
+            i7 = 1;
+        }
+        nbVar.P1 = i7;
+        ha haVar = nbVar.R0;
+        if (haVar != null) {
+            haVar.a(i7);
+        }
+        l9.a(nbVar.c, nbVar.L1);
+        nbVar.J(1, true);
     }
 
-    public final void b(float f10) {
-        float f11 = this.a;
-        this.b = f10;
-        super.setTranslationY(f11 + f10);
+    public final void b() {
+        ArrayList arrayList;
+        nb nbVar = this.a;
+        qa qaVar = nbVar.C0;
+        if (qaVar == null || nbVar.T1 || nbVar.Q1 || !qaVar.isInited()) {
+            return;
+        }
+        nb nbVar2 = this.a;
+        if (nbVar2.g0 != 0) {
+            return;
+        }
+        u3 u3Var = nbVar2.n1;
+        if (u3Var != null) {
+            u3Var.f(true);
+        }
+        if (this.a.p0() && (arrayList = this.a.v2) != null && !arrayList.isEmpty()) {
+            nb nbVar3 = this.a;
+            org.telegram.messenger.t0.b.getSharedPreferences("camera", 0).edit().putString("flashMode", (String) nbVar3.v2.get(nbVar3.u2)).commit();
+        }
+        this.a.C0.switchCamera();
+        nb.Z(this.a.C0.isFrontface());
+        if (this.a.p0()) {
+            this.a.s.c(null);
+        } else {
+            this.a.s.d();
+        }
     }
 
     public final void c() {
-        if (this.e.K == 0) {
-            setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), -16777216));
+        boolean z10;
+        boolean z11;
+        nb nbVar = this.a;
+        if (nbVar.g0 != 0 || nbVar.Q1 || nbVar.R1) {
+            return;
+        }
+        Activity activity = nbVar.b;
+        if (activity != null) {
+            if (Build.VERSION.SDK_INT >= 33) {
+                z11 = (activity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") == 0 && activity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") == 0) ? false : true;
+                if (z11) {
+                    activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, ks.z1);
+                }
+            } else {
+                z11 = activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0;
+                if (z11) {
+                    activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, ks.z1);
+                }
+            }
+            z10 = !z11;
         } else {
-            setBackground(null);
+            z10 = true;
+        }
+        if (z10) {
+            nbVar.e(true);
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        sa saVar = this.e;
-        if (view == saVar.i0) {
-            float f10 = saVar.W ? org.telegram.messenger.g0.m : 0.0f;
-            LinearGradient linearGradient = this.d;
-            Paint paint = this.c;
-            if (linearGradient == null) {
-                LinearGradient linearGradient2 = new LinearGradient(0.0f, f10, 0.0f, f10 + org.telegram.messenger.g0.L(72.0f), new int[]{TLObject.FLAG_30, 0}, new float[]{f10 / (org.telegram.messenger.g0.L(72.0f) + f10), 1.0f}, Shader.TileMode.CLAMP);
-                this.d = linearGradient2;
-                paint.setShader(linearGradient2);
+    public final void d() {
+        qa qaVar;
+        nb nbVar = this.a;
+        if (nbVar.Q1 || nbVar.T1 || nbVar.g0 != 0 || (qaVar = nbVar.C0) == null || !qaVar.isInited()) {
+            return;
+        }
+        nbVar.X0.f(true);
+        File file = nbVar.H1;
+        if (file != null) {
+            try {
+                file.delete();
+            } catch (Exception unused) {
             }
-            paint.setAlpha(ls.e4);
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(0.0f, 0.0f, getWidth(), org.telegram.messenger.g0.L(84.0f) + f10);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), paint);
+            nbVar.H1 = null;
         }
-        return drawChild;
+        j6 j6Var = nbVar.D0;
+        if (j6Var != null) {
+            j6Var.c(true);
+        }
+        nbVar.H1 = x7.w(nbVar.c, "jpg");
+        nbVar.Q1 = true;
+        nbVar.o();
+        nbVar.d2 = false;
+        if (nbVar.C0.isFrontface() && nbVar.u2 == 1) {
+            nb.a(nbVar);
+        }
+        if (!nbVar.p0()) {
+            h(null);
+            return;
+        }
+        w2 w2Var = nbVar.s;
+        c7 c7Var = new c7(this, 3);
+        w2Var.h(w2Var.p);
+        w2Var.e(1.0f, 320L, new s2(w2Var, c7Var, 0));
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        ValueAnimator valueAnimator = this.e.F;
-        if (valueAnimator == null || !valueAnimator.isRunning()) {
-            super.invalidate();
+    public final void e(boolean z10) {
+        nb nbVar = this.a;
+        if (nbVar.S1 || !nbVar.R1) {
+            return;
+        }
+        nbVar.S1 = true;
+        org.telegram.messenger.g0.h3(new ia(this, 0), z10 ? 0L : 400L);
+    }
+
+    public final void f(Runnable runnable, boolean z10) {
+        qa qaVar;
+        nb nbVar = this.a;
+        if (nbVar.R1 || nbVar.S1 || nbVar.T1 || nbVar.g0 != 0 || (qaVar = nbVar.C0) == null || qaVar.getCameraSession() == null) {
+            return;
+        }
+        u3 u3Var = nbVar.m1;
+        if (u3Var != null) {
+            u3Var.f(true);
+        }
+        u3 u3Var2 = nbVar.n1;
+        if (u3Var2 != null) {
+            u3Var2.f(true);
+        }
+        nbVar.X0.f(true);
+        nbVar.R1 = true;
+        j6 j6Var = nbVar.D0;
+        if (j6Var != null) {
+            j6Var.c(true);
+        }
+        File file = nbVar.H1;
+        if (file != null) {
+            try {
+                file.delete();
+            } catch (Exception unused) {
+            }
+            nbVar.H1 = null;
+        }
+        nbVar.H1 = x7.x(nbVar.c, true);
+        nbVar.o();
+        nbVar.d2 = false;
+        if (nbVar.C0.isFrontface() && nbVar.u2 == 1) {
+            nb.a(nbVar);
+        }
+        if (nbVar.p0()) {
+            nbVar.s.c(new ja(this, z10, runnable));
+        } else {
+            g(runnable, z10);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        sa saVar = this.e;
-        int i13 = saVar.W ? saVar.a0 : 0;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        saVar.i0.layout(0, 0, saVar.T, saVar.U);
-        saVar.i0.setPivotX(saVar.T * 0.5f);
-        FrameLayout frameLayout = saVar.j0;
-        frameLayout.layout(0, i13, saVar.T, frameLayout.getMeasuredHeight() + i13);
-        FrameLayout frameLayout2 = saVar.l0;
-        frameLayout2.layout(0, saVar.U - frameLayout2.getMeasuredHeight(), saVar.T, saVar.U);
-        FrameLayout frameLayout3 = saVar.n0;
-        int i14 = saVar.U;
-        frameLayout3.layout(0, i14, saVar.T, frameLayout3.getMeasuredHeight() + i14);
-        saVar.m0.layout(0, 0, saVar.T, saVar.U);
-        bi.m3 m3Var = saVar.u0;
-        if (m3Var != null) {
-            m3Var.layout(0, 0, measuredWidth, measuredHeight);
+    public final void g(Runnable runnable, boolean z10) {
+        nb nbVar = this.a;
+        if (nbVar.C0 == null) {
+            return;
         }
-        saVar.s.c.layout(0, 0, measuredWidth, measuredHeight);
-        j jVar = saVar.d1.N;
-        if (jVar != null) {
-            jVar.layout(0, 0, saVar.T, saVar.U);
-            saVar.d1.y();
+        CameraController.getInstance().recordVideo(nbVar.C0.getCameraSessionObject(), nbVar.H1, false, new di.v6(this, 25), new ja(this, runnable, z10), nbVar.C0, true);
+        if (nbVar.P1 != 1) {
+            nbVar.P1 = 1;
+            nbVar.J0.a(false, true);
+            nbVar.h0(nbVar.P1 == 1, true);
+            nbVar.R0.a(nbVar.P1);
+            n6 n6Var = nbVar.P0;
+            boolean z11 = nbVar.P1 == 1;
+            n6Var.o0 = -1.0f;
+            n6Var.p0 = z11;
+            n6Var.invalidate();
         }
-        ee0 ee0Var = saVar.C1;
-        if (ee0Var != null) {
-            ee0Var.layout(0, 0, ee0Var.getMeasuredWidth(), saVar.C1.getMeasuredHeight());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x009b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void h(w10 w10Var) {
+        boolean z10;
+        FileOutputStream fileOutputStream;
+        nb nbVar = this.a;
+        int i7 = nbVar.c;
+        if (!nbVar.p0()) {
+            nbVar.C0.startTakePictureAnimation(true);
         }
-        u9 u9Var = saVar.w1;
-        if (u9Var != null) {
-            u9Var.layout(0, 0, u9Var.getMeasuredWidth(), saVar.w1.getMeasuredHeight());
+        if ((nbVar.C0.isDual() && TextUtils.equals(nbVar.C0.getCameraSession().getCurrentFlashMode(), "off")) || nbVar.B0.j()) {
+            if (!nbVar.B0.j()) {
+                nbVar.C0.pauseAsTakingPicture();
+            }
+            Bitmap bitmap = nbVar.C0.getTextureView().getBitmap();
+            try {
+                fileOutputStream = new FileOutputStream(nbVar.H1.getAbsoluteFile());
+                try {
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                } finally {
+                }
+            } catch (Exception e10) {
+                e = e10;
+                z10 = false;
+            }
+            try {
+                fileOutputStream.close();
+                z10 = true;
+            } catch (Exception e11) {
+                e = e11;
+                z10 = true;
+                org.telegram.messenger.a8.g(e, true);
+                bitmap.recycle();
+                if (z10) {
+                }
+            }
+            bitmap.recycle();
+        } else {
+            z10 = false;
         }
-        for (int i15 = 0; i15 < getChildCount(); i15++) {
-            View childAt = getChildAt(i15);
-            if (childAt instanceof w60) {
-                childAt.layout(0, 0, measuredWidth, measuredHeight);
+        if (z10) {
+            j6 j6Var = nbVar.D0;
+            if (j6Var != null) {
+                j6Var.c(true);
+            }
+            nbVar.Q1 = CameraController.getInstance().takePicture(nbVar.H1, true, nbVar.C0.getCameraSessionObject(), new ai.s1(22, this, w10Var));
+            return;
+        }
+        nbVar.Q1 = false;
+        j6 j6Var2 = nbVar.D0;
+        if (j6Var2 != null) {
+            j6Var2.c(false);
+        }
+        x7 m10 = x7.m(nbVar.H1, 0);
+        m10.J0 = nbVar.w0;
+        m10.K0 = nbVar.x0;
+        if (!nbVar.B0.j()) {
+            nbVar.L1 = m10;
+            l9.a(i7, m10);
+            nbVar.M1 = false;
+            if (w10Var != null) {
+                w10Var.a(new ia(this, 1));
+                return;
+            } else {
+                nbVar.J(1, true);
+                return;
             }
         }
-        setPivotX(measuredWidth / 2.0f);
-        setPivotY((-measuredHeight) * 0.2f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        int size2 = View.MeasureSpec.getSize(i10);
-        sa saVar = this.e;
-        a(saVar.i0, saVar.T, saVar.U);
-        saVar.i();
-        a(saVar.j0, saVar.T, org.telegram.messenger.g0.L(150.0f));
-        a(saVar.l0, saVar.T, org.telegram.messenger.g0.L(220.0f));
-        a(saVar.n0, saVar.T, saVar.V);
-        a(saVar.m0, saVar.T, saVar.U);
-        a(saVar.s.c, size, size2);
-        bi.m3 m3Var = saVar.u0;
-        if (m3Var != null) {
-            a(m3Var, size, size2);
-        }
-        j jVar = saVar.d1.N;
-        if (jVar != null) {
-            a(jVar, saVar.T, saVar.U);
-        }
-        ee0 ee0Var = saVar.C1;
-        if (ee0Var != null) {
-            a(ee0Var, size, size2);
-        }
-        u9 u9Var = saVar.w1;
-        if (u9Var != null) {
-            a(u9Var, size, size2);
-        }
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof w60) {
-                a(childAt, size, size2);
+        nbVar.H1 = null;
+        if (nbVar.B0.l(m10)) {
+            x7 a10 = x7.a(nbVar.B0.getLayout(), nbVar.B0.getContent());
+            nbVar.L1 = a10;
+            l9.a(i7, a10);
+            nbVar.M1 = false;
+            if (w10Var != null) {
+                w10Var.a(null);
             }
+        } else if (w10Var != null) {
+            w10Var.a(null);
         }
-        setMeasuredDimension(size, size2);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        this.a = f10;
-        super.setTranslationY(this.b + f10);
-        float i7 = Utilities.i((f10 / getMeasuredHeight()) * 4.0f, 1.0f, 0.0f);
-        sa saVar = this.e;
-        saVar.L = i7;
-        saVar.n();
-        saVar.n.invalidate();
-        float i10 = 1.0f - (Utilities.i(getTranslationY() / org.telegram.messenger.g0.L(320.0f), 1.0f, 0.0f) * 0.1f);
-        setScaleX(i10);
-        setScaleY(i10);
+        nbVar.l0(true);
     }
 }

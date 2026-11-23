@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ei extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class ei extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 bn bnVar = this.b;
-                org.telegram.ui.Components.h50 h50Var = bnVar.q3;
-                if (h50Var != null) {
-                    h50Var.setIsMessageTransition(false);
+                org.telegram.ui.Components.e50 e50Var = bnVar.q3;
+                if (e50Var != null) {
+                    e50Var.setIsMessageTransition(false);
                     bnVar.q3.d(true);
                     bnVar.q3.setVisibility(4);
                     break;

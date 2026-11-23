@@ -2,12 +2,12 @@ package e2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v implements a1 {
     public final a1 a;
 
-    public v(p4.i1 i1Var, a1 a1Var) {
+    public v(p4.h1 h1Var, a1 a1Var) {
         this.a = a1Var;
     }
 
@@ -62,8 +62,18 @@ public final class v implements a1 {
     }
 
     @Override // e2.a1
-    public final void a(x1 x1Var) {
-        this.a.a(x1Var);
+    public final void a(int i7) {
+        this.a.a(i7);
+    }
+
+    @Override // e2.a1
+    public final void b(x1 x1Var) {
+        this.a.b(x1Var);
+    }
+
+    @Override // e2.a1
+    public final void c(boolean z10) {
+        this.a.c(z10);
     }
 
     @Override // e2.a1
@@ -78,7 +88,7 @@ public final class v implements a1 {
 
     @Override // e2.a1
     public final void f(boolean z10) {
-        this.a.f(z10);
+        this.a.h(z10);
     }
 
     @Override // e2.a1
@@ -88,27 +98,17 @@ public final class v implements a1 {
 
     @Override // e2.a1
     public final void h(boolean z10) {
-        this.a.j(z10);
+        this.a.h(z10);
     }
 
     @Override // e2.a1
-    public final void i(int i7) {
-        this.a.i(i7);
+    public final void j(int i7, boolean z10) {
+        this.a.j(i7, z10);
     }
 
     @Override // e2.a1
-    public final void j(boolean z10) {
-        this.a.j(z10);
-    }
-
-    @Override // e2.a1
-    public final void k(int i7, boolean z10) {
-        this.a.k(i7, z10);
-    }
-
-    @Override // e2.a1
-    public final void l(float f10) {
-        this.a.l(f10);
+    public final void k(float f10) {
+        this.a.k(f10);
     }
 
     @Override // e2.a1

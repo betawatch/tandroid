@@ -13,10 +13,10 @@ import com.google.android.gms.common.GooglePlayServicesMissingManifestValueExcep
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -29,9 +29,9 @@ public abstract class g {
         try {
             if (!c) {
                 try {
-                    PackageInfo b10 = z6.b.a(context).b(Build.VERSION.SDK_INT >= 28 ? 134217792 : 64, "com.google.android.gms");
+                    PackageInfo c10 = z6.b.a(context).c(Build.VERSION.SDK_INT >= 28 ? 134217792 : 64, "com.google.android.gms");
                     h.a(context);
-                    if (b10 == null || h.b(b10, false) || !h.b(b10, true)) {
+                    if (c10 == null || h.b(c10, false) || !h.b(c10, true)) {
                         b = false;
                     } else {
                         b = true;
@@ -95,7 +95,7 @@ public abstract class g {
             }
             if (i10 != 12451000) {
                 int i11 = e.a;
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ls.p1 + String.valueOf(i10).length() + ls.Y2);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ks.p1 + String.valueOf(i10).length() + ks.Y2);
                 sb2.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
                 sb2.append(i11);
                 sb2.append(" but found ");

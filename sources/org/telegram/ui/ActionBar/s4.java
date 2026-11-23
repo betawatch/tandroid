@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class s4 extends Drawable {
     public final Paint a;
@@ -36,7 +36,7 @@ public class s4 extends Drawable {
         this.h = true;
         this.i = new DecelerateInterpolator();
         new RectF();
-        this.o = ls.e4;
+        this.o = ks.e4;
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint2.setStrokeWidth(org.telegram.messenger.g0.p * 1.66f);
         paint2.setStrokeCap(Paint.Cap.ROUND);
@@ -110,16 +110,16 @@ public class s4 extends Drawable {
         canvas.translate(((org.telegram.messenger.g0.L(24.0f) / 2) - org.telegram.messenger.g0.L(9.0f)) - (org.telegram.messenger.g0.L(1.0f) * this.f), org.telegram.messenger.g0.L(24.0f) / 2);
         int i10 = this.j;
         if (i10 == 0) {
-            i10 = m6.x0(null, m6.v8, false);
+            i10 = n6.x0(null, n6.v8, false);
         }
         int i11 = this.k;
         if (i11 == 0) {
-            i11 = m6.x0(null, m6.s8, false);
+            i11 = n6.x0(null, n6.s8, false);
         }
         boolean z10 = this.h;
         Paint paint = this.a;
         if (z10) {
-            canvas.rotate(this.f * (this.c ? -180 : ls.K2), org.telegram.messenger.g0.L(9.0f), 0.0f);
+            canvas.rotate(this.f * (this.c ? -180 : ks.K2), org.telegram.messenger.g0.L(9.0f), 0.0f);
             paint.setColor(i10);
             paint.setAlpha(this.o);
             canvas.drawLine(this.l ? com.google.android.gms.internal.vision.e2.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, org.telegram.messenger.g0.L(0.5f) * this.f) : 0.0f, 0.0f, ((org.telegram.messenger.g0.L(18.0f) - (org.telegram.messenger.g0.L(3.0f) * this.f)) - 0.0f) - (this.l ? (1.0f - this.f) * (paint.getStrokeWidth() / 2.0f) : 0.0f), 0.0f, paint);
@@ -135,7 +135,7 @@ public class s4 extends Drawable {
                 abs = (org.telegram.messenger.g0.L(0.25f) * this.f) + L2;
             }
         } else {
-            canvas.rotate(this.f * (this.c ? -225 : ls.R1), org.telegram.messenger.g0.L(9.0f), 0.0f);
+            canvas.rotate(this.f * (this.c ? -225 : ks.R1), org.telegram.messenger.g0.L(9.0f), 0.0f);
             if (this.n) {
                 paint.setColor(i10);
                 paint.setAlpha(this.o);
@@ -145,8 +145,8 @@ public class s4 extends Drawable {
                 abs2 = (Math.abs(this.f) * org.telegram.messenger.g0.N(3.0f)) + org.telegram.messenger.g0.N(5.0f);
                 abs3 = (Math.abs(this.f) * org.telegram.messenger.g0.N(7.0f)) + org.telegram.messenger.g0.N(2.0f);
             } else {
-                int x02 = m6.x0(null, m6.y8, false);
-                org.telegram.messenger.g0.S0(this.f, 1.0f, i11, m6.x0(null, m6.w8, false));
+                int x02 = n6.x0(null, n6.y8, false);
+                org.telegram.messenger.g0.S0(this.f, 1.0f, i11, n6.x0(null, n6.w8, false));
                 paint.setColor(org.telegram.messenger.g0.S0(this.f, 1.0f, i10, x02));
                 paint.setAlpha(this.o);
                 canvas.drawLine(this.f * org.telegram.messenger.g0.L(1.0f), 0.0f, (org.telegram.messenger.g0.L(18.0f) - (org.telegram.messenger.g0.L(1.0f) * this.f)) - 0.0f, 0.0f, paint);

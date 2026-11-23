@@ -1,35 +1,37 @@
 package hi;
 
-import org.telegram.ui.Components.nr;
+import android.view.TextureView;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i6 b;
+public final class e6 {
+    public TextureView a;
+    public c7 b;
+    public org.telegram.ui.web.b c;
+    public boolean d;
+    public int e;
+    public int f;
+    public boolean g;
 
-    public /* synthetic */ e6(i6 i6Var, int i7) {
-        this.a = i7;
-        this.b = i6Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c();
-                break;
-            default:
-                i6 i6Var = this.b;
-                i6Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(nr.h).setDuration(280L).start();
-                i6Var.c = System.currentTimeMillis();
-                i6Var.invalidate();
-                try {
-                    i6Var.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-                org.telegram.messenger.g0.h3(i6Var.h, 59500L);
-                break;
+    public final void a(TextureView textureView) {
+        TextureView textureView2 = this.a;
+        if (textureView2 == textureView) {
+            return;
+        }
+        if (textureView2 != null) {
+            ViewParent parent = textureView2.getParent();
+            if (parent instanceof ViewGroup) {
+                ((ViewGroup) parent).removeView(this.a);
+            }
+            this.a = null;
+        }
+        this.d = false;
+        this.a = textureView;
+        c7 c7Var = this.b;
+        if (c7Var != null) {
+            c7Var.a(textureView);
         }
     }
 }

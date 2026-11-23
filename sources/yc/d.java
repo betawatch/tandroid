@@ -18,13 +18,13 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
-import org.telegram.messenger.gz;
+import oi.z3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d {
-    public final gz a;
+    public final z3 a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -38,9 +38,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, gz gzVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, z3 z3Var, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = gzVar;
+        this.a = z3Var;
         this.c = new BufferedInputStream(inputStream, TLObject.FLAG_13);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -141,7 +141,7 @@ public final class d {
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        gz gzVar = this.a;
+        z3 z3Var = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -213,7 +213,7 @@ public final class d {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
                             i.d(e10);
-                            gzVar.a();
+                            z3Var.b();
                         } catch (SSLException e11) {
                             throw e11;
                         } catch (IOException unused) {
@@ -225,18 +225,18 @@ public final class d {
                         i.c(e12.a(), "text/plain", e12.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        gzVar.a();
+                        z3Var.b();
                     }
                 } catch (SSLException e13) {
                     i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e13.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    gzVar.a();
+                    z3Var.b();
                 } catch (IOException e14) {
                     i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e14.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    gzVar.a();
+                    z3Var.b();
                 }
             } catch (SocketException e15) {
                 throw e15;
@@ -245,7 +245,7 @@ public final class d {
             }
         } catch (Throwable th2) {
             i.d(null);
-            gzVar.a();
+            z3Var.b();
             throw th2;
         }
     }

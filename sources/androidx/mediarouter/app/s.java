@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
+import a8.d7;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s extends ArrayAdapter {
     public final float a;
@@ -26,7 +26,7 @@ public final class s extends ArrayAdapter {
     public s(t tVar, Context context, ArrayList arrayList) {
         super(context, 0, arrayList);
         this.b = tVar;
-        this.a = c7.c(context);
+        this.a = d7.c(context);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
@@ -58,9 +58,9 @@ public final class s extends ArrayAdapter {
             MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
             Context context = viewGroup.getContext();
             OverlayListView overlayListView = tVar.V;
-            int b10 = c7.b(context, 0);
+            int b10 = d7.b(context, 0);
             int alpha = Color.alpha(b10);
-            int i11 = ls.e4;
+            int i11 = ks.e4;
             if (alpha != 255) {
                 b10 = i0.a.k(b10, ((Integer) overlayListView.getTag()).intValue());
             }

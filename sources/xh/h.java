@@ -11,12 +11,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.r5;
-import tg.y;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class h {
     public static h q;
@@ -31,14 +30,14 @@ public final class h {
     public boolean p;
     public final r5 a = new r5("SpoilerEffectBitmapFactory", 3);
     public final b3.j[] b = new b3.j[f.C.length];
-    public final y[] c = new y[2];
+    public final t1.a[] c = new t1.a[2];
     public int d = 0;
     public final Rect m = new Rect();
     public final z n = new z(this, 2);
     public final Rect o = new Rect();
 
     public h() {
-        int L = g0.L(cz.o() == 2 ? 150.0f : 100.0f);
+        int L = g0.L(bz.o() == 2 ? 150.0f : 100.0f);
         Point point = g0.q;
         int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, L);
         this.k = min < g0.L(80.0f) ? g0.L(80.0f) : min;

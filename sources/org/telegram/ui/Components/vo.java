@@ -1,62 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class vo extends FrameLayout {
-    public i71 a;
-    public float b;
-    public boolean c;
-    public float d;
-    public ValueAnimator e;
+public final /* synthetic */ class vo implements org.telegram.messenger.w10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kp b;
 
-    public abstract void a(boolean z10);
+    public /* synthetic */ vo(kp kpVar, int i7) {
+        this.a = i7;
+        this.b = kpVar;
+    }
 
-    public final void b(boolean z10) {
-        this.c = z10;
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            this.e = null;
-            valueAnimator.cancel();
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                kp kpVar = this.b;
+                kpVar.Z1 = (TL_stories.TL_premium_boostsStatus) obj;
+                kpVar.Y1 = true;
+                kpVar.a1(true);
+                kpVar.X1 = false;
+                break;
+            default:
+                org.telegram.messenger.g3 g3Var = (org.telegram.messenger.g3) obj;
+                kp kpVar2 = this.b;
+                if (kpVar2.getContext() != null) {
+                    org.telegram.ui.bn bnVar = kpVar2.v1;
+                    ug.k0 k0Var = new ug.k0(22, kpVar2.a, kpVar2.getContext(), bnVar, kpVar2.J0);
+                    k0Var.B1(g3Var);
+                    k0Var.A1(kpVar2.Z1, true);
+                    k0Var.C1(kpVar2.v1.a());
+                    k0Var.M2 = new to(kpVar2, 2);
+                    k0Var.show();
+                    break;
+                }
+                break;
         }
-        if (z10) {
-            setVisibility(0);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new x(this, 14));
-        this.e.setInterpolator(nr.h);
-        this.e.setDuration(320L);
-        this.e.addListener(new org.telegram.ui.on(5, this, z10));
-        this.e.start();
-    }
-
-    public int getCurrentHeight() {
-        return (int) (getMeasuredHeight() * this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.c;
-    }
-
-    public void setShown(float f10) {
-        this.b = f10;
-        i71 i71Var = this.a;
-        if (i71Var != null) {
-            i71Var.setPivotX(i71Var.getWidth() / 2.0f);
-            this.a.setPivotY(0.0f);
-            this.a.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
-            this.a.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
-        }
-        setAlpha(f10);
-        invalidate();
-    }
-
-    public void setTabs(i71 i71Var) {
-        this.a = i71Var;
-        addView(i71Var, c8.ma.c(-1.0f, -1));
     }
 }

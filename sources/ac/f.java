@@ -14,7 +14,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.support.v4.media.session.a0;
 import android.util.Log;
-import c8.ad;
+import c8.bd;
 import c8.bg;
 import c8.cg;
 import c8.db;
@@ -40,7 +40,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends pb.e {
     public static final n6.c[] k = {j.c};
@@ -133,8 +133,8 @@ public final class f extends pb.e {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             if (ufVar.d(fbVar, elapsedRealtime)) {
                 ufVar.i.put(fbVar, Long.valueOf(elapsedRealtime));
-                ga.d dVar = new ga.d(1);
-                dVar.d = db.b;
+                ga.d dVar = new ga.d();
+                dVar.c = db.b;
                 n.a.execute(new qa(ufVar, new xa(dVar, 0), fbVar, ufVar.c(), 1));
             }
         } finally {
@@ -154,7 +154,7 @@ public final class f extends pb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     bg bgVar = this.j;
                     m.h(bgVar);
-                    yf yfVar = new yf(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), ad.a(aVar.d));
+                    yf yfVar = new yf(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), bd.a(aVar.d));
                     int i7 = aVar.e;
                     try {
                         if (i7 != -1) {

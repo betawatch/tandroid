@@ -1,12 +1,12 @@
 package gf;
 
 import c8.a1;
-import c8.z0;
+import c8.b1;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import kf.r;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p extends mf.a {
     public final r a = new r();
@@ -33,7 +33,7 @@ public final class p extends mf.a {
         while (i10 < charSequence.length()) {
             int c10 = p1.g.c(lVar.a);
             if (c10 == 0) {
-                int c11 = a1.c(i10, charSequence.length(), charSequence);
+                int c11 = b1.c(i10, charSequence.length(), charSequence);
                 if (c11 < charSequence.length() && charSequence.charAt(c11) == '[') {
                     lVar.a = 2;
                     lVar.d = new StringBuilder();
@@ -44,7 +44,7 @@ public final class p extends mf.a {
                 }
                 i10 = -1;
             } else if (c10 == 1) {
-                b10 = z0.b(i10, charSequence);
+                b10 = a1.b(i10, charSequence);
                 if (b10 != -1) {
                     lVar.d.append(charSequence, i10, b10);
                     if (b10 >= charSequence.length()) {
@@ -57,17 +57,17 @@ public final class p extends mf.a {
                         if (!replaceAll.isEmpty()) {
                             lVar.e = replaceAll;
                             lVar.a = 3;
-                            i10 = a1.c(b10 + 2, charSequence.length(), charSequence);
+                            i10 = b1.c(b10 + 2, charSequence.length(), charSequence);
                         }
                     }
                 }
                 i10 = -1;
             } else if (c10 == 2) {
-                int c12 = a1.c(i10, charSequence.length(), charSequence);
-                int a10 = z0.a(c12, charSequence);
+                int c12 = b1.c(i10, charSequence.length(), charSequence);
+                int a10 = a1.a(c12, charSequence);
                 if (a10 != -1) {
                     lVar.f = charSequence.charAt(c12) == '<' ? charSequence.subSequence(c12 + 1, a10 - 1).toString() : charSequence.subSequence(c12, a10).toString();
-                    i10 = a1.c(a10, charSequence.length(), charSequence);
+                    i10 = b1.c(a10, charSequence.length(), charSequence);
                     if (i10 >= charSequence.length()) {
                         lVar.i = true;
                         sb2.setLength(0);
@@ -76,7 +76,7 @@ public final class p extends mf.a {
                 }
                 i10 = -1;
             } else if (c10 == 3) {
-                i10 = a1.c(i10, charSequence.length(), charSequence);
+                i10 = b1.c(i10, charSequence.length(), charSequence);
                 if (i10 >= charSequence.length()) {
                     lVar.a = 1;
                 } else {
@@ -100,14 +100,14 @@ public final class p extends mf.a {
                     }
                 }
             } else if (c10 == 4) {
-                b10 = z0.d(charSequence, i10, lVar.g);
+                b10 = a1.d(charSequence, i10, lVar.g);
                 if (b10 != -1) {
                     lVar.h.append(charSequence.subSequence(i10, b10));
                     if (b10 >= charSequence.length()) {
                         lVar.h.append('\n');
                         i10 = b10;
                     } else {
-                        i10 = a1.c(b10 + 1, charSequence.length(), charSequence);
+                        i10 = b1.c(b10 + 1, charSequence.length(), charSequence);
                         if (i10 == charSequence.length()) {
                             lVar.i = true;
                             lVar.a();

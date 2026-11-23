@@ -1,6 +1,6 @@
 package h8;
 
-import a8.l8;
+import a8.m8;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -9,7 +9,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a extends Binder implements j, IInterface {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class a extends Binder implements j, IInterface {
     public void P(int i7, boolean z10) {
         switch (this.a) {
             case 1:
-                l8.a(new Status(i7, null, null, null), Boolean.valueOf(z10), this.b);
+                m8.a(new Status(i7, null, null, null), Boolean.valueOf(z10), this.b);
                 break;
         }
     }
@@ -119,7 +119,7 @@ public final class a extends Binder implements j, IInterface {
     public void x0(Status status, boolean z10) {
         switch (this.a) {
             case 1:
-                l8.a(status, Boolean.valueOf(z10), this.b);
+                m8.a(status, Boolean.valueOf(z10), this.b);
                 break;
         }
     }

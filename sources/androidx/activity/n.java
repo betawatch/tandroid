@@ -12,7 +12,7 @@ import android.view.Surface;
 import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
-import c8.jb;
+import c8.kb;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.y0;
 import h2.l0;
@@ -21,11 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlin.jvm.internal.j;
 import m.p;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.jn;
-import p4.e0;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.du0;
+import p4.d0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
 
     @Override // u2.k
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public u2.c D(b8 b8Var) {
+    public u2.c y(b8 b8Var) {
         MediaCodec mediaCodec;
         u2.m eVar;
         int i7;
@@ -57,7 +57,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                     eVar = new u2.e(mediaCodec, (HandlerThread) ((u2.b) this.d).get());
                     i7 = 0;
                 } else {
-                    eVar = new jn(mediaCodec, 22);
+                    eVar = new aa(mediaCodec, 23);
                     i7 = 4;
                 }
                 cVar = new u2.c(mediaCodec, (HandlerThread) ((u2.b) this.c).get(), eVar, (u2.j) b8Var.f);
@@ -204,15 +204,15 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
 
     @Override // m9.t
     public void h(Throwable th2) {
-        e0 e0Var = (e0) this.d;
+        d0 d0Var = (d0) this.d;
         if (th2 instanceof UnsupportedOperationException) {
             h2.a.m("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
         } else {
             h2.a.d("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
         }
-        l0.J(e0Var.t);
+        l0.J(d0Var.t);
         if (this.b) {
-            e0Var.p((p4.v) this.c);
+            d0Var.p((p4.v) this.c);
         }
     }
 
@@ -222,19 +222,19 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
 
     @Override // m9.t
     public void onSuccess(Object obj) {
-        e0 e0Var = (e0) this.d;
+        d0 d0Var = (d0) this.d;
         p4.v vVar = (p4.v) this.c;
         boolean z10 = this.b;
-        jb.b(e0Var.t, (p4.w) obj);
-        l0.J(e0Var.t);
+        kb.b(d0Var.t, (p4.w) obj);
+        l0.J(d0Var.t);
         if (z10) {
-            e0Var.p(vVar);
+            d0Var.p(vVar);
         }
     }
 
-    public /* synthetic */ n(eu0 eu0Var, Object obj, int i7) {
+    public /* synthetic */ n(du0 du0Var, Object obj, int i7) {
         this.a = i7;
-        this.d = eu0Var;
+        this.d = du0Var;
         this.c = obj;
     }
 
@@ -280,9 +280,9 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         this.d = aVar2;
     }
 
-    public n(e0 e0Var, p4.v vVar, boolean z10, y0 y0Var) {
+    public n(d0 d0Var, p4.v vVar, boolean z10, y0 y0Var) {
         this.a = 4;
-        this.d = e0Var;
+        this.d = d0Var;
         this.c = vVar;
         this.b = z10;
     }

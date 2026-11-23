@@ -1,60 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.ui.fe0;
+import org.telegram.messenger.p10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class h0 implements Runnable, gs {
-    public boolean a;
-    public final /* synthetic */ ls b;
-    public final /* synthetic */ fe0 c;
-    public final /* synthetic */ u0 d;
+public final class h0 implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ p10 h;
+    public final /* synthetic */ v0 n;
 
-    public h0(ls lsVar, fe0 fe0Var, u0 u0Var) {
-        this.b = lsVar;
-        this.c = fe0Var;
-        this.d = u0Var;
-    }
-
-    public final void a() {
-        if (this.a) {
-            return;
-        }
-        u0 u0Var = this.d;
-        if (u0Var.e == null) {
-            return;
-        }
-        ArrayList arrayList = u0Var.J;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            if (((q0) obj).d) {
-                return;
-            }
-        }
-        run();
-    }
-
-    @Override // org.telegram.messenger.gs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.d4) {
-            a();
-        }
+    public h0(v0 v0Var, String str, long j3, String str2, byte[] bArr, p10 p10Var) {
+        this.n = v0Var;
+        this.c = str;
+        this.d = j3;
+        this.e = str2;
+        this.f = bArr;
+        this.h = p10Var;
     }
 
     @Override // java.lang.Runnable
-    public final void run() {
+    public final synchronized void run() {
         if (this.a) {
             return;
         }
-        this.a = true;
-        org.telegram.messenger.g0.r(this);
-        this.b.n(this, ls.d4);
-        this.c.run();
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new f0(1, this, this.h));
     }
 }

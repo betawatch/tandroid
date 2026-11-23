@@ -2,10 +2,10 @@ package sa;
 
 import android.content.Context;
 import android.os.Build;
-import c8.e1;
-import c8.ub;
+import c8.f1;
+import c8.vb;
+import gb.a1;
 import gb.o;
-import gb.z0;
 import j$.time.ZoneOffset;
 import j$.time.format.DateTimeFormatter;
 import j$.util.DateRetargetClass;
@@ -21,12 +21,12 @@ import java.util.Set;
 import rd.l;
 import zd.b0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h {
     public static final q1.e b = new q1.e("fire-global");
     public static final q1.e c = new q1.e("fire-count");
-    public static final q1.e d = ub.a("last-used-date");
+    public static final q1.e d = vb.a("last-used-date");
     public final ka.d a;
 
     public h(Context context, String str) {
@@ -43,7 +43,7 @@ public final class h {
                 Iterator it = ((Set) entry.getValue()).iterator();
                 while (it.hasNext()) {
                     if (str.equals((String) it.next())) {
-                        return ub.b(((q1.e) entry.getKey()).a);
+                        return vb.b(((q1.e) entry.getKey()).a);
                     }
                 }
             }
@@ -56,7 +56,7 @@ public final class h {
         if (d2 == null) {
             return;
         }
-        HashSet hashSet = new HashSet((Collection) e1.a(bVar, d2, new HashSet()));
+        HashSet hashSet = new HashSet((Collection) f1.a(bVar, d2, new HashSet()));
         hashSet.remove(str);
         if (hashSet.isEmpty()) {
             bVar.c(d2);
@@ -76,7 +76,7 @@ public final class h {
             String c10 = c(System.currentTimeMillis());
             ka.d dVar = this.a;
             dVar.getClass();
-            for (Map.Entry entry : ((Map) b0.u(new z0(dVar, null, 2))).entrySet()) {
+            for (Map.Entry entry : ((Map) b0.u(new a1(dVar, null, 2))).entrySet()) {
                 if (entry.getValue() instanceof Set) {
                     HashSet hashSet = new HashSet((Set) entry.getValue());
                     hashSet.remove(c10);
@@ -114,7 +114,7 @@ public final class h {
         try {
             try {
                 String c10 = c(j3);
-                q1.e b10 = ub.b(str);
+                q1.e b10 = vb.b(str);
                 this.a.a(new e1.b(this, c10, str, b10, 2));
             } catch (Throwable th2) {
                 th = th2;

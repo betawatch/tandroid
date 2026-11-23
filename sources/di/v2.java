@@ -3,16 +3,16 @@ package di;
 import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.b51;
 import org.telegram.ui.bn;
-import org.telegram.ui.c51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -24,12 +24,12 @@ public final /* synthetic */ class v2 implements Runnable {
     public final /* synthetic */ long h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ v2(f6 f6Var, TLObject tLObject, long j3, long j10, y10 y10Var, TLRPC.TL_error tL_error, long j11) {
+    public /* synthetic */ v2(f6 f6Var, TLObject tLObject, long j3, long j10, w10 w10Var, TLRPC.TL_error tL_error, long j11) {
         this.b = f6Var;
         this.c = tLObject;
         this.d = j3;
         this.e = j10;
-        this.n = y10Var;
+        this.n = w10Var;
         this.f = tL_error;
         this.h = j11;
     }
@@ -51,10 +51,10 @@ public final /* synthetic */ class v2 implements Runnable {
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error == null) {
-                            f6Var.k().t(hd.N0(2131743634, null), null).k(false);
+                            f6Var.k().t(gd.N0(2131743632, null), null).k(false);
                             break;
                         } else {
-                            f6Var.k().t(org.telegram.ui.Components.lc.W(tL_error.text), null).k(false);
+                            f6Var.k().t(org.telegram.ui.Components.kc.W(tL_error.text), null).k(false);
                             break;
                         }
                     } else {
@@ -64,14 +64,14 @@ public final /* synthetic */ class v2 implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", -j3);
                             bundle.putBoolean("start_from_monetization", true);
-                            c51 c51Var = new c51(bundle);
+                            b51 b51Var = new b51(bundle);
                             e0.g(f6Var.a).h(j3, true);
                             e0.g(f6Var.a).l(j3);
-                            c51Var.whenFullyVisible(new bi.c4(c51Var, j11, 2));
-                            T.presentFragment(c51Var);
+                            b51Var.whenFullyVisible(new bi.e4(b51Var, j11, 2));
+                            T.presentFragment(b51Var);
                             break;
                         } else {
-                            TLRPC.UserFull d2 = np.u1(f6Var.a).d2(j10);
+                            TLRPC.UserFull d2 = mp.u1(f6Var.a).d2(j10);
                             if (d2 != null) {
                                 int max = Math.max(0, d2.stargifts_count - 1);
                                 d2.stargifts_count = max;
@@ -83,11 +83,11 @@ public final /* synthetic */ class v2 implements Runnable {
                             y8.y(f6Var.a, false).R(true);
                             if (!(T instanceof pb)) {
                                 pb pbVar = new pb();
-                                pbVar.whenFullyVisible(new bi.c4(pbVar, j11, 1));
+                                pbVar.whenFullyVisible(new bi.e4(pbVar, j11, 1));
                                 T.presentFragment(pbVar);
                                 break;
                             } else {
-                                org.telegram.ui.Components.lc.b0(T).I(R.raw.stars_topup, hd.N0(2131750204, null), hd.H(',', "Gift2Converted", (int) j11)).k(true);
+                                org.telegram.ui.Components.kc.b0(T).I(R.raw.stars_topup, gd.N0(2131750204, null), gd.H(',', "Gift2Converted", (int) j11)).k(true);
                                 break;
                             }
                         }
@@ -99,14 +99,14 @@ public final /* synthetic */ class v2 implements Runnable {
                 TLObject tLObject2 = this.c;
                 long j12 = this.d;
                 long j13 = this.e;
-                y10 y10Var = (y10) this.n;
+                w10 w10Var = (w10) this.n;
                 TLRPC.TL_error tL_error2 = this.f;
                 long j14 = this.h;
                 if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error2 != null && "BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                        if (!np.u1(f6Var2.a).m7) {
+                        if (!mp.u1(f6Var2.a).m7) {
                             y8 y10 = y8.y(f6Var2.a, false);
-                            d3.e0 e0Var = new d3.e0(f6Var2, j14, j12, y10Var, 1);
+                            d3.e0 e0Var = new d3.e0(f6Var2, j14, j12, w10Var, 1);
                             y10.e = false;
                             y10.q(e0Var, false, true);
                             y10.e = true;
@@ -117,23 +117,23 @@ public final /* synthetic */ class v2 implements Runnable {
                             break;
                         }
                     } else {
-                        y10Var.a(tL_error2);
+                        w10Var.a(tL_error2);
                         f6Var2.k().g0(tL_error2, false);
                         break;
                     }
                 } else {
                     TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject2;
-                    np.u1(f6Var2.a).f4(tL_payments_paymentResult.updates.users, false);
-                    np.u1(f6Var2.a).Z3(tL_payments_paymentResult.updates.chats, false);
+                    mp.u1(f6Var2.a).f4(tL_payments_paymentResult.updates.users, false);
+                    mp.u1(f6Var2.a).Z3(tL_payments_paymentResult.updates.chats, false);
                     y8.y(f6Var2.a, false).R(false);
                     y8.y(f6Var2.a, false).O(j12);
                     y8.y(f6Var2.a, false).O(j13);
                     y8.y(f6Var2.a, false).N();
-                    y10Var.a(null);
+                    w10Var.a(null);
                     org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                     if (T2 != null) {
                         if (j12 < 0 || j13 < 0) {
-                            org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(T2).I(R.raw.forward, hd.N0(2131749880, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749881, f6Var2.E1(), org.telegram.messenger.n5.t(j12))));
+                            org.telegram.ui.Components.fc I = org.telegram.ui.Components.kc.b0(T2).I(R.raw.forward, gd.N0(2131749880, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749881, f6Var2.E1(), org.telegram.messenger.n5.t(j12))));
                             I.t = true;
                             I.j();
                         } else {

@@ -1,65 +1,150 @@
 package f3;
 
-import a8.la;
-import h2.l0;
+import a8.ma;
+import a8.p0;
+import e2.q0;
+import java.io.EOFException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class y implements b0 {
-    public final b3.j a;
-    public final b3.j b;
-    public long c;
+public final class y implements c4.m {
+    public final h2.x a;
 
-    public y(long j3, long[] jArr, long[] jArr2) {
-        la.f(jArr.length == jArr2.length);
-        int length = jArr2.length;
-        if (length <= 0 || jArr2[0] <= 0) {
-            this.a = new b3.j(length, 6);
-            this.b = new b3.j(length, 6);
-        } else {
-            int i7 = length + 1;
-            b3.j jVar = new b3.j(i7, 6);
-            this.a = jVar;
-            b3.j jVar2 = new b3.j(i7, 6);
-            this.b = jVar2;
-            jVar.c(0L);
-            jVar2.c(0L);
+    public y(int i7) {
+        switch (i7) {
+            case 1:
+                this.a = new h2.x();
+                break;
+            default:
+                this.a = new h2.x(10);
+                break;
         }
-        this.a.d(jArr);
-        this.b.d(jArr2);
-        this.c = j3;
     }
 
-    @Override // f3.b0
-    public final boolean d() {
-        return this.b.b > 0;
-    }
-
-    @Override // f3.b0
-    public final /* synthetic */ boolean e() {
-        return false;
-    }
-
-    @Override // f3.b0
-    public final a0 f(long j3) {
-        b3.j jVar = this.b;
-        if (jVar.b == 0) {
-            c0 c0Var = c0.c;
-            return new a0(c0Var, c0Var);
+    @Override // c4.m
+    public void E(byte[] bArr, int i7, int i10, c4.l lVar, h2.j jVar) {
+        g2.b a10;
+        h2.x xVar = this.a;
+        xVar.L(i7 + i10, bArr);
+        xVar.N(i7);
+        ArrayList arrayList = new ArrayList();
+        while (xVar.a() > 0) {
+            ma.e("Incomplete Mp4Webvtt Top Level box header found.", xVar.a() >= 8);
+            int m10 = xVar.m();
+            if (xVar.m() == 1987343459) {
+                int i11 = m10 - 8;
+                CharSequence charSequence = null;
+                g2.a aVar = null;
+                while (i11 > 0) {
+                    ma.e("Incomplete vtt cue box header found.", i11 >= 8);
+                    int m11 = xVar.m();
+                    int m12 = xVar.m();
+                    int i12 = m11 - 8;
+                    byte[] bArr2 = xVar.a;
+                    int i13 = xVar.b;
+                    String str = h2.l0.a;
+                    String str2 = new String(bArr2, i13, i12, StandardCharsets.UTF_8);
+                    xVar.O(i12);
+                    i11 = (i11 - 8) - i12;
+                    if (m12 == 1937011815) {
+                        l4.g gVar = new l4.g();
+                        l4.h.e(str2, gVar);
+                        aVar = gVar.a();
+                    } else if (m12 == 1885436268) {
+                        charSequence = l4.h.f(null, str2.trim(), Collections.EMPTY_LIST);
+                    }
+                }
+                if (charSequence == null) {
+                    charSequence = "";
+                }
+                if (aVar != null) {
+                    aVar.a = charSequence;
+                    aVar.b = null;
+                    a10 = aVar.a();
+                } else {
+                    Pattern pattern = l4.h.a;
+                    l4.g gVar2 = new l4.g();
+                    gVar2.c = charSequence;
+                    a10 = gVar2.a().a();
+                }
+                arrayList.add(a10);
+            } else {
+                xVar.O(m10 - 8);
+            }
         }
-        int c10 = l0.c(jVar, j3);
-        long m10 = jVar.m(c10);
-        b3.j jVar2 = this.a;
-        c0 c0Var2 = new c0(m10, jVar2.m(c10));
-        if (m10 == j3 || c10 == jVar.b - 1) {
-            return new a0(c0Var2, c0Var2);
-        }
-        int i7 = c10 + 1;
-        return new a0(c0Var2, new c0(jVar.m(i7), jVar2.m(i7)));
+        jVar.accept(new c4.a(-9223372036854775807L, -9223372036854775807L, arrayList));
     }
 
-    @Override // f3.b0
-    public final long h() {
-        return this.c;
+    @Override // c4.m
+    public int N() {
+        return 2;
+    }
+
+    public q0 a(p pVar, t3.g gVar, int i7) {
+        q0 q0Var = null;
+        int i10 = 0;
+        loop0: while (true) {
+            int i11 = 0;
+            do {
+                int i12 = i11 % 10;
+                int i13 = i12 + 10;
+                h2.x xVar = this.a;
+                if (i12 == 0 && i11 != 0) {
+                    byte[] bArr = xVar.a;
+                    System.arraycopy(bArr, 10, bArr, 0, 9);
+                }
+                int i14 = i11 == 0 ? 10 : 1;
+                try {
+                    pVar.b(i13 - i14, i14, xVar.a);
+                    xVar.N(i12);
+                    xVar.M(i13);
+                    if (xVar.a() < 3) {
+                        throw new IndexOutOfBoundsException("position=" + xVar.b + ", limit=" + xVar.c);
+                    }
+                    int D = xVar.D();
+                    int i15 = xVar.b - 3;
+                    xVar.b = i15;
+                    if (D != 4801587) {
+                        if (b.h(xVar.i()) != -1) {
+                            break loop0;
+                        }
+                        if (i11 == 0) {
+                            xVar.c(20);
+                        }
+                        i11++;
+                    } else {
+                        xVar.O(6);
+                        int z10 = xVar.z();
+                        int i16 = z10 + 10;
+                        if (q0Var == null) {
+                            byte[] bArr2 = new byte[i16];
+                            System.arraycopy(xVar.a, i15, bArr2, 0, 10);
+                            pVar.b(10, z10, bArr2);
+                            q0Var = new t3.h(gVar).c(i16, bArr2);
+                        } else {
+                            pVar.m(z10);
+                        }
+                        i10 += i16;
+                    }
+                } catch (EOFException unused) {
+                }
+            } while (i11 <= i7);
+        }
+        pVar.o();
+        pVar.m(i10);
+        return q0Var;
+    }
+
+    @Override // c4.m
+    public /* synthetic */ c4.d s(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
+    }
+
+    @Override // c4.m
+    public /* synthetic */ void reset() {
     }
 }

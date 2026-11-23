@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class wc extends Drawable {
     public static final uc H = new uc(0);
@@ -44,8 +44,8 @@ public final class wc extends Drawable {
     public final float[] z = new float[4];
     public int A = -1;
     public float E = 1.0f;
-    public final og F = new og(this, 16);
-    public int G = org.telegram.messenger.ls.e4;
+    public final ng F = new ng(this, 16);
+    public int G = org.telegram.messenger.ks.e4;
 
     public wc() {
         vc vcVar = new vc();
@@ -70,7 +70,7 @@ public final class wc extends Drawable {
     }
 
     public static int e(int i7) {
-        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Sh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Zh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.ai, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.bi, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Qh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Rh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Oh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ph, false));
+        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Sh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Zh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.ai, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bi, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Qh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Rh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Oh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ph, false));
     }
 
     public final void a(int i7) {
@@ -270,7 +270,7 @@ public final class wc extends Drawable {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
         this.t = elapsedRealtime;
-        boolean e10 = org.telegram.messenger.qc.e(512);
+        boolean e10 = org.telegram.messenger.pc.e(512);
         vc vcVar = this.r;
         vc vcVar2 = this.q;
         if (e10 && min > 0) {
@@ -317,7 +317,7 @@ public final class wc extends Drawable {
 
     public final void f(float f10) {
         this.w = f10;
-        if (org.telegram.messenger.qc.e(512)) {
+        if (org.telegram.messenger.pc.e(512)) {
             float f11 = this.w - this.v;
             this.x = f11 / (((f11 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
         }
@@ -327,7 +327,7 @@ public final class wc extends Drawable {
         if (i7 != this.A || this.E < 1.0f) {
             this.A = i7;
             int e10 = e(i7);
-            if (z10 && this.B != 0 && org.telegram.messenger.qc.e(512)) {
+            if (z10 && this.B != 0 && org.telegram.messenger.pc.e(512)) {
                 this.C = this.B;
                 this.D = e10;
                 this.E = 0.0f;

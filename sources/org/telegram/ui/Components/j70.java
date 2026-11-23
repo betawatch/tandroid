@@ -1,296 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.core.widget.NestedScrollView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j70 implements View.OnClickListener {
+public final /* synthetic */ class j70 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ o70 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ j70(Object obj, int i7) {
+    public /* synthetic */ j70(o70 o70Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = o70Var;
+        this.c = tL_chatInviteJoinResultWebView;
+        this.d = j3;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        TLRPC.Chat chat;
-        int i7;
-        int i10 = this.a;
-        boolean z10 = false;
-        Object[] objArr = 0;
-        final int i11 = 1;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                l70 l70Var = (l70) obj;
-                l70Var.m1 = true;
-                l70Var.dismiss();
-                break;
-            case 1:
-                ((r70) obj).dismiss();
-                break;
-            case 2:
-                za0 za0Var = (za0) obj;
-                za0.b(za0Var.getContext(), za0Var.a, za0Var.n, false, za0Var.y, new oo(za0Var, 29), za0Var.c);
-                break;
-            case 3:
-                ((zb0) obj).onBackPressed();
-                break;
-            case 4:
-                yc0.J0((yc0) obj);
-                break;
-            case 5:
-                org.telegram.ui.l4 l4Var = (org.telegram.ui.l4) obj;
-                l4Var.getClass();
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                int intValue = ((Integer) t5Var.getTag()).intValue();
-                ee0 ee0Var = (ee0) l4Var.e;
-                if (intValue == ee0Var.E) {
-                    ee0Var.O = t5Var.getCurrentColor();
-                } else {
-                    ee0Var.P = t5Var.getCurrentColor();
-                }
-                ez ezVar = ee0Var.m0;
-                if (ezVar != null) {
-                    ezVar.c(false, false, false);
-                }
-                ee0Var.d();
-                break;
-            case 6:
-                view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(((ke0) obj).a.E.url)));
-                break;
-            case 7:
-                ((pe0) obj).s.getSwipeBack().b(true);
-                break;
-            case 8:
-                df0 df0Var = (df0) obj;
-                df0Var.getClass();
-                af0 af0Var = (af0) df0Var;
-                bf0 bf0Var = af0Var.e;
-                ef0 ef0Var = (ef0) af0Var.getTag(R.id.object_tag);
-                if (ef0Var.b.size() > 15) {
-                    boolean z11 = ef0Var.e;
-                    ef0Var.e = !z11;
-                    if (!z11) {
-                        ef0Var.f = 10;
-                    }
-                    bf0Var.s.K0(af0Var);
-                    bf0Var.s.n1.X(true);
-                    break;
-                }
-                break;
-            case 9:
-                ((yk0) obj).onBackPressed();
-                break;
-            case 10:
-                sl0 sl0Var = (sl0) ((di.l4) obj).d;
-                Activity activity = sl0Var.G;
-                org.telegram.ui.ActionBar.g2 g2Var = sl0Var.H;
-                int i12 = org.telegram.ui.o6.n1;
-                if (g2Var != null && activity != null) {
-                    final org.telegram.ui.o6 o6Var = new org.telegram.ui.o6(i11, activity, z10);
-                    o6Var.w0 = false;
-                    o6Var.v0 = false;
-                    int i13 = org.telegram.ui.ActionBar.m6.d6;
-                    o6Var.Q(i13);
-                    LinearLayout linearLayout = new LinearLayout(activity);
-                    linearLayout.setOrientation(1);
-                    FrameLayout frameLayout = new FrameLayout(activity);
-                    frameLayout.addView(linearLayout);
-                    ImageView imageView = new ImageView(activity);
-                    imageView.setBackground(org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.i6, o6Var.J0), 1, -1));
-                    org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.Aj, o6Var.J0, PorterDuff.Mode.SRC_ATOP);
-                    imageView.setImageResource(R.drawable.ic_layer_close);
-                    final Object[] objArr2 = objArr == true ? 1 : 0;
-                    imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.vs
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view2) {
-                            switch (objArr2) {
-                                case 0:
-                                    o6Var.dismiss();
-                                    break;
-                                default:
-                                    org.telegram.ui.o6 o6Var2 = o6Var;
-                                    o6Var2.dismiss();
-                                    org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
-                                    q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ls.e5, new Object[0]);
-                                    q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
-                                    break;
-                            }
-                        }
-                    });
-                    int L = org.telegram.messenger.g0.L(8.0f);
-                    imageView.setPadding(L, L, L, L);
-                    frameLayout.addView(imageView, c8.ma.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-                    ov0 ov0Var = new ov0(activity, o6Var.a);
-                    ov0Var.setStickerNum(9);
-                    ov0Var.getImageReceiver().W(1);
-                    linearLayout.addView(ov0Var, c8.ma.t(org.telegram.messenger.ls.v1, org.telegram.messenger.ls.v1, 1, 0, 26, 0, 0));
-                    TextView textView = new TextView(activity);
-                    textView.setGravity(1);
-                    int i14 = org.telegram.ui.ActionBar.m6.j5;
-                    org.telegram.ui.ActionBar.t6.U(textView, i14, null);
-                    i5.c.r(20.0f, 1, 2131751334, textView, null);
-                    linearLayout.addView(textView, c8.ma.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-                    TextView textView2 = new TextView(activity);
-                    textView2.setGravity(1);
-                    textView2.setTextSize(1, 14.0f);
-                    org.telegram.ui.ActionBar.t6.U(textView2, i14, null);
-                    textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-                    textView2.setText(org.telegram.messenger.hd.a0("DownloadedFilesMessage", null, 2131751333, new Object[0]));
-                    linearLayout.addView(textView2, c8.ma.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
-                    TextView textView3 = new TextView(activity);
-                    textView3.setGravity(17);
-                    TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                    textView3.setEllipsize(truncateAt);
-                    textView3.setSingleLine(true);
-                    textView3.setTextSize(1, 14.0f);
-                    textView3.setTypeface(org.telegram.messenger.g0.o());
-                    textView3.setText(org.telegram.messenger.hd.N0(2131748504, null));
-                    org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.Ji, null);
-                    int L2 = org.telegram.messenger.g0.L(8.0f);
-                    int i15 = org.telegram.ui.ActionBar.m6.Fi;
-                    int x02 = org.telegram.ui.ActionBar.m6.x0(null, i15, false);
-                    int o4 = i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i13, false), 120);
-                    org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.m6.k0(L2, L2, L2, L2, x02, o4, o4);
-                    org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i15);
-                    org.telegram.ui.ActionBar.p6 g10 = org.telegram.ui.ActionBar.t6.g(i13, 120);
-                    textView3.setBackground(k02);
-                    org.telegram.ui.ActionBar.t6.j(textView3, k02, M, g10, null);
-                    linearLayout.addView(textView3, c8.ma.d(-1, 48.0f, 0, 14.0f, 28.0f, 14.0f, 6.0f));
-                    TextView textView4 = new TextView(activity);
-                    textView4.setGravity(17);
-                    textView4.setEllipsize(truncateAt);
-                    textView4.setSingleLine(true);
-                    textView4.setTextSize(1, 14.0f);
-                    textView4.setTypeface(org.telegram.messenger.g0.o());
-                    textView4.setText(org.telegram.messenger.hd.N0(2131752081, null));
-                    org.telegram.ui.ActionBar.t6.U(textView4, i15, null);
-                    int L3 = org.telegram.messenger.g0.L(8.0f);
-                    int o10 = i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i15, false), 120);
-                    org.telegram.ui.Cells.y k03 = org.telegram.ui.ActionBar.m6.k0(L3, L3, L3, L3, 0, o10, o10);
-                    org.telegram.ui.ActionBar.p6 g11 = org.telegram.ui.ActionBar.t6.g(i15, 120);
-                    textView4.setBackground(k03);
-                    org.telegram.ui.ActionBar.t6.j(textView4, k03, null, g11, null);
-                    textView4.setLetterSpacing(0.025f);
-                    linearLayout.addView(textView4, c8.ma.d(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
-                    NestedScrollView nestedScrollView = new NestedScrollView(activity);
-                    nestedScrollView.addView(frameLayout);
-                    o6Var.O = nestedScrollView;
-                    textView3.setOnClickListener(new m8(10, o6Var, g2Var));
-                    textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.vs
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view2) {
-                            switch (i11) {
-                                case 0:
-                                    o6Var.dismiss();
-                                    break;
-                                default:
-                                    org.telegram.ui.o6 o6Var2 = o6Var;
-                                    o6Var2.dismiss();
-                                    org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
-                                    q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ls.e5, new Object[0]);
-                                    q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
-                                    break;
-                            }
-                        }
-                    });
-                    o6Var.show();
-                    break;
-                }
-                break;
-            case 11:
-                ah.i iVar = ((tl0) obj).d;
-                iVar.setText("");
-                org.telegram.messenger.g0.I3(iVar);
-                break;
-            case 12:
-                em0 em0Var = (em0) obj;
-                em0Var.getClass();
-                new ug.y0(em0Var.b, 24, true).show();
-                break;
-            case 13:
-                ((um0) obj).N(false);
-                break;
-            case 14:
-                ep0 ep0Var = (ep0) ((hi.k1) obj).w;
-                ArrayList arrayList = ep0Var.s;
-                if (!arrayList.isEmpty()) {
-                    ep0Var.r = TextUtils.join(" ", arrayList).toString();
-                    ep0Var.n = false;
-                    ep0Var.d();
-                    ep0Var.x = null;
-                    if (ep0Var.b != 0) {
-                        ep0Var.b = 0;
-                        dp0 dp0Var = ep0Var.I;
-                        if (dp0Var != null) {
-                            ((org.telegram.ui.ju) dp0Var).g(0);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 15:
-                jt0 jt0Var = ((ur0) obj).f;
-                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var.y1;
-                if (g2Var2 != null && g2Var2.getParentLayout() != null) {
-                    ((ActionBarLayout) jt0Var.y1.getParentLayout()).r();
-                    break;
-                }
-                break;
-            case 16:
-                ((cp0) obj).run();
-                break;
-            case 17:
-                ((nv0) obj).b.getImageReceiver().P0(false);
-                break;
-            case 18:
-                org.telegram.messenger.g0.h3((fi.t4) obj, 100L);
-                break;
-            case 19:
-                e01 e01Var = ((g01) obj).b;
-                e01Var.setText("");
-                org.telegram.messenger.g0.I3(e01Var);
-                break;
-            case 20:
-                ((p01) obj).b.getImageReceiver().P0(false);
-                break;
-            case 21:
-                ((b31) obj).dismiss();
-                break;
-            case 22:
-                org.telegram.ui.bn bnVar = ((org.telegram.ui.ck) obj).E;
-                if (bnVar.getUserConfig().q() || ((chat = bnVar.e) != null && chat.autotranslation)) {
-                    bnVar.getMessagesController().v7.K(bnVar.a(), !r2.B(r3));
-                } else {
-                    i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                    org.telegram.messenger.np.u1(i7).g7.edit().putInt("dialog_show_translate_count" + bnVar.a(), 14).commit();
-                    bnVar.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) bnVar, 13, false));
-                }
-                bnVar.zd(true);
+                o70 o70Var = this.b;
+                org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(o70Var.a);
+                TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = this.c;
+                u12.f4(tL_chatInviteJoinResultWebView.users, false);
+                org.telegram.messenger.l2.b(o70Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
                 break;
             default:
-                ((ActionBarPopupWindow$ActionBarPopupWindowLayout) obj).getSwipeBack().b(true);
+                o70 o70Var2 = this.b;
+                org.telegram.messenger.mp u13 = org.telegram.messenger.mp.u1(o70Var2.a);
+                TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView2 = this.c;
+                u13.f4(tL_chatInviteJoinResultWebView2.users, false);
+                org.telegram.messenger.l2.b(o70Var2.a).c(this.d, tL_chatInviteJoinResultWebView2.bot_id, tL_chatInviteJoinResultWebView2.query_id, false);
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package f5;
 
-import a8.ba;
+import a8.ca;
 import a8.p0;
 import a8.xa;
 import android.app.Activity;
@@ -49,13 +49,13 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public class b extends ba {
+public class b extends ca {
     public final Long A;
     public final com.google.android.gms.internal.play_billing.h B;
     public final String c;
@@ -218,7 +218,7 @@ public class b extends ba {
         try {
             int i10 = x.a;
             try {
-                this.h.Z(x.b(i7, 2, fVar, null, m3.b), this.l, j3, z10);
+                this.h.b0(x.b(i7, 2, fVar, null, m3.b), this.l, j3, z10);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
             }
@@ -231,7 +231,7 @@ public class b extends ba {
         try {
             int i10 = x.a;
             try {
-                this.h.Z(x.b(i7, 2, fVar, str, m3.b), this.l, j3, z10);
+                this.h.b0(x.b(i7, 2, fVar, str, m3.b), this.l, j3, z10);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
             }
@@ -485,7 +485,7 @@ public class b extends ba {
                         }
                     }
                     if (fVar2 != z.g) {
-                        C(ls.t1, fVar2, j3, z11);
+                        C(ks.t1, fVar2, j3, z11);
                         E(fVar2);
                         return fVar2;
                     }
@@ -697,7 +697,7 @@ public class b extends ba {
                                         cVar = bVar.i;
                                     }
                                     if (cVar == null) {
-                                        return com.google.android.gms.internal.play_billing.u.c(z.h, ls.s1);
+                                        return com.google.android.gms.internal.play_billing.u.c(z.h, ks.s1);
                                     }
                                     return ((com.google.android.gms.internal.play_billing.a) cVar).A1(i25, bVar.g.getPackageName(), str18, str19, bundle2);
                                 } catch (DeadObjectException e11) {
@@ -980,7 +980,7 @@ public class b extends ba {
                 p3 p3Var = (p3) o3Var.a();
                 bVar.b = p3Var;
                 try {
-                    bVar.e0(i3Var, p3Var);
+                    bVar.g0(i3Var, p3Var);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }
@@ -1075,7 +1075,7 @@ public class b extends ba {
                                             } else if (this.b != 1) {
                                                 com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client state no longer CONNECTING, returning service disconnected.");
                                                 fVar2 = z.h;
-                                                j(ls.q1, i7, fVar2);
+                                                j(ks.q1, i7, fVar2);
                                             } else {
                                                 t tVar = this.j;
                                                 if ((i7 <= 0 || Build.VERSION.SDK_INT < 29) ? this.g.bindService(intent2, tVar, 1) : this.g.bindService(intent2, 1, e(), tVar)) {

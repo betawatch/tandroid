@@ -7,19 +7,19 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class q0 extends g3 {
+public final class q0 extends i3 {
     public final /* synthetic */ t0 A0;
     public final RectF x0;
     public final RectF y0;
     public final Path z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q0(t0 t0Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(i7, context, h6Var);
+    public q0(t0 t0Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(i7, context, i6Var);
         this.A0 = t0Var;
         this.x0 = new RectF();
         this.y0 = new RectF();
@@ -54,7 +54,7 @@ public final class q0 extends g3 {
                 canvas.save();
                 canvas.clipPath(this.z0);
                 canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
-                o10.k(o0Var.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (o0Var.getWidth() / 2.0f), canvas);
+                m10.k(o0Var.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (o0Var.getWidth() / 2.0f), canvas);
                 o0Var.b(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
                 o0Var.c(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
                 canvas.restore();

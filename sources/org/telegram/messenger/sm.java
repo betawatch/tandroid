@@ -1,55 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ sm(np npVar, long j3, Runnable runnable, int i7) {
+    public /* synthetic */ sm(mp mpVar, TLRPC.Updates updates, boolean z10, int i7) {
         this.a = i7;
-        this.b = npVar;
-        this.c = j3;
-        this.d = runnable;
+        this.b = mpVar;
+        this.c = updates;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Runnable runnable = this.d;
-        long j3 = this.c;
-        np npVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                if (runnable != null) {
-                    npVar.getClass();
-                    runnable.run();
-                }
-                npVar.getNotificationCenter().k(ls.a5, Long.valueOf(j3), 0L);
-                break;
-            case 1:
-                npVar.b3(0, j3, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                Utilities.d.c(new sm(this.b, this.c, this.d, 1));
                 break;
             default:
-                npVar.b3(0, j3, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.V3(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ sm(np npVar, Runnable runnable, long j3) {
-        this.a = 0;
-        this.b = npVar;
-        this.d = runnable;
-        this.c = j3;
     }
 }

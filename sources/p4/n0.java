@@ -1,7 +1,6 @@
 package p4;
 
-import a8.la;
-import ai.u1;
+import a8.ma;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -24,27 +23,27 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
-import c8.jb;
+import c8.kb;
 import di.da;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import org.telegram.messenger.qe;
-import org.telegram.ui.Components.es0;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.wc1;
+import org.telegram.messenger.pe;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.Components.rm;
+import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n0 extends android.support.v4.media.session.s {
     public static final int z;
     public final ab.c0 g;
-    public final e0 h;
+    public final d0 h;
     public final q4.u i;
-    public final qe j;
+    public final pe j;
     public final android.support.v4.media.session.q k;
     public final boolean l;
     public final b m;
@@ -53,12 +52,12 @@ public final class n0 extends android.support.v4.media.session.s {
     public final ComponentName p;
     public final boolean q;
     public volatile long r;
-    public qe s;
+    public pe s;
     public int t;
     public final Bundle u;
     public h9.i0 v;
     public h9.i0 w;
-    public l1 x;
+    public k1 x;
     public e2.y0 y;
 
     static {
@@ -79,7 +78,7 @@ public final class n0 extends android.support.v4.media.session.s {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public n0(e0 e0Var, Uri uri, Handler handler, Bundle bundle, boolean z10, h9.i0 i0Var, h9.i0 i0Var2, l1 l1Var, e2.y0 y0Var, Bundle bundle2) {
+    public n0(d0 d0Var, Uri uri, Handler handler, Bundle bundle, boolean z10, h9.i0 i0Var, h9.i0 i0Var2, k1 k1Var, e2.y0 y0Var, Bundle bundle2) {
         super(1);
         boolean z11;
         List<ResolveInfo> queryBroadcastReceivers;
@@ -88,20 +87,20 @@ public final class n0 extends android.support.v4.media.session.s {
         PendingIntent foregroundService;
         q4.q qVar;
         boolean z12 = true;
-        this.h = e0Var;
+        this.h = d0Var;
         this.q = z10;
         this.v = i0Var;
         this.w = i0Var2;
-        this.x = l1Var;
+        this.x = k1Var;
         this.y = y0Var;
         this.u = new Bundle(bundle2);
-        Context context = e0Var.f;
+        Context context = d0Var.f;
         this.i = q4.u.a(context);
-        this.j = new qe(this);
-        ab.c0 c0Var = new ab.c0(e0Var);
+        this.j = new pe(this);
+        ab.c0 c0Var = new ab.c0(d0Var);
         this.g = c0Var;
         this.r = 300000L;
-        this.k = new android.support.v4.media.session.q(e0Var.l.getLooper(), c0Var);
+        this.k = new android.support.v4.media.session.q(d0Var.l.getLooper(), c0Var);
         int i7 = Build.VERSION.SDK_INT;
         if (i7 >= 33) {
             String str = h2.l0.a;
@@ -158,13 +157,13 @@ public final class n0 extends android.support.v4.media.session.s {
                         foregroundService = z12 ? i7 >= 26 ? PendingIntent.getForegroundService(context, 0, intent2, z) : PendingIntent.getService(context, 0, intent2, z) : PendingIntent.getBroadcast(context, 0, intent2, z);
                         this.o = null;
                     }
-                    qVar = new q4.q(context, TextUtils.join(".", new String[]{"androidx.media3.session.id", e0Var.i}), i7 >= 31 ? null : k02, i7 >= 31 ? foregroundService : null, bundle);
+                    qVar = new q4.q(context, TextUtils.join(".", new String[]{"androidx.media3.session.id", d0Var.i}), i7 >= 31 ? null : k02, i7 >= 31 ? foregroundService : null, bundle);
                     this.n = qVar;
                     if (i7 >= 31 && componentName != null) {
                         bg.o0.j(qVar, componentName);
                     }
                     qVar.e(this, handler);
-                    this.m = z11 ? new b(context, new f0(this, 0)) : null;
+                    this.m = z11 ? new b(context, new e0(this, 0)) : null;
                 }
             }
         }
@@ -190,13 +189,13 @@ public final class n0 extends android.support.v4.media.session.s {
         Intent intent22 = new Intent("android.intent.action.MEDIA_BUTTON", uri);
         if (k02 != null) {
         }
-        qVar = new q4.q(context, TextUtils.join(".", new String[]{"androidx.media3.session.id", e0Var.i}), i7 >= 31 ? null : k02, i7 >= 31 ? foregroundService : null, bundle);
+        qVar = new q4.q(context, TextUtils.join(".", new String[]{"androidx.media3.session.id", d0Var.i}), i7 >= 31 ? null : k02, i7 >= 31 ? foregroundService : null, bundle);
         this.n = qVar;
         if (i7 >= 31) {
             bg.o0.j(qVar, componentName);
         }
         qVar.e(this, handler);
-        this.m = z11 ? new b(context, new f0(this, 0)) : null;
+        this.m = z11 ? new b(context, new e0(this, 0)) : null;
     }
 
     public static void e0(q4.q qVar, ArrayList arrayList) {
@@ -278,9 +277,9 @@ public final class n0 extends android.support.v4.media.session.s {
     public static e2.l0 g0(String str, Uri uri, String str2, Bundle bundle) {
         e2.z zVar = new e2.z();
         h9.g0 g0Var = h9.i0.b;
-        t1 t1Var = t1.e;
+        s1 s1Var = s1.e;
         List list = Collections.EMPTY_LIST;
-        t1 t1Var2 = t1.e;
+        s1 s1Var2 = s1.e;
         e2.e0 e0Var = new e2.e0();
         e2.h0 h0Var = e2.h0.d;
         if (str == null) {
@@ -321,17 +320,17 @@ public final class n0 extends android.support.v4.media.session.s {
         if (hVar == null) {
             return;
         }
-        i0(20, new wc1(5, this, hVar), ((q4.l) this.n.b).c(), true);
+        i0(20, new uc1(5, this, hVar), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void F() {
-        i0(11, new h0(this, 5), ((q4.l) this.n.b).c(), true);
+        i0(11, new g0(this, 5), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void G(long j3) {
-        i0(5, new g0(this, j3, 1), ((q4.l) this.n.b).c(), true);
+        i0(5, new f0(this, j3, 1), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
@@ -339,7 +338,7 @@ public final class n0 extends android.support.v4.media.session.s {
         if (f10 <= 0.0f) {
             return;
         }
-        i0(13, new m0() { // from class: p4.k0
+        i0(13, new m0() { // from class: p4.j0
             @Override // p4.m0
             public final void f(v vVar) {
                 n0.this.h.t.d(f10);
@@ -356,7 +355,7 @@ public final class n0 extends android.support.v4.media.session.s {
     public final void L(q4.y yVar) {
         e2.d1 c10 = n.c(yVar);
         if (c10 != null) {
-            j0(null, 40010, new h0(this, c10), ((q4.l) this.n.b).c());
+            j0(null, 40010, new g0(this, c10), ((q4.l) this.n.b).c());
             return;
         }
         h2.a.l("MediaSessionLegacyStub", "Ignoring invalid RatingCompat " + yVar);
@@ -364,33 +363,33 @@ public final class n0 extends android.support.v4.media.session.s {
 
     @Override // android.support.v4.media.session.s
     public final void M(int i7) {
-        i0(15, new j0(this, i7, 0), ((q4.l) this.n.b).c(), true);
+        i0(15, new i0(this, i7, 0), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void P(int i7) {
-        i0(14, new j0(this, i7, 1), ((q4.l) this.n.b).c(), true);
+        i0(14, new i0(this, i7, 1), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void S() {
-        boolean p02 = this.h.t.p0(9);
+        boolean q02 = this.h.t.q0(9);
         q4.q qVar = this.n;
-        if (p02) {
-            i0(9, new h0(this, 10), ((q4.l) qVar.b).c(), true);
+        if (q02) {
+            i0(9, new g0(this, 10), ((q4.l) qVar.b).c(), true);
         } else {
-            i0(8, new h0(this, 11), ((q4.l) qVar.b).c(), true);
+            i0(8, new g0(this, 11), ((q4.l) qVar.b).c(), true);
         }
     }
 
     @Override // android.support.v4.media.session.s
     public final void V() {
-        boolean p02 = this.h.t.p0(7);
+        boolean q02 = this.h.t.q0(7);
         q4.q qVar = this.n;
-        if (p02) {
-            i0(7, new h0(this, 2), ((q4.l) qVar.b).c(), true);
+        if (q02) {
+            i0(7, new g0(this, 2), ((q4.l) qVar.b).c(), true);
         } else {
-            i0(6, new h0(this, 3), ((q4.l) qVar.b).c(), true);
+            i0(6, new g0(this, 3), ((q4.l) qVar.b).c(), true);
         }
     }
 
@@ -399,18 +398,18 @@ public final class n0 extends android.support.v4.media.session.s {
         if (j3 < 0) {
             return;
         }
-        i0(10, new g0(this, j3, 0), ((q4.l) this.n.b).c(), true);
+        i0(10, new f0(this, j3, 0), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void b0() {
-        i0(3, new h0(this, 8), ((q4.l) this.n.b).c(), true);
+        i0(3, new g0(this, 8), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
     public final void c(q4.h hVar) {
         if (hVar != null) {
-            i0(20, new u1(this, hVar, -1, 18), ((q4.l) this.n.b).c(), false);
+            i0(20, new ai.o1(this, hVar, -1, 18), ((q4.l) this.n.b).c(), false);
         }
     }
 
@@ -418,7 +417,7 @@ public final class n0 extends android.support.v4.media.session.s {
     public final void d(q4.h hVar, int i7) {
         if (hVar != null) {
             if (i7 == -1 || i7 >= 0) {
-                i0(20, new u1(this, hVar, i7, 18), ((q4.l) this.n.b).c(), false);
+                i0(20, new ai.o1(this, hVar, i7, 18), ((q4.l) this.n.b).c(), false);
             }
         }
     }
@@ -429,35 +428,35 @@ public final class n0 extends android.support.v4.media.session.s {
             return;
         }
         if (!str.equals("androidx.media3.session.SESSION_COMMAND_REQUEST_SESSION3_TOKEN") || resultReceiver == null) {
-            k1 k1Var = new k1(str, Bundle.EMPTY);
-            j0(k1Var, 0, new tm(this, k1Var, bundle, resultReceiver), ((q4.l) this.n.b).c());
+            j1 j1Var = new j1(str, Bundle.EMPTY);
+            j0(j1Var, 0, new rm(this, j1Var, bundle, resultReceiver), ((q4.l) this.n.b).c());
             return;
         }
-        p1 p1Var = this.h.j;
-        p1Var.getClass();
-        String str2 = p1.b;
+        o1 o1Var = this.h.j;
+        o1Var.getClass();
+        String str2 = o1.b;
         Bundle bundle2 = new Bundle();
-        q1 q1Var = p1Var.a;
-        if (q1Var != null) {
+        p1 p1Var = o1Var.a;
+        if (p1Var != null) {
             bundle2.putInt(str2, 0);
         } else {
             bundle2.putInt(str2, 1);
         }
-        String str3 = p1.c;
-        q1Var.getClass();
+        String str3 = o1.c;
+        p1Var.getClass();
         Bundle bundle3 = new Bundle();
-        bundle3.putInt(q1.i, q1Var.a);
-        bundle3.putInt(q1.j, 0);
-        bundle3.putInt(q1.k, q1Var.b);
-        bundle3.putString(q1.l, q1Var.d);
-        bundle3.putString(q1.m, q1Var.e);
-        bundle3.putBinder(q1.o, q1Var.f);
-        bundle3.putParcelable(q1.n, null);
-        bundle3.putBundle(q1.p, q1Var.g);
-        bundle3.putInt(q1.q, q1Var.c);
-        MediaSession.Token token = q1Var.h;
+        bundle3.putInt(p1.i, p1Var.a);
+        bundle3.putInt(p1.j, 0);
+        bundle3.putInt(p1.k, p1Var.b);
+        bundle3.putString(p1.l, p1Var.d);
+        bundle3.putString(p1.m, p1Var.e);
+        bundle3.putBinder(p1.o, p1Var.f);
+        bundle3.putParcelable(p1.n, null);
+        bundle3.putBundle(p1.p, p1Var.g);
+        bundle3.putInt(p1.q, p1Var.c);
+        MediaSession.Token token = p1Var.h;
         if (token != null) {
-            bundle3.putParcelable(q1.r, token);
+            bundle3.putParcelable(p1.r, token);
         }
         bundle2.putBundle(str3, bundle3);
         resultReceiver.send(0, bundle2);
@@ -477,40 +476,40 @@ public final class n0 extends android.support.v4.media.session.s {
         if (bundle == null) {
             bundle = Bundle.EMPTY;
         }
-        k1 k1Var = new k1(str, bundle);
+        j1 j1Var = new j1(str, bundle);
         boolean j3 = d.j(str);
         q4.q qVar = this.n;
         if (!j3) {
-            j0(k1Var, 0, new h0(this, k1Var, bundle), ((q4.l) qVar.b).c());
+            j0(j1Var, 0, new g0(this, j1Var, bundle), ((q4.l) qVar.b).c());
             return;
         }
         try {
-            d d = d.d(k1Var);
+            d d = d.d(j1Var);
             int i7 = d.b;
             Object obj = d.g;
             if (!d.b()) {
                 h2.a.l("MediaSessionLegacyStub", "Can't execute predefined custom command: ".concat(str));
                 return;
             }
-            k1 k1Var2 = d.a;
-            if (k1Var2 != null) {
-                la.p(k1Var2.a == 40010);
+            j1 j1Var2 = d.a;
+            if (j1Var2 != null) {
+                ma.p(j1Var2.a == 40010);
                 obj.getClass();
-                j0(null, 40010, new h0(this, (e2.d1) obj), ((q4.l) qVar.b).c());
+                j0(null, 40010, new g0(this, (e2.d1) obj), ((q4.l) qVar.b).c());
                 return;
             }
-            i1 i1Var = this.h.t;
+            h1 h1Var = this.h.t;
             if (i7 == 1) {
                 if (obj != null) {
                     booleanValue = ((Boolean) obj).booleanValue();
-                } else if (!i1Var.u()) {
+                } else if (!h1Var.v()) {
                     booleanValue = true;
                 }
                 if (!booleanValue) {
-                    i0(1, new h0(this, 6), ((q4.l) qVar.b).c(), false);
+                    i0(1, new g0(this, 6), ((q4.l) qVar.b).c(), false);
                     return;
                 } else if (i7 != 31) {
-                    i0(i7, new wc1(4, this, d), ((q4.l) qVar.b).c(), true);
+                    i0(i7, new uc1(4, this, d), ((q4.l) qVar.b).c(), true);
                     return;
                 } else {
                     obj.getClass();
@@ -522,16 +521,16 @@ public final class n0 extends android.support.v4.media.session.s {
             if (!booleanValue) {
             }
         } catch (RuntimeException e10) {
-            h2.a.m("MediaSessionLegacyStub", "Failed to convert predefined custom command: " + k1Var.b, e10);
+            h2.a.m("MediaSessionLegacyStub", "Failed to convert predefined custom command: " + j1Var.b, e10);
         }
     }
 
     @Override // android.support.v4.media.session.s
     public final void h() {
-        i0(12, new h0(this, 4), ((q4.l) this.n.b).c(), true);
+        i0(12, new g0(this, 4), ((q4.l) this.n.b).c(), true);
     }
 
-    public final q4.w h0(i1 i1Var) {
+    public final q4.w h0(h1 h1Var) {
         int i7;
         int i10;
         long j3;
@@ -540,17 +539,17 @@ public final class n0 extends android.support.v4.media.session.s {
         int i12;
         int i13;
         long j10;
-        e2.v0 W = i1Var.W();
-        boolean z10 = i1Var.p0(16) && !i1Var.P0();
-        boolean z11 = W != null || h2.l0.c0(i1Var, this.q);
-        if (W != null) {
+        e2.v0 X = h1Var.X();
+        boolean z10 = h1Var.q0(16) && !h1Var.Q0();
+        boolean z11 = X != null || h2.l0.c0(h1Var, this.q);
+        if (X != null) {
             i10 = 7;
         } else {
             int i14 = n.a;
-            if (i1Var.W() != null) {
+            if (h1Var.X() != null) {
                 i7 = 7;
             } else {
-                int i15 = i1Var.i();
+                int i15 = h1Var.i();
                 if (i15 == 1) {
                     i7 = 0;
                 } else if (i15 == 2) {
@@ -572,7 +571,7 @@ public final class n0 extends android.support.v4.media.session.s {
             }
             i10 = i7;
         }
-        e2.y0 a10 = jb.a(this.y, i1Var.t());
+        e2.y0 a10 = kb.a(this.y, h1Var.u());
         long j11 = 128;
         for (int i16 = 0; i16 < a10.a.a.size(); i16++) {
             int a11 = a10.a.a(i16);
@@ -632,41 +631,41 @@ public final class n0 extends android.support.v4.media.session.s {
             j11 &= -257;
         }
         long j12 = j11;
-        if (i1Var.p0(17)) {
-            int o02 = i1Var.o0();
+        if (h1Var.q0(17)) {
+            int p02 = h1Var.p0();
             int i17 = n.a;
-            j3 = o02 == -1 ? -1L : o02;
+            j3 = p02 == -1 ? -1L : p02;
         } else {
             j3 = -1;
         }
-        float f10 = i1Var.j().a;
-        float f11 = (i1Var.h() && z10) ? f10 : 0.0f;
-        Bundle bundle = W != null ? new Bundle(W.c) : new Bundle();
+        float f10 = h1Var.l().a;
+        float f11 = (h1Var.j() && z10) ? f10 : 0.0f;
+        Bundle bundle = X != null ? new Bundle(X.c) : new Bundle();
         bundle.putAll(this.u);
         bundle.putFloat("EXO_SPEED", f10);
-        e2.l0 S0 = i1Var.S0();
+        e2.l0 S0 = h1Var.S0();
         if (S0 != null) {
             String str2 = S0.a;
             if (!"".equals(str2)) {
                 bundle.putString("androidx.media.PlaybackStateCompat.Extras.KEY_MEDIA_ID", str2);
             }
         }
-        long l10 = z10 ? i1Var.l() : -1L;
-        long d02 = z10 ? i1Var.d0() : -1L;
+        long n10 = z10 ? h1Var.n() : -1L;
+        long e02 = z10 ? h1Var.e0() : -1L;
         ArrayList arrayList = new ArrayList();
-        long j13 = d02;
-        long j14 = l10;
+        long j13 = e02;
+        long j14 = n10;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         for (int i18 = 0; i18 < this.v.size(); i18++) {
             d dVar = (d) this.v.get(i18);
-            k1 k1Var = dVar.a;
+            j1 j1Var = dVar.a;
             Bundle bundle2 = dVar.d;
-            if (k1Var != null) {
-                Bundle bundle3 = k1Var.c;
-                String str3 = k1Var.b;
-                if (dVar.f && k1Var.a == 0) {
-                    l1 l1Var = this.x;
-                    if ((k1Var != null && l1Var.a.contains(k1Var)) || (((i13 = dVar.b) != -1 && a10.a(i13)) || d.j(str3))) {
+            if (j1Var != null) {
+                Bundle bundle3 = j1Var.c;
+                String str3 = j1Var.b;
+                if (dVar.f && j1Var.a == 0) {
+                    k1 k1Var = this.x;
+                    if ((j1Var != null && k1Var.a.contains(j1Var)) || (((i13 = dVar.b) != -1 && a10.a(i13)) || d.j(str3))) {
                         if (!bundle2.isEmpty()) {
                             bundle3 = new Bundle(bundle3);
                         }
@@ -688,9 +687,9 @@ public final class n0 extends android.support.v4.media.session.s {
                 }
             }
         }
-        if (W != null) {
+        if (X != null) {
             int i20 = n.a;
-            int i21 = W.a;
+            int i21 = X.a;
             if (i21 == -110) {
                 i12 = 8;
             } else if (i21 == -109) {
@@ -726,7 +725,7 @@ public final class n0 extends android.support.v4.media.session.s {
             } else {
                 i12 = 10;
             }
-            str = W.getMessage();
+            str = X.getMessage();
             i11 = i12;
         } else {
             str = null;
@@ -746,17 +745,17 @@ public final class n0 extends android.support.v4.media.session.s {
         q4.r c10 = ((q4.l) this.n.b).c();
         c10.getClass();
         v vVar = new v(c10, 0, 0, false, null, Bundle.EMPTY);
-        e0 e0Var = this.h;
-        n0 n0Var = e0Var.h;
-        Context context = e0Var.f;
-        b0 b0Var = e0Var.d;
+        d0 d0Var = this.h;
+        n0 n0Var = d0Var.h;
+        Context context = d0Var.f;
+        a0 a0Var = d0Var.d;
         Bundle extras = intent.getExtras();
-        es0 es0Var = null;
+        as0 as0Var = null;
         KeyEvent keyEvent = (extras == null || !extras.containsKey("android.intent.extra.KEY_EVENT")) ? null : (KeyEvent) extras.getParcelable("android.intent.extra.KEY_EVENT");
         ComponentName component = intent.getComponent();
         if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && ((component == null || Objects.equals(component.getPackageName(), context.getPackageName())) && keyEvent != null)) {
-            e0Var.u();
-            e0Var.e.getClass();
+            d0Var.u();
+            d0Var.e.getClass();
             if (keyEvent.getAction() != 0) {
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 126 && keyCode != 127 && keyCode != 272 && keyCode != 273) {
@@ -769,43 +768,43 @@ public final class n0 extends android.support.v4.media.session.s {
             int keyCode2 = keyEvent.getKeyCode();
             boolean hasSystemFeature = context.getPackageManager().hasSystemFeature("android.software.leanback");
             if (keyCode2 != 79 && keyCode2 != 85) {
-                es0 es0Var2 = b0Var.a;
-                if (es0Var2 != null) {
-                    b0Var.removeCallbacks(es0Var2);
-                    es0 es0Var3 = b0Var.a;
-                    b0Var.a = null;
-                    es0Var = es0Var3;
+                as0 as0Var2 = a0Var.a;
+                if (as0Var2 != null) {
+                    a0Var.removeCallbacks(as0Var2);
+                    as0 as0Var3 = a0Var.a;
+                    a0Var.a = null;
+                    as0Var = as0Var3;
                 }
-                if (es0Var != null) {
-                    h2.l0.W(b0Var, es0Var);
+                if (as0Var != null) {
+                    h2.l0.W(a0Var, as0Var);
                 }
             } else if (hasSystemFeature || keyEvent.getRepeatCount() != 0) {
-                es0 es0Var4 = b0Var.a;
-                if (es0Var4 != null) {
-                    b0Var.removeCallbacks(es0Var4);
-                    es0 es0Var5 = b0Var.a;
-                    b0Var.a = null;
-                    es0Var = es0Var5;
+                as0 as0Var4 = a0Var.a;
+                if (as0Var4 != null) {
+                    a0Var.removeCallbacks(as0Var4);
+                    as0 as0Var5 = a0Var.a;
+                    a0Var.a = null;
+                    as0Var = as0Var5;
                 }
-                if (es0Var != null) {
-                    h2.l0.W(b0Var, es0Var);
+                if (as0Var != null) {
+                    h2.l0.W(a0Var, as0Var);
                 }
             } else {
-                es0 es0Var6 = b0Var.a;
-                if (es0Var6 == null) {
-                    es0 es0Var7 = new es0(b0Var, vVar, keyEvent, 20);
-                    b0Var.a = es0Var7;
-                    b0Var.postDelayed(es0Var7, ViewConfiguration.getDoubleTapTimeout());
+                as0 as0Var6 = a0Var.a;
+                if (as0Var6 == null) {
+                    as0 as0Var7 = new as0(a0Var, vVar, keyEvent, 21);
+                    a0Var.a = as0Var7;
+                    a0Var.postDelayed(as0Var7, ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
-                if (es0Var6 != null) {
-                    b0Var.removeCallbacks(es0Var6);
-                    b0Var.a = null;
+                if (as0Var6 != null) {
+                    a0Var.removeCallbacks(as0Var6);
+                    a0Var.a = null;
                 }
                 z10 = true;
-                if (!e0Var.x) {
+                if (!d0Var.x) {
                     boolean booleanExtra = intent.getBooleanExtra("androidx.media3.session.NOTIFICATION_DISMISSED_EVENT_KEY", false);
-                    if (keyEvent.getRepeatCount() > 0 || e0Var.b(keyEvent, z10, booleanExtra)) {
+                    if (keyEvent.getRepeatCount() > 0 || d0Var.b(keyEvent, z10, booleanExtra)) {
                         return true;
                     }
                 } else if ((keyCode2 == 85 || keyCode2 == 79) && z10) {
@@ -814,32 +813,32 @@ public final class n0 extends android.support.v4.media.session.s {
                 }
             }
             z10 = false;
-            if (!e0Var.x) {
+            if (!d0Var.x) {
             }
         }
         return false;
     }
 
     public final void i0(int i7, m0 m0Var, q4.r rVar, boolean z10) {
-        e0 e0Var = this.h;
-        if (e0Var.j()) {
+        d0 d0Var = this.h;
+        if (d0Var.j()) {
             return;
         }
         if (rVar != null) {
-            h2.l0.W(e0Var.l, new da(this, i7, rVar, m0Var, z10));
+            h2.l0.W(d0Var.l, new da(this, i7, rVar, m0Var, z10));
             return;
         }
         h2.a.b("MediaSessionLegacyStub", "RemoteUserInfo is null, ignoring command=" + i7);
     }
 
-    public final void j0(k1 k1Var, int i7, m0 m0Var, q4.r rVar) {
+    public final void j0(j1 j1Var, int i7, m0 m0Var, q4.r rVar) {
         if (rVar != null) {
-            h2.l0.W(this.h.l, new ai.i1(this, k1Var, i7, rVar, m0Var, 26));
+            h2.l0.W(this.h.l, new ai.d1(this, j1Var, i7, rVar, m0Var, 26));
             return;
         }
         StringBuilder sb2 = new StringBuilder("RemoteUserInfo is null, ignoring command=");
-        Object obj = k1Var;
-        if (k1Var == null) {
+        Object obj = j1Var;
+        if (j1Var == null) {
             obj = Integer.valueOf(i7);
         }
         sb2.append(obj);
@@ -848,49 +847,49 @@ public final class n0 extends android.support.v4.media.session.s {
 
     @Override // android.support.v4.media.session.s
     public final void k() {
-        i0(1, new h0(this, 12), ((q4.l) this.n.b).c(), true);
+        i0(1, new g0(this, 12), ((q4.l) this.n.b).c(), true);
     }
 
     public final void l0(e2.l0 l0Var, boolean z10, boolean z11) {
-        i0(31, new a0(this, l0Var, z10, z11), ((q4.l) this.n.b).c(), false);
+        i0(31, new z(this, l0Var, z10, z11), ((q4.l) this.n.b).c(), false);
     }
 
     public final v m0(q4.r rVar) {
-        v r10 = this.g.r(rVar);
-        if (r10 == null) {
-            v vVar = new v(rVar, 0, 0, this.i.b(rVar), new l0(rVar), Bundle.EMPTY);
+        v u10 = this.g.u(rVar);
+        if (u10 == null) {
+            v vVar = new v(rVar, 0, 0, this.i.b(rVar), new k0(rVar), Bundle.EMPTY);
             t m10 = this.h.m(vVar);
             this.g.b(rVar, vVar, m10.a, m10.b);
-            e0 e0Var = this.h;
-            if (!e0Var.x || !e0.k(vVar)) {
-                e0Var.e.getClass();
+            d0 d0Var = this.h;
+            if (!d0Var.x || !d0.k(vVar)) {
+                d0Var.e.getClass();
             }
-            r10 = vVar;
+            u10 = vVar;
         }
         android.support.v4.media.session.q qVar = this.k;
         long j3 = this.r;
-        qVar.removeMessages(1001, r10);
-        qVar.sendMessageDelayed(qVar.obtainMessage(1001, r10), j3);
-        return r10;
+        qVar.removeMessages(1001, u10);
+        qVar.sendMessageDelayed(qVar.obtainMessage(1001, u10), j3);
+        return u10;
     }
 
     @Override // android.support.v4.media.session.s
     public final void n() {
-        i0(1, new h0(this, 6), ((q4.l) this.n.b).c(), false);
+        i0(1, new g0(this, 6), ((q4.l) this.n.b).c(), false);
     }
 
     public final void n0() {
         b bVar;
         int i7;
         h9.i0 i0Var = this.w;
-        l1 l1Var = this.x;
+        k1 k1Var = this.x;
         e2.y0 y0Var = this.y;
         String str = d.h;
         h9.f0 f0Var = new h9.f0(4);
         for (int i10 = 0; i10 < i0Var.size(); i10++) {
             d dVar = (d) i0Var.get(i10);
-            k1 k1Var = dVar.a;
-            if ((k1Var == null || !l1Var.a.contains(k1Var)) && ((i7 = dVar.b) == -1 || !y0Var.a(i7))) {
+            j1 j1Var = dVar.a;
+            if ((j1Var == null || !k1Var.a.contains(j1Var)) && ((i7 = dVar.b) == -1 || !y0Var.a(i7))) {
                 if (dVar.f) {
                     dVar = new d(dVar.a, dVar.b, dVar.c, new Bundle(dVar.d), false, dVar.e, dVar.g);
                 }
@@ -922,8 +921,8 @@ public final class n0 extends android.support.v4.media.session.s {
         ((q4.l) this.n.b).a.setExtras(bundle);
     }
 
-    public final void p0(i1 i1Var) {
-        h2.l0.W(this.h.l, new i0(this, i1Var, 1));
+    public final void p0(h1 h1Var) {
+        h2.l0.W(this.h.l, new h0(this, h1Var, 1));
     }
 
     @Override // android.support.v4.media.session.s
@@ -943,7 +942,7 @@ public final class n0 extends android.support.v4.media.session.s {
 
     @Override // android.support.v4.media.session.s
     public final void w() {
-        i0(2, new h0(this, 7), ((q4.l) this.n.b).c(), true);
+        i0(2, new g0(this, 7), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s

@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class rh extends oq0 {
     public final /* synthetic */ bn a;
@@ -19,7 +19,7 @@ public final class rh extends oq0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         kj kjVar;
         ImageReceiver imageReceiver;
         if (i7 >= 0) {
@@ -42,7 +42,7 @@ public final class rh extends oq0 {
                                 wq0Var.d = bnVar.X1.getListView();
                                 wq0Var.a = imageReceiver;
                                 wq0Var.e = imageReceiver.p();
-                                wq0Var.h = imageReceiver.E();
+                                wq0Var.h = imageReceiver.F();
                                 return wq0Var;
                             }
                         }
@@ -57,7 +57,7 @@ public final class rh extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.d20 d20Var, boolean z10, int i10, int i11, boolean z11) {
         if (i7 >= 0) {
             bn bnVar = this.a;
             if (i7 >= bnVar.fb.size()) {

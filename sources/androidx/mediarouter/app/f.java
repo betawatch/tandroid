@@ -12,11 +12,11 @@ import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.mk;
-import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.ng;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -76,12 +76,12 @@ public final class f extends BroadcastReceiver {
                 t0.d.post(new org.telegram.messenger.a(this, 14));
                 break;
             case 8:
-                og ogVar = new og(this, 25);
+                ng ngVar = new ng(this, 25);
                 if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ogVar.run();
+                    ngVar.run();
                     break;
                 } else {
-                    ((mk) this.b).r.postDelayed(ogVar, 1000L);
+                    ((kk) this.b).r.postDelayed(ngVar, 1000L);
                     break;
                 }
             case 9:
@@ -108,7 +108,7 @@ public final class f extends BroadcastReceiver {
                         nVar = pVar.e;
                     }
                     if (nVar != null) {
-                        nVar.a.p0(intent.getIntExtra("action_id", -1));
+                        nVar.a.D2(intent.getIntExtra("action_id", -1));
                         break;
                     }
                 }

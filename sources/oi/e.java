@@ -1,31 +1,31 @@
 package oi;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.bj;
-import org.telegram.ui.Components.ll;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.aj;
+import org.telegram.ui.Components.jl;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements ll, bj {
-    public final /* synthetic */ o a;
-    public final /* synthetic */ ui b;
+public final /* synthetic */ class e implements jl, aj {
+    public final /* synthetic */ p a;
+    public final /* synthetic */ ti b;
 
-    public /* synthetic */ e(o oVar, ui uiVar) {
-        this.a = oVar;
-        this.b = uiVar;
+    public /* synthetic */ e(p pVar, ti tiVar) {
+        this.a = pVar;
+        this.b = tiVar;
     }
 
-    @Override // org.telegram.ui.Components.ll
-    public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
-        o oVar = this.a;
-        oVar.getClass();
-        ui uiVar = this.b;
+    @Override // org.telegram.ui.Components.jl
+    public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
+        p pVar = this.a;
+        pVar.getClass();
+        ti tiVar = this.b;
         if (messageMedia == null || messageMedia.geo == null) {
-            uiVar.a(true);
+            tiVar.a(true);
             return;
         }
         TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
@@ -33,15 +33,15 @@ public final /* synthetic */ class e implements ll, bj {
         pageblockmap.zoom = 15;
         pageblockmap.w = 600;
         pageblockmap.h = 400;
-        oVar.r.V1(pageblockmap);
-        oVar.a0(true);
-        uiVar.a(true);
+        pVar.r.V1(pageblockmap);
+        pVar.a0(true);
+        tiVar.a(true);
     }
 
-    @Override // org.telegram.ui.Components.bj
-    public void i(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.Components.aj
+    public void e(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
         if (!arrayList.isEmpty()) {
-            this.a.r.e2((gj) arrayList.get(0));
+            this.a.r.e2((fj) arrayList.get(0));
         }
         this.b.a(true);
     }

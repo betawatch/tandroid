@@ -18,14 +18,14 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.o10;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.fc1;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.m10;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -45,10 +45,10 @@ public final class e extends View {
     public boolean S;
     public org.telegram.ui.Cells.y T;
     public final Paint U;
-    public final oh0 V;
+    public final nh0 V;
     public final Drawable W;
     public final FabBackgroundDrawable a;
-    public final o0 a0;
+    public final p0 a0;
     public final FabBackgroundDrawable b;
     public final Paint b0;
     public final Drawable c;
@@ -57,8 +57,8 @@ public final class e extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final mc n;
-    public final mc r;
+    public final lc n;
+    public final lc r;
     public b s;
     public final int w;
     public float x;
@@ -67,8 +67,8 @@ public final class e extends View {
     public e(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new mc(this);
-        this.r = new mc(this);
+        this.n = new lc(this);
+        this.r = new lc(this);
         this.E = true;
         this.F = true;
         this.N = new Rect();
@@ -76,12 +76,12 @@ public final class e extends View {
         this.U = new Paint(1);
         Paint paint2 = new Paint(1);
         this.b0 = paint2;
-        o0 o0Var = new o0(org.telegram.messenger.g0.L(45.0f), org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(8.0f), 4);
-        this.a0 = o0Var;
-        o0Var.h = true;
-        o0Var.i = 0.0f;
-        o0Var.d = 0.0f;
-        o0Var.b(0.0d);
+        p0 p0Var = new p0(org.telegram.messenger.g0.L(45.0f), org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(8.0f), 4);
+        this.a0 = p0Var;
+        p0Var.h = true;
+        p0Var.i = 0.0f;
+        p0Var.d = 0.0f;
+        p0Var.b(0.0d);
         paint2.setColor(-16777216);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.J = ViewConfiguration.get(activity).getScaledTouchSlop();
@@ -98,9 +98,9 @@ public final class e extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         textPaint.setColor(-1);
-        String N0 = hd.N0(2131754715, null);
-        String N02 = hd.N0(2131751591, null);
-        String N03 = hd.N0(2131745855, null);
+        String N0 = gd.N0(2131754715, null);
+        String N02 = gd.N0(2131751591, null);
+        String N03 = gd.N0(2131745855, null);
         int measureText = (int) textPaint.measureText(N0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.e = new StaticLayout(N0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
@@ -110,15 +110,15 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        oh0 oh0Var = new oh0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
-        this.V = oh0Var;
-        oh0Var.K(1);
-        oh0Var.P(90);
-        oh0Var.R(this);
+        nh0 nh0Var = new nh0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
+        this.V = nh0Var;
+        nh0Var.K(1);
+        nh0Var.P(90);
+        nh0Var.R(this);
         this.W = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.y j02 = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
+        org.telegram.ui.Cells.y j02 = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
         this.T = j02;
         j02.setCallback(this);
     }
@@ -248,10 +248,10 @@ public final class e extends View {
         canvas.scale(a11, a11, r6.centerX(), r6.top + f12);
         canvas.translate(this.K + org.telegram.messenger.g0.L(46.0f), 0.0f);
         if (!this.S) {
-            o0 o0Var = this.a0;
-            o0Var.c();
+            p0 p0Var = this.a0;
+            p0Var.c();
             float f13 = (int) f12;
-            o0Var.a(canvas, f13, f13, this);
+            p0Var.a(canvas, f13, f13, this);
         }
         this.a.draw(canvas);
         if (this.S) {
@@ -320,7 +320,7 @@ public final class e extends View {
         super.onMeasure(i7, i10);
         int i11 = this.w;
         this.M = (getMeasuredWidth() / 2.0f) - ((i11 / 2.0f) + org.telegram.messenger.g0.L(46.0f));
-        int z10 = o10.z(28.0f, i11, 2);
+        int z10 = m10.z(28.0f, i11, 2);
         this.c.setBounds(z10, z10, org.telegram.messenger.g0.L(28.0f) + z10, org.telegram.messenger.g0.L(28.0f) + z10);
         this.d.setBounds(z10, z10, org.telegram.messenger.g0.L(28.0f) + z10, org.telegram.messenger.g0.L(28.0f) + z10);
         float L = org.telegram.messenger.g0.L(3.0f);
@@ -340,8 +340,8 @@ public final class e extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            mc mcVar = this.n;
-            mc mcVar2 = this.r;
+            lc lcVar = this.n;
+            lc lcVar2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -360,7 +360,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.P = ofFloat;
                         if (this.R != null && (Math.abs(y10) < f10 || this.K > this.M * 0.8f)) {
-                            ((fc1) this.R).b();
+                            ((dc1) this.R).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.L, 0.0f);
@@ -368,35 +368,35 @@ public final class e extends View {
                         ofFloat2.start();
                         this.Q = ofFloat2;
                         if (this.R != null && (Math.abs(y10) < f10 || (-this.L) > this.M * 0.8f)) {
-                            ((fc1) this.R).a();
+                            ((dc1) this.R).a();
                         }
                     }
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.G = false;
-                mcVar2.c(false);
-                mcVar.c(false);
+                lcVar2.c(false);
+                lcVar.c(false);
                 setPressed(false);
                 return false;
             }
             motionEvent.getX();
             this.I = motionEvent.getY();
             if (this.P == null && this.O.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.S ? m6.x0(null, m6.i6, false) : -51130);
+                this.T = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.S ? n6.x0(null, n6.i6, false) : -51130);
                 this.G = true;
                 this.H = true;
-                mcVar2.c(true);
-                mcVar.c(false);
+                lcVar2.c(true);
+                lcVar.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
             }
             if (this.Q == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
+                this.T = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
                 this.G = true;
                 this.H = false;
-                mcVar2.c(false);
-                mcVar.c(true);
+                lcVar2.c(false);
+                lcVar.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.Q;
                 if (valueAnimator != null) {
@@ -421,11 +421,11 @@ public final class e extends View {
             return;
         }
         this.V.start();
-        o0 o0Var = this.a0;
-        if (!o0Var.e) {
+        p0 p0Var = this.a0;
+        if (!p0Var.e) {
             invalidate();
         }
-        o0Var.e = true;
+        p0Var.e = true;
         fabBackgroundDrawable.setColor(-1041108);
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 60, 0, 0, 60, 0, 0, 0, 0);
         this.c0 = ofInt;

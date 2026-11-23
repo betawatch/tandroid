@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m1 implements e0, b3.k {
     public int E;
@@ -37,7 +37,7 @@ public final class m1 implements e0, b3.k {
     }
 
     @Override // x2.e0
-    public final long b(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
+    public final long c(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
         for (int i7 = 0; i7 < uVarArr.length; i7++) {
             d1 d1Var = d1VarArr[i7];
             ArrayList arrayList = this.h;
@@ -56,7 +56,7 @@ public final class m1 implements e0, b3.k {
     }
 
     @Override // x2.f1
-    public final boolean c(l2.s0 s0Var) {
+    public final boolean d(l2.t0 t0Var) {
         if (this.x) {
             return false;
         }
@@ -76,7 +76,7 @@ public final class m1 implements e0, b3.k {
     }
 
     @Override // x2.f1
-    public final long e() {
+    public final long f() {
         return (this.x || this.r.d()) ? Long.MIN_VALUE : 0L;
     }
 
@@ -85,24 +85,8 @@ public final class m1 implements e0, b3.k {
         return this.r.d();
     }
 
-    @Override // x2.e0
-    public final long k(long j3) {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i7 >= arrayList.size()) {
-                return j3;
-            }
-            k1 k1Var = (k1) arrayList.get(i7);
-            if (k1Var.a == 2) {
-                k1Var.a = 1;
-            }
-            i7++;
-        }
-    }
-
     @Override // b3.k
-    public final b3.i l(b3.m mVar, long j3, long j10, IOException iOException, int i7) {
+    public final b3.i k(b3.m mVar, long j3, long j10, IOException iOException, int i7) {
         long min;
         IOException iOException2;
         b3.i iVar;
@@ -128,22 +112,38 @@ public final class m1 implements e0, b3.k {
             iOException2 = iOException;
             iVar = min != -9223372036854775807L ? new b3.i(0, min, false) : b3.p.f;
         }
-        this.e.q(uVar, 1, -1, this.s, 0, null, 0L, this.n, iOException2, !iVar.a());
+        this.e.p(uVar, 1, -1, this.s, 0, null, 0L, this.n, iOException2, !iVar.a());
         return iVar;
     }
 
     @Override // x2.e0
-    public final long o() {
-        return -9223372036854775807L;
+    public final long l(long j3) {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i7 >= arrayList.size()) {
+                return j3;
+            }
+            k1 k1Var = (k1) arrayList.get(i7);
+            if (k1Var.a == 2) {
+                k1Var.a = 1;
+            }
+            i7++;
+        }
     }
 
     @Override // b3.k
-    public final void p(b3.m mVar, long j3, long j10, boolean z10) {
+    public final void m(b3.m mVar, long j3, long j10, boolean z10) {
         l1 l1Var = (l1) mVar;
         j2.b0 b0Var = l1Var.b;
         u uVar = new u(l1Var.a, b0Var.c, b0Var.d, j3, j10, b0Var.b);
         this.d.getClass();
-        this.e.o(uVar, 1, -1, null, 0, null, 0L, this.n);
+        this.e.n(uVar, 1, -1, null, 0, null, 0L, this.n);
+    }
+
+    @Override // x2.e0
+    public final long p() {
+        return -9223372036854775807L;
     }
 
     @Override // x2.e0
@@ -156,20 +156,20 @@ public final class m1 implements e0, b3.k {
         return this.x ? Long.MIN_VALUE : 0L;
     }
 
+    @Override // x2.e0
+    public final void s(d0 d0Var, long j3) {
+        d0Var.V(this);
+    }
+
     @Override // b3.k
-    public final void s(b3.m mVar, long j3, long j10, int i7) {
+    public final void t(b3.m mVar, long j3, long j10, int i7) {
         l1 l1Var = (l1) mVar;
         j2.b0 b0Var = l1Var.b;
-        this.e.u(i7 == 0 ? new u(l1Var.a, j3) : new u(l1Var.a, b0Var.c, b0Var.d, j3, j10, b0Var.b), 1, -1, this.s, 0, null, 0L, this.n, i7);
-    }
-
-    @Override // x2.e0
-    public final void t(d0 d0Var, long j3) {
-        d0Var.m(this);
+        this.e.s(i7 == 0 ? new u(l1Var.a, j3) : new u(l1Var.a, b0Var.c, b0Var.d, j3, j10, b0Var.b), 1, -1, this.s, 0, null, 0L, this.n, i7);
     }
 
     @Override // b3.k
-    public final void z(b3.m mVar, long j3, long j10) {
+    public final void x(b3.m mVar, long j3, long j10) {
         l1 l1Var = (l1) mVar;
         this.E = (int) l1Var.b.b;
         byte[] bArr = l1Var.c;
@@ -179,11 +179,11 @@ public final class m1 implements e0, b3.k {
         j2.b0 b0Var = l1Var.b;
         u uVar = new u(l1Var.a, b0Var.c, b0Var.d, j3, j10, this.E);
         this.d.getClass();
-        this.e.p(uVar, 1, -1, this.s, 0, null, 0L, this.n);
+        this.e.o(uVar, 1, -1, this.s, 0, null, 0L, this.n);
     }
 
     @Override // x2.e0
-    public final void i() {
+    public final void j() {
     }
 
     @Override // x2.e0
@@ -195,7 +195,7 @@ public final class m1 implements e0, b3.k {
     }
 
     @Override // x2.e0
-    public final long f(long j3, l2.p1 p1Var) {
+    public final long i(long j3, l2.q1 q1Var) {
         return j3;
     }
 }

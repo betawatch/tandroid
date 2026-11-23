@@ -7,7 +7,7 @@ import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class r50 extends ReplacementSpan {
     public final Paint a;
@@ -22,7 +22,7 @@ public final class r50 extends ReplacementSpan {
     public r50(float f10, int i7, View view) {
         e5 e5Var = new e5(this, 3);
         this.f = true;
-        this.n = org.telegram.messenger.ls.e4;
+        this.n = org.telegram.messenger.ks.e4;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.b = imageReceiver;
         imageReceiver.d = i7;
@@ -37,15 +37,15 @@ public final class r50 extends ReplacementSpan {
         if (view2 != null) {
             view2.removeOnAttachStateChangeListener(e5Var);
             if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.R();
+                imageReceiver.S();
             }
         }
         View view3 = this.e;
         if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.P();
+            imageReceiver.Q();
         }
         this.e = view;
-        imageReceiver.H0(view);
+        imageReceiver.I0(view);
         if (view != null) {
             view.addOnAttachStateChangeListener(e5Var);
         }
@@ -54,7 +54,7 @@ public final class r50 extends ReplacementSpan {
     public final void a(float f10) {
         float L = org.telegram.messenger.g0.L(f10);
         this.d = L;
-        this.b.J0((int) L);
+        this.b.K0((int) L);
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -65,7 +65,7 @@ public final class r50 extends ReplacementSpan {
             int alpha = paint.getAlpha();
             this.n = alpha;
             paint2.setAlpha(alpha);
-            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(this.n / 255.0f, 855638016));
+            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.n6.r1(this.n / 255.0f, 855638016));
         }
         float f11 = this.h + f10;
         float L = (((i11 + i13) / 2.0f) + 0.0f) - (org.telegram.messenger.g0.L(this.c) / 2.0f);
@@ -78,7 +78,7 @@ public final class r50 extends ReplacementSpan {
         float L2 = org.telegram.messenger.g0.L(this.c);
         float L3 = org.telegram.messenger.g0.L(this.c);
         ImageReceiver imageReceiver = this.b;
-        imageReceiver.y0(f11, L, L2, L3);
+        imageReceiver.z0(f11, L, L2, L3);
         imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
         imageReceiver.h(canvas, null);
     }

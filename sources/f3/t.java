@@ -1,10 +1,8 @@
 package f3;
 
-import h2.l0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public class t implements b0 {
+public class t implements c0 {
     public final /* synthetic */ int a;
     public final long b;
     public final Object c;
@@ -15,7 +13,7 @@ public class t implements b0 {
         this.b = j3;
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final boolean d() {
         switch (this.a) {
             case 0:
@@ -27,15 +25,15 @@ public class t implements b0 {
         }
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // f3.b0
-    public final a0 f(long j3) {
+    @Override // f3.c0
+    public final b0 f(long j3) {
         switch (this.a) {
             case 0:
                 u uVar = (u) this.c;
@@ -43,30 +41,30 @@ public class t implements b0 {
                 wf.b bVar = uVar.k;
                 long[] jArr = (long[]) bVar.b;
                 long[] jArr2 = (long[]) bVar.c;
-                int f10 = l0.f(jArr, l0.j((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
+                int f10 = h2.l0.f(jArr, h2.l0.j((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
                 long j10 = f10 == -1 ? 0L : jArr[f10];
                 long j11 = f10 != -1 ? jArr2[f10] : 0L;
                 int i7 = uVar.e;
                 long j12 = (j10 * 1000000) / i7;
                 long j13 = this.b;
-                c0 c0Var = new c0(j12, j11 + j13);
+                d0 d0Var = new d0(j12, j11 + j13);
                 if (j12 == j3 || f10 == jArr.length - 1) {
-                    return new a0(c0Var, c0Var);
+                    return new b0(d0Var, d0Var);
                 }
                 int i10 = f10 + 1;
-                return new a0(c0Var, new c0((jArr[i10] * 1000000) / i7, j13 + jArr2[i10]));
+                return new b0(d0Var, new d0((jArr[i10] * 1000000) / i7, j13 + jArr2[i10]));
             case 1:
-                return (a0) this.c;
+                return (b0) this.c;
             default:
                 h3.b bVar2 = (h3.b) this.c;
-                a0 b10 = bVar2.i[0].b(j3);
+                b0 b10 = bVar2.i[0].b(j3);
                 int i11 = 1;
                 while (true) {
                     h3.e[] eVarArr = bVar2.i;
                     if (i11 >= eVarArr.length) {
                         return b10;
                     }
-                    a0 b11 = eVarArr[i11].b(j3);
+                    b0 b11 = eVarArr[i11].b(j3);
                     if (b11.a.b < b10.a.b) {
                         b10 = b11;
                     }
@@ -75,7 +73,7 @@ public class t implements b0 {
         }
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final long h() {
         switch (this.a) {
         }
@@ -91,7 +89,7 @@ public class t implements b0 {
     public t(long j3, long j10) {
         this.a = 1;
         this.b = j3;
-        c0 c0Var = j10 == 0 ? c0.c : new c0(0L, j10);
-        this.c = new a0(c0Var, c0Var);
+        d0 d0Var = j10 == 0 ? d0.c : new d0(0L, j10);
+        this.c = new b0(d0Var, d0Var);
     }
 }

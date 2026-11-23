@@ -1,33 +1,34 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l70 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class l70 implements org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ l70(LaunchActivity launchActivity, int i7) {
+    public /* synthetic */ l70(bi.t8 t8Var, int i7) {
         this.a = i7;
-        this.b = launchActivity;
+        this.b = t8Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
         int i7 = this.a;
-        LaunchActivity launchActivity = this.b;
+        Runnable runnable = this.b;
+        String str = (String) obj;
         switch (i7) {
             case 0:
-                launchActivity.w1 = false;
-                break;
-            case 1:
-                String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.h3(new t60(launchActivity, 7), 30000L);
+                String str2 = LaunchActivity.C1;
+                if (runnable != null && "paid".equals(str)) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                String str2 = LaunchActivity.C1;
-                org.telegram.messenger.g0.h3(new t60(launchActivity, 10), 30000L);
+                if (runnable != null && "paid".equals(str)) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

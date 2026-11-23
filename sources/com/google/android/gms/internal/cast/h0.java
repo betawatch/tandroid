@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.cast;
 
-import a8.v8;
+import a8.w8;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h0 extends c0 implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
@@ -47,7 +47,7 @@ public abstract class h0 extends c0 implements Set, j$.util.Set {
                 throw new NullPointerException(i5.c.i(i13, "at index "));
             }
             int hashCode = obj2.hashCode();
-            int a10 = v8.a(hashCode);
+            int a10 = w8.a(hashCode);
             while (true) {
                 int i14 = a10 & i10;
                 Object obj3 = objArr2[i14];

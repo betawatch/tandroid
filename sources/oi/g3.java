@@ -5,35 +5,35 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class g3 implements x4 {
-    public final /* synthetic */ r a;
+    public final /* synthetic */ s a;
     public final /* synthetic */ a b;
     public final /* synthetic */ t3 c;
 
-    public g3(a aVar, r rVar, t3 t3Var) {
+    public g3(a aVar, s sVar, t3 t3Var) {
         this.c = t3Var;
-        this.a = rVar;
+        this.a = sVar;
         this.b = aVar;
     }
 
     @Override // oi.x4
     public final void a() {
-        r rVar = this.a;
-        rVar.a = 3;
+        s sVar = this.a;
+        sVar.a = 3;
         t3 t3Var = this.c;
-        t3Var.h4.remove(rVar);
-        t3Var.t4(this.b, rVar);
+        t3Var.h4.remove(sVar);
+        t3Var.t4(this.b, sVar);
         t3Var.p3.onContentChanged();
     }
 
     @Override // oi.x4
     public final void b(int i7, int i10) {
         if (i7 > 0 && i10 > 0) {
-            r rVar = this.a;
-            rVar.j = i7;
-            rVar.k = i10;
+            s sVar = this.a;
+            sVar.j = i7;
+            sVar.k = i10;
         }
         View C1 = this.c.C1(this.b);
         if (C1 instanceof s4) {
@@ -46,37 +46,37 @@ public final class g3 implements x4 {
     public final void c(TLRPC.Photo photo) {
         int i7;
         int i10;
-        r rVar = this.a;
-        rVar.g = photo;
-        rVar.a = 2;
+        s sVar = this.a;
+        sVar.g = photo;
+        sVar.a = 2;
         TLRPC.PhotoSize w10 = w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
         if (w10 != null && (i7 = w10.w) > 0 && (i10 = w10.h) > 0) {
-            rVar.j = i7;
-            rVar.k = i10;
+            sVar.j = i7;
+            sVar.k = i10;
         }
         a aVar = this.b;
-        TL_iv.PageBlock Q3 = t3.Q3(aVar, rVar);
+        TL_iv.PageBlock Q3 = t3.Q3(aVar, sVar);
         if (Q3 instanceof TL_iv.pageBlockPhoto) {
             ((TL_iv.pageBlockPhoto) Q3).photo_id = photo.id;
         }
         t3 t3Var = this.c;
-        t3Var.h4.remove(rVar);
+        t3Var.h4.remove(sVar);
         t3Var.q4(aVar);
         t3Var.p3.onContentChanged();
     }
 
     @Override // oi.x4
     public final void d(TLRPC.Document document) {
-        r rVar = this.a;
-        rVar.h = document;
-        rVar.a = 2;
+        s sVar = this.a;
+        sVar.h = document;
+        sVar.a = 2;
         a aVar = this.b;
-        TL_iv.PageBlock Q3 = t3.Q3(aVar, rVar);
+        TL_iv.PageBlock Q3 = t3.Q3(aVar, sVar);
         if (Q3 instanceof TL_iv.pageBlockVideo) {
             ((TL_iv.pageBlockVideo) Q3).video_id = document.id;
         }
         t3 t3Var = this.c;
-        t3Var.h4.remove(rVar);
+        t3Var.h4.remove(sVar);
         t3Var.q4(aVar);
         t3Var.p3.onContentChanged();
     }

@@ -1,7 +1,43 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class d1 {
-    public static l8.a a;
+    public static Integer a(String str) {
+        if (str == null) {
+            return null;
+        }
+        switch (str.hashCode()) {
+            case -1118317585:
+                return str.equals("REPEAT_ALL_AND_SHUFFLE") ? 3 : null;
+            case -962896020:
+                return str.equals("REPEAT_SINGLE") ? 2 : null;
+            case 1645938909:
+                return str.equals("REPEAT_ALL") ? 1 : null;
+            case 1645952171:
+                return str.equals("REPEAT_OFF") ? 0 : null;
+            default:
+                return null;
+        }
+    }
+
+    public static String b(Integer num) {
+        if (num == null) {
+            return null;
+        }
+        int intValue = num.intValue();
+        if (intValue == 0) {
+            return "REPEAT_OFF";
+        }
+        if (intValue == 1) {
+            return "REPEAT_ALL";
+        }
+        if (intValue == 2) {
+            return "REPEAT_SINGLE";
+        }
+        if (intValue != 3) {
+            return null;
+        }
+        return "REPEAT_ALL_AND_SHUFFLE";
+    }
 }

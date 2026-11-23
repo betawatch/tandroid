@@ -3,13 +3,13 @@ package fi;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class b6 extends h6 {
     public final String C;
@@ -31,7 +31,7 @@ public final class b6 extends h6 {
     }
 
     @Override // fi.h6
-    public final gj f(int i7) {
+    public final fj f(int i7) {
         if (i7 < 0) {
             return null;
         }
@@ -39,7 +39,7 @@ public final class b6 extends h6 {
         if (i7 >= arrayList.size()) {
             return null;
         }
-        return (gj) arrayList.get(i7);
+        return (fj) arrayList.get(i7);
     }
 
     @Override // fi.h6
@@ -91,18 +91,18 @@ public final class b6 extends h6 {
         TLObject tLObject = null;
         int i10 = this.c;
         if (!isEmpty) {
-            TLObject h22 = np.u1(i10).h2(str2);
+            TLObject h22 = mp.u1(i10).h2(str2);
             if (h22 == null) {
-                np.u1(i10).f2().a(str2, null, new l2(this, z10, i7, list));
+                mp.u1(i10).f2().a(str2, null, new l2(this, z10, i7, list));
                 return true;
             }
             tLObject = h22;
         }
         if (tLObject != null) {
             tL_stories_searchPosts.flags |= 4;
-            tL_stories_searchPosts.peer = np.m1(tLObject);
+            tL_stories_searchPosts.peer = mp.m1(tLObject);
         }
-        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.g1(this, 7));
+        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.b1(this, 7));
         return true;
     }
 

@@ -1,86 +1,45 @@
 package sg;
 
-import android.graphics.Bitmap;
-import android.graphics.PointF;
-import org.telegram.ui.Components.yt0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l0 {
-    public final float a;
-    public final float b;
-    public final PointF c;
-    public final PointF d;
-    public final float e;
-    public final PointF f;
-    public final PointF g;
+    public final double a;
+    public final double b;
+    public final double c;
+    public boolean d;
 
-    public l0(w8.a aVar, Bitmap bitmap, yt0 yt0Var, boolean z10) {
-        PointF pointF = null;
-        PointF pointF2 = null;
-        PointF pointF3 = null;
-        PointF pointF4 = null;
-        for (w8.c cVar : aVar.b) {
-            PointF pointF5 = cVar.a;
-            int i7 = cVar.b;
-            if (i7 == 4) {
-                pointF = b(pointF5, bitmap, yt0Var, z10);
-            } else if (i7 == 5) {
-                pointF3 = b(pointF5, bitmap, yt0Var, z10);
-            } else if (i7 == 10) {
-                pointF2 = b(pointF5, bitmap, yt0Var, z10);
-            } else if (i7 == 11) {
-                pointF4 = b(pointF5, bitmap, yt0Var, z10);
-            }
-        }
-        if (pointF != null && pointF2 != null) {
-            if (pointF.x < pointF2.x) {
-                PointF pointF6 = pointF2;
-                pointF2 = pointF;
-                pointF = pointF6;
-            }
-            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
-            this.d = pointF7;
-            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
-            this.e = hypot;
-            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
-            this.a = 2.35f * hypot;
-            float f10 = hypot * 0.8f;
-            double radians = (float) Math.toRadians(r0 - 90.0f);
-            this.c = new PointF((((float) Math.cos(radians)) * f10) + pointF7.x, (f10 * ((float) Math.sin(radians))) + pointF7.y);
-        }
-        if (pointF3 == null || pointF4 == null) {
-            return;
-        }
-        if (pointF3.x < pointF4.x) {
-            PointF pointF8 = pointF4;
-            pointF4 = pointF3;
-            pointF3 = pointF8;
-        }
-        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
-        this.f = pointF9;
-        float f11 = this.e * 0.7f;
-        double radians2 = (float) Math.toRadians(this.b + 90.0f);
-        this.g = new PointF((((float) Math.cos(radians2)) * f11) + pointF9.x, (f11 * ((float) Math.sin(radians2))) + pointF9.y);
+    public l0(double d, double d2, double d10) {
+        this.a = d;
+        this.b = d2;
+        this.c = d10;
     }
 
-    public static PointF b(PointF pointF, Bitmap bitmap, yt0 yt0Var, boolean z10) {
-        return new PointF((yt0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (yt0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
+    public final float a(l0 l0Var) {
+        return (float) Math.sqrt(Math.pow(this.c - l0Var.c, 2.0d) + Math.pow(this.b - l0Var.b, 2.0d) + Math.pow(this.a - l0Var.a, 2.0d));
     }
 
-    public final PointF a(int i7) {
-        if (i7 == 0) {
-            return this.c;
+    public final l0 b(l0 l0Var) {
+        return new l0((this.a + l0Var.a) * 0.5d, (this.b + l0Var.b) * 0.5d, (this.c + l0Var.c) * 0.5d);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
         }
-        if (i7 == 1) {
-            return this.d;
+        if (obj == this) {
+            return true;
         }
-        if (i7 == 2) {
-            return this.f;
+        if (!(obj instanceof l0)) {
+            return false;
         }
-        if (i7 != 3) {
-            return null;
-        }
-        return this.g;
+        l0 l0Var = (l0) obj;
+        return this.a == l0Var.a && this.b == l0Var.b && this.c == l0Var.c;
+    }
+
+    public l0(double d, double d2, double d10, int i7) {
+        this.a = d;
+        this.b = d2;
+        this.c = d10;
+        this.d = true;
     }
 }

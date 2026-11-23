@@ -1,41 +1,75 @@
 package org.telegram.ui;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y51 implements LocationListener {
-    public final /* synthetic */ ThemeActivity a;
+public final /* synthetic */ class y51 implements org.telegram.ui.Components.qj0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public y51(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    public /* synthetic */ y51(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        ThemeActivity themeActivity = this.a;
-        if (location == null) {
-            return;
+    @Override // org.telegram.ui.Components.qj0
+    public final void b(int i7, View view) {
+        switch (this.a) {
+            case 0:
+                e61 e61Var = (e61) this.b;
+                g61 g61Var = (g61) this.c;
+                d61 d61Var = (d61) this.d;
+                ThemeActivity themeActivity = e61Var.e;
+                int i10 = themeActivity.f;
+                org.telegram.ui.ActionBar.m6 D0 = i10 == 1 ? org.telegram.ui.ActionBar.n6.J : org.telegram.ui.ActionBar.n6.D0();
+                if (i7 == g61Var.b() - 1) {
+                    themeActivity.presentFragment(new v71(D0, false, 1, false, i10 == 1));
+                } else {
+                    org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) g61Var.e.get(i7);
+                    if (!TextUtils.isEmpty(k6Var.o) && k6Var.a != org.telegram.ui.ActionBar.n6.n) {
+                        org.telegram.ui.ActionBar.h6.a(false);
+                    }
+                    int i11 = D0.Z;
+                    int i12 = k6Var.a;
+                    if (i11 != i12) {
+                        org.telegram.ui.ActionBar.n6.K1(D0, i10 == 1, i12, view);
+                        org.telegram.ui.ActionBar.s3.q(D0, k6Var.a);
+                        org.telegram.ui.ActionBar.n6.M1(themeActivity);
+                    } else {
+                        themeActivity.presentFragment(new v71(D0, false, 1, i12 >= 100, i10 == 1));
+                    }
+                }
+                int left = view.getLeft();
+                int right = view.getRight();
+                int L = org.telegram.messenger.g0.L(52.0f);
+                int i13 = left - L;
+                if (i13 < 0) {
+                    d61Var.w0(i13, 0, null);
+                } else {
+                    int i14 = right + L;
+                    if (i14 > d61Var.getMeasuredWidth()) {
+                        d61Var.w0(i14 - d61Var.getMeasuredWidth(), 0, null);
+                    }
+                }
+                int childCount = d61Var.getChildCount();
+                for (int i15 = 0; i15 < childCount; i15++) {
+                    View childAt = d61Var.getChildAt(i15);
+                    if (childAt instanceof ThemeActivity.InnerAccentView) {
+                        ((ThemeActivity.InnerAccentView) childAt).a(true);
+                    }
+                }
+                break;
+            default:
+                hx0.a0((hx0) this.b, (Context) this.c, (String) this.d, view, i7);
+                break;
         }
-        themeActivity.M0 = false;
-        LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
-        locationManager.removeUpdates(themeActivity.S0);
-        locationManager.removeUpdates(themeActivity.T0);
-        themeActivity.G0(location, false);
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderDisabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderEnabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onStatusChanged(String str, int i7, Bundle bundle) {
     }
 }

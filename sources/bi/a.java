@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements qj0 {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class a implements qj0 {
     }
 
     @Override // org.telegram.ui.Components.qj0
-    public final void c(int i7, View view) {
+    public final void b(int i7, View view) {
         switch (this.a) {
             case 0:
                 int i10 = e.W1;
@@ -30,9 +30,9 @@ public final /* synthetic */ class a implements qj0 {
                 break;
             case 3:
                 boolean z10 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof org.telegram.ui.Cells.s5) {
-                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    s5Var.y.e(s5Var);
+                if (view instanceof org.telegram.ui.Cells.r5) {
+                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+                    r5Var.y.d(r5Var);
                     break;
                 }
                 break;

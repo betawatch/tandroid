@@ -1,321 +1,93 @@
 package hi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.xe;
-import org.telegram.ui.BubbleActivity;
+import android.view.KeyEvent;
+import android.view.TextureView;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.tr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class k0 extends View {
-    public final Paint a;
-    public final Path b;
-    public final RectF c;
-    public final Matrix d;
-    public final Matrix e;
-    public final Matrix f;
-    public final Matrix h;
-    public final Matrix n;
-    public final Matrix r;
-    public final /* synthetic */ l0 s;
+public final /* synthetic */ class k0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(l0 l0Var, Context context) {
-        super(context);
-        this.s = l0Var;
-        this.a = new Paint(1);
-        this.b = new Path();
-        this.c = new RectF();
-        this.d = new Matrix();
-        this.e = new Matrix();
-        this.f = new Matrix();
-        this.h = new Matrix();
-        this.n = new Matrix();
-        this.r = new Matrix();
+    public /* synthetic */ k0(Object obj, int i7, int i10, int i11, int i12) {
+        this.a = i12;
+        this.e = obj;
+        this.b = i7;
+        this.c = i10;
+        this.d = i11;
     }
 
-    private float getContainerHeight() {
-        return ((getHeight() - (!(getContext() instanceof BubbleActivity) ? org.telegram.messenger.g0.m : 0.0f)) - this.s.f.E) - org.telegram.messenger.g0.L(32.0f);
-    }
-
-    private float getContainerWidth() {
-        return getWidth() - org.telegram.messenger.g0.L(32.0f);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a0, code lost:
-    
-        if (r15 != false) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0060, code lost:
-    
-        if (r15 != false) goto L27;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Matrix matrix, boolean z10) {
-        int currentWidth;
-        int currentHeight;
-        xe xeVar;
-        l0 l0Var = this.s;
-        currentWidth = l0Var.getCurrentWidth();
-        currentHeight = l0Var.getCurrentHeight();
-        og.g gVar = l0Var.x;
-        int i7 = gVar.i;
-        if (i7 == 90 || i7 == 270) {
-            currentHeight = currentWidth;
-            currentWidth = currentHeight;
-        }
-        float f10 = 1.0f;
-        float f11 = 0.0f;
-        float f12 = ((gVar.l - 1.0f) * (z10 ? 1.0f : 0.0f)) + 1.0f;
-        float f13 = currentWidth;
-        float containerWidth = getContainerWidth() / f13;
-        float f14 = currentHeight;
-        if (containerWidth * f14 > getContainerHeight()) {
-            containerWidth = getContainerHeight() / f14;
-        }
-        boolean z11 = (l0Var.y.Q / 90) % 2 == 1;
-        matrix.preTranslate(gVar.d, gVar.e);
-        float f15 = (gVar.f / f12) * containerWidth;
-        c7 c7Var = l0Var.y;
-        if (c7Var != null && (xeVar = c7Var.m0) != null) {
-            if (z10) {
-                f10 = xeVar.c;
-            }
-            f10 = f15;
-        }
-        matrix.preScale(f10, f10);
-        float f16 = gVar.b;
-        float f17 = gVar.c;
-        if (l0Var.E && z10) {
-            xe xeVar2 = l0Var.y.m0;
-            float f18 = xeVar2 == null ? 0.0f : !z11 ? xeVar2.a : xeVar2.b;
-            float f19 = xeVar2 == null ? 0.0f : !z11 ? xeVar2.b : xeVar2.a;
-            f16 = f18;
-            f17 = f19;
-        }
-        matrix.preTranslate(f16 * f13, f17 * f14);
-        c7 c7Var2 = l0Var.y;
-        float f20 = c7Var2.Q + gVar.g + i7;
-        xe xeVar3 = c7Var2.m0;
-        if (xeVar3 != null) {
-            if (z10) {
-                f11 = xeVar3.d + xeVar3.k;
-            }
-            f11 = f20;
-        }
-        matrix.preRotate(f11);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x01df, code lost:
-    
-        if (r9.l != false) goto L56;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x01d7  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x027a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01e5  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(Canvas canvas, boolean z10) {
-        float f10;
-        float f11;
-        Canvas canvas2;
-        float f12;
-        boolean z11;
-        boolean z12;
-        l0 l0Var = this.s;
-        int[] iArr = l0Var.s;
-        int[] iArr2 = l0Var.w;
-        v5 v5Var = l0Var.a;
-        if (!z10) {
-            f10 = 255.0f;
-            f11 = 2.0f;
-            canvas2 = canvas;
-        } else {
-            if (l0Var.r >= 1.0f) {
-                return;
-            }
-            f10 = 255.0f;
-            f11 = 2.0f;
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, v5Var.getWidth(), v5Var.getHeight(), (int) (Math.min(1.0f, (1.0f - l0Var.r) * 2.0f) * 255.0f), 31);
-            canvas2.translate(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
-        }
-        canvas2.save();
-        Paint paint = this.a;
-        paint.setColor(-16777216);
-        paint.setAlpha((int) (l0Var.r * f10));
-        canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
-        if (l0Var.r < 1.0f && !z10) {
-            Path path = this.b;
-            path.rewind();
-            float width = v5Var.getWidth();
-            float height = v5Var.getHeight();
-            RectF rectF = this.c;
-            rectF.set(0.0f, 0.0f, width, height);
-            rectF.offset(iArr2[0], iArr2[1]);
-            RectF rectF2 = org.telegram.messenger.g0.P;
-            rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
-            org.telegram.messenger.g0.Z1(rectF, rectF2, l0Var.r, rectF);
-            float W1 = org.telegram.messenger.g0.W1(l0Var.r, org.telegram.messenger.g0.L(12.0f), 0);
-            path.addRoundRect(rectF, W1, W1, Path.Direction.CW);
-            canvas2.clipPath(path);
-        }
-        float f13 = l0Var.r;
-        Matrix matrix = this.f;
-        matrix.reset();
-        Matrix matrix2 = this.h;
-        matrix2.reset();
-        matrix.preTranslate(-iArr[0], -iArr[1]);
-        matrix.preTranslate(iArr2[0], iArr2[1]);
-        matrix.preScale(v5Var.getWidth() / l0Var.y.i0, v5Var.getHeight() / l0Var.y.j0);
-        matrix.preConcat(l0Var.y.n0);
-        matrix.preTranslate(v5Var.getContentWidth() / f11, v5Var.getContentHeight() / f11);
-        matrix2.preTranslate((getContainerWidth() / f11) + org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.f3.a(getContainerHeight(), org.telegram.messenger.g0.L(32.0f), f11, !(getContext() instanceof BubbleActivity) ? org.telegram.messenger.g0.m : 0.0f));
-        if (z10) {
-            float f14 = l0Var.r;
-            Matrix matrix3 = this.n;
-            Matrix matrix4 = this.d;
-            if (matrix4 == null) {
-                f12 = f11;
-            } else {
-                f12 = f11;
-                float[] fArr = org.telegram.messenger.g0.h0;
-                matrix.getValues(fArr);
-                float[] fArr2 = org.telegram.messenger.g0.i0;
-                matrix4.getValues(fArr2);
-                org.telegram.messenger.g0.a2(fArr, fArr2, f14, fArr2);
-                matrix3.setValues(fArr2);
-            }
-            matrix3.preRotate(-l0Var.y.Q);
-            Matrix matrix5 = this.r;
-            if (matrix3.invert(matrix5)) {
-                c7 c7Var = l0Var.y;
-                int i7 = c7Var.Q;
-                xe xeVar = c7Var.m0;
-                boolean z13 = ((i7 + (xeVar != null ? xeVar.k : 0)) / 90) % 2 == 1;
-                float contentWidth = v5Var.getContentWidth();
-                float contentHeight = v5Var.getContentHeight();
-                xe xeVar2 = l0Var.y.m0;
-                float f15 = xeVar2 != null ? xeVar2.e : 1.0f;
-                float f16 = xeVar2 != null ? xeVar2.f : 1.0f;
-                float f17 = ((z13 ? contentHeight : contentWidth) * f15) / f12;
-                if (!z13) {
-                    contentWidth = contentHeight;
-                }
-                float f18 = (contentWidth * f16) / f12;
-                float T1 = org.telegram.messenger.g0.T1(1.0f, 4.0f, f13);
-                canvas2.concat(matrix3);
-                canvas2.clipRect((-f17) * T1, (-f18) * T1, f17 * T1, f18 * T1);
-                canvas2.concat(matrix5);
-                z11 = true;
-                a(matrix, z11);
-                a(matrix2, false);
-                org.telegram.ui.Components.d6 d6Var = l0Var.b;
-                if (l0Var.E) {
-                    og.m mVar = l0Var.f.M;
-                    if (mVar != null) {
-                        z11 = mVar.j;
-                        z12 = z11;
-                    }
-                    z12 = false;
-                } else {
-                    xe xeVar3 = l0Var.y.m0;
-                    if (xeVar3 != null) {
-                    }
-                    z12 = false;
-                }
-                float d = d6Var.d(z12);
-                float f19 = 1.0f - (d * f12);
-                matrix2.preScale(f19, 1.0f);
-                matrix.preScale(f19, 1.0f);
-                float A = org.telegram.messenger.f3.A(1.0f, d, 4.0f * d, 0.25f);
-                matrix2.preSkew(0.0f, A);
-                matrix.preSkew(0.0f, A);
-                matrix2.preTranslate((-v5Var.getContentWidth()) / f12, (-v5Var.getContentHeight()) / f12);
-                matrix.preTranslate((-v5Var.getContentWidth()) / f12, (-v5Var.getContentHeight()) / f12);
-                float f20 = l0Var.r;
-                float[] fArr3 = org.telegram.messenger.g0.h0;
-                matrix.getValues(fArr3);
-                float[] fArr4 = org.telegram.messenger.g0.i0;
-                matrix2.getValues(fArr4);
-                org.telegram.messenger.g0.a2(fArr3, fArr4, f20, fArr4);
-                Matrix matrix6 = this.e;
-                matrix6.setValues(fArr4);
-                canvas2.concat(matrix6);
-                Paint paint2 = v5Var.R;
-                Matrix matrix7 = v5Var.a0;
-                if (v5Var.n == null) {
-                    canvas2.save();
-                    canvas2.scale(v5Var.getContentWidth() / v5Var.getWidth(), v5Var.getContentHeight() / v5Var.getHeight());
-                    canvas2.concat(v5Var.k0);
-                    v5Var.n.draw(canvas2);
-                    canvas2.restore();
-                } else if (v5Var.a != null && v5Var.d != null) {
-                    matrix7.reset();
-                    matrix7.preScale(v5Var.d.k0 / v5Var.a.getWidth(), v5Var.d.l0 / v5Var.a.getHeight());
-                    paint2.setAlpha(ls.e4);
-                    canvas2.drawBitmap(v5Var.a, matrix7, paint2);
-                }
-                canvas2.restore();
-                if (z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                m0 m0Var = (m0) ((l0) this.e).b;
+                x7 x7Var = m0Var.n;
+                if (x7Var == null) {
                     return;
                 }
-                canvas2.restore();
+                int i7 = x7Var.k0;
+                int i10 = this.b;
+                int i11 = this.c;
+                int i12 = this.d;
+                if (i7 == i10 && x7Var.l0 == i11 && x7Var.Q == i12) {
+                    return;
+                }
+                x7Var.k0 = i10;
+                x7Var.l0 = i11;
+                x7Var.Q = i12;
+                TextureView textureView = m0Var.e;
+                if (textureView != null) {
+                    textureView.requestLayout();
+                    return;
+                }
                 return;
-            }
-        } else {
-            f12 = f11;
+            case 1:
+                oi.t3 t3Var = (oi.t3) this.e;
+                KeyEvent.Callback D4 = t3Var.D4(this.b);
+                if (D4 instanceof org.telegram.ui.Cells.h9) {
+                    t3Var.v3.b0(this.c, this.d, (org.telegram.ui.Cells.h9) D4);
+                    return;
+                }
+                return;
+            case 2:
+                oi.j3 j3Var = (oi.j3) this.e;
+                oi.t3.O1(j3Var.b, this.b, this.c, this.d);
+                return;
+            default:
+                tr trVar = (tr) this.e;
+                int i13 = this.b;
+                int i14 = this.c;
+                int i15 = this.d;
+                trVar.getClass();
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        sQLitePreparedStatement = trVar.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
+                        sQLitePreparedStatement.requery();
+                        sQLitePreparedStatement.bindInteger(1, i13);
+                        sQLitePreparedStatement.bindInteger(2, i14);
+                        sQLitePreparedStatement.bindInteger(3, i15);
+                        sQLitePreparedStatement.step();
+                    } catch (Exception e10) {
+                        trVar.o(e10, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
+                }
         }
-        z11 = true;
-        a(matrix, z11);
-        a(matrix2, false);
-        org.telegram.ui.Components.d6 d6Var2 = l0Var.b;
-        if (l0Var.E) {
-        }
-        float d2 = d6Var2.d(z12);
-        float f192 = 1.0f - (d2 * f12);
-        matrix2.preScale(f192, 1.0f);
-        matrix.preScale(f192, 1.0f);
-        float A2 = org.telegram.messenger.f3.A(1.0f, d2, 4.0f * d2, 0.25f);
-        matrix2.preSkew(0.0f, A2);
-        matrix.preSkew(0.0f, A2);
-        matrix2.preTranslate((-v5Var.getContentWidth()) / f12, (-v5Var.getContentHeight()) / f12);
-        matrix.preTranslate((-v5Var.getContentWidth()) / f12, (-v5Var.getContentHeight()) / f12);
-        float f202 = l0Var.r;
-        float[] fArr32 = org.telegram.messenger.g0.h0;
-        matrix.getValues(fArr32);
-        float[] fArr42 = org.telegram.messenger.g0.i0;
-        matrix2.getValues(fArr42);
-        org.telegram.messenger.g0.a2(fArr32, fArr42, f202, fArr42);
-        Matrix matrix62 = this.e;
-        matrix62.setValues(fArr42);
-        canvas2.concat(matrix62);
-        Paint paint22 = v5Var.R;
-        Matrix matrix72 = v5Var.a0;
-        if (v5Var.n == null) {
-        }
-        canvas2.restore();
-        if (z10) {
-        }
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.s.y == null) {
-            return;
-        }
-        b(canvas, false);
     }
 }

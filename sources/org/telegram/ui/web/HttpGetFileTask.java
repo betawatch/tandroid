@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import hi.c7;
+import hi.x7;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,23 +15,23 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private y10 doneCallback;
+    private w10 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private y10 progressCallback;
+    private w10 progressCallback;
 
-    public HttpGetFileTask(y10 y10Var, y10 y10Var2) {
-        this.doneCallback = y10Var;
-        this.progressCallback = y10Var2;
+    public HttpGetFileTask(w10 w10Var, w10 w10Var2) {
+        this.doneCallback = w10Var;
+        this.progressCallback = w10Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -174,7 +174,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = c7.w(k10.t0, str2);
+                        this.file = x7.w(i10.t0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -315,12 +315,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        y10 y10Var = this.doneCallback;
-        if (y10Var != null) {
+        w10 w10Var = this.doneCallback;
+        if (w10Var != null) {
             if (this.exception == null) {
-                y10Var.a(file);
+                w10Var.a(file);
             } else {
-                y10Var.a(null);
+                w10Var.a(null);
             }
         }
     }

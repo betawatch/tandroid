@@ -1,12 +1,12 @@
 package z3;
 
-import f3.a0;
 import f3.b0;
 import f3.c0;
+import f3.d0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class j implements b0 {
+public final class j implements c0 {
     public final long a;
     public final k[] b;
     public final int c;
@@ -17,18 +17,18 @@ public final class j implements b0 {
         this.c = i7;
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final boolean d() {
         return true;
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // f3.b0
-    public final a0 f(long j3) {
+    @Override // f3.c0
+    public final b0 f(long j3) {
         long j10;
         long j11;
         long j12;
@@ -38,9 +38,9 @@ public final class j implements b0 {
         long j15 = j3;
         k[] kVarArr = this.b;
         int length = kVarArr.length;
-        c0 c0Var = c0.c;
+        d0 d0Var = d0.c;
         if (length == 0) {
-            return new a0(c0Var, c0Var);
+            return new b0(d0Var, d0Var);
         }
         int i7 = this.c;
         int i10 = -1;
@@ -53,7 +53,7 @@ public final class j implements b0 {
             long[] jArr = tVar.c;
             long[] jArr2 = tVar.f;
             if (a10 == -1) {
-                return new a0(c0Var, c0Var);
+                return new b0(d0Var, d0Var);
             }
             long j16 = jArr2[a10];
             j10 = jArr[a10];
@@ -108,11 +108,11 @@ public final class j implements b0 {
             i10 = -1;
         }
         long j19 = j12;
-        c0 c0Var2 = new c0(j15, j17);
-        return j19 == -9223372036854775807L ? new a0(c0Var2, c0Var2) : new a0(c0Var2, new c0(j19, j11));
+        d0 d0Var2 = new d0(j15, j17);
+        return j19 == -9223372036854775807L ? new b0(d0Var2, d0Var2) : new b0(d0Var2, new d0(j19, j11));
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final long h() {
         return this.a;
     }

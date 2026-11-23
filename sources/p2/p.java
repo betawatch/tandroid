@@ -5,30 +5,30 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p extends n {
-    public final md0 j;
-    public final md0 k;
+    public final i61 j;
+    public final i61 k;
     public final long l;
 
-    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, md0 md0Var, md0 md0Var2, long j15, long j16) {
+    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, i61 i61Var, i61 i61Var2, long j15, long j16) {
         super(jVar, j3, j10, j11, j13, list, j14, j15, j16);
-        this.j = md0Var;
-        this.k = md0Var2;
+        this.j = i61Var;
+        this.k = i61Var2;
         this.l = j12;
     }
 
     @Override // p2.s
     public final j a(m mVar) {
-        md0 md0Var = this.j;
-        if (md0Var == null) {
+        i61 i61Var = this.j;
+        if (i61Var == null) {
             return this.a;
         }
         u uVar = mVar.a;
-        return new j(0L, md0Var.m(uVar.j, 0L, 0L, uVar.a), -1L);
+        return new j(0L, i61Var.o(uVar.j, 0L, 0L, uVar.a), -1L);
     }
 
     @Override // p2.n
@@ -56,6 +56,6 @@ public final class p extends n {
         List list = this.f;
         long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a : (j3 - j10) * this.e;
         u uVar = kVar.a;
-        return new j(0L, this.k.m(uVar.j, j3, j11, uVar.a), -1L);
+        return new j(0L, this.k.o(uVar.j, j3, j11, uVar.a), -1L);
     }
 }

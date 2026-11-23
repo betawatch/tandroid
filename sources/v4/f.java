@@ -1,86 +1,42 @@
 package v4;
 
+import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Components.f10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class f implements Runnable {
+public final /* synthetic */ class f implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ k c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ f(k kVar, ArrayList arrayList, int i7) {
+    public /* synthetic */ f(int i7, Object obj, Object obj2) {
         this.a = i7;
-        this.c = kVar;
-        this.b = arrayList;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i7 = 0;
-                while (true) {
-                    k kVar = this.c;
-                    if (i7 >= size) {
-                        arrayList.clear();
-                        kVar.u.remove(arrayList);
-                        break;
-                    } else {
-                        Object obj = arrayList.get(i7);
-                        i7++;
-                        j jVar = (j) obj;
-                        kVar.C(jVar.a, jVar);
-                        kVar.w.add(jVar);
-                    }
-                }
-            case 1:
-                ArrayList arrayList2 = this.b;
-                int size2 = arrayList2.size();
-                int i10 = 0;
-                while (true) {
-                    k kVar2 = this.c;
-                    if (i10 >= size2) {
-                        arrayList2.clear();
-                        kVar2.v.remove(arrayList2);
-                        break;
-                    } else {
-                        Object obj2 = arrayList2.get(i10);
-                        i10++;
-                        i iVar = (i) obj2;
-                        kVar2.B(iVar);
-                        kVar2.x.add(iVar);
-                    }
-                }
+                ((l) this.b).P((f1) this.c);
+                break;
             default:
-                ArrayList arrayList3 = this.b;
-                int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
-                    i11 = Math.min(i11, ((f1) arrayList3.get(size3)).b());
-                }
-                int size4 = arrayList3.size();
-                while (true) {
-                    size4--;
-                    k kVar3 = this.c;
-                    if (size4 < 0) {
-                        arrayList3.clear();
-                        kVar3.t.remove(arrayList3);
-                        break;
-                    } else {
-                        f1 f1Var = (f1) arrayList3.get(size4);
-                        long b10 = (f1Var.b() - i11) * kVar3.D;
-                        View view = f1Var.a;
-                        ViewPropertyAnimator animate = view.animate();
-                        kVar3.y.add(f1Var);
-                        animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(kVar3.h()).setStartDelay(b10).setInterpolator(kVar3.h);
-                        animate.setUpdateListener(new c(kVar3, f1Var, 1));
-                        animate.setListener(new g(kVar3, f1Var, view, animate)).start();
-                    }
+                f10 f10Var = (f10) this.b;
+                Drawable drawable = (Drawable) this.c;
+                f10Var.getClass();
+                drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                View view = ((ug.h1) f10Var.c).w2;
+                if (!(view instanceof r1)) {
+                    view.invalidate();
+                    break;
+                } else {
+                    ((r1) view).q2();
+                    break;
                 }
         }
     }

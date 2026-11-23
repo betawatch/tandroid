@@ -1,37 +1,21 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ar0 extends org.telegram.ui.Cells.h7 {
-    public final /* synthetic */ jt0 m0;
+public final class ar0 extends FragmentContextView {
+    public final /* synthetic */ it0 Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ar0(jt0 jt0Var, Context context) {
-        super(context);
-        this.m0 = jt0Var;
+    public ar0(it0 it0Var, Context context, org.telegram.ui.ActionBar.g2 g2Var, it0 it0Var2, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, g2Var, it0Var2, false, i6Var);
+        this.Y0 = it0Var;
     }
 
-    @Override // org.telegram.ui.Cells.h7
-    public final boolean d(org.telegram.messenger.gj gjVar) {
-        long playlistTopicId;
-        jt0 jt0Var = this.m0;
-        ys0[] ys0VarArr = jt0Var.w1;
-        if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
-            boolean S = MediaController.B().S(gjVar);
-            MediaController.B().r0(S ? ys0VarArr[4].a : null, false);
-            return S;
-        }
-        if (!gjVar.I3()) {
-            return false;
-        }
-        MediaController B = MediaController.B();
-        ArrayList arrayList = ys0VarArr[4].a;
-        long j3 = jt0Var.f1;
-        playlistTopicId = jt0Var.getPlaylistTopicId();
-        return B.o0(arrayList, gjVar, j3, true, null, playlistTopicId);
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i7) {
+        it0 it0Var = this.Y0;
+        it0Var.S0.j(it0Var.T0, i7 == 0, true);
     }
 }

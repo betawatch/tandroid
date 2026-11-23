@@ -1,30 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b70 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.c b;
-    public final /* synthetic */ int c;
+public final class b70 extends ek0 {
+    public final /* synthetic */ f70 f3;
 
-    public /* synthetic */ b70(org.telegram.messenger.c cVar, int i7, int i10) {
-        this.a = i10;
-        this.b = cVar;
-        this.c = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b70(f70 f70Var, Context context) {
+        super(context, null);
+        this.f3 = f70Var;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                ConnectionsManager.getInstance(this.b.a).cancelRequest(this.c, true);
-                break;
-            default:
-                ConnectionsManager.getInstance(this.b.a).cancelRequest(this.c, true);
-                break;
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.u1) {
+            return;
         }
+        super.requestLayout();
     }
 }

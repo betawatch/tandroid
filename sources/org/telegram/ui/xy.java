@@ -1,118 +1,124 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class xy extends ez {
-    public final /* synthetic */ yy F;
+public final class xy extends rg.b {
+    public final /* synthetic */ yy d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xy(yy yyVar, Context context, int i7, int i10) {
-        super(context, null, i7, i10);
-        this.F = yyVar;
+    public xy(yy yyVar) {
+        this.d = yyVar;
     }
 
-    @Override // org.telegram.ui.ez
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        yy yyVar = this.F;
-        yyVar.d.V1.remove(tL_exportedChatlistInvite);
-        yyVar.d.h1();
-        yyVar.d.i1(true);
+    @Override // org.telegram.ui.Components.dk0
+    public final boolean D(v4.f1 f1Var) {
+        int i7 = f1Var.f;
+        return i7 == 8 || i7 == 7;
     }
 
-    @Override // org.telegram.ui.ez
-    public final void c() {
-        org.telegram.ui.Components.a70 G = org.telegram.ui.Components.a70.G(this.F.d.c, null, this);
-        final int i7 = 0;
-        G.c(R.drawable.msg_copy, org.telegram.messenger.hd.N0(2131751750, null), new Runnable(this) { // from class: org.telegram.ui.wy
-            public final /* synthetic */ xy b;
+    public final v4.i0 F() {
+        return this.d.o1.getAdapter();
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // v4.i0
+    public final int b() {
+        return this.d.a2.size();
+    }
 
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i7) {
-                    case 0:
-                        xy xyVar = this.b;
-                        String str = xyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.lc(xyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, false);
-        final int i10 = 1;
-        G.c(R.drawable.msg_qrcode, org.telegram.messenger.hd.N0(2131750455, null), new Runnable(this) { // from class: org.telegram.ui.wy
-            public final /* synthetic */ xy b;
+    @Override // v4.i0
+    public final int d(int i7) {
+        return ((bz) this.d.a2.get(i7)).a;
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // v4.i0
+    public final void f() {
+        F().f();
+    }
 
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        xy xyVar = this.b;
-                        String str = xyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.lc(xyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, false);
-        final int i11 = 2;
-        G.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131751522, null), new Runnable(this) { // from class: org.telegram.ui.wy
-            public final /* synthetic */ xy b;
+    @Override // v4.i0
+    public final void g(int i7) {
+        F().g(i7 + 1);
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // v4.i0
+    public final void j(int i7, int i10) {
+        F().j(i7 + 1, i10);
+    }
 
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        xy xyVar = this.b;
-                        String str = xyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.lc(xyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, true);
-        if (org.telegram.messenger.hd.a0) {
-            G.i = 3;
+    @Override // v4.i0
+    public final void k(int i7, int i10) {
+        F().k(i7 + 1, i10);
+    }
+
+    @Override // v4.i0
+    public final void n(int i7, int i10, Object obj) {
+        F().n(i7 + 1, i10, obj);
+    }
+
+    @Override // v4.i0
+    public final void o(int i7, int i10) {
+        F().o(i7 + 1, i10);
+    }
+
+    @Override // v4.i0
+    public final void p(int i7, int i10) {
+        F().p(i7 + 1, i10);
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        int i10;
+        int i11 = f1Var.f;
+        View view = f1Var.a;
+        ArrayList arrayList = this.d.a2;
+        bz bzVar = (bz) arrayList.get(i7);
+        int i12 = i7 + 1;
+        boolean z10 = (i12 >= arrayList.size() || (i10 = ((bz) arrayList.get(i12)).a) == 3 || i10 == 6) ? false : true;
+        if (i11 == 7) {
+            ((dz) view).e(bzVar.m, z10);
+            return;
         }
-        G.a0();
+        if (i11 == 6 || i11 == 3) {
+            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            if (i11 == 6) {
+                z8Var.setFixedSize(0);
+                z8Var.setText(bzVar.d);
+                return;
+            } else {
+                z8Var.setFixedSize(12);
+                z8Var.setText("");
+                return;
+            }
+        }
+        if (i11 != 0 && i11 == 8) {
+            uy uyVar = (uy) view;
+            uyVar.a.setText(org.telegram.messenger.gd.N0(2131751702, null));
+            if (uyVar.c != z10) {
+                uyVar.c = z10;
+                uyVar.setWillNotDraw(!z10);
+            }
+        }
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        View z8Var;
+        yy yyVar = this.d;
+        if (i7 == 8) {
+            z8Var = new uy(yyVar.getContext());
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, z8Var, null);
+        } else if (i7 == 7) {
+            z8Var = new wy(this, yyVar.getContext(), yyVar.a, yyVar.U1.a);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, z8Var, null);
+        } else if (i7 == 6 || i7 == 3) {
+            z8Var = new org.telegram.ui.Cells.z8(yyVar.getContext());
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, z8Var, null);
+        } else {
+            z8Var = new k0(yyVar, yyVar.getContext());
+        }
+        return new org.telegram.ui.Components.mj0(z8Var);
     }
 }

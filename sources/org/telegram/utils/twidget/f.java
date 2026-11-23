@@ -3,9 +3,9 @@ package org.telegram.utils.twidget;
 import android.media.AudioRecordingConfiguration;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements p4.d0, p4.c1, h2.j {
+public final /* synthetic */ class f implements p4.c0, p4.b1, h2.j {
     public final /* synthetic */ int a;
 
     public /* synthetic */ f(int i7) {
@@ -18,21 +18,21 @@ public final /* synthetic */ class f implements p4.d0, p4.c1, h2.j {
 
     @Override // h2.j
     public void accept(Object obj) {
-        p4.i1 i1Var = (p4.i1) obj;
+        p4.h1 h1Var = (p4.h1) obj;
         switch (this.a) {
             case 26:
-                i1Var.B0();
+                h1Var.C0();
                 break;
             case 27:
-                i1Var.b();
+                h1Var.b();
                 break;
             default:
-                i1Var.g0();
+                h1Var.h0();
                 break;
         }
     }
 
-    @Override // p4.d0
+    @Override // p4.c0
     public void b(p4.u uVar, int i7) {
         switch (this.a) {
             case 21:
@@ -47,17 +47,17 @@ public final /* synthetic */ class f implements p4.d0, p4.c1, h2.j {
         }
     }
 
-    @Override // p4.c1
-    public Object k(p4.e0 e0Var, p4.v vVar, int i7) {
+    @Override // p4.b1
+    public Object j(p4.d0 d0Var, p4.v vVar, int i7) {
         switch (this.a) {
             case 24:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             case 25:
-                e0Var.getClass();
+                d0Var.getClass();
                 throw new ClassCastException();
             default:
-                return e0Var.n(vVar);
+                return d0Var.n(vVar);
         }
     }
 
@@ -69,7 +69,7 @@ public final /* synthetic */ class f implements p4.d0, p4.c1, h2.j {
         this.a = 25;
     }
 
-    public /* synthetic */ f(boolean z10, p4.k1 k1Var, Bundle bundle) {
+    public /* synthetic */ f(boolean z10, p4.j1 j1Var, Bundle bundle) {
         this.a = 29;
     }
 }

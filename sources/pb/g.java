@@ -4,11 +4,10 @@ import android.content.Context;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Components.nd0;
 import r0.f1;
-import sg.h0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -35,7 +34,7 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList b10 = new h0(4, context, new c5(MlKitComponentDiscoveryService.class)).b();
+            ArrayList b10 = new s2.e(5, context, new nd0(MlKitComponentDiscoveryService.class, 21)).b();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             f1 f1Var = u9.e.B;
@@ -44,7 +43,7 @@ public final class g {
             arrayList2.add(u9.a.c(gVar2, g.class, new Class[0]));
             u9.f fVar = new u9.f(executor, arrayList, arrayList2, f1Var);
             gVar2.a = fVar;
-            fVar.g(true);
+            fVar.h(true);
             gVar = c;
         }
         return gVar;

@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r9;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.q9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.qx0;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(ai.y1 y1Var, int i7, long j3, org.telegram.ui.ActionBar.g2 g2Var, w4 w4Var) {
+    public /* synthetic */ e0(ai.s1 s1Var, int i7, long j3, org.telegram.ui.ActionBar.g2 g2Var, z4 z4Var) {
         this.a = 6;
-        this.d = y1Var;
+        this.d = s1Var;
         this.c = i7;
         this.b = j3;
         this.e = g2Var;
-        this.f = w4Var;
+        this.f = z4Var;
     }
 
     @Override // java.lang.Runnable
@@ -46,7 +46,7 @@ public final /* synthetic */ class e0 implements Runnable {
         TL_stories.StoryItem storyItem = null;
         switch (this.a) {
             case 0:
-                new c9((Context) this.d, this.c, ((r9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
+                new f9((Context) this.d, this.c, ((q9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
                 break;
             case 1:
                 c1.a aVar = (c1.a) this.d;
@@ -55,7 +55,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 String str = (String) this.f;
                 int i10 = this.c;
                 aVar.run();
-                x4.s(tL_starGiftUnique, j3 != 0 ? hd.a0(null, null, 2131749655, str, org.telegram.messenger.n5.s(i10, j3)) : hd.a0(null, null, 2131749656, str));
+                a5.s(tL_starGiftUnique, j3 != 0 ? gd.a0(null, null, 2131749655, str, org.telegram.messenger.n5.s(i10, j3)) : gd.a0(null, null, 2131749656, str));
                 break;
             case 2:
                 di.k1 k1Var = (di.k1) this.d;
@@ -64,10 +64,10 @@ public final /* synthetic */ class e0 implements Runnable {
                 int i11 = this.c;
                 long j10 = this.b;
                 k1Var.run();
-                x4.s(tL_starGiftUnique2, hd.a0(null, null, 2131749650, str2));
+                a5.s(tL_starGiftUnique2, gd.a0(null, null, 2131749650, str2));
                 String str3 = tL_starGiftUnique2.slug;
                 if (!TextUtils.isEmpty(str3)) {
-                    org.telegram.messenger.g0.h3(new o4(i11, 0, j10, str3, true), x4.a[0]);
+                    org.telegram.messenger.g0.h3(new r4(i11, 0, j10, str3, true), a5.a[0]);
                     break;
                 }
                 break;
@@ -84,15 +84,15 @@ public final /* synthetic */ class e0 implements Runnable {
                 zArr[i12] = false;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
-                    np.u1(i13).f4(starsStatus.users, false);
-                    np.u1(i13).Z3(starsStatus.chats, false);
+                    mp.u1(i13).f4(starsStatus.users, false);
+                    mp.u1(i13).Z3(starsStatus.chats, false);
                     arrayListArr[i12].addAll(starsStatus.history);
                     zArr2[i12] = !arrayListArr[i12].isEmpty() || zArr2[i12];
                     boolean[] zArr3 = d0Var.e;
                     boolean z10 = (starsStatus.flags & 1) == 0;
                     zArr3[i12] = z10;
                     d0Var.c[i12] = z10 ? null : starsStatus.next_offset;
-                    ls.f(i13).k(ls.F3, Long.valueOf(j11));
+                    ks.f(i13).k(ks.F3, Long.valueOf(j11));
                     break;
                 }
                 break;
@@ -118,8 +118,8 @@ public final /* synthetic */ class e0 implements Runnable {
                 HashSet hashSet = p6Var.t;
                 if (tLObject2 != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject2;
-                    np.u1(i16).f4(tL_stories_stories.users, false);
-                    np.u1(i16).Z3(tL_stories_stories.chats, false);
+                    mp.u1(i16).f4(tL_stories_stories.users, false);
+                    mp.u1(i16).Z3(tL_stories_stories.chats, false);
                     while (true) {
                         if (i7 < tL_stories_stories.stories.size()) {
                             if (tL_stories_stories.stories.get(i7).id == i15) {
@@ -147,20 +147,20 @@ public final /* synthetic */ class e0 implements Runnable {
                 } else {
                     storyItem.dialogId = j13;
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                    tL_updateStory.peer = np.u1(i16).B1(j13);
+                    tL_updateStory.peer = mp.u1(i16).B1(j13);
                     tL_updateStory.story = storyItem;
                     p6Var.c0(tL_updateStory);
                     break;
                 }
             case 6:
-                ai.y1 y1Var = (ai.y1) this.d;
+                ai.s1 s1Var = (ai.s1) this.d;
                 int i17 = this.c;
                 long j14 = this.b;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.e;
-                w4 w4Var = (w4) this.f;
-                y1Var.a(Boolean.TRUE);
-                lc.Y().Q(R.raw.contact_check, 36, hd.N0(2131749332, null)).j();
-                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new p9(y1Var, g2Var, i17, w4Var, 1));
+                z4 z4Var = (z4) this.f;
+                s1Var.a(Boolean.TRUE);
+                kc.Y().Q(R.raw.contact_check, 36, gd.N0(2131749332, null)).j();
+                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new p9(s1Var, g2Var, i17, z4Var, 1));
                 break;
             case 7:
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
@@ -174,12 +174,12 @@ public final /* synthetic */ class e0 implements Runnable {
                         break;
                     } else {
                         r1Var.l7[i18].q(chat);
-                        r1Var.k7[i18].i0(chat, r1Var.l7[i18], null);
+                        r1Var.k7[i18].j0(chat, r1Var.l7[i18], null);
                         break;
                     }
                 } else {
                     r1Var.l7[i18].r(user);
-                    r1Var.k7[i18].i0(user, r1Var.l7[i18], null);
+                    r1Var.k7[i18].j0(user, r1Var.l7[i18], null);
                     break;
                 }
             default:
@@ -205,18 +205,18 @@ public final /* synthetic */ class e0 implements Runnable {
                     p1Var.e();
                     break;
                 } else {
-                    org.telegram.utils.twidget.i1.a.execute(new qx0(p1Var, j16, 3));
+                    org.telegram.utils.twidget.i1.a.execute(new ox0(p1Var, j16, 3));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ e0(Context context, int i7, r9 r9Var, long j3, Runnable runnable) {
+    public /* synthetic */ e0(Context context, int i7, q9 q9Var, long j3, Runnable runnable) {
         this.a = 0;
         this.d = context;
         this.c = i7;
-        this.e = r9Var;
+        this.e = q9Var;
         this.b = j3;
         this.f = runnable;
     }

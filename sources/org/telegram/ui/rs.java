@@ -16,17 +16,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class rs extends org.telegram.ui.Components.zj0 {
     public final Context r;
     public final HashMap s = new HashMap();
     public final ArrayList w = new ArrayList();
-    public final /* synthetic */ us x;
+    public final /* synthetic */ ts x;
 
-    public rs(us usVar, Context context, ArrayList arrayList, boolean z10) {
-        Comparator qw0Var;
-        this.x = usVar;
+    public rs(ts tsVar, Context context, ArrayList arrayList, boolean z10) {
+        Comparator ow0Var;
+        this.x = tsVar;
         this.r = context;
         if (arrayList != null) {
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -73,16 +73,16 @@ public final class rs extends org.telegram.ui.Components.zj0 {
             }
         }
         if (Build.VERSION.SDK_INT >= 24) {
-            Collator collator = Collator.getInstance(org.telegram.messenger.hd.E0().y != null ? org.telegram.messenger.hd.E0().y : Locale.getDefault());
+            Collator collator = Collator.getInstance(org.telegram.messenger.gd.E0().y != null ? org.telegram.messenger.gd.E0().y : Locale.getDefault());
             Objects.requireNonNull(collator);
-            qw0Var = new di.s4(collator, 6);
+            ow0Var = new di.s4(collator, 6);
         } else {
-            qw0Var = new qw0(13);
+            ow0Var = new ow0(13);
         }
-        Collections.sort(this.w, qw0Var);
+        Collections.sort(this.w, ow0Var);
         Iterator it = this.s.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new qs(qw0Var, 0));
+            Collections.sort((ArrayList) it.next(), new qs(ow0Var, 0));
         }
     }
 
@@ -133,13 +133,13 @@ public final class rs extends org.telegram.ui.Components.zj0 {
     public final void W(int i7, int i10, v4.f1 f1Var) {
         if (f1Var.f == 0) {
             ps psVar = (ps) ((ArrayList) this.s.get(this.w.get(i7))).get(i10);
-            org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) f1Var.a;
+            org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) f1Var.a;
             String str = null;
-            CharSequence m10 = org.telegram.messenger.j6.m(us.a0(psVar), x9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
+            CharSequence m10 = org.telegram.messenger.j6.m(ts.a0(psVar), w9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
             if (this.x.h) {
                 str = "+" + psVar.c;
             }
-            x9Var.c(m10, str, false, false);
+            w9Var.c(m10, str, false, false);
         }
     }
 
@@ -166,7 +166,7 @@ public final class rs extends org.telegram.ui.Components.zj0 {
             Z = new org.telegram.ui.Cells.f3(context, null);
             Z.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(8.0f));
         } else {
-            Z = us.Z(context);
+            Z = ts.Z(context);
         }
         return new org.telegram.ui.Components.mj0(Z);
     }

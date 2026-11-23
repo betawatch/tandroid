@@ -1,76 +1,48 @@
 package hi;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x0 implements y10 {
+public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
+    public final /* synthetic */ d1 b;
 
-    public /* synthetic */ x0(b1 b1Var, int i7) {
+    public /* synthetic */ x0(d1 d1Var, int i7) {
         this.a = i7;
-        this.b = b1Var;
+        this.b = d1Var;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        File file;
-        File file2;
-        ArrayList arrayList = (ArrayList) obj;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        d1 d1Var = this.b;
+        switch (i7) {
             case 0:
-                long currentTimeMillis = System.currentTimeMillis();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    c7 a10 = ((a1) arrayList.get(i7)).a();
-                    if ((a10.v() || ((file = a10.L) != null && file.exists())) && currentTimeMillis - a10.d <= 604800000) {
-                        arrayList4.add(a10);
-                        arrayList2.add(Long.valueOf(a10.b));
-                    } else {
-                        arrayList3.add(a10);
-                    }
+                d1Var.b();
+                break;
+            case 1:
+                d1Var.e = false;
+                a1 a1Var = d1Var.s;
+                if (a1Var != null) {
+                    a1Var.a(true);
+                    d1Var.s = null;
                 }
-                b1 b1Var = this.b;
-                b1Var.c(arrayList3);
-                b1Var.f = false;
-                b1Var.e = true;
-                fi.p6 R1 = np.u1(b1Var.a).R1();
-                int size = arrayList4.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj2 = arrayList4.get(i10);
-                    i10++;
-                    fi.o6 o6Var = new fi.o6(R1, (c7) obj2);
-                    R1.d(o6Var.K, o6Var, R1.b, false);
+                c1 c1Var = d1Var.n;
+                if (c1Var != null) {
+                    c1Var.a();
                 }
-                ls.f(R1.a).k(ls.y5, new Object[0]);
+                d1Var.c = false;
+                d1Var.d();
                 break;
             default:
-                b1 b1Var2 = this.b;
-                b1Var2.getClass();
-                long currentTimeMillis2 = System.currentTimeMillis();
-                ArrayList arrayList5 = new ArrayList();
-                ArrayList arrayList6 = new ArrayList();
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    c7 a11 = ((a1) arrayList.get(i11)).a();
-                    if ((a11.v() || ((file2 = a11.L) != null && file2.exists())) && (!a11.g ? currentTimeMillis2 - a11.d <= 604800000 : currentTimeMillis2 <= a11.J)) {
-                        b1Var2.b.add(a11);
-                        arrayList5.add(Long.valueOf(a11.b));
-                    } else {
-                        arrayList6.add(a11);
-                    }
+                if (d1Var.c && d1Var.r != null) {
+                    d1Var.n.b(R.raw.error, 3500, gd.O0("VideoConvertFail"));
+                    d1Var.c = false;
+                    d1Var.d();
+                    break;
                 }
-                b1Var2.c(arrayList6);
-                b1Var2.d = false;
-                b1Var2.c = true;
-                ls.f(b1Var2.a).k(ls.B5, new Object[0]);
                 break;
         }
     }

@@ -3,9 +3,9 @@ package u8;
 import android.graphics.Point;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class m extends r6.a {
     public static final Parcelable.Creator<m> CREATOR = new o(1);
@@ -28,29 +28,29 @@ public final class m extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
+        int r10 = cc.r(parcel, 20293);
         int i10 = this.a;
-        bc.q(parcel, 2, 4);
+        cc.q(parcel, 2, 4);
         parcel.writeInt(i10);
-        bc.l(parcel, 3, this.b);
-        bc.l(parcel, 4, this.c);
+        cc.l(parcel, 3, this.b);
+        cc.l(parcel, 4, this.c);
         int i11 = this.d;
-        bc.q(parcel, 5, 4);
+        cc.q(parcel, 5, 4);
         parcel.writeInt(i11);
-        bc.o(parcel, 6, this.e, i7);
-        bc.k(parcel, 7, this.f, i7);
-        bc.k(parcel, 8, this.h, i7);
-        bc.k(parcel, 9, this.n, i7);
-        bc.k(parcel, 10, this.r, i7);
-        bc.k(parcel, 11, this.s, i7);
-        bc.k(parcel, 12, this.w, i7);
-        bc.k(parcel, 13, this.x, i7);
-        bc.k(parcel, 14, this.y, i7);
-        bc.k(parcel, 15, this.E, i7);
-        bc.c(parcel, 16, this.F);
+        cc.o(parcel, 6, this.e, i7);
+        cc.k(parcel, 7, this.f, i7);
+        cc.k(parcel, 8, this.h, i7);
+        cc.k(parcel, 9, this.n, i7);
+        cc.k(parcel, 10, this.r, i7);
+        cc.k(parcel, 11, this.s, i7);
+        cc.k(parcel, 12, this.w, i7);
+        cc.k(parcel, 13, this.x, i7);
+        cc.k(parcel, 14, this.y, i7);
+        cc.k(parcel, 15, this.E, i7);
+        cc.c(parcel, 16, this.F);
         boolean z10 = this.G;
-        bc.q(parcel, 17, 4);
+        cc.q(parcel, 17, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        bc.s(parcel, r10);
+        cc.s(parcel, r10);
     }
 }

@@ -1,7 +1,7 @@
 package b3;
 
 import a8.p0;
-import ai.h0;
+import ai.d0;
 import android.R;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,10 +19,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
-import c8.t9;
+import c8.u9;
 import com.google.android.gms.internal.play_billing.h4;
 import e2.o0;
-import f3.f0;
+import f3.g0;
 import f5.v;
 import f5.w;
 import f5.z;
@@ -39,19 +39,18 @@ import java.util.regex.Pattern;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 import m9.y;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ur;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.k9;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class j implements s9, g61, h2.d, u2.u, f0 {
+public final class j implements s9, f61, h2.d, u2.u, g0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -63,32 +62,27 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
     }
 
     @Override // org.telegram.ui.s9
-    public void J(String str) {
+    public void H(String str) {
         String c10 = vf.c.c(str);
         if (TextUtils.isEmpty(c10)) {
-            g0.g3(new ai.n(7));
+            org.telegram.messenger.g0.g3(new ai.k(7));
         } else {
-            np.u1(this.b).f2().a(c10, null, new h0((g2) this.c, 7));
+            mp.u1(this.b).f2().a(c10, null, new d0((g2) this.c, 7));
         }
     }
 
-    @Override // org.telegram.ui.s9
-    public /* synthetic */ String J0() {
-        return null;
+    @Override // h2.d
+    public y I(o0 o0Var) {
+        y I = ((h2.d) this.c).I(o0Var);
+        if (I == null) {
+            return null;
+        }
+        return u9.c(I, new org.telegram.tgnet.g(this, 21));
     }
 
     @Override // u2.u
     public boolean N1(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return codecCapabilities.isFeatureRequired(str);
-    }
-
-    @Override // h2.d
-    public y O(o0 o0Var) {
-        y O = ((h2.d) this.c).O(o0Var);
-        if (O == null) {
-            return null;
-        }
-        return t9.c(O, new org.telegram.tgnet.u(this, 19));
     }
 
     @Override // u2.u
@@ -97,6 +91,16 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
             this.c = new MediaCodecList(this.b).getCodecInfos();
         }
         return ((MediaCodecInfo[]) this.c).length;
+    }
+
+    @Override // h2.d
+    public y V(byte[] bArr) {
+        return u9.c(((h2.d) this.c).V(bArr), new org.telegram.tgnet.g(this, 21));
+    }
+
+    @Override // org.telegram.ui.s9
+    public /* synthetic */ boolean Z0(String str, k9 k9Var) {
+        return false;
     }
 
     public Object a() {
@@ -154,11 +158,6 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         jArr2[i10] = j3;
     }
 
-    @Override // org.telegram.ui.s9
-    public /* synthetic */ boolean c1(String str, k9 k9Var) {
-        return false;
-    }
-
     public void d(long[] jArr) {
         int length = this.b + jArr.length;
         long[] jArr2 = (long[]) this.c;
@@ -177,19 +176,11 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         return o4;
     }
 
-    @Override // u2.u
-    public MediaCodecInfo f(int i7) {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c)[i7];
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v1, types: [android.widget.ListAdapter] */
     /* JADX WARN: Type inference failed for: r8v3 */
     /* JADX WARN: Type inference failed for: r8v4 */
-    public g.f g() {
+    public g.f f() {
         g.b bVar = (g.b) this.c;
         g.f fVar = new g.f((ContextThemeWrapper) bVar.c, this.b);
         View view = (View) bVar.h;
@@ -257,6 +248,14 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         return fVar;
     }
 
+    @Override // u2.u
+    public MediaCodecInfo g(int i7) {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c)[i7];
+    }
+
     public rc.u h(String str) {
         Matcher matcher;
         String str2;
@@ -317,7 +316,7 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
                     ((qb.a) this.c).getClass();
                     rc.s sVar = new rc.s(z10 ? SSLSocketFactory.getDefault() : SocketFactory.getDefault(), new rc.a(str2, i10), i7, null, null);
                     sVar.d = 1;
-                    sVar.e = ls.Z3;
+                    sVar.e = ks.Z3;
                     sVar.f = true;
                     if (port >= 0) {
                         str2 = str2 + ":" + port;
@@ -394,16 +393,16 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         return i11;
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onStateChanged(boolean z10, int i7) {
-        g0.g3(new jg.q(this, this.b, i7, 3));
+        org.telegram.messenger.g0.g3(new jg.q(this, this.b, i7, 3));
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -447,7 +446,7 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
     public long s(f3.l lVar) {
         x xVar = (x) this.c;
         int i7 = 0;
-        lVar.g(xVar.a, 0, 1, false);
+        lVar.k(xVar.a, 0, 1, false);
         int i10 = xVar.a[0] & 255;
         if (i10 == 0) {
             return Long.MIN_VALUE;
@@ -459,13 +458,23 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
             i12++;
         }
         int i13 = i10 & (~i11);
-        lVar.g(xVar.a, 1, i12, false);
+        lVar.k(xVar.a, 1, i12, false);
         while (i7 < i12) {
             i7++;
             i13 = (xVar.a[i7] & 255) + (i13 << 8);
         }
         this.b = i12 + 1 + this.b;
         return i13;
+    }
+
+    @Override // u2.u
+    public boolean s0(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
+    }
+
+    @Override // u2.u
+    public boolean s2() {
+        return true;
     }
 
     public void t(Object instance) {
@@ -482,11 +491,6 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
             objArr[i11] = instance;
             this.b = i11 + 1;
         }
-    }
-
-    @Override // h2.d
-    public y t0(byte[] bArr) {
-        return t9.c(((h2.d) this.c).t0(bArr), new org.telegram.tgnet.u(this, 19));
     }
 
     public String toString() {
@@ -513,11 +517,6 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
             System.arraycopy(((ByteBuffer) this.c).array(), i7, bArr, 0, i11);
         }
         return bArr;
-    }
-
-    @Override // u2.u
-    public boolean u2() {
-        return true;
     }
 
     public String v(h4 h4Var) {
@@ -553,16 +552,16 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         }
     }
 
-    @Override // u2.u
-    public boolean x0(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
+    @Override // org.telegram.ui.s9
+    public /* synthetic */ String w0() {
+        return null;
     }
 
     public /* synthetic */ j(int i7, boolean z10, boolean z11) {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onRenderedFirstFrame() {
     }
 
@@ -636,6 +635,22 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         this.b = 20;
     }
 
+    @Override // org.telegram.ui.s9
+    public /* synthetic */ void E0(ur urVar) {
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public /* synthetic */ void onSeekFinished(m2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public /* synthetic */ void onSeekStarted(m2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
     public j(Context context) {
         this.a = 3;
         int e10 = g.f.e(context, 0);
@@ -643,32 +658,16 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         this.b = e10;
     }
 
-    @Override // org.telegram.ui.s9
-    public /* synthetic */ void S0(vr vrVar) {
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public /* synthetic */ void onSeekFinished(m2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public /* synthetic */ void onSeekStarted(m2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
     public j(boolean z10, boolean z11, boolean z12) {
         this.a = 16;
         this.b = (z10 || z11 || z12) ? 1 : 0;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public void onError(i61 i61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.f61
+    public void onError(h61 h61Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.f61
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 }

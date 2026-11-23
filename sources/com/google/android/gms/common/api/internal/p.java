@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p {
     public int a;
@@ -76,13 +76,13 @@ public final class p {
         v1Var.f = bArr;
     }
 
-    public a1 a() {
+    public z0 a() {
         q6.m.a("Must set register function", ((q) this.c) != null);
         q6.m.a("Must set unregister function", ((q) this.d) != null);
         q6.m.a("Must set holder", ((o) this.e) != null);
         m mVar = ((o) this.e).b;
         q6.m.i(mVar, "Key must not be null");
-        return new a1(new h2.w(this, (o) this.e, (n6.c[]) this.f, this.b, this.a), new a1(this, mVar));
+        return new z0(new h2.w(this, (o) this.e, (n6.c[]) this.f, this.b, this.a), new z0(this, mVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x016a  */
@@ -233,9 +233,9 @@ public final class p {
             new s(null, 0).a(Status.e);
             return;
         }
-        b9.k0 k0Var = aVar.g;
-        k0Var.getClass();
-        k0Var.d(2, new u1(cVar, k0Var.i));
+        b9.j0 j0Var = aVar.g;
+        j0Var.getClass();
+        j0Var.d(2, new u1(cVar, j0Var.i));
     }
 
     public Object c() {

@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class f4 {
     public static /* synthetic */ MediaCodec.CryptoInfo.Pattern a() {
@@ -149,9 +149,9 @@ public abstract /* synthetic */ class f4 {
         }
     }
 
-    public static void i(v9.f fVar) {
-        if ((Build.VERSION.SDK_INT <= 23 || fVar != ForkJoinPool.commonPool()) && !fVar.a.isTerminated()) {
-            fVar.shutdown();
+    public static void i(v9.g gVar) {
+        if ((Build.VERSION.SDK_INT <= 23 || gVar != ForkJoinPool.commonPool()) && !gVar.a.isTerminated()) {
+            gVar.shutdown();
             throw null;
         }
     }

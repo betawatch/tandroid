@@ -1,7 +1,7 @@
 package c1;
 
-import a8.e7;
 import a8.f7;
+import a8.g7;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import c8.cc;
-import c8.je;
-import c8.y9;
-import c8.yc;
+import c8.dc;
+import c8.ke;
+import c8.z9;
+import c8.zc;
 import di.f2;
 import f7.k;
 import f7.l;
@@ -31,7 +31,7 @@ import w0.g;
 import w0.h;
 import w0.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -71,11 +71,11 @@ public final class e extends ResultReceiver {
                     Log.w("BeginSignIn", "Returned request code " + i15 + " which  does not match what was given " + i14);
                     return;
                 }
-                if (e7.b(i7, new b1.e(i13), new c(fVar, i11), fVar.h)) {
+                if (f7.b(i7, new b1.e(i13), new c(fVar, i11), fVar.h)) {
                     return;
                 }
                 try {
-                    e7.a(fVar.h, new b1.f(i13, fVar, fVar.e(a.a.a(fVar.e).f(intent))));
+                    f7.a(fVar.h, new b1.f(i13, fVar, fVar.e(a.a.a(fVar.e).f(intent))));
                     return;
                 } catch (com.google.android.gms.common.api.f e10) {
                     r rVar = new r();
@@ -154,7 +154,7 @@ public final class e extends ResultReceiver {
                         throw null;
                     }
                 }
-                u uVar = (u) cc.a(byteArrayExtra, u.CREATOR);
+                u uVar = (u) dc.a(byteArrayExtra, u.CREATOR);
                 j.d(uVar, "deserializeFromBytes(...)");
                 LinkedHashMap linkedHashMap = d1.g.a;
                 l lVar = uVar.d;
@@ -248,7 +248,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i18 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent3 = (Intent) y9.a(resultData);
+                Intent intent3 = (Intent) z9.a(resultData);
                 int i19 = b1.d.c;
                 if (i18 != i19) {
                     Log.w("CreatePublicKey", "Returned request code " + i19 + " does not match what was given " + i18);
@@ -277,7 +277,7 @@ public final class e extends ResultReceiver {
                     a10 = h1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : yc.a(string, bundle);
+                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : zc.a(string, bundle);
                 }
                 if (a10 != null) {
                     CancellationSignal cancellationSignal10 = dVar6.h;
@@ -306,7 +306,7 @@ public final class e extends ResultReceiver {
                         if (string2 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a11 = je.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
+                        a11 = ke.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar6.h;
@@ -340,7 +340,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i22 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent4 = (Intent) y9.a(resultData);
+                Intent intent4 = (Intent) z9.a(resultData);
                 Executor executor12 = aVar2.g;
                 if (executor12 == null) {
                     j.h("executor");
@@ -348,7 +348,7 @@ public final class e extends ResultReceiver {
                 }
                 v0.g gVar5 = aVar2.f;
                 if (gVar5 != null) {
-                    f7.a(i22, i7, intent4, executor12, gVar5, aVar2.h);
+                    g7.a(i22, i7, intent4, executor12, gVar5, aVar2.h);
                     return;
                 } else {
                     j.h("callback");
@@ -372,7 +372,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i23 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent5 = (Intent) y9.a(resultData);
+                Intent intent5 = (Intent) z9.a(resultData);
                 Executor executor14 = aVar3.g;
                 if (executor14 == null) {
                     j.h("executor");
@@ -380,7 +380,7 @@ public final class e extends ResultReceiver {
                 }
                 v0.g gVar7 = aVar3.f;
                 if (gVar7 != null) {
-                    f7.a(i23, i7, intent5, executor14, gVar7, aVar3.h);
+                    g7.a(i23, i7, intent5, executor14, gVar7, aVar3.h);
                     return;
                 } else {
                     j.h("callback");
@@ -406,7 +406,7 @@ public final class e extends ResultReceiver {
                         }
                     }
                     pVar.b(dVar2);
-                    fVar2.e.c(b5.a.a(resultData));
+                    fVar2.e.c(b5.a.b(resultData));
                     fVar2.a();
                 }
                 return;

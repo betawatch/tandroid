@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ak extends nx {
+public final class ak extends mx {
     public final /* synthetic */ bn O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class ak extends nx {
         this.O = bnVar;
     }
 
-    @Override // org.telegram.ui.nx
+    @Override // org.telegram.ui.mx
     public final void h() {
         this.O.cd();
     }

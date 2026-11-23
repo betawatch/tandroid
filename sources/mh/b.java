@@ -8,12 +8,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import kg.i0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.voip.q2;
+import org.telegram.ui.Components.voip.r2;
 import te.c;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class b extends ViewGroup {
     public int a;
@@ -25,9 +25,9 @@ public abstract class b extends ViewGroup {
         this.c = new LinkedHashMap(16);
     }
 
-    public final void a(q2 q2Var) {
-        addView(q2Var);
-        this.c.put(q2Var, new a(q2Var, new i0(this, 20)));
+    public final void a(r2 r2Var) {
+        addView(r2Var);
+        this.c.put(r2Var, new a(r2Var, new i0(this, 20)));
     }
 
     public final void b(boolean z10, boolean z11) {
@@ -54,10 +54,10 @@ public abstract class b extends ViewGroup {
             i11 = 1;
         }
         if (z12) {
-            min = Math.min(g0.L(50.0f) + Math.max((int) (o10.B(50.0f, i11, measuredHeight) / (i11 + 0.333f)), 0), measuredHeight / i11);
+            min = Math.min(g0.L(50.0f) + Math.max((int) (m10.B(50.0f, i11, measuredHeight) / (i11 + 0.333f)), 0), measuredHeight / i11);
             i7 = (measuredHeight - (i11 * min)) / 2;
         } else {
-            int min2 = Math.min(g0.L(50.0f) + Math.max((int) (o10.B(50.0f, i11, measuredWidth2) / (i11 + 0.333f)), 0), measuredWidth2 / i11);
+            int min2 = Math.min(g0.L(50.0f) + Math.max((int) (m10.B(50.0f, i11, measuredWidth2) / (i11 + 0.333f)), 0), measuredWidth2 / i11);
             min = g0.L(76.0f);
             i7 = (measuredWidth2 - (i11 * min2)) / 2;
             measuredWidth2 = min2;
@@ -67,16 +67,16 @@ public abstract class b extends ViewGroup {
         while (it2.hasNext()) {
             a aVar = (a) ((Map.Entry) it2.next()).getValue();
             boolean z13 = aVar.h;
-            q2 q2Var = aVar.e;
+            r2 r2Var = aVar.e;
             c cVar2 = aVar.b;
             te.a aVar2 = aVar.c;
             c cVar3 = aVar.a;
             if (z13) {
                 if (z12) {
-                    measuredWidth = ((measuredWidth2 - q2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
+                    measuredWidth = ((measuredWidth2 - r2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
                     i10 = (min * i12) + i7;
                 } else {
-                    measuredWidth = ((measuredWidth2 - q2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i12) + i7;
+                    measuredWidth = ((measuredWidth2 - r2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i12) + i7;
                     i10 = getMeasuredHeight() - g0.L(76.0f);
                 }
                 if (z11 || !((z10 || cVar3.h) && aVar2.f)) {
@@ -96,8 +96,8 @@ public abstract class b extends ViewGroup {
         invalidate();
     }
 
-    public final void c(q2 q2Var, boolean z10, boolean z11) {
-        a aVar = (a) this.c.get(q2Var);
+    public final void c(r2 r2Var, boolean z10, boolean z11) {
+        a aVar = (a) this.c.get(r2Var);
         if (aVar == null || aVar.h == z10) {
             return;
         }

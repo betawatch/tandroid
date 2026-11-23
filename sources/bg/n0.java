@@ -2,12 +2,12 @@ package bg;
 
 import java.io.File;
 import java.util.ArrayList;
+import org.telegram.messenger.ec;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.gc;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public static void a(TLRPC.Photo photo, TLRPC.User user, boolean z10) {
@@ -50,7 +50,7 @@ public abstract class n0 {
             StringBuilder sb3 = new StringBuilder();
             sb3.append(w12.location.volume_id);
             sb3.append("_");
-            fc.D().S(n10, a8.p0.n(w12.location.local_id, "@50_50", sb3), gc.i(w10, photo));
+            ec.D().S(n10, a8.p0.n(w12.location.local_id, "@50_50", sb3), fc.i(w10, photo));
         }
         if (w13 == null || w11 == null) {
             return;
@@ -66,6 +66,6 @@ public abstract class n0 {
         StringBuilder sb5 = new StringBuilder();
         sb5.append(w13.location.volume_id);
         sb5.append("_");
-        fc.D().S(n11, a8.p0.n(w13.location.local_id, "@150_150", sb5), gc.i(w11, photo));
+        ec.D().S(n11, a8.p0.n(w13.location.local_id, "@150_150", sb5), fc.i(w11, photo));
     }
 }

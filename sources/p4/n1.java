@@ -1,167 +1,65 @@
 package p4;
 
-import a8.la;
+import a8.ma;
 import android.os.Bundle;
-import j$.util.Objects;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n1 {
-    public static final e2.b1 k;
-    public static final n1 l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public static final String q;
-    public static final String r;
-    public static final String s;
-    public static final String t;
-    public static final String u;
-    public static final String v;
-    public final e2.b1 a;
-    public final boolean b;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public final int a;
+    public final Bundle b;
     public final long c;
-    public final long d;
-    public final long e;
-    public final int f;
-    public final long g;
-    public final long h;
-    public final long i;
-    public final long j;
+    public final l1 d;
 
     static {
-        e2.b1 b1Var = new e2.b1(null, 0, null, null, 0, 0L, 0L, -1, -1);
-        k = b1Var;
-        l = new n1(b1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
         String str = h2.l0.a;
-        m = Integer.toString(0, 36);
-        n = Integer.toString(1, 36);
-        o = Integer.toString(2, 36);
-        p = Integer.toString(3, 36);
-        q = Integer.toString(4, 36);
-        r = Integer.toString(5, 36);
-        s = Integer.toString(6, 36);
-        t = Integer.toString(7, 36);
-        u = Integer.toString(8, 36);
-        v = Integer.toString(9, 36);
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
+        h = Integer.toString(3, 36);
     }
 
-    public n1(e2.b1 b1Var, boolean z10, long j3, long j10, long j11, int i7, long j12, long j13, long j14, long j15) {
-        la.f(z10 == (b1Var.h != -1));
-        this.a = b1Var;
-        this.b = z10;
-        this.c = j3;
-        this.d = j10;
-        this.e = j11;
-        this.f = i7;
-        this.g = j12;
-        this.h = j13;
-        this.i = j14;
-        this.j = j15;
+    public n1(int i7) {
+        this(i7, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
     }
 
-    public final n1 a(boolean z10, boolean z11) {
-        if (z10 && z11) {
-            return this;
-        }
-        return new n1(this.a.b(z10, z11), z10 && this.b, this.c, z10 ? this.d : -9223372036854775807L, z10 ? this.e : 0L, z10 ? this.f : 0, z10 ? this.g : 0L, z10 ? this.h : -9223372036854775807L, z10 ? this.i : -9223372036854775807L, z10 ? this.j : 0L);
-    }
-
-    public final Bundle b(int i7) {
-        Bundle bundle = new Bundle();
-        e2.b1 b1Var = this.a;
-        if (i7 < 3 || !k.a(b1Var)) {
-            bundle.putBundle(m, b1Var.c(i7));
-        }
-        boolean z10 = this.b;
-        if (z10) {
-            bundle.putBoolean(n, z10);
-        }
-        long j3 = this.c;
-        if (j3 != -9223372036854775807L) {
-            bundle.putLong(o, j3);
-        }
-        long j10 = this.d;
-        if (j10 != -9223372036854775807L) {
-            bundle.putLong(p, j10);
-        }
-        long j11 = this.e;
-        if (i7 < 3 || j11 != 0) {
-            bundle.putLong(q, j11);
-        }
-        int i10 = this.f;
-        if (i10 != 0) {
-            bundle.putInt(r, i10);
-        }
-        long j12 = this.g;
-        if (j12 != 0) {
-            bundle.putLong(s, j12);
-        }
-        long j13 = this.h;
-        if (j13 != -9223372036854775807L) {
-            bundle.putLong(t, j13);
-        }
-        long j14 = this.i;
-        if (j14 != -9223372036854775807L) {
-            bundle.putLong(u, j14);
-        }
-        long j15 = this.j;
-        if (i7 >= 3 && j15 == 0) {
-            return bundle;
-        }
-        bundle.putLong(v, j15);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && n1.class == obj.getClass()) {
-            n1 n1Var = (n1) obj;
-            if (this.c == n1Var.c && this.a.equals(n1Var.a) && this.b == n1Var.b && this.d == n1Var.d && this.e == n1Var.e && this.f == n1Var.f && this.g == n1Var.g && this.h == n1Var.h && this.i == n1Var.i && this.j == n1Var.j) {
-                return true;
+    public static n1 a(Bundle bundle) {
+        l1 l1Var;
+        int i7 = bundle.getInt(e, -1);
+        Bundle o4 = h2.l0.o(bundle.getBundle(f));
+        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
+        Bundle bundle2 = bundle.getBundle(h);
+        if (bundle2 != null) {
+            int i10 = bundle2.getInt(l1.d, 1000);
+            String string = bundle2.getString(l1.e, "");
+            Bundle o10 = h2.l0.o(bundle2.getBundle(l1.f));
+            if (o10 == null) {
+                o10 = Bundle.EMPTY;
             }
+            l1Var = new l1(string, i10, o10);
+        } else {
+            l1Var = i7 != 0 ? new l1(i7) : null;
         }
-        return false;
+        l1 l1Var2 = l1Var;
+        if (o4 == null) {
+            o4 = Bundle.EMPTY;
+        }
+        return new n1(i7, o4, j3, l1Var2);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, Boolean.valueOf(this.b));
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("SessionPositionInfo {PositionInfo {mediaItemIndex=");
-        e2.b1 b1Var = this.a;
-        sb2.append(b1Var.b);
-        sb2.append(", periodIndex=");
-        sb2.append(b1Var.e);
-        sb2.append(", positionMs=");
-        sb2.append(b1Var.f);
-        sb2.append(", contentPositionMs=");
-        sb2.append(b1Var.g);
-        sb2.append(", adGroupIndex=");
-        sb2.append(b1Var.h);
-        sb2.append(", adIndexInAdGroup=");
-        sb2.append(b1Var.i);
-        sb2.append("}, isPlayingAd=");
-        sb2.append(this.b);
-        sb2.append(", eventTimeMs=");
-        sb2.append(this.c);
-        sb2.append(", durationMs=");
-        sb2.append(this.d);
-        sb2.append(", bufferedPositionMs=");
-        sb2.append(this.e);
-        sb2.append(", bufferedPercentage=");
-        sb2.append(this.f);
-        sb2.append(", totalBufferedDurationMs=");
-        sb2.append(this.g);
-        sb2.append(", currentLiveOffsetMs=");
-        sb2.append(this.h);
-        sb2.append(", contentDurationMs=");
-        sb2.append(this.i);
-        sb2.append(", contentBufferedPositionMs=");
-        return a8.p0.r(sb2, this.j, "}");
+    public n1(int i7, Bundle bundle, long j3, l1 l1Var) {
+        ma.f(l1Var == null || i7 < 0);
+        this.a = i7;
+        this.b = new Bundle(bundle);
+        this.c = j3;
+        if (l1Var == null && i7 < 0) {
+            l1Var = new l1(i7);
+        }
+        this.d = l1Var;
     }
 }

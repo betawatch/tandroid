@@ -1,10 +1,10 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.cx;
+import org.telegram.ui.bx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n2 extends fi.e7 {
     public final /* synthetic */ u2 S;
@@ -24,23 +24,23 @@ public final class n2 extends fi.e7 {
     public final boolean d(long j3) {
         u2 u2Var = this.S;
         int i7 = u2Var.G0;
-        cx cxVar = u2Var.E4;
-        if (cxVar == null || u2Var.P0) {
+        bx bxVar = u2Var.E4;
+        if (bxVar == null || u2Var.P0) {
             return false;
         }
         if (j3 > 0) {
-            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
+            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
             if (c22 == null || c22.linked_community_id == 0) {
                 return false;
             }
-            cxVar.showDialog(new li.d0(cxVar, c22.linked_community_id));
+            bxVar.showDialog(new li.c0(bxVar, c22.linked_community_id));
             return true;
         }
-        TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
+        TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
         if (O0 == null || O0.linked_community_id == 0) {
             return false;
         }
-        cxVar.showDialog(new li.d0(cxVar, O0.linked_community_id));
+        bxVar.showDialog(new li.c0(bxVar, O0.linked_community_id));
         return true;
     }
 

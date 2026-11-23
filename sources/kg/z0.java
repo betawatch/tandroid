@@ -7,35 +7,35 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.nio.charset.StandardCharsets;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.zk;
-import org.telegram.ui.Wallet.da;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.xk;
+import org.telegram.ui.Wallet.ea;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class z0 extends EditTextBoldCursor {
     public final /* synthetic */ int M1 = 1;
-    public final g5 N1;
+    public final f5 N1;
     public int O1;
-    public final n6 P1;
+    public final m6 P1;
     public final /* synthetic */ Object Q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public z0(c1 c1Var, Activity activity) {
         super(activity);
         this.Q1 = c1Var;
-        this.N1 = new g5(this);
-        n6 n6Var = new n6(false, true, true);
-        this.P1 = n6Var;
-        n6Var.n(0.2f, 160L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(15.33f));
-        n6Var.setCallback(this);
-        n6Var.b = 5;
+        this.N1 = new f5(this);
+        m6 m6Var = new m6(false, true, true);
+        this.P1 = m6Var;
+        m6Var.n(0.2f, 160L, kr.h);
+        m6Var.w(org.telegram.messenger.g0.L(15.33f));
+        m6Var.setCallback(this);
+        m6Var.b = 5;
     }
 
     @Override // android.view.View
@@ -43,39 +43,39 @@ public final class z0 extends EditTextBoldCursor {
         switch (this.M1) {
             case 0:
                 super.dispatchDraw(canvas);
-                int a10 = this.N1.a(m6.w0(this.O1 < 0 ? m6.p7 : m6.P5, ((c1) this.Q1).getResourceProvider()), false);
-                n6 n6Var = this.P1;
-                n6Var.u(a10);
-                n6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                n6Var.draw(canvas);
+                int a10 = this.N1.a(n6.w0(this.O1 < 0 ? n6.p7 : n6.P5, ((c1) this.Q1).getResourceProvider()), false);
+                m6 m6Var = this.P1;
+                m6Var.u(a10);
+                m6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+                m6Var.draw(canvas);
                 break;
             case 1:
                 super.dispatchDraw(canvas);
-                int a11 = this.N1.a(m6.w0(this.O1 < 0 ? m6.p7 : m6.P5, (h6) this.Q1), false);
-                n6 n6Var2 = this.P1;
-                n6Var2.u(a11);
-                n6Var2.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                n6Var2.draw(canvas);
+                int a11 = this.N1.a(n6.w0(this.O1 < 0 ? n6.p7 : n6.P5, (i6) this.Q1), false);
+                m6 m6Var2 = this.P1;
+                m6Var2.u(a11);
+                m6Var2.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+                m6Var2.draw(canvas);
                 break;
             case 2:
                 super.dispatchDraw(canvas);
-                int a12 = this.N1.a(m6.w0(this.O1 <= 0 ? m6.p7 : m6.P5, ((zk) this.Q1).a), false);
-                n6 n6Var3 = this.P1;
-                n6Var3.u(a12);
+                int a12 = this.N1.a(n6.w0(this.O1 <= 0 ? n6.p7 : n6.P5, ((xk) this.Q1).a), false);
+                m6 m6Var3 = this.P1;
+                m6Var3.u(a12);
                 int L = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
                 int height = getHeight() + getScrollY();
-                n6Var3.setBounds(L - org.telegram.messenger.g0.L(48.0f), height - Math.min(org.telegram.messenger.g0.L(44.0f), getHeight()), L, height);
-                n6Var3.draw(canvas);
+                m6Var3.setBounds(L - org.telegram.messenger.g0.L(48.0f), height - Math.min(org.telegram.messenger.g0.L(44.0f), getHeight()), L, height);
+                m6Var3.draw(canvas);
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int a13 = this.N1.a(m6.w0(this.O1 <= 0 ? m6.p7 : m6.P5, ((da) this.Q1).getResourceProvider()), false);
-                n6 n6Var4 = this.P1;
-                n6Var4.u(a13);
+                int a13 = this.N1.a(n6.w0(this.O1 <= 0 ? n6.p7 : n6.P5, ((ea) this.Q1).getResourceProvider()), false);
+                m6 m6Var4 = this.P1;
+                m6Var4.u(a13);
                 int L2 = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
                 int height2 = getHeight() + getScrollY();
-                n6Var4.setBounds(L2 - org.telegram.messenger.g0.L(48.0f), height2 - Math.min(org.telegram.messenger.g0.L(44.0f), getHeight()), L2, height2);
-                n6Var4.draw(canvas);
+                m6Var4.setBounds(L2 - org.telegram.messenger.g0.L(48.0f), height2 - Math.min(org.telegram.messenger.g0.L(44.0f), getHeight()), L2, height2);
+                m6Var4.draw(canvas);
                 break;
         }
     }
@@ -92,57 +92,57 @@ public final class z0 extends EditTextBoldCursor {
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         switch (this.M1) {
             case 0:
                 super.onTextChanged(charSequence, i7, i10, i11);
-                n6 n6Var = this.P1;
-                if (n6Var != null) {
+                m6 m6Var = this.P1;
+                if (m6Var != null) {
                     this.O1 = 96 - charSequence.length();
-                    n6Var.a();
+                    m6Var.a();
                     String str = "";
                     if (this.O1 <= 12) {
                         str = "" + this.O1;
                     }
-                    n6Var.t(str, true, true);
+                    m6Var.t(str, true, true);
                     break;
                 }
                 break;
             case 1:
                 super.onTextChanged(charSequence, i7, i10, i11);
-                n6 n6Var2 = this.P1;
-                if (n6Var2 != null) {
+                m6 m6Var2 = this.P1;
+                if (m6Var2 != null) {
                     this.O1 = 32 - charSequence.length();
-                    n6Var2.a();
+                    m6Var2.a();
                     String str2 = "";
                     if (this.O1 <= 4) {
                         str2 = "" + this.O1;
                     }
-                    n6Var2.t(str2, true, true);
+                    m6Var2.t(str2, true, true);
                     break;
                 }
                 break;
             case 2:
                 super.onTextChanged(charSequence, i7, i10, i11);
-                n6 n6Var3 = this.P1;
-                if (n6Var3 != null) {
+                m6 m6Var3 = this.P1;
+                if (m6Var3 != null) {
                     this.O1 = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    n6Var3.a();
+                    m6Var3.a();
                     int i12 = this.O1;
-                    n6Var3.t(i12 <= 100 ? Integer.toString(i12) : "", isAttachedToWindow(), true);
+                    m6Var3.t(i12 <= 100 ? Integer.toString(i12) : "", isAttachedToWindow(), true);
                     invalidate();
                     break;
                 }
                 break;
             default:
                 super.onTextChanged(charSequence, i7, i10, i11);
-                n6 n6Var4 = this.P1;
-                if (n6Var4 != null) {
+                m6 m6Var4 = this.P1;
+                if (m6Var4 != null) {
                     this.O1 = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    n6Var4.a();
+                    m6Var4.a();
                     int i13 = this.O1;
-                    n6Var4.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
+                    m6Var4.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
                     invalidate();
                     break;
                 }
@@ -174,43 +174,43 @@ public final class z0 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(Context context, h6 h6Var) {
+    public z0(Context context, i6 i6Var) {
         super(context);
-        this.Q1 = h6Var;
-        this.N1 = new g5(this);
-        n6 n6Var = new n6(false, true, true);
-        this.P1 = n6Var;
-        n6Var.n(0.2f, 160L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(15.33f));
-        n6Var.setCallback(this);
-        n6Var.b = 5;
+        this.Q1 = i6Var;
+        this.N1 = new f5(this);
+        m6 m6Var = new m6(false, true, true);
+        this.P1 = m6Var;
+        m6Var.n(0.2f, 160L, kr.h);
+        m6Var.w(org.telegram.messenger.g0.L(15.33f));
+        m6Var.setCallback(this);
+        m6Var.b = 5;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(zk zkVar, Context context) {
+    public z0(xk xkVar, Context context) {
         super(context);
-        this.Q1 = zkVar;
+        this.Q1 = xkVar;
         this.O1 = 960;
-        this.N1 = new g5(this);
-        n6 n6Var = new n6(false, true, true);
-        this.P1 = n6Var;
-        n6Var.n(0.2f, 160L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(15.33f));
-        n6Var.b = 5;
-        n6Var.setCallback(this);
+        this.N1 = new f5(this);
+        m6 m6Var = new m6(false, true, true);
+        this.P1 = m6Var;
+        m6Var.n(0.2f, 160L, kr.h);
+        m6Var.w(org.telegram.messenger.g0.L(15.33f));
+        m6Var.b = 5;
+        m6Var.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(da daVar, Activity activity) {
+    public z0(ea eaVar, Activity activity) {
         super(activity);
-        this.Q1 = daVar;
+        this.Q1 = eaVar;
         this.O1 = 960;
-        this.N1 = new g5(this);
-        n6 n6Var = new n6(false, true, true);
-        this.P1 = n6Var;
-        n6Var.n(0.2f, 160L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(15.33f));
-        n6Var.b = 5;
-        n6Var.setCallback(this);
+        this.N1 = new f5(this);
+        m6 m6Var = new m6(false, true, true);
+        this.P1 = m6Var;
+        m6Var.n(0.2f, 160L, kr.h);
+        m6Var.w(org.telegram.messenger.g0.L(15.33f));
+        m6Var.b = 5;
+        m6Var.setCallback(this);
     }
 }

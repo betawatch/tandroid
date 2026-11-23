@@ -8,42 +8,42 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.au;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bu;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
+public final class e0 extends y implements org.telegram.ui.ActionBar.c6 {
     public final ArrayList E;
     public c0 F;
     public int G;
     public int H;
-    public final j6.o I;
+    public final i6.g I;
     public final int n;
-    public final h6 r;
+    public final i6 r;
     public final HorizontalScrollView s;
     public final LinearLayout w;
     public final x1 x;
     public final TextView y;
 
-    public e0(int i7, Context context, h6 h6Var) {
+    public e0(int i7, Context context, i6 i6Var) {
         super(context);
         this.E = new ArrayList();
-        this.I = new j6.o(this, 6);
+        this.I = new i6.g(this, 7);
         this.n = i7;
-        this.r = h6Var;
+        this.r = i6Var;
         f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f));
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         this.s = horizontalScrollView;
@@ -53,14 +53,14 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         this.w = linearLayout;
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
-        addView(horizontalScrollView, ma.e(-1, -1, 23));
-        x1 x1Var = new x1(R.drawable.msg_add, context, h6Var);
+        addView(horizontalScrollView, na.e(-1, -1, 23));
+        x1 x1Var = new x1(R.drawable.msg_add, context, i6Var);
         x1Var.e = 19;
         x1Var.updateColors();
         this.x = x1Var;
         final int i11 = 1;
         x1Var.setSelected(true);
-        x1Var.setContentDescription(hd.N0(2131754483, null));
+        x1Var.setContentDescription(gd.N0(2131754483, null));
         x1Var.setOnClickListener(new View.OnClickListener(this) { // from class: oi.a0
             public final /* synthetic */ e0 b;
 
@@ -79,7 +79,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                         if (c0Var != null && (aVar = e0Var.a) != null) {
                             t3 t3Var = ((l3) c0Var).a;
                             t3Var.r3(false);
-                            t3Var.p3.x(new q3(t3Var, aVar, -1), view);
+                            t3Var.p3.c(new q3(t3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -89,17 +89,17 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                         if (c0Var2 != null && (aVar2 = e0Var2.a) != null) {
                             t3 t3Var2 = ((l3) c0Var2).a;
                             t3Var2.r3(false);
-                            t3Var2.p3.x(new q3(t3Var2, aVar2, -1), view);
+                            t3Var2.p3.c(new q3(t3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(x1Var, ma.e(38, 38, 21));
+        addView(x1Var, na.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.y = textView;
-        textView.setText(hd.N0(2131745816, null));
+        textView.setText(gd.N0(2131745816, null));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
@@ -123,7 +123,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                         if (c0Var != null && (aVar = e0Var.a) != null) {
                             t3 t3Var = ((l3) c0Var).a;
                             t3Var.r3(false);
-                            t3Var.p3.x(new q3(t3Var, aVar, -1), view);
+                            t3Var.p3.c(new q3(t3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -133,21 +133,21 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                         if (c0Var2 != null && (aVar2 = e0Var2.a) != null) {
                             t3 t3Var2 = ((l3) c0Var2).a;
                             t3Var2.r3(false);
-                            t3Var2.p3.x(new q3(t3Var2, aVar2, -1), view);
+                            t3Var2.p3.c(new q3(t3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(textView, ma.e(-2, 38, 17));
-        int i12 = m6.Fi;
-        int w02 = m6.w0(i12, h6Var);
-        int w10 = m6.w(m6.w0(m6.d6, h6Var), m6.r1(0.1f, w02));
-        t6.U(textView, i12, h6Var);
-        textView.setBackground(m6.b0(w10, m6.r1(0.16f, w02), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(19.0f)));
+        addView(textView, na.e(-2, 38, 17));
+        int i12 = n6.Fi;
+        int w02 = n6.w0(i12, i6Var);
+        int w10 = n6.w(n6.w0(n6.d6, i6Var), n6.r1(0.1f, w02));
+        u6.U(textView, i12, i6Var);
+        textView.setBackground(n6.b0(w10, n6.r1(0.16f, w02), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(19.0f)));
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_add).mutate();
-        t6.x(this, mutate, i12, h6Var, PorterDuff.Mode.SRC_IN);
+        u6.x(this, mutate, i12, i6Var, PorterDuff.Mode.SRC_IN);
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(mutate, (Drawable) null, (Drawable) null, (Drawable) null);
     }
 
@@ -165,9 +165,9 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.d6));
+        hashSet.add(Integer.valueOf(n6.d6));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0029  */
@@ -199,7 +199,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                 while (i7 < size) {
                     b0 b0Var = new b0(this, getContext(), pageblockbuttonrow.buttons.get(i7), i7);
                     arrayList2.add(b0Var);
-                    linearLayout.addView(b0Var, ma.t(-2, -1, 16, i7 == 0 ? 0 : 7, 0, 0, 0));
+                    linearLayout.addView(b0Var, na.t(-2, -1, 16, i7 == 0 ? 0 : 7, 0, 0, 0));
                     i7++;
                 }
                 boolean z10 = size >= 8;
@@ -251,7 +251,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                 for (int i16 = 0; i16 < size3; i16++) {
                     b0 b0Var = (b0) arrayList.get(i16);
                     b0Var.getClass();
-                    int max3 = Math.max(org.telegram.messenger.g0.L(34.0f), b0Var.a.h());
+                    int max3 = Math.max(org.telegram.messenger.g0.L(34.0f), b0Var.a.i());
                     iArr[i16] = max3;
                     i15 += max3;
                 }
@@ -291,13 +291,13 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                         int i27 = iArr[i26];
                         b0 b0Var2 = (b0) arrayList.get(i26);
                         b0Var2.getClass();
-                        i25 += i27 - Math.max(org.telegram.messenger.g0.L(34.0f), b0Var2.a.e());
+                        i25 += i27 - Math.max(org.telegram.messenger.g0.L(34.0f), b0Var2.a.f());
                     }
                     if (i25 <= 0) {
                         for (int i28 = 0; i28 < size3; i28++) {
                             b0 b0Var3 = (b0) arrayList.get(i28);
                             b0Var3.getClass();
-                            iArr[i28] = Math.max(org.telegram.messenger.g0.L(34.0f), b0Var3.a.e());
+                            iArr[i28] = Math.max(org.telegram.messenger.g0.L(34.0f), b0Var3.a.f());
                         }
                     } else {
                         int min = Math.min(i15 - max2, i25);
@@ -307,7 +307,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                             int i31 = iArr[i29];
                             b0 b0Var4 = (b0) arrayList.get(i29);
                             b0Var4.getClass();
-                            int max4 = i31 - Math.max(org.telegram.messenger.g0.L(34.0f), b0Var4.a.e());
+                            int max4 = i31 - Math.max(org.telegram.messenger.g0.L(34.0f), b0Var4.a.f());
                             if (i29 == i14) {
                                 i12 = min - i30;
                                 i11 = min;
@@ -326,12 +326,12 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                 for (int i32 = 0; i32 < size3; i32++) {
                     b0 b0Var5 = (b0) arrayList.get(i32);
                     int i33 = iArr[i32];
-                    bu buVar = b0Var5.a;
-                    buVar.e = Math.max(org.telegram.messenger.g0.L(34.0f), i33);
+                    au auVar = b0Var5.a;
+                    auVar.e = Math.max(org.telegram.messenger.g0.L(34.0f), i33);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) b0Var5.getLayoutParams();
                     if (layoutParams2 != null) {
                         int i34 = layoutParams2.width;
-                        int i35 = buVar.e;
+                        int i35 = auVar.e;
                         if (i34 != i35) {
                             layoutParams2.width = i35;
                             b0Var5.setLayoutParams(layoutParams2);
@@ -341,10 +341,10 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
             }
         }
         if (size2 > 0) {
-            L = ((b0) arrayList.get(0)).a.c();
+            L = ((b0) arrayList.get(0)).a.d();
             L2 = org.telegram.messenger.g0.L(8.0f);
         } else {
-            L = org.telegram.messenger.g0.L(cz.W0 + 18);
+            L = org.telegram.messenger.g0.L(bz.W0 + 18);
             L2 = org.telegram.messenger.g0.L(8.0f);
         }
         int paddingBottom = getPaddingBottom() + getPaddingTop() + L2 + L;
@@ -352,14 +352,14 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         setMeasuredDimension(size, paddingBottom);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         this.x.updateColors();
-        int i7 = m6.Fi;
-        h6 h6Var = this.r;
-        int w02 = m6.w0(i7, h6Var);
-        int i10 = m6.d6;
-        int w03 = m6.w0(i10, h6Var);
+        int i7 = n6.Fi;
+        i6 i6Var = this.r;
+        int w02 = n6.w0(i7, i6Var);
+        int i10 = n6.d6;
+        int w03 = n6.w0(i10, i6Var);
         if (w02 == this.G && w03 == this.H) {
             return;
         }
@@ -367,15 +367,15 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         this.H = w03;
         TextView textView = this.y;
         Drawable background = textView.getBackground();
-        m6.H1(background, m6.w(w03, m6.r1(0.1f, w02)), false);
-        m6.H1(background, m6.r1(0.16f, w02), true);
+        n6.H1(background, n6.w(w03, n6.r1(0.1f, w02)), false);
+        n6.H1(background, n6.r1(0.16f, w02), true);
         textView.invalidate();
-        j6.o oVar = this.I;
-        removeCallbacks(oVar);
-        postDelayed(oVar, 100L);
+        i6.g gVar = this.I;
+        removeCallbacks(gVar);
+        postDelayed(gVar, 100L);
         try {
             if (getBackground() instanceof y1) {
-                ((y1) getBackground()).a(m6.w0(i10, h6Var));
+                ((y1) getBackground()).a(n6.w0(i10, i6Var));
             }
         } catch (Exception e10) {
             a8.g(e10, true);

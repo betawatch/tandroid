@@ -1,21 +1,22 @@
 package m4;
 
-import a8.la;
-import c8.o9;
-import c8.v0;
+import a8.ma;
+import c8.p9;
+import c8.w0;
 import e2.s0;
 import e2.t0;
-import f3.i0;
+import f3.j0;
 import fi.j6;
 import h2.l0;
-import h9.t1;
+import h9.i0;
+import h9.s1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
-    public i0 f;
+    public j0 f;
     public boolean i;
     public int k;
     public int l;
@@ -82,11 +83,11 @@ public final class v implements i {
                         d4.f fVar = this.b;
                         fVar.H(i20, bArr2);
                         fVar.d();
-                        int a11 = o9.a(fVar, 3, 8, 8);
+                        int a11 = p9.a(fVar, 3, 8, 8);
                         j6Var.b = a11;
                         if (a11 != -1) {
-                            la.f(Math.max(Math.max(2, 8), 32) <= 63);
-                            v0.a(v0.a(3L, 255L), 4294967296L);
+                            ma.f(Math.max(Math.max(2, 8), 32) <= 63);
+                            w0.a(w0.a(3L, 255L), 4294967296L);
                             if (fVar.b() >= 2) {
                                 long l10 = fVar.l(2);
                                 if (l10 == 3) {
@@ -118,7 +119,7 @@ public final class v implements i {
                                             throw t0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a12 = o9.a(fVar, 11, 24, 24);
+                                    int a12 = p9.a(fVar, 11, 24, 24);
                                     j6Var.d = a12;
                                     if (a12 != -1) {
                                         z10 = true;
@@ -299,7 +300,7 @@ public final class v implements i {
                                 c10 = 1;
                             }
                             fVar2.L(2);
-                            o9.c(fVar2);
+                            p9.c(fVar2);
                             int j15 = fVar2.j(5);
                             int i28 = 0;
                             int i29 = 0;
@@ -308,14 +309,14 @@ public final class v implements i {
                                 int i31 = 16;
                                 if (i28 < j15 + 1) {
                                     int j16 = fVar2.j(3);
-                                    i29 = o9.a(fVar2, 5, 8, 16) + 1 + i29;
+                                    i29 = p9.a(fVar2, 5, 8, 16) + 1 + i29;
                                     if ((j16 == 0 || j16 == 2) && fVar2.i()) {
-                                        o9.c(fVar2);
+                                        p9.c(fVar2);
                                     }
                                     i28++;
                                     i19 = i30;
                                 } else {
-                                    int a13 = o9.a(fVar2, 4, 8, 16) + 1;
+                                    int a13 = p9.a(fVar2, 4, 8, 16) + 1;
                                     fVar2.K();
                                     int i32 = 0;
                                     while (true) {
@@ -328,7 +329,7 @@ public final class v implements i {
                                                     fVar2.L(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    o9.b(fVar2);
+                                                    p9.b(fVar2);
                                                 }
                                             } else if (j17 == i30) {
                                                 fVar2.L(i18);
@@ -340,7 +341,7 @@ public final class v implements i {
                                                     fVar2.K();
                                                 }
                                                 if (c10 > 0) {
-                                                    o9.b(fVar2);
+                                                    p9.b(fVar2);
                                                     i14 = fVar2.j(2);
                                                 } else {
                                                     i14 = 0;
@@ -371,10 +372,10 @@ public final class v implements i {
                                                     fVar2.K();
                                                 }
                                             } else if (j17 == i18) {
-                                                o9.a(fVar2, 4, i17, i31);
-                                                int a14 = o9.a(fVar2, 4, i17, i31);
+                                                p9.a(fVar2, 4, i17, i31);
+                                                int a14 = p9.a(fVar2, 4, i17, i31);
                                                 if (fVar2.i()) {
-                                                    o9.a(fVar2, i17, i31, 0);
+                                                    p9.a(fVar2, i17, i31, 0);
                                                 }
                                                 fVar2.K();
                                                 if (a14 > 0) {
@@ -389,12 +390,12 @@ public final class v implements i {
                                         } else {
                                             if (fVar2.i()) {
                                                 int i34 = 8;
-                                                int a15 = o9.a(fVar2, 2, 4, 8) + 1;
+                                                int a15 = p9.a(fVar2, 2, 4, 8) + 1;
                                                 int i35 = 0;
                                                 bArr = null;
                                                 while (i35 < a15) {
-                                                    int a16 = o9.a(fVar2, 4, i34, 16);
-                                                    int a17 = o9.a(fVar2, 4, i34, 16);
+                                                    int a16 = p9.a(fVar2, 4, i34, 16);
+                                                    int a17 = p9.a(fVar2, 4, i34, 16);
                                                     if (a16 == 7) {
                                                         int j20 = fVar2.j(4) + 1;
                                                         fVar2.L(4);
@@ -423,7 +424,7 @@ public final class v implements i {
                                                     if (j3 != j10) {
                                                         this.t = j10;
                                                         String concat = j12 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(j12))) : "mhm1";
-                                                        t1 v = (bArr == null || bArr.length <= 0) ? null : h9.i0.v(l0.b, bArr);
+                                                        s1 v = (bArr == null || bArr.length <= 0) ? null : i0.v(l0.b, bArr);
                                                         e2.t tVar = new e2.t();
                                                         tVar.a = this.e;
                                                         tVar.q = s0.n("video/mp2t");

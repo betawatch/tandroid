@@ -12,10 +12,10 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.LinearLayout;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class w1 extends ViewGroup {
     public int E;
@@ -41,9 +41,9 @@ public abstract class w1 extends ViewGroup {
         this.c = 0;
         this.e = 8388659;
         int[] iArr = f.a.n;
-        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
-        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) D.c, i7);
-        TypedArray typedArray = (TypedArray) D.c;
+        h6.m E = h6.m.E(context, attributeSet, iArr, i7);
+        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) E.c, i7);
+        TypedArray typedArray = (TypedArray) E.c;
         int i10 = typedArray.getInt(1, -1);
         if (i10 >= 0) {
             setOrientation(i10);
@@ -59,10 +59,10 @@ public abstract class w1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(D.t(5));
+        setDividerDrawable(E.z(5));
         this.E = typedArray.getInt(8, 0);
         this.F = typedArray.getDimensionPixelSize(6, 0);
-        D.G();
+        E.G();
     }
 
     public final void c(Canvas canvas, int i7) {
@@ -125,7 +125,7 @@ public abstract class w1 extends ViewGroup {
             throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout points to a View that doesn't know how to get its baseline.");
         }
         int i11 = this.c;
-        if (this.d == 1 && (i7 = this.e & ls.x1) != 48) {
+        if (this.d == 1 && (i7 = this.e & ks.x1) != 48) {
             if (i7 == 16) {
                 i11 = i5.c.e(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i11);
             } else if (i7 == 80) {
@@ -286,7 +286,7 @@ public abstract class w1 extends ViewGroup {
             int paddingRight2 = (i23 - paddingLeft) - getPaddingRight();
             int virtualChildCount = getVirtualChildCount();
             int i24 = this.e;
-            int i25 = i24 & ls.x1;
+            int i25 = i24 & ks.x1;
             int i26 = 8388615 & i24;
             int paddingTop = i25 != 16 ? i25 != 80 ? getPaddingTop() : ((getPaddingTop() + i12) - i10) - this.f : i5.c.e(i12 - i10, this.f, 2, getPaddingTop());
             int i27 = 0;
@@ -323,7 +323,7 @@ public abstract class w1 extends ViewGroup {
         int virtualChildCount2 = getVirtualChildCount();
         int i31 = this.e;
         int i32 = 8388615 & i31;
-        int i33 = i31 & ls.x1;
+        int i33 = i31 & ks.x1;
         boolean z11 = this.a;
         int[] iArr = this.r;
         int[] iArr2 = this.s;
@@ -364,7 +364,7 @@ public abstract class w1 extends ViewGroup {
                             if (i19 < 0) {
                                 i19 = i33;
                             }
-                            i20 = i19 & ls.x1;
+                            i20 = i19 & ks.x1;
                             i21 = i34;
                             if (i20 != 16) {
                                 e11 = (i5.c.e(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
@@ -395,7 +395,7 @@ public abstract class w1 extends ViewGroup {
                     i19 = ((LinearLayout.LayoutParams) v1Var2).gravity;
                     if (i19 < 0) {
                     }
-                    i20 = i19 & ls.x1;
+                    i20 = i19 & ks.x1;
                     i21 = i34;
                     if (i20 != 16) {
                     }
@@ -854,7 +854,7 @@ public abstract class w1 extends ViewGroup {
                                     if (i76 < 0) {
                                         i76 = w1Var.e;
                                     }
-                                    int i77 = (((i76 & ls.x1) >> 4) & (-2)) >> 1;
+                                    int i77 = (((i76 & ks.x1) >> 4) & (-2)) >> 1;
                                     iArr2[i77] = Math.max(iArr2[i77], baseline2);
                                     iArr[i77] = Math.max(iArr[i77], measuredHeight3 - baseline2);
                                 }
@@ -1049,7 +1049,7 @@ public abstract class w1 extends ViewGroup {
                                 if (i92 < 0) {
                                     i92 = w1Var.e;
                                 }
-                                int i93 = (((i92 & ls.x1) >> 4) & (-2)) >> 1;
+                                int i93 = (((i92 & ks.x1) >> 4) & (-2)) >> 1;
                                 iArr5[i93] = Math.max(iArr5[i93], baseline);
                                 iArr6[i93] = Math.max(iArr6[i93], measuredHeight4 - baseline);
                             }
@@ -1155,7 +1155,7 @@ public abstract class w1 extends ViewGroup {
             if ((8388615 & i7) == 0) {
                 i7 |= 8388611;
             }
-            if ((i7 & ls.x1) == 0) {
+            if ((i7 & ks.x1) == 0) {
                 i7 |= 48;
             }
             this.e = i7;
@@ -1191,9 +1191,9 @@ public abstract class w1 extends ViewGroup {
     }
 
     public void setVerticalGravity(int i7) {
-        int i10 = i7 & ls.x1;
+        int i10 = i7 & ks.x1;
         int i11 = this.e;
-        if ((i11 & ls.x1) != i10) {
+        if ((i11 & ks.x1) != i10) {
             this.e = i10 | (i11 & (-113));
             requestLayout();
         }

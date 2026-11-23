@@ -7,14 +7,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.xq;
-import org.telegram.ui.Components.c81;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.wq;
 import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.rk0;
-import org.telegram.ui.qx0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d1 {
     public boolean A;
@@ -27,7 +27,7 @@ public final class d1 {
     public sa.d e;
     public p1 f;
     public n1 g;
-    public d81 h;
+    public e81 h;
     public int i;
     public int j;
     public int k;
@@ -177,9 +177,9 @@ public final class d1 {
         if (this.e != null) {
             a8.d("widget " + this.a + ": " + str);
         }
-        d81 d81Var = this.h;
-        if (d81Var != null) {
-            d81Var.a.h();
+        e81 e81Var = this.h;
+        if (e81Var != null) {
+            e81Var.a.h();
         }
     }
 
@@ -187,7 +187,7 @@ public final class d1 {
     public final void g(p1 p1Var) {
         n1 n1Var;
         k0 h;
-        d81 d81Var;
+        e81 e81Var;
         if (p1Var == this.f && (n1Var = p1Var.N) != null) {
             if (this.g == null || p1Var.B) {
                 this.g = null;
@@ -198,33 +198,33 @@ public final class d1 {
                 int max = Math.max(1, n1Var.e);
                 boolean z11 = max != this.i;
                 this.i = max;
-                d81 d81Var2 = this.h;
-                if (d81Var2 != null) {
-                    c81 c81Var = d81Var2.a;
+                e81 e81Var2 = this.h;
+                if (e81Var2 != null) {
+                    d81 d81Var = e81Var2.a;
                     if (z11) {
-                        c81Var.j();
+                        d81Var.j();
                     }
-                    c81Var.h();
+                    d81Var.h();
                 }
                 if ((z11 || objArr != false) && this.e != null && (h = n0.h(this)) != null && this.i > 0) {
                     int f10 = n0.f(this.k);
                     int max2 = Math.max(50, Math.min(600, n0.f(this.i)));
                     boolean z12 = this.l;
                     if (f10 > 0 && h.f == 0 && !h.k && n0.l(h.a()).a(f10, max2, z12)) {
-                        ur a02 = ur.a0(h.b);
-                        a02.a.c(new xq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
+                        tr a02 = tr.a0(h.b);
+                        a02.a.c(new wq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
                     }
                     rk0 rk0Var = h.u;
                     if (rk0Var != null) {
                         rk0Var.p0("frame off screen");
                     }
                 }
-                if (!e() || z11 || (d81Var = this.h) == null) {
+                if (!e() || z11 || (e81Var = this.h) == null) {
                     return;
                 }
-                c81 c81Var2 = d81Var.a;
-                c81Var2.j();
-                c81Var2.h();
+                d81 d81Var2 = e81Var.a;
+                d81Var2.j();
+                d81Var2.h();
             }
         }
     }
@@ -339,7 +339,7 @@ public final class d1 {
             long j3 = p1Var.v;
             p1Var.v = 0L;
             if (j3 != 0) {
-                i1.a.execute(new qx0(p1Var, j3, 3));
+                i1.a.execute(new ox0(p1Var, j3, 3));
             }
         }
         this.f = null;

@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout {
     public r4 a;
@@ -29,9 +29,9 @@ public final class o3 extends FrameLayout {
         i0.b bVar = i0.b.e;
         this.f = bVar;
         this.h = bVar;
-        org.telegram.tgnet.u uVar = new org.telegram.tgnet.u(this, 6);
+        org.telegram.tgnet.g gVar = new org.telegram.tgnet.g(this, 8);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(this, uVar);
+        r0.a0.i(this, gVar);
         setSystemUiVisibility(1280);
     }
 

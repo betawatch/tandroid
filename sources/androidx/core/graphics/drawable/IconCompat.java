@@ -21,6 +21,7 @@ import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import d1.f;
 import f2.i;
+import g0.g;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +29,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -359,7 +360,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 }
             case 6:
                 if (i7 >= 30) {
-                    createWithBitmap = g0.f.d(j());
+                    createWithBitmap = g.d(j());
                     break;
                 } else {
                     if (context == null) {

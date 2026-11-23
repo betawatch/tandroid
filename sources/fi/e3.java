@@ -1,9 +1,9 @@
 package fi;
 
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class e3 implements Runnable {
                     }
                     f9Var2.G.addListener(new o8(f9Var2, 0));
                     f9Var2.G.setDuration(320L);
-                    f9Var2.G.setInterpolator(nr.h);
+                    f9Var2.G.setInterpolator(kr.h);
                     f9Var2.G.start();
                     break;
                 }
@@ -54,11 +54,11 @@ public final /* synthetic */ class e3 implements Runnable {
                 c9 c9Var = f9Var4.t0;
                 ImageReceiver imageReceiver = c9Var.b;
                 if (imageReceiver != null) {
-                    imageReceiver.O0(false, true);
+                    imageReceiver.P0(false, true);
                 }
                 ImageReceiver imageReceiver2 = c9Var.c;
                 if (imageReceiver2 != null) {
-                    imageReceiver2.O0(false, true);
+                    imageReceiver2.P0(false, true);
                     break;
                 }
                 break;

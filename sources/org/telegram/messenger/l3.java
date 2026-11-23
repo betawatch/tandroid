@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,12 +18,12 @@ public final /* synthetic */ class l3 implements Runnable {
         t3 t3Var = this.b;
         switch (i7) {
             case 0:
-                ls.f(t3Var.C.a).k(ls.w2, Long.valueOf(t3Var.c), Long.valueOf(t3Var.b.id), Boolean.FALSE);
+                ks.f(t3Var.C.a).k(ks.w2, Long.valueOf(t3Var.c), Long.valueOf(t3Var.b.id), Boolean.FALSE);
                 break;
             case 1:
                 t3Var.E = false;
                 t3Var.d();
-                ls.f(t3Var.C.a).k(ls.C2, new Object[0]);
+                ks.f(t3Var.C.a).k(ks.C2, new Object[0]);
                 break;
             default:
                 t3Var.M = null;

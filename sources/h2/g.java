@@ -6,10 +6,10 @@ import e2.s0;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final byte[] a = {0, 0, 0, 1};
@@ -190,7 +190,7 @@ public abstract class g {
                             int parseInt5 = Integer.parseInt(split[3]);
                             if (parseInt3 == 0) {
                                 if (parseInt4 == 0) {
-                                    i7 = ls.g4;
+                                    i7 = ks.g4;
                                 }
                                 i7 = -1;
                             } else if (parseInt3 != 1) {
@@ -455,11 +455,11 @@ public abstract class g {
                                                     break;
                                                 default:
                                                     switch (parseInt2) {
-                                                        case ls.T /* 30 */:
+                                                        case ks.T /* 30 */:
                                                             i13 = 256;
                                                             i16 = -1;
                                                             break;
-                                                        case ls.U /* 31 */:
+                                                        case ks.U /* 31 */:
                                                             i16 = -1;
                                                             i13 = 512;
                                                             break;
@@ -487,11 +487,11 @@ public abstract class g {
                                                                             i13 = 16384;
                                                                             i16 = -1;
                                                                             break;
-                                                                        case ls.o0 /* 51 */:
+                                                                        case ks.o0 /* 51 */:
                                                                             i13 = 32768;
                                                                             i16 = -1;
                                                                             break;
-                                                                        case ls.p0 /* 52 */:
+                                                                        case ks.p0 /* 52 */:
                                                                             i13 = 65536;
                                                                             i16 = -1;
                                                                             break;
@@ -709,15 +709,15 @@ public abstract class g {
                                         i19 = 256;
                                     } else if (parseInt15 != 51) {
                                         switch (parseInt15) {
-                                            case ls.x0 /* 60 */:
+                                            case ks.x0 /* 60 */:
                                                 i20 = -1;
                                                 i19 = 2048;
                                                 break;
-                                            case ls.y0 /* 61 */:
+                                            case ks.y0 /* 61 */:
                                                 i20 = -1;
                                                 i19 = TLObject.FLAG_12;
                                                 break;
-                                            case ls.z0 /* 62 */:
+                                            case ks.z0 /* 62 */:
                                                 i19 = 8192;
                                                 break;
                                             default:

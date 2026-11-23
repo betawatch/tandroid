@@ -1,6 +1,6 @@
 package o9;
 
-import a8.j8;
+import a8.k8;
 import a8.r7;
 import ab.b0;
 import com.google.android.gms.common.api.Status;
@@ -10,7 +10,7 @@ import kotlin.jvm.internal.j;
 import u9.q;
 import zd.v0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements u9.d, r {
     public static final h b = new h(0);
@@ -24,7 +24,7 @@ public final class h implements u9.d, r {
     }
 
     @Override // u9.d
-    public Object e(r7 r7Var) {
+    public Object c(r7 r7Var) {
         switch (this.a) {
             case 0:
                 Object e10 = r7Var.e(new q(q9.a.class, Executor.class));
@@ -46,18 +46,18 @@ public final class h implements u9.d, r {
     }
 
     @Override // com.google.android.gms.common.api.internal.r
-    public Exception k(Status status) {
+    public Exception f(Status status) {
         int i7 = status.a;
         int i10 = status.a;
         String str = status.b;
         if (i7 == 8) {
             if (str == null) {
-                str = j8.a(i10);
+                str = k8.a(i10);
             }
             return new b0(str);
         }
         if (str == null) {
-            str = j8.a(i10);
+            str = k8.a(i10);
         }
         return new db.b(str);
     }

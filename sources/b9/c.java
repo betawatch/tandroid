@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import c8.ac;
+import c8.bc;
 import com.google.android.gms.wearable.ConnectionConfiguration;
 import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -19,24 +19,24 @@ public final class c implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = ac.z(parcel);
+                int z10 = bc.z(parcel);
                 String str = null;
                 ArrayList arrayList = null;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 2) {
-                        str = ac.h(parcel, readInt);
+                        str = bc.h(parcel, readInt);
                     } else if (c10 != 3) {
-                        ac.y(parcel, readInt);
+                        bc.y(parcel, readInt);
                     } else {
-                        arrayList = ac.l(parcel, readInt, m0.CREATOR);
+                        arrayList = bc.l(parcel, readInt, l0.CREATOR);
                     }
                 }
-                ac.m(parcel, z10);
+                bc.m(parcel, z10);
                 return new b(str, arrayList);
             case 1:
-                int z11 = ac.z(parcel);
+                int z11 = bc.z(parcel);
                 f fVar = null;
                 int i7 = 0;
                 int i10 = 0;
@@ -45,21 +45,21 @@ public final class c implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     char c11 = (char) readInt2;
                     if (c11 == 2) {
-                        fVar = (f) ac.g(parcel, readInt2, f.CREATOR);
+                        fVar = (f) bc.g(parcel, readInt2, f.CREATOR);
                     } else if (c11 == 3) {
-                        i7 = ac.u(parcel, readInt2);
+                        i7 = bc.u(parcel, readInt2);
                     } else if (c11 == 4) {
-                        i10 = ac.u(parcel, readInt2);
+                        i10 = bc.u(parcel, readInt2);
                     } else if (c11 != 5) {
-                        ac.y(parcel, readInt2);
+                        bc.y(parcel, readInt2);
                     } else {
-                        i11 = ac.u(parcel, readInt2);
+                        i11 = bc.u(parcel, readInt2);
                     }
                 }
-                ac.m(parcel, z11);
+                bc.m(parcel, z11);
                 return new e(fVar, i7, i10, i11);
             case 2:
-                int z12 = ac.z(parcel);
+                int z12 = bc.z(parcel);
                 String str2 = null;
                 String str3 = null;
                 String str4 = null;
@@ -67,58 +67,58 @@ public final class c implements Parcelable.Creator {
                     int readInt3 = parcel.readInt();
                     char c12 = (char) readInt3;
                     if (c12 == 2) {
-                        str2 = ac.h(parcel, readInt3);
+                        str2 = bc.h(parcel, readInt3);
                     } else if (c12 == 3) {
-                        str3 = ac.h(parcel, readInt3);
+                        str3 = bc.h(parcel, readInt3);
                     } else if (c12 != 4) {
-                        ac.y(parcel, readInt3);
+                        bc.y(parcel, readInt3);
                     } else {
-                        str4 = ac.h(parcel, readInt3);
+                        str4 = bc.h(parcel, readInt3);
                     }
                 }
-                ac.m(parcel, z12);
+                bc.m(parcel, z12);
                 return new f(str2, str3, str4);
             case 3:
-                int z13 = ac.z(parcel);
+                int z13 = bc.z(parcel);
                 int i12 = 0;
                 while (parcel.dataPosition() < z13) {
                     int readInt4 = parcel.readInt();
                     if (((char) readInt4) != 2) {
-                        ac.y(parcel, readInt4);
+                        bc.y(parcel, readInt4);
                     } else {
-                        i12 = ac.u(parcel, readInt4);
+                        i12 = bc.u(parcel, readInt4);
                     }
                 }
-                ac.m(parcel, z13);
+                bc.m(parcel, z13);
                 return new g(i12);
             case 4:
-                int z14 = ac.z(parcel);
+                int z14 = bc.z(parcel);
                 int i13 = 0;
                 while (parcel.dataPosition() < z14) {
                     int readInt5 = parcel.readInt();
                     if (((char) readInt5) != 2) {
-                        ac.y(parcel, readInt5);
+                        bc.y(parcel, readInt5);
                     } else {
-                        i13 = ac.u(parcel, readInt5);
+                        i13 = bc.u(parcel, readInt5);
                     }
                 }
-                ac.m(parcel, z14);
+                bc.m(parcel, z14);
                 return new h(i13);
             case 5:
-                int z15 = ac.z(parcel);
+                int z15 = bc.z(parcel);
                 int i14 = 0;
                 while (parcel.dataPosition() < z15) {
                     int readInt6 = parcel.readInt();
                     if (((char) readInt6) != 2) {
-                        ac.y(parcel, readInt6);
+                        bc.y(parcel, readInt6);
                     } else {
-                        i14 = ac.u(parcel, readInt6);
+                        i14 = bc.u(parcel, readInt6);
                     }
                 }
-                ac.m(parcel, z15);
+                bc.m(parcel, z15);
                 return new i(i14);
             case 6:
-                int z16 = ac.z(parcel);
+                int z16 = bc.z(parcel);
                 int i15 = 0;
                 boolean z17 = false;
                 boolean z18 = false;
@@ -128,40 +128,40 @@ public final class c implements Parcelable.Creator {
                     int readInt7 = parcel.readInt();
                     char c13 = (char) readInt7;
                     if (c13 == 1) {
-                        i15 = ac.u(parcel, readInt7);
+                        i15 = bc.u(parcel, readInt7);
                     } else if (c13 == 2) {
-                        z17 = ac.n(parcel, readInt7);
+                        z17 = bc.n(parcel, readInt7);
                     } else if (c13 == 3) {
-                        z18 = ac.n(parcel, readInt7);
+                        z18 = bc.n(parcel, readInt7);
                     } else if (c13 == 4) {
-                        z19 = ac.n(parcel, readInt7);
+                        z19 = bc.n(parcel, readInt7);
                     } else if (c13 != 5) {
-                        ac.y(parcel, readInt7);
+                        bc.y(parcel, readInt7);
                     } else {
-                        z20 = ac.n(parcel, readInt7);
+                        z20 = bc.n(parcel, readInt7);
                     }
                 }
-                ac.m(parcel, z16);
+                bc.m(parcel, z16);
                 return new j(i15, z17, z18, z19, z20);
             case 7:
-                int z21 = ac.z(parcel);
+                int z21 = bc.z(parcel);
                 String str5 = null;
                 String str6 = null;
                 while (parcel.dataPosition() < z21) {
                     int readInt8 = parcel.readInt();
                     char c14 = (char) readInt8;
                     if (c14 == 2) {
-                        str5 = ac.h(parcel, readInt8);
+                        str5 = bc.h(parcel, readInt8);
                     } else if (c14 != 3) {
-                        ac.y(parcel, readInt8);
+                        bc.y(parcel, readInt8);
                     } else {
-                        str6 = ac.h(parcel, readInt8);
+                        str6 = bc.h(parcel, readInt8);
                     }
                 }
-                ac.m(parcel, z21);
+                bc.m(parcel, z21);
                 return new DataItemAssetParcelable(str5, str6);
             case 8:
-                int z22 = ac.z(parcel);
+                int z22 = bc.z(parcel);
                 Uri uri = null;
                 Bundle bundle = null;
                 byte[] bArr = null;
@@ -169,121 +169,121 @@ public final class c implements Parcelable.Creator {
                     int readInt9 = parcel.readInt();
                     char c15 = (char) readInt9;
                     if (c15 == 2) {
-                        uri = (Uri) ac.g(parcel, readInt9, Uri.CREATOR);
+                        uri = (Uri) bc.g(parcel, readInt9, Uri.CREATOR);
                     } else if (c15 == 4) {
-                        bundle = ac.a(parcel, readInt9);
+                        bundle = bc.a(parcel, readInt9);
                     } else if (c15 != 5) {
-                        ac.y(parcel, readInt9);
+                        bc.y(parcel, readInt9);
                     } else {
-                        bArr = ac.b(parcel, readInt9);
+                        bArr = bc.b(parcel, readInt9);
                     }
                 }
-                ac.m(parcel, z22);
+                bc.m(parcel, z22);
                 return new k(uri, bundle, bArr);
             case 9:
-                int z23 = ac.z(parcel);
+                int z23 = bc.z(parcel);
                 int i16 = 0;
                 int i17 = 0;
                 while (parcel.dataPosition() < z23) {
                     int readInt10 = parcel.readInt();
                     char c16 = (char) readInt10;
                     if (c16 == 2) {
-                        i16 = ac.u(parcel, readInt10);
+                        i16 = bc.u(parcel, readInt10);
                     } else if (c16 != 3) {
-                        ac.y(parcel, readInt10);
+                        bc.y(parcel, readInt10);
                     } else {
-                        i17 = ac.u(parcel, readInt10);
+                        i17 = bc.u(parcel, readInt10);
                     }
                 }
-                ac.m(parcel, z23);
+                bc.m(parcel, z23);
                 return new l(i16, i17);
             case 10:
-                int z24 = ac.z(parcel);
+                int z24 = bc.z(parcel);
                 int i18 = 0;
                 ArrayList arrayList2 = null;
                 while (parcel.dataPosition() < z24) {
                     int readInt11 = parcel.readInt();
                     char c17 = (char) readInt11;
                     if (c17 == 2) {
-                        i18 = ac.u(parcel, readInt11);
+                        i18 = bc.u(parcel, readInt11);
                     } else if (c17 != 3) {
-                        ac.y(parcel, readInt11);
+                        bc.y(parcel, readInt11);
                     } else {
-                        arrayList2 = ac.l(parcel, readInt11, b.CREATOR);
+                        arrayList2 = bc.l(parcel, readInt11, b.CREATOR);
                     }
                 }
-                ac.m(parcel, z24);
+                bc.m(parcel, z24);
                 return new m(i18, arrayList2);
             case 11:
-                int z25 = ac.z(parcel);
+                int z25 = bc.z(parcel);
                 int i19 = 0;
                 b bVar = null;
                 while (parcel.dataPosition() < z25) {
                     int readInt12 = parcel.readInt();
                     char c18 = (char) readInt12;
                     if (c18 == 2) {
-                        i19 = ac.u(parcel, readInt12);
+                        i19 = bc.u(parcel, readInt12);
                     } else if (c18 != 3) {
-                        ac.y(parcel, readInt12);
+                        bc.y(parcel, readInt12);
                     } else {
-                        bVar = (b) ac.g(parcel, readInt12, b.CREATOR);
+                        bVar = (b) bc.g(parcel, readInt12, b.CREATOR);
                     }
                 }
-                ac.m(parcel, z25);
+                bc.m(parcel, z25);
                 return new n(i19, bVar);
             case 12:
-                int z26 = ac.z(parcel);
+                int z26 = bc.z(parcel);
                 int i20 = 0;
                 ParcelFileDescriptor parcelFileDescriptor = null;
                 while (parcel.dataPosition() < z26) {
                     int readInt13 = parcel.readInt();
                     char c19 = (char) readInt13;
                     if (c19 == 2) {
-                        i20 = ac.u(parcel, readInt13);
+                        i20 = bc.u(parcel, readInt13);
                     } else if (c19 != 3) {
-                        ac.y(parcel, readInt13);
+                        bc.y(parcel, readInt13);
                     } else {
-                        parcelFileDescriptor = (ParcelFileDescriptor) ac.g(parcel, readInt13, ParcelFileDescriptor.CREATOR);
+                        parcelFileDescriptor = (ParcelFileDescriptor) bc.g(parcel, readInt13, ParcelFileDescriptor.CREATOR);
                     }
                 }
-                ac.m(parcel, z26);
+                bc.m(parcel, z26);
                 return new o(i20, parcelFileDescriptor);
             case 13:
-                int z27 = ac.z(parcel);
+                int z27 = bc.z(parcel);
                 int i21 = 0;
                 ParcelFileDescriptor parcelFileDescriptor2 = null;
                 while (parcel.dataPosition() < z27) {
                     int readInt14 = parcel.readInt();
                     char c20 = (char) readInt14;
                     if (c20 == 2) {
-                        i21 = ac.u(parcel, readInt14);
+                        i21 = bc.u(parcel, readInt14);
                     } else if (c20 != 3) {
-                        ac.y(parcel, readInt14);
+                        bc.y(parcel, readInt14);
                     } else {
-                        parcelFileDescriptor2 = (ParcelFileDescriptor) ac.g(parcel, readInt14, ParcelFileDescriptor.CREATOR);
+                        parcelFileDescriptor2 = (ParcelFileDescriptor) bc.g(parcel, readInt14, ParcelFileDescriptor.CREATOR);
                     }
                 }
-                ac.m(parcel, z27);
+                bc.m(parcel, z27);
                 return new p(i21, parcelFileDescriptor2);
             case 14:
-                int z28 = ac.z(parcel);
+                int z28 = bc.z(parcel);
                 int i22 = 0;
                 boolean z29 = false;
                 while (parcel.dataPosition() < z28) {
                     int readInt15 = parcel.readInt();
                     char c21 = (char) readInt15;
                     if (c21 == 2) {
-                        i22 = ac.u(parcel, readInt15);
+                        i22 = bc.u(parcel, readInt15);
                     } else if (c21 != 3) {
-                        ac.y(parcel, readInt15);
+                        bc.y(parcel, readInt15);
                     } else {
-                        z29 = ac.n(parcel, readInt15);
+                        z29 = bc.n(parcel, readInt15);
                     }
                 }
-                ac.m(parcel, z28);
+                bc.m(parcel, z28);
                 return new q(i22, z29);
             case 15:
-                int z30 = ac.z(parcel);
+                int z30 = bc.z(parcel);
                 int i23 = 0;
                 boolean z31 = false;
                 boolean z32 = false;
@@ -291,189 +291,189 @@ public final class c implements Parcelable.Creator {
                     int readInt16 = parcel.readInt();
                     char c22 = (char) readInt16;
                     if (c22 == 2) {
-                        i23 = ac.u(parcel, readInt16);
+                        i23 = bc.u(parcel, readInt16);
                     } else if (c22 == 3) {
-                        z31 = ac.n(parcel, readInt16);
+                        z31 = bc.n(parcel, readInt16);
                     } else if (c22 != 4) {
-                        ac.y(parcel, readInt16);
+                        bc.y(parcel, readInt16);
                     } else {
-                        z32 = ac.n(parcel, readInt16);
+                        z32 = bc.n(parcel, readInt16);
                     }
                 }
-                ac.m(parcel, z30);
+                bc.m(parcel, z30);
                 return new r(i23, z31, z32);
             case 16:
-                int z33 = ac.z(parcel);
+                int z33 = bc.z(parcel);
                 int i24 = 0;
                 boolean z34 = false;
                 while (parcel.dataPosition() < z33) {
                     int readInt17 = parcel.readInt();
                     char c23 = (char) readInt17;
                     if (c23 == 2) {
-                        i24 = ac.u(parcel, readInt17);
+                        i24 = bc.u(parcel, readInt17);
                     } else if (c23 != 3) {
-                        ac.y(parcel, readInt17);
+                        bc.y(parcel, readInt17);
                     } else {
-                        z34 = ac.n(parcel, readInt17);
+                        z34 = bc.n(parcel, readInt17);
                     }
                 }
-                ac.m(parcel, z33);
+                bc.m(parcel, z33);
                 return new s(i24, z34);
             case 17:
-                int z35 = ac.z(parcel);
+                int z35 = bc.z(parcel);
                 int i25 = 0;
                 String str7 = null;
                 while (parcel.dataPosition() < z35) {
                     int readInt18 = parcel.readInt();
                     char c24 = (char) readInt18;
                     if (c24 == 2) {
-                        i25 = ac.u(parcel, readInt18);
+                        i25 = bc.u(parcel, readInt18);
                     } else if (c24 != 3) {
-                        ac.y(parcel, readInt18);
+                        bc.y(parcel, readInt18);
                     } else {
-                        str7 = ac.h(parcel, readInt18);
+                        str7 = bc.h(parcel, readInt18);
                     }
                 }
-                ac.m(parcel, z35);
+                bc.m(parcel, z35);
                 return new t(i25, str7);
             case 18:
-                int z36 = ac.z(parcel);
+                int z36 = bc.z(parcel);
                 int i26 = 0;
                 ConnectionConfiguration connectionConfiguration = null;
                 while (parcel.dataPosition() < z36) {
                     int readInt19 = parcel.readInt();
                     char c25 = (char) readInt19;
                     if (c25 == 2) {
-                        i26 = ac.u(parcel, readInt19);
+                        i26 = bc.u(parcel, readInt19);
                     } else if (c25 != 3) {
-                        ac.y(parcel, readInt19);
+                        bc.y(parcel, readInt19);
                     } else {
-                        connectionConfiguration = (ConnectionConfiguration) ac.g(parcel, readInt19, ConnectionConfiguration.CREATOR);
+                        connectionConfiguration = (ConnectionConfiguration) bc.g(parcel, readInt19, ConnectionConfiguration.CREATOR);
                     }
                 }
-                ac.m(parcel, z36);
+                bc.m(parcel, z36);
                 return new u(i26, connectionConfiguration);
             case 19:
-                int z37 = ac.z(parcel);
+                int z37 = bc.z(parcel);
                 int i27 = 0;
                 ConnectionConfiguration[] connectionConfigurationArr = null;
                 while (parcel.dataPosition() < z37) {
                     int readInt20 = parcel.readInt();
                     char c26 = (char) readInt20;
                     if (c26 == 2) {
-                        i27 = ac.u(parcel, readInt20);
+                        i27 = bc.u(parcel, readInt20);
                     } else if (c26 != 3) {
-                        ac.y(parcel, readInt20);
+                        bc.y(parcel, readInt20);
                     } else {
-                        connectionConfigurationArr = (ConnectionConfiguration[]) ac.k(parcel, readInt20, ConnectionConfiguration.CREATOR);
+                        connectionConfigurationArr = (ConnectionConfiguration[]) bc.k(parcel, readInt20, ConnectionConfiguration.CREATOR);
                     }
                 }
-                ac.m(parcel, z37);
+                bc.m(parcel, z37);
                 return new v(i27, connectionConfigurationArr);
             case 20:
-                int z38 = ac.z(parcel);
+                int z38 = bc.z(parcel);
                 int i28 = 0;
                 ArrayList arrayList3 = null;
                 while (parcel.dataPosition() < z38) {
                     int readInt21 = parcel.readInt();
                     char c27 = (char) readInt21;
                     if (c27 == 2) {
-                        i28 = ac.u(parcel, readInt21);
+                        i28 = bc.u(parcel, readInt21);
                     } else if (c27 != 3) {
-                        ac.y(parcel, readInt21);
+                        bc.y(parcel, readInt21);
                     } else {
-                        arrayList3 = ac.l(parcel, readInt21, m0.CREATOR);
+                        arrayList3 = bc.l(parcel, readInt21, l0.CREATOR);
                     }
                 }
-                ac.m(parcel, z38);
+                bc.m(parcel, z38);
                 return new w(i28, arrayList3);
             case 21:
-                int z39 = ac.z(parcel);
+                int z39 = bc.z(parcel);
                 int i29 = 0;
                 k kVar = null;
                 while (parcel.dataPosition() < z39) {
                     int readInt22 = parcel.readInt();
                     char c28 = (char) readInt22;
                     if (c28 == 2) {
-                        i29 = ac.u(parcel, readInt22);
+                        i29 = bc.u(parcel, readInt22);
                     } else if (c28 != 3) {
-                        ac.y(parcel, readInt22);
+                        bc.y(parcel, readInt22);
                     } else {
-                        kVar = (k) ac.g(parcel, readInt22, k.CREATOR);
+                        kVar = (k) bc.g(parcel, readInt22, k.CREATOR);
                     }
                 }
-                ac.m(parcel, z39);
+                bc.m(parcel, z39);
                 return new x(i29, kVar);
             case 22:
-                int z40 = ac.z(parcel);
+                int z40 = bc.z(parcel);
                 int i30 = 0;
                 String str8 = null;
                 while (parcel.dataPosition() < z40) {
                     int readInt23 = parcel.readInt();
                     char c29 = (char) readInt23;
                     if (c29 == 2) {
-                        i30 = ac.u(parcel, readInt23);
+                        i30 = bc.u(parcel, readInt23);
                     } else if (c29 != 3) {
-                        ac.y(parcel, readInt23);
+                        bc.y(parcel, readInt23);
                     } else {
-                        str8 = ac.h(parcel, readInt23);
+                        str8 = bc.h(parcel, readInt23);
                     }
                 }
-                ac.m(parcel, z40);
+                bc.m(parcel, z40);
                 return new y(i30, str8);
             case 23:
-                int z41 = ac.z(parcel);
+                int z41 = bc.z(parcel);
                 int i31 = 0;
                 ParcelFileDescriptor parcelFileDescriptor3 = null;
                 while (parcel.dataPosition() < z41) {
                     int readInt24 = parcel.readInt();
                     char c30 = (char) readInt24;
                     if (c30 == 2) {
-                        i31 = ac.u(parcel, readInt24);
+                        i31 = bc.u(parcel, readInt24);
                     } else if (c30 != 3) {
-                        ac.y(parcel, readInt24);
+                        bc.y(parcel, readInt24);
                     } else {
-                        parcelFileDescriptor3 = (ParcelFileDescriptor) ac.g(parcel, readInt24, ParcelFileDescriptor.CREATOR);
+                        parcelFileDescriptor3 = (ParcelFileDescriptor) bc.g(parcel, readInt24, ParcelFileDescriptor.CREATOR);
                     }
                 }
-                ac.m(parcel, z41);
+                bc.m(parcel, z41);
                 return new z(i31, parcelFileDescriptor3);
             case 24:
-                int z42 = ac.z(parcel);
+                int z42 = bc.z(parcel);
                 int i32 = 0;
-                m0 m0Var = null;
+                l0 l0Var = null;
                 while (parcel.dataPosition() < z42) {
                     int readInt25 = parcel.readInt();
                     char c31 = (char) readInt25;
                     if (c31 == 2) {
-                        i32 = ac.u(parcel, readInt25);
+                        i32 = bc.u(parcel, readInt25);
                     } else if (c31 != 3) {
-                        ac.y(parcel, readInt25);
+                        bc.y(parcel, readInt25);
                     } else {
-                        m0Var = (m0) ac.g(parcel, readInt25, m0.CREATOR);
+                        l0Var = (l0) bc.g(parcel, readInt25, l0.CREATOR);
                     }
                 }
-                ac.m(parcel, z42);
-                return new a0(i32, m0Var);
+                bc.m(parcel, z42);
+                return new a0(i32, l0Var);
             case 25:
-                int z43 = ac.z(parcel);
+                int z43 = bc.z(parcel);
                 int i33 = 0;
                 String str9 = null;
                 while (parcel.dataPosition() < z43) {
                     int readInt26 = parcel.readInt();
                     char c32 = (char) readInt26;
                     if (c32 == 2) {
-                        i33 = ac.u(parcel, readInt26);
+                        i33 = bc.u(parcel, readInt26);
                     } else if (c32 != 3) {
-                        ac.y(parcel, readInt26);
+                        bc.y(parcel, readInt26);
                     } else {
-                        str9 = ac.h(parcel, readInt26);
+                        str9 = bc.h(parcel, readInt26);
                     }
                 }
-                ac.m(parcel, z43);
+                bc.m(parcel, z43);
                 return new b0(i33, str9);
             case 26:
-                int z44 = ac.z(parcel);
+                int z44 = bc.z(parcel);
                 String str10 = null;
                 int i34 = 0;
                 int i35 = 0;
@@ -481,19 +481,19 @@ public final class c implements Parcelable.Creator {
                     int readInt27 = parcel.readInt();
                     char c33 = (char) readInt27;
                     if (c33 == 1) {
-                        str10 = ac.h(parcel, readInt27);
+                        str10 = bc.h(parcel, readInt27);
                     } else if (c33 == 2) {
-                        i34 = ac.u(parcel, readInt27);
+                        i34 = bc.u(parcel, readInt27);
                     } else if (c33 != 3) {
-                        ac.y(parcel, readInt27);
+                        bc.y(parcel, readInt27);
                     } else {
-                        i35 = ac.u(parcel, readInt27);
+                        i35 = bc.u(parcel, readInt27);
                     }
                 }
-                ac.m(parcel, z44);
-                return new b1(str10, i34, i35);
+                bc.m(parcel, z44);
+                return new a1(str10, i34, i35);
             case 27:
-                int z45 = ac.z(parcel);
+                int z45 = bc.z(parcel);
                 int i36 = 0;
                 String str11 = null;
                 byte[] bArr2 = null;
@@ -502,34 +502,34 @@ public final class c implements Parcelable.Creator {
                     int readInt28 = parcel.readInt();
                     char c34 = (char) readInt28;
                     if (c34 == 2) {
-                        i36 = ac.u(parcel, readInt28);
+                        i36 = bc.u(parcel, readInt28);
                     } else if (c34 == 3) {
-                        str11 = ac.h(parcel, readInt28);
+                        str11 = bc.h(parcel, readInt28);
                     } else if (c34 == 4) {
-                        bArr2 = ac.b(parcel, readInt28);
+                        bArr2 = bc.b(parcel, readInt28);
                     } else if (c34 != 5) {
-                        ac.y(parcel, readInt28);
+                        bc.y(parcel, readInt28);
                     } else {
-                        str12 = ac.h(parcel, readInt28);
+                        str12 = bc.h(parcel, readInt28);
                     }
                 }
-                ac.m(parcel, z45);
-                return new l0(i36, str11, str12, bArr2);
+                bc.m(parcel, z45);
+                return new k0(i36, str11, str12, bArr2);
             case 28:
-                int z46 = ac.z(parcel);
+                int z46 = bc.z(parcel);
                 int i37 = 0;
                 while (parcel.dataPosition() < z46) {
                     int readInt29 = parcel.readInt();
                     if (((char) readInt29) != 2) {
-                        ac.y(parcel, readInt29);
+                        bc.y(parcel, readInt29);
                     } else {
-                        i37 = ac.u(parcel, readInt29);
+                        i37 = bc.u(parcel, readInt29);
                     }
                 }
-                ac.m(parcel, z46);
+                bc.m(parcel, z46);
                 return new e0(i37);
             default:
-                int z47 = ac.z(parcel);
+                int z47 = bc.z(parcel);
                 String str13 = null;
                 int i38 = 0;
                 boolean z48 = false;
@@ -538,19 +538,19 @@ public final class c implements Parcelable.Creator {
                     int readInt30 = parcel.readInt();
                     char c35 = (char) readInt30;
                     if (c35 == 2) {
-                        str13 = ac.h(parcel, readInt30);
+                        str13 = bc.h(parcel, readInt30);
                     } else if (c35 == 3) {
-                        str14 = ac.h(parcel, readInt30);
+                        str14 = bc.h(parcel, readInt30);
                     } else if (c35 == 4) {
-                        i38 = ac.u(parcel, readInt30);
+                        i38 = bc.u(parcel, readInt30);
                     } else if (c35 != 5) {
-                        ac.y(parcel, readInt30);
+                        bc.y(parcel, readInt30);
                     } else {
-                        z48 = ac.n(parcel, readInt30);
+                        z48 = bc.n(parcel, readInt30);
                     }
                 }
-                ac.m(parcel, z47);
-                return new m0(i38, str13, str14, z48);
+                bc.m(parcel, z47);
+                return new l0(i38, str13, str14, z48);
         }
     }
 
@@ -610,13 +610,13 @@ public final class c implements Parcelable.Creator {
             case 25:
                 return new b0[i7];
             case 26:
-                return new b1[i7];
+                return new a1[i7];
             case 27:
-                return new l0[i7];
+                return new k0[i7];
             case 28:
                 return new e0[i7];
             default:
-                return new m0[i7];
+                return new l0[i7];
         }
     }
 }

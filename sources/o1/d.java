@@ -3,6 +3,7 @@ package o1;
 import android.content.Context;
 import android.content.SharedPreferences;
 import b7.h;
+import c8.z;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -11,7 +12,7 @@ import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import p1.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d {
     public final ka.b a;
@@ -30,7 +31,7 @@ public final class d {
         this.b = iVar;
         this.c = context;
         this.d = sharedPreferencesName;
-        this.e = b5.a.c(aVar);
+        this.e = h.b(aVar);
         this.f = keysToMigrate == e.a ? null : new LinkedHashSet(keysToMigrate);
     }
 
@@ -60,7 +61,7 @@ public final class d {
                 i7 = cVar2.d;
                 boolean z10 = true;
                 if (i7 != 0) {
-                    h.b(obj2);
+                    z.b(obj2);
                     cVar2.a = this;
                     cVar2.d = 1;
                     obj2 = this.a.invoke(obj, cVar2);
@@ -73,7 +74,7 @@ public final class d {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     dVar = cVar2.a;
-                    h.b(obj2);
+                    z.b(obj2);
                 }
                 if (((Boolean) obj2).booleanValue()) {
                     return Boolean.FALSE;

@@ -1,19 +1,19 @@
 package m4;
 
-import a8.la;
+import a8.ma;
 import e2.s0;
-import f3.i0;
+import f3.j0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final h2.x a;
-    public final f3.z b;
+    public final f3.a0 b;
     public final String c;
     public final int d;
     public final String e;
-    public i0 f;
+    public j0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -27,7 +27,7 @@ public final class u implements i {
         h2.x xVar = new h2.x(4);
         this.a = xVar;
         xVar.a[0] = -1;
-        this.b = new f3.z();
+        this.b = new f3.a0();
         this.n = -9223372036854775807L;
         this.c = str;
         this.d = i7;
@@ -71,18 +71,18 @@ public final class u implements i {
                 if (i12 >= 4) {
                     xVar2.N(0);
                     int m10 = xVar2.m();
-                    f3.z zVar = this.b;
-                    if (zVar.a(m10)) {
-                        this.m = zVar.b;
+                    f3.a0 a0Var = this.b;
+                    if (a0Var.a(m10)) {
+                        this.m = a0Var.b;
                         if (!this.j) {
-                            this.l = (zVar.f * 1000000) / zVar.c;
+                            this.l = (a0Var.f * 1000000) / a0Var.c;
                             e2.t tVar = new e2.t();
                             tVar.a = this.g;
                             tVar.q = s0.n(this.e);
-                            tVar.r = s0.n((String) zVar.g);
+                            tVar.r = s0.n((String) a0Var.g);
                             tVar.s = TLObject.FLAG_12;
-                            tVar.J = zVar.d;
-                            tVar.K = zVar.c;
+                            tVar.J = a0Var.d;
+                            tVar.K = a0Var.c;
                             tVar.d = this.c;
                             tVar.f = this.d;
                             this.f.g(new e2.u(tVar));
@@ -105,7 +105,7 @@ public final class u implements i {
                 int i13 = this.i + min2;
                 this.i = i13;
                 if (i13 >= this.m) {
-                    la.p(this.n != -9223372036854775807L);
+                    ma.p(this.n != -9223372036854775807L);
                     this.f.c(this.n, 1, this.m, 0, null);
                     this.n += this.l;
                     this.i = 0;

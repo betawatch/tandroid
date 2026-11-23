@@ -17,7 +17,7 @@ import x4.b;
 import x4.c;
 import x4.d;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -63,21 +63,21 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
         }
         ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = ShortcutInfoCompatSaverImpl.getInstance(applicationContext);
         try {
-            List<g0.b> b10 = shortcutInfoCompatSaverImpl.b();
+            List<g0.c> b10 = shortcutInfoCompatSaverImpl.b();
             if (b10 == null || b10.isEmpty()) {
                 return Collections.EMPTY_LIST;
             }
             ArrayList arrayList3 = new ArrayList();
-            for (g0.b bVar : b10) {
+            for (g0.c cVar2 : b10) {
                 int size2 = arrayList2.size();
                 int i11 = 0;
                 while (true) {
                     if (i11 < size2) {
                         Object obj2 = arrayList2.get(i11);
                         i11++;
-                        c cVar2 = (c) obj2;
-                        if (bVar.j.containsAll(Arrays.asList(cVar2.c))) {
-                            arrayList3.add(new a(bVar, new ComponentName(applicationContext.getPackageName(), cVar2.b)));
+                        c cVar3 = (c) obj2;
+                        if (cVar2.j.containsAll(Arrays.asList(cVar3.c))) {
+                            arrayList3.add(new a(cVar2, new ComponentName(applicationContext.getPackageName(), cVar3.b)));
                             break;
                         }
                     }
@@ -96,22 +96,22 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             while (i14 < size3) {
                 int i15 = i14 + 1;
                 a aVar = (a) arrayList3.get(i14);
-                g0.b bVar2 = aVar.a;
+                g0.c cVar4 = aVar.a;
                 try {
-                    iconCompat = shortcutInfoCompatSaverImpl.g(bVar2.b);
+                    iconCompat = shortcutInfoCompatSaverImpl.g(cVar4.b);
                 } catch (Exception e10) {
                     Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e10);
                     iconCompat = null;
                 }
                 Bundle bundle = new Bundle();
-                bundle.putString("android.intent.extra.shortcut.ID", bVar2.b);
-                int i16 = bVar2.m;
+                bundle.putString("android.intent.extra.shortcut.ID", cVar4.b);
+                int i16 = cVar4.m;
                 if (i13 != i16) {
                     f10 -= 0.01f;
                     i13 = i16;
                 }
                 float f11 = f10;
-                arrayList4.add(new ChooserTarget(bVar2.e, iconCompat != null ? iconCompat.m(null) : null, f11, aVar.b, bundle));
+                arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f11, aVar.b, bundle));
                 i14 = i15;
                 f10 = f11;
             }

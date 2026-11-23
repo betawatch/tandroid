@@ -8,20 +8,20 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Cells.z9;
-import org.telegram.ui.Components.c20;
-import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.a20;
+import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.e20;
 import org.telegram.ui.Components.g20;
-import org.telegram.ui.Components.i20;
-import org.telegram.ui.Components.k40;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.z71;
+import org.telegram.ui.Components.h40;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.w7;
+import org.telegram.ui.x7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class h1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -104,8 +104,8 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                         i1Var.m = ofFloat;
                                         i1Var.e = false;
-                                        ofFloat.addUpdateListener(new hi.j3(i1Var, 13));
-                                        i1Var.m.addListener(new ki.m3(i1Var, 10));
+                                        ofFloat.addUpdateListener(new hi.s3(i1Var, 13));
+                                        i1Var.m.addListener(new ki.n3(i1Var, 10));
                                         i1Var.m.setDuration(250L);
                                         i1Var.m.setInterpolator(i1.w);
                                         i1Var.n.d();
@@ -136,8 +136,8 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 i1Var.m = ofFloat2;
                                 i1Var.e = false;
-                                ofFloat2.addUpdateListener(new hi.j3(i1Var, 13));
-                                i1Var.m.addListener(new ki.m3(i1Var, 10));
+                                ofFloat2.addUpdateListener(new hi.s3(i1Var, 13));
+                                i1Var.m.addListener(new ki.n3(i1Var, 10));
                                 i1Var.m.setDuration(250L);
                                 i1Var.m.setInterpolator(i1.w);
                                 i1Var.n.d();
@@ -168,80 +168,80 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 1:
-                aa aaVar = (aa) ((z9) obj).b;
-                aaVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                aaVar.getTransitionParams().e();
-                aaVar.getTransitionParams().a();
-                aaVar.getTransitionParams().h = true;
-                aaVar.getTransitionParams().L1 = 0.0f;
+                z9 z9Var = (z9) ((y9) obj).b;
+                z9Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                z9Var.getTransitionParams().e();
+                z9Var.getTransitionParams().a();
+                z9Var.getTransitionParams().h = true;
+                z9Var.getTransitionParams().L1 = 0.0f;
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat3.addUpdateListener(new org.telegram.ui.Cells.r(this, 8));
-                ofFloat3.addListener(new y9(this, 0));
+                ofFloat3.addListener(new x9(this, 0));
                 ofFloat3.start();
                 break;
             case 2:
-                ((du) obj).a.n1.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((bu) obj).a.n1.getViewTreeObserver().removeOnPreDrawListener(this);
                 break;
             case 3:
-                c20 c20Var = (c20) obj;
-                g20 g20Var = c20Var.f;
-                w7 w7Var = c20Var.e;
-                w7Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                w7Var.getLocationOnScreen(c20Var.I);
-                float f12 = c20Var.s.x + c20Var.S;
-                i20 i20Var = c20Var.W;
-                float measuredWidth = ((i20Var.getMeasuredWidth() / 2.0f) + f12) - r8[0];
-                float measuredWidth2 = ((i20Var.getMeasuredWidth() / 2.0f) + (c20Var.s.y + c20Var.T)) - r8[1];
-                boolean z12 = measuredWidth2 - ((float) org.telegram.messenger.g0.L(61.0f)) > 0.0f && ((float) org.telegram.messenger.g0.L(61.0f)) + measuredWidth2 < ((float) w7Var.getMeasuredHeight());
-                if (org.telegram.messenger.g0.L(61.0f) + measuredWidth + g20Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f) && z12) {
-                    g20Var.setTranslationX(org.telegram.messenger.g0.L(61.0f) + measuredWidth);
-                    float measuredHeight = measuredWidth2 / w7Var.getMeasuredHeight();
-                    float L = org.telegram.messenger.g0.L(40.0f) / g20Var.getMeasuredHeight();
-                    g20Var.setTranslationY((int) (measuredWidth2 - (g20Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
-                    g20Var.a(measuredWidth, measuredWidth2, 0);
+                a20 a20Var = (a20) obj;
+                e20 e20Var = a20Var.f;
+                x7 x7Var = a20Var.e;
+                x7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                x7Var.getLocationOnScreen(a20Var.I);
+                float f12 = a20Var.s.x + a20Var.S;
+                g20 g20Var = a20Var.W;
+                float measuredWidth = ((g20Var.getMeasuredWidth() / 2.0f) + f12) - r8[0];
+                float measuredWidth2 = ((g20Var.getMeasuredWidth() / 2.0f) + (a20Var.s.y + a20Var.T)) - r8[1];
+                boolean z12 = measuredWidth2 - ((float) org.telegram.messenger.g0.L(61.0f)) > 0.0f && ((float) org.telegram.messenger.g0.L(61.0f)) + measuredWidth2 < ((float) x7Var.getMeasuredHeight());
+                if (org.telegram.messenger.g0.L(61.0f) + measuredWidth + e20Var.getMeasuredWidth() < x7Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f) && z12) {
+                    e20Var.setTranslationX(org.telegram.messenger.g0.L(61.0f) + measuredWidth);
+                    float measuredHeight = measuredWidth2 / x7Var.getMeasuredHeight();
+                    float L = org.telegram.messenger.g0.L(40.0f) / e20Var.getMeasuredHeight();
+                    e20Var.setTranslationY((int) (measuredWidth2 - (e20Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
+                    e20Var.a(measuredWidth, measuredWidth2, 0);
                     break;
-                } else if ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - g20Var.getMeasuredWidth() > org.telegram.messenger.g0.L(16.0f) && z12) {
-                    float L2 = org.telegram.messenger.g0.L(40.0f) / g20Var.getMeasuredHeight();
-                    float max = Math.max(L2, Math.min(measuredWidth2 / w7Var.getMeasuredHeight(), 1.0f - L2));
-                    g20Var.setTranslationX((int) ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - g20Var.getMeasuredWidth()));
-                    g20Var.setTranslationY((int) (measuredWidth2 - (g20Var.getMeasuredHeight() * max)));
-                    g20Var.a(measuredWidth, measuredWidth2, 1);
+                } else if ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - e20Var.getMeasuredWidth() > org.telegram.messenger.g0.L(16.0f) && z12) {
+                    float L2 = org.telegram.messenger.g0.L(40.0f) / e20Var.getMeasuredHeight();
+                    float max = Math.max(L2, Math.min(measuredWidth2 / x7Var.getMeasuredHeight(), 1.0f - L2));
+                    e20Var.setTranslationX((int) ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - e20Var.getMeasuredWidth()));
+                    e20Var.setTranslationY((int) (measuredWidth2 - (e20Var.getMeasuredHeight() * max)));
+                    e20Var.a(measuredWidth, measuredWidth2, 1);
                     break;
-                } else if (measuredWidth2 <= w7Var.getMeasuredHeight() * 0.3f) {
-                    float measuredWidth3 = measuredWidth / w7Var.getMeasuredWidth();
-                    float L3 = org.telegram.messenger.g0.L(40.0f) / g20Var.getMeasuredWidth();
-                    g20Var.setTranslationX((int) (measuredWidth - (g20Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
-                    g20Var.setTranslationY((int) (org.telegram.messenger.g0.L(61.0f) + measuredWidth2));
-                    g20Var.a(measuredWidth, measuredWidth2, 2);
+                } else if (measuredWidth2 <= x7Var.getMeasuredHeight() * 0.3f) {
+                    float measuredWidth3 = measuredWidth / x7Var.getMeasuredWidth();
+                    float L3 = org.telegram.messenger.g0.L(40.0f) / e20Var.getMeasuredWidth();
+                    e20Var.setTranslationX((int) (measuredWidth - (e20Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
+                    e20Var.setTranslationY((int) (org.telegram.messenger.g0.L(61.0f) + measuredWidth2));
+                    e20Var.a(measuredWidth, measuredWidth2, 2);
                     break;
                 } else {
-                    float measuredWidth4 = measuredWidth / w7Var.getMeasuredWidth();
-                    float L4 = org.telegram.messenger.g0.L(40.0f) / g20Var.getMeasuredWidth();
-                    g20Var.setTranslationX((int) (measuredWidth - (g20Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
-                    g20Var.setTranslationY((int) ((measuredWidth2 - g20Var.getMeasuredHeight()) - org.telegram.messenger.g0.L(61.0f)));
-                    g20Var.a(measuredWidth, measuredWidth2, 3);
+                    float measuredWidth4 = measuredWidth / x7Var.getMeasuredWidth();
+                    float L4 = org.telegram.messenger.g0.L(40.0f) / e20Var.getMeasuredWidth();
+                    e20Var.setTranslationX((int) (measuredWidth - (e20Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
+                    e20Var.setTranslationY((int) ((measuredWidth2 - e20Var.getMeasuredHeight()) - org.telegram.messenger.g0.L(61.0f)));
+                    e20Var.a(measuredWidth, measuredWidth2, 3);
                     break;
                 }
                 break;
             case 4:
-                ((hi.l5) obj).invalidate();
+                ((hi.w5) obj).invalidate();
                 break;
             default:
-                z71 z71Var = (z71) ((k40) obj).b;
-                z71Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = z71Var.e;
+                a81 a81Var = (a81) ((h40) obj).b;
+                a81Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = a81Var.e;
                 int i14 = 4;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    z71Var.e.setImageDrawable(null);
-                    Bitmap bitmap = z71Var.h;
+                    a81Var.e.setImageDrawable(null);
+                    Bitmap bitmap = a81Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        z71Var.h = null;
+                        a81Var.h = null;
                     }
                 }
-                org.telegram.messenger.g0.g3(new w51(this, i14));
-                z71Var.r = 0;
+                org.telegram.messenger.g0.g3(new v51(this, i14));
+                a81Var.r = 0;
                 break;
         }
         return true;

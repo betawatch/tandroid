@@ -2,11 +2,11 @@ package di;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final int a;
@@ -45,7 +45,7 @@ public final class c0 {
         this.h = true;
         TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
         int i7 = this.a;
-        getsuggestedstarrefbots.peer = np.u1(i7).l1(this.b);
+        getsuggestedstarrefbots.peer = mp.u1(i7).l1(this.b);
         getsuggestedstarrefbots.limit = 20;
         int i10 = this.g;
         getsuggestedstarrefbots.order_by_date = i10 == 3;
@@ -55,6 +55,6 @@ public final class c0 {
         } else {
             getsuggestedstarrefbots.offset = this.j;
         }
-        ConnectionsManager.getInstance(i7).sendRequest(getsuggestedstarrefbots, new ai.g1(this, 2));
+        ConnectionsManager.getInstance(i7).sendRequest(getsuggestedstarrefbots, new ai.b1(this, 2));
     }
 }

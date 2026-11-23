@@ -6,21 +6,21 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.p5;
-import org.telegram.ui.Components.y5;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.x5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class s0 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, n nVar, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;
         long j3 = document.id;
-        y5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
+        x5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
         linkedHashMap.put(Long.valueOf(j3), e10);
         arrayList.add(Long.valueOf(j3));
         SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
@@ -81,16 +81,16 @@ public abstract class s0 {
         return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    public static y5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
-        y5 y5Var;
+    public static x5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
+        x5 x5Var;
         if (document != null) {
-            y5Var = new y5(document.id, 1.0f, fontMetricsInt);
-            y5Var.document = document;
+            x5Var = new x5(document.id, 1.0f, fontMetricsInt);
+            x5Var.document = document;
         } else {
-            y5Var = new y5(l10.longValue(), 1.0f, fontMetricsInt);
+            x5Var = new x5(l10.longValue(), 1.0f, fontMetricsInt);
         }
-        y5Var.cacheType = p5.f();
-        return y5Var;
+        x5Var.cacheType = o5.f();
+        return x5Var;
     }
 
     public static void f(long j3, int i7, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
@@ -98,7 +98,7 @@ public abstract class s0 {
         if (Q == null || tL_premium_boostsStatus == null) {
             return;
         }
-        ug.k0 k0Var = new ug.k0(21, k10.t0, Q.getContext(), Q, Q.getResourceProvider());
+        ug.k0 k0Var = new ug.k0(21, i10.t0, Q.getContext(), Q, Q.getResourceProvider());
         k0Var.N2 = i7;
         k0Var.A1(tL_premium_boostsStatus, true);
         k0Var.C1(j3);

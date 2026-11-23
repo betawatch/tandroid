@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics;
 
-import a8.i8;
+import a8.j8;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
@@ -14,11 +14,11 @@ import o9.g;
 import q9.a;
 import q9.b;
 import q9.c;
-import tg.o1;
+import tg.s;
 import u9.i;
 import u9.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
@@ -51,8 +51,8 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         a10.a(new i(0, 2, x9.a.class));
         a10.a(new i(0, 2, p9.a.class));
         a10.a(new i(0, 2, fb.a.class));
-        a10.f = new o1(this, 9);
+        a10.f = new s(this, 11);
         a10.c(2);
-        return Arrays.asList(a10.b(), i8.a("fire-cls", "20.1.1"));
+        return Arrays.asList(a10.b(), j8.a("fire-cls", "20.1.1"));
     }
 }

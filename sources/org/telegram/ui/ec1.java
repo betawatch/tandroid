@@ -1,11 +1,56 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ec1 extends org.telegram.ui.Components.voip.q2 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
-        super.dispatchSetPressed(z10);
-        setPressedBtn(z10);
+public final class ec1 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.c9 b;
+    public org.telegram.ui.Components.wy0 c;
+
+    public ec1(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        org.telegram.ui.Components.c9 c9Var = new org.telegram.ui.Components.c9(this, false);
+        this.b = c9Var;
+        c9Var.p = org.telegram.messenger.g0.L(100.0f);
+        c9Var.o = org.telegram.messenger.g0.L(30.0f);
+        c9Var.x = false;
+        c9Var.s = org.telegram.messenger.g0.L(24.0f);
+        c9Var.h(org.telegram.messenger.g0.L(18.0f));
+        c9Var.t = 0.58f;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            return;
+        }
+        float L = org.telegram.messenger.g0.L(4.0f);
+        org.telegram.ui.Components.c9 c9Var = this.b;
+        float c10 = c9Var.c() + L + org.telegram.messenger.g0.L(7.0f) + this.c.c + org.telegram.messenger.g0.L(13.0f);
+        float L2 = org.telegram.messenger.g0.L(30.0f);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set((getWidth() - c10) / 2.0f, 0.0f, (getWidth() + c10) / 2.0f, getHeight());
+        float f10 = L2 / 2.0f;
+        canvas.drawRoundRect(rectF, f10, f10, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + org.telegram.messenger.g0.L(4.0f), 0.0f);
+        c9Var.g(canvas);
+        canvas.translate(c9Var.A + org.telegram.messenger.g0.L(7.0f), 0.0f);
+        this.c.c(0.0f, f10, 1.0f, -1, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(30.0f));
     }
 }

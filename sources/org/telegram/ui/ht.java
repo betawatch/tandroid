@@ -1,54 +1,67 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ht extends rg.a {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final /* synthetic */ class ht implements org.telegram.ui.Components.nj0, org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ lt a;
 
-    public ht(int i7, String str) {
-        super(i7, false);
-        this.f = str;
+    public /* synthetic */ ht(lt ltVar) {
+        this.a = ltVar;
     }
 
-    public static ht b(CharSequence charSequence, String str) {
-        return new ht(-1, 0, 0, 0, charSequence, str);
+    @Override // org.telegram.ui.ActionBar.q1
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        int i10;
+        int i11;
+        int i12;
+        lt ltVar = this.a;
+        ot otVar = ltVar.w3;
+        ArrayList arrayList = ltVar.n3;
+        arrayList.clear();
+        int i13 = 0;
+        while (true) {
+            kt[] ktVarArr = ltVar.o3;
+            if (i13 >= ktVarArr.length) {
+                i10 = ((org.telegram.ui.ActionBar.g2) otVar).currentAccount;
+                org.telegram.messenger.cz.e(i10).l(0);
+                i11 = ((org.telegram.ui.ActionBar.g2) otVar).currentAccount;
+                org.telegram.messenger.cz.e(i11).l(1);
+                i12 = ((org.telegram.ui.ActionBar.g2) otVar).currentAccount;
+                org.telegram.messenger.cz.e(i12).l(2);
+                ltVar.f3 = true;
+                ltVar.C1();
+                ltVar.D1(true);
+                return;
+            }
+            kt ktVar = ktVarArr[i13];
+            if (ktVar.c > 0) {
+                arrayList.add(Integer.valueOf(ktVar.d));
+            }
+            i13++;
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ht)) {
-            return false;
+    @Override // org.telegram.ui.Components.nj0
+    public int run() {
+        lt ltVar = this.a;
+        ArrayList arrayList = ltVar.k3;
+        int i7 = 0;
+        while (true) {
+            if (i7 >= arrayList.size()) {
+                i7 = -1;
+                break;
+            }
+            if (((gt) arrayList.get(i7)).a == 5) {
+                break;
+            }
+            i7++;
         }
-        ht htVar = (ht) obj;
-        CharSequence charSequence = htVar.f;
-        int i7 = htVar.a;
-        int i10 = this.a;
-        if (i7 != i10) {
-            return false;
+        if (i7 < 0) {
+            return -1;
         }
-        CharSequence charSequence2 = this.f;
-        if (i10 == 1 || i10 == 4 || i10 == 3 || i10 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
-        }
-        if (i10 == 2) {
-            return htVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && htVar.d == this.d && htVar.e == this.e && htVar.c == this.c;
-        }
-        return true;
-    }
-
-    public ht(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i7;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = charSequence;
-        this.g = charSequence2;
+        ltVar.h3.h1(i7, org.telegram.messenger.g0.L(60.0f));
+        return i7;
     }
 }

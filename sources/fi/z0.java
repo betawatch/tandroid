@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.le;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,12 +65,12 @@ public final /* synthetic */ class z0 implements Runnable {
                     mediaController.g1 = tL_document;
                     tL_document.file_reference = new byte[0];
                     tL_document.dc_id = TLObject.FLAG_31;
-                    tL_document.id = cz.p();
-                    mediaController.g1.user_id = k10.i(i11).e();
+                    tL_document.id = bz.p();
+                    mediaController.g1.user_id = i10.i(i11).e();
                     mediaController.g1.mime_type = "audio/ogg";
-                    cz.y();
+                    bz.y();
                     try {
-                        e0.g gVar = new e0.g(org.telegram.messenger.t0.b, org.telegram.messenger.w7.z(1), new le(mediaController));
+                        e0.g gVar = new e0.g(org.telegram.messenger.t0.b, org.telegram.messenger.w7.z(1), new ke(mediaController));
                         mediaController.G1 = gVar;
                         if (!gVar.h()) {
                             throw new IllegalStateException("Unable to start AudioRecorderV2");
@@ -82,26 +82,26 @@ public final /* synthetic */ class z0 implements Runnable {
                         return;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.e("AudioRecorderV2 failed", e10);
-                        ls.f(mediaController.i1).k(ls.m2, Integer.valueOf(mediaController.h1));
+                        ks.f(mediaController.i1).k(ks.m2, Integer.valueOf(mediaController.h1));
                         mediaController.x(false);
                         return;
                     }
                 }
                 return;
             case 2:
-                ur urVar = (ur) this.e;
+                tr trVar = (tr) this.e;
                 int i13 = this.b;
                 long j11 = this.c;
                 int i14 = this.d;
-                urVar.getClass();
+                trVar.getClass();
                 try {
-                    SQLiteDatabase sQLiteDatabase = urVar.b;
+                    SQLiteDatabase sQLiteDatabase = trVar.b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("UPDATE OR REPLACE widget_state SET mid = " + i13 + " WHERE uid = " + j11 + " AND mid = " + i14).stepThis().dispose();
-                    urVar.b.executeFast("UPDATE OR REPLACE widget_heights SET mid = " + i13 + " WHERE uid = " + j11 + " AND mid = " + i14).stepThis().dispose();
+                    trVar.b.executeFast("UPDATE OR REPLACE widget_heights SET mid = " + i13 + " WHERE uid = " + j11 + " AND mid = " + i14).stepThis().dispose();
                     return;
                 } catch (Exception e11) {
-                    urVar.o(e11, true);
+                    trVar.o(e11, true);
                     return;
                 }
             default:

@@ -1,73 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.StickersActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p4 extends s41 {
-    public final /* synthetic */ int e;
-    public Object f;
+public final class p4 extends qb0 {
+    public final /* synthetic */ int[] z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p4(Object obj, int i7) {
-        super("@stickers", (fz0) null);
-        this.e = i7;
-        this.f = obj;
+    public p4(Context context, org.telegram.ui.ActionBar.i6 i6Var, int[] iArr) {
+        super(context, i6Var);
+        this.z0 = iArr;
     }
 
-    @Override // org.telegram.ui.Components.s41, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        int i7;
-        int i10;
-        switch (this.e) {
-            case 0:
-                ((org.telegram.ui.ActionBar.g2) this.f).dismissCurrentDialog();
-                super.onClick(view);
-                break;
-            case 1:
-                kw0 kw0Var = (kw0) this.f;
-                org.telegram.messenger.np.u1(kw0Var.a).F3(getURL(), kw0Var.G1, 1, null);
-                kw0Var.dismiss();
-                break;
-            case 2:
-                org.telegram.messenger.g0.g(getURL());
-                lc.b0((kg.v) this.f).k(false).j();
-                break;
-            case 3:
-                org.telegram.ui.n50 n50Var = ((org.telegram.ui.l50) this.f).d;
-                i7 = ((org.telegram.ui.ActionBar.g2) n50Var).currentAccount;
-                org.telegram.messenger.np.u1(i7).F3("stickers", n50Var, 1, null);
-                break;
-            case 4:
-                ((org.telegram.ui.qj0) this.f).a.dismissCurrentDialog();
-                super.onClick(view);
-                break;
-            default:
-                StickersActivity stickersActivity = (StickersActivity) this.f;
-                i10 = ((org.telegram.ui.ActionBar.g2) stickersActivity).currentAccount;
-                org.telegram.messenger.np.u1(i10).F3("stickers", stickersActivity, 3, null);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p4(String str, int i7, Object obj) {
-        super(str, (fz0) null);
-        this.e = i7;
-        this.f = obj;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p4(String str, fz0 fz0Var) {
-        super(str, fz0Var);
-        this.e = 2;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p4(String str, org.telegram.ui.ActionBar.g2 g2Var) {
-        super(str, (fz0) null);
-        this.e = 0;
-        this.f = g2Var;
+    @Override // org.telegram.ui.Components.qb0
+    public final CharSequence d(int i7) {
+        int i10 = this.z0[i7];
+        return i10 == 0 ? org.telegram.messenger.gd.N0(2131748114, null) : i10 < 60 ? org.telegram.messenger.gd.G(i10, "Minutes", new Object[0]) : i10 < 1440 ? org.telegram.messenger.gd.G(i10 / 60, "Hours", new Object[0]) : i10 < 10080 ? org.telegram.messenger.gd.G(i10 / 1440, "Days", new Object[0]) : i10 < 44640 ? org.telegram.messenger.gd.G(i10 / 10080, "Weeks", new Object[0]) : i10 < 525600 ? org.telegram.messenger.gd.G(i10 / 44640, "Months", new Object[0]) : org.telegram.messenger.gd.G(i10 / 525600, "Years", new Object[0]);
     }
 }

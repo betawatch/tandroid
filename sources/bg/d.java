@@ -2,15 +2,15 @@ package bg;
 
 import java.util.Map;
 import java.util.function.ToIntFunction;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.r9;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.q9;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.d6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -45,11 +45,11 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 10:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 11:
-                return ((r9) obj).e.bid_date;
+                return ((q9) obj).e.bid_date;
             case 12:
                 return Integer.parseInt((String) obj);
             case 13:
-                return ((gj) obj).e1();
+                return ((fj) obj).e1();
             case 14:
                 return -((TLRPC.TL_forumTopic) obj).top_message;
             case 15:
@@ -57,9 +57,9 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 16:
                 return ((TLRPC.Message) obj).id;
             case 17:
-                return ((e6) obj).d;
+                return ((d6) obj).d;
             case 18:
-                return ((e6) obj).e;
+                return ((d6) obj).e;
             case 19:
                 ad.c cVar = (ad.c) obj;
                 return cVar.d - cVar.b;

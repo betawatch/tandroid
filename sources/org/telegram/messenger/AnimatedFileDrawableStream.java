@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements j7 {
     public final int E;
@@ -14,7 +14,7 @@ public class AnimatedFileDrawableStream implements j7 {
     public i7 a;
     public CountDownLatch b;
     public final TLRPC.Document c;
-    public final gc d;
+    public final fc d;
     public final Object e;
     public final int f;
     public volatile boolean h;
@@ -25,9 +25,9 @@ public class AnimatedFileDrawableStream implements j7 {
     public boolean x;
     public String y;
 
-    public AnimatedFileDrawableStream(TLRPC.Document document, gc gcVar, Object obj, int i7, boolean z10, int i10, int i11) {
+    public AnimatedFileDrawableStream(TLRPC.Document document, fc fcVar, Object obj, int i7, boolean z10, int i10, int i11) {
         this.c = document;
-        this.d = gcVar;
+        this.d = fcVar;
         this.e = obj;
         this.f = i7;
         this.w = z10;
@@ -35,7 +35,7 @@ public class AnimatedFileDrawableStream implements j7 {
         w7 G = w7.G(i7);
         CountDownLatch countDownLatch = new CountDownLatch(1);
         i7[] i7VarArr = new i7[1];
-        w7.K.c(new k7(G, i7VarArr, document, gcVar, obj, i10, this, 0L, z10, i11, countDownLatch));
+        w7.K.c(new k7(G, i7VarArr, document, fcVar, obj, i10, this, 0L, z10, i11, countDownLatch));
         w7.a(countDownLatch, true);
         this.a = i7VarArr[0];
     }
@@ -65,10 +65,10 @@ public class AnimatedFileDrawableStream implements j7 {
                     }
                 }
                 Object obj = this.e;
-                if (obj instanceof gj) {
-                    gj gjVar = (gj) obj;
-                    a6 q10 = a6.q(gjVar.K1);
-                    int e12 = gjVar.e1();
+                if (obj instanceof fj) {
+                    fj fjVar = (fj) obj;
+                    a6 q10 = a6.q(fjVar.K1);
+                    int e12 = fjVar.e1();
                     ArrayList arrayList = q10.H;
                     int i7 = 0;
                     while (true) {
@@ -76,7 +76,7 @@ public class AnimatedFileDrawableStream implements j7 {
                             z11 = false;
                             break;
                         } else {
-                            if (((gj) arrayList.get(i7)).k.id == e12) {
+                            if (((fj) arrayList.get(i7)).k.id == e12) {
                                 z11 = true;
                                 break;
                             }
@@ -100,9 +100,9 @@ public class AnimatedFileDrawableStream implements j7 {
     public final void c() {
         int i7 = this.f;
         w7.G(i7).f(this.c);
-        gc gcVar = this.d;
-        if (gcVar != null) {
-            w7.G(i7).e(null, null, null, gcVar.f, "mp4", null);
+        fc fcVar = this.d;
+        if (fcVar != null) {
+            w7.G(i7).e(null, null, null, fcVar.f, "mp4", null);
         }
     }
 
@@ -164,7 +164,7 @@ public class AnimatedFileDrawableStream implements j7 {
                         i7Var.getClass();
                         CountDownLatch countDownLatch = new CountDownLatch(r22);
                         ?? r10 = new long[2];
-                        Utilities.d.c(new k9(i7Var, (Serializable) r10, j3, i12, countDownLatch, 2));
+                        Utilities.d.c(new j9(i7Var, (Serializable) r10, j3, i12, countDownLatch, 2));
                         try {
                             countDownLatch.await();
                         } catch (Exception unused) {
@@ -201,7 +201,7 @@ public class AnimatedFileDrawableStream implements j7 {
                                 if (this.a.Z || this.r != j3 || this.w) {
                                     w7 G = w7.G(this.f);
                                     TLRPC.Document document = this.c;
-                                    gc gcVar = this.d;
+                                    fc fcVar = this.d;
                                     Object obj = this.e;
                                     boolean z12 = this.w;
                                     int i15 = this.E;
@@ -211,7 +211,7 @@ public class AnimatedFileDrawableStream implements j7 {
                                     i7[] i7VarArr = new i7[i17];
                                     boolean z13 = i17;
                                     i11 = i13;
-                                    w7.K.c(new k7(G, i7VarArr, document, gcVar, obj, i15, this, j3, z12, i16, countDownLatch2));
+                                    w7.K.c(new k7(G, i7VarArr, document, fcVar, obj, i15, this, j3, z12, i16, countDownLatch2));
                                     w7.a(countDownLatch2, z13);
                                     i7 i7Var2 = i7VarArr[i11];
                                     i7 i7Var3 = this.a;

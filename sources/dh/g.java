@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
 import java.util.ArrayList;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.si;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.ri;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class g {
     public final boolean a;
@@ -28,7 +28,7 @@ public final class g {
     public Rect m;
 
     public g(boolean z10) {
-        boolean e10 = qc.e(262144);
+        boolean e10 = pc.e(262144);
         this.a = e10;
         this.c = true;
         this.d = (e10 || z10) ? 1 : 8;
@@ -173,7 +173,7 @@ public final class g {
                 if (i12 <= 0) {
                     return;
                 }
-                long r10 = si.r(si.r(0L, i7), i10);
+                long r10 = ri.r(ri.r(0L, i7), i10);
                 int i16 = 0;
                 boolean z11 = false;
                 while (true) {
@@ -182,12 +182,12 @@ public final class g {
                         break;
                     }
                     RenderNode renderNode = renderNodeArr[i16];
-                    r10 = si.r(r10, renderNode.getUniqueId());
+                    r10 = ri.r(r10, renderNode.getUniqueId());
                     for (int i17 = 0; i17 < this.k; i17++) {
                         f fVar4 = (f) arrayList.get(i17);
                         RenderNode d = d(i16, i17);
                         Rect rect3 = fVar4.d;
-                        r10 = si.r(si.r(si.r(si.r(si.r(r10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
+                        r10 = ri.r(ri.r(ri.r(ri.r(ri.r(r10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
                     }
                     if (!renderNode.hasDisplayList()) {
                         z11 = true;

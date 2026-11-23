@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import gd.k;
 import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzay extends j implements p {
     int zza;
@@ -59,7 +59,7 @@ final class zzay extends j implements p {
         a aVar = a.a;
         int i7 = this.zza;
         if (i7 == 0) {
-            h.b(obj);
+            z.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzba zzbaVar = this.zzb;
             zzdaVar = zzbaVar.zzb;
@@ -80,11 +80,11 @@ final class zzay extends j implements p {
             throw new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null);
         }
         if (i7 != 1) {
-            h.b(obj);
+            z.b(obj);
             return k.a;
         }
         zzhkVar = (zzhk) this.zzd;
-        h.b(obj);
+        z.b(obj);
         this.zzd = null;
         this.zza = 2;
     }

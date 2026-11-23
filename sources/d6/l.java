@@ -1,26 +1,26 @@
 package d6;
 
-import a8.l8;
+import a8.m8;
 import a8.q;
-import a8.v7;
+import a8.w7;
 import android.content.Context;
 import android.os.Binder;
 import android.os.Parcel;
 import android.text.TextUtils;
-import b9.k0;
+import b9.j0;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.RevocationBoundService;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.common.api.internal.p0;
+import com.google.android.gms.common.api.internal.o0;
 import com.google.android.gms.common.api.t;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import org.json.JSONException;
 import org.telegram.messenger.d1;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l extends q {
     public final /* synthetic */ int b = 0;
@@ -55,17 +55,17 @@ public final class l extends q {
                         }
                         googleSignInOptions = null;
                     }
-                    k0 a11 = v7.a(revocationBoundService, googleSignInOptions);
+                    j0 a11 = w7.a(revocationBoundService, googleSignInOptions);
                     if (b10 != null) {
-                        p0 p0Var = a11.i;
+                        o0 o0Var = a11.i;
                         Context context = a11.a;
                         boolean z10 = a11.h() == 3;
                         h.a.a("Revoking access", new Object[0]);
                         String e12 = b.a(context).e("refreshToken");
                         h.b(context);
                         if (!z10) {
-                            g gVar = new g(p0Var, 1);
-                            p0Var.b.d(1, gVar);
+                            g gVar = new g(o0Var, 1);
+                            o0Var.b.d(1, gVar);
                             basePendingResult = gVar;
                         } else if (e12 == null) {
                             d1 d1Var = c.c;
@@ -84,7 +84,7 @@ public final class l extends q {
                     }
                 } else if (i7 == 2) {
                     m1();
-                    i.B(revocationBoundService).E();
+                    i.F(revocationBoundService).H();
                 }
                 break;
             default:
@@ -92,7 +92,7 @@ public final class l extends q {
                     Status status2 = (Status) l7.f.a(parcel, Status.CREATOR);
                     a6.f fVar = (a6.f) l7.f.a(parcel, a6.f.CREATOR);
                     l7.f.b(parcel);
-                    l8.a(status2, fVar, (TaskCompletionSource) obj);
+                    m8.a(status2, fVar, (TaskCompletionSource) obj);
                     break;
                 }
                 break;

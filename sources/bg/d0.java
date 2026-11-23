@@ -9,10 +9,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d0 extends Drawable {
     public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
@@ -23,7 +23,7 @@ public final class d0 extends Drawable {
     public int g;
     public final Paint c = new Paint(1);
     public final Rect d = new Rect();
-    public int h = ls.e4;
+    public int h = ks.e4;
 
     public d0(int i7) {
         GradientDrawable gradientDrawable = new GradientDrawable();
@@ -60,7 +60,7 @@ public final class d0 extends Drawable {
         int[] iArr = this.f;
         a(interpolator, i7, iArr);
         this.b.setColors(iArr);
-        this.c.setColor(m6.r1(this.h / 255.0f, this.g));
+        this.c.setColor(n6.r1(this.h / 255.0f, this.g));
     }
 
     public final void c(int i7, int i10) {
@@ -143,7 +143,7 @@ public final class d0 extends Drawable {
     public final void setAlpha(int i7) {
         this.h = i7;
         this.b.setAlpha(i7);
-        this.c.setColor(m6.r1(this.h / 255.0f, this.g));
+        this.c.setColor(n6.r1(this.h / 255.0f, this.g));
     }
 
     @Override // android.graphics.drawable.Drawable

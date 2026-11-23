@@ -7,39 +7,39 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class kc {
     public int a;
     public final RectF b;
-    public final org.telegram.ui.Components.d6 c;
-    public final org.telegram.ui.Components.d6 d;
-    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.c6 d;
+    public final org.telegram.ui.Components.c6 e;
     public LinearGradient f;
     public final Matrix g;
     public final Paint h;
     public final boolean i;
     public long j;
     public final ImageReceiver k;
-    public final org.telegram.ui.Components.b9 l;
-    public final org.telegram.ui.Components.b9 m;
-    public xy0 n;
-    public xy0 o;
+    public final org.telegram.ui.Components.a9 l;
+    public final org.telegram.ui.Components.a9 m;
+    public wy0 n;
+    public wy0 o;
     public boolean p;
-    public final org.telegram.ui.Components.mc q;
+    public final org.telegram.ui.Components.lc q;
     public int r;
     public Drawable s;
     public Drawable t;
-    public xy0 u;
+    public wy0 u;
     public int v;
     public final /* synthetic */ lc w;
 
@@ -48,39 +48,39 @@ public final class kc {
         mc mcVar = lcVar.w;
         this.w = lcVar;
         this.b = new RectF();
-        nr nrVar = nr.h;
-        this.c = new org.telegram.ui.Components.d6(lcVar, 0L, 600L, nrVar);
-        this.d = new org.telegram.ui.Components.d6(lcVar, 0L, 200L, nrVar);
-        this.e = new org.telegram.ui.Components.d6(lcVar, 0L, 350L, nrVar);
+        kr krVar = kr.h;
+        this.c = new org.telegram.ui.Components.c6(lcVar, 0L, 600L, krVar);
+        this.d = new org.telegram.ui.Components.c6(lcVar, 0L, 200L, krVar);
+        this.e = new org.telegram.ui.Components.c6(lcVar, 0L, 350L, krVar);
         this.f = null;
         this.g = new Matrix();
         this.h = new Paint(1);
         ImageReceiver imageReceiver = new ImageReceiver(lcVar);
         this.k = imageReceiver;
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        this.l = b9Var;
-        org.telegram.ui.Components.b9 b9Var2 = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
-        this.m = b9Var2;
-        this.q = new org.telegram.ui.Components.mc(lcVar);
+        org.telegram.ui.Components.a9 a9Var = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
+        this.l = a9Var;
+        org.telegram.ui.Components.a9 a9Var2 = new org.telegram.ui.Components.a9((org.telegram.ui.ActionBar.i6) null);
+        this.m = a9Var2;
+        this.q = new org.telegram.ui.Components.lc(lcVar);
         this.i = z10;
         this.j = j3;
         if (j3 >= 0) {
-            TLRPC.User c22 = np.u1(mcVar.n1).c2(Long.valueOf(j3));
-            str = p10.l(c22);
-            b9Var.r(c22);
-            imageReceiver.i0(c22, b9Var, null);
+            TLRPC.User c22 = mp.u1(mcVar.n1).c2(Long.valueOf(j3));
+            str = n10.l(c22);
+            a9Var.r(c22);
+            imageReceiver.j0(c22, a9Var, null);
         } else {
-            TLRPC.Chat O0 = np.u1(mcVar.n1).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = mp.u1(mcVar.n1).O0(Long.valueOf(-j3));
             str = O0 == null ? "" : O0.title;
-            b9Var.q(O0);
-            imageReceiver.i0(O0, b9Var, null);
+            a9Var.q(O0);
+            imageReceiver.j0(O0, a9Var, null);
         }
-        imageReceiver.J0(org.telegram.messenger.g0.L(56.0f));
-        imageReceiver.P();
+        imageReceiver.K0(org.telegram.messenger.g0.L(56.0f));
+        imageReceiver.Q();
         imageReceiver.B0 = true;
-        b9Var2.g(21);
-        b9Var2.h(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.c8, mcVar.m1));
-        this.n = new xy0(str, 12.0f, null);
+        a9Var2.g(21);
+        a9Var2.h(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.c8, mcVar.m1));
+        this.n = new wy0(str, 12.0f, null);
     }
 
     public final void a(Canvas canvas) {
@@ -114,7 +114,7 @@ public final class kc {
                 float L4 = org.telegram.messenger.g0.L(56.0f);
                 f11 = 2.0f;
                 ImageReceiver imageReceiver = this.k;
-                imageReceiver.y0(L - (org.telegram.messenger.g0.L(56.0f) / 2.0f), L2 - (org.telegram.messenger.g0.L(56.0f) / 2.0f), L3, L4);
+                imageReceiver.z0(L - (org.telegram.messenger.g0.L(56.0f) / 2.0f), L2 - (org.telegram.messenger.g0.L(56.0f) / 2.0f), L3, L4);
                 imageReceiver.setAlpha(d);
                 imageReceiver.h(canvas, null);
                 imageReceiver.setAlpha(1.0f);
@@ -130,11 +130,11 @@ public final class kc {
                 int L6 = i11 - (org.telegram.messenger.g0.L(56.0f) / 2);
                 int L7 = (org.telegram.messenger.g0.L(56.0f) / 2) + i10;
                 int L8 = (org.telegram.messenger.g0.L(56.0f) / 2) + i11;
-                org.telegram.ui.Components.b9 b9Var = this.m;
-                b9Var.setBounds(L5, L6, L7, L8);
-                b9Var.y = (int) (d * f12 * d2);
-                b9Var.draw(canvas);
-                b9Var.y = ls.e4;
+                org.telegram.ui.Components.a9 a9Var = this.m;
+                a9Var.setBounds(L5, L6, L7, L8);
+                a9Var.y = (int) (d * f12 * d2);
+                a9Var.draw(canvas);
+                a9Var.y = ks.e4;
             }
         } else {
             f10 = 40.0f;
@@ -154,11 +154,11 @@ public final class kc {
             this.f.setLocalMatrix(matrix);
         }
         canvas.drawRoundRect(rectF, rectF.height() / f11, rectF.height() / f11, paint);
-        xy0 xy0Var = this.o;
-        xy0Var.c(L - (xy0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
-        xy0 xy0Var2 = this.n;
-        xy0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
-        xy0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, lcVar.w.m1), canvas);
+        wy0 wy0Var = this.o;
+        wy0Var.c(L - (wy0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
+        wy0 wy0Var2 = this.n;
+        wy0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
+        wy0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, lcVar.w.m1), canvas);
         if (this.v > 0) {
             int i13 = (int) L;
             int i14 = (int) L2;
@@ -168,8 +168,8 @@ public final class kc {
             this.s.setAlpha(i12);
             this.t.draw(canvas);
             this.s.draw(canvas);
-            xy0 xy0Var3 = this.u;
-            xy0Var3.c(L - (xy0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
+            wy0 wy0Var3 = this.u;
+            wy0Var3.c(L - (wy0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
         }
         canvas.restore();
     }
@@ -180,31 +180,31 @@ public final class kc {
         lc lcVar = this.w;
         mc mcVar = lcVar.w;
         if (this.i) {
-            if ((this.p ? 2666000L : this.j == k10.i(mcVar.n1).e() ? 0L : this.j) != j3) {
+            if ((this.p ? 2666000L : this.j == i10.i(mcVar.n1).e() ? 0L : this.j) != j3) {
                 this.p = j3 == 2666000;
                 if (j3 == 0 || j3 == 2666000) {
-                    j3 = k10.i(mcVar.n1).e();
+                    j3 = i10.i(mcVar.n1).e();
                 }
                 this.j = j3;
                 if (this.p) {
-                    str2 = hd.N0(2131744805, null);
+                    str2 = gd.N0(2131744807, null);
                 } else {
                     ImageReceiver imageReceiver = this.k;
-                    org.telegram.ui.Components.b9 b9Var = this.l;
+                    org.telegram.ui.Components.a9 a9Var = this.l;
                     if (j3 >= 0) {
-                        TLRPC.User c22 = np.u1(mcVar.n1).c2(Long.valueOf(this.j));
-                        str = p10.l(c22);
-                        b9Var.r(c22);
-                        imageReceiver.i0(c22, b9Var, null);
+                        TLRPC.User c22 = mp.u1(mcVar.n1).c2(Long.valueOf(this.j));
+                        str = n10.l(c22);
+                        a9Var.r(c22);
+                        imageReceiver.j0(c22, a9Var, null);
                     } else {
-                        TLRPC.Chat O0 = np.u1(mcVar.n1).O0(Long.valueOf(-this.j));
+                        TLRPC.Chat O0 = mp.u1(mcVar.n1).O0(Long.valueOf(-this.j));
                         str = O0 == null ? "" : O0.title;
-                        b9Var.q(O0);
-                        imageReceiver.i0(O0, b9Var, null);
+                        a9Var.q(O0);
+                        imageReceiver.j0(O0, a9Var, null);
                     }
                     str2 = str;
                 }
-                this.n = new xy0(str2, 12.0f, null);
+                this.n = new wy0(str2, 12.0f, null);
                 lcVar.invalidate();
             }
         }

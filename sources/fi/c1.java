@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoipAudioManager;
 import org.telegram.tgnet.ConnectionsManager;
@@ -24,9 +24,9 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
+public final class c1 implements fs, AudioManager.OnAudioFocusChangeListener {
     public static c1 X;
     public int E;
     public NativeInstance F;
@@ -75,7 +75,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         a1 a1Var = new a1(this);
         this.I = a1Var;
         org.telegram.messenger.a8.b("[LivePlayer] setup to call " + inputGroupCall.id);
-        ls.f(i7).b(this, ls.x2);
+        ks.f(i7).b(this, ks.x2);
         if (z11) {
             this.K = NativeInstance.createVideoCapturer(a1Var, z12 ? 1 : 0);
         }
@@ -135,15 +135,15 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         }
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.x2) {
+        if (i7 == ks.x2) {
             long longValue = ((Long) objArr[0]).longValue();
             TLRPC.GroupCall groupCall = (TLRPC.GroupCall) objArr[1];
             if (this.b == longValue) {
                 cg.d.a(this.w, groupCall);
                 this.w = groupCall;
-                ls.f(this.e).k(ls.G2, Long.valueOf(groupCall.id));
+                ks.f(this.e).k(ks.G2, Long.valueOf(groupCall.id));
             }
         }
     }
@@ -154,7 +154,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         }
         this.x = true;
         u(false);
-        ls.f(this.e).n(this, ls.x2);
+        ks.f(this.e).n(this, ks.x2);
         org.telegram.messenger.a8.b("[LivePlayer] destroyed");
         if (this.y) {
             TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
@@ -183,7 +183,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         }
         if (X == this) {
             X = null;
-            ls.f(this.e).k(ls.G2, Long.valueOf(g()));
+            ks.f(this.e).k(ks.G2, Long.valueOf(g()));
         }
     }
 
@@ -229,7 +229,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         if (this.x) {
             return;
         }
-        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.b2.d("live_" + this.f.id), 0L, false, cz.I0, new u0(this, 0), new ci.v(25), new u0(this, 2), new u0(this, 3), new u0(this, 4), new u0(this, 5), false);
+        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.c2.d("live_" + this.f.id), 0L, false, bz.I0, new u0(this, 0), new ci.v(25), new u0(this, 2), new u0(this, 3), new u0(this, 4), new u0(this, 5), false);
         this.F = makeGroup;
         makeGroup.setOnStateUpdatedListener(new b1(this));
         this.F.resetGroupInstance(false, false);
@@ -242,7 +242,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
         }
         long j3 = this.b;
         int i7 = this.e;
-        return j3 >= 0 ? k10.i(i7).e() == j3 : org.telegram.messenger.v3.w(14, np.u1(i7).O0(Long.valueOf(-j3)));
+        return j3 >= 0 ? i10.i(i7).e() == j3 : org.telegram.messenger.v3.w(14, mp.u1(i7).O0(Long.valueOf(-j3)));
     }
 
     public final boolean m() {
@@ -314,7 +314,7 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
             return;
         }
         this.s = z10;
-        ls.f(this.e).k(ls.G2, Long.valueOf(g()));
+        ks.f(this.e).k(ks.G2, Long.valueOf(g()));
     }
 
     public final void u(boolean z10) {
@@ -383,11 +383,11 @@ public final class c1 implements gs, AudioManager.OnAudioFocusChangeListener {
     public final void w() {
         TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
         int i7 = this.e;
-        tL_updateStory.peer = np.u1(i7).B1(this.b);
+        tL_updateStory.peer = mp.u1(i7).B1(this.b);
         TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
         tL_updateStory.story = tL_storyItemDeleted;
         tL_storyItemDeleted.id = this.c;
-        np.u1(i7).R1().c0(tL_updateStory);
+        mp.u1(i7).R1().c0(tL_updateStory);
         e();
     }
 

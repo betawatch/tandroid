@@ -3,14 +3,29 @@ package b5;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.versionedparcelable.ParcelImpl;
-import gd.h;
-import gd.i;
-import gd.j;
+import java.lang.reflect.Method;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static d a(Bundle bundle) {
+    public static void a(Throwable th2, Throwable exception) {
+        j.e(th2, "<this>");
+        j.e(exception, "exception");
+        if (th2 != exception) {
+            Integer num = nd.a.a;
+            if (num == null || num.intValue() >= 19) {
+                th2.addSuppressed(exception);
+                return;
+            }
+            Method method = md.a.a;
+            if (method != null) {
+                method.invoke(th2, exception);
+            }
+        }
+    }
+
+    public static d b(Bundle bundle) {
         try {
             Bundle bundle2 = (Bundle) bundle.getParcelable("android.support.v4.media.session.SESSION_TOKEN2");
             if (bundle2 == null) {
@@ -25,19 +40,5 @@ public abstract class a {
         } catch (RuntimeException unused) {
             return null;
         }
-    }
-
-    public static gd.c b(rd.a aVar) {
-        gd.d[] dVarArr = gd.d.a;
-        j jVar = j.a;
-        h hVar = new h();
-        hVar.a = aVar;
-        hVar.b = jVar;
-        return hVar;
-    }
-
-    public static i c(rd.a initializer) {
-        kotlin.jvm.internal.j.e(initializer, "initializer");
-        return new i(initializer);
     }
 }

@@ -2,13 +2,14 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import b7.h;
+import c8.z;
 import gd.c;
 import ie.a;
 import ie.d;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
@@ -19,7 +20,7 @@ public final class zzeh {
     public zzeh(Application application) {
         this.zza = application;
         int i7 = zzby.zza;
-        this.zzd = b5.a.c(zzef.zza);
+        this.zzd = h.b(zzef.zza);
         zzdp.zza(application);
     }
 
@@ -78,7 +79,7 @@ public final class zzeh {
                     aVar = jd.a.a;
                     i7 = zzeaVar2.zzg;
                     if (i7 != 0) {
-                        h.b(obj);
+                        z.b(obj);
                         a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
@@ -101,7 +102,7 @@ public final class zzeh {
                         }
                         obj3 = (a) zzeaVar2.zza;
                         try {
-                            h.b(obj);
+                            z.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).f(null);
                             return zzeqVar;
@@ -115,7 +116,7 @@ public final class zzeh {
                     Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    h.b(obj);
+                    z.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;

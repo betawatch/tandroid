@@ -3,30 +3,30 @@ package kg;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ma;
-import hi.d7;
-import hi.s6;
+import c8.na;
+import hi.c7;
+import hi.y7;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class u0 extends g2 implements gs {
+public final class u0 extends g2 implements fs {
     public c5 a;
-    public h51 b;
+    public g51 b;
     public b0 c;
     public final int[] d;
     public final String[] e;
@@ -50,47 +50,47 @@ public final class u0 extends g2 implements gs {
             if (i7 >= iArr2.length) {
                 return;
             }
-            this.e[i7] = hd.G(iArr2[i7], "DaysSchedule", new Object[0]);
+            this.e[i7] = gd.G(iArr2[i7], "DaysSchedule", new Object[0]);
             i7++;
         }
     }
 
-    public static void Z(u0 u0Var, ArrayList arrayList, c51 c51Var) {
-        String N0 = hd.N0(2131752763, null);
-        String N02 = hd.N0(2131752761, null);
-        o41 o41Var = new o41(2);
-        o41Var.m = N0;
-        o41Var.p = N02;
-        o41Var.n = "RestrictedEmoji";
-        o41Var.o = "👋";
-        arrayList.add(o41Var);
-        o41 i7 = o41.i(1, hd.N0(2131752757, null));
+    public static void Z(u0 u0Var, ArrayList arrayList, b51 b51Var) {
+        String N0 = gd.N0(2131752763, null);
+        String N02 = gd.N0(2131752761, null);
+        n41 n41Var = new n41(2);
+        n41Var.m = N0;
+        n41Var.p = N02;
+        n41Var.n = "RestrictedEmoji";
+        n41Var.o = "👋";
+        arrayList.add(n41Var);
+        n41 i7 = n41.i(1, gd.N0(2131752757, null));
         i7.L(u0Var.r);
         arrayList.add(i7);
-        arrayList.add(o41.C(null));
+        arrayList.add(n41.C(null));
         if (u0Var.r) {
-            u1 d = v1.f(u0Var.currentAccount).d("hello");
+            v1 d = w1.f(u0Var.currentAccount).d("hello");
             if (d != null) {
-                o41 o41Var2 = new o41(17);
-                o41Var2.H = d;
-                arrayList.add(o41Var2);
+                n41 n41Var2 = new n41(17);
+                n41Var2.H = d;
+                arrayList.add(n41Var2);
             } else {
-                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, hd.N0(2131752762, null));
+                n41 c10 = n41.c(2, R.drawable.msg2_chats_add, gd.N0(2131752762, null));
                 c10.r = true;
                 arrayList.add(c10);
             }
-            arrayList.add(o41.C(null));
-            arrayList.add(o41.u(hd.N0(2131752676, null)));
-            o41 x10 = o41.x(3, hd.N0(2131752769, null));
+            arrayList.add(n41.C(null));
+            arrayList.add(n41.u(gd.N0(2131752676, null)));
+            n41 x10 = n41.x(3, gd.N0(2131752769, null));
             x10.L(u0Var.s);
             arrayList.add(x10);
-            o41 x11 = o41.x(4, hd.N0(2131752764, null));
+            n41 x11 = n41.x(4, gd.N0(2131752764, null));
             x11.L(!u0Var.s);
             arrayList.add(x11);
-            arrayList.add(o41.C(null));
-            u0Var.c.a(arrayList, c51Var, true);
-            arrayList.add(o41.C(hd.N0(2131752758, null)));
-            arrayList.add(o41.u(hd.N0(2131752760, null)));
+            arrayList.add(n41.C(null));
+            u0Var.c.a(arrayList, b51Var, true);
+            arrayList.add(n41.C(gd.N0(2131752758, null)));
+            arrayList.add(n41.u(gd.N0(2131752760, null)));
             int i10 = 0;
             while (true) {
                 int[] iArr = u0Var.d;
@@ -104,14 +104,14 @@ public final class u0 extends g2 implements gs {
                 }
             }
             String[] strArr = u0Var.e;
-            s6 s6Var = new s6(u0Var, 10);
-            o41 o41Var3 = new o41(14);
-            o41Var3.q = strArr;
-            o41Var3.A = i10;
-            o41Var3.D = s6Var;
-            o41Var3.C = -1L;
-            arrayList.add(o41Var3);
-            arrayList.add(o41.C(hd.N0(2131752759, null)));
+            c7 c7Var = new c7(u0Var, 10);
+            n41 n41Var3 = new n41(14);
+            n41Var3.q = strArr;
+            n41Var3.A = i10;
+            n41Var3.D = c7Var;
+            n41Var3.C = -1L;
+            arrayList.add(n41Var3);
+            arrayList.add(n41.C(gd.N0(2131752759, null)));
         }
     }
 
@@ -142,7 +142,7 @@ public final class u0 extends g2 implements gs {
             finishFragment();
             return;
         }
-        u1 d = v1.f(this.currentAccount).d("hello");
+        v1 d = w1.f(this.currentAccount).d("hello");
         boolean z10 = this.r;
         if (z10 && d == null) {
             q2.E.a();
@@ -175,7 +175,7 @@ public final class u0 extends g2 implements gs {
                 d2.flags2 &= -5;
                 d2.business_greeting_message = null;
             }
-            getConnectionsManager().sendRequest(updatebusinessgreetingmessage, new ai.g1(this, 19));
+            getConnectionsManager().sendRequest(updatebusinessgreetingmessage, new ai.b1(this, 19));
             getMessagesStorage().j2(d2, false);
         }
     }
@@ -184,9 +184,9 @@ public final class u0 extends g2 implements gs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.N0(2131752763, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 9));
-        this.a = this.simpleActionBar.s(hd.N0(2131745750, null));
+        this.simpleActionBar.setTitle(gd.N0(2131752763, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.w1(this, 9));
+        this.a = this.simpleActionBar.s(gd.N0(2131745750, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         int i7 = 2;
@@ -195,20 +195,20 @@ public final class u0 extends g2 implements gs {
         b0Var.n = true;
         TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = this.n;
         b0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
-        h51 h51Var = new h51(this, new d7(this, 11), new t0(this, i7), null);
-        this.b = h51Var;
-        h51Var.r1();
+        g51 g51Var = new g51(this, new y7(this, 11), new t0(this, i7), null);
+        this.b = g51Var;
+        g51Var.r1();
         this.b.setSectionsDrawBackground(true);
-        h51 h51Var2 = this.b;
-        h51Var2.g3.r = false;
-        frameLayout.addView(h51Var2, ma.c(-1.0f, -1));
+        g51 g51Var2 = this.b;
+        g51Var2.g3.r = false;
+        frameLayout.addView(g51Var2, na.c(-1.0f, -1));
         d0();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     public final void d0() {
-        c51 c51Var;
+        b51 b51Var;
         if (this.f) {
             return;
         }
@@ -226,25 +226,25 @@ public final class u0 extends g2 implements gs {
         if (b0Var != null) {
             b0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
         }
-        h51 h51Var = this.b;
-        if (h51Var != null && (c51Var = h51Var.g3) != null) {
-            c51Var.O(true);
+        g51 g51Var = this.b;
+        if (g51Var != null && (b51Var = g51Var.g3) != null) {
+            b51Var.O(true);
         }
         a0(true);
         this.f = true;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        c51 c51Var;
-        if (i7 != ls.F1) {
-            if (i7 == ls.E0) {
+        b51 b51Var;
+        if (i7 != ks.F1) {
+            if (i7 == ks.E0) {
                 d0();
             }
         } else {
-            h51 h51Var = this.b;
-            if (h51Var != null && (c51Var = h51Var.g3) != null) {
-                c51Var.O(true);
+            g51 g51Var = this.b;
+            if (g51Var != null && (b51Var = g51Var.g3) != null) {
+                b51Var.O(true);
             }
             a0(true);
         }
@@ -272,12 +272,12 @@ public final class u0 extends g2 implements gs {
                 return false;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = hd.N0(2131743590, null);
+            String N0 = gd.N0(2131743588, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = hd.N0(2131752756, null);
-            alertDialog$Builder.k(hd.N0(2131754213, null), new t0(this, i7));
-            alertDialog$Builder.h(hd.N0(2131747386, null), new t0(this, 1));
+            t1Var.U = gd.N0(2131752756, null);
+            alertDialog$Builder.k(gd.N0(2131754213, null), new t0(this, i7));
+            alertDialog$Builder.h(gd.N0(2131747386, null), new t0(this, 1));
             showDialog(t1Var);
         }
         return false;
@@ -285,17 +285,17 @@ public final class u0 extends g2 implements gs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ls.F1);
-        getNotificationCenter().c(this, ls.E0);
-        v1.f(this.currentAccount).h();
+        getNotificationCenter().c(this, ks.F1);
+        getNotificationCenter().c(this, ks.E0);
+        w1.f(this.currentAccount).h();
         d0();
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ls.F1);
-        getNotificationCenter().n(this, ls.E0);
+        getNotificationCenter().n(this, ks.F1);
+        getNotificationCenter().n(this, ks.E0);
         super.onFragmentDestroy();
     }
 

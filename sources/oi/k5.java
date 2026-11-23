@@ -5,37 +5,37 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import j$.util.Objects;
 import java.util.LinkedHashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class k5 extends n41 {
+public final class k5 extends m41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        n41.h(new k5());
+        m41.h(new k5());
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
+    @Override // org.telegram.ui.Components.m41
+    public final void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
         m5 m5Var = (m5) view;
-        a aVar = (a) o41Var.H;
-        b3 b3Var = (b3) o41Var.I;
+        a aVar = (a) n41Var.H;
+        b3 b3Var = (b3) n41Var.I;
         o5 o5Var = m5Var.w;
         boolean z11 = true;
         boolean z12 = m5Var.a != aVar;
         m5Var.a = aVar;
         m5Var.F = b3Var;
-        m5Var.E = hd.a0;
+        m5Var.E = gd.a0;
         m5Var.c(aVar);
         TL_iv.PageBlock pageBlock = aVar.b;
         if (pageBlock instanceof TL_iv.pageBlockTable) {
@@ -44,7 +44,7 @@ public final class k5 extends n41 {
             o5Var.setModel(e6Var);
             LinkedHashSet linkedHashSet = m5Var.I;
             Objects.requireNonNull(linkedHashSet);
-            o5Var.setSelectionProvider(new kg.x1(linkedHashSet, 27));
+            o5Var.setSelectionProvider(new kg.f1(linkedHashSet, 29));
             m5Var.A();
             f1 f1Var = m5Var.r;
             a aVar2 = m5Var.a;
@@ -77,14 +77,14 @@ public final class k5 extends n41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, h6 h6Var) {
-        m5 m5Var = new m5(context, h6Var);
-        m5Var.setBackground(new y1(m6.w0(m6.d6, h6Var)));
+    @Override // org.telegram.ui.Components.m41
+    public final View d(Context context, ek0 ek0Var, int i7, i6 i6Var) {
+        m5 m5Var = new m5(context, i6Var);
+        m5Var.setBackground(new y1(n6.w0(n6.d6, i6Var)));
         return m5Var;
     }
 
-    @Override // org.telegram.ui.Components.n41
+    @Override // org.telegram.ui.Components.m41
     public final boolean f() {
         return false;
     }

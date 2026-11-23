@@ -1,65 +1,55 @@
 package bi;
 
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.h51;
+import java.util.Comparator;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a7 implements Runnable {
+public final /* synthetic */ class a7 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
-    public final /* synthetic */ h51[] c;
-    public final /* synthetic */ a70 d;
+    public final /* synthetic */ m8 b;
 
-    public /* synthetic */ a7(j8 j8Var, h51[] h51VarArr, a70 a70Var, int i7) {
+    public /* synthetic */ a7(m8 m8Var, int i7) {
         this.a = i7;
-        this.b = j8Var;
-        this.c = h51VarArr;
-        this.d = a70Var;
+        this.b = m8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                x7 x7Var = this.b.d;
-                if (!x7Var.l.isEmpty()) {
-                    x7Var.l.clear();
-                    x7Var.m();
-                    h51 h51Var = this.c[0];
-                    if (h51Var != null) {
-                        h51Var.g3.O(true);
-                    }
-                    this.d.q0 = true;
-                    break;
+                a8 a8Var = this.b.d;
+                Integer num = (Integer) a8Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
+                Integer num2 = (Integer) a8Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
+                if (num == null) {
+                    return 1;
                 }
-                break;
+                if (num2 == null) {
+                    return -1;
+                }
+                return num2.intValue() - num.intValue();
             case 1:
-                x7 x7Var2 = this.b.d;
-                if (!x7Var2.k.isEmpty()) {
-                    x7Var2.k.clear();
-                    x7Var2.m();
-                    h51 h51Var2 = this.c[0];
-                    if (h51Var2 != null) {
-                        h51Var2.g3.O(true);
-                    }
-                    this.d.q0 = true;
-                    break;
+                a8 a8Var2 = this.b.d;
+                Integer num3 = (Integer) a8Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
+                Integer num4 = (Integer) a8Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
+                if (num3 == null) {
+                    return 1;
                 }
-                break;
+                if (num4 == null) {
+                    return -1;
+                }
+                return num4.intValue() - num3.intValue();
             default:
-                x7 x7Var3 = this.b.d;
-                if (!x7Var3.j.isEmpty()) {
-                    x7Var3.j.clear();
-                    x7Var3.m();
-                    h51 h51Var3 = this.c[0];
-                    if (h51Var3 != null) {
-                        h51Var3.g3.O(true);
-                    }
-                    this.d.q0 = true;
-                    break;
+                a8 a8Var3 = this.b.d;
+                Integer num5 = (Integer) a8Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
+                Integer num6 = (Integer) a8Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
+                if (num5 == null) {
+                    return 1;
                 }
-                break;
+                if (num6 == null) {
+                    return -1;
+                }
+                return num6.intValue() - num5.intValue();
         }
     }
 }

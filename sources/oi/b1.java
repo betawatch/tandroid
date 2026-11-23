@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class b1 implements TextWatcher {
     public final /* synthetic */ f1 a;
@@ -27,7 +27,7 @@ public final class b1 implements TextWatcher {
             c6.o(editable2, 0, editable.length(), 1, true, f1Var.x2);
         }
         if (f1Var.n2 || f1Var.j2 || f1Var.k2) {
-            f1Var.e2.s1(editable2);
+            f1Var.e2.g0(editable2);
             return;
         }
         f1Var.i2 = true;
@@ -40,9 +40,9 @@ public final class b1 implements TextWatcher {
         }
         f1Var.i2 = false;
         if (z10) {
-            f1Var.e2.x0(f1Var);
+            f1Var.e2.A(f1Var);
         } else {
-            f1Var.e2.s1(editable2);
+            f1Var.e2.g0(editable2);
         }
     }
 
@@ -53,7 +53,7 @@ public final class b1 implements TextWatcher {
         if (f1Var.i2 || (e1Var = f1Var.e2) == null) {
             return;
         }
-        e1Var.A(i10, i11);
+        e1Var.m(i10, i11);
     }
 
     @Override // android.text.TextWatcher

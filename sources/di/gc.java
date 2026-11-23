@@ -6,9 +6,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.ui.Components.u10;
+import org.telegram.ui.Components.s10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gc implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -46,25 +46,25 @@ public final /* synthetic */ class gc implements ValueAnimator.AnimatorUpdateLis
                 jcVar.invalidate();
                 break;
             case 1:
-                u10 u10Var = (u10) view;
-                u10Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i13, i12);
-                u10Var.N = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
-                u10Var.G.setColorFilter(new PorterDuffColorFilter(u10Var.M, PorterDuff.Mode.MULTIPLY));
-                u10Var.F.setColor(u10Var.M);
-                u10Var.r.setColor(u10Var.N);
-                u10Var.K.d(i0.a.o(u10Var.N, 38));
-                u10Var.invalidate();
+                s10 s10Var = (s10) view;
+                s10Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i13, i12);
+                s10Var.N = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                s10Var.G.setColorFilter(new PorterDuffColorFilter(s10Var.M, PorterDuff.Mode.MULTIPLY));
+                s10Var.F.setColor(s10Var.M);
+                s10Var.r.setColor(s10Var.N);
+                s10Var.K.d(i0.a.o(s10Var.N, 38));
+                s10Var.invalidate();
                 break;
             default:
-                org.telegram.ui.Components.voip.y yVar = (org.telegram.ui.Components.voip.y) view;
-                yVar.getClass();
+                org.telegram.ui.Components.voip.z zVar = (org.telegram.ui.Components.voip.z) view;
+                zVar.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yVar.E0 = i0.a.f(floatValue2, i13, i12);
+                zVar.E0 = i0.a.f(floatValue2, i13, i12);
                 int f10 = i0.a.f(floatValue2, i11, i10);
-                yVar.G0 = f10;
-                yVar.U.setColor(f10);
-                if (yVar.T > 0.0f) {
-                    yVar.invalidate();
+                zVar.G0 = f10;
+                zVar.U.setColor(f10);
+                if (zVar.T > 0.0f) {
+                    zVar.invalidate();
                     break;
                 }
                 break;

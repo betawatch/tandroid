@@ -1,73 +1,26 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.DeadObjectException;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class d1 extends u0 {
-    public final u b;
-    public final TaskCompletionSource c;
-    public final r d;
+public abstract class d1 {
+    public final int a;
 
-    public d1(int i7, u uVar, TaskCompletionSource taskCompletionSource, r rVar) {
-        super(i7);
-        this.c = taskCompletionSource;
-        this.b = uVar;
-        this.d = rVar;
-        if (i7 == 2 && uVar.b) {
-            throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
-        }
+    public d1(int i7) {
+        this.a = i7;
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final void a(Status status) {
-        this.c.trySetException(this.d.k(status));
+    public static Status e(RemoteException remoteException) {
+        return new Status(19, remoteException.getClass().getSimpleName() + ": " + remoteException.getLocalizedMessage(), null, null);
     }
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final void b(Exception exc) {
-        this.c.trySetException(exc);
-    }
+    public abstract void a(Status status);
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final void c(a1 a1Var, boolean z10) {
-        Boolean valueOf = Boolean.valueOf(z10);
-        Map map = (Map) a1Var.b;
-        TaskCompletionSource taskCompletionSource = this.c;
-        map.put(taskCompletionSource, valueOf);
-        taskCompletionSource.getTask().addOnCompleteListener(new a1(a1Var, taskCompletionSource));
-    }
+    public abstract void b(Exception exc);
 
-    @Override // com.google.android.gms.common.api.internal.e1
-    public final void d(l0 l0Var) {
-        TaskCompletionSource taskCompletionSource = this.c;
-        try {
-            this.b.c(l0Var.b, taskCompletionSource);
-        } catch (DeadObjectException e10) {
-            throw e10;
-        } catch (RemoteException e11) {
-            a(e1.e(e11));
-        } catch (RuntimeException e12) {
-            taskCompletionSource.trySetException(e12);
-        }
-    }
+    public abstract void c(z0 z0Var, boolean z10);
 
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final n6.c[] f(l0 l0Var) {
-        return this.b.a;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final boolean g(l0 l0Var) {
-        return this.b.b;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final int h(l0 l0Var) {
-        return this.b.c;
-    }
+    public abstract void d(k0 k0Var);
 }

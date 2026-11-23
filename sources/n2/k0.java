@@ -1,102 +1,133 @@
 package n2;
 
-import a8.la;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Arrays;
-import org.telegram.messenger.ls;
+import android.media.AudioTrack;
+import android.os.Build;
+import android.os.SystemClock;
+import java.lang.reflect.Method;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class k0 extends f2.o {
-    public int[] i;
-    public int[] j;
+public final class k0 {
+    public boolean A;
+    public long B;
+    public final h6.o a;
+    public final h2.g0 b;
+    public final long[] c;
+    public final AudioTrack d;
+    public final int e;
+    public final long f;
+    public final boolean g;
+    public final z h;
+    public float i;
+    public long j;
+    public long k;
+    public long l;
+    public Method m;
+    public long n;
+    public long o;
+    public long p;
+    public long q;
+    public long r;
+    public int s;
+    public int t;
+    public long u;
+    public long v;
+    public long w;
+    public long x;
+    public long y;
+    public long z;
 
-    @Override // f2.n
-    public final void c(ByteBuffer byteBuffer) {
-        int[] iArr = this.j;
-        iArr.getClass();
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        ByteBuffer l10 = l(((limit - position) / this.b.d) * this.c.d);
-        while (position < limit) {
-            for (int i7 : iArr) {
-                int u10 = (h2.l0.u(this.b.c) * i7) + position;
-                int i10 = this.b.c;
-                if (i10 != 2) {
-                    if (i10 == 3) {
-                        l10.put(byteBuffer.get(u10));
-                    } else if (i10 != 4) {
-                        if (i10 != 21) {
-                            if (i10 != 22) {
-                                if (i10 != 268435456) {
-                                    if (i10 != 1342177280) {
-                                        if (i10 != 1610612736) {
-                                            if (i10 != 1879048192) {
-                                                throw new IllegalStateException("Unexpected encoding: " + this.b.c);
-                                            }
-                                            l10.putDouble(byteBuffer.getDouble(u10));
-                                        }
-                                    }
-                                }
-                            }
-                            l10.putInt(byteBuffer.getInt(u10));
-                        }
-                        ByteOrder order = byteBuffer.order();
-                        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
-                        byte b10 = byteBuffer.get(order == byteOrder ? u10 : u10 + 2);
-                        byte b11 = byteBuffer.get(u10 + 1);
-                        if (byteBuffer.order() == byteOrder) {
-                            u10 += 2;
-                        }
-                        int i11 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
-                        la.h((i11 & (-16777216)) == 0 || (i11 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i11));
-                        la.f(l10.remaining() >= 3);
-                        l10.put((byte) (l10.order() == byteOrder ? (i11 & 16711680) >> 16 : i11 & ls.e4)).put((byte) ((i11 & 65280) >> 8)).put((byte) (l10.order() == byteOrder ? i11 & ls.e4 : (i11 & 16711680) >> 16));
-                    } else {
-                        l10.putFloat(byteBuffer.getFloat(u10));
+    public k0(h6.o oVar, h2.g0 g0Var, AudioTrack audioTrack, int i7, int i10, int i11) {
+        this.a = oVar;
+        this.b = g0Var;
+        this.d = audioTrack;
+        try {
+            this.m = AudioTrack.class.getMethod("getLatency", null);
+        } catch (NoSuchMethodException unused) {
+        }
+        this.c = new long[10];
+        this.z = -9223372036854775807L;
+        this.y = -9223372036854775807L;
+        this.h = new z(audioTrack, oVar);
+        int sampleRate = audioTrack.getSampleRate();
+        this.e = sampleRate;
+        boolean M = h2.l0.M(i7);
+        this.g = M;
+        this.f = M ? h2.l0.Y(sampleRate, i11 / i10) : -9223372036854775807L;
+        this.q = 0L;
+        this.r = 0L;
+        this.A = false;
+        this.B = 0L;
+        this.u = -9223372036854775807L;
+        this.v = -9223372036854775807L;
+        this.o = 0L;
+        this.n = 0L;
+        this.i = 1.0f;
+        this.j = -9223372036854775807L;
+    }
+
+    public final long a() {
+        if (this.u != -9223372036854775807L) {
+            return Math.min(this.x, c());
+        }
+        this.b.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (elapsedRealtime - this.p >= 5) {
+            int playState = this.d.getPlayState();
+            if (playState != 1) {
+                long playbackHeadPosition = r4.getPlaybackHeadPosition() & 4294967295L;
+                if (Build.VERSION.SDK_INT <= 29) {
+                    if (playbackHeadPosition != 0 || this.q <= 0 || playState != 3) {
+                        this.v = -9223372036854775807L;
+                    } else if (this.v == -9223372036854775807L) {
+                        this.v = elapsedRealtime;
                     }
                 }
-                l10.putShort(byteBuffer.getShort(u10));
+                long j3 = this.q;
+                if (j3 > playbackHeadPosition) {
+                    if (this.A) {
+                        this.B += j3;
+                        this.A = false;
+                    } else {
+                        this.r++;
+                    }
+                }
+                this.q = playbackHeadPosition;
             }
-            position += this.b.d;
+            this.p = elapsedRealtime;
         }
-        byteBuffer.position(limit);
-        l10.flip();
+        return this.q + this.B + (this.r << 32);
     }
 
-    @Override // f2.o
-    public final f2.k h(f2.k kVar) {
-        int i7 = kVar.c;
-        int[] iArr = this.i;
-        if (iArr == null) {
-            return f2.k.e;
-        }
-        int i10 = kVar.b;
-        if (!h2.l0.M(i7)) {
-            throw new f2.m(kVar);
-        }
-        boolean z10 = i10 != iArr.length;
-        int i11 = 0;
-        while (i11 < iArr.length) {
-            int i12 = iArr[i11];
-            if (i12 >= i10) {
-                throw new f2.m("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", kVar);
-            }
-            z10 |= i12 != i11;
-            i11++;
-        }
-        return z10 ? new f2.k(kVar.a, iArr.length, i7) : f2.k.e;
+    public final long b(long j3) {
+        int i7 = this.t;
+        int i10 = this.e;
+        long max = Math.max(0L, (i7 == 0 ? this.u != -9223372036854775807L ? h2.l0.Y(i10, c()) : h2.l0.Y(i10, a()) : h2.l0.B(j3 + this.k, this.i)) - this.n);
+        return this.u != -9223372036854775807L ? Math.min(h2.l0.Y(i10, this.x), max) : max;
     }
 
-    @Override // f2.o
-    public final void i() {
-        this.j = this.i;
+    public final long c() {
+        if (this.d.getPlayState() == 2) {
+            return this.w;
+        }
+        this.b.getClass();
+        return this.w + h2.l0.a0(h2.l0.B(h2.l0.S(SystemClock.elapsedRealtime()) - this.u, this.i), this.e, 1000000L, RoundingMode.UP);
     }
 
-    @Override // f2.o
-    public final void k() {
-        this.j = null;
-        this.i = null;
+    public final void d(long j3) {
+        long j10 = this.j;
+        if (j10 == -9223372036854775807L || j3 < j10) {
+            return;
+        }
+        long F = h2.l0.F(j3 - j10, this.i);
+        this.b.getClass();
+        long currentTimeMillis = System.currentTimeMillis() - h2.l0.h0(F);
+        this.j = -9223372036854775807L;
+        h2.r rVar = ((h0) this.a.b).j;
+        rVar.getClass();
+        if (Thread.currentThread() == rVar.a) {
+            rVar.e(-1, new e0(currentTimeMillis));
+        }
     }
 }

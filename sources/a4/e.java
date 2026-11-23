@@ -2,7 +2,8 @@ package a4;
 
 import e2.t0;
 import e2.u;
-import f3.b0;
+import f3.c0;
+import f3.j0;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -11,11 +12,11 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements o {
     public q a;
@@ -59,7 +60,7 @@ public final class e implements o {
                 jVar.e = j11;
                 h hVar = jVar.d;
                 String str = l0.a;
-                hVar.v0(j11);
+                hVar.l0(j11);
                 jVar.h = 2;
             }
         }
@@ -68,7 +69,7 @@ public final class e implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:60:0x0178 A[RETURN] */
@@ -85,11 +86,11 @@ public final class e implements o {
             if (!g(pVar)) {
                 throw t0.a(null, "Failed to determine bitstream type");
             }
-            pVar.n();
+            pVar.o();
         }
         if (!this.c) {
-            f3.i0 d2 = this.a.d2(0, 1);
-            this.a.d1();
+            j0 d2 = this.a.d2(0, 1);
+            this.a.Z0();
             j jVar = this.b;
             jVar.c = this.a;
             jVar.b = d2;
@@ -105,7 +106,7 @@ public final class e implements o {
         int i12 = 3;
         if (i10 != 0) {
             if (i10 == 1) {
-                pVar.r((int) jVar2.f);
+                pVar.q((int) jVar2.f);
                 jVar2.h = 2;
                 return 0;
             }
@@ -115,19 +116,19 @@ public final class e implements o {
                 }
                 throw new IllegalStateException();
             }
-            long m0 = jVar2.d.m0(pVar);
-            if (m0 >= 0) {
-                sVar.a = m0;
+            long a02 = jVar2.d.a0(pVar);
+            if (a02 >= 0) {
+                sVar.a = a02;
                 return 1;
             }
-            if (m0 < -1) {
-                jVar2.a(-(m0 + 2));
+            if (a02 < -1) {
+                jVar2.a(-(a02 + 2));
             }
             if (!jVar2.l) {
-                b0 f10 = jVar2.d.f();
-                f10.getClass();
-                jVar2.c.j(f10);
-                jVar2.b.d(f10.h());
+                c0 N = jVar2.d.N();
+                N.getClass();
+                jVar2.c.h(N);
+                jVar2.b.d(N.h());
                 jVar2.l = true;
             }
             if (jVar2.k <= 0 && !fVar.b(pVar)) {

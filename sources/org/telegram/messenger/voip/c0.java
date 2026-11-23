@@ -1,21 +1,21 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.ur;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ ur c;
+    public final /* synthetic */ tr c;
 
-    public /* synthetic */ c0(VoIPService voIPService, ur urVar, int i7) {
+    public /* synthetic */ c0(VoIPService voIPService, tr trVar, int i7) {
         this.a = i7;
         this.b = voIPService;
-        this.c = urVar;
+        this.c = trVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate

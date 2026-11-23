@@ -1,95 +1,75 @@
 package li;
 
-import android.content.Context;
-import android.widget.TextView;
-import bi.c4;
-import java.util.ArrayList;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t1;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.bn;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.fj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.oq0;
+import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ gs e;
+public final class m extends oq0 {
+    public final /* synthetic */ o a;
 
-    public /* synthetic */ m(gs gsVar, boolean z10, boolean z11, long j3, int i7) {
-        this.a = i7;
-        this.e = gsVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = j3;
+    public m(o oVar) {
+        this.a = oVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        int i10 = 2131751902;
-        boolean z10 = this.c;
-        boolean z11 = this.b;
-        long j3 = this.d;
-        gs gsVar = this.e;
-        switch (i7) {
-            case 0:
-                p pVar = (p) gsVar;
-                String N0 = hd.N0(2131751903, null);
-                if (z11) {
-                    i10 = 2131751905;
-                } else if (z10) {
-                    i10 = 2131751904;
-                }
-                c5.s0(pVar, N0, hd.N0(i10, null), hd.N0(2131746125, null), true, new h(pVar, j3, 0));
-                break;
-            case 1:
-                d0 d0Var = (d0) gsVar;
-                Context context = d0Var.getContext();
-                h6 h6Var = d0Var.J0;
-                String N02 = hd.N0(2131751903, null);
-                if (z11) {
-                    i10 = 2131751905;
-                } else if (z10) {
-                    i10 = 2131751904;
-                }
-                t1 M = c5.M(context, h6Var, N02, hd.N0(i10, null), hd.N0(2131746125, null), new c4(d0Var, j3, 12));
-                M.show();
-                TextView textView = (TextView) M.d(-1);
-                if (textView != null) {
-                    t6.U(textView, m6.q7, null);
-                    break;
-                }
-                break;
-            case 2:
-                np npVar = (np) gsVar;
-                ArrayList arrayList = z11 ? npVar.w0 : npVar.v0;
-                if (!z10) {
-                    arrayList.remove(Long.valueOf(j3));
-                    break;
-                } else if (!arrayList.contains(Long.valueOf(j3))) {
-                    arrayList.add(Long.valueOf(j3));
-                    break;
-                }
-                break;
-            default:
-                bn.y1((bn) gsVar, j3, z11, z10);
-                break;
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final wq0 E(fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        TLRPC.FileLocation fileLocation2;
+        TLRPC.ChatPhoto chatPhoto;
+        if (fileLocation != null) {
+            o oVar = this.a;
+            TLRPC.Chat O0 = oVar.getMessagesController().O0(Long.valueOf(oVar.c));
+            if (O0 == null || (chatPhoto = O0.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null) {
+                fileLocation2 = null;
+            }
+            if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
+                int[] iArr = new int[2];
+                oVar.x.getLocationInWindow(iArr);
+                wq0 wq0Var = new wq0();
+                wq0Var.b = iArr[0];
+                wq0Var.c = iArr[1];
+                p9 p9Var = oVar.x;
+                wq0Var.d = p9Var;
+                ImageReceiver imageReceiver = p9Var.getImageReceiver();
+                wq0Var.a = imageReceiver;
+                wq0Var.f = -oVar.c;
+                wq0Var.e = imageReceiver.p();
+                wq0Var.g = -1L;
+                wq0Var.h = oVar.x.getImageReceiver().F();
+                wq0Var.k = 1.0f;
+                wq0Var.p = true;
+                return wq0Var;
+            }
         }
+        return null;
     }
 
-    public /* synthetic */ m(bn bnVar, long j3, boolean z10, boolean z11) {
-        this.a = 3;
-        this.e = bnVar;
-        this.d = j3;
-        this.b = z10;
-        this.c = z11;
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void G() {
+        this.a.x.getImageReceiver().P0(true, true);
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean N() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.G.p(str, str2, z10);
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final int y() {
+        return 1;
     }
 }

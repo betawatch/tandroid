@@ -1,12 +1,12 @@
 package vh;
 
 import android.view.View;
+import j6.r;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.tn;
+import org.telegram.ui.Components.qn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,31 +23,31 @@ public final /* synthetic */ class a implements View.OnClickListener {
         g gVar = this.b;
         switch (i7) {
             case 0:
-                jn jnVar = gVar.g2;
-                if (jnVar != null) {
+                r rVar = gVar.g2;
+                if (rVar != null) {
                     ArrayList arrayList = new ArrayList(gVar.f2.keySet());
-                    tn tnVar = (tn) jnVar.b;
-                    ArrayList arrayList2 = tnVar.Q0;
+                    qn qnVar = (qn) rVar.b;
+                    ArrayList arrayList2 = qnVar.Q0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
-                    int i10 = tnVar.M0;
+                    int i10 = qnVar.M0;
                     if (i10 >= 0) {
-                        tnVar.r.g(i10);
+                        qnVar.r.g(i10);
                     }
                 }
                 gVar.dismiss();
                 break;
             case 1:
-                jn jnVar2 = gVar.g2;
-                if (jnVar2 != null) {
+                r rVar2 = gVar.g2;
+                if (rVar2 != null) {
                     ArrayList arrayList3 = new ArrayList(gVar.f2.keySet());
-                    tn tnVar2 = (tn) jnVar2.b;
-                    ArrayList arrayList4 = tnVar2.Q0;
+                    qn qnVar2 = (qn) rVar2.b;
+                    ArrayList arrayList4 = qnVar2.Q0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);
-                    int i11 = tnVar2.M0;
+                    int i11 = qnVar2.M0;
                     if (i11 >= 0) {
-                        tnVar2.r.g(i11);
+                        qnVar2.r.g(i11);
                     }
                 }
                 gVar.dismiss();

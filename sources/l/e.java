@@ -17,8 +17,8 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import bi.v2;
-import hi.t5;
+import bi.x2;
+import hi.u0;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -29,7 +29,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -52,8 +52,8 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
     public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 1);
-    public final v2 s = new v2(this, 7);
-    public final t5 w = new t5(this, 9);
+    public final x2 s = new x2(this, 7);
+    public final u0 w = new u0(this, 10);
     public int x = 0;
     public int y = 0;
     public boolean L = false;
@@ -82,7 +82,47 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.x
-    public final void d(k kVar, boolean z10) {
+    public final void d() {
+        ArrayList arrayList = this.n;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ListAdapter adapter = ((d) obj).a.c.getAdapter();
+            if (adapter instanceof HeaderViewListAdapter) {
+                adapter = ((HeaderViewListAdapter) adapter).getWrappedAdapter();
+            }
+            ((h) adapter).notifyDataSetChanged();
+        }
+    }
+
+    @Override // l.b0
+    public final void dismiss() {
+        ArrayList arrayList = this.n;
+        int size = arrayList.size();
+        if (size > 0) {
+            d[] dVarArr = (d[]) arrayList.toArray(new d[size]);
+            for (int i7 = size - 1; i7 >= 0; i7--) {
+                d dVar = dVarArr[i7];
+                if (dVar.a.P.isShowing()) {
+                    dVar.a.dismiss();
+                }
+            }
+        }
+    }
+
+    @Override // l.b0
+    public final r1 e() {
+        ArrayList arrayList = this.n;
+        if (arrayList.isEmpty()) {
+            return null;
+        }
+        return ((d) i5.c.h(1, arrayList)).a.c;
+    }
+
+    @Override // l.x
+    public final void f(k kVar, boolean z10) {
         ArrayList arrayList = this.n;
         int size = arrayList.size();
         int i7 = 0;
@@ -131,7 +171,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         dismiss();
         w wVar = this.N;
         if (wVar != null) {
-            wVar.d(kVar, true);
+            wVar.f(kVar, true);
         }
         ViewTreeObserver viewTreeObserver = this.O;
         if (viewTreeObserver != null) {
@@ -142,46 +182,6 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         this.F.removeOnAttachStateChangeListener(this.s);
         this.P.onDismiss();
-    }
-
-    @Override // l.b0
-    public final void dismiss() {
-        ArrayList arrayList = this.n;
-        int size = arrayList.size();
-        if (size > 0) {
-            d[] dVarArr = (d[]) arrayList.toArray(new d[size]);
-            for (int i7 = size - 1; i7 >= 0; i7--) {
-                d dVar = dVarArr[i7];
-                if (dVar.a.P.isShowing()) {
-                    dVar.a.dismiss();
-                }
-            }
-        }
-    }
-
-    @Override // l.x
-    public final void e() {
-        ArrayList arrayList = this.n;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ListAdapter adapter = ((d) obj).a.c.getAdapter();
-            if (adapter instanceof HeaderViewListAdapter) {
-                adapter = ((HeaderViewListAdapter) adapter).getWrappedAdapter();
-            }
-            ((h) adapter).notifyDataSetChanged();
-        }
-    }
-
-    @Override // l.b0
-    public final r1 f() {
-        ArrayList arrayList = this.n;
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        return ((d) i5.c.h(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -236,7 +236,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         l(d0Var);
         w wVar = this.N;
         if (wVar != null) {
-            wVar.C(d0Var);
+            wVar.u(d0Var);
         }
         return true;
     }
@@ -392,8 +392,8 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         j2Var.O = true;
         xVar.setFocusable(true);
         xVar.setInputMethodMode(2);
-        j2Var.p(hVar2);
-        j2Var.r(m10);
+        j2Var.o(hVar2);
+        j2Var.q(m10);
         j2Var.x = this.y;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {

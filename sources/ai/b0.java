@@ -1,115 +1,76 @@
 package ai;
 
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.gf;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.sf;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements Runnable {
+public final /* synthetic */ class b0 implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ b0(p0 p0Var, int i7) {
+    public /* synthetic */ b0(int i7, FrameLayout frameLayout) {
         this.a = i7;
-        this.b = p0Var;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        s0 s0Var;
-        s0 s0Var2;
-        s0 s0Var3;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
         switch (this.a) {
             case 0:
-                p0 p0Var = this.b;
-                if (!p0Var.p() && (s0Var = p0Var.s) != null) {
-                    s0Var.setShown(false);
+                bi.b1 b1Var = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        LinearLayout linearLayout = b1Var.e;
+                        if (linearLayout == null || b1Var.O) {
+                            b1Var.c(null);
+                        } else {
+                            b1Var.e = null;
+                            b1Var.h(linearLayout, false);
+                        }
+                    }
                     break;
                 }
                 break;
             case 1:
-                p0 p0Var2 = this.b;
-                if (!p0Var2.p() && (s0Var2 = p0Var2.s) != null) {
-                    s0Var2.e();
+                bi.b1 b1Var2 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var2.c(null);
+                    }
                     break;
                 }
                 break;
             case 2:
-                gf gfVar = this.b.f.a.F0;
-                if (gfVar != null) {
-                    gfVar.requestFocus();
+                bi.b1 b1Var3 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var3.c(null);
+                    }
                     break;
                 }
                 break;
             case 3:
-                ChatActivityEnterView chatActivityEnterView = this.b.f.a;
-                chatActivityEnterView.G1 = 0L;
-                chatActivityEnterView.H1 = null;
-                break;
-            case 4:
-                p0 p0Var3 = this.b;
-                sf sfVar = p0Var3.f;
-                String z10 = p0Var3.z();
-                h0 h0Var = new h0(p0Var3, 0);
-                sfVar.getClass();
-                ChatActivityEnterView chatActivityEnterView2 = sfVar.a;
-                org.telegram.ui.Components.n0 n0Var = new org.telegram.ui.Components.n0(chatActivityEnterView2.getContext(), chatActivityEnterView2.M4);
-                n0Var.x1(z10);
-                n0Var.f2 = h0Var;
-                n0Var.show();
-                break;
-            case 5:
-                gf gfVar2 = this.b.f.a.F0;
-                if (gfVar2 != null) {
-                    gfVar2.requestFocus();
+                bi.b1 b1Var4 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var4.c(null);
+                    }
                     break;
                 }
-                break;
-            case 6:
-                p0 p0Var4 = this.b;
-                if (p0Var4.r == 3 && (s0Var3 = p0Var4.s) != null) {
-                    s0Var3.e();
-                    break;
-                }
-                break;
-            case 7:
-                p0 p0Var5 = this.b;
-                int i7 = p0Var5.r;
-                if (i7 == 3 || i7 == 4) {
-                    p0Var5.w.setIsland(true);
-                    break;
-                }
-                break;
-            case 8:
-                p0 p0Var6 = this.b;
-                if (p0Var6.r == 1) {
-                    p0Var6.M(true);
-                    break;
-                }
-                break;
-            case 9:
-                p0 p0Var7 = this.b;
-                if (p0Var7.r == 1) {
-                    p0Var7.M(false);
-                    break;
-                }
-                break;
-            case 10:
-                nr nrVar = nr.h;
-                p0 p0Var8 = this.b;
-                p0Var8.b(0.0f, 320L, nrVar);
-                org.telegram.messenger.g0.h3(new b0(p0Var8, 1), 360L);
                 break;
             default:
-                p0 p0Var9 = this.b;
-                if (!p0Var9.p()) {
-                    p0Var9.f.a.M1(null, true);
-                    p0Var9.b(0.0f, 240L, nr.g);
+                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.b;
+                q0Var.getClass();
+                if (i7 == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && (g1Var = q0Var.d) != null && g1Var.isShowing()) {
+                    q0Var.d.d(true);
                     break;
                 }
                 break;
         }
+        return true;
     }
 }

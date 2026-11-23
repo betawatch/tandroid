@@ -1,113 +1,86 @@
 package gb;
 
-import android.util.Log;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class z0 extends kd.j implements rd.p {
+public final class z0 implements ce.d {
     public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z0(Object obj, id.c cVar, int i7) {
-        super(2, cVar);
+    public /* synthetic */ z0(Object obj, int i7) {
         this.a = i7;
-        this.c = obj;
+        this.b = obj;
     }
 
-    @Override // kd.a
-    public final id.c create(Object obj, id.c cVar) {
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0051  */
+    @Override // ce.d
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object a(Object obj, id.c cVar) {
+        m1.o oVar;
+        int i7;
+        Object e10;
         switch (this.a) {
             case 0:
-                return new z0((d1) this.c, cVar, 0);
-            case 1:
-                return new z0((d1) this.c, cVar, 1);
-            default:
-                return new z0((ka.d) this.c, cVar, 2);
-        }
-    }
-
-    @Override // rd.p
-    public final Object invoke(Object obj, Object obj2) {
-        zd.z zVar = (zd.z) obj;
-        id.c cVar = (id.c) obj2;
-        switch (this.a) {
-        }
-        return ((z0) create(zVar, cVar)).invokeSuspend(gd.k.a);
-    }
-
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        switch (this.a) {
-            case 0:
-                d1 d1Var = (d1) this.c;
-                jd.a aVar = jd.a.a;
-                int i7 = this.b;
-                if (i7 == 0) {
-                    b7.h.b(obj);
-                    wf.b bVar = new wf.b(8, d1Var.e.getData(), new x0(d1Var, null));
-                    y0 y0Var = new y0(d1Var, 0);
-                    this.b = 1;
-                    if (bVar.v(y0Var, this) == aVar) {
-                        return aVar;
-                    }
-                } else {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    b7.h.b(obj);
+                k0 k0Var = (k0) obj;
+                e1 e1Var = (e1) this.b;
+                kotlin.jvm.internal.j.e(k0Var, "<set-?>");
+                e1Var.h = k0Var;
+                if (e1Var.j) {
+                    e1Var.j = false;
+                    e1Var.c();
                 }
-                return gd.k.a;
+                Object a10 = e1.a(e1Var, k0Var.a.a, b1.a, cVar);
+                return a10 == jd.a.a ? a10 : gd.k.a;
             case 1:
-                d1 d1Var2 = (d1) this.c;
+                if (cVar instanceof m1.o) {
+                    oVar = (m1.o) cVar;
+                    int i10 = oVar.b;
+                    if ((i10 & TLObject.FLAG_31) != 0) {
+                        oVar.b = i10 - TLObject.FLAG_31;
+                        Object obj2 = oVar.a;
+                        jd.a aVar = jd.a.a;
+                        i7 = oVar.b;
+                        if (i7 != 0) {
+                            c8.z.b(obj2);
+                            ce.d dVar = (ce.d) this.b;
+                            m1.e1 e1Var2 = (m1.e1) obj;
+                            if (e1Var2 instanceof m1.w0) {
+                                throw ((m1.w0) e1Var2).b;
+                            }
+                            if (!(e1Var2 instanceof m1.c)) {
+                                if (e1Var2 instanceof m1.l0 ? true : e1Var2 instanceof m1.f1) {
+                                    throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+                                }
+                                throw new androidx.car.app.j();
+                            }
+                            Object obj3 = ((m1.c) e1Var2).b;
+                            oVar.b = 1;
+                            if (dVar.a(obj3, oVar) == aVar) {
+                                return aVar;
+                            }
+                        } else {
+                            if (i7 != 1) {
+                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                            }
+                            c8.z.b(obj2);
+                        }
+                        return gd.k.a;
+                    }
+                }
+                oVar = new m1.o(this, cVar);
+                Object obj22 = oVar.a;
                 jd.a aVar2 = jd.a.a;
-                int i10 = this.b;
-                id.c cVar = null;
-                try {
-                    if (i10 == 0) {
-                        b7.h.b(obj);
-                        m1.g gVar = d1Var2.e;
-                        b1 b1Var = new b1(d1Var2, cVar, 0);
-                        this.b = 1;
-                        if (gVar.a(b1Var, this) == aVar2) {
-                            return aVar2;
-                        }
-                    } else {
-                        if (i10 != 1) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        b7.h.b(obj);
-                    }
-                } catch (Exception e10) {
-                    Log.d("FirebaseSessions", "App backgrounded, failed to update data. Message: " + e10.getMessage());
-                    j0 j0Var = d1Var2.h;
-                    if (j0Var == null) {
-                        kotlin.jvm.internal.j.h("localSessionData");
-                        throw null;
-                    }
-                    d1Var2.h = j0.a(j0Var, null, d1Var2.d.a(), null, 5);
+                i7 = oVar.b;
+                if (i7 != 0) {
                 }
                 return gd.k.a;
             default:
-                jd.a aVar3 = jd.a.a;
-                int i11 = this.b;
-                if (i11 == 0) {
-                    b7.h.b(obj);
-                    ce.c data = ((ka.d) this.c).c.a.getData();
-                    this.b = 1;
-                    obj = ce.x.e(data, this);
-                    if (obj == aVar3) {
-                        return aVar3;
-                    }
-                } else {
-                    if (i11 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    b7.h.b(obj);
-                }
-                q1.b bVar2 = (q1.b) obj;
-                return bVar2 != null ? bVar2.a() : hd.o.a;
+                m1.b0 b0Var = (m1.b0) this.b;
+                return ((b0Var.h.v() instanceof m1.l0) || (e10 = m1.b0.e(b0Var, true, cVar)) != jd.a.a) ? gd.k.a : e10;
         }
     }
 }

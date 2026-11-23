@@ -12,15 +12,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Random;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.yz;
-import org.telegram.ui.Components.z60;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c0 {
     public static int A(int i7, int i10, Drawable drawable) {
@@ -51,8 +51,8 @@ public abstract /* synthetic */ class c0 {
         throw null;
     }
 
-    public static boolean a(gj gjVar) {
-        return gjVar != null && gj.B0(gjVar.k) == 1271266957;
+    public static boolean a(fj fjVar) {
+        return fjVar != null && fj.B0(fjVar.k) == 1271266957;
     }
 
     public static void b(RecyclerView recyclerView) {
@@ -66,7 +66,7 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i7 = tt0.m0;
+        int i7 = st0.m0;
         v4.p0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;
@@ -78,8 +78,8 @@ public abstract /* synthetic */ class c0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static void d(z60 z60Var, boolean z10) {
-        ((View) z60Var).setVisibility(z10 ? 4 : 0);
+    public static void d(w60 w60Var, boolean z10) {
+        ((View) w60Var).setVisibility(z10 ? 4 : 0);
     }
 
     public static float e(float f10, float f11, float f12) {
@@ -106,8 +106,8 @@ public abstract /* synthetic */ class c0 {
         return (drawable.getIntrinsicHeight() / i7) + i10;
     }
 
-    public static int k(yz yzVar, int i7) {
-        return yzVar.c(yzVar.getMeasuredWidth()) + i7;
+    public static int k(vz vzVar, int i7) {
+        return vzVar.c(vzVar.getMeasuredWidth()) + i7;
     }
 
     public static Bundle l(int i7, String str, String str2, boolean z10) {
@@ -123,13 +123,13 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static Integer n(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
-        arrayList.add(hd.N0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(Integer.valueOf(i10));
         return Integer.valueOf(i11);
     }
 
     public static Integer o(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num, int i10) {
-        arrayList.add(hd.N0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(num);
         return Integer.valueOf(i10);
     }
@@ -146,25 +146,25 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static void r(int i7, String str, ArrayList arrayList) {
-        arrayList.add(new q6(i7, str));
+        arrayList.add(new p6(i7, str));
     }
 
     public static void s(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(hd.N0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(num);
     }
 
-    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new lc(frameLayout, h6Var).g0(tL_error, z10);
+    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.i6 i6Var, TLRPC.TL_error tL_error, boolean z10) {
+        new kc(frameLayout, i6Var).g0(tL_error, z10);
     }
 
     public static void u(String str, int i7, StringBuilder sb2, String str2) {
-        sb2.append(hd.N0(i7, str));
+        sb2.append(gd.N0(i7, str));
         sb2.append(str2);
     }
 
     public static void v(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
-        arrayList.add(hd.N0(i7, str));
+        arrayList.add(gd.N0(i7, str));
         arrayList2.add(Integer.valueOf(i10));
     }
 

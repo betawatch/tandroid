@@ -1,32 +1,52 @@
 package y7;
 
-import c8.fe;
-import java.util.AbstractMap;
+import c8.ge;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class n9 extends k9 {
-    public final /* synthetic */ a c;
+public final class n9 extends l9 {
+    public static final n9 e = new n9(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public n9(a aVar) {
-        this.c = aVar;
+    public n9(int i7, Object[] objArr) {
+        this.c = objArr;
+        this.d = i7;
+    }
+
+    @Override // y7.l9, y7.i9
+    public final int f(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i7 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i7);
+        return i7;
     }
 
     @Override // java.util.List
-    public final /* synthetic */ Object get(int i7) {
-        a aVar = this.c;
-        fe.a(i7, aVar.e);
-        int i10 = i7 + i7;
-        Object[] objArr = aVar.d;
-        Object obj = objArr[i10];
+    public final Object get(int i7) {
+        ge.a(i7, this.d);
+        Object obj = this.c[i7];
         obj.getClass();
-        Object obj2 = objArr[i10 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+        return obj;
+    }
+
+    @Override // y7.i9
+    public final int i() {
+        return this.d;
+    }
+
+    @Override // y7.i9
+    public final int j() {
+        return 0;
+    }
+
+    @Override // y7.i9
+    public final Object[] k() {
+        return this.c;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.c.e;
+        return this.d;
     }
 }

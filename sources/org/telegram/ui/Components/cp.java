@@ -2,29 +2,29 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cp implements org.telegram.ui.w71 {
+public final /* synthetic */ class cp implements org.telegram.ui.u71 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ui b;
-    public final /* synthetic */ org.telegram.ui.vb c;
+    public final /* synthetic */ dp b;
 
-    public /* synthetic */ cp(ui uiVar, org.telegram.ui.vb vbVar, int i7) {
+    public /* synthetic */ cp(dp dpVar, int i7) {
         this.a = i7;
-        this.b = uiVar;
-        this.c = vbVar;
+        this.b = dpVar;
     }
 
-    @Override // org.telegram.ui.w71
+    @Override // org.telegram.ui.u71
     public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
         switch (this.a) {
             case 0:
-                this.b.L();
-                this.c.a(tL_wallPaper);
+                kp kpVar = this.b.a;
+                kpVar.S1.L();
+                kpVar.dismiss();
                 break;
             default:
-                this.b.L();
-                this.c.a(tL_wallPaper);
+                kp kpVar2 = this.b.a;
+                kpVar2.S1.L();
+                kpVar2.dismiss();
                 break;
         }
     }

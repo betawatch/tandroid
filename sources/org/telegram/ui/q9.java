@@ -13,10 +13,10 @@ import android.widget.TextView;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class q9 extends ViewGroup {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a = 0;
     public final Object b;
     public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
 
@@ -195,16 +195,16 @@ public final class q9 extends ViewGroup {
                 t9Var.m0();
                 break;
             default:
-                bb1 bb1Var = (bb1) this.c;
-                kVar4 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
-                kVar5 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
+                za1 za1Var = (za1) this.c;
+                kVar4 = ((org.telegram.ui.ActionBar.g2) za1Var).actionBar;
+                kVar5 = ((org.telegram.ui.ActionBar.g2) za1Var).actionBar;
                 int measuredWidth3 = kVar5.getMeasuredWidth();
-                kVar6 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
+                kVar6 = ((org.telegram.ui.ActionBar.g2) za1Var).actionBar;
                 kVar4.layout(0, 0, measuredWidth3, kVar6.getMeasuredHeight());
-                hi.l5 l5Var = bb1Var.E;
-                l5Var.layout(0, 0, l5Var.getMeasuredWidth(), bb1Var.E.getMeasuredHeight());
-                li0 li0Var = (li0) this.b;
-                li0Var.layout(0, 0, li0Var.getMeasuredWidth(), li0Var.getMeasuredHeight());
+                hi.w5 w5Var = za1Var.E;
+                w5Var.layout(0, 0, w5Var.getMeasuredWidth(), za1Var.E.getMeasuredHeight());
+                ji0 ji0Var = (ji0) this.b;
+                ji0Var.layout(0, 0, ji0Var.getMeasuredWidth(), ji0Var.getMeasuredHeight());
                 break;
         }
     }
@@ -235,9 +235,9 @@ public final class q9 extends ViewGroup {
                     t9Var.h.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     t9Var.s.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(60.0f), TLObject.FLAG_30));
                 }
-                t9Var.b.measure(org.telegram.messenger.o10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                t9Var.b.measure(org.telegram.messenger.m10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 if (i11 == 3) {
-                    t9Var.c.measure(org.telegram.messenger.o10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    t9Var.c.measure(org.telegram.messenger.m10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 } else {
                     t9Var.c.measure(View.MeasureSpec.makeMeasureSpec((int) (size * 0.9f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 }
@@ -246,23 +246,23 @@ public final class q9 extends ViewGroup {
             default:
                 int size3 = View.MeasureSpec.getSize(i7);
                 int size4 = View.MeasureSpec.getSize(i10);
-                bb1 bb1Var = (bb1) this.c;
-                kVar2 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
+                za1 za1Var = (za1) this.c;
+                kVar2 = ((org.telegram.ui.ActionBar.g2) za1Var).actionBar;
                 kVar2.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i10);
-                hi.l5 l5Var = bb1Var.E;
+                hi.w5 w5Var = za1Var.E;
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
-                kVar3 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
-                l5Var.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(3.0f) + kVar3.getMeasuredHeight(), TLObject.FLAG_30));
-                ((li0) this.b).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i10);
+                kVar3 = ((org.telegram.ui.ActionBar.g2) za1Var).actionBar;
+                w5Var.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(3.0f) + kVar3.getMeasuredHeight(), TLObject.FLAG_30));
+                ((ji0) this.b).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i10);
                 setMeasuredDimension(size3, size4);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q9(bb1 bb1Var, Context context, li0 li0Var) {
+    public q9(za1 za1Var, Context context, ji0 ji0Var) {
         super(context);
-        this.c = bb1Var;
-        this.b = li0Var;
+        this.c = za1Var;
+        this.b = ji0Var;
     }
 }

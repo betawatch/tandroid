@@ -1,11 +1,11 @@
 package g9;
 
-import a8.la;
+import a8.ma;
 import a8.xa;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s implements Iterator {
     public String b;
@@ -27,7 +27,7 @@ public final class s implements Iterator {
     public final boolean hasNext() {
         String str;
         i iVar;
-        la.p(this.a != 4);
+        ma.p(this.a != 4);
         int c10 = p1.g.c(this.a);
         if (c10 == 0) {
             return true;
@@ -45,7 +45,7 @@ public final class s implements Iterator {
                 e eVar = (e) this.h.b;
                 CharSequence charSequence = this.c;
                 int length = charSequence.length();
-                la.m(i10, length);
+                ma.m(i10, length);
                 while (true) {
                     if (i10 >= length) {
                         i10 = -1;

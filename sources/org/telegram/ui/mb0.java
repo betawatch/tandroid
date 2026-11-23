@@ -1,40 +1,52 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class mb0 extends br {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class mb0 extends TextView {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ mb0(int i7, Context context, Object obj) {
+    public /* synthetic */ mb0(Context context, int i7) {
         super(context);
-        this.h = i7;
-        this.n = obj;
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.br
-    public final void a() {
-        switch (this.h) {
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 5:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
             case 0:
-                ((pb0) this.n).h(null);
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
                 break;
             case 1:
-                ((hc0) this.n).h(null);
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(100.0f)), TLObject.FLAG_31));
                 break;
             case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.F != 0) {
-                    passcodeActivity.u0();
-                    break;
-                } else {
-                    postDelayed(new hf0(this, 3), 260L);
-                    break;
-                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
+                break;
+            case 4:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(org.telegram.messenger.g0.L(26.0f)), TLObject.FLAG_30));
+                break;
             default:
-                ((bb1) this.n).H0();
+                super.onMeasure(i7, i10);
                 break;
         }
     }

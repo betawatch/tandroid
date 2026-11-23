@@ -3,15 +3,15 @@ package di;
 import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.px;
-import org.telegram.ui.Components.sx;
-import org.telegram.ui.a81;
-import org.telegram.ui.f40;
+import org.telegram.ui.e40;
 import org.telegram.ui.mm;
-import org.telegram.ui.qa0;
+import org.telegram.ui.pa0;
 import org.telegram.ui.rn;
+import org.telegram.ui.y71;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -46,16 +46,16 @@ public final /* synthetic */ class z implements DialogInterface.OnCancelListener
                 ((ChatActivityEnterView) this.c).F3.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 5:
-                ConnectionsManager.getInstance(((sx) ((px) this.c).c.b).G.d1).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((px) ((mx) this.c).c.b).G.d1).cancelRequest(this.b, true);
                 break;
             case 6:
-                ConnectionsManager.getInstance(((f40) this.c).o1.a).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((e40) this.c).o1.a).cancelRequest(this.b, true);
                 break;
             case 7:
-                ((qa0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                ((pa0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                ConnectionsManager.getInstance(((a81) this.c).currentAccount).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((y71) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
     }

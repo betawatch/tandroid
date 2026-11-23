@@ -2,13 +2,13 @@ package di;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ei;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.fi;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class a4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -44,21 +44,21 @@ public final class a4 extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                ui uiVar = (ui) this.d;
-                uiVar.w2.setAlpha(0.0f);
-                uiVar.w2.setTranslationY(org.telegram.messenger.g0.L(78.0f) + this.b);
-                fi fiVar = uiVar.Z1;
-                mi miVar = uiVar.w2;
+                ti tiVar = (ti) this.d;
+                tiVar.w2.setAlpha(0.0f);
+                tiVar.w2.setTranslationY(org.telegram.messenger.g0.L(78.0f) + this.b);
+                ei eiVar = tiVar.Z1;
+                li liVar = tiVar.w2;
                 Float valueOf = Float.valueOf(1.0f);
-                fiVar.getClass();
-                fiVar.a(miVar, valueOf);
-                uiVar.V2.setAlpha(0.0f);
-                r1.g gVar = new r1.g((Object) uiVar.x2, (r1.e) r1.g.p, 0.0f);
+                eiVar.getClass();
+                eiVar.a(liVar, valueOf);
+                tiVar.V2.setAlpha(0.0f);
+                r1.g gVar = new r1.g((Object) tiVar.x2, (r1.e) r1.g.p, 0.0f);
                 gVar.m.a(0.75f);
                 gVar.m.b(500.0f);
-                gVar.b(new org.telegram.ui.Components.j7(this, 3));
-                gVar.a(new bi.y0(4, this, (gh) this.c));
-                uiVar.r3 = gVar;
+                gVar.b(new org.telegram.ui.Components.i7(this, 3));
+                gVar.a(new bi.y0(4, this, (fh) this.c));
+                tiVar.r3 = gVar;
                 gVar.h();
                 break;
             default:

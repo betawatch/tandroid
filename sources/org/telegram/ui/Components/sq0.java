@@ -1,36 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.os.Bundle;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class sq0 implements org.telegram.ui.e50 {
-    public final /* synthetic */ jt0 a;
+public final class sq0 extends org.telegram.ui.bn {
+    public boolean vd;
+    public final /* synthetic */ int wd;
+    public final /* synthetic */ it0 xd;
 
-    public sq0(jt0 jt0Var) {
-        this.a = jt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sq0(it0 it0Var, Bundle bundle, int i7) {
+        super(bundle);
+        this.xd = it0Var;
+        this.wd = i7;
+        this.vd = true;
     }
 
-    @Override // org.telegram.ui.e50
-    public final void c(org.telegram.ui.f50 f50Var, long j3) {
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", j3);
-        bundle.putBoolean("just_created_chat", true);
-        f50Var.presentFragment(new org.telegram.ui.bn(bundle), true);
-        wr0 wr0Var = this.a.S;
-        org.telegram.ui.ActionBar.g2 g2Var = wr0Var.r.y1;
-        if (wr0Var.n != 0) {
-            g2Var.getConnectionsManager().cancelRequest(wr0Var.n, true);
-            wr0Var.n = 0;
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        it0 it0Var = this.xd;
+        us0 us0Var = it0Var.V;
+        if (this.vd) {
+            if (this.k0 != null) {
+                Oa("");
+                this.k0.Q(us0Var.x, false);
+            }
+            org.telegram.ui.bk bkVar = this.D1;
+            if (bkVar != null) {
+                bkVar.e(us0Var.y, false);
+            }
+            org.telegram.messenger.ri mediaDataController = it0Var.y1.getMediaDataController();
+            int classGuid = getClassGuid();
+            ch.p0 p0Var = us0Var.y;
+            String str = us0Var.x;
+            ArrayList arrayList = us0Var.n;
+            ArrayList arrayList2 = us0Var.h;
+            int i7 = us0Var.w;
+            boolean z12 = us0Var.s;
+            mediaDataController.R0 = p0Var;
+            mediaDataController.e1 = str;
+            boolean[] zArr = mediaDataController.Y0;
+            zArr[0] = z12;
+            zArr[1] = true;
+            ArrayList arrayList3 = mediaDataController.a1;
+            arrayList3.clear();
+            arrayList3.addAll(arrayList2);
+            mediaDataController.b1.clear();
+            mediaDataController.b1.addAll(arrayList);
+            mediaDataController.p2();
+            int[] iArr = mediaDataController.X0;
+            iArr[0] = i7;
+            iArr[1] = 0;
+            mediaDataController.f1 = this.wd;
+            mediaDataController.getNotificationCenter().k(org.telegram.messenger.ks.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.l0()), Boolean.TRUE);
+            this.vd = false;
         }
-        wr0Var.d.clear();
-        wr0Var.e = false;
-        wr0Var.h = false;
-        wr0Var.E(0L);
-        TLRPC.User c22 = g2Var.getMessagesController().c2(Long.valueOf(wr0Var.F()));
-        if (c22 != null) {
-            g2Var.getMessagesController().c3(c22, g2Var.getClassGuid(), true, null);
-        }
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

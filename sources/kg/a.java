@@ -3,18 +3,18 @@ package kg;
 import android.os.Bundle;
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.w10;
-import org.telegram.ui.Cells.n8;
-import org.telegram.ui.Cells.s8;
-import org.telegram.ui.Components.a5;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.o41;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.u10;
+import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.z4;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class a implements u10, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.c0();
@@ -35,16 +35,16 @@ public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q
         }
     }
 
-    @Override // org.telegram.messenger.w10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        o41 o41Var = (o41) obj;
+    @Override // org.telegram.messenger.u10
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        n41 n41Var = (n41) obj;
         final View view = (View) obj2;
         final c cVar = this.b;
-        if (cVar.c.h(o41Var)) {
+        if (cVar.c.h(n41Var)) {
             return;
         }
-        int i7 = o41Var.d;
-        if (i7 == 2 || o41Var.a == 17) {
+        int i7 = n41Var.d;
+        if (i7 == 2 || n41Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().e());
             bundle.putInt("chatMode", 5);
@@ -94,24 +94,24 @@ public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q
             cVar.a0(true);
         } else {
             if (i7 == 8) {
-                c5.x(cVar.getParentActivity(), hd.N0(2131752811, null), hd.N0(2131752813, null), cVar.F, new a5() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.a5
-                    public final void O(int i12, int i13, boolean z10) {
+                b5.x(cVar.getParentActivity(), gd.N0(2131752811, null), gd.N0(2131752813, null), cVar.F, new z4() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.z4
+                    public final void I(int i12, int i13, boolean z10) {
                         switch (i11) {
                             case 0:
                                 c cVar2 = cVar;
                                 cVar2.getClass();
-                                n8 n8Var = (n8) view;
+                                m8 m8Var = (m8) view;
                                 cVar2.F = i12;
-                                n8Var.w(hd.Q(i12), true);
+                                m8Var.w(gd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
                                 c cVar3 = cVar;
                                 cVar3.getClass();
-                                n8 n8Var2 = (n8) view;
+                                m8 m8Var2 = (m8) view;
                                 cVar3.G = i12;
-                                n8Var2.w(hd.Q(i12), true);
+                                m8Var2.w(gd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }
@@ -120,24 +120,24 @@ public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q
                 return;
             }
             if (i7 == 9) {
-                c5.x(cVar.getParentActivity(), hd.N0(2131752814, null), hd.N0(2131752813, null), cVar.G, new a5() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.a5
-                    public final void O(int i12, int i13, boolean z10) {
+                b5.x(cVar.getParentActivity(), gd.N0(2131752814, null), gd.N0(2131752813, null), cVar.G, new z4() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.z4
+                    public final void I(int i12, int i13, boolean z10) {
                         switch (i10) {
                             case 0:
                                 c cVar2 = cVar;
                                 cVar2.getClass();
-                                n8 n8Var = (n8) view;
+                                m8 m8Var = (m8) view;
                                 cVar2.F = i12;
-                                n8Var.w(hd.Q(i12), true);
+                                m8Var.w(gd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
                                 c cVar3 = cVar;
                                 cVar3.getClass();
-                                n8 n8Var2 = (n8) view;
+                                m8 m8Var2 = (m8) view;
                                 cVar3.G = i12;
-                                n8Var2.w(hd.Q(i12), true);
+                                m8Var2.w(gd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }
@@ -146,7 +146,7 @@ public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q
             } else if (i7 == 10) {
                 boolean z10 = !cVar.w;
                 cVar.w = z10;
-                ((s8) view).setChecked(z10);
+                ((r8) view).setChecked(z10);
                 cVar.a0(true);
             }
         }

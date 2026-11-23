@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import a8.q9;
+import a8.r9;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,7 +15,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import c8.cb;
+import c8.hb;
 import di.u9;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -26,13 +26,13 @@ import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.s2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.w2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i0 extends WebViewClient {
     public boolean a = true;
@@ -58,8 +58,8 @@ public final class i0 extends WebViewClient {
             w0Var2.a = Utilities.c.nextLong();
             s0Var.e.b = System.currentTimeMillis();
             s0Var.e.c = v0.u(s0Var.getUrl());
-            s0Var.e.d = z1.a(s0Var);
-            cb.c(s0Var.e);
+            s0Var.e.d = a2.a(s0Var);
+            hb.c(s0Var.e);
         }
         s0Var.c("doUpdateVisitedHistory " + str + " " + z10);
         v0 v0Var = s0Var.R;
@@ -75,7 +75,7 @@ public final class i0 extends WebViewClient {
         s0 s0Var = this.e;
         s0Var.c("onPageCommitVisible " + str);
         boolean z10 = this.c;
-        if (z10 && !q9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
+        if (z10 && !r9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
             boolean z11 = v0.R0;
             if (v0Var.q()) {
                 s0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
@@ -103,7 +103,7 @@ public final class i0 extends WebViewClient {
         s0Var.b = true;
         s0Var.c("onPageFinished");
         boolean z10 = this.c;
-        if (z10 && !q9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
+        if (z10 && !r9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
             boolean z11 = v0.R0;
             if (v0Var.q()) {
                 s0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
@@ -272,9 +272,9 @@ public final class i0 extends WebViewClient {
             v0 v0Var = s0Var.R;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, v0Var == null ? null : v0Var.e);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            t1Var.S = hd.N0(2131752092, null);
-            t1Var.U = org.telegram.messenger.g0.T2(hd.N0(2131752093, null), new h0(this, 2));
-            alertDialog$Builder.k(hd.N0(2131747637, null), null);
+            t1Var.S = gd.N0(2131752092, null);
+            t1Var.U = org.telegram.messenger.g0.T2(gd.N0(2131752093, null), new h0(this, 2));
+            alertDialog$Builder.k(gd.N0(2131747637, null), null);
             t1Var.setOnDismissListener(new u9(this, 11));
             alertDialog$Builder.p();
             return true;
@@ -430,7 +430,7 @@ public final class i0 extends WebViewClient {
                 return false;
             }
             if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (np.u1(s0Var.R.N).E4 != null && np.u1(s0Var.R.N).E4.contains(parse.getScheme())) {
+                if (mp.u1(s0Var.R.N).E4 != null && mp.u1(s0Var.R.N).E4.contains(parse.getScheme())) {
                     v0 v0Var = s0Var.R;
                     if (s0Var.f != null) {
                         c0 c0Var4 = v0Var.c;

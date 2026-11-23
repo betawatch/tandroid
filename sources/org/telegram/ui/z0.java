@@ -11,9 +11,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class z0 extends View implements org.telegram.ui.Cells.i9, c3 {
+public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
     public final p50 a;
     public final e4 b;
     public z2 c;
@@ -100,10 +100,10 @@ public final class z0 extends View implements org.telegram.ui.Cells.i9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.o10.a(this);
+        return org.telegram.messenger.m10.a(this);
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -203,7 +203,7 @@ public final class z0 extends View implements org.telegram.ui.Cells.i9, c3 {
         if (spannableStringBuilder.length() == 0) {
             return;
         }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.hd.N0(2131754872, null));
+        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.gd.N0(2131754872, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bq0 extends AnimatorListenerAdapter {
     public final /* synthetic */ cq0 a;
@@ -19,7 +19,7 @@ public final class bq0 extends AnimatorListenerAdapter {
         PhotoViewer photoViewer = cq0Var.c;
         photoViewer.n4 = 0;
         photoViewer.D1();
-        photoViewer.M0.setAlpha(org.telegram.messenger.ls.e4);
+        photoViewer.M0.setAlpha(org.telegram.messenger.ks.e4);
         photoViewer.f0.invalidate();
         photoViewer.Q0.setTranslationY(0.0f);
         if (photoViewer.t4) {

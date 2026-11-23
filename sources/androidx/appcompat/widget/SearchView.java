@@ -32,9 +32,9 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import c8.j9;
+import c8.l9;
 import h6.m;
-import hi.t6;
+import hi.d7;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import kd.f;
@@ -51,11 +51,11 @@ import m.w2;
 import m.x1;
 import m.y2;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f x0;
@@ -100,7 +100,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 v0;
     public final WeakHashMap w0;
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -116,7 +116,7 @@ public class SearchView extends w1 implements k.b {
             int i7 = configuration.screenWidthDp;
             int i10 = configuration.screenHeightDp;
             if (i7 < 960 || i10 < 720 || configuration.orientation != 2) {
-                return i7 < 600 ? (i7 < 640 || i10 < 480) ? ls.q2 : ls.W2 : ls.W2;
+                return i7 < 600 ? (i7 < 640 || i10 < 480) ? ks.q2 : ks.W2 : ks.W2;
             }
             return 256;
         }
@@ -901,15 +901,15 @@ public class SearchView extends w1 implements k.b {
         this.N = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.U = imageView5;
-        findViewById.setBackground(mVar.t(10));
-        findViewById2.setBackground(mVar.t(14));
-        imageView.setImageDrawable(mVar.t(13));
-        imageView2.setImageDrawable(mVar.t(7));
-        imageView3.setImageDrawable(mVar.t(4));
-        imageView4.setImageDrawable(mVar.t(16));
-        imageView5.setImageDrawable(mVar.t(13));
-        this.V = mVar.t(12);
-        j9.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
+        findViewById.setBackground(mVar.z(10));
+        findViewById2.setBackground(mVar.z(14));
+        imageView.setImageDrawable(mVar.z(13));
+        imageView2.setImageDrawable(mVar.z(7));
+        imageView3.setImageDrawable(mVar.z(4));
+        imageView4.setImageDrawable(mVar.z(16));
+        imageView5.setImageDrawable(mVar.z(13));
+        this.V = mVar.z(12);
+        l9.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.W = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.a0 = obtainStyledAttributes.getResourceId(5, 0);
         imageView.setOnClickListener(aVar);
@@ -922,7 +922,7 @@ public class SearchView extends w1 implements k.b {
         searchAutoComplete.setOnItemClickListener(k0Var);
         searchAutoComplete.setOnItemSelectedListener(x1Var);
         searchAutoComplete.setOnKeyListener(bVar);
-        searchAutoComplete.setOnFocusChangeListener(new t6(this, 1));
+        searchAutoComplete.setOnFocusChangeListener(new d7(this, 1));
         setIconifiedByDefault(obtainStyledAttributes.getBoolean(8, true));
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         if (dimensionPixelSize != -1) {

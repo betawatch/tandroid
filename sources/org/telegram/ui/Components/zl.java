@@ -1,71 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.PhotoViewer;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class zl extends ek0 {
-    public final /* synthetic */ int f3;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout g3;
+public final class zl implements CameraView.CameraViewDelegate {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.f3 = i7;
-        this.g3 = chatAttachAlertPhotoLayout;
+    public zl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.f3) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.g3.b.Z3[0] - org.telegram.messenger.g0.L(80.0f)) {
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public final void onCameraInit() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        ImageView imageView = chatAttachAlertPhotoLayout.s0;
+        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.T;
+        String currentFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode();
+        String nextFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getNextFlashMode();
+        if (currentFlashMode == null || nextFlashMode == null) {
+            return;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        switch (this.f3) {
-            case 1:
-                super.onLayout(z10, i7, i10, i11, i12);
-                PhotoViewer.p1().r0();
-                break;
-            default:
-                super.onLayout(z10, i7, i10, i11, i12);
-                break;
+        if (currentFlashMode.equals(nextFlashMode)) {
+            for (int i7 = 0; i7 < 2; i7++) {
+                imageViewArr[i7].setVisibility(4);
+                imageViewArr[i7].setAlpha(0.0f);
+                imageViewArr[i7].setTranslationY(0.0f);
+            }
+        } else {
+            ChatAttachAlertPhotoLayout.r0(imageViewArr[0], chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode());
+            int i10 = 0;
+            while (i10 < 2) {
+                imageViewArr[i10].setVisibility(i10 == 0 ? 0 : 4);
+                imageViewArr[i10].setAlpha((i10 == 0 && chatAttachAlertPhotoLayout.c0) ? 1.0f : 0.0f);
+                imageViewArr[i10].setTranslationY(0.0f);
+                i10++;
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.f3) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.g3.b.Z3[0] - org.telegram.messenger.g0.L(80.0f)) {
-                    break;
-                }
-                break;
+        imageView.setImageResource(chatAttachAlertPhotoLayout.Q.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
+        imageView.setVisibility(chatAttachAlertPhotoLayout.Q.hasFrontFaceCamera() ? 0 : 4);
+        if (chatAttachAlertPhotoLayout.c0) {
+            return;
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.f3) {
-            case 0:
-                if (!this.g3.K0) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
-        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        chatAttachAlertPhotoLayout.P = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.Q, (Property<em, Float>) View.ALPHA, 0.0f, 1.0f));
+        chatAttachAlertPhotoLayout.P.setDuration(180L);
+        chatAttachAlertPhotoLayout.P.addListener(new x(this, 14));
+        chatAttachAlertPhotoLayout.P.start();
     }
 }

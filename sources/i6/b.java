@@ -8,9 +8,8 @@ import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.internal.cast.t;
-import g6.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public static final j6.b c = new j6.b("FetchBitmapTask", null);
@@ -21,7 +20,7 @@ public final class b extends AsyncTask {
         e eVar;
         this.b = r7Var;
         Context applicationContext = context.getApplicationContext();
-        j jVar = new j(this);
+        g6.j jVar = new g6.j(this);
         j6.b bVar = com.google.android.gms.internal.cast.d.a;
         try {
             com.google.android.gms.internal.cast.f b10 = com.google.android.gms.internal.cast.d.b(applicationContext.getApplicationContext());
@@ -72,7 +71,7 @@ public final class b extends AsyncTask {
         if (r7Var != null) {
             a aVar = (a) r7Var.f;
             if (aVar != null) {
-                aVar.v0(bitmap);
+                aVar.w(bitmap);
             }
             r7Var.e = null;
         }

@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l extends TextView implements we.a {
     public final /* synthetic */ m a;
@@ -17,6 +17,6 @@ public final class l extends TextView implements we.a {
     @Override // we.a
     public final void a() {
         org.telegram.messenger.g0.E2(this);
-        this.a.b.y(this);
+        this.a.b.z(this);
     }
 }

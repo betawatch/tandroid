@@ -7,23 +7,23 @@ import android.widget.TextView;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.Components.x5 a;
+    public final org.telegram.ui.Components.w5 a;
     public final x3 b;
     public final FrameLayout.LayoutParams c;
-    public final org.telegram.ui.ActionBar.h6 d;
+    public final org.telegram.ui.ActionBar.i6 d;
     public int e;
     public boolean f;
 
-    public y3(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        this(16, context, h6Var);
+    public y3(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        this(16, context, i6Var);
     }
 
     public final void a(CharSequence charSequence, View.OnClickListener onClickListener) {
@@ -87,52 +87,52 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.b
     }
 
     public void setTextColor(int i7) {
-        org.telegram.ui.Components.x5 x5Var = this.a;
-        org.telegram.ui.ActionBar.h6 h6Var = this.d;
-        org.telegram.ui.ActionBar.t6.U(x5Var, i7, h6Var);
-        org.telegram.ui.ActionBar.t6.Y(this.b, i7, h6Var);
+        org.telegram.ui.Components.w5 w5Var = this.a;
+        org.telegram.ui.ActionBar.i6 i6Var = this.d;
+        org.telegram.ui.ActionBar.u6.U(w5Var, i7, i6Var);
+        org.telegram.ui.ActionBar.u6.Y(this.b, i7, i6Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         boolean z10 = this.f;
-        org.telegram.ui.ActionBar.h6 h6Var = this.d;
-        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.e7, h6Var));
-        int i7 = org.telegram.ui.ActionBar.m6.f7;
-        this.a.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        org.telegram.ui.ActionBar.i6 i6Var = this.d;
+        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.e7, i6Var));
+        int i7 = org.telegram.ui.ActionBar.n6.f7;
+        this.a.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+        this.b.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
     }
 
-    public y3(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public y3(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.e = 32;
-        this.d = h6Var;
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.e7, this, h6Var);
-        org.telegram.ui.Components.x5 x5Var = new org.telegram.ui.Components.x5(getContext());
-        this.a = x5Var;
+        this.d = i6Var;
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, this, i6Var);
+        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(getContext());
+        this.a = w5Var;
         boolean z10 = true;
-        x5Var.setTextSize(1, 14.0f);
-        x5Var.setTypeface(org.telegram.messenger.g0.o());
-        int i10 = org.telegram.ui.ActionBar.m6.f7;
-        org.telegram.ui.ActionBar.t6.U(x5Var, i10, h6Var);
-        x5Var.setGravity((hd.a0 ? 5 : 3) | 16);
+        w5Var.setTextSize(1, 14.0f);
+        w5Var.setTypeface(org.telegram.messenger.g0.o());
+        int i10 = org.telegram.ui.ActionBar.n6.f7;
+        org.telegram.ui.ActionBar.u6.U(w5Var, i10, i6Var);
+        w5Var.setGravity((gd.a0 ? 5 : 3) | 16);
         float f10 = i7;
-        addView(x5Var, c8.ma.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
+        addView(w5Var, c8.na.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
         x3 x3Var = new x3(getContext(), z10, z10, z10, 0);
         this.b = x3Var;
         x3Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f), 0);
-        x3Var.b(0.9f, 420L, nr.h);
+        x3Var.b(0.9f, 420L, kr.h);
         x3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        org.telegram.ui.ActionBar.t6.Y(x3Var, i10, h6Var);
-        x3Var.setGravity(hd.a0 ? 3 : 5);
-        FrameLayout.LayoutParams d = c8.ma.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f);
+        org.telegram.ui.ActionBar.u6.Y(x3Var, i10, i6Var);
+        x3Var.setGravity(gd.a0 ? 3 : 5);
+        FrameLayout.LayoutParams d = c8.na.d(-2, -1.0f, (gd.a0 ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f);
         this.c = d;
         addView(x3Var, d);
         WeakHashMap weakHashMap = r0.i0.a;
         new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

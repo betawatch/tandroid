@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
+import a8.d7;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -20,10 +20,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.c5;
+import org.telegram.ui.ActionBar.i5;
 import v4.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l0 extends v4.i0 {
     public final ArrayList c = new ArrayList();
@@ -41,10 +41,10 @@ public final class l0 extends v4.i0 {
         this.x = n0Var;
         Context context = n0Var.E;
         this.d = LayoutInflater.from(context);
-        this.e = c7.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = c7.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = c7.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = c7.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = d7.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = d7.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = d7.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = d7.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         this.s = context.getResources().getInteger(R.integer.mr_cast_volume_slider_layout_animation_duration_ms);
         this.w = new AccelerateDecelerateInterpolator();
         G();
@@ -90,7 +90,7 @@ public final class l0 extends v4.i0 {
         uVar.getClass();
         s4.x.b();
         for (s4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            c5 b10 = n0Var.r.b(vVar);
+            i5 b10 = n0Var.r.b(vVar);
             if (b10 != null && (oVar = (s4.o) b10.a) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
@@ -189,7 +189,7 @@ public final class l0 extends v4.i0 {
 
     @Override // v4.i0
     public final void t(f1 f1Var, int i7) {
-        c5 b10;
+        i5 b10;
         s4.o oVar;
         ArrayList arrayList = this.c;
         int i10 = (i7 == 0 ? this.r : (j0) arrayList.get(i7 - 1)).b;

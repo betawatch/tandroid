@@ -1,63 +1,87 @@
 package bi;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.JsPromptResult;
-import android.widget.TextView;
-import org.telegram.messenger.y10;
-import org.telegram.ui.Components.ot;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.fq0;
+import org.telegram.ui.Components.hq0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class u5 implements TextView.OnEditorActionListener {
+public final class u5 extends Drawable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    public /* synthetic */ u5(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+    public u5(fq0 fq0Var) {
+        this.a = 0;
+        this.b = org.telegram.ui.ActionBar.n6.e0(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                t5 t5Var = (t5) this.b;
-                if (i7 != 6) {
-                    return false;
-                }
-                String obj = t5Var.getText().toString();
-                if (obj.length() <= 0 || obj.length() > 12) {
-                    org.telegram.messenger.g0.D3(t5Var);
-                } else {
-                    ((y10) this.c).a(obj);
-                    org.telegram.ui.ActionBar.t1 t1Var = ((org.telegram.ui.ActionBar.t1[]) this.d)[0];
-                    if (t1Var != null) {
-                        t1Var.dismiss();
-                    }
-                    View view = (View) this.e;
-                    if (view != null) {
-                        view.requestFocus();
-                    }
-                }
-                return true;
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
+                break;
             default:
-                if (i7 != 6) {
-                    return false;
-                }
-                boolean[] zArr = (boolean[]) this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    ((JsPromptResult) this.c).confirm(((ot) this.d).getText().toString());
-                    ((org.telegram.ui.ActionBar.t1) this.e).dismiss();
-                }
-                return true;
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
+                break;
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i7);
+                break;
+            default:
+                this.b.setAlpha(i7);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i7 = this.a;
+    }
+
+    public u5(hq0 hq0Var) {
+        this.a = 1;
+        int L = org.telegram.messenger.g0.L(16.0f);
+        int L2 = org.telegram.messenger.g0.L(16.0f);
+        int i7 = org.telegram.ui.ActionBar.n6.d6;
+        org.telegram.ui.ActionBar.i6 i6Var = hq0Var.c;
+        this.b = org.telegram.ui.ActionBar.n6.e0(L, L2, org.telegram.ui.ActionBar.n6.w(org.telegram.ui.ActionBar.n6.w0(i7, i6Var), org.telegram.ui.ActionBar.n6.r1(0.04f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var))));
+        this.c = new Rect();
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

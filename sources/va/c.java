@@ -5,7 +5,7 @@ import android.net.TrafficStats;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import c8.ub;
+import c8.vb;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -28,23 +28,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.ls;
-import tg.y;
+import org.telegram.messenger.ks;
 import u9.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final o9.g a;
     public final xa.c b;
-    public final y c;
+    public final t1.a c;
     public final j d;
     public final m e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final v9.i i;
+    public final v9.j i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -53,18 +52,18 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(o9.g gVar, ua.b bVar, ExecutorService executorService, v9.i iVar) {
+    public c(o9.g gVar, ua.b bVar, ExecutorService executorService, v9.j jVar) {
         gVar.a();
         xa.c cVar = new xa.c(gVar.a, bVar);
-        y yVar = new y(gVar);
+        t1.a aVar = new t1.a(gVar);
         if (z9.a.a == null) {
             z9.a.a = new z9.a();
         }
-        z9.a aVar = z9.a.a;
+        z9.a aVar2 = z9.a.a;
         if (j.d == null) {
-            j.d = new j(aVar);
+            j.d = new j(aVar2);
         }
-        j jVar = j.d;
+        j jVar2 = j.d;
         m mVar = new m(new u9.c(gVar, 2));
         h hVar = new h();
         this.g = new Object();
@@ -72,12 +71,12 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = gVar;
         this.b = cVar;
-        this.c = yVar;
-        this.d = jVar;
+        this.c = aVar;
+        this.d = jVar2;
         this.e = mVar;
         this.f = hVar;
         this.h = executorService;
-        this.i = iVar;
+        this.i = jVar;
     }
 
     public final void a(i iVar) {
@@ -131,7 +130,7 @@ public final class c implements d {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                y a10 = y.a(gVar.a);
+                t1.a a10 = t1.a.a(gVar.a);
                 try {
                     f10 = this.c.f();
                     int i7 = f10.b;
@@ -303,7 +302,7 @@ public final class c implements d {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                y a10 = y.a(gVar.a);
+                t1.a a10 = t1.a.a(gVar.a);
                 try {
                     this.c.d(bVar);
                     if (a10 != null) {
@@ -372,7 +371,7 @@ public final class c implements d {
                     if (publicKey != null) {
                         try {
                             byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
-                            digest[0] = (byte) (((digest[0] & 15) + ls.x1) & ls.e4);
+                            digest[0] = (byte) (((digest[0] & 15) + ks.x1) & ks.e4);
                             str2 = Base64.encodeToString(digest, 0, 8, 11);
                         } catch (NoSuchAlgorithmException unused) {
                             Log.w("ContentValues", "Unexpected error, device missing required algorithms");
@@ -406,7 +405,7 @@ public final class c implements d {
                     break;
                 }
                 String str3 = strArr[i7];
-                String str4 = (String) cVar.a.b(ub.a("|T|" + cVar.b + "|" + str3), null);
+                String str4 = (String) cVar.a.b(vb.a("|T|" + cVar.b + "|" + str3), null);
                 if (str4 == null || str4.isEmpty()) {
                     i7++;
                 } else if (str4.startsWith("{")) {

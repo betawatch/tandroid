@@ -1,11 +1,11 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j1 extends e2.l1 {
     public static final Object q = new Object();
@@ -26,13 +26,13 @@ public final class j1 extends e2.l1 {
         e2.z zVar = new e2.z();
         e2.c0 c0Var = new e2.c0();
         List list = Collections.EMPTY_LIST;
-        h9.t1 t1Var = h9.t1.e;
+        h9.s1 s1Var = h9.s1.e;
         e2.e0 e0Var = new e2.e0();
         e2.h0 h0Var = e2.h0.d;
         Uri uri = Uri.EMPTY;
-        la.p(c0Var.b == null || c0Var.a != null);
+        ma.p(c0Var.b == null || c0Var.a != null);
         if (uri != null) {
-            new e2.g0(uri, null, c0Var.a != null ? new e2.d0(c0Var) : null, null, list, null, t1Var, -9223372036854775807L);
+            new e2.g0(uri, null, c0Var.a != null ? new e2.d0(c0Var) : null, null, list, null, s1Var, -9223372036854775807L);
         }
         new e2.b0(zVar);
         new e2.f0(e0Var);
@@ -62,7 +62,7 @@ public final class j1 extends e2.l1 {
 
     @Override // e2.l1
     public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
-        la.j(i7, 1);
+        ma.j(i7, 1);
         Object obj = z10 ? q : null;
         long j3 = -this.i;
         i1Var.getClass();
@@ -77,7 +77,7 @@ public final class j1 extends e2.l1 {
 
     @Override // e2.l1
     public final Object l(int i7) {
-        la.j(i7, 1);
+        ma.j(i7, 1);
         return q;
     }
 
@@ -91,7 +91,7 @@ public final class j1 extends e2.l1 {
     */
     public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
         long j10;
-        la.j(i7, 1);
+        ma.j(i7, 1);
         long j11 = this.j;
         boolean z10 = this.l;
         if (z10 && !this.m && j3 != 0) {

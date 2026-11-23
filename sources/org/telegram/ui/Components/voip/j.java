@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class j implements VideoSink {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final class j implements VideoSink {
                 }
                 break;
             default:
-                ((d0) this.b).s = SystemClock.elapsedRealtime();
-                ((d0) this.b).w = videoFrame.getRotatedWidth();
-                ((d0) this.b).x = videoFrame.getRotatedHeight();
-                n2 n2Var = ((d0) this.b).c;
-                if (n2Var != null) {
-                    n2Var.d.onFrame(videoFrame);
+                ((e0) this.b).s = SystemClock.elapsedRealtime();
+                ((e0) this.b).w = videoFrame.getRotatedWidth();
+                ((e0) this.b).x = videoFrame.getRotatedHeight();
+                o2 o2Var = ((e0) this.b).c;
+                if (o2Var != null) {
+                    o2Var.d.onFrame(videoFrame);
                     break;
                 }
                 break;

@@ -10,10 +10,10 @@ import java.net.IDN;
 import java.net.URLEncoder;
 import java.util.Locale;
 import java.util.regex.Pattern;
-import n2.o0;
+import n2.p0;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a {
     public static final Pattern g = Pattern.compile("[A-Za-z0-9][A-Za-z0-9_-]*(/[A-Za-z0-9][A-Za-z0-9_-]*)*");
@@ -26,20 +26,20 @@ public final class a {
     public final String e;
     public final String f;
 
-    public a(o0 o0Var) {
-        int i7 = o0Var.a;
+    public a(p0 p0Var) {
+        int i7 = p0Var.a;
         this.a = i7;
-        this.b = (String) o0Var.c;
+        this.b = (String) p0Var.c;
         if (i7 == 3) {
-            this.f = (String) o0Var.f;
+            this.f = (String) p0Var.f;
             this.c = 0;
             this.d = "";
             this.e = "";
             return;
         }
         if (i7 == 2) {
-            this.f = (String) o0Var.f;
-            this.c = o0Var.b;
+            this.f = (String) p0Var.f;
+            this.c = p0Var.b;
             this.d = "";
             this.e = "";
             return;
@@ -48,19 +48,19 @@ public final class a {
             throw new IllegalArgumentException();
         }
         this.f = "";
-        this.c = o0Var.b;
-        this.d = (String) o0Var.d;
-        this.e = (String) o0Var.e;
+        this.c = p0Var.b;
+        this.d = (String) p0Var.d;
+        this.e = (String) p0Var.e;
     }
 
-    public static o0 a() {
-        o0 o0Var = new o0();
-        o0Var.a = 1;
-        o0Var.c = "";
-        o0Var.d = "";
-        o0Var.e = "";
-        o0Var.f = "";
-        return o0Var;
+    public static p0 a() {
+        p0 p0Var = new p0();
+        p0Var.a = 1;
+        p0Var.c = "";
+        p0Var.d = "";
+        p0Var.e = "";
+        p0Var.f = "";
+        return p0Var;
     }
 
     public static String b(String str) {
@@ -104,7 +104,7 @@ public final class a {
             i10 = 0;
         }
         int f10 = f(sharedPreferences.getInt("proxy_type", i10));
-        o0 a10 = a();
+        p0 a10 = a();
         if (string == null) {
             string = "";
         }
@@ -202,7 +202,7 @@ public final class a {
                                 return null;
                             }
                         }
-                        o0 a10 = a();
+                        p0 a10 = a();
                         a10.p(i7);
                         if (queryParameter == null) {
                             queryParameter = "";
@@ -235,7 +235,7 @@ public final class a {
                     queryParameter3 = uri.getQueryParameter("secret");
                     if (i7 == 3) {
                     }
-                    o0 a102 = a();
+                    p0 a102 = a();
                     a102.p(i7);
                     if (queryParameter == null) {
                     }
@@ -289,7 +289,7 @@ public final class a {
                 queryParameter3 = uri.getQueryParameter("secret");
                 if (i7 == 3) {
                 }
-                o0 a1022 = a();
+                p0 a1022 = a();
                 a1022.p(i7);
                 if (queryParameter == null) {
                 }

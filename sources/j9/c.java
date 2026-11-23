@@ -1,11 +1,11 @@
 package j9;
 
-import a8.la;
-import c8.t0;
-import c8.w0;
+import a8.ma;
+import c8.u0;
+import c8.x0;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final /* synthetic */ int a = 0;
@@ -15,15 +15,15 @@ public abstract class c {
     }
 
     public static boolean a(double d) {
-        if (t0.b(d)) {
-            return d == 0.0d || 52 - Long.numberOfTrailingZeros(t0.a(d)) <= Math.getExponent(d);
+        if (u0.b(d)) {
+            return d == 0.0d || 52 - Long.numberOfTrailingZeros(u0.a(d)) <= Math.getExponent(d);
         }
         return false;
     }
 
     public static boolean b(double d) {
-        if (d > 0.0d && t0.b(d)) {
-            long a10 = t0.a(d);
+        if (d > 0.0d && u0.b(d)) {
+            long a10 = u0.a(d);
             if ((a10 & (a10 - 1)) == 0) {
                 return true;
             }
@@ -40,14 +40,14 @@ public abstract class c {
     public static int c(double d) {
         boolean b10;
         RoundingMode roundingMode = RoundingMode.CEILING;
-        la.e("x must be positive and finite", d > 0.0d && t0.b(d));
+        ma.e("x must be positive and finite", d > 0.0d && u0.b(d));
         int exponent = Math.getExponent(d);
         if (Math.getExponent(d) < -1022) {
             return c(d * 4.503599627370496E15d) - 52;
         }
         switch (b.a[roundingMode.ordinal()]) {
             case 1:
-                w0.b(b(d));
+                x0.b(b(d));
                 return !r2 ? exponent + 1 : exponent;
             case 2:
                 if (!r2) {

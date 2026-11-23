@@ -1,49 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class gn implements ck {
-    public final /* synthetic */ org.telegram.messenger.y10 a;
-    public final /* synthetic */ fi.n2 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
+public final class gn extends v4.d0 {
+    public final /* synthetic */ kg.d0 r;
 
-    public gn(fi.n2 n2Var, org.telegram.messenger.y10 y10Var, org.telegram.ui.ActionBar.g2 g2Var) {
-        this.a = y10Var;
-        this.b = n2Var;
-        this.c = g2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gn(kg.d0 d0Var, Context context) {
+        super(context);
+        this.r = d0Var;
     }
 
-    @Override // org.telegram.ui.Components.ck
-    public final void A() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.c.getParentActivity().startActivityForResult(intent, 28);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // v4.d0
+    public final int k(int i7, View view) {
+        int i10;
+        qn qnVar = (qn) this.r.V;
+        if (qnVar.W0) {
+            i7 = -1;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ck
-    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
-        if (!arrayList.isEmpty()) {
-            this.a.a(new th.c((String) arrayList.get(0)));
+        int k10 = super.k(i7, view);
+        if (qnVar.W0) {
+            k10 += org.telegram.messenger.g0.L(160.0f);
         }
-        this.b.a(true);
-    }
-
-    @Override // org.telegram.ui.Components.ck
-    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
-        if (!arrayList.isEmpty()) {
-            this.a.a(new th.d((org.telegram.messenger.zy) arrayList.get(0)));
+        if (!qnVar.W0) {
+            k10 = org.telegram.messenger.f3.B(7.0f, qnVar.S0 - org.telegram.messenger.g0.m, k10);
         }
-        this.b.a(true);
+        if (qnVar.W0 && k10 == 0 && (i10 = qnVar.X0) >= 0) {
+            qn.P(qnVar, i10);
+            qnVar.X0 = -1;
+        }
+        qnVar.W0 = false;
+        return k10;
     }
 
-    @Override // org.telegram.ui.Components.ck
-    public final /* synthetic */ void T() {
+    @Override // v4.d0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

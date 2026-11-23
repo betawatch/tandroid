@@ -1,35 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ze implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Dialog b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class ze implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ tt0 a;
+    public final /* synthetic */ on0 b;
 
-    public /* synthetic */ ze(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i7) {
-        this.a = i7;
-        this.c = chatActivityEnterView;
-        this.b = dialog;
+    public ze(tt0 tt0Var, on0 on0Var) {
+        this.a = tt0Var;
+        this.b = on0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                chatActivityEnterView.q0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView.q0.postDelayed(new og(this.b, 20), 100L);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                chatActivityEnterView2.q0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView2.q0.postDelayed(new og(this.b, 20), 100L);
-                break;
-        }
-        return true;
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        tt0 tt0Var = this.a;
+        tt0Var.post(new org.telegram.ui.Cells.fa(this, tt0Var, this.b, 4));
     }
 }

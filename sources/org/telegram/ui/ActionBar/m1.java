@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class m1 extends n5 {
+public final class m1 extends o5 {
     public final /* synthetic */ int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -35,24 +35,24 @@ public final class m1 extends n5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n5, android.widget.TextView
+    @Override // org.telegram.ui.ActionBar.o5, android.widget.TextView
     public final void setTextColor(int i7) {
         switch (this.d) {
             case 0:
                 super.setTextColor(i7);
-                setBackground(m6.J0(org.telegram.messenger.g0.L(20.0f), i7));
+                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
                 break;
             case 1:
                 super.setTextColor(i7);
-                setBackground(m6.J0(org.telegram.messenger.g0.L(20.0f), i7));
+                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
                 break;
             case 2:
                 super.setTextColor(i7);
-                setBackground(m6.J0(org.telegram.messenger.g0.L(20.0f), i7));
+                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
                 break;
             default:
                 super.setTextColor(i7);
-                setBackgroundDrawable(m6.J0(org.telegram.messenger.g0.L(20.0f), i7));
+                setBackgroundDrawable(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
                 break;
         }
     }

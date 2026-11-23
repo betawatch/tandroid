@@ -1,36 +1,76 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+import android.os.Process;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e0 {
-    public final String a;
-    public final int b;
+    public final Context a;
+    public final gd.i b;
     public final int c;
-    public final boolean d;
+    public final gd.i d;
+    public final gd.i e;
+    public boolean f;
 
-    public e0(int i7, int i10, String str, boolean z10) {
-        this.a = str;
-        this.b = i7;
-        this.c = i10;
-        this.d = z10;
+    public e0(Context appContext, j1 uuidGenerator) {
+        kotlin.jvm.internal.j.e(appContext, "appContext");
+        kotlin.jvm.internal.j.e(uuidGenerator, "uuidGenerator");
+        this.a = appContext;
+        final int i7 = 0;
+        this.b = b7.h.b(new rd.a(this) { // from class: gb.d0
+            public final /* synthetic */ e0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // rd.a
+            public final Object invoke() {
+                switch (i7) {
+                    case 0:
+                        return ((f0) this.b.e.getValue()).a;
+                    default:
+                        return g0.b(this.b.a);
+                }
+            }
+        });
+        this.c = Process.myPid();
+        this.d = b7.h.b(new androidx.activity.d(uuidGenerator, 1));
+        final int i10 = 1;
+        this.e = b7.h.b(new rd.a(this) { // from class: gb.d0
+            public final /* synthetic */ e0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // rd.a
+            public final Object invoke() {
+                switch (i10) {
+                    case 0:
+                        return ((f0) this.b.e.getValue()).a;
+                    default:
+                        return g0.b(this.b.a);
+                }
+            }
+        });
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final String a() {
+        return (String) this.b.getValue();
+    }
+
+    public final Map b(Map map) {
+        gd.i iVar = this.d;
+        if (map == null) {
+            return hd.r.c(new gd.e(a(), new c0(Process.myPid(), (String) iVar.getValue())));
         }
-        if (!(obj instanceof e0)) {
-            return false;
-        }
-        e0 e0Var = (e0) obj;
-        return kotlin.jvm.internal.j.a(this.a, e0Var.a) && this.b == e0Var.b && this.c == e0Var.c && this.d == e0Var.d;
-    }
-
-    public final int hashCode() {
-        return (((((this.a.hashCode() * 31) + this.b) * 31) + this.c) * 31) + (this.d ? 1231 : 1237);
-    }
-
-    public final String toString() {
-        return "ProcessDetails(processName=" + this.a + ", pid=" + this.b + ", importance=" + this.c + ", isDefaultProcess=" + this.d + ')';
+        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
+        linkedHashMap.put(a(), new c0(Process.myPid(), (String) iVar.getValue()));
+        int size = linkedHashMap.size();
+        return size != 0 ? size != 1 ? new LinkedHashMap(linkedHashMap) : hd.r.g(linkedHashMap) : hd.o.a;
     }
 }

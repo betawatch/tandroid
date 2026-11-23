@@ -1,90 +1,68 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o90 extends wy {
-    public final yt0 X;
-    public final /* synthetic */ v90 Y;
+public final class o90 extends org.telegram.ui.oq0 {
+    public final /* synthetic */ s90 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o90(v90 v90Var) {
-        super(100, false);
-        this.Y = v90Var;
-        this.X = new yt0();
+    public o90(s90 s90Var) {
+        this.a = s90Var;
     }
 
-    @Override // v4.p0
-    public final int A() {
-        v90 v90Var = this.Y;
-        return (v90Var.f.I() == null && v90Var.f.V == null) ? B() : B() - 1;
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final yt0 D1(int i7) {
-        TLRPC.PhotoSize w10;
-        yt0 yt0Var = this.X;
-        int i10 = 0;
-        yt0Var.c = false;
-        v90 v90Var = this.Y;
-        if (i7 == 0) {
-            yt0Var.a = this.m;
-            yt0Var.b = v90Var.e.h;
-            yt0Var.c = true;
-            return yt0Var;
-        }
-        int i11 = i7 - 1;
-        if (v90Var.f.I() == null && v90Var.f.V == null) {
-            i7 = i11;
-        }
-        yt0Var.a = 0.0f;
-        yt0Var.b = 0.0f;
-        Object J = v90Var.f.J(i7);
-        if (J instanceof TLRPC.BotInlineResult) {
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
-            TLRPC.Document document = botInlineResult.document;
-            if (document != null) {
-                TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
-                yt0Var.a = w11 != null ? w11.w : 100.0f;
-                yt0Var.b = w11 != null ? w11.h : 100.0f;
-                while (i10 < botInlineResult.document.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i10);
-                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                        yt0Var.a = documentAttribute.w;
-                        yt0Var.b = documentAttribute.h;
-                        break;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final org.telegram.ui.wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        if (i7 >= 0) {
+            s90 s90Var = this.a;
+            if (i7 < s90Var.Q.size()) {
+                int childCount = s90Var.getListView().getChildCount();
+                Object obj = s90Var.Q.get(i7);
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = s90Var.getListView().getChildAt(i10);
+                    if (childAt instanceof org.telegram.ui.Cells.i2) {
+                        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
+                        if (i2Var.getResult() == obj) {
+                            imageReceiver = i2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
+                                wq0Var.b = iArr[0];
+                                wq0Var.c = iArr[1];
+                                wq0Var.d = s90Var.getListView();
+                                wq0Var.a = imageReceiver;
+                                wq0Var.e = imageReceiver.p();
+                                wq0Var.h = imageReceiver.F();
+                                return wq0Var;
+                            }
+                        }
                     }
-                    i10++;
-                }
-            } else if (botInlineResult.content != null) {
-                while (i10 < botInlineResult.content.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i10);
-                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        yt0Var.a = documentAttribute2.w;
-                        yt0Var.b = documentAttribute2.h;
-                        break;
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
                     }
-                    i10++;
-                }
-            } else if (botInlineResult.thumb != null) {
-                while (i10 < botInlineResult.thumb.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i10);
-                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        yt0Var.a = documentAttribute3.w;
-                        yt0Var.b = documentAttribute3.h;
-                        break;
-                    }
-                    i10++;
-                }
-            } else {
-                TLRPC.Photo photo = botInlineResult.photo;
-                if (photo != null && (w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false)) != null) {
-                    yt0Var.a = w10.w;
-                    yt0Var.b = w10.h;
                 }
             }
         }
-        return yt0Var;
+        return null;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void o(int i7, org.telegram.messenger.d20 d20Var, boolean z10, int i10, int i11, boolean z11) {
+        if (i7 >= 0) {
+            s90 s90Var = this.a;
+            if (i7 >= s90Var.Q.size()) {
+                return;
+            }
+            s90Var.y.a0((TLRPC.BotInlineResult) s90Var.Q.get(i7), z10, i10);
+        }
     }
 }

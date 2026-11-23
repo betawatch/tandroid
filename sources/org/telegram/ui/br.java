@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class br extends LinearLayout {
     public final Paint a;
@@ -75,7 +75,7 @@ public abstract class br extends LinearLayout {
                         i17 = 7;
                         i12 = 42;
                         i13 = 34;
-                        addView(this.f[i15], c8.ma.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
+                        addView(this.f[i15], c8.na.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
                         this.f[i15].addTextChangedListener(new ar(this, i15, i7));
                         this.f[i15].setOnEditorActionListener(new fa(this, 3));
                         i15++;
@@ -83,7 +83,7 @@ public abstract class br extends LinearLayout {
                 }
                 i13 = i16;
                 i12 = i11;
-                addView(this.f[i15], c8.ma.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
+                addView(this.f[i15], c8.na.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
                 this.f[i15].addTextChangedListener(new ar(this, i15, i7));
                 this.f[i15].setOnEditorActionListener(new fa(this, 3));
                 i15++;
@@ -138,7 +138,7 @@ public abstract class br extends LinearLayout {
                     }
                 }
                 float successProgress = erVar.getSuccessProgress();
-                int f10 = i0.a.f(successProgress, i0.a.f(erVar.getErrorProgress(), i0.a.f(erVar.getFocusedProgress(), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.k6, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.l6, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q7, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i7, false));
+                int f10 = i0.a.f(successProgress, i0.a.f(erVar.getErrorProgress(), i0.a.f(erVar.getFocusedProgress(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.k6, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.l6, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q7, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i7, false));
                 Paint paint = this.a;
                 paint.setColor(f10);
                 RectF rectF = org.telegram.messenger.g0.P;

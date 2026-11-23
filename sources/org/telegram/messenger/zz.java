@@ -1,49 +1,13 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f00 b;
-
-    public /* synthetic */ zz(f00 f00Var, int i7) {
-        this.a = i7;
-        this.b = f00Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        f00 f00Var = this.b;
-        switch (i7) {
-            case 0:
-                ls f10 = ls.f(f00Var.currentAccount);
-                int i10 = np.I8;
-                f10.k(2, 512);
-                break;
-            default:
-                f00Var.a.b();
-                f00Var.b.b();
-                f00Var.d.clear();
-                SharedPreferences.Editor edit = f00Var.getUserConfig().k().edit();
-                for (String str : f00Var.getUserConfig().k().getAll().keySet()) {
-                    if (str.startsWith("topics_load_offset_message_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_date_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_topic_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_end_reached_")) {
-                        edit.remove(str);
-                    }
-                }
-                edit.apply();
-                break;
-        }
+public final class zz implements RequestDelegate {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

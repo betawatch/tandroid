@@ -8,9 +8,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Timer;
-import org.telegram.ui.Wallet.h1;
+import org.telegram.ui.Wallet.i1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q extends z {
     public boolean b;
@@ -19,7 +19,7 @@ public final class q extends z {
     public final o e;
     public final Object f;
     public Timer h;
-    public h6.r n;
+    public h6.s n;
     public long r;
     public boolean s;
 
@@ -38,20 +38,20 @@ public final class q extends z {
             v vVar = new v(38, "An uncaught throwable was detected in the reading thread: " + th2.getMessage(), th2);
             ab.q qVar = this.a.d;
             qVar.d(vVar);
-            ArrayList arrayList = (ArrayList) qVar.p();
+            ArrayList arrayList = (ArrayList) qVar.q();
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     } catch (Throwable unused) {
                     }
                 } catch (Throwable unused2) {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 }
             }
         }
@@ -70,18 +70,18 @@ public final class q extends z {
     }
 
     public final void b() {
-        ArrayList arrayList = (ArrayList) this.a.d.p();
+        ArrayList arrayList = (ArrayList) this.a.d.q();
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 } catch (Throwable unused) {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
@@ -102,35 +102,35 @@ public final class q extends z {
                 } catch (UnsupportedEncodingException | IndexOutOfBoundsException unused) {
                 }
             }
-            ArrayList arrayList = (ArrayList) qVar.p();
+            ArrayList arrayList = (ArrayList) qVar.q();
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.b((u) qVar.b, str);
+                        i1Var.b((u) qVar.b, str);
                     } catch (Throwable unused2) {
                     }
                 } catch (Throwable unused3) {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 }
             }
         } catch (Throwable th2) {
             uVar.d.d(new v(37, "Failed to convert payload data into a string: " + th2.getMessage(), th2));
-            ArrayList arrayList2 = (ArrayList) qVar.p();
+            ArrayList arrayList2 = (ArrayList) qVar.q();
             int size2 = arrayList2.size();
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                h1 h1Var2 = (h1) obj2;
+                i1 i1Var2 = (i1) obj2;
                 try {
                     try {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     } catch (Throwable unused4) {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     }
                 } catch (Throwable unused5) {
                 }
@@ -145,9 +145,9 @@ public final class q extends z {
                 timer.cancel();
                 this.h = null;
             }
-            h6.r rVar = this.n;
-            if (rVar != null) {
-                rVar.cancel();
+            h6.s sVar = this.n;
+            if (sVar != null) {
+                sVar.cancel();
                 this.n = null;
             }
         }
@@ -159,18 +159,18 @@ public final class q extends z {
         } catch (v e10) {
             u uVar = this.a;
             uVar.d.d(e10);
-            ArrayList arrayList = (ArrayList) uVar.d.p();
+            ArrayList arrayList = (ArrayList) uVar.d.q();
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                h1 h1Var = (h1) obj;
+                i1 i1Var = (i1) obj;
                 try {
                     try {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     } catch (Throwable unused) {
-                        h1Var.getClass();
+                        i1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -192,21 +192,21 @@ public final class q extends z {
         int i7;
         byte[] bArr;
         byte[] f10;
-        ArrayList arrayList = (ArrayList) this.a.d.p();
+        ArrayList arrayList = (ArrayList) this.a.d.q();
         int size2 = arrayList.size();
         int i10 = 0;
         int i11 = 0;
         while (i11 < size2) {
             Object obj = arrayList.get(i11);
             i11++;
-            h1 h1Var = (h1) obj;
+            i1 i1Var = (i1) obj;
             try {
                 try {
-                    h1Var.getClass();
+                    i1Var.getClass();
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                h1Var.getClass();
+                i1Var.getClass();
             }
         }
         int i12 = xVar.e;
@@ -214,18 +214,18 @@ public final class q extends z {
         if (i12 == 0) {
             ArrayList arrayList2 = this.d;
             u uVar = this.a;
-            ArrayList arrayList3 = (ArrayList) uVar.d.p();
+            ArrayList arrayList3 = (ArrayList) uVar.d.q();
             int size3 = arrayList3.size();
             int i13 = 0;
             while (i13 < size3) {
                 Object obj2 = arrayList3.get(i13);
                 i13++;
-                h1 h1Var2 = (h1) obj2;
+                i1 i1Var2 = (i1) obj2;
                 try {
                     try {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     } catch (Throwable unused3) {
-                        h1Var2.getClass();
+                        i1Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }
@@ -249,20 +249,20 @@ public final class q extends z {
                     e = e10;
                     v vVar = new v(36, "Failed to concatenate payloads of multiple frames to construct a message: " + e.getMessage(), e);
                     this.a.d.d(vVar);
-                    ArrayList arrayList4 = (ArrayList) uVar.d.p();
+                    ArrayList arrayList4 = (ArrayList) uVar.d.q();
                     size = arrayList4.size();
                     i7 = 0;
                     while (i7 < size) {
                         Object obj4 = arrayList4.get(i7);
                         i7++;
-                        h1 h1Var3 = (h1) obj4;
+                        i1 i1Var3 = (i1) obj4;
                         try {
                             try {
-                                h1Var3.getClass();
+                                i1Var3.getClass();
                             } catch (Throwable unused5) {
                             }
                         } catch (Throwable unused6) {
-                            h1Var3.getClass();
+                            i1Var3.getClass();
                         }
                     }
                     uVar.g(x.a(1009, vVar.getMessage()));
@@ -275,7 +275,7 @@ public final class q extends z {
                     e = e11;
                     v vVar2 = new v(36, "Failed to concatenate payloads of multiple frames to construct a message: " + e.getMessage(), e);
                     this.a.d.d(vVar2);
-                    ArrayList arrayList42 = (ArrayList) uVar.d.p();
+                    ArrayList arrayList42 = (ArrayList) uVar.d.q();
                     size = arrayList42.size();
                     i7 = 0;
                     while (i7 < size) {
@@ -301,17 +301,17 @@ public final class q extends z {
             return true;
         }
         if (i12 == 1) {
-            ArrayList arrayList5 = (ArrayList) this.a.d.p();
+            ArrayList arrayList5 = (ArrayList) this.a.d.q();
             int size5 = arrayList5.size();
             while (i10 < size5) {
                 Object obj5 = arrayList5.get(i10);
                 i10++;
-                h1 h1Var4 = (h1) obj5;
+                i1 i1Var4 = (i1) obj5;
                 try {
                     try {
-                        h1Var4.getClass();
+                        i1Var4.getClass();
                     } catch (Throwable unused7) {
-                        h1Var4.getClass();
+                        i1Var4.getClass();
                     }
                 } catch (Throwable unused8) {
                 }
@@ -346,20 +346,20 @@ public final class q extends z {
                         }
                     }
                     if (z10) {
-                        this.a.d.f();
+                        this.a.d.e();
                     }
-                    ArrayList arrayList6 = (ArrayList) this.a.d.p();
+                    ArrayList arrayList6 = (ArrayList) this.a.d.q();
                     int size6 = arrayList6.size();
                     int i16 = 0;
                     while (i16 < size6) {
                         Object obj6 = arrayList6.get(i16);
                         i16++;
-                        h1 h1Var5 = (h1) obj6;
+                        i1 i1Var5 = (i1) obj6;
                         try {
                             try {
-                                h1Var5.getClass();
+                                i1Var5.getClass();
                             } catch (Throwable unused9) {
-                                h1Var5.getClass();
+                                i1Var5.getClass();
                             }
                         } catch (Throwable unused10) {
                         }
@@ -367,17 +367,17 @@ public final class q extends z {
                     return false;
                 case 9:
                     u uVar2 = this.a;
-                    ArrayList arrayList7 = (ArrayList) uVar2.d.p();
+                    ArrayList arrayList7 = (ArrayList) uVar2.d.q();
                     int size7 = arrayList7.size();
                     while (i10 < size7) {
                         Object obj7 = arrayList7.get(i10);
                         i10++;
-                        h1 h1Var6 = (h1) obj7;
+                        i1 i1Var6 = (i1) obj7;
                         try {
                             try {
-                                h1Var6.getClass();
+                                i1Var6.getClass();
                             } catch (Throwable unused11) {
-                                h1Var6.getClass();
+                                i1Var6.getClass();
                             }
                         } catch (Throwable unused12) {
                         }
@@ -390,17 +390,17 @@ public final class q extends z {
                     uVar2.g(xVar2);
                     return true;
                 case 10:
-                    ArrayList arrayList8 = (ArrayList) this.a.d.p();
+                    ArrayList arrayList8 = (ArrayList) this.a.d.q();
                     int size8 = arrayList8.size();
                     while (i10 < size8) {
                         Object obj8 = arrayList8.get(i10);
                         i10++;
-                        h1 h1Var7 = (h1) obj8;
+                        i1 i1Var7 = (i1) obj8;
                         try {
                             try {
-                                h1Var7.getClass();
+                                i1Var7.getClass();
                             } catch (Throwable unused13) {
-                                h1Var7.getClass();
+                                i1Var7.getClass();
                             }
                         } catch (Throwable unused14) {
                         }
@@ -409,19 +409,19 @@ public final class q extends z {
                     return true;
             }
         } else {
-            ArrayList arrayList9 = (ArrayList) this.a.d.p();
+            ArrayList arrayList9 = (ArrayList) this.a.d.q();
             int size9 = arrayList9.size();
             while (i10 < size9) {
                 Object obj9 = arrayList9.get(i10);
                 i10++;
-                h1 h1Var8 = (h1) obj9;
+                i1 i1Var8 = (i1) obj9;
                 try {
                     try {
-                        h1Var8.getClass();
+                        i1Var8.getClass();
                     } catch (Throwable unused15) {
                     }
                 } catch (Throwable unused16) {
-                    h1Var8.getClass();
+                    i1Var8.getClass();
                 }
             }
             if (xVar.a) {
@@ -466,18 +466,18 @@ public final class q extends z {
                                     uVar.getClass();
                                 } else {
                                     this.a.d.d(e);
-                                    ArrayList arrayList = (ArrayList) uVar.d.p();
+                                    ArrayList arrayList = (ArrayList) uVar.d.q();
                                     int size = arrayList.size();
                                     int i7 = 0;
                                     while (i7 < size) {
                                         Object obj = arrayList.get(i7);
                                         i7++;
-                                        h1 h1Var = (h1) obj;
+                                        i1 i1Var = (i1) obj;
                                         try {
                                             try {
-                                                h1Var.getClass();
+                                                i1Var.getClass();
                                             } catch (Throwable unused) {
-                                                h1Var.getClass();
+                                                i1Var.getClass();
                                             }
                                         } catch (Throwable unused2) {
                                         }
@@ -573,12 +573,12 @@ public final class q extends z {
                 timer.cancel();
                 this.h = null;
             }
-            h6.r rVar = this.n;
-            if (rVar != null) {
-                rVar.cancel();
+            h6.s sVar = this.n;
+            if (sVar != null) {
+                sVar.cancel();
                 this.n = null;
             }
-            this.n = new h6.r(this, 5);
+            this.n = new h6.s(this, 5);
             Timer timer2 = new Timer("ReadingThreadCloseTimer");
             this.h = timer2;
             timer2.schedule(this.n, this.r);

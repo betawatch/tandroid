@@ -8,23 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.q40;
-import org.telegram.ui.w91;
+import org.telegram.ui.p40;
+import org.telegram.ui.u91;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k implements eh.a {
     public final ViewGroup c;
-    public final q40 d;
+    public final p40 d;
     public final ViewGroup e;
     public boolean h;
     public final RectF a = new RectF();
     public final PointF b = new PointF();
     public final RectF f = new RectF();
 
-    public k(ViewGroup viewGroup, ViewGroup viewGroup2, q40 q40Var) {
+    public k(ViewGroup viewGroup, ViewGroup viewGroup2, p40 p40Var) {
         this.c = viewGroup;
-        this.d = q40Var;
+        this.d = p40Var;
         this.e = viewGroup2;
     }
 
@@ -67,9 +67,9 @@ public final class k implements eh.a {
                     View childAt = viewGroup.getChildAt(i7);
                     RectF rectF2 = this.a;
                     if (jh.k.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
-                        q40 q40Var = this.d;
-                        int i10 = q40Var.a;
-                        Object obj = q40Var.b;
+                        p40 p40Var = this.d;
+                        int i10 = p40Var.a;
+                        Object obj = p40Var.b;
                         switch (i10) {
                             case 0:
                                 ((ek0) obj).drawChild(canvas, childAt, uptimeMillis);
@@ -83,7 +83,7 @@ public final class k implements eh.a {
                                     break;
                                 }
                             default:
-                                ((w91) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((u91) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                         }
                     }

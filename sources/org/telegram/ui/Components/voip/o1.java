@@ -1,49 +1,72 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.ViewTreeObserver;
-import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.nr;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o1 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ float a;
+public final class o1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
     public final /* synthetic */ float b;
-    public final /* synthetic */ q1 c;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Object d;
 
-    public o1(q1 q1Var, float f10, float f11) {
-        this.c = q1Var;
-        this.a = f10;
-        this.b = f11;
+    public /* synthetic */ o1(Object obj, float f10, float f11, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = f10;
+        this.c = f11;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        q1 q1Var = this.c;
-        if (q1Var.Q) {
-            q1Var.N = false;
-            q1Var.requestLayout();
-            return false;
+    public void a() {
+        te.c cVar = (te.c) this.d;
+        if (cVar.h) {
+            cVar.d(this.b + this.c, 1.0f);
+            if (cVar.h) {
+                cVar.h = false;
+            }
+            cVar.b.G(cVar.f, cVar.a);
         }
-        ValueAnimator valueAnimator = q1Var.e0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                a();
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(q1Var.K, 0.0f);
-        q1Var.e0 = ofFloat;
-        ofFloat.addUpdateListener(q1Var.f0);
-        q1Var.e0.setDuration(300L);
-        q1Var.e0.start();
-        float measuredWidth = this.a - ((q1Var.getMeasuredWidth() - (q1Var.getMeasuredWidth() * 0.23f)) / 2.0f);
-        float measuredHeight = this.b - ((q1Var.getMeasuredHeight() - (q1Var.getMeasuredHeight() * 0.23f)) / 2.0f);
-        q1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        q1Var.setTranslationX(measuredWidth);
-        q1Var.setTranslationY(measuredHeight);
-        q1Var.setScaleX(0.23f);
-        q1Var.setScaleY(0.23f);
-        q1Var.animate().setListener(null).cancel();
-        q1Var.animate().setListener(new y9(this, 16)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(nr.f).start();
-        return false;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r1 r1Var = (r1) this.d;
+                r1Var.P = false;
+                r1Var.N = true;
+                r1Var.a0 = this.b;
+                r1Var.b0 = this.c;
+                r1Var.requestLayout();
+                break;
+            default:
+                a();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ((te.c) this.d).getClass();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

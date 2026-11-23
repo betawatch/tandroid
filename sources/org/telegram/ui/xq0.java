@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class xq0 extends View {
     public final Paint a;
@@ -30,35 +30,35 @@ public final class xq0 extends View {
         this.b = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint.setColor(-3289651);
-        this.h = org.telegram.messenger.hd.N0(2131754736, "AccDescrVideoCompressLow");
-        this.n = org.telegram.messenger.hd.N0(2131754737, "AccDescrVideoCompressHigh");
+        this.h = org.telegram.messenger.gd.N0(2131754736, "AccDescrVideoCompressLow");
+        this.n = org.telegram.messenger.gd.N0(2131754737, "AccDescrVideoCompressHigh");
         setImportantForAccessibility(1);
         setFocusable(true);
-        setAccessibilityDelegate(new org.telegram.ui.Components.fu0(2, this));
+        setAccessibilityDelegate(new org.telegram.ui.Components.eu0(2, this));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.s.Z7 != 1) {
-            this.f = (((getMeasuredWidth() - (this.c * this.s.Z7)) - (((this.s.Z7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.Z7 - 1);
+        if (this.s.f8 != 1) {
+            this.f = (((getMeasuredWidth() - (this.c * this.s.f8)) - (((this.s.f8 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.f8 - 1);
         } else {
-            this.f = ((getMeasuredWidth() - (this.c * this.s.Z7)) - (this.d * 2)) - (this.e * 2);
+            this.f = ((getMeasuredWidth() - (this.c * this.s.f8)) - (this.d * 2)) - (this.e * 2);
         }
         int L = org.telegram.messenger.g0.L(6.0f) + (getMeasuredHeight() / 2);
         int i7 = 0;
-        while (i7 < this.s.Z7) {
+        while (i7 < this.s.f8) {
             int i10 = this.e;
             int i11 = (this.d * 2) + this.f;
             int i12 = this.c;
             int i13 = (i12 / 2) + ((i11 + i12) * i7) + i10;
-            if (i7 <= this.s.Y7) {
+            if (i7 <= this.s.e8) {
                 this.a.setColor(-11292945);
             } else {
                 this.a.setColor(1728053247);
             }
-            canvas.drawCircle(i13, L, i7 == this.s.Y7 ? org.telegram.messenger.g0.L(6.0f) : this.c / 2, this.a);
+            canvas.drawCircle(i13, L, i7 == this.s.e8 ? org.telegram.messenger.g0.L(6.0f) : this.c / 2, this.a);
             if (i7 != 0) {
-                canvas.drawRect((i7 == this.s.Y7 + 1 ? org.telegram.messenger.g0.N(2.0f) : 0.0f) + (((i13 - (this.c / 2)) - this.d) - this.f), L - org.telegram.messenger.g0.L(1.0f), (r2 + this.f) - (i7 == this.s.Y7 ? org.telegram.messenger.g0.N(2.0f) : 0.0f), org.telegram.messenger.g0.L(2.0f) + L, this.a);
+                canvas.drawRect((i7 == this.s.e8 + 1 ? org.telegram.messenger.g0.N(2.0f) : 0.0f) + (((i13 - (this.c / 2)) - this.d) - this.f), L - org.telegram.messenger.g0.L(1.0f), (r2 + this.f) - (i7 == this.s.e8 ? org.telegram.messenger.g0.N(2.0f) : 0.0f), org.telegram.messenger.g0.L(2.0f) + L, this.a);
             }
             i7++;
         }
@@ -78,13 +78,13 @@ public final class xq0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float x10 = motionEvent.getX();
         if (motionEvent.getAction() == 0) {
-            this.r = this.s.Y7;
+            this.r = this.s.e8;
             getParent().requestDisallowInterceptTouchEvent(true);
         }
         int i7 = 0;
         if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
             while (true) {
-                if (i7 >= this.s.Z7) {
+                if (i7 >= this.s.f8) {
                     break;
                 }
                 int i10 = this.e;
@@ -97,16 +97,16 @@ public final class xq0 extends View {
                 int i17 = (i11 / 2) + i15 + i12;
                 if (x10 <= i16 - i17 || x10 >= i16 + i17) {
                     i7++;
-                } else if (this.s.Y7 != i7) {
-                    this.s.Y7 = i7;
+                } else if (this.s.e8 != i7) {
+                    this.s.e8 = i7;
                     this.s.L0();
                     invalidate();
                     return true;
                 }
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.s.Y7 != this.r) {
-                this.s.n2(1);
+            if (this.s.e8 != this.r) {
+                this.s.o2(1);
             }
             this.s.L6 = false;
             return true;

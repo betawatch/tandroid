@@ -1,12 +1,12 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n1 extends a {
     public final j2.m h;
@@ -27,7 +27,7 @@ public final class n1 extends a {
         e2.z zVar = new e2.z();
         e2.c0 c0Var = new e2.c0();
         List list = Collections.EMPTY_LIST;
-        h9.t1 t1Var = h9.t1.e;
+        h9.s1 s1Var = h9.s1.e;
         e2.e0 e0Var = new e2.e0();
         e2.h0 h0Var = e2.h0.d;
         Uri uri = Uri.EMPTY;
@@ -37,7 +37,7 @@ public final class n1 extends a {
         if (c0Var.b != null && c0Var.a == null) {
             z10 = false;
         }
-        la.p(z10);
+        ma.p(z10);
         if (uri != null) {
             g0Var = new e2.g0(uri, null, c0Var.a != null ? new e2.d0(c0Var) : null, null, list, null, q10, -9223372036854775807L);
         } else {
@@ -57,7 +57,7 @@ public final class n1 extends a {
         this.j = new e2.u(tVar);
         Map map = Collections.EMPTY_MAP;
         Uri uri3 = k0Var.a;
-        la.k(uri3, "The uri must be set.");
+        ma.k(uri3, "The uri must be set.");
         this.h = new j2.m(uri3, 1, null, map, 0L, -1L, null, 1);
         this.n = new j1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, l0Var, null);
     }

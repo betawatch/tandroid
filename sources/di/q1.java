@@ -3,29 +3,29 @@ package di;
 import android.graphics.Bitmap;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.np;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.r10;
-import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q1 implements t10 {
+public final /* synthetic */ class q1 implements r10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gs b;
+    public final /* synthetic */ fs b;
 
-    public /* synthetic */ q1(gs gsVar, int i7) {
+    public /* synthetic */ q1(fs fsVar, int i7) {
         this.a = i7;
-        this.b = gsVar;
+        this.b = fsVar;
     }
 
-    @Override // org.telegram.messenger.t10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2, Object obj3) {
         int i7;
-        hi.v vVar;
+        hi.c0 c0Var;
         switch (this.a) {
             case 0:
                 ((f6) this.b).C2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
@@ -33,11 +33,11 @@ public final /* synthetic */ class q1 implements t10 {
             case 1:
                 f6 f6Var = (f6) this.b;
                 ArrayList arrayList = (ArrayList) obj;
-                r10 r10Var = (r10) obj2;
+                p10 p10Var = (p10) obj2;
                 Runnable runnable = (Runnable) obj3;
-                bi.h8 h8Var = f6Var.S2;
-                if (h8Var != null) {
-                    h8Var.b();
+                bi.k8 k8Var = f6Var.S2;
+                if (k8Var != null) {
+                    k8Var.b();
                     f6Var.S2 = null;
                 }
                 TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
@@ -50,141 +50,141 @@ public final /* synthetic */ class q1 implements t10 {
                     tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
                     craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
                 }
-                ConnectionsManager.getInstance(f6Var.a).sendRequestTyped(craftstargift, new d3.b(1), new e2(f6Var, r10Var, arrayList, runnable, 0));
+                ConnectionsManager.getInstance(f6Var.a).sendRequestTyped(craftstargift, new d3.b(1), new e2(f6Var, p10Var, arrayList, runnable, 0));
                 break;
             default:
-                hi.sa saVar = (hi.sa) this.b;
+                hi.nb nbVar = (hi.nb) this.b;
                 Boolean bool = (Boolean) obj;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 ArrayList arrayList3 = (ArrayList) obj3;
-                if (saVar.g0 == 0 && arrayList2 != null && !arrayList2.isEmpty() && saVar.q2 == null && !saVar.X && saVar.I()) {
-                    saVar.I1 = null;
-                    saVar.J1 = null;
-                    saVar.K1 = null;
+                if (nbVar.g0 == 0 && arrayList2 != null && !arrayList2.isEmpty() && nbVar.q2 == null && !nbVar.X && nbVar.I()) {
+                    nbVar.I1 = null;
+                    nbVar.J1 = null;
+                    nbVar.K1 = null;
                     if (bool.booleanValue()) {
-                        if (arrayList2.size() + saVar.B0.getFilledCount() > saVar.B0.getTotalCount()) {
-                            int size2 = arrayList2.size() + saVar.B0.getFilledCount();
-                            ArrayList a10 = hi.v.a();
+                        if (arrayList2.size() + nbVar.B0.getFilledCount() > nbVar.B0.getTotalCount()) {
+                            int size2 = arrayList2.size() + nbVar.B0.getFilledCount();
+                            ArrayList a10 = hi.c0.a();
                             int size3 = a10.size();
                             int i11 = 0;
                             while (true) {
                                 if (i11 < size3) {
                                     Object obj5 = a10.get(i11);
                                     i11++;
-                                    vVar = (hi.v) obj5;
-                                    if (vVar.e.size() >= size2) {
+                                    c0Var = (hi.c0) obj5;
+                                    if (c0Var.e.size() >= size2) {
                                     }
                                 } else {
-                                    vVar = null;
+                                    c0Var = null;
                                 }
                             }
-                            if (vVar == null) {
-                                saVar.B0.o(null);
-                                saVar.B0.c();
-                                saVar.J0.setSelected((hi.v) null);
-                                hi.v9 v9Var = saVar.C0;
-                                if (v9Var != null) {
-                                    v9Var.recordHevc = !saVar.B0.j();
+                            if (c0Var == null) {
+                                nbVar.B0.o(null);
+                                nbVar.B0.c();
+                                nbVar.J0.setSelected((hi.c0) null);
+                                hi.qa qaVar = nbVar.C0;
+                                if (qaVar != null) {
+                                    qaVar.recordHevc = !nbVar.B0.j();
                                 }
-                                saVar.J0.a(false, true);
-                                saVar.l0(true);
+                                nbVar.J0.a(false, true);
+                                nbVar.l0(true);
                                 break;
                             } else {
-                                hi.fa faVar = saVar.B0;
-                                saVar.A0 = vVar;
-                                faVar.o(vVar);
-                                saVar.J0.setSelected(vVar);
-                                int indexOf = hi.v.a().indexOf(vVar);
+                                hi.ab abVar = nbVar.B0;
+                                nbVar.A0 = c0Var;
+                                abVar.o(c0Var);
+                                nbVar.J0.setSelected(c0Var);
+                                int indexOf = hi.c0.a().indexOf(c0Var);
                                 if (indexOf >= 0) {
-                                    saVar.J0.a.v0(indexOf);
+                                    nbVar.J0.a.v0(indexOf);
                                 }
-                                hi.v9 v9Var2 = saVar.C0;
-                                if (v9Var2 != null) {
-                                    v9Var2.recordHevc = !saVar.B0.j();
+                                hi.qa qaVar2 = nbVar.C0;
+                                if (qaVar2 != null) {
+                                    qaVar2.recordHevc = !nbVar.B0.j();
                                 }
-                                saVar.H0.setDrawable(new hi.w(vVar, false));
-                                saVar.b0(saVar.I0, saVar.J0.e, true);
-                                saVar.P0.e(true, saVar.B0.j() ? saVar.B0.getFilledProgress() : 0.0f);
+                                nbVar.H0.setDrawable(new hi.d0(c0Var, false));
+                                nbVar.b0(nbVar.I0, nbVar.J0.e, true);
+                                nbVar.P0.e(true, nbVar.B0.j() ? nbVar.B0.getFilledProgress() : 0.0f);
                             }
                         }
                     }
-                    saVar.M1 = true;
+                    nbVar.M1 = true;
                     int i12 = 0;
                     while (true) {
                         if (i12 < arrayList2.size()) {
-                            hi.c7 l10 = hi.c7.l((ff) arrayList2.get(i12));
+                            hi.x7 l10 = hi.x7.l((ef) arrayList2.get(i12));
                             l10.M0 = (Bitmap) arrayList3.get(i12);
-                            l10.J0 = saVar.w0;
-                            l10.K0 = saVar.x0;
+                            l10.J0 = nbVar.w0;
+                            l10.K0 = nbVar.x0;
                             l10.A();
                             if (!bool.booleanValue()) {
-                                if (saVar.L1 == null) {
-                                    saVar.L1 = l10;
+                                if (nbVar.L1 == null) {
+                                    nbVar.L1 = l10;
                                 } else {
-                                    if (saVar.I1 == null) {
+                                    if (nbVar.I1 == null) {
                                         ArrayList arrayList4 = new ArrayList();
-                                        saVar.I1 = arrayList4;
-                                        arrayList4.add(saVar.L1);
+                                        nbVar.I1 = arrayList4;
+                                        arrayList4.add(nbVar.L1);
                                     }
-                                    if (saVar.I1.size() < 10) {
-                                        saVar.I1.add(l10);
+                                    if (nbVar.I1.size() < 10) {
+                                        nbVar.I1.add(l10);
                                     }
                                 }
                                 i12++;
-                            } else if (saVar.B0.l(l10)) {
-                                saVar.L1 = hi.c7.a(saVar.B0.getLayout(), saVar.B0.getContent());
+                            } else if (nbVar.B0.l(l10)) {
+                                nbVar.L1 = hi.x7.a(nbVar.B0.getLayout(), nbVar.B0.getContent());
                             } else {
                                 i12++;
                             }
                         }
                     }
-                    if (saVar.I1 != null) {
-                        saVar.h0(false, true);
-                        saVar.R0.a(saVar.P1);
-                        hi.d6 d6Var = saVar.P0;
-                        boolean z10 = saVar.P1 == 1;
-                        d6Var.o0 = -1.0f;
-                        d6Var.p0 = z10;
-                        d6Var.invalidate();
-                        saVar.J1 = new ArrayList();
-                        saVar.K1 = new ArrayList();
-                        for (int i13 = 0; i13 < saVar.I1.size(); i13 = com.google.android.gms.internal.vision.e2.f(i13, i13, 1, saVar.K1)) {
-                            saVar.J1.add(Integer.valueOf(i13));
+                    if (nbVar.I1 != null) {
+                        nbVar.h0(false, true);
+                        nbVar.R0.a(nbVar.P1);
+                        hi.n6 n6Var = nbVar.P0;
+                        boolean z10 = nbVar.P1 == 1;
+                        n6Var.o0 = -1.0f;
+                        n6Var.p0 = z10;
+                        n6Var.invalidate();
+                        nbVar.J1 = new ArrayList();
+                        nbVar.K1 = new ArrayList();
+                        for (int i13 = 0; i13 < nbVar.I1.size(); i13 = com.google.android.gms.internal.vision.e2.f(i13, i13, 1, nbVar.K1)) {
+                            nbVar.J1.add(Integer.valueOf(i13));
                         }
-                        saVar.B0.n(null);
-                        saVar.J0.a(false, true);
-                        saVar.l0(true);
-                        saVar.e(false);
-                        saVar.J(1, true);
-                        hi.l9 l9Var = saVar.e1;
-                        if (l9Var != null) {
-                            hi.l lVar = l9Var.h;
-                            if (!l9Var.J && !l9Var.N && (i7 = np.g1().getInt("multistorieshint", 0)) < 3) {
-                                np.g1().edit().putInt("multistorieshint", i7 + 1).apply();
-                                org.telegram.messenger.g0.r(lVar);
-                                l9Var.J = true;
-                                l9Var.invalidate();
-                                org.telegram.messenger.g0.h3(lVar, 5500L);
+                        nbVar.B0.n(null);
+                        nbVar.J0.a(false, true);
+                        nbVar.l0(true);
+                        nbVar.e(false);
+                        nbVar.J(1, true);
+                        hi.ga gaVar = nbVar.e1;
+                        if (gaVar != null) {
+                            hi.w wVar = gaVar.h;
+                            if (!gaVar.J && !gaVar.N && (i7 = mp.g1().getInt("multistorieshint", 0)) < 3) {
+                                mp.g1().edit().putInt("multistorieshint", i7 + 1).apply();
+                                org.telegram.messenger.g0.r(wVar);
+                                gaVar.J = true;
+                                gaVar.invalidate();
+                                org.telegram.messenger.g0.h3(wVar, 5500L);
                             }
                         }
-                        hi.g3 g3Var = saVar.N0;
-                        if (g3Var != null) {
-                            saVar.m2 = g3Var.e.e0();
-                            saVar.n2 = saVar.N0.getSelectedAlbum();
+                        hi.p3 p3Var = nbVar.N0;
+                        if (p3Var != null) {
+                            nbVar.m2 = p3Var.e.e0();
+                            nbVar.n2 = nbVar.N0.getSelectedAlbum();
                             break;
                         }
                     } else {
-                        hi.c7 c7Var = saVar.L1;
-                        if (c7Var != null) {
-                            c7Var.B();
+                        hi.x7 x7Var = nbVar.L1;
+                        if (x7Var != null) {
+                            x7Var.B();
                         }
-                        saVar.J0.a(false, true);
-                        saVar.l0(true);
-                        saVar.e(false);
-                        hi.g3 g3Var2 = saVar.N0;
-                        if (g3Var2 != null) {
-                            saVar.m2 = g3Var2.e.e0();
-                            saVar.n2 = saVar.N0.getSelectedAlbum();
+                        nbVar.J0.a(false, true);
+                        nbVar.l0(true);
+                        nbVar.e(false);
+                        hi.p3 p3Var2 = nbVar.N0;
+                        if (p3Var2 != null) {
+                            nbVar.m2 = p3Var2.e.e0();
+                            nbVar.n2 = nbVar.N0.getSelectedAlbum();
                             break;
                         }
                     }

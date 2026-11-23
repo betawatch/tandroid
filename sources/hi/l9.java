@@ -1,18 +1,155 @@
 package hi;
 
-import android.app.Activity;
-import android.graphics.Path;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class l9 extends w3 {
-    public final Path O;
-    public final /* synthetic */ sa P;
+public abstract class l9 extends View {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l9(sa saVar, Activity activity, fi.b bVar, org.telegram.ui.Components.ca caVar) {
-        super(activity, bVar, caVar);
-        this.P = saVar;
-        this.O = new Path();
+    public static void a(int i7, x7 x7Var) {
+        i9 i9Var;
+        if (x7Var == null) {
+            return;
+        }
+        try {
+            String string = mp.u1(i7).h7.getString("story_privacy2", null);
+            if (string == null) {
+                i9Var = new i9();
+            } else {
+                SerializedData serializedData = new SerializedData(Utilities.v(string));
+                i9Var = b(serializedData);
+                serializedData.cleanup();
+                if (i9Var.f.isEmpty() && i9Var.b.isEmpty()) {
+                    i9Var = new i9();
+                } else {
+                    HashSet hashSet = new HashSet();
+                    hashSet.addAll(i9Var.c);
+                    Iterator it = i9Var.d.values().iterator();
+                    while (it.hasNext()) {
+                        hashSet.addAll((ArrayList) it.next());
+                    }
+                    if (!hashSet.isEmpty()) {
+                        tr a02 = tr.a0(i7);
+                        a02.a.c(new ai.e1(a02, hashSet, i7, 16));
+                    }
+                }
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            i9Var = new i9();
+        }
+        x7Var.E0 = i9Var;
+        x7Var.F0.clear();
+        x7Var.F0.addAll(x7Var.E0.b);
+        if (i10.i(i7).q()) {
+            x7Var.I0 = mp.u1(i7).h7.getInt("story_period", 86400);
+        } else {
+            x7Var.I0 = 86400;
+        }
+    }
+
+    public static i9 b(SerializedData serializedData) {
+        int readInt32 = serializedData.readInt32(true);
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy");
+        }
+        int readInt322 = serializedData.readInt32(true);
+        ArrayList arrayList = new ArrayList(readInt322);
+        for (int i7 = 0; i7 < readInt322; i7++) {
+            arrayList.add(TLRPC.InputUser.TLdeserialize(serializedData, serializedData.readInt32(true), true));
+        }
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (2)");
+        }
+        int readInt323 = serializedData.readInt32(true);
+        ArrayList arrayList2 = new ArrayList(readInt323);
+        for (int i10 = 0; i10 < readInt323; i10++) {
+            arrayList2.add(Long.valueOf(serializedData.readInt64(true)));
+        }
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (3)");
+        }
+        int readInt324 = serializedData.readInt32(true);
+        HashMap hashMap = new HashMap();
+        for (int i11 = 0; i11 < readInt324; i11++) {
+            long readInt64 = serializedData.readInt64(true);
+            if (serializedData.readInt32(true) != 481674261) {
+                throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (4)");
+            }
+            int readInt325 = serializedData.readInt32(true);
+            ArrayList arrayList3 = new ArrayList(readInt325);
+            for (int i12 = 0; i12 < readInt325; i12++) {
+                arrayList3.add(Long.valueOf(serializedData.readInt64(true)));
+            }
+            hashMap.put(Long.valueOf(readInt64), arrayList3);
+        }
+        HashSet hashSet = new HashSet();
+        hashSet.addAll(arrayList2);
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            hashSet.addAll((ArrayList) it.next());
+        }
+        i9 i9Var = new i9(readInt32, arrayList, 0);
+        ArrayList arrayList4 = i9Var.c;
+        arrayList4.clear();
+        arrayList4.addAll(arrayList2);
+        HashMap hashMap2 = i9Var.d;
+        hashMap2.clear();
+        hashMap2.putAll(hashMap);
+        return i9Var;
+    }
+
+    public static void c(SerializedData serializedData, i9 i9Var) {
+        int i7 = i9Var.a;
+        HashMap hashMap = i9Var.d;
+        ArrayList arrayList = i9Var.c;
+        serializedData.writeInt32(i7);
+        serializedData.writeInt32(Vector.constructor);
+        ArrayList arrayList2 = i9Var.e;
+        serializedData.writeInt32(arrayList2.size());
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            ((TLRPC.InputUser) obj).serializeToStream(serializedData);
+        }
+        serializedData.writeInt32(Vector.constructor);
+        serializedData.writeInt32(arrayList.size());
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList.get(i11);
+            i11++;
+            serializedData.writeInt64(((Long) obj2).longValue());
+        }
+        serializedData.writeInt32(Vector.constructor);
+        serializedData.writeInt32(hashMap.size());
+        for (Map.Entry entry : hashMap.entrySet()) {
+            serializedData.writeInt64(((Long) entry.getKey()).longValue());
+            serializedData.writeInt32(Vector.constructor);
+            serializedData.writeInt32(((ArrayList) entry.getValue()).size());
+            ArrayList arrayList3 = (ArrayList) entry.getValue();
+            int size3 = arrayList3.size();
+            int i12 = 0;
+            while (i12 < size3) {
+                Object obj3 = arrayList3.get(i12);
+                i12++;
+                serializedData.writeInt64(((Long) obj3).longValue());
+            }
+        }
     }
 }

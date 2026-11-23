@@ -10,20 +10,20 @@ import h9.c0;
 import h9.g0;
 import h9.i0;
 import h9.o;
-import h9.t1;
+import h9.s1;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f implements a {
     public final i0 a;
     public final int b;
 
-    public f(int i7, t1 t1Var) {
+    public f(int i7, s1 s1Var) {
         this.b = i7;
-        this.a = t1Var;
+        this.a = s1Var;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */

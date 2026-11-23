@@ -1,13 +1,13 @@
 package gh;
 
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class e implements a {
-    public final h6 a;
+    public final i6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public class e implements a {
     public float n;
     public float r;
 
-    public e(h6 h6Var) {
-        this.a = h6Var;
+    public e(i6 i6Var) {
+        this.a = i6Var;
         float N = g0.N(1.0f);
         float N2 = g0.N(0.33333334f);
         this.n = N;
@@ -35,8 +35,8 @@ public class e implements a {
     }
 
     @Override // gh.a
-    public final int A2() {
-        return a(this.e);
+    public /* synthetic */ int D0() {
+        return 0;
     }
 
     @Override // gh.a
@@ -45,28 +45,23 @@ public class e implements a {
     }
 
     @Override // gh.a
-    public /* synthetic */ int M0() {
-        return 0;
-    }
-
-    @Override // gh.a
-    public int U0() {
+    public int Q0() {
         return a(this.d);
     }
 
     @Override // gh.a
-    public int W1() {
+    public final /* synthetic */ float T0() {
+        return -1.0f;
+    }
+
+    @Override // gh.a
+    public final /* synthetic */ float V0() {
+        return -1.0f;
+    }
+
+    @Override // gh.a
+    public int X1() {
         return a(this.b);
-    }
-
-    @Override // gh.a
-    public final /* synthetic */ float Y0() {
-        return -1.0f;
-    }
-
-    @Override // gh.a
-    public final /* synthetic */ float Z0() {
-        return -1.0f;
     }
 
     public final int a(d dVar) {
@@ -74,11 +69,11 @@ public class e implements a {
         if (dVar == null) {
             return 0;
         }
-        h6 h6Var = this.a;
-        if ((h6Var instanceof fi.b) || (h6Var == null ? m6.I.q() : h6Var.d())) {
+        i6 i6Var = this.a;
+        if ((i6Var instanceof fi.b) || (i6Var == null ? n6.I.q() : i6Var.b())) {
             z10 = true;
         }
-        return dVar.j(h6Var, z10);
+        return dVar.f(i6Var, z10);
     }
 
     public float b() {
@@ -102,7 +97,12 @@ public class e implements a {
     }
 
     @Override // gh.a
-    public int t0() {
+    public int i0() {
         return a(this.c);
+    }
+
+    @Override // gh.a
+    public final int x2() {
+        return a(this.e);
     }
 }

@@ -1,28 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class je0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ke0 b;
+public final class je0 {
+    public final /* synthetic */ org.telegram.ui.dq0 a;
 
-    public /* synthetic */ je0(ke0 ke0Var, int i7) {
-        this.a = i7;
-        this.b = ke0Var;
+    public je0(org.telegram.ui.dq0 dq0Var) {
+        this.a = dq0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.a.n.setVisibility(8);
-                break;
-            default:
-                this.b.a.h.setVisibility(8);
-                break;
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        org.telegram.messenger.g0.g3(new org.telegram.ui.ii(this, Integer.parseInt(str), 16));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        org.telegram.messenger.g0.g3(new he0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f10) {
+        this.a.K = f10;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i7) {
+        this.a.J = i7 * 1000;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i7) {
+        org.telegram.ui.dq0 dq0Var = this.a;
+        dq0Var.I = i7 * 1000;
+        String str = dq0Var.s;
+        if (str != null) {
+            ke0.a(dq0Var, str);
+            dq0Var.s = null;
         }
+    }
+
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.dq0 dq0Var = this.a;
+        boolean z10 = dq0Var.H;
+        boolean z11 = false;
+        int i7 = 1;
+        dq0Var.H = parseInt == 1 || parseInt == 3;
+        dq0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i7 = 2;
+                }
+            }
+            i7 = 3;
+        } else {
+            i7 = 4;
+        }
+        if (i7 == 3 && dq0Var.h.getVisibility() != 4) {
+            org.telegram.messenger.g0.h3(new he0(this, 1), 300L);
+        }
+        org.telegram.messenger.g0.g3(new di.x7(this, z11, i7, 4));
     }
 }

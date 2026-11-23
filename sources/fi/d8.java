@@ -8,53 +8,53 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import java.util.HashSet;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class d8 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class d8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final Paint a;
     public final Paint b;
     public final TextView c;
     public final TextView d;
     public final TextView e;
-    public final org.telegram.ui.ActionBar.h6 f;
+    public final org.telegram.ui.ActionBar.i6 f;
 
-    public d8(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public d8(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        this.f = h6Var;
-        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.q7, h6Var));
+        this.f = i6Var;
+        paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q7, i6Var));
         paint2.setColor(-1);
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
-        i5.c.r(14.0f, 1, 2131744425, textView, null);
+        i5.c.r(14.0f, 1, 2131744424, textView, null);
         textView.setTextColor(-1);
-        addView(textView, ma.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, na.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 8.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.m6.r1(0.5f, -1));
+        textView2.setTextColor(org.telegram.ui.ActionBar.n6.r1(0.5f, -1));
         textView2.setVisibility(8);
         textView2.setTranslationY(org.telegram.messenger.g0.L(9.0f));
-        addView(textView2, ma.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView2, na.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.e = textView3;
         textView3.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         int L = org.telegram.messenger.g0.L(16.0f);
-        textView3.setBackground(org.telegram.ui.ActionBar.m6.k0(L, L, L, L, 536870911, 956301311, 956301311));
+        textView3.setBackground(org.telegram.ui.ActionBar.n6.k0(L, L, L, L, 536870911, 956301311, 956301311));
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        o10.l(14.0f, 2131743698, 1, textView3, null);
+        m10.l(14.0f, 2131743696, 1, textView3, null);
         textView3.setTextColor(-1);
         textView3.setGravity(17);
-        addView(textView3, ma.d(-2, 32.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        addView(textView3, na.d(-2, 32.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -91,17 +91,17 @@ public final class d8 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.e.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.a.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.q7, this.f));
+            this.a.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q7, this.f));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

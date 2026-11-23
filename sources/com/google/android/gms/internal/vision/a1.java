@@ -2,9 +2,9 @@ package com.google.android.gms.internal.vision;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.ac;
+import c8.bc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a1 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -13,27 +13,27 @@ public final class a1 implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = ac.z(parcel);
+                int z10 = bc.z(parcel);
                 int i7 = 0;
                 boolean z11 = false;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 2) {
-                        i7 = ac.u(parcel, readInt);
+                        i7 = bc.u(parcel, readInt);
                     } else if (c10 != 3) {
-                        ac.y(parcel, readInt);
+                        bc.y(parcel, readInt);
                     } else {
-                        z11 = ac.n(parcel, readInt);
+                        z11 = bc.n(parcel, readInt);
                     }
                 }
-                ac.m(parcel, z10);
+                bc.m(parcel, z10);
                 x1 x1Var = new x1();
                 x1Var.a = i7;
                 x1Var.b = z11;
                 return x1Var;
             default:
-                int z12 = ac.z(parcel);
+                int z12 = bc.z(parcel);
                 int i10 = 0;
                 int i11 = 0;
                 long j3 = 0;
@@ -43,20 +43,20 @@ public final class a1 implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     char c11 = (char) readInt2;
                     if (c11 == 2) {
-                        i10 = ac.u(parcel, readInt2);
+                        i10 = bc.u(parcel, readInt2);
                     } else if (c11 == 3) {
-                        i12 = ac.u(parcel, readInt2);
+                        i12 = bc.u(parcel, readInt2);
                     } else if (c11 == 4) {
-                        i13 = ac.u(parcel, readInt2);
+                        i13 = bc.u(parcel, readInt2);
                     } else if (c11 == 5) {
-                        j3 = ac.w(parcel, readInt2);
+                        j3 = bc.w(parcel, readInt2);
                     } else if (c11 != 6) {
-                        ac.y(parcel, readInt2);
+                        bc.y(parcel, readInt2);
                     } else {
-                        i11 = ac.u(parcel, readInt2);
+                        i11 = bc.u(parcel, readInt2);
                     }
                 }
-                ac.m(parcel, z12);
+                bc.m(parcel, z12);
                 g3 g3Var = new g3();
                 g3Var.a = i10;
                 g3Var.b = i12;

@@ -7,50 +7,50 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.a9;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.z8;
+import org.telegram.ui.Components.lq;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class d0 extends a9 {
+public final class d0 extends z8 {
     public Drawable E;
     public int F;
     public boolean G;
-    public final h6 x;
+    public final i6 x;
     public ColorDrawable y;
 
-    public d0(Context context, h6 h6Var) {
-        super(context, h6Var);
-        this.x = h6Var;
+    public d0(Context context, i6 i6Var) {
+        super(context, i6Var);
+        this.x = i6Var;
     }
 
     public void setBackground(boolean z10) {
         Context context = getContext();
         int i7 = z10 ? R.drawable.greydivider_bottom : R.drawable.greydivider;
-        int i10 = m6.b7;
-        h6 h6Var = this.x;
-        Drawable X0 = m6.X0(context, i7, m6.w0(i10, h6Var));
-        ColorDrawable colorDrawable = new ColorDrawable(m6.w0(m6.a7, h6Var));
+        int i10 = n6.b7;
+        i6 i6Var = this.x;
+        Drawable X0 = n6.X0(context, i7, n6.w0(i10, i6Var));
+        ColorDrawable colorDrawable = new ColorDrawable(n6.w0(n6.a7, i6Var));
         this.y = colorDrawable;
         this.E = X0;
-        oq oqVar = new oq(colorDrawable, X0, 0, 0);
-        oqVar.x = true;
-        setBackground(oqVar);
+        lq lqVar = new lq(colorDrawable, X0, 0, 0);
+        lqVar.x = true;
+        setBackground(lqVar);
     }
 
-    @Override // org.telegram.ui.Cells.a9, org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.Cells.z8, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         super.updateColors();
         try {
             ColorDrawable colorDrawable = this.y;
-            h6 h6Var = this.x;
+            i6 i6Var = this.x;
             if (colorDrawable != null) {
-                colorDrawable.setColor(m6.w0(m6.a7, h6Var));
+                colorDrawable.setColor(n6.w0(n6.a7, i6Var));
             }
             if (this.E != null) {
-                int w02 = m6.w0(m6.b7, h6Var);
+                int w02 = n6.w0(n6.b7, i6Var);
                 if (w02 == this.F && this.G) {
                     return;
                 }

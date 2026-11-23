@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import com.google.android.recaptcha.RecaptchaAction;
 import gd.g;
 import gd.k;
@@ -9,7 +9,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzel extends j implements p {
     int zza;
@@ -60,10 +60,10 @@ final class zzel extends j implements p {
         int i7 = this.zza;
         try {
         } catch (zzcg e10) {
-            obj = h.a(e10.zzc());
+            obj = z.a(e10.zzc());
         }
         if (i7 == 0) {
-            h.b(obj);
+            z.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzeq zzeqVar = this.zzb;
             long j3 = this.zzc;
@@ -73,11 +73,11 @@ final class zzel extends j implements p {
             obj = new zzhf(9, new zzeo(zzeqVar, j3, recaptchaAction, null), null);
         } else {
             if (i7 != 1) {
-                h.b(obj);
+                z.b(obj);
                 return new g(obj);
             }
             zzhkVar = (zzhk) this.zze;
-            h.b(obj);
+            z.b(obj);
         }
         this.zze = null;
         this.zza = 2;

@@ -8,10 +8,10 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.c5;
-import p4.z;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.web.t1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -27,38 +27,13 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void b(int i7, int i10, int i11, long j3) {
-        this.a.queueInputBuffer(i7, 0, i10, j3, i11);
-    }
-
-    @Override // u2.l
-    public final void c(int i7, k2.d dVar, long j3, int i10) {
-        this.a.queueSecureInputBuffer(i7, 0, dVar.i, j3, i10);
-    }
-
-    @Override // u2.l
-    public final void d(z zVar) {
-        zVar.run();
-    }
-
-    @Override // u2.l
-    public final void e(int i7) {
-        this.a.releaseOutputBuffer(i7, false);
-    }
-
-    @Override // u2.l
-    public final void f() {
-        this.a.detachOutputSurface();
-    }
-
-    @Override // u2.l
     public final void flush() {
         this.a.flush();
     }
 
     @Override // u2.l
-    public final void g(int i7, long j3) {
-        this.a.releaseOutputBuffer(i7, j3);
+    public final void g(int i7, int i10, int i11, long j3) {
+        this.a.queueInputBuffer(i7, 0, i10, j3, i11);
     }
 
     @Override // u2.l
@@ -77,17 +52,37 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final int h() {
+    public final void h(int i7, k2.d dVar, long j3, int i10) {
+        this.a.queueSecureInputBuffer(i7, 0, dVar.i, j3, i10);
+    }
+
+    @Override // u2.l
+    public final void i(int i7) {
+        this.a.releaseOutputBuffer(i7, false);
+    }
+
+    @Override // u2.l
+    public final void j() {
+        this.a.detachOutputSurface();
+    }
+
+    @Override // u2.l
+    public final void k(int i7, long j3) {
+        this.a.releaseOutputBuffer(i7, j3);
+    }
+
+    @Override // u2.l
+    public final int l() {
         return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // u2.l
-    public final /* synthetic */ boolean i(c5 c5Var) {
-        return false;
+    public final void m(t1 t1Var) {
+        t1Var.run();
     }
 
     @Override // u2.l
-    public final int j(MediaCodec.BufferInfo bufferInfo) {
+    public final int n(MediaCodec.BufferInfo bufferInfo) {
         int dequeueOutputBuffer;
         do {
             dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
@@ -96,28 +91,23 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void k(d3.k kVar, Handler handler) {
+    public final void o(d3.k kVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, kVar, 1), handler);
     }
 
     @Override // u2.l
-    public final void l(int i7) {
+    public final /* synthetic */ boolean p(nd0 nd0Var) {
+        return false;
+    }
+
+    @Override // u2.l
+    public final void q(int i7) {
         this.a.setVideoScalingMode(i7);
     }
 
     @Override // u2.l
-    public final void m(Surface surface) {
+    public final void r(Surface surface) {
         this.a.setOutputSurface(surface);
-    }
-
-    @Override // u2.l
-    public final void n(ArrayList arrayList) {
-        this.a.subscribeToVendorParameters(arrayList);
-    }
-
-    @Override // u2.l
-    public final void o(ArrayList arrayList) {
-        this.a.unsubscribeFromVendorParameters(arrayList);
     }
 
     @Override // u2.l
@@ -143,7 +133,17 @@ public final class x implements l {
     }
 
     @Override // u2.l
+    public final void s(ArrayList arrayList) {
+        this.a.subscribeToVendorParameters(arrayList);
+    }
+
+    @Override // u2.l
     public final void setParameters(Bundle bundle) {
         this.a.setParameters(bundle);
+    }
+
+    @Override // u2.l
+    public final void t(ArrayList arrayList) {
+        this.a.unsubscribeFromVendorParameters(arrayList);
     }
 }

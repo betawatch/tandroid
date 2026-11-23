@@ -2,16 +2,17 @@ package oi;
 
 import android.text.TextUtils;
 import android.view.View;
+import bi.h6;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,9 +37,9 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                 y3Var.a.a.r.b4(i10);
                 break;
             default:
-                final o oVar = y3Var.a.a;
-                h6 h6Var = oVar.a;
-                t3 t3Var = oVar.r;
+                final p pVar = y3Var.a.a;
+                i6 i6Var = pVar.a;
+                t3 t3Var = pVar.r;
                 a T2 = t3Var.T2();
                 final int i11 = 0;
                 final int i12 = 1;
@@ -47,68 +48,68 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                 TL_iv.pageBlockMath pageblockmath = null;
                 pagetablecell = null;
                 if (i10 == 1) {
-                    int i13 = oVar.n;
-                    a70 a70Var = oVar.I;
-                    if (a70Var != null) {
-                        a70Var.v();
+                    int i13 = pVar.n;
+                    x60 x60Var = pVar.I;
+                    if (x60Var != null) {
+                        x60Var.v();
                     }
-                    a70 H = a70.H(oVar, h6Var, view, true);
+                    x60 H = x60.H(pVar, i6Var, view, true);
                     H.T = true;
-                    a70 K = H.K();
-                    boolean z10 = (np.u1(i13).B4() || k10.i(i13).q()) ? false : true;
-                    K.c(R.drawable.ic_ab_back, hd.N0(2131753753, null), new bi.e6(H, 7), false);
+                    x60 K = H.K();
+                    boolean z10 = (mp.u1(i13).B4() || i10.i(i13).q()) ? false : true;
+                    K.c(R.drawable.ic_ab_back, gd.N0(2131753753, null), new h6(H, 7), false);
                     K.k();
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading1(), R.drawable.iv_h1, hd.N0(2131754027, null), cz.W0 + 2, H);
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading2(), R.drawable.iv_h2, hd.N0(2131754026, null), cz.W0 + 1, H);
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading3(), R.drawable.iv_h3, hd.N0(2131754025, null), cz.W0, H);
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading4(), R.drawable.iv_h4, hd.N0(2131754024, null), cz.W0 - 1, H);
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading5(), R.drawable.iv_h5, hd.N0(2131754023, null), cz.W0 - 2, H);
-                    oVar.U(K, T2, new TL_iv.pageBlockHeading6(), R.drawable.iv_h6, hd.N0(2131754022, null), cz.W0 - 3, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading1(), R.drawable.iv_h1, gd.N0(2131754027, null), bz.W0 + 2, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading2(), R.drawable.iv_h2, gd.N0(2131754026, null), bz.W0 + 1, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading3(), R.drawable.iv_h3, gd.N0(2131754025, null), bz.W0, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading4(), R.drawable.iv_h4, gd.N0(2131754024, null), bz.W0 - 1, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading5(), R.drawable.iv_h5, gd.N0(2131754023, null), bz.W0 - 2, H);
+                    pVar.U(K, T2, new TL_iv.pageBlockHeading6(), R.drawable.iv_h6, gd.N0(2131754022, null), bz.W0 - 3, H);
                     boolean z11 = T2 != null && t3.F3(T2.b);
-                    z1 z1Var = new z1(oVar.getContext(), R.drawable.iv_h1);
+                    z1 z1Var = new z1(pVar.getContext(), R.drawable.iv_h1);
                     z1Var.a(z10);
-                    H.j(z11, 0, z1Var, hd.N0(2131754028, null), new bi.x5(H, K, 2));
-                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text, null, hd.N0(2131753985, null), new f(oVar, T2, 5));
-                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, null, hd.N0(2131753993, null), new f(oVar, T2, 6));
+                    H.j(z11, 0, z1Var, gd.N0(2131754028, null), new bi.a6(H, K, 2));
+                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text, null, gd.N0(2131753985, null), new f(pVar, T2, 5));
+                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, null, gd.N0(2131753993, null), new f(pVar, T2, 6));
                     boolean z12 = T2 != null && (T2.b instanceof TL_iv.pageBlockPullquote);
-                    z1 z1Var2 = new z1(oVar.getContext(), R.drawable.iv_pullquote);
+                    z1 z1Var2 = new z1(pVar.getContext(), R.drawable.iv_pullquote);
                     z1Var2.a(z10);
-                    H.j(z12, 0, z1Var2, hd.N0(2131753994, null), new f(oVar, T2, 7));
-                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, null, hd.N0(2131754052, null), new f(oVar, T2, 8));
+                    H.j(z12, 0, z1Var2, gd.N0(2131753994, null), new f(pVar, T2, 7));
+                    H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, null, gd.N0(2131754052, null), new f(pVar, T2, 8));
                     boolean z13 = T2 != null && (T2.b instanceof TL_iv.pageBlockFooter);
-                    z1 z1Var3 = new z1(oVar.getContext(), R.drawable.iv_footer);
+                    z1 z1Var3 = new z1(pVar.getContext(), R.drawable.iv_footer);
                     z1Var3.a(z10);
-                    H.j(z13, 0, z1Var3, hd.N0(2131754029, null), new f(oVar, T2, 9));
+                    H.j(z13, 0, z1Var3, gd.N0(2131754029, null), new f(pVar, T2, 9));
                     H.a0();
-                    oVar.I = H;
+                    pVar.I = H;
                     break;
                 } else if (i10 == 2) {
-                    a70 a70Var2 = oVar.I;
-                    if (a70Var2 != null) {
-                        a70Var2.v();
+                    x60 x60Var2 = pVar.I;
+                    if (x60Var2 != null) {
+                        x60Var2.v();
                     }
-                    final a70 G = a70.G(oVar, h6Var, view);
+                    final x60 G = x60.G(pVar, i6Var, view);
                     G.T = true;
-                    G.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, hd.N0(2131753996, null), new f(oVar, T2, 1));
-                    G.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, hd.N0(2131754003, null), new f(oVar, T2, 2));
-                    G.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, hd.N0(2131754000, null), new f(oVar, T2, 3));
-                    G.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, hd.N0(2131753998, null), new f(oVar, T2, 4));
-                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockDetails), R.drawable.iv_details, null, hd.N0(2131753984, null), new b(t3Var, 1));
+                    G.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, gd.N0(2131753996, null), new f(pVar, T2, 1));
+                    G.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, gd.N0(2131754003, null), new f(pVar, T2, 2));
+                    G.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, gd.N0(2131754000, null), new f(pVar, T2, 3));
+                    G.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, gd.N0(2131753998, null), new f(pVar, T2, 4));
+                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockDetails), R.drawable.iv_details, null, gd.N0(2131753984, null), new b(t3Var, 1));
                     boolean p22 = t3Var.p2();
                     boolean s22 = t3Var.s2();
                     if (p22 || s22) {
                         G.k();
                         if (p22) {
-                            G.c(R.drawable.iv_list_tab, hd.N0(2131754010, null), new Runnable() { // from class: oi.g
+                            G.c(R.drawable.iv_list_tab, gd.N0(2131754010, null), new Runnable() { // from class: oi.g
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i11) {
                                         case 0:
-                                            oVar.r.u3(false);
+                                            pVar.r.u3(false);
                                             G.v();
                                             break;
                                         default:
-                                            oVar.r.u3(true);
+                                            pVar.r.u3(true);
                                             G.v();
                                             break;
                                     }
@@ -116,16 +117,16 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                             }, false);
                         }
                         if (s22) {
-                            G.c(R.drawable.iv_list_untab, hd.N0(2131753995, null), new Runnable() { // from class: oi.g
+                            G.c(R.drawable.iv_list_untab, gd.N0(2131753995, null), new Runnable() { // from class: oi.g
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i12) {
                                         case 0:
-                                            oVar.r.u3(false);
+                                            pVar.r.u3(false);
                                             G.v();
                                             break;
                                         default:
-                                            oVar.r.u3(true);
+                                            pVar.r.u3(true);
                                             G.v();
                                             break;
                                     }
@@ -135,7 +136,7 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                     }
                     G.X = true;
                     G.a0();
-                    oVar.I = G;
+                    pVar.I = G;
                     break;
                 } else if (i10 == 4) {
                     m5 m5Var = t3Var.q4;
@@ -167,7 +168,7 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                             pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                         }
                     }
-                    o.Z(oVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new li.d(3, oVar, pageblockmath), h6Var);
+                    p.Z(pVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ki.n2(4, pVar, pageblockmath), i6Var);
                     break;
                 } else if (i10 == 9) {
                     t3Var.w3();

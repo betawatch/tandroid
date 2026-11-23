@@ -9,14 +9,14 @@ import android.graphics.fonts.FontFamily;
 import android.graphics.fonts.FontStyle;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import c8.m0;
+import c8.n0;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class j extends m0 {
+public final class j extends n0 {
     public static Font g(FontFamily fontFamily, int i7) {
         FontStyle fontStyle = new FontStyle((i7 & 1) != 0 ? 700 : 400, (i7 & 2) != 0 ? 1 : 0);
         Font font = fontFamily.getFont(0);
@@ -75,7 +75,7 @@ public final class j extends m0 {
         return (Math.abs(fontStyle.getWeight() - fontStyle2.getWeight()) / 100) + (fontStyle.getSlant() == fontStyle2.getSlant() ? 0 : 2);
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         try {
             FontFamily.Builder builder = null;
@@ -101,7 +101,7 @@ public final class j extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface b(Context context, o0.h[] hVarArr, int i7) {
         try {
             FontFamily h = h(hVarArr, context.getContentResolver());
@@ -115,7 +115,7 @@ public final class j extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface c(Context context, List list, int i7) {
         ContentResolver contentResolver = context.getContentResolver();
         try {
@@ -137,12 +137,12 @@ public final class j extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface d(Context context, InputStream inputStream) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface e(Context context, Resources resources, int i7, String str, int i10) {
         try {
             Font build = new Font.Builder(resources, i7).build();
@@ -153,7 +153,7 @@ public final class j extends m0 {
         }
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final o0.h f(o0.h[] hVarArr, int i7) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }

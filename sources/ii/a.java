@@ -1,20 +1,20 @@
 package ii;
 
-import org.telegram.messenger.r10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r10 b;
+    public final /* synthetic */ p10 b;
     public final /* synthetic */ TLObject c;
     public final /* synthetic */ TLRPC.TL_error d;
 
-    public /* synthetic */ a(r10 r10Var, TLObject tLObject, TLRPC.TL_error tL_error, int i7) {
+    public /* synthetic */ a(p10 p10Var, TLObject tLObject, TLRPC.TL_error tL_error, int i7) {
         this.a = i7;
-        this.b = r10Var;
+        this.b = p10Var;
         this.c = tLObject;
         this.d = tL_error;
     }

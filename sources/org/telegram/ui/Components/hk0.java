@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public interface hk0 {
-    void e(boolean z10);
+    void f(boolean z10);
 
-    boolean f(int i7);
+    boolean g(int i7);
 
-    void l(View view, boolean z10);
+    void n(View view, boolean z10);
 
-    boolean m(int i7);
+    boolean o(int i7);
 }

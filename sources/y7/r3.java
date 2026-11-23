@@ -1,21 +1,19 @@
 package y7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r3 implements na.d {
     public static final r3 a = new r3();
-    public static final na.c b = new na.c("inferenceCommonLogEvent", i5.c.p(p5.c.o(h.class, new e(1))));
-    public static final na.c c = new na.c("options", i5.c.p(p5.c.o(h.class, new e(2))));
-    public static final na.c d = new na.c("identifyLanguageResult", i5.c.p(p5.c.o(h.class, new e(3))));
-    public static final na.c e = new na.c("identifyPossibleLanguagesResult", i5.c.p(p5.c.o(h.class, new e(4))));
+
+    static {
+        p5.c.u(p5.c.o(h.class, p5.c.p(p5.c.o(h.class, p5.c.p(p5.c.o(h.class, new e(1)), 2)), 3)));
+    }
 
     @Override // na.a
-    public final void a(Object obj, Object obj2) {
-        k7 k7Var = (k7) obj;
-        na.e eVar = (na.e) obj2;
-        eVar.a(b, k7Var.a);
-        eVar.a(c, k7Var.b);
-        eVar.a(d, k7Var.c);
-        eVar.a(e, null);
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

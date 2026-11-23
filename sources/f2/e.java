@@ -1,6 +1,5 @@
 package f2;
 
-import a8.bb;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Handler;
@@ -8,23 +7,23 @@ import android.os.Looper;
 import com.google.android.gms.internal.vision.e2;
 import h2.h0;
 import h2.i0;
-import l2.o0;
+import l2.p0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e {
     public final g9.t a;
     public final Handler b;
-    public o0 c;
+    public p0 c;
     public e2.e d;
     public int f;
     public h h;
     public float g = 1.0f;
     public int e = 0;
 
-    public e(Context context, Looper looper, o0 o0Var) {
-        this.a = bb.a(new d(context, 0));
-        this.c = o0Var;
+    public e(Context context, Looper looper, p0 p0Var) {
+        this.a = af.b.b(new d(context, 0));
+        this.c = p0Var;
         this.b = new Handler(looper);
     }
 
@@ -37,9 +36,9 @@ public final class e {
     }
 
     public final void b(int i7) {
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            i0 i0Var = o0Var.n;
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            i0 i0Var = p0Var.n;
             i0Var.getClass();
             h0 c10 = i0.c();
             c10.a = i0Var.a.obtainMessage(33, i7, 0);
@@ -57,9 +56,9 @@ public final class e {
             return;
         }
         this.g = f10;
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            o0Var.n.f(34);
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            p0Var.n.f(34);
         }
     }
 

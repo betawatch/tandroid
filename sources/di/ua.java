@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ua extends ug.t1 {
     public final /* synthetic */ int r;
@@ -43,7 +43,7 @@ public final class ua extends ug.t1 {
             case 0:
                 ug.s1 s1Var = new ug.s1(this.w);
                 this.a = s1Var;
-                s1Var.O = ls.q1;
+                s1Var.O = ks.q1;
                 int i11 = 0;
                 s1Var.M = false;
                 s1Var.G = false;
@@ -75,7 +75,7 @@ public final class ua extends ug.t1 {
                             s1Var2.y = 1600;
                             s1Var2.L = true;
                         }
-                        s1Var2.Q = org.telegram.ui.ActionBar.m6.G6;
+                        s1Var2.Q = org.telegram.ui.ActionBar.n6.G6;
                         s1Var2.c();
                         break;
                     } else {
@@ -103,7 +103,7 @@ public final class ua extends ug.t1 {
             default:
                 ug.s1 s1Var3 = new ug.s1(this.w);
                 this.a = s1Var3;
-                s1Var3.O = ls.r1;
+                s1Var3.O = ks.r1;
                 int i13 = 0;
                 s1Var3.M = false;
                 s1Var3.G = false;
@@ -124,7 +124,7 @@ public final class ua extends ug.t1 {
                         s1Var4.r = 17;
                         s1Var4.s = 18;
                         s1Var4.t = 19;
-                        s1Var4.Q = org.telegram.ui.ActionBar.m6.G6;
+                        s1Var4.Q = org.telegram.ui.ActionBar.n6.G6;
                         s1Var4.c();
                         break;
                     } else {

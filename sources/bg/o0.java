@@ -15,16 +15,16 @@ import android.media.MediaFormat;
 import android.media.metrics.LogSessionId;
 import android.media.session.MediaSession;
 import android.os.Build;
-import h9.t1;
+import h9.s1;
 import j$.util.Comparator$-CC;
 import j$.util.Comparator$-EL;
 import java.io.ByteArrayInputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public static RenderEffect a;
@@ -64,11 +64,11 @@ public abstract class o0 {
             switch (gVar.c()) {
                 case 3:
                 case 4:
-                    i11 = ls.K2;
+                    i11 = ks.K2;
                     break;
                 case 5:
                 case 8:
-                    i11 = ls.t4;
+                    i11 = ks.t4;
                     break;
                 case 6:
                 case 7:
@@ -88,7 +88,7 @@ public abstract class o0 {
     public static h9.i0 c(List list) {
         if (Build.VERSION.SDK_INT < 31 || list == null) {
             h9.g0 g0Var = h9.i0.b;
-            return t1.e;
+            return s1.e;
         }
         TreeSet treeSet = new TreeSet(Comparator$-EL.reversed(Comparator$-CC.comparing(new aa.l(2))));
         Iterator it = list.iterator();

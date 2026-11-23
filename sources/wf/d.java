@@ -29,18 +29,17 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.xg;
+import org.telegram.ui.Components.wg;
 import ug.x;
 import v4.x0;
-import yc.f;
 import yc.g;
 import yc.i;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final e l;
@@ -94,7 +93,7 @@ public final class d extends i {
             }
         }
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(ipAddress & ls.e4) + '.' + ((ipAddress >> 8) & ls.e4) + '.' + ((ipAddress >> 16) & ls.e4) + '.' + ((ipAddress >> 24) & ls.e4));
+        sb2.append(String.valueOf(ipAddress & ks.e4) + '.' + ((ipAddress >> 8) & ks.e4) + '.' + ((ipAddress >> 16) & ks.e4) + '.' + ((ipAddress >> 24) & ks.e4));
         sb2.append(":61578");
         return sb2.toString();
     }
@@ -168,20 +167,20 @@ public final class d extends i {
         p5.c.t(m10, (String) dVar.i.get("range"), "CAST_SERVER");
         try {
             g k10 = k(dVar);
-            xg xgVar = k10.e;
-            xgVar.put("Access-Control-Allow-Origin", "*");
-            xgVar.put("Access-Control-Max-Age", "3628800");
-            xgVar.put("Access-Control-Allow-Methods", "*");
-            xgVar.put("Access-Control-Allow-Headers", "*");
+            wg wgVar = k10.e;
+            wgVar.put("Access-Control-Allow-Origin", "*");
+            wgVar.put("Access-Control-Max-Age", "3628800");
+            wgVar.put("Access-Control-Allow-Methods", "*");
+            wgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
-            g c10 = i.c(f.n, "text/plain", "Error reading file");
-            xg xgVar2 = c10.e;
-            xgVar2.put("Access-Control-Allow-Origin", "*");
-            xgVar2.put("Access-Control-Max-Age", "3628800");
-            xgVar2.put("Access-Control-Allow-Methods", "*");
-            xgVar2.put("Access-Control-Allow-Headers", "*");
+            g c10 = i.c(yc.f.n, "text/plain", "Error reading file");
+            wg wgVar2 = c10.e;
+            wgVar2.put("Access-Control-Allow-Origin", "*");
+            wgVar2.put("Access-Control-Max-Age", "3628800");
+            wgVar2.put("Access-Control-Allow-Methods", "*");
+            wgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }
@@ -244,7 +243,7 @@ public final class d extends i {
         String str = (String) dVar.i.get("host");
         String path = Uri.parse("http://" + str + dVar.f).getPath();
         boolean b10 = p1.g.b(6, dVar.g);
-        f fVar = f.c;
+        yc.f fVar = yc.f.c;
         if (b10) {
             return i.c(fVar, "text/plain", "");
         }
@@ -295,7 +294,7 @@ public final class d extends i {
         if (eVar == null) {
             Pair pair = this.i;
             File file = (pair == null || !((String) pair.first).equalsIgnoreCase(path)) ? null : (File) this.i.second;
-            return file != null ? new g(fVar, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : i.c(f.h, "text/plain", "file not found");
+            return file != null ? new g(fVar, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : i.c(yc.f.h, "text/plain", "file not found");
         }
         Uri uri = eVar.c;
         String str2 = (String) dVar.i.get("host");
@@ -345,12 +344,12 @@ public final class d extends i {
                     j10 = j3;
                     c cVar = new c(createDataSource, new m(uri, 1, null, map, j11, j12, null, 0));
                     if (wVar != null) {
-                        fVar = f.e;
+                        fVar = yc.f.e;
                     }
                     c10 = new g(fVar, eVar.a, cVar, j15);
                 } else {
                     j10 = j3;
-                    c10 = i.c(f.d, str3, "");
+                    c10 = i.c(yc.f.d, str3, "");
                 }
                 g gVar = c10;
                 if (wVar != null) {

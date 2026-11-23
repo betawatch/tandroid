@@ -4,6 +4,7 @@ import e2.s0;
 import e2.t;
 import e2.t0;
 import e2.u;
+import f3.j0;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -12,13 +13,13 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a;
@@ -96,7 +97,7 @@ public final class b implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0032 A[RETURN] */
@@ -134,7 +135,7 @@ public final class b implements o {
                         if (!b(pVar)) {
                             throw t0.a(null, "AVI Header List not found");
                         }
-                        pVar.r(12);
+                        pVar.q(12);
                         this.e = 1;
                         return 0;
                     case 1:
@@ -201,7 +202,7 @@ public final class b implements o {
                                     }
                                     int h = s0.h(uVar.s);
                                     if (h == 1 || h == 2) {
-                                        f3.i0 d2 = this.f.d2(i15, h);
+                                        j0 d2 = this.f.d2(i15, h);
                                         d2.g(new u(a10));
                                         d2.d(a02);
                                         this.h = Math.max(this.h, a02);
@@ -219,7 +220,7 @@ public final class b implements o {
                             }
                         }
                         this.i = (e[]) arrayList.toArray(new e[0]);
-                        this.f.d1();
+                        this.f.Z0();
                         this.e = 3;
                         return 0;
                     case 3:
@@ -232,7 +233,7 @@ public final class b implements o {
                             }
                         }
                         pVar.b(0, 12, xVar.a);
-                        pVar.n();
+                        pVar.o();
                         xVar.N(0);
                         dVar.getClass();
                         dVar.a = xVar.o();
@@ -241,7 +242,7 @@ public final class b implements o {
                         int o10 = xVar.o();
                         int i18 = dVar.a;
                         if (i18 == 1179011410) {
-                            pVar.r(12);
+                            pVar.q(12);
                             return 0;
                         }
                         if (i18 != 1414744396 || o10 != 1769369453) {
@@ -259,7 +260,7 @@ public final class b implements o {
                                 this.j = this.n;
                                 return 0;
                             }
-                            this.f.j(new f3.t(this.h));
+                            this.f.h(new f3.t(this.h));
                             this.p = true;
                         }
                         this.j = pVar.getPosition() + 12;
@@ -334,9 +335,9 @@ public final class b implements o {
                         }
                         this.p = true;
                         if (this.i.length == 0) {
-                            this.f.j(new f3.t(this.h));
+                            this.f.h(new f3.t(this.h));
                         } else {
-                            this.f.j(new f3.t(this, this.h, 2));
+                            this.f.h(new f3.t(this, this.h, 2));
                         }
                         this.e = 6;
                         this.j = this.m;
@@ -353,9 +354,9 @@ public final class b implements o {
                             boolean z12 = e10 == 0;
                             if (z12) {
                                 if (eVar5.g > 0) {
-                                    f3.i0 i0Var = eVar5.b;
+                                    j0 j0Var = eVar5.b;
                                     int i22 = eVar5.i;
-                                    i0Var.c((eVar5.e * i22) / eVar5.f, Arrays.binarySearch(eVar5.n, i22) >= 0 ? 1 : 0, eVar5.g, 0, null);
+                                    j0Var.c((eVar5.e * i22) / eVar5.f, Arrays.binarySearch(eVar5.n, i22) >= 0 ? 1 : 0, eVar5.g, 0, null);
                                 }
                                 eVar5.i++;
                             }
@@ -365,15 +366,15 @@ public final class b implements o {
                             return 0;
                         }
                         if ((pVar.getPosition() & 1) == 1) {
-                            pVar.r(1);
+                            pVar.q(1);
                         }
                         pVar.b(0, 12, xVar.a);
                         xVar.N(0);
                         int o17 = xVar.o();
                         if (o17 == 1414744396) {
                             xVar.N(8);
-                            pVar.r(xVar.o() == 1769369453 ? 12 : 8);
-                            pVar.n();
+                            pVar.q(xVar.o() == 1769369453 ? 12 : 8);
+                            pVar.o();
                             return 0;
                         }
                         int o18 = xVar.o();
@@ -381,8 +382,8 @@ public final class b implements o {
                             this.j = pVar.getPosition() + o18 + 8;
                             return 0;
                         }
-                        pVar.r(8);
-                        pVar.n();
+                        pVar.q(8);
+                        pVar.o();
                         for (e eVar6 : this.i) {
                             if (eVar6.c == o17 || eVar6.d == o17) {
                                 eVar3 = eVar6;
@@ -403,7 +404,7 @@ public final class b implements o {
                         throw new AssertionError();
                 }
             } else {
-                pVar.r((int) (j3 - position));
+                pVar.q((int) (j3 - position));
             }
         }
         z10 = false;

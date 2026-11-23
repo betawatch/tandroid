@@ -1,7 +1,7 @@
 package i6;
 
 import a8.r7;
-import a8.x9;
+import a8.y9;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -18,13 +18,12 @@ import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.a2;
 import e0.q;
-import h6.p;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f {
     public static final j6.b u = new j6.b("MediaNotificationProxy", null);
@@ -105,7 +104,7 @@ public final class f {
                         intent.setComponent(componentName);
                         intent.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j3);
                         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 201326592);
-                        j6.b bVar = i.a;
+                        j6.b bVar = j.a;
                         int i11 = fVar.E;
                         if (j3 == 10000) {
                             i11 = fVar.F;
@@ -205,7 +204,7 @@ public final class f {
                         intent8.setComponent(componentName);
                         intent8.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j3);
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, 201326592);
-                        j6.b bVar2 = i.a;
+                        j6.b bVar2 = j.a;
                         int i14 = fVar.w;
                         if (j3 == 10000) {
                             i14 = fVar.x;
@@ -265,7 +264,7 @@ public final class f {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a11 = x9.a(context, component); a11 != null; a11 = x9.a(context, a11.getComponent())) {
+                    for (Intent a11 = y9.a(context, component); a11 != null; a11 = y9.a(context, a11.getComponent())) {
                         arrayList.add(size, a11);
                     }
                 } catch (PackageManager.NameNotFoundException e10) {
@@ -284,13 +283,13 @@ public final class f {
         if (activities != null) {
             qVar.g = activities;
         }
-        p pVar = fVar.W;
+        h6.q qVar2 = fVar.W;
         j6.b bVar2 = u;
-        if (pVar != null) {
+        if (qVar2 != null) {
             bVar2.b("actionsProvider != null", new Object[0]);
-            int[] b10 = i.b(pVar);
+            int[] b10 = j.b(qVar2);
             this.g = b10 == null ? null : (int[]) b10.clone();
-            ArrayList a12 = i.a(pVar);
+            ArrayList a12 = j.a(qVar2);
             this.f = new ArrayList();
             if (a12 != null) {
                 int size2 = a12.size();

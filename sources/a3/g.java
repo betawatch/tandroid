@@ -2,7 +2,7 @@ package a3;
 
 import aa.c0;
 import aa.f0;
-import ai.p0;
+import ai.l0;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.m1;
 import fi.l4;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -20,25 +20,26 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import oi.q3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.np;
-import org.telegram.messenger.pr;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.or;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.q2;
-import org.telegram.messenger.r10;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.yo;
+import org.telegram.messenger.xo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
+public final /* synthetic */ class g implements p, ai.b, l5.g, or, q1, xo {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -100,38 +101,38 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
         taskCompletionSource.trySetResult(bVar2);
     }
 
-    @Override // ai.f
-    public void c(TLRPC.TL_error tL_error, String str) {
-        p0 p0Var = (p0) this.c;
-        ai.g gVar = (ai.g) this.d;
-        ai.g gVar2 = (ai.g) this.e;
-        if (p0Var.r != 4) {
+    @Override // ai.b
+    public void b(TLRPC.TL_error tL_error, String str) {
+        l0 l0Var = (l0) this.c;
+        ai.c cVar = (ai.c) this.d;
+        ai.c cVar2 = (ai.c) this.e;
+        if (l0Var.r != 4) {
             return;
         }
         if (str != null) {
-            g0.h3(new aa.r(p0Var, str, gVar2, 4), Math.max(0L, (p0Var.V + 1200) - SystemClock.uptimeMillis()));
+            g0.h3(new aa.r(l0Var, str, cVar2, 4), Math.max(0L, (l0Var.V + 1200) - SystemClock.uptimeMillis()));
             return;
         }
-        p0Var.r = 3;
-        p0Var.K = gVar;
-        p0Var.F.f(false);
-        p0Var.f(0L, 240L);
+        l0Var.r = 3;
+        l0Var.K = cVar;
+        l0Var.F.f(false);
+        l0Var.g(0L, 240L);
         if (!this.b) {
-            p0Var.J = null;
+            l0Var.J = null;
         }
-        p0Var.w.d(gVar.a(), false);
-        p0Var.w.setRevert(p0Var.J != null);
-        p0Var.D(false);
-        p0.G(tL_error);
+        l0Var.w.d(cVar.a(), false);
+        l0Var.w.setRevert(l0Var.J != null);
+        l0Var.B(false);
+        l0.E(tL_error);
     }
 
-    @Override // org.telegram.messenger.yo
-    public boolean e(TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.xo
+    public boolean d(TLRPC.TL_error tL_error) {
         return ProfileActivity.d0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (g2) this.e, tL_error);
     }
 
     @Override // a3.p
-    public t1 f(int i7, m1 m1Var, int[] iArr) {
+    public s1 f(int i7, m1 m1Var, int[] iArr) {
         s sVar = (s) this.c;
         n nVar = (n) this.d;
         int[] iArr2 = (int[]) this.e;
@@ -146,7 +147,7 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(t1 t1Var, int i7) {
         switch (this.a) {
             case 4:
                 boolean z10 = this.b;
@@ -177,11 +178,11 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
                 break;
             case 5:
                 bn bnVar = (bn) this.c;
-                np npVar = (np) this.d;
+                mp mpVar = (mp) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
-                npVar.J2 = 1;
-                np.g1().edit().putInt("secretWebpage2", bnVar.getMessagesController().J2).commit();
+                mpVar.J2 = 1;
+                mp.g1().edit().putInt("secretWebpage2", bnVar.getMessagesController().J2).commit();
                 bnVar.Z5 = null;
                 bnVar.Cb(charSequence, z11);
                 break;
@@ -206,41 +207,41 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
                     }
                 }
             default:
-                nw0 nw0Var = (nw0) this.c;
-                r10 r10Var = (r10) this.d;
+                mw0 mw0Var = (mw0) this.c;
+                p10 p10Var = (p10) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = nw0Var.getText().toString().trim();
+                String trim2 = mw0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(g0.M3(trim2.toString()))) {
-                    g0.v1(nw0Var);
-                    org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, context2, z13 ? null : new fi.b());
+                    g0.v1(mw0Var);
+                    t1 t1Var2 = new t1(3, context2, z13 ? null : new fi.b());
                     t1Var2.r(250L);
-                    r10Var.a(trim2, new bi.j(t1Var2, t1Var, nw0Var, 14));
+                    p10Var.a(trim2, new bi.j(t1Var2, t1Var, mw0Var, 14));
                     break;
                 } else {
-                    nw0Var.setErrorText(".");
-                    g0.E3(-6.0f, nw0Var, null);
+                    mw0Var.setErrorText(".");
+                    g0.E3(-6.0f, mw0Var, null);
                     q2.E.a();
-                    g0.I3(nw0Var);
+                    g0.I3(mw0Var);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.pr
+    @Override // org.telegram.messenger.or
     public void run(long j3) {
-        li.g gVar = (li.g) this.c;
-        org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
+        li.f fVar = (li.f) this.c;
+        t1 t1Var = (t1) this.d;
         String str = (String) this.e;
-        gVar.getClass();
+        fVar.getClass();
         t1Var.dismiss();
         if (j3 == 0) {
             return;
         }
-        gVar.b = -j3;
-        gVar.c = gVar.getMessagesController().O0(Long.valueOf(j3));
-        gVar.a0(str, this.b);
+        fVar.b = -j3;
+        fVar.c = fVar.getMessagesController().O0(Long.valueOf(j3));
+        fVar.a0(str, this.b);
     }
 
     public /* synthetic */ g(Object obj, Object obj2, boolean z10, Object obj3, int i7) {

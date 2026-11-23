@@ -1,36 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.ArrayList;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class jp implements ResultCallback {
-    public final /* synthetic */ org.telegram.messenger.f4 a;
-    public final /* synthetic */ np b;
+public final class jp {
+    public final org.telegram.ui.ActionBar.s3 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
 
-    public jp(np npVar, org.telegram.messenger.f4 f4Var) {
-        this.b = npVar;
-        this.a = f4Var;
+    public jp(org.telegram.ui.ActionBar.s3 s3Var) {
+        this.a = s3Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        ArrayList e10 = this.a.e(7);
-        np npVar = this.b;
-        org.telegram.messenger.ls.f(npVar.a).d(new mf(20, this, e10));
-        npVar.V1 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    public final String a() {
+        org.telegram.ui.ActionBar.s3 s3Var = this.a;
+        if (s3Var == null || s3Var.a) {
+            return null;
+        }
+        return s3Var.e;
     }
 }

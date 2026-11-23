@@ -1,241 +1,157 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.f81;
-import org.telegram.ui.Components.p10;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.we;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.ve0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class pa extends p10 {
-    public final /* synthetic */ ra a;
+public final class pa extends v5 {
+    public boolean n2;
+    public final /* synthetic */ nb o2;
 
-    public pa(ra raVar) {
-        this.a = raVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pa(nb nbVar, Context context, boolean z10, File file, boolean z11, boolean z12, mb mbVar, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, x7 x7Var, int i11, int i12, we weVar, org.telegram.ui.Components.ba baVar, fi.b bVar, e6 e6Var, bb bbVar) {
+        super(context, z10, file, z11, z12, mbVar, activity, i7, bitmap, bitmap2, i10, arrayList, x7Var, i11, i12, weVar, baVar, bVar, e6Var, bbVar);
+        this.o2 = nbVar;
     }
 
-    @Override // org.telegram.ui.Components.p10
-    public final boolean a() {
-        v9 v9Var;
-        sa saVar = this.a.o0;
-        if (saVar.g0 != 0 || (v9Var = saVar.C0) == null || saVar.T1 || !v9Var.isInited() || saVar.Q1 || saVar.P0.y0) {
-            return false;
-        }
-        n6 n6Var = saVar.E0;
-        return (n6Var == null || !(n6Var.y.i || n6Var.M)) && !saVar.I() && saVar.q2 == null;
+    @Override // tg.l
+    public final void B(boolean z10) {
+        nb nbVar = this.o2;
+        nbVar.p1.a(true, z10, nbVar.j0);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        sa saVar = this.a.o0;
-        v9 v9Var = saVar.C0;
-        if (v9Var == null || saVar.T1 || saVar.Q1 || !v9Var.isInited() || saVar.g0 != 0 || saVar.P1 == -1) {
-            return false;
+    @Override // tg.l
+    public final void C() {
+        nb nbVar = this.o2;
+        nbVar.w1.O0(false);
+        nbVar.d1.clearAnimation();
+        ViewPropertyAnimator duration = nbVar.d1.animate().alpha(0.0f).setDuration(180L);
+        kr krVar = kr.g;
+        duration.setInterpolator(krVar).start();
+        if (nbVar.h0 != 2) {
+            nbVar.Z0.clearAnimation();
+            nbVar.Z0.animate().alpha(0.0f).setDuration(180L).setInterpolator(krVar).start();
         }
-        saVar.C0.switchCamera();
-        saVar.P0.d(180.0f);
-        sa.Z(saVar.C0.isFrontface());
-        if (saVar.p0()) {
-            saVar.s.c(null);
-            return true;
-        }
-        saVar.s.d();
-        return true;
+        V0(p(), false);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTapEvent(MotionEvent motionEvent) {
-        v9 v9Var = this.a.o0.C0;
-        if (v9Var == null) {
-            return false;
+    public final void V0(boolean z10, boolean z11) {
+        nb nbVar = this.o2;
+        if (!z10) {
+            nbVar.q1.a(false, z11);
+            nbVar.q1.clearAnimation();
+            nbVar.q1.animate().alpha(0.0f).withEndAction(new m4(this, 1)).setDuration(180L).setInterpolator(kr.g).setStartDelay(z11 ? 500L : 0L).start();
+        } else {
+            nbVar.q1.setVisibility(0);
+            nbVar.q1.setAlpha(0.0f);
+            nbVar.q1.clearAnimation();
+            nbVar.q1.animate().alpha(1.0f).setDuration(180L).setInterpolator(kr.g).start();
         }
-        v9Var.O = null;
-        v9Var.L = -1L;
-        return false;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        ra raVar = this.a;
-        raVar.m0 = 0.0f;
-        raVar.n0 = 0.0f;
-        return false;
+    @Override // tg.l
+    public final void d(boolean z10) {
+        nb nbVar = this.o2;
+        nbVar.p1.b(nbVar.d1.getText());
+        nbVar.p1.a(false, z10 && this.n2, null);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        n6 n6Var;
-        v9 v9Var;
-        f81 f81Var;
-        fa faVar;
-        ra raVar = this.a;
-        sa saVar = raVar.o0;
-        ValueAnimator valueAnimator = saVar.F;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || (((n6Var = saVar.E0) != null && (n6Var.y.i || n6Var.M)) || saVar.P0.y0 || (((v9Var = saVar.C0) != null && v9Var.s) || raVar.k0 || (((f81Var = saVar.W0) != null && (f81Var.G || f81Var.H)) || saVar.H())))) {
-            return false;
+    @Override // tg.l
+    public final void e(boolean z10) {
+        tg.n nVar;
+        if (!p()) {
+            z10 = false;
         }
-        boolean z10 = true;
-        raVar.i0 = true;
-        if (saVar.X) {
-            if (Math.abs(saVar.r.a) >= org.telegram.messenger.g0.L(1.0f)) {
-                if ((f11 <= 0.0f || Math.abs(f11) <= 2000.0f || Math.abs(f11) <= Math.abs(f10)) && saVar.L <= 0.4f) {
-                    sa.b(saVar);
-                } else {
-                    saVar.p(true);
-                }
-            } else if (saVar.N0 != null && !saVar.M0 && saVar.P1 != -1) {
-                if (Math.abs(f11) <= 200.0f || (saVar.N0.d.canScrollVertically(-1) && saVar.L0)) {
-                    saVar.e(!saVar.R1 && saVar.N0.getTranslationY() < ((float) saVar.N0.getPadding()));
-                } else {
-                    saVar.e(!saVar.R1 && f11 < 0.0f);
-                }
-            }
-            saVar.M0 = false;
-            saVar.X = false;
-            saVar.Y = false;
-            if (z10 && (faVar = saVar.B0) != null) {
-                faVar.b();
-            }
-            return z10;
+        nb nbVar = this.o2;
+        nbVar.d1.clearAnimation();
+        ViewPropertyAnimator duration = nbVar.d1.animate().alpha(nbVar.h0 == -1 ? 1.0f : 0.0f).setDuration(180L);
+        kr krVar = kr.g;
+        duration.setInterpolator(krVar).start();
+        nbVar.Z0.clearAnimation();
+        ViewPropertyAnimator animate = nbVar.Z0.animate();
+        int i7 = nbVar.h0;
+        animate.alpha((i7 == -1 || i7 == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(krVar).start();
+        V0(false, z10);
+        if (z10 && (nVar = this.t0) != null) {
+            B0(nVar);
         }
-        z10 = false;
-        saVar.M0 = false;
-        saVar.X = false;
-        saVar.Y = false;
-        if (z10) {
-            faVar.b();
-        }
-        return z10;
+        T0();
+        this.Z1 = true;
+        this.n2 = false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00f4  */
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        n6 n6Var;
-        v9 v9Var;
-        f81 f81Var;
-        g3 g3Var;
-        float f12;
-        ra raVar = this.a;
-        sa saVar = raVar.o0;
-        ValueAnimator valueAnimator = saVar.F;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || saVar.p2 != null || saVar.o2 != null || (((n6Var = saVar.E0) != null && (n6Var.y.i || n6Var.M)) || saVar.P0.y0 || (((v9Var = saVar.C0) != null && v9Var.s) || raVar.k0 || (((f81Var = saVar.W0) != null && (f81Var.G || f81Var.H)) || saVar.H() || saVar.R1 || saVar.Q1 || saVar.g0 != 0)))) {
-            return false;
+    @Override // tg.l
+    public final void g() {
+        this.n2 = false;
+        V0(p(), false);
+        this.o2.p1.a(false, false, null);
+    }
+
+    @Override // tg.l
+    public final void h() {
+        this.n2 = true;
+        this.o2.w1.O0(false);
+        V0(false, false);
+    }
+
+    @Override // tg.l
+    public final void j(boolean z10) {
+        this.o2.q1.a(z10, false);
+    }
+
+    @Override // hi.v5
+    public final void q0() {
+        nb nbVar = this.o2;
+        nbVar.d1.f.d();
+        nbVar.k0(0, false, true);
+        tg.n nVar = this.t0;
+        if (!(nVar instanceof tg.q2) || this.u0) {
+            return;
         }
-        if (!saVar.Y) {
-            float f13 = raVar.m0 + f11;
-            raVar.m0 = f13;
-            if (!saVar.X && Math.abs(f13) >= org.telegram.messenger.g0.e) {
-                fa faVar = saVar.B0;
-                if (faVar != null) {
-                    faVar.b();
-                }
-                saVar.X = true;
+        tg.q2 q2Var = (tg.q2) nVar;
+        if (q2Var instanceof tg.d) {
+            tg.d dVar = (tg.d) q2Var;
+            dVar.z();
+            if (dVar.E0 == null) {
+                return;
             }
         }
-        if (saVar.X) {
-            int measuredHeight = (saVar.n.getMeasuredHeight() - ((int) (org.telegram.messenger.g0.q.y * 0.35f))) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m);
-            g3 g3Var2 = saVar.N0;
-            if (g3Var2 != null) {
-                float f14 = measuredHeight;
-                if (g3Var2.getTranslationY() < f14) {
-                    raVar.l0 = saVar.N0.getTranslationY() - f14;
-                    g3Var = saVar.N0;
-                    if (g3Var != null && g3Var.d.canScrollVertically(-1)) {
-                        f11 = Math.max(0.0f, f11);
-                    }
-                    float f15 = raVar.l0 - f11;
-                    raVar.l0 = f15;
-                    float max = Math.max(-measuredHeight, f15);
-                    raVar.l0 = max;
-                    if (saVar.g0 == 1) {
-                        raVar.l0 = Math.max(0.0f, max);
-                    }
-                    f12 = raVar.l0;
-                    if (f12 < 0.0f) {
-                        saVar.r.setTranslationY(f12);
-                        g3 g3Var3 = saVar.N0;
-                        if (g3Var3 != null) {
-                            g3Var3.setTranslationY(measuredHeight);
-                        }
-                    } else {
-                        saVar.r.setTranslationY(0.0f);
-                        if (saVar.N0 == null) {
-                            saVar.s(false);
-                        }
-                        saVar.N0.setTranslationY(measuredHeight + raVar.l0);
-                    }
-                }
-            }
-            raVar.l0 = saVar.r.a;
-            g3Var = saVar.N0;
-            if (g3Var != null) {
-                f11 = Math.max(0.0f, f11);
-            }
-            float f152 = raVar.l0 - f11;
-            raVar.l0 = f152;
-            float max2 = Math.max(-measuredHeight, f152);
-            raVar.l0 = max2;
-            if (saVar.g0 == 1) {
-            }
-            f12 = raVar.l0;
-            if (f12 < 0.0f) {
-            }
-        }
-        if (!saVar.X) {
-            float f16 = raVar.n0 + f10;
-            raVar.n0 = f16;
-            if (!saVar.Y && Math.abs(f16) >= org.telegram.messenger.g0.e) {
-                fa faVar2 = saVar.B0;
-                if (faVar2 != null) {
-                    faVar2.b();
-                }
-                saVar.Y = true;
-            }
-        }
-        return true;
+        this.u0 = true;
+        q2Var.q();
+        View focusedView = q2Var.getFocusedView();
+        focusedView.requestFocus();
+        org.telegram.messenger.g0.I3(focusedView);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-        v9 v9Var = this.a.o0.C0;
-        if (v9Var == null) {
-            return false;
-        }
-        c1 c1Var = v9Var.O;
-        if (c1Var == null) {
-            return true;
-        }
-        c1Var.run();
-        v9Var.O = null;
-        return true;
+    @Override // tg.l
+    public final void y() {
+        this.o2.w1.O0(false);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        sa saVar = this.a.o0;
-        saVar.X = false;
-        saVar.Y = false;
-        if (!a() && onSingleTapConfirmed(motionEvent)) {
-            return true;
+    @Override // hi.v5
+    public final void y0(boolean z10) {
+        nb nbVar = this.o2;
+        bb bbVar = nbVar.Y0;
+        if (bbVar != null) {
+            bbVar.x(6, z10);
+            w5 w5Var = nbVar.k1;
+            if (w5Var != null) {
+                ((ve0) w5Var.c).a(nbVar.Y0.k(), true);
+            }
         }
-        if (!saVar.I() || motionEvent.getY() >= saVar.N0.g()) {
-            return false;
+        db dbVar = nbVar.d1;
+        if (dbVar != null) {
+            dbVar.e0 = z10;
+            dbVar.M.b(z10);
         }
-        saVar.e(false);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

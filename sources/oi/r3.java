@@ -1,38 +1,38 @@
 package oi;
 
 import android.view.View;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public interface r3 {
-    void D(int i7);
+    void B(a aVar);
 
-    void G();
+    void E();
 
-    a70 G0(View view);
+    void N();
 
-    void H(a aVar);
+    void Q(a6 a6Var, String str);
 
-    void Q();
-
-    void R0(s3 s3Var, View view);
-
-    void V();
+    void S(int i7);
 
     boolean a(float f10);
 
-    void a0(a6 a6Var, String str);
+    void b(f1 f1Var, boolean z10);
 
-    void b0(int i7);
+    void c(q3 q3Var, View view);
 
-    void j1();
+    void f0();
 
-    void k(f1 f1Var, boolean z10);
+    x60 i0(View view);
 
-    void m0();
+    void l0(s3 s3Var, View view);
 
     void onContentChanged();
 
-    void x(q3 q3Var, View view);
+    void r(int i7);
+
+    void s0();
+
+    void y();
 }

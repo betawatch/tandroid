@@ -1,104 +1,41 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class w51 extends org.telegram.ui.ActionBar.j {
+public final class w51 implements LocationListener {
     public final /* synthetic */ ThemeActivity a;
 
     public w51(ThemeActivity themeActivity) {
         this.a = themeActivity;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0156  */
-    @Override // org.telegram.ui.ActionBar.j
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i7) {
-        if (i7 == -1) {
-            this.a.finishFragment();
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
+        ThemeActivity themeActivity = this.a;
+        if (location == null) {
             return;
         }
-        if (i7 == 1) {
-            this.a.B0();
-            return;
-        }
-        if (i7 == 2) {
-            org.telegram.ui.ActionBar.j6 k10 = org.telegram.ui.ActionBar.m6.D0().k(false);
-            if (k10.r == null) {
-                this.a.getMessagesController().H4(k10.b, k10);
-                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.v4, k10.b, k10);
-                return;
-            }
-            String str = "https://" + this.a.getMessagesController().X2 + "/addtheme/" + k10.r.slug;
-            this.a.showDialog(new org.telegram.ui.Components.ap0(this.a.getParentActivity(), null, str, false, str, false, null));
-            return;
-        }
-        if (i7 == 3) {
-            this.a.C0();
-            return;
-        }
-        if (i7 == 4) {
-            if (this.a.getParentActivity() == null) {
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
-            alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(2131743903, "ThemeResetToDefaultsTitle");
-            alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131743904, "ThemeResetToDefaultsText");
-            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745922, "Reset"), new qi0(this, 18));
-            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, "Cancel"), null);
-            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            this.a.showDialog(t1Var);
-            TextView textView = (TextView) t1Var.d(-1);
-            if (textView != null) {
-                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
-                return;
-            }
-            return;
-        }
-        if (i7 == 5) {
-            SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
-            String str2 = "Blue";
-            String string = sharedPreferences.getString("lastDayTheme", "Blue");
-            if (org.telegram.ui.ActionBar.m6.Q0(string) == null || org.telegram.ui.ActionBar.m6.Q0(string).q()) {
-                string = "Blue";
-            }
-            String str3 = "Dark Blue";
-            String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-            if (org.telegram.ui.ActionBar.m6.Q0(string2) == null || !org.telegram.ui.ActionBar.m6.Q0(string2).q()) {
-                string2 = "Dark Blue";
-            }
-            org.telegram.ui.ActionBar.l6 l6Var = org.telegram.ui.ActionBar.m6.I;
-            if (!string.equals(string2)) {
-                str3 = string2;
-            } else if (l6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-                str3 = string2;
-                boolean equals = str2.equals(l6Var.m());
-                org.telegram.ui.ActionBar.l6 Q0 = !equals ? org.telegram.ui.ActionBar.m6.Q0(str3) : org.telegram.ui.ActionBar.m6.Q0(str2);
-                int[] iArr = {(this.a.s.getIconView().getMeasuredWidth() / 2) + r9, (this.a.s.getIconView().getMeasuredHeight() / 2) + r9};
-                this.a.s.getIconView().getLocationInWindow(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
-                this.a.F0(true);
-                org.telegram.ui.ActionBar.m6.M1(this.a);
-            }
-            str2 = string;
-            boolean equals2 = str2.equals(l6Var.m());
-            if (!equals2) {
-            }
-            int[] iArr2 = {(this.a.s.getIconView().getMeasuredWidth() / 2) + i10, (this.a.s.getIconView().getMeasuredHeight() / 2) + i11};
-            this.a.s.getIconView().getLocationInWindow(iArr2);
-            int i102 = iArr2[0];
-            int i112 = iArr2[1];
-            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
-            this.a.F0(true);
-            org.telegram.ui.ActionBar.m6.M1(this.a);
-        }
+        themeActivity.M0 = false;
+        LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
+        locationManager.removeUpdates(themeActivity.S0);
+        locationManager.removeUpdates(themeActivity.T0);
+        themeActivity.G0(location, false);
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderDisabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderEnabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onStatusChanged(String str, int i7, Bundle bundle) {
     }
 }

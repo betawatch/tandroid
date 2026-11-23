@@ -1,18 +1,18 @@
 package fi;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.at;
+import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class y3 {
     public boolean a;
@@ -38,54 +38,54 @@ public final class y3 {
         }
     }
 
-    public static void c(at atVar) {
+    public static void c(zs zsVar) {
         y3 y3Var = new y3();
         y3Var.b = new org.telegram.messenger.j5(y3Var, 0);
-        y3Var.d = atVar;
-        int i7 = k10.t0;
+        y3Var.d = zsVar;
+        int i7 = i10.t0;
         y3Var.g = new org.telegram.messenger.a(y3Var, 6);
         y3Var.f = org.telegram.messenger.i5.r(i7);
-        y3Var.e = ls.f(i7);
+        y3Var.e = ks.f(i7);
         y3Var.c = new Handler(Looper.myLooper());
         if (y3Var.d(false)) {
             return;
         }
-        ((ls) y3Var.e).b((org.telegram.messenger.j5) y3Var.b, ls.O);
+        ((ks) y3Var.e).b((org.telegram.messenger.j5) y3Var.b, ks.O);
         ((Handler) y3Var.c).postDelayed((org.telegram.messenger.a) y3Var.g, 1000L);
     }
 
-    public n2.r0 a() {
+    public n2.s0 a() {
         Context context = (Context) this.b;
-        la.p(!this.a);
+        ma.p(!this.a);
         this.a = true;
         if (((h6.m) this.d) == null) {
             this.d = new h6.m(new f2.n[0]);
         }
-        if (((n2.i0) this.f) == null) {
-            if (((n2.l0) this.g) == null) {
-                this.g = new n2.l0(context);
+        if (((n2.j0) this.f) == null) {
+            if (((n2.m0) this.g) == null) {
+                this.g = new n2.m0(context);
             }
-            if (((n2.s0) this.e) == null) {
-                this.e = n2.s0.a;
+            if (((n2.t0) this.e) == null) {
+                this.e = n2.t0.a;
             }
-            n2.h0 h0Var = new n2.h0(context);
+            n2.i0 i0Var = new n2.i0(context);
             n2.b bVar = context != null ? null : (n2.b) this.c;
-            Context context2 = h0Var.a;
+            Context context2 = i0Var.a;
             if (context2 == null) {
-                h0Var.d = bVar;
+                i0Var.d = bVar;
             }
-            n2.l0 l0Var = (n2.l0) this.g;
-            h0Var.b = l0Var;
-            h0Var.c = (n2.s0) this.e;
-            if (l0Var == null) {
-                h0Var.b = new n2.l0(context2);
+            n2.m0 m0Var = (n2.m0) this.g;
+            i0Var.b = m0Var;
+            i0Var.c = (n2.t0) this.e;
+            if (m0Var == null) {
+                i0Var.b = new n2.m0(context2);
             }
-            this.f = new n2.i0(h0Var);
+            this.f = new n2.j0(i0Var);
         } else {
-            la.p(((n2.l0) this.g) == null);
-            la.p(((n2.s0) this.e) == null);
+            ma.p(((n2.m0) this.g) == null);
+            ma.p(((n2.t0) this.e) == null);
         }
-        return new n2.r0(this);
+        return new n2.s0(this);
     }
 
     public void b() {
@@ -104,9 +104,9 @@ public final class y3 {
             return false;
         }
         if (!z11) {
-            ls lsVar = (ls) this.e;
-            if (lsVar != null) {
-                lsVar.n((org.telegram.messenger.j5) this.b, ls.O);
+            ks ksVar = (ks) this.e;
+            if (ksVar != null) {
+                ksVar.n((org.telegram.messenger.j5) this.b, ks.O);
             }
             Handler handler = (Handler) this.c;
             if (handler != null) {
@@ -114,9 +114,9 @@ public final class y3 {
             }
             this.a = true;
         }
-        at atVar = (at) this.d;
-        LaunchActivity launchActivity = (LaunchActivity) atVar.b;
-        Intent intent = (Intent) atVar.c;
+        zs zsVar = (zs) this.d;
+        LaunchActivity launchActivity = (LaunchActivity) zsVar.b;
+        Intent intent = (Intent) zsVar.c;
         String str = LaunchActivity.C1;
         launchActivity.W(intent, true, false, false, null, true, false);
         return true;

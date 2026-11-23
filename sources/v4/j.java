@@ -1,19 +1,25 @@
 package v4;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public class j {
-    public final f1 a;
-    public final int b;
+public final class j {
+    public f1 a;
+    public f1 b;
     public final int c;
     public final int d;
     public final int e;
+    public final int f;
 
-    public j(f1 f1Var, int i7, int i10, int i11, int i12) {
+    public j(f1 f1Var, f1 f1Var2, int i7, int i10, int i11, int i12) {
         this.a = f1Var;
-        this.b = i7;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
+        this.b = f1Var2;
+        this.c = i7;
+        this.d = i10;
+        this.e = i11;
+        this.f = i12;
+    }
+
+    public final String toString() {
+        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
     }
 }

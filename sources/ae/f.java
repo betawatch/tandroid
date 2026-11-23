@@ -4,10 +4,10 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Choreographer;
-import b7.h;
+import c8.z;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class f {
     private static volatile Choreographer choreographer;
@@ -17,7 +17,7 @@ public abstract class f {
         try {
             a10 = new e(a(Looper.getMainLooper()), false);
         } catch (Throwable th2) {
-            a10 = h.a(th2);
+            a10 = z.a(th2);
         }
         if (a10 instanceof gd.f) {
             a10 = null;

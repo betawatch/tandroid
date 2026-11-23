@@ -18,36 +18,36 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import ch.p0;
 import e2.j0;
-import hi.ha;
+import hi.cb;
 import kg.i0;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.f3;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.m9;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.voip.n;
-import org.telegram.ui.i20;
+import org.telegram.ui.h20;
 import xh.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c extends ViewGroup implements ue.a, gs, te.b {
+public final class c extends ViewGroup implements ue.a, fs, te.b {
     public static final Rect M = new Rect();
     public final i0 E;
     public RenderNode F;
@@ -55,17 +55,17 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     public View H;
     public GroupCallMessage I;
     public a J;
-    public final ha K;
+    public final cb K;
     public final RectF L;
     public final te.a a;
     public final te.a b;
-    public final m9 c;
+    public final l9 c;
     public final ImageReceiver d;
     public final Paint e;
     public final Paint f;
     public final n h;
     public final ImageReceiver n;
-    public p5 r;
+    public o5 r;
     public p0 s;
     public final l w;
     public j0 x;
@@ -73,10 +73,10 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
 
     public c(Context context) {
         super(context);
-        nr nrVar = nr.h;
-        this.a = new te.a(0, this, nrVar, 320L, false);
-        this.b = new te.a(1, this, nrVar, 320L, false);
-        this.c = new m9(this);
+        kr krVar = kr.h;
+        this.a = new te.a(0, this, krVar, 320L, false);
+        this.b = new te.a(1, this, krVar, 320L, false);
+        this.c = new l9(this);
         Paint paint = new Paint(1);
         this.e = paint;
         Paint paint2 = new Paint(1);
@@ -84,7 +84,7 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
         n nVar = new n();
         this.h = nVar;
         this.E = new i0(this, 24);
-        this.K = new ha(this, 1);
+        this.K = new cb(this, 1);
         this.L = new RectF();
         l lVar = new l(context);
         this.w = lVar;
@@ -99,7 +99,7 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
         paint2.setAlpha(0);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.d = imageReceiver;
-        imageReceiver.J0(g0.L(11.0f));
+        imageReceiver.K0(g0.L(11.0f));
         nVar.c.setStrokeWidth(g0.L(1.0f));
         this.n = new ImageReceiver(this);
         setWillNotDraw(false);
@@ -123,7 +123,7 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     }
 
     @Override // te.b
-    public final void H(int i7, float f10, float f11, te.c cVar) {
+    public final void K(int i7, float f10, float f11, te.c cVar) {
         this.f.setAlpha(Math.round(this.b.e * 100.0f));
         int round = Math.round(this.a.e * 220.0f);
         n nVar = this.h;
@@ -133,23 +133,13 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     }
 
     @Override // ue.a
-    public final void M(float f10, float f11) {
+    public final void U(float f10, float f11) {
         a aVar;
         GroupCallMessage groupCallMessage;
         if (a(f10, f11) != 1 || (aVar = this.J) == null || (groupCallMessage = this.I) == null) {
             return;
         }
-        ((i20) aVar).a(groupCallMessage);
-    }
-
-    @Override // ue.a
-    public final boolean Q0(float f10, float f11) {
-        return a(f10, f11) == 1;
-    }
-
-    @Override // ue.a
-    public final /* synthetic */ boolean Z0(View view, float f10, float f11) {
-        return false;
+        ((h20) aVar).a(groupCallMessage);
     }
 
     public final int a(float f10, float f11) {
@@ -167,9 +157,9 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
         return ((RectF) this.x.c).contains(f10, f11) ? 0 : -1;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.l4) {
+        if (i7 == ks.l4) {
             invalidate();
         }
     }
@@ -216,9 +206,9 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
         super.dispatchDraw(canvas);
         this.d.h(canvas, null);
         this.n.h(canvas, null);
-        p5 p5Var = this.r;
-        if (p5Var != null) {
-            p5Var.draw(canvas);
+        o5 o5Var = this.r;
+        if (o5Var != null) {
+            o5Var.draw(canvas);
         }
     }
 
@@ -239,26 +229,16 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
         return 0.0f;
     }
 
-    @Override // ue.a
-    public final /* synthetic */ boolean m0() {
-        return true;
-    }
-
-    @Override // ue.a
-    public final /* synthetic */ boolean m1() {
-        return false;
-    }
-
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.d.P();
-        this.n.P();
-        p5 p5Var = this.r;
-        if (p5Var != null) {
-            p5Var.a(this);
+        this.d.Q();
+        this.n.Q();
+        o5 o5Var = this.r;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
-        ls.e().c(this, ls.l4);
+        ks.e().c(this, ks.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.subscribeToStateUpdates(this.E);
@@ -268,13 +248,13 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.d.R();
-        this.n.R();
-        p5 p5Var = this.r;
-        if (p5Var != null) {
-            p5Var.n(this);
+        this.d.S();
+        this.n.S();
+        o5 o5Var = this.r;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
-        ls.e().n(this, ls.l4);
+        ks.e().n(this, ks.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.unsubscribeFromStateUpdates(this.E);
@@ -304,7 +284,7 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             p0 p0Var = this.s;
-            int c10 = o10.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int c10 = m10.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             l lVar = this.w;
             lVar.measure(c10, makeMeasureSpec);
@@ -358,8 +338,8 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
                 pointF.offset(rectF3.left + g0.L(32.0f), 0.0f);
             }
             this.x = j0Var2;
-            this.d.A0(rectF);
-            this.n.A0((RectF) this.x.f);
+            this.d.B0(rectF);
+            this.n.B0((RectF) this.x.f);
             if (this.r != null) {
                 RectF rectF4 = (RectF) this.x.f;
                 Rect rect = M;
@@ -374,6 +354,26 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         return this.c.a(this, motionEvent);
+    }
+
+    @Override // ue.a
+    public final boolean q1(float f10, float f11) {
+        return a(f10, f11) == 1;
+    }
+
+    @Override // ue.a
+    public final /* synthetic */ boolean r1(View view, float f10, float f11) {
+        return false;
+    }
+
+    @Override // ue.a
+    public final /* synthetic */ boolean r2() {
+        return false;
+    }
+
+    @Override // ue.a
+    public final /* synthetic */ boolean s0() {
+        return true;
     }
 
     public void set(GroupCallMessage groupCallMessage) {
@@ -393,24 +393,24 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
             this.a.a(groupCallMessage4.isSendDelayed(), false);
             this.b.a(this.I.isSendError(), false);
         }
-        TLObject g22 = np.u1(k10.t0).g2(groupCallMessage.fromId);
+        TLObject g22 = mp.u1(i10.t0).g2(groupCallMessage.fromId);
         String m10 = n5.m(g22);
-        b9 b9Var = new b9((h6) null);
-        b9Var.p(g22);
-        this.d.i0(g22, b9Var, null);
+        a9 a9Var = new a9((i6) null);
+        a9Var.p(g22);
+        this.d.j0(g22, a9Var, null);
         ImageReceiver imageReceiver = this.n;
-        imageReceiver.q0(null, null, null, null, null, 0);
+        imageReceiver.r0(null, null, null, null, null, 0);
         if (this.r != null && isAttachedToWindow()) {
             this.r.n(this);
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(m10);
-        spannableStringBuilder.setSpan(new l41(g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new k41(g0.o()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.K, 0, spannableStringBuilder.length(), 33);
         p0 p0Var = groupCallMessage.visibleReaction;
         l lVar = this.w;
         if (p0Var == null) {
-            CharSequence j02 = gj.j0(groupCallMessage.message, false, true, lVar.getPaint());
+            CharSequence j02 = fj.j0(groupCallMessage.message, false, true, lVar.getPaint());
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             boolean b10 = b(spannableStringBuilder);
             boolean b11 = b(j02);
@@ -425,14 +425,14 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
             spannableStringBuilder2.append(j02);
             spannableStringBuilder = spannableStringBuilder2;
         } else if (p0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
             if (tL_availableReaction != null) {
-                imageReceiver.q0(gc.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
+                imageReceiver.r0(fc.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
             }
         } else if (p0Var.g != 0) {
-            p5 p5Var = new p5(0, groupCallMessage.currentAccount, groupCallMessage.visibleReaction.g);
-            this.r = p5Var;
-            p5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            o5 o5Var = new o5(0, groupCallMessage.currentAccount, groupCallMessage.visibleReaction.g);
+            this.r = o5Var;
+            o5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             if (isAttachedToWindow()) {
                 this.r.a(this);
             }
@@ -453,30 +453,30 @@ public final class c extends ViewGroup implements ue.a, gs, te.b {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void E0() {
+    public final /* synthetic */ void D0() {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void t0() {
+    public final /* synthetic */ void P0() {
     }
 
     @Override // te.b
-    public final /* synthetic */ void D(float f10, int i7) {
+    public final /* synthetic */ void G(float f10, int i7) {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void t(float f10, float f11) {
+    public final /* synthetic */ void u(float f10, float f11) {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void e1(View view, float f10, float f11) {
+    public final /* synthetic */ void B(View view, float f10, float f11) {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void o(View view, float f10, float f11) {
+    public final /* synthetic */ void X1(View view, float f10, float f11) {
     }
 
     @Override // ue.a
-    public final /* synthetic */ void x(View view, float f10, float f11) {
+    public final /* synthetic */ void r(View view, float f10, float f11) {
     }
 }

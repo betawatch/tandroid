@@ -3,7 +3,7 @@ package ce;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class w extends de.b implements u, c, de.e {
     public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(w.class, Object.class, "_state$volatile");
@@ -14,9 +14,29 @@ public final class w extends de.b implements u, c, de.e {
         this._state$volatile = obj;
     }
 
-    @Override // de.e
-    public final c B(id.h hVar, int i7, be.a aVar) {
-        return ((((i7 < 0 || i7 >= 2) && i7 != -2) || aVar != be.a.b) && !((i7 == 0 || i7 == -3) && aVar == be.a.a)) ? new b(this, hVar, i7, aVar, 1) : this;
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00cc A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x010b A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e6  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x010a -> B:15:0x00c4). Please report as a decompilation issue!!! */
+    @Override // ce.c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final java.lang.Object J(ce.d r18, kd.c r19) {
+        /*
+            Method dump skipped, instructions count: 329
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: ce.w.J(ce.d, kd.c):java.lang.Object");
     }
 
     @Override // ce.d
@@ -26,6 +46,11 @@ public final class w extends de.b implements u, c, de.e {
         }
         c(null, obj);
         return gd.k.a;
+    }
+
+    @Override // de.e
+    public final c a0(id.h hVar, int i7, be.a aVar) {
+        return ((((i7 < 0 || i7 >= 2) && i7 != -2) || aVar != be.a.b) && !((i7 == 0 || i7 == -3) && aVar == be.a.a)) ? new b(this, hVar, i7, aVar, 1) : this;
     }
 
     public final boolean c(Object obj, Object obj2) {
@@ -90,30 +115,5 @@ public final class w extends de.b implements u, c, de.e {
                 i11 = i7;
             }
         }
-    }
-
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00cc A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x010b A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00e6  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x010a -> B:15:0x00c4). Please report as a decompilation issue!!! */
-    @Override // ce.c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final java.lang.Object v(ce.d r18, kd.c r19) {
-        /*
-            Method dump skipped, instructions count: 329
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: ce.w.v(ce.d, kd.c):java.lang.Object");
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.webkit.ValueCallback;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements ValueCallback {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class d0 implements ValueCallback {
                 int i7 = s0.W;
                 break;
             default:
-                HashMap hashMap = v1.e;
+                HashMap hashMap = w1.e;
                 break;
         }
     }

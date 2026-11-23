@@ -1,18 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class dj extends pi.k {
     public Runnable W;
     public final /* synthetic */ bn X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(bn bnVar, bn bnVar2, bj bjVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(bnVar2, bjVar, h6Var);
+    public dj(bn bnVar, bn bnVar2, bj bjVar, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(bnVar2, bjVar, i6Var);
         this.X = bnVar;
     }
 
-    @Override // v4.k
+    @Override // v4.l
     public final void F() {
         bn bnVar = this.X;
         if (bnVar.ea == -1) {
@@ -20,7 +20,7 @@ public final class dj extends pi.k {
         }
     }
 
-    @Override // pi.k, v4.k
+    @Override // pi.k, v4.l
     public final void N() {
         super.N();
         Runnable runnable = this.W;
@@ -45,15 +45,15 @@ public final class dj extends pi.k {
         if (org.telegram.messenger.s2.a) {
             org.telegram.messenger.a8.b("chatItemAnimator disable notifications");
         }
-        j6.o oVar = bnVar.a0.getAdjustPanLayoutHelper().h;
-        org.telegram.messenger.g0.r(oVar);
-        oVar.run();
-        org.telegram.ui.Components.te teVar = bnVar.a0.O4;
-        org.telegram.messenger.g0.r(teVar);
-        teVar.run();
+        i6.g gVar = bnVar.a0.getAdjustPanLayoutHelper().h;
+        org.telegram.messenger.g0.r(gVar);
+        gVar.run();
+        org.telegram.ui.Components.ue ueVar = bnVar.a0.O4;
+        org.telegram.messenger.g0.r(ueVar);
+        ueVar.run();
     }
 
-    @Override // pi.k, v4.k, v4.n0
+    @Override // pi.k, v4.l, v4.n0
     public final void g() {
         super.g();
         Runnable runnable = this.W;

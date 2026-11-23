@@ -16,7 +16,7 @@ import m.k3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -96,7 +96,7 @@ public class ContentFrameLayout extends FrameLayout {
                 actionBarOverlayLayout.e();
                 ActionMenuView actionMenuView = ((k3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (hVar = actionMenuView.K) != null) {
-                    hVar.f();
+                    hVar.e();
                     m.d dVar = hVar.K;
                     if (dVar != null && dVar.b()) {
                         dVar.i.dismiss();

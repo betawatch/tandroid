@@ -1,43 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class c80 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+public interface c80 {
+    void d();
 
-    public /* synthetic */ c80(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i7) {
-        this.a = i7;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
-    }
+    void e();
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        switch (this.a) {
-            case 0:
-                ((g80) this.e).s = null;
-                hi.l5 l5Var = (hi.l5) this.c;
-                l5Var.animate().cancel();
-                l5Var.animate().alpha(0.0f).setDuration(150L).setListener(new s60(this, 3));
-                break;
-            default:
-                ((org.telegram.ui.iy) this.e).y = null;
-                hi.l5 l5Var2 = (hi.l5) this.c;
-                l5Var2.animate().cancel();
-                l5Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.ay(this, 0));
-                break;
-        }
-    }
+    void g();
+
+    void j();
 }

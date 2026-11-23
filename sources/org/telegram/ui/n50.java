@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
+public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
     public int E;
     public int F;
     public int G;
@@ -27,8 +27,8 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final boolean O;
     public k50 P;
     public FrameLayout a;
-    public org.telegram.ui.Components.nv0 b;
-    public org.telegram.ui.Components.yz c;
+    public org.telegram.ui.Components.mv0 b;
+    public org.telegram.ui.Components.vz c;
     public org.telegram.ui.Components.ek0 d;
     public l50 e;
     public m50 f;
@@ -52,7 +52,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         }
         if (!n50Var.N) {
             if (i7 >= n50Var.F && i7 < n50Var.G) {
-                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.si.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.h8) view).a(), false);
+                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.ri.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.g8) view).a(), false);
             }
             if (i7 == n50Var.K) {
                 n50Var.i0(n50Var.r, true, false);
@@ -61,11 +61,11 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             return;
         }
         if (i7 > n50Var.f.d.size()) {
-            boolean a10 = ((org.telegram.ui.Cells.h8) view).a();
+            boolean a10 = ((org.telegram.ui.Cells.g8) view).a();
             m50 m50Var = n50Var.f;
             n50Var.i0((TLRPC.TL_messages_stickerSet) m50Var.e.get((i7 - m50Var.d.size()) - 1), a10, false);
         } else if (i7 != n50Var.f.d.size()) {
-            n50Var.i0((TLRPC.TL_messages_stickerSet) n50Var.f.d.get(i7), ((org.telegram.ui.Cells.h8) view).a(), true);
+            n50Var.i0((TLRPC.TL_messages_stickerSet) n50Var.f.d.get(i7), ((org.telegram.ui.Cells.g8) view).a(), true);
         }
     }
 
@@ -90,7 +90,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             } else {
                 n50Var.w.stickerset = stickerSet;
             }
-            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(n50Var.currentAccount);
+            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(n50Var.currentAccount);
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = n50Var.r;
             d02.N.k(tL_messages_stickerSet2, tL_messages_stickerSet2.set.id);
         } else if (z10) {
@@ -114,9 +114,9 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 chatFull2.flags &= -257;
             }
         }
-        org.telegram.messenger.ur.a0(n50Var.currentAccount).N1(n50Var.w, false);
-        org.telegram.messenger.ls.f(n50Var.currentAccount).k(org.telegram.messenger.ls.T, n50Var.w, 0, Boolean.TRUE, Boolean.FALSE);
-        org.telegram.messenger.ls.f(n50Var.currentAccount).k(org.telegram.messenger.ls.s3, Long.valueOf(n50Var.w.id), Boolean.valueOf(z10));
+        org.telegram.messenger.tr.a0(n50Var.currentAccount).N1(n50Var.w, false);
+        org.telegram.messenger.ks.f(n50Var.currentAccount).k(org.telegram.messenger.ks.T, n50Var.w, 0, Boolean.TRUE, Boolean.FALSE);
+        org.telegram.messenger.ks.f(n50Var.currentAccount).k(org.telegram.messenger.ks.s3, Long.valueOf(n50Var.w.id), Boolean.valueOf(z10));
         n50Var.finishFragment();
     }
 
@@ -124,14 +124,14 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         int i7 = n50Var.n;
         if (tL_messages_stickerSet == null) {
             if (n50Var.r != null) {
-                org.telegram.messenger.f3.n(null, 2131749185, org.telegram.ui.Components.lc.b0(n50Var), R.raw.done, 36);
+                org.telegram.messenger.f3.n(null, 2131749185, org.telegram.ui.Components.kc.b0(n50Var), R.raw.done, 36);
             }
             n50Var.r = null;
             n50Var.s = true;
         } else {
             n50Var.r = tL_messages_stickerSet;
             n50Var.s = false;
-            org.telegram.messenger.f3.n(null, 2131749185, org.telegram.ui.Components.lc.b0(n50Var), R.raw.done, 36);
+            org.telegram.messenger.f3.n(null, 2131749185, org.telegram.ui.Components.kc.b0(n50Var), R.raw.done, 36);
         }
         n50Var.m0();
         n50Var.k0(n50Var.r, false);
@@ -140,7 +140,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 for (int i10 = 0; i10 < n50Var.d.getChildCount(); i10++) {
                     View childAt = n50Var.d.getChildAt(i10);
                     if (n50Var.d.T(childAt).b() == n50Var.F + i7) {
-                        ((org.telegram.ui.Cells.h8) childAt).b(false, true);
+                        ((org.telegram.ui.Cells.g8) childAt).b(false, true);
                         break;
                     }
                 }
@@ -152,7 +152,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 for (int i11 = 0; i11 < n50Var.d.getChildCount(); i11++) {
                     View childAt2 = n50Var.d.getChildAt(i11);
                     if (n50Var.d.T(childAt2).b() == n50Var.F + n50Var.n) {
-                        ((org.telegram.ui.Cells.h8) childAt2).b(true, true);
+                        ((org.telegram.ui.Cells.g8) childAt2).b(true, true);
                         return;
                     }
                 }
@@ -164,33 +164,33 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Li));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Mi));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.b7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.I6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.J6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.B6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.i6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.t8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.A8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.v8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.s8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Li));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Mi));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.z6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.b7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.I6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.J6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.B6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.i6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.t8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.v8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.s8));
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(this.O ? 2131749250 : 2131749204, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 10));
+        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(this.O ? 2131749250 : 2131749204, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new cv(this, 10));
         org.telegram.ui.ActionBar.g5 b10 = this.simpleActionBar.t().b(0, R.drawable.outline_header_search);
         this.M = b10;
         b10.O();
-        b10.C0 = new bi.w1(this, 13);
-        this.M.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
+        b10.C0 = new bi.x1(this, 13);
+        this.M.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
         this.e = new l50(this, context);
         this.f = new m50(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -199,30 +199,30 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.d = ek0Var;
         ek0Var.r1();
         this.d.setSectionsDrawBackground(true);
-        v4.k kVar = new v4.k();
-        kVar.n(200L);
-        kVar.m = true;
-        this.d.setItemAnimator(kVar);
+        v4.l lVar = new v4.l();
+        lVar.n(200L);
+        lVar.m = true;
+        this.d.setItemAnimator(lVar);
         v4.c0 c0Var = new v4.c0();
         this.h = c0Var;
         c0Var.j1(1);
         this.d.setLayoutManager(this.h);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.a = frameLayout2;
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, frameLayout2, null);
-        org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(context, getResourceProvider());
-        this.c = yzVar;
-        yzVar.setViewType(19);
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, frameLayout2, null);
+        org.telegram.ui.Components.vz vzVar = new org.telegram.ui.Components.vz(context, getResourceProvider());
+        this.c = vzVar;
+        vzVar.setViewType(19);
         this.c.setIsSingleCell(true);
         this.c.setItemsCount((int) Math.ceil(org.telegram.messenger.g0.q.y / org.telegram.messenger.g0.N(58.0f)));
-        this.a.addView(this.c, c8.ma.c(-1.0f, -1));
-        org.telegram.ui.Components.nv0 nv0Var = new org.telegram.ui.Components.nv0(context, this.c, 1, null);
-        this.b = nv0Var;
-        h6.m.i(nv0Var);
+        this.a.addView(this.c, c8.na.c(-1.0f, -1));
+        org.telegram.ui.Components.mv0 mv0Var = new org.telegram.ui.Components.mv0(context, this.c, 1, null);
+        this.b = mv0Var;
+        h6.m.s(mv0Var);
         this.a.addView(this.b);
         this.a.setVisibility(8);
         this.d.setEmptyView(this.a);
-        frameLayout.addView(this.d, c8.ma.c(-1.0f, -1));
+        frameLayout.addView(this.d, c8.na.c(-1.0f, -1));
         frameLayout.addView(this.a);
         this.d.setAdapter(this.e);
         this.d.setOnItemClickListener(new h(this, 14));
@@ -230,17 +230,17 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ls.x0) {
+        if (i7 == org.telegram.messenger.ks.x0) {
             if (((Integer) objArr[0]).intValue() == h0()) {
                 l0(true);
                 return;
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ls.T) {
-            if (i7 == org.telegram.messenger.ls.B0) {
+        if (i7 != org.telegram.messenger.ks.T) {
+            if (i7 == org.telegram.messenger.ks.B0) {
                 long longValue = ((Long) objArr[0]).longValue();
                 if (g0(this.w) == null || g0(this.w).id != longValue) {
                     return;
@@ -253,7 +253,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
         if (chatFull.id == this.x) {
             if (this.w == null && g0(chatFull) != null) {
-                this.r = org.telegram.messenger.si.d0(this.currentAccount).a0(g0(chatFull));
+                this.r = org.telegram.messenger.ri.d0(this.currentAccount).a0(g0(chatFull));
             }
             this.w = chatFull;
             l0(true);
@@ -290,11 +290,11 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         } else {
             tL_inputStickerSetShortName = null;
         }
-        org.telegram.ui.Components.kw0 kw0Var = new org.telegram.ui.Components.kw0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
-        kw0Var.Y1 = new i50(this, z10, tL_messages_stickerSet);
-        kw0Var.a1();
+        org.telegram.ui.Components.jw0 jw0Var = new org.telegram.ui.Components.jw0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
+        jw0Var.Y1 = new h50(this, z10, tL_messages_stickerSet);
+        jw0Var.a1();
         org.telegram.messenger.g0.v1(getParentActivity().getCurrentFocus());
-        kw0Var.show();
+        jw0Var.show();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
@@ -305,7 +305,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final void j0(TLRPC.ChatFull chatFull) {
         this.w = chatFull;
         if (g0(chatFull) != null) {
-            this.r = org.telegram.messenger.si.d0(this.currentAccount).a0(g0(this.w));
+            this.r = org.telegram.messenger.ri.d0(this.currentAccount).a0(g0(this.w));
         }
     }
 
@@ -363,7 +363,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             this.H = i7 + 1;
             this.L = i7;
         }
-        ArrayList u02 = org.telegram.messenger.si.d0(this.currentAccount).u0(h0());
+        ArrayList u02 = org.telegram.messenger.ri.d0(this.currentAccount).u0(h0());
         if (u02.isEmpty()) {
             this.E = -1;
             this.F = -1;
@@ -394,7 +394,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     */
     public final void m0() {
         long j3;
-        ArrayList u02 = org.telegram.messenger.si.d0(this.currentAccount).u0(h0());
+        ArrayList u02 = org.telegram.messenger.ri.d0(this.currentAccount).u0(h0());
         this.n = -1;
         if (!this.s) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.r;
@@ -422,10 +422,10 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
-        org.telegram.messenger.si.d0(this.currentAccount).D(h0());
-        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.x0);
-        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.T);
-        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.B0);
+        org.telegram.messenger.ri.d0(this.currentAccount).D(h0());
+        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.x0);
+        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.B0);
         l0(true);
         return true;
     }
@@ -437,9 +437,9 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         TLRPC.TL_channels_setStickers tL_channels_setStickers;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
         super.onFragmentDestroy();
-        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.x0);
-        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.T);
-        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.B0);
+        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.x0);
+        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.B0);
         if ((this.r != null || this.s) && (chatFull = this.w) != null) {
             if (g0(chatFull) == null || (tL_messages_stickerSet = this.r) == null || tL_messages_stickerSet.set.id != g0(this.w).id) {
                 if (g0(this.w) == null && this.r == null) {
@@ -449,7 +449,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 long j3 = this.x;
                 if (z10) {
                     TLRPC.TL_channels_setEmojiStickers tL_channels_setEmojiStickers = new TLRPC.TL_channels_setEmojiStickers();
-                    tL_channels_setEmojiStickers.channel = org.telegram.messenger.np.u1(this.currentAccount).j1(j3);
+                    tL_channels_setEmojiStickers.channel = org.telegram.messenger.mp.u1(this.currentAccount).j1(j3);
                     if (this.s) {
                         tL_channels_setEmojiStickers.stickerset = new TLRPC.TL_inputStickerSetEmpty();
                         tL_channels_setStickers = tL_channels_setEmojiStickers;
@@ -463,12 +463,12 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     }
                 } else {
                     TLRPC.TL_channels_setStickers tL_channels_setStickers2 = new TLRPC.TL_channels_setStickers();
-                    tL_channels_setStickers2.channel = org.telegram.messenger.np.u1(this.currentAccount).j1(j3);
+                    tL_channels_setStickers2.channel = org.telegram.messenger.mp.u1(this.currentAccount).j1(j3);
                     if (this.s) {
                         tL_channels_setStickers2.stickerset = new TLRPC.TL_inputStickerSetEmpty();
                         tL_channels_setStickers = tL_channels_setStickers2;
                     } else {
-                        org.telegram.messenger.np.u1(this.currentAccount).i7.edit().remove("group_hide_stickers_" + this.w.id).apply();
+                        org.telegram.messenger.mp.u1(this.currentAccount).i7.edit().remove("group_hide_stickers_" + this.w.id).apply();
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID2 = new TLRPC.TL_inputStickerSetID();
                         tL_channels_setStickers2.stickerset = tL_inputStickerSetID2;
                         TLRPC.StickerSet stickerSet2 = this.r.set;

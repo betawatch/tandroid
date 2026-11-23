@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.StringTokenizer;
 import ug.m0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -56,12 +56,12 @@ public final class a {
         }
     }
 
-    public static c0 b(b bVar, Object obj, Object obj2) {
+    public static c0 b(v4.b bVar, Object obj, Object obj2) {
         boolean z10 = false;
         return new c0(bVar, obj, obj2, c, z10, 16);
     }
 
-    public static c0 c(b bVar, Object obj, Object obj2, Object obj3) {
+    public static c0 c(v4.b bVar, Object obj, Object obj2, Object obj3) {
         return new c0(bVar, obj, obj2, new Object[]{obj3}, false, 16);
     }
 
@@ -97,8 +97,8 @@ public final class a {
         return m0Var;
     }
 
-    public final b e(m0 m0Var) {
-        b bVar = new b();
+    public final v4.b e(m0 m0Var) {
+        v4.b bVar = new v4.b();
         bVar.b = m0Var;
         return bVar;
     }

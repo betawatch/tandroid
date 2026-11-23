@@ -5,15 +5,15 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.f40;
+import org.telegram.ui.e40;
 import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static boolean a;
@@ -30,19 +30,19 @@ public abstract class g {
             t3 t3Var2 = sharedInstance.groupCall;
             TLRPC.GroupCallParticipant groupCallParticipant = t3Var2 != null ? (TLRPC.GroupCallParticipant) t3Var2.d.f(sharedInstance.getSelfId()) : null;
             boolean z11 = (groupCallParticipant == null || groupCallParticipant.raise_hand_rating == 0) ? false : true;
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, hd.N0(z11 ? 2131743149 : 2131743045, null), !z11), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.N0(z11 ? 2131743144 : 2131743040, null), !z11), 100, 0));
         } else if (sharedInstance.isMicMute()) {
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, hd.N0(2131742985, null), true), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.N0(2131742980, null), true), 100, 0));
         } else {
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_unmuted, hd.N0(2131743048, null), true), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_unmuted, gd.N0(2131743043, null), true), 100, 0));
         }
         int videoState = sharedInstance.getVideoState(false);
         if (videoState == 2) {
-            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_on, hd.N0(2131742992, null), true), 90, 1));
+            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_on, gd.N0(2131742987, null), true), 90, 1));
         } else if (a || videoState == 1) {
-            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_off, hd.N0(2131742993, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z10 || ((t3Var = sharedInstance.groupCall) != null && t3Var.c()))), 60, 1));
+            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_off, gd.N0(2131742988, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z10 || ((t3Var = sharedInstance.groupCall) != null && t3Var.c()))), 60, 1));
         }
-        arrayList.add(new f(new wi.k(3, R.drawable.msg_endcall, hd.N0(z10 ? 2131743119 : 2131743167, null), true), 80, 2));
+        arrayList.add(new f(new wi.k(3, R.drawable.msg_endcall, gd.N0(z10 ? 2131743114 : 2131743162, null), true), 80, 2));
         Collections.sort(arrayList, new pe(19));
         while (arrayList.size() > i7) {
             a8.p0.z(1, arrayList);
@@ -71,7 +71,7 @@ public abstract class g {
         }
         if (i7 == 1) {
             if (z10 && sharedInstance.mutedByAdmin()) {
-                sharedInstance.editCallMember(k10.i(sharedInstance.getAccount()).f(), null, null, null, Boolean.TRUE, null);
+                sharedInstance.editCallMember(i10.i(sharedInstance.getAccount()).f(), null, null, null, Boolean.TRUE, null);
                 return;
             } else {
                 sharedInstance.setMicMute(!sharedInstance.isMicMute(), false, true);
@@ -81,7 +81,7 @@ public abstract class g {
         if (i7 != 2) {
             if (i7 == 3) {
                 if (z10) {
-                    f40.x1(org.telegram.messenger.t0.b, null, false, true);
+                    e40.x1(org.telegram.messenger.t0.b, null, false, true);
                     return;
                 } else {
                     sharedInstance.hangUp();

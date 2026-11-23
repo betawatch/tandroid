@@ -7,23 +7,23 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public class e7 {
     public int A;
     public boolean D;
     public final boolean E;
     public float G;
-    public mc H;
-    public org.telegram.ui.ActionBar.h6 J;
+    public lc H;
+    public org.telegram.ui.ActionBar.i6 J;
     public float K;
     public boolean L;
     public float M;
@@ -63,9 +63,9 @@ public class e7 {
     public final RectF F = new RectF();
     public boolean I = false;
 
-    public e7(org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
+    public e7(org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
         this.E = z10;
-        this.J = h6Var;
+        this.J = i6Var;
     }
 
     public final boolean a(View view, MotionEvent motionEvent) {
@@ -76,15 +76,15 @@ public class e7 {
         boolean z10;
         TLRPC.TL_recentStory tL_recentStory4;
         this.R = view;
-        p6 R1 = np.u1(k10.t0).R1();
+        p6 R1 = mp.u1(i10.t0).R1();
         boolean z11 = false;
         if (motionEvent.getAction() == 0) {
             if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
                 TLRPC.Chat chat = null;
                 if (this.x > 0) {
-                    user = np.u1(k10.t0).c2(Long.valueOf(this.x));
+                    user = mp.u1(i10.t0).c2(Long.valueOf(this.x));
                 } else {
-                    chat = np.u1(k10.t0).O0(Long.valueOf(-this.x));
+                    chat = mp.u1(i10.t0).O0(Long.valueOf(-this.x));
                     user = null;
                 }
                 if (c(chat, user)) {
@@ -92,17 +92,17 @@ public class e7 {
                 } else if (this.r) {
                     z10 = !R1.h.isEmpty();
                 } else {
-                    if (this.x <= 0 ? np.u1(k10.t0).R1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : np.u1(k10.t0).R1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
+                    if (this.x <= 0 ? mp.u1(i10.t0).R1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : mp.u1(i10.t0).R1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
                         z11 = true;
                     }
                     z10 = z11;
                 }
-                if (this.x != k10.i(k10.t0).n && z10) {
-                    mc mcVar = this.H;
-                    if (mcVar == null) {
-                        this.H = new mc(view, 1.5f, 5.0f);
+                if (this.x != i10.i(i10.t0).n && z10) {
+                    lc lcVar = this.H;
+                    if (lcVar == null) {
+                        this.H = new lc(view, 1.5f, 5.0f);
                     } else {
-                        mcVar.a = view;
+                        lcVar.a = view;
                     }
                     view.getParent().requestDisallowInterceptTouchEvent(true);
                     this.H.c(true);
@@ -124,10 +124,10 @@ public class e7 {
         }
         if (motionEvent.getAction() == 2 && this.N) {
             if (Math.abs(this.O - motionEvent.getX()) > org.telegram.messenger.g0.e || Math.abs(this.P - motionEvent.getY()) > org.telegram.messenger.g0.e) {
-                mc mcVar2 = this.H;
-                if (mcVar2 != null) {
-                    mcVar2.a = view;
-                    mcVar2.c(false);
+                lc lcVar2 = this.H;
+                if (lcVar2 != null) {
+                    lcVar2.a = view;
+                    lcVar2.c(false);
                 }
                 l4 l4Var3 = this.Q;
                 if (l4Var3 != null) {
@@ -137,17 +137,17 @@ public class e7 {
                 this.N = false;
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            mc mcVar3 = this.H;
-            if (mcVar3 != null) {
-                mcVar3.a = view;
-                mcVar3.c(false);
+            lc lcVar3 = this.H;
+            if (lcVar3 != null) {
+                lcVar3.a = view;
+                lcVar3.c(false);
             }
             if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                np u12 = np.u1(k10.t0);
+                mp u12 = mp.u1(i10.t0);
                 p6 R12 = u12.R1();
                 if (this.r) {
                     f(0L);
-                } else if (this.x != k10.i(k10.t0).e()) {
+                } else if (this.x != i10.i(i10.t0).e()) {
                     if (R12.K(this.x)) {
                         f(this.x);
                     } else {
@@ -180,11 +180,11 @@ public class e7 {
     }
 
     public final float b() {
-        mc mcVar = this.H;
-        if (mcVar == null) {
+        lc lcVar = this.H;
+        if (lcVar == null) {
             return 1.0f;
         }
-        return mcVar.a(0.08f);
+        return lcVar.a(0.08f);
     }
 
     public boolean c(TLRPC.Chat chat, TLRPC.User user) {

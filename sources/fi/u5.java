@@ -1,11 +1,11 @@
 package fi;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -55,7 +55,7 @@ public final /* synthetic */ class u5 implements Runnable {
                             c7Var.b.a.c(new a7(c7Var, peerStories, 0));
                         }
                     }
-                    ls.f(p6Var.a).k(ls.y5, new Object[0]);
+                    ks.f(p6Var.a).k(ks.y5, new Object[0]);
                     break;
                 }
                 break;
@@ -66,9 +66,9 @@ public final /* synthetic */ class u5 implements Runnable {
                 long j11 = this.c;
                 long j12 = this.d;
                 Float f10 = (Float) this.h;
-                org.telegram.messenger.y8 y8Var = z11 ? (org.telegram.messenger.y8) w7Var.n.get(str) : (org.telegram.messenger.y8) w7Var.h.get(str);
-                if (y8Var != null) {
-                    Utilities.d.c(new org.telegram.messenger.t8(y8Var, f10, j12, j11));
+                org.telegram.messenger.x8 x8Var = z11 ? (org.telegram.messenger.x8) w7Var.n.get(str) : (org.telegram.messenger.x8) w7Var.h.get(str);
+                if (x8Var != null) {
+                    Utilities.d.c(new org.telegram.messenger.s8(x8Var, f10, j12, j11));
                     break;
                 } else if (j12 != 0) {
                     w7Var.y.put(str, Long.valueOf(j12));

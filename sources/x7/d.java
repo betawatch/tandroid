@@ -1,6 +1,6 @@
 package x7;
 
-import c8.od;
+import c8.pd;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -10,7 +10,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public static final b b = new b(e.e, 0);
@@ -107,7 +107,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: l */
     public d subList(int i7, int i10) {
-        od.b(i7, i10, size());
+        pd.b(i7, i10, size());
         int i11 = i10 - i7;
         return i11 == size() ? this : i11 == 0 ? e.e : new c(this, i7, i11);
     }
@@ -135,7 +135,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public final b listIterator(int i7) {
         int size = size();
         if (i7 < 0 || i7 > size) {
-            throw new IndexOutOfBoundsException(od.c(i7, size, "index"));
+            throw new IndexOutOfBoundsException(pd.c(i7, size, "index"));
         }
         return isEmpty() ? b : new b(this, i7);
     }

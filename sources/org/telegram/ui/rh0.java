@@ -1,38 +1,32 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sh0 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class rh0 implements org.telegram.ui.Components.rj0, org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ NotificationsSettingsActivity a;
 
-    public /* synthetic */ rh0(sh0 sh0Var, String str, int i7) {
-        this.a = i7;
-        this.b = sh0Var;
-        this.c = str;
+    public /* synthetic */ rh0(NotificationsSettingsActivity notificationsSettingsActivity) {
+        this.a = notificationsSettingsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sh0 sh0Var = this.b;
-                String str = this.c;
-                sh0Var.getClass();
-                org.telegram.messenger.g0.g3(new rh0(sh0Var, str, 1));
-                break;
-            default:
-                sh0 sh0Var2 = this.b;
-                String str2 = this.c;
-                jg.z1 z1Var = sh0Var2.h;
-                int i7 = sh0Var2.n.s;
-                z1Var.g(str2, true, (i7 == 1 || i7 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.g.c(new mc0(sh0Var2, str2, new ArrayList(sh0Var2.n.x), 10));
-                break;
-        }
+    @Override // org.telegram.ui.Components.rj0
+    public /* synthetic */ boolean U0(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rj0
+    public void g(float f10, float f11, int i7, View view) {
+        NotificationsSettingsActivity.d0(this.a, view, i7, f10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        NotificationsSettingsActivity.e0(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.rj0
+    public /* synthetic */ void f0(View view, float f10, float f11) {
     }
 }

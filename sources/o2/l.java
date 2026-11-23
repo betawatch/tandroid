@@ -8,7 +8,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l {
     public final q a;
@@ -54,9 +54,9 @@ public final class l {
         l lVar = obj;
         while (i13 < lVar.i.length) {
             p2.m mVar2 = (p2.m) a10.get(uVar.i(i13));
-            p2.b M = eVar.M(mVar2.b);
+            p2.b L = eVar.L(mVar2.b);
             j[] jVarArr2 = lVar.i;
-            p2.b bVar = M == null ? (p2.b) mVar2.b.get(i12) : M;
+            p2.b bVar = L == null ? (p2.b) mVar2.b.get(i12) : L;
             e2.u uVar3 = mVar2.a;
             w0Var.getClass();
             String str = uVar3.r;
@@ -82,14 +82,14 @@ public final class l {
                 y2.e eVar3 = eVar2;
                 int i15 = i13;
                 long j10 = d;
-                jVarArr[i15] = new j(j10, mVar, bVar, eVar3, 0L, mVar.c());
+                jVarArr[i15] = new j(j10, mVar, bVar, eVar3, 0L, mVar.d());
                 i13 = i15 + 1;
                 lVar = this;
                 oVar2 = oVar;
                 d = j10;
                 i12 = 0;
             } else if (w0Var.a) {
-                hVar2 = new c4.h(((nb.a) w0Var.c).j(uVar3), uVar3);
+                hVar2 = new c4.h(((nb.a) w0Var.c).f(uVar3), uVar3);
             } else {
                 eVar2 = null;
                 mVar = mVar2;
@@ -97,7 +97,7 @@ public final class l {
                 y2.e eVar32 = eVar2;
                 int i152 = i13;
                 long j102 = d;
-                jVarArr[i152] = new j(j102, mVar, bVar, eVar32, 0L, mVar.c());
+                jVarArr[i152] = new j(j102, mVar, bVar, eVar32, 0L, mVar.d());
                 i13 = i152 + 1;
                 lVar = this;
                 oVar2 = oVar;
@@ -111,7 +111,7 @@ public final class l {
             y2.e eVar322 = eVar2;
             int i1522 = i13;
             long j1022 = d;
-            jVarArr[i1522] = new j(j1022, mVar, bVar, eVar322, 0L, mVar.c());
+            jVarArr[i1522] = new j(j1022, mVar, bVar, eVar322, 0L, mVar.d());
             i13 = i1522 + 1;
             lVar = this;
             oVar2 = oVar;
@@ -132,11 +132,11 @@ public final class l {
     public final j b(int i7) {
         j[] jVarArr = this.i;
         j jVar = jVarArr[i7];
-        p2.b M = this.b.M(jVar.b.b);
-        if (M == null || M.equals(jVar.c)) {
+        p2.b L = this.b.L(jVar.b.b);
+        if (L == null || L.equals(jVar.c)) {
             return jVar;
         }
-        j jVar2 = new j(jVar.e, jVar.b, M, jVar.a, jVar.f, jVar.d);
+        j jVar2 = new j(jVar.e, jVar.b, L, jVar.a, jVar.f, jVar.d);
         jVarArr[i7] = jVar2;
         return jVar2;
     }

@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
-import org.telegram.ui.ix;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final c5.c b = new c5.c(3);
@@ -89,7 +89,7 @@ public abstract class w {
     }
 
     public boolean k() {
-        return !(this instanceof ix);
+        return !(this instanceof hx);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, f1 f1Var, float f10, float f11, int i7, boolean z10) {

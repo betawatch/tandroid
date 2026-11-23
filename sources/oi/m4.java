@@ -9,25 +9,25 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.ma;
+import c8.na;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.g20;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 {
+public final class m4 extends y implements org.telegram.ui.ActionBar.c6, h9, j0 {
     public static final /* synthetic */ int N = 0;
     public final ImageReceiver E;
     public final Drawable F;
@@ -39,13 +39,13 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
     public int L;
     public final i0 M;
     public final int n;
-    public final h6 r;
+    public final i6 r;
     public final Paint s;
     public final Paint w;
     public final Paint x;
     public final TextPaint y;
 
-    public m4(int i7, Context context, h6 h6Var) {
+    public m4(int i7, Context context, i6 i6Var) {
         super(context);
         this.s = new Paint(1);
         this.w = new Paint(1);
@@ -53,7 +53,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         TextPaint textPaint = new TextPaint(1);
         this.y = textPaint;
         this.n = i7;
-        this.r = h6Var;
+        this.r = i6Var;
         setWillNotDraw(false);
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint.setTextAlign(Paint.Align.CENTER);
@@ -62,11 +62,11 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f));
         View view = new View(context);
         this.G = view;
-        view.setOnClickListener(new hi.o4(this, 19));
-        addView(view, ma.e(-1, -2, 51));
-        i0 i0Var = new i0(context, h6Var, new hi.t5(this, 21));
+        view.setOnClickListener(new hi.z4(this, 19));
+        addView(view, na.e(-1, -2, 51));
+        i0 i0Var = new i0(context, i6Var, new hi.u0(this, 22));
         this.M = i0Var;
-        addView(i0Var.a, ma.e(-2, -2, 51));
+        addView(i0Var.a, na.e(-2, -2, 51));
         updateColors();
     }
 
@@ -87,12 +87,12 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         return this.M.f(i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.gf));
-        hashSet.add(Integer.valueOf(m6.xe));
-        hashSet.add(Integer.valueOf(m6.lg));
-        hashSet.add(Integer.valueOf(m6.G6));
+        hashSet.add(Integer.valueOf(n6.gf));
+        hashSet.add(Integer.valueOf(n6.xe));
+        hashSet.add(Integer.valueOf(n6.lg));
+        hashSet.add(Integer.valueOf(n6.G6));
     }
 
     @Override // oi.j0
@@ -136,7 +136,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         TL_iv.pageBlockMap map = getMap();
         ImageReceiver imageReceiver = this.E;
         if (map == null || !(map.geo instanceof TLRPC.TL_geoPoint)) {
-            imageReceiver.w0(null);
+            imageReceiver.x0(null);
             this.J = null;
             return;
         }
@@ -153,17 +153,17 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
             return;
         }
         this.J = str;
-        int i12 = np.u1(this.n).p3;
+        int i12 = mp.u1(this.n).p3;
         this.I = i12;
         if (i12 == 2) {
-            imageReceiver.q0(gc.p(i20.b(map.geo, i10, i11, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, null, 0);
+            imageReceiver.r0(fc.p(g20.b(map.geo, i10, i11, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, null, 0);
             return;
         }
         TLRPC.GeoPoint geoPoint = map.geo;
-        imageReceiver.o0(org.telegram.messenger.g0.e0(this.n, geoPoint.lat, geoPoint._long, i10, i11, true, 15, -1), null, null, null, 0L);
+        imageReceiver.p0(org.telegram.messenger.g0.e0(this.n, geoPoint.lat, geoPoint._long, i10, i11, true, 15, -1), null, null, null, 0L);
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         this.M.e(arrayList);
     }
@@ -171,7 +171,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.E.P();
+        this.E.Q();
         this.J = null;
         h();
     }
@@ -179,17 +179,17 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.E.R();
+        this.E.S();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        j9 textSelectionHelper;
+        i9 textSelectionHelper;
         if (getMap() != null) {
             ImageReceiver imageReceiver = this.E;
             canvas2 = canvas;
-            canvas2.drawRect(imageReceiver.L0, imageReceiver.M0, imageReceiver.y(), imageReceiver.A(), this.s);
+            canvas2.drawRect(imageReceiver.L0, imageReceiver.M0, imageReceiver.z(), imageReceiver.B(), this.s);
             int r10 = (int) imageReceiver.r();
             int s5 = (int) imageReceiver.s();
             Drawable drawable = this.F;
@@ -202,7 +202,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
             TL_iv.pageBlockMap map = getMap();
             if (map != null && (map.geo instanceof TLRPC.TL_geoPoint)) {
                 imageReceiver.h(canvas2, null);
-                if (this.I == 2 && imageReceiver.L()) {
+                if (this.I == 2 && imageReceiver.M()) {
                     if (this.K == null) {
                         this.K = getContext().getResources().getDrawable(R.drawable.map_pin).mutate();
                     }
@@ -234,7 +234,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         int paddingRight = getPaddingRight();
         int i13 = i11 - i7;
         int max = Math.max(0, (i13 - paddingLeft) - paddingRight);
-        this.E.y0(paddingLeft, getPaddingTop(), max, this.L);
+        this.E.z0(paddingLeft, getPaddingTop(), max, this.L);
         this.G.layout(paddingLeft, getPaddingTop(), max + paddingLeft, getPaddingTop() + this.L);
         this.M.g(paddingLeft, paddingRight, i13, getPaddingTop() + this.L);
         h();
@@ -257,16 +257,16 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
         setMeasuredDimension(size, getPaddingBottom() + getPaddingTop() + this.L + h);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = m6.gf;
-        h6 h6Var = this.r;
-        this.s.setColor(m6.w0(i7, h6Var));
-        this.w.setColor(m6.w0(m6.xe, h6Var));
-        this.x.setColor(m6.w0(m6.lg, h6Var));
-        int i10 = m6.G6;
-        this.y.setColor(m6.r1(0.5f, m6.w0(i10, h6Var)));
-        this.F.setColorFilter(new PorterDuffColorFilter(m6.r1(0.5f, m6.w0(i10, h6Var)), PorterDuff.Mode.SRC_IN));
+        int i7 = n6.gf;
+        i6 i6Var = this.r;
+        this.s.setColor(n6.w0(i7, i6Var));
+        this.w.setColor(n6.w0(n6.xe, i6Var));
+        this.x.setColor(n6.w0(n6.lg, i6Var));
+        int i10 = n6.G6;
+        this.y.setColor(n6.r1(0.5f, n6.w0(i10, i6Var)));
+        this.F.setColorFilter(new PorterDuffColorFilter(n6.r1(0.5f, n6.w0(i10, i6Var)), PorterDuff.Mode.SRC_IN));
         i0 i0Var = this.M;
         if (i0Var != null) {
             i0Var.a();

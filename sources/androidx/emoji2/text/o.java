@@ -6,16 +6,16 @@ import fi.i7;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.s5;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.s10;
-import org.telegram.ui.Components.voip.h2;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.q10;
+import org.telegram.ui.Components.voip.i2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o implements Runnable {
     public static final /* synthetic */ o b = new o(1);
@@ -51,8 +51,8 @@ public final class o implements Runnable {
                 return;
             case 2:
                 Math.abs(Utilities.b.nextInt() % 3);
-                s10[] s10VarArr = i7.a;
-                ls.f(k10.t0).k(2, 0);
+                q10[] q10VarArr = i7.a;
+                ks.f(i10.t0).k(2, 0);
                 g0.h3(i7.o, 1000L);
                 LaunchActivity.Q().getFragmentView();
                 return;
@@ -72,7 +72,7 @@ public final class o implements Runnable {
                     s5Var.a = new ArrayList(10);
                     s5Var.b = new SparseIntArray();
                     s5Var.c = new ArrayList(10);
-                    s5Var.i = new j6.o(s5Var, 7);
+                    s5Var.i = new i6.g(s5Var, 8);
                     s5Var.d = max;
                     s5Var.f = Utilities.b.nextInt();
                     s5.k = s5Var;
@@ -80,19 +80,19 @@ public final class o implements Runnable {
                 Utilities.e.c(new org.telegram.messenger.k(i7, arrayList2));
                 return;
             case 5:
-                m6.j = false;
-                m6.m(false);
+                n6.j = false;
+                n6.m(false);
                 return;
             case 6:
-                m6.k = false;
-                m6.m(true);
+                n6.k = false;
+                n6.m(true);
                 return;
             case 7:
                 return;
             case 8:
-                h2 h2Var = h2.U;
-                if (h2Var != null) {
-                    g0.r(h2Var.b.f.O);
+                i2 i2Var = i2.U;
+                if (i2Var != null) {
+                    g0.r(i2Var.b.f.O);
                     return;
                 }
                 return;

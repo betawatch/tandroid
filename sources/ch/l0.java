@@ -12,28 +12,28 @@ import di.b1;
 import java.util.ArrayList;
 import java.util.Random;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g1;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.xi0;
+import org.telegram.ui.a11;
 import org.telegram.ui.bn;
-import org.telegram.ui.c11;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l0 {
     public static l0 B;
@@ -95,19 +95,19 @@ public final class l0 {
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.oh0] */
-    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.oh0] */
+    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.nh0] */
+    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.nh0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l0(Context context, g2 g2Var, xi0 xi0Var, View view, View view2, float f10, float f11, p0 p0Var, int i7, int i10, boolean z10) {
-        gj gjVar;
+        fj fjVar;
         Context context2;
         g2 g2Var2;
         View view3;
         n0 n0Var;
         long j3;
-        gj gjVar2;
+        fj fjVar2;
         xi0 xi0Var2;
         View view4;
         float f12;
@@ -128,7 +128,7 @@ public final class l0 {
         ?? r11;
         int i14;
         j0 j0Var3;
-        gj gjVar3;
+        fj fjVar3;
         int i15;
         int i16;
         boolean z11;
@@ -139,17 +139,17 @@ public final class l0 {
         this.z = z10;
         boolean z12 = view instanceof r1;
         if (z12) {
-            gjVar = ((r1) view).getMessageObject();
-            this.n = gjVar.e1();
-            this.o = gjVar.c1();
+            fjVar = ((r1) view).getMessageObject();
+            this.n = fjVar.e1();
+            this.o = fjVar.c1();
         } else if (view instanceof v0) {
-            gjVar = ((v0) view).getMessageObject();
-            this.n = gjVar.e1();
+            fjVar = ((v0) view).getMessageObject();
+            this.n = fjVar.e1();
             this.o = 0L;
         } else {
             this.n = 0;
             this.o = 0L;
-            gjVar = null;
+            fjVar = null;
         }
         this.p = p0Var;
         this.a = i10;
@@ -159,7 +159,7 @@ public final class l0 {
             view3 = view2;
             n0Var = k10;
             j3 = 0;
-            gjVar2 = gjVar;
+            fjVar2 = fjVar;
             xi0Var2 = xi0Var;
             g2Var2 = g2Var;
             l0 l0Var = new l0(context, g2Var2, xi0Var2, view, view3, f10, f11, p0Var, i7, 1, true);
@@ -172,7 +172,7 @@ public final class l0 {
             view3 = view2;
             n0Var = k10;
             j3 = 0;
-            gjVar2 = gjVar;
+            fjVar2 = fjVar;
             xi0Var2 = xi0Var;
         }
         bn bnVar2 = g2Var2 instanceof bn ? (bn) g2Var2 : null;
@@ -193,20 +193,20 @@ public final class l0 {
         int i19 = 1;
         if (i10 == 1) {
             Random random = new Random();
-            ArrayList<TLRPC.MessagePeerReaction> arrayList = (gjVar2 == null || (tL_messageReactions = gjVar2.k.reactions) == null) ? null : tL_messageReactions.recent_reactions;
+            ArrayList<TLRPC.MessagePeerReaction> arrayList = (fjVar2 == null || (tL_messageReactions = fjVar2.k.reactions) == null) ? null : tL_messageReactions.recent_reactions;
             if (arrayList != null && bnVar2 != null && bnVar2.a() < j3) {
                 int i20 = 0;
                 while (i20 < arrayList.size()) {
                     if (this.p.equals(arrayList.get(i20).reaction) && arrayList.get(i20).unread) {
-                        b9 b9Var = new b9((h6) null);
+                        a9 a9Var = new a9((i6) null);
                         i17 = i19;
                         ImageReceiver imageReceiver = new ImageReceiver(null);
-                        long B1 = gj.B1(arrayList.get(i20).peer_id);
+                        long B1 = fj.B1(arrayList.get(i20).peer_id);
                         if (B1 < j3) {
-                            TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-B1));
+                            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-B1));
                             if (O0 != null) {
-                                b9Var.q(O0);
-                                imageReceiver.i0(O0, b9Var, null);
+                                a9Var.q(O0);
+                                imageReceiver.j0(O0, a9Var, null);
                                 k0 k0Var = new k0();
                                 k0Var.a = imageReceiver;
                                 float f17 = 100.0f;
@@ -257,10 +257,10 @@ public final class l0 {
                             }
                             bnVar = bnVar2;
                         } else {
-                            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(B1));
+                            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(B1));
                             if (c22 != null) {
-                                b9Var.r(c22);
-                                imageReceiver.i0(c22, b9Var, null);
+                                a9Var.r(c22);
+                                imageReceiver.j0(c22, a9Var, null);
                                 k0 k0Var2 = new k0();
                                 k0Var2.a = imageReceiver;
                                 float f172 = 100.0f;
@@ -326,7 +326,7 @@ public final class l0 {
                 f12 = 0.0f;
             }
             if (i10 != 2) {
-                int L = org.telegram.messenger.g0.L((z10 && cz.j()) ? 60.0f : 34.0f);
+                int L = org.telegram.messenger.g0.L((z10 && bz.j()) ? 60.0f : 34.0f);
                 round = (int) ((L * 2.0f) / org.telegram.messenger.g0.p);
                 i12 = L;
                 i11 = i23;
@@ -339,8 +339,8 @@ public final class l0 {
                     round = (int) (Math.round(Math.min(org.telegram.messenger.g0.L(350.0f), Math.min(point.x, point.y)) * 0.7f) / org.telegram.messenger.g0.p);
                     i12 = round2;
                 } else if (z10) {
-                    i12 = org.telegram.messenger.g0.L(cz.j() ? 240.0f : 140.0f);
-                    round = cz.j() ? (int) ((org.telegram.messenger.g0.L(80.0f) * 2.0f) / org.telegram.messenger.g0.p) : e();
+                    i12 = org.telegram.messenger.g0.L(bz.j() ? 240.0f : 140.0f);
+                    round = bz.j() ? (int) ((org.telegram.messenger.g0.L(80.0f) * 2.0f) / org.telegram.messenger.g0.p) : e();
                 } else {
                     i12 = org.telegram.messenger.g0.L(80.0f);
                     round = e();
@@ -357,9 +357,9 @@ public final class l0 {
             int i25 = round;
             View view5 = view4;
             int i26 = i12;
-            gj gjVar4 = gjVar2;
+            fj fjVar4 = fjVar2;
             r15 = i11;
-            i0Var = new i0(this, context2, g2Var, view5, z10, gjVar4, bnVar4, i13, i10, r10, f31, f13, f14, p0Var);
+            i0Var = new i0(this, context2, g2Var, view5, z10, fjVar4, bnVar4, i13, i10, r10, f31, f13, f14, p0Var);
             this.i = i0Var;
             j0Var = new j0(this, context2);
             this.b = j0Var;
@@ -367,7 +367,7 @@ public final class l0 {
             this.c = j0Var2;
             j0 j0Var4 = new j0(this, context2);
             this.d = j0Var4;
-            tL_availableReaction = p0Var.f == null ? (TLRPC.TL_availableReaction) si.d0(i7).r.get(this.p.f) : null;
+            tL_availableReaction = p0Var.f == null ? (TLRPC.TL_availableReaction) ri.d0(i7).r.get(this.p.f) : null;
             if (tL_availableReaction != null && p0Var.g == j3) {
                 this.l = r15;
                 return;
@@ -375,7 +375,7 @@ public final class l0 {
             if (tL_availableReaction == null) {
                 int i27 = 2;
                 if (i10 != 2) {
-                    if ((i10 == r15 && qc.e(4112)) || i10 == 0) {
+                    if ((i10 == r15 && pc.e(4112)) || i10 == 0) {
                         TLRPC.Document document = i10 == r15 ? tL_availableReaction.around_animation : tL_availableReaction.effect_animation;
                         String a10 = i10 == r15 ? a() : e2.j(i25, "_", i25);
                         ImageReceiver imageReceiver3 = j0Var.getImageReceiver();
@@ -385,16 +385,16 @@ public final class l0 {
                         sb2.append(i28);
                         sb2.append("_");
                         imageReceiver3.w1 = a8.p0.n(this.n, "_", sb2);
-                        j0Var.l(gc.b(document), a10, null, null, 0, null);
+                        j0Var.l(fc.b(document), a10, null, null, 0, null);
                         z11 = false;
-                        j0Var.getImageReceiver().W(0);
+                        j0Var.getImageReceiver().X(0);
                         j0Var.getImageReceiver().u0 = false;
                     } else {
                         z11 = false;
                     }
-                    if (j0Var.getImageReceiver().B() != null) {
-                        j0Var.getImageReceiver().B().N(z11 ? 1 : 0, z11, z11);
-                        j0Var.getImageReceiver().B().start();
+                    if (j0Var.getImageReceiver().C() != null) {
+                        j0Var.getImageReceiver().C().N(z11 ? 1 : 0, z11, z11);
+                        j0Var.getImageReceiver().C().start();
                     }
                     i27 = 2;
                     r11 = z11;
@@ -410,7 +410,7 @@ public final class l0 {
                     sb3.append(i29);
                     sb3.append("_");
                     imageReceiver4.w1 = a8.p0.n(this.n, "_", sb3);
-                    j0Var2.l(gc.b(document2), e2.j(i24, "_", i24), null, null, 0, null);
+                    j0Var2.l(fc.b(document2), e2.j(i24, "_", i24), null, null, 0, null);
                 } else if (i10 == 0) {
                     TLRPC.Document document3 = tL_availableReaction.activate_animation;
                     ImageReceiver imageReceiver5 = j0Var2.getImageReceiver();
@@ -420,7 +420,7 @@ public final class l0 {
                     sb4.append(i30);
                     sb4.append("_");
                     imageReceiver5.w1 = a8.p0.n(this.n, "_", sb4);
-                    j0Var2.l(gc.b(document3), e2.j(i24, "_", i24), null, null, 0, null);
+                    j0Var2.l(fc.b(document3), e2.j(i24, "_", i24), null, null, 0, null);
                 }
                 j0Var3 = j0Var4;
             } else {
@@ -428,53 +428,53 @@ public final class l0 {
                 r11 = 0;
                 if (i10 == 0) {
                     i14 = i7;
-                    p5 p5Var = new p5(r15 == true ? 1 : 0, i14, p0Var.g);
-                    p5Var.n(j0Var2);
-                    j0Var2.I = p5Var;
+                    o5 o5Var = new o5(r15 == true ? 1 : 0, i14, p0Var.g);
+                    o5Var.n(j0Var2);
+                    j0Var2.I = o5Var;
                     if (j0Var2.K) {
-                        p5Var.a(j0Var2);
+                        o5Var.a(j0Var2);
                     }
                 } else {
                     i14 = i7;
                     if (i10 == 2) {
                         j0Var3 = j0Var4;
-                        gjVar3 = gjVar4;
-                        p5 p5Var2 = new p5(2, i14, p0Var.g);
-                        p5Var2.n(j0Var2);
-                        j0Var2.I = p5Var2;
+                        fjVar3 = fjVar4;
+                        o5 o5Var2 = new o5(2, i14, p0Var.g);
+                        o5Var2.n(j0Var2);
+                        j0Var2.I = o5Var2;
                         if (j0Var2.K) {
-                            p5Var2.a(j0Var2);
+                            o5Var2.a(j0Var2);
                         }
                         if (i10 != 0 || i10 == r15) {
-                            p5 p5Var3 = new p5(2, i14, p0Var.g);
-                            p5Var3.setColorFilter(new PorterDuffColorFilter(gjVar3 == null ? m6.w0(gjVar3.P5() ? gjVar3.P3() ? m6.Jc : m6.tk : gjVar3.P3() ? m6.xk : m6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                            o5 o5Var3 = new o5(2, i14, p0Var.g);
+                            o5Var3.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? n6.w0(fjVar3.P5() ? fjVar3.P3() ? n6.Jc : n6.tk : fjVar3.P3() ? n6.xk : n6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                             boolean z13 = i10 != 0 ? r15 == true ? 1 : 0 : false;
-                            j0Var.J = d.a(p5Var3, z13, !z13);
+                            j0Var.J = d.a(o5Var3, z13, !z13);
                             i0Var.setClipChildren(false);
                         }
                     }
                 }
                 j0Var3 = j0Var4;
-                gjVar3 = gjVar4;
+                fjVar3 = fjVar4;
                 if (i10 != 0) {
                 }
-                p5 p5Var32 = new p5(2, i14, p0Var.g);
-                if (gjVar3 == null) {
+                o5 o5Var32 = new o5(2, i14, p0Var.g);
+                if (fjVar3 == null) {
                 }
-                p5Var32.setColorFilter(new PorterDuffColorFilter(gjVar3 == null ? m6.w0(gjVar3.P5() ? gjVar3.P3() ? m6.Jc : m6.tk : gjVar3.P3() ? m6.xk : m6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                o5Var32.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? n6.w0(fjVar3.P5() ? fjVar3.P3() ? n6.Jc : n6.tk : fjVar3.P3() ? n6.xk : n6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                 if (i10 != 0) {
                 }
-                j0Var.J = d.a(p5Var32, z13, !z13);
+                j0Var.J = d.a(o5Var32, z13, !z13);
                 i0Var.setClipChildren(false);
             }
-            j0Var2.getImageReceiver().W(r11);
+            j0Var2.getImageReceiver().X(r11);
             j0Var2.getImageReceiver().u0 = r11;
-            if (j0Var2.getImageReceiver().B() != null) {
+            if (j0Var2.getImageReceiver().C() != null) {
                 if (i10 == 2) {
-                    j0Var2.getImageReceiver().B().N(j0Var2.getImageReceiver().B().e[r11] - (r15 == true ? 1 : 0), r11, r11);
+                    j0Var2.getImageReceiver().C().N(j0Var2.getImageReceiver().C().e[r11] - (r15 == true ? 1 : 0), r11, r11);
                 } else {
-                    j0Var2.getImageReceiver().B().N(r11, r11, r11);
-                    j0Var2.getImageReceiver().B().start();
+                    j0Var2.getImageReceiver().C().N(r11, r11, r11);
+                    j0Var2.getImageReceiver().C().start();
                 }
             }
             i15 = i26 - i13;
@@ -487,7 +487,7 @@ public final class l0 {
             ((FrameLayout.LayoutParams) j0Var2.getLayoutParams()).leftMargin = i15;
             if (i10 != r15 && !z10) {
                 if (tL_availableReaction != null) {
-                    j0Var3.getImageReceiver().q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
+                    j0Var3.getImageReceiver().r0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
                 }
                 frameLayout.addView(j0Var3);
                 j0Var3.getLayoutParams().width = i13;
@@ -517,8 +517,8 @@ public final class l0 {
         f15 = iArr2[0];
         f16 = iArr2[i23];
         f12 = view3.getScaleX() * view3.getWidth();
-        if (view3 instanceof c11) {
-            float f32 = ((c11) view3).H;
+        if (view3 instanceof a11) {
+            float f32 = ((a11) view3).H;
             if (f32 > 0.0f) {
                 f12 = view3.getWidth() * ((f32 * 2.0f) + 1.0f);
                 f15 = f3.y(f12, view3.getWidth(), 2.0f, f15);
@@ -541,9 +541,9 @@ public final class l0 {
         int i252 = round;
         View view52 = view4;
         int i262 = i12;
-        gj gjVar42 = gjVar2;
+        fj fjVar42 = fjVar2;
         r15 = i11;
-        i0Var = new i0(this, context2, g2Var, view52, z10, gjVar42, bnVar4, i13, i10, r10, f312, f13, f14, p0Var);
+        i0Var = new i0(this, context2, g2Var, view52, z10, fjVar42, bnVar4, i13, i10, r10, f312, f13, f14, p0Var);
         this.i = i0Var;
         j0Var = new j0(this, context2);
         this.b = j0Var;
@@ -557,9 +557,9 @@ public final class l0 {
         }
         if (tL_availableReaction == null) {
         }
-        j0Var2.getImageReceiver().W(r11);
+        j0Var2.getImageReceiver().X(r11);
         j0Var2.getImageReceiver().u0 = r11;
-        if (j0Var2.getImageReceiver().B() != null) {
+        if (j0Var2.getImageReceiver().C() != null) {
         }
         i15 = i262 - i13;
         i16 = i15 >> 1;
@@ -634,7 +634,7 @@ public final class l0 {
             return;
         }
         boolean z10 = true;
-        if (np.g1().getBoolean("view_animations", true)) {
+        if (mp.g1().getBoolean("view_animations", true)) {
             if (i10 == 2 || i10 == 0) {
                 d(g2Var, null, view, view2, 0.0f, 0.0f, p0Var, i7, 1);
             }

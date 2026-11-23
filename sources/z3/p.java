@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -270,8 +270,8 @@ public abstract class p {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static f3.f0 m(f3.p pVar, boolean z10, boolean z11) {
-        f3.f0 f0Var;
+    public static f3.g0 m(f3.p pVar, boolean z10, boolean z11) {
+        f3.g0 g0Var;
         int i7;
         long j3;
         int i10;
@@ -294,7 +294,7 @@ public abstract class p {
         boolean z12 = false;
         while (i17 < i15) {
             xVar.K(8);
-            if (!pVar.g(xVar.a, i16, 8, true)) {
+            if (!pVar.k(xVar.a, i16, 8, true)) {
                 break;
             }
             long C = xVar.C();
@@ -322,13 +322,13 @@ public abstract class p {
             long j13 = C;
             long j14 = i11;
             if (j13 < j14) {
-                f0Var = null;
+                g0Var = null;
                 if (m10 != 1718773093 || i11 != 8) {
                     return new j6(m10, j13, i11);
                 }
                 j13 = j14;
             } else {
-                f0Var = null;
+                g0Var = null;
             }
             int i18 = i10 + i11;
             if (m10 == 1836019574 || m10 == 1970628964) {
@@ -390,7 +390,7 @@ public abstract class p {
                                         i20++;
                                     }
                                 } else {
-                                    iArr = f0Var;
+                                    iArr = g0Var;
                                 }
                                 if (!z12) {
                                     return new b3.j(iArr, m11);
@@ -412,8 +412,8 @@ public abstract class p {
             j11 = j3;
             length = j10;
         }
-        f0Var = null;
+        g0Var = null;
         i7 = i16;
-        return !z12 ? m.a : z10 != i7 ? i7 != 0 ? i.b : i.c : f0Var;
+        return !z12 ? m.a : z10 != i7 ? i7 != 0 ? i.b : i.c : g0Var;
     }
 }

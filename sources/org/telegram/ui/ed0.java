@@ -2,11 +2,11 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ed0 extends eb0 {
+public final class ed0 extends db0 {
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.iu0 f;
+    public final /* synthetic */ org.telegram.ui.Components.hu0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ed0(gd0 gd0Var, Context context, int i7) {
@@ -23,7 +23,7 @@ public final class ed0 extends eb0 {
         }
     }
 
-    @Override // org.telegram.ui.eb0
+    @Override // org.telegram.ui.db0
     public final boolean a() {
         switch (this.e) {
             case 0:
@@ -31,11 +31,11 @@ public final class ed0 extends eb0 {
             case 1:
                 return ((gd0) this.f).l0;
             default:
-                return ((ec0) this.f).N;
+                return ((dc0) this.f).N;
         }
     }
 
-    @Override // org.telegram.ui.eb0
+    @Override // org.telegram.ui.db0
     public final boolean b() {
         ed0 ed0Var;
         switch (this.e) {
@@ -53,8 +53,8 @@ public final class ed0 extends eb0 {
                 break;
             default:
                 if (getVisibility() == 0) {
-                    ec0 ec0Var = (ec0) this.f;
-                    if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                    dc0 dc0Var = (dc0) this.f;
+                    if (dc0Var.Q <= 0 || dc0Var.O == null) {
                     }
                 }
                 break;
@@ -63,9 +63,9 @@ public final class ed0 extends eb0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ed0(ec0 ec0Var, Context context) {
-        super(ec0Var.b0, context);
+    public ed0(dc0 dc0Var, Context context) {
+        super(dc0Var.b0, context);
         this.e = 2;
-        this.f = ec0Var;
+        this.f = dc0Var;
     }
 }

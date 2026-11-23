@@ -1,6 +1,6 @@
 package j2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import android.util.Base64;
 import e2.t0;
@@ -8,7 +8,7 @@ import h2.l0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -42,7 +42,7 @@ public final class f extends c {
         long j3 = mVar.f;
         Uri normalizeScheme = uri.normalizeScheme();
         String scheme = normalizeScheme.getScheme();
-        la.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
+        ma.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
         String schemeSpecificPart = normalizeScheme.getSchemeSpecificPart();
         String str = l0.a;
         String[] split = schemeSpecificPart.split(",", -1);

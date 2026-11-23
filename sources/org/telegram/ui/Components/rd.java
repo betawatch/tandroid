@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -22,12 +22,12 @@ public final /* synthetic */ class rd implements View.OnLongClickListener {
                 int i10 = ChatActivityEnterView.s7;
                 break;
             default:
-                gf gfVar = chatActivityEnterView.F0;
-                if (gfVar != null && gfVar.length() > 0) {
+                hf hfVar = chatActivityEnterView.F0;
+                if (hfVar != null && hfVar.length() > 0) {
                     break;
                 }
                 break;
         }
-        return chatActivityEnterView.g1(view);
+        return chatActivityEnterView.h1(view);
     }
 }

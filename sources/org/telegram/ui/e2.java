@@ -15,9 +15,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c3 {
+public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c3 {
     public final p50 a;
     public final e4 b;
     public z2 c;
@@ -37,7 +37,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         c2 c2Var = new c2(this, context, p50Var);
         this.d = c2Var;
         c2Var.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        addView(c2Var, c8.ma.c(-2.0f, -1));
+        addView(c2Var, c8.na.c(-2.0f, -1));
         d2 d2Var = new d2(this, context, p50Var, e4Var);
         this.e = d2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
@@ -47,16 +47,16 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         int L2 = org.telegram.messenger.g0.L(12.0f);
         layoutParams.bottomMargin = L2;
         layoutParams.topMargin = L2;
-        org.telegram.messenger.ls.i(d2Var);
+        org.telegram.messenger.ks.i(d2Var);
         c2Var.addView(d2Var, layoutParams);
         c2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.b2
             @Override // android.view.View.OnScrollChangeListener
             public final void onScrollChange(View view, int i7, int i10, int i11, int i12) {
-                org.telegram.ui.Cells.j9 j9Var = ((g4) p50.this).Q0;
-                if (j9Var == null || !j9Var.x()) {
+                org.telegram.ui.Cells.i9 i9Var = ((g4) p50.this).Q0;
+                if (i9Var == null || !i9Var.x()) {
                     return;
                 }
-                j9Var.w();
+                i9Var.w();
             }
         });
         setWillNotDraw(false);
@@ -73,12 +73,12 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
     public static SpannableString b(e2 e2Var, CharSequence charSequence, String str) {
         SpannableString spannableString = new SpannableString(charSequence);
         setDiffMarkerSpans(spannableString);
-        Pattern pattern = org.telegram.ui.Components.d90.a;
+        Pattern pattern = org.telegram.ui.Components.a90.a;
         char[] cArr = new char[spannableString.length()];
         int i7 = 0;
         for (int i10 = 0; i10 <= spannableString.length(); i10++) {
             if (i10 >= spannableString.length() || spannableString.charAt(i10) == '\n') {
-                int h = org.telegram.ui.Components.d90.h(i7, spannableString);
+                int h = org.telegram.ui.Components.a90.h(i7, spannableString);
                 int i11 = i7;
                 while (i11 < i10) {
                     cArr[i11] = (h == 3 || i11 == i7) ? ' ' : spannableString.charAt(i11);
@@ -91,12 +91,12 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
             }
         }
         String str2 = new String(cArr);
-        oi.t tVar = new oi.t(25, e2Var, spannableString);
+        n2.c0 c0Var = new n2.c0(27, e2Var, spannableString);
         qi.p pVar = qi.j.a;
         if (str2.length() == spannableString.length()) {
             String b10 = qi.p.b(str);
             if (!b10.isEmpty() && !str2.isEmpty()) {
-                qi.j.a.d(str2, b10, new wc1(11, spannableString, tVar));
+                qi.j.a.d(str2, b10, new uc1(11, spannableString, c0Var));
             }
         }
         return spannableString;
@@ -109,7 +109,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
             if (indexOf < 0) {
                 indexOf = spannableString.length();
             }
-            int h = org.telegram.ui.Components.d90.h(i7, spannableString);
+            int h = org.telegram.ui.Components.a90.h(i7, spannableString);
             if (h == 1) {
                 spannableString.setSpan(new qi.c(19), i7, i7 + 1, 33);
             } else if (h == 2) {
@@ -152,16 +152,16 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.o10.a(this);
+        return org.telegram.messenger.m10.a(this);
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.r9
+    @Override // android.view.View, org.telegram.ui.Cells.q9
     public final void invalidate() {
         this.e.invalidate();
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -207,7 +207,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         int lineCount = staticLayout.getLineCount();
         int i7 = 0;
         while (i7 < lineCount) {
-            int h = org.telegram.ui.Components.d90.h(staticLayout.getLineStart(i7), text);
+            int h = org.telegram.ui.Components.a90.h(staticLayout.getLineStart(i7), text);
             Paint paint = this.s;
             if (h == 1) {
                 paint.setColor(640993113);

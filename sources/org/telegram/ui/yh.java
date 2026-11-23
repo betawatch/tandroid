@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class yh extends org.telegram.ui.ActionBar.g1 {
     public final /* synthetic */ org.telegram.ui.Components.xi0 o;
@@ -29,10 +29,10 @@ public final class yh extends org.telegram.ui.ActionBar.g1 {
         if (bnVar.g9 != this) {
             return;
         }
-        org.telegram.ui.Components.gc gcVar = org.telegram.ui.Components.gc.w;
-        org.telegram.ui.Components.gc gcVar2 = bnVar.C1;
-        if (gcVar == gcVar2 && gcVar2 != null) {
-            gcVar2.b();
+        org.telegram.ui.Components.fc fcVar = org.telegram.ui.Components.fc.w;
+        org.telegram.ui.Components.fc fcVar2 = bnVar.C1;
+        if (fcVar == fcVar2 && fcVar2 != null) {
+            fcVar2.b();
             bnVar.C1 = null;
         }
         bnVar.g9 = null;

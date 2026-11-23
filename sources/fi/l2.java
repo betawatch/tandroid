@@ -3,17 +3,17 @@ package fi;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.telegram.messenger.az;
-import org.telegram.messenger.np;
-import org.telegram.messenger.si;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mk;
+import org.telegram.ui.Components.kk;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l2 implements y10 {
+public final /* synthetic */ class l2 implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class l2 implements y10 {
         this.c = i7;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         org.telegram.messenger.c accountInstance;
         switch (this.a) {
@@ -48,16 +48,16 @@ public final /* synthetic */ class l2 implements y10 {
                 org.telegram.ui.ActionBar.g2 g2Var = z3Var.t0.f;
                 accountInstance = z3Var.getAccountInstance();
                 long j10 = j3;
-                az.S(this.c, z3Var.l1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z3Var.y1.a, g2Var, null, this.b);
+                zy.S(this.c, z3Var.l1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z3Var.y1.a, g2Var, null, this.b);
                 z3Var.L1.setFieldText("");
                 z3Var.i0(l10.longValue() <= 0);
-                si.d0(z3Var.m2).x0(j10, false);
+                ri.d0(z3Var.m2).x0(j10, false);
                 break;
             case 1:
                 b6 b6Var = (b6) this.d;
                 List list = (List) this.e;
                 e6 e6Var = b6Var.q;
-                TLObject h22 = np.u1(b6Var.c).h2(b6Var.D);
+                TLObject h22 = mp.u1(b6Var.c).h2(b6Var.D);
                 b6Var.G = false;
                 if (h22 == null) {
                     b6Var.J = 0;
@@ -70,7 +70,7 @@ public final /* synthetic */ class l2 implements y10 {
                     break;
                 }
             default:
-                ((mk) this.d).R.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
+                ((kk) this.d).R.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
                 break;
         }
     }

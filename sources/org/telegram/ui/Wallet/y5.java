@@ -1,36 +1,33 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class y5 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n6 b;
+public final class y5 extends bs {
+    public final ShapeDrawable H;
+    public final /* synthetic */ o6 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y5(n6 n6Var, Context context, int i7) {
+    public y5(o6 o6Var, Context context) {
         super(context);
-        this.a = i7;
-        this.b = n6Var;
+        this.I = o6Var;
+        this.H = org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(22.0f), o6Var.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i7);
-                n6 n6Var = this.b;
-                n6Var.a0.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - org.telegram.messenger.g0.L(24.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(size, org.telegram.messenger.g0.L(36.0f) + n6Var.a0.getMeasuredHeight());
-                break;
-            default:
-                n6 n6Var2 = this.b;
-                n6Var2.e.measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(View.MeasureSpec.getSize(i7), n6Var2.e.getMeasuredHeight());
-                break;
+    @Override // org.telegram.ui.Components.bs, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int ceil = (int) Math.ceil(getMetadata().g.a);
+        if (ceil > 0) {
+            ShapeDrawable shapeDrawable = this.H;
+            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
+            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
+            shapeDrawable.draw(canvas);
         }
+        super.dispatchDraw(canvas);
     }
 }

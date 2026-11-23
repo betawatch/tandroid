@@ -4,9 +4,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class wj0 extends p10 {
+public final class wj0 extends n10 {
     public View a;
     public final /* synthetic */ xj0 b;
 
@@ -14,7 +14,7 @@ public final class wj0 extends p10 {
         this.b = xj0Var;
     }
 
-    @Override // org.telegram.ui.Components.p10
+    @Override // org.telegram.ui.Components.n10
     public final boolean a() {
         return ((ek0) this.b.b).X0 != null;
     }
@@ -37,11 +37,11 @@ public final class wj0 extends p10 {
                 view.sendAccessibilityEvent(1);
                 qj0 qj0Var = ek0Var.U0;
                 if (qj0Var != null) {
-                    qj0Var.c(i7, view);
+                    qj0Var.b(i7, view);
                 } else {
                     rj0 rj0Var = ek0Var.V0;
                     if (rj0Var != null) {
-                        rj0Var.f(x10 - view.getX(), y10 - view.getY(), i7, view);
+                        rj0Var.g(x10 - view.getX(), y10 - view.getY(), i7, view);
                     }
                 }
             }
@@ -64,10 +64,10 @@ public final class wj0 extends p10 {
         rj0 rj0Var;
         ek0 ek0Var = (ek0) this.b.b;
         View view = this.a;
-        if (view == null || (rj0Var = ek0Var.V0) == null || !rj0Var.b1(view)) {
+        if (view == null || (rj0Var = ek0Var.V0) == null || !rj0Var.U0(view)) {
             return false;
         }
-        ek0Var.V0.s0(this.a, motionEvent.getX(), motionEvent.getY());
+        ek0Var.V0.f0(this.a, motionEvent.getX(), motionEvent.getY());
         this.a = null;
         return true;
     }
@@ -90,7 +90,7 @@ public final class wj0 extends p10 {
             return;
         }
         if (sj0Var != null) {
-            if (sj0Var.c(i7, view)) {
+            if (sj0Var.b(i7, view)) {
                 try {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
@@ -100,7 +100,7 @@ public final class wj0 extends p10 {
             }
             return;
         }
-        if (ek0Var.X0.f(motionEvent.getX() - ek0Var.M1.getX(), motionEvent.getY() - ek0Var.M1.getY(), i7, view)) {
+        if (ek0Var.X0.g(motionEvent.getX() - ek0Var.M1.getX(), motionEvent.getY() - ek0Var.M1.getY(), i7, view)) {
             try {
                 view.performHapticFeedback(0);
             } catch (Exception unused2) {
@@ -114,7 +114,7 @@ public final class wj0 extends p10 {
     public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
         rj0 rj0Var;
         View view = this.a;
-        if (view == null || (rj0Var = ((ek0) this.b.b).V0) == null || !rj0Var.b1(view)) {
+        if (view == null || (rj0Var = ((ek0) this.b.b).V0) == null || !rj0Var.U0(view)) {
             return false;
         }
         b(this.a, motionEvent);
@@ -128,7 +128,7 @@ public final class wj0 extends p10 {
         View view = ek0Var.M1;
         if (view != null) {
             rj0 rj0Var = ek0Var.V0;
-            if (rj0Var != null && rj0Var.b1(view)) {
+            if (rj0Var != null && rj0Var.U0(view)) {
                 this.a = ek0Var.M1;
                 return false;
             }

@@ -1,7 +1,7 @@
 package androidx.fragment.app;
 
+import a8.a7;
 import a8.sa;
-import a8.z6;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Looper;
@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -60,7 +60,7 @@ public abstract class j0 {
     public final b0 u;
     public int v;
     public u w;
-    public z6 x;
+    public a7 x;
     public s y;
     public s z;
     public final ArrayList a = new ArrayList();
@@ -300,12 +300,12 @@ public abstract class j0 {
 
     public static boolean L(s sVar) {
         sVar.getClass();
-        ArrayList r10 = sVar.M.c.r();
-        int size = r10.size();
+        ArrayList q10 = sVar.M.c.q();
+        int size = q10.size();
         boolean z10 = false;
         int i7 = 0;
         while (i7 < size) {
-            Object obj = r10.get(i7);
+            Object obj = q10.get(i7);
             i7++;
             s sVar2 = (s) obj;
             if (sVar2 != null) {
@@ -422,7 +422,7 @@ public abstract class j0 {
         } else {
             arrayList4.clear();
         }
-        this.N.addAll(eVar.w());
+        this.N.addAll(eVar.v());
         s sVar = this.z;
         int i14 = i7;
         boolean z14 = false;
@@ -574,7 +574,7 @@ public abstract class j0 {
                     i24++;
                     s sVar5 = ((q0) obj).b;
                     if (sVar5 != null && sVar5.K != null) {
-                        eVar.D(g(sVar5));
+                        eVar.B(g(sVar5));
                     }
                 }
             }
@@ -975,7 +975,7 @@ public abstract class j0 {
                     p0Var2.j();
                     s sVar = p0Var2.c;
                     if (sVar.x && !sVar.v()) {
-                        eVar.E(p0Var2);
+                        eVar.C(p0Var2);
                     }
                 }
             }
@@ -994,7 +994,7 @@ public abstract class j0 {
         this.H = false;
         this.I = false;
         this.O.i = false;
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.M.R();
             }
@@ -1160,9 +1160,9 @@ public abstract class j0 {
             }
             Object obj = arrayList.get(i11);
             i11++;
-            Bundle N = eVar.N((String) obj, null);
-            if (N != null) {
-                s sVar = (s) this.O.d.get(((o0) N.getParcelable("state")).b);
+            Bundle M = eVar.M((String) obj, null);
+            if (M != null) {
+                s sVar = (s) this.O.d.get(((o0) M.getParcelable("state")).b);
                 if (sVar != null) {
                     if (K(2)) {
                         i10 = 2;
@@ -1170,12 +1170,12 @@ public abstract class j0 {
                     } else {
                         i10 = 2;
                     }
-                    p0Var = new p0(bVar, eVar, sVar, N);
-                    bundle2 = N;
+                    p0Var = new p0(bVar, eVar, sVar, M);
+                    bundle2 = M;
                 } else {
                     i10 = 2;
-                    bundle2 = N;
-                    p0Var = new p0(this.o, this.c, this.w.b.getClassLoader(), H(), N);
+                    bundle2 = M;
+                    p0Var = new p0(this.o, this.c, this.w.b.getClassLoader(), H(), M);
                 }
                 s sVar2 = p0Var.c;
                 sVar2.b = bundle2;
@@ -1184,7 +1184,7 @@ public abstract class j0 {
                     Log.v("FragmentManager", "restoreSaveState: active (" + sVar2.e + "): " + sVar2);
                 }
                 p0Var.l(this.w.b.getClassLoader());
-                eVar.D(p0Var);
+                eVar.B(p0Var);
                 p0Var.e = this.v;
             }
         }
@@ -1361,7 +1361,7 @@ public abstract class j0 {
                     if (!bundle4.isEmpty()) {
                         bundle3.putBundle("savedInstanceState", bundle4);
                     }
-                    p0Var.a.F(sVar2, bundle4, false);
+                    p0Var.a.E(sVar2, bundle4, false);
                     Bundle bundle5 = new Bundle();
                     sVar2.h0.g(bundle5);
                     if (!bundle5.isEmpty()) {
@@ -1384,7 +1384,7 @@ public abstract class j0 {
                 if (bundle7 != null) {
                     bundle3.putBundle("arguments", bundle7);
                 }
-                eVar.N(str, bundle3);
+                eVar.M(str, bundle3);
                 arrayList2.add(sVar.e);
                 if (K(2)) {
                     Log.v("FragmentManager", "Saved state of " + sVar + ": " + sVar.b);
@@ -1486,7 +1486,7 @@ public abstract class j0 {
         p0 g10 = g(sVar);
         sVar.K = this;
         xi.e eVar = this.c;
-        eVar.D(g10);
+        eVar.B(g10);
         if (!sVar.S) {
             eVar.e(sVar);
             sVar.x = false;
@@ -1507,12 +1507,12 @@ public abstract class j0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void b(u uVar, z6 z6Var, s sVar) {
+    public final void b(u uVar, a7 a7Var, s sVar) {
         if (this.w != null) {
             throw new IllegalStateException("Already attached");
         }
         this.w = uVar;
-        this.x = z6Var;
+        this.x = a7Var;
         this.y = sVar;
         CopyOnWriteArrayList copyOnWriteArrayList = this.p;
         if (sVar != 0) {
@@ -1581,9 +1581,9 @@ public abstract class j0 {
         if (uVar8 == null || sVar != 0) {
             return;
         }
-        md0 md0Var = uVar8.e.c;
-        ((CopyOnWriteArrayList) md0Var.c).add(this.u);
-        ((Runnable) md0Var.b).run();
+        i61 i61Var = uVar8.e.c;
+        ((CopyOnWriteArrayList) i61Var.c).add(this.u);
+        ((Runnable) i61Var.b).run();
     }
 
     public final void b0(s sVar, androidx.lifecycle.n nVar) {
@@ -1823,7 +1823,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchConfigurationChanged() on host. Host implements OnConfigurationChangedProvider and automatically dispatches configuration changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.onConfigurationChanged(configuration);
                 if (z10) {
@@ -1837,7 +1837,7 @@ public abstract class j0 {
         if (this.v < 1) {
             return false;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 if (!sVar.R ? sVar.M.j() : false) {
                     return true;
@@ -1853,7 +1853,7 @@ public abstract class j0 {
         }
         ArrayList arrayList = null;
         boolean z10 = false;
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && N(sVar)) {
                 if (!sVar.R ? sVar.M.k() : false) {
                     if (arrayList == null) {
@@ -1920,14 +1920,14 @@ public abstract class j0 {
         }
         u uVar6 = this.w;
         if ((uVar6 != null) && this.y == null) {
-            md0 md0Var = uVar6.e.c;
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) md0Var.c;
+            i61 i61Var = uVar6.e.c;
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) i61Var.c;
             b0 b0Var = this.u;
             copyOnWriteArrayList.remove(b0Var);
-            if (((HashMap) md0Var.d).remove(b0Var) != null) {
+            if (((HashMap) i61Var.d).remove(b0Var) != null) {
                 throw new ClassCastException();
             }
-            ((Runnable) md0Var.b).run();
+            ((Runnable) i61Var.b).run();
         }
         this.w = null;
         this.x = null;
@@ -1954,7 +1954,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchLowMemory() on host. Host implements OnTrimMemoryProvider and automatically dispatches low memory callbacks to fragments."));
             throw null;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.V = true;
                 if (z10) {
@@ -1969,7 +1969,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchMultiWindowModeChanged() on host. Host implements OnMultiWindowModeChangedProvider and automatically dispatches multi-window mode changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && z10) {
                 sVar.M.n(true);
             }
@@ -1977,11 +1977,11 @@ public abstract class j0 {
     }
 
     public final void o() {
-        ArrayList r10 = this.c.r();
-        int size = r10.size();
+        ArrayList q10 = this.c.q();
+        int size = q10.size();
         int i7 = 0;
         while (i7 < size) {
-            Object obj = r10.get(i7);
+            Object obj = q10.get(i7);
             i7++;
             s sVar = (s) obj;
             if (sVar != null) {
@@ -1993,7 +1993,7 @@ public abstract class j0 {
 
     public final boolean p() {
         if (this.v >= 1) {
-            for (s sVar : this.c.w()) {
+            for (s sVar : this.c.v()) {
                 if (sVar != null) {
                     if (!sVar.R ? sVar.M.p() : false) {
                         return true;
@@ -2008,7 +2008,7 @@ public abstract class j0 {
         if (this.v < 1) {
             return;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && !sVar.R) {
                 sVar.M.q();
             }
@@ -2036,7 +2036,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchPictureInPictureModeChanged() on host. Host implements OnPictureInPictureModeChangedProvider and automatically dispatches picture-in-picture mode changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && z10) {
                 sVar.M.s(true);
             }
@@ -2048,7 +2048,7 @@ public abstract class j0 {
             return false;
         }
         boolean z10 = false;
-        for (s sVar : this.c.w()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && N(sVar)) {
                 if (!sVar.R ? sVar.M.t() : false) {
                     z10 = true;

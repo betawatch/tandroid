@@ -5,25 +5,25 @@ import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
-import org.telegram.messenger.od;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.nd;
+import org.telegram.messenger.ov;
+import org.telegram.messenger.pm;
+import org.telegram.messenger.pp;
 import org.telegram.messenger.pv;
-import org.telegram.messenger.qm;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qv;
-import org.telegram.messenger.si;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.y10;
-import org.telegram.messenger.ys;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.xs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.x60;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,13 +34,13 @@ public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ j9(int i7, Context context, long j3, long j10, org.telegram.ui.ActionBar.w2[] w2VarArr, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ j9(int i7, Context context, long j3, long j10, org.telegram.ui.ActionBar.w2[] w2VarArr, org.telegram.ui.ActionBar.i6 i6Var) {
         this.b = i7;
         this.e = context;
         this.c = j3;
         this.d = j10;
         this.f = w2VarArr;
-        this.h = h6Var;
+        this.h = i6Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final /* synthetic */ class j9 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        pv pvVar;
+        ov ovVar;
         SQLiteCursor sQLiteCursor;
         SQLitePreparedStatement sQLitePreparedStatement;
         SQLiteCursor queryFinalized;
@@ -83,7 +83,7 @@ public final /* synthetic */ class j9 implements Runnable {
                 int i15 = this.b;
                 e0 g10 = e0.g(i15);
                 long j11 = this.c;
-                g10.f(context, j11, this.d, new ki.v2((org.telegram.ui.ActionBar.w2[]) obj2, context, i15, j11, (org.telegram.ui.ActionBar.h6) obj, 2));
+                g10.f(context, j11, this.d, new ki.w2((org.telegram.ui.ActionBar.w2[]) obj2, context, i15, j11, (org.telegram.ui.ActionBar.i6) obj, 2));
                 return;
             case 1:
                 fi.t0 t0Var = (fi.t0) obj3;
@@ -99,7 +99,7 @@ public final /* synthetic */ class j9 implements Runnable {
                     return;
                 }
                 if (!"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                    new org.telegram.ui.Components.lc(t0Var.b, new fi.b()).g0(tL_error, true);
+                    new org.telegram.ui.Components.kc(t0Var.b, new fi.b()).g0(tL_error, true);
                     return;
                 }
                 fi.c1 c1Var = t0Var.Q;
@@ -109,44 +109,44 @@ public final /* synthetic */ class j9 implements Runnable {
                 }
                 return;
             case 2:
-                si siVar = (si) obj3;
+                ri riVar = (ri) obj3;
                 TL_bots.BotInfo botInfo = (TL_bots.BotInfo) obj2;
-                y10 y10Var = (y10) obj;
-                TL_bots.BotInfo botInfo2 = (TL_bots.BotInfo) siVar.y1.get(j10 + "_" + j3);
+                w10 w10Var = (w10) obj;
+                TL_bots.BotInfo botInfo2 = (TL_bots.BotInfo) riVar.y1.get(j10 + "_" + j3);
                 if (botInfo2 != null) {
                     botInfo = botInfo2;
                 }
-                if (y10Var != null) {
-                    y10Var.a(botInfo);
+                if (w10Var != null) {
+                    w10Var.a(botInfo);
                 }
-                siVar.getNotificationCenter().k(66, botInfo, Integer.valueOf(i13));
+                riVar.getNotificationCenter().k(66, botInfo, Integer.valueOf(i13));
                 return;
             case 3:
-                np npVar = (np) obj3;
+                mp mpVar = (mp) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
                 int[] iArr = (int[]) obj;
                 long j14 = this.d;
                 if (j10 == 0) {
-                    ur messagesStorage = npVar.getMessagesStorage();
-                    messagesStorage.a.c(new qp(messagesStorage, j14, 3));
+                    tr messagesStorage = mpVar.getMessagesStorage();
+                    messagesStorage.a.c(new pp(messagesStorage, j14, 3));
                 }
                 TLRPC.TL_messages_deleteSavedHistory tL_messages_deleteSavedHistory = new TLRPC.TL_messages_deleteSavedHistory();
-                tL_messages_deleteSavedHistory.peer = npVar.l1(j14);
+                tL_messages_deleteSavedHistory.peer = mpVar.l1(j14);
                 tL_messages_deleteSavedHistory.parent_peer = inputPeer;
                 if (i13 == 0 && j10 == 0) {
                     int i16 = 0;
                     while (true) {
-                        if (i16 >= npVar.I1().j.size()) {
-                            pvVar = null;
-                        } else if (((pv) npVar.I1().j.get(i16)).a == j14) {
-                            pvVar = (pv) npVar.I1().j.get(i16);
+                        if (i16 >= mpVar.I1().j.size()) {
+                            ovVar = null;
+                        } else if (((ov) mpVar.I1().j.get(i16)).a == j14) {
+                            ovVar = (ov) mpVar.I1().j.get(i16);
                         } else {
                             i16++;
                         }
                     }
-                    if (pvVar != null) {
-                        iArr[0] = Math.max(iArr[0], pvVar.c);
-                        qv I1 = npVar.I1();
+                    if (ovVar != null) {
+                        iArr[0] = Math.max(iArr[0], ovVar.c);
+                        pv I1 = mpVar.I1();
                         I1.g -= I1.j(j14);
                         I1.l();
                     }
@@ -156,23 +156,23 @@ public final /* synthetic */ class j9 implements Runnable {
                     }
                     tL_messages_deleteSavedHistory.max_id = i17;
                 }
-                npVar.getConnectionsManager().sendRequest(tL_messages_deleteSavedHistory, new qm(npVar, j14, iArr, inputPeer, 1), 64);
+                mpVar.getConnectionsManager().sendRequest(tL_messages_deleteSavedHistory, new pm(mpVar, j14, iArr, inputPeer, 1), 64);
                 return;
             case 4:
-                ur urVar = (ur) obj3;
+                tr trVar = (tr) obj3;
                 String str = (String) obj2;
-                bi.a5 a5Var = (bi.a5) obj;
+                bi.d5 d5Var = (bi.d5) obj;
                 long currentTimeMillis = System.currentTimeMillis();
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase2 = urVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = trVar.b;
                         StringBuilder sb2 = new StringBuilder("DELETE FROM onchain_offer_intents WHERE used_at < ");
                         try {
                             sb2.append(currentTimeMillis - 1800000);
                             sb2.append(" OR used_at > ");
                             sb2.append(currentTimeMillis);
                             sQLiteDatabase2.executeFast(sb2.toString()).stepThis().dispose();
-                            queryFinalized = urVar.b.queryFinalized("SELECT random_id FROM onchain_offer_intents WHERE slug = ? AND amount = ? AND duration = ?", str, Long.valueOf(j3), Integer.valueOf(i13));
+                            queryFinalized = trVar.b.queryFinalized("SELECT random_id FROM onchain_offer_intents WHERE slug = ? AND amount = ? AND duration = ?", str, Long.valueOf(j3), Integer.valueOf(i13));
                             try {
                                 try {
                                     j10 = queryFinalized.next() ? queryFinalized.longValue(0) : j10;
@@ -207,14 +207,14 @@ public final /* synthetic */ class j9 implements Runnable {
                         sQLiteCursor = queryFinalized;
                         sQLitePreparedStatement = null;
                         try {
-                            urVar.o(e, true);
+                            trVar.o(e, true);
                             if (sQLiteCursor != null) {
                                 sQLiteCursor.dispose();
                             }
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                             }
-                            org.telegram.messenger.g0.g3(new od(a5Var, j10, i14));
+                            org.telegram.messenger.g0.g3(new nd(d5Var, j10, i14));
                             return;
                         } catch (Throwable th3) {
                             th = th3;
@@ -226,17 +226,17 @@ public final /* synthetic */ class j9 implements Runnable {
                         }
                     }
                     try {
-                        executeFast = urVar.b.executeFast("REPLACE INTO onchain_offer_intents VALUES(?, ?, ?, ?, ?)");
+                        executeFast = trVar.b.executeFast("REPLACE INTO onchain_offer_intents VALUES(?, ?, ?, ?, ?)");
                     } catch (Exception e14) {
                         e = e14;
                         sQLiteCursor = null;
                         sQLitePreparedStatement = null;
-                        urVar.o(e, true);
+                        trVar.o(e, true);
                         if (sQLiteCursor != null) {
                         }
                         if (sQLitePreparedStatement != null) {
                         }
-                        org.telegram.messenger.g0.g3(new od(a5Var, j10, i14));
+                        org.telegram.messenger.g0.g3(new nd(d5Var, j10, i14));
                         return;
                     }
                 } catch (Throwable th4) {
@@ -255,12 +255,12 @@ public final /* synthetic */ class j9 implements Runnable {
                     e = e15;
                     sQLitePreparedStatement = executeFast;
                     sQLiteCursor = null;
-                    urVar.o(e, true);
+                    trVar.o(e, true);
                     if (sQLiteCursor != null) {
                     }
                     if (sQLitePreparedStatement != null) {
                     }
-                    org.telegram.messenger.g0.g3(new od(a5Var, j10, i14));
+                    org.telegram.messenger.g0.g3(new nd(d5Var, j10, i14));
                     return;
                 } catch (Throwable th5) {
                     th = th5;
@@ -272,18 +272,18 @@ public final /* synthetic */ class j9 implements Runnable {
                     }
                     throw th;
                 }
-                org.telegram.messenger.g0.g3(new od(a5Var, j10, i14));
+                org.telegram.messenger.g0.g3(new nd(d5Var, j10, i14));
                 return;
             case 5:
-                ur urVar2 = (ur) obj3;
+                tr trVar2 = (tr) obj3;
                 String str2 = (String) obj2;
                 String str3 = (String) obj;
-                urVar2.getClass();
+                trVar2.getClass();
                 try {
-                    urVar2.b.beginTransaction();
+                    trVar2.b.beginTransaction();
                     int i18 = 0;
                     for (int i19 = 2; i18 < i19; i19 = 2) {
-                        SQLiteDatabase sQLiteDatabase3 = urVar2.b;
+                        SQLiteDatabase sQLiteDatabase3 = trVar2.b;
                         Locale locale = Locale.US;
                         SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT data FROM " + (i18 == 0 ? "messages_v2" : "messages_topics") + " WHERE mid = " + i13 + " AND uid = " + j10, new Object[i12]);
                         try {
@@ -295,7 +295,7 @@ public final /* synthetic */ class j9 implements Runnable {
                                 if (TLdeserialize != null) {
                                     z10 = i12;
                                     i10 = i13;
-                                    TLdeserialize.readAttachPath(byteBufferValue, urVar2.getUserConfig().n);
+                                    TLdeserialize.readAttachPath(byteBufferValue, trVar2.getUserConfig().n);
                                 } else {
                                     z10 = i12;
                                     i10 = i13;
@@ -312,8 +312,8 @@ public final /* synthetic */ class j9 implements Runnable {
                                         if (str3 != null) {
                                             tL_messageMediaWidget.chat_data = str3.isEmpty() ? null : str3;
                                         }
-                                        SQLitePreparedStatement executeFast2 = urVar2.b.executeFast("UPDATE " + (i18 == 0 ? "messages_v2" : "messages_topics") + " SET data = ? WHERE mid = ? AND uid = ?");
-                                        gj.q5(TLdeserialize);
+                                        SQLitePreparedStatement executeFast2 = trVar2.b.executeFast("UPDATE " + (i18 == 0 ? "messages_v2" : "messages_topics") + " SET data = ? WHERE mid = ? AND uid = ?");
+                                        fj.q5(TLdeserialize);
                                         NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
                                         TLdeserialize.serializeToStream(nativeByteBuffer);
                                         executeFast2.requery();
@@ -336,8 +336,8 @@ public final /* synthetic */ class j9 implements Runnable {
                             e = e16;
                             sQLiteCursor2 = queryFinalized2;
                             try {
-                                urVar2.o(e, true);
-                                SQLiteDatabase sQLiteDatabase4 = urVar2.b;
+                                trVar2.o(e, true);
+                                SQLiteDatabase sQLiteDatabase4 = trVar2.b;
                                 if (sQLiteDatabase4 != null) {
                                     sQLiteDatabase4.commitTransaction();
                                 }
@@ -348,7 +348,7 @@ public final /* synthetic */ class j9 implements Runnable {
                                 return;
                             } catch (Throwable th6) {
                                 th = th6;
-                                sQLiteDatabase = urVar2.b;
+                                sQLiteDatabase = trVar2.b;
                                 if (sQLiteDatabase != null) {
                                     sQLiteDatabase.commitTransaction();
                                 }
@@ -360,7 +360,7 @@ public final /* synthetic */ class j9 implements Runnable {
                         } catch (Throwable th7) {
                             th = th7;
                             sQLiteCursor2 = queryFinalized2;
-                            sQLiteDatabase = urVar2.b;
+                            sQLiteDatabase = trVar2.b;
                             if (sQLiteDatabase != null) {
                             }
                             if (sQLiteCursor2 != null) {
@@ -368,8 +368,8 @@ public final /* synthetic */ class j9 implements Runnable {
                             throw th;
                         }
                     }
-                    urVar2.b.commitTransaction();
-                    SQLiteDatabase sQLiteDatabase5 = urVar2.b;
+                    trVar2.b.commitTransaction();
+                    SQLiteDatabase sQLiteDatabase5 = trVar2.b;
                     if (sQLiteDatabase5 != null) {
                         sQLiteDatabase5.commitTransaction();
                         return;
@@ -385,15 +385,15 @@ public final /* synthetic */ class j9 implements Runnable {
                 break;
             default:
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
-                ((a70) obj3).v();
-                np u12 = np.u1(i13);
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
+                ((x60) obj3).v();
+                mp u12 = mp.u1(i13);
                 long j15 = this.c;
                 long j16 = this.d;
                 boolean u22 = u12.u2(j15, j16, null);
-                ys.t(i13).G(j15, j16, !u22);
-                if (org.telegram.ui.Components.lc.a(g2Var)) {
-                    org.telegram.ui.Components.lc.z(g2Var, !u22 ? 3 : 4, !u22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, h6Var).j();
+                xs.t(i13).G(j15, j16, !u22);
+                if (org.telegram.ui.Components.kc.a(g2Var)) {
+                    org.telegram.ui.Components.kc.z(g2Var, !u22 ? 3 : 4, !u22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, i6Var).j();
                     return;
                 }
                 return;
@@ -409,17 +409,17 @@ public final /* synthetic */ class j9 implements Runnable {
         this.h = tL_textWithEntities;
     }
 
-    public /* synthetic */ j9(si siVar, long j3, long j10, TL_bots.BotInfo botInfo, y10 y10Var, int i7) {
-        this.e = siVar;
+    public /* synthetic */ j9(ri riVar, long j3, long j10, TL_bots.BotInfo botInfo, w10 w10Var, int i7) {
+        this.e = riVar;
         this.c = j3;
         this.d = j10;
         this.f = botInfo;
-        this.h = y10Var;
+        this.h = w10Var;
         this.b = i7;
     }
 
-    public /* synthetic */ j9(np npVar, long j3, long j10, TLRPC.InputPeer inputPeer, int i7, int[] iArr) {
-        this.e = npVar;
+    public /* synthetic */ j9(mp mpVar, long j3, long j10, TLRPC.InputPeer inputPeer, int i7, int[] iArr) {
+        this.e = mpVar;
         this.c = j3;
         this.d = j10;
         this.f = inputPeer;
@@ -427,8 +427,8 @@ public final /* synthetic */ class j9 implements Runnable {
         this.h = iArr;
     }
 
-    public /* synthetic */ j9(ur urVar, int i7, long j3, String str, long j10, String str2) {
-        this.e = urVar;
+    public /* synthetic */ j9(tr trVar, int i7, long j3, String str, long j10, String str2) {
+        this.e = trVar;
         this.b = i7;
         this.c = j3;
         this.f = str;
@@ -436,21 +436,21 @@ public final /* synthetic */ class j9 implements Runnable {
         this.h = str2;
     }
 
-    public /* synthetic */ j9(ur urVar, long j3, String str, long j10, int i7, bi.a5 a5Var) {
-        this.e = urVar;
+    public /* synthetic */ j9(tr trVar, long j3, String str, long j10, int i7, bi.d5 d5Var) {
+        this.e = trVar;
         this.c = j3;
         this.f = str;
         this.d = j10;
         this.b = i7;
-        this.h = a5Var;
+        this.h = d5Var;
     }
 
-    public /* synthetic */ j9(a70 a70Var, int i7, long j3, long j10, bn bnVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        this.e = a70Var;
+    public /* synthetic */ j9(x60 x60Var, int i7, long j3, long j10, bn bnVar, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.e = x60Var;
         this.b = i7;
         this.c = j3;
         this.d = j10;
         this.f = bnVar;
-        this.h = h6Var;
+        this.h = i6Var;
     }
 }

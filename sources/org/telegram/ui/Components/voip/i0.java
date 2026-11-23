@@ -1,74 +1,53 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class i0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class i0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y b;
-    public final /* synthetic */ k0 c;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ i0(k0 k0Var, y yVar, int i7) {
+    public /* synthetic */ i0(Object obj, float f10, float f11, float f12, int i7) {
         this.a = i7;
-        this.c = k0Var;
-        this.b = yVar;
+        this.e = obj;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                k0 k0Var = this.c;
-                k0Var.O0 = null;
-                this.b.F = false;
-                y yVar = k0Var.F;
-                if (yVar != null) {
-                    if (yVar.getParent() != null) {
-                        k0Var.removeView(k0Var.F);
-                        k0Var.F.e();
-                    }
-                    k0Var.F = null;
-                    break;
-                }
+                l0 l0Var = (l0) this.e;
+                l0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0Var.z0 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue, 1.0f, this.b * floatValue);
+                l0Var.s0 = this.c * floatValue;
+                l0Var.t0 = this.d * floatValue;
+                l0Var.invalidate();
                 break;
             case 1:
-                k0 k0Var2 = this.c;
-                k0Var2.y.e();
-                k0Var2.r = null;
-                this.b.r = false;
-                if (!k0Var2.b) {
-                    k0Var2.d();
-                    k0Var2.E = null;
-                    k0Var2.d = 0L;
-                }
-                k0Var2.c = k0Var2.b ? 1.0f : 0.0f;
-                k0Var2.l();
-                k0Var2.i(false);
-                if (!k0Var2.b) {
-                    k0Var2.l0.setVisibility(8);
-                    k0Var2.m0.setVisibility(8);
-                    k0Var2.f0.setVisibility(8);
-                    k0Var2.g0.setVisibility(8);
-                    break;
-                }
-                break;
-            case 2:
-                y yVar2 = this.b;
-                if (yVar2.getParent() != null) {
-                    this.c.removeView(yVar2);
-                    yVar2.e();
-                    break;
-                }
+                fc1 fc1Var = (fc1) this.e;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fc1Var.f1 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                fc1Var.Y0 = this.c * floatValue2;
+                fc1Var.Z0 = this.d * floatValue2;
+                fc1Var.s.invalidate();
                 break;
             default:
-                y yVar3 = this.b;
-                if (yVar3.getParent() != null) {
-                    this.c.removeView(yVar3);
-                    yVar3.e();
-                    break;
-                }
+                vg.m mVar = (vg.m) this.e;
+                mVar.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vg.f fVar = mVar.b;
+                fVar.d = this.b * floatValue3;
+                fVar.e = this.c * floatValue3;
+                fVar.i = floatValue3 * this.d;
                 break;
         }
     }

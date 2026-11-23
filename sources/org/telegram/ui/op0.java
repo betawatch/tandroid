@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class op0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class op0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 3:
-                this.c.U7 = null;
+                this.c.a8 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -83,32 +83,32 @@ public final class op0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                if (animator.equals(photoViewer.U7)) {
-                    photoViewer.U7 = new AnimatorSet();
+                if (animator.equals(photoViewer.a8)) {
+                    photoViewer.a8 = new AnimatorSet();
                     if (z10) {
-                        photoViewer.O7.setVisibility(0);
-                        photoViewer.P7.setVisibility(0);
-                        AnimatorSet animatorSet = photoViewer.U7;
-                        xq0 xq0Var = photoViewer.O7;
+                        photoViewer.U7.setVisibility(0);
+                        photoViewer.V7.setVisibility(0);
+                        AnimatorSet animatorSet = photoViewer.a8;
+                        xq0 xq0Var = photoViewer.U7;
                         Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(xq0Var, (Property<xq0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Cells.x0, Float>) property, 0.0f));
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(xq0Var, (Property<xq0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.V7, (Property<org.telegram.ui.Cells.x0, Float>) property, 0.0f));
                     } else {
                         if (photoViewer.S4) {
                             photoViewer.k0.setVisibility(8);
                             photoViewer.k0.setAlpha(0.0f);
                             photoViewer.k0.setBackgroundColor(photoViewer.d2 == 11 ? -16777216 : 2130706432);
                         }
-                        photoViewer.O7.setVisibility(4);
-                        photoViewer.P7.setVisibility(4);
-                        AnimatorSet animatorSet2 = photoViewer.U7;
+                        photoViewer.U7.setVisibility(4);
+                        photoViewer.V7.setVisibility(4);
+                        AnimatorSet animatorSet2 = photoViewer.a8;
                         di.n4 n4Var = photoViewer.Q0;
                         Property property2 = View.TRANSLATION_Y;
                         animatorSet2.playTogether(ObjectAnimator.ofFloat(n4Var, (Property<di.n4, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.Q0, (Property<di.n4, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.T0, (Property<oi.w1, Float>) property2, 0.0f));
                     }
-                    photoViewer.U7.addListener(new ay(this, 18));
-                    photoViewer.U7.setDuration(200L);
-                    photoViewer.U7.setInterpolator(org.telegram.messenger.g0.F);
-                    photoViewer.U7.start();
+                    photoViewer.a8.addListener(new zx(this, 18));
+                    photoViewer.a8.setDuration(200L);
+                    photoViewer.a8.setInterpolator(org.telegram.messenger.g0.F);
+                    photoViewer.a8.start();
                     break;
                 }
                 break;

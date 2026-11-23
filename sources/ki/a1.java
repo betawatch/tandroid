@@ -2,11 +2,11 @@ package ki;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a1 implements org.telegram.ui.Cells.s0 {
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ org.telegram.ui.ActionBar.g2 G() {
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 B() {
         return null;
     }
 
@@ -16,65 +16,65 @@ public final class a1 implements org.telegram.ui.Cells.s0 {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ long d() {
+    public final /* synthetic */ long b() {
         return 0L;
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ boolean h() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ boolean s0(org.telegram.ui.Cells.v0 v0Var, float f10, float f11) {
+    public final /* synthetic */ boolean g0(org.telegram.ui.Cells.v0 v0Var, float f10, float f11) {
         return false;
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void D(org.telegram.ui.Cells.v0 v0Var) {
+    public final /* synthetic */ boolean i() {
+        return true;
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void M(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    public final /* synthetic */ void H(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void V(long j3) {
+    public final /* synthetic */ void Q(long j3) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void a0(org.telegram.ui.Cells.v0 v0Var) {
+    public final /* synthetic */ void S(org.telegram.ui.Cells.v0 v0Var) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void t(org.telegram.ui.Cells.v0 v0Var) {
+    public final /* synthetic */ void l(org.telegram.ui.Cells.v0 v0Var) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void x(org.telegram.ui.Cells.v0 v0Var) {
+    public final /* synthetic */ void r(org.telegram.ui.Cells.v0 v0Var) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void g0(org.telegram.ui.Cells.v0 v0Var, String str) {
+    public final /* synthetic */ void w(org.telegram.ui.Cells.v0 v0Var) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void n(org.telegram.ui.Cells.v0 v0Var, int i7) {
+    public final /* synthetic */ void V(org.telegram.ui.Cells.v0 v0Var, String str) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void Q(org.telegram.ui.Cells.v0 v0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+    public final /* synthetic */ void j(org.telegram.ui.Cells.v0 v0Var, int i7) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void b0(org.telegram.ui.Cells.v0 v0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
+    public final /* synthetic */ void K(org.telegram.ui.Cells.v0 v0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void u(org.telegram.ui.Cells.v0 v0Var, int i7, int i10) {
+    public final /* synthetic */ void T(org.telegram.ui.Cells.v0 v0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public final /* synthetic */ void x0(org.telegram.ui.Cells.v0 v0Var, TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11) {
+    public final /* synthetic */ void n(org.telegram.ui.Cells.v0 v0Var, int i7, int i10) {
+    }
+
+    @Override // org.telegram.ui.Cells.s0
+    public final /* synthetic */ void s0(org.telegram.ui.Cells.v0 v0Var, TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11) {
     }
 }

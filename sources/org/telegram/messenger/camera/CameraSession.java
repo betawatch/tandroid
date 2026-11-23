@@ -11,11 +11,11 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -45,7 +45,7 @@ public class CameraSession {
     public ArrayList<String> availableFlashModes = new ArrayList<>();
     private int infoCameraId = -1;
     Camera.CameraInfo info = new Camera.CameraInfo();
-    private Camera.AutoFocusCallback autoFocusCallback = new k();
+    private Camera.AutoFocusCallback autoFocusCallback = new j();
 
     public CameraSession(CameraInfo cameraInfo, Size size, Size size2, int i7, boolean z10) {
         this.previewSize = size;
@@ -90,7 +90,7 @@ public class CameraSession {
             if (rotation == 1) {
                 i7 = 90;
             } else if (rotation == 2) {
-                i7 = ls.K2;
+                i7 = ks.K2;
             } else if (rotation == 3) {
                 i7 = 270;
             }
@@ -498,9 +498,9 @@ public class CameraSession {
                     if (i11 == 1) {
                         i7 = 90;
                     } else if (i11 == 2) {
-                        i7 = ls.K2;
+                        i7 = ks.K2;
                     } else if (i11 == 3) {
-                        i7 = ls.t4;
+                        i7 = ks.t4;
                     }
                     cameraInfo = this.info;
                     if (cameraInfo.orientation % 90 != 0) {

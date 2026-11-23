@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import c8.ma;
+import c8.na;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l1 extends FrameLayout {
     public float a;
@@ -38,7 +38,7 @@ public final class l1 extends FrameLayout {
         imageReceiver.u0 = false;
         imageReceiver2.u0 = false;
         setClipChildren(false);
-        addView(k1Var, ma.e(-1, -2, 21));
+        addView(k1Var, na.e(-1, -2, 21));
     }
 
     public final void a(boolean z10, boolean z11, boolean z12) {
@@ -63,15 +63,15 @@ public final class l1 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.c.P();
-        this.d.P();
+        this.c.Q();
+        this.d.Q();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.c.R();
-        this.d.R();
+        this.c.S();
+        this.d.S();
     }
 
     @Override // android.widget.FrameLayout, android.view.View

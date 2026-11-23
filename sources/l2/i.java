@@ -1,159 +1,161 @@
 package l2;
 
-import android.graphics.SurfaceTexture;
-import android.util.Log;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.LaunchActivity;
+import a8.ma;
+import android.text.TextUtils;
+import h9.s1;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class i implements t0 {
-    public static i h;
-    public boolean a;
-    public boolean b;
-    public final Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
+public final class i implements r0 {
+    public static final s1 r;
+    public final e2.k1 a;
+    public final e2.i1 b;
+    public final b3.e c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final long h;
+    public final long i;
+    public final long j;
+    public final long k;
+    public final int l;
+    public final boolean m;
+    public final long n;
+    public final h9.l0 o;
+    public final ConcurrentHashMap p;
+    public long q;
 
-    public i() {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.e = new wi.p(this);
+    static {
+        h9.g0 g0Var = h9.i0.b;
+        Object[] objArr = {"file", "content", "data", "android.resource", "rawresource", "asset"};
+        h9.o.e(6, objArr);
+        r = h9.i0.o(6, objArr);
     }
 
-    public static i d() {
-        if (h == null) {
-            h = new i();
+    public i(b3.e eVar, int i7, int i10, int i11, int i12, int i13, boolean z10, Map map) {
+        a(i10, 0, "bufferForPlaybackMs", "0");
+        a(i11, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
+        a(i12, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        a(i13, 0, "bufferForPlaybackAfterRebufferForLocalPlaybackMs", "0");
+        a(50000, i10, "minBufferMs", "bufferForPlaybackMs");
+        a(i7, i11, "minBufferForLocalPlaybackMs", "bufferForPlaybackForLocalPlaybackMs");
+        a(50000, i12, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        a(i7, i13, "minBufferForLocalPlaybackMs", "bufferForPlaybackAfterRebufferForLocalPlaybackMs");
+        a(50000, 50000, "maxBufferMs", "minBufferMs");
+        a(50000, i7, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
+        a(0, 0, "backBufferDurationMs", "0");
+        this.a = new e2.k1();
+        this.b = new e2.i1();
+        this.c = eVar;
+        long j3 = 50000;
+        this.d = h2.l0.S(j3);
+        this.e = h2.l0.S(i7);
+        this.f = h2.l0.S(j3);
+        this.g = h2.l0.S(j3);
+        this.h = h2.l0.S(i10);
+        this.i = h2.l0.S(i11);
+        this.j = h2.l0.S(i12);
+        this.k = h2.l0.S(i13);
+        this.l = -1;
+        this.m = z10;
+        this.n = h2.l0.S(0);
+        this.p = new ConcurrentHashMap();
+        this.o = h9.l0.b(map);
+        this.q = -1L;
+    }
+
+    public static void a(int i7, int i10, String str, String str2) {
+        ma.i(i7 >= i10, "%s cannot be less than %s", str, str2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(q0 q0Var) {
+        int i7;
+        boolean z10;
+        long j3;
+        float f10;
+        m2.i iVar = q0Var.a;
+        long j10 = q0Var.d;
+        h hVar = (h) this.p.get(iVar);
+        hVar.getClass();
+        h hVar2 = (h) this.p.get(iVar);
+        hVar2.getClass();
+        synchronized (hVar2) {
+            i7 = hVar2.d;
         }
-        return h;
-    }
-
-    public static void g(String str) {
-        Log.d("PIP_DEBUG", "[utils.pip] " + str);
-    }
-
-    @Override // l2.t0
-    public long a() {
-        if (this.a) {
-            return ((q1) this.c).a();
+        int i10 = i7 * this.c.b;
+        h hVar3 = (h) this.p.get(iVar);
+        hVar3.getClass();
+        boolean z11 = i10 >= hVar3.c;
+        if (iVar.equals(m2.i.c)) {
+            return !z11;
         }
-        t0 t0Var = (t0) this.f;
-        t0Var.getClass();
-        return t0Var.a();
-    }
-
-    @Override // l2.t0
-    public boolean b() {
-        if (this.a) {
-            ((q1) this.c).getClass();
-            return false;
-        }
-        t0 t0Var = (t0) this.f;
-        t0Var.getClass();
-        return t0Var.b();
-    }
-
-    public wi.n c() {
-        ArrayList arrayList = (ArrayList) this.c;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            wi.n nVar = (wi.n) arrayList.get(i7);
-            if (nVar.e()) {
-                return nVar;
+        e2.l1 l1Var = q0Var.b;
+        e2.g0 g0Var = l1Var.m(l1Var.g(q0Var.c.a, this.b).c, this.a, 0L).c.b;
+        if (g0Var != null) {
+            String scheme = g0Var.a.getScheme();
+            if (TextUtils.isEmpty(scheme) || r.contains(scheme)) {
+                z10 = true;
+                j3 = !z10 ? this.e : this.d;
+                long j11 = !z10 ? this.g : this.f;
+                f10 = q0Var.e;
+                if (f10 > 1.0f) {
+                    j3 = Math.min(h2.l0.B(j3, f10), j11);
+                }
+                if (j10 >= Math.max(j3, 500000L)) {
+                    boolean z12 = (z10 ? this.m : false) || !z11;
+                    hVar.b = z12;
+                    if (!z12 && j10 < 500000) {
+                        h2.a.l("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
+                    }
+                } else if (j10 >= j11 || z11) {
+                    hVar.b = false;
+                }
+                return hVar.b;
             }
         }
-        return null;
+        z10 = false;
+        if (!z10) {
+        }
+        if (!z10) {
+        }
+        f10 = q0Var.e;
+        if (f10 > 1.0f) {
+        }
+        if (j10 >= Math.max(j3, 500000L)) {
+        }
+        return hVar.b;
     }
 
-    @Override // l2.t0
-    public void e(e2.w0 w0Var) {
-        t0 t0Var = (t0) this.f;
-        if (t0Var != null) {
-            t0Var.e(w0Var);
-            w0Var = ((t0) this.f).j();
-        }
-        ((q1) this.c).e(w0Var);
-    }
-
-    public void f() {
-        ((wi.p) this.e).j();
-    }
-
-    public void h(b bVar) {
-        t0 t0Var;
-        t0 h7 = bVar.h();
-        if (h7 == null || h7 == (t0Var = (t0) this.f)) {
-            return;
-        }
-        if (t0Var != null) {
-            throw new l(2, new IllegalStateException("Multiple renderer media clocks enabled."), 1000);
-        }
-        this.f = h7;
-        this.e = bVar;
-        h7.e((e2.w0) ((q1) this.c).e);
-    }
-
-    public void i(wi.n nVar, int i7) {
-        g("dismissed, prevState=" + i7);
-        ((ArrayList) this.c).remove(nVar);
-        wi.p pVar = (wi.p) this.e;
-        if (nVar == pVar.e) {
-            pVar.e = null;
-        }
-        if (nVar == pVar.f) {
-            wi.o oVar = pVar.g;
-            View view = pVar.h;
-            pVar.f = null;
-            pVar.g = null;
-            pVar.h = null;
-            wi.q qVar = pVar.c;
-            if (qVar != null) {
-                qVar.a(null, null);
-            }
-            if (oVar != null) {
-                SurfaceTexture surfaceTexture = oVar.a;
-                oVar.a = null;
-                if (surfaceTexture != null) {
-                    surfaceTexture.release();
+    public final void c() {
+        int i7 = 0;
+        if (this.p.isEmpty()) {
+            b3.e eVar = this.c;
+            synchronized (eVar) {
+                if (eVar.a) {
+                    eVar.d(0);
                 }
             }
-            if (view != null) {
-                nVar.a.w(view);
-            }
-            LaunchActivity launchActivity = pVar.b;
-            if (launchActivity != null && pVar.i && org.telegram.messenger.g0.H1(launchActivity)) {
-                pVar.b.moveTaskToBack(false);
-            }
-            pVar.i = false;
-            bg.v0 v0Var = pVar.d;
-            if (v0Var != null) {
-                v0Var.b(false);
-            }
+            return;
         }
-        f();
-    }
-
-    @Override // l2.t0
-    public e2.w0 j() {
-        t0 t0Var = (t0) this.f;
-        return t0Var != null ? t0Var.j() : (e2.w0) ((q1) this.c).e;
-    }
-
-    public wi.n k(wi.l lVar) {
-        wi.n nVar = new wi.n(this, lVar);
-        ((ArrayList) this.c).add(nVar);
-        g("register " + lVar);
-        f();
-        return nVar;
-    }
-
-    public i(o0 o0Var, h2.g0 g0Var) {
-        this.d = o0Var;
-        q1 q1Var = new q1();
-        q1Var.d = g0Var;
-        q1Var.e = e2.w0.d;
-        this.c = q1Var;
-        this.a = true;
+        b3.e eVar2 = this.c;
+        Iterator it = this.p.values().iterator();
+        while (it.hasNext()) {
+            i7 += ((h) it.next()).c;
+        }
+        eVar2.d(i7);
     }
 }

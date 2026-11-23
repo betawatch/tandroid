@@ -1,42 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nn implements View.OnKeyListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class nn extends org.telegram.ui.Cells.a6 {
+    public final /* synthetic */ org.telegram.ui.l4 G;
 
-    public /* synthetic */ nn(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nn(org.telegram.ui.l4 l4Var, Context context, int i7) {
+        super(context, i7, null, null);
+        this.G = l4Var;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                rn rnVar = (rn) this.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i7 != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
-                    return false;
-                }
-                ImageView imageView = rnVar.f;
-                if (imageView != null) {
-                    imageView.callOnClick();
-                }
-                return true;
-            default:
-                ku kuVar = (ku) this.b;
-                kuVar.getClass();
-                if (i7 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !kuVar.isShowing()) {
-                    return false;
-                }
-                kuVar.dismiss();
-                return true;
+    @Override // org.telegram.ui.Cells.a6
+    public final void h(bi.u uVar, ActionMode actionMode) {
+        if (uVar.isFocused() && uVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.bn.C8(menu, ((org.telegram.ui.bn) ((qn) this.G.e).b.a2).h, false, true, true, true);
         }
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void j(boolean z10) {
+        qn.R((qn) this.G.e, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void k(org.telegram.ui.Cells.a6 a6Var) {
+        qn.S((qn) this.G.e, a6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void l(bi.u uVar) {
+        ((qn) this.G.e).b.i1(uVar, true);
     }
 }

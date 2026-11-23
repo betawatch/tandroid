@@ -1,61 +1,6 @@
 package y7;
 
-import a8.xa;
-import android.media.MediaCodec;
-import android.media.MediaFormat;
-import android.util.Range;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class f7 implements oa.a, zi.x0 {
-    public Object a;
-    public Object b;
-    public Object c;
-
-    public f7(int i7) {
-        switch (i7) {
-            case 4:
-                this.a = new ArrayList();
-                this.b = new ArrayList();
-                break;
-            default:
-                this.a = new HashMap();
-                this.b = new HashMap();
-                this.c = z7.e.c;
-                break;
-        }
-    }
-
-    @Override // zi.x0
-    public void A(MediaFormat mediaFormat) {
-        this.c = mediaFormat;
-    }
-
-    @Override // oa.a
-    public /* bridge */ /* synthetic */ oa.a b(Class cls, na.d dVar) {
-        ((HashMap) this.a).put(cls, dVar);
-        ((HashMap) this.b).remove(cls);
-        return this;
-    }
-
-    @Override // zi.x0
-    public void q(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bufferInfo.size);
-        byteBuffer.position(bufferInfo.offset);
-        byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        allocateDirect.put(byteBuffer).flip();
-        MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-        bufferInfo2.set(0, bufferInfo.size, bufferInfo.presentationTimeUs, bufferInfo.flags);
-        ((ArrayList) this.a).add(allocateDirect);
-        ((ArrayList) this.b).add(bufferInfo2);
-    }
-
-    public f7(zi.p0 p0Var, Range range, xa xaVar) {
-        this.a = p0Var;
-        this.b = range;
-        this.c = xaVar;
-    }
+public abstract class f7 {
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class oq0 implements uq0 {
     @Override // org.telegram.ui.uq0
@@ -18,7 +18,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         return null;
     }
 
@@ -83,7 +83,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public org.telegram.messenger.gj V() {
+    public org.telegram.messenger.fj V() {
         return null;
     }
 
@@ -128,12 +128,12 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public org.telegram.messenger.ic j(int i7) {
+    public org.telegram.messenger.hc j(int i7) {
         return null;
     }
 
     @Override // org.telegram.ui.uq0
-    public int k(int i7, org.telegram.messenger.f20 f20Var) {
+    public int k(int i7, org.telegram.messenger.d20 d20Var) {
         return -1;
     }
 
@@ -164,7 +164,7 @@ public class oq0 implements uq0 {
 
     @Override // org.telegram.ui.uq0
     public boolean u() {
-        return !(this instanceof org.telegram.ui.Components.cm);
+        return !(this instanceof org.telegram.ui.Components.am);
     }
 
     @Override // org.telegram.ui.uq0
@@ -189,7 +189,7 @@ public class oq0 implements uq0 {
 
     @Override // org.telegram.ui.uq0
     public boolean z() {
-        return !(this instanceof org.telegram.ui.Components.li);
+        return !(this instanceof org.telegram.ui.Components.ki);
     }
 
     @Override // org.telegram.ui.uq0
@@ -201,7 +201,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public void M(org.telegram.messenger.f20 f20Var) {
+    public void M(org.telegram.messenger.d20 d20Var) {
     }
 
     @Override // org.telegram.ui.uq0
@@ -261,6 +261,6 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
+    public void o(int i7, org.telegram.messenger.d20 d20Var, boolean z10, int i10, int i11, boolean z11) {
     }
 }

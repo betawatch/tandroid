@@ -1,156 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class nk extends mi {
-    public final ty n;
-    public final ek0 r;
-    public final v4.c0 s;
-    public final HorizontalScrollView w;
-    public final boolean x;
+public final /* synthetic */ class nk implements InputFilter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public nk(ui uiVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
-        super(context, h6Var, uiVar);
-        this.x = z10;
-        this.f = true;
-        org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
-        boolean z11 = !z10;
-        ty tyVar = new ty(g2Var, z11, z10, false, getContext(), true, null, null, false, h6Var, false, true);
-        this.n = tyVar;
-        tyVar.x0 = false;
-        tyVar.J(z11, z10, false, false);
-        tyVar.p2 = true;
-        kw kwVar = tyVar.y;
-        if (kwVar != null) {
-            kwVar.setVisibility(8);
+    public /* synthetic */ nk(int i7, View view) {
+        this.a = i7;
+        this.b = view;
+    }
+
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                return xk.S((xk) this.b, charSequence, i7, i10, spanned, i11, i12);
+            default:
+                return (charSequence.length() <= 0 || !Character.isWhitespace(charSequence.charAt(0))) ? charSequence : (TextUtils.isEmpty(((mw0) this.b).getText()) || i11 == 0) ? "" : charSequence;
         }
-        tyVar.q2 = true;
-        ImageView imageView = tyVar.E;
-        if (imageView != null) {
-            imageView.setVisibility(8);
-        }
-        tyVar.T2 = true;
-        addView(tyVar, c8.ma.c(-1.0f, -1));
-        HorizontalScrollView y10 = tyVar.y(z11 ? 1 : 0);
-        this.w = y10;
-        ek0 x10 = tyVar.x(z11 ? 1 : 0);
-        this.r = x10;
-        x10.j(new oa(this, 5));
-        this.s = (v4.c0) x10.getLayoutManager();
-        y10.setTranslationY(Math.max(0, getCurrentItemTop()));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002d  */
-    @Override // org.telegram.ui.Components.mi
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void B(int i7, int i10) {
-        int i11;
-        int L;
-        int L2;
-        ek0 ek0Var;
-        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        if (!org.telegram.messenger.g0.Q1()) {
-            Point point = org.telegram.messenger.g0.q;
-            if (point.x > point.y) {
-                i11 = (int) (i10 / 3.5f);
-                L = i11 - org.telegram.messenger.g0.L(52.0f);
-                if (L < 0) {
-                    L = 0;
-                }
-                L2 = org.telegram.messenger.g0.L(36.0f) + L;
-                ek0Var = this.r;
-                if (ek0Var.getPaddingTop() == L2) {
-                    ek0Var.setPadding(org.telegram.messenger.g0.L(6.0f), L2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
-                    return;
-                }
-                return;
-            }
-        }
-        i11 = (i10 / 5) * 2;
-        L = i11 - org.telegram.messenger.g0.L(52.0f);
-        if (L < 0) {
-        }
-        L2 = org.telegram.messenger.g0.L(36.0f) + L;
-        ek0Var = this.r;
-        if (ek0Var.getPaddingTop() == L2) {
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public final void I(mi miVar) {
-        ui uiVar = this.b;
-        try {
-            uiVar.V2.getTitleTextView().setBuildFullLayout(true);
-        } catch (Exception unused) {
-        }
-        uiVar.V2.setTitle(org.telegram.messenger.hd.N0(this.x ? 2131745456 : 2131745462, null));
-        this.s.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public final void K() {
-        this.r.y0(0);
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getCurrentItemTop() {
-        ek0 ek0Var = this.r;
-        if (ek0Var.getChildCount() <= 0) {
-            ek0Var.setTopGlowOffset(ek0Var.getPaddingTop());
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = ek0Var.getChildAt(0);
-        mj0 mj0Var = (mj0) ek0Var.G(childAt);
-        int top = childAt.getTop() - org.telegram.messenger.g0.L(36.0f);
-        int L = org.telegram.messenger.g0.L(7.0f);
-        if (top < org.telegram.messenger.g0.L(7.0f) || mj0Var == null || mj0Var.b() != 0) {
-            top = L;
-        }
-        ek0Var.setTopGlowOffset(top);
-        return top;
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getFirstOffset() {
-        return org.telegram.messenger.g0.L(56.0f) + getListTopPadding();
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public int getListTopPadding() {
-        return this.r.getPaddingTop();
-    }
-
-    @Override // org.telegram.ui.Components.mi
-    public final int j() {
-        return 1;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        this.w.setTranslationY(Math.max(0, getCurrentItemTop()));
-    }
-
-    public void setDelegate(tx txVar) {
-        this.n.setDelegate(txVar);
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        this.b.b.invalidate();
-        invalidate();
     }
 }

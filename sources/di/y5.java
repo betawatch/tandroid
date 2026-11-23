@@ -2,11 +2,11 @@ package di;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class y5 extends AnimatorListenerAdapter {
     public final /* synthetic */ z5 a;
@@ -24,10 +24,10 @@ public final class y5 extends AnimatorListenerAdapter {
         TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = z5Var.e;
         int i7 = 2 - z5Var.y0;
         stargiftattributemodelArr[i7] = (TL_stars.starGiftAttributeModel) z5Var.d0.f;
-        pb.d1(z5Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - z5Var.y0].document, ls.q2);
+        pb.d1(z5Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - z5Var.y0].document, ks.q2);
         TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) z5Var.e0.f;
         if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.p5 l10 = org.telegram.ui.Components.p5.l(k10.t0, 7, stargiftattributepattern.document);
+            org.telegram.ui.Components.o5 l10 = org.telegram.ui.Components.o5.l(i10.t0, 7, stargiftattributepattern.document);
             l10.m = true;
             l10.u();
         }

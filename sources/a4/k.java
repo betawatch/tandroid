@@ -17,7 +17,6 @@ import e0.j0;
 import e0.m;
 import e0.o;
 import e0.q;
-import f3.z;
 import h2.k0;
 import h2.l0;
 import h2.x;
@@ -33,12 +32,12 @@ import m4.e0;
 import m4.f0;
 import m4.g0;
 import m6.n;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mx0;
-import org.telegram.ui.Components.ox0;
+import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.nx0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class k implements a0 {
     public final /* synthetic */ int a;
@@ -200,9 +199,9 @@ public class k implements a0 {
                                 int A3 = xVar.A();
                                 if (A3 != 21) {
                                     if (A3 == 14) {
-                                        i15 = ls.S1;
+                                        i15 = ks.S1;
                                     } else if (A3 == 33) {
-                                        i15 = ls.V1;
+                                        i15 = ks.V1;
                                     }
                                 }
                                 i15 = 172;
@@ -320,7 +319,7 @@ public class k implements a0 {
                     if (d0Var.o) {
                         return;
                     }
-                    d0Var.m.d1();
+                    d0Var.m.Z0();
                     d0Var.n = 0;
                     d0Var.o = true;
                     return;
@@ -329,7 +328,7 @@ public class k implements a0 {
                 int i23 = i12 == 1 ? 0 : d0Var.n - 1;
                 d0Var.n = i23;
                 if (i23 == 0) {
-                    d0Var.m.d1();
+                    d0Var.m.Z0();
                     d0Var.o = true;
                 }
             }
@@ -799,7 +798,7 @@ public class k implements a0 {
         kotlin.jvm.internal.j.e(hint, "hint");
         String concat = hint.length() == 0 ? "" : "\n".concat(hint);
         StringBuilder n10 = p5.c.n(message, " at path: ");
-        n10.append(((xa) this.c).m());
+        n10.append(((xa) this.c).l());
         n10.append(concat);
         String message2 = n10.toString();
         String input = (String) this.f;
@@ -870,7 +869,7 @@ public class k implements a0 {
     public String toString() {
         switch (this.a) {
             case 2:
-                StringBuilder sb2 = new StringBuilder(ls.e3);
+                StringBuilder sb2 = new StringBuilder(ks.e3);
                 sb2.append("<<\n mode: ");
                 sb2.append((gc.d) this.c);
                 sb2.append("\n ecLevel: ");
@@ -935,12 +934,12 @@ public class k implements a0 {
             return;
         }
         iArr[i7] = 1;
-        for (mx0 mx0Var : ((mx0[][]) this.d)[i7]) {
-            w(mx0Var.a.b);
-            mx0[] mx0VarArr = (mx0[]) this.c;
+        for (lx0 lx0Var : ((lx0[][]) this.d)[i7]) {
+            w(lx0Var.a.b);
+            lx0[] lx0VarArr = (lx0[]) this.c;
             int i10 = this.b;
             this.b = i10 - 1;
-            mx0VarArr[i10] = mx0Var;
+            lx0VarArr[i10] = lx0Var;
         }
         iArr[i7] = 2;
     }
@@ -1291,10 +1290,10 @@ public class k implements a0 {
         this.f = source;
     }
 
-    public k(z zVar, f3.k0 k0Var, byte[] bArr, ei.a[] aVarArr, int i7) {
+    public k(f3.a0 a0Var, f3.l0 l0Var, byte[] bArr, ei.a[] aVarArr, int i7) {
         this.a = 0;
-        this.c = zVar;
-        this.d = k0Var;
+        this.c = a0Var;
+        this.d = l0Var;
         this.e = bArr;
         this.f = aVarArr;
         this.b = i7;
@@ -1309,31 +1308,31 @@ public class k implements a0 {
         this.b = i7;
     }
 
-    public k(ox0 ox0Var, mx0[] mx0VarArr) {
+    public k(nx0 nx0Var, lx0[] lx0VarArr) {
         this.a = 5;
-        this.f = ox0Var;
-        int length = mx0VarArr.length;
-        this.c = new mx0[length];
+        this.f = nx0Var;
+        int length = lx0VarArr.length;
+        this.c = new lx0[length];
         this.b = length - 1;
-        int e10 = ox0Var.e() + 1;
-        mx0[][] mx0VarArr2 = new mx0[e10][];
+        int e10 = nx0Var.e() + 1;
+        lx0[][] lx0VarArr2 = new lx0[e10][];
         int[] iArr = new int[e10];
-        for (mx0 mx0Var : mx0VarArr) {
-            int i7 = mx0Var.a.a;
+        for (lx0 lx0Var : lx0VarArr) {
+            int i7 = lx0Var.a.a;
             iArr[i7] = iArr[i7] + 1;
         }
         for (int i10 = 0; i10 < e10; i10++) {
-            mx0VarArr2[i10] = new mx0[iArr[i10]];
+            lx0VarArr2[i10] = new lx0[iArr[i10]];
         }
         Arrays.fill(iArr, 0);
-        for (mx0 mx0Var2 : mx0VarArr) {
-            int i11 = mx0Var2.a.a;
-            mx0[] mx0VarArr3 = mx0VarArr2[i11];
+        for (lx0 lx0Var2 : lx0VarArr) {
+            int i11 = lx0Var2.a.a;
+            lx0[] lx0VarArr3 = lx0VarArr2[i11];
             int i12 = iArr[i11];
             iArr[i11] = i12 + 1;
-            mx0VarArr3[i12] = mx0Var2;
+            lx0VarArr3[i12] = lx0Var2;
         }
-        this.d = mx0VarArr2;
-        this.e = new int[((ox0) this.f).e() + 1];
+        this.d = lx0VarArr2;
+        this.e = new int[((nx0) this.f).e() + 1];
     }
 }

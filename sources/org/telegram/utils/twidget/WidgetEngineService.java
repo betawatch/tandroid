@@ -18,16 +18,16 @@ import java.util.concurrent.Executors;
 import java.util.zip.ZipFile;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public class WidgetEngineService extends Service {
     public static volatile String b;
     public static String c;
-    public static final ExecutorService d = Executors.newSingleThreadExecutor(new ai.z0(6));
+    public static final ExecutorService d = Executors.newSingleThreadExecutor(new ai.v0(6));
     public static volatile boolean e;
     public final a0 a = new a0(this);
 
-    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
     public static final class Forked extends WidgetEngineService {
     }
 

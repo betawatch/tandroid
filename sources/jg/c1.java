@@ -1,11 +1,11 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c1 implements Runnable {
     public final /* synthetic */ TLRPC.Chat a;
@@ -13,17 +13,17 @@ public final class c1 implements Runnable {
     public final /* synthetic */ long c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ a0.h e;
-    public final /* synthetic */ np f;
+    public final /* synthetic */ mp f;
     public final /* synthetic */ h1 h;
 
-    public c1(h1 h1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.h hVar, np npVar) {
+    public c1(h1 h1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.h hVar, mp mpVar) {
         this.h = h1Var;
         this.a = chat;
         this.b = str;
         this.c = j3;
         this.d = arrayList;
         this.e = hVar;
-        this.f = npVar;
+        this.f = mpVar;
     }
 
     @Override // java.lang.Runnable
@@ -33,7 +33,7 @@ public final class c1 implements Runnable {
             return;
         }
         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = np.k1(this.a);
+        tL_channels_getParticipants.channel = mp.k1(this.a);
         tL_channels_getParticipants.limit = 20;
         tL_channels_getParticipants.offset = 0;
         TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();

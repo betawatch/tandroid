@@ -1,37 +1,20 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class qo {
-    public final int a;
-    public final long b;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e;
-    public int f;
-    public int g;
+    public final TL_communities.CommunityPeer a;
+    public final TLRPC.Chat b;
+    public final TLRPC.User c;
+    public final TLRPC.Dialog d;
 
-    public qo(int i7, long j3) {
-        ArrayList arrayList = new ArrayList();
-        this.e = arrayList;
-        this.f = -1;
-        this.a = i7;
-        this.b = j3;
-        if (this.c || this.d) {
-            return;
-        }
-        boolean isEmpty = arrayList.isEmpty();
-        this.c = true;
-        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
-        tL_messages_getCommonChats.user_id = np.u1(i7).q1(j3);
-        tL_messages_getCommonChats.max_id = arrayList.isEmpty() ? 0L : ((TLRPC.Chat) i5.c.h(1, arrayList)).id;
-        tL_messages_getCommonChats.limit = isEmpty ? 15 : 30;
-        int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCommonChats, new p3(this, r7, isEmpty, 4));
-        this.f = sendRequest;
-        int[] iArr = {sendRequest};
+    public qo(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
+        this.a = communityPeer;
+        this.b = chat;
+        this.c = user;
+        this.d = dialog;
     }
 }

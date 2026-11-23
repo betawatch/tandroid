@@ -1,16 +1,16 @@
 package ce;
 
-import hi.t5;
+import hi.u0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h implements c {
-    public final /* synthetic */ t5 a;
+    public final /* synthetic */ u0 a;
     public final /* synthetic */ m1.n b;
 
-    public h(t5 t5Var, m1.n nVar) {
-        this.a = t5Var;
+    public h(u0 u0Var, m1.n nVar) {
+        this.a = u0Var;
         this.b = nVar;
     }
 
@@ -23,7 +23,7 @@ public final class h implements c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object v(d dVar, kd.c cVar) {
+    public final Object J(d dVar, kd.c cVar) {
         g gVar;
         jd.a aVar;
         int i7;
@@ -44,13 +44,13 @@ public final class h implements c {
                     aVar = jd.a.a;
                     i7 = gVar.b;
                     if (i7 != 0) {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         try {
-                            t5 t5Var = this.a;
+                            u0 u0Var = this.a;
                             gVar.d = this;
                             gVar.e = dVar;
                             gVar.b = 1;
-                            if (t5Var.v(dVar, gVar) != aVar) {
+                            if (u0Var.J(dVar, gVar) != aVar) {
                                 hVar = this;
                             }
                         } catch (Throwable th3) {
@@ -71,7 +71,7 @@ public final class h implements c {
                     if (i7 != 1) {
                         if (i7 == 2) {
                             Throwable th4 = (Throwable) gVar.d;
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             throw th4;
                         }
                         if (i7 != 3) {
@@ -79,7 +79,7 @@ public final class h implements c {
                         }
                         hVar3 = (de.h) gVar.d;
                         try {
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             hVar3.releaseIntercepted();
                             return gd.k.a;
                         } catch (Throwable th5) {
@@ -91,7 +91,7 @@ public final class h implements c {
                     dVar = gVar.e;
                     hVar = (h) gVar.d;
                     try {
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                     } catch (Throwable th6) {
                         th = th6;
                         zVar = new z(th);

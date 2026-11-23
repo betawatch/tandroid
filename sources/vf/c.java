@@ -28,9 +28,9 @@ import org.telegram.messenger.ShareBroadcastReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
@@ -40,24 +40,22 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ao0;
 import org.telegram.ui.g4;
-import org.telegram.ui.jw0;
 import org.telegram.ui.k3;
 import org.telegram.ui.web.s0;
 import org.telegram.ui.x2;
-import sg.h0;
-import tg.y;
-import zf.e;
+import s2.e;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static h0 a;
-    public static y b;
+    public static e a;
+    public static t1.a b;
     public static ag.a c;
     public static String d;
     public static WeakReference e;
@@ -219,23 +217,23 @@ public abstract class c {
         }
     }
 
-    public static h0 e() {
-        y yVar = b;
-        h0 h0Var = null;
-        if (yVar == null) {
+    public static e e() {
+        t1.a aVar = b;
+        e eVar = null;
+        if (aVar == null) {
             a = null;
         } else if (a == null) {
             pb.b bVar = new pb.b(27);
-            e eVar = (e) yVar.b;
+            zf.e eVar2 = (zf.e) aVar.b;
             zf.b bVar2 = new zf.b(bVar);
             try {
-                if (((zf.c) eVar).h1(bVar2)) {
-                    h0Var = new h0(14, bVar2, (ComponentName) yVar.c);
+                if (((zf.c) eVar2).h1(bVar2)) {
+                    eVar = new e(15, bVar2, (ComponentName) aVar.c);
                 }
             } catch (RemoteException unused) {
             }
-            a = h0Var;
-            new WeakReference(h0Var);
+            a = eVar;
+            new WeakReference(eVar);
         }
         return a;
     }
@@ -322,7 +320,7 @@ public abstract class c {
         Typeface typeface = g0.a;
         String K0 = uri == null ? null : g0.K0(uri.toString(), false);
         String lowerCase = K0 != null ? K0.toLowerCase() : "";
-        if (!np.u1(k10.t0).h4.contains(lowerCase)) {
+        if (!mp.u1(i10.t0).h4.contains(lowerCase)) {
             Matcher matcher = LaunchActivity.D1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb2 = new StringBuilder("https://t.me/");
@@ -394,7 +392,7 @@ public abstract class c {
 
     public static boolean h(String str) {
         try {
-            return TextUtils.equals(g0.K0(str, false), np.u1(k10.t0).X2);
+            return TextUtils.equals(g0.K0(str, false), mp.u1(i10.t0).X2);
         } catch (Exception e10) {
             a8.g(e10, true);
             return false;
@@ -660,7 +658,7 @@ public abstract class c {
         String lowerCase;
         String K0;
         PendingIntent broadcast;
-        h0 e10;
+        e e10;
         String sb2;
         Uri build;
         if (context == null || uri == null) {
@@ -726,7 +724,7 @@ public abstract class c {
             build = uri;
             uri2 = build;
         }
-        int i7 = k10.t0;
+        int i7 = i10.t0;
         boolean[] zArr = {false};
         boolean g10 = g(uri2, false, zArr);
         if (str != null) {
@@ -801,21 +799,21 @@ public abstract class c {
                 try {
                     Typeface typeface = g0.a;
                     String K02 = uri2 == null ? null : g0.K0(uri2.toString(), false);
-                    if (k10.i(k10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
+                    if (i10.i(i10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
                         t1[] t1VarArr = {new t1(3, context, null)};
                         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                         getwebpagepreview.message = uri2.toString();
                         str4 = str3;
                         z19 = z17;
-                        int i10 = 15;
+                        int i10 = 17;
                         bVar2 = bVar;
                         try {
-                            int sendRequest = ConnectionsManager.getInstance(k10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, t1VarArr, i7, uri2, context, z19));
+                            int sendRequest = ConnectionsManager.getInstance(i10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, t1VarArr, i7, uri2, context, z19));
                             if (bVar2 != null) {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.h3(new jw0(t1VarArr, sendRequest, i10), 1000L);
+                                g0.h3(new ao0(t1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -836,16 +834,16 @@ public abstract class c {
             }
             boolean z21 = false;
             K0 = g0.K0(uri2.toString().toLowerCase(), false);
-            if (np.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
-                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(np.u1(org.telegram.messenger.c.a(k10.t0).a).i4, "UTF-8")).build();
+            if (mp.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
+                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(mp.u1(org.telegram.messenger.c.a(i10.t0).a).i4, "UTF-8")).build();
             }
             if (z19) {
                 if (uri2 == null) {
-                    if (!np.u1(i7).T2(uri2.toString())) {
+                    if (!mp.u1(i7).T2(uri2.toString())) {
                     }
                 }
-                if (np.u1(i7).U2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
-                    if (np.u1(i7).h4.contains(K0)) {
+                if (mp.u1(i7).U2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
+                    if (mp.u1(i7).h4.contains(K0)) {
                         Intent intent = new Intent("android.intent.action.VIEW", uri2);
                         intent.addFlags(TLObject.FLAG_28);
                         t0.b.startActivity(intent);
@@ -881,17 +879,17 @@ public abstract class c {
                         Bundle bundle = new Bundle();
                         bundle.putBinder("android.support.customtabs.extra.SESSION", e10 == null ? null : (zf.b) e10.b);
                         intent3.putExtras(bundle);
-                        String N0 = hd.N0(2131751750, null);
+                        String N0 = gd.N0(2131751750, null);
                         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", N0);
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
                         z22 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", m6.x0(null, m6.S8, false));
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", n6.x0(null, n6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String N02 = hd.N0(2131745263, null);
+                        String N02 = gd.N0(2131745263, null);
                         z21 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();
@@ -930,7 +928,7 @@ public abstract class c {
                 try {
                     if (BubbleActivity.b0 == null) {
                         if (uri2 != null) {
-                            if (np.u1(i7).T2(uri2.toString())) {
+                            if (mp.u1(i7).T2(uri2.toString())) {
                                 if (TextUtils.isEmpty(str4)) {
                                     if (uri2.getScheme() != null && !"https".equals(uri2.getScheme()) && !"http".equals(uri2.getScheme()) && !"tonsite".equals(uri2.getScheme())) {
                                     }
@@ -1000,7 +998,7 @@ public abstract class c {
         uri2 = uri2.normalizeScheme();
         boolean z212 = false;
         K0 = g0.K0(uri2.toString().toLowerCase(), false);
-        if (np.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
+        if (mp.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
         }
         if (z19) {
         }

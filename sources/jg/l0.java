@@ -3,21 +3,21 @@ package jg;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class l0 extends v4.o {
+public final class l0 extends v4.p {
     public final /* synthetic */ q0 b;
 
     public l0(q0 q0Var) {
         this.b = q0Var;
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final boolean a(int i7, int i10) {
         return true;
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final boolean b(int i7, int i10) {
         q0 q0Var = this.b;
         o0 o0Var = (o0) q0Var.g3.get(i7);
@@ -43,12 +43,12 @@ public final class l0 extends v4.o {
         return (tLObject3 instanceof TLRPC.Chat) && ((TLRPC.Chat) tLObject).id == ((TLRPC.Chat) tLObject3).id;
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final int d() {
         return this.b.f3.size();
     }
 
-    @Override // v4.o
+    @Override // v4.p
     public final int e() {
         return this.b.g3.size();
     }

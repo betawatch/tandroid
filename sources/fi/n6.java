@@ -2,14 +2,14 @@ package fi;
 
 import java.io.File;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.f20;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n6 implements y10 {
+public final /* synthetic */ class n6 implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ o6 b;
 
@@ -18,17 +18,17 @@ public final /* synthetic */ class n6 implements y10 {
         this.b = o6Var;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         int i7 = this.a;
         o6 o6Var = this.b;
         switch (i7) {
             case 0:
-                hi.c7 c7Var = o6Var.c;
-                c7Var.c0 = (TLRPC.Document) obj;
+                hi.x7 x7Var = o6Var.c;
+                x7Var.c0 = (TLRPC.Document) obj;
                 TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
-                TLRPC.Document document = c7Var.c0;
-                int i10 = np.I8;
+                TLRPC.Document document = x7Var.c0;
+                int i10 = mp.I8;
                 TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                 tL_inputDocument.id = document.id;
                 tL_inputDocument.access_hash = document.access_hash;
@@ -37,11 +37,11 @@ public final /* synthetic */ class n6 implements y10 {
                 o6Var.c(tL_inputFileStoryDocument);
                 break;
             default:
-                f20 f20Var = (f20) obj;
-                o6Var.G = f20Var;
-                o6Var.F.r0 = f20Var;
-                o6Var.E = f20Var.r / 1000;
-                if (!f20Var.c()) {
+                d20 d20Var = (d20) obj;
+                o6Var.G = d20Var;
+                o6Var.F.r0 = d20Var;
+                o6Var.E = d20Var.r / 1000;
+                if (!d20Var.c()) {
                     if (new File(o6Var.F.r0.o).renameTo(new File(o6Var.e))) {
                         org.telegram.messenger.w7.G(o6Var.N.a).h0(false, 33554432, o6Var.e, false);
                         break;

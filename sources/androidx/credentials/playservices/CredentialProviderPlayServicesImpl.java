@@ -19,8 +19,8 @@ import di.l6;
 import di.v6;
 import f7.v;
 import gd.k;
-import hi.t5;
-import hi.w4;
+import h6.o;
+import hi.u0;
 import j7.c;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,13 +33,12 @@ import n6.d;
 import org.json.JSONException;
 import rd.l;
 import v0.i;
-import v0.o;
 import v0.q;
 import w0.a;
 import w0.h;
 import w7.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements i {
     public static final g Companion = new g();
@@ -99,7 +98,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onClearCredential$lambda$14$lambda$13$lambda$12(v0.g gVar, r rVar) {
-        gVar.a(rVar.a);
+        gVar.T(rVar.a);
     }
 
     private static final k onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, v0.g gVar, c cVar) {
@@ -130,7 +129,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onClearCredential$lambda$7$lambda$6(v0.g gVar) {
-        gVar.a(new a("clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added", "androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION"));
+        gVar.T(new a("clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added", "androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION"));
     }
 
     private static final k onCreateCredential$lambda$5(Executor executor, v0.g gVar) {
@@ -140,7 +139,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onCreateCredential$lambda$5$lambda$4(v0.g gVar) {
-        gVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
+        gVar.T(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -151,7 +150,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onGetCredential$lambda$1$lambda$0(v0.g gVar) {
-        gVar.a(new h(1, "this device requires a Google Play Services update for the given feature to be supported"));
+        gVar.T(new h(1, "this device requires a Google Play Services update for the given feature to be supported"));
     }
 
     private static final k onGetCredential$lambda$3(Executor executor, v0.g gVar) {
@@ -161,7 +160,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onGetCredential$lambda$3$lambda$2(v0.g gVar) {
-        gVar.a(new h(1, "getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
+        gVar.T(new h(1, "getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.g gVar) {
@@ -178,7 +177,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
         com.google.android.gms.common.api.internal.g.a();
         t b10 = u.b();
         b10.d = new n6.c[]{l7.d.a};
-        b10.c = new w4(a10, 9);
+        b10.c = new o(a10, 11);
         b10.b = false;
         b10.a = 1554;
         a10.e(1, b10.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
@@ -226,7 +225,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24(v0.g gVar, Exception exc) {
-        gVar.a(new a(exc.getMessage()));
+        gVar.T(new a(exc.getMessage()));
     }
 
     public final d getGoogleApiAvailability() {
@@ -275,7 +274,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
             k7.g gVar3 = new k7.g(context, k7.g.l, aVar, com.google.android.gms.common.api.i.c);
             t b10 = u.b();
             b10.d = new n6.c[]{t7.b.b};
-            b10.c = new t5(gVar2, 7);
+            b10.c = new u0(gVar2, 8);
             b10.a = 32704;
             Task e10 = gVar3.e(1, b10.a());
             j.d(e10, "doWrite(...)");
@@ -410,7 +409,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
                 new k7.g(context2, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest).addOnSuccessListener(new v6(new e1.b(cancellationSignal, aVar2, executor, callback, 1), 4)).addOnFailureListener(new l6(request, aVar2, callback, executor, cancellationSignal));
                 return;
             }
-        } while (!(((v0.h) it.next()) instanceof o));
+        } while (!(((v0.h) it.next()) instanceof v0.o));
         if (!isAvailableOnDevice(MIN_GMS_APK_VERSION_DIGITAL_CRED)) {
             Companion.getClass();
             if (g.a(cancellationSignal)) {
@@ -429,8 +428,8 @@ public final class CredentialProviderPlayServicesImpl implements i {
         }
         ArrayList arrayList2 = new ArrayList();
         for (v0.h hVar4 : list) {
-            if (hVar4 instanceof o) {
-                arrayList2.add(new j7.i(hVar4.a, hVar4.b, hVar4.c, ((o) hVar4).e, "", ""));
+            if (hVar4 instanceof v0.o) {
+                arrayList2.add(new j7.i(hVar4.a, hVar4.b, hVar4.c, ((v0.o) hVar4).e, "", ""));
             }
         }
         Bundle bundle2 = new Bundle();

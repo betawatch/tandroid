@@ -1,72 +1,44 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.animation.AnimatorSet;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.sd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
-    public final TextView a;
-    public final LinearLayout b;
-    public View.OnClickListener c;
-    public int d;
-    public final int[] e;
+    public TextView a;
+    public TextView b;
+    public sd0 c;
+    public AnimatorSet d;
+    public i6.g e;
 
-    public t5(Context context) {
-        super(context);
-        int i7 = 8;
-        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setGravity(5);
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 12.0f);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, c8.ma.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.b = linearLayout;
-        linearLayout.setOrientation(0);
-        for (int i10 = 0; i10 < this.e.length; i10++) {
-            RadioButton radioButton = new RadioButton(context);
-            radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
-            radioButton.setTag(Integer.valueOf(i10));
-            this.b.addView(radioButton, c8.ma.l(1.0f / this.e.length, 0, -1));
-            radioButton.setOnClickListener(new a(this, i7));
+    public final void a(String str, int i7, float f10) {
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
         }
-        addView(this.b, c8.ma.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
-    }
-
-    public final void a(int i7, String str) {
-        this.d = i7;
-        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
-        b(false);
-    }
-
-    public final void b(boolean z10) {
-        LinearLayout linearLayout = this.b;
-        int childCount = linearLayout.getChildCount();
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt = linearLayout.getChildAt(i7);
-            if (childAt instanceof RadioButton) {
-                RadioButton radioButton = (RadioButton) childAt;
-                int intValue = ((Integer) radioButton.getTag()).intValue();
-                int[] iArr = this.e;
-                radioButton.a(this.d == iArr[intValue], z10);
-                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
-            }
+        org.telegram.messenger.g0.r(this.e);
+        textView2.setTag(null);
+        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        if (f10 > 0.0f) {
+            textView2.setText("+" + ((int) f10));
+        } else {
+            textView2.setText("" + ((int) f10));
         }
-    }
-
-    public int getCurrentColor() {
-        return this.d;
+        textView2.setAlpha(0.0f);
+        textView.setAlpha(1.0f);
+        sd0 sd0Var = this.c;
+        sd0Var.h = i7;
+        sd0Var.n = 100;
+        sd0Var.a((int) f10, false);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -74,8 +46,13 @@ public final class t5 extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(40.0f), TLObject.FLAG_30));
     }
 
+    public void setSeekBarDelegate(rd0 rd0Var) {
+        this.c.setDelegate(new e9(this, rd0Var));
+    }
+
     @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.c = onClickListener;
+    public void setTag(Object obj) {
+        super.setTag(obj);
+        this.c.setTag(obj);
     }
 }

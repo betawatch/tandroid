@@ -4,15 +4,15 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class pq0 extends ImageView {
     public int a;
     public boolean b;
     public boolean c;
     public boolean d;
-    public org.telegram.ui.Components.i61 e;
-    public final org.telegram.ui.Components.nr f;
+    public org.telegram.ui.Components.h61 e;
+    public final org.telegram.ui.Components.kr f;
     public ValueAnimator h;
     public final /* synthetic */ PhotoViewer n;
 
@@ -24,14 +24,14 @@ public final class pq0 extends ImageView {
         this.b = false;
         this.c = false;
         this.d = false;
-        this.f = org.telegram.ui.Components.nr.i;
+        this.f = org.telegram.ui.Components.kr.i;
         setAlpha(0.0f);
     }
 
     public static void a(pq0 pq0Var) {
         PhotoViewer photoViewer = pq0Var.n;
-        org.telegram.ui.Components.i61 i61Var = photoViewer.G2;
-        if (i61Var == null || i61Var.U() == -9223372036854775807L) {
+        org.telegram.ui.Components.h61 h61Var = photoViewer.G2;
+        if (h61Var == null || h61Var.U() == -9223372036854775807L) {
             ValueAnimator valueAnimator = pq0Var.h;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

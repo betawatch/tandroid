@@ -1,25 +1,61 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements org.telegram.messenger.q10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 
-    public /* synthetic */ ft(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class ft extends ShapeDrawable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ EditTextBoldCursor b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ft(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.messenger.q10
-    public final Object run() {
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                return Boolean.valueOf(((EditTextBoldCursor) this.b).w());
-            case 1:
-                return ((w30) this.b).getCloseIntoObject();
+                super.draw(canvas);
+                this.b.H0 = true;
+                break;
             default:
-                return Boolean.valueOf(((ot) this.b).w());
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.e1) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.H0 = true;
+                    break;
+                }
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.j0 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.F0);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public ft(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

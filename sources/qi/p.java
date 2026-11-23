@@ -1,6 +1,6 @@
 package qi;
 
-import ai.z0;
+import ai.v0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,10 +13,10 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.a8;
+import org.telegram.ui.web.t1;
 import p4.r0;
-import p4.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class p implements AutoCloseable {
     public final r0 b;
@@ -31,7 +31,7 @@ public final class p implements AutoCloseable {
     public final HashMap n = new HashMap();
     public final int e = 256;
     public final long f = 8388608;
-    public final ExecutorService d = Executors.newSingleThreadExecutor(new z0(8));
+    public final ExecutorService d = Executors.newSingleThreadExecutor(new v0(8));
 
     public p(r0 r0Var, r0 r0Var2) {
         this.b = r0Var;
@@ -134,19 +134,19 @@ public final class p implements AutoCloseable {
         }
     }
 
-    public final void c(n nVar, ji.l lVar) {
-        l lVar2 = new l(nVar, lVar);
+    public final void c(n nVar, j6.k kVar) {
+        l lVar = new l(nVar, kVar);
         int i7 = this.e;
         if (i7 == 0) {
             return;
         }
-        long j3 = lVar2.b;
+        long j3 = lVar.b;
         long j10 = this.f;
         if (j3 > j10) {
             return;
         }
         LinkedHashMap linkedHashMap = this.h;
-        linkedHashMap.put(nVar, lVar2);
+        linkedHashMap.put(nVar, lVar);
         this.r += j3;
         while (true) {
             if (linkedHashMap.size() <= i7 && this.r <= j10) {
@@ -206,7 +206,7 @@ public final class p implements AutoCloseable {
                 ArrayList arrayList2 = new ArrayList();
                 arrayList2.add(oVar);
                 this.n.put(nVar, arrayList2);
-                this.d.execute(new z(6, this, nVar));
+                this.d.execute(new t1(10, this, nVar));
                 return oVar;
             } catch (Throwable th2) {
                 throw th2;

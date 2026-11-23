@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class uk0 extends FrameLayout {
     public final Paint a;
-    public final h40 b;
+    public final e40 b;
     public final RectF c;
     public final float d;
     public float e;
@@ -19,12 +19,12 @@ public final class uk0 extends FrameLayout {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
-        h40 h40Var = new h40(this, 1);
-        this.b = h40Var;
+        e40 e40Var = new e40(this, 1);
+        this.b = e40Var;
         this.c = new RectF();
         this.d = (org.telegram.messenger.g0.L(3.0f) * 0.5f) + org.telegram.messenger.g0.L(5.0f);
         a(paint, 0.2f);
-        a(h40Var, 1.0f);
+        a(e40Var, 1.0f);
         setWillNotDraw(false);
     }
 

@@ -2,7 +2,7 @@ package com.google.firebase.concurrent;
 
 import android.os.Build;
 import android.os.StrictMode;
-import c8.wc;
+import c8.xc;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.Arrays;
@@ -20,9 +20,9 @@ import u9.m;
 import u9.q;
 import ug.x;
 import v9.a;
-import v9.f;
+import v9.g;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final m a = new m(new ab.m(3));
@@ -30,14 +30,14 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final m c = new m(new ab.m(5));
     public static final m d = new m(new ab.m(6));
 
-    public static f a() {
+    public static g a() {
         StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
         int i7 = Build.VERSION.SDK_INT;
         detectNetwork.detectResourceMismatches();
         if (i7 >= 26) {
             detectNetwork.detectUnbufferedIo();
         }
-        return new f(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
+        return new g(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -49,7 +49,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(qVar);
         for (q qVar2 : qVarArr) {
-            wc.a(qVar2, "Null interface");
+            xc.a(qVar2, "Null interface");
         }
         Collections.addAll(hashSet, qVarArr);
         u9.a aVar = new u9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new x(8), hashSet3);
@@ -60,7 +60,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(qVar3);
         for (q qVar4 : qVarArr2) {
-            wc.a(qVar4, "Null interface");
+            xc.a(qVar4, "Null interface");
         }
         Collections.addAll(hashSet4, qVarArr2);
         u9.a aVar2 = new u9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new x(9), hashSet6);
@@ -71,7 +71,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(qVar5);
         for (q qVar6 : qVarArr3) {
-            wc.a(qVar6, "Null interface");
+            xc.a(qVar6, "Null interface");
         }
         Collections.addAll(hashSet7, qVarArr3);
         u9.a aVar3 = new u9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new x(10), hashSet9);

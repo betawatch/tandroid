@@ -13,9 +13,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, org.telegram.ui.ActionBar.b6 {
+public final class o2 extends FrameLayout implements org.telegram.ui.Cells.h9, org.telegram.ui.ActionBar.c6 {
     public final /* synthetic */ g4 E;
     public int a;
     public final j2 b;
@@ -48,7 +48,7 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, o
         m2 m2Var = new m2(this);
         this.c = m2Var;
         j2Var.setAdapter(m2Var);
-        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
+        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false);
         this.a = x02;
         org.telegram.messenger.g0.A3(j2Var, x02);
         addView(j2Var);
@@ -58,12 +58,12 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, o
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d6));
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.f;
         if (z2Var != null) {
@@ -131,7 +131,7 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, o
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131754855, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754855, null));
         if (this.f != null) {
             sb2.append(", ");
             sb2.append(this.f.d.getText());
@@ -186,7 +186,7 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, o
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.e;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.y.H) {
-                alignment = org.telegram.ui.Components.zu0.a();
+                alignment = org.telegram.ui.Components.yu0.a();
             }
             z2 n11 = g4.n(g4Var, this, null, richText2, L2, 0, pageblockslideshow2, alignment, 0, this.y);
             this.h = n11;
@@ -215,14 +215,14 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.i9, o
         return g4.j(g4Var, this.y, motionEvent, this, this.h, this.n, this.r + this.s) || super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         j2 j2Var = this.b;
         if (j2Var == null) {
             return;
         }
         try {
-            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
+            int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false);
             if (x02 != this.a) {
                 this.a = x02;
                 org.telegram.messenger.g0.A3(j2Var, x02);

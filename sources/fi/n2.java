@@ -3,25 +3,25 @@ package fi;
 import android.app.Activity;
 import android.content.Context;
 import java.util.WeakHashMap;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.ti;
 import org.telegram.ui.bn;
 import org.telegram.ui.pl;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class n2 extends ui {
+public final class n2 extends ti {
     public final /* synthetic */ int J4;
     public final /* synthetic */ Object K4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n2(org.telegram.ui.ActionBar.g2 g2Var, Activity activity, org.telegram.ui.ActionBar.g2 g2Var2, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(activity, g2Var2, false, false, true, h6Var);
+    public /* synthetic */ n2(org.telegram.ui.ActionBar.g2 g2Var, Activity activity, org.telegram.ui.ActionBar.g2 g2Var2, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(activity, g2Var2, false, false, true, i6Var);
         this.J4 = i7;
         this.K4 = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.ui, org.telegram.ui.ActionBar.w2
+    @Override // org.telegram.ui.Components.ti, org.telegram.ui.ActionBar.w2
     public void L() {
         int i7;
         int i10;
@@ -146,15 +146,15 @@ public final class n2 extends ui {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(Context context, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.h6 h6Var, Runnable runnable) {
-        super(context, g2Var, false, false, true, h6Var);
+    public n2(Context context, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.i6 i6Var, Runnable runnable) {
+        super(context, g2Var, false, false, true, i6Var);
         this.J4 = 3;
         this.K4 = runnable;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(z3 z3Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, null, false, false, true, h6Var);
+    public n2(z3 z3Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, null, false, false, true, i6Var);
         this.J4 = 0;
         this.K4 = z3Var;
     }

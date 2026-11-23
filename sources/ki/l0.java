@@ -7,23 +7,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import c8.ma;
-import c8.ra;
-import hi.o4;
+import c8.na;
+import c8.sa;
+import hi.z4;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class l0 extends LinearLayout implements rh.a, te.i {
-    public final h6 a;
+    public final i6 a;
     public final FrameLayout b;
     public TLRPC.TL_replyKeyboardMarkup c;
     public i0 d;
@@ -37,12 +37,12 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
     public int x;
     public final te.j y;
 
-    public l0(Context context, h6 h6Var) {
+    public l0(Context context, i6 i6Var) {
         super(context);
         this.n = new ArrayList();
         this.w = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, null);
-        this.y = new te.j(this, nr.h, 320L);
-        this.a = h6Var;
+        this.y = new te.j(this, kr.h, 320L);
+        this.a = i6Var;
         setOrientation(1);
         ScrollView scrollView = new ScrollView(context);
         this.r = scrollView;
@@ -68,7 +68,7 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
     }
 
     public final void d() {
-        org.telegram.messenger.g0.x3(this.r, m6.w0(m6.zf, this.a));
+        org.telegram.messenger.g0.x3(this.r, n6.w0(n6.zf, this.a));
         int i7 = 0;
         while (true) {
             ArrayList arrayList = this.n;
@@ -87,11 +87,11 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
         super.dispatchDraw(canvas);
         float R0 = org.telegram.messenger.g0.R0(this.s);
         if (R0 > 0.0f) {
-            int r12 = m6.r1(R0, m6.w0(m6.zf, this.a));
+            int r12 = n6.r1(R0, n6.w0(n6.zf, this.a));
             int i7 = this.x;
             GradientDrawable gradientDrawable = this.w;
             if (i7 != r12) {
-                gradientDrawable.setColors(new int[]{r12, m6.r1(0.66f, r12), i0.a.o(r12, 0)});
+                gradientDrawable.setColors(new int[]{r12, n6.r1(0.66f, r12), i0.a.o(r12, 0)});
                 this.x = r12;
             }
             gradientDrawable.setBounds(0, getMeasuredHeight() - this.s, getMeasuredWidth(), getMeasuredHeight());
@@ -100,7 +100,7 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
     }
 
     @Override // te.i
-    public final void f(te.j jVar) {
+    public final void g(te.j jVar) {
         Iterator it = this.y.iterator();
         while (it.hasNext()) {
             te.e eVar = (te.e) it.next();
@@ -196,13 +196,13 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
         float f11 = 4.0f;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (o10.B(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (m10.B(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
         int i10 = 0;
         while (i10 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i10);
             LinearLayout linearLayout = new LinearLayout(getContext());
             linearLayout.setOrientation(i7);
-            k0Var2.addView(linearLayout, ma.k(8.0f, i10 == 0 ? 8.0f : f11, 8.0f, i10 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : f10, -1, this.h));
+            k0Var2.addView(linearLayout, na.k(8.0f, i10 == 0 ? 8.0f : f11, 8.0f, i10 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : f10, -1, this.h));
             float size = 1.0f / keyboardButtonRow.buttons.size();
             int i11 = i7;
             while (i11 < keyboardButtonRow.buttons.size()) {
@@ -217,10 +217,10 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
                 j0Var.h = z14;
                 j0Var.a();
                 FrameLayout frameLayout = new FrameLayout(getContext());
-                frameLayout.addView(j0Var, ma.c(-1.0f, -1));
-                linearLayout.addView(frameLayout, ma.m(size, 0, -1, 0, i11 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
-                j0Var.setOnClickListener(new o4(this, 11));
-                ra.b(j0Var, 0.02f, 1.5f);
+                frameLayout.addView(j0Var, na.c(-1.0f, -1));
+                linearLayout.addView(frameLayout, na.m(size, 0, -1, 0, i11 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
+                j0Var.setOnClickListener(new z4(this, 11));
+                sa.b(j0Var, 0.02f, 1.5f);
                 arrayList.add(j0Var);
                 j0Var.a();
                 i11++;
@@ -243,7 +243,7 @@ public abstract class l0 extends LinearLayout implements rh.a, te.i {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (o10.B(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (m10.B(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
         this.h = max;
         int L = org.telegram.messenger.g0.L(max);
         Iterator it = this.y.iterator();

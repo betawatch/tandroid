@@ -8,8 +8,8 @@ import da.v1;
 import di.fc;
 import fi.b4;
 import fi.s0;
-import h9.r1;
-import hi.xa;
+import h9.q1;
+import hi.sb;
 import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Comparator {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class c implements Comparator {
                 r rVar2 = (r) obj2;
                 boolean z10 = rVar.e;
                 int i13 = rVar.s;
-                r1 a10 = (z10 && rVar.n) ? s.l : s.l.a();
+                q1 a10 = (z10 && rVar.n) ? s.l : s.l.a();
                 boolean z11 = rVar.f.F;
                 h9.w wVar = h9.w.a;
                 if (z11) {
@@ -140,7 +140,7 @@ public final /* synthetic */ class c implements Comparator {
                 String str2 = p0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             default:
-                return (int) (((xa) obj2).e - ((xa) obj).e);
+                return (int) (((sb) obj2).e - ((sb) obj).e);
         }
         return i7 - i10;
     }

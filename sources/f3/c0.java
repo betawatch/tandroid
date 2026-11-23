@@ -1,40 +1,13 @@
 package f3;
 
-import a8.p0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c0 {
-    public static final c0 c = new c0(0, 0);
-    public final long a;
-    public final long b;
+public interface c0 {
+    boolean d();
 
-    public c0(long j3, long j10) {
-        this.a = j3;
-        this.b = j10;
-    }
+    boolean e();
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && c0.class == obj.getClass()) {
-            c0 c0Var = (c0) obj;
-            if (this.a == c0Var.a && this.b == c0Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
+    b0 f(long j3);
 
-    public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[timeUs=");
-        sb2.append(this.a);
-        sb2.append(", position=");
-        return p0.r(sb2, this.b, "]");
-    }
+    long h();
 }

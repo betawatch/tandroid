@@ -2,13 +2,13 @@ package kg;
 
 import android.os.Bundle;
 import java.io.Serializable;
-import org.telegram.messenger.w10;
-import org.telegram.ui.Components.o41;
+import org.telegram.messenger.u10;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements org.telegram.ui.ActionBar.q1, w10 {
+public final /* synthetic */ class t0 implements org.telegram.ui.ActionBar.q1, u10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ u0 b;
 
@@ -18,7 +18,7 @@ public final /* synthetic */ class t0 implements org.telegram.ui.ActionBar.q1, w
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 this.b.c0();
@@ -29,15 +29,15 @@ public final /* synthetic */ class t0 implements org.telegram.ui.ActionBar.q1, w
         }
     }
 
-    @Override // org.telegram.messenger.w10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        o41 o41Var = (o41) obj;
+    @Override // org.telegram.messenger.u10
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        n41 n41Var = (n41) obj;
         u0 u0Var = this.b;
-        if (u0Var.c.h(o41Var)) {
+        if (u0Var.c.h(n41Var)) {
             return;
         }
-        int i7 = o41Var.d;
-        if (i7 == 2 || o41Var.a == 17) {
+        int i7 = n41Var.d;
+        if (i7 == 2 || n41Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", u0Var.getUserConfig().e());
             bundle.putInt("chatMode", 5);

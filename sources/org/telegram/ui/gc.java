@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class gc extends View {
     public final Paint a;
@@ -18,9 +18,9 @@ public final class gc extends View {
     public final Path f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.mc r;
+    public final org.telegram.ui.Components.lc r;
     public boolean s;
-    public final org.telegram.ui.Components.d6 w;
+    public final org.telegram.ui.Components.c6 w;
     public final /* synthetic */ hc x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,8 +34,8 @@ public final class gc extends View {
         this.d = new Paint(1);
         this.e = new Path();
         this.f = new Path();
-        this.r = new org.telegram.ui.Components.mc(this);
-        this.w = new org.telegram.ui.Components.d6(this, 0L, 320L, org.telegram.ui.Components.nr.h);
+        this.r = new org.telegram.ui.Components.lc(this);
+        this.w = new org.telegram.ui.Components.c6(this, 0L, 320L, org.telegram.ui.Components.kr.h);
         paint.setStyle(Paint.Style.STROKE);
     }
 
@@ -45,27 +45,27 @@ public final class gc extends View {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(org.telegram.messenger.cp cpVar) {
-        org.telegram.ui.ActionBar.h6 h6Var = this.x.a;
-        boolean d = h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q();
+    public final void a(org.telegram.messenger.bp bpVar) {
+        org.telegram.ui.ActionBar.i6 i6Var = this.x.a;
+        boolean b10 = i6Var != null ? i6Var.b() : org.telegram.ui.ActionBar.n6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
-        if (d) {
-            if (cpVar.g() != cpVar.f()) {
-                if (!(cpVar.i() != cpVar.f())) {
-                    paint2.setColor(cpVar.e(1, h6Var));
-                    paint.setColor(cpVar.e(0, h6Var));
-                    this.d.setColor(cpVar.e(2, h6Var));
-                    this.h = cpVar.g() == cpVar.f();
-                    this.n = cpVar.i() != cpVar.f();
+        if (b10) {
+            if (bpVar.g() != bpVar.f()) {
+                if (!(bpVar.i() != bpVar.f())) {
+                    paint2.setColor(bpVar.e(1, i6Var));
+                    paint.setColor(bpVar.e(0, i6Var));
+                    this.d.setColor(bpVar.e(2, i6Var));
+                    this.h = bpVar.g() == bpVar.f();
+                    this.n = bpVar.i() != bpVar.f();
                 }
             }
         }
-        paint2.setColor(cpVar.e(0, h6Var));
-        paint.setColor(cpVar.e(1, h6Var));
-        this.d.setColor(cpVar.e(2, h6Var));
-        this.h = cpVar.g() == cpVar.f();
-        this.n = cpVar.i() != cpVar.f();
+        paint2.setColor(bpVar.e(0, i6Var));
+        paint.setColor(bpVar.e(1, i6Var));
+        this.d.setColor(bpVar.e(2, i6Var));
+        this.h = bpVar.g() == bpVar.f();
+        this.n = bpVar.i() != bpVar.f();
     }
 
     @Override // android.view.View

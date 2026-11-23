@@ -1,6 +1,6 @@
 package d3;
 
-import a8.la;
+import a8.ma;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.os.Trace;
@@ -10,7 +10,7 @@ import e2.x1;
 import h2.l0;
 import x2.d1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class a extends l2.b {
     public final long J;
@@ -43,7 +43,7 @@ public abstract class a extends l2.b {
     public int k0;
     public int l0;
     public long m0;
-    public l2.d n0;
+    public l2.e n0;
 
     public a(long j3, Handler handler, h0 h0Var, int i7) {
         super(2);
@@ -56,7 +56,7 @@ public abstract class a extends l2.b {
         this.Z = 0;
         this.T = -1;
         this.b0 = 0;
-        this.n0 = new l2.d();
+        this.n0 = new l2.e();
     }
 
     public abstract k2.e F(e2.u uVar);
@@ -74,10 +74,10 @@ public abstract class a extends l2.b {
             if (videoDecoderOutputBuffer == null) {
                 return false;
             }
-            l2.d dVar = this.n0;
-            int i7 = dVar.f;
+            l2.e eVar2 = this.n0;
+            int i7 = eVar2.f;
             int i10 = videoDecoderOutputBuffer.skippedOutputBufferCount;
-            dVar.f = i7 + i10;
+            eVar2.f = i7 + i10;
             this.l0 -= i10;
         }
         if (this.S.isEndOfStream()) {
@@ -205,11 +205,11 @@ public abstract class a extends l2.b {
                 this.Z = 2;
                 return false;
             }
-            k8.a aVar = this.c;
-            aVar.g0();
-            int w10 = w(aVar, hVar2, 0);
+            jb.m mVar = this.c;
+            mVar.T();
+            int w10 = w(mVar, hVar2, 0);
             if (w10 == -5) {
-                K(aVar);
+                K(mVar);
                 return true;
             }
             if (w10 == -4) {
@@ -308,19 +308,19 @@ public abstract class a extends l2.b {
         }
     }
 
-    public final void K(k8.a aVar) {
-        l2.e eVar;
+    public final void K(jb.m mVar) {
+        l2.f fVar;
         this.e0 = true;
-        e2.u uVar = (e2.u) aVar.c;
+        e2.u uVar = (e2.u) mVar.c;
         uVar.getClass();
-        q2.g gVar = (q2.g) aVar.b;
+        q2.g gVar = (q2.g) mVar.b;
         p5.c.w(this.Y, gVar);
         this.Y = gVar;
         e2.u uVar2 = this.O;
         this.O = uVar;
-        k2.e eVar2 = this.Q;
+        k2.e eVar = this.Q;
         wf.b bVar = this.L;
-        if (eVar2 == null) {
+        if (eVar == null) {
             J();
             e2.u uVar3 = this.O;
             uVar3.getClass();
@@ -332,15 +332,15 @@ public abstract class a extends l2.b {
             return;
         }
         if (gVar != this.X) {
-            String name = eVar2.getName();
+            String name = eVar.getName();
             uVar2.getClass();
-            eVar = new l2.e(name, uVar2, uVar, 0, 128);
+            fVar = new l2.f(name, uVar2, uVar, 0, 128);
         } else {
-            String name2 = eVar2.getName();
+            String name2 = eVar.getName();
             uVar2.getClass();
-            eVar = new l2.e(name2, uVar2, uVar, 0, 8);
+            fVar = new l2.f(name2, uVar2, uVar, 0, 8);
         }
-        if (eVar.d == 0) {
+        if (fVar.d == 0) {
             if (this.a0) {
                 this.Z = 1;
             } else {
@@ -352,7 +352,7 @@ public abstract class a extends l2.b {
         uVar4.getClass();
         Handler handler2 = (Handler) bVar.b;
         if (handler2 != null) {
-            handler2.post(new aa.r(bVar, uVar4, eVar, 17));
+            handler2.post(new aa.r(bVar, uVar4, fVar, 17));
         }
     }
 
@@ -419,14 +419,14 @@ public abstract class a extends l2.b {
 
     public final void P(int i7, int i10) {
         int i11;
-        l2.d dVar = this.n0;
-        dVar.h += i7;
+        l2.e eVar = this.n0;
+        eVar.h += i7;
         int i12 = i7 + i10;
-        dVar.g += i12;
+        eVar.g += i12;
         this.j0 += i12;
         int i13 = this.k0 + i12;
         this.k0 = i13;
-        dVar.i = Math.max(i13, dVar.i);
+        eVar.i = Math.max(i13, eVar.i);
         int i14 = this.K;
         if (i14 <= 0 || (i11 = this.j0) < i14 || i11 <= 0) {
             return;
@@ -443,7 +443,7 @@ public abstract class a extends l2.b {
         this.i0 = elapsedRealtime;
     }
 
-    @Override // l2.b, l2.i1
+    @Override // l2.b, l2.j1
     public final void c(int i7, Object obj) {
         Surface surface;
         if (i7 != 1) {
@@ -505,7 +505,7 @@ public abstract class a extends l2.b {
     }
 
     @Override // l2.b
-    public final boolean l() {
+    public final boolean k() {
         return this.g0;
     }
 
@@ -520,7 +520,7 @@ public abstract class a extends l2.b {
     public final boolean m() {
         boolean h;
         if (this.O != null) {
-            if (k()) {
+            if (j()) {
                 h = this.E;
             } else {
                 d1 d1Var = this.r;
@@ -561,12 +561,12 @@ public abstract class a extends l2.b {
 
     @Override // l2.b
     public final void o(boolean z10, boolean z11) {
-        l2.d dVar = new l2.d();
-        this.n0 = dVar;
+        l2.e eVar = new l2.e();
+        this.n0 = eVar;
         wf.b bVar = this.L;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new g0(bVar, dVar, 0));
+            handler.post(new g0(bVar, eVar, 0));
         }
         this.b0 = z11 ? 1 : 0;
     }
@@ -624,20 +624,20 @@ public abstract class a extends l2.b {
             return;
         }
         if (this.O == null) {
-            k8.a aVar = this.c;
-            aVar.g0();
+            jb.m mVar = this.c;
+            mVar.T();
             this.N.clear();
-            int w10 = w(aVar, this.N, 2);
+            int w10 = w(mVar, this.N, 2);
             if (w10 != -5) {
                 if (w10 == -4) {
-                    la.p(this.N.isEndOfStream());
+                    ma.p(this.N.isEndOfStream());
                     this.f0 = true;
                     this.g0 = true;
                     return;
                 }
                 return;
             }
-            K(aVar);
+            K(mVar);
         }
         J();
         if (this.Q != null) {

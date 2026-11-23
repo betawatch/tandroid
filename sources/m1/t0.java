@@ -1,6 +1,6 @@
 package m1;
 
-import c8.rb;
+import c8.sb;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.channels.FileLock;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class t0 implements m0 {
     public final id.h a;
@@ -33,8 +33,8 @@ public final class t0 implements m0 {
         this.e = ".version";
         this.f = "fcntl failed: EAGAIN";
         this.g = new ie.d();
-        this.h = b5.a.c(new q0(this, 1));
-        this.i = b5.a.c(new q0(this, 0));
+        this.h = b7.h.b(new q0(this, 1));
+        this.i = b7.h.b(new q0(this, 0));
     }
 
     public static final void f(t0 t0Var, File file) {
@@ -101,7 +101,7 @@ public final class t0 implements m0 {
                             if (r52 == 1) {
                                 z11 = r32.d;
                                 dVar2 = r32.a;
-                                b7.h.b(obj);
+                                c8.z.b(obj);
                                 if (z11) {
                                     dVar2.f(null);
                                 }
@@ -115,11 +115,11 @@ public final class t0 implements m0 {
                             fileInputStream = r32.b;
                             dVar = r32.a;
                             try {
-                                b7.h.b(obj);
+                                c8.z.b(obj);
                                 if (fileLock2 != null) {
                                     fileLock2.release();
                                 }
-                                rb.a(fileInputStream, null);
+                                sb.a(fileInputStream, null);
                                 if (z10) {
                                     dVar.f(null);
                                 }
@@ -131,7 +131,7 @@ public final class t0 implements m0 {
                                 throw th;
                             }
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         ie.d dVar3 = this.g;
                         boolean e10 = dVar3.e();
                         try {
@@ -170,7 +170,7 @@ public final class t0 implements m0 {
                                         fileLock2 = fileLock;
                                         if (fileLock2 != null) {
                                         }
-                                        rb.a(fileInputStream, null);
+                                        sb.a(fileInputStream, null);
                                         if (z10) {
                                         }
                                         return obj;
@@ -215,7 +215,7 @@ public final class t0 implements m0 {
                     throw th6;
                 } catch (Throwable th7) {
                     try {
-                        rb.a(r52, th6);
+                        sb.a(r52, th6);
                         throw th7;
                     } catch (Throwable th8) {
                         th = th8;
@@ -287,7 +287,7 @@ public final class t0 implements m0 {
                             r12 = jd.a.a;
                             i7 = r0Var.f;
                             if (i7 != 0) {
-                                b7.h.b(obj);
+                                c8.z.b(obj);
                                 r0Var.a = this;
                                 r0Var.b = lVar;
                                 ie.d dVar = this.g;
@@ -308,13 +308,13 @@ public final class t0 implements m0 {
                                     closeable2 = (Closeable) r0Var.b;
                                     obj5 = (ie.a) r0Var.a;
                                     try {
-                                        b7.h.b(obj);
+                                        c8.z.b(obj);
                                         obj4 = obj;
                                         if (fileLock != null) {
                                             fileLock.release();
                                         }
                                         try {
-                                            rb.a(closeable2, null);
+                                            sb.a(closeable2, null);
                                             ((ie.d) obj5).f(null);
                                             return obj4;
                                         } catch (Throwable th3) {
@@ -334,7 +334,7 @@ public final class t0 implements m0 {
                                 obj2 = (ie.a) r0Var.b;
                                 lVar2 = (rd.l) r0Var.a;
                                 try {
-                                    b7.h.b(obj);
+                                    c8.z.b(obj);
                                     obj3 = obj;
                                     fileLock2 = (FileLock) obj3;
                                 } catch (Throwable th5) {
@@ -357,7 +357,7 @@ public final class t0 implements m0 {
                                         obj5 = obj2;
                                         if (fileLock != null) {
                                         }
-                                        rb.a(closeable2, null);
+                                        sb.a(closeable2, null);
                                         ((ie.d) obj5).f(null);
                                         return obj4;
                                     }
@@ -373,7 +373,7 @@ public final class t0 implements m0 {
                             ie.a aVar = (ie.a) r0Var.c;
                             rd.l lVar3 = (rd.l) r0Var.b;
                             t0Var = (t0) r0Var.a;
-                            b7.h.b(obj);
+                            c8.z.b(obj);
                             obj = aVar;
                             lVar = lVar3;
                             FileOutputStream fileOutputStream = new FileOutputStream((File) t0Var.h.getValue());
@@ -428,7 +428,7 @@ public final class t0 implements m0 {
             try {
                 throw th9;
             } catch (Throwable th10) {
-                rb.a(r12, th9);
+                sb.a(r12, th9);
                 throw th10;
             }
         }

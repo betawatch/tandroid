@@ -1,20 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class l10 extends g.p {
-    public final /* synthetic */ f40 c;
+public final class l10 extends v4.l {
+    public final /* synthetic */ e40 F;
 
-    public l10(f40 f40Var) {
-        this.c = f40Var;
+    public l10(e40 e40Var) {
+        this.F = e40Var;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        int size = this.c.n4.e.size();
-        if (size > 1 && size != 2) {
-            return (size != 3 || i7 == 0 || i7 == 1) ? 3 : 6;
-        }
-        return 6;
+    @Override // v4.l
+    public final void P(v4.f1 f1Var) {
+        e40 e40Var = this.F;
+        e40Var.L1.invalidate();
+        e40Var.Z3.invalidate();
+        e40Var.b.invalidate();
+        e40.Q0(e40Var);
     }
 }

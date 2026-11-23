@@ -19,26 +19,26 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.xy0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class jc extends View {
     public LinearGradient E;
     public final Matrix F;
     public boolean G;
     public final Drawable H;
-    public final org.telegram.ui.Components.n6 I;
-    public final org.telegram.ui.Components.n6 J;
-    public final nq[] K;
+    public final org.telegram.ui.Components.m6 I;
+    public final org.telegram.ui.Components.m6 J;
+    public final kq[] K;
     public final Paint L;
-    public final xy0 M;
-    public final org.telegram.ui.Components.d6 N;
-    public final org.telegram.ui.Components.d6 O;
+    public final wy0 M;
+    public final org.telegram.ui.Components.c6 N;
+    public final org.telegram.ui.Components.c6 O;
     public boolean P;
     public long Q;
     public final RectF R;
@@ -47,7 +47,7 @@ public abstract class jc extends View {
     public final RectF U;
     public final Path V;
     public final Path W;
-    public final org.telegram.ui.ActionBar.h6 a;
+    public final org.telegram.ui.ActionBar.i6 a;
     public final Path a0;
     public final Paint b;
     public final RectF b0;
@@ -74,14 +74,14 @@ public abstract class jc extends View {
     public int x;
     public int y;
 
-    public jc(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public jc(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.b = new Paint(1);
         this.c = new Paint(1);
         this.d = new Paint(1);
         this.e = new Paint(1);
         this.f = new Paint(1);
-        this.h = new ec(0, ls.X4);
+        this.h = new ec(0, ks.X4);
         this.n = new ec(2, 30);
         this.r = -1135603;
         this.s = -404714;
@@ -90,17 +90,17 @@ public abstract class jc extends View {
         this.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{this.r, this.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
         this.F = new Matrix();
         this.G = true;
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
-        this.I = n6Var;
-        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(false, true, true);
-        this.J = n6Var2;
-        this.K = new nq[1];
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
+        this.I = m6Var;
+        org.telegram.ui.Components.m6 m6Var2 = new org.telegram.ui.Components.m6(false, true, true);
+        this.J = m6Var2;
+        this.K = new kq[1];
         Paint paint = new Paint(1);
         this.L = paint;
-        this.M = new xy0(hd.N0(2131744794, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
-        nr nrVar = nr.h;
-        this.N = new org.telegram.ui.Components.d6(this, 0L, 320L, nrVar);
-        this.O = new org.telegram.ui.Components.d6(this, 0L, 320L, nrVar);
+        this.M = new wy0(gd.N0(2131744796, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        kr krVar = kr.h;
+        this.N = new org.telegram.ui.Components.c6(this, 0L, 320L, krVar);
+        this.O = new org.telegram.ui.Components.c6(this, 0L, 320L, krVar);
         this.Q = -1L;
         this.R = new RectF();
         this.S = new RectF();
@@ -112,24 +112,24 @@ public abstract class jc extends View {
         this.b0 = new RectF();
         this.c0 = new Path();
         this.d0 = 0.0f;
-        this.g0 = new te.a(this, nrVar, 320L);
-        this.a = h6Var;
+        this.g0 = new te.a(this, krVar, 320L);
+        this.a = i6Var;
         Drawable g10 = i5.c.g(context, R.drawable.msg_premium_liststar);
         this.H = g10;
         g10.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        n6Var.u(-1);
-        n6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        n6Var.w(org.telegram.messenger.g0.L(21.0f));
-        n6Var.setCallback(this);
+        m6Var.u(-1);
+        m6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        m6Var.w(org.telegram.messenger.g0.L(21.0f));
+        m6Var.setCallback(this);
         Point point = org.telegram.messenger.g0.q;
-        n6Var.N = point.x;
-        n6Var.b = 17;
-        n6Var2.u(-570425345);
-        n6Var2.w(org.telegram.messenger.g0.L(11.0f));
-        n6Var2.setCallback(this);
-        n6Var2.N = point.x;
-        n6Var2.b = 17;
-        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
+        m6Var.N = point.x;
+        m6Var.b = 17;
+        m6Var2.u(-570425345);
+        m6Var2.w(org.telegram.messenger.g0.L(11.0f));
+        m6Var2.setCallback(this);
+        m6Var2.N = point.x;
+        m6Var2.b = 17;
+        paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, i6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
     }
@@ -145,14 +145,14 @@ public abstract class jc extends View {
         int value = getValue();
         this.m0.addListener(new ic(this, f10, value));
         this.m0.setDuration(320L);
-        this.m0.setInterpolator(nr.h);
+        this.m0.setInterpolator(kr.h);
         this.m0.start();
         if (c(f10) != value) {
             e(c(f10));
         }
-        org.telegram.ui.Components.n6 n6Var = this.I;
-        n6Var.a();
-        n6Var.t(pb.Z0(false, hd.E(c(f10), ','), this.K), true, true);
+        org.telegram.ui.Components.m6 m6Var = this.I;
+        m6Var.a();
+        m6Var.t(pb.Z0(false, gd.E(c(f10), ','), this.K), true, true);
     }
 
     public final float b(int i7) {
@@ -198,7 +198,7 @@ public abstract class jc extends View {
     public final void dispatchDraw(Canvas canvas) {
         Paint paint;
         float f10;
-        org.telegram.ui.Components.d6 d6Var;
+        org.telegram.ui.Components.c6 c6Var;
         int i7;
         Path path;
         Paint paint2;
@@ -225,7 +225,7 @@ public abstract class jc extends View {
         float L2 = org.telegram.messenger.g0.L(12.0f);
         Path.Direction direction = Path.Direction.CW;
         path2.addRoundRect(rectF2, L, L2, direction);
-        int r12 = org.telegram.ui.ActionBar.m6.r1(0.15f, this.r);
+        int r12 = org.telegram.ui.ActionBar.n6.r1(0.15f, this.r);
         Paint paint4 = this.b;
         paint4.setColor(r12);
         canvas.drawPath(path2, paint4);
@@ -246,14 +246,14 @@ public abstract class jc extends View {
         canvas.clipPath(path2);
         ecVar.a(canvas, f14);
         long j3 = this.Q;
-        org.telegram.ui.Components.d6 d6Var2 = this.O;
-        org.telegram.ui.Components.d6 d6Var3 = this.N;
-        xy0 xy0Var = this.M;
+        org.telegram.ui.Components.c6 c6Var2 = this.O;
+        org.telegram.ui.Components.c6 c6Var3 = this.N;
+        wy0 wy0Var = this.M;
         Paint paint5 = this.L;
         if (j3 == -1 || b((int) j3) >= 1.0f || b((int) this.Q) <= 0.0f) {
             paint = paint4;
             f10 = b10;
-            d6Var = d6Var2;
+            c6Var = c6Var2;
             i7 = f14;
             path = path3;
             paint2 = paint5;
@@ -261,14 +261,14 @@ public abstract class jc extends View {
             canvas2 = canvas;
         } else {
             float L3 = rectF2.left + org.telegram.messenger.g0.L(12.0f) + (Utilities.l(b((int) this.Q)) * (rectF2.width() - org.telegram.messenger.g0.L(24.0f)));
-            float d = d6Var3.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(14.0f)));
-            float W1 = org.telegram.messenger.g0.W1(d6Var2.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
-            float f16 = (L3 + xy0Var.c) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L3 - W1) - xy0Var.c : L3 + W1;
+            float d = c6Var3.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(14.0f)));
+            float W1 = org.telegram.messenger.g0.W1(c6Var2.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
+            float f16 = (L3 + wy0Var.c) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L3 - W1) - wy0Var.c : L3 + W1;
             paint5.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
-            paint5.setColor(org.telegram.ui.ActionBar.m6.r1(0.6f, f14));
+            paint5.setColor(org.telegram.ui.ActionBar.n6.r1(0.6f, f14));
             paint = paint4;
             f10 = b10;
-            d6Var = d6Var2;
+            c6Var = c6Var2;
             i7 = f14;
             rectF = rectF3;
             canvas.drawLine(L3, org.telegram.messenger.g0.T1(rectF2.top, rectF2.centerY(), d), L3, org.telegram.messenger.g0.T1(rectF2.bottom, rectF2.centerY(), d), paint5);
@@ -286,11 +286,11 @@ public abstract class jc extends View {
             i10 = i7;
         } else {
             float L4 = rectF2.left + org.telegram.messenger.g0.L(12.0f) + (Utilities.l(b((int) this.Q)) * (rectF2.width() - org.telegram.messenger.g0.L(24.0f)));
-            float d2 = d6Var3.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(14.0f)));
-            float W12 = org.telegram.messenger.g0.W1(d6Var.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
-            float f17 = (xy0Var.c + L4) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L4 - W12) - xy0Var.c : W12 + L4;
+            float d2 = c6Var3.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(14.0f)));
+            float W12 = org.telegram.messenger.g0.W1(c6Var.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
+            float f17 = (wy0Var.c + L4) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L4 - W12) - wy0Var.c : W12 + L4;
             paint2.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
-            paint2.setColor(org.telegram.ui.ActionBar.m6.r1(0.4f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.a)));
+            paint2.setColor(org.telegram.ui.ActionBar.n6.r1(0.4f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, this.a)));
             i10 = i7;
             canvas2.drawLine(L4, org.telegram.messenger.g0.T1(rectF2.top, rectF2.centerY(), d2), L4, org.telegram.messenger.g0.T1(rectF2.bottom, rectF2.centerY(), d2), paint2);
             this.M.c(f17, rectF2.centerY(), 0.75f, -1, canvas);
@@ -326,10 +326,10 @@ public abstract class jc extends View {
         canvas2.drawRoundRect(rectF4, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), this.e);
         float L8 = org.telegram.messenger.g0.L(9.0f) / rectF2.width();
         float T1 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.T1(rectF4.left, rectF4.right, f10), org.telegram.messenger.g0.T1(rectF4.left + org.telegram.messenger.g0.L(9.0f), rectF4.right - org.telegram.messenger.g0.L(9.0f), f10), Math.min(Utilities.l(f10 / L8), Utilities.l((1.0f - f10) / L8)));
-        org.telegram.ui.Components.n6 n6Var = this.J;
-        float c10 = n6Var.c() + org.telegram.messenger.g0.L(20.0f);
-        org.telegram.ui.Components.n6 n6Var2 = this.I;
-        float max = Math.max(c10, n6Var2.c() + org.telegram.messenger.g0.L(50.0f));
+        org.telegram.ui.Components.m6 m6Var = this.J;
+        float c10 = m6Var.c() + org.telegram.messenger.g0.L(20.0f);
+        org.telegram.ui.Components.m6 m6Var2 = this.I;
+        float max = Math.max(c10, m6Var2.c() + org.telegram.messenger.g0.L(50.0f));
         float L9 = org.telegram.messenger.g0.L(44.0f);
         float i11 = Utilities.i(T1 - (max / f12), (rectF2.right - max) - org.telegram.messenger.g0.L(4.0f), rectF2.left + org.telegram.messenger.g0.L(4.0f));
         float L10 = rectF2.top - org.telegram.messenger.g0.L(21.0f);
@@ -402,16 +402,16 @@ public abstract class jc extends View {
         canvas2.save();
         float f30 = 1.0f - (this.g0.e * f20);
         canvas2.scale(f30, f30, rectF5.centerX(), rectF5.top - (rectF5.height() * f11));
-        this.H.setBounds((int) ((rectF5.centerX() - (n6Var2.c() / f12)) + org.telegram.messenger.g0.L(-12.0f)), (int) (rectF5.centerY() - org.telegram.messenger.g0.L(10.0f)), (int) ((rectF5.centerX() - (n6Var2.c() / f12)) + org.telegram.messenger.g0.L(8.0f)), (int) (rectF5.centerY() + org.telegram.messenger.g0.L(10.0f)));
+        this.H.setBounds((int) ((rectF5.centerX() - (m6Var2.c() / f12)) + org.telegram.messenger.g0.L(-12.0f)), (int) (rectF5.centerY() - org.telegram.messenger.g0.L(10.0f)), (int) ((rectF5.centerX() - (m6Var2.c() / f12)) + org.telegram.messenger.g0.L(8.0f)), (int) (rectF5.centerY() + org.telegram.messenger.g0.L(10.0f)));
         if (this.G) {
             this.H.draw(canvas2);
         }
-        n6Var2.o(rectF5.left + org.telegram.messenger.g0.L(24.0f), rectF5.top, rectF5.right, rectF5.bottom);
-        n6Var2.draw(canvas2);
+        m6Var2.o(rectF5.left + org.telegram.messenger.g0.L(24.0f), rectF5.top, rectF5.right, rectF5.bottom);
+        m6Var2.draw(canvas2);
         canvas2.restore();
-        n6Var.o(rectF5.left, rectF5.top + org.telegram.messenger.g0.L(10.0f), rectF5.right, rectF5.bottom + org.telegram.messenger.g0.L(10.0f));
-        n6Var.C = (int) (this.g0.e * 255.0f);
-        n6Var.draw(canvas2);
+        m6Var.o(rectF5.left, rectF5.top + org.telegram.messenger.g0.L(10.0f), rectF5.right, rectF5.bottom + org.telegram.messenger.g0.L(10.0f));
+        m6Var.C = (int) (this.g0.e * 255.0f);
+        m6Var.draw(canvas2);
         canvas2.restore();
     }
 
@@ -441,15 +441,15 @@ public abstract class jc extends View {
                 this.d0 = Utilities.l((x10 / (getWidth() * 1.0f)) + this.d0);
                 if (getValue() != value) {
                     e(getValue());
-                    org.telegram.ui.Components.n6 n6Var = this.I;
-                    n6Var.a();
-                    n6Var.t(pb.Z0(false, hd.E(getValue(), ','), this.K), true, true);
+                    org.telegram.ui.Components.m6 m6Var = this.I;
+                    m6Var.a();
+                    m6Var.t(pb.Z0(false, gd.E(getValue(), ','), this.K), true, true);
                 }
                 this.h0 = motionEvent.getX();
                 return true;
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (!this.l0 && motionEvent.getPointerId(0) == this.k0 && a8.w9.a(this.h0, this.i0, motionEvent.getX(), motionEvent.getY()) < org.telegram.messenger.g0.e && System.currentTimeMillis() - this.j0 <= ViewConfiguration.getTapTimeout() * 1.5f) {
+            if (!this.l0 && motionEvent.getPointerId(0) == this.k0 && a8.x9.a(this.h0, this.i0, motionEvent.getX(), motionEvent.getY()) < org.telegram.messenger.g0.e && System.currentTimeMillis() - this.j0 <= ViewConfiguration.getTapTimeout() * 1.5f) {
                 float x11 = motionEvent.getX();
                 motionEvent.getY();
                 if (!d(x11)) {
@@ -497,16 +497,16 @@ public abstract class jc extends View {
         this.w = ofFloat;
         ofFloat.addUpdateListener(new gc(this, i11, i7, i12, i10, 0));
         this.w.addListener(new hc(this, i11, i7, i12, i10));
-        this.w.setInterpolator(nr.h);
+        this.w.setInterpolator(kr.h);
         this.w.setDuration(420L);
         this.w.start();
     }
 
     public final void g(String str) {
         this.g0.a(!TextUtils.isEmpty(str), true);
-        org.telegram.ui.Components.n6 n6Var = this.J;
-        n6Var.a();
-        n6Var.t(str, true, true);
+        org.telegram.ui.Components.m6 m6Var = this.J;
+        m6Var.a();
+        m6Var.t(str, true, true);
     }
 
     public float getProgress() {
@@ -540,9 +540,9 @@ public abstract class jc extends View {
         float b10 = b(i7);
         this.d0 = b10;
         this.e0 = b10;
-        org.telegram.ui.Components.n6 n6Var = this.I;
-        n6Var.a();
-        n6Var.t(pb.Z0(false, hd.E(getValue(), ','), this.K), true, true);
+        org.telegram.ui.Components.m6 m6Var = this.I;
+        m6Var.a();
+        m6Var.t(pb.Z0(false, gd.E(getValue(), ','), this.K), true, true);
     }
 
     public void setValueAnimated(int i7) {

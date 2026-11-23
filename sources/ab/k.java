@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k {
     public static final Object c = new Object();
@@ -40,7 +40,7 @@ public final class k {
         if (!z10) {
             return p0Var.b(intent).continueWith(new d3.b(3), new a3.l(8));
         }
-        if (c0.s().y(context)) {
+        if (c0.v().A(context)) {
             m0.c(context, p0Var, intent);
         } else {
             p0Var.b(intent);

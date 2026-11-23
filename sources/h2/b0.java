@@ -5,7 +5,7 @@ import e2.i1;
 import e2.l1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b0 {
     public final int a;
@@ -25,29 +25,29 @@ public final class b0 {
     public final void a() {
         e0 e0Var = this.h;
         i0 i0Var = (i0) e0Var.f;
-        l2.f0 f0Var = (l2.f0) e0Var.a;
-        if (!f0Var.h()) {
+        l2.g0 g0Var = (l2.g0) e0Var.a;
+        if (!g0Var.j()) {
             if (this.f) {
                 i0Var.e(2);
             }
             this.f = false;
             return;
         }
-        l1 y02 = f0Var.y0();
-        Object l10 = y02.p() ? null : y02.l(f0Var.B());
-        int n02 = f0Var.n0();
-        int O = f0Var.O();
-        long l11 = f0Var.l();
-        if (l10 != null && n02 == -1) {
-            l11 -= l0.h0(y02.g(l10, (i1) e0Var.e).e);
+        l1 z02 = g0Var.z0();
+        Object l10 = z02.p() ? null : z02.l(g0Var.C());
+        int o02 = g0Var.o0();
+        int P = g0Var.P();
+        long n10 = g0Var.n();
+        if (l10 != null && o02 == -1) {
+            n10 -= l0.h0(z02.g(l10, (i1) e0Var.e).e);
         }
         ((g0) e0Var.d).getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         boolean z10 = this.f;
         int i7 = this.a;
-        if (z10 && Objects.equals(l10, this.b) && n02 == this.c && O == this.d && l11 == this.e) {
+        if (z10 && Objects.equals(l10, this.b) && o02 == this.c && P == this.d && n10 == this.e) {
             if (elapsedRealtime - this.g >= i7) {
-                ((l2.z) e0Var.c).a.A1(new l2.l(2, new f0(2, i7), 1003));
+                ((l2.a0) e0Var.c).a.A1(new l2.m(2, new f0(2, i7), 1003));
                 return;
             }
             return;
@@ -55,9 +55,9 @@ public final class b0 {
         this.f = true;
         this.g = elapsedRealtime;
         this.b = l10;
-        this.c = n02;
-        this.d = O;
-        this.e = l11;
+        this.c = o02;
+        this.d = P;
+        this.e = n10;
         i0Var.e(2);
         i0Var.a.sendEmptyMessageDelayed(2, i7);
     }

@@ -1,55 +1,133 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class je implements a5, yi0 {
+public final class je extends ImageView {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ je(ChatActivityEnterView chatActivityEnterView, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ je(ChatActivityEnterView chatActivityEnterView, Context context, int i7) {
+        super(context);
         this.a = i7;
         this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.a5
-    public void O(int i7, int i10, boolean z10) {
+    @Override // android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                this.b.w1(z10, i7, i10, 0L, true);
-                break;
-            case 1:
+                if (getAlpha() < 0.5f || this.b.y1 > 0.0f) {
+                    return false;
+                }
+                return super.dispatchTouchEvent(motionEvent);
             default:
-                boolean w12 = this.b.w1(z10, i7, i10, 0L, true);
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                org.telegram.ui.eg0 eg0Var = chatActivityEnterView.M0;
-                if (eg0Var != null) {
-                    eg0Var.h(!w12);
-                    chatActivityEnterView.M0 = null;
-                    break;
+                float f10 = chatActivityEnterView.y1;
+                if (f10 < 1.0f) {
+                    if (f10 <= 0.0f) {
+                        super.draw(canvas);
+                        break;
+                    } else {
+                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
+                        super.draw(canvas);
+                        canvas.restoreToCount(saveLayerAlpha);
+                        break;
+                    }
                 }
                 break;
-            case 2:
-                this.b.w1(z10, i7, 0, 0L, true);
+            default:
+                super.draw(canvas);
                 break;
         }
     }
 
-    public void a(boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        td tdVar = chatActivityEnterView.X1;
-        rg rgVar = chatActivityEnterView.E2;
-        if (rgVar != null) {
-            rgVar.invalidate();
+    @Override // android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 1:
+                super.onLayout(z10, i7, i10, i11, i12);
+                post(new td(this.b, 16));
+                break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
         }
-        if (z10) {
-            return;
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 3:
+                if (getAlpha() <= 0.0f) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        yh.a aVar = chatActivityEnterView.T1;
-        if (aVar != null) {
-            zi0 zi0Var = chatActivityEnterView.i1;
-            aVar.c(Math.round(Math.max(1.0f, (zi0Var.w - zi0Var.s) * zi0Var.r)));
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.a) {
+            case 1:
+                super.setAlpha(f10);
+                te teVar = this.b.z2;
+                if (teVar != null) {
+                    teVar.setTranslationX(teVar.a);
+                    break;
+                }
+                break;
+            case 2:
+                super.setAlpha(f10);
+                te teVar2 = this.b.z2;
+                if (teVar2 != null) {
+                    teVar2.setTranslationX(teVar2.a);
+                    break;
+                }
+                break;
+            case 3:
+                super.setAlpha(f10);
+                pe peVar = this.b.a1;
+                if (peVar != null) {
+                    peVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setAlpha(f10);
+                break;
         }
-        org.telegram.messenger.g0.r(tdVar);
-        org.telegram.messenger.g0.h3(tdVar, 300L);
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setVisibility(int i7) {
+        switch (this.a) {
+            case 3:
+                super.setVisibility(i7);
+                pe peVar = this.b.a1;
+                if (peVar != null) {
+                    peVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i7);
+                break;
+        }
     }
 }

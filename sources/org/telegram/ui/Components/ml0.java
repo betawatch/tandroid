@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ml0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -31,38 +31,38 @@ public final /* synthetic */ class ml0 implements Runnable {
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    String B = org.telegram.messenger.w7.B(((org.telegram.messenger.gj) arrayList2.get(i11)).F0());
+                    String B = org.telegram.messenger.w7.B(((org.telegram.messenger.fj) arrayList2.get(i11)).F0());
                     if (B != null && B.toLowerCase().contains(str)) {
-                        org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(i10, ((org.telegram.messenger.gj) arrayList2.get(i11)).k, false, false);
-                        gjVar.z0 = ((org.telegram.messenger.gj) arrayList2.get(i11)).z0;
-                        gjVar.K5(sl0Var.L, true);
-                        arrayList3.add(gjVar);
+                        org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i10, ((org.telegram.messenger.fj) arrayList2.get(i11)).k, false, false);
+                        fjVar.z0 = ((org.telegram.messenger.fj) arrayList2.get(i11)).z0;
+                        fjVar.K5(sl0Var.L, true);
+                        arrayList3.add(fjVar);
                     }
                 }
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    String B2 = org.telegram.messenger.w7.B(((org.telegram.messenger.gj) arrayList.get(i12)).F0());
+                    String B2 = org.telegram.messenger.w7.B(((org.telegram.messenger.fj) arrayList.get(i12)).F0());
                     if (B2 != null && B2.toLowerCase().contains(str)) {
-                        org.telegram.messenger.gj gjVar2 = new org.telegram.messenger.gj(i10, ((org.telegram.messenger.gj) arrayList.get(i12)).k, false, false);
-                        gjVar2.z0 = ((org.telegram.messenger.gj) arrayList.get(i12)).z0;
-                        gjVar2.K5(sl0Var.L, true);
-                        arrayList4.add(gjVar2);
+                        org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(i10, ((org.telegram.messenger.fj) arrayList.get(i12)).k, false, false);
+                        fjVar2.z0 = ((org.telegram.messenger.fj) arrayList.get(i12)).z0;
+                        fjVar2.K5(sl0Var.L, true);
+                        arrayList4.add(fjVar2);
                     }
                 }
                 org.telegram.messenger.g0.g3(new ml0(sl0Var, str, arrayList3, arrayList4));
                 break;
             default:
-                nv0 nv0Var = sl0Var.a;
+                mv0 mv0Var = sl0Var.a;
                 if (str.equals(sl0Var.M)) {
                     if (sl0Var.r == 0) {
                         sl0Var.O.b(0);
                     }
                     sl0Var.e(arrayList2, arrayList, true);
                     if (sl0Var.r == 0) {
-                        nv0Var.e(false, true);
-                        m80 m80Var = nv0Var.e;
-                        nv0Var.d.setText(org.telegram.messenger.hd.N0(2131745604, null));
-                        m80Var.setVisibility(0);
-                        m80Var.setText(org.telegram.messenger.hd.N0(2131745611, null));
+                        mv0Var.e(false, true);
+                        j80 j80Var = mv0Var.e;
+                        mv0Var.d.setText(org.telegram.messenger.gd.N0(2131745604, null));
+                        j80Var.setVisibility(0);
+                        j80Var.setText(org.telegram.messenger.gd.N0(2131745611, null));
                         break;
                     }
                 }

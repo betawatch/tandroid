@@ -5,19 +5,20 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class o0 extends TextView {
     public int a;
-    public final h6.m b;
+    public final i61 b;
 
     public o0(Context context) {
         super(context);
         this.a = -1;
-        this.b = new h6.m(29);
+        this.b = new i61(1);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -29,12 +30,12 @@ public final class o0 extends TextView {
             super.onDraw(canvas);
             return;
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
         super.onDraw(canvas);
         canvas.save();
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(getWidth() - org.telegram.messenger.g0.L(15.0f), 0.0f, getWidth(), getHeight());
-        this.b.n(canvas, rectF, 2, 1.0f);
+        this.b.u(canvas, rectF, 2, 1.0f);
         canvas.restore();
         canvas.restore();
     }

@@ -7,15 +7,15 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h4 extends f6 {
     public static final Paint i = new Paint(2);
     public static final Rect j = new Rect();
     public i4 c;
     public i4 d;
-    public org.telegram.ui.Components.d6 e;
-    public org.telegram.ui.Components.d6 f;
+    public org.telegram.ui.Components.c6 e;
+    public org.telegram.ui.Components.c6 f;
     public i4 g;
     public i4 h;
 
@@ -28,7 +28,7 @@ public final class h4 extends f6 {
                 i7 = paint.getAlpha();
                 paint.setAlpha((int) (i7 * f10));
             } else {
-                i7 = ls.e4;
+                i7 = ks.e4;
             }
             canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
             if (f10 < 1.0f) {
@@ -83,7 +83,7 @@ public final class h4 extends f6 {
         }
         if (this.g != null) {
             if (this.e == null) {
-                this.e = new org.telegram.ui.Components.d6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.nr.g);
+                this.e = new org.telegram.ui.Components.c6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.kr.g);
             }
             float e10 = this.e.e(false, 1.0f);
             c(canvas, this.g, bounds, Math.min(1.0f, e10 * 1.5f));
@@ -100,7 +100,7 @@ public final class h4 extends f6 {
             return;
         }
         if (this.f == null) {
-            this.f = new org.telegram.ui.Components.d6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.nr.g);
+            this.f = new org.telegram.ui.Components.c6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.kr.g);
         }
         float e11 = this.f.e(false, 1.0f);
         c(canvas, this.h, bounds, Math.min(1.0f, 1.5f * e11));

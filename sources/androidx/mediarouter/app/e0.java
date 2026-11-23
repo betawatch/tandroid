@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
+import a8.d7;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import org.telegram.messenger.beta.R;
 import v4.f1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class e0 extends f1 {
     public s4.v v;
@@ -25,12 +25,12 @@ public abstract class e0 extends f1 {
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
         Context context = n0Var.E;
-        Drawable b10 = c8.z.b(context, R.drawable.mr_cast_mute_button);
-        if (c7.h(context)) {
+        Drawable b10 = c8.a0.b(context, R.drawable.mr_cast_mute_button);
+        if (d7.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
         imageButton.setImageDrawable(b10);
-        if (c7.h(context)) {
+        if (d7.h(context)) {
             color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_light);
             color2 = context.getColor(R.color.mr_cast_progressbar_background_light);
         } else {

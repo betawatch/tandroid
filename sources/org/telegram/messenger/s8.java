@@ -1,495 +1,442 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import j$.util.Objects;
-import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.concurrent.ConcurrentMap$-EL;
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import android.content.SharedPreferences;
+import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Map;
-import java.util.concurrent.CountDownLatch;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class s8 implements j2.h, j7 {
-    public static final ConcurrentHashMap I = new ConcurrentHashMap();
-    public static final ConcurrentHashMap J = new ConcurrentHashMap();
-    public boolean E = true;
-    public final ArrayList F = new ArrayList(1);
-    public int G;
-    public j2.m H;
-    public i7 a;
-    public Uri b;
-    public long c;
-    public long d;
-    public long e;
-    public boolean f;
-    public long h;
-    public CountDownLatch n;
-    public RandomAccessFile r;
-    public TLRPC.TL_document s;
-    public Object w;
-    public int x;
-    public File y;
+public final /* synthetic */ class s8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public static Uri i(int i7, Object obj, TLRPC.Document document) {
-        String r10 = w7.r(null, document);
-        w7.G(i7);
-        File I2 = w7.I(document);
-        if (I2 != null && I2.exists()) {
-            return Uri.fromFile(I2);
-        }
-        try {
-            StringBuilder sb2 = new StringBuilder("?account=");
-            sb2.append(i7);
-            sb2.append("&id=");
-            sb2.append(document.id);
-            sb2.append("&hash=");
-            sb2.append(document.access_hash);
-            sb2.append("&dc=");
-            sb2.append(document.dc_id);
-            sb2.append("&size=");
-            sb2.append(document.size);
-            sb2.append("&mime=");
-            sb2.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-            sb2.append("&rid=");
-            sb2.append(w7.G(i7).F(obj));
-            sb2.append("&name=");
-            sb2.append(URLEncoder.encode(w7.B(document), "UTF-8"));
-            sb2.append("&reference=");
-            byte[] bArr = document.file_reference;
-            if (bArr == null) {
-                bArr = new byte[0];
-            }
-            sb2.append(Utilities.f(bArr));
-            return Uri.parse("tg://" + r10 + sb2.toString());
-        } catch (UnsupportedEncodingException e10) {
-            a8.g(e10, true);
-            return null;
-        }
+    public /* synthetic */ s8(Object obj, long j3, long j10, Object obj2, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = j3;
+        this.c = j10;
+        this.e = obj2;
     }
 
-    @Override // org.telegram.messenger.j7
-    public final void a() {
-        CountDownLatch countDownLatch = this.n;
-        this.n = null;
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-        }
-    }
-
-    @Override // j2.h
-    public final void addTransferListener(j2.c0 c0Var) {
-        c0Var.getClass();
-        ArrayList arrayList = this.F;
-        if (arrayList.contains(c0Var)) {
-            return;
-        }
-        arrayList.add(c0Var);
-        this.G++;
-    }
-
-    @Override // j2.h
-    public final void close() {
-        a8.d("FileStreamLoadOperation " + this.s.id + " close me=" + this);
-        i7 i7Var = this.a;
-        int i7 = 0;
-        if (i7Var != null) {
-            Utilities.d.c(new e7(i7Var, this, i7));
-        }
-        RandomAccessFile randomAccessFile = this.r;
-        if (randomAccessFile != null) {
-            try {
-                randomAccessFile.close();
-            } catch (Exception e10) {
-                a8.g(e10, true);
-            }
-            this.r = null;
-        }
-        this.b = null;
-        I.remove(Long.valueOf(this.s.id));
-        if (this.f) {
-            this.f = false;
-            j2.m mVar = this.H;
-            String str = h2.l0.a;
-            while (i7 < this.G) {
-                ((b3.g) ((j2.c0) this.F.get(i7))).f(mVar, this.E);
-                i7++;
-            }
-            this.H = null;
-        }
-        CountDownLatch countDownLatch = this.n;
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-            this.n = null;
-        }
-    }
-
-    public final void e(int i7) {
-        j2.m mVar = this.H;
-        String str = h2.l0.a;
-        for (int i10 = 0; i10 < this.G; i10++) {
-            j2.c0 c0Var = (j2.c0) this.F.get(i10);
-            boolean z10 = this.E;
-            b3.g gVar = (b3.g) c0Var;
-            synchronized (gVar) {
-                if (z10) {
-                    if (mVar != null) {
-                        try {
-                            if ((mVar.h & 8) == 8) {
-                            }
-                        } finally {
-                        }
-                    }
-                    gVar.i += i7;
-                }
-            }
-        }
-    }
-
-    @Override // j2.h
-    public final Map getResponseHeaders() {
-        return Collections.EMPTY_MAP;
-    }
-
-    @Override // j2.h
-    public final Uri getUri() {
-        return this.b;
-    }
-
-    public final int h() {
-        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(J, Long.valueOf(this.s.id), null);
-        if (num != null) {
-            return num.intValue();
-        }
-        return 3;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0251  */
-    @Override // j2.h
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final long open(j2.m mVar) {
-        int i7;
-        TLRPC.TL_document tL_document;
-        ArrayList arrayList = this.F;
-        Uri uri = mVar.a;
-        long j3 = mVar.e;
-        this.b = uri;
-        for (int i10 = 0; i10 < this.G; i10++) {
-            ((j2.c0) arrayList.get(i10)).getClass();
-        }
-        int intValue = Utilities.z(this.b.getQueryParameter("account")).intValue();
-        this.x = intValue;
-        this.w = w7.G(intValue).H.get(Utilities.z(this.b.getQueryParameter("rid")));
-        TLRPC.TL_document tL_document2 = new TLRPC.TL_document();
-        this.s = tL_document2;
-        tL_document2.access_hash = Utilities.A(this.b.getQueryParameter("hash")).longValue();
-        this.s.id = Utilities.A(this.b.getQueryParameter("id")).longValue();
-        this.s.size = Utilities.A(this.b.getQueryParameter("size")).longValue();
-        this.s.dc_id = Utilities.z(this.b.getQueryParameter("dc")).intValue();
-        this.s.mime_type = this.b.getQueryParameter("mime");
-        this.s.file_reference = Utilities.v(this.b.getQueryParameter("reference"));
-        TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
-        tL_documentAttributeFilename.file_name = this.b.getQueryParameter("name");
-        this.s.attributes.add(tL_documentAttributeFilename);
-        if (this.s.mime_type.startsWith(MediaStreamTrack.VIDEO_TRACK_KIND)) {
-            this.s.attributes.add(new TLRPC.TL_documentAttributeVideo());
-        } else if (this.s.mime_type.startsWith(MediaStreamTrack.AUDIO_TRACK_KIND)) {
-            this.s.attributes.add(new TLRPC.TL_documentAttributeAudio());
-        }
-        I.put(Long.valueOf(this.s.id), this);
-        this.h = j3;
-        this.e = mVar.f;
-        w7 G = w7.G(this.x);
-        TLRPC.TL_document tL_document3 = this.s;
-        Object obj = this.w;
-        long j10 = this.h;
-        int h = h();
-        int i11 = tL_document3 == null ? 1 : 0;
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        i7[] i7VarArr = new i7[1];
-        w7.K.c(new k7(G, i7VarArr, tL_document3, null, obj, h, this, j10, false, i11, countDownLatch));
-        w7.a(countDownLatch, true);
-        this.a = i7VarArr[0];
-        this.d = 0L;
-        long j11 = this.s.size - j3;
-        this.c = j11;
-        long j12 = this.e;
-        if (j12 != -1) {
-            this.c = Math.min(j11, j12);
-        }
-        this.f = true;
-        this.H = mVar;
-        for (int i12 = 0; i12 < this.G; i12++) {
-            ((b3.g) ((j2.c0) arrayList.get(i12))).g(mVar, this.E);
-        }
-        i7 i7Var = this.a;
-        if (i7Var != null) {
-            File g10 = i7Var.g();
-            this.y = g10;
-            if (g10 != null) {
-                try {
-                    RandomAccessFile randomAccessFile = new RandomAccessFile(this.y, "r");
-                    this.r = randomAccessFile;
-                    randomAccessFile.seek(this.h);
-                } catch (Throwable unused) {
-                }
-                if (this.a.Y == 3) {
-                    i7 = 0;
-                    try {
-                        this.E = false;
-                        long length = this.y.length() - this.h;
-                        this.c = length;
-                        long j13 = this.e;
-                        if (j13 != -1) {
-                            this.c = Math.min(length, j13 - this.d);
-                        }
-                    } catch (Throwable unused2) {
-                    }
-                    a8.d("FileStreamLoadOperation " + this.s.id + " open operation=" + this.a + " currentFile=" + this.y + " file=" + this.r + " bytesRemaining=" + this.c + " me=" + this);
-                    StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
-                    sb2.append(this.s.id);
-                    sb2.append(" ");
-                    sb2.append(gj.h2(this.s));
-                    sb2.append("x");
-                    sb2.append(gj.h2(this.s));
-                    sb2.append(" mime_type=");
-                    sb2.append(this.s.mime_type);
-                    sb2.append(" codec=");
-                    tL_document = this.s;
-                    String str = null;
-                    if (tL_document != null) {
-                        int size = tL_document.attributes.size();
-                        int i13 = i7;
-                        while (true) {
-                            if (i13 >= size) {
-                                break;
-                            }
-                            TLRPC.DocumentAttribute documentAttribute = tL_document.attributes.get(i13);
-                            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                                str = ((TLRPC.TL_documentAttributeVideo) documentAttribute).video_codec;
-                                break;
-                            }
-                            i13++;
-                        }
-                    }
-                    sb2.append(str);
-                    sb2.append(" size=");
-                    sb2.append(this.s.size);
-                    a8.d(sb2.toString());
-                    return this.c;
-                }
-            }
-        }
-        i7 = 0;
-        a8.d("FileStreamLoadOperation " + this.s.id + " open operation=" + this.a + " currentFile=" + this.y + " file=" + this.r + " bytesRemaining=" + this.c + " me=" + this);
-        StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
-        sb22.append(this.s.id);
-        sb22.append(" ");
-        sb22.append(gj.h2(this.s));
-        sb22.append("x");
-        sb22.append(gj.h2(this.s));
-        sb22.append(" mime_type=");
-        sb22.append(this.s.mime_type);
-        sb22.append(" codec=");
-        tL_document = this.s;
-        String str2 = null;
-        if (tL_document != null) {
-        }
-        sb22.append(str2);
-        sb22.append(" size=");
-        sb22.append(this.s.size);
-        a8.d(sb22.toString());
-        return this.c;
-    }
-
-    /* JADX WARN: Can't wrap try/catch for region: R(21:13|(13:109|110|(1:112)|17|18|19|20|(6:22|(1:24)(1:96)|25|(1:27)|28|(1:30))(1:97)|31|(1:95)(1:37)|38|(6:44|(1:46)|47|(2:91|92)|49|(4:51|52|(1:54)(1:62)|(2:56|(2:58|59)(1:60))(1:61))(1:90))(1:42)|43)|15|(1:100)|17|18|19|20|(0)(0)|31|(1:33)|95|38|(1:40)|44|(0)|47|(0)|49|(0)(0)|43) */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005f A[Catch: Exception -> 0x0025, InterruptedException -> 0x0028, TryCatch #5 {InterruptedException -> 0x0028, Exception -> 0x0025, blocks: (B:110:0x0020, B:17:0x002f, B:20:0x005a, B:22:0x005f, B:25:0x007b, B:27:0x00a2, B:28:0x00b2, B:30:0x00b6, B:31:0x00c1, B:33:0x00c8, B:35:0x00cc, B:37:0x00d0, B:38:0x00d5, B:40:0x00d9, B:44:0x00e1, B:46:0x00e5, B:47:0x00f9, B:49:0x0100, B:64:0x0142, B:68:0x014d, B:70:0x0155, B:73:0x0183, B:75:0x01a1, B:95:0x00d3, B:15:0x002b, B:101:0x01b6, B:104:0x01bd, B:106:0x01c7, B:52:0x0104, B:56:0x0120, B:58:0x0137), top: B:109:0x0020, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00e5 A[Catch: Exception -> 0x0025, InterruptedException -> 0x0028, TryCatch #5 {InterruptedException -> 0x0028, Exception -> 0x0025, blocks: (B:110:0x0020, B:17:0x002f, B:20:0x005a, B:22:0x005f, B:25:0x007b, B:27:0x00a2, B:28:0x00b2, B:30:0x00b6, B:31:0x00c1, B:33:0x00c8, B:35:0x00cc, B:37:0x00d0, B:38:0x00d5, B:40:0x00d9, B:44:0x00e1, B:46:0x00e5, B:47:0x00f9, B:49:0x0100, B:64:0x0142, B:68:0x014d, B:70:0x0155, B:73:0x0183, B:75:0x01a1, B:95:0x00d3, B:15:0x002b, B:101:0x01b6, B:104:0x01bd, B:106:0x01c7, B:52:0x0104, B:56:0x0120, B:58:0x0137), top: B:109:0x0020, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0104 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01b1 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00fd A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x00bd  */
-    /* JADX WARN: Type inference failed for: r6v1, types: [java.io.Serializable, long[]] */
-    @Override // e2.n
+    /* JADX WARN: Removed duplicated region for block: B:141:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0545  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x03a0  */
+    /* JADX WARN: Removed duplicated region for block: B:83:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r14v0 */
+    /* JADX WARN: Type inference failed for: r14v35, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r14v36 */
+    /* JADX WARN: Type inference failed for: r5v12, types: [org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.NativeByteBuffer] */
+    /* JADX WARN: Type inference failed for: r7v26, types: [org.telegram.SQLite.SQLiteCursor] */
+    /* JADX WARN: Type inference failed for: r8v23, types: [org.telegram.tgnet.TLRPC$TL_messageService] */
+    /* JADX WARN: Type inference failed for: r8v24, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v26, types: [org.telegram.tgnet.TLRPC$Message] */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int read(byte[] bArr, int i7, int i10) {
+    public final void run() {
+        long j3;
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        TLRPC.InputReplyTo inputReplyTo;
+        String sb2;
+        SQLiteCursor sQLiteCursor;
+        int i7;
+        SQLiteCursor queryFinalized;
+        long j10;
+        boolean z13;
+        boolean z14;
+        int i10;
+        boolean z15;
         int i11;
+        xv xvVar;
+        TLRPC.EncryptedChat encryptedChat;
         int i12;
+        long j11;
+        ?? c10;
         int i13;
-        File file;
-        RandomAccessFile randomAccessFile;
-        RandomAccessFile randomAccessFile2;
-        int i14 = i10;
-        int i15 = 0;
-        if (i14 == 0) {
-            return 0;
-        }
-        long j3 = this.c;
-        if (j3 == 0) {
-            return -1;
-        }
-        if (j3 < i14) {
-            i14 = (int) j3;
-        }
-        int i16 = i14;
-        int i17 = 0;
-        while (true) {
-            if (i17 == 0) {
-                try {
-                    if (!this.f) {
-                    }
-                    i7 i7Var = this.a;
-                    i7Var.getClass();
-                    CountDownLatch countDownLatch = new CountDownLatch(1);
-                    ?? r62 = new long[2];
-                    Utilities.d.c(new k9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
-                    countDownLatch.await();
-                    i11 = (int) r62[i15];
-                    if (i11 != 0) {
-                        this.n = new CountDownLatch(1);
-                        w7 G = w7.G(this.x);
-                        TLRPC.TL_document tL_document = this.s;
-                        Object obj = this.w;
-                        long j10 = this.h;
-                        int h = h();
-                        int i18 = tL_document == null ? 1 : i15;
-                        CountDownLatch countDownLatch2 = new CountDownLatch(1);
-                        i7[] i7VarArr = new i7[1];
-                        i12 = i11;
-                        i13 = i15;
-                        w7.K.c(new k7(G, i7VarArr, tL_document, null, obj, h, this, j10, false, i18, countDownLatch2));
-                        w7.a(countDownLatch2, true);
-                        i7 i7Var2 = i7VarArr[i13 == true ? 1 : 0];
-                        i7 i7Var3 = this.a;
-                        if (i7Var3 != i7Var2) {
-                            i7Var3.getClass();
-                            Utilities.d.c(new e7(i7Var3, this, 0));
-                            this.a = i7Var2;
-                        }
-                        CountDownLatch countDownLatch3 = this.n;
-                        if (countDownLatch3 != null) {
-                            countDownLatch3.await();
-                            this.n = null;
+        int i14 = this.a;
+        long j12 = this.c;
+        long j13 = this.b;
+        ?? r14 = 0;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        switch (i14) {
+            case 0:
+                x8 x8Var = (x8) obj2;
+                Float f10 = (Float) obj;
+                boolean[] zArr = x8Var.R;
+                if (f10 != null && x8Var.G != 0 && j13 == 0) {
+                    if (f10.floatValue() > 0.75f) {
+                        z10 = true;
+                        z10 = true;
+                        if (!zArr[0]) {
+                            zArr[0] = true;
+                            z11 = true;
+                            if (f10.floatValue() > 0.95f || zArr[z10 ? 1 : 0]) {
+                                z12 = z11;
+                            } else {
+                                zArr[z10 ? 1 : 0] = z10;
+                                z12 = z10 ? 1 : 0;
+                            }
+                            if (z12) {
+                                x8Var.G = (long) (j12 / f10.floatValue());
+                            }
                         }
                     } else {
-                        i12 = i11;
-                        i13 = i15;
+                        z10 = true;
                     }
-                    i7 i7Var4 = this.a;
-                    file = (i7Var4.Y == 3 || i7Var4.z || !i7Var4.O0) ? i7Var4.J0 : i7Var4.L0;
-                    if (this.r != null || !Objects.equals(this.y, file)) {
-                        if (s2.a) {
-                            a8.b("check stream file " + file);
-                        }
-                        randomAccessFile = this.r;
-                        if (randomAccessFile != null) {
-                            try {
-                                randomAccessFile.close();
-                            } catch (Exception unused) {
-                            }
-                        }
-                        this.y = file;
-                        if (file == null) {
-                            try {
-                                RandomAccessFile randomAccessFile3 = new RandomAccessFile(this.y, "r");
-                                this.r = randomAccessFile3;
-                                randomAccessFile3.seek(this.h);
-                                if ((this.a.Y == 3 ? true : i13) != false) {
-                                    this.E = i13;
-                                    long length = this.y.length() - this.h;
-                                    this.c = length;
-                                    long j11 = this.e;
-                                    if (j11 != -1) {
-                                        this.c = Math.min(length, j11 - this.d);
-                                    }
-                                }
-                            } catch (Throwable unused2) {
-                                if ((this.a.Y == 3) && !this.y.exists()) {
-                                    w7.G(this.x).e(null, null, null, null, null, this.a.r);
-                                    w7 G2 = w7.G(this.x);
-                                    TLRPC.TL_document tL_document2 = this.s;
-                                    Object obj2 = this.w;
-                                    long j12 = this.h;
-                                    int h7 = h();
-                                    int i19 = tL_document2 == null ? 1 : 0;
-                                    CountDownLatch countDownLatch4 = new CountDownLatch(1);
-                                    i7[] i7VarArr2 = new i7[1];
-                                    w7.K.c(new k7(G2, i7VarArr2, tL_document2, null, obj2, h7, this, j12, false, i19, countDownLatch4));
-                                    w7.a(countDownLatch4, true);
-                                    i7 i7Var5 = i7VarArr2[0];
-                                    i7 i7Var6 = this.a;
-                                    if (i7Var6 != i7Var5) {
-                                        i7Var6.getClass();
-                                        Utilities.d.c(new e7(i7Var6, this, 0));
-                                        this.a = i7Var5;
-                                    }
-                                }
-                            }
-                        }
+                    z11 = false;
+                    if (f10.floatValue() > 0.95f) {
                     }
-                    i17 = i12;
-                    i15 = 0;
-                } catch (InterruptedException e10) {
-                    a8.g(e10, true);
-                    return -3;
-                } catch (Exception e11) {
-                    throw new IOException(e11);
+                    z12 = z11;
+                    if (z12) {
+                    }
                 }
-            }
-            randomAccessFile2 = this.r;
-            if (randomAccessFile2 != null) {
+                if (x8Var.G == 0 || j13 == 0) {
+                    j3 = 0;
+                } else {
+                    x8Var.G = 0L;
+                    x8Var.t = j13;
+                    x8Var.a();
+                    if (!x8Var.P && x8Var.J) {
+                        x8Var.f();
+                    }
+                    j3 = 0;
+                }
+                if (j13 > j3) {
+                    j12 = j13;
+                }
+                x8Var.O = j12;
+                if (x8Var.K < x8Var.e) {
+                    x8Var.d();
+                    return;
+                }
+                return;
+            case 1:
+                ri riVar = (ri) obj2;
+                TLRPC.Message message = (TLRPC.Message) obj;
+                a0.h hVar = riVar.v1;
+                a0.h hVar2 = (a0.h) riVar.u1.f(j13);
+                TLRPC.DraftMessage draftMessage = hVar2 != null ? (TLRPC.DraftMessage) hVar2.f(j12) : null;
+                if (draftMessage == null || (inputReplyTo = draftMessage.reply_to) == null || inputReplyTo.reply_to_msg_id != message.id) {
+                    return;
+                }
+                a0.h hVar3 = (a0.h) hVar.f(j13);
+                a0.h hVar4 = hVar3;
+                if (hVar3 == null) {
+                    a0.h hVar5 = new a0.h();
+                    hVar.k(hVar5, j13);
+                    hVar4 = hVar5;
+                }
+                hVar4.k(message, j12);
+                SerializedData serializedData = new SerializedData(message.getObjectSize());
+                message.serializeToStream(serializedData);
+                SharedPreferences.Editor edit = riVar.w1.edit();
+                if (j12 == 0) {
+                    sb2 = a8.p0.o(j13, "r_");
+                } else {
+                    StringBuilder t6 = a8.p0.t(j13, "rt_", "_");
+                    t6.append(j12);
+                    sb2 = t6.toString();
+                }
+                edit.putString(sb2, Utilities.f(serializedData.toByteArray())).commit();
+                riVar.getNotificationCenter().k(85, Long.valueOf(j13));
+                serializedData.cleanup();
+                return;
+            case 2:
+                ((ri) obj2).S0(this.b, this.c, (ArrayList) obj, false);
+                return;
+            case 3:
+                ((tr) obj2).getMessagesController().a0(null, null, null, this.b, true, 1, false, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj, 0);
+                return;
+            case 4:
+                ((tr) obj2).getMessagesController().r3(this.b, (TLRPC.InputPeer) obj, this.c);
+                return;
+            case 5:
+                tr trVar = (tr) obj2;
+                org.telegram.ui.cg cgVar = (org.telegram.ui.cg) obj;
+                try {
+                    if (j13 != 0) {
+                        SQLiteDatabase sQLiteDatabase = trVar.b;
+                        Locale locale = Locale.US;
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT MIN(mid) FROM messages_topics WHERE uid = " + j12 + " AND topic_id = " + j13 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
+                        i7 = 0;
+                    } else {
+                        SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                        Locale locale2 = Locale.US;
+                        i7 = 0;
+                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT MIN(mid) FROM messages_v2 WHERE uid = " + j12 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
+                    }
+                    sQLiteCursor = queryFinalized;
+                    try {
+                        try {
+                            int intValue = sQLiteCursor.next() ? sQLiteCursor.intValue(i7) : 0;
+                            sQLiteCursor.dispose();
+                            g0.g3(new x0(cgVar, intValue, 10));
+                        } catch (Exception e10) {
+                            e = e10;
+                            trVar.o(e, true);
+                            if (sQLiteCursor == null) {
+                                return;
+                            }
+                            sQLiteCursor.dispose();
+                            return;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                        if (sQLiteCursor != null) {
+                            sQLiteCursor.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Exception e11) {
+                    e = e11;
+                    sQLiteCursor = null;
+                } catch (Throwable th3) {
+                    th = th3;
+                    sQLiteCursor = null;
+                    if (sQLiteCursor != null) {
+                    }
+                    throw th;
+                }
+                sQLiteCursor.dispose();
+                return;
+            case 6:
+                ys ysVar = (ys) obj2;
+                TLRPC.PeerNotifySettings peerNotifySettings = (TLRPC.PeerNotifySettings) obj;
+                long j14 = this.b;
+                long j15 = this.c;
+                String v = xs.v(j14, j15, true);
+                int i15 = ysVar.a;
+                mp u12 = mp.u1(i15);
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i15);
+                tr a02 = tr.a0(i15);
+                xs t10 = xs.t(i15);
+                int c11 = f3.c("notify2_", v, ysVar.b(), -1);
+                int c12 = f3.c("notifyuntil_", v, ysVar.b(), 0);
+                SharedPreferences.Editor edit2 = ysVar.b().edit();
+                if ((peerNotifySettings.flags & 2) != 0) {
+                    j10 = j15;
+                    edit2.putBoolean(p5.c.k("silent_", v), peerNotifySettings.silent);
+                } else {
+                    j10 = j15;
+                    edit2.remove("silent_" + v);
+                }
+                if ((peerNotifySettings.flags & 64) != 0) {
+                    edit2.putBoolean(p5.c.k("stories_", v), !peerNotifySettings.stories_muted);
+                } else {
+                    edit2.remove("stories_" + v);
+                }
+                TLRPC.Dialog dialog = j10 == 0 ? (TLRPC.Dialog) u12.R.f(j14) : null;
+                if (dialog != null) {
+                    dialog.notify_settings = peerNotifySettings;
+                }
+                if ((peerNotifySettings.flags & 4) == 0) {
+                    if (c11 != -1) {
+                        if (dialog != null) {
+                            dialog.notify_settings.mute_until = 0;
+                        }
+                        edit2.remove("notify2_" + v);
+                        z13 = true;
+                    } else {
+                        z13 = false;
+                    }
+                    if (j10 == 0) {
+                        a02.E1(j14, 0L);
+                    }
+                } else {
+                    if (peerNotifySettings.mute_until > connectionsManager.getCurrentTime()) {
+                        if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime() + 31536000) {
+                            if (c11 == 3 && c12 == peerNotifySettings.mute_until) {
+                                z15 = false;
+                            } else {
+                                edit2.putInt("notify2_" + v, 3);
+                                edit2.putInt("notifyuntil_" + v, peerNotifySettings.mute_until);
+                                if (dialog != null) {
+                                    dialog.notify_settings.mute_until = 0;
+                                }
+                                z15 = true;
+                            }
+                            z14 = z15;
+                            i11 = peerNotifySettings.mute_until;
+                        } else if (c11 != 2) {
+                            edit2.putInt("notify2_" + v, 2);
+                            if (dialog != null) {
+                                dialog.notify_settings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                            }
+                            i11 = 0;
+                            z14 = true;
+                        } else {
+                            i11 = 0;
+                            z14 = false;
+                        }
+                        if (j10 == 0) {
+                            a02.E1(j14, (i11 << 32) | 1);
+                            t10.N(j14);
+                        }
+                        ysVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                        edit2.apply();
+                        if (z14) {
+                            return;
+                        }
+                        g0.g3(new xr(ysVar, 1));
+                        return;
+                    }
+                    if (c11 == 0 || c11 == 1) {
+                        z13 = false;
+                    } else {
+                        if (dialog != null) {
+                            TLRPC.PeerNotifySettings peerNotifySettings2 = dialog.notify_settings;
+                            i10 = 0;
+                            peerNotifySettings2.mute_until = 0;
+                        } else {
+                            i10 = 0;
+                        }
+                        edit2.putInt("notify2_" + v, i10);
+                        z13 = true;
+                    }
+                    if (j10 == 0) {
+                        a02.E1(j14, 0L);
+                    }
+                }
+                z14 = z13;
+                ysVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                edit2.apply();
+                if (z14) {
+                }
                 break;
-            }
-            i7 i7Var7 = this.a;
-            i7Var7.getClass();
-            CountDownLatch countDownLatch5 = new CountDownLatch(1);
-            ?? r622 = new long[2];
-            Utilities.d.c(new k9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
-            countDownLatch5.await();
-            i11 = (int) r622[i15];
-            if (i11 != 0) {
-            }
-            i7 i7Var42 = this.a;
-            if (i7Var42.Y == 3) {
-            }
-            if (this.r != null) {
-            }
-            if (s2.a) {
-            }
-            randomAccessFile = this.r;
-            if (randomAccessFile != null) {
-            }
-            this.y = file;
-            if (file == null) {
-            }
-            i17 = i12;
-            i15 = 0;
+            default:
+                xv xvVar2 = (xv) obj2;
+                TLRPC.EncryptedChat encryptedChat2 = (TLRPC.EncryptedChat) obj;
+                try {
+                    if (encryptedChat2.admin_id == xvVar2.getUserConfig().e() && (j13 & 1) == 0) {
+                        j13++;
+                    }
+                    if (j13 > j12) {
+                        return;
+                    }
+                    int i16 = (int) j13;
+                    int i17 = (int) j12;
+                    SQLiteDatabase sQLiteDatabase3 = xvVar2.getMessagesStorage().b;
+                    Locale locale3 = Locale.US;
+                    SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT uid FROM requested_holes WHERE uid = " + encryptedChat2.id + " AND ((seq_out_start >= " + i16 + " AND " + i16 + " <= seq_out_end) OR (seq_out_start >= " + i17 + " AND " + i17 + " <= seq_out_end))", new Object[0]);
+                    boolean next = queryFinalized2.next();
+                    queryFinalized2.dispose();
+                    if (next) {
+                        return;
+                    }
+                    long F = n5.F(encryptedChat2.id);
+                    SparseArray sparseArray = new SparseArray();
+                    ArrayList arrayList = new ArrayList();
+                    while (j13 <= j12) {
+                        sparseArray.put((int) j13, null);
+                        j13 += 2;
+                    }
+                    SQLiteDatabase sQLiteDatabase4 = xvVar2.getMessagesStorage().b;
+                    Locale locale4 = Locale.US;
+                    ?? queryFinalized3 = sQLiteDatabase4.queryFinalized("SELECT m.data, r.random_id, s.seq_in, s.seq_out, m.ttl, s.mid FROM messages_seq as s LEFT JOIN randoms_v2 as r ON r.mid = s.mid LEFT JOIN messages_v2 as m ON m.mid = s.mid WHERE m.uid = " + F + " AND m.out = 1 AND s.seq_out >= " + i16 + " AND s.seq_out <= " + i17 + " ORDER BY seq_out ASC", new Object[0]);
+                    while (queryFinalized3.next()) {
+                        long longValue = queryFinalized3.longValue(1);
+                        if (longValue == 0) {
+                            longValue = Utilities.b.nextLong();
+                        }
+                        int intValue2 = queryFinalized3.intValue(2);
+                        int intValue3 = queryFinalized3.intValue(3);
+                        int intValue4 = queryFinalized3.intValue(5);
+                        TLRPC.EncryptedChat encryptedChat3 = encryptedChat2;
+                        ?? byteBufferValue = queryFinalized3.byteBufferValue(r14);
+                        if (byteBufferValue != 0) {
+                            c10 = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r14), r14);
+                            i12 = i16;
+                            c10.readAttachPath(byteBufferValue, xvVar2.getUserConfig().n);
+                            byteBufferValue.reuse();
+                            c10.random_id = longValue;
+                            c10.dialog_id = F;
+                            c10.seq_in = intValue2;
+                            c10.seq_out = intValue3;
+                            j11 = F;
+                            c10.ttl = queryFinalized3.intValue(4);
+                            i13 = intValue3;
+                        } else {
+                            i12 = i16;
+                            long j16 = longValue;
+                            j11 = F;
+                            c10 = xvVar2.c(intValue4, intValue3, intValue2, j16, encryptedChat3);
+                            i13 = intValue3;
+                        }
+                        arrayList.add(c10);
+                        sparseArray.remove(i13);
+                        F = j11;
+                        i16 = i12;
+                        encryptedChat2 = encryptedChat3;
+                        r14 = 0;
+                    }
+                    int i18 = i16;
+                    TLRPC.EncryptedChat encryptedChat4 = encryptedChat2;
+                    queryFinalized3.dispose();
+                    if (sparseArray.size() != 0) {
+                        int i19 = 0;
+                        while (i19 < sparseArray.size()) {
+                            int keyAt = sparseArray.keyAt(i19);
+                            arrayList.add(xvVar2.c(xvVar2.getUserConfig().j(), keyAt, keyAt + 1, Utilities.b.nextLong(), encryptedChat4));
+                            i19++;
+                            xvVar2 = xvVar2;
+                            encryptedChat4 = encryptedChat4;
+                        }
+                        xvVar = xvVar2;
+                        encryptedChat = encryptedChat4;
+                        xvVar.getUserConfig().v(false);
+                    } else {
+                        xvVar = xvVar2;
+                        encryptedChat = encryptedChat4;
+                    }
+                    Collections.sort(arrayList, new dl(18));
+                    ArrayList arrayList2 = new ArrayList();
+                    arrayList2.add(encryptedChat);
+                    g0.g3(new vv(xvVar, arrayList, 0));
+                    zy sendMessagesHelper = xvVar.getSendMessagesHelper();
+                    ArrayList arrayList3 = new ArrayList();
+                    ArrayList arrayList4 = new ArrayList();
+                    sendMessagesHelper.getClass();
+                    g0.g3(new tj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
+                    SQLiteDatabase sQLiteDatabase5 = xvVar.getMessagesStorage().b;
+                    Locale locale5 = Locale.US;
+                    sQLiteDatabase5.executeFast("REPLACE INTO requested_holes VALUES(" + encryptedChat.id + ", " + i18 + ", " + i17 + ")").stepThis().dispose();
+                    return;
+                } catch (Exception e12) {
+                    a8.g(e12, true);
+                    return;
+                }
         }
-        if (!this.f) {
-            return 0;
-        }
-        int read = randomAccessFile2.read(bArr, i7, i17);
-        if (read > 0) {
-            long j13 = read;
-            this.h += j13;
-            this.c -= j13;
-            this.d += j13;
-            e(read);
-        }
-        return read;
+    }
+
+    public /* synthetic */ s8(c1 c1Var, long j3, TLObject tLObject, long j10, int i7) {
+        this.a = i7;
+        this.d = c1Var;
+        this.b = j3;
+        this.e = tLObject;
+        this.c = j10;
+    }
+
+    public /* synthetic */ s8(x8 x8Var, Float f10, long j3, long j10) {
+        this.a = 0;
+        this.d = x8Var;
+        this.e = f10;
+        this.b = j3;
+        this.c = j10;
     }
 }

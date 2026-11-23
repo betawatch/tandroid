@@ -1,69 +1,71 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class u50 implements f80 {
-    public final /* synthetic */ v50 a;
+public final class u50 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
+    public int d;
+    public int e;
+    public final /* synthetic */ x50 f;
 
-    public u50(v50 v50Var) {
-        this.a = v50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u50(x50 x50Var, Context context) {
+        super(context);
+        this.f = x50Var;
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setBackground(org.telegram.ui.ActionBar.n6.M(46, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.R7, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Y7, false)));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.large_income);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        addView(imageView, c8.na.d(46, 46.0f, 19, 13.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        i5.c.x(textView, 1, 16.0f);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+        addView(textView, c8.na.d(-1, -2.0f, 51, 72.0f, 9.0f, 0.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        textView2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.y6, null);
+        addView(textView2, c8.na.d(-1, -2.0f, 51, 72.0f, 32.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.f80
-    public final void d() {
-        a60 a60Var = this.a.c;
-        org.telegram.ui.ActionBar.g2 g2Var = a60Var.P1;
-        if (g2Var instanceof org.telegram.ui.ff0) {
-            org.telegram.ui.ff0 ff0Var = (org.telegram.ui.ff0) g2Var;
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = a60Var.m1;
-            org.telegram.ui.k90 k90Var = new org.telegram.ui.k90(1, ff0Var.n);
-            k90Var.T = ff0Var.t0;
-            k90Var.d0(tL_chatInviteExported);
-            ff0Var.presentFragment(k90Var);
-        } else {
-            org.telegram.ui.k90 k90Var2 = new org.telegram.ui.k90(1, a60Var.b2);
-            k90Var2.d0(a60Var.m1);
-            k90Var2.T = new t50(this);
-            a60Var.P1.presentFragment(k90Var2);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.R7, false);
+        int x03 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Y7, false);
+        ImageView imageView = this.a;
+        if (imageView != null) {
+            if (x02 == this.d && x03 == this.e) {
+                return;
+            }
+            this.d = x02;
+            this.e = x03;
+            imageView.setBackground(org.telegram.ui.ActionBar.n6.M(46, x02, x03));
+            invalidate();
         }
-        a60Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.f80
-    public final void e() {
-        a60 a60Var = this.a.c;
-        org.telegram.ui.ActionBar.g2 g2Var = a60Var.P1;
-        if (g2Var instanceof org.telegram.ui.ff0) {
-            ((org.telegram.ui.ff0) g2Var).k0(a60Var.m1);
-        } else {
-            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
-            tL_messages_editExportedChatInvite.link = a60Var.m1.link;
-            tL_messages_editExportedChatInvite.revoked = true;
-            tL_messages_editExportedChatInvite.peer = org.telegram.messenger.np.u1(a60Var.a).l1(-a60Var.b2);
-            ConnectionsManager.getInstance(a60Var.a).sendRequest(tL_messages_editExportedChatInvite, new s50(this, 0));
-        }
-        a60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.f80
-    public final void i() {
-        a60 a60Var = this.a.c;
-        org.telegram.ui.ActionBar.g2 g2Var = a60Var.P1;
-        if (g2Var instanceof org.telegram.ui.ff0) {
-            ((org.telegram.ui.ff0) g2Var).h0(a60Var.m1);
-        } else {
-            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
-            tL_messages_deleteExportedChatInvite.link = a60Var.m1.link;
-            tL_messages_deleteExportedChatInvite.peer = org.telegram.messenger.np.u1(a60Var.a).l1(-a60Var.b2);
-            ConnectionsManager.getInstance(a60Var.a).sendRequest(tL_messages_deleteExportedChatInvite, new s50(this, 1));
-        }
-        a60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.f80
-    public final /* synthetic */ void f() {
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

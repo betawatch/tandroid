@@ -2,12 +2,12 @@ package oi;
 
 import android.graphics.Rect;
 import android.text.Layout;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class z implements u9 {
+public final class z implements t9 {
     public final /* synthetic */ int a = 0;
     public final Object b;
     public final /* synthetic */ Object c;
@@ -17,7 +17,7 @@ public final class z implements u9 {
         this.c = rect;
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final Layout a() {
         switch (this.a) {
             case 0:
@@ -31,7 +31,7 @@ public final class z implements u9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final Rect c() {
         switch (this.a) {
             case 0:
@@ -41,14 +41,14 @@ public final class z implements u9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final /* synthetic */ CharSequence getPrefix() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getRow() {
         switch (this.a) {
             case 0:
@@ -58,7 +58,7 @@ public final class z implements u9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final CharSequence getText() {
         switch (this.a) {
             case 0:
@@ -76,7 +76,7 @@ public final class z implements u9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getX() {
         switch (this.a) {
             case 0:
@@ -87,7 +87,7 @@ public final class z implements u9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
+    @Override // org.telegram.ui.Cells.t9
     public final int getY() {
         switch (this.a) {
             case 0:

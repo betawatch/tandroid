@@ -1,68 +1,132 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class r90 extends org.telegram.ui.oq0 {
-    public final /* synthetic */ v90 a;
+public final class r90 extends ek0 {
+    public boolean f3;
+    public boolean g3;
+    public int h3;
+    public int i3;
+    public final /* synthetic */ s90 j3;
 
-    public r90(v90 v90Var) {
-        this.a = v90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r90(s90 s90Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
+        this.j3 = s90Var;
+        setOnScrollListener(new na(this, 12));
+        i(new q90(this));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        if (i7 >= 0) {
-            v90 v90Var = this.a;
-            if (i7 < v90Var.Q.size()) {
-                int childCount = v90Var.getListView().getChildCount();
-                Object obj = v90Var.Q.get(i7);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = v90Var.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.i2) {
-                        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
-                        if (i2Var.getResult() == obj) {
-                            imageReceiver = i2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
-                                wq0Var.b = iArr[0];
-                                wq0Var.c = iArr[1];
-                                wq0Var.d = v90Var.getListView();
-                                wq0Var.a = imageReceiver;
-                                wq0Var.e = imageReceiver.p();
-                                wq0Var.h = imageReceiver.E();
-                                return wq0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i7) {
+        s90 s90Var = this.j3;
+        s90Var.invalidate();
+        s90Var.b();
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        s90 s90Var = this.j3;
+        jg.h1 h1Var = s90Var.f;
+        jg.n1 n1Var = s90Var.e;
+        if (!s90Var.c.t ? this.g3 || n1Var == null || n1Var.e == null || !n1Var.f || motionEvent.getY() >= n1Var.e.getBottom() : this.g3 || n1Var == null || n1Var.e == null || !n1Var.f || motionEvent.getY() <= n1Var.e.getTop()) {
+            boolean z10 = !this.f3 && org.telegram.ui.ns.p().q(motionEvent, s90Var.b, null, this.o2);
+            if (((h1Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && h1Var.N()) {
+                if (h1Var.o0 == null) {
+                    jg.d1 d1Var = new jg.d1(h1Var, h1Var.f, h1Var.n, h1Var.r, 0);
+                    h1Var.o0 = d1Var;
+                    d1Var.a();
                 }
+                h1Var.o0.b();
+            }
+            if (super.onInterceptTouchEvent(motionEvent) || z10) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
-        if (i7 >= 0) {
-            v90 v90Var = this.a;
-            if (i7 >= v90Var.Q.size()) {
-                return;
-            }
-            v90Var.y.g((TLRPC.BotInlineResult) v90Var.Q.get(i7), z10, i10);
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        int i13;
+        int i14 = i11 - i7;
+        int i15 = i12 - i10;
+        s90 s90Var = this.j3;
+        boolean g10 = s90Var.g();
+        v4.c0 currentLayoutManager = s90Var.getCurrentLayoutManager();
+        int L0 = g10 ? currentLayoutManager.L0() : currentLayoutManager.N0();
+        View m10 = currentLayoutManager.m(L0);
+        if (m10 != null) {
+            i13 = m10.getTop() - (g10 ? 0 : this.i3 - i15);
+        } else {
+            i13 = 0;
         }
+        super.onLayout(z10, i7, i10, i11, i12);
+        if (s90Var.I) {
+            s90Var.H = true;
+            currentLayoutManager.h1(0, 100000);
+            super.onLayout(false, i7, i10, i11, i12);
+            s90Var.H = false;
+            s90Var.I = false;
+        } else if (L0 != -1 && i14 == this.h3 && i15 - this.i3 != 0) {
+            s90Var.H = true;
+            currentLayoutManager.i1(L0, i13, false);
+            super.onLayout(false, i7, i10, i11, i12);
+            s90Var.H = false;
+        }
+        this.i3 = i15;
+        this.h3 = i14;
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i10);
+        s90 s90Var = this.j3;
+        jg.n1 n1Var = s90Var.e;
+        if (n1Var != null) {
+            n1Var.d = Integer.valueOf(size);
+            bi.o3 o3Var = n1Var.e;
+            if (o3Var != null) {
+                o3Var.requestLayout();
+            }
+        }
+        float min = (int) Math.min(org.telegram.messenger.g0.L(126.0f), org.telegram.messenger.g0.q.y * 0.22f);
+        s90Var.w = min;
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        s90 s90Var = this.j3;
+        jg.n1 n1Var = s90Var.e;
+        if (s90Var.c.t) {
+            if (!this.g3 && n1Var != null && n1Var.e != null && n1Var.f && motionEvent.getY() > n1Var.e.getTop()) {
+                return false;
+            }
+        } else if (!this.g3 && n1Var != null && n1Var.e != null && n1Var.f && motionEvent.getY() < n1Var.e.getBottom()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.j3.H) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.Components.ek0, android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        s90 s90Var = this.j3;
+        s90Var.invalidate();
+        s90Var.b();
     }
 }

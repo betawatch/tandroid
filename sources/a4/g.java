@@ -1,13 +1,13 @@
 package a4;
 
-import a8.la;
+import a8.ma;
 import e2.t0;
 import f3.p;
 import h2.x;
 import java.io.EOFException;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -15,8 +15,8 @@ public final class g {
     public int c;
     public int d;
     public int e;
-    public final int[] f = new int[ls.e4];
-    public final x g = new x(ls.e4);
+    public final int[] f = new int[ks.e4];
+    public final x g = new x(ks.e4);
 
     public final boolean a(p pVar, boolean z10) {
         boolean z11;
@@ -29,7 +29,7 @@ public final class g {
         x xVar = this.g;
         xVar.K(27);
         try {
-            z11 = pVar.g(xVar.a, 0, 27, z10);
+            z11 = pVar.k(xVar.a, 0, 27, z10);
         } catch (EOFException e10) {
             if (!z10) {
                 throw e10;
@@ -48,7 +48,7 @@ public final class g {
                 this.d = A + 27;
                 xVar.K(A);
                 try {
-                    z12 = pVar.g(xVar.a, 0, this.c, z10);
+                    z12 = pVar.k(xVar.a, 0, this.c, z10);
                 } catch (EOFException e11) {
                     if (!z10) {
                         throw e11;
@@ -72,7 +72,7 @@ public final class g {
 
     public final boolean b(p pVar, long j3) {
         boolean z10;
-        la.f(pVar.getPosition() == pVar.l());
+        ma.f(pVar.getPosition() == pVar.l());
         x xVar = this.g;
         xVar.K(4);
         while (true) {
@@ -80,7 +80,7 @@ public final class g {
                 break;
             }
             try {
-                z10 = pVar.g(xVar.a, 0, 4, true);
+                z10 = pVar.k(xVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
@@ -89,10 +89,10 @@ public final class g {
             }
             xVar.N(0);
             if (xVar.C() == 1332176723) {
-                pVar.n();
+                pVar.o();
                 return true;
             }
-            pVar.r(1);
+            pVar.q(1);
         }
         do {
             if (j3 != -1 && pVar.getPosition() >= j3) {

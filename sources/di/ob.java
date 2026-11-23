@@ -5,107 +5,107 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ob extends LinearLayout implements gs {
+public final class ob extends LinearLayout implements fs {
     public final int a;
-    public final j71 b;
+    public final k71 b;
     public final nb c;
     public final FrameLayout d;
-    public final tt0 e;
+    public final st0 e;
     public final long f;
 
-    public ob(Context context, int i7, boolean z10, long j3, int i10, org.telegram.ui.ActionBar.h6 h6Var, tt0 tt0Var) {
+    public ob(Context context, int i7, boolean z10, long j3, int i10, org.telegram.ui.ActionBar.i6 i6Var, st0 st0Var) {
         super(context);
-        this.e = tt0Var;
+        this.e = st0Var;
         this.a = i7;
         this.f = j3;
         setOrientation(1);
-        j71 j71Var = tt0Var == null ? new j71(context, null) : new gk0(context, h6Var, tt0Var);
-        this.b = j71Var;
-        nb nbVar = new nb(context, i7, z10, j3, i10, h6Var);
+        k71 k71Var = st0Var == null ? new k71(context, null) : new gk0(context, i6Var, st0Var);
+        this.b = k71Var;
+        nb nbVar = new nb(context, i7, z10, j3, i10, i6Var);
         this.c = nbVar;
-        nbVar.g = tt0Var == null ? null : (gk0) j71Var;
-        j71Var.setAdapter(nbVar);
-        View i11 = j71Var.i(tt0Var == null ? 3 : -2, true);
+        nbVar.g = st0Var == null ? null : (gk0) k71Var;
+        k71Var.setAdapter(nbVar);
+        View k10 = k71Var.k(st0Var == null ? 3 : -2, true);
         View view = new View(context);
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d7, view, h6Var);
-        if (tt0Var == null) {
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d7, view, i6Var);
+        if (st0Var == null) {
             this.d = null;
-            addView(i11, c8.ma.o(-1, 48));
-            addView(view, new LinearLayout.LayoutParams(c8.ma.z(-1.0f), c8.ma.z(1.0f / org.telegram.messenger.g0.p)));
-            setBackgroundColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
+            addView(k10, c8.na.o(-1, 48));
+            addView(view, new LinearLayout.LayoutParams(c8.na.z(-1.0f), c8.na.z(1.0f / org.telegram.messenger.g0.p)));
+            setBackgroundColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, i6Var));
         } else {
             setClipChildren(false);
             setClipToPadding(false);
             FrameLayout frameLayout = new FrameLayout(context);
             this.d = frameLayout;
             frameLayout.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-            frameLayout.addView(i11, c8.ma.e(-1, 48, 48));
+            frameLayout.addView(k10, c8.na.e(-1, 48, 48));
         }
-        addView(j71Var, c8.ma.o(-1, -1));
+        addView(k71Var, c8.na.o(-1, -1));
     }
 
     public final void a(boolean z10) {
         nb nbVar = this.c;
-        j71 j71Var = this.b;
-        tt0 tt0Var = this.e;
-        if (tt0Var == null) {
+        k71 k71Var = this.b;
+        st0 st0Var = this.e;
+        if (st0Var == null) {
             nbVar.i();
-            j71Var.j(z10);
+            k71Var.l(z10);
             return;
         }
         ArrayList arrayList = nbVar.i;
         ArrayList arrayList2 = nbVar.i;
         int i7 = 0;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            i7 |= 1 << ((o41) arrayList.get(i10)).A;
+            i7 |= 1 << ((n41) arrayList.get(i10)).A;
         }
-        View currentView = j71Var.getCurrentView();
+        View currentView = k71Var.getCurrentView();
         int i11 = currentView instanceof mb ? ((mb) currentView).d : 0;
         nbVar.i();
         int i12 = 0;
         for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-            i12 |= 1 << ((o41) arrayList2.get(i13)).A;
+            i12 |= 1 << ((n41) arrayList2.get(i13)).A;
         }
         if (i7 == i12) {
             if (z10) {
                 return;
             }
-            j71Var.j(false);
+            k71Var.l(false);
             return;
         }
-        j71Var.onTouchEvent(null);
+        k71Var.onTouchEvent(null);
         int i14 = 0;
         while (true) {
             if (i14 >= arrayList2.size()) {
                 i14 = 0;
                 break;
-            } else if (((o41) arrayList2.get(i14)).A == i11) {
+            } else if (((n41) arrayList2.get(i14)).A == i11) {
                 break;
             } else {
                 i14++;
             }
         }
-        j71Var.setPosition(i14);
-        j71Var.F();
-        j71Var.j(false);
-        tt0Var.p();
+        k71Var.setPosition(i14);
+        k71Var.H();
+        k71Var.l(false);
+        st0Var.p();
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ls.B3;
+        int i11 = ks.B3;
         long j3 = this.f;
-        if ((i7 == i11 && j3 == 0) || (i7 == ls.F3 && j3 != 0 && ((Long) objArr[0]).longValue() == j3)) {
+        if ((i7 == i11 && j3 == 0) || (i7 == ks.F3 && j3 != 0 && ((Long) objArr[0]).longValue() == j3)) {
             a(true);
         }
     }
@@ -122,20 +122,20 @@ public final class ob extends LinearLayout implements gs {
         return this.d;
     }
 
-    public j71 getViewPager() {
+    public k71 getViewPager() {
         return this.b;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         a(false);
-        ls.f(this.a).c(this, this.f == 0 ? ls.B3 : ls.F3);
+        ks.f(this.a).c(this, this.f == 0 ? ks.B3 : ks.F3);
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        ls.f(this.a).n(this, this.f == 0 ? ls.B3 : ls.F3);
+        ks.f(this.a).n(this, this.f == 0 ? ks.B3 : ks.F3);
         super.onDetachedFromWindow();
     }
 
@@ -146,9 +146,9 @@ public final class ob extends LinearLayout implements gs {
                 return;
             }
             nbVar.h = qVar;
-            j71 j71Var = this.b;
-            qVar.c(j71Var);
-            for (View view : j71Var.getViewPages()) {
+            k71 k71Var = this.b;
+            qVar.c(k71Var);
+            for (View view : k71Var.getViewPages()) {
                 if (view instanceof mb) {
                     qVar.b(((mb) view).a);
                 }

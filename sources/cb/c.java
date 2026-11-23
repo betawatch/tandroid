@@ -2,7 +2,7 @@ package cb;
 
 import a8.sa;
 import aa.p;
-import ai.r0;
+import ai.n0;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,9 +16,10 @@ import androidx.fragment.app.f0;
 import androidx.fragment.app.j0;
 import androidx.fragment.app.s;
 import androidx.lifecycle.a0;
-import bi.n3;
+import bi.p3;
 import com.android.billingclient.api.ProxyBillingActivityV2;
-import com.google.android.gms.common.api.internal.h1;
+import com.google.android.gms.common.api.internal.g1;
+import com.google.android.gms.common.api.internal.p0;
 import com.google.android.gms.common.api.internal.q;
 import com.google.android.gms.common.api.internal.q0;
 import com.google.android.gms.internal.cast.t;
@@ -28,7 +29,6 @@ import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import d9.o;
 import di.pb;
 import e5.n;
 import f5.g;
@@ -36,13 +36,14 @@ import f6.d0;
 import f6.e0;
 import fi.z3;
 import g6.j;
-import gb.d1;
+import ga.d;
+import gb.e1;
 import gb.l;
-import gb.w0;
+import gb.x0;
 import h6.m;
 import j$.util.DesugarCollections;
 import j6.f;
-import j6.x;
+import j6.y;
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -56,20 +57,19 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.locks.Lock;
 import m.i1;
-import m.o3;
 import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import org.telegram.messenger.ls;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.qo0;
-import org.telegram.ui.Components.qt0;
-import org.telegram.ui.q11;
-import org.telegram.ui.r00;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.po0;
+import org.telegram.ui.Components.pt0;
+import org.telegram.ui.o11;
+import org.telegram.ui.q00;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class c implements SuccessContinuation, r0, a0, androidx.activity.result.b, h71, q11, q0, qt0, n, q, qo0, i1, OnCompleteListener, ib.b {
+public final class c implements SuccessContinuation, n0, a0, androidx.activity.result.b, i71, o11, p0, pt0, n, q, po0, i1, OnCompleteListener, ib.b {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -79,11 +79,39 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         this.b = obj;
     }
 
-    public static int B(int i7) {
-        return C(i7 << 3);
+    public static int B(long j3) {
+        if (((-128) & j3) == 0) {
+            return 1;
+        }
+        if (((-16384) & j3) == 0) {
+            return 2;
+        }
+        if (((-2097152) & j3) == 0) {
+            return 3;
+        }
+        if (((-268435456) & j3) == 0) {
+            return 4;
+        }
+        if (((-34359738368L) & j3) == 0) {
+            return 5;
+        }
+        if (((-4398046511104L) & j3) == 0) {
+            return 6;
+        }
+        if (((-562949953421312L) & j3) == 0) {
+            return 7;
+        }
+        if (((-72057594037927936L) & j3) == 0) {
+            return 8;
+        }
+        return (j3 & Long.MIN_VALUE) == 0 ? 9 : 10;
     }
 
     public static int C(int i7) {
+        return D(i7 << 3);
+    }
+
+    public static int D(int i7) {
         if ((i7 & (-128)) == 0) {
             return 1;
         }
@@ -96,7 +124,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         return (i7 & (-268435456)) == 0 ? 4 : 5;
     }
 
-    public static int q(CharSequence charSequence) {
+    public static int r(CharSequence charSequence) {
         int length = charSequence.length();
         int i7 = 0;
         int i10 = 0;
@@ -144,15 +172,15 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         throw new IllegalArgumentException(sb3.toString());
     }
 
-    public static int v(int i7, String str) {
-        int B = B(i7);
-        int q10 = q(str);
-        return C(q10) + q10 + B;
+    public static int x(int i7, String str) {
+        int C = C(i7);
+        int r10 = r(str);
+        return D(r10) + r10 + C;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v20 */
-    public static void x(CharSequence charSequence, ByteBuffer byteBuffer) {
+    public static void z(CharSequence charSequence, ByteBuffer byteBuffer) {
         int i7;
         char charAt;
         if (byteBuffer.isReadOnly()) {
@@ -176,7 +204,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
                                 char charAt3 = charSequence.charAt(i11);
                                 if (Character.isSurrogatePair(charAt2, charAt3)) {
                                     int codePoint = Character.toCodePoint(charAt2, charAt3);
-                                    byteBuffer.put((byte) ((codePoint >>> 18) | ls.P3));
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | ks.P3));
                                     byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
                                     byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
                                     byteBuffer.put((byte) ((codePoint & 63) | 128));
@@ -244,7 +272,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
                                 char charAt5 = charSequence.charAt(i15);
                                 if (Character.isSurrogatePair(charAt4, charAt5)) {
                                     int codePoint2 = Character.toCodePoint(charAt4, charAt5);
-                                    array[i7] = (byte) ((codePoint2 >>> 18) | ls.P3);
+                                    array[i7] = (byte) ((codePoint2 >>> 18) | ks.P3);
                                     array[i7 + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
                                     int i16 = i7 + 3;
                                     array[i7 + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
@@ -278,129 +306,95 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         }
     }
 
-    public static int z(long j3) {
-        if (((-128) & j3) == 0) {
-            return 1;
+    public void A(long j3) {
+        while (((-128) & j3) != 0) {
+            v((((int) j3) & ks.L1) | 128);
+            j3 >>>= 7;
         }
-        if (((-16384) & j3) == 0) {
-            return 2;
-        }
-        if (((-2097152) & j3) == 0) {
-            return 3;
-        }
-        if (((-268435456) & j3) == 0) {
-            return 4;
-        }
-        if (((-34359738368L) & j3) == 0) {
-            return 5;
-        }
-        if (((-4398046511104L) & j3) == 0) {
-            return 6;
-        }
-        if (((-562949953421312L) & j3) == 0) {
-            return 7;
-        }
-        if (((-72057594037927936L) & j3) == 0) {
-            return 8;
-        }
-        return (j3 & Long.MIN_VALUE) == 0 ? 9 : 10;
+        v((int) j3);
     }
 
-    @Override // androidx.lifecycle.a0
-    public void A(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        g0 g0Var = (g0) this.b;
-        Handler handler = g0Var.B0;
-        sa saVar = g0Var.C0;
-        handler.removeCallbacks(saVar);
-        TextView textView = g0Var.H0;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-        handler.postDelayed(saVar, 2000L);
-    }
-
-    @Override // org.telegram.ui.Components.qo0
-    public void D0() {
-        z3.h0((z3) this.b);
-    }
-
-    @Override // org.telegram.ui.Components.qt0
-    public void G(boolean z10) {
+    @Override // org.telegram.ui.Components.pt0
+    public void E(boolean z10) {
         pb pbVar = (pb) this.b;
         te.a aVar = pbVar.Z;
         if (aVar != null) {
             aVar.a(z10, true);
         }
-        r00 r00Var = pbVar.s;
-        if (r00Var != null) {
-            r00Var.invalidate();
+        q00 q00Var = pbVar.s;
+        if (q00Var != null) {
+            q00Var.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.qt0
-    public float U0() {
+    @Override // org.telegram.ui.Components.pt0
+    public float K0() {
         return i5.c.d(9.66f, ri.a.d(((pb) this.b).c0), 0);
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.pt0
+    public int T0() {
+        return ((pb) this.b).d0;
+    }
+
+    @Override // org.telegram.ui.Components.i71
     public void a(int i7, boolean z10) {
-        n3 n3Var = (n3) this.b;
-        if (n3Var.m2 == i7) {
+        p3 p3Var = (p3) this.b;
+        if (p3Var.m2 == i7) {
             return;
         }
-        n3Var.m2 = i7;
-        n3Var.e2.g();
-        n3Var.U1.O(true);
+        p3Var.m2 = i7;
+        p3Var.e2.g();
+        p3Var.U1.O(true);
     }
 
     @Override // com.google.android.gms.common.api.internal.q
     public void accept(Object obj, Object obj2) {
-        x xVar = (x) obj;
-        f fVar = (f) xVar.n();
+        y yVar = (y) obj;
+        f fVar = (f) yVar.n();
         d0 d0Var = ((e0) this.b).l;
         Parcel p12 = fVar.p1();
         t.d(p12, d0Var);
         fVar.u1(p12, 18);
-        f fVar2 = (f) xVar.n();
+        f fVar2 = (f) yVar.n();
         fVar2.u1(fVar2.p1(), 17);
         ((TaskCompletionSource) obj2).setResult(null);
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ boolean b() {
-        return true;
+    @Override // e5.n
+    public String[] b() {
+        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
     }
 
     @Override // e5.n
     public WebViewProviderBoundaryInterface createWebView(WebView webView) {
-        return (WebViewProviderBoundaryInterface) af.b.b(WebViewProviderBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).createWebView(webView));
+        return (WebViewProviderBoundaryInterface) af.b.a(WebViewProviderBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).createWebView(webView));
     }
 
-    @Override // e5.n
-    public String[] d() {
-        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ boolean d() {
+        return true;
     }
 
-    public void e(StringBuilder sb2, Iterator it) {
+    public void f(StringBuilder sb2, Iterator it) {
         g gVar = (g) this.b;
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(g.f(entry.getKey()));
+            sb2.append(g.c(entry.getKey()));
             sb2.append("=");
-            sb2.append(g.f(entry.getValue()));
+            sb2.append(g.c(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append((CharSequence) gVar.a);
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(g.f(entry2.getKey()));
+                sb2.append(g.c(entry2.getKey()));
                 sb2.append("=");
-                sb2.append(g.f(entry2.getValue()));
+                sb2.append(g.c(entry2.getValue()));
             }
         }
     }
 
     @Override // androidx.activity.result.b
-    public void f(Object obj) {
+    public void g(Object obj) {
         switch (this.a) {
             case 7:
                 androidx.activity.result.a aVar = (androidx.activity.result.a) obj;
@@ -443,63 +437,58 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
     @Override // fd.a
     public Object get() {
         switch (this.a) {
-            case 27:
-                return new l((ua.b) ((o) this.b).a);
+            case 28:
+                return new l((ua.b) ((e.a) this.b).a);
             default:
-                return new w0((d1) ((ib.c) this.b).get());
+                return new x0((e1) ((ib.c) this.b).get());
         }
     }
 
     @Override // e5.n
     public StaticsBoundaryInterface getStatics() {
-        return (StaticsBoundaryInterface) af.b.b(StaticsBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).getStatics());
+        return (StaticsBoundaryInterface) af.b.a(StaticsBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).getStatics());
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ boolean h(int i7) {
-        return false;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.q0
-    public void i(n6.a aVar) {
-        h1 h1Var = (h1) this.b;
-        h1Var.o.lock();
+    @Override // com.google.android.gms.common.api.internal.p0
+    public void h(n6.a aVar) {
+        g1 g1Var = (g1) this.b;
+        g1Var.o.lock();
         try {
-            h1Var.l = aVar;
-            h1Var.j();
+            g1Var.l = aVar;
+            g1Var.j();
         } finally {
-            h1Var.o.unlock();
+            g1Var.o.unlock();
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.q0
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ boolean i(int i7) {
+        return false;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.p0
     public void j(int i7) {
         n6.a aVar;
-        h1 h1Var = (h1) this.b;
-        Lock lock = h1Var.o;
-        Lock lock2 = h1Var.o;
+        g1 g1Var = (g1) this.b;
+        Lock lock = g1Var.o;
+        Lock lock2 = g1Var.o;
         lock.lock();
         try {
-            if (!h1Var.n && (aVar = h1Var.m) != null && aVar.c()) {
-                h1Var.n = true;
-                h1Var.e.onConnectionSuspended(i7);
+            if (!g1Var.n && (aVar = g1Var.m) != null && aVar.c()) {
+                g1Var.n = true;
+                g1Var.e.onConnectionSuspended(i7);
                 return;
             }
-            h1Var.n = false;
-            h1Var.b.j(i7);
-            h1Var.m = null;
-            h1Var.l = null;
+            g1Var.n = false;
+            g1Var.b.j(i7);
+            g1Var.m = null;
+            g1Var.l = null;
         } finally {
             lock2.unlock();
         }
     }
 
-    @Override // org.telegram.ui.Components.qt0
-    public int j1() {
-        return ((pb) this.b).d0;
-    }
-
-    public Set l() {
+    public Set k() {
         Set unmodifiableSet;
         synchronized (((HashSet) this.b)) {
             unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
@@ -507,26 +496,36 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         return unmodifiableSet;
     }
 
-    @Override // com.google.android.gms.common.api.internal.q0
-    public void m(Bundle bundle) {
-        h1 h1Var = (h1) this.b;
-        h1Var.o.lock();
-        try {
-            Bundle bundle2 = h1Var.k;
-            if (bundle2 == null) {
-                h1Var.k = bundle;
-            } else if (bundle != null) {
-                bundle2.putAll(bundle);
-            }
-            h1Var.l = n6.a.f;
-            h1Var.j();
-        } finally {
-            h1Var.o.unlock();
-        }
+    public boolean l() {
+        q0 q0Var = ((com.google.android.gms.common.api.internal.e0) this.b).d;
+        return q0Var != null && q0Var.g();
+    }
+
+    @Override // org.telegram.ui.Components.po0
+    public void l0() {
+        z3.h0((z3) this.b);
     }
 
     public void n() {
         ((androidx.fragment.app.u) this.b).d.R();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.p0
+    public void o(Bundle bundle) {
+        g1 g1Var = (g1) this.b;
+        g1Var.o.lock();
+        try {
+            Bundle bundle2 = g1Var.k;
+            if (bundle2 == null) {
+                g1Var.k = bundle;
+            } else if (bundle != null) {
+                bundle2.putAll(bundle);
+            }
+            g1Var.l = n6.a.f;
+            g1Var.j();
+        } finally {
+            g1Var.o.unlock();
+        }
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
@@ -534,35 +533,35 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         g6.c.h((g6.c) ((j) this.b).c, "launchApplication", task);
     }
 
-    public void p(m mVar) {
-        o3 o3Var = (o3) this.b;
-        o3Var.b = mVar;
-        Iterator it = ((LinkedList) o3Var.c).iterator();
+    public void q(m mVar) {
+        d dVar = (d) this.b;
+        dVar.a = mVar;
+        Iterator it = ((LinkedList) dVar.b).iterator();
         while (it.hasNext()) {
             ((a7.c) it.next()).b();
         }
-        ((LinkedList) o3Var.c).clear();
+        ((LinkedList) dVar.b).clear();
     }
 
-    public void r(int i7, String str) {
+    public void s(int i7, String str) {
         ByteBuffer byteBuffer = (ByteBuffer) this.b;
-        w(i7, 2);
+        y(i7, 2);
         try {
-            int C = C(str.length());
-            if (C != C(str.length() * 3)) {
-                u(q(str));
-                x(str, byteBuffer);
+            int D = D(str.length());
+            if (D != D(str.length() * 3)) {
+                w(r(str));
+                z(str, byteBuffer);
                 return;
             }
             int position = byteBuffer.position();
-            if (byteBuffer.remaining() < C) {
-                throw new androidx.datastore.preferences.protobuf.l(position + C, byteBuffer.limit());
+            if (byteBuffer.remaining() < D) {
+                throw new androidx.datastore.preferences.protobuf.l(position + D, byteBuffer.limit());
             }
-            byteBuffer.position(position + C);
-            x(str, byteBuffer);
+            byteBuffer.position(position + D);
+            z(str, byteBuffer);
             int position2 = byteBuffer.position();
             byteBuffer.position(position);
-            u((position2 - position) - C);
+            w((position2 - position) - D);
             byteBuffer.position(position2);
         } catch (BufferOverflowException e10) {
             androidx.datastore.preferences.protobuf.l lVar = new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
@@ -571,24 +570,15 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         }
     }
 
-    public void s(int i7, byte[] bArr) {
-        w(i7, 2);
-        u(bArr.length);
+    public void t(int i7, byte[] bArr) {
+        y(i7, 2);
+        w(bArr.length);
         int length = bArr.length;
         ByteBuffer byteBuffer = (ByteBuffer) this.b;
         if (byteBuffer.remaining() < length) {
             throw new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
         }
         byteBuffer.put(bArr, 0, length);
-    }
-
-    public void t(int i7) {
-        byte b10 = (byte) i7;
-        ByteBuffer byteBuffer = (ByteBuffer) this.b;
-        if (!byteBuffer.hasRemaining()) {
-            throw new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
-        }
-        byteBuffer.put(b10);
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -602,28 +592,43 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         return Tasks.forResult(null);
     }
 
-    public void u(int i7) {
+    @Override // androidx.lifecycle.a0
+    public void u(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        g0 g0Var = (g0) this.b;
+        Handler handler = g0Var.B0;
+        sa saVar = g0Var.C0;
+        handler.removeCallbacks(saVar);
+        TextView textView = g0Var.H0;
+        if (textView != null) {
+            textView.setText(charSequence);
+        }
+        handler.postDelayed(saVar, 2000L);
+    }
+
+    public void v(int i7) {
+        byte b10 = (byte) i7;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (!byteBuffer.hasRemaining()) {
+            throw new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(b10);
+    }
+
+    public void w(int i7) {
         while ((i7 & (-128)) != 0) {
-            t((i7 & ls.L1) | 128);
+            v((i7 & ks.L1) | 128);
             i7 >>>= 7;
         }
-        t(i7);
+        v(i7);
     }
 
-    public void w(int i7, int i10) {
-        u((i7 << 3) | i10);
-    }
-
-    public void y(long j3) {
-        while (((-128) & j3) != 0) {
-            t((((int) j3) & ls.L1) | 128);
-            j3 >>>= 7;
-        }
-        t((int) j3);
+    public void y(int i7, int i10) {
+        w((i7 << 3) | i10);
     }
 
     public c(byte[] bArr, int i7) {
-        this.a = 14;
+        this.a = 15;
         ByteBuffer wrap = ByteBuffer.wrap(bArr, 0, i7);
         this.b = wrap;
         wrap.order(ByteOrder.LITTLE_ENDIAN);
@@ -638,7 +643,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
             case 10:
                 this.b = new q4.q[cg.b.values().length];
                 break;
-            case 19:
+            case 20:
                 break;
             default:
                 this.b = new HashSet();
@@ -651,23 +656,23 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
         this.b = nVar;
     }
 
-    @Override // org.telegram.ui.Components.qo0
-    public /* synthetic */ void Q() {
+    @Override // org.telegram.ui.Components.po0
+    public /* synthetic */ void K() {
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ void c() {
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ void e() {
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ void o() {
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ void p() {
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ void g(float f10) {
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ void c(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public /* synthetic */ void k(ArrayList arrayList) {
+    @Override // org.telegram.ui.Components.i71
+    public /* synthetic */ void m(ArrayList arrayList) {
     }
 }

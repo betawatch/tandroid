@@ -12,10 +12,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -105,7 +105,7 @@ public abstract class b {
                     if (i7 != -1) {
                         throw new b0("Invalid byte sequence");
                     }
-                    aVar.b(((i7 >> 8) * ls.W2) + (i7 & ls.e4), 13);
+                    aVar.b(((i7 >> 8) * ks.W2) + (i7 & ks.e4), 13);
                     i10 += 2;
                 } else {
                     i16 = 49472;
@@ -299,7 +299,7 @@ public abstract class b {
                 qVar.d = bVar2;
                 gc.b bVar7 = (gc.b) qVar.d;
                 i11 = 2;
-                gc.e[] eVarArr = {q.q(1), q.q(2), q.q(3)};
+                gc.e[] eVarArr = {q.r(1), q.r(2), q.r(3)};
                 m[] mVarArr = {qVar.l(eVarArr[0]), qVar.l(eVarArr[1]), qVar.l(eVarArr[2])};
                 int i30 = 0;
                 int i31 = -1;
@@ -307,10 +307,10 @@ public abstract class b {
                 for (int i33 = 3; i30 < i33; i33 = 3) {
                     m mVar = mVarArr[i30];
                     int i34 = i19;
-                    int C = mVar.C((gc.e) mVar.c);
-                    if (d(C, eVarArr[i30], bVar7) && C < i32) {
+                    int D = mVar.D((gc.e) mVar.c);
+                    if (d(D, eVarArr[i30], bVar7) && D < i32) {
                         i31 = i30;
-                        i32 = C;
+                        i32 = D;
                     }
                     i30++;
                     i19 = i34;

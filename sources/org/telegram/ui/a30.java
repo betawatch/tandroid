@@ -1,37 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class a30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f40 b;
+public final class a30 extends org.telegram.ui.Components.zo0 {
+    public final /* synthetic */ e40 V2;
 
-    public /* synthetic */ a30(f40 f40Var, int i7) {
-        this.a = i7;
-        this.b = f40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a30(e40 e40Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.V2 = e40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                f40 f40Var = this.b;
-                f40Var.Q1.setVisibility(4);
-                f40Var.R1.setVisibility(4);
-                f40Var.P1.setVisibility(4);
-                break;
-            case 1:
-                this.b.c2 = null;
-                break;
-            default:
-                f40 f40Var2 = this.b;
-                f40Var2.c3 = null;
-                f40Var2.b3.setColor(f40Var2.S3 == 3 ? -1163700 : -12761513);
-                f40Var2.a3.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.zo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            e40 e40Var = this.V2;
+            if (m10 == 1) {
+                e40Var.o1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i7), 41);
+            } else {
+                e40Var.o1().k(0L, 41, Integer.valueOf(i7), Integer.valueOf(hVar.m()), null, null);
+            }
         }
     }
 }

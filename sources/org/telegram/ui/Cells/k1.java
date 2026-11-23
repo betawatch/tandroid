@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.z51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class k1 extends OldVideoPlayerRewinder {
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 PhotoViewer.c(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 photoViewer.A1.f(false);
-                wi.n nVar = photoViewer.P8;
+                wi.n nVar = photoViewer.V8;
                 if (nVar != null && (hVar = nVar.e) != null) {
                     hVar.F.f(false);
                     break;
@@ -44,9 +44,9 @@ public final class k1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 r1 r1Var = (r1) this.b;
-                a61 a61Var = r1Var.Ob;
-                a61Var.n = new hi.w4(this, 27);
-                a61Var.e(false);
+                z51 z51Var = r1Var.Ob;
+                z51Var.n = new h6.o(this, 29);
+                z51Var.e(false);
                 r1Var.Ob.d(!z10);
                 r1Var.Ob.f(true);
                 r1Var.invalidate();
@@ -58,12 +58,12 @@ public final class k1 extends OldVideoPlayerRewinder {
                 photoViewer.A1.d(z11);
                 photoViewer.A1.f(true);
                 photoViewer.f0.invalidate();
-                wi.n nVar = photoViewer.P8;
+                wi.n nVar = photoViewer.V8;
                 if (nVar != null && (hVar = nVar.e) != null) {
-                    a61 a61Var2 = hVar.F;
-                    a61Var2.e(false);
-                    a61Var2.d(z11);
-                    a61Var2.f(true);
+                    z51 z51Var2 = hVar.F;
+                    z51Var2.e(false);
+                    z51Var2.d(z11);
+                    z51Var2.f(true);
                     fi.u2 u2Var = hVar.o;
                     if (u2Var != null) {
                         u2Var.invalidate();
@@ -98,7 +98,7 @@ public final class k1 extends OldVideoPlayerRewinder {
                     photoViewer.q3.h(false, f10);
                     photoViewer.r3.invalidate();
                 }
-                wi.n nVar = photoViewer.P8;
+                wi.n nVar = photoViewer.V8;
                 if (nVar != null && (hVar = nVar.e) != null) {
                     hVar.F.g(0L);
                     if (z10) {

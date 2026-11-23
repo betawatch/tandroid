@@ -1,50 +1,81 @@
 package li;
 
-import org.telegram.messenger.gs;
-import org.telegram.messenger.np;
-import org.telegram.messenger.pr;
-import org.telegram.ui.ActionBar.t1;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import c8.na;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.p9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements pr {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t1 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ gs e;
+public final class e extends FrameLayout implements c6 {
+    public final p9 a;
+    public final i6 b;
+    public final TextView c;
+    public final TextView d;
 
-    public /* synthetic */ e(gs gsVar, t1 t1Var, long j3, boolean z10, int i7) {
-        this.a = i7;
-        this.e = gsVar;
-        this.b = t1Var;
-        this.c = j3;
-        this.d = z10;
+    public e(Context context, i6 i6Var) {
+        super(context);
+        this.b = i6Var;
+        p9 p9Var = new p9(context);
+        this.a = p9Var;
+        p9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
+        addView(p9Var, na.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        addView(textView, na.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(textView2, na.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // org.telegram.messenger.pr
-    public final void run(long j3) {
-        switch (this.a) {
-            case 0:
-                g gVar = (g) this.e;
-                gVar.getClass();
-                this.b.dismiss();
-                if (j3 != 0) {
-                    gVar.b = -j3;
-                    gVar.c = gVar.getMessagesController().O0(Long.valueOf(j3));
-                    gVar.b0(this.c, this.d);
-                    break;
-                }
-                break;
-            default:
-                d0 d0Var = (d0) this.e;
-                d0Var.getClass();
-                this.b.dismiss();
-                if (j3 != 0) {
-                    d0Var.L0(np.u1(d0Var.a).O0(Long.valueOf(j3)), this.c, this.d);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(n6.G6));
+        hashSet.add(Integer.valueOf(n6.z6));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = n6.S0;
+        p9 p9Var = this.a;
+        bg.t.a(canvas, drawable, (p9Var.getWidth() / 2.0f) + p9Var.getLeft(), (p9Var.getHeight() / 2.0f) + p9Var.getTop(), p9Var.getHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(218.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int i7 = n6.G6;
+        i6 i6Var = this.b;
+        this.c.setTextColor(n6.w0(i7, i6Var));
+        this.d.setTextColor(n6.w0(n6.z6, i6Var));
     }
 }

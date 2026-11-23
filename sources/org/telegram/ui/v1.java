@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 {
+public final class v1 extends ViewGroup implements org.telegram.ui.Cells.h9, c3 {
     public CheckBoxBase E;
     public final p50 a;
     public final e4 b;
@@ -54,7 +54,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
         p50Var.getClass();
         int L = measuredWidth - org.telegram.messenger.g0.L(15);
         x3 x3Var = this.x.c;
-        return org.telegram.messenger.o10.B(12.0f, x3Var.f, L - x3Var.c);
+        return org.telegram.messenger.m10.B(12.0f, x3Var.f, L - x3Var.c);
     }
 
     @Override // org.telegram.ui.c3
@@ -130,10 +130,10 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.o10.a(this);
+        return org.telegram.messenger.m10.a(this);
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.r9
+    @Override // android.view.View, org.telegram.ui.Cells.q9
     public final void invalidate() {
         super.invalidate();
         org.telegram.ui.Components.mj0 mj0Var = this.d;
@@ -142,13 +142,13 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
         }
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         org.telegram.ui.Components.mj0 mj0Var = this.d;
         if (mj0Var != null) {
             KeyEvent.Callback callback = mj0Var.a;
-            if (callback instanceof org.telegram.ui.Cells.i9) {
-                ((org.telegram.ui.Cells.i9) callback).k(arrayList);
+            if (callback instanceof org.telegram.ui.Cells.h9) {
+                ((org.telegram.ui.Cells.h9) callback).k(arrayList);
             }
         }
         z2 z2Var = this.c;
@@ -195,7 +195,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
                 p50Var.getClass();
                 int L2 = measuredWidth - org.telegram.messenger.g0.L(15);
                 x3 x3Var = this.x.c;
-                canvas.translate(org.telegram.messenger.o10.B(12.0f, x3Var.f, L2 - x3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.g0.L(1.0f) : 0));
+                canvas.translate(org.telegram.messenger.m10.B(12.0f, x3Var.f, L2 - x3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.g0.L(1.0f) : 0));
             }
             this.x.i.d(canvas, this);
             canvas.restore();
@@ -250,7 +250,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
         z1 z1Var;
         z2 z2Var2;
         int i15;
-        org.telegram.ui.Cells.j9 j9Var;
+        org.telegram.ui.Cells.i9 i9Var;
         int size = View.MeasureSpec.getSize(i7);
         w3 w3Var = this.x;
         int i16 = 1;
@@ -268,11 +268,11 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
             this.f = i11;
             this.h = 0;
             x3 x3Var = this.x.c;
-            if (x3Var.d == size && x3Var.e == org.telegram.messenger.cz.Z0) {
+            if (x3Var.d == size && x3Var.e == org.telegram.messenger.bz.Z0) {
                 p50Var = p50Var3;
             } else {
                 x3Var.d = size;
-                x3Var.e = org.telegram.messenger.cz.Z0;
+                x3Var.e = org.telegram.messenger.bz.Z0;
                 x3Var.c = 0;
                 int size2 = x3Var.b.size();
                 boolean z10 = true;
@@ -313,7 +313,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
                     p50Var.getClass();
                     CheckBoxBase checkBoxBase = new CheckBoxBase(20, this, null);
                     this.E = checkBoxBase;
-                    checkBoxBase.h(org.telegram.ui.ActionBar.m6.Yl, org.telegram.ui.ActionBar.m6.z5, org.telegram.ui.ActionBar.m6.k7);
+                    checkBoxBase.h(org.telegram.ui.ActionBar.n6.Yl, org.telegram.ui.ActionBar.n6.z5, org.telegram.ui.ActionBar.n6.k7);
                     this.E.d(10);
                     this.E.k(true);
                     this.E.i(org.telegram.messenger.g0.L(5.0f));
@@ -344,7 +344,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
             int i20 = L4;
             TL_iv.RichText richText = w3Var4.e;
             if (richText != null) {
-                z2 n10 = g4.n(this.a, this, null, richText, i20, 0, w3Var4, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.zu0.a(), 0, this.b);
+                z2 n10 = g4.n(this.a, this, null, richText, i20, 0, w3Var4, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.yu0.a(), 0, this.b);
                 this.c = n10;
                 if (n10 != null && n10.d.getLineCount() > 0) {
                     z2 z2Var3 = this.x.i;
@@ -442,17 +442,17 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
                 z2Var4.w = this.f;
             }
             org.telegram.ui.Components.mj0 mj0Var2 = this.d;
-            if (mj0Var2 != null && (mj0Var2.a instanceof org.telegram.ui.Cells.i9) && (j9Var = ((g4) p50Var).Q0) != null) {
-                ArrayList arrayList = j9Var.A0;
+            if (mj0Var2 != null && (mj0Var2.a instanceof org.telegram.ui.Cells.h9) && (i9Var = ((g4) p50Var).Q0) != null) {
+                ArrayList arrayList = i9Var.A0;
                 arrayList.clear();
-                ((org.telegram.ui.Cells.i9) this.d.a).k(arrayList);
+                ((org.telegram.ui.Cells.h9) this.d.a).k(arrayList);
                 int size3 = arrayList.size();
                 while (i18 < size3) {
                     Object obj = arrayList.get(i18);
                     i18++;
-                    org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) obj;
-                    if (u9Var instanceof z2) {
-                        z2 z2Var5 = (z2) u9Var;
+                    org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) obj;
+                    if (t9Var instanceof z2) {
+                        z2 z2Var5 = (z2) t9Var;
                         z2Var5.s += this.n;
                         z2Var5.w += this.r;
                     }

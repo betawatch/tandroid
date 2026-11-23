@@ -1,135 +1,118 @@
 package hi;
 
-import org.telegram.ui.Components.bz;
-import org.telegram.ui.Components.ez;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.y51;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v5 b;
+public final class s5 extends LinearLayout {
+    public final TextView a;
+    public final ai.h0 b;
+    public ImageView c;
+    public ImageView d;
+    public float e;
+    public boolean f;
+    public ValueAnimator h;
+    public final ImageView n;
+    public final /* synthetic */ v5 r;
 
-    public /* synthetic */ s5(v5 v5Var, int i7) {
-        this.a = i7;
-        this.b = v5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s5(v5 v5Var, Context context) {
+        super(context);
+        this.r = v5Var;
+        setOrientation(0);
+        int i7 = org.telegram.ui.ActionBar.n6.i6;
+        n5 n5Var = v5Var.q1;
+        setBackground(org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i7, n5Var), 2, -1));
+        ai.h0 h0Var = new ai.h0(this, context);
+        this.b = h0Var;
+        addView(h0Var, c8.na.t(-2, -2, 19, 16, 0, 16, 0));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        ImageView imageView2 = this.c;
+        int i10 = org.telegram.ui.ActionBar.n6.E8;
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
+        org.telegram.ui.ActionBar.u6.s(imageView2, i10, n5Var, mode);
+        h0Var.addView(this.c, c8.na.e(-2, -2, 17));
+        ImageView imageView3 = new ImageView(context);
+        this.d = imageView3;
+        imageView3.setScaleType(scaleType);
+        org.telegram.ui.ActionBar.u6.s(this.d, i10, n5Var, mode);
+        this.d.setVisibility(8);
+        h0Var.addView(this.d, c8.na.e(-2, -2, 17));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, i10, n5Var);
+        textView.setTextSize(1, 16.0f);
+        addView(textView, c8.na.t(-2, -2, 19, 0, 0, 16, 0));
+        ImageView imageView4 = new ImageView(context);
+        this.n = imageView4;
+        imageView4.setImageResource(R.drawable.msg_text_check);
+        imageView4.setScaleType(scaleType);
+        org.telegram.ui.ActionBar.u6.s(imageView4, org.telegram.ui.ActionBar.n6.h7, n5Var, PorterDuff.Mode.MULTIPLY);
+        imageView4.setVisibility(8);
+        addView(imageView4, c8.na.o(50, -1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.r();
-                break;
-            case 1:
-                this.b.r();
-                break;
-            case 2:
-                this.b.m(0L);
-                break;
-            case 3:
-                v5 v5Var = this.b;
-                s5 s5Var = v5Var.L;
-                i61 i61Var = v5Var.e;
-                if (i61Var != null && v5Var.G != null) {
-                    long S = i61Var.S();
-                    if (v5Var.getDuration() > 1) {
-                        float duration = S / v5Var.getDuration();
-                        if (!v5Var.G.n1) {
-                            c7 c7Var = v5Var.d;
-                            if ((duration < c7Var.Z || duration > c7Var.a0) && System.currentTimeMillis() - v5Var.K > 500) {
-                                v5Var.K = System.currentTimeMillis();
-                                i61 i61Var2 = v5Var.e;
-                                long duration2 = (long) (v5Var.d.Z * v5Var.getDuration());
-                                i61Var2.q0(duration2, false);
-                                v5Var.w(true);
-                                v5Var.y(true);
-                                S = duration2;
-                                v5Var.G.setProgress(v5Var.e.S());
-                            }
-                        }
-                        v5Var.w(S < v5Var.J);
-                        v5Var.y(S < v5Var.J);
-                        v5Var.G.setProgress(v5Var.e.S());
-                    } else {
-                        v5Var.G.setProgress(v5Var.e.S());
-                    }
-                    if (v5Var.e.d0()) {
-                        org.telegram.messenger.g0.r(s5Var);
-                        org.telegram.messenger.g0.h3(s5Var, (long) (1000.0f / org.telegram.messenger.g0.r));
-                    }
-                    v5Var.J = S;
-                    break;
-                }
-                break;
-            case 4:
-                v5 v5Var2 = this.b;
-                s5 s5Var2 = v5Var2.M;
-                if (v5Var2.E != null && v5Var2.e == null && v5Var2.y == null && v5Var2.G != null && !v5Var2.j()) {
-                    long S2 = v5Var2.E.S();
-                    c7 c7Var2 = v5Var2.d;
-                    if (c7Var2 != null) {
-                        float f10 = S2;
-                        float f11 = c7Var2.E;
-                        float f12 = c7Var2.C;
-                        if ((f10 < f11 * f12 || f10 > c7Var2.F * f12) && System.currentTimeMillis() - v5Var2.K > 500) {
-                            v5Var2.K = System.currentTimeMillis();
-                            i61 i61Var3 = v5Var2.E;
-                            long j3 = (long) (v5Var2.d.E * r3.C);
-                            i61Var3.q0(j3, false);
-                            S2 = j3;
-                        }
-                    }
-                    v5Var2.G.setProgress(S2);
-                    if (v5Var2.E.d0()) {
-                        org.telegram.messenger.g0.r(s5Var2);
-                        org.telegram.messenger.g0.h3(s5Var2, (long) (1000.0f / org.telegram.messenger.g0.r));
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                v5 v5Var3 = this.b;
-                s5 s5Var3 = v5Var3.N;
-                if (v5Var3.y != null && v5Var3.e == null && !v5Var3.j() && v5Var3.G != null) {
-                    long S3 = v5Var3.y.S();
-                    c7 c7Var3 = v5Var3.d;
-                    if (c7Var3 != null) {
-                        float f13 = S3;
-                        float f14 = c7Var3.s0;
-                        float f15 = c7Var3.q0;
-                        if ((f13 < f14 * f15 || f13 > c7Var3.t0 * f15) && System.currentTimeMillis() - v5Var3.K > 500) {
-                            v5Var3.K = System.currentTimeMillis();
-                            i61 i61Var4 = v5Var3.y;
-                            long j10 = (long) (v5Var3.d.s0 * r3.q0);
-                            i61Var4.q0(j10, false);
-                            v5Var3.w(true);
-                            S3 = j10;
-                        }
-                    }
-                    v5Var3.G.setProgress(S3);
-                    if (v5Var3.y.d0()) {
-                        org.telegram.messenger.g0.r(s5Var3);
-                        org.telegram.messenger.g0.h3(s5Var3, (long) (1000.0f / org.telegram.messenger.g0.r));
-                        break;
-                    }
-                }
-                break;
-            default:
-                v5 v5Var4 = this.b;
-                y51 y51Var = v5Var4.n;
-                if (y51Var != null) {
-                    ez ezVar = y51Var.b;
-                    if (ezVar != null) {
-                        ezVar.postRunnable(new bz(ezVar, 0));
-                    }
-                    y51Var.a = null;
-                    v5Var4.removeView(v5Var4.n);
-                    v5Var4.n = null;
-                    break;
-                }
-                break;
+    public final void a(int i7, boolean z10, boolean z11) {
+        if (!z11) {
+            this.c.setImageResource(i7);
+            return;
         }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.h = null;
+            a(i7, false, false);
+            return;
+        }
+        this.f = z10;
+        this.d.setImageResource(i7);
+        this.d.setVisibility(0);
+        this.d.setAlpha(1.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new ch.v(2, this, z10));
+        this.h.addListener(new ai.g0(this, 23));
+        this.h.setInterpolator(kr.h);
+        this.h.setDuration(420L);
+        this.h.start();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.View
+    public final boolean performClick() {
+        v5 v5Var = this.r;
+        org.telegram.ui.ActionBar.g1 g1Var = v5Var.r1;
+        if (g1Var != null && g1Var.isShowing()) {
+            v5Var.r1.d(true);
+        }
+        return super.performClick();
+    }
+
+    public void setIcon(int i7) {
+        a(i7, true, false);
+    }
+
+    @Override // android.view.View
+    public void setSelected(boolean z10) {
+        this.n.setVisibility(z10 ? 0 : 8);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

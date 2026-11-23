@@ -1,6 +1,6 @@
 package b1;
 
-import a8.e7;
+import a8.f7;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
 import rd.l;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -56,7 +56,7 @@ public abstract class d {
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        e7.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        f7.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 

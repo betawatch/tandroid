@@ -1,56 +1,30 @@
 package bi;
 
-import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.y10;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gq0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b6 implements y10 {
+public final /* synthetic */ class b6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m6 b;
-    public final /* synthetic */ TL_stars.SavedStarGift c;
+    public final /* synthetic */ p6 b;
 
-    public /* synthetic */ b6(m6 m6Var, TL_stars.SavedStarGift savedStarGift, int i7) {
+    public /* synthetic */ b6(p6 p6Var, int i7) {
         this.a = i7;
-        this.b = m6Var;
-        this.c = savedStarGift;
+        this.b = p6Var;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        TL_stars.SavedStarGift savedStarGift = this.c;
-        m6 m6Var = this.b;
-        int i10 = 1;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                m6Var.a.e.b((String) obj, new b6(m6Var, savedStarGift, i10));
+                this.b.setReordering(true);
+                break;
+            case 1:
+                this.b.setReordering(true);
+                break;
+            case 2:
+                this.b.f(false);
                 break;
             default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                gq0 gq0Var = m6Var.a;
-                di.n8 n8Var = gq0Var.e;
-                int i11 = tL_starGiftCollection.collection_id;
-                n8Var.getClass();
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(savedStarGift);
-                n8Var.a(i11, arrayList);
-                gq0Var.f(true);
-                i71 i71Var = gq0Var.n;
-                int i12 = tL_starGiftCollection.collection_id;
-                i71Var.e(i12, gq0Var.e.f(i12) + 1);
-                org.telegram.ui.ActionBar.g2 g2Var = gq0Var.a;
-                if (g2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) g2Var).X4(true);
-                }
-                gq0Var.o();
-                lc.b0(g2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131750376, di.f6.F1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                this.b.setReordering(true);
                 break;
         }
     }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class hj0 {
     public final ek0 a;
@@ -63,7 +63,7 @@ public final class hj0 {
         View view = null;
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = ek0Var.getChildAt(i10);
-            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof yz)) {
+            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof vz)) {
                 view = childAt;
             }
         }
@@ -75,11 +75,11 @@ public final class hj0 {
             ek0Var.addView(view);
             layoutManager.M(view);
             Animator ofFloat = this.f ? ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f) : ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addListener(new h10(this, (yz) view, layoutManager));
+            ofFloat.addListener(new f10(this, (vz) view, layoutManager));
             ofFloat.start();
             i7--;
         }
-        org.telegram.ui.yp ypVar = new org.telegram.ui.yp(this, (yz) view, i7, i11);
+        org.telegram.ui.yp ypVar = new org.telegram.ui.yp(this, (vz) view, i7, i11);
         this.h.add(ypVar);
         ek0Var.getViewTreeObserver().addOnPreDrawListener(ypVar);
     }

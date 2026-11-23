@@ -1,9 +1,68 @@
 package gb;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class a0 {
-    public final ke.a serializer() {
-        return z.a;
+public final /* synthetic */ class a0 implements oe.e {
+    public static final a0 a;
+    private static final me.d descriptor;
+
+    static {
+        a0 a0Var = new a0();
+        a = a0Var;
+        oe.m mVar = new oe.m("com.google.firebase.sessions.ProcessData", a0Var, 2);
+        mVar.k("pid", false);
+        mVar.k("uuid", false);
+        descriptor = mVar;
+    }
+
+    @Override // ke.a
+    public final void a(qe.h hVar, Object obj) {
+        c0 value = (c0) obj;
+        kotlin.jvm.internal.j.e(value, "value");
+        me.d dVar = descriptor;
+        qe.h a10 = hVar.a(dVar);
+        int i7 = value.a;
+        a10.b(dVar, 0);
+        a10.c(i7);
+        a10.k(dVar, 1, value.b);
+        a10.l(dVar);
+    }
+
+    @Override // ke.a
+    public final Object b(h2.c decoder) {
+        kotlin.jvm.internal.j.e(decoder, "decoder");
+        me.d dVar = descriptor;
+        h2.c c10 = decoder.c(dVar);
+        String str = null;
+        boolean z10 = true;
+        int i7 = 0;
+        int i10 = 0;
+        while (z10) {
+            int d = c10.d(dVar);
+            if (d == -1) {
+                z10 = false;
+            } else if (d == 0) {
+                i10 = c10.f(dVar, 0);
+                i7 |= 1;
+            } else {
+                if (d != 1) {
+                    throw new ke.d(d);
+                }
+                str = c10.n(dVar, 1);
+                i7 |= 2;
+            }
+        }
+        c10.p(dVar);
+        return new c0(i7, i10, str);
+    }
+
+    @Override // oe.e
+    public final ke.a[] c() {
+        return new ke.a[]{oe.f.a, oe.p.a};
+    }
+
+    @Override // ke.a
+    public final me.d d() {
+        return descriptor;
     }
 }

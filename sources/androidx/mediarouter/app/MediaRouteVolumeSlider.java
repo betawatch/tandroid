@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.c7;
+import a8.d7;
 import android.R;
 import android.content.Context;
 import android.graphics.Color;
@@ -9,9 +9,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
@@ -50,7 +50,7 @@ public class MediaRouteVolumeSlider extends m.c0 {
     @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i7 = isEnabled() ? ls.e4 : (int) (this.b * 255.0f);
+        int i7 = isEnabled() ? ks.e4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
         int i10 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -82,6 +82,6 @@ public class MediaRouteVolumeSlider extends m.c0 {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i7) {
         super(context, attributeSet, i7);
-        this.b = c7.c(context);
+        this.b = d7.c(context);
     }
 }

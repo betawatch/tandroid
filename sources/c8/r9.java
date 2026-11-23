@@ -1,43 +1,20 @@
 package c8;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.RemoteException;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class r9 {
-    public static v7.e a;
-
-    public static hi.t5 a(Bitmap bitmap) {
-        try {
-            v7.e eVar = a;
-            q6.m.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            v7.c cVar = (v7.c) eVar;
-            Parcel p12 = cVar.p1();
-            v7.b.b(p12, bitmap);
-            Parcel o12 = cVar.o1(p12, 6);
-            a7.a m12 = a7.b.m1(o12.readStrongBinder());
-            o12.recycle();
-            return new hi.t5(m12);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            throw new IllegalArgumentException("Invalid input received");
         }
-    }
-
-    public static hi.t5 b(int i7) {
-        try {
-            v7.e eVar = a;
-            q6.m.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            v7.c cVar = (v7.c) eVar;
-            Parcel p12 = cVar.p1();
-            p12.writeInt(i7);
-            Parcel o12 = cVar.o1(p12, 1);
-            a7.a m12 = a7.b.m1(o12.readStrongBinder());
-            o12.recycle();
-            return new hi.t5(m12);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
+        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
+        for (int i7 = 0; i7 < str.length(); i7++) {
+            sb2.append(str.charAt(i7));
+            if (str2.length() > i7) {
+                sb2.append(str2.charAt(i7));
+            }
         }
+        return sb2.toString();
     }
 }

@@ -14,9 +14,9 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class q4 extends View implements org.telegram.ui.Components.dg0 {
+public abstract class q4 extends View implements org.telegram.ui.Components.cg0 {
     public final GradientDrawable[] E;
     public final boolean[] F;
     public final float[] G;
@@ -29,7 +29,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
     public int N;
     public float O;
     public int P;
-    public org.telegram.ui.Components.hg0 Q;
+    public org.telegram.ui.Components.gg0 Q;
     public final TextPaint R;
     public float S;
     public int T;
@@ -91,9 +91,9 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
         paint3.setAlpha(66);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(250L);
-        ofFloat.setInterpolator(org.telegram.ui.Components.nr.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.kr.j);
         ofFloat.addUpdateListener(new a3(this, i7));
-        ofFloat.addListener(new ki.m3(this, 16));
+        ofFloat.addListener(new ki.n3(this, 16));
         TextPaint textPaint = new TextPaint(1);
         this.R = textPaint;
         textPaint.setColor(-1);
@@ -110,24 +110,24 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
         return this.U;
     }
 
-    @Override // org.telegram.ui.Components.dg0
+    @Override // org.telegram.ui.Components.cg0
     public final void a() {
         Arrays.fill(this.F, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.dg0
+    @Override // org.telegram.ui.Components.cg0
     public final void b(boolean z10) {
         this.F[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.dg0
+    @Override // org.telegram.ui.Components.cg0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.hg0 getProfileGalleryView() {
+    public org.telegram.ui.Components.gg0 getProfileGalleryView() {
         return this.Q;
     }
 
@@ -216,7 +216,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
                 paint6.setAlpha((int) (this.H * 85.0f));
                 paint5.setAlpha((int) (this.H * 255.0f));
             }
-            int z11 = org.telegram.messenger.o10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
+            int z11 = org.telegram.messenger.m10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
             int L = org.telegram.messenger.g0.L(8.0f);
             int i14 = 0;
             z10 = false;
@@ -265,7 +265,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
                     if (i14 != this.N) {
                         this.I[i14] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ls.e4) * this.H));
+                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.kr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ks.e4) * this.H));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i14 != this.N ? paint3 : paint6);
                     i14++;
@@ -454,8 +454,8 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
         gradientDrawableArr[1].setBounds(i7 - i13, 0, i7, i10);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.hg0 hg0Var) {
-        this.Q = hg0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.gg0 gg0Var) {
+        this.Q = gg0Var;
     }
 
     public void c() {

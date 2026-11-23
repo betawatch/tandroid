@@ -1,6 +1,6 @@
 package b3;
 
-import a8.la;
+import a8.ma;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class l extends Handler implements Runnable {
     public final int a;
@@ -45,7 +45,7 @@ public final class l extends Handler implements Runnable {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.A();
+                    this.b.y();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -60,7 +60,7 @@ public final class l extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             k kVar = this.d;
             kVar.getClass();
-            kVar.p(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            kVar.m(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -70,7 +70,7 @@ public final class l extends Handler implements Runnable {
         long j3 = elapsedRealtime - this.c;
         k kVar = this.d;
         kVar.getClass();
-        kVar.s(this.b, elapsedRealtime, j3, this.f);
+        kVar.t(this.b, elapsedRealtime, j3, this.f);
         this.e = null;
         p pVar = this.s;
         c3.a aVar = pVar.a;
@@ -98,13 +98,13 @@ public final class l extends Handler implements Runnable {
         k kVar = this.d;
         kVar.getClass();
         if (this.n) {
-            kVar.p(this.b, elapsedRealtime, j3, false);
+            kVar.m(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i10 = message.what;
         if (i10 == 2) {
             try {
-                kVar.z(this.b, elapsedRealtime, j3);
+                kVar.x(this.b, elapsedRealtime, j3);
                 return;
             } catch (RuntimeException e10) {
                 h2.a.d("LoadTask", "Unexpected exception handling load completed", e10);
@@ -119,8 +119,8 @@ public final class l extends Handler implements Runnable {
         this.e = iOException;
         int i11 = this.f + 1;
         this.f = i11;
-        i l10 = kVar.l(this.b, elapsedRealtime, j3, iOException, i11);
-        int i12 = l10.a;
+        i k10 = kVar.k(this.b, elapsedRealtime, j3, iOException, i11);
+        int i12 = k10.a;
         if (i12 == 3) {
             this.s.c = this.e;
             return;
@@ -129,12 +129,12 @@ public final class l extends Handler implements Runnable {
             if (i12 == 1) {
                 this.f = 1;
             }
-            long j10 = l10.b;
+            long j10 = k10.b;
             if (j10 == -9223372036854775807L) {
                 j10 = Math.min((this.f - 1) * 1000, 5000);
             }
             p pVar = this.s;
-            la.p(pVar.b == null);
+            ma.p(pVar.b == null);
             pVar.b = this;
             if (j10 > 0) {
                 sendEmptyMessageDelayed(1, j10);

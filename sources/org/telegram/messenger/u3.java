@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.f40;
+import org.telegram.ui.e40;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class u3 {
     public TLRPC.GroupCallParticipant a;
@@ -19,7 +19,7 @@ public final class u3 {
         float f10 = i7 / i10;
         if (this.c != f10) {
             this.c = f10;
-            if (f40.E5 || t3Var.f.size() % 2 != 1) {
+            if (e40.E5 || t3Var.f.size() % 2 != 1) {
                 return;
             }
             t3Var.B();
@@ -32,7 +32,7 @@ public final class u3 {
         }
         if (obj != null && u3.class == obj.getClass()) {
             u3 u3Var = (u3) obj;
-            if (this.b == u3Var.b && gj.B1(this.a.peer) == gj.B1(u3Var.a.peer)) {
+            if (this.b == u3Var.b && fj.B1(this.a.peer) == fj.B1(u3Var.a.peer)) {
                 return true;
             }
         }

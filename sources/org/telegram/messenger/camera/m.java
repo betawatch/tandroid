@@ -1,39 +1,28 @@
 package org.telegram.messenger.camera;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import org.telegram.messenger.camera.CameraView;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ CameraView b;
+    public final /* synthetic */ CameraView.CameraGLThread c;
 
-    public /* synthetic */ m(CameraView cameraView, int i7) {
+    public /* synthetic */ m(CameraView cameraView, CameraView.CameraGLThread cameraGLThread, int i7) {
         this.a = i7;
         this.b = cameraView;
+        this.c = cameraGLThread;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$resetCamera$4();
-                break;
-            case 1:
-                this.b.lambda$new$7();
-                break;
-            case 2:
-                this.b.lambda$toggleDual$2();
-                break;
-            case 3:
-                this.b.lambda$switchCamera$3();
-                break;
-            case 4:
-                this.b.lambda$onSurfaceTextureDestroyed$5();
-                break;
-            case 5:
-                this.b.onSurfaceTextureUpdatedInternal();
+                this.b.lambda$createCamera$10(this.c);
                 break;
             default:
-                this.b.lambda$enableDualInternal$0();
+                this.b.lambda$createCamera$8(this.c);
                 break;
         }
     }

@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.a61;
-import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.z51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class d extends FrameLayout {
             case 0:
                 super.dispatchDraw(canvas);
                 h hVar = this.b;
-                fn0 fn0Var = hVar.G;
-                if (fn0Var != null && fn0Var.a()) {
+                en0 en0Var = hVar.G;
+                if (en0Var != null && en0Var.a()) {
                     hVar.G.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     hVar.G.draw(canvas);
                     break;
@@ -67,16 +67,16 @@ public final class d extends FrameLayout {
                         g0.h3(bVar, 500L);
                     } else {
                         hVar.L = false;
-                        lVar.H();
+                        lVar.T0();
                         g0.r(bVar);
                     }
                 }
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     hVar.L = false;
-                    lVar.H();
+                    lVar.T0();
                     g0.r(bVar);
-                } else if (actionMasked == 2 && lVar.s()) {
-                    lVar.L(motionEvent.getX());
+                } else if (actionMasked == 2 && lVar.l0()) {
+                    lVar.d1(motionEvent.getX());
                 }
                 if (hVar.t != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -92,7 +92,7 @@ public final class d extends FrameLayout {
                 obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
                 boolean onTouchEvent = hVar.p.onTouchEvent(obtain2);
                 obtain2.recycle();
-                boolean z10 = !hVar.p.isInProgress() && hVar.q.w0(motionEvent);
+                boolean z10 = !hVar.p.isInProgress() && hVar.q.I2(motionEvent);
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     hVar.r = false;
                     hVar.s = false;
@@ -125,14 +125,14 @@ public final class d extends FrameLayout {
         switch (this.a) {
             case 0:
                 h hVar = this.b;
-                a61 a61Var = hVar.F;
-                if (a61Var.j) {
-                    a61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    a61Var.draw(canvas);
+                z51 z51Var = hVar.F;
+                if (z51Var.j) {
+                    z51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    z51Var.draw(canvas);
                 }
                 canvas.save();
                 canvas.translate(getLeft(), getTop());
-                hVar.b.j0(canvas, getRight() - getLeft(), getBottom() - getTop());
+                hVar.b.t2(canvas, getRight() - getLeft(), getBottom() - getTop());
                 canvas.restore();
                 break;
             default:

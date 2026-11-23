@@ -3,20 +3,21 @@ package ug;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import bi.k8;
+import bi.n8;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ri;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.qw0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Wallet.o5;
+import org.telegram.ui.ow0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class m1 extends ek0 implements gs, n0 {
+public abstract class m1 extends ek0 implements fs, n0 {
     public final ArrayList f3;
     public final v4.c0 g3;
     public boolean h3;
@@ -24,10 +25,10 @@ public abstract class m1 extends ek0 implements gs, n0 {
     public final int j3;
     public boolean k3;
     public boolean l3;
-    public final s4.s0 m3;
-    public final nr n3;
+    public final o5 m3;
+    public final kr n3;
     public final ArrayList o3;
-    public final qw0 p3;
+    public final ow0 p3;
     public View q3;
     public boolean r3;
     public int s3;
@@ -42,10 +43,10 @@ public abstract class m1 extends ek0 implements gs, n0 {
         this.h3 = true;
         this.i3 = true;
         u0 u0Var = (u0) this;
-        this.m3 = new s4.s0(u0Var, 5);
-        this.n3 = new nr(0.0f, 0.5f, 0.5f, 1.0f);
+        this.m3 = new o5(u0Var, 9);
+        this.n3 = new kr(0.0f, 0.5f, 0.5f, 1.0f);
         this.o3 = new ArrayList();
-        this.p3 = new qw0(12);
+        this.p3 = new ow0(12);
         this.t3 = -1;
         this.j3 = i7;
         v4.c0 c0Var = new v4.c0();
@@ -54,28 +55,28 @@ public abstract class m1 extends ek0 implements gs, n0 {
         setAdapter(new j1(u0Var));
         setClipChildren(false);
         setOnScrollListener(new i1(u0Var, 0));
-        setOnItemClickListener(new k8(u0Var, 23));
-        si.d0(i7).r1();
+        setOnItemClickListener(new n8(u0Var, 23));
+        ri.d0(i7).r1();
         arrayList.clear();
-        arrayList.addAll(si.d0(i7).C0);
+        arrayList.addAll(ri.d0(i7).C0);
         getAdapter().f();
         invalidate();
     }
 
     public final void A1() {
         if (this.v3) {
-            s4.s0 s0Var = this.m3;
-            org.telegram.messenger.g0.r(s0Var);
-            org.telegram.messenger.g0.h3(s0Var, 2700L);
+            o5 o5Var = this.m3;
+            org.telegram.messenger.g0.r(o5Var);
+            org.telegram.messenger.g0.h3(o5Var, 2700L);
         }
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ls.o5) {
+        if (i7 == ks.o5) {
             ArrayList arrayList = this.f3;
             arrayList.clear();
-            arrayList.addAll(si.d0(this.j3).C0);
+            arrayList.addAll(ri.d0(this.j3).C0);
             getAdapter().f();
             invalidate();
         }
@@ -130,14 +131,14 @@ public abstract class m1 extends ek0 implements gs, n0 {
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ls.f(this.j3).c(this, ls.o5);
+        ks.f(this.j3).c(this, ks.o5);
         A1();
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ls.f(this.j3).n(this, ls.o5);
+        ks.f(this.j3).n(this, ks.o5);
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
@@ -145,7 +146,7 @@ public abstract class m1 extends ek0 implements gs, n0 {
         super.onLayout(z10, i7, i10, i11, i12);
         if (this.h3 && !this.f3.isEmpty() && getChildCount() > 0) {
             this.h3 = false;
-            org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 27));
+            org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 28));
         }
         int i13 = this.t3;
         if (i13 > 0) {

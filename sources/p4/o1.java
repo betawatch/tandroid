@@ -1,65 +1,38 @@
 package p4;
 
-import a8.la;
+import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o1 {
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final Bundle b;
-    public final long c;
-    public final m1 d;
+    public static final String b;
+    public static final String c;
+    public final p1 a;
 
     static {
+        e2.m0.a("media3.session");
         String str = h2.l0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
+        b = Integer.toString(0, 36);
+        c = Integer.toString(1, 36);
     }
 
-    public o1(int i7) {
-        this(i7, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
+    public o1(int i7, String str, d1 d1Var, Bundle bundle, MediaSession.Token token) {
+        this.a = new p1(i7, str, d1Var, bundle, token);
     }
 
-    public static o1 a(Bundle bundle) {
-        m1 m1Var;
-        int i7 = bundle.getInt(e, -1);
-        Bundle o4 = h2.l0.o(bundle.getBundle(f));
-        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
-        Bundle bundle2 = bundle.getBundle(h);
-        if (bundle2 != null) {
-            int i10 = bundle2.getInt(m1.d, 1000);
-            String string = bundle2.getString(m1.e, "");
-            Bundle o10 = h2.l0.o(bundle2.getBundle(m1.f));
-            if (o10 == null) {
-                o10 = Bundle.EMPTY;
-            }
-            m1Var = new m1(string, i10, o10);
-        } else {
-            m1Var = i7 != 0 ? new m1(i7) : null;
+    public final boolean equals(Object obj) {
+        if (obj instanceof o1) {
+            return this.a.equals(((o1) obj).a);
         }
-        m1 m1Var2 = m1Var;
-        if (o4 == null) {
-            o4 = Bundle.EMPTY;
-        }
-        return new o1(i7, o4, j3, m1Var2);
+        return false;
     }
 
-    public o1(int i7, Bundle bundle, long j3, m1 m1Var) {
-        la.f(m1Var == null || i7 < 0);
-        this.a = i7;
-        this.b = new Bundle(bundle);
-        this.c = j3;
-        if (m1Var == null && i7 < 0) {
-            m1Var = new m1(i7);
-        }
-        this.d = m1Var;
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return this.a.toString();
     }
 }

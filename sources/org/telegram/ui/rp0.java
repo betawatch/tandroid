@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class rp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class rp0 extends AnimatorListenerAdapter {
         if (i7 == 0 || i7 == 4 || ((i7 == 2 || i7 == 5) && photoViewer.g7.size() > 1)) {
             photoViewer.O0.setVisibility(8);
             photoViewer.P0.setVisibility(8);
-            photoViewer.q3();
+            photoViewer.r3();
         }
         if (photoViewer.d2 == 11) {
             photoViewer.i6 = photoViewer.Y5;
@@ -55,19 +55,19 @@ public final class rp0 extends AnimatorListenerAdapter {
         }
         Bitmap n10 = photoViewer.C4.n();
         if (n10 != null || photoViewer.s1) {
-            photoViewer.D1.b(n10, photoViewer.C4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (org.telegram.ui.Components.y51) photoViewer.C2 : null, nq0Var.c);
+            photoViewer.D1.b(n10, photoViewer.C4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (org.telegram.ui.Components.x51) photoViewer.C2 : null, nq0Var.c);
             photoViewer.D1.a();
             int q10 = photoViewer.C4.q();
             int o4 = photoViewer.C4.o();
-            org.telegram.messenger.xe xeVar = nq0Var.c;
-            if (xeVar != null) {
-                int i10 = xeVar.k;
+            org.telegram.messenger.we weVar = nq0Var.c;
+            if (weVar != null) {
+                int i10 = weVar.k;
                 if (i10 == 90 || i10 == 270) {
                     o4 = q10;
                     q10 = o4;
                 }
-                q10 = (int) (q10 * xeVar.e);
-                o4 = (int) (o4 * xeVar.f);
+                q10 = (int) (q10 * weVar.e);
+                o4 = (int) (o4 * weVar.f);
             }
             float f10 = q10;
             float f11 = o4;
@@ -86,9 +86,9 @@ public final class rp0 extends AnimatorListenerAdapter {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<org.telegram.ui.Cells.x0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.r6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.rd0, Float>) View.ALPHA, 0.0f, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<org.telegram.ui.Cells.x0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.q6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.qd0, Float>) View.ALPHA, 0.0f, 1.0f));
         photoViewer.p6.setDuration(200L);
-        photoViewer.p6.addListener(new ay(this, 12));
+        photoViewer.p6.addListener(new zx(this, 12));
         photoViewer.p6.start();
     }
 }

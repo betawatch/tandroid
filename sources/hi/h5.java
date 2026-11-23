@@ -1,118 +1,38 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.nr;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class h5 extends LinearLayout {
-    public final TextView a;
-    public final ai.l0 b;
-    public ImageView c;
-    public ImageView d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public final ImageView n;
-    public final /* synthetic */ k5 r;
+public final class h5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h5(k5 k5Var, Context context) {
-        super(context);
-        this.r = k5Var;
-        setOrientation(0);
-        int i7 = org.telegram.ui.ActionBar.m6.i6;
-        c5 c5Var = k5Var.q1;
-        setBackground(org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i7, c5Var), 2, -1));
-        ai.l0 l0Var = new ai.l0(this, context);
-        this.b = l0Var;
-        addView(l0Var, c8.ma.t(-2, -2, 19, 16, 0, 16, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.c;
-        int i10 = org.telegram.ui.ActionBar.m6.E8;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
-        org.telegram.ui.ActionBar.t6.s(imageView2, i10, c5Var, mode);
-        l0Var.addView(this.c, c8.ma.e(-2, -2, 17));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setScaleType(scaleType);
-        org.telegram.ui.ActionBar.t6.s(this.d, i10, c5Var, mode);
-        this.d.setVisibility(8);
-        l0Var.addView(this.d, c8.ma.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.t6.U(textView, i10, c5Var);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, c8.ma.t(-2, -2, 19, 0, 0, 16, 0));
-        ImageView imageView4 = new ImageView(context);
-        this.n = imageView4;
-        imageView4.setImageResource(R.drawable.msg_text_check);
-        imageView4.setScaleType(scaleType);
-        org.telegram.ui.ActionBar.t6.s(imageView4, org.telegram.ui.ActionBar.m6.h7, c5Var, PorterDuff.Mode.MULTIPLY);
-        imageView4.setVisibility(8);
-        addView(imageView4, c8.ma.o(50, -1));
+    public /* synthetic */ h5(v5 v5Var, int i7) {
+        this.a = i7;
+        this.b = v5Var;
     }
 
-    public final void a(int i7, boolean z10, boolean z11) {
-        if (!z11) {
-            this.c.setImageResource(i7);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                v5 v5Var = this.b;
+                v5Var.L1 = 0.0f;
+                v5Var.J1.setAlpha(1.0f);
+                v5Var.J1.setVisibility(8);
+                v5Var.J1.n();
+                break;
+            case 1:
+                this.b.d2.setTranslationY(0.0f);
+                break;
+            default:
+                v5 v5Var2 = this.b;
+                v5Var2.g2 = false;
+                v5Var2.d2.setTranslationY(0.0f);
+                v5Var2.v0();
+                break;
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.h = null;
-            a(i7, false, false);
-            return;
-        }
-        this.f = z10;
-        this.d.setImageResource(i7);
-        this.d.setVisibility(0);
-        this.d.setAlpha(1.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new ch.v(2, this, z10));
-        this.h.addListener(new ai.k0(this, 23));
-        this.h.setInterpolator(nr.h);
-        this.h.setDuration(420L);
-        this.h.start();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean performClick() {
-        k5 k5Var = this.r;
-        org.telegram.ui.ActionBar.g1 g1Var = k5Var.r1;
-        if (g1Var != null && g1Var.isShowing()) {
-            k5Var.r1.d(true);
-        }
-        return super.performClick();
-    }
-
-    public void setIcon(int i7) {
-        a(i7, true, false);
-    }
-
-    @Override // android.view.View
-    public void setSelected(boolean z10) {
-        this.n.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
     }
 }

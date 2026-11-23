@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.pr, na0, org.telegram.messenger.mr {
+public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.or, ma0, org.telegram.messenger.lr {
     public final /* synthetic */ int a;
     public final /* synthetic */ rn b;
 
@@ -13,8 +13,8 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
         this.b = rnVar;
     }
 
-    @Override // org.telegram.ui.na0
-    public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
+    @Override // org.telegram.ui.ma0
+    public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
         tL_channelLocation.address = messageMedia.address;
         tL_channelLocation.geo_point = messageMedia.geo;
@@ -26,22 +26,8 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
         rnVar.getMessagesController().b3(0, rnVar.w0, true);
     }
 
-    @Override // org.telegram.messenger.mr
-    public void d(boolean z10) {
-        boolean Q1 = org.telegram.messenger.g0.Q1();
-        int i7 = org.telegram.messenger.ls.t;
-        rn rnVar = this.b;
-        if (Q1) {
-            rnVar.getNotificationCenter().k(i7, Long.valueOf(-rnVar.w0));
-        } else {
-            rnVar.getNotificationCenter().k(i7, new Object[0]);
-        }
-        rnVar.finishFragment();
-        rnVar.getNotificationCenter().k(org.telegram.messenger.ls.K2, Long.valueOf(-rnVar.x0.id), null, rnVar.x0, Boolean.valueOf(z10));
-    }
-
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 this.b.o0();
@@ -58,7 +44,21 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
         }
     }
 
-    @Override // org.telegram.messenger.pr
+    @Override // org.telegram.messenger.lr
+    public void q(boolean z10) {
+        boolean Q1 = org.telegram.messenger.g0.Q1();
+        int i7 = org.telegram.messenger.ks.t;
+        rn rnVar = this.b;
+        if (Q1) {
+            rnVar.getNotificationCenter().k(i7, Long.valueOf(-rnVar.w0));
+        } else {
+            rnVar.getNotificationCenter().k(i7, new Object[0]);
+        }
+        rnVar.finishFragment();
+        rnVar.getNotificationCenter().k(org.telegram.messenger.ks.K2, Long.valueOf(-rnVar.x0.id), null, rnVar.x0, Boolean.valueOf(z10));
+    }
+
+    @Override // org.telegram.messenger.or
     public void run(long j3) {
         switch (this.a) {
             case 4:

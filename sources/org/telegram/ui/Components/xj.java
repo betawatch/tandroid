@@ -1,61 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import java.io.File;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xj implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class xj implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ kk b;
 
-    public /* synthetic */ xj(FrameLayout frameLayout, int i7, float f10, int i10) {
-        this.a = i10;
-        this.d = frameLayout;
-        this.b = i7;
-        this.c = f10;
+    public /* synthetic */ xj(kk kkVar, int i7) {
+        this.a = i7;
+        this.b = kkVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        ek ekVar = (ek) obj;
+        ek ekVar2 = (ek) obj2;
         switch (this.a) {
             case 0:
-                mk mkVar = (mk) this.d;
-                ak akVar = mkVar.r;
-                ak akVar2 = mkVar.s;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i7 = this.b;
-                float f10 = this.c;
-                if (i7 != 1) {
-                    akVar2.setTranslationX(f10 * floatValue);
-                    akVar2.setAlpha(Math.max(0.0f, 1.0f - floatValue));
-                    akVar2.invalidate();
-                    akVar.setAlpha(floatValue);
-                    float f11 = (floatValue * 0.05f) + 0.95f;
-                    akVar.setScaleX(f11);
-                    akVar.setScaleY(f11);
-                    akVar2.invalidate();
+                kk kkVar = this.b;
+                kkVar.getClass();
+                File file = ekVar.f;
+                if (file != null) {
+                    if (ekVar2.f != null) {
+                        boolean isDirectory = file.isDirectory();
+                        if (isDirectory != ekVar2.f.isDirectory()) {
+                            if (isDirectory) {
+                            }
+                        } else if (isDirectory || kkVar.d0) {
+                            break;
+                        } else {
+                            long lastModified = ekVar.f.lastModified();
+                            long lastModified2 = ekVar2.f.lastModified();
+                            if (lastModified != lastModified2) {
+                                if (lastModified > lastModified2) {
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                if (this.b.d0) {
                     break;
                 } else {
-                    akVar.setTranslationX(f10 * floatValue);
-                    akVar.setAlpha(1.0f - floatValue);
-                    akVar.invalidate();
-                    akVar2.setAlpha(floatValue);
-                    float f12 = (floatValue * 0.05f) + 0.95f;
-                    akVar2.setScaleX(f12);
-                    akVar2.setScaleY(f12);
-                    break;
+                    long lastModified3 = ekVar.f.lastModified();
+                    long lastModified4 = ekVar2.f.lastModified();
+                    if (lastModified3 != lastModified4) {
+                        if (lastModified3 > lastModified4) {
+                        }
+                    }
                 }
-            default:
-                qa0 qa0Var = (qa0) this.d;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f13 = 1.0f - floatValue2;
-                int i10 = (int) ((qa0Var.S * floatValue2) + (this.b * f13));
-                qa0Var.U = i10;
-                qa0Var.f((qa0Var.T * floatValue2) + (this.c * f13), i10);
                 break;
         }
+        return ekVar.f.getName().compareToIgnoreCase(ekVar2.f.getName());
     }
 }

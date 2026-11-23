@@ -1,38 +1,38 @@
 package ki;
 
-import org.telegram.messenger.gs;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class z0 implements gs {
+public final class z0 implements fs {
     public final /* synthetic */ long a;
-    public final /* synthetic */ gs[] b;
+    public final /* synthetic */ fs[] b;
     public final /* synthetic */ int c;
     public final /* synthetic */ x0 d;
 
-    public z0(long j3, gs[] gsVarArr, int i7, x0 x0Var) {
+    public z0(long j3, fs[] fsVarArr, int i7, x0 x0Var) {
         this.a = j3;
-        this.b = gsVarArr;
+        this.b = fsVarArr;
         this.c = i7;
         this.d = x0Var;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         a0.h hVar;
-        int i11 = ls.w0;
+        int i11 = ks.w0;
         if (i7 != i11 || (hVar = (a0.h) objArr[0]) == null) {
             return;
         }
         long j3 = this.a;
         if (hVar.d(j3)) {
             TLRPC.WebPage webPage = (TLRPC.WebPage) hVar.f(j3);
-            gs[] gsVarArr = this.b;
-            if (gsVarArr[0] != null) {
-                ls.f(this.c).n(gsVarArr[0], i11);
-                gsVarArr[0] = null;
+            fs[] fsVarArr = this.b;
+            if (fsVarArr[0] != null) {
+                ks.f(this.c).n(fsVarArr[0], i11);
+                fsVarArr[0] = null;
             }
             if (!(webPage instanceof TLRPC.TL_webPage)) {
                 webPage = null;

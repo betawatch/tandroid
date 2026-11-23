@@ -8,7 +8,7 @@ import android.graphics.fonts.FontVariationAxis;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import c8.n0;
+import c8.o0;
 import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -71,7 +71,7 @@ public class h extends f {
         return cls.getMethod("addFontFromAssetManager", AssetManager.class, String.class, cls2, Boolean.TYPE, cls2, cls2, cls2, FontVariationAxis[].class);
     }
 
-    @Override // i0.f, c8.m0
+    @Override // i0.f, c8.n0
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         Object obj;
         Method method = this.h;
@@ -114,7 +114,7 @@ public class h extends f {
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x009e A[SYNTHETIC] */
-    @Override // i0.f, c8.m0
+    @Override // i0.f, c8.n0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -140,7 +140,7 @@ public class h extends f {
                         if (hVar.e == 0) {
                             Uri uri = hVar.a;
                             if (!hashMap.containsKey(uri)) {
-                                hashMap.put(uri, n0.e(context, uri));
+                                hashMap.put(uri, o0.e(context, uri));
                             }
                         }
                     }
@@ -224,7 +224,7 @@ public class h extends f {
         return null;
     }
 
-    @Override // c8.m0
+    @Override // c8.n0
     public final Typeface e(Context context, Resources resources, int i7, String str, int i10) {
         Object obj;
         Method method = this.h;

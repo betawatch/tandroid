@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c0 {
     public final g a;
@@ -45,7 +45,7 @@ public final class c0 {
             return;
         }
         this.h = 0.0f;
-        g0.f.v(this.e, 0.0f);
+        g0.g.v(this.e, 0.0f);
     }
 
     public final void b() {
@@ -111,13 +111,13 @@ public final class c0 {
                     return;
                 }
                 this.h = f10;
-                g0.f.v(this.e, f10);
+                g0.g.v(this.e, f10);
             }
         }
         f10 = 0.0f;
         if (z10) {
         }
         this.h = f10;
-        g0.f.v(this.e, f10);
+        g0.g.v(this.e, f10);
     }
 }

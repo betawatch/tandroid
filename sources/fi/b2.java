@@ -1,21 +1,21 @@
 package fi;
 
-import c8.ha;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.np;
+import c8.ia;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.jj;
+import org.telegram.messenger.mp;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.ta0;
 import org.telegram.ui.bn;
 import org.telegram.ui.rm;
 import org.telegram.ui.uk;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class b2 extends ha {
+public final class b2 extends ia {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -24,7 +24,7 @@ public final class b2 extends ha {
         this.b = obj;
     }
 
-    @Override // c8.ha
+    @Override // c8.ia
     public final void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -54,30 +54,30 @@ public final class b2 extends ha {
                 bnVar.dd();
                 break;
             default:
-                qa0 qa0Var = (qa0) this.b;
-                ka0 ka0Var = qa0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = qa0Var.s;
-                wa0 wa0Var = qa0Var.d0;
-                if (wa0Var.s) {
+                na0 na0Var = (na0) this.b;
+                ha0 ha0Var = na0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = na0Var.s;
+                ta0 ta0Var = na0Var.d0;
+                if (ta0Var.s) {
                     if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z10) {
-                        if (ka0Var.v - ka0Var.u <= np.u1(wa0Var.x).r4) {
-                            r9 r9Var = ka0Var.W;
-                            gj c10 = qa0Var.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
-                            kj kjVar = wa0Var.d;
-                            if (kjVar.d == null) {
-                                int i7 = ka0Var.u;
-                                kjVar.e = i7;
-                                int i10 = ka0Var.v;
-                                kjVar.f = i10;
-                                kjVar.d = rm.b(i7, i10, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(qa0Var.J);
+                        if (ha0Var.v - ha0Var.u <= mp.u1(ta0Var.x).r4) {
+                            q9 q9Var = ha0Var.W;
+                            fj c10 = na0Var.c(q9Var != null ? ((org.telegram.ui.Cells.r1) q9Var).getMessageObject() : null);
+                            jj jjVar = ta0Var.d;
+                            if (jjVar.d == null) {
+                                int i7 = ha0Var.u;
+                                jjVar.e = i7;
+                                int i10 = ha0Var.v;
+                                jjVar.f = i10;
+                                jjVar.d = rm.b(i7, i10, c10);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(na0Var.J);
                                 break;
                             }
                         } else {
-                            qa0Var.g();
+                            na0Var.g();
                             break;
                         }
                     }
@@ -86,7 +86,7 @@ public final class b2 extends ha {
         }
     }
 
-    @Override // c8.ha
+    @Override // c8.ia
     public void b() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;

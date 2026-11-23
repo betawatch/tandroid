@@ -1,30 +1,90 @@
 package hi;
 
-import android.content.Context;
-import org.telegram.messenger.camera.CameraController;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.nh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class r extends i6 {
-    public final /* synthetic */ t G;
+public final class r extends Drawable {
+    public final Paint a;
+    public float b;
+    public float c;
+    public long d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final nh0 h;
+    public final db i;
+    public final /* synthetic */ db j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(t tVar, Context context) {
-        super(context);
-        this.G = tVar;
+    public r(db dbVar, db dbVar2) {
+        this.j = dbVar;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = 1.0f;
+        this.i = dbVar2;
+        nh0 nh0Var = new nh0(R.raw.chat_audio_record_delete_3, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+        this.h = nh0Var;
+        nh0Var.p0 = true;
+        paint.setColor(-2406842);
+        nh0Var.a0 = true;
+        nh0Var.Q(-2406842, "Cup Red");
+        nh0Var.Q(-2406842, "Box");
+        nh0Var.o();
     }
 
-    @Override // hi.i6
-    public final void c() {
-        org.telegram.messenger.g0.r(this.h);
-        if (this.c <= 0) {
-            a(true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        boolean z10 = this.g;
+        nh0 nh0Var = this.h;
+        if (z10) {
+            nh0Var.setAlpha((int) (this.b * 255.0f * this.c));
+        }
+        int i7 = (int) (this.b * 255.0f * this.c);
+        Paint paint = this.a;
+        paint.setAlpha(i7);
+        long currentTimeMillis = System.currentTimeMillis() - this.d;
+        if (this.e || this.g) {
+            float f10 = (currentTimeMillis / 600.0f) + this.b;
+            this.b = f10;
+            if (f10 >= 1.0f) {
+                this.b = 1.0f;
+                this.e = false;
+            }
         } else {
-            CameraController.getInstance().stopVideoRecording(this.a.getCameraSessionRecording(), false, false);
+            float f11 = this.b - (currentTimeMillis / 600.0f);
+            this.b = f11;
+            if (f11 <= 0.0f) {
+                this.b = 0.0f;
+                this.e = true;
+            }
         }
-        t tVar = this.G;
-        if (tVar.O1) {
-            tVar.z(true, false);
+        this.d = System.currentTimeMillis();
+        nh0Var.setBounds(getBounds());
+        if (this.g) {
+            nh0Var.draw(canvas);
         }
+        if (!this.g || !nh0Var.u()) {
+            canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), org.telegram.messenger.g0.L(5.0f), paint);
+        }
+        this.j.invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.c = i7 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

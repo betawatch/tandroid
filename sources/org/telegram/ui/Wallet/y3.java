@@ -1,38 +1,10 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y3 implements r1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ y3(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
-
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                f4 f4Var = (f4) this.b;
-                f4Var.H = f10;
-                f4Var.d();
-                break;
-            case 1:
-                e9 e9Var = (e9) this.b;
-                e9Var.e = f10;
-                e9Var.setScaleX(f10);
-                e9Var.setScaleY(f10);
-                break;
-            case 2:
-                da daVar = (da) this.b;
-                daVar.c0 = f10;
-                daVar.G0();
-                break;
-            default:
-                ((ca) this.b).d.setConversionWobble(f10);
-                break;
-        }
-    }
+public final class y3 {
+    public int a;
+    public int b;
+    public byte[] c;
+    public int[] d;
 }

@@ -1,25 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ex0 implements pb0, rb0 {
-    public final /* synthetic */ gx0 a;
+import android.content.Context;
+import android.graphics.Canvas;
 
-    @Override // org.telegram.ui.Components.pb0
-    public String i(int i7) {
-        return this.a.n[i7];
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class ex0 extends qb0 {
+    public final /* synthetic */ fx0 z0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ex0(fx0 fx0Var, Context context) {
+        super(13, context, null);
+        this.z0 = fx0Var;
     }
 
-    @Override // org.telegram.ui.Components.rb0
-    public void n(tb0 tb0Var, int i7) {
-        gx0 gx0Var = this.a;
-        gx0Var.b();
-        org.telegram.messenger.cz.r1 = i7;
-        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.cz.r1).apply();
-        gx0Var.invalidate();
-        try {
-            tb0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // org.telegram.ui.Components.qb0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.j5, false);
+        fx0 fx0Var = this.z0;
+        if (x02 != fx0Var.a) {
+            fx0Var.a = x02;
+            setTextColor(x02);
         }
+        super.onDraw(canvas);
+        float L = org.telegram.messenger.g0.L(31.0f);
+        fx0Var.e.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h7, false));
+        canvas.drawLine(org.telegram.messenger.g0.L(2.0f), L, getMeasuredWidth() - org.telegram.messenger.g0.L(2.0f), L, fx0Var.e);
+        float measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(31.0f);
+        canvas.drawLine(org.telegram.messenger.g0.L(2.0f), measuredHeight, getMeasuredWidth() - org.telegram.messenger.g0.L(2.0f), measuredHeight, fx0Var.e);
     }
 }

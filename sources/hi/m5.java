@@ -1,37 +1,24 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
+import android.graphics.PointF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.xt0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class m5 extends ImageView {
-    public final int a;
-    public final /* synthetic */ o5 b;
+public final class m5 extends tg.j2 {
+    public final /* synthetic */ v5 A0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(o5 o5Var, Context context, int i7, int i10) {
-        super(context);
-        this.b = o5Var;
-        this.a = i7;
-        setBackground(org.telegram.ui.ActionBar.m6.h0(1090519039, 1, -1));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setImageResource(i10);
-        setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new ci.q(this, i7, 4));
+    public m5(v5 v5Var, Context context, PointF pointF, float f10, float f11, xt0 xt0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f10, f11, xt0Var, document, obj);
+        this.A0 = v5Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
+    @Override // tg.j2
+    public final void q(nh0 nh0Var) {
+        this.A0.getClass();
     }
 }

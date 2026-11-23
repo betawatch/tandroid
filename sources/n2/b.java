@@ -10,18 +10,18 @@ import android.os.Build;
 import android.provider.Settings;
 import android.util.Pair;
 import android.util.SparseArray;
-import c8.aa;
-import c8.k1;
-import h9.t1;
+import c8.ba;
+import c8.l1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b {
-    public static final t1 e;
+    public static final s1 e;
     public static final b f;
-    public static final t1 g;
+    public static final s1 g;
     public static final h9.l0 h;
     public final SparseArray a = new SparseArray();
     public final int b;
@@ -29,27 +29,27 @@ public final class b {
     public final h9.i0 d;
 
     static {
-        t1 u10 = h9.i0.u(12);
+        s1 u10 = h9.i0.u(12);
         e = u10;
-        f = new b(h9.i0.u(a.d), u10, t1.e);
+        f = new b(h9.i0.u(a.d), u10, s1.e);
         Object[] objArr = {2, 5, 6};
         h9.o.e(3, objArr);
         g = h9.i0.o(3, objArr);
         xa xaVar = new xa(4, 10);
-        xaVar.w(5, 6);
-        xaVar.w(17, 6);
-        xaVar.w(7, 6);
-        xaVar.w(30, 10);
-        xaVar.w(18, 6);
-        xaVar.w(6, 8);
-        xaVar.w(8, 8);
-        xaVar.w(14, 8);
+        xaVar.u(5, 6);
+        xaVar.u(17, 6);
+        xaVar.u(7, 6);
+        xaVar.u(30, 10);
+        xaVar.u(18, 6);
+        xaVar.u(6, 8);
+        xaVar.u(8, 8);
+        xaVar.u(14, 8);
         h = xaVar.c(true);
     }
 
-    public b(t1 t1Var, List list, List list2) {
-        for (int i7 = 0; i7 < t1Var.d; i7++) {
-            a aVar = (a) t1Var.get(i7);
+    public b(s1 s1Var, List list, List list2) {
+        for (int i7 = 0; i7 < s1Var.d; i7++) {
+            a aVar = (a) s1Var.get(i7);
             this.a.put(aVar.a, aVar);
         }
         int i10 = 0;
@@ -61,7 +61,7 @@ public final class b {
         this.d = h9.i0.q(list2);
     }
 
-    public static t1 a(int[] iArr, int i7) {
+    public static s1 a(int[] iArr, int i7) {
         h9.f0 p10 = h9.i0.p();
         if (iArr == null) {
             iArr = new int[0];
@@ -82,24 +82,24 @@ public final class b {
     public static b b(Context context, Intent intent, e2.e eVar, AudioDeviceInfo audioDeviceInfo, List list) {
         AudioManager d = f2.i.d(context);
         if (audioDeviceInfo == null) {
-            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? ai.d.f(d, eVar) : null;
+            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? g0.a.d(d, eVar) : null;
         }
-        h9.i0 b10 = audioDeviceInfo != null ? x0.b(audioDeviceInfo) : e;
+        h9.i0 b10 = audioDeviceInfo != null ? y0.b(audioDeviceInfo) : e;
         if (Build.VERSION.SDK_INT >= 33 && (h2.l0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
-            return ai.d.e(d, eVar, b10, list);
+            return g0.a.c(d, eVar, b10, list);
         }
         for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? d.getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
-            if (aa.a(audioDeviceInfo2.getType())) {
+            if (ba.a(audioDeviceInfo2.getType())) {
                 return new b(h9.i0.u(a.d), b10, list);
             }
         }
         h9.s0 s0Var = new h9.s0(4);
         s0Var.c(2);
         if (Build.VERSION.SDK_INT >= 29 && (h2.l0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
-            t1 d2 = ab.y.d(eVar);
+            s1 d2 = ab.y.d(eVar);
             d2.getClass();
             s0Var.d(d2);
-            return new b(a(k1.f(s0Var.g()), 10), b10, list);
+            return new b(a(l1.f(s0Var.g()), 10), b10, list);
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z10 = Settings.Global.getInt(contentResolver, "use_external_surround_sound_flag", 0) == 1;
@@ -109,20 +109,20 @@ public final class b {
             }
         }
         if (Settings.Global.getInt(contentResolver, "external_surround_sound_enabled", 0) == 1) {
-            t1 t1Var = g;
-            t1Var.getClass();
-            s0Var.d(t1Var);
+            s1 s1Var = g;
+            s1Var.getClass();
+            s0Var.d(s1Var);
         }
         if (intent == null || z10 || intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) != 1) {
-            return new b(a(k1.f(s0Var.g()), 10), b10, list);
+            return new b(a(l1.f(s0Var.g()), 10), b10, list);
         }
         int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
         if (intArrayExtra != null) {
-            List a10 = k1.a(intArrayExtra);
+            List a10 = l1.a(intArrayExtra);
             a10.getClass();
             s0Var.d(a10);
         }
-        return new b(a(k1.f(s0Var.g()), intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10)), b10, list);
+        return new b(a(l1.f(s0Var.g()), intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10)), b10, list);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00ca, code lost:

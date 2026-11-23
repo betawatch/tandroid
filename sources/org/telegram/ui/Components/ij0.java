@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ij0 extends Drawable {
     public final Paint a = new Paint(1);
@@ -30,7 +30,7 @@ public final class ij0 extends Drawable {
         View view = this.b;
         canvas.translate(-view.getX(), -view.getY());
         canvas.clipPath(this.c);
-        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.e.o2);
+        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.e.o2);
         Paint paint = this.a;
         paint.setColor(i0.a.o(w02, paint.getAlpha()));
         canvas.drawRect(this.d, paint);

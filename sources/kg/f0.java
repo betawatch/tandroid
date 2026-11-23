@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class f0 extends dk0 {
     public final Context c;
@@ -55,41 +55,41 @@ public final class f0 extends dk0 {
         if (f1Var.f != 0) {
             return;
         }
-        r1 r1Var = (r1) f1Var.a;
+        s1 s1Var = (s1) f1Var.a;
         boolean z10 = i7 != b() + (-2);
         int i10 = i7 - 1;
         if (i10 >= 0) {
             ArrayList arrayList = this.d;
             if (i10 < arrayList.size()) {
                 obj = arrayList.get(i10);
-                if (obj instanceof u1) {
+                if (obj instanceof v1) {
                     return;
                 }
-                u1 u1Var = (u1) obj;
-                r1Var.a(u1Var, this.e, z10);
-                r1Var.d.a(this.f.x.contains(Integer.valueOf(u1Var.a)), false);
+                v1 v1Var = (v1) obj;
+                s1Var.a(v1Var, this.e, z10);
+                s1Var.d.a(this.f.x.contains(Integer.valueOf(v1Var.a)), false);
                 return;
             }
         }
         obj = null;
-        if (obj instanceof u1) {
+        if (obj instanceof v1) {
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View r1Var;
+        View s1Var;
         Context context = this.c;
         if (i7 == 0) {
-            r1Var = new r1(context, this.f.a, false);
+            s1Var = new s1(context, this.f.a, false);
         } else if (i7 != 1) {
-            r1Var = new View(context);
-            r1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setTag(-33024);
         } else {
-            r1Var = new View(context);
-            r1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
-            r1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+            s1Var.setTag(-33024);
         }
-        return new mj0(r1Var);
+        return new mj0(s1Var);
     }
 }

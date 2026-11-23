@@ -1,40 +1,68 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j9 b;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ l8(j9 j9Var, int i7) {
+    public /* synthetic */ l8(int i7, boolean[] zArr) {
         this.a = i7;
-        this.b = j9Var;
+        this.b = zArr;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Long l10 = (Long) view.getTag();
-                j9 j9Var = this.b;
-                org.telegram.messenger.t3 i12 = j9Var.getMessagesController().i1(l10.longValue(), false, null);
-                TLRPC.Chat O0 = j9Var.getMessagesController().O0(l10);
-                j9Var.M = O0;
-                if (i12 == null) {
-                    j9Var.N = l10;
-                    j9Var.getMessagesController().b3(0, l10.longValue(), true);
-                    break;
-                } else {
-                    org.telegram.ui.Components.voip.b2.l(O0, null, false, null, j9Var.getParentActivity(), j9Var, j9Var.getAccountInstance());
+                boolean[] zArr = this.b;
+                boolean z10 = !zArr[0];
+                zArr[0] = z10;
+                ((org.telegram.ui.Cells.d2) view).c(z10, true);
+                break;
+            case 1:
+                boolean[] zArr2 = this.b;
+                boolean z11 = !zArr2[1];
+                zArr2[1] = z11;
+                ((org.telegram.ui.Cells.d2) view).c(z11, true);
+                break;
+            case 2:
+                boolean[] zArr3 = this.b;
+                boolean z12 = !zArr3[0];
+                zArr3[0] = z12;
+                ((org.telegram.ui.Cells.d2) view).c(z12, true);
+                break;
+            case 3:
+                boolean[] zArr4 = this.b;
+                boolean z13 = !zArr4[0];
+                zArr4[0] = z13;
+                ((org.telegram.ui.Cells.d2) view).c(z13, true);
+                break;
+            case 4:
+                if (view.isEnabled()) {
+                    boolean[] zArr5 = this.b;
+                    boolean z14 = !zArr5[0];
+                    zArr5[0] = z14;
+                    ((org.telegram.ui.Cells.d2) view).c(z14, true);
                     break;
                 }
+                break;
+            case 5:
+                boolean[] zArr6 = this.b;
+                boolean z15 = !zArr6[0];
+                zArr6[0] = z15;
+                ((org.telegram.ui.Cells.d2) view).c(z15, true);
+                break;
             default:
-                j9 j9Var2 = this.b;
-                j9Var2.getClass();
-                j9.l0(j9Var2);
+                if (view.isEnabled()) {
+                    boolean[] zArr7 = this.b;
+                    boolean z16 = !zArr7[0];
+                    zArr7[0] = z16;
+                    ((org.telegram.ui.Cells.d2) view).c(z16, true);
+                    break;
+                }
                 break;
         }
     }

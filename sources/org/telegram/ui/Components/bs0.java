@@ -10,25 +10,25 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bs0 extends dk0 {
     public final Context c;
     public final jg.z1 e;
-    public as0 f;
+    public zr0 f;
     public final TLRPC.Chat n;
-    public final /* synthetic */ jt0 s;
+    public final /* synthetic */ it0 s;
     public ArrayList d = new ArrayList();
     public int h = 0;
     public int r = 0;
 
-    public bs0(jt0 jt0Var, Context context) {
-        this.s = jt0Var;
+    public bs0(it0 it0Var, Context context) {
+        this.s = it0Var;
         this.c = context;
         jg.z1 z1Var = new jg.z1(true);
         this.e = z1Var;
-        z1Var.a = new zr0(this);
-        this.n = jt0Var.G1.g();
+        z1Var.a = new yr0(this);
+        this.n = it0Var.G1.g();
     }
 
     @Override // v4.i0
@@ -77,9 +77,9 @@ public final class bs0 extends dk0 {
             return;
         }
         org.telegram.messenger.q5 q5Var = Utilities.g;
-        as0 as0Var = new as0(this, str, 0);
-        this.f = as0Var;
-        q5Var.d(as0Var, 300L);
+        zr0 zr0Var = new zr0(this, str, 0);
+        this.f = zr0Var;
+        q5Var.d(zr0Var, 300L);
     }
 
     @Override // v4.i0
@@ -97,11 +97,11 @@ public final class bs0 extends dk0 {
         int size = this.e.g.size();
         this.h = size;
         if (size > 0) {
-            jt0 jt0Var = this.s;
-            if (jt0Var.Y0) {
-                ds0 ds0Var = jt0Var.n0[0];
+            it0 it0Var = this.s;
+            if (it0Var.Y0) {
+                ds0 ds0Var = it0Var.n0[0];
                 if (ds0Var.F == 7 && ds0Var.h.getAdapter() != this) {
-                    jt0Var.B1(false);
+                    it0Var.B1(false);
                 }
             }
         }
@@ -112,26 +112,26 @@ public final class bs0 extends dk0 {
     public final void t(v4.f1 f1Var, int i7) {
         TLRPC.User c22;
         SpannableStringBuilder spannableStringBuilder;
-        jt0 jt0Var = this.s;
-        org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
+        it0 it0Var = this.s;
+        org.telegram.ui.ActionBar.g2 g2Var = it0Var.y1;
         TLObject E = E(i7);
         if (E instanceof TLRPC.ChannelParticipant) {
-            c22 = g2Var.getMessagesController().c2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) E).peer)));
+            c22 = g2Var.getMessagesController().c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) E).peer)));
         } else if (!(E instanceof TLRPC.ChatParticipant)) {
             return;
         } else {
             c22 = g2Var.getMessagesController().c2(Long.valueOf(((TLRPC.ChatParticipant) E).user_id));
         }
-        org.telegram.messenger.p10.o(c22);
+        org.telegram.messenger.n10.o(c22);
         jg.z1 z1Var = this.e;
         z1Var.g.size();
         String str = z1Var.n;
         if (str != null) {
-            String q10 = org.telegram.messenger.p10.q(c22);
+            String q10 = org.telegram.messenger.n10.q(c22);
             spannableStringBuilder = new SpannableStringBuilder(q10);
             int A1 = org.telegram.messenger.g0.A1(q10, str);
             if (A1 != -1) {
-                spannableStringBuilder.setSpan(new k00(org.telegram.ui.ActionBar.m6.q6, jt0Var.I1), A1, str.length() + A1, 33);
+                spannableStringBuilder.setSpan(new i00(org.telegram.ui.ActionBar.n6.q6, it0Var.I1), A1, str.length() + A1, 33);
             }
         } else {
             spannableStringBuilder = null;
@@ -146,10 +146,10 @@ public final class bs0 extends dk0 {
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        jt0 jt0Var = this.s;
-        org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(this.c, 9, 5, true, jt0Var.I1);
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, b5Var, jt0Var.I1);
-        b5Var.setDelegate(new zr0(this));
+        it0 it0Var = this.s;
+        org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(this.c, 9, 5, true, it0Var.I1);
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, b5Var, it0Var.I1);
+        b5Var.setDelegate(new yr0(this));
         return new mj0(b5Var);
     }
 }

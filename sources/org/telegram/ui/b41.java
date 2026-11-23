@@ -1,62 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class b41 extends org.telegram.ui.Components.b71 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ c51 e;
+public final class b41 extends org.telegram.ui.Components.ek0 {
+    public int f3;
+    public final /* synthetic */ b51 g3;
 
-    public b41(c51 c51Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = c51Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b41(b51 b51Var, Context context) {
+        super(context, null);
+        this.g3 = b51Var;
     }
 
-    @Override // org.telegram.ui.Components.b71
-    public final View d(int i7) {
-        c51 c51Var = this.e;
-        if (c51Var.o0) {
-            return c51Var.j0;
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        g41 g41Var;
+        super.onMeasure(i7, i10);
+        if (this.f3 != getMeasuredHeight() && (g41Var = this.g3.X) != null) {
+            g41Var.f();
         }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z10) {
-            if (i7 == 0) {
-                return frameLayout;
-            }
-            i7--;
-        }
-        if (this.b) {
-            if (i7 == 0) {
-                return c51Var.j0;
-            }
-            i7--;
-        }
-        return (this.c && i7 == 0) ? c51Var.k0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.b71
-    public final int e() {
-        if (this.e.o0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.b71
-    public final int h(int i7) {
-        return i7;
-    }
-
-    @Override // org.telegram.ui.Components.b71
-    public final void b(View view, int i7, int i10) {
+        this.f3 = getMeasuredHeight();
     }
 }

@@ -1,13 +1,13 @@
 package di;
 
-import org.telegram.messenger.k10;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -39,8 +39,8 @@ public final /* synthetic */ class q3 implements Runnable {
                     break;
                 } else {
                     TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
-                    k10.i(f6Var.a).y = tmppassword;
-                    k10.i(f6Var.a).v(false);
+                    i10.i(f6Var.a).y = tmppassword;
+                    i10.i(f6Var.a).v(false);
                     f6Var.O1(tmppassword.tmp_password, twoStepVerificationActivity, z11, null);
                     break;
                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class q3 implements Runnable {
                     if (twoStepVerificationActivity2 != null) {
                         twoStepVerificationActivity2.t0();
                     }
-                    org.telegram.ui.Components.lc.c0(tL_error != null ? tL_error.text : "NULL_ERROR");
+                    org.telegram.ui.Components.kc.c0(tL_error != null ? tL_error.text : "NULL_ERROR");
                     break;
                 }
         }

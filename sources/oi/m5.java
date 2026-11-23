@@ -6,8 +6,8 @@ import android.text.Layout;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
-import c8.ea;
-import c8.ma;
+import c8.fa;
+import c8.na;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
@@ -15,64 +15,64 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.t9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
+public final class m5 extends y implements org.telegram.ui.ActionBar.c6, h9 {
     public boolean E;
     public b3 F;
     public e6 G;
     public boolean H;
     public final LinkedHashSet I;
     public j5 J;
-    public final h K;
-    public final h6 n;
+    public final i K;
+    public final i6 n;
     public final f1 r;
     public final x3 s;
     public final o5 w;
     public final l5 x;
     public final ArrayList y;
 
-    public m5(Context context, h6 h6Var) {
+    public m5(Context context, i6 i6Var) {
         super(context);
         this.y = new ArrayList();
         this.I = new LinkedHashSet();
-        this.K = new h(this, 3);
-        this.n = h6Var;
+        this.K = new i(this, 3);
+        this.n = i6Var;
         setClipChildren(false);
         setClipToPadding(false);
-        f1 f1Var = new f1(context, h6Var);
+        f1 f1Var = new f1(context, i6Var);
         this.r = f1Var;
         f1Var.setAllowNewlines(false);
         f1Var.setInputType(147457);
         f1Var.setGravity(49);
-        f1Var.setTextSize(1, Math.max(8, cz.W0 - 2));
+        f1Var.setTextSize(1, Math.max(8, bz.W0 - 2));
         f1Var.setIncludeFontPadding(false);
         f1Var.setMinHeight(0);
         f1Var.setBackground(null);
         f1Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(2.0f), 0);
-        f1Var.setHint(hd.N0(2131753986, null));
+        f1Var.setHint(gd.N0(2131753986, null));
         f1Var.setCenterEmptyHint(true);
-        f1Var.setListener(new hi.t5(this, 22));
-        f1Var.setDelegate(new kg.x1(this, 26));
+        f1Var.setListener(new hi.u0(this, 23));
+        f1Var.setDelegate(new kg.f1(this, 28));
         addView(f1Var);
         x3 x3Var = new x3(this, context, 1);
         this.s = x3Var;
         x3Var.setClipChildren(false);
         x3Var.setClipToPadding(false);
         x3Var.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
-        addView(x3Var, ma.d(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
-        o5 o5Var = new o5(context, h6Var);
+        addView(x3Var, na.d(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
+        o5 o5Var = new o5(context, i6Var);
         this.w = o5Var;
         l5 l5Var = new l5(this, context);
         this.x = l5Var;
@@ -99,10 +99,10 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.G6));
-        hashSet.add(Integer.valueOf(m6.d6));
+        hashSet.add(Integer.valueOf(n6.G6));
+        hashSet.add(Integer.valueOf(n6.d6));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -112,7 +112,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
             return;
         }
         b3 b3Var = this.F;
-        j9 textSelectionHelper = b3Var != null ? b3Var.a.getTextSelectionHelper() : null;
+        i9 textSelectionHelper = b3Var != null ? b3Var.a.getTextSelectionHelper() : null;
         if (textSelectionHelper == null) {
             return;
         }
@@ -120,9 +120,9 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         arrayList.clear();
         k(arrayList);
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            u9 u9Var = (u9) arrayList.get(i7);
+            t9 t9Var = (t9) arrayList.get(i7);
             canvas.save();
-            canvas.translate(u9Var.getX(), u9Var.getY());
+            canvas.translate(t9Var.getX(), t9Var.getY());
             textSelectionHelper.Z(canvas, this, i7);
             canvas.restore();
         }
@@ -266,7 +266,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         }
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.r9
+    @Override // android.view.View, org.telegram.ui.Cells.q9
     public final void invalidate() {
         super.invalidate();
         o5 o5Var = this.w;
@@ -360,7 +360,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         f1 f1Var;
         Layout layout;
@@ -447,7 +447,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         int i13;
         int i14 = i11 - i7;
         int i15 = this.c;
-        int d = ea.d(this.a);
+        int d = fa.d(this.a);
         boolean z11 = this.E;
         int i16 = z11 ? d : i15;
         if (!z11) {
@@ -474,7 +474,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         int i12;
         int size = View.MeasureSpec.getSize(i7);
         int i13 = 0;
-        int max = Math.max(0, (size - this.c) - ea.d(this.a));
+        int max = Math.max(0, (size - this.c) - fa.d(this.a));
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, max - (org.telegram.messenger.g0.L(16.0f) * 2)), TLObject.FLAG_30);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
         f1 f1Var = this.r;
@@ -604,7 +604,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         if (pagetablecell == null) {
             return;
         }
-        post(new t(7, this, pagetablecell));
+        post(new n2.c0(9, this, pagetablecell));
     }
 
     public void setCellSelectionListener(j5 j5Var) {
@@ -662,16 +662,16 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         o5 o5Var;
         f1 f1Var = this.r;
         f1Var.updateColors();
-        int i7 = m6.G6;
-        h6 h6Var = this.n;
-        int w02 = m6.w0(i7, h6Var);
+        int i7 = n6.G6;
+        i6 i6Var = this.n;
+        int w02 = n6.w0(i7, i6Var);
         f1Var.setTextColor(w02);
-        f1Var.setHintTextColor(m6.r1(0.35f, w02));
+        f1Var.setHintTextColor(n6.r1(0.35f, w02));
         int i10 = 0;
         while (true) {
             o5Var = this.w;
@@ -687,7 +687,7 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         o5Var.b();
         try {
             if (getBackground() instanceof y1) {
-                ((y1) getBackground()).a(m6.w0(m6.d6, h6Var));
+                ((y1) getBackground()).a(n6.w0(n6.d6, i6Var));
             }
         } catch (Exception e10) {
             a8.g(e10, true);

@@ -1,10 +1,25 @@
 package c8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class m1 {
-    public static byte a(long j3) {
-        a8.la.d(j3, "out of range: %s", (j3 >> 8) == 0);
-        return (byte) j3;
+    public static long[] a(long[]... jArr) {
+        long j3 = 0;
+        for (long[] jArr2 : jArr) {
+            j3 += jArr2.length;
+        }
+        int i7 = (int) j3;
+        a8.ma.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i7));
+        long[] jArr3 = new long[i7];
+        int i10 = 0;
+        for (long[] jArr4 : jArr) {
+            System.arraycopy(jArr4, 0, jArr3, i10, jArr4.length);
+            i10 += jArr4.length;
+        }
+        return jArr3;
+    }
+
+    public static int b(long j3) {
+        return (int) (j3 ^ (j3 >>> 32));
     }
 }

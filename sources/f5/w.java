@@ -1,6 +1,6 @@
 package f5;
 
-import a8.i9;
+import a8.j9;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -30,10 +30,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class w extends b {
     public final Context C;
@@ -64,9 +64,9 @@ public final class w extends b {
             h4Var.a = jVar.v(h4Var);
         } catch (Exception e10) {
             g2 g2Var = new g2(e10);
-            i9 i9Var = g4.f;
+            j9 j9Var = g4.f;
             i4 i4Var = j4Var.b;
-            if (i9Var.d(i4Var, null, g2Var)) {
+            if (j9Var.d(i4Var, null, g2Var)) {
                 g4.d(i4Var);
             }
         }
@@ -131,7 +131,7 @@ public final class w extends b {
         try {
             i7 = ((Integer) F(2).get(28500L, TimeUnit.MILLISECONDS)).intValue();
         } catch (TimeoutException e10) {
-            G(ls.n1, 28, z.p);
+            G(ks.n1, 28, z.p);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e10);
         } catch (Exception e11) {
             if (e11 instanceof InterruptedException) {
@@ -150,7 +150,7 @@ public final class w extends b {
             return super.b(activity, eVar);
         } catch (Exception e12) {
             f fVar = z.f;
-            G(ls.o1, 2, fVar);
+            G(ks.o1, 2, fVar);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e12);
             return fVar;
         }
@@ -172,7 +172,7 @@ public final class w extends b {
                 wf.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.e0(c10, (p3) bVar.b);
+                    bVar.g0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

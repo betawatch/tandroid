@@ -1,14 +1,14 @@
 package androidx.biometric;
 
-import a8.l1;
-import a8.o1;
+import a8.m1;
+import a8.p1;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class i implements androidx.lifecycle.a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void A(Object obj) {
+    public final void u(Object obj) {
         boolean z10;
         int i7 = this.a;
         int i10 = 0;
@@ -64,7 +64,7 @@ public final class i implements androidx.lifecycle.a0 {
                     int i12 = Build.VERSION.SDK_INT;
                     if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
                         KeyguardManager a10 = h0.a(n10);
-                        if ((a10 == null ? false : h0.b(a10)) && l1.a(qVar.m0.c())) {
+                        if ((a10 == null ? false : h0.b(a10)) && m1.a(qVar.m0.c())) {
                             qVar.S();
                             qVar.m0.d(null);
                             break;
@@ -72,7 +72,7 @@ public final class i implements androidx.lifecycle.a0 {
                     }
                     if (qVar.R()) {
                         if (charSequence2 == null) {
-                            charSequence2 = o1.a(qVar.n(), i11);
+                            charSequence2 = p1.a(qVar.n(), i11);
                         }
                         if (i11 == 5) {
                             int i13 = qVar.m0.l;

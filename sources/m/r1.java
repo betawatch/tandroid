@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -29,7 +29,7 @@ public class r1 extends ListView {
     public final boolean r;
     public boolean s;
     public u0.d w;
-    public j6.o x;
+    public i6.g x;
 
     public r1(Context context, boolean z10) {
         super(context, null, R.attr.dropDownListViewStyle);
@@ -327,11 +327,11 @@ public class r1 extends ListView {
             return super.onHoverEvent(motionEvent);
         }
         int actionMasked = motionEvent.getActionMasked();
-        int i10 = 1;
+        int i10 = 2;
         if (actionMasked == 10 && this.x == null) {
-            j6.o oVar = new j6.o(this, i10);
-            this.x = oVar;
-            post(oVar);
+            i6.g gVar = new i6.g(this, i10);
+            this.x = gVar;
+            post(gVar);
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
         if (actionMasked != 9 && actionMasked != 7) {
@@ -370,11 +370,11 @@ public class r1 extends ListView {
         if (motionEvent.getAction() == 0) {
             this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        j6.o oVar = this.x;
-        if (oVar != null) {
-            r1 r1Var = (r1) oVar.b;
+        i6.g gVar = this.x;
+        if (gVar != null) {
+            r1 r1Var = (r1) gVar.b;
             r1Var.x = null;
-            r1Var.removeCallbacks(oVar);
+            r1Var.removeCallbacks(gVar);
         }
         return super.onTouchEvent(motionEvent);
     }

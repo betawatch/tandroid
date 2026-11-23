@@ -1,47 +1,36 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.m10;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y b;
+    public final /* synthetic */ z b;
 
-    public /* synthetic */ t(y yVar, int i7) {
+    public /* synthetic */ t(z zVar, int i7) {
         this.a = i7;
-        this.b = yVar;
+        this.b = zVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        boolean z10;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y yVar = this.b;
-                yVar.b0 = floatValue;
-                yVar.c0.setAlpha(floatValue);
-                yVar.a.invalidate();
+                this.b.requestLayout();
                 break;
             default:
-                y yVar2 = this.b;
-                u uVar = yVar2.a;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (floatValue2 < 0.5f) {
-                    z10 = false;
-                } else {
-                    floatValue2 -= 1.0f;
-                    z10 = true;
+                z zVar = this.b;
+                TextView textView = zVar.P;
+                v vVar = zVar.a;
+                if (!vVar.d.isFirstFrameRendered()) {
+                    vVar.animate().cancel();
+                    vVar.animate().alpha(0.0f).setDuration(150L).start();
+                    textView.animate().cancel();
+                    m10.n(textView.animate(), 1.0f, 150L);
+                    break;
                 }
-                if (z10 && !yVar2.L0) {
-                    yVar2.y0.setAlpha(1.0f);
-                    yVar2.L0 = true;
-                    uVar.d.clearImage();
-                }
-                float f10 = floatValue2 * 180.0f;
-                yVar2.y0.setRotationY(f10);
-                uVar.d.setRotationY(f10);
                 break;
         }
     }

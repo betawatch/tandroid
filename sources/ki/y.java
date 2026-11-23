@@ -15,30 +15,30 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class y extends View implements b6 {
+public final class y extends View implements c6 {
     public final org.telegram.ui.Cells.y E;
     public boolean F;
     public int G;
-    public oh0 H;
+    public nh0 H;
     public int I;
     public int J;
     public final RectF a;
     public final Paint b;
     public final TextPaint c;
     public final v d;
-    public final oh0 e;
+    public final nh0 e;
     public boolean f;
     public float h;
     public String n;
@@ -56,9 +56,9 @@ public final class y extends View implements b6 {
         this.c = textPaint;
         v vVar = new v(this);
         this.d = vVar;
-        oh0 oh0Var = new oh0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
-        this.e = oh0Var;
-        this.n = hd.N0(2131752879, null);
+        nh0 nh0Var = new nh0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
+        this.e = nh0Var;
+        this.n = gd.N0(2131752879, null);
         this.F = true;
         updateColors();
         vVar.n = true;
@@ -69,21 +69,21 @@ public final class y extends View implements b6 {
         vVar.a.setStrokeCap(Paint.Cap.ROUND);
         vVar.l = true;
         int L = org.telegram.messenger.g0.L(16.0f);
-        int x02 = m6.x0(null, m6.Hi, false);
+        int x02 = n6.x0(null, n6.Hi, false);
         this.G = x02;
-        org.telegram.ui.Cells.y k02 = m6.k0(L, L, L, L, 0, x02, x02);
+        org.telegram.ui.Cells.y k02 = n6.k0(L, L, L, L, 0, x02, x02);
         this.E = k02;
         k02.setCallback(this);
-        oh0Var.setCallback(this);
-        oh0Var.R(this);
-        setContentDescription(hd.N0(2131754917, "AccDescrBotMenu"));
+        nh0Var.setCallback(this);
+        nh0Var.R(this);
+        setContentDescription(gd.N0(2131754917, "AccDescrBotMenu"));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.Uf));
-        hashSet.add(Integer.valueOf(m6.Wf));
-        hashSet.add(Integer.valueOf(m6.Hi));
+        hashSet.add(Integer.valueOf(n6.Uf));
+        hashSet.add(Integer.valueOf(n6.Wf));
+        hashSet.add(Integer.valueOf(n6.Hi));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0046  */
@@ -112,18 +112,18 @@ public final class y extends View implements b6 {
                         invalidate();
                     }
                     z10 = true;
-                    interpolation = nr.f.getInterpolation(this.h);
+                    interpolation = kr.f.getInterpolation(this.h);
                     if (z10 && interpolation > 0.0f) {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
                     if (this.F) {
-                        this.a.set(0.0f, 0.0f, o10.b(this.s, org.telegram.messenger.g0.L(4.0f), interpolation, org.telegram.messenger.g0.L(40.0f)), getMeasuredHeight());
+                        this.a.set(0.0f, 0.0f, m10.b(this.s, org.telegram.messenger.g0.L(4.0f), interpolation, org.telegram.messenger.g0.L(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), this.b);
-                        int x02 = m6.x0(null, m6.Hi, false);
+                        int x02 = n6.x0(null, n6.Hi, false);
                         if (x02 != this.G) {
                             org.telegram.ui.Cells.y yVar = this.E;
                             this.G = x02;
-                            m6.H1(yVar, x02, true);
+                            n6.H1(yVar, x02, true);
                         }
                         org.telegram.ui.Cells.y yVar2 = this.E;
                         RectF rectF = this.a;
@@ -133,11 +133,11 @@ public final class y extends View implements b6 {
                     if (this.x) {
                         canvas.save();
                         canvas.translate(org.telegram.messenger.g0.L(9.5f), org.telegram.messenger.g0.L(6.0f));
-                        oh0 oh0Var = this.e;
-                        oh0Var.setBounds(0, 0, oh0Var.b, oh0Var.c);
-                        oh0Var.draw(canvas);
+                        nh0 nh0Var = this.e;
+                        nh0Var.setBounds(0, 0, nh0Var.b, nh0Var.c);
+                        nh0Var.draw(canvas);
                         canvas.restore();
-                        if (oh0Var.l0) {
+                        if (nh0Var.l0) {
                             invalidate();
                         }
                     } else {
@@ -168,7 +168,7 @@ public final class y extends View implements b6 {
                         invalidate();
                     }
                     z10 = true;
-                    interpolation = nr.f.getInterpolation(this.h);
+                    interpolation = kr.f.getInterpolation(this.h);
                     if (z10) {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
@@ -183,7 +183,7 @@ public final class y extends View implements b6 {
                 }
             }
             z10 = false;
-            interpolation = nr.f.getInterpolation(this.h);
+            interpolation = kr.f.getInterpolation(this.h);
             if (z10) {
             }
             if (this.F) {
@@ -220,7 +220,7 @@ public final class y extends View implements b6 {
             textPaint.setTextSize(L);
             this.J = size;
             int i11 = (int) (org.telegram.messenger.g0.q.x * 0.6f);
-            StaticLayout c10 = zu0.c(j6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i11, 1, true);
+            StaticLayout c10 = yu0.c(j6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i11, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -246,11 +246,11 @@ public final class y extends View implements b6 {
             return;
         }
         if (this.y != z10) {
-            oh0 oh0Var = this.e;
-            oh0Var.stop();
-            oh0Var.h = true;
-            oh0Var.P(z10 ? oh0Var.e[0] : 1);
-            oh0Var.start();
+            nh0 nh0Var = this.e;
+            nh0Var.stop();
+            nh0Var.h = true;
+            nh0Var.P(z10 ? nh0Var.e[0] : 1);
+            nh0Var.start();
             this.y = z10;
         }
     }
@@ -260,24 +260,24 @@ public final class y extends View implements b6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         TextPaint textPaint = this.c;
         try {
-            this.b.setColor(m6.x0(null, m6.Uf, false));
-            int x02 = m6.x0(null, m6.Wf, false);
+            this.b.setColor(n6.x0(null, n6.Uf, false));
+            int x02 = n6.x0(null, n6.Wf, false);
             v vVar = this.d;
             vVar.k = x02;
             vVar.j = x02;
-            oh0 oh0Var = this.e;
-            if (oh0Var != null) {
-                if (oh0Var == this.H) {
+            nh0 nh0Var = this.e;
+            if (nh0Var != null) {
+                if (nh0Var == this.H) {
                     if (x02 != this.I) {
                     }
                 }
-                this.H = oh0Var;
+                this.H = nh0Var;
                 this.I = x02;
-                oh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                nh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
             int alpha = textPaint.getAlpha();
             textPaint.setColor(x02);

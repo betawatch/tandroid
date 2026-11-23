@@ -1,31 +1,44 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class b3 extends AnimatorListenerAdapter {
+public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d3 b;
+    public final /* synthetic */ e3 b;
 
-    public /* synthetic */ b3(d3 d3Var, int i7) {
+    public /* synthetic */ b3(e3 e3Var, int i7) {
         this.a = i7;
-        this.b = d3Var;
+        this.b = e3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                d3 d3Var = this.b;
-                d3Var.r = 0;
-                d3Var.invalidate();
+                e3 e3Var = this.b;
+                e3Var.getClass();
+                e3Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3Var.invalidate();
+                break;
+            case 1:
+                e3 e3Var2 = this.b;
+                e3Var2.getClass();
+                e3Var2.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var2.invalidate();
+                break;
+            case 2:
+                e3 e3Var3 = this.b;
+                e3Var3.getClass();
+                e3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var3.invalidate();
                 break;
             default:
-                d3 d3Var2 = this.b;
-                d3Var2.s = 0;
-                d3Var2.invalidate();
+                e3 e3Var4 = this.b;
+                e3Var4.getClass();
+                e3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var4.invalidate();
                 break;
         }
     }

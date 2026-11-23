@@ -7,18 +7,18 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import fi.d4;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.m41;
-import org.telegram.ui.qi0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.l41;
+import org.telegram.ui.oi0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] E1;
 
-    public p(Context context, h6 h6Var) {
-        super(context, h6Var);
+    public p(Context context, i6 i6Var) {
+        super(context, i6Var);
         this.x0 = true;
         this.y0 = true;
     }
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.R0;
             if (eVar != null) {
                 getSelectedDate();
-                m41 m41Var = (m41) ((qi0) eVar).b;
-                m41Var.f();
-                m41Var.b.u0.d(false, false);
+                l41 l41Var = (l41) ((oi0) eVar).b;
+                l41Var.f();
+                l41Var.b.u0.d(false, false);
             }
             invalidate();
             B();
@@ -366,7 +366,7 @@ public final class p extends g {
                 Paint paint = fVar3.c;
                 Paint paint2 = fVar3.c;
                 paint.setStrokeWidth(max * f16);
-                paint2.setAlpha(ls.e4);
+                paint2.setAlpha(ks.e4);
                 canvas.drawLines(fVar3.k, 0, fVar3.j, paint2);
             }
         }
@@ -398,7 +398,7 @@ public final class p extends g {
 
     @Override // lg.g
     public final long r(int i7, int i10) {
-        return ((mg.d) this.i0).m.U0(i7, i10);
+        return ((mg.d) this.i0).m.P0(i7, i10);
     }
 
     @Override // lg.g
@@ -439,7 +439,7 @@ public final class p extends g {
             }
         }
         mg.b bVar2 = this.i0;
-        ((mg.d) bVar2).m = new k8.a(((mg.d) bVar2).l);
+        ((mg.d) bVar2).m = new jb.m(((mg.d) bVar2).l);
         super.z();
     }
 

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import com.google.android.recaptcha.RecaptchaAction;
 import gd.k;
 import id.c;
@@ -8,7 +8,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzfq extends j implements p {
     Object zza;
@@ -74,7 +74,7 @@ final class zzfq extends j implements p {
         try {
             switch (this.zzc) {
                 case 0:
-                    h.b(obj);
+                    z.b(obj);
                     zzhkVar = (zzhk) this.zzh;
                     zzgb zzgbVar = this.zzd;
                     long j3 = this.zze;
@@ -158,7 +158,7 @@ final class zzfq extends j implements p {
                 case 1:
                     zzhkVar = (zzhk) this.zza;
                     zzhkVar2 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     this.zzh = zzhkVar2;
                     this.zza = null;
                     this.zzc = 2;
@@ -168,7 +168,7 @@ final class zzfq extends j implements p {
                     return aVar;
                 case 2:
                     zzhkVar3 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     double longValue2 = ((Number) obj).longValue();
                     zzfpVar = this.zzd.zza;
                     String str2 = this.zzf;
@@ -186,7 +186,7 @@ final class zzfq extends j implements p {
                     d = this.zzb;
                     zzhkVar3 = (zzhk) this.zza;
                     zzhkVar4 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     this.zzh = zzhkVar4;
                     this.zza = null;
                     this.zzb = d;
@@ -198,7 +198,7 @@ final class zzfq extends j implements p {
                 case 4:
                     d = this.zzb;
                     zzhkVar5 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     zzxx zzxxVar2 = (zzxx) obj;
                     zzgb zzgbVar22 = this.zzd;
                     zzfpVar2 = zzgbVar22.zza;
@@ -218,7 +218,7 @@ final class zzfq extends j implements p {
                 case 5:
                     zzhkVar5 = (zzhk) this.zza;
                     zzhkVar6 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     this.zzh = zzhkVar6;
                     this.zza = null;
                     this.zzc = 6;
@@ -228,7 +228,7 @@ final class zzfq extends j implements p {
                     return aVar;
                 case 6:
                     zzhkVar7 = (zzhk) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     zzyg zzygVar32 = (zzyg) obj;
                     zzfpVar4 = this.zzd.zza;
                     this.zzh = zzygVar32;
@@ -241,7 +241,7 @@ final class zzfq extends j implements p {
                 case 7:
                     zzhkVar7 = (zzhk) this.zza;
                     zzygVar = (zzyg) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     this.zzh = zzygVar;
                     this.zza = null;
                     this.zzc = 8;
@@ -250,7 +250,7 @@ final class zzfq extends j implements p {
                     return aVar;
                 default:
                     zzygVar2 = (zzyg) this.zzh;
-                    h.b(obj);
+                    z.b(obj);
                     return zzygVar2.zzj();
             }
         } catch (zzcg e10) {

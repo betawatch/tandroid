@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class yp implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ yp(Object obj, org.telegram.ui.Components.yz yzVar, int i7, int i10) {
+    public /* synthetic */ yp(Object obj, org.telegram.ui.Components.vz vzVar, int i7, int i10) {
         this.a = i10;
         this.d = obj;
-        this.b = yzVar;
+        this.b = vzVar;
         this.c = i7;
     }
 
@@ -66,7 +66,7 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                         layoutManager.M(view);
                         z10 = true;
                         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
-                        ofFloat2.addListener(new org.telegram.ui.Cells.y9(this, layoutManager));
+                        ofFloat2.addListener(new org.telegram.ui.Cells.x9(this, layoutManager));
                         ofFloat2.start();
                         animatorSet.start();
                         return z10;
@@ -77,23 +77,23 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                 return z10;
             case 1:
                 float f13 = 0.0f;
-                org.telegram.ui.Components.lk lkVar = (org.telegram.ui.Components.lk) obj;
-                org.telegram.ui.Components.mk mkVar = lkVar.Y;
-                mkVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount2 = mkVar.r.getChildCount();
+                org.telegram.ui.Components.jk jkVar = (org.telegram.ui.Components.jk) obj;
+                org.telegram.ui.Components.kk kkVar = jkVar.Y;
+                kkVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount2 = kkVar.r.getChildCount();
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 int i15 = 0;
                 while (i15 < childCount2) {
-                    View childAt2 = mkVar.r.getChildAt(i15);
+                    View childAt2 = kkVar.r.getChildAt(i15);
                     if (view != null) {
-                        mkVar.r.getClass();
+                        kkVar.r.getClass();
                         if (RecyclerView.R(childAt2) < i11) {
                             i15++;
                             f13 = 0.0f;
                         }
                     }
                     childAt2.setAlpha(f13);
-                    int min2 = (int) ((Math.min(mkVar.r.getMeasuredHeight(), Math.max(0, childAt2.getTop())) / mkVar.r.getMeasuredHeight()) * 100.0f);
+                    int min2 = (int) ((Math.min(kkVar.r.getMeasuredHeight(), Math.max(0, childAt2.getTop())) / kkVar.r.getMeasuredHeight()) * 100.0f);
                     ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
                     ofFloat3.setStartDelay(min2);
                     ofFloat3.setDuration(200L);
@@ -101,16 +101,16 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                     i15++;
                     f13 = 0.0f;
                 }
-                animatorSet2.addListener(new org.telegram.ui.Components.jk(this));
-                lkVar.V.d();
+                animatorSet2.addListener(new org.telegram.ui.Components.hk(this));
+                jkVar.V.d();
                 animatorSet2.start();
                 if (view != null && view.getParent() == null) {
-                    mkVar.r.addView(view);
-                    v4.p0 layoutManager2 = mkVar.r.getLayoutManager();
+                    kkVar.r.addView(view);
+                    v4.p0 layoutManager2 = kkVar.r.getLayoutManager();
                     if (layoutManager2 != null) {
                         layoutManager2.M(view);
                         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
-                        ofFloat4.addListener(new org.telegram.ui.Components.jk(this, layoutManager2));
+                        ofFloat4.addListener(new org.telegram.ui.Components.hk(this, layoutManager2));
                         ofFloat4.start();
                         return true;
                     }
@@ -146,19 +146,19 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                 }
                 hj0Var.g.add(animatorSet3);
                 animatorSet3.start();
-                animatorSet3.addListener(new org.telegram.ui.Components.h10(4, this, animatorSet3));
+                animatorSet3.addListener(new org.telegram.ui.Components.f10(4, this, animatorSet3));
                 return false;
             default:
-                c00 c00Var = (c00) obj;
-                c00Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                et etVar = c00Var.b;
-                int childCount4 = etVar.getChildCount();
+                b00 b00Var = (b00) obj;
+                b00Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                dt dtVar = b00Var.b;
+                int childCount4 = dtVar.getChildCount();
                 AnimatorSet animatorSet4 = new AnimatorSet();
                 int i17 = 0;
                 while (i17 < childCount4) {
-                    View childAt4 = etVar.getChildAt(i17);
+                    View childAt4 = dtVar.getChildAt(i17);
                     if (view != null) {
-                        etVar.getClass();
+                        dtVar.getClass();
                         f10 = 100.0f;
                         if (RecyclerView.R(childAt4) < i11) {
                             f11 = f12;
@@ -173,7 +173,7 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                     }
                     childAt4.setAlpha(f12);
                     f11 = f12;
-                    int min3 = (int) ((Math.min(etVar.getMeasuredHeight(), Math.max(i13, childAt4.getTop())) / etVar.getMeasuredHeight()) * f10);
+                    int min3 = (int) ((Math.min(dtVar.getMeasuredHeight(), Math.max(i13, childAt4.getTop())) / dtVar.getMeasuredHeight()) * f10);
                     i7 = i13;
                     float[] fArr = new float[i12];
                     // fill-array-data instruction
@@ -192,12 +192,12 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                 }
                 float f14 = f12;
                 int i18 = i13;
-                animatorSet4.addListener(new sz(this));
-                c00Var.m0.d();
+                animatorSet4.addListener(new rz(this));
+                b00Var.m0.d();
                 animatorSet4.start();
                 if (view != null && view.getParent() == null) {
-                    etVar.addView(view);
-                    v4.p0 layoutManager3 = etVar.getLayoutManager();
+                    dtVar.addView(view);
+                    v4.p0 layoutManager3 = dtVar.getLayoutManager();
                     if (layoutManager3 != null) {
                         layoutManager3.M(view);
                         Property property = View.ALPHA;
@@ -205,7 +205,7 @@ public final class yp implements ViewTreeObserver.OnPreDrawListener {
                         fArr2[i18] = view.getAlpha();
                         fArr2[1] = f14;
                         ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr2);
-                        ofFloat7.addListener(new sz(this, layoutManager3));
+                        ofFloat7.addListener(new rz(this, layoutManager3));
                         ofFloat7.start();
                     }
                 }

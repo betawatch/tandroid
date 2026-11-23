@@ -1,10 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.text.Editable;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class zm0 extends v4.t {
-    @Override // v4.t, v4.c0, v4.p0
-    public final boolean y0() {
-        return false;
-    }
+public interface zm0 {
+    void S();
+
+    boolean f();
+
+    void g0(int i7, boolean z10, boolean z11);
+
+    void o();
+
+    void v(Editable editable);
 }

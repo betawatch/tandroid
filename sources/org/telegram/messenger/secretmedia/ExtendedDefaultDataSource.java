@@ -1,6 +1,6 @@
 package org.telegram.messenger.secretmedia;
 
-import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -22,10 +22,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.s8;
+import org.telegram.messenger.r8;
 import q4.q;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -44,7 +44,7 @@ public final class ExtendedDefaultDataSource implements h {
     private final LongSparseArray<Uri> mtprotoUris;
     private h rawResourceDataSource;
     private h rtmpDataSource;
-    private s8 streamLoadOperation;
+    private r8 streamLoadOperation;
     private final List<c0> transferListeners;
 
     public ExtendedDefaultDataSource(Context context, String str, boolean z10) {
@@ -131,9 +131,9 @@ public final class ExtendedDefaultDataSource implements h {
 
     private h getStreamDataSource() {
         if (this.streamLoadOperation == null) {
-            s8 s8Var = new s8();
-            this.streamLoadOperation = s8Var;
-            addListenersToDataSource(s8Var);
+            r8 r8Var = new r8();
+            this.streamLoadOperation = r8Var;
+            addListenersToDataSource(r8Var);
         }
         return this.streamLoadOperation;
     }
@@ -185,7 +185,7 @@ public final class ExtendedDefaultDataSource implements h {
 
     @Override // j2.h
     public long open(m mVar) {
-        la.p(this.dataSource == null);
+        ma.p(this.dataSource == null);
         Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
             uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));
@@ -231,7 +231,7 @@ public final class ExtendedDefaultDataSource implements h {
     }
 
     public ExtendedDefaultDataSource(Context context, String str, int i7, int i10, boolean z10) {
-        this(context, new r(str, i7, i10, z10, new q(28)), (LongSparseArray<Uri>) null);
+        this(context, new r(str, i7, i10, z10, new q(29)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {

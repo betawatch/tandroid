@@ -9,10 +9,10 @@ import android.graphics.RectF;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class q extends g {
     public final Matrix E1;
@@ -723,21 +723,21 @@ public class q extends g {
                     canvas.save();
                     canvas.clipRect(f39, i11, f38, getMeasuredHeight() - this.s);
                     if (z11) {
-                        canvas.drawColor(m6.x0(null, m6.ik, false));
+                        canvas.drawColor(n6.x0(null, n6.ik, false));
                     }
                     for (size = arrayList3.size() - 1; size >= 0; size--) {
                         ng.f fVar3 = (ng.f) arrayList3.get(size);
                         Paint paint = fVar3.c;
                         paint.setAlpha(i31);
                         canvas.drawPath(fVar3.f, paint);
-                        paint.setAlpha(ls.e4);
+                        paint.setAlpha(ks.e4);
                     }
                     canvas.restore();
                     canvas.restore();
                 }
                 f12 = 0.0f;
             }
-            i7 = ls.e4;
+            i7 = ks.e4;
             float[] fArr4 = ((mg.e) this.i0).b;
             int i232 = ((int) (f36 / (fArr4.length >= 2 ? f10 : fArr4[1] * f35))) + 1;
             int max2 = Math.max(0, (this.G - i232) - 1);
@@ -935,7 +935,7 @@ public class q extends g {
                 }
             }
             if (z12) {
-                canvas.drawColor(m6.x0(null, m6.ik, false));
+                canvas.drawColor(n6.x0(null, n6.ik, false));
             }
             for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
                 ng.f fVar3 = (ng.f) arrayList.get(size2);

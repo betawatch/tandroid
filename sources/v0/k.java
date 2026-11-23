@@ -12,9 +12,9 @@ import android.os.CancellationSignal;
 import android.text.TextUtils;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.beta.R;
-import tg.y;
+import org.telegram.ui.Cells.aa;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k implements i {
     public final CredentialManager a;
@@ -32,19 +32,19 @@ public final class k implements i {
     @Override // v0.i
     public final void onCreateCredential(Context context, b bVar, CancellationSignal cancellationSignal, Executor executor, g gVar) {
         kotlin.jvm.internal.j.e(context, "context");
-        je.b bVar2 = (je.b) gVar;
+        aa aaVar = (aa) gVar;
         CredentialManager credentialManager = this.a;
         if (credentialManager == null) {
-            bVar2.a(new w0.c(3, "Your device doesn't support credential manager"));
+            aaVar.T(new w0.c(3, "Your device doesn't support credential manager"));
             return;
         }
-        j jVar = new j(bVar2, (e) bVar, this);
+        j jVar = new j(aaVar, (e) bVar, this);
         kotlin.jvm.internal.j.b(credentialManager);
         Bundle bundle = bVar.a;
-        y yVar = bVar.c;
+        t1.a aVar = bVar.c;
         Bundle bundle2 = new Bundle();
-        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) yVar.b);
-        CharSequence charSequence = (CharSequence) yVar.c;
+        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) aVar.b);
+        CharSequence charSequence = (CharSequence) aVar.c;
         if (!TextUtils.isEmpty(charSequence)) {
             bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_DISPLAY_NAME", charSequence);
         }
@@ -65,7 +65,7 @@ public final class k implements i {
         kotlin.jvm.internal.j.e(executor, "executor");
         CredentialManager credentialManager = this.a;
         if (credentialManager == null) {
-            gVar.a(new w0.h(3, "Your device doesn't support credential manager"));
+            gVar.T(new w0.h(3, "Your device doesn't support credential manager"));
             return;
         }
         j jVar = new j(gVar, this);

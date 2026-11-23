@@ -1,27 +1,57 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.icu.text.Collator;
+import java.util.Comparator;
+import java.util.List;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g00 implements oc, nc {
-    public final /* synthetic */ a10 a;
-    public final /* synthetic */ gj b;
-    public final /* synthetic */ f3.s c;
-    public final /* synthetic */ di.p9 d;
+public final /* synthetic */ class g00 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g00(a10 a10Var, gj gjVar, f3.s sVar, di.p9 p9Var) {
-        this.a = a10Var;
-        this.b = gjVar;
-        this.c = sVar;
-        this.d = p9Var;
+    public /* synthetic */ g00(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.oc
-    public void a(String str) {
-        g0.g3(new gn(this.a, this.b, str, this.c, this.d, 18));
-    }
-
-    @Override // org.telegram.messenger.nc
-    public void q(Exception exc) {
-        g0.g3(new ul(this.a, this.b, this.c, this.d, 27));
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int compare;
+        switch (this.a) {
+            case 0:
+                compare = ((Collator) this.b).compare(((r00) obj).b, ((r00) obj2).b);
+                return compare;
+            default:
+                cd cdVar = (cd) this.b;
+                cd cdVar2 = (cd) obj;
+                cd cdVar3 = (cd) obj2;
+                if (cdVar2 != cdVar) {
+                    if (cdVar3 != cdVar) {
+                        List list = y00.N;
+                        int indexOf = list.indexOf(cdVar2.f);
+                        int indexOf2 = list.indexOf(cdVar3.f);
+                        if (indexOf >= 0 && indexOf2 >= 0) {
+                            return indexOf - indexOf2;
+                        }
+                        if (indexOf < 0) {
+                            if (indexOf2 < 0) {
+                                int i7 = cdVar2.k;
+                                int i10 = cdVar3.k;
+                                if (i7 == i10) {
+                                    return cdVar2.a.compareTo(cdVar3.a);
+                                }
+                                if (i7 <= i10) {
+                                    if (i7 >= i10) {
+                                        return 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    return 1;
+                }
+                return -1;
+        }
     }
 }

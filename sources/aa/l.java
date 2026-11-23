@@ -12,14 +12,14 @@ import java.io.StringReader;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.t00;
+import org.telegram.messenger.r00;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ps;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Function {
     public final /* synthetic */ int a;
@@ -89,15 +89,15 @@ public final /* synthetic */ class l implements Function {
             case 5:
                 return String.valueOf((Long) obj);
             case 6:
-                return np.a((int[]) obj);
+                return mp.a((int[]) obj);
             case 7:
-                return ((t00) obj).b;
+                return ((r00) obj).b;
             case 8:
                 return Long.valueOf(n5.o((TLRPC.Peer) obj));
             case 9:
-                return Long.valueOf(((gj) obj).Z0());
+                return Long.valueOf(((fj) obj).Z0());
             case 10:
-                return Integer.valueOf(((gj) obj).e1());
+                return Integer.valueOf(((fj) obj).e1());
             case 11:
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
                 if (channelParticipant == null) {

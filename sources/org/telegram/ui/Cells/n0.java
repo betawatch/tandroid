@@ -10,17 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.kq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class n0 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        gj gjVar;
+        fj fjVar;
         long j3;
         int i7;
         v0 v0Var;
@@ -64,25 +64,25 @@ public final /* synthetic */ class n0 implements Runnable {
                 break;
             case 2:
                 s0 s0Var = v0Var3.g1;
-                org.telegram.ui.ActionBar.g2 G = s0Var != null ? s0Var.G() : null;
-                if (G == null) {
-                    G = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 B = s0Var != null ? s0Var.B() : null;
+                if (B == null) {
+                    B = LaunchActivity.T();
                 }
-                if (G != null) {
-                    G.presentFragment(new org.telegram.ui.Wallet.n6());
+                if (B != null) {
+                    B.presentFragment(new org.telegram.ui.Wallet.o6());
                     break;
                 }
                 break;
             case 3:
                 int i12 = v0Var3.I;
-                if (v0Var3.T() && (gjVar = v0Var3.Q0) != null && gjVar.k != null) {
-                    org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i12);
-                    TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) gjVar.k.action;
+                if (v0Var3.W() && (fjVar = v0Var3.Q0) != null && fjVar.k != null) {
+                    org.telegram.ui.Wallet.v0 D = org.telegram.ui.Wallet.v0.D(i12);
+                    TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) fjVar.k.action;
                     int i13 = 2;
-                    boolean z10 = gjVar.P3() && gjVar.k.send_state == 2;
-                    boolean z11 = gjVar.P3() && gjVar.k.send_state == 1;
+                    boolean z10 = fjVar.P3() && fjVar.k.send_state == 2;
+                    boolean z11 = fjVar.P3() && fjVar.k.send_state == 1;
                     v0Var3.playSoundEffect(0);
-                    TLRPC.Message message = gjVar.k;
+                    TLRPC.Message message = fjVar.k;
                     if (message != null) {
                         TLRPC.MessageAction messageAction = message.action;
                         if (messageAction instanceof TLRPC.TL_messageActionGramTransfer) {
@@ -100,16 +100,16 @@ public final /* synthetic */ class n0 implements Runnable {
                                                 wallettransaction.id = tL_messageActionGramTransfer.transaction_id;
                                                 wallettransaction.failed = z10;
                                                 wallettransaction.pending = z11;
-                                                wallettransaction.incoming = !gjVar.P3();
+                                                wallettransaction.incoming = !fjVar.P3();
                                                 wallettransaction.comment = tL_messageActionGramTransfer.comment;
                                                 wallettransaction.comment_encrypted = tL_messageActionGramTransfer.comment_encrypted;
                                                 wallettransaction.comment_encrypted_preparing = tL_messageActionGramTransfer.comment_encrypted_preparing;
                                                 wallettransaction.amount = tL_messageActionGramTransfer.amount;
-                                                if (TextUtils.isEmpty(tL_messageActionGramTransfer.onramp_provider_name) || !p10.B(gj.B0(gjVar.k))) {
+                                                if (TextUtils.isEmpty(tL_messageActionGramTransfer.onramp_provider_name) || !n10.B(fj.B0(fjVar.k))) {
                                                     TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = new TL_wallet.walletTransactionPeerUser();
                                                     wallettransaction.peer = wallettransactionpeeruser;
                                                     wallettransactionpeeruser.address = tL_messageActionGramTransfer.peer_address;
-                                                    wallettransactionpeeruser.user_id = gj.B0(gjVar.k);
+                                                    wallettransactionpeeruser.user_id = fj.B0(fjVar.k);
                                                 } else {
                                                     TL_wallet.walletTransactionPeerOnramp wallettransactionpeeronramp = new TL_wallet.walletTransactionPeerOnramp();
                                                     wallettransactionpeeronramp.provider_name = tL_messageActionGramTransfer.onramp_provider_name;
@@ -117,100 +117,100 @@ public final /* synthetic */ class n0 implements Runnable {
                                                     wallettransaction.peer = wallettransactionpeeronramp;
                                                 }
                                                 wallettransaction.preview = i7;
-                                                wallettransaction.date = gjVar.k.date;
+                                                wallettransaction.date = fjVar.k.date;
                                             }
                                         }
                                         v0Var2 = v0Var;
                                         n0Var = new n0(v0Var2, i13);
-                                        if (!v0Var2.Q0.P3() || !np.u1(i12).V3.contains("WALLET_FIRST_INCOMING_TRANSFER")) {
-                                            org.telegram.ui.Wallet.n6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
+                                        if (!v0Var2.Q0.P3() || !mp.u1(i12).V3.contains("WALLET_FIRST_INCOMING_TRANSFER")) {
+                                            org.telegram.ui.Wallet.o6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
                                             break;
                                         } else {
-                                            np.u1(i12).s4(j3, "WALLET_FIRST_INCOMING_TRANSFER");
+                                            mp.u1(i12).s4(j3, "WALLET_FIRST_INCOMING_TRANSFER");
                                             Context context = v0Var2.getContext();
-                                            org.telegram.ui.ActionBar.h6 h6Var = v0Var2.h1;
-                                            org.telegram.ui.ActionBar.w2 j10 = org.telegram.messenger.f3.j(1, context, h6Var, false);
+                                            org.telegram.ui.ActionBar.i6 i6Var = v0Var2.h1;
+                                            org.telegram.ui.ActionBar.w2 j10 = org.telegram.messenger.f3.j(1, context, i6Var, false);
                                             FrameLayout frameLayout = new FrameLayout(context);
                                             int L = org.telegram.messenger.g0.L(16.0f);
-                                            int i15 = org.telegram.ui.ActionBar.m6.h5;
-                                            Drawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i15, h6Var));
-                                            org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i15);
+                                            int i15 = org.telegram.ui.ActionBar.n6.h5;
+                                            Drawable d02 = org.telegram.ui.ActionBar.n6.d0(L, org.telegram.ui.ActionBar.n6.w0(i15, i6Var));
+                                            org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i15);
                                             frameLayout.setBackground(d02);
-                                            org.telegram.ui.ActionBar.t6.j(frameLayout, d02, M, null, h6Var);
+                                            org.telegram.ui.ActionBar.u6.j(frameLayout, d02, M, null, i6Var);
                                             frameLayout.setPadding(org.telegram.messenger.g0.L(36.0f), 0, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(14.0f));
                                             LinearLayout linearLayout = new LinearLayout(context);
                                             linearLayout.setOrientation(1);
                                             linearLayout.setGravity(1);
-                                            frameLayout.addView(linearLayout, c8.ma.c(-2.0f, -1));
-                                            linearLayout.addView(new org.telegram.ui.Wallet.m7(120, context, false), c8.ma.t(120, 120, 1, 0, 0, 0, -8));
+                                            frameLayout.addView(linearLayout, c8.na.c(-2.0f, -1));
+                                            linearLayout.addView(new org.telegram.ui.Wallet.n7(120, context, false), c8.na.t(120, 120, 1, 0, 0, 0, -8));
                                             TextView textView = new TextView(context);
-                                            textView.setText(hd.N0(2131742869, null));
-                                            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
+                                            textView.setText(gd.N0(2131742864, null));
+                                            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
                                             textView.setTextSize(1, 17.0f);
                                             textView.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                                             textView.setGravity(17);
-                                            TextView f10 = o10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 0, 0, 0, 6), context);
-                                            double d = ((org.telegram.messenger.i0) np.u1(i12).A7.l.b).a;
-                                            f10.setText((d <= 0.0d || Double.isNaN(d) || Double.isInfinite(d)) ? hd.N0(2131742868, null) : hd.a0(null, null, 2131742867, org.telegram.ui.Wallet.u0.x(1000000000L, false), String.format(hd.E0().y, "%.2f", Double.valueOf(d))));
-                                            org.telegram.ui.ActionBar.t6.U(f10, org.telegram.ui.ActionBar.m6.r5, h6Var);
+                                            TextView f10 = m10.f(linearLayout, textView, c8.na.t(-1, -2, 1, 0, 0, 0, 6), context);
+                                            double d = ((org.telegram.messenger.i0) mp.u1(i12).A7.l.b).a;
+                                            f10.setText((d <= 0.0d || Double.isNaN(d) || Double.isInfinite(d)) ? gd.N0(2131742863, null) : gd.a0(null, null, 2131742862, org.telegram.ui.Wallet.v0.x(1000000000L, false), String.format(gd.E0().y, "%.2f", Double.valueOf(d))));
+                                            org.telegram.ui.ActionBar.u6.U(f10, org.telegram.ui.ActionBar.n6.r5, i6Var);
                                             f10.setTextSize(1, 14.0f);
                                             f10.setGravity(17);
                                             f10.setLineSpacing(org.telegram.messenger.g0.L(1.0f), 1.0f);
-                                            linearLayout.addView(f10, c8.ma.t(-1, -2, 1, 0, 0, 0, 24));
-                                            org.telegram.ui.Wallet.g6 g6Var = new org.telegram.ui.Wallet.g6(context, h6Var);
-                                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131742866, null));
-                                            nq nqVar = new nq(R.drawable.mini_attach, 2);
-                                            nqVar.c(org.telegram.messenger.g0.L(14.0f));
+                                            linearLayout.addView(f10, c8.na.t(-1, -2, 1, 0, 0, 0, 24));
+                                            org.telegram.ui.Wallet.h6 h6Var = new org.telegram.ui.Wallet.h6(context, i6Var);
+                                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131742861, null));
+                                            kq kqVar = new kq(R.drawable.mini_attach, 2);
+                                            kqVar.c(org.telegram.messenger.g0.L(14.0f));
                                             int indexOf = spannableStringBuilder.toString().indexOf("📎");
-                                            spannableStringBuilder.setSpan(nqVar, indexOf, indexOf + 2, 33);
+                                            spannableStringBuilder.setSpan(kqVar, indexOf, indexOf + 2, 33);
                                             int indexOf2 = spannableStringBuilder.toString().indexOf("→");
-                                            spannableStringBuilder.setSpan(new nq(R.drawable.wallet_intro_arrow, 2), indexOf2, indexOf2 + 1, 33);
-                                            g6Var.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-                                            g6Var.a(R.drawable.wallet_intro_telegram, hd.N0(2131742756, null), spannableStringBuilder);
-                                            int i16 = org.telegram.ui.ActionBar.m6.n6;
+                                            spannableStringBuilder.setSpan(new kq(R.drawable.wallet_intro_arrow, 2), indexOf2, indexOf2 + 1, 33);
+                                            h6Var.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
+                                            h6Var.a(R.drawable.wallet_intro_telegram, gd.N0(2131742751, null), spannableStringBuilder);
+                                            int i16 = org.telegram.ui.ActionBar.n6.n6;
                                             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                                            org.telegram.ui.ActionBar.t6.s(g6Var.b, i16, h6Var, mode);
-                                            linearLayout.addView(g6Var, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-                                            org.telegram.ui.Wallet.g6 g6Var2 = new org.telegram.ui.Wallet.g6(context, h6Var);
-                                            g6Var2.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-                                            g6Var2.a(R.drawable.wallet_intro_trade, hd.N0(2131742722, null), hd.N0(2131742864, null));
-                                            org.telegram.ui.ActionBar.t6.s(g6Var2.b, i16, h6Var, mode);
-                                            linearLayout.addView(g6Var2, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-                                            org.telegram.ui.Wallet.g6 g6Var3 = new org.telegram.ui.Wallet.g6(context, h6Var);
-                                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.N0(2131742865, null));
-                                            nq nqVar2 = new nq(R.drawable.wallet_intro_chats, 2);
+                                            org.telegram.ui.ActionBar.u6.s(h6Var.b, i16, i6Var, mode);
+                                            linearLayout.addView(h6Var, c8.na.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            org.telegram.ui.Wallet.h6 h6Var2 = new org.telegram.ui.Wallet.h6(context, i6Var);
+                                            h6Var2.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
+                                            h6Var2.a(R.drawable.wallet_intro_trade, gd.N0(2131742717, null), gd.N0(2131742859, null));
+                                            org.telegram.ui.ActionBar.u6.s(h6Var2.b, i16, i6Var, mode);
+                                            linearLayout.addView(h6Var2, c8.na.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            org.telegram.ui.Wallet.h6 h6Var3 = new org.telegram.ui.Wallet.h6(context, i6Var);
+                                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(gd.N0(2131742860, null));
+                                            kq kqVar2 = new kq(R.drawable.wallet_intro_chats, 2);
                                             int indexOf3 = spannableStringBuilder2.toString().indexOf("💬");
-                                            spannableStringBuilder2.setSpan(nqVar2, indexOf3, indexOf3 + 2, 33);
+                                            spannableStringBuilder2.setSpan(kqVar2, indexOf3, indexOf3 + 2, 33);
                                             int indexOf4 = spannableStringBuilder2.toString().indexOf("⋮");
-                                            spannableStringBuilder2.setSpan(new nq(R.drawable.wallet_intro_options, 2), indexOf4, indexOf4 + 1, 33);
+                                            spannableStringBuilder2.setSpan(new kq(R.drawable.wallet_intro_options, 2), indexOf4, indexOf4 + 1, 33);
                                             int indexOf5 = TextUtils.indexOf(spannableStringBuilder2, "→");
                                             while (indexOf5 >= 0) {
                                                 int i17 = indexOf5 + 1;
-                                                spannableStringBuilder2.setSpan(new nq(R.drawable.wallet_intro_arrow, 2), indexOf5, i17, 33);
+                                                spannableStringBuilder2.setSpan(new kq(R.drawable.wallet_intro_arrow, 2), indexOf5, i17, 33);
                                                 indexOf5 = TextUtils.indexOf(spannableStringBuilder2, "→", i17);
                                             }
-                                            g6Var3.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-                                            g6Var3.a(R.drawable.wallet_intro_store, hd.N0(2131742742, null), spannableStringBuilder2);
-                                            org.telegram.ui.ActionBar.t6.s(g6Var3.b, org.telegram.ui.ActionBar.m6.n6, h6Var, PorterDuff.Mode.SRC_IN);
-                                            linearLayout.addView(g6Var3, c8.ma.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-                                            hi.e g10 = o10.g(24, context, h6Var, true);
-                                            g10.setText(hd.N0(2131742854, null));
-                                            linearLayout.addView(g10, c8.ma.t(-1, 48, 1, 0, 0, 0, 0));
-                                            c8.ra.b(g10, 0.02f, 1.1f);
+                                            h6Var3.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
+                                            h6Var3.a(R.drawable.wallet_intro_store, gd.N0(2131742737, null), spannableStringBuilder2);
+                                            org.telegram.ui.ActionBar.u6.s(h6Var3.b, org.telegram.ui.ActionBar.n6.n6, i6Var, PorterDuff.Mode.SRC_IN);
+                                            linearLayout.addView(h6Var3, c8.na.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
+                                            hi.e g10 = m10.g(24, context, i6Var, true);
+                                            g10.setText(gd.N0(2131742849, null));
+                                            linearLayout.addView(g10, c8.na.t(-1, 48, 1, 0, 0, 0, 0));
+                                            c8.sa.b(g10, 0.02f, 1.1f);
                                             j10.O = frameLayout;
                                             org.telegram.ui.ActionBar.w2[] w2VarArr = {j10};
                                             w2VarArr[0].u0(true);
                                             w2VarArr[0].O();
                                             g10.setOnClickListener(new org.telegram.ui.Wallet.a5(w2VarArr, 0));
                                             w2VarArr[0].show();
-                                            w2VarArr[0].n(new kg.y(v0Var2, wallettransaction, n0Var, 27));
+                                            w2VarArr[0].n(new kg.x(v0Var2, wallettransaction, n0Var, 28));
                                             break;
                                         }
                                     }
                                 }
                             }
                             j3 = 0;
-                            if (gjVar.k.random_id != 0) {
+                            if (fjVar.k.random_id != 0) {
                                 ArrayList arrayList2 = D.p;
                                 int size = arrayList2.size();
                                 int i18 = 0;
@@ -220,7 +220,7 @@ public final /* synthetic */ class n0 implements Runnable {
                                     TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                                     i7 = i11;
                                     v0Var = v0Var3;
-                                    if (wallettransaction2.random_id == gjVar.k.random_id) {
+                                    if (wallettransaction2.random_id == fjVar.k.random_id) {
                                         wallettransaction = wallettransaction2;
                                         if (wallettransaction == null) {
                                         }
@@ -228,7 +228,7 @@ public final /* synthetic */ class n0 implements Runnable {
                                         n0Var = new n0(v0Var2, i13);
                                         if (!v0Var2.Q0.P3()) {
                                         }
-                                        org.telegram.ui.Wallet.n6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
+                                        org.telegram.ui.Wallet.o6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
                                     } else {
                                         v0Var3 = v0Var;
                                         i11 = i7;
@@ -244,7 +244,7 @@ public final /* synthetic */ class n0 implements Runnable {
                             n0Var = new n0(v0Var2, i13);
                             if (!v0Var2.Q0.P3()) {
                             }
-                            org.telegram.ui.Wallet.n6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
+                            org.telegram.ui.Wallet.o6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
                         }
                     }
                     i7 = 1;
@@ -257,16 +257,16 @@ public final /* synthetic */ class n0 implements Runnable {
                     n0Var = new n0(v0Var2, i13);
                     if (!v0Var2.Q0.P3()) {
                     }
-                    org.telegram.ui.Wallet.n6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
+                    org.telegram.ui.Wallet.o6.K0(v0Var2.getContext(), v0Var2.I, wallettransaction, null, null, null, n0Var, v0Var2.h1);
                 }
                 break;
             case 4:
-                v0Var3.U();
+                v0Var3.X();
                 break;
             case 5:
                 s0 s0Var2 = v0Var3.g1;
                 if (s0Var2 != null) {
-                    s0Var2.a0(v0Var3);
+                    s0Var2.S(v0Var3);
                     break;
                 }
                 break;

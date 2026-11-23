@@ -1,6 +1,6 @@
 package si;
 
-import ai.t0;
+import ai.p0;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.RecordingCanvas;
@@ -10,14 +10,14 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.RuntimeShader;
 import android.support.v4.media.session.w;
-import c8.kc;
+import c8.lc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class e extends kc {
+public final class e extends lc {
     public final RenderNode a = w.o();
-    public final RuntimeShader b = t0.d();
+    public final RuntimeShader b = p0.d();
     public int c = -1;
     public int d = -1;
     public int e;
@@ -30,7 +30,7 @@ public final class e extends kc {
         this.i = fVar;
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void a(Rect rect, RectF rectF) {
         float f10;
         a aVar;
@@ -113,7 +113,7 @@ public final class e extends kc {
         } else {
             beginRecording.save();
             beginRecording.translate(-rectF.left, -rectF.top);
-            fVar.f.o(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
+            fVar.f.z(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
             beginRecording.restore();
         }
         this.a.endRecording();
@@ -121,23 +121,23 @@ public final class e extends kc {
         fVar.w = false;
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void b() {
         this.a.discardDisplayList();
         this.c = -1;
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final boolean d() {
         return this.a.hasDisplayList();
     }
 
-    @Override // c8.kc
+    @Override // c8.lc
     public final void e(float f10) {
         this.a.setAlpha(f10);
     }

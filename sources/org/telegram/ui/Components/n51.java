@@ -1,193 +1,118 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
+import android.app.Activity;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import java.io.File;
 import org.telegram.messenger.ApplicationLoaderImpl;
-import org.telegram.messenger.beta.R;
+import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class n51 extends org.telegram.ui.ActionBar.w2 {
-    public final Drawable m1;
-    public final m51 n1;
-    public AnimatorSet o1;
-    public final View p1;
-    public final LinearLayout q1;
-    public int r1;
-    public final int[] s1;
+public final class n51 extends IUpdateLayout {
+    public FrameLayout a;
+    public RadialProgress2 b;
+    public org.telegram.ui.Cells.b2 c;
+    public final Activity d;
+    public final ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n51(Context context, org.telegram.messenger.d1 d1Var) {
-        super(context, false);
-        final int i7 = 0;
-        int i10 = 2;
-        this.s1 = new int[2];
-        setCanceledOnTouchOutside(false);
-        this.v0 = false;
-        this.w0 = false;
-        Drawable g10 = i5.c.g(context, R.drawable.sheet_shadow_round);
-        this.m1 = g10;
-        g10.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false), PorterDuff.Mode.MULTIPLY));
-        final int i11 = 1;
-        x01 x01Var = new x01(1, context, this);
-        x01Var.setWillNotDraw(false);
-        this.b = x01Var;
-        m51 m51Var = new m51(this, context);
-        this.n1 = m51Var;
-        m51Var.setFillViewport(true);
-        m51Var.setWillNotDraw(false);
-        m51Var.setClipToPadding(false);
-        m51Var.setVerticalScrollBarEnabled(false);
-        x01Var.addView(m51Var, c8.ma.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 130.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.q1 = linearLayout;
-        linearLayout.setOrientation(1);
-        m51Var.addView(linearLayout, c8.ma.x(-1, -2, 51));
-        TextView textView = new TextView(context);
-        org.telegram.messenger.o10.p(textView, 1, 20.0f);
-        int i12 = org.telegram.ui.ActionBar.m6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i12, false));
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(org.telegram.messenger.hd.N0(2131754226, null));
-        linearLayout.addView(textView, c8.ma.t(-2, -2, 49, 23, 16, 23, 0));
-        TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.r5, false));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setMovementMethod(new org.telegram.messenger.c0(false));
-        int i13 = org.telegram.ui.ActionBar.m6.k5;
-        textView2.setLinkTextColor(org.telegram.ui.ActionBar.m6.x0(null, i13, false));
-        textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131754239, d1Var.b, Integer.valueOf(d1Var.a)));
-        textView2.setGravity(49);
-        linearLayout.addView(textView2, c8.ma.t(-2, -2, 49, 23, 0, 23, 5));
-        String str = d1Var.c;
-        if (!TextUtils.isEmpty(str)) {
-            TextView textView3 = new TextView(getContext());
-            textView3.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i12, false));
-            textView3.setTextSize(1, 14.0f);
-            textView3.setMovementMethod(new org.telegram.messenger.c0(false));
-            textView3.setLinkTextColor(org.telegram.ui.ActionBar.m6.x0(null, i13, false));
-            textView3.setText(org.telegram.messenger.j6.m(str, textView3.getPaint().getFontMetricsInt(), false, null, 0));
-            org.telegram.messenger.ls.i(textView3);
-            textView3.setGravity(51);
-            linearLayout.addView(textView3, c8.ma.t(-2, -2, 51, 23, 15, 23, 0));
-        }
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, org.telegram.messenger.g0.f1(), 83);
-        layoutParams.bottomMargin = org.telegram.messenger.g0.L(130.0f);
-        View view = new View(context);
-        this.p1 = view;
-        view.setBackgroundColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.V5, false));
-        view.setAlpha(0.0f);
-        view.setTag(1);
-        x01Var.addView(view, layoutParams);
-        hi.e eVar = new hi.e(context, null, true);
-        File g11 = org.telegram.messenger.t0.a.g();
-        if (g11 != null) {
-            eVar.i(org.telegram.messenger.hd.a0(null, null, 2131754222, new Object[0]), false, true);
-            eVar.setOnClickListener(new q31(i10, this, g11));
-        } else {
-            eVar.i(org.telegram.messenger.hd.a0(null, null, 2131754224, new Object[0]), false, true);
-            eVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.l51
-                public final /* synthetic */ n51 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i7) {
-                        case 0:
-                            if (((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q()) {
-                                org.telegram.messenger.h1.e().b(false);
-                            }
-                            this.b.dismiss();
-                            break;
-                        default:
-                            this.b.dismiss();
-                            break;
-                    }
-                }
-            });
-        }
-        x01Var.addView(eVar, c8.ma.d(-1, 48.0f, 87, 20.0f, 0.0f, 20.0f, 60.0f));
-        hi.e eVar2 = new hi.e(context, null, false);
-        eVar2.i(org.telegram.messenger.hd.N0(2131754221, null), false, true);
-        eVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.l51
-            public final /* synthetic */ n51 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i11) {
-                    case 0:
-                        if (((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q()) {
-                            org.telegram.messenger.h1.e().b(false);
-                        }
-                        this.b.dismiss();
-                        break;
-                    default:
-                        this.b.dismiss();
-                        break;
-                }
-            }
-        });
-        x01Var.addView(eVar2, c8.ma.d(-1, 48.0f, 87, 20.0f, 4.0f, 20.0f, 8.0f));
+    public n51(Activity activity, ViewGroup viewGroup) {
+        super(activity, viewGroup);
+        this.d = activity;
+        this.e = viewGroup;
     }
 
-    public static void J0(n51 n51Var) {
-        View childAt = n51Var.q1.getChildAt(0);
-        int[] iArr = n51Var.s1;
-        childAt.getLocationInWindow(iArr);
-        int max = Math.max(iArr[1] - org.telegram.messenger.g0.L(24.0f), 0);
-        if (r0.getMeasuredHeight() + iArr[1] <= n51Var.b.getTranslationY() + (n51Var.c.getMeasuredHeight() - org.telegram.messenger.g0.L(113.0f))) {
-            n51Var.K0(false);
-        } else {
-            n51Var.K0(true);
-        }
-        if (n51Var.r1 != max) {
-            n51Var.r1 = max;
-            n51Var.n1.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.w2
-    public final boolean G() {
-        return false;
-    }
-
-    public final void K0(boolean z10) {
-        View view = this.p1;
-        if ((!z10 || view.getTag() == null) && (z10 || view.getTag() != null)) {
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void createUpdateUI(int i7) {
+        ViewGroup viewGroup = this.e;
+        if (viewGroup == null || this.a != null) {
             return;
         }
-        view.setTag(z10 ? null : 1);
+        Activity activity = this.d;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setVisibility(4);
+        this.a.setTranslationY(org.telegram.messenger.g0.L(44.0f));
+        this.a.setBackground(org.telegram.ui.ActionBar.n6.h0(1090519039, 2, -1));
+        viewGroup.addView(this.a, c8.na.e(-1, 44, 83));
+        this.a.setOnClickListener(new ci.q(this, i7, 21));
+        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(this, activity);
+        this.c = b2Var;
+        b2Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        this.c.setTypeface(org.telegram.messenger.g0.o());
+        this.c.setTextColor(-1);
+        this.c.setGravity(17);
+        this.a.addView(this.c, c8.na.g());
+        this.c.c(org.telegram.messenger.gd.N0(2131754226, null), false, true);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
+        this.b = radialProgress2;
+        int i10 = org.telegram.ui.ActionBar.n6.Fi;
+        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.n6.x0(null, i10, false), org.telegram.ui.ActionBar.n6.x0(null, i10, false));
+        this.b.r(0, 0, org.telegram.messenger.g0.L(22.0f), org.telegram.messenger.g0.L(22.0f));
+        this.b.setCircleRadius(org.telegram.messenger.g0.L(11.0f));
+        this.b.setAsMini();
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateAppUpdateViews(int i7, boolean z10) {
+        org.telegram.messenger.h1 e10;
+        String str;
+        int i10;
+        if (this.e == null) {
+            return;
+        }
+        if (((!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() || (str = (e10 = org.telegram.messenger.h1.e()).a) == null || (i10 = e10.b) == 0) ? null : new org.telegram.messenger.d1(str, i10, e10.c)) == null) {
+            FrameLayout frameLayout = this.a;
+            if (frameLayout == null || frameLayout.getTag() == null) {
+                return;
+            }
+            this.a.setTag(null);
+            if (z10) {
+                this.a.animate().translationY(org.telegram.messenger.g0.L(44.0f)).setInterpolator(kr.g).setListener(new s11(this, 4)).setDuration(180L).start();
+                return;
+            } else {
+                this.a.setTranslationY(org.telegram.messenger.g0.L(44.0f));
+                this.a.setVisibility(4);
+                return;
+            }
+        }
+        createUpdateUI(i7);
+        File g10 = org.telegram.messenger.t0.a.g();
+        if (g10 == null || !g10.exists()) {
+            if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
+                this.b.setIcon(3, true, z10);
+                this.b.p(true, !((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k);
+                this.c.c(org.telegram.messenger.gd.a0(null, null, 2131754223, Integer.valueOf((int) ((!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k) * 100.0f))), z10, true);
+            } else {
+                this.b.setIcon(2, true, z10);
+                this.c.c(org.telegram.messenger.gd.N0(2131754226, null), z10, true);
+            }
+        } else {
+            this.b.setIcon(15, true, z10);
+            this.c.c(org.telegram.messenger.gd.N0(2131754222, null), z10, true);
+        }
+        if (this.a.getTag() != null) {
+            return;
+        }
+        this.a.setVisibility(0);
+        this.a.setTag(1);
         if (z10) {
-            view.setVisibility(0);
+            this.a.animate().translationY(0.0f).setInterpolator(kr.g).setListener(null).setDuration(180L).start();
+        } else {
+            this.a.setTranslationY(0.0f);
         }
-        AnimatorSet animatorSet = this.o1;
-        if (animatorSet != null) {
-            animatorSet.cancel();
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateFileProgress(Object[] objArr) {
+        if (this.a == null || this.c == null) {
+            return;
         }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.o1 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
-        this.o1.setDuration(150L);
-        this.o1.addListener(new org.telegram.ui.on(25, this, z10));
-        this.o1.start();
+        if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
+            float f10 = !((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k;
+            this.b.p(true, f10);
+            this.c.setText(org.telegram.messenger.gd.a0(null, null, 2131754223, Integer.valueOf((int) (f10 * 100.0f))));
+            this.a.invalidate();
+        }
     }
 }

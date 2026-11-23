@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.wt;
+import org.telegram.ui.vt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class t extends c0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class t extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new wt(1);
+        this.O = new vt(1);
         this.P = new Rect();
         y1(i7);
     }
@@ -452,24 +452,24 @@ public class t extends c0 {
     }
 
     @Override // v4.c0
-    public final void a1(x0 x0Var, c1 c1Var, l2.l0 l0Var, int i7) {
+    public final void a1(x0 x0Var, c1 c1Var, l2.m0 m0Var, int i7) {
         A1();
         if (c1Var.b() > 0 && !c1Var.g) {
             boolean z10 = i7 == 1;
-            int u12 = u1(l0Var.b, x0Var, c1Var);
+            int u12 = u1(m0Var.b, x0Var, c1Var);
             if (z10) {
                 while (u12 > 0) {
-                    int i10 = l0Var.b;
+                    int i10 = m0Var.b;
                     if (i10 <= 0) {
                         break;
                     }
                     int i11 = i10 - 1;
-                    l0Var.b = i11;
+                    m0Var.b = i11;
                     u12 = u1(i11, x0Var, c1Var);
                 }
             } else {
                 int b10 = c1Var.b() - 1;
-                int i12 = l0Var.b;
+                int i12 = m0Var.b;
                 while (i12 < b10) {
                     int i13 = i12 + 1;
                     int u13 = u1(i13, x0Var, c1Var);
@@ -479,7 +479,7 @@ public class t extends c0 {
                     i12 = i13;
                     u12 = u13;
                 }
-                l0Var.b = i12;
+                m0Var.b = i12;
             }
         }
         r1();
@@ -784,7 +784,7 @@ public class t extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new wt(1);
+        this.O = new vt(1);
         this.P = new Rect();
         y1(i7);
     }

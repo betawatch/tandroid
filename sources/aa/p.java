@@ -65,9 +65,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.function.Supplier;
 import m.o3;
-import sg.h0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p {
     public static final h r = new h(1);
@@ -127,7 +126,7 @@ public final class p {
         Task call;
         pVar.getClass();
         ArrayList arrayList = new ArrayList();
-        for (File file : ga.d.i(((File) pVar.g.d).listFiles(r))) {
+        for (File file : ga.d.e(((File) pVar.g.c).listFiles(r))) {
             try {
                 long parseLong = Long.parseLong(file.getName().substring(3));
                 try {
@@ -209,7 +208,7 @@ public final class p {
                     i10 = 8;
                     ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).d(hVar.c(str3, false));
                     ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.e).b).getReference()).d(hVar.c(str3, true));
-                    ((AtomicMarkableReference) o3Var.g).set(hVar.d(str3), false);
+                    ((AtomicMarkableReference) o3Var.h).set(hVar.d(str3), false);
                     ca.q qVar = (ca.q) o3Var.f;
                     File b10 = dVar2.b(str3, "rollouts-state");
                     if (!b10.exists() || b10.length() == 0) {
@@ -450,9 +449,9 @@ public final class p {
             ga.d dVar4 = this.g;
             h hVar2 = new h(2);
             dVar4.getClass();
-            File file = new File((File) dVar4.e, str3);
+            File file = new File((File) dVar4.d, str3);
             file.mkdirs();
-            Stream stream = Collection.-EL.stream(ga.d.i(file.listFiles(hVar2)));
+            Stream stream = Collection.-EL.stream(ga.d.e(file.listFiles(hVar2)));
             int i20 = 0;
             List list4 = (List) stream.map(new l(i20)).filter(new m(i20)).collect(Collectors.toList());
             final List<ApplicationExitInfo> historicalProcessExitReasons2 = activityManager.getHistoricalProcessExitReasons(null, 0, 0);
@@ -479,10 +478,10 @@ public final class p {
         ga.d dVar5 = bVar.b;
         dVar5.a(".com.google.firebase.crashlytics");
         dVar5.a(".com.google.firebase.crashlytics-ndk");
-        if (!((String) dVar5.b).isEmpty()) {
+        if (!((String) dVar5.a).isEmpty()) {
             dVar5.a(".com.google.firebase.crashlytics.files.v1");
             final String str9 = ".com.google.firebase.crashlytics.files.v2" + File.pathSeparator;
-            File file2 = (File) dVar5.c;
+            File file2 = (File) dVar5.b;
             if (file2.exists() && (list = file2.list(new FilenameFilter() { // from class: ga.c
                 @Override // java.io.FilenameFilter
                 public final boolean accept(File file3, String str10) {
@@ -507,7 +506,7 @@ public final class p {
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", k14, null);
                 }
-                ga.d.h(new File((File) dVar5.e, str10));
+                ga.d.d(new File((File) dVar5.d, str10));
                 d.remove(str10);
             }
         }
@@ -518,31 +517,31 @@ public final class p {
             }
             ea.a aVar2 = ga.b.g;
             h hVar3 = ga.b.i;
-            File file3 = new File((File) dVar5.e, str11);
+            File file3 = new File((File) dVar5.d, str11);
             file3.mkdirs();
-            List<File> i22 = ga.d.i(file3.listFiles(hVar3));
-            if (i22.isEmpty()) {
+            List<File> e15 = ga.d.e(file3.listFiles(hVar3));
+            if (e15.isEmpty()) {
                 String p10 = p0.p("Session ", str11, " has no events.");
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", p10, null);
                 }
             } else {
-                Collections.sort(i22);
+                Collections.sort(e15);
                 ArrayList arrayList6 = new ArrayList();
                 boolean z14 = z12;
-                for (File file4 : i22) {
+                for (File file4 : e15) {
                     try {
                         f10 = ga.b.f(file4);
                         aVar2.getClass();
-                    } catch (IOException e15) {
-                        Log.w("FirebaseCrashlytics", "Could not add event to report for " + file4, e15);
+                    } catch (IOException e16) {
+                        Log.w("FirebaseCrashlytics", "Could not add event to report for " + file4, e16);
                     }
                     try {
                         JsonReader jsonReader = new JsonReader(new StringReader(f10));
                         try {
-                            t0 e16 = ea.a.e(jsonReader);
+                            t0 e17 = ea.a.e(jsonReader);
                             jsonReader.close();
-                            arrayList6.add(bVar.a(str11, e16));
+                            arrayList6.add(bVar.a(str11, e17));
                             if (!z14) {
                                 String name = file4.getName();
                                 if (!name.startsWith("event") || !name.endsWith("_")) {
@@ -554,8 +553,8 @@ public final class p {
                             z14 = z13;
                         } finally {
                         }
-                    } catch (IllegalStateException e17) {
-                        throw new IOException(e17);
+                    } catch (IllegalStateException e18) {
+                        throw new IOException(e18);
                     }
                 }
                 if (arrayList6.isEmpty()) {
@@ -581,14 +580,14 @@ public final class p {
                                         a18.h = new o1(d2);
                                     }
                                     a17.j = a18.a();
-                                } catch (IOException e18) {
-                                    e = e18;
+                                } catch (IOException e19) {
+                                    e = e19;
                                     Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b14, e);
-                                    ga.d.h(new File((File) dVar5.e, str11));
+                                    ga.d.d(new File((File) dVar5.d, str11));
                                     z12 = false;
                                 }
-                            } catch (IOException e19) {
-                                e = e19;
+                            } catch (IOException e20) {
+                                e = e20;
                             }
                         }
                         da.d0 a19 = a17.a();
@@ -602,8 +601,8 @@ public final class p {
                         }
                         a10 = a20.a();
                         t2Var = a10.k;
-                    } catch (IOException e20) {
-                        e = e20;
+                    } catch (IOException e21) {
+                        e = e21;
                     }
                     if (t2Var == null) {
                         throw new IllegalStateException("Reports without sessions cannot have events added to them.");
@@ -620,34 +619,34 @@ public final class p {
                             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                                 try {
                                     Log.d("FirebaseCrashlytics", str12, null);
-                                } catch (IOException e21) {
-                                    e = e21;
+                                } catch (IOException e22) {
+                                    e = e22;
                                 }
                             }
-                            ga.b.g(z14 ? new File((File) dVar5.h, ((n0) t2Var4).b) : new File((File) dVar5.f, ((n0) t2Var4).b), ea.a.a.v(a24));
-                        } catch (IOException e22) {
-                            e = e22;
+                            ga.b.g(z14 ? new File((File) dVar5.f, ((n0) t2Var4).b) : new File((File) dVar5.e, ((n0) t2Var4).b), ea.a.a.F(a24));
+                        } catch (IOException e23) {
+                            e = e23;
                         }
                     }
-                    ga.d.h(new File((File) dVar5.e, str11));
+                    ga.d.d(new File((File) dVar5.d, str11));
                     z12 = false;
-                    e = e21;
+                    e = e22;
                     Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b14, e);
-                    ga.d.h(new File((File) dVar5.e, str11));
+                    ga.d.d(new File((File) dVar5.d, str11));
                     z12 = false;
                 }
             }
-            ga.d.h(new File((File) dVar5.e, str11));
+            ga.d.d(new File((File) dVar5.d, str11));
             z12 = false;
         }
         b7.l lVar = bVar.c.b().a;
         ArrayList c10 = bVar.c();
         int size2 = c10.size();
-        int i23 = i7;
-        if (size2 <= i23) {
+        int i22 = i7;
+        if (size2 <= i22) {
             return;
         }
-        Iterator it = c10.subList(i23, size2).iterator();
+        Iterator it = c10.subList(i22, size2).iterator();
         while (it.hasNext()) {
             ((File) it.next()).delete();
         }
@@ -709,11 +708,11 @@ public final class p {
                 str2 = str7;
                 str3 = str10;
                 i7 = 4;
-                ((ba.e) o3Var.b).b.a(new ai.r((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((ca.q) o3Var.f).a(), 4));
+                ((ba.e) o3Var.b).b.a(new ai.j(o3Var, str, ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), ((ca.q) o3Var.f).a(), 5));
             }
         }
         ca.f fVar3 = this.i;
-        ((ca.d) fVar3.b).f();
+        ((ca.d) fVar3.b).b();
         fVar3.b = ca.f.c;
         if (str != null) {
             fVar3.b = new ca.o(((ga.d) fVar3.a).b(str, "userlog"));
@@ -769,16 +768,16 @@ public final class p {
             throw new NullPointerException("Null identifier");
         }
         String str18 = a0Var2.c().a;
-        h0 h0Var = aVar2.h;
-        if (((f5.a) h0Var.c) == null) {
-            h0Var.c = new f5.a(h0Var);
+        s2.e eVar = aVar2.h;
+        if (((f5.a) eVar.c) == null) {
+            eVar.c = new f5.a(eVar);
         }
-        f5.a aVar3 = (f5.a) h0Var.c;
+        f5.a aVar3 = (f5.a) eVar.c;
         String str19 = aVar3.b;
         if (aVar3 == null) {
-            h0Var.c = new f5.a(h0Var);
+            eVar.c = new f5.a(eVar);
         }
-        m0Var.g = new o0(str17, str14, str15, str18, str19, ((f5.a) h0Var.c).c);
+        m0Var.g = new o0(str17, str14, str15, str18, str19, ((f5.a) eVar.c).c);
         m1 m1Var = new m1();
         m1Var.a = 3;
         m1Var.e = (byte) (m1Var.e | 1);
@@ -844,7 +843,7 @@ public final class p {
         String str22 = ((n0) t2Var).b;
         try {
             ga.b.g.getClass();
-            ga.b.g(dVar.b(str22, "report"), ea.a.a.v(a12));
+            ga.b.g(dVar.b(str22, "report"), ea.a.a.F(a12));
             File b12 = dVar.b(str22, "start-time");
             long j3 = ((n0) t2Var).d;
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(b12), ga.b.e);
@@ -865,15 +864,16 @@ public final class p {
     public final void e(String str) {
         ExecutorService executorService = this.e.b.a;
         ProfilingManager profilingManager = (ProfilingManager) this.a.getSystemService(ProfilingManager.class);
+        int i7 = 0;
         Object[] objArr = {new ProfilingTrigger.Builder(7).build(), new ProfilingTrigger.Builder(8).build()};
         ArrayList arrayList = new ArrayList(2);
-        for (int i7 = 0; i7 < 2; i7++) {
-            Object obj = objArr[i7];
+        for (int i10 = 0; i10 < 2; i10++) {
+            Object obj = objArr[i10];
             Objects.requireNonNull(obj);
             arrayList.add(obj);
         }
         profilingManager.addProfilingTriggers(DesugarCollections.unmodifiableList(arrayList));
-        profilingManager.registerForAllProfilingResults(executorService, new k(0, this, str));
+        profilingManager.registerForAllProfilingResults(executorService, new k(i7, this, str));
     }
 
     public final boolean f(ia.c cVar) {
@@ -988,7 +988,7 @@ public final class p {
         Task a10;
         TaskCompletionSource taskCompletionSource = this.o;
         ga.d dVar = this.m.b.b;
-        if (ga.d.i(((File) dVar.f).listFiles()).isEmpty() && ga.d.i(((File) dVar.h).listFiles()).isEmpty() && ga.d.i(((File) dVar.n).listFiles()).isEmpty()) {
+        if (ga.d.e(((File) dVar.e).listFiles()).isEmpty() && ga.d.e(((File) dVar.f).listFiles()).isEmpty() && ga.d.e(((File) dVar.h).listFiles()).isEmpty()) {
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", "No crash reports are available to be sent.", null);
             }

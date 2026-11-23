@@ -1,22 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class u3 extends s41 {
-    public final /* synthetic */ AlertDialog$Builder e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u3(String str, AlertDialog$Builder alertDialog$Builder) {
-        super(str, (fz0) null);
-        this.e = alertDialog$Builder;
-    }
-
-    @Override // org.telegram.ui.Components.s41, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.e.a.M0.run();
-        super.onClick(view);
+public final class u3 extends qb0 {
+    @Override // org.telegram.ui.Components.qb0
+    public final CharSequence d(int i7) {
+        return org.telegram.messenger.gd.G(i7, "Hours", new Object[0]);
     }
 }

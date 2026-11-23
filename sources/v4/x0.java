@@ -14,10 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class x0 {
     public int a;
@@ -374,25 +373,25 @@ public final class x0 {
                 }
             } else {
                 f1 U2 = RecyclerView.U(view);
-                md0 md0Var = recyclerView.e;
-                va vaVar = (va) md0Var.c;
-                int indexOfChild = ((RecyclerView) ((qf) md0Var.b).b).indexOfChild(view);
+                i61 i61Var = recyclerView.e;
+                va vaVar = (va) i61Var.c;
+                int indexOfChild = ((RecyclerView) ((b) i61Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
-                if (!vaVar.G(indexOfChild)) {
+                if (!vaVar.E(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                vaVar.C(indexOfChild);
-                md0Var.K(view);
-                md0 md0Var2 = recyclerView.e;
-                va vaVar2 = (va) md0Var2.c;
-                int indexOfChild2 = ((RecyclerView) ((qf) md0Var2.b).b).indexOfChild(view);
-                int D = (indexOfChild2 == -1 || vaVar2.G(indexOfChild2)) ? -1 : indexOfChild2 - vaVar2.D(indexOfChild2);
-                if (D == -1) {
+                vaVar.A(indexOfChild);
+                i61Var.Q(view);
+                i61 i61Var2 = recyclerView.e;
+                va vaVar2 = (va) i61Var2.c;
+                int indexOfChild2 = ((RecyclerView) ((b) i61Var2.b).b).indexOfChild(view);
+                int B = (indexOfChild2 == -1 || vaVar2.E(indexOfChild2)) ? -1 : indexOfChild2 - vaVar2.B(indexOfChild2);
+                if (B == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
                 }
-                recyclerView.e.p(D);
+                recyclerView.e.t(B);
                 i(view);
                 U2.a(8224);
                 f1Var3 = U2;

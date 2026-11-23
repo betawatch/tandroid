@@ -1,82 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class nz0 extends FrameLayout {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public final org.telegram.ui.Components.n01 d;
-    public boolean e;
-    public long f;
-    public long h;
-    public final org.telegram.ui.Components.oh0 n;
-    public final TextPaint r;
-    public StaticLayout s;
-    public float w;
-    public float x;
-    public final /* synthetic */ SecretMediaViewer y;
+public final /* synthetic */ class nz0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sz0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nz0(SecretMediaViewer secretMediaViewer, Activity activity) {
-        super(activity);
-        this.y = secretMediaViewer;
-        this.c = new RectF();
-        this.d = new org.telegram.ui.Components.n01();
-        this.r = new TextPaint(1);
-        setWillNotDraw(false);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
-        paint.setColor(-1644826);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        Paint paint2 = new Paint(1);
-        this.a = paint2;
-        paint2.setStyle(style);
-        paint2.setStrokeCap(cap);
-        paint2.setColor(-1644826);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.oh0 oh0Var = new org.telegram.ui.Components.oh0(R.raw.fire_on, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        this.n = oh0Var;
-        oh0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        oh0Var.R(this);
-        oh0Var.start();
+    public /* synthetic */ nz0(sz0 sz0Var, int i7) {
+        this.a = i7;
+        this.b = sz0Var;
     }
 
-    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException
-        */
-    @Override // android.view.View
-    public final void onDraw(android.graphics.Canvas r15) {
-        /*
-            Method dump skipped, instructions count: 215
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.nz0.onDraw(android.graphics.Canvas):void");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        float measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(35.0f);
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        float N = org.telegram.messenger.g0.N(10.5f);
-        this.c.set(measuredWidth - N, measuredHeight - N, measuredWidth + N, N + measuredHeight);
-        setPivotX(measuredWidth);
-        setPivotY(measuredHeight);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sz0 sz0Var = this.b;
+                nz0 nz0Var = sz0Var.a0;
+                if (sz0Var.x != null) {
+                    sz0Var.b0 = r2.S() / sz0Var.x.U();
+                    qz0 qz0Var = sz0Var.O;
+                    if (qz0Var != null) {
+                        qz0Var.pc = (sz0Var.x.U() - sz0Var.x.S()) / 1000;
+                        sz0Var.O.U3();
+                        org.telegram.ui.Components.dn0 seekBarWaveform = sz0Var.O.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f10 = sz0Var.b0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f10;
+                            org.telegram.ui.Cells.r1 r1Var = seekBarWaveform.n;
+                            if (r1Var != null) {
+                                r1Var.invalidate();
+                            }
+                        }
+                    }
+                    if (sz0Var.x.d0()) {
+                        org.telegram.messenger.g0.r(nz0Var);
+                        org.telegram.messenger.g0.h3(nz0Var, 16L);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                sz0 sz0Var2 = this.b;
+                if (sz0Var2.d == null) {
+                    org.telegram.messenger.g0.g3(new nz0(sz0Var2, 2));
+                    org.telegram.ui.Cells.r1 r1Var2 = sz0Var2.P;
+                    if (r1Var2 != null) {
+                        r1Var2.setVisibility(0);
+                        sz0Var2.P.invalidate();
+                    }
+                }
+                MediaController.B().F0();
+                break;
+        }
     }
 }

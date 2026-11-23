@@ -43,7 +43,7 @@ import p9.a;
 import ua.b;
 import va.d;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static c m;
@@ -108,7 +108,7 @@ public class FirebaseMessaging {
         } else {
             Log.w("FirebaseMessaging", "Context " + context3 + " was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result.");
         }
-        if (r7Var.v()) {
+        if (r7Var.z()) {
             n nVar = new n(this);
             va.c cVar2 = (va.c) dVar;
             synchronized (cVar2) {
@@ -129,7 +129,7 @@ public class FirebaseMessaging {
                 switch (i7) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.f.s() && firebaseMessaging.j(firebaseMessaging.d())) {
+                        if (firebaseMessaging.f.t() && firebaseMessaging.j(firebaseMessaging.d())) {
                             firebaseMessaging.h();
                             return;
                         }
@@ -183,7 +183,7 @@ public class FirebaseMessaging {
                 switch (i10) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.f.s() && firebaseMessaging.j(firebaseMessaging.d())) {
+                        if (firebaseMessaging.f.t() && firebaseMessaging.j(firebaseMessaging.d())) {
                             firebaseMessaging.h();
                             return;
                         }
@@ -275,7 +275,7 @@ public class FirebaseMessaging {
                     Log.d("FirebaseMessaging", "Making new request for: " + b10);
                 }
                 r7 r7Var = this.d;
-                task = r7Var.J().continueWithTask(Executors.newSingleThreadExecutor(new s("Firebase-Messaging-Task")), new a1.c(r7Var, 3)).onSuccessTask(this.h, new h(this, b10, d, 1)).continueWithTask((Executor) kVar.a, new ab.g(1, kVar, b10));
+                task = r7Var.I().continueWithTask(Executors.newSingleThreadExecutor(new s("Firebase-Messaging-Task")), new a1.c(r7Var, 3)).onSuccessTask(this.h, new h(this, b10, d, 1)).continueWithTask((Executor) kVar.a, new ab.g(1, kVar, b10));
                 ((f) kVar.b).put(b10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + b10);
@@ -352,7 +352,7 @@ public class FirebaseMessaging {
             String str2 = d0Var.a;
             String a10 = this.i.a();
             if (System.currentTimeMillis() <= d0Var.c + d0.d && a10.equals(d0Var.b)) {
-                if (!this.d.v()) {
+                if (!this.d.z()) {
                     return str2.length() <= 22;
                 }
                 try {

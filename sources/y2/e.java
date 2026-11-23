@@ -1,16 +1,15 @@
 package y2;
 
-import a8.la;
+import a8.ma;
 import android.util.SparseArray;
 import e2.u;
-import f3.b0;
-import f3.i0;
+import f3.c0;
+import f3.j0;
 import f3.o;
 import f3.q;
 import f3.s;
-import sg.h0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e implements q {
     public static final s w = new s();
@@ -20,9 +19,9 @@ public final class e implements q {
     public final SparseArray d = new SparseArray();
     public final d e = d.a;
     public boolean f;
-    public h0 h;
+    public s2.e h;
     public long n;
-    public b0 r;
+    public c0 r;
     public u[] s;
 
     public e(o oVar, int i7, u uVar) {
@@ -31,19 +30,31 @@ public final class e implements q {
         this.c = uVar;
     }
 
-    public final f3.j a() {
-        b0 b0Var = this.r;
-        if (b0Var instanceof f3.j) {
-            return (f3.j) b0Var;
+    @Override // f3.q
+    public final void Z0() {
+        SparseArray sparseArray = this.d;
+        u[] uVarArr = new u[sparseArray.size()];
+        for (int i7 = 0; i7 < sparseArray.size(); i7++) {
+            u uVar = ((c) sparseArray.valueAt(i7)).e;
+            uVar.getClass();
+            uVarArr[i7] = uVar;
         }
-        if (b0Var instanceof x3.d) {
-            return ((x3.d) b0Var).a;
+        this.s = uVarArr;
+    }
+
+    public final f3.j a() {
+        c0 c0Var = this.r;
+        if (c0Var instanceof f3.j) {
+            return (f3.j) c0Var;
+        }
+        if (c0Var instanceof x3.d) {
+            return ((x3.d) c0Var).a;
         }
         return null;
     }
 
-    public final void b(h0 h0Var, long j3, long j10) {
-        this.h = h0Var;
+    public final void b(s2.e eVar, long j3, long j10) {
+        this.h = eVar;
         this.n = j10;
         boolean z10 = this.f;
         o oVar = this.a;
@@ -66,11 +77,11 @@ public final class e implements q {
                 return;
             }
             c cVar = (c) sparseArray.valueAt(i7);
-            if (h0Var == null) {
+            if (eVar == null) {
                 cVar.f = cVar.c;
             } else {
                 cVar.g = j10;
-                i0 f10 = h0Var.f(cVar.a);
+                j0 f10 = eVar.f(cVar.a);
                 cVar.f = f10;
                 u uVar = cVar.e;
                 if (uVar != null) {
@@ -82,31 +93,19 @@ public final class e implements q {
     }
 
     @Override // f3.q
-    public final void d1() {
-        SparseArray sparseArray = this.d;
-        u[] uVarArr = new u[sparseArray.size()];
-        for (int i7 = 0; i7 < sparseArray.size(); i7++) {
-            u uVar = ((c) sparseArray.valueAt(i7)).e;
-            uVar.getClass();
-            uVarArr[i7] = uVar;
-        }
-        this.s = uVarArr;
-    }
-
-    @Override // f3.q
-    public final i0 d2(int i7, int i10) {
+    public final j0 d2(int i7, int i10) {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i7);
         if (cVar == null) {
-            la.p(this.s == null);
+            ma.p(this.s == null);
             cVar = new c(i7, i10, i10 == this.b ? this.c : null, this.e);
-            h0 h0Var = this.h;
+            s2.e eVar = this.h;
             long j3 = this.n;
-            if (h0Var == null) {
+            if (eVar == null) {
                 cVar.f = cVar.c;
             } else {
                 cVar.g = j3;
-                i0 f10 = h0Var.f(i10);
+                j0 f10 = eVar.f(i10);
                 cVar.f = f10;
                 u uVar = cVar.e;
                 if (uVar != null) {
@@ -119,7 +118,7 @@ public final class e implements q {
     }
 
     @Override // f3.q
-    public final void j(b0 b0Var) {
-        this.r = b0Var;
+    public final void h(c0 c0Var) {
+        this.r = c0Var;
     }
 }

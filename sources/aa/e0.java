@@ -44,7 +44,7 @@ import java.util.function.Predicate;
 import m.o3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e0 {
     public final u a;
@@ -68,9 +68,9 @@ public final class e0 {
     public static t0 a(t0 t0Var, ca.f fVar, o3 o3Var, Map map) {
         Map unmodifiableMap;
         s0 a10 = t0Var.a();
-        String n10 = ((ca.d) fVar.b).n();
-        if (n10 != null) {
-            a10.e = new h1(n10);
+        String l10 = ((ca.d) fVar.b).l();
+        if (l10 != null) {
+            a10.e = new h1(l10);
         } else if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "No log data to include with this event.", null);
         }
@@ -175,8 +175,8 @@ public final class e0 {
         u uVar = new u(context, a0Var, aVar, bVar, cVar);
         ga.b bVar2 = new ga.b(dVar, cVar, jVar);
         ea.a aVar2 = ha.a.b;
-        o5.s.b(context);
-        return new e0(uVar, bVar2, new ha.a(new ha.b(o5.s.a().c(new m5.a(ha.a.c, ha.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new l5.c("json"), ha.a.e), cVar.b(), qVar)), fVar, o3Var, a0Var, eVar);
+        o5.t.b(context);
+        return new e0(uVar, bVar2, new ha.a(new ha.b(o5.t.a().c(new m5.a(ha.a.c, ha.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new l5.c("json"), ha.a.e), cVar.b(), qVar)), fVar, o3Var, a0Var, eVar);
     }
 
     public static List f(Map map) {
@@ -225,7 +225,7 @@ public final class e0 {
         ab.c0 c0Var = null;
         while (!stack.isEmpty()) {
             Throwable th4 = (Throwable) stack.pop();
-            c0Var = new ab.c0(th4.getLocalizedMessage(), th4.getClass().getName(), bVar.o(th4.getStackTrace()), c0Var, 4);
+            c0Var = new ab.c0(th4.getLocalizedMessage(), th4.getClass().getName(), bVar.h(th4.getStackTrace()), c0Var, 4);
         }
         ab.c0 c0Var2 = c0Var;
         s0 s0Var = new s0();
@@ -265,13 +265,13 @@ public final class e0 {
                     it = it2;
                     b10 = b13;
                 } else {
-                    StackTraceElement[] o4 = bVar.o(next.getValue());
+                    StackTraceElement[] h = bVar.h(next.getValue());
                     String name2 = key.getName();
                     if (name2 == null) {
                         throw new NullPointerException("Null name");
                     }
                     it = it2;
-                    List d2 = u.d(o4, 0);
+                    List d2 = u.d(h, 0);
                     if (d2 == null) {
                         throw new NullPointerException("Null frames");
                     }

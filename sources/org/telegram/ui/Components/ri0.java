@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ri0 extends v4.u0 {
     public boolean a;
@@ -19,8 +19,8 @@ public final class ri0 extends v4.u0 {
 
     public static ValueAnimator c(float f10, float f11, q0.a aVar, Runnable runnable) {
         ValueAnimator duration = ValueAnimator.ofFloat(f10, f11).setDuration((long) (Math.abs(f11 - f10) * 150.0f));
-        duration.addUpdateListener(new h60(aVar, 9));
-        duration.addListener(new s60(runnable, 13));
+        duration.addUpdateListener(new e60(aVar, 9));
+        duration.addListener(new p60(runnable, 13));
         duration.start();
         return duration;
     }

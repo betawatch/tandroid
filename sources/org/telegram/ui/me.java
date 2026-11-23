@@ -4,9 +4,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class me implements org.telegram.messenger.y10 {
+public final /* synthetic */ class me implements org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
 
@@ -15,20 +15,20 @@ public final /* synthetic */ class me implements org.telegram.messenger.y10 {
         this.b = bnVar;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
         int i7 = this.a;
         bn bnVar = this.b;
         switch (i7) {
             case 0:
-                org.telegram.messenger.lj ljVar = (org.telegram.messenger.lj) obj;
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) obj;
                 bn bnVar2 = this.b;
-                bnVar2.y5 = ljVar;
-                bnVar2.H5.k.suggested_post = ljVar.c();
-                bnVar2.fc(true, null, bnVar2.H5, null, null, true, 0, null, false, 0L);
+                bnVar2.y5 = kjVar;
+                bnVar2.H5.k.suggested_post = kjVar.c();
+                bnVar2.gc(true, null, bnVar2.H5, null, null, true, 0, null, false, 0L, null, true);
                 break;
             case 1:
-                bnVar.kc((org.telegram.messenger.lj) obj);
+                bnVar.kc((org.telegram.messenger.kj) obj);
                 break;
             case 2:
                 bnVar.cc(true, false);
@@ -109,9 +109,9 @@ public final /* synthetic */ class me implements org.telegram.messenger.y10 {
                 break;
             case 7:
                 Long l10 = (Long) obj;
-                org.telegram.ui.Components.a21 a21Var = bnVar.g2;
-                if (a21Var != null) {
-                    a21Var.n(l10.longValue(), true);
+                org.telegram.ui.Components.z11 z11Var = bnVar.g2;
+                if (z11Var != null) {
+                    z11Var.n(l10.longValue(), true);
                     break;
                 }
                 break;

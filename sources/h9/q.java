@@ -1,12 +1,12 @@
 package h9;
 
-import a8.ka;
+import a8.la;
 import j$.util.Objects;
 import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q extends AbstractSet {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final class q extends AbstractSet {
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
                     int f10 = sVar.f(entry.getKey());
-                    if (f10 != -1 && ka.a(sVar.l()[f10], entry.getValue())) {
+                    if (f10 != -1 && la.a(sVar.l()[f10], entry.getValue())) {
                         return true;
                     }
                 }

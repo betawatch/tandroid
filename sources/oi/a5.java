@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.jh0;
+import org.telegram.ui.Components.ih0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public abstract class a5 {
     public static Object a(Spanned spanned, int i7, int i10, Class cls) {
@@ -55,14 +55,14 @@ public abstract class a5 {
             boolean z11 = true;
             int i14 = i12 < size ? iArr[i12] - 1 : length;
             qi.g gVar = spanned == null ? null : (qi.g) a(spanned, i13, i14, qi.g.class);
-            jh0 jh0Var = (spanned == null || gVar != null) ? 0 : (jh0) a(spanned, i13, i14, jh0.class);
-            if (gVar == null && jh0Var == 0) {
+            ih0 ih0Var = (spanned == null || gVar != null) ? 0 : (ih0) a(spanned, i13, i14, ih0.class);
+            if (gVar == null && ih0Var == 0) {
                 CharSequence subSequence = charSequence.subSequence(i13, i14);
                 TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
                 pageblockparagraph2.text = c6.f(subSequence);
                 arrayList.add(pageblockparagraph2);
             } else {
-                qi.g gVar2 = gVar != null ? gVar : jh0Var;
+                qi.g gVar2 = gVar != null ? gVar : ih0Var;
                 while (true) {
                     if (i12 >= size) {
                         i7 = length;
@@ -78,7 +78,7 @@ public abstract class a5 {
                     } else {
                         i7 = length;
                     }
-                    if ((gVar != null ? a(spanned, i15, length, qi.g.class) : a(spanned, i15, length, jh0.class)) != gVar2) {
+                    if ((gVar != null ? a(spanned, i15, length, qi.g.class) : a(spanned, i15, length, ih0.class)) != gVar2) {
                         break;
                     }
                     i14 = length;
@@ -100,7 +100,7 @@ public abstract class a5 {
                     TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                     pageblockblockquote.text = c6.f(subSequence2);
                     pageblockblockquote.caption = new TL_iv.textEmpty();
-                    pageblockblockquote.collapsed = (jh0Var == 0 || !jh0Var.e) ? false : z10;
+                    pageblockblockquote.collapsed = (ih0Var == 0 || !ih0Var.e) ? false : z10;
                     arrayList.add(pageblockblockquote);
                 }
                 length = i7;
@@ -213,7 +213,7 @@ public abstract class a5 {
                     TL_iv.PageBlock pageBlock2 = aVar.b;
                     boolean z11 = (pageBlock2 instanceof TL_iv.pageBlockBlockquote) && ((TL_iv.pageBlockBlockquote) pageBlock2).collapsed;
                     if (spannableStringBuilder.length() > 0) {
-                        jh0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
+                        ih0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
                     }
                     arrayList.add(spannableStringBuilder);
                 } else {
@@ -232,7 +232,7 @@ public abstract class a5 {
                     i10++;
                 }
                 if (spannableStringBuilder2.length() > 0) {
-                    jh0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+                    ih0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
                 }
                 arrayList.add(spannableStringBuilder2);
                 i7 = i10;
@@ -254,8 +254,8 @@ public abstract class a5 {
         c6.o(spannableStringBuilder, 0, length, 65536, false, null);
         c6.o(spannableStringBuilder, 0, length, TLObject.FLAG_14, false, null);
         c6.o(spannableStringBuilder, 0, length, 32768, false, null);
-        for (q qVar : (q[]) spannableStringBuilder.getSpans(0, length, q.class)) {
-            spannableStringBuilder.removeSpan(qVar);
+        for (r rVar : (r[]) spannableStringBuilder.getSpans(0, length, r.class)) {
+            spannableStringBuilder.removeSpan(rVar);
         }
         return spannableStringBuilder;
     }

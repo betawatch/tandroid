@@ -1,36 +1,74 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g20 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ VideoEncodingService b;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ g20(VideoEncodingService videoEncodingService, int i7) {
-        this.a = i7;
-        this.b = videoEncodingService;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes.dex */
+public final class g20 extends TLObject {
+    public static final /* synthetic */ int i = 0;
+    public String a;
+    public TLRPC.InputWebFileLocation b;
+    public ArrayList c;
+    public int d;
+    public String e;
+    public boolean f;
+
+    public static g20 a(double d, double d2, long j3, int i7, int i10, int i11, int i12) {
+        g20 g20Var = new g20();
+        TLRPC.TL_inputWebFileGeoPointLocation tL_inputWebFileGeoPointLocation = new TLRPC.TL_inputWebFileGeoPointLocation();
+        g20Var.b = tL_inputWebFileGeoPointLocation;
+        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
+        tL_inputWebFileGeoPointLocation.geo_point = tL_inputGeoPoint;
+        tL_inputWebFileGeoPointLocation.access_hash = j3;
+        tL_inputGeoPoint.lat = d;
+        tL_inputGeoPoint._long = d2;
+        tL_inputWebFileGeoPointLocation.w = i7;
+        tL_inputWebFileGeoPointLocation.h = i10;
+        tL_inputWebFileGeoPointLocation.zoom = i11;
+        tL_inputWebFileGeoPointLocation.scale = i12;
+        g20Var.e = "image/png";
+        g20Var.a = String.format(Locale.US, "maps_%.6f_%.6f_%d_%d_%d_%d.png", Double.valueOf(d), Double.valueOf(d2), Integer.valueOf(i7), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12));
+        g20Var.c = new ArrayList();
+        return g20Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        VideoEncodingService videoEncodingService = this.b;
-        switch (i7) {
-            case 0:
-                VideoEncodingService videoEncodingService2 = VideoEncodingService.e;
-                videoEncodingService.getClass();
-                kf kfVar = MediaController.B().b0;
-                if (kfVar == null) {
-                    videoEncodingService.stopSelf();
-                    break;
-                } else {
-                    videoEncodingService.a(kfVar);
-                    break;
-                }
-            default:
-                VideoEncodingService videoEncodingService3 = VideoEncodingService.e;
-                videoEncodingService.b();
-                break;
+    public static g20 b(TLRPC.GeoPoint geoPoint, int i7, int i10, int i11, int i12) {
+        return a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, i7, i10, i11, i12);
+    }
+
+    public static g20 c(TLRPC.WebDocument webDocument) {
+        if (webDocument instanceof TLRPC.TL_webDocument) {
+            g20 g20Var = new g20();
+            TLRPC.TL_webDocument tL_webDocument = (TLRPC.TL_webDocument) webDocument;
+            TLRPC.TL_inputWebFileLocation tL_inputWebFileLocation = new TLRPC.TL_inputWebFileLocation();
+            g20Var.b = tL_inputWebFileLocation;
+            String str = webDocument.url;
+            g20Var.a = str;
+            tL_inputWebFileLocation.url = str;
+            tL_inputWebFileLocation.access_hash = tL_webDocument.access_hash;
+            g20Var.d = tL_webDocument.size;
+            g20Var.e = tL_webDocument.mime_type;
+            g20Var.c = tL_webDocument.attributes;
+            return g20Var;
         }
+        if (!(webDocument instanceof TLRPC.TL_webDocumentNoProxy)) {
+            return null;
+        }
+        g20 g20Var2 = new g20();
+        TLRPC.TL_webDocumentNoProxy tL_webDocumentNoProxy = (TLRPC.TL_webDocumentNoProxy) webDocument;
+        TLRPC.TL_inputWebFileLocation tL_inputWebFileLocation2 = new TLRPC.TL_inputWebFileLocation();
+        g20Var2.b = tL_inputWebFileLocation2;
+        String str2 = webDocument.url;
+        g20Var2.a = str2;
+        tL_inputWebFileLocation2.url = str2;
+        tL_inputWebFileLocation2.access_hash = tL_webDocumentNoProxy.access_hash;
+        g20Var2.d = tL_webDocumentNoProxy.size;
+        g20Var2.e = tL_webDocumentNoProxy.mime_type;
+        g20Var2.c = tL_webDocumentNoProxy.attributes;
+        g20Var2.f = true;
+        return g20Var2;
     }
 }

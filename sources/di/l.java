@@ -1,16 +1,16 @@
 package di;
 
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m70;
-import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.j70;
+import org.telegram.ui.Components.o70;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.s90;
-import org.telegram.ui.yn;
+import org.telegram.ui.r90;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -33,30 +33,30 @@ public final /* synthetic */ class l implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new m((t) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.b));
                 break;
             case 1:
-                r70 r70Var = (r70) this.d;
+                o70 o70Var = (o70) this.d;
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.e;
                 if (tLObject instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    np.u1(r70Var.a).V3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
+                    mp.u1(o70Var.a).V3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
                 } else if (tLObject instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                    org.telegram.messenger.g0.g3(new m70(r70Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, this.b, 0));
+                    org.telegram.messenger.g0.g3(new j70(o70Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, this.b, 0));
                 }
-                org.telegram.messenger.g0.g3(new yn(r70Var, tL_error, this.c, tL_messages_importChatInvite, 5));
+                org.telegram.messenger.g0.g3(new xn(o70Var, tL_error, this.c, tL_messages_importChatInvite, 5));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new m((s90) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
+                org.telegram.messenger.g0.g3(new m((r90) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
                 break;
         }
     }
 
-    public /* synthetic */ l(r70 r70Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.d = r70Var;
+    public /* synthetic */ l(o70 o70Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.d = o70Var;
         this.b = j3;
         this.c = z10;
         this.e = tL_messages_importChatInvite;
     }
 
-    public /* synthetic */ l(s90 s90Var, long j3, String str, boolean z10) {
-        this.d = s90Var;
+    public /* synthetic */ l(r90 r90Var, long j3, String str, boolean z10) {
+        this.d = r90Var;
         this.b = j3;
         this.e = str;
         this.c = z10;

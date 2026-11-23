@@ -1,9 +1,9 @@
 package yd;
 
-import c8.he;
+import c8.ie;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a implements Comparable {
     public static final long b;
@@ -13,8 +13,8 @@ public final class a implements Comparable {
 
     static {
         int i7 = b.a;
-        b = he.a(4611686018427387903L);
-        c = he.a(-4611686018427387903L);
+        b = ie.a(4611686018427387903L);
+        c = ie.a(-4611686018427387903L);
     }
 
     public static final void a(StringBuilder sb2, int i7, int i10, int i11, String str, boolean z10) {

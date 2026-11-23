@@ -3,12 +3,12 @@ package u7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
-import c8.bc;
-import c8.sc;
+import c8.cc;
+import c8.tc;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j extends r6.a {
     public static final Parcelable.Creator<j> CREATOR = new m(1);
@@ -76,7 +76,7 @@ public final class j extends r6.a {
             return false;
         }
         j jVar = (j) obj;
-        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && sc.a(this.d, jVar.d) && sc.a(this.f, jVar.f) && sc.a(this.h, jVar.h) && this.n.equals(jVar.n);
+        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && tc.a(this.d, jVar.d) && tc.a(this.f, jVar.f) && tc.a(this.h, jVar.h) && this.n.equals(jVar.n);
     }
 
     public final int hashCode() {
@@ -113,18 +113,18 @@ public final class j extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.q(parcel, 1, 4);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        bc.q(parcel, 2, 4);
+        cc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        bc.l(parcel, 3, this.c);
-        bc.l(parcel, 4, this.d);
-        bc.q(parcel, 5, 4);
+        cc.l(parcel, 3, this.c);
+        cc.l(parcel, 4, this.d);
+        cc.q(parcel, 5, 4);
         parcel.writeInt(this.e);
-        bc.l(parcel, 6, this.f);
-        bc.k(parcel, 7, this.h, i7);
-        bc.p(parcel, 8, this.n);
-        bc.s(parcel, r10);
+        cc.l(parcel, 6, this.f);
+        cc.k(parcel, 7, this.h, i7);
+        cc.p(parcel, 8, this.n);
+        cc.s(parcel, r10);
     }
 }

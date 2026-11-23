@@ -3,22 +3,22 @@ package ki;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Pair;
-import hi.d7;
+import hi.y7;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a0 extends AsyncTask {
     public String a;
     public long b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ d7 d;
+    public final /* synthetic */ y7 d;
 
-    public a0(String str, d7 d7Var) {
+    public a0(String str, y7 y7Var) {
         this.c = str;
-        this.d = d7Var;
+        this.d = y7Var;
     }
 
     @Override // android.os.AsyncTask

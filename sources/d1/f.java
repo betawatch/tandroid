@@ -1,5 +1,6 @@
 package d1;
 
+import a8.l8;
 import android.app.Notification;
 import android.app.Person;
 import android.content.ContentResolver;
@@ -19,7 +20,6 @@ import android.view.ViewConfiguration;
 import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
-import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.clearcut.e2;
 import e0.j0;
 import f6.p;
@@ -32,17 +32,17 @@ import m.z0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.u9;
 import org.webrtc.MediaStreamTrack;
 import q6.m;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class f {
     public static int a;
@@ -52,7 +52,7 @@ public abstract class f {
     public static e2 e;
 
     public static void A(float f10) {
-        BasePendingResult basePendingResult;
+        l8 l8Var;
         h e10 = e();
         if (e10 == null) {
             return;
@@ -66,11 +66,11 @@ public abstract class f {
         if (e10.w()) {
             l lVar = new l(e10, d2, 0);
             h.x(lVar);
-            basePendingResult = lVar;
+            l8Var = lVar;
         } else {
-            basePendingResult = h.t();
+            l8Var = h.t();
         }
-        basePendingResult.b(new u9(2));
+        l8Var.b(new u9(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -83,7 +83,7 @@ public abstract class f {
         long j3;
         int i7 = a;
         if (i7 == 0) {
-            PhotoViewer.p1().g3();
+            PhotoViewer.p1().h3();
             return;
         }
         if (i7 == 1) {
@@ -97,24 +97,24 @@ public abstract class f {
                 long a10 = e11 == null ? -1L : e11.a();
                 long D = B.D(B.v0);
                 if (D >= 0 && a10 >= 0 && Math.abs(D - a10) > 1000) {
-                    gj gjVar = B.v0;
-                    if ((B.j0 != null || B.F0 != null) && gjVar != null && B.L(gjVar)) {
+                    fj fjVar = B.v0;
+                    if ((B.j0 != null || B.F0 != null) && fjVar != null && B.L(fjVar)) {
                         try {
-                            i61 i61Var = B.j0;
-                            if (i61Var != null) {
-                                j3 = i61Var.U();
+                            h61 h61Var = B.j0;
+                            if (h61Var != null) {
+                                j3 = h61Var.U();
                                 if (j3 != -9223372036854775807L) {
-                                    gjVar.b0 = Utilities.l(a10 / j3);
+                                    fjVar.b0 = Utilities.l(a10 / j3);
                                 }
                                 B.j0.q0(a10, false);
-                                gjVar.e0 = a10;
+                                fjVar.e0 = a10;
                                 if (!B.U1) {
                                     v(a10);
                                 }
                             } else {
-                                i61 i61Var2 = B.F0;
-                                if (i61Var2 != null) {
-                                    j3 = i61Var2.U();
+                                h61 h61Var2 = B.F0;
+                                if (h61Var2 != null) {
+                                    j3 = h61Var2.U();
                                     B.F0.p0(a10);
                                     if (!B.U1) {
                                         v(a10);
@@ -124,7 +124,7 @@ public abstract class f {
                                 }
                             }
                             if (j3 != 0) {
-                                ls.f(gjVar.K1).k(ls.i2, Integer.valueOf(gjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
+                                ks.f(fjVar.K1).k(ks.i2, Integer.valueOf(fjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
                             }
                         } catch (Exception e12) {
                             a8.g(e12, true);
@@ -348,8 +348,8 @@ public abstract class f {
     }
 
     public static void x(boolean z10) {
-        BasePendingResult basePendingResult;
-        BasePendingResult basePendingResult2;
+        l8 l8Var;
+        l8 l8Var2;
         h e10 = e();
         if (e10 == null || z10 == e10.m()) {
             return;
@@ -363,22 +363,22 @@ public abstract class f {
             if (e10.w()) {
                 i iVar = new i(e10, 6);
                 h.x(iVar);
-                basePendingResult2 = iVar;
+                l8Var2 = iVar;
             } else {
-                basePendingResult2 = h.t();
+                l8Var2 = h.t();
             }
-            basePendingResult2.b(new u9(0));
+            l8Var2.b(new u9(0));
             return;
         }
         m.e("Must be called from the main thread.");
         if (e10.w()) {
             i iVar2 = new i(e10, 5);
             h.x(iVar2);
-            basePendingResult = iVar2;
+            l8Var = iVar2;
         } else {
-            basePendingResult = h.t();
+            l8Var = h.t();
         }
-        basePendingResult.b(new u9(1));
+        l8Var.b(new u9(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i7) {
@@ -386,7 +386,7 @@ public abstract class f {
     }
 
     public static void z(float f10) {
-        BasePendingResult basePendingResult;
+        l8 l8Var;
         h e10 = e();
         if (e10 == null) {
             return;
@@ -400,10 +400,10 @@ public abstract class f {
         if (e10.w()) {
             l lVar = new l(e10, d2, 1);
             h.x(lVar);
-            basePendingResult = lVar;
+            l8Var = lVar;
         } else {
-            basePendingResult = h.t();
+            l8Var = h.t();
         }
-        basePendingResult.b(new u9(4));
+        l8Var.b(new u9(4));
     }
 }

@@ -1,293 +1,737 @@
 package hi;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.PointF;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.as0;
-import org.telegram.ui.bn;
-import org.telegram.ui.fm0;
-import org.telegram.ui.i81;
-import org.telegram.ui.lm0;
-import org.telegram.ui.ny0;
-import org.telegram.ui.oj;
-import org.telegram.ui.py0;
-import org.telegram.ui.qy0;
+import java.util.List;
+import org.telegram.messenger.b20;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.we;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.Components.be0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class i1 extends j71 {
-    public final /* synthetic */ int W;
-    public final /* synthetic */ Object a0;
+public final class i1 {
+    public final long A;
+    public final ArrayList B;
+    public final List C;
+    public final String D;
+    public final ff E;
+    public final int F;
+    public boolean G;
+    public int H;
+    public long I;
+    public long J;
+    public long K;
+    public long L;
+    public final boolean M;
+    public final TLRPC.TL_error N;
+    public final String O;
+    public final TLRPC.InputDocument P;
+    public final String Q;
+    public final String R;
+    public final long S;
+    public final long T;
+    public final float U;
+    public final float V;
+    public final float W;
+    public final String X;
+    public final String Y;
+    public final long Z;
+    public long a;
+    public final long a0;
+    public final long b;
+    public final float b0;
+    public final String c;
+    public final float c0;
+    public final String d;
+    public final float d0;
+    public final boolean e;
+    public final float e0;
+    public final String f;
+    public final TLRPC.InputPeer f0;
+    public final boolean g;
+    public final long g0;
+    public final boolean h;
+    public final String h0;
+    public final long i;
+    public final TLRPC.InputMedia i0;
+    public final long j;
+    public final c0 j0;
+    public final int k;
+    public final ArrayList k0;
+    public final int l;
+    public final int m;
+    public final int n;
+    public final we o;
+    public final int p;
+    public final int q;
+    public final long r;
+    public final float[] s;
+    public final int t;
+    public final int u;
+    public final String v;
+    public final ArrayList w;
+    public final ArrayList x;
+    public final String y;
+    public final String z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i1(int i7, Context context, Object obj) {
-        super(context, null);
-        this.W = i7;
-        this.a0 = obj;
+    public i1(x7 x7Var) {
+        float[] fArr = new float[9];
+        this.s = fArr;
+        ArrayList arrayList = new ArrayList();
+        this.x = arrayList;
+        this.V = 1.0f;
+        this.W = 1.0f;
+        this.d0 = 1.0f;
+        this.e0 = 1.0f;
+        this.a = x7Var.b;
+        this.b = x7Var.d;
+        File file = x7Var.O0;
+        this.c = file == null ? "" : file.toString();
+        File file2 = x7Var.N0;
+        this.d = file2 == null ? "" : file2.toString();
+        this.e = x7Var.K;
+        File file3 = x7Var.L;
+        this.f = file3 == null ? "" : file3.toString();
+        this.g = x7Var.M;
+        this.h = x7Var.Y;
+        float f10 = x7Var.Z;
+        long j3 = x7Var.h0;
+        this.i = (long) (f10 * j3);
+        this.j = (long) (x7Var.a0 * j3);
+        this.k = x7Var.Q;
+        this.l = x7Var.R;
+        this.m = x7Var.k0;
+        this.n = x7Var.l0;
+        this.o = x7Var.m0;
+        this.p = x7Var.i0;
+        this.q = x7Var.j0;
+        this.r = j3;
+        x7Var.n0.getValues(fArr);
+        this.t = x7Var.A0;
+        this.u = x7Var.B0;
+        CharSequence[] charSequenceArr = {x7Var.C0};
+        this.w = x7Var.D0 ? ri.d0(x7Var.a).Y(charSequenceArr, true, true) : null;
+        CharSequence charSequence = charSequenceArr[0];
+        this.v = charSequence == null ? "" : charSequence.toString();
+        arrayList.addAll(x7Var.F0);
+        File file4 = x7Var.P0;
+        this.y = file4 == null ? "" : file4.toString();
+        File file5 = x7Var.R0;
+        this.z = file5 == null ? "" : file5.toString();
+        this.A = x7Var.S0;
+        this.B = x7Var.T0;
+        this.C = x7Var.U0;
+        File file6 = x7Var.Z0;
+        this.D = file6 != null ? file6.toString() : "";
+        this.E = x7Var.a1;
+        this.F = x7Var.I0;
+        this.M = x7Var.w;
+        this.N = x7Var.x;
+        this.O = x7Var.y;
+        this.P = x7Var.z;
+        this.Q = x7Var.A;
+        this.R = x7Var.B;
+        this.S = x7Var.C;
+        this.T = x7Var.D;
+        this.U = x7Var.E;
+        this.V = x7Var.F;
+        this.W = x7Var.G;
+        File file7 = x7Var.o0;
+        this.X = file7 != null ? file7.getAbsolutePath() : null;
+        this.Y = x7Var.p0;
+        this.Z = x7Var.q0;
+        this.a0 = x7Var.r0;
+        this.b0 = x7Var.s0;
+        this.c0 = x7Var.t0;
+        this.d0 = x7Var.u0;
+        this.e0 = x7Var.P;
+        this.f0 = x7Var.v0;
+        this.g0 = x7Var.J0;
+        this.h0 = x7Var.K0;
+        this.i0 = x7Var.L0;
+        this.j0 = x7Var.S;
+        this.k0 = c20.a(x7Var);
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public int D() {
-        switch (this.W) {
-            case 9:
-                return 12;
-            default:
-                return super.D();
+    public final x7 a() {
+        x7 x7Var = new x7();
+        x7Var.b = this.a;
+        x7Var.c = true;
+        x7Var.d = this.b;
+        String str = this.c;
+        if (!TextUtils.isEmpty(str)) {
+            x7Var.O0 = new File(str);
+        }
+        String str2 = this.d;
+        if (!TextUtils.isEmpty(str2)) {
+            x7Var.N0 = new File(str2);
+        }
+        x7Var.K = this.e;
+        String str3 = this.f;
+        if (str3 != null) {
+            x7Var.L = new File(str3);
+        }
+        x7Var.M = this.g;
+        x7Var.Y = this.h;
+        long j3 = this.r;
+        x7Var.h0 = j3;
+        if (j3 > 0) {
+            x7Var.Z = this.i / j3;
+            x7Var.a0 = this.j / j3;
+        } else {
+            x7Var.Z = 0.0f;
+            x7Var.a0 = 1.0f;
+        }
+        x7Var.Q = this.k;
+        x7Var.R = this.l;
+        x7Var.k0 = this.m;
+        x7Var.l0 = this.n;
+        x7Var.m0 = this.o;
+        x7Var.i0 = this.p;
+        x7Var.j0 = this.q;
+        x7Var.n0.setValues(this.s);
+        x7Var.A0 = this.t;
+        x7Var.B0 = this.u;
+        ArrayList arrayList = null;
+        String str4 = this.v;
+        int i7 = 0;
+        if (str4 != null) {
+            SpannableString spannableString = new SpannableString(str4);
+            if (org.telegram.ui.ActionBar.n6.o2 == null) {
+                org.telegram.ui.ActionBar.n6.Q();
+            }
+            CharSequence m10 = org.telegram.messenger.j6.m(spannableString, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), true, null, 0);
+            fj.b(m10, this.w, true, false, true, false, 0);
+            x7Var.C0 = fj.B5(m10, this.w, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false);
+        } else {
+            x7Var.C0 = "";
+        }
+        ArrayList arrayList2 = x7Var.F0;
+        arrayList2.clear();
+        arrayList2.addAll(this.x);
+        String str5 = this.y;
+        if (str5 != null) {
+            x7Var.P0 = new File(str5);
+        }
+        String str6 = this.z;
+        if (str6 != null) {
+            x7Var.R0 = new File(str6);
+        }
+        x7Var.S0 = this.A;
+        x7Var.T0 = this.B;
+        x7Var.U0 = this.C;
+        String str7 = this.D;
+        if (str7 != null) {
+            x7Var.Z0 = new File(str7);
+        }
+        x7Var.a1 = this.E;
+        x7Var.I0 = this.F;
+        x7Var.g = this.G;
+        x7Var.f = this.H;
+        x7Var.e = this.I;
+        x7Var.J = this.L;
+        x7Var.I = this.K;
+        x7Var.H = this.J;
+        x7Var.w = this.M;
+        x7Var.x = this.N;
+        x7Var.y = this.O;
+        x7Var.z = this.P;
+        x7Var.A = this.Q;
+        x7Var.B = this.R;
+        x7Var.C = this.S;
+        x7Var.D = this.T;
+        x7Var.E = this.U;
+        x7Var.F = this.V;
+        x7Var.G = this.W;
+        String str8 = this.X;
+        if (str8 != null) {
+            x7Var.o0 = new File(str8);
+        }
+        x7Var.p0 = this.Y;
+        x7Var.q0 = this.Z;
+        x7Var.r0 = this.a0;
+        x7Var.s0 = this.b0;
+        x7Var.t0 = this.c0;
+        x7Var.u0 = this.d0;
+        x7Var.P = this.e0;
+        x7Var.v0 = this.f0;
+        x7Var.J0 = this.g0;
+        x7Var.K0 = this.h0;
+        x7Var.L0 = this.i0;
+        x7Var.S = this.j0;
+        int i10 = c20.C;
+        ArrayList arrayList3 = this.k0;
+        if (arrayList3 != null) {
+            arrayList = new ArrayList();
+            int size = arrayList3.size();
+            while (i7 < size) {
+                Object obj = arrayList3.get(i7);
+                i7++;
+                c20 c20Var = (c20) obj;
+                x7 x7Var2 = new x7();
+                x7Var2.K = c20Var.b;
+                x7Var2.Y = c20Var.c;
+                x7Var2.L = new File(c20Var.d);
+                x7Var2.P = c20Var.e;
+                x7Var2.U = c20Var.i;
+                x7Var2.X = c20Var.f;
+                x7Var2.V = c20Var.j;
+                x7Var2.W = c20Var.k;
+                x7Var2.k0 = c20Var.l;
+                x7Var2.l0 = c20Var.m;
+                x7Var2.h0 = c20Var.o;
+                arrayList.add(x7Var2);
+            }
+        }
+        x7Var.T = arrayList;
+        return x7Var;
+    }
+
+    public final void b(NativeByteBuffer nativeByteBuffer) {
+        ArrayList arrayList;
+        nativeByteBuffer.writeInt32(-1318387531);
+        nativeByteBuffer.writeInt64(this.b);
+        nativeByteBuffer.writeString(this.c);
+        nativeByteBuffer.writeBool(this.e);
+        nativeByteBuffer.writeString(this.f);
+        nativeByteBuffer.writeBool(this.g);
+        nativeByteBuffer.writeBool(this.h);
+        nativeByteBuffer.writeInt64(this.i);
+        nativeByteBuffer.writeInt64(this.j);
+        nativeByteBuffer.writeInt32(this.k);
+        nativeByteBuffer.writeInt32(this.l);
+        nativeByteBuffer.writeInt32(this.m);
+        nativeByteBuffer.writeInt32(this.n);
+        nativeByteBuffer.writeInt32(this.p);
+        nativeByteBuffer.writeInt32(this.q);
+        nativeByteBuffer.writeInt64(this.r);
+        int i7 = 0;
+        int i10 = 0;
+        while (true) {
+            float[] fArr = this.s;
+            if (i10 >= fArr.length) {
+                break;
+            }
+            nativeByteBuffer.writeFloat(fArr[i10]);
+            i10++;
+        }
+        nativeByteBuffer.writeInt32(this.t);
+        nativeByteBuffer.writeInt32(this.u);
+        nativeByteBuffer.writeString(this.v);
+        nativeByteBuffer.writeInt32(Vector.constructor);
+        ArrayList arrayList2 = this.w;
+        nativeByteBuffer.writeInt32(arrayList2 == null ? 0 : arrayList2.size());
+        if (arrayList2 != null) {
+            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                ((TLRPC.MessageEntity) arrayList2.get(i11)).serializeToStream(nativeByteBuffer);
+            }
+        }
+        nativeByteBuffer.writeInt32(Vector.constructor);
+        ArrayList arrayList3 = this.x;
+        nativeByteBuffer.writeInt32(arrayList3 == null ? 0 : arrayList3.size());
+        if (arrayList3 != null) {
+            for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                ((TLRPC.InputPrivacyRule) arrayList3.get(i12)).serializeToStream(nativeByteBuffer);
+            }
+        }
+        nativeByteBuffer.writeBool(false);
+        nativeByteBuffer.writeString(this.y);
+        nativeByteBuffer.writeInt64(this.A);
+        nativeByteBuffer.writeInt32(Vector.constructor);
+        ArrayList arrayList4 = this.B;
+        nativeByteBuffer.writeInt32(arrayList4 == null ? 0 : arrayList4.size());
+        if (arrayList4 != null) {
+            for (int i13 = 0; i13 < arrayList4.size(); i13++) {
+                ((b20) arrayList4.get(i13)).b(nativeByteBuffer, true);
+            }
+        }
+        nativeByteBuffer.writeInt32(Vector.constructor);
+        List list = this.C;
+        nativeByteBuffer.writeInt32(list == null ? 0 : list.size());
+        if (list != null) {
+            for (int i14 = 0; i14 < list.size(); i14++) {
+                ((TLRPC.InputDocument) list.get(i14)).serializeToStream(nativeByteBuffer);
+            }
+        }
+        String str = this.D;
+        if (str == null) {
+            str = "";
+        }
+        nativeByteBuffer.writeString(str);
+        ff ffVar = this.E;
+        if (ffVar == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            nativeByteBuffer.writeInt32(-1318387530);
+            nativeByteBuffer.writeFloat(ffVar.a);
+            nativeByteBuffer.writeFloat(ffVar.b);
+            nativeByteBuffer.writeFloat(ffVar.c);
+            nativeByteBuffer.writeFloat(ffVar.d);
+            nativeByteBuffer.writeFloat(ffVar.e);
+            nativeByteBuffer.writeFloat(ffVar.f);
+            nativeByteBuffer.writeFloat(ffVar.g);
+            nativeByteBuffer.writeInt32(ffVar.h);
+            nativeByteBuffer.writeInt32(ffVar.i);
+            nativeByteBuffer.writeFloat(ffVar.j);
+            nativeByteBuffer.writeFloat(ffVar.k);
+            nativeByteBuffer.writeFloat(ffVar.l);
+            nativeByteBuffer.writeFloat(ffVar.m);
+            nativeByteBuffer.writeInt32(ffVar.n);
+            nativeByteBuffer.writeFloat(ffVar.o);
+            h2.c cVar = ffVar.p;
+            ((be0) cVar.b).d(nativeByteBuffer);
+            ((be0) cVar.c).d(nativeByteBuffer);
+            ((be0) cVar.d).d(nativeByteBuffer);
+            ((be0) cVar.e).d(nativeByteBuffer);
+            nativeByteBuffer.writeFloat(ffVar.q);
+            if (ffVar.r == null) {
+                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+            } else {
+                nativeByteBuffer.writeInt32(-559038737);
+                nativeByteBuffer.writeFloat(ffVar.r.x);
+                nativeByteBuffer.writeFloat(ffVar.r.y);
+            }
+            nativeByteBuffer.writeFloat(ffVar.s);
+            nativeByteBuffer.writeFloat(ffVar.t);
+        }
+        nativeByteBuffer.writeInt32(this.F);
+        nativeByteBuffer.writeInt32(Vector.constructor);
+        nativeByteBuffer.writeInt32(0);
+        nativeByteBuffer.writeBool(this.G);
+        nativeByteBuffer.writeInt32(this.H);
+        nativeByteBuffer.writeInt64(this.I);
+        nativeByteBuffer.writeInt64(this.L);
+        nativeByteBuffer.writeInt64(this.K);
+        nativeByteBuffer.writeInt64(this.J);
+        nativeByteBuffer.writeString(this.z);
+        nativeByteBuffer.writeBool(this.M);
+        TLRPC.TL_error tL_error = this.N;
+        if (tL_error == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            tL_error.serializeToStream(nativeByteBuffer);
+        }
+        nativeByteBuffer.writeString(this.d);
+        String str2 = this.O;
+        if (str2 == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            nativeByteBuffer.writeInt32(TLRPC.TL_documentAttributeAudio.constructor);
+            nativeByteBuffer.writeString(str2);
+            String str3 = this.Q;
+            if (str3 == null) {
+                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+            } else {
+                nativeByteBuffer.writeInt32(TLRPC.TL_jsonString.constructor);
+                nativeByteBuffer.writeString(str3);
+            }
+            String str4 = this.R;
+            if (str4 == null) {
+                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+            } else {
+                nativeByteBuffer.writeInt32(TLRPC.TL_jsonString.constructor);
+                nativeByteBuffer.writeString(str4);
+            }
+            nativeByteBuffer.writeInt64(this.S);
+            nativeByteBuffer.writeInt64(this.T);
+            nativeByteBuffer.writeFloat(this.U);
+            nativeByteBuffer.writeFloat(this.V);
+            nativeByteBuffer.writeFloat(this.W);
+        }
+        TLRPC.InputPeer inputPeer = this.f0;
+        if (inputPeer != null) {
+            inputPeer.serializeToStream(nativeByteBuffer);
+        } else {
+            new TLRPC.TL_inputPeerSelf().serializeToStream(nativeByteBuffer);
+        }
+        String str5 = this.X;
+        if (TextUtils.isEmpty(str5)) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            nativeByteBuffer.writeInt32(TLRPC.TL_documentAttributeVideo.constructor);
+            nativeByteBuffer.writeString(str5);
+            nativeByteBuffer.writeInt64(this.Z);
+            nativeByteBuffer.writeInt64(this.a0);
+            nativeByteBuffer.writeFloat(this.b0);
+            nativeByteBuffer.writeFloat(this.c0);
+            nativeByteBuffer.writeFloat(this.d0);
+        }
+        nativeByteBuffer.writeFloat(this.e0);
+        nativeByteBuffer.writeInt64(this.g0);
+        String str6 = this.h0;
+        nativeByteBuffer.writeString(str6 != null ? str6 : "");
+        TLRPC.InputMedia inputMedia = this.i0;
+        if (inputMedia == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            inputMedia.serializeToStream(nativeByteBuffer);
+        }
+        c0 c0Var = this.j0;
+        if (c0Var == null || c0Var.e.size() <= 1 || (arrayList = this.k0) == null || arrayList.size() <= 1) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            nativeByteBuffer.writeInt32(-559038737);
+            nativeByteBuffer.writeString(c0Var.a);
+            int size = arrayList.size();
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                ((c20) obj).serializeToStream(nativeByteBuffer);
+            }
+        }
+        we weVar = this.o;
+        if (weVar == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            weVar.serializeToStream(nativeByteBuffer);
+        }
+        TLRPC.InputDocument inputDocument = this.P;
+        if (inputDocument == null) {
+            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            inputDocument.serializeToStream(nativeByteBuffer);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.j71
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean b(MotionEvent motionEvent) {
-        int i7;
-        View E;
-        int R;
-        switch (this.W) {
-            case 1:
-                p8 p8Var = (p8) this.a0;
-                View currentView = p8Var.m1.getCurrentView();
-                if (!(currentView instanceof k8)) {
-                    return true;
+    public i1(NativeByteBuffer nativeByteBuffer) {
+        int readInt32;
+        this.s = new float[9];
+        this.x = new ArrayList();
+        this.V = 1.0f;
+        this.W = 1.0f;
+        this.d0 = 1.0f;
+        this.e0 = 1.0f;
+        if (nativeByteBuffer.readInt32(true) == -1318387531) {
+            this.b = nativeByteBuffer.readInt64(true);
+            String readString = nativeByteBuffer.readString(true);
+            this.c = readString;
+            if (readString != null && readString.length() == 0) {
+                this.c = null;
+            }
+            this.e = nativeByteBuffer.readBool(true);
+            String readString2 = nativeByteBuffer.readString(true);
+            this.f = readString2;
+            if (readString2 != null && readString2.length() == 0) {
+                this.f = null;
+            }
+            this.g = nativeByteBuffer.readBool(true);
+            this.h = nativeByteBuffer.readBool(true);
+            this.i = nativeByteBuffer.readInt64(true);
+            this.j = nativeByteBuffer.readInt64(true);
+            this.k = nativeByteBuffer.readInt32(true);
+            this.l = nativeByteBuffer.readInt32(true);
+            this.m = nativeByteBuffer.readInt32(true);
+            this.n = nativeByteBuffer.readInt32(true);
+            this.p = nativeByteBuffer.readInt32(true);
+            this.q = nativeByteBuffer.readInt32(true);
+            this.r = nativeByteBuffer.readInt64(true);
+            int i7 = 0;
+            while (true) {
+                float[] fArr = this.s;
+                if (i7 >= fArr.length) {
+                    break;
                 }
-                if (getCurrentPosition() > 0) {
-                    p8Var.N0();
-                    return true;
+                fArr[i7] = nativeByteBuffer.readFloat(true);
+                i7++;
+            }
+            this.t = nativeByteBuffer.readInt32(true);
+            this.u = nativeByteBuffer.readInt32(true);
+            String readString3 = nativeByteBuffer.readString(true);
+            this.v = readString3;
+            if (readString3 != null && readString3.length() == 0) {
+                this.v = null;
+            }
+            if (nativeByteBuffer.readInt32(true) == 481674261) {
+                int readInt322 = nativeByteBuffer.readInt32(true);
+                for (int i10 = 0; i10 < readInt322; i10++) {
+                    if (this.w == null) {
+                        this.w = new ArrayList();
+                    }
+                    this.w.add(TLRPC.MessageEntity.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
                 }
-                k8 k8Var = (k8) currentView;
-                ArrayList arrayList = k8Var.M;
-                ek0 ek0Var = k8Var.f;
-                if (k8Var.a == 0 && motionEvent != null && (E = ek0Var.E(motionEvent.getX(), motionEvent.getY() - k8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
-                    y7 y7Var = (y7) arrayList.get(R);
-                    if (y7Var.a == 3 && !y7Var.n) {
-                        boolean z10 = hd.a0;
-                        float x10 = motionEvent.getX();
-                        if (!z10 ? x10 > org.telegram.messenger.g0.L(100.0f) : x10 < k8Var.getWidth() - org.telegram.messenger.g0.L(100.0f)) {
-                            i7 = y7Var.i;
-                            if (i7 != -1) {
-                                p8Var.H1 = i7;
-                                if (i7 == 3) {
-                                    if (!p8Var.s1.isEmpty() && !p8Var.t1.isEmpty()) {
-                                        p8Var.I1 = i7;
-                                    }
-                                } else if (i7 != 4) {
-                                    p8Var.I1 = i7;
-                                } else if (!p8Var.o1.isEmpty() && !p8Var.p1.isEmpty()) {
-                                    p8Var.I1 = i7;
-                                }
-                                k8Var.g(true);
-                                k8Var.f(true);
+                if (nativeByteBuffer.readInt32(true) == 481674261) {
+                    int readInt323 = nativeByteBuffer.readInt32(true);
+                    this.x.clear();
+                    for (int i11 = 0; i11 < readInt323; i11++) {
+                        this.x.add(TLRPC.InputPrivacyRule.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
+                    }
+                    nativeByteBuffer.readBool(true);
+                    String readString4 = nativeByteBuffer.readString(true);
+                    this.y = readString4;
+                    if (readString4 != null && readString4.length() == 0) {
+                        this.y = null;
+                    }
+                    this.A = nativeByteBuffer.readInt64(true);
+                    if (nativeByteBuffer.readInt32(true) == 481674261) {
+                        int readInt324 = nativeByteBuffer.readInt32(true);
+                        for (int i12 = 0; i12 < readInt324; i12++) {
+                            if (this.B == null) {
+                                this.B = new ArrayList();
                             }
-                            if (i7 != -1) {
-                                p8Var.N0();
-                            }
-                            return i7 == -1;
+                            this.B.add(new b20(nativeByteBuffer, true, true));
                         }
+                        if (nativeByteBuffer.readInt32(true) == 481674261) {
+                            int readInt325 = nativeByteBuffer.readInt32(true);
+                            for (int i13 = 0; i13 < readInt325; i13++) {
+                                if (this.C == null) {
+                                    this.C = new ArrayList();
+                                }
+                                this.C.add(TLRPC.InputDocument.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
+                            }
+                            String readString5 = nativeByteBuffer.readString(true);
+                            this.D = readString5;
+                            if (readString5 != null && readString5.length() == 0) {
+                                this.D = null;
+                            }
+                            int readInt326 = nativeByteBuffer.readInt32(true);
+                            if (readInt326 == 1450380236) {
+                                this.E = null;
+                            } else if (readInt326 == -1318387530) {
+                                ff ffVar = new ff();
+                                this.E = ffVar;
+                                ffVar.a = nativeByteBuffer.readFloat(true);
+                                ffVar.b = nativeByteBuffer.readFloat(true);
+                                ffVar.c = nativeByteBuffer.readFloat(true);
+                                ffVar.d = nativeByteBuffer.readFloat(true);
+                                ffVar.e = nativeByteBuffer.readFloat(true);
+                                ffVar.f = nativeByteBuffer.readFloat(true);
+                                ffVar.g = nativeByteBuffer.readFloat(true);
+                                ffVar.h = nativeByteBuffer.readInt32(true);
+                                ffVar.i = nativeByteBuffer.readInt32(true);
+                                ffVar.j = nativeByteBuffer.readFloat(true);
+                                ffVar.k = nativeByteBuffer.readFloat(true);
+                                ffVar.l = nativeByteBuffer.readFloat(true);
+                                ffVar.m = nativeByteBuffer.readFloat(true);
+                                ffVar.n = nativeByteBuffer.readInt32(true);
+                                ffVar.o = nativeByteBuffer.readFloat(true);
+                                h2.c cVar = ffVar.p;
+                                ((be0) cVar.b).c(nativeByteBuffer);
+                                ((be0) cVar.c).c(nativeByteBuffer);
+                                ((be0) cVar.d).c(nativeByteBuffer);
+                                ((be0) cVar.e).c(nativeByteBuffer);
+                                ffVar.q = nativeByteBuffer.readFloat(true);
+                                if (nativeByteBuffer.readInt32(true) == 1450380236) {
+                                    ffVar.r = null;
+                                } else {
+                                    if (ffVar.r == null) {
+                                        ffVar.r = new PointF();
+                                    }
+                                    ffVar.r.x = nativeByteBuffer.readFloat(true);
+                                    ffVar.r.y = nativeByteBuffer.readFloat(true);
+                                }
+                                ffVar.s = nativeByteBuffer.readFloat(true);
+                                ffVar.t = nativeByteBuffer.readFloat(true);
+                            }
+                            if (nativeByteBuffer.remaining() >= 4) {
+                                this.F = nativeByteBuffer.readInt32(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                if (nativeByteBuffer.readInt32(true) == 481674261) {
+                                    nativeByteBuffer.readInt32(true);
+                                } else {
+                                    throw new RuntimeException("Vector magic in StoryDraft parse error (5)");
+                                }
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                this.G = nativeByteBuffer.readBool(true);
+                                this.H = nativeByteBuffer.readInt32(true);
+                                this.I = nativeByteBuffer.readInt64(true);
+                                this.L = nativeByteBuffer.readInt64(true);
+                                this.K = nativeByteBuffer.readInt64(true);
+                                this.J = nativeByteBuffer.readInt64(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                String readString6 = nativeByteBuffer.readString(true);
+                                this.z = readString6;
+                                if (readString6 != null && readString6.length() == 0) {
+                                    this.z = null;
+                                }
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                this.M = nativeByteBuffer.readBool(true);
+                                int readInt327 = nativeByteBuffer.readInt32(true);
+                                if (readInt327 == 1450380236) {
+                                    this.N = null;
+                                } else {
+                                    this.N = TLRPC.TL_error.TLdeserialize(nativeByteBuffer, readInt327, true);
+                                }
+                                this.d = nativeByteBuffer.readString(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == -1739392570) {
+                                this.O = nativeByteBuffer.readString(true);
+                                if (nativeByteBuffer.readInt32(true) == -1222740358) {
+                                    this.Q = nativeByteBuffer.readString(true);
+                                }
+                                if (nativeByteBuffer.readInt32(true) == -1222740358) {
+                                    this.R = nativeByteBuffer.readString(true);
+                                }
+                                this.S = nativeByteBuffer.readInt64(true);
+                                this.T = nativeByteBuffer.readInt64(true);
+                                this.U = nativeByteBuffer.readFloat(true);
+                                this.V = nativeByteBuffer.readFloat(true);
+                                this.W = nativeByteBuffer.readFloat(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                this.f0 = TLRPC.InputPeer.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == 1137015880) {
+                                this.X = nativeByteBuffer.readString(true);
+                                this.Z = nativeByteBuffer.readInt64(true);
+                                this.a0 = nativeByteBuffer.readInt64(true);
+                                this.b0 = nativeByteBuffer.readFloat(true);
+                                this.c0 = nativeByteBuffer.readFloat(true);
+                                this.d0 = nativeByteBuffer.readFloat(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                this.e0 = nativeByteBuffer.readFloat(true);
+                            }
+                            if (nativeByteBuffer.remaining() > 0) {
+                                this.g0 = nativeByteBuffer.readInt64(true);
+                                this.h0 = nativeByteBuffer.readString(true);
+                                int readInt328 = nativeByteBuffer.readInt32(true);
+                                if (readInt328 != 1450380236) {
+                                    this.i0 = TLRPC.InputMedia.TLdeserialize(nativeByteBuffer, readInt328, true);
+                                }
+                            }
+                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == -559038737) {
+                                this.j0 = new c0(nativeByteBuffer.readString(true));
+                                this.k0 = new ArrayList();
+                                for (int i14 = 0; i14 < this.j0.e.size(); i14++) {
+                                    c20 c20Var = new c20();
+                                    c20Var.readParams(nativeByteBuffer, true);
+                                    c20Var.r = (b0) this.j0.e.get(i14);
+                                    this.k0.add(c20Var);
+                                }
+                            }
+                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == 1151577037) {
+                                we weVar = new we();
+                                this.o = weVar;
+                                weVar.readParams(nativeByteBuffer, true);
+                            }
+                            if (nativeByteBuffer.remaining() <= 0 || (readInt32 = nativeByteBuffer.readInt32(true)) != 448771445) {
+                                return;
+                            }
+                            this.P = TLRPC.InputDocument.TLdeserialize(nativeByteBuffer, readInt32, true);
+                            return;
+                        }
+                        throw new RuntimeException("Vector magic in StoryDraft parse error (4)");
                     }
+                    throw new RuntimeException("Vector magic in StoryDraft parse error (3)");
                 }
-                i7 = -1;
-                if (i7 != -1) {
-                }
-                if (i7 != -1) {
-                }
-                if (i7 == -1) {
-                }
-                break;
-            case 2:
-            default:
-                return super.b(motionEvent);
-            case 3:
-                oj ojVar = ((bn) this.a0).E1;
-                return ojVar != null && ojVar.b > 0.5f;
+                throw new RuntimeException("Vector magic in StoryDraft parse error (2)");
+            }
+            throw new RuntimeException("Vector magic in StoryDraft parse error (1)");
         }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public boolean e(MotionEvent motionEvent) {
-        switch (this.W) {
-            case 2:
-                return getCurrentPosition() != 2;
-            default:
-                return super.e(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public boolean f(MotionEvent motionEvent) {
-        switch (this.W) {
-            case 2:
-                return false;
-            case 6:
-                return false;
-            default:
-                return super.f(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.W) {
-            case 3:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void p(View view, View view2, int i7, int i10) {
-        switch (this.W) {
-            case 1:
-                p8 p8Var = (p8) this.a0;
-                if (p8Var.d) {
-                    p8Var.N0();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void q() {
-        switch (this.W) {
-            case 2:
-                if (getCurrentPosition() == 1) {
-                    ((li.d0) this.a0).v1.d.g3.O(false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void r() {
-        ny0 ny0Var;
-        switch (this.W) {
-            case 6:
-                if ((getCurrentView() instanceof py0) && (ny0Var = ((py0) getCurrentView()).n) != null) {
-                    org.telegram.messenger.g0.v1(ny0Var);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void s(boolean z10) {
-        switch (this.W) {
-            case 0:
-                i2 i2Var = (i2) this.a0;
-                i1 i1Var = i2Var.q1;
-                h2 h2Var = i2Var.r1;
-                if (h2Var != null) {
-                    h2Var.G = i1Var.getPositionAnimated();
-                    h2Var.invalidate();
-                }
-                i2Var.b.invalidate();
-                invalidate();
-                i2.C1 = i1Var.getCurrentPosition();
-                break;
-            case 1:
-                ((p8) this.a0).b.invalidate();
-                break;
-            case 2:
-                ((li.d0) this.a0).b.invalidate();
-                break;
-            case 3:
-                bn bnVar = (bn) this.a0;
-                bnVar.m1.getClass();
-                bnVar.m1.getClass();
-                bnVar.A7();
-                break;
-            case 4:
-                lm0 lm0Var = (lm0) this.a0;
-                float positionAnimated = lm0Var.J.getPositionAnimated();
-                lm0Var.N.setSelected(positionAnimated);
-                lm0Var.e.setProgressToGradient(1.0f - c8.l9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                lm0Var.K0();
-                fm0 H0 = lm0Var.H0();
-                e eVar = lm0Var.R;
-                if (eVar != null && H0 != null && H0 != lm0Var.S) {
-                    lm0Var.S = H0;
-                    ji.l lVar = H0.e;
-                    eVar.i((CharSequence) lVar.b, true, true);
-                    lm0Var.R.g((SpannableStringBuilder) lVar.c, true);
-                    break;
-                }
-                break;
-            case 5:
-                ((as0) this.a0).e();
-                break;
-            case 6:
-                ((qy0) this.a0).b.invalidate();
-                break;
-            case 7:
-                ((i81) this.a0).e();
-                break;
-            case 8:
-                ((org.telegram.ui.Wallet.d3) this.a0).b.invalidate();
-                break;
-            default:
-                org.telegram.ui.Wallet.n6 n6Var = (org.telegram.ui.Wallet.n6) this.a0;
-                n6Var.g1();
-                org.telegram.ui.Wallet.r8 r8Var = n6Var.k0;
-                if (r8Var != null && r8Var.i1) {
-                    r8Var.f0();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void u(int i7) {
-        org.telegram.ui.Wallet.j9 j9Var;
-        switch (this.W) {
-            case 9:
-                org.telegram.ui.Wallet.n6 n6Var = (org.telegram.ui.Wallet.n6) this.a0;
-                n6Var.f0 = i7;
-                if (i7 != 1 && (j9Var = n6Var.j0) != null) {
-                    j9Var.b(false);
-                }
-                if (i7 == 1) {
-                    n6Var.s0.post(new org.telegram.ui.Wallet.q4(n6Var, 13));
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void w(int i7) {
-        switch (this.W) {
-            case 3:
-                if (i7 == 0) {
-                    bn bnVar = (bn) this.a0;
-                    if (bnVar.H1) {
-                        bnVar.H1 = false;
-                        bnVar.F1.h.clear();
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i1(org.telegram.ui.ActionBar.g2 g2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.W = i7;
-        this.a0 = g2Var;
+        throw new RuntimeException("StoryDraft parse error");
     }
 }

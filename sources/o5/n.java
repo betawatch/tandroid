@@ -1,30 +1,7 @@
 package o5;
 
-import java.util.HashMap;
-import org.telegram.ui.md0;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final md0 a;
-
-    static {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.put(n.class, e.a);
-        hashMap2.remove(n.class);
-        hashMap.put(r5.a.class, a.a);
-        hashMap2.remove(r5.a.class);
-        hashMap.put(r5.g.class, g.a);
-        hashMap2.remove(r5.g.class);
-        hashMap.put(r5.e.class, d.a);
-        hashMap2.remove(r5.e.class);
-        hashMap.put(r5.d.class, c.a);
-        hashMap2.remove(r5.d.class);
-        hashMap.put(r5.b.class, b.a);
-        hashMap2.remove(r5.b.class);
-        hashMap.put(r5.f.class, f.a);
-        hashMap2.remove(r5.f.class);
-        a = new md0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 11);
-    }
+    public static final pb.b a = new pb.b(16);
 }

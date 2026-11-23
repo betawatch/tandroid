@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends d {
     public final b3.d g;
@@ -98,14 +98,14 @@ public final class b extends d {
                 }
                 y2.m mVar = mVarArr[i10];
                 if (mVar.next()) {
-                    x10 = mVar.S0() - mVar.O();
+                    x10 = mVar.P0() - mVar.U();
                     break;
                 }
                 i10++;
             }
         } else {
             y2.m mVar2 = mVarArr[this.r];
-            x10 = mVar2.S0() - mVar2.O();
+            x10 = mVar2.P0() - mVar2.U();
         }
         int i11 = this.s;
         if (i11 == 0) {

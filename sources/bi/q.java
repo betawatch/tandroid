@@ -2,19 +2,19 @@ package bi;
 
 import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.o70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cx;
+import org.telegram.ui.bx;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     long j3 = this.b;
-                    if (!p10.B(j3)) {
+                    if (!n10.B(j3)) {
                         Bundle bundle = new Bundle();
                         if (j3 > 0) {
                             bundle.putLong("user_id", j3);
-                            if (j3 == k10.i(yVar.a).e()) {
+                            if (j3 == i10.i(yVar.a).e()) {
                                 bundle.putBoolean("my_profile", true);
                             }
                         } else {
@@ -57,11 +57,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 yVar.dismiss();
                 break;
             case 1:
-                n3 n3Var = (n3) this.c;
-                n3Var.getClass();
+                p3 p3Var = (p3) this.c;
+                p3Var.getClass();
                 org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    n3Var.dismiss();
+                    p3Var.dismiss();
                     T2.presentFragment(ProfileActivity.D4(this.b));
                     break;
                 }
@@ -79,29 +79,29 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 z3Var.t0.N(new ProfileActivity(bundle2, null));
                 break;
             case 3:
-                r70 r70Var = (r70) this.c;
-                r70Var.dismiss();
+                o70 o70Var = (o70) this.c;
+                o70Var.dismiss();
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
-                tL_messages_importChatInvite.hash = r70Var.n1;
-                ConnectionsManager.getInstance(r70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new e8(r70Var, this.b, tL_messages_importChatInvite), 2);
+                tL_messages_importChatInvite.hash = o70Var.n1;
+                ConnectionsManager.getInstance(o70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new h8(o70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 4:
-                cx cxVar = (cx) this.c;
-                np messagesController = cxVar.getMessagesController();
+                bx bxVar = (bx) this.c;
+                mp messagesController = bxVar.getMessagesController();
                 long j11 = this.b;
                 boolean u22 = messagesController.u2(j11, 0L, null);
                 if (u22) {
-                    cxVar.getNotificationsController().T(j11, 4, 0L);
+                    bxVar.getNotificationsController().T(j11, 4, 0L);
                 } else {
-                    cxVar.getNotificationsController().T(j11, 3, 0L);
+                    bxVar.getNotificationsController().T(j11, 3, 0L);
                 }
-                lc.A(cxVar, !u22, null).j();
-                cxVar.finishPreviewFragment();
+                kc.A(bxVar, !u22, null).j();
+                bxVar.finishPreviewFragment();
                 break;
             default:
-                y10 y10Var = ((sh.m) this.c).f;
-                if (y10Var != null) {
-                    y10Var.a(Long.valueOf(this.b));
+                w10 w10Var = ((sh.m) this.c).f;
+                if (w10Var != null) {
+                    w10Var.a(Long.valueOf(this.b));
                     break;
                 }
                 break;

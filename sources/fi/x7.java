@@ -18,16 +18,16 @@ import android.widget.OverScroller;
 import androidx.core.widget.NestedScrollView;
 import java.lang.reflect.Field;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.z60;
+import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public class x7 extends NestedScrollView implements z60 {
-    public final t9 a0;
+public class x7 extends NestedScrollView implements w60 {
+    public final s9 a0;
     public final r1.g b0;
     public final w7 c0;
     public boolean d0;
@@ -52,7 +52,7 @@ public class x7 extends NestedScrollView implements z60 {
     public boolean w0;
     public boolean x0;
 
-    public x7(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public x7(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.r0 = -1;
@@ -61,12 +61,12 @@ public class x7 extends NestedScrollView implements z60 {
         this.s0 = frameLayout;
         setClipChildren(false);
         setOverScrollMode(2);
-        ls.i(this);
+        ks.i(this);
         w7 w7Var = new w7(this, getContext());
         this.c0 = w7Var;
-        t9 t9Var = new t9(w7Var, h6Var);
-        this.a0 = t9Var;
-        t9Var.h0 = false;
+        s9 s9Var = new s9(w7Var, i6Var);
+        this.a0 = s9Var;
+        s9Var.h0 = false;
         frameLayout.addView(w7Var, -1, -2);
         addView(frameLayout, new ViewGroup.LayoutParams(-1, -2));
         paint.setColor(-16777216);
@@ -124,7 +124,7 @@ public class x7 extends NestedScrollView implements z60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new p7(this, scrollY, f10, 0));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(nr.f);
+            ofFloat.setInterpolator(kr.f);
             ofFloat.start();
         }
     }
@@ -137,7 +137,7 @@ public class x7 extends NestedScrollView implements z60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new p7(this, scrollY, f10, 1));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(nr.f);
+            ofFloat.setInterpolator(kr.f);
             ofFloat.start();
         }
     }
@@ -296,7 +296,7 @@ public class x7 extends NestedScrollView implements z60 {
         this.a0.w();
     }
 
-    @Override // org.telegram.ui.Components.z60
+    @Override // org.telegram.ui.Components.w60
     public final void f(RectF rectF) {
         v7 v7Var;
         w7 w7Var = this.c0;
@@ -313,6 +313,30 @@ public class x7 extends NestedScrollView implements z60 {
         float x10 = w7Var.getX() - getScrollX();
         FrameLayout frameLayout = this.s0;
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (w7Var.getY() - getScrollY()));
+    }
+
+    @Override // org.telegram.ui.Components.w60
+    public final void g(Canvas canvas, float f10) {
+        v7 v7Var;
+        w7 w7Var = this.c0;
+        v7[] v7VarArr = w7Var.r;
+        v7[] v7VarArr2 = w7Var.r;
+        if (v7VarArr == null || (v7Var = v7VarArr[0]) == null || v7Var.p == null) {
+            draw(canvas);
+            return;
+        }
+        canvas.save();
+        float x10 = w7Var.getX() - getScrollX();
+        FrameLayout frameLayout = this.s0;
+        float x11 = frameLayout.getX() + x10 + w7Var.F;
+        float y10 = frameLayout.getY() + (w7Var.getY() - getScrollY()) + w7Var.G;
+        v7 v7Var2 = v7VarArr2[0];
+        canvas.translate(x11, (y10 + org.telegram.messenger.g0.W1(w7Var.x, v7Var2.m, v7Var2.l)) - v7VarArr2[0].p.b());
+        s7 s7Var = v7VarArr2[0].p;
+        int width = getWidth();
+        int i7 = w7Var.F;
+        s7Var.a(canvas, (width - i7) - i7);
+        canvas.restore();
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View
@@ -344,30 +368,6 @@ public class x7 extends NestedScrollView implements z60 {
     @Override // androidx.core.widget.NestedScrollView, android.view.View
     public float getTopFadingEdgeStrength() {
         return 1.0f;
-    }
-
-    @Override // org.telegram.ui.Components.z60
-    public final void h(Canvas canvas, float f10) {
-        v7 v7Var;
-        w7 w7Var = this.c0;
-        v7[] v7VarArr = w7Var.r;
-        v7[] v7VarArr2 = w7Var.r;
-        if (v7VarArr == null || (v7Var = v7VarArr[0]) == null || v7Var.p == null) {
-            draw(canvas);
-            return;
-        }
-        canvas.save();
-        float x10 = w7Var.getX() - getScrollX();
-        FrameLayout frameLayout = this.s0;
-        float x11 = frameLayout.getX() + x10 + w7Var.F;
-        float y10 = frameLayout.getY() + (w7Var.getY() - getScrollY()) + w7Var.G;
-        v7 v7Var2 = v7VarArr2[0];
-        canvas.translate(x11, (y10 + org.telegram.messenger.g0.W1(w7Var.x, v7Var2.m, v7Var2.l)) - v7VarArr2[0].p.b());
-        s7 s7Var = v7VarArr2[0].p;
-        int width = getWidth();
-        int i7 = w7Var.F;
-        s7Var.a(canvas, (width - i7) - i7);
-        canvas.restore();
     }
 
     @Override // androidx.core.widget.NestedScrollView
@@ -456,12 +456,12 @@ public class x7 extends NestedScrollView implements z60 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.z60
+    @Override // org.telegram.ui.Components.w60
     public /* bridge */ /* synthetic */ void setScrimHidden(boolean z10) {
         org.telegram.ui.Cells.c0.d(this, z10);
     }
 
-    public void F(org.telegram.ui.Components.y5 y5Var) {
+    public void F(org.telegram.ui.Components.x5 x5Var) {
     }
 
     public void I(s7 s7Var) {

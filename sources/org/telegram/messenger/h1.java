@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.io.File;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class h1 {
     public static h1 m;
@@ -99,7 +99,7 @@ public final class h1 {
         }
         this.j = true;
         this.k = 0.0f;
-        ls.e().k(ls.U4, new Object[0]);
+        ks.e().k(ks.U4, new Object[0]);
         if (TextUtils.isEmpty(this.f)) {
             if (z10) {
                 this.j = false;
@@ -111,14 +111,14 @@ public final class h1 {
         }
         final int i7 = 0;
         final int i10 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new y10(this) { // from class: org.telegram.messenger.f1
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new w10(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.y10
+            @Override // org.telegram.messenger.w10
             public final void a(Object obj) {
                 switch (i7) {
                     case 0:
@@ -126,18 +126,18 @@ public final class h1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        ls.e().k(ls.U4, new Object[0]);
+                        ks.e().k(ks.U4, new Object[0]);
                         break;
                 }
             }
-        }, new y10(this) { // from class: org.telegram.messenger.f1
+        }, new w10(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.y10
+            @Override // org.telegram.messenger.w10
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
@@ -145,7 +145,7 @@ public final class h1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        ls.e().k(ls.U4, new Object[0]);
+                        ks.e().k(ks.U4, new Object[0]);
                         break;
                 }
             }

@@ -1,6 +1,6 @@
 package wd;
 
-import c8.f0;
+import c8.g0;
 import hd.n;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,7 +17,7 @@ public abstract class d extends f {
         }
         Object next = it.next();
         if (!it.hasNext()) {
-            return f0.a(next);
+            return g0.a(next);
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(next);

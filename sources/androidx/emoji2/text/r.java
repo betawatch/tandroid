@@ -1,10 +1,10 @@
 package androidx.emoji2.text;
 
-import a8.u6;
+import a8.v6;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import c8.tb;
+import c8.ub;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class r implements k {
     public final Context a;
@@ -22,19 +22,19 @@ public final class r implements k {
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor h;
-    public u6 n;
+    public v6 n;
 
     public r(Context context, o0.d dVar) {
-        tb.a(context, "Context cannot be null");
+        ub.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = s.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(u6 u6Var) {
+    public final void a(v6 v6Var) {
         synchronized (this.d) {
-            this.n = u6Var;
+            this.n = v6Var;
         }
         c();
     }
@@ -72,7 +72,7 @@ public final class r implements k {
                     this.h = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new a3.f(this, 12));
+                this.f.execute(new a3.f(this, 11));
             } catch (Throwable th2) {
                 throw th2;
             }

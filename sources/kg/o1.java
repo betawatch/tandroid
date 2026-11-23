@@ -1,69 +1,46 @@
 package kg;
 
-import android.view.KeyEvent;
+import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
-import bi.m2;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.y10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.Components.cu0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class o1 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ z0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ u1 c;
-    public final /* synthetic */ TextView d;
-    public final /* synthetic */ m2 e;
-    public final /* synthetic */ y10 f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] g;
-    public final /* synthetic */ View h;
+public final class o1 extends cu0 {
+    public final /* synthetic */ int g0;
 
-    public o1(z0 z0Var, int i7, u1 u1Var, TextView textView, m2 m2Var, y10 y10Var, org.telegram.ui.ActionBar.t1[] t1VarArr, View view) {
-        this.a = z0Var;
-        this.b = i7;
-        this.c = u1Var;
-        this.d = textView;
-        this.e = m2Var;
-        this.f = y10Var;
-        this.g = t1VarArr;
-        this.h = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o1(Context context, r4 r4Var, int i7) {
+        super(context, r4Var);
+        this.g0 = i7;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        if (i7 != 6) {
-            return false;
+    @Override // org.telegram.ui.Components.cu0
+    public boolean O() {
+        switch (this.g0) {
+            case 2:
+                return false;
+            case 3:
+                return false;
+            default:
+                return super.O();
         }
-        z0 z0Var = this.a;
-        String obj = z0Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 32) {
-            org.telegram.messenger.g0.D3(z0Var);
-            return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.g0) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
         }
-        v1 f10 = v1.f(this.b);
-        u1 u1Var = this.c;
-        int i10 = u1Var == null ? -1 : u1Var.a;
-        u1 d = f10.d(obj);
-        if (d != null && d.a != i10) {
-            org.telegram.messenger.g0.D3(z0Var);
-            this.d.setText(hd.N0(2131752650, null));
-            this.e.a(Boolean.TRUE);
-            return true;
-        }
-        this.f.a(obj);
-        org.telegram.ui.ActionBar.t1[] t1VarArr = this.g;
-        org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
-        if (t1Var != null) {
-            t1Var.dismiss();
-        }
-        if (t1VarArr[0] == s1.f) {
-            s1.f = null;
-        }
-        View view = this.h;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
     }
 }

@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ui0 extends q9 {
+public final class ui0 extends p9 {
     public final /* synthetic */ int H;
     public final /* synthetic */ vi0 I;
 
@@ -18,7 +18,7 @@ public final class ui0 extends q9 {
         this.I = vi0Var;
     }
 
-    @Override // org.telegram.ui.Components.q9
+    @Override // org.telegram.ui.Components.p9
     public ImageReceiver c() {
         switch (this.H) {
             case 0:
@@ -37,18 +37,18 @@ public final class ui0 extends q9 {
                 vi0 vi0Var = this.I;
                 ui0 ui0Var = vi0Var.b;
                 super.dispatchDraw(canvas);
-                if (this.a.B() != null && !vi0Var.F) {
-                    this.a.B().start();
+                if (this.a.C() != null && !vi0Var.F) {
+                    this.a.C().start();
                 }
-                if (vi0Var.s && !vi0Var.w && this.a.B() != null && this.a.B().A() && ui0Var.a.B() != null && ui0Var.a.B().u()) {
+                if (vi0Var.s && !vi0Var.w && this.a.C() != null && this.a.C().A() && ui0Var.a.C() != null && ui0Var.a.C().u()) {
                     vi0Var.w = true;
-                    ui0Var.a.B().N(0, false, true);
+                    ui0Var.a.C().N(0, false, true);
                     ui0Var.setVisibility(0);
                     Runnable runnable = vi0Var.Q.Q0;
                     if (runnable != null) {
                         runnable.run();
                     }
-                    org.telegram.messenger.g0.g3(new hb0(this, 14));
+                    org.telegram.messenger.g0.g3(new eb0(this, 14));
                 }
                 invalidate();
                 break;
@@ -75,7 +75,7 @@ public final class ui0 extends q9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q9, android.view.View
+    @Override // org.telegram.ui.Components.p9, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.H) {
             case 1:
@@ -83,10 +83,10 @@ public final class ui0 extends q9 {
                 super.onDraw(canvas);
                 break;
             case 2:
-                p5 p5Var = this.e;
-                ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
-                if (imageReceiver != null && imageReceiver.B() != null) {
-                    imageReceiver.B().start();
+                o5 o5Var = this.e;
+                ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
+                if (imageReceiver != null && imageReceiver.C() != null) {
+                    imageReceiver.C().start();
                 }
                 super.onDraw(canvas);
                 break;

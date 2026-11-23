@@ -1,18 +1,19 @@
 package c8;
 
-import java.lang.ref.Reference;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class wd {
-    public static void a(ArrayList arrayList, Object obj) {
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Object obj2 = ((Reference) arrayList.get(size)).get();
-            if (obj2 == null || obj2 == obj) {
-                arrayList.remove(size);
-                return;
-            }
+    public static void a(StringBuilder sb2, Object obj, rd.l lVar) {
+        if (lVar != null) {
+            sb2.append((CharSequence) lVar.invoke(obj));
+            return;
+        }
+        if (obj == null ? true : obj instanceof CharSequence) {
+            sb2.append((CharSequence) obj);
+        } else if (obj instanceof Character) {
+            sb2.append(((Character) obj).charValue());
+        } else {
+            sb2.append((CharSequence) obj.toString());
         }
     }
 }

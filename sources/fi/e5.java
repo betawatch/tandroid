@@ -2,10 +2,10 @@ package fi;
 
 import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.Components.zf0;
+import org.telegram.ui.Components.yf0;
+import org.telegram.ui.Components.zb0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class e5 implements c5.h {
     public final /* synthetic */ int a;
@@ -20,14 +20,14 @@ public final class e5 implements c5.h {
     public final void a(int i7) {
         switch (this.a) {
             case 1:
-                cc0 cc0Var = (cc0) this.b;
-                c5.h hVar = cc0Var.c;
+                zb0 zb0Var = (zb0) this.b;
+                c5.h hVar = zb0Var.c;
                 if (hVar != null) {
                     hVar.a(i7);
                 }
                 int i10 = 0;
-                while (i10 < cc0Var.d.getChildCount()) {
-                    cc0Var.d.getChildAt(i10).setSelected(i10 == i7);
+                while (i10 < zb0Var.d.getChildCount()) {
+                    zb0Var.d.getChildAt(i10).setSelected(i10 == i7);
                     i10++;
                 }
                 break;
@@ -68,13 +68,13 @@ public final class e5 implements c5.h {
                 }
                 break;
             case 1:
-                cc0 cc0Var = (cc0) this.b;
-                cc0Var.h = i7;
-                cc0Var.n = f10;
-                if (cc0Var.d.getChildAt(i7) != null) {
-                    cc0.a(cc0Var, i7, (int) (cc0Var.d.getChildAt(i7).getWidth() * f10));
-                    cc0Var.invalidate();
-                    c5.h hVar = cc0Var.c;
+                zb0 zb0Var = (zb0) this.b;
+                zb0Var.h = i7;
+                zb0Var.n = f10;
+                if (zb0Var.d.getChildAt(i7) != null) {
+                    zb0.a(zb0Var, i7, (int) (zb0Var.d.getChildAt(i7).getWidth() * f10));
+                    zb0Var.invalidate();
+                    c5.h hVar = zb0Var.c;
                     if (hVar != null) {
                         hVar.b(f10, i7, i10);
                         break;
@@ -82,23 +82,23 @@ public final class e5 implements c5.h {
                 }
                 break;
             default:
-                zf0 zf0Var = (zf0) this.b;
-                if (!zf0Var.a && Math.abs(i7 - zf0Var.x) == 1) {
-                    int i11 = zf0Var.x;
+                yf0 yf0Var = (yf0) this.b;
+                if (!yf0Var.a && Math.abs(i7 - yf0Var.x) == 1) {
+                    int i11 = yf0Var.x;
                     if (i7 > i11) {
-                        zf0.a(zf0Var, 0, 1, 1);
+                        yf0.a(yf0Var, 0, 1, 1);
                     } else if (i7 < i11) {
-                        zf0.a(zf0Var, 1, 0, 0);
-                        zf0.a(zf0Var, 2, 0, -1);
+                        yf0.a(yf0Var, 1, 0, 0);
+                        yf0.a(yf0Var, 2, 0, -1);
                     }
                 }
-                int i12 = zf0Var.x;
-                int i13 = zf0Var.y;
-                zf0Var.x = i7;
-                zf0Var.y = i10;
+                int i12 = yf0Var.x;
+                int i13 = yf0Var.y;
+                yf0Var.x = i7;
+                yf0Var.y = i10;
                 if (i12 != i7 || i13 != i10) {
-                    zf0Var.I = true;
-                    zf0Var.postInvalidateOnAnimation();
+                    yf0Var.I = true;
+                    yf0Var.postInvalidateOnAnimation();
                     break;
                 }
                 break;
@@ -116,11 +116,11 @@ public final class e5 implements c5.h {
                 }
                 break;
             case 1:
-                cc0 cc0Var = (cc0) this.b;
+                zb0 zb0Var = (zb0) this.b;
                 if (i7 == 0) {
-                    cc0.a(cc0Var, cc0Var.e.getCurrentItem(), 0);
+                    zb0.a(zb0Var, zb0Var.e.getCurrentItem(), 0);
                 }
-                c5.h hVar = cc0Var.c;
+                c5.h hVar = zb0Var.c;
                 if (hVar != null) {
                     hVar.c(i7);
                     break;

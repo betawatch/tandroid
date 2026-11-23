@@ -1,99 +1,74 @@
 package li;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ro;
-import org.telegram.messenger.v3;
+import java.util.ArrayList;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.q2;
-import org.telegram.ui.Cells.u2;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class h0 extends n41 {
-    static {
-        n41.h(new h0());
+public final /* synthetic */ class h0 implements p10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j0 b;
+
+    public /* synthetic */ h0(j0 j0Var, int i7) {
+        this.a = i7;
+        this.b = j0Var;
     }
 
-    public static o41 i(ro roVar, q2 q2Var) {
-        TLRPC.User user = roVar.c;
-        if (user != null) {
-            o41 K = o41.K(h0.class);
-            long j3 = user.id;
-            K.C = j3;
-            K.d = (int) (j3 ^ (j3 >>> 32));
-            K.H = user;
-            K.I = q2Var;
-            return K;
+    @Override // org.telegram.messenger.p10
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                j0 j0Var = this.b;
+                j0Var.q.dismiss();
+                j0Var.q = null;
+                j0Var.r = 0;
+                if (tL_error == null) {
+                    i0 i0Var = j0Var.h;
+                    if (i0Var != null) {
+                        i0Var.close();
+                        break;
+                    }
+                } else {
+                    j0Var.c.g0(tL_error, false);
+                    break;
+                }
+                break;
+            case 1:
+                TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
+                j0 j0Var2 = this.b;
+                j0Var2.m = false;
+                if (peerLinkRequests != null) {
+                    ArrayList arrayList = j0Var2.j;
+                    if (arrayList == null) {
+                        j0Var2.j = new ArrayList(peerLinkRequests.requests);
+                    } else {
+                        arrayList.addAll(peerLinkRequests.requests);
+                    }
+                    String str = peerLinkRequests.next_offset;
+                    j0Var2.k = str;
+                    j0Var2.l = peerLinkRequests.total_count;
+                    j0Var2.n = str == null;
+                    j0Var2.a();
+                    i0 i0Var2 = j0Var2.h;
+                    if (i0Var2 != null) {
+                        i0Var2.o();
+                        break;
+                    }
+                }
+                break;
+            default:
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                j0 j0Var3 = this.b;
+                if (tL_error2 == null) {
+                    j0Var3.getClass();
+                    break;
+                } else {
+                    j0Var3.c.g0(tL_error2, false);
+                    break;
+                }
         }
-        TLRPC.Chat chat = roVar.b;
-        o41 K2 = o41.K(h0.class);
-        long j10 = chat != null ? -chat.id : 0L;
-        K2.C = j10;
-        K2.d = (int) (j10 ^ (j10 >>> 32));
-        K2.H = chat;
-        K2.I = q2Var;
-        return K2;
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        u2 u2Var = (u2) view;
-        u2Var.setDialogCellDelegate((q2) o41Var.I);
-        Object obj = o41Var.H;
-        if (obj instanceof TLRPC.Chat) {
-            TLRPC.Chat chat = (TLRPC.Chat) obj;
-            u2Var.R0 = v3.e0(k10.t0, chat);
-            TLRPC.Dialog U0 = np.u1(k10.t0).U0(-chat.id);
-            u2Var.Q0 = U0 == null;
-            if (U0 != null) {
-                u2Var.setCustomMessageWithoutRebuild(null);
-                u2Var.e0(U0, 0, 0);
-                return;
-            } else {
-                u2Var.setCustomMessageWithoutRebuild(hd.G(chat.participants_count, "Members", new Object[0]));
-                u2Var.d0(-chat.id, null, 0, false, false);
-                return;
-            }
-        }
-        if (obj instanceof TLRPC.User) {
-            TLRPC.User user = (TLRPC.User) obj;
-            u2Var.R0 = v3.f0(k10.t0, user);
-            TLRPC.Dialog U02 = np.u1(k10.t0).U0(user.id);
-            u2Var.Q0 = U02 == null;
-            if (U02 != null) {
-                u2Var.setCustomMessageWithoutRebuild(null);
-                u2Var.e0(U02, 0, 0);
-            } else {
-                u2Var.setCustomMessageWithoutRebuild(hd.N0(2131753153, null));
-                u2Var.d0(user.id, null, 0, false, false);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final boolean c(o41 o41Var, o41 o41Var2) {
-        return o41Var.d == o41Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, h6 h6Var) {
-        u2 u2Var = new u2(null, context, false, i7, h6Var);
-        u2Var.P0 = true;
-        return u2Var;
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final boolean e(o41 o41Var, o41 o41Var2) {
-        return o41Var.d == o41Var2.d;
     }
 }

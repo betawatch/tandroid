@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i7) {
             case 0:
-                se seVar = chatActivityEnterView.z2;
-                if (seVar != null) {
-                    seVar.setTranslationX(seVar.a);
+                te teVar = chatActivityEnterView.z2;
+                if (teVar != null) {
+                    teVar.setTranslationX(teVar.a);
                     break;
                 }
                 break;
             case 1:
-                se seVar2 = chatActivityEnterView.z2;
-                if (seVar2 != null) {
-                    seVar2.setTranslationX(seVar2.a);
+                te teVar2 = chatActivityEnterView.z2;
+                if (teVar2 != null) {
+                    teVar2.setTranslationX(teVar2.a);
                     break;
                 }
                 break;
@@ -42,9 +42,9 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
             case 4:
                 int i10 = ChatActivityEnterView.s7;
                 chatActivityEnterView.x0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fg fgVar = chatActivityEnterView.V0;
-                if (fgVar != null) {
-                    fgVar.Z();
+                eg egVar = chatActivityEnterView.V0;
+                if (egVar != null) {
+                    egVar.Z();
                     break;
                 }
                 break;
@@ -58,7 +58,7 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
                     chatActivityEnterView.i1.setAlpha(chatActivityEnterView.K1 ? 1.0f : chatActivityEnterView.D2.getTransformToSeekbarProgressStep3());
                     chatActivityEnterView.i1.invalidate();
                 }
-                chatActivityEnterView.W0();
+                chatActivityEnterView.X0();
                 break;
             case 7:
                 int i12 = ChatActivityEnterView.s7;
@@ -69,9 +69,9 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
                 int i13 = ChatActivityEnterView.s7;
                 chatActivityEnterView.getClass();
                 chatActivityEnterView.B6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rg rgVar = chatActivityEnterView.E2;
-                if (rgVar != null) {
-                    rgVar.invalidate();
+                qg qgVar = chatActivityEnterView.E2;
+                if (qgVar != null) {
+                    qgVar.invalidate();
                 }
                 ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
                 if (recordCircle != null) {
@@ -93,9 +93,9 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
                 if (D0 != null) {
                     D0.setInputBubbleExtraAlpha(1.0f - floatValue);
                 }
-                de deVar = chatActivityEnterView.f1;
-                if (deVar != null) {
-                    deVar.invalidate();
+                ee eeVar = chatActivityEnterView.f1;
+                if (eeVar != null) {
+                    eeVar.invalidate();
                     break;
                 }
                 break;

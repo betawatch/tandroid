@@ -2,9 +2,10 @@ package zi;
 
 import android.os.Handler;
 import j$.util.Objects;
-import org.telegram.ui.Components.qf;
+import org.telegram.ui.Cells.aa;
+import ug.u1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +35,9 @@ public final /* synthetic */ class b implements Runnable {
                     kVar2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + k.z(j3));
                     u0 u0Var = (u0) kVar2.k.a;
                     Handler handler = u0Var.i;
-                    qf qfVar = u0Var.d;
-                    Objects.requireNonNull(qfVar);
-                    handler.post(new v4.p(qfVar, 16));
+                    aa aaVar = u0Var.d;
+                    Objects.requireNonNull(aaVar);
+                    handler.post(new u1(aaVar, 17));
                     break;
                 }
                 break;

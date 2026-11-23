@@ -5,11 +5,11 @@ import android.view.View;
 import ch.n0;
 import di.q5;
 import oi.q0;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.fn0;
-import org.telegram.ui.Components.i21;
+import org.telegram.ui.Components.bq;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.h21;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -44,13 +44,13 @@ public final class b implements Drawable.Callback {
                 ((q0) this.b).b.invalidate();
                 break;
             case 6:
-                ((eq) this.b).invalidateSelf();
+                ((bq) this.b).invalidateSelf();
                 break;
             case 7:
-                ((fn0) this.b).b.run();
+                ((en0) this.b).b.run();
                 break;
             case 8:
-                ((i21) this.b).invalidateSelf();
+                ((h21) this.b).invalidateSelf();
                 break;
             case 9:
                 ((zg.a) this.b).c.invalidate();
@@ -89,7 +89,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((eq) this.b).scheduleSelf(runnable, j3);
+                ((bq) this.b).scheduleSelf(runnable, j3);
                 break;
             case 7:
             case 8:
@@ -131,7 +131,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((eq) this.b).unscheduleSelf(runnable);
+                ((bq) this.b).unscheduleSelf(runnable);
                 break;
             case 7:
             case 8:

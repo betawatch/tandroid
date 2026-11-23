@@ -1,59 +1,23 @@
 package a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class j8 {
-    public static String a(int i7) {
-        switch (i7) {
-            case -1:
-                return "SUCCESS_CACHE";
-            case 0:
-                return "SUCCESS";
-            case 1:
-            case 9:
-            case 11:
-            case 12:
-            default:
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i7).length() + 21);
-                sb2.append("unknown status code: ");
-                sb2.append(i7);
-                return sb2.toString();
-            case 2:
-                return "SERVICE_VERSION_UPDATE_REQUIRED";
-            case 3:
-                return "SERVICE_DISABLED";
-            case 4:
-                return "SIGN_IN_REQUIRED";
-            case 5:
-                return "INVALID_ACCOUNT";
-            case 6:
-                return "RESOLUTION_REQUIRED";
-            case 7:
-                return "NETWORK_ERROR";
-            case 8:
-                return "INTERNAL_ERROR";
-            case 10:
-                return "DEVELOPER_ERROR";
-            case 13:
-                return "ERROR";
-            case 14:
-                return "INTERRUPTED";
-            case 15:
-                return "TIMEOUT";
-            case 16:
-                return "CANCELED";
-            case 17:
-                return "API_NOT_CONNECTED";
-            case 18:
-                return "DEAD_CLIENT";
-            case 19:
-                return "REMOTE_EXCEPTION";
-            case 20:
-                return "CONNECTION_SUSPENDED_DURING_CALL";
-            case 21:
-                return "RECONNECTION_TIMED_OUT_DURING_UPDATE";
-            case 22:
-                return "RECONNECTION_TIMED_OUT";
-        }
+    public static u9.a a(String str, String str2) {
+        cb.a aVar = new cb.a(str, str2);
+        e2.j0 a10 = u9.a.a(cb.a.class);
+        a10.b = 1;
+        a10.f = new tg.s(aVar, 10);
+        return a10.b();
+    }
+
+    public static u9.a b(String str, n2.a0 a0Var) {
+        e2.j0 a10 = u9.a.a(cb.a.class);
+        a10.b = 1;
+        a10.a(u9.i.a(Context.class));
+        a10.f = new ab.g(8, str, a0Var);
+        return a10.b();
     }
 }

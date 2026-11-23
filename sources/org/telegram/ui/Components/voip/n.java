@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class n {
     public final Paint a;
@@ -26,11 +26,11 @@ public final class n {
     public boolean l;
     public float m;
     public float n;
-    public ug.w1 o;
+    public ug.x1 o;
     public org.telegram.ui.web.z0 p;
 
     public n() {
-        this(64, ls.i3, ls.q2);
+        this(64, ks.i3, ks.q2);
     }
 
     public final void a(float f10, Canvas canvas, RectF rectF, View view) {
@@ -51,7 +51,7 @@ public final class n {
         int[] iArr = {0, i0.a.o(i7, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, ls.i3), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, ks.i3), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -91,7 +91,7 @@ public final class n {
     }
 
     public n(int i7, int i10) {
-        this(i7, i10, ls.q2);
+        this(i7, i10, ks.q2);
     }
 
     public n(int i7, int i10, int i11) {

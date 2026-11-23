@@ -12,11 +12,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.mz;
-import org.telegram.ui.Components.xy0;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.kz;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i0 extends Drawable {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final class i0 extends Drawable {
         switch (this.a) {
             case 0:
                 Rect bounds = getBounds();
-                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ls.e4, 31);
+                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ks.e4, 31);
                 Drawable drawable = (Drawable) this.b;
                 drawable.setBounds(bounds);
                 drawable.draw(canvas);
-                ((xy0) this.d).c(bounds.centerX() - (((xy0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
+                ((wy0) this.d).c(bounds.centerX() - (((wy0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -69,23 +69,23 @@ public final class i0 extends Drawable {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(getBounds());
                 nVar.a(this.c, canvas, rectF, null);
-                mz mzVar = (mz) this.b;
-                if (mzVar != null) {
-                    mzVar.c = nVar.a;
+                kz kzVar = (kz) this.b;
+                if (kzVar != null) {
+                    kzVar.c = nVar.a;
                     int i10 = nVar.f;
                     float f15 = (((i7 * 2) + i10) * nVar.g) - i7;
                     int i11 = (int) (i10 * 0.5f);
                     int width = getBounds().width();
-                    float f16 = width / mzVar.e;
-                    float height = getBounds().height() / mzVar.f;
-                    float max = mzVar.s ? Math.max(f16, height) : Math.min(f16, height);
+                    float f16 = width / kzVar.e;
+                    float height = getBounds().height() / kzVar.f;
+                    float max = kzVar.s ? Math.max(f16, height) : Math.min(f16, height);
                     matrix.reset();
                     matrix.setScale(1.0f / max, 0.0f, i7 / 2.0f, 0.0f);
-                    matrix.setTranslate((f15 - mzVar.getBounds().left) - (i7 / max), 0.0f);
+                    matrix.setTranslate((f15 - kzVar.getBounds().left) - (i7 / max), 0.0f);
                     nVar.b.setLocalMatrix(matrix);
                     int i12 = i11 / 2;
-                    mzVar.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);
-                    mzVar.draw(canvas);
+                    kzVar.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);
+                    kzVar.draw(canvas);
                 }
                 nVar.o.invalidate();
                 break;
@@ -189,23 +189,23 @@ public final class i0 extends Drawable {
         Paint paint = new Paint(1);
         this.d = paint;
         this.b = context.getResources().getDrawable(R.drawable.msg_filled_menu_groups);
-        paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.1552f, -16777216));
+        paint.setColor(org.telegram.ui.ActionBar.n6.r1(0.1552f, -16777216));
         this.c = f10;
     }
 
-    public i0(org.telegram.ui.Components.voip.n nVar, mz mzVar) {
+    public i0(org.telegram.ui.Components.voip.n nVar, kz kzVar) {
         this.a = 3;
         this.d = nVar;
-        this.b = mzVar;
+        this.b = kzVar;
     }
 
     public i0(Context context, int i7) {
         this.a = 0;
         this.c = 0.75f;
         this.b = i5.c.g(context, R.drawable.filled_stream_crown);
-        xy0 xy0Var = new xy0(i5.c.i(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-        this.d = xy0Var;
-        xy0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        wy0 wy0Var = new wy0(i5.c.i(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.d = wy0Var;
+        wy0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
     private final void a(int i7) {

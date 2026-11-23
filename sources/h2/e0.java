@@ -3,7 +3,7 @@ package h2;
 import e2.i1;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class e0 {
     public Object a;
@@ -17,18 +17,18 @@ public final class e0 {
     public Object i;
     public Object j;
 
-    public e0(l2.f0 f0Var, l2.z zVar, g0 g0Var, int i7, int i10, int i11, int i12) {
-        this.a = f0Var;
-        this.c = zVar;
-        this.d = g0Var;
-        this.f = g0Var.a(f0Var.t, new n(this, 1));
+    public e0(l2.g0 g0Var, l2.a0 a0Var, g0 g0Var2, int i7, int i10, int i11, int i12) {
+        this.a = g0Var;
+        this.c = a0Var;
+        this.d = g0Var2;
+        this.f = g0Var2.a(g0Var.t, new n(this, 1));
         this.g = new a0(this, i7);
         this.h = new b0(this, i10);
         this.i = new c0(this, i11);
         this.j = new d0(this, i12);
-        z zVar2 = new z(this, 0);
-        this.b = zVar2;
-        f0Var.m.a(zVar2);
+        z zVar = new z(this, 0);
+        this.b = zVar;
+        g0Var.m.a(zVar);
     }
 
     public void a(String str, String str2) {
@@ -41,7 +41,7 @@ public final class e0 {
 
     public o5.h b() {
         String str = ((String) this.a) == null ? " transportName" : "";
-        if (((o5.l) this.c) == null) {
+        if (((o5.m) this.c) == null) {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
@@ -54,7 +54,7 @@ public final class e0 {
             str = p5.c.v(str, " autoMetadata");
         }
         if (str.isEmpty()) {
-            return new o5.h((String) this.a, (Integer) this.b, (o5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);
+            return new o5.h((String) this.a, (Integer) this.b, (o5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }

@@ -13,18 +13,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
     public final h c;
     public ArrayList d;
     public final SparseIntArray e;
-    public final s f;
+    public final t f;
     public final ArrayList g;
     public final ArrayDeque h;
     public final y i;
-    public final r j;
+    public final s j;
     public BasePendingResult k;
     public BasePendingResult l;
     public final Set m = DesugarCollections.synchronizedSet(new HashSet());
@@ -38,9 +38,9 @@ public final class c {
         this.g = new ArrayList();
         this.h = new ArrayDeque(20);
         this.i = new y(Looper.getMainLooper(), 0);
-        this.j = new r(this, 0);
+        this.j = new s(this, 0);
         hVar.p(new c0(this, 1));
-        this.f = new s(this);
+        this.f = new t(this);
         this.b = e();
         d();
     }
@@ -116,7 +116,7 @@ public final class c {
                 basePendingResult2 = h.t();
             }
             this.l = basePendingResult2;
-            basePendingResult2.i(new q(this, 0));
+            basePendingResult2.i(new r(this, 0));
         }
     }
 

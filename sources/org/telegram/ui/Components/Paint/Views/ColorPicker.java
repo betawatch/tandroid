@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
-import sg.h1;
-import tg.a;
+import org.telegram.messenger.ks;
+import sg.g1;
+import tg.e;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -56,7 +56,7 @@ public class ColorPicker extends FrameLayout {
         int green2 = Color.green(i12);
         int blue = Color.blue(i11);
         int blue2 = Color.blue(i12);
-        return Color.argb(ls.e4, Math.min(ls.e4, (int) (((red2 - red) * min) + red)), Math.min(ls.e4, (int) (((green2 - green) * min) + green)), Math.min(ls.e4, (int) (((blue2 - blue) * min) + blue)));
+        return Color.argb(ks.e4, Math.min(ks.e4, (int) (((red2 - red) * min) + red)), Math.min(ks.e4, (int) (((green2 - green) * min) + green)), Math.min(ks.e4, (int) (((blue2 - blue) * min) + blue)));
     }
 
     private void setDraggingFactor(float f10) {
@@ -72,8 +72,8 @@ public class ColorPicker extends FrameLayout {
         return null;
     }
 
-    public h1 getSwatch() {
-        return new h1(this.a, this.b, a(this.a));
+    public g1 getSwatch() {
+        return new g1(this.a, this.b, a(this.a));
     }
 
     @Override // android.view.View
@@ -107,9 +107,9 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setSwatch(h1 h1Var) {
-        setLocation(h1Var.b);
-        setWeight(h1Var.c);
+    public void setSwatch(g1 g1Var) {
+        setLocation(g1Var.b);
+        setWeight(g1Var.c);
     }
 
     public void setUndoEnabled(boolean z10) {
@@ -121,6 +121,6 @@ public class ColorPicker extends FrameLayout {
         invalidate();
     }
 
-    public void setDelegate(a aVar) {
+    public void setDelegate(e eVar) {
     }
 }

@@ -1,42 +1,37 @@
 package org.telegram.ui.Components;
 
+import android.widget.Toast;
+import java.util.ArrayList;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class hp implements org.telegram.ui.p71 {
-    public final /* synthetic */ np a;
+public final class hp implements ResultCallback {
+    public final /* synthetic */ org.telegram.messenger.f4 a;
+    public final /* synthetic */ kp b;
 
-    public hp(np npVar) {
-        this.a = npVar;
+    public hp(kp kpVar, org.telegram.messenger.f4 f4Var) {
+        this.b = kpVar;
+        this.a = f4Var;
     }
 
-    @Override // org.telegram.ui.p71
-    public final boolean Y0() {
-        return true;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        org.telegram.messenger.f4 f4Var = this.a;
+        ArrayList e10 = f4Var.e((f4Var.f.c ? 2 : 0) | 5);
+        kp kpVar = this.b;
+        org.telegram.messenger.ks.f(kpVar.a).d(new xd(23, this, e10));
+        kpVar.V1 = false;
     }
 
-    @Override // org.telegram.ui.p71
-    public final boolean d() {
-        return this.a.H1;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
     }
 
-    @Override // org.telegram.ui.p71
-    public final void l1(boolean z10) {
-        np npVar = this.a;
-        org.telegram.ui.bn bnVar = npVar.v1;
-        npVar.H1 = !npVar.H1;
-        if (npVar.G1 != null) {
-            npVar.J1 = true;
-            bnVar.w7 = true;
-            TLRPC.WallPaper wallPaper = npVar.Q0() ? null : npVar.s1.g;
-            org.telegram.ui.ActionBar.s3 s3Var = npVar.G1.a;
-            if (s3Var.a) {
-                npVar.s1.r(null, wallPaper, z10, Boolean.valueOf(npVar.H1), false);
-            } else {
-                npVar.s1.r(s3Var, wallPaper, z10, Boolean.valueOf(npVar.H1), false);
-            }
-            bnVar.w7 = false;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

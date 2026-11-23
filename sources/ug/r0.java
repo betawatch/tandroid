@@ -9,48 +9,47 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import c8.ma;
-import c8.ra;
+import c8.na;
+import c8.sa;
 import fi.d4;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.s2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.tq;
-import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.x01;
-import org.telegram.ui.c30;
-import org.telegram.ui.k71;
-import tg.z1;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rp;
+import org.telegram.ui.Components.w01;
+import org.telegram.ui.b30;
+import org.telegram.ui.i71;
+import tg.c2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class r0 extends FrameLayout implements p80 {
+public class r0 extends FrameLayout implements m80 {
     public final org.telegram.ui.Components.voip.n E;
     public boolean F;
-    public final rh0 G;
+    public final qh0 G;
     public boolean H;
     public boolean I;
-    public tq J;
+    public qq J;
     public boolean K;
     public boolean L;
-    public final d6 M;
-    public final d6 N;
-    public up O;
+    public final c6 M;
+    public final c6 N;
+    public rp O;
     public float P;
     public boolean Q;
     public ValueAnimator R;
     public final Paint a;
     public final boolean b;
-    public final h6 c;
+    public final i6 c;
     public float d;
     public boolean e;
     public final q0 f;
@@ -58,15 +57,15 @@ public class r0 extends FrameLayout implements p80 {
     public final int n;
     public boolean r;
     public float s;
-    public final x01 w;
+    public final w01 w;
     public ValueAnimator x;
     public final Path y;
 
-    public r0(Context context, h6 h6Var, boolean z10) {
-        this(org.telegram.messenger.g0.L(8.0f), context, h6Var, z10);
+    public r0(Context context, i6 i6Var, boolean z10) {
+        this(org.telegram.messenger.g0.L(8.0f), context, i6Var, z10);
     }
 
-    @Override // org.telegram.ui.Components.p80
+    @Override // org.telegram.ui.Components.m80
     public final boolean a() {
         return this.Q;
     }
@@ -81,12 +80,12 @@ public class r0 extends FrameLayout implements p80 {
             q0Var.a();
         }
         q0Var.c(str, z10, true);
-        x01 x01Var = this.w;
-        x01Var.setContentDescription(str);
+        w01 w01Var = this.w;
+        w01Var.setContentDescription(str);
         if (this.L) {
             return;
         }
-        x01Var.setOnClickListener(onClickListener);
+        w01Var.setOnClickListener(onClickListener);
     }
 
     public final void c(CharSequence charSequence, boolean z10, boolean z11) {
@@ -112,38 +111,38 @@ public class r0 extends FrameLayout implements p80 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.r ? 1.0f : 0.0f);
         this.x = ofFloat;
         ofFloat.addUpdateListener(new d4(this, 12));
-        this.x.addListener(new k71(this, 19));
+        this.x.addListener(new i71(this, 19));
         this.x.setDuration(250L);
-        this.x.setInterpolator(nr.f);
+        this.x.setInterpolator(kr.f);
         this.x.start();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int L;
-        tq tqVar = this.J;
+        qq qqVar = this.J;
         q0 q0Var = this.h;
-        if (tqVar != null) {
-            sq sqVar = tqVar.a;
-            if (sqVar.h == 0) {
+        if (qqVar != null) {
+            pq pqVar = qqVar.a;
+            if (pqVar.h == 0) {
                 L = 0;
             } else {
-                L = org.telegram.messenger.g0.L(sqVar.C - 0.5f) + sqVar.s;
+                L = org.telegram.messenger.g0.L(pqVar.C - 0.5f) + pqVar.s;
             }
-            d6 d6Var = this.M;
-            d6Var.e(false, ((L * 0.85f) + org.telegram.messenger.g0.L(3.0f)) / 2.0f);
+            c6 c6Var = this.M;
+            c6Var.e(false, ((L * 0.85f) + org.telegram.messenger.g0.L(3.0f)) / 2.0f);
             float e10 = (q0Var.getDrawable().e() / 2.0f) + (getMeasuredWidth() / 2.0f) + org.telegram.messenger.g0.L(3.0f);
-            d6 d6Var2 = this.N;
-            d6Var2.e(false, e10);
-            q0Var.setTranslationX(-d6Var.c);
-            this.J.setTranslationX(d6Var2.c - d6Var.c);
+            c6 c6Var2 = this.N;
+            c6Var2.e(false, e10);
+            q0Var.setTranslationX(-c6Var.c);
+            this.J.setTranslationX(c6Var2.c - c6Var.c);
         } else if (q0Var != null) {
             q0Var.setTranslationX(0.0f);
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         float f10 = this.s;
-        h6 h6Var = this.c;
+        i6 i6Var = this.c;
         boolean z10 = this.b;
         int i7 = this.n;
         Paint paint = this.a;
@@ -167,9 +166,9 @@ public class r0 extends FrameLayout implements p80 {
                 canvas.drawRoundRect(rectF, f13, f13, ia.e.d().e());
             } else {
                 if (z10) {
-                    paint.setColor(m6.w0(m6.Fi, h6Var));
+                    paint.setColor(n6.w0(n6.Fi, i6Var));
                 }
-                paint.setAlpha(ls.e4);
+                paint.setAlpha(ks.e4);
                 float f14 = i7;
                 canvas.drawRoundRect(rectF, f14, f14, paint);
             }
@@ -184,7 +183,7 @@ public class r0 extends FrameLayout implements p80 {
         }
         if (this.s != 0.0f && this.F) {
             if (z10) {
-                paint.setColor(m6.w0(m6.Fi, h6Var));
+                paint.setColor(n6.w0(n6.Fi, i6Var));
             }
             paint.setAlpha((int) (this.s * 255.0f));
             if (this.s != 1.0f) {
@@ -210,19 +209,19 @@ public class r0 extends FrameLayout implements p80 {
         q0Var.setAlpha(f10);
         q0Var.setTranslationY((1.0f - this.s) * org.telegram.messenger.g0.L(12.0f));
         float f11 = 1.0f - this.s;
-        x01 x01Var = this.w;
-        x01Var.setAlpha(f11);
-        x01Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
-        x01Var.setVisibility(this.s == 1.0f ? 4 : 0);
+        w01 w01Var = this.w;
+        w01Var.setAlpha(f11);
+        w01Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
+        w01Var.setVisibility(this.s == 1.0f ? 4 : 0);
         q0Var.setVisibility(this.s == 0.0f ? 4 : 0);
         invalidate();
     }
 
-    public rh0 getIconView() {
+    public qh0 getIconView() {
         return this.G;
     }
 
-    public o6 getTextView() {
+    public org.telegram.ui.Components.n6 getTextView() {
         return this.f;
     }
 
@@ -248,16 +247,16 @@ public class r0 extends FrameLayout implements p80 {
     }
 
     public void setIcon(int i7) {
-        rh0 rh0Var = this.G;
-        rh0Var.f(i7, 24, 24, null);
+        qh0 qh0Var = this.G;
+        qh0Var.f(i7, 24, 24, null);
         org.telegram.ui.Components.voip.n nVar = this.E;
         nVar.g = 2.0f;
-        nVar.p = new org.telegram.ui.web.z0(this, 25);
+        nVar.p = new org.telegram.ui.web.z0(this, 26);
         invalidate();
-        rh0Var.setVisibility(0);
+        qh0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.p80
+    @Override // org.telegram.ui.Components.m80
     public void setLoading(boolean z10) {
         if (this.Q != z10) {
             ValueAnimator valueAnimator = this.R;
@@ -269,22 +268,22 @@ public class r0 extends FrameLayout implements p80 {
             this.Q = z10;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z10 ? 1.0f : 0.0f);
             this.R = ofFloat;
-            ofFloat.addUpdateListener(new z1(this, 3));
-            this.R.addListener(new c30(17, this, z10));
+            ofFloat.addUpdateListener(new c2(this, 3));
+            this.R.addListener(new b30(17, this, z10));
             this.R.setDuration(320L);
-            this.R.setInterpolator(nr.h);
+            this.R.setInterpolator(kr.h);
             this.R.start();
         }
     }
 
-    public r0(int i7, Context context, h6 h6Var, boolean z10) {
+    public r0(int i7, Context context, i6 i6Var, boolean z10) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         this.y = new Path();
         this.K = true;
-        this.M = new d6(this);
-        this.N = new d6(this);
+        this.M = new c6(this);
+        this.N = new c6(this);
         this.P = 0.0f;
         this.n = i7;
         org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
@@ -295,42 +294,42 @@ public class r0 extends FrameLayout implements p80 {
         LinearLayout g10 = f3.g(context, 0);
         q0 q0Var = new q0(this, context, 0);
         this.f = q0Var;
-        q0Var.b(0.35f, 350L, nr.h);
+        q0Var.b(0.35f, 350L, kr.h);
         q0Var.setGravity(17);
         q0Var.setTextColor(-1);
         q0Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
         q0Var.setTypeface(org.telegram.messenger.g0.o());
-        rh0 rh0Var = new rh0(context);
-        this.G = rh0Var;
-        rh0Var.setColorFilter(-1);
-        rh0Var.setVisibility(8);
-        x01 x01Var = new x01(10, context, this);
-        this.w = x01Var;
-        x01Var.addView(g10, ma.e(-2, -2, 17));
+        qh0 qh0Var = new qh0(context);
+        this.G = qh0Var;
+        qh0Var.setColorFilter(-1);
+        qh0Var.setVisibility(8);
+        w01 w01Var = new w01(10, context, this);
+        this.w = w01Var;
+        w01Var.addView(g10, na.e(-2, -2, 17));
         int o4 = i0.a.o(-1, 120);
-        x01Var.setBackground(m6.k0(i7, i7, i7, i7, 0, o4, o4));
-        g10.addView(q0Var, ma.r(-2, -2, 16));
-        g10.addView(rh0Var, ma.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
-        addView(x01Var);
+        w01Var.setBackground(n6.k0(i7, i7, i7, i7, 0, o4, o4));
+        g10.addView(q0Var, na.r(-2, -2, 16));
+        g10.addView(qh0Var, na.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        addView(w01Var);
         setOutlineProvider(bg.u0.b);
         setClipToOutline(true);
-        ra.b(this, 0.02f, 1.2f);
+        sa.b(this, 0.02f, 1.2f);
         if (z10) {
             q0 q0Var2 = new q0(this, context, 1);
             this.h = q0Var2;
             q0Var2.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
             q0Var2.setGravity(17);
-            t6.Y(q0Var2, m6.Ji, h6Var);
+            u6.Y(q0Var2, n6.Ji, i6Var);
             q0Var2.setTextSize(org.telegram.messenger.g0.L(14.0f));
             q0Var2.setTypeface(org.telegram.messenger.g0.o());
             q0Var2.getDrawable().K = true;
             int L = org.telegram.messenger.g0.L(8.0f);
             int o10 = i0.a.o(-1, 120);
-            q0Var2.setBackground(m6.k0(L, L, L, L, 0, o10, o10));
+            q0Var2.setBackground(n6.k0(L, L, L, L, 0, o10, o10));
             addView(q0Var2);
-            paint.setColor(m6.w0(m6.Fi, h6Var));
+            paint.setColor(n6.w0(n6.Fi, i6Var));
             this.b = true;
-            this.c = h6Var;
+            this.c = i6Var;
             e();
         }
     }

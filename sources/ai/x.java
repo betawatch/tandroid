@@ -1,186 +1,115 @@
 package ai;
 
-import android.content.Context;
-import android.util.Log;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.cz;
-import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.hf;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.rf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class x {
-    public boolean a;
-    public boolean b;
-    public long c;
-    public final Object d;
-    public final Object e;
-    public Object f;
-    public Object g;
-    public Object h;
+public final /* synthetic */ class x implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    public x(Context context, d3.x xVar) {
-        this.d = context.getApplicationContext();
-        this.e = xVar;
-        this.c = 15000L;
-        this.h = new d3.y();
-        this.g = h2.g0.a;
+    public /* synthetic */ x(l0 l0Var, int i7) {
+        this.a = i7;
+        this.b = l0Var;
     }
 
-    public static x c(android.support.v4.media.session.a0 a0Var, r2 r2Var) {
-        long nativeSessionNew;
-        t tVar = (t) a0Var.b;
-        long k10 = DictationAsr.k(tVar);
-        if (k10 == 0) {
-            return null;
-        }
-        x xVar = new x(a0Var, r2Var);
-        String a10 = tVar.a((String) a0Var.c);
-        nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, a10.split(",")[0], cz.o() == 0 ? 2 : 4);
-        xVar.c = nativeSessionNew;
-        if (nativeSessionNew != 0) {
-            return xVar;
-        }
-        DictationAsr.Q(tVar);
-        return null;
-    }
-
-    public void a() {
-        String nativeSessionFinish;
-        long j3 = this.c;
-        if (j3 == 0) {
-            return;
-        }
-        nativeSessionFinish = DictationAsr.nativeSessionFinish(j3);
-        b(nativeSessionFinish);
-        DictationAsr.nativeSessionFree(this.c);
-        this.c = 0L;
-        DictationAsr.Q((t) this.e);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:61:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void b(String str) {
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        int i7;
-        r2 r2Var = (r2) this.f;
-        StringBuilder sb2 = (StringBuilder) this.g;
-        if (str == null || str.length() <= 2) {
-            return;
-        }
-        boolean z13 = this.b;
-        try {
-            JSONArray jSONArray = new JSONArray(str);
-            z11 = false;
-            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                try {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i10);
-                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-                    int hashCode = optString.hashCode();
-                    z10 = true;
-                    if (hashCode != -1354815177) {
-                        if (hashCode != -792934015) {
-                            if (hashCode != 100619) {
-                                continue;
-                            } else {
-                                try {
-                                    if (optString.equals("eou") && jSONObject.optDouble("p") > 0.5d) {
-                                        z13 = true;
-                                    }
-                                } catch (Exception e10) {
-                                    e = e10;
-                                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
-                                    z12 = z13;
-                                    if (z11) {
-                                    }
-                                    i7 = 0;
-                                    this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
-                                    if (z12) {
-                                    }
-                                }
-                            }
-                        } else if (optString.equals("partial")) {
-                            StringBuilder sb3 = new StringBuilder();
-                            this.a = DictationAsr.j(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                            DictationAsr.n(sb3, jSONObject.optJSONArray("open"), null);
-                            DictationAsr.n(sb3, jSONObject.optJSONArray("tail"), null);
-                            this.h = sb3.toString();
-                            z11 = true;
-                        }
-                    } else if (optString.equals("commit")) {
-                        DictationAsr.n(sb2, jSONObject.optJSONArray("words"), null);
-                        z11 = true;
-                    }
-                } catch (Exception e11) {
-                    e = e11;
-                    z10 = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        o0 o0Var;
+        o0 o0Var2;
+        o0 o0Var3;
+        switch (this.a) {
+            case 0:
+                l0 l0Var = this.b;
+                if (!l0Var.n() && (o0Var = l0Var.s) != null) {
+                    o0Var.setShown(false);
+                    break;
                 }
-            }
-            z10 = true;
-        } catch (Exception e12) {
-            e = e12;
-            z10 = true;
-            z11 = false;
-        }
-        z12 = z13;
-        if (z11) {
-            String sb4 = sb2.toString();
-            String str2 = (String) this.h;
-            boolean z14 = this.a;
-            r2Var.w++;
-            if (r2Var.g > sb4.length()) {
-                r2Var.g = 0;
-            }
-            r2Var.h = sb4.length();
-            r2Var.i = str2.isEmpty();
-            String trim = sb4.substring(r2Var.g).trim();
-            if (trim.length() > 180 && str2.isEmpty()) {
-                org.telegram.messenger.g0.g3(new o2(r2Var, r2Var.f, trim, z10, 0));
-                s2 s2Var = r2Var.x;
-                long j3 = s2Var.f;
-                s2Var.f = 1 + j3;
-                r2Var.f = j3;
-                r2Var.g = sb4.length();
-                r2Var.q.reset();
-                trim = "";
-            }
-            String q10 = DictationAsr.q(trim, str2, z14);
-            if (!q10.equals(r2Var.j)) {
-                r2Var.j = q10;
-                boolean z15 = 0;
-                org.telegram.messenger.g0.g3(new o2(r2Var, r2Var.f, q10, z15, 0));
-                i7 = z15;
-                this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
-                if (z12 && ((String) this.h).isEmpty() && sb2.length() > 0) {
-                    sb2.setLength(i7);
-                    r2Var.b();
-                    r2Var.h = i7;
-                    r2Var.g = i7;
-                    return;
+                break;
+            case 1:
+                l0 l0Var2 = this.b;
+                if (!l0Var2.n() && (o0Var2 = l0Var2.s) != null) {
+                    o0Var2.e();
+                    break;
                 }
-                return;
-            }
+                break;
+            case 2:
+                hf hfVar = this.b.f.a.F0;
+                if (hfVar != null) {
+                    hfVar.requestFocus();
+                    break;
+                }
+                break;
+            case 3:
+                ChatActivityEnterView chatActivityEnterView = this.b.f.a;
+                chatActivityEnterView.G1 = 0L;
+                chatActivityEnterView.H1 = null;
+                break;
+            case 4:
+                l0 l0Var3 = this.b;
+                rf rfVar = l0Var3.f;
+                String x10 = l0Var3.x();
+                d0 d0Var = new d0(l0Var3, 0);
+                rfVar.getClass();
+                ChatActivityEnterView chatActivityEnterView2 = rfVar.a;
+                org.telegram.ui.Components.m0 m0Var = new org.telegram.ui.Components.m0(chatActivityEnterView2.getContext(), chatActivityEnterView2.M4);
+                m0Var.x1(x10);
+                m0Var.f2 = d0Var;
+                m0Var.show();
+                break;
+            case 5:
+                hf hfVar2 = this.b.f.a.F0;
+                if (hfVar2 != null) {
+                    hfVar2.requestFocus();
+                    break;
+                }
+                break;
+            case 6:
+                l0 l0Var4 = this.b;
+                if (l0Var4.r == 3 && (o0Var3 = l0Var4.s) != null) {
+                    o0Var3.e();
+                    break;
+                }
+                break;
+            case 7:
+                l0 l0Var5 = this.b;
+                int i7 = l0Var5.r;
+                if (i7 == 3 || i7 == 4) {
+                    l0Var5.w.setIsland(true);
+                    break;
+                }
+                break;
+            case 8:
+                l0 l0Var6 = this.b;
+                if (l0Var6.r == 1) {
+                    l0Var6.K(true);
+                    break;
+                }
+                break;
+            case 9:
+                l0 l0Var7 = this.b;
+                if (l0Var7.r == 1) {
+                    l0Var7.K(false);
+                    break;
+                }
+                break;
+            case 10:
+                kr krVar = kr.h;
+                l0 l0Var8 = this.b;
+                l0Var8.b(0.0f, 320L, krVar);
+                org.telegram.messenger.g0.h3(new x(l0Var8, 1), 360L);
+                break;
+            default:
+                l0 l0Var9 = this.b;
+                if (!l0Var9.n()) {
+                    l0Var9.f.a.N1(null, true);
+                    l0Var9.b(0.0f, 240L, kr.g);
+                    break;
+                }
+                break;
         }
-        i7 = 0;
-        this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
-        if (z12) {
-        }
-    }
-
-    public x(android.support.v4.media.session.a0 a0Var, r2 r2Var) {
-        this.g = new StringBuilder();
-        this.h = "";
-        this.d = a0Var;
-        this.e = (t) a0Var.b;
-        this.f = r2Var;
     }
 }

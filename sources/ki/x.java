@@ -5,20 +5,20 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import di.xb;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.kq;
 import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class x extends dk0 {
     public ArrayList c;
@@ -61,12 +61,12 @@ public final class x extends dk0 {
         w wVar = (w) f1Var.a;
         String str = (String) this.c.get(i7);
         if (((Boolean) this.e.get(i7)).booleanValue()) {
-            nq nqVar = new nq(R.drawable.mini_ephemeral_hidden_14, 0);
-            nqVar.a(m6.A6);
-            nqVar.n = 1;
+            kq kqVar = new kq(R.drawable.mini_ephemeral_hidden_14, 0);
+            kqVar.a(n6.A6);
+            kqVar.n = 1;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             spannableStringBuilder.append((CharSequence) " *");
-            spannableStringBuilder.setSpan(nqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(kqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
             wVar.a.setText(spannableStringBuilder);
         } else {
             wVar.a.setText(str);
@@ -83,21 +83,21 @@ public final class x extends dk0 {
         wVar.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
         xb xbVar = new xb(context, 4);
         wVar.b = xbVar;
-        ls.i(xbVar);
+        ks.i(xbVar);
         xbVar.setTextSize(1, 16.0f);
-        int i10 = m6.G6;
-        t6.U(xbVar, i10, null);
+        int i10 = n6.G6;
+        u6.U(xbVar, i10, null);
         xbVar.setTag(Integer.valueOf(i10));
         xbVar.setMaxLines(2);
         xbVar.setEllipsize(TextUtils.TruncateAt.END);
-        wVar.addView(xbVar, ma.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.g0.L(8.0f), 0));
+        wVar.addView(xbVar, na.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.g0.L(8.0f), 0));
         TextView textView = new TextView(context);
         wVar.a = textView;
         textView.setTextSize(1, 14.0f);
-        int i11 = m6.y6;
-        t6.U(textView, i11, null);
+        int i11 = n6.y6;
+        u6.U(textView, i11, null);
         textView.setTag(Integer.valueOf(i11));
-        wVar.addView(textView, ma.p(-2, -2, 0.0f, 16));
+        wVar.addView(textView, na.p(-2, -2, 0.0f, 16));
         wVar.setLayoutParams(new v4.q0(-1, -2));
         return new mj0(wVar);
     }

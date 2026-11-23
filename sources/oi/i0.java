@@ -5,38 +5,37 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Cells.j9;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class i0 {
     public final f1 a;
-    public final h6 b;
+    public final i6 b;
     public final h0 c;
     public boolean d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public i0(Context context, h6 h6Var, h0 h0Var) {
-        this.b = h6Var;
+    public i0(Context context, i6 i6Var, h0 h0Var) {
+        this.b = i6Var;
         this.c = h0Var;
-        f1 f1Var = new f1(context, h6Var);
+        f1 f1Var = new f1(context, i6Var);
         this.a = f1Var;
         f1Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
         f1Var.setAllowNewlines(false);
         f1Var.setInputType(147457);
         f1Var.setGravity(8388659);
-        f1Var.setTextSize(1, Math.max(8, cz.W0 - 2));
-        f1Var.setHint(hd.N0(2131754451, null));
-        f1Var.setListener(new ji.l(this, h0Var, false, 8));
-        f1Var.setDelegate(new f0((int) (0 == true ? 1 : 0), (Object) this, (Object) h0Var));
+        f1Var.setTextSize(1, Math.max(8, bz.W0 - 2));
+        f1Var.setHint(gd.N0(2131754451, null));
+        f1Var.setListener(new j6.k(9, this, h0Var));
+        f1Var.setDelegate(new f0(0, this, h0Var));
         a();
     }
 
@@ -60,22 +59,22 @@ public final class i0 {
     public final void a() {
         f1 f1Var = this.a;
         f1Var.updateColors();
-        int i7 = m6.G6;
-        h6 h6Var = this.b;
-        m6.w0(i7, h6Var);
-        t6.V(f1Var, t6.K(0.5f, i7), h6Var);
-        p6 K = t6.K(0.35f, i7);
-        t6.n(f1Var, 1, K.a, -1, 2, K.d, h6Var);
+        int i7 = n6.G6;
+        i6 i6Var = this.b;
+        n6.w0(i7, i6Var);
+        u6.V(f1Var, u6.K(0.5f, i7), i6Var);
+        q6 K = u6.K(0.35f, i7);
+        u6.n(f1Var, 1, K.a, -1, 2, K.d, i6Var);
     }
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a c12 = this.c.c1();
-        if (c12 == null || (pageBlock = c12.b) == null) {
+        a V = this.c.V();
+        if (V == null || (pageBlock = V.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = c12.b.caption.text;
+        TL_iv.RichText richText = V.b.caption.text;
         String l10 = c6.l(richText);
         f1 f1Var = this.a;
         if (String.valueOf(f1Var.getText()).equals(l10)) {
@@ -87,14 +86,14 @@ public final class i0 {
 
     public final void c(Canvas canvas) {
         h0 h0Var = this.c;
-        j9 P0 = h0Var.P0();
-        if (P0 != null) {
+        i9 K = h0Var.K();
+        if (K != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            P0.Z(canvas, h0Var.a1(), 0);
+            K.Z(canvas, h0Var.P(), 0);
             canvas.restore();
         }
     }
@@ -143,11 +142,11 @@ public final class i0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a c12 = this.c.c1();
-        if (c12 == null || (pageBlock = c12.b) == null) {
+        a V = this.c.V();
+        if (V == null || (pageBlock = V.b) == null) {
             return;
         }
         d(pageBlock);
-        c12.b.caption.text = c6.f(this.a.getText());
+        V.b.caption.text = c6.f(this.a.getText());
     }
 }

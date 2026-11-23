@@ -31,13 +31,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import q4.q;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class l extends ViewGroup {
     public static final b u0;
@@ -834,7 +834,7 @@ public class l extends ViewGroup {
                     m7 m7Var = (m7) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         m7Var.a(false);
-                        g0.h3(new f2.a(m7Var, 17), 16L);
+                        g0.h3(new f2.a(m7Var, 16), 16L);
                     } else {
                         if (!m7Var.d) {
                             m7Var.a(true);
@@ -952,7 +952,7 @@ public class l extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & ls.e4;
+        int action = motionEvent.getAction() & ks.e4;
         if (action == 3 || action == 1) {
             v();
             return false;
@@ -1069,7 +1069,7 @@ public class l extends ViewGroup {
                 if (fVar.a) {
                     int i19 = fVar.b;
                     int i20 = i19 & 7;
-                    int i21 = i19 & ls.x1;
+                    int i21 = i19 & ks.x1;
                     if (i20 != 1) {
                         if (i20 == 3) {
                             i13 = childAt.getMeasuredWidth() + paddingLeft;
@@ -1184,7 +1184,7 @@ public class l extends ViewGroup {
             if (childAt.getVisibility() != 8 && (fVar2 = (f) childAt.getLayoutParams()) != null && fVar2.a) {
                 int i14 = fVar2.b;
                 int i15 = i14 & 7;
-                int i16 = i14 & ls.x1;
+                int i16 = i14 & ks.x1;
                 boolean z11 = i16 == 48 || i16 == 80;
                 if (i15 != 3 && i15 != 5) {
                     z10 = false;
@@ -1302,7 +1302,7 @@ public class l extends ViewGroup {
                 this.a0 = VelocityTracker.obtain();
             }
             this.a0.addMovement(motionEvent);
-            int action = motionEvent.getAction() & ls.e4;
+            int action = motionEvent.getAction() & ks.e4;
             if (action == 0) {
                 this.r.abortAnimation();
                 this.L = false;

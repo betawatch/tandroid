@@ -1,42 +1,27 @@
 package ai;
 
-import java.util.Comparator;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l implements Comparator {
+public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float[] b;
+    public final /* synthetic */ q b;
 
-    public /* synthetic */ l(int i7, float[] fArr) {
+    public /* synthetic */ l(q qVar, int i7) {
         this.a = i7;
-        this.b = fArr;
+        this.b = qVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float[] fArr = this.b;
-                t[] tVarArr = DictationAsr.a;
-                return Float.compare(fArr[((Integer) obj2).intValue()], fArr[((Integer) obj).intValue()]);
-            case 1:
-                float[] fArr2 = this.b;
-                return Float.compare(fArr2[(((Integer) obj).intValue() * 3) + 2], fArr2[(((Integer) obj2).intValue() * 3) + 2]);
-            case 2:
-                float[] fArr3 = this.b;
-                return Float.compare(fArr3[(((Integer) obj).intValue() * 3) + 2], fArr3[(((Integer) obj2).intValue() * 3) + 2]);
-            case 3:
-                float[] fArr4 = this.b;
-                return Float.compare(fArr4[(((Integer) obj).intValue() * 3) + 2], fArr4[(((Integer) obj2).intValue() * 3) + 2]);
+                DictationAsr.I(this.b);
+                break;
             default:
-                float[] fArr5 = this.b;
-                Integer num = (Integer) obj2;
-                float f10 = fArr5[((Integer) obj).intValue()];
-                float log = f10 > 0.0f ? (float) Math.log(f10) : 0.0f;
-                float f11 = fArr5[num.intValue()];
-                return Float.compare(log, f11 > 0.0f ? (float) Math.log(f11) : 0.0f);
+                DictationAsr.I(this.b);
+                break;
         }
     }
 }

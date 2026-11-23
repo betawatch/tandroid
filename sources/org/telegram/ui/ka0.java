@@ -1,36 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class ka0 extends org.telegram.ui.Components.jt0 {
-    public final /* synthetic */ qa0 x2;
+public final class ka0 extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ pa0 o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka0(qa0 qa0Var, Context context, org.telegram.ui.Components.bt0 bt0Var, qa0 qa0Var2, ja0 ja0Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, 0L, bt0Var, 0, null, null, null, 8, 0, qa0Var2, ja0Var, 0, h6Var, null);
-        this.x2 = qa0Var;
+    public ka0(pa0 pa0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = pa0Var;
     }
 
-    @Override // org.telegram.ui.Components.jt0
-    public final int O0() {
-        return 32;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final boolean Y() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final int e1() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.x2.T0;
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.P0 = null;
     }
 }

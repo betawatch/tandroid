@@ -2,11 +2,11 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class y4 {
     public final x4 a = new x4(this, 0);
-    public final org.telegram.messenger.ls b = org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0);
+    public final org.telegram.messenger.ks b = org.telegram.messenger.ks.f(org.telegram.messenger.i10.t0);
     public final Object c;
     public final int d;
     public final int e;

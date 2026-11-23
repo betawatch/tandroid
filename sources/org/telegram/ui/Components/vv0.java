@@ -1,39 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vv0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kw0 b;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ vv0(kw0 kw0Var, int i7) {
-        this.a = i7;
-        this.b = kw0Var;
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final class vv0 extends zo0 {
+    public final /* synthetic */ jw0 V2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vv0(jw0 jw0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, null, str, false, str2, false, i6Var);
+        this.V2 = jw0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.o1.f();
-                break;
-            case 1:
-                this.b.o1.f();
-                break;
-            case 2:
-                kw0 kw0Var = this.b;
-                kw0Var.dismiss();
-                org.telegram.messenger.si.d0(kw0Var.a).k2(kw0Var.getContext(), kw0Var.N1, 1, kw0Var.G1, false, false);
-                break;
-            case 3:
-                kw0 kw0Var2 = this.b;
-                org.telegram.messenger.np.u1(kw0Var2.a).F3("stickers", kw0Var2.G1, 1, null);
-                break;
-            default:
-                kw0 kw0Var3 = this.b;
-                kw0Var3.dismiss();
-                org.telegram.messenger.si.d0(kw0Var3.a).k2(kw0Var3.getContext(), kw0Var3.N1, 1, kw0Var3.G1, false, false);
-                break;
+    @Override // org.telegram.ui.Components.zo0, org.telegram.ui.ActionBar.w2
+    public final void L() {
+        super.L();
+        org.telegram.ui.ActionBar.g2 g2Var = this.V2.G1;
+        if (g2Var instanceof org.telegram.ui.bn) {
+            org.telegram.messenger.g0.Z2(g2Var.getParentActivity(), g2Var.getClassGuid());
+            if (((org.telegram.ui.bn) g2Var).a0.getVisibility() == 0) {
+                g2Var.getFragmentView().requestLayout();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.g0.h3(new org.telegram.ui.f0(this, hVar, i7, 26), 100L);
         }
     }
 }

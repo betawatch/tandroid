@@ -6,36 +6,36 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.fa;
+import c8.ga;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class u0 extends y implements org.telegram.ui.ActionBar.b6, i9 {
-    public final h6 n;
+public final class u0 extends y implements org.telegram.ui.ActionBar.c6, h9 {
+    public final i6 n;
     public final Paint r;
     public final Paint s;
     public r2 w;
     public boolean x;
 
-    public u0(Context context, h6 h6Var) {
+    public u0(Context context, i6 i6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
-        this.n = h6Var;
+        this.n = i6Var;
         setWillNotDraw(false);
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.ml));
-        hashSet.add(Integer.valueOf(m6.lg));
+        hashSet.add(Integer.valueOf(n6.ml));
+        hashSet.add(Integer.valueOf(n6.lg));
     }
 
     @Override // oi.y
@@ -51,17 +51,17 @@ public final class u0 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Cells.i9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         int i7 = this.x ? 0 : this.c;
         int g10 = (g() - i7) / 4;
-        arrayList.add(fa.a((i7 + g10) - org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f) + (g() - g10), org.telegram.messenger.g0.L(12.0f)));
+        arrayList.add(ga.a((i7 + g10) - org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f) + (g() - g10), org.telegram.messenger.g0.L(12.0f)));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        j9 textSelectionHelper;
+        i9 textSelectionHelper;
         int i7 = this.x ? 0 : this.c;
         int g10 = (g() - i7) / 4;
         int i10 = i7 + g10;
@@ -91,11 +91,11 @@ public final class u0 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(12.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = m6.ml;
-        h6 h6Var = this.n;
-        this.r.setColor(m6.w0(i7, h6Var));
-        this.s.setColor(m6.w0(m6.lg, h6Var));
+        int i7 = n6.ml;
+        i6 i6Var = this.n;
+        this.r.setColor(n6.w0(i7, i6Var));
+        this.s.setColor(n6.w0(n6.lg, i6Var));
     }
 }

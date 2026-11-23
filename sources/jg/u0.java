@@ -1,21 +1,21 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.pi;
+import org.telegram.messenger.oi;
 import org.telegram.ui.Cells.h2;
-import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.n90;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements pi, h2 {
+public final /* synthetic */ class u0 implements oi, h2 {
     public final /* synthetic */ h1 a;
 
     public /* synthetic */ u0(h1 h1Var) {
         this.a = h1Var;
     }
 
-    @Override // org.telegram.messenger.pi
-    public void e(String str, ArrayList arrayList) {
+    @Override // org.telegram.messenger.oi
+    public void c(String str, ArrayList arrayList) {
         h1 h1Var = this.a;
         h1Var.O = arrayList;
         h1Var.J = null;
@@ -28,8 +28,8 @@ public final /* synthetic */ class u0 implements pi, h2 {
         h1Var.L = null;
         h1Var.Q = null;
         h1Var.f();
-        q90 q90Var = h1Var.W;
+        n90 n90Var = h1Var.W;
         ArrayList arrayList2 = h1Var.O;
-        q90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+        n90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

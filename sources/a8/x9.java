@@ -1,41 +1,17 @@
 package a8;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class x9 {
-    public static Intent a(Context context, ComponentName componentName) {
-        String b10 = b(context, componentName);
-        if (b10 == null) {
-            return null;
-        }
-        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b10);
-        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+    public static float a(float f10, float f11, float f12, float f13) {
+        double d = f10 - f12;
+        double d2 = f11 - f13;
+        return (float) Math.sqrt((d2 * d2) + (d * d));
     }
 
-    public static String b(Context context, ComponentName componentName) {
-        String string;
-        PackageManager packageManager = context.getPackageManager();
-        int i7 = Build.VERSION.SDK_INT;
-        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i7 >= 29 ? 269222528 : i7 >= 24 ? 787072 : 640);
-        String str = activityInfo.parentActivityName;
-        if (str != null) {
-            return str;
-        }
-        Bundle bundle = activityInfo.metaData;
-        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
-            return null;
-        }
-        if (string.charAt(0) != '.') {
-            return string;
-        }
-        return context.getPackageName() + string;
+    public static float b(int i7, int i10, int i11, int i12) {
+        double d = i7 - i11;
+        double d2 = i10 - i12;
+        return (float) Math.sqrt((d2 * d2) + (d * d));
     }
 }

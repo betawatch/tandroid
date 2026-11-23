@@ -2,7 +2,7 @@ package m1;
 
 import androidx.datastore.core.NativeSharedCounter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p0 extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -42,11 +42,11 @@ public final class p0 extends kd.j implements rd.p {
         switch (i7) {
             case 0:
                 jd.a aVar = jd.a.a;
-                b7.h.b(obj);
+                c8.z.b(obj);
                 return new Integer(nativeSharedCounter.nativeGetCounterValue(((z0) t0Var.i.getValue()).a));
             default:
                 jd.a aVar2 = jd.a.a;
-                b7.h.b(obj);
+                c8.z.b(obj);
                 return new Integer(nativeSharedCounter.nativeIncrementAndGetCounterValue(((z0) t0Var.i.getValue()).a));
         }
     }

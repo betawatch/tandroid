@@ -1,22 +1,22 @@
 package rg;
 
 import java.util.ArrayList;
-import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.dk0;
-import v4.o;
+import org.telegram.ui.Components.z01;
+import v4.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class b extends dk0 {
-    public final a11 c = new a11();
+    public final z01 c = new z01();
 
     public final void E(ArrayList arrayList, ArrayList arrayList2) {
         if (arrayList2 == null) {
             arrayList2 = new ArrayList();
         }
-        a11 a11Var = this.c;
-        a11Var.c = arrayList;
-        a11Var.d = arrayList2;
-        o.c(a11Var, true).c(this);
+        z01 z01Var = this.c;
+        z01Var.c = arrayList;
+        z01Var.d = arrayList2;
+        p.c(z01Var, true).c(this);
     }
 }

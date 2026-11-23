@@ -1,14 +1,14 @@
 package e2;
 
-import a8.ja;
+import a8.ka;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final ArrayList a = new ArrayList();
@@ -90,7 +90,7 @@ public abstract class s0 {
         r0 f10;
         String str2 = null;
         if (str != null) {
-            String c10 = ja.c(str.trim());
+            String c10 = ka.c(str.trim());
             if (c10.startsWith("avc1") || c10.startsWith("avc3")) {
                 return "video/avc";
             }
@@ -208,34 +208,34 @@ public abstract class s0 {
         }
         switch (i7) {
             case 96:
-            case ls.i1 /* 97 */:
-            case ls.j1 /* 98 */:
-            case ls.k1 /* 99 */:
-            case ls.l1 /* 100 */:
+            case ks.i1 /* 97 */:
+            case ks.j1 /* 98 */:
+            case ks.k1 /* 99 */:
+            case ks.l1 /* 100 */:
             case 101:
                 return "video/mpeg2";
-            case ls.n1 /* 102 */:
-            case ls.o1 /* 103 */:
-            case ls.p1 /* 104 */:
+            case ks.n1 /* 102 */:
+            case ks.o1 /* 103 */:
+            case ks.p1 /* 104 */:
                 return "audio/mp4a-latm";
-            case ls.q1 /* 105 */:
-            case ls.s1 /* 107 */:
+            case ks.q1 /* 105 */:
+            case ks.s1 /* 107 */:
                 return "audio/mpeg";
-            case ls.r1 /* 106 */:
+            case ks.r1 /* 106 */:
                 return "video/mpeg";
-            case ls.t1 /* 108 */:
+            case ks.t1 /* 108 */:
                 return "image/jpeg";
             default:
                 switch (i7) {
-                    case ls.z2 /* 169 */:
-                    case ls.C2 /* 172 */:
+                    case ks.z2 /* 169 */:
+                    case ks.C2 /* 172 */:
                         return "audio/vnd.dts";
-                    case ls.A2 /* 170 */:
-                    case ls.B2 /* 171 */:
+                    case ks.A2 /* 170 */:
+                    case ks.B2 /* 171 */:
                         return "audio/vnd.dts.hd";
-                    case ls.D2 /* 173 */:
+                    case ks.D2 /* 173 */:
                         return "audio/opus";
-                    case ls.E2 /* 174 */:
+                    case ks.E2 /* 174 */:
                         return "audio/ac4";
                     default:
                         return null;
@@ -330,7 +330,7 @@ public abstract class s0 {
         if (str == null) {
             return null;
         }
-        c10 = ja.c(str);
+        c10 = ka.c(str);
         c10.getClass();
         switch (c10) {
             case "video/x-mvhevc":

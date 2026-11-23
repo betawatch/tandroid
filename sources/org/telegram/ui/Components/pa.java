@@ -1,44 +1,106 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class pa extends v4.k0 {
-    public final /* synthetic */ v4.k0 a;
-    public final /* synthetic */ qa b;
+public final class pa extends dk0 {
+    public final /* synthetic */ int c;
+    public final Context d;
+    public final Object e;
+    public final /* synthetic */ KeyEvent.Callback f;
 
-    public pa(qa qaVar, v4.k0 k0Var) {
-        this.b = qaVar;
-        this.a = k0Var;
+    public pa(gj gjVar, Context context) {
+        this.c = 1;
+        this.f = gjVar;
+        this.e = new ArrayList();
+        this.d = context;
     }
 
-    @Override // v4.k0
-    public final void a() {
-        this.a.a();
+    @Override // v4.i0
+    public void B(v4.k0 k0Var) {
+        switch (this.c) {
+            case 0:
+                ((dk0) this.e).B(new oa(this, k0Var));
+                break;
+            default:
+                super.B(k0Var);
+                break;
+        }
     }
 
-    @Override // v4.k0
-    public final void b(int i7, int i10) {
-        this.a.b(i7 + (!((sa) this.b.f).K1 ? 1 : 0), i10);
+    @Override // org.telegram.ui.Components.dk0
+    public final boolean D(v4.f1 f1Var) {
+        switch (this.c) {
+            case 0:
+                return ((dk0) this.e).D(f1Var);
+            default:
+                return f1Var.f == 0;
+        }
     }
 
-    @Override // v4.k0
-    public final void c(int i7, int i10, Object obj) {
-        this.a.c(i7 + (!((sa) this.b.f).K1 ? 1 : 0), i10, obj);
+    @Override // v4.i0
+    public final int b() {
+        switch (this.c) {
+            case 0:
+                return ((dk0) this.e).b() + 1;
+            default:
+                return ((ArrayList) this.e).size();
+        }
     }
 
-    @Override // v4.k0
-    public final void d(int i7, int i10) {
-        this.a.d(i7 + (!((sa) this.b.f).K1 ? 1 : 0), i10);
+    @Override // v4.i0
+    public final int d(int i7) {
+        switch (this.c) {
+            case 0:
+                ra raVar = (ra) this.f;
+                if (i7 == (raVar.K1 ? b() - 1 : 0)) {
+                    return -1000;
+                }
+                return ((dk0) this.e).d(i7 - (!raVar.K1 ? 1 : 0));
+            default:
+                return 0;
+        }
     }
 
-    @Override // v4.k0
-    public final void e(int i7, int i10) {
-        int i11 = !((sa) this.b.f).K1 ? 1 : 0;
-        this.a.e(i7 + i11, i10 + i11);
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        switch (this.c) {
+            case 0:
+                ra raVar = (ra) this.f;
+                if (i7 != (raVar.K1 ? b() - 1 : 0)) {
+                    ((dk0) this.e).t(f1Var, i7 - (!raVar.K1 ? 1 : 0));
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Cells.wa waVar = (org.telegram.ui.Cells.wa) f1Var.a;
+                waVar.d(1, false, false);
+                waVar.setSize(((gj) this.f).r);
+                waVar.e(1, ((ArrayList) this.e).get(i7), null, 0);
+                break;
+        }
     }
 
-    @Override // v4.k0
-    public final void f(int i7, int i10) {
-        this.a.f(i7 + (!((sa) this.b.f).K1 ? 1 : 0), i10);
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        switch (this.c) {
+            case 0:
+                return i7 == -1000 ? new mj0(new bi.o3((ra) this.f, this.d)) : ((dk0) this.e).x(viewGroup, i7);
+            default:
+                fj fjVar = new fj(this, this.d);
+                fjVar.b = false;
+                return new mj0(fjVar);
+        }
+    }
+
+    public pa(ra raVar, dk0 dk0Var, Context context) {
+        this.c = 0;
+        this.f = raVar;
+        this.e = dk0Var;
+        this.d = context;
     }
 }

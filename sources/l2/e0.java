@@ -1,45 +1,34 @@
 package l2;
 
-import android.content.Context;
-import j$.util.function.IntConsumer$-CC;
-import java.lang.ref.WeakReference;
-import java.util.function.IntConsumer;
+import android.os.Handler;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class e0 {
-    public final WeakReference a;
-    public final c0 b;
-    public final /* synthetic */ f0 c;
+public final /* synthetic */ class e0 implements Executor {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.function.IntConsumer, l2.c0] */
-    public e0(f0 f0Var, Context context) {
-        this.c = f0Var;
-        this.a = new WeakReference(context);
-        ?? r02 = new IntConsumer() { // from class: l2.c0
-            @Override // java.util.function.IntConsumer
-            public final void accept(int i7) {
-                f0 f0Var2 = e0.this.c;
-                if (f0Var2.i0) {
-                    return;
-                }
-                f0Var2.t1(1, 19, Integer.valueOf(i7));
-            }
-
-            public /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-                return IntConsumer$-CC.$default$andThen(this, intConsumer);
-            }
-        };
-        this.b = r02;
-        context.registerDeviceIdChangeListener(new d0(f0Var.v.a(f0Var.t, null), 0), r02);
+    public /* synthetic */ e0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static void a(e0 e0Var) {
-        Context context = (Context) e0Var.a.get();
-        if (context == null) {
-            return;
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((h2.i0) this.b).d(runnable);
+                break;
+            case 1:
+                ((Handler) this.b).post(runnable);
+                break;
+            case 2:
+                h2.l0.W(((p4.d0) this.b).l, runnable);
+                break;
+            default:
+                ((s4.b) this.b).post(runnable);
+                break;
         }
-        context.unregisterDeviceIdChangeListener(e0Var.b);
     }
 }

@@ -7,9 +7,9 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class y2 extends View implements b6 {
+public final class y2 extends View implements c6 {
     public final /* synthetic */ a3 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,7 +29,7 @@ public final class y2 extends View implements b6 {
         setTranslationY(org.telegram.messenger.g0.n);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         a3 a3Var = this.a;
         Paint paint = a3Var.d;
@@ -38,7 +38,7 @@ public final class y2 extends View implements b6 {
             if (j3Var == null) {
                 return;
             }
-            int e10 = j3Var.e(m6.x0(null, m6.a7, false));
+            int e10 = j3Var.e(n6.x0(null, n6.a7, false));
             if (paint.getColor() != e10) {
                 paint.setColor(e10);
                 invalidate();
@@ -50,7 +50,7 @@ public final class y2 extends View implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

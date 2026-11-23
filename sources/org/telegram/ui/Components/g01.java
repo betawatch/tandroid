@@ -1,62 +1,201 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.util.SparseIntArray;
+import java.io.File;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class g01 extends FrameLayout {
-    public final ImageView a;
-    public final e01 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g01(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), -854795));
-        addView(view, c8.ma.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, c8.ma.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        d01 d01Var = new d01();
-        imageView2.setImageDrawable(d01Var);
-        d01Var.f = org.telegram.messenger.g0.L(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, c8.ma.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new j70(this, 19));
-        e01 e01Var = new e01(this, context);
-        this.b = e01Var;
-        e01Var.setTextSize(1, 16.0f);
-        e01Var.setHintTextColor(-6774617);
-        e01Var.setTextColor(-14540254);
-        e01Var.setBackgroundDrawable(null);
-        e01Var.setPadding(0, 0, 0, 0);
-        e01Var.setMaxLines(1);
-        e01Var.setLines(1);
-        e01Var.setSingleLine(true);
-        e01Var.setImeOptions(268435459);
-        e01Var.setHint(org.telegram.messenger.hd.N0(2131745640, null));
-        e01Var.setCursorColor(-11491093);
-        e01Var.setCursorSize(org.telegram.messenger.g0.L(20.0f));
-        e01Var.setCursorWidth(1.5f);
-        addView(e01Var, c8.ma.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        e01Var.addTextChangedListener(new f01(this));
-        e01Var.setOnEditorActionListener(new h(this, 11));
+public final class g01 extends BitmapDrawable {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public g01(File file, org.telegram.messenger.t5 t5Var) {
+        super(r16);
+        int i7;
+        int i10;
+        BitmapDrawable bitmapDrawable;
+        int i11;
+        Bitmap bitmap;
+        za0 za0Var;
+        Bitmap bitmap2;
+        Bitmap decodeFile;
+        int i12;
+        new RectF();
+        Paint paint = new Paint();
+        Bitmap.Config config = Bitmap.Config.ARGB_8888;
+        Bitmap c10 = org.telegram.messenger.vr.c(560, 678);
+        Canvas canvas = new Canvas(c10);
+        SparseIntArray T0 = org.telegram.ui.ActionBar.n6.T0(null, t5Var.c.d, null);
+        SparseIntArray clone = T0.clone();
+        t5Var.d.d(T0, clone);
+        int I0 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.s8);
+        int I02 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.v8);
+        int I03 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.Je);
+        int I04 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.Oe);
+        int I05 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.ra);
+        int I06 = org.telegram.ui.ActionBar.n6.I0(clone, org.telegram.ui.ActionBar.n6.rb);
+        int i13 = clone.get(org.telegram.ui.ActionBar.n6.Ee);
+        int i14 = clone.get(org.telegram.ui.ActionBar.n6.Fe);
+        int i15 = clone.get(org.telegram.ui.ActionBar.n6.Ge);
+        int i16 = clone.get(org.telegram.ui.ActionBar.n6.He);
+        int i17 = clone.get(org.telegram.ui.ActionBar.n6.Ie);
+        Drawable mutate = org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
+        org.telegram.ui.ActionBar.n6.C1(I02, mutate);
+        Drawable mutate2 = org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
+        org.telegram.ui.ActionBar.n6.C1(I02, mutate2);
+        Drawable mutate3 = org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
+        org.telegram.ui.ActionBar.n6.C1(I04, mutate3);
+        Drawable mutate4 = org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
+        org.telegram.ui.ActionBar.n6.C1(I04, mutate4);
+        org.telegram.ui.ActionBar.u4[] u4VarArr = new org.telegram.ui.ActionBar.u4[2];
+        int i18 = 0;
+        while (i18 < 2) {
+            Drawable drawable = mutate4;
+            org.telegram.ui.ActionBar.u4[] u4VarArr2 = u4VarArr;
+            org.telegram.ui.ActionBar.s5 s5Var = new org.telegram.ui.ActionBar.s5(i18 == 1, clone, 1);
+            u4VarArr2[i18] = s5Var;
+            org.telegram.ui.ActionBar.n6.C1(i18 == 1 ? I06 : I05, s5Var);
+            i18++;
+            mutate4 = drawable;
+            u4VarArr = u4VarArr2;
+        }
+        Drawable drawable2 = mutate4;
+        org.telegram.ui.ActionBar.u4[] u4VarArr3 = u4VarArr;
+        if (i15 != 0) {
+            i7 = i13;
+            i10 = i14;
+            i11 = 120;
+            za0Var = new za0(true, i13, i14, i15, i16);
+            bitmapDrawable = null;
+            bitmap = c10;
+        } else {
+            i7 = i13;
+            i10 = i14;
+            int width = c10.getWidth();
+            int height = c10.getHeight() - 120;
+            GradientDrawable.Orientation d = o9.d(i17);
+            i11 = 120;
+            Resources resources = org.telegram.messenger.t0.b.getResources();
+            Rect e10 = o9.e(d, width, height);
+            bitmap = c10;
+            Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            Utilities.drawDitheredGradient(createBitmap, new int[]{i7, i10}, e10.left, e10.top, e10.right, e10.bottom);
+            bitmapDrawable = new BitmapDrawable(resources, createBitmap);
+            za0Var = null;
+        }
+        int V0 = org.telegram.messenger.g0.V0(org.telegram.messenger.g0.w0(i7, i10), false);
+        if (bitmapDrawable != null) {
+            bitmapDrawable.setBounds(0, i11, bitmap.getWidth(), bitmap.getHeight() - 120);
+            bitmapDrawable.draw(canvas);
+        }
+        if (file != null) {
+            if ("application/x-tgwallpattern".equals(t5Var.mime_type)) {
+                decodeFile = org.telegram.messenger.lz.f(file, 560, 678, 1);
+            } else {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 1;
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+                float f10 = options.outWidth;
+                float f11 = options.outHeight;
+                float f12 = 560;
+                float f13 = 678;
+                float min = Math.min(f10 / f12, f11 / f13);
+                min = min < 1.2f ? 1.0f : min;
+                options.inJustDecodeBounds = false;
+                if (min <= 1.0f || (f10 <= f12 && f11 <= f13)) {
+                    options.inSampleSize = (int) min;
+                } else {
+                    int i19 = 1;
+                    while (true) {
+                        i12 = i19 * 2;
+                        if (i19 * 4 >= min) {
+                            break;
+                        } else {
+                            i19 = i12;
+                        }
+                    }
+                    options.inSampleSize = i12;
+                }
+                decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+            }
+            bitmap2 = decodeFile;
+            if (bitmap2 != null) {
+                if (za0Var != null) {
+                    za0Var.s((int) (t5Var.d.p * 100.0f), bitmap2);
+                    za0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+                    za0Var.draw(canvas);
+                } else {
+                    Paint paint2 = new Paint(2);
+                    if (t5Var.d.p >= 0.0f) {
+                        paint2.setColorFilter(new PorterDuffColorFilter(V0, PorterDuff.Mode.SRC_IN));
+                    }
+                    paint2.setAlpha(org.telegram.messenger.ks.e4);
+                    float max = Math.max(560 / bitmap2.getWidth(), 678 / bitmap2.getHeight());
+                    int width2 = (int) (bitmap2.getWidth() * max);
+                    canvas.save();
+                    canvas.translate((560 - width2) / 2, (678 - ((int) (bitmap2.getHeight() * max))) / 2);
+                    canvas.scale(max, max);
+                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint2);
+                    canvas.restore();
+                }
+            }
+        } else {
+            bitmap2 = null;
+        }
+        if (bitmap2 == null && za0Var != null) {
+            za0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+            za0Var.draw(canvas);
+        }
+        paint.setColor(I0);
+        canvas.drawRect(0.0f, 0.0f, bitmap.getWidth(), 120.0f, paint);
+        if (mutate != null) {
+            int intrinsicHeight = (120 - mutate.getIntrinsicHeight()) / 2;
+            mutate.setBounds(13, intrinsicHeight, mutate.getIntrinsicWidth() + 13, mutate.getIntrinsicHeight() + intrinsicHeight);
+            mutate.draw(canvas);
+        }
+        if (mutate2 != null) {
+            int width3 = (bitmap.getWidth() - mutate2.getIntrinsicWidth()) - 10;
+            int intrinsicHeight2 = (120 - mutate2.getIntrinsicHeight()) / 2;
+            mutate2.setBounds(width3, intrinsicHeight2, mutate2.getIntrinsicWidth() + width3, mutate2.getIntrinsicHeight() + intrinsicHeight2);
+            mutate2.draw(canvas);
+        }
+        u4VarArr3[1].setBounds(org.telegram.messenger.ks.r2, org.telegram.messenger.ks.t3, bitmap.getWidth() - 20, org.telegram.messenger.ks.f5);
+        u4VarArr3[1].o(0, 560, 522);
+        u4VarArr3[1].draw(canvas);
+        u4VarArr3[1].setBounds(org.telegram.messenger.ks.r2, 430, bitmap.getWidth() - 20, 522);
+        u4VarArr3[1].o(430, 560, 522);
+        u4VarArr3[1].draw(canvas);
+        u4VarArr3[0].setBounds(20, org.telegram.messenger.ks.u5, 399, 415);
+        u4VarArr3[0].o(org.telegram.messenger.ks.u5, 560, 522);
+        u4VarArr3[0].draw(canvas);
+        paint.setColor(I03);
+        canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);
+        if (mutate3 != null) {
+            int intrinsicHeight3 = ((120 - mutate3.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
+            mutate3.setBounds(22, intrinsicHeight3, mutate3.getIntrinsicWidth() + 22, mutate3.getIntrinsicHeight() + intrinsicHeight3);
+            mutate3.draw(canvas);
+        }
+        if (drawable2 != null) {
+            int width4 = (bitmap.getWidth() - drawable2.getIntrinsicWidth()) - 22;
+            int intrinsicHeight4 = ((120 - drawable2.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
+            drawable2.setBounds(width4, intrinsicHeight4, drawable2.getIntrinsicWidth() + width4, drawable2.getIntrinsicHeight() + intrinsicHeight4);
+            drawable2.draw(canvas);
+        }
     }
 }

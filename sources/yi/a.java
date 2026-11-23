@@ -5,15 +5,15 @@ import android.os.Handler;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import ji.o;
+import ji.n;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.le;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.wr;
-import org.telegram.ui.qx0;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.vr;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class a implements Runnable {
                     dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
                     dVar.r = SystemClock.elapsedRealtime();
                     ac.e eVar = dVar.g;
-                    ((j) eVar.c).i.post(new qx0(eVar, eVar.a, 5));
+                    ((j) eVar.c).i.post(new ox0(eVar, eVar.a, 5));
                     dVar.i.post(new a(dVar, 2));
                     return;
                 } catch (Throwable th2) {
@@ -87,10 +87,10 @@ public final /* synthetic */ class a implements Runnable {
                         throw new IllegalStateException("AudioRecord read failed: " + read);
                     }
                     byteBuffer.limit(read);
-                    o oVar = wr.k;
-                    if (oVar != null && read > 0) {
+                    n nVar = vr.k;
+                    if (nVar != null && read > 0) {
                         try {
-                            oVar.n(byteBuffer, read, 48000, 2);
+                            nVar.l(byteBuffer, read, 48000, 2);
                         } catch (Throwable th3) {
                             a8.g(th3, true);
                         }
@@ -121,9 +121,9 @@ public final /* synthetic */ class a implements Runnable {
                                         long j13 = jVar.j();
                                         double d = sqrt;
                                         if (d >= 0.0d) {
-                                            MediaController mediaController = ((le) jVar.f.b).a;
+                                            MediaController mediaController = ((ke) jVar.f.b).a;
                                             mediaController.l1 = j13;
-                                            ls.f(mediaController.i1).k(ls.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
+                                            ks.f(mediaController.i1).k(ks.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
                                         }
                                     }
                                 }

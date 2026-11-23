@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cg implements org.telegram.messenger.or {
+public final /* synthetic */ class cg implements org.telegram.messenger.nr {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
 
@@ -11,13 +11,13 @@ public final /* synthetic */ class cg implements org.telegram.messenger.or {
         this.b = bnVar;
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.nr
     public final void a(int i7) {
         switch (this.a) {
             case 0:
                 bn bnVar = this.b;
                 if (bnVar.getParentActivity() != null && bnVar.fragmentView != null && i7 > 0) {
-                    org.telegram.ui.Components.lc.b0(bnVar).m(org.telegram.ui.Components.kc.r, i7, 0, 0, bnVar.Ba).j();
+                    org.telegram.ui.Components.kc.b0(bnVar).m(org.telegram.ui.Components.jc.r, i7, 0, 0, bnVar.Ba).j();
                     break;
                 }
                 break;

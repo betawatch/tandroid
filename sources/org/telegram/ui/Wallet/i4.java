@@ -1,31 +1,11 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
+import org.telegram.messenger.fs;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m4 b;
-
-    public /* synthetic */ i4(m4 m4Var, int i7) {
-        this.a = i7;
-        this.b = m4Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Cells.v0 v0Var = this.b.a;
-                if (v0Var.getParent() instanceof View) {
-                    ((View) v0Var.getParent()).invalidate();
-                    break;
-                }
-                break;
-            default:
-                this.b.p();
-                break;
-        }
+public final /* synthetic */ class i4 implements fs {
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
     }
 }

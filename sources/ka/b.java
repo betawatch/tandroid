@@ -1,7 +1,7 @@
 package ka;
 
-import b7.h;
 import gd.k;
+import hd.h;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
@@ -16,7 +16,7 @@ import zd.b0;
 import zd.w1;
 import zd.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends j implements p {
     public final /* synthetic */ int a;
@@ -81,19 +81,19 @@ public final class b extends j implements p {
         switch (i10) {
             case 0:
                 jd.a aVar = jd.a.a;
-                h.b(obj);
+                c8.z.b(obj);
                 ((l) obj2).invoke((q1.b) this.b);
                 return kVar;
             case 1:
                 jd.a aVar2 = jd.a.a;
-                h.b(obj);
+                c8.z.b(obj);
                 e1 e1Var = (e1) this.b;
                 return Boolean.valueOf((e1Var instanceof m1.c) && e1Var.a <= ((e1) obj2).a);
             case 2:
                 jd.a aVar3 = jd.a.a;
-                h.b(obj);
+                c8.z.b(obj);
                 Set keySet = ((q1.b) this.b).a().keySet();
-                ArrayList arrayList = new ArrayList(hd.h.d(keySet, 10));
+                ArrayList arrayList = new ArrayList(h.d(keySet, 10));
                 Iterator it = keySet.iterator();
                 while (it.hasNext()) {
                     arrayList.add(((e) it.next()).a);
@@ -112,7 +112,7 @@ public final class b extends j implements p {
                 return Boolean.valueOf(r2);
             default:
                 jd.a aVar4 = jd.a.a;
-                h.b(obj);
+                c8.z.b(obj);
                 id.h c10 = ((z) this.b).c();
                 androidx.activity.d dVar = (androidx.activity.d) obj2;
                 try {

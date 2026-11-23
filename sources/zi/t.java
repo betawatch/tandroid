@@ -16,8 +16,9 @@ import android.view.Surface;
 import com.google.android.gms.internal.vision.e2;
 import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
+import y7.h7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -260,8 +261,8 @@ public final class t {
             this.i.a("GL error", e10);
             c cVar = this.s;
             if (cVar != null) {
-                k0 k0Var = cVar.b;
-                ((u0) k0Var.a).i.post(new j0(k0Var, e10, 1));
+                h7 h7Var = cVar.b;
+                ((u0) h7Var.a).i.post(new j0(h7Var, e10, 1));
             }
         }
     }
@@ -377,8 +378,8 @@ public final class t {
                 this.i.a("GL error", e);
                 c cVar = this.s;
                 if (cVar != null) {
-                    k0 k0Var = cVar.b;
-                    ((u0) k0Var.a).i.post(new j0(k0Var, e, 1));
+                    h7 h7Var = cVar.b;
+                    ((u0) h7Var.a).i.post(new j0(h7Var, e, 1));
                 }
             }
         } catch (RuntimeException e11) {
@@ -665,7 +666,7 @@ public final class t {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new wg.p(this, handlerThread, countDownLatch, 7));
+        handler.post(new wg.p(this, handlerThread, countDownLatch, 8));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {

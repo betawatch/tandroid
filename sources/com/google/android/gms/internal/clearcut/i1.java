@@ -6,7 +6,7 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -270,7 +270,7 @@ public abstract class i1 {
         long j10 = (-4) & j3;
         int g10 = d.g(obj, j10);
         int i7 = ((~((int) j3)) & 3) << 3;
-        b(j10, obj, ((255 & b10) << i7) | (g10 & (~(ls.e4 << i7))));
+        b(j10, obj, ((255 & b10) << i7) | (g10 & (~(ks.e4 << i7))));
     }
 
     public static void d(Object obj, long j3, Object obj2) {
@@ -280,7 +280,7 @@ public abstract class i1 {
     public static void e(Object obj, long j3, byte b10) {
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        b(j10, obj, ((255 & b10) << i7) | (d.g(obj, j10) & (~(ls.e4 << i7))));
+        b(j10, obj, ((255 & b10) << i7) | (d.g(obj, j10) & (~(ks.e4 << i7))));
     }
 
     public static Unsafe f() {

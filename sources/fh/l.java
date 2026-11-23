@@ -12,10 +12,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
-import c8.q0;
+import c8.r0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class l {
     public static final i h = new i(TLObject.FLAG_22, 0);
@@ -221,7 +221,7 @@ public final class l {
                 int i16 = i12;
                 boolean z11 = f15.k;
                 int i17 = z11 ? f15.f + ceil : (f15.i / 2) + ceil;
-                j jVar2 = new j(new NinePatch(createBitmap, q0.c(i16, i16 + (z10 ? i11 : 1), i17, i17 + (z11 ? i11 : 1), 0, 0, 0, 0, 1).array(), null), null, ceil, createBitmap.getByteCount());
+                j jVar2 = new j(new NinePatch(createBitmap, r0.c(i16, i16 + (z10 ? i11 : 1), i17, i17 + (z11 ? i11 : 1), 0, 0, 0, 0, 1).array(), null), null, ceil, createBitmap.getByteCount());
                 iVar.put(Long.valueOf(j3), jVar2);
                 jVar = jVar2;
             } else {

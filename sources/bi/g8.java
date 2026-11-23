@@ -1,149 +1,81 @@
 package bi;
 
-import android.app.Activity;
 import android.content.Context;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import di.pb;
-import org.telegram.messenger.r10;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.s00;
+import org.telegram.messenger.w10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.jm0;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class g8 extends c51 {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ Object R;
+public final /* synthetic */ class g8 implements w10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g8(KeyEvent.Callback callback, ek0 ek0Var, Context context, int i7, r10 r10Var, org.telegram.ui.ActionBar.h6 h6Var, int i10) {
-        super(ek0Var, context, i7, 0, false, r10Var, h6Var);
-        this.Q = i10;
-        this.R = callback;
+    public /* synthetic */ g8(l8 l8Var, org.telegram.ui.ActionBar.t1 t1Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
+        this.c = l8Var;
+        this.d = t1Var;
+        this.e = bVar;
+        this.f = tL_starGiftUnique;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.c51, v4.i0
-    public void t(v4.f1 f1Var, int i7) {
-        fi.m0 m0Var;
-        fi.r0 r0Var;
-        switch (this.Q) {
-            case 2:
-                super.t(f1Var, i7);
-                fi.a2 a2Var = (fi.a2) this.R;
-                if (a2Var.E) {
-                    View view = f1Var.a;
-                    if ((view instanceof fi.m0) && (r0Var = (m0Var = (fi.m0) view).L) != null && r0Var.a == a2Var.y) {
-                        m0Var.a();
-                        a2Var.E = false;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.t(f1Var, i7);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.c51, v4.i0
-    public v4.f1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.ActionBar.h6 h6Var;
-        org.telegram.ui.ActionBar.h6 h6Var2;
-        org.telegram.ui.ActionBar.h6 h6Var3;
-        org.telegram.ui.ActionBar.h6 h6Var4;
-        switch (this.Q) {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj) {
+        switch (this.a) {
             case 0:
-                i8 i8Var = (i8) this.R;
-                if (i7 != 0) {
-                    if (i7 != 42) {
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
+                l8 l8Var = (l8) this.c;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
+                cg.b bVar = (cg.b) this.e;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.f;
+                TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
+                t1Var.dismiss();
+                if (tL_payments_paymentFormStarGift != null) {
+                    di.f5 f5Var = new di.f5(bVar, tL_payments_paymentFormStarGift);
+                    Context context = l8Var.getContext();
+                    org.telegram.ui.ActionBar.i6 i6Var = l8Var.J0;
+                    int i7 = l8Var.a;
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(tL_starGiftUnique.title);
+                    sb2.append(" #");
+                    String l10 = i5.c.l(tL_starGiftUnique.num, ',', sb2);
+                    long j3 = this.b;
+                    new di.h5(context, i6Var, tL_starGiftUnique, f5Var, i7, j3, l10, true, new h8(l8Var, tL_starGiftUnique, j3, 0)).b();
                     break;
                 }
+                break;
             case 1:
-                pb pbVar = (pb) this.R;
-                if (i7 != 42) {
-                    break;
-                } else {
-                    Activity parentActivity = pbVar.getParentActivity();
-                    int i10 = org.telegram.ui.ActionBar.m6.L6;
-                    h6Var = ((org.telegram.ui.ActionBar.g2) pbVar).resourceProvider;
-                    org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(parentActivity, i10, 21, 0, false, h6Var);
-                    o4Var.setHeight(25);
-                    break;
-                }
-            case 3:
-                ii.t tVar = (ii.t) this.R;
-                if (i7 != 42) {
-                    break;
-                } else {
-                    Activity parentActivity2 = tVar.getParentActivity();
-                    int i11 = org.telegram.ui.ActionBar.m6.L6;
-                    h6Var2 = ((org.telegram.ui.ActionBar.g2) tVar).resourceProvider;
-                    org.telegram.ui.Cells.o4 o4Var2 = new org.telegram.ui.Cells.o4(parentActivity2, i11, 21, 0, false, h6Var2);
-                    o4Var2.setHeight(25);
-                    break;
-                }
-            case 4:
-                ki.j jVar = (ki.j) this.R;
-                if (i7 != 42) {
-                    break;
-                } else {
-                    Activity parentActivity3 = jVar.getParentActivity();
-                    int i12 = org.telegram.ui.ActionBar.m6.L6;
-                    h6Var3 = ((org.telegram.ui.ActionBar.g2) jVar).resourceProvider;
-                    org.telegram.ui.Cells.o4 o4Var3 = new org.telegram.ui.Cells.o4(parentActivity3, i12, 21, 0, false, h6Var3);
-                    o4Var3.setHeight(25);
-                    break;
-                }
-            case 5:
-                ki.h3 h3Var = (ki.h3) this.R;
-                if (i7 != 42) {
-                    break;
-                } else {
-                    Activity parentActivity4 = h3Var.getParentActivity();
-                    int i13 = org.telegram.ui.ActionBar.m6.L6;
-                    h6Var4 = ((org.telegram.ui.ActionBar.g2) h3Var).resourceProvider;
-                    org.telegram.ui.Cells.o4 o4Var4 = new org.telegram.ui.Cells.o4(parentActivity4, i13, 21, 0, false, h6Var4);
-                    o4Var4.setHeight(25);
-                    break;
-                }
-        }
-        return super.x(viewGroup, i7);
-    }
-
-    @Override // org.telegram.ui.Components.c51, v4.i0
-    public void y(v4.f1 f1Var) {
-        fi.m0 m0Var;
-        fi.r0 r0Var;
-        switch (this.Q) {
-            case 2:
-                super.y(f1Var);
-                fi.a2 a2Var = (fi.a2) this.R;
-                if (a2Var.E) {
-                    View view = f1Var.a;
-                    if ((view instanceof fi.m0) && (r0Var = (m0Var = (fi.m0) view).L) != null && r0Var.a == a2Var.y) {
-                        m0Var.a();
-                        a2Var.E = false;
-                        break;
-                    }
-                }
+                di.f6 f6Var = (di.f6) this.c;
+                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) this.d;
+                Long l11 = (Long) this.e;
+                f2 f2Var = (f2) this.f;
+                f6Var.getClass();
+                f6Var.v1(this.b, stargiftdepositpayload, l11.longValue(), (vf.b) obj, f2Var);
                 break;
             default:
-                super.y(f1Var);
+                jm0.a0((jm0) this.c, (cg.b) this.e, (TL_stars.TL_starGiftUnique) this.f, this.b, (ll0) this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g8(s00 s00Var, ek0 ek0Var, Activity activity, int i7, int i10, r10 r10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11) {
-        super(ek0Var, activity, i7, i10, true, r10Var, h6Var);
-        this.Q = i11;
-        this.R = s00Var;
+    public /* synthetic */ g8(di.f6 f6Var, long j3, TL_stars.starGiftDepositPayload stargiftdepositpayload, Long l10, f2 f2Var) {
+        this.c = f6Var;
+        this.b = j3;
+        this.d = stargiftdepositpayload;
+        this.e = l10;
+        this.f = f2Var;
+    }
+
+    public /* synthetic */ g8(jm0 jm0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, ll0 ll0Var) {
+        this.c = jm0Var;
+        this.e = bVar;
+        this.f = tL_starGiftUnique;
+        this.b = j3;
+        this.d = ll0Var;
     }
 }

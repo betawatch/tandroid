@@ -13,27 +13,27 @@ import android.view.MotionEvent;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ls;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.ot;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class e0 extends ot implements b6 {
-    public final h6 e2;
-    public final jn f2;
+public abstract class e0 extends mt implements c6 {
+    public final i6 e2;
+    public final nd0 f2;
     public Runnable g2;
     public int h2;
 
-    public e0(int i7, Context context, h6 h6Var) {
-        super(context, h6Var);
-        this.e2 = h6Var;
-        this.f2 = new jn(getContext(), new d0());
+    public e0(int i7, Context context, i6 i6Var) {
+        super(context, i6Var);
+        this.e2 = i6Var;
+        this.f2 = new nd0(getContext(), new d0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i10 = Build.VERSION.SDK_INT;
@@ -46,14 +46,14 @@ public abstract class e0 extends ot implements b6 {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(12.0f));
-        t6.U(this, m6.Le, h6Var);
-        t6.G(this, m6.Yc, h6Var);
-        t6.C(this, m6.lg, h6Var);
-        int i12 = m6.Me;
-        t6.l(this, 34, i12, h6Var);
-        t6.D(this, i12, h6Var);
-        t6.l(this, 30, m6.Ne, h6Var);
-        t6.l(this, 36, m6.mg, h6Var);
+        u6.U(this, n6.Le, i6Var);
+        u6.G(this, n6.Yc, i6Var);
+        u6.C(this, n6.lg, i6Var);
+        int i12 = n6.Me;
+        u6.l(this, 34, i12, i6Var);
+        u6.D(this, i12, i6Var);
+        u6.l(this, 30, n6.Ne, i6Var);
+        u6.l(this, 36, n6.mg, i6Var);
         if (i10 >= 28) {
             setFallbackLineSpacing(false);
         }
@@ -69,7 +69,7 @@ public abstract class e0 extends ot implements b6 {
         if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
             b bVar = new b(this.e2);
-            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ls.e4);
+            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ks.e4);
             ofInt.addUpdateListener(new a(bVar, this, 0));
             ofInt.setDuration(200L);
             ofInt.start();
@@ -86,7 +86,7 @@ public abstract class e0 extends ot implements b6 {
                 setCursorVisible(false);
                 ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
                 ofInt.addUpdateListener(new a(bVar, this, 1));
-                ofInt.addListener(new ai.k0(aVar, 2));
+                ofInt.addListener(new ai.g0(aVar, 2));
                 ofInt.setDuration(200L);
                 ofInt.start();
             } else {
@@ -95,7 +95,7 @@ public abstract class e0 extends ot implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.rt, android.view.View
+    @Override // org.telegram.ui.Components.pt, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (!((GestureDetector) this.f2.b).onTouchEvent(motionEvent) || isLongClickable()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -126,10 +126,10 @@ public abstract class e0 extends ot implements b6 {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void o(ActionMode actionMode, Menu menu) {
         menu.clear();
-        menu.add(R.id.menu_delete, R.id.menu_delete, 0, hd.N0(2131751586, null));
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, gd.N0(2131751586, null));
     }
 
-    @Override // org.telegram.ui.Components.rt, android.widget.TextView
+    @Override // org.telegram.ui.Components.pt, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         if (!hasSelection() || ((b[]) getText().getSpans(i7, i10, b.class)).length == 0) {
@@ -149,20 +149,20 @@ public abstract class e0 extends ot implements b6 {
         this.g2 = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        h6 h6Var = this.e2;
+        i6 i6Var = this.e2;
         try {
-            setHintColor(m6.w0(m6.Me, h6Var));
-            setCursorColor(m6.w0(m6.Ne, h6Var));
-            setHandlesColor(m6.w0(m6.mg, h6Var));
+            setHintColor(n6.w0(n6.Me, i6Var));
+            setCursorColor(n6.w0(n6.Ne, i6Var));
+            setHandlesColor(n6.w0(n6.mg, i6Var));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -4,14 +4,15 @@ import a9.h;
 import android.graphics.Bitmap;
 import android.os.SystemClock;
 import com.google.android.gms.tasks.Task;
+import ga.d;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import m.o3;
 import org.telegram.tgnet.ConnectionsManager;
 import pb.n;
 import q6.j;
 import q6.m;
-import sg.h0;
+import s2.e;
+import y7.s2;
 import z7.e7;
 import z7.f7;
 import z7.ja;
@@ -20,7 +21,7 @@ import z7.ma;
 import z7.oa;
 import z7.z6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -82,18 +83,18 @@ public final class a {
             }
         }
         hashMap.put(k7Var, Long.valueOf(elapsedRealtime3));
-        o3 o3Var = new o3();
-        o3Var.c = z6.b;
-        o3Var.b = e7.b;
-        o3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        o3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        o3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        o3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        o3Var.g = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        f7 f7Var = new f7(o3Var);
-        y7.f7 f7Var2 = new y7.f7();
-        f7Var2.c = f7Var;
-        n.a.execute(new h(a10, new h0(f7Var2), task.isSuccessful() ? (String) task.getResult() : j.c.a(a10.g)));
+        d dVar = new d();
+        dVar.c = z6.b;
+        dVar.b = e7.b;
+        dVar.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        dVar.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        dVar.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        dVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        dVar.h = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        f7 f7Var = new f7(dVar);
+        s2 s2Var = new s2(4, false);
+        s2Var.d = f7Var;
+        n.a.execute(new h(a10, new e(s2Var), task.isSuccessful() ? (String) task.getResult() : j.c.a(a10.g)));
         return aVar;
     }
 }

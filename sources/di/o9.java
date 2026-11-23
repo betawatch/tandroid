@@ -1,10 +1,10 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.tu0;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.su0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o9 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,23 +26,23 @@ public final /* synthetic */ class o9 implements Runnable {
         org.telegram.ui.ActionBar.w2[] w2VarArr = this.b;
         switch (i7) {
             case 0:
-                tu0 tu0Var = new tu0(context);
+                su0 su0Var = new su0(context);
                 if (!org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.u1(w2VarArr[0].j1) && (w2Var = w2VarArr[0]) != null && (g2Var = w2Var.j1) != null) {
-                    tu0Var.a0(g2Var);
+                    su0Var.a0(g2Var);
                 }
-                tu0Var.show();
+                su0Var.show();
                 break;
             case 1:
                 w2VarArr[0].dismiss();
-                vf.c.t(context, hd.N0(2131752023, null));
+                vf.c.t(context, gd.N0(2131752023, null));
                 break;
             case 2:
                 w2VarArr[0].dismiss();
-                vf.c.v(context, hd.N0(2131752018, null), false);
+                vf.c.v(context, gd.N0(2131752018, null), false);
                 break;
             default:
                 w2VarArr[0].dismiss();
-                vf.c.t(context, hd.N0(2131752015, null));
+                vf.c.t(context, gd.N0(2131752015, null));
                 break;
         }
     }

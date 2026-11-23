@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class yk0 extends Dialog {
     public static final /* synthetic */ int P = 0;
@@ -46,7 +46,7 @@ public final class yk0 extends Dialog {
     public boolean N;
     public ValueAnimator O;
     public final Context a;
-    public final org.telegram.ui.ActionBar.h6 b;
+    public final org.telegram.ui.ActionBar.i6 b;
     public Bitmap c;
     public BitmapShader d;
     public Paint e;
@@ -54,38 +54,38 @@ public final class yk0 extends Dialog {
     public final ui.b h;
     public final dh.c n;
     public float r;
-    public final bi.e3 s;
-    public final du0 w;
-    public a70 x;
+    public final bi.g3 s;
+    public final cu0 w;
+    public x60 x;
     public FrameLayout y;
 
-    public yk0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public yk0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context, R.style.TransparentDialog);
         this.K = 1.0f;
         this.L = 1.0f;
         this.N = false;
         this.a = context;
-        this.b = h6Var;
-        bi.e3 e3Var = new bi.e3(24, context, this);
-        this.s = e3Var;
-        e3Var.setOnClickListener(new j70(this, 9));
-        du0 du0Var = new du0(context, null);
-        this.w = du0Var;
-        du0Var.setClipToPadding(false);
-        e3Var.addView(du0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
+        this.b = i6Var;
+        bi.g3 g3Var = new bi.g3(24, context, this);
+        this.s = g3Var;
+        g3Var.setOnClickListener(new g70(this, 9));
+        cu0 cu0Var = new cu0(context, null);
+        this.w = cu0Var;
+        cu0Var.setClipToPadding(false);
+        g3Var.addView(cu0Var, c8.na.e(-1, -1, org.telegram.messenger.ks.E1));
         ui.b bVar = new ui.b();
         this.h = bVar;
         dh.c cVar = new dh.c(bVar, bVar, bVar);
         this.n = cVar;
-        cVar.h = new jh.k(e3Var);
-        cVar.i = e3Var;
-        qf qfVar = new qf(this, 5);
+        cVar.h = new jh.k(g3Var);
+        cVar.i = g3Var;
+        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(this, 7);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(e3Var, qfVar);
+        r0.a0.i(g3Var, aaVar);
     }
 
-    public static void d(org.telegram.messenger.r10 r10Var) {
-        org.telegram.messenger.g0.l2(new z2(r10Var, 12), 15.0f);
+    public static void d(org.telegram.messenger.p10 p10Var) {
+        org.telegram.messenger.g0.l2(new y2(p10Var, 12), 15.0f);
     }
 
     public final void c(Runnable runnable, boolean z10) {
@@ -95,9 +95,9 @@ public final class yk0 extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, z10 ? 1.0f : 0.0f);
         this.O = ofFloat;
-        ofFloat.addUpdateListener(new h60(this, 12));
+        ofFloat.addUpdateListener(new e60(this, 12));
         this.O.addListener(new androidx.fragment.app.g(this, z10, runnable, 8));
-        this.O.setInterpolator(nr.h);
+        this.O.setInterpolator(kr.h);
         this.O.setDuration(350L);
         this.O.start();
     }
@@ -112,17 +112,17 @@ public final class yk0 extends Dialog {
         this.s.invalidate();
     }
 
-    public final void e(a70 a70Var) {
-        int i7 = org.telegram.ui.ActionBar.m6.E8;
-        org.telegram.ui.ActionBar.h6 h6Var = this.b;
-        a70Var.U(org.telegram.ui.ActionBar.m6.r1(0.06f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var)));
-        a70Var.R(this.n, c8.i0.l(h6Var), false);
-        this.x = a70Var;
-        this.E = a70Var.A;
+    public final void e(x60 x60Var) {
+        int i7 = org.telegram.ui.ActionBar.n6.E8;
+        org.telegram.ui.ActionBar.i6 i6Var = this.b;
+        x60Var.U(org.telegram.ui.ActionBar.n6.r1(0.06f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var)));
+        x60Var.R(this.n, c8.j0.l(i6Var), false);
+        this.x = x60Var;
+        this.E = x60Var.A;
         FrameLayout frameLayout = new FrameLayout(this.a);
         this.y = frameLayout;
-        frameLayout.addView(this.E, c8.ma.c(-2.0f, -2));
-        this.w.addView(this.y, c8.ma.c(-2.0f, -2));
+        frameLayout.addView(this.E, c8.na.c(-2.0f, -2));
+        this.w.addView(this.y, c8.na.c(-2.0f, -2));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -159,8 +159,8 @@ public final class yk0 extends Dialog {
     /* JADX WARN: Type inference failed for: r6v10 */
     /* JADX WARN: Type inference failed for: r6v11, types: [android.text.Layout] */
     /* JADX WARN: Type inference failed for: r6v59 */
-    /* JADX WARN: Type inference failed for: r7v13, types: [android.graphics.Path, org.telegram.ui.Components.h80, org.telegram.ui.Components.rq] */
-    /* JADX WARN: Type inference failed for: r7v17, types: [android.graphics.Path, org.telegram.ui.Components.h80] */
+    /* JADX WARN: Type inference failed for: r7v13, types: [android.graphics.Path, org.telegram.ui.Components.e80, org.telegram.ui.Components.oq] */
+    /* JADX WARN: Type inference failed for: r7v17, types: [android.graphics.Path, org.telegram.ui.Components.e80] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -185,8 +185,8 @@ public final class yk0 extends Dialog {
         Bitmap bitmap;
         SpannableStringBuilder spannableStringBuilder;
         int i13;
-        org.telegram.messenger.fv fvVar;
-        org.telegram.messenger.rt rtVar;
+        org.telegram.messenger.ev evVar;
+        org.telegram.messenger.qt qtVar;
         ArrayList<org.telegram.ui.Cells.q1> pollButtons;
         int i14;
         int i15;
@@ -198,7 +198,7 @@ public final class yk0 extends Dialog {
             return;
         }
         r1Var.getCurrentMessagesGroup();
-        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
+        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
         int i18 = 0;
         boolean z12 = r1Var.getExplanationLayout() != null && messageObject.L0;
         if (z12 && z10) {
@@ -226,8 +226,8 @@ public final class yk0 extends Dialog {
         if (arrayList != null) {
             int i19 = 0;
             while (i19 < arrayList.size()) {
-                org.telegram.messenger.dj djVar = (org.telegram.messenger.dj) arrayList.get(i19);
-                StaticLayout staticLayout = djVar.e;
+                org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) arrayList.get(i19);
+                StaticLayout staticLayout = cjVar.e;
                 if (staticLayout != null && (staticLayout.getText() instanceof Spanned)) {
                     z11 = z12;
                     CharacterStyle[] characterStyleArr = (CharacterStyle[]) ((Spanned) staticLayout.getText()).getSpans(i18, staticLayout.getText().length(), CharacterStyle.class);
@@ -238,9 +238,9 @@ public final class yk0 extends Dialog {
                             if (characterStyleArr[i20] == characterStyle) {
                                 i7 = ((Spanned) staticLayout.getText()).getSpanStart(characterStyle);
                                 i11 = ((Spanned) staticLayout.getText()).getSpanEnd(characterStyle);
-                                f10 += djVar.l() ? (int) Math.ceil(f12) : 0;
-                                f11 += djVar.p(arrayList, r1Var.ib) + djVar.f;
-                                i10 = djVar.s;
+                                f10 += cjVar.l() ? (int) Math.ceil(f12) : 0;
+                                f11 += cjVar.p(arrayList, r1Var.ib) + cjVar.f;
+                                i10 = cjVar.s;
                                 r15 = staticLayout;
                                 if (r15 == 0 && r1Var.getDescriptionlayout() != null) {
                                     StaticLayout descriptionlayout = r1Var.getDescriptionlayout();
@@ -314,30 +314,30 @@ public final class yk0 extends Dialog {
                                         r15 = r15;
                                     }
                                 }
-                                if (r15 == 0 && messageObject != null && (fvVar = messageObject.y2) != null) {
-                                    ArrayList arrayList2 = fvVar.g;
+                                if (r15 == 0 && messageObject != null && (evVar = messageObject.y2) != null) {
+                                    ArrayList arrayList2 = evVar.g;
                                     if (characterStyle != null) {
-                                        rtVar = new org.telegram.messenger.rt();
+                                        qtVar = new org.telegram.messenger.qt();
                                         int i21 = 0;
                                         for (int i22 = 0; i22 < arrayList2.size(); i22++) {
-                                            org.telegram.messenger.au auVar = (org.telegram.messenger.au) arrayList2.get(i22);
-                                            if (auVar.S()) {
-                                                if (auVar.u(characterStyle, i21, rtVar)) {
+                                            org.telegram.messenger.zt ztVar = (org.telegram.messenger.zt) arrayList2.get(i22);
+                                            if (ztVar.S()) {
+                                                if (ztVar.u(characterStyle, i21, qtVar)) {
                                                     break;
                                                 } else {
-                                                    i21 = auVar.I() + i21;
+                                                    i21 = ztVar.I() + i21;
                                                 }
                                             }
                                         }
                                     }
-                                    rtVar = null;
-                                    if (rtVar != null) {
-                                        r15 = rtVar.a;
-                                        i7 = rtVar.b;
-                                        i11 = rtVar.c;
-                                        i10 = rtVar.d;
-                                        f10 = r1Var.getTextX() + rtVar.e;
-                                        f11 = r1Var.getTextY() + rtVar.f;
+                                    qtVar = null;
+                                    if (qtVar != null) {
+                                        r15 = qtVar.a;
+                                        i7 = qtVar.b;
+                                        i11 = qtVar.c;
+                                        i10 = qtVar.d;
+                                        f10 = r1Var.getTextX() + qtVar.e;
+                                        f11 = r1Var.getTextY() + qtVar.f;
                                     }
                                 }
                                 float f18 = f10;
@@ -355,12 +355,12 @@ public final class yk0 extends Dialog {
                                     float lineTop = f11 + r15.getLineTop(lineForOffset);
                                     float primaryHorizontal = r15.getPrimaryHorizontal(i23);
                                     float lineWidth = r15.getLineWidth(lineForOffset);
-                                    ?? h80Var = new h80(0);
-                                    h80Var.d(r15, i23, 0.0f);
-                                    r15.getSelectionPath(i23, i11, h80Var);
+                                    ?? e80Var = new e80(0);
+                                    e80Var.d(r15, i23, 0.0f);
+                                    r15.getSelectionPath(i23, i11, e80Var);
                                     RectF rectF2 = new RectF();
-                                    h80Var.computeBounds(rectF2, true);
-                                    StaticLayout g52 = org.telegram.messenger.gj.g5(charSequence, r15.getPaint(), r15.getWidth(), 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                    e80Var.computeBounds(rectF2, true);
+                                    StaticLayout g52 = org.telegram.messenger.fj.g5(charSequence, r15.getPaint(), r15.getWidth(), 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
                                     i11 = charSequence.length();
                                     float width = g52.getWidth();
                                     float f19 = 0.0f;
@@ -383,15 +383,15 @@ public final class yk0 extends Dialog {
                                     rectF = null;
                                 }
                                 Paint paint2 = new Paint(1);
-                                paint2.setColor(org.telegram.ui.ActionBar.m6.w0(messageObject.P3() ? org.telegram.ui.ActionBar.m6.rb : org.telegram.ui.ActionBar.m6.ra, this.b));
+                                paint2.setColor(org.telegram.ui.ActionBar.n6.w0(messageObject.P3() ? org.telegram.ui.ActionBar.n6.rb : org.telegram.ui.ActionBar.n6.ra, this.b));
                                 paint2.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(5.0f)));
-                                ?? h80Var2 = new h80(0);
-                                h80Var2.c = true;
-                                h80Var2.d(r62, i12, 0.0f);
-                                r62.getSelectionPath(i12, i11, h80Var2);
-                                h80Var2.a();
+                                ?? e80Var2 = new e80(0);
+                                e80Var2.c = true;
+                                e80Var2.d(r62, i12, 0.0f);
+                                r62.getSelectionPath(i12, i11, e80Var2);
+                                e80Var2.a();
                                 RectF rectF3 = new RectF();
-                                h80Var2.computeBounds(rectF3, true);
+                                e80Var2.computeBounds(rectF3, true);
                                 int width2 = (int) (rectF3.width() + org.telegram.messenger.g0.L(5.0f));
                                 if (!r1Var.L0() || width2 <= 0) {
                                     paint = paint2;
@@ -412,14 +412,14 @@ public final class yk0 extends Dialog {
                                         paint4.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(5.0f)));
                                         paint4.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                                         canvas.translate(-rectF3.left, -rectF3.top);
-                                        canvas.drawPath(h80Var2, paint4);
+                                        canvas.drawPath(e80Var2, paint4);
                                         bitmap = createBitmap;
                                         Paint paint5 = new Paint(3);
                                         paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                                         r1Var.E3();
                                         TextPaint textPaint = new TextPaint(layout.getPaint());
                                         textPaint.set(layout.getPaint());
-                                        spannableStringBuilder = new SpannableStringBuilder(y5.cloneSpans(layout.getText(), -1, textPaint.getFontMetricsInt()));
+                                        spannableStringBuilder = new SpannableStringBuilder(x5.cloneSpans(layout.getText(), -1, textPaint.getFontMetricsInt()));
                                         if (i12 <= 0) {
                                             i13 = 0;
                                             spannableStringBuilder.setSpan(new ForegroundColorSpan(0), 0, i12, 33);
@@ -432,11 +432,11 @@ public final class yk0 extends Dialog {
                                         if (messageObject.R1 >= 4) {
                                             f15 = -1.0f;
                                         }
-                                        StaticLayout g53 = org.telegram.messenger.gj.g5(spannableStringBuilder, textPaint, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
+                                        StaticLayout g53 = org.telegram.messenger.fj.g5(spannableStringBuilder, textPaint, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
                                         int[] iArr = new int[2];
                                         r1Var.getLocationOnScreen(iArr);
                                         float f20 = f14;
-                                        this.F = new xk0(h80Var2, new int[]{iArr[0] + ((int) f13), iArr[1] + ((int) f14)}, r1Var, iArr, bitmap, rectF3, paint5, paint, g53);
+                                        this.F = new xk0(e80Var2, new int[]{iArr[0] + ((int) f13), iArr[1] + ((int) f14)}, r1Var, iArr, bitmap, rectF3, paint5, paint, g53);
                                         int L = (int) ((org.telegram.messenger.g0.L(5.0f) / 2.0f) + iArr[0] + f13 + rectF3.left);
                                         int i26 = (int) (iArr[1] + f20 + rectF3.top);
                                         this.F.setBounds(L, i26, ((int) rectF3.width()) + L, ((int) rectF3.height()) + i26);
@@ -469,18 +469,18 @@ public final class yk0 extends Dialog {
                                 r1Var.E3();
                                 TextPaint textPaint2 = new TextPaint(layout.getPaint());
                                 textPaint2.set(layout.getPaint());
-                                spannableStringBuilder = new SpannableStringBuilder(y5.cloneSpans(layout.getText(), -1, textPaint2.getFontMetricsInt()));
+                                spannableStringBuilder = new SpannableStringBuilder(x5.cloneSpans(layout.getText(), -1, textPaint2.getFontMetricsInt()));
                                 if (i12 <= 0) {
                                 }
                                 if (i11 < spannableStringBuilder.length()) {
                                 }
                                 if (messageObject.R1 >= 4) {
                                 }
-                                StaticLayout g532 = org.telegram.messenger.gj.g5(spannableStringBuilder, textPaint2, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
+                                StaticLayout g532 = org.telegram.messenger.fj.g5(spannableStringBuilder, textPaint2, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
                                 int[] iArr2 = new int[2];
                                 r1Var.getLocationOnScreen(iArr2);
                                 float f202 = f14;
-                                this.F = new xk0(h80Var2, new int[]{iArr2[0] + ((int) f13), iArr2[1] + ((int) f14)}, r1Var, iArr2, bitmap, rectF3, paint52, paint, g532);
+                                this.F = new xk0(e80Var2, new int[]{iArr2[0] + ((int) f13), iArr2[1] + ((int) f14)}, r1Var, iArr2, bitmap, rectF3, paint52, paint, g532);
                                 int L2 = (int) ((org.telegram.messenger.g0.L(5.0f) / 2.0f) + iArr2[0] + f13 + rectF3.left);
                                 int i262 = (int) (iArr2[1] + f202 + rectF3.top);
                                 this.F.setBounds(L2, i262, ((int) rectF3.width()) + L2, ((int) rectF3.height()) + i262);
@@ -516,11 +516,11 @@ public final class yk0 extends Dialog {
             }
         }
         if (r15 == 0) {
-            ArrayList arrayList22 = fvVar.g;
+            ArrayList arrayList22 = evVar.g;
             if (characterStyle != null) {
             }
-            rtVar = null;
-            if (rtVar != null) {
+            qtVar = null;
+            if (qtVar != null) {
             }
         }
         float f182 = f10;
@@ -543,20 +543,20 @@ public final class yk0 extends Dialog {
         Window window = getWindow();
         window.setWindowAnimations(R.style.DialogNoAnimation);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        bi.e3 e3Var = this.s;
-        setContentView(e3Var, layoutParams);
+        bi.g3 g3Var = this.s;
+        setContentView(g3Var, layoutParams);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ls.E1;
+        attributes.gravity = org.telegram.messenger.ks.E1;
         attributes.dimAmount = 0.0f;
         int i7 = attributes.flags & (-3);
         attributes.softInputMode = 16;
         attributes.flags = i7 | (-1945959040);
         org.telegram.messenger.g0.m(attributes);
         window.setAttributes(attributes);
-        e3Var.setSystemUiVisibility(256);
-        org.telegram.messenger.g0.n3(e3Var, !org.telegram.ui.ActionBar.m6.I.q());
+        g3Var.setSystemUiVisibility(256);
+        org.telegram.messenger.g0.n3(g3Var, !org.telegram.ui.ActionBar.n6.I.q());
     }
 
     @Override // android.app.Dialog

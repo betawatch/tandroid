@@ -2,14 +2,14 @@ package fi;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class a6 extends h6 {
     public boolean C;
@@ -34,7 +34,7 @@ public final class a6 extends h6 {
         ArrayList arrayList3 = new ArrayList();
         TL_bots.reorderPreviewMedias reorderpreviewmedias = new TL_bots.reorderPreviewMedias();
         int i7 = this.c;
-        reorderpreviewmedias.bot = np.u1(i7).q1(this.d);
+        reorderpreviewmedias.bot = mp.u1(i7).q1(this.d);
         reorderpreviewmedias.lang_code = this.E;
         int size = arrayList.size();
         int i10 = 0;
@@ -42,9 +42,9 @@ public final class a6 extends h6 {
             Object obj = arrayList.get(i10);
             i10++;
             Integer num = (Integer) obj;
-            gj f10 = f(num.intValue());
+            fj f10 = f(num.intValue());
             if (f10 != null) {
-                reorderpreviewmedias.order.add(np.l5(f10.l.media));
+                reorderpreviewmedias.order.add(mp.l5(f10.l.media));
                 arrayList2.add(f10);
                 arrayList3.add(num);
             }
@@ -68,17 +68,17 @@ public final class a6 extends h6 {
             if (i7 >= arrayList2.size()) {
                 break;
             }
-            gj gjVar = (gj) arrayList2.get(i7);
+            fj fjVar = (fj) arrayList2.get(i7);
             int i10 = 0;
             while (true) {
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                if (np.u0(gjVar.l.media, (TLRPC.MessageMedia) arrayList.get(i10))) {
+                if (mp.u0(fjVar.l.media, (TLRPC.MessageMedia) arrayList.get(i10))) {
                     arrayList2.remove(i7);
                     ArrayList arrayList3 = this.H;
-                    if (!arrayList3.isEmpty() && gjVar.e1() < ((ArrayList) arrayList3.get(0)).size()) {
-                        ((ArrayList) arrayList3.get(0)).remove(gjVar.e1());
+                    if (!arrayList3.isEmpty() && fjVar.e1() < ((ArrayList) arrayList3.get(0)).size()) {
+                        ((ArrayList) arrayList3.get(0)).remove(fjVar.e1());
                     }
                     i7--;
                 } else {
@@ -89,9 +89,9 @@ public final class a6 extends h6 {
         }
         TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
         int i11 = this.c;
-        deletepreviewmedia.bot = np.u1(i11).q1(this.d);
+        deletepreviewmedia.bot = mp.u1(i11).q1(this.d);
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            deletepreviewmedia.media.add(np.l5((TLRPC.MessageMedia) arrayList.get(i12)));
+            deletepreviewmedia.media.add(mp.l5((TLRPC.MessageMedia) arrayList.get(i12)));
         }
         ConnectionsManager.getInstance(i11).sendRequest(deletepreviewmedia, null);
         e6 e6Var = this.q;
@@ -101,7 +101,7 @@ public final class a6 extends h6 {
 
     public final void G(TLRPC.InputMedia inputMedia, TL_bots.botPreviewMedia botpreviewmedia) {
         ArrayList arrayList;
-        gj gjVar;
+        fj fjVar;
         int e12;
         TL_stories.StoryItem storyItem;
         TLRPC.MessageMedia messageMedia;
@@ -110,12 +110,12 @@ public final class a6 extends h6 {
         while (true) {
             arrayList = this.i;
             if (i7 >= arrayList.size()) {
-                gjVar = null;
+                fjVar = null;
                 i7 = 0;
                 break;
             }
-            gjVar = (gj) arrayList.get(i7);
-            if (inputMedia != null && (storyItem = gjVar.l) != null && (messageMedia = storyItem.media) != null) {
+            fjVar = (fj) arrayList.get(i7);
+            if (inputMedia != null && (storyItem = fjVar.l) != null && (messageMedia = storyItem.media) != null) {
                 if (!(inputMedia instanceof TLRPC.TL_inputMediaPhoto)) {
                     if ((inputMedia instanceof TLRPC.TL_inputMediaDocument) && (document = messageMedia.document) != null && document.id == ((TLRPC.TL_inputMediaDocument) inputMedia).id.id) {
                         break;
@@ -130,8 +130,8 @@ public final class a6 extends h6 {
             i7++;
         }
         ArrayList arrayList2 = this.H;
-        if (gjVar != null) {
-            arrayList.remove(gjVar);
+        if (fjVar != null) {
+            arrayList.remove(fjVar);
             if (arrayList2.isEmpty()) {
                 arrayList2.add(new ArrayList());
             }
@@ -140,23 +140,23 @@ public final class a6 extends h6 {
             }
         }
         z5 z5Var = new z5(this, this.d, botpreviewmedia);
-        gj gjVar2 = new gj(this.c, z5Var);
-        TLRPC.Message message = gjVar2.k;
-        if (gjVar == null) {
+        fj fjVar2 = new fj(this.c, z5Var);
+        TLRPC.Message message = fjVar2.k;
+        if (fjVar == null) {
             e12 = this.I;
             this.I = e12 + 1;
         } else {
-            e12 = gjVar.e1();
+            e12 = fjVar.e1();
         }
         message.id = e12;
         z5Var.id = e12;
-        gjVar2.j = this;
-        gjVar2.r0(false);
+        fjVar2.j = this;
+        fjVar2.r0(false);
         if (arrayList2.isEmpty()) {
             arrayList2.add(new ArrayList());
         }
-        ((ArrayList) arrayList2.get(0)).add(i7, Integer.valueOf(gjVar2.e1()));
-        arrayList.add(i7, gjVar2);
+        ((ArrayList) arrayList2.get(0)).add(i7, Integer.valueOf(fjVar2.e1()));
+        arrayList.add(i7, fjVar2);
         e6 e6Var = this.q;
         org.telegram.messenger.g0.r(e6Var);
         org.telegram.messenger.g0.g3(e6Var);
@@ -173,12 +173,12 @@ public final class a6 extends h6 {
         int i7 = this.c;
         if (str != null) {
             TL_bots.getPreviewInfo getpreviewinfo = new TL_bots.getPreviewInfo();
-            getpreviewinfo.bot = np.u1(i7).q1(j3);
+            getpreviewinfo.bot = mp.u1(i7).q1(j3);
             getpreviewinfo.lang_code = str;
             getpreviewmedias = getpreviewinfo;
         } else {
             TL_bots.getPreviewMedias getpreviewmedias2 = new TL_bots.getPreviewMedias();
-            getpreviewmedias2.bot = np.u1(i7).q1(j3);
+            getpreviewmedias2.bot = mp.u1(i7).q1(j3);
             getpreviewmedias = getpreviewmedias2;
         }
         this.C = true;
@@ -188,35 +188,35 @@ public final class a6 extends h6 {
 
     public final void I(TL_bots.botPreviewMedia botpreviewmedia) {
         z5 z5Var = new z5(this, this.d, botpreviewmedia);
-        gj gjVar = new gj(this.c, z5Var);
-        TLRPC.Message message = gjVar.k;
+        fj fjVar = new fj(this.c, z5Var);
+        TLRPC.Message message = fjVar.k;
         int i7 = this.I;
         this.I = i7 + 1;
         message.id = i7;
         z5Var.id = i7;
-        gjVar.j = this;
-        gjVar.r0(false);
+        fjVar.j = this;
+        fjVar.r0(false);
         ArrayList arrayList = this.H;
         if (arrayList.isEmpty()) {
             arrayList.add(new ArrayList());
         }
-        ((ArrayList) arrayList.get(0)).add(0, Integer.valueOf(gjVar.e1()));
-        this.i.add(0, gjVar);
+        ((ArrayList) arrayList.get(0)).add(0, Integer.valueOf(fjVar.e1()));
+        this.i.add(0, fjVar);
         e6 e6Var = this.q;
         org.telegram.messenger.g0.r(e6Var);
         org.telegram.messenger.g0.g3(e6Var);
     }
 
     @Override // fi.h6
-    public final gj f(int i7) {
+    public final fj f(int i7) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.i;
             if (i10 >= arrayList.size()) {
                 return null;
             }
-            if (((gj) arrayList.get(i10)).e1() == i7) {
-                return (gj) arrayList.get(i10);
+            if (((fj) arrayList.get(i10)).e1() == i7) {
+                return (fj) arrayList.get(i10);
             }
             i10++;
         }

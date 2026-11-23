@@ -2,13 +2,13 @@ package com.google.android.gms.wallet.wobs;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
+import c8.cc;
 import java.util.ArrayList;
 import r6.a;
 import y8.v;
 import z8.f;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends a {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new v(7);
@@ -34,30 +34,30 @@ public class CommonWalletObject extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 2, this.a);
-        bc.l(parcel, 3, this.b);
-        bc.l(parcel, 4, this.c);
-        bc.l(parcel, 5, this.d);
-        bc.l(parcel, 6, this.e);
-        bc.l(parcel, 7, this.f);
-        bc.l(parcel, 8, this.h);
-        bc.l(parcel, 9, this.n);
+        int r10 = cc.r(parcel, 20293);
+        cc.l(parcel, 2, this.a);
+        cc.l(parcel, 3, this.b);
+        cc.l(parcel, 4, this.c);
+        cc.l(parcel, 5, this.d);
+        cc.l(parcel, 6, this.e);
+        cc.l(parcel, 7, this.f);
+        cc.l(parcel, 8, this.h);
+        cc.l(parcel, 9, this.n);
         int i10 = this.r;
-        bc.q(parcel, 10, 4);
+        cc.q(parcel, 10, 4);
         parcel.writeInt(i10);
-        bc.p(parcel, 11, this.s);
-        bc.k(parcel, 12, this.w, i7);
-        bc.p(parcel, 13, this.x);
-        bc.l(parcel, 14, this.y);
-        bc.l(parcel, 15, this.E);
-        bc.p(parcel, 16, this.F);
+        cc.p(parcel, 11, this.s);
+        cc.k(parcel, 12, this.w, i7);
+        cc.p(parcel, 13, this.x);
+        cc.l(parcel, 14, this.y);
+        cc.l(parcel, 15, this.E);
+        cc.p(parcel, 16, this.F);
         boolean z10 = this.G;
-        bc.q(parcel, 17, 4);
+        cc.q(parcel, 17, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        bc.p(parcel, 18, this.H);
-        bc.p(parcel, 19, this.I);
-        bc.p(parcel, 20, this.J);
-        bc.s(parcel, r10);
+        cc.p(parcel, 18, this.H);
+        cc.p(parcel, 19, this.I);
+        cc.p(parcel, 20, this.J);
+        cc.s(parcel, r10);
     }
 }

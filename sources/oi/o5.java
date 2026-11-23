@@ -11,24 +11,24 @@ import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import c8.ta;
+import c8.va;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class o5 extends ViewGroup {
     public final RectF E;
     public final RectF F;
     public final Path G;
-    public final org.telegram.ui.Components.d6 H;
+    public final org.telegram.ui.Components.c6 H;
     public int I;
     public boolean J;
     public boolean K;
@@ -39,7 +39,7 @@ public final class o5 extends ViewGroup {
     public int P;
     public int Q;
     public e6 a;
-    public final h6 b;
+    public final i6 b;
     public int[] c;
     public int[] d;
     public int[] e;
@@ -52,7 +52,7 @@ public final class o5 extends ViewGroup {
     public final Paint x;
     public final Paint y;
 
-    public o5(Context context, h6 h6Var) {
+    public o5(Context context, i6 i6Var) {
         super(context);
         this.c = new int[0];
         this.d = new int[0];
@@ -69,7 +69,7 @@ public final class o5 extends ViewGroup {
         this.E = new RectF();
         this.F = new RectF();
         this.G = new Path();
-        this.b = h6Var;
+        this.b = i6Var;
         setClipChildren(false);
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -80,7 +80,7 @@ public final class o5 extends ViewGroup {
         paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint2.setStrokeJoin(Paint.Join.ROUND);
         paint2.setStrokeCap(Paint.Cap.ROUND);
-        this.H = new org.telegram.ui.Components.d6(this, 0L, 220L, nr.h);
+        this.H = new org.telegram.ui.Components.c6(this, 0L, 220L, kr.h);
         b();
     }
 
@@ -112,7 +112,7 @@ public final class o5 extends ViewGroup {
                 Object obj = arrayList.get(i10);
                 i10++;
                 TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) obj;
-                if (((LinkedHashSet) ((kg.x1) this.h).b).contains(pagetablecell3)) {
+                if (((LinkedHashSet) ((kg.f1) this.h).b).contains(pagetablecell3)) {
                     int b10 = this.a.b(pagetablecell3);
                     int a10 = this.a.a(pagetablecell3);
                     if (b10 < i7 || (b10 == i7 && a10 < i11)) {
@@ -127,27 +127,27 @@ public final class o5 extends ViewGroup {
     }
 
     public final void b() {
-        int i7 = m6.hi;
-        h6 h6Var = this.b;
-        this.n.setColor(m6.w0(i7, h6Var));
-        int w02 = m6.w0(m6.M6, h6Var);
+        int i7 = n6.hi;
+        i6 i6Var = this.b;
+        this.n.setColor(n6.w0(i7, i6Var));
+        int w02 = n6.w0(n6.M6, i6Var);
         int red = Color.red(w02);
         int green = Color.green(w02);
         int blue = Color.blue(w02);
-        this.r.setColor(m6.w0(m6.gi, h6Var));
+        this.r.setColor(n6.w0(n6.gi, i6Var));
         this.s.setColor(Color.argb(20, red, green, blue));
-        this.I = ls.e4;
-        int i10 = m6.Fi;
-        this.w.setColor(m6.w0(i10, h6Var));
+        this.I = ks.e4;
+        int i10 = n6.Fi;
+        this.w.setColor(n6.w0(i10, i6Var));
         Paint.Style style = Paint.Style.FILL;
         Paint paint = this.x;
         paint.setStyle(style);
-        this.P = m6.w0(m6.E6, h6Var);
-        this.Q = m6.w0(m6.Ji, h6Var);
+        this.P = n6.w0(n6.E6, i6Var);
+        this.Q = n6.w0(n6.Ji, i6Var);
         paint.setColor(this.P);
         Paint paint2 = this.y;
         paint2.setStyle(style);
-        paint2.setColor(m6.w0(i10, h6Var));
+        paint2.setColor(n6.w0(i10, i6Var));
         invalidate();
     }
 
@@ -721,7 +721,7 @@ public final class o5 extends ViewGroup {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                if (((LinkedHashSet) ((kg.x1) this.h).b).contains((TL_iv.pageTableCell) obj)) {
+                if (((LinkedHashSet) ((kg.f1) this.h).b).contains((TL_iv.pageTableCell) obj)) {
                     return true;
                 }
             }
@@ -836,7 +836,7 @@ public final class o5 extends ViewGroup {
                         ceil = (int) Math.ceil(Layout.getDesiredWidth(text, f1Var.getPaint()));
                     }
                     i14 = i17;
-                    arrayList.add(ta.b(text, f1Var.getPaint(), a10, e6.n(p5Var.b), L6, max, ceil));
+                    arrayList.add(va.b(text, f1Var.getPaint(), a10, e6.n(p5Var.b), L6, max, ceil));
                     i17 = i14 + 1;
                     arrayList2 = arrayList;
                     L = i12;
@@ -854,7 +854,7 @@ public final class o5 extends ViewGroup {
         }
         int i18 = L;
         int i19 = L3;
-        System.arraycopy(ta.a(i16, size, L5, arrayList2), 0, this.c, 0, i16);
+        System.arraycopy(va.a(i16, size, L5, arrayList2), 0, this.c, 0, i16);
         int i20 = 0;
         for (int i21 : this.c) {
             i20 += i21;
@@ -976,7 +976,7 @@ public final class o5 extends ViewGroup {
         if (e6Var == null || (n5Var = this.h) == null || i7 < 0 || i7 >= e6Var.b || i10 < 0 || i10 >= e6Var.c) {
             return false;
         }
-        return ((LinkedHashSet) ((kg.x1) n5Var).b).contains(e6Var.d[i7][i10]);
+        return ((LinkedHashSet) ((kg.f1) n5Var).b).contains(e6Var.d[i7][i10]);
     }
 
     public final int q() {

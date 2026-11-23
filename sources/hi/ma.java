@@ -1,41 +1,37 @@
 package hi;
 
-import android.graphics.Canvas;
-import org.telegram.ui.LaunchActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class ma extends na {
-    public final /* synthetic */ fi.p g;
-    public final /* synthetic */ float h;
+public final class ma extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ nb d;
 
-    public ma(fi.p pVar, float f10) {
-        this.g = pVar;
-        this.h = f10;
+    public /* synthetic */ ma(nb nbVar, int i7, int i10, int i11) {
+        this.a = i11;
+        this.d = nbVar;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // hi.na
-    public final void a(Canvas canvas, float f10) {
-        float pow = (float) Math.pow(f10, 16.0d);
-        fi.p pVar = this.g;
-        float f11 = this.h;
-        pVar.c(canvas, f11, f11, pow);
-    }
-
-    @Override // hi.na
-    public final void e() {
-        fi.p pVar = this.g;
-        pVar.post(new fi.o(pVar, 1));
-    }
-
-    @Override // hi.na
-    public final void f(boolean z10) {
-        fi.p pVar = this.g;
-        pVar.x = true;
-        pVar.invalidate();
-        if (z10) {
-            pVar.getLocationInWindow(new int[2]);
-            LaunchActivity.b0((pVar.getWidth() / 2.0f) + r6[0], (pVar.getHeight() / 2.0f) + r6[1], 1.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.d.M(this.b, this.c);
+                break;
+            default:
+                int i7 = this.b;
+                int i10 = this.c;
+                if (i7 != i10) {
+                    this.d.P(i7, i10);
+                    break;
+                }
+                break;
         }
     }
 }

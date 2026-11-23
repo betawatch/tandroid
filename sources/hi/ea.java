@@ -1,121 +1,176 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RenderNode;
-import android.os.Build;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.RectF;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
-import java.util.Arrays;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.vd0;
-import org.telegram.ui.Components.xd0;
-import org.telegram.ui.Components.yt0;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.p10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.xt0;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class ea extends FrameLayout {
-    public final Rect a;
-    public final Rect b;
-    public RenderNode c;
-    public final /* synthetic */ sa d;
+public final /* synthetic */ class ea implements p10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ fs c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ea(sa saVar, Activity activity) {
-        super(activity);
-        this.d = saVar;
-        this.a = new Rect();
-        this.b = new Rect();
+    public /* synthetic */ ea(fs fsVar, boolean z10, int i7) {
+        this.a = i7;
+        this.c = fsVar;
+        this.b = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        boolean z10;
-        Canvas canvas2;
-        int i7 = Build.VERSION.SDK_INT;
-        if (i7 < 31 || !canvas.isHardwareAccelerated() || org.telegram.messenger.g0.m0) {
-            z10 = false;
-            canvas2 = canvas;
-        } else {
-            if (this.c == null) {
-                this.c = new RenderNode("StoryRecorder.PreviewView");
-            }
-            this.c.setPosition(0, 0, getWidth(), getHeight());
-            canvas2 = this.c.beginRecording();
-            z10 = true;
+    @Override // org.telegram.messenger.p10
+    public final void a(Object obj, Object obj2) {
+        xt0 xt0Var;
+        TLRPC.PhotoSize w10;
+        int i7 = this.a;
+        int i10 = 0;
+        boolean z10 = this.b;
+        fs fsVar = this.c;
+        switch (i7) {
+            case 0:
+                nb nbVar = (nb) fsVar;
+                Bitmap bitmap = (Bitmap) obj2;
+                int i11 = nbVar.c;
+                if (obj != null && nbVar.q2 == null && !nbVar.X && nbVar.I()) {
+                    if (!z10) {
+                        nbVar.h0(false, true);
+                        nbVar.R0.a(nbVar.P1);
+                        n6 n6Var = nbVar.P0;
+                        boolean z11 = nbVar.P1 == 1;
+                        n6Var.o0 = -1.0f;
+                        n6Var.p0 = z11;
+                        n6Var.invalidate();
+                        nbVar.e(false);
+                        boolean z12 = obj instanceof ef;
+                        if (!z12) {
+                            if (obj instanceof x7) {
+                                x7 x7Var = (x7) obj;
+                                if (x7Var.L == null && !x7Var.v()) {
+                                    nbVar.f1.c("Failed to load draft");
+                                    mp.u1(i11).R1().w.b(x7Var);
+                                    break;
+                                } else {
+                                    x7Var.J0 = nbVar.w0;
+                                    x7Var.K0 = nbVar.x0;
+                                    nbVar.P1 = x7Var.K ? 1 : 0;
+                                    x7Var.M0 = bitmap;
+                                    nbVar.M1 = false;
+                                    nbVar.B0.n(x7Var);
+                                    nbVar.L1 = x7Var;
+                                    if (z12) {
+                                        l9.a(i11, x7Var);
+                                    }
+                                    nbVar.J(1, true);
+                                }
+                            }
+                        } else {
+                            ef efVar = (ef) obj;
+                            if (efVar.b && !efVar.d()) {
+                                i10 = 1;
+                            }
+                            nbVar.P1 = i10;
+                            x7 l10 = x7.l(efVar);
+                            l10.M0 = bitmap;
+                            l10.J0 = nbVar.w0;
+                            l10.K0 = nbVar.x0;
+                            l10.A();
+                            nbVar.M1 = true;
+                            if (nbVar.B0.j()) {
+                                nbVar.H1 = null;
+                                l10.P = 1.0f;
+                                if (nbVar.B0.l(l10)) {
+                                    nbVar.L1 = x7.a(nbVar.B0.getLayout(), nbVar.B0.getContent());
+                                }
+                                nbVar.l0(true);
+                            } else {
+                                l10.B();
+                                nbVar.L1 = l10;
+                                if (z12) {
+                                    l9.a(i11, l10);
+                                }
+                                nbVar.J(1, true);
+                            }
+                        }
+                    } else if (nbVar.L1 != null) {
+                        nbVar.t();
+                        nbVar.L1.j = true;
+                        if (obj instanceof ef) {
+                            pa paVar = nbVar.w1;
+                            paVar.c0(paVar.j0(((ef) obj).I, false));
+                        } else if (obj instanceof TLObject) {
+                            pa paVar2 = nbVar.w1;
+                            TLObject tLObject = (TLObject) obj;
+                            paVar2.Z1 = true;
+                            q5 q5Var = paVar2.B0;
+                            float f10 = (!(tLObject instanceof TLRPC.Photo) || (w10 = org.telegram.messenger.w7.w(((TLRPC.Photo) tLObject).sizes, 1000, false, null, false)) == null) ? 1.0f : w10.w / w10.h;
+                            if (f10 > 1.0f) {
+                                float floor = (float) Math.floor(Math.max(paVar2.B1, q5Var.getMeasuredWidth()) * 0.5d);
+                                xt0Var = new xt0(floor, floor / f10);
+                            } else {
+                                float floor2 = (float) Math.floor(Math.max(paVar2.C1, q5Var.getMeasuredHeight()) * 0.5d);
+                                xt0Var = new xt0(f10 * floor2, floor2);
+                            }
+                            tg.s1 s1Var = new tg.s1(paVar2.getContext(), paVar2.d0(), xt0Var, tLObject);
+                            s1Var.setDelegate(paVar2);
+                            q5Var.addView(s1Var);
+                            paVar2.e0();
+                            paVar2.c0(s1Var);
+                        }
+                        nbVar.e(false);
+                    }
+                    p3 p3Var = nbVar.N0;
+                    if (p3Var != null) {
+                        nbVar.m2 = p3Var.e.e0();
+                        nbVar.n2 = nbVar.N0.getSelectedAlbum();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                li.c0 c0Var = (li.c0) fsVar;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error == null) {
+                    li.k0.f(new org.telegram.ui.Components.kc((FrameLayout) c0Var.b, c0Var.J0), 1, z10);
+                    c0Var.o1.C(0);
+                    break;
+                } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
+                    org.telegram.ui.Cells.c0.t((FrameLayout) c0Var.b, c0Var.J0, tL_error, false);
+                    break;
+                } else {
+                    li.k0.f(new org.telegram.ui.Components.kc((FrameLayout) c0Var.b, c0Var.J0), 2, z10);
+                    c0Var.o1.C(0);
+                    break;
+                }
+            default:
+                ProfileActivity profileActivity = (ProfileActivity) fsVar;
+                Integer num = (Integer) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                RectF rectF = ProfileActivity.Z6;
+                if (!profileActivity.c4()) {
+                    if (org.telegram.ui.Components.kc.a(profileActivity)) {
+                        if (num.intValue() == 1) {
+                            org.telegram.ui.Components.kc.l(null, profileActivity, z10).j();
+                        } else if (num.intValue() == 2) {
+                            org.telegram.ui.Components.kc.l(org.telegram.messenger.n5.t(profileActivity.e1), profileActivity, z10).j();
+                        } else if (tL_error2 != null) {
+                            org.telegram.ui.Components.kc.e0(tL_error2);
+                        }
+                    }
+                    org.telegram.messenger.n6 n6Var2 = profileActivity.Y1;
+                    if (n6Var2 != null) {
+                        n6Var2.g();
+                        break;
+                    }
+                }
+                break;
         }
-        super.dispatchDraw(canvas2);
-        if (!z10 || i7 < 31) {
-            return;
-        }
-        this.c.endRecording();
-        org.telegram.ui.Components.ca caVar = this.d.s0;
-        if (caVar != null) {
-            caVar.g(this, this.c);
-        }
-        canvas.drawRenderNode(this.c);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        ValueAnimator valueAnimator = this.d.F;
-        if (valueAnimator == null || !valueAnimator.isRunning()) {
-            super.invalidate();
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        if (Build.VERSION.SDK_INT >= 29) {
-            int i13 = i11 - i7;
-            int i14 = i12 - i10;
-            int L = i14 - org.telegram.messenger.g0.L(120.0f);
-            int L2 = org.telegram.messenger.g0.L(40.0f);
-            Rect rect = this.a;
-            rect.set(0, L, L2, i14);
-            int L3 = i13 - org.telegram.messenger.g0.L(40.0f);
-            int L4 = i14 - org.telegram.messenger.g0.L(120.0f);
-            Rect rect2 = this.b;
-            rect2.set(L3, L4, i13, i14);
-            setSystemGestureExclusionRects(Arrays.asList(rect, rect2));
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        sa saVar = this.d;
-        xd0 xd0Var = saVar.G1;
-        if (xd0Var != null) {
-            float measuredWidth = xd0Var.getMeasuredWidth();
-            float measuredHeight = saVar.G1.getMeasuredHeight();
-            aj0 aj0Var = xd0Var.e;
-            aj0Var.a = 0.0f;
-            aj0Var.b = 0.0f;
-            aj0Var.c = measuredWidth;
-            aj0Var.d = measuredHeight;
-        }
-        vd0 vd0Var = saVar.F1;
-        if (vd0Var != null) {
-            float measuredWidth2 = vd0Var.getMeasuredWidth();
-            float measuredHeight2 = saVar.F1.getMeasuredHeight();
-            yt0 yt0Var = vd0Var.d;
-            yt0Var.a = measuredWidth2;
-            yt0Var.b = measuredHeight2;
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r0v1, types: [android.widget.FrameLayout, hi.oa] */
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ?? r02 = this.d.w2;
-        if (r02 == 0) {
-            return super.onTouchEvent(motionEvent);
-        }
-        r02.i(motionEvent);
-        return true;
     }
 }

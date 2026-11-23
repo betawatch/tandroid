@@ -1,173 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lt0 extends FrameLayout {
-    public org.telegram.ui.Components.o9 a;
-    public final org.telegram.ui.Cells.r1 b;
-    public Drawable c;
-    public final Drawable d;
-    public final org.telegram.messenger.gj e;
-    public final /* synthetic */ PrivacyControlActivity f;
+public final /* synthetic */ class lt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PrivacySettingsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lt0(PrivacyControlActivity privacyControlActivity, Context context) {
-        super(context);
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        this.f = privacyControlActivity;
-        setWillNotDraw(false);
-        setClipToPadding(false);
-        this.d = org.telegram.ui.ActionBar.m6.Y0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7);
-        setPadding(0, org.telegram.messenger.g0.L(11.0f), 0, org.telegram.messenger.g0.L(11.0f));
-        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        i7 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
-        i10 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        TLRPC.User c22 = u12.c2(Long.valueOf(org.telegram.messenger.k10.i(i10).e()));
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.message = org.telegram.messenger.hd.N0(2131746638, null);
-        tL_message.date = currentTimeMillis - 3540;
-        tL_message.dialog_id = 1L;
-        tL_message.flags = org.telegram.messenger.ls.k4;
-        tL_message.from_id = new TLRPC.TL_peerUser();
-        tL_message.id = 1;
-        TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
-        tL_message.fwd_from = tL_messageFwdHeader;
-        tL_messageFwdHeader.from_name = org.telegram.messenger.i5.m(0, c22.first_name, c22.last_name);
-        tL_message.media = new TLRPC.TL_messageMediaEmpty();
-        tL_message.out = false;
-        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-        tL_message.peer_id = tL_peerUser;
-        i11 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        tL_peerUser.user_id = org.telegram.messenger.k10.i(i11).e();
-        i12 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(i12, tL_message, true, false);
-        this.e = gjVar;
-        gjVar.T = 1L;
-        gjVar.S1 = false;
-        i13 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        org.telegram.ui.Cells.r1 r1Var = new org.telegram.ui.Cells.r1(context, i13);
-        this.b = r1Var;
-        r1Var.setDelegate(new sa.d(19));
-        r1Var.f6 = false;
-        r1Var.setFullyDraw(true);
-        r1Var.y3(gjVar, null, false, false, false, false);
-        addView(r1Var, c8.ma.o(-1, -2));
+    public /* synthetic */ lt0(PrivacySettingsActivity privacySettingsActivity, int i7) {
+        this.a = i7;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        PrivacyControlActivity.w0(this.f);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        PrivacyControlActivity.w0(this.f);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        PrivacyControlActivity.w0(this.f);
-        org.telegram.ui.Components.o9 o9Var = this.a;
-        if (o9Var != null) {
-            o9Var.dispose();
-            this.a = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        PrivacySettingsActivity privacySettingsActivity = this.b;
+        switch (i7) {
+            case 0:
+                privacySettingsActivity.a.f();
+                privacySettingsActivity.S = true;
+                break;
+            case 1:
+                privacySettingsActivity.c.dismiss();
+                break;
+            default:
+                org.telegram.ui.Components.nb nbVar = new org.telegram.ui.Components.nb(privacySettingsActivity.getParentActivity(), null);
+                nbVar.d(R.raw.email_check_inbox, new String[0]);
+                nbVar.b.setText(org.telegram.messenger.gd.N0(2131742540, null));
+                org.telegram.ui.Components.fc.g(privacySettingsActivity, nbVar, 1500).j();
+                try {
+                    privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                privacySettingsActivity.E0();
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable t02 = org.telegram.ui.ActionBar.m6.t0();
-        if (t02 != null && this.c != t02) {
-            org.telegram.ui.Components.o9 o9Var = this.a;
-            if (o9Var != null) {
-                o9Var.dispose();
-                this.a = null;
-            }
-            this.c = t02;
-        }
-        Drawable drawable = this.c;
-        if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.cb0)) {
-            drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            Drawable drawable2 = this.c;
-            if (drawable2 instanceof org.telegram.ui.Components.p9) {
-                this.a = ((org.telegram.ui.Components.p9) drawable2).c(canvas, this);
-            } else {
-                drawable2.draw(canvas);
-            }
-        } else if (drawable instanceof BitmapDrawable) {
-            if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
-                canvas.save();
-                float f10 = 2.0f / org.telegram.messenger.g0.p;
-                canvas.scale(f10, f10);
-                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f10), (int) Math.ceil(getMeasuredHeight() / f10));
-            } else {
-                int measuredHeight = getMeasuredHeight();
-                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
-                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
-                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
-                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                int i7 = (measuredHeight - ceil2) / 2;
-                canvas.save();
-                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
-                this.c.setBounds(measuredWidth, i7, ceil + measuredWidth, ceil2 + i7);
-            }
-            this.c.draw(canvas);
-            canvas.restore();
-        } else {
-            super.onDraw(canvas);
-        }
-        if ((getParent() instanceof org.telegram.ui.Components.ek0) && ((org.telegram.ui.Components.ek0) getParent()).b1()) {
-            return;
-        }
-        int measuredWidth2 = getMeasuredWidth();
-        int measuredHeight2 = getMeasuredHeight();
-        Drawable drawable3 = this.d;
-        drawable3.setBounds(0, 0, measuredWidth2, measuredHeight2);
-        drawable3.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
     }
 }

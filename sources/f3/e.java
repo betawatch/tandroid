@@ -1,8 +1,8 @@
 package f3;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class e implements b0 {
+public final class e implements c0 {
     public final g a;
     public final long b;
     public final long c;
@@ -19,23 +19,23 @@ public final class e implements b0 {
         this.f = j13;
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final boolean d() {
         return true;
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // f3.b0
-    public final a0 f(long j3) {
-        c0 c0Var = new c0(j3, f.a(this.a.k(j3), 0L, this.c, this.d, this.e, this.f));
-        return new a0(c0Var, c0Var);
+    @Override // f3.c0
+    public final b0 f(long j3) {
+        d0 d0Var = new d0(j3, f.a(this.a.h(j3), 0L, this.c, this.d, this.e, this.f));
+        return new b0(d0Var, d0Var);
     }
 
-    @Override // f3.b0
+    @Override // f3.c0
     public final long h() {
         return this.b;
     }

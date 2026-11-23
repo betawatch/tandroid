@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
-import c8.mc;
+import c8.nc;
 import j$.util.Objects;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nd0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -115,7 +115,7 @@ public abstract class h3 {
                 try {
                     fVar = b7.f.c(this.a, b7.f.b, str);
                 } catch (b7.b e10) {
-                    mc.a(e10, "Error loading optional module %s", str);
+                    nc.a(e10, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -150,15 +150,15 @@ public abstract class h3 {
         }
     }
 
-    public h3(Context context, jn jnVar) {
+    public h3(Context context, nd0 nd0Var) {
         this.e = new android.support.v4.media.session.q(this, 12);
         if (context != null) {
             this.a = context;
-            if (jnVar == null) {
-                this.d = new jn(new ComponentName(context, getClass()), 15);
+            if (nd0Var == null) {
+                this.d = new nd0(new ComponentName(context, getClass()), 12);
                 return;
             } else {
-                this.d = jnVar;
+                this.d = nd0Var;
                 return;
             }
         }

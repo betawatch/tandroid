@@ -13,13 +13,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
+import c8.na;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.oh0;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.nh0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class t6 extends FrameLayout {
     public final ArrayList a;
@@ -33,7 +33,7 @@ public final class t6 extends FrameLayout {
         this.c = -1;
         int i7 = 0;
         this.d = 0;
-        this.e = new f2.a(this, 14);
+        this.e = new f2.a(this, 13);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         addView(imageView, -1, -1);
@@ -47,21 +47,21 @@ public final class t6 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.N0(2131744520, null));
+        textView.setText(gd.N0(2131744522, null));
         textView.setTextSize(1, 20.0f);
-        linearLayout.addView(textView, ma.o(-2, -2));
+        linearLayout.addView(textView, na.o(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
-        textView2.setText(hd.N0(2131744517, null));
+        textView2.setText(gd.N0(2131744519, null));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
-        linearLayout.addView(textView2, ma.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
+        linearLayout.addView(textView2, na.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
         ArrayList arrayList = new ArrayList(4);
         this.a = arrayList;
-        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, hd.N0(2131744524, null), hd.N0(2131744523, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_pause, hd.N0(2131744519, null), hd.N0(2131744518, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_back, hd.N0(2131744526, null), hd.N0(2131744525, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, hd.N0(2131744522, null), hd.N0(2131744521, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, gd.N0(2131744526, null), gd.N0(2131744525, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_pause, gd.N0(2131744521, null), gd.N0(2131744520, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_back, gd.N0(2131744528, null), gd.N0(2131744527, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, gd.N0(2131744524, null), gd.N0(2131744523, null)));
         int measuredWidth = t8Var.getMeasuredWidth() - org.telegram.messenger.g0.L(100.0f);
         int size = arrayList.size();
         int i10 = 0;
@@ -95,10 +95,10 @@ public final class t6 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(hd.N0(2131744527, null));
+        textView3.setText(gd.N0(2131744529, null));
         textView3.setTextSize(1, 14.0f);
-        linearLayout.addView(textView3, ma.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
-        addView(linearLayout, ma.e(-1, -2, 17));
+        linearLayout.addView(textView3, na.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
+        addView(linearLayout, na.e(-1, -2, 17));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), org.telegram.messenger.g0.j2(12.0f, 10, t8Var));
         bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
         imageView.setImageDrawable(bitmapDrawable);
@@ -118,7 +118,7 @@ public final class t6 extends FrameLayout {
         this.b.setDuration(350L);
         this.b.setInterpolator(new AccelerateDecelerateInterpolator());
         this.b.getCurrentPlayTime();
-        this.b.addListener(new ai.k0(this, 16));
+        this.b.addListener(new ai.g0(this, 16));
         this.b.addUpdateListener(new ah.g(this, 23));
         this.b.start();
         org.telegram.messenger.g0.h3(this.e, (((s6) this.a.get(this.d)).c.r() * 2) + 100);
@@ -135,16 +135,16 @@ public final class t6 extends FrameLayout {
         ArrayList arrayList = this.a;
         if (i7 != -1) {
             s6 s6Var = (s6) arrayList.get(i7);
-            oh0 oh0Var = s6Var.c;
-            oh0Var.M(0);
-            oh0Var.stop();
+            nh0 nh0Var = s6Var.c;
+            nh0Var.M(0);
+            nh0Var.stop();
             s6Var.n = 0.0f;
             s6Var.invalidate();
         }
         s6 s6Var2 = (s6) arrayList.get(this.d);
-        oh0 oh0Var2 = s6Var2.c;
-        oh0Var2.M(0);
-        oh0Var2.stop();
+        nh0 nh0Var2 = s6Var2.c;
+        nh0Var2.M(0);
+        nh0Var2.stop();
         s6Var2.n = 0.0f;
         s6Var2.invalidate();
         c();

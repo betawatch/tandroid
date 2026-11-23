@@ -1,44 +1,25 @@
 package wg;
 
-import android.util.Pair;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.y10;
+import android.content.Context;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements y10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
-    public final /* synthetic */ boolean c;
+public final class u0 extends ah.o {
+    public final /* synthetic */ v0 L;
 
-    public /* synthetic */ u0(w0 w0Var, boolean z10, int i7) {
-        this.a = i7;
-        this.b = w0Var;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u0(v0 v0Var, Context context, i6 i6Var) {
+        super(context, i6Var);
+        this.L = v0Var;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                List list = (List) obj;
-                w0 w0Var = this.b;
-                ArrayList arrayList = w0Var.c2;
-                if (this.c) {
-                    w0Var.d2.addAll(list);
-                }
-                if (w0Var.n2 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    w0Var.o1(true, true);
-                    w0Var.k1(true);
-                    break;
-                }
-                break;
-            default:
-                w0.e1(this.b, this.c, (Pair) obj);
-                break;
-        }
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        int L = org.telegram.messenger.g0.L(78.0f) + getMeasuredHeight();
+        v0 v0Var = this.L;
+        v0Var.l2 = L;
+        v0Var.k2.G();
     }
 }

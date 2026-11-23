@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class o implements d {
     public static final Charset c = Charset.forName("UTF-8");
@@ -17,7 +17,7 @@ public final class o implements d {
     }
 
     @Override // ca.d
-    public final void f() {
+    public final void b() {
         aa.g.b(this.b, "There was a problem closing the Crashlytics log file.");
         this.b = null;
     }
@@ -30,7 +30,7 @@ public final class o implements d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String n() {
+    public final String l() {
         n nVar;
         byte[] bArr;
         File file = this.a;

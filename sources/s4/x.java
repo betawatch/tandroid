@@ -9,10 +9,11 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.md0;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Wallet.o5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -72,9 +73,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        md0 md0Var = eVar.C;
-        if (md0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) md0Var.b;
+        i61 i61Var = eVar.C;
+        if (i61Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) i61Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }
@@ -109,12 +110,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new qf(c10, 16));
+                k kVar = new k(c10.h, new aa(c10, 17));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 qe.h hVar = c10.c;
-                ((Handler) hVar.d).post((s0) hVar.h);
+                ((Handler) hVar.d).post((o5) hVar.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -138,7 +139,7 @@ public final class x {
                 }
                 c10.r = null;
                 qe.h hVar2 = c10.c;
-                ((Handler) hVar2.d).post((s0) hVar2.h);
+                ((Handler) hVar2.d).post((o5) hVar2.h);
             }
         }
         bVar.b(769, zVar);

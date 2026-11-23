@@ -14,25 +14,25 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.y10;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.xy0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.w10;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
+public final class lc extends View implements org.telegram.ui.ActionBar.c6 {
     public PorterDuffColorFilter a;
     public int b;
     public final boolean c;
     public final ArrayList d;
     public final ArrayList e;
     public final Paint f;
-    public final org.telegram.ui.Components.d6 h;
+    public final org.telegram.ui.Components.c6 h;
     public float n;
     public kc r;
-    public y10 s;
+    public w10 s;
     public final /* synthetic */ mc w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -43,11 +43,11 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         this.e = new ArrayList();
         Paint paint = new Paint(1);
         this.f = paint;
-        this.h = new org.telegram.ui.Components.d6(this, 0L, 320L, nr.h);
+        this.h = new org.telegram.ui.Components.c6(this, 0L, 320L, kr.h);
         this.c = z10;
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
-        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, mcVar.m1));
+        paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, mcVar.m1));
     }
 
     @Override // android.view.View
@@ -77,7 +77,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
             if (i7 >= arrayList.size()) {
                 return;
             }
-            ((kc) arrayList.get(i7)).k.P();
+            ((kc) arrayList.get(i7)).k.Q();
             i7++;
         }
     }
@@ -91,7 +91,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
             if (i7 >= arrayList.size()) {
                 return;
             }
-            ((kc) arrayList.get(i7)).k.R();
+            ((kc) arrayList.get(i7)).k.S();
             i7++;
         }
     }
@@ -99,7 +99,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         kc kcVar;
-        y10 y10Var;
+        w10 w10Var;
         if (motionEvent.getAction() == 0) {
             kc kcVar2 = this.r;
             if (kcVar2 != null) {
@@ -123,8 +123,8 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                 kcVar3.q.c(true);
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (motionEvent.getAction() == 1 && (kcVar = this.r) != null && !kcVar.p && kcVar.b.contains(motionEvent.getX(), motionEvent.getY()) && (y10Var = this.s) != null) {
-                y10Var.a(Long.valueOf(this.r.j));
+            if (motionEvent.getAction() == 1 && (kcVar = this.r) != null && !kcVar.p && kcVar.b.contains(motionEvent.getX(), motionEvent.getY()) && (w10Var = this.s) != null) {
+                w10Var.a(Long.valueOf(this.r.j));
             }
             kc kcVar4 = this.r;
             if (kcVar4 != null) {
@@ -151,13 +151,13 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    public void setOnSenderClickListener(y10 y10Var) {
-        this.s = y10Var;
+    public void setOnSenderClickListener(w10 w10Var) {
+        this.s = w10Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.ui.Components.d6] */
-    /* JADX WARN: Type inference failed for: r11v4, types: [org.telegram.ui.Components.d6] */
+    /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.ui.Components.c6] */
+    /* JADX WARN: Type inference failed for: r11v4, types: [org.telegram.ui.Components.c6] */
     /* JADX WARN: Type inference failed for: r2v10 */
     /* JADX WARN: Type inference failed for: r2v6 */
     /* JADX WARN: Type inference failed for: r2v7, types: [android.graphics.Typeface] */
@@ -177,7 +177,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
     /* JADX WARN: Type inference failed for: r9v9, types: [di.kc] */
     public void setSenders(ArrayList<fc> arrayList) {
         ArrayList arrayList2;
-        nq[] nqVarArr;
+        kq[] kqVarArr;
         ?? r72;
         ?? r82;
         ?? r92;
@@ -188,7 +188,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         while (true) {
             arrayList2 = this.d;
             int size = arrayList2.size();
-            nqVarArr = null;
+            kqVarArr = null;
             fc fcVar = null;
             r72 = this.e;
             r82 = 1;
@@ -205,7 +205,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                 }
             }
             if (fcVar == null) {
-                kcVar.k.R();
+                kcVar.k.S();
                 arrayList2.remove(i7);
                 i7--;
                 kcVar.a = -1;
@@ -224,7 +224,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                     break;
                 }
             }
-            r92 = nqVarArr;
+            r92 = kqVarArr;
             if (r92 == null) {
                 for (int i13 = 0; i13 < r72.size(); i13++) {
                     kc kcVar3 = (kc) r72.get(i13);
@@ -236,7 +236,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                 }
                 if (r92 != null) {
                     r72.remove(r92);
-                    r92.k.P();
+                    r92.k.Q();
                     arrayList2.add(r92);
                 }
             }
@@ -251,7 +251,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
             r92.a = (arrayList3.size() - r82) - i11;
             long j3 = fcVar3.d;
             Paint paint = r92.h;
-            r92.o = new xy0(pb.U0(i5.c.l(j3, ',', new StringBuilder("⭐️")), 0.85f, nqVarArr), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+            r92.o = new wy0(pb.U0(i5.c.l(j3, ',', new StringBuilder("⭐️")), 0.85f, kqVarArr), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
             boolean z13 = lcVar.c;
             int i14 = mcVar.n1;
             if (z13) {
@@ -271,7 +271,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
             if (this.c) {
                 int i16 = i11 + 1;
                 r92.v = i16;
-                r92.u = new xy0(i5.c.i(i16, ""), 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+                r92.u = new wy0(i5.c.i(i16, ""), 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
                 if (i16 > 0 && r92.s == null) {
                     Drawable mutate = lcVar.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -280,7 +280,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                     mutate.setColorFilter(new PorterDuffColorFilter(i17, mode));
                     Drawable mutate2 = lcVar.getContext().getResources().getDrawable(R.drawable.filled_stream_crown_outline).mutate();
                     r92.t = mutate2;
-                    mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, mcVar.m1), mode));
+                    mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, mcVar.m1), mode));
                 }
             }
             if (fcVar3.b) {
@@ -291,30 +291,30 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                     r92.p = z14;
                     if (z14) {
                         r22 = null;
-                        t6 = hd.N0(2131744805, null);
+                        t6 = gd.N0(2131744807, null);
                     } else {
                         r22 = null;
                         t6 = org.telegram.messenger.n5.t(r92.j);
                     }
-                    r92.n = new xy0(t6, 12.0f, r22);
+                    r92.n = new wy0(t6, 12.0f, r22);
                     lcVar.invalidate();
                     i11++;
                     arrayList3 = arrayList;
-                    nqVarArr = r22;
+                    kqVarArr = r22;
                     r82 = 1;
                 }
             }
             r22 = null;
             i11++;
             arrayList3 = arrayList;
-            nqVarArr = r22;
+            kqVarArr = r22;
             r82 = 1;
         }
         invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x002e A[Catch: Exception -> 0x001a, TryCatch #0 {Exception -> 0x001a, blocks: (B:3:0x0002, B:5:0x0015, B:9:0x0028, B:11:0x002e, B:13:0x0036, B:15:0x003a, B:17:0x0042, B:19:0x0047, B:24:0x004a, B:28:0x001c), top: B:2:0x0002 }] */
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -323,7 +323,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         Drawable drawable;
         ArrayList arrayList = this.d;
         try {
-            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.w.m1);
+            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, this.w.m1);
             this.f.setColor(w02);
             if (this.a != null) {
                 if (w02 != this.b) {
@@ -350,7 +350,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

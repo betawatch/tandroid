@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class ea extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ la c;
@@ -62,11 +62,11 @@ public final class ea extends org.telegram.ui.Components.dk0 {
         int i10 = f1Var.f;
         View view = f1Var.a;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(i7 == 0 ? j3 != 0 ? 2131752973 : 2131745302 : 2131743397, null));
+            ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(i7 == 0 ? j3 != 0 ? 2131752973 : 2131745302 : 2131743395, null));
             return;
         }
         if (i10 == 2) {
-            ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.hd.N0(j3 != 0 ? 2131752925 : 2131743396, null));
+            ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.gd.N0(j3 != 0 ? 2131752925 : 2131743394, null));
             return;
         }
         if (i10 == 3) {
@@ -102,7 +102,7 @@ public final class ea extends org.telegram.ui.Components.dk0 {
             return new org.telegram.ui.Components.mj0(kaVar);
         }
         if (i7 == 2) {
-            return new org.telegram.ui.Components.mj0(new org.telegram.ui.Cells.a9(laVar.getParentActivity()));
+            return new org.telegram.ui.Components.mj0(new org.telegram.ui.Cells.z8(laVar.getParentActivity()));
         }
         if (i7 == 3) {
             return new org.telegram.ui.Components.mj0(new ga(laVar, laVar.getParentActivity()));

@@ -1,21 +1,26 @@
 package d6;
 
-import a8.la;
+import a8.ma;
 import a8.n1;
-import a8.w9;
+import a8.o1;
+import a8.x9;
 import a8.xa;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.Looper;
 import android.os.Parcel;
+import android.os.RemoteException;
 import android.os.ResultReceiver;
 import android.support.v4.media.session.a0;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
@@ -23,17 +28,19 @@ import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
 import androidx.biometric.z;
-import androidx.fragment.app.j0;
+import androidx.fragment.app.f0;
 import androidx.fragment.app.k0;
+import b9.w0;
 import ch.p;
+import ci.j0;
 import ci.o0;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.internal.f0;
-import com.google.android.gms.common.api.internal.h1;
+import com.google.android.gms.common.api.internal.e0;
+import com.google.android.gms.common.api.internal.g1;
 import com.google.android.gms.common.api.internal.o;
+import com.google.android.gms.common.api.internal.p0;
 import com.google.android.gms.common.api.internal.q;
-import com.google.android.gms.common.api.internal.q0;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.a2;
 import com.google.android.gms.internal.cast.m0;
@@ -59,8 +66,7 @@ import fi.b9;
 import fi.c9;
 import fi.e3;
 import g.s;
-import gb.p0;
-import hi.t5;
+import hi.u0;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationHandler;
@@ -88,44 +94,47 @@ import org.chromium.support_lib_boundary.WebMessagePayloadBoundaryInterface;
 import org.chromium.support_lib_boundary.WebMessagePortBoundaryInterface;
 import org.json.JSONException;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.kc;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.j6;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.pt0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cv0;
-import org.telegram.ui.wv0;
+import org.telegram.ui.bv0;
+import org.telegram.ui.vv0;
 import q6.m;
 import q7.l1;
 import q7.m1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, q0, i0, q, qt0, kc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, ib.b {
+public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, p0, i0, q, pt0, jc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, p90 {
     public static i c;
     public final /* synthetic */ int a;
     public final Object b;
 
     public /* synthetic */ i(cb.c cVar) {
-        this.a = 18;
+        this.a = 19;
         this.b = (r) cVar.b;
     }
 
-    public static synchronized i B(Context context) {
-        i F;
+    public static synchronized i F(Context context) {
+        i I;
         synchronized (i.class) {
-            F = F(context.getApplicationContext());
+            I = I(context.getApplicationContext());
         }
-        return F;
+        return I;
     }
 
-    public static synchronized i F(Context context) {
+    public static synchronized i I(Context context) {
         synchronized (i.class) {
             i iVar = c;
             if (iVar != null) {
@@ -137,32 +146,171 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    public static o o(Looper looper, Object obj, String str) {
+    public static o p(Looper looper, Object obj, String str) {
         m.i(obj, "Listener must not be null");
         m.i(looper, "Looper must not be null");
         return new o(looper, obj, str);
     }
 
-    public void A() {
-        f0 f0Var = (f0) ((WeakReference) this.b).get();
-        if (f0Var == null) {
+    public void A(int i7) {
+        TLRPC.TL_exportedNoPaidMessagesToken c10;
+        o0 o0Var = ((j0) this.b).e;
+        if (o0Var == null || o0Var.d == i7) {
             return;
         }
-        f0Var.k();
+        if (o0Var.c.d && i7 == 2) {
+            i7 = 1;
+        }
+        o0Var.d = i7;
+        o0Var.f().edit().putBoolean("qrNoPaidPermanent", o0Var.d == 2).apply();
+        int i10 = o0Var.d;
+        if (i10 == 0) {
+            if (o0Var.n != 0) {
+                ConnectionsManager.getInstance(o0Var.a).cancelRequest(o0Var.n, true);
+                o0Var.n = 0;
+                return;
+            }
+            return;
+        }
+        if (i10 == 2 && (c10 = o0Var.c()) != null) {
+            o0Var.f = c10;
+            o0Var.b.setFreeLink(o0Var.d(c10));
+        }
+        o0Var.n(false, o0Var.d == 1);
     }
 
-    @Override // l.w
-    public boolean C(l.k kVar) {
-        Window.Callback callback = ((s) this.b).f.getCallback();
-        if (callback == null) {
-            return true;
+    public float B(int i7, int i10, int i11, int i12) {
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        i iVar;
+        int i19;
+        int i20 = 1;
+        boolean z10 = Math.abs(i12 - i10) > Math.abs(i11 - i7);
+        if (z10) {
+            i14 = i7;
+            i13 = i10;
+            i16 = i11;
+            i15 = i12;
+        } else {
+            i13 = i7;
+            i14 = i10;
+            i15 = i11;
+            i16 = i12;
         }
-        callback.onMenuOpened(ls.t1, kVar);
-        return true;
+        int abs = Math.abs(i15 - i13);
+        int abs2 = Math.abs(i16 - i14);
+        int i21 = 2;
+        int i22 = (-abs) / 2;
+        int i23 = i13 < i15 ? 1 : -1;
+        int i24 = i14 < i16 ? 1 : -1;
+        int i25 = i15 + i23;
+        int i26 = i13;
+        int i27 = i14;
+        int i28 = 0;
+        while (true) {
+            if (i26 == i25) {
+                i17 = i21;
+                break;
+            }
+            int i29 = z10 ? i27 : i26;
+            int i30 = z10 ? i26 : i27;
+            boolean z11 = z10;
+            if (i28 == i20) {
+                i18 = i20;
+                i19 = abs;
+                iVar = this;
+            } else {
+                i18 = 0;
+                iVar = this;
+                i19 = abs;
+            }
+            if (i18 == ((cc.b) iVar.b).b(i29, i30)) {
+                if (i28 == 2) {
+                    return x9.b(i26, i27, i13, i14);
+                }
+                i28++;
+            }
+            i22 += abs2;
+            if (i22 > 0) {
+                if (i27 == i16) {
+                    i17 = 2;
+                    break;
+                }
+                i27 += i24;
+                i22 -= i19;
+            }
+            i26 += i23;
+            abs = i19;
+            z10 = z11;
+            i20 = 1;
+            i21 = 2;
+        }
+        if (i28 == i17) {
+            return x9.b(i25, i16, i13, i14);
+        }
+        return Float.NaN;
+    }
+
+    public float C(int i7, int i10, int i11, int i12) {
+        float f10;
+        float f11;
+        cc.b bVar = (cc.b) this.b;
+        float B = B(i7, i10, i11, i12);
+        int i13 = i7 - (i11 - i7);
+        int i14 = 0;
+        if (i13 < 0) {
+            f10 = i7 / (i7 - i13);
+            i13 = 0;
+        } else {
+            int i15 = bVar.a;
+            if (i13 >= i15) {
+                float f12 = ((i15 - 1) - i7) / (i13 - i7);
+                int i16 = i15 - 1;
+                f10 = f12;
+                i13 = i16;
+            } else {
+                f10 = 1.0f;
+            }
+        }
+        float f13 = i10;
+        int i17 = (int) (f13 - ((i12 - i10) * f10));
+        if (i17 < 0) {
+            f11 = f13 / (i10 - i17);
+        } else {
+            int i18 = bVar.b;
+            if (i17 >= i18) {
+                f11 = ((i18 - 1) - i10) / (i17 - i10);
+                i14 = i18 - 1;
+            } else {
+                i14 = i17;
+                f11 = 1.0f;
+            }
+        }
+        return (B(i7, i10, (int) (((i13 - i7) * f11) + i7), i14) + B) - 1.0f;
+    }
+
+    public void D() {
+        e0 e0Var = (e0) ((WeakReference) this.b).get();
+        if (e0Var == null) {
+            return;
+        }
+        e0Var.k();
+    }
+
+    @Override // org.telegram.ui.Components.pt0
+    public void E(boolean z10) {
+        te.a aVar = ((t) this.b).s;
+        if (aVar != null) {
+            aVar.a(z10, true);
+        }
     }
 
     @Override // te.b
-    public void D(float f10, int i7) {
+    public void G(float f10, int i7) {
         p pVar = (p) this.b;
         pVar.c.setLayerType(0, null);
         if (f10 == 0.0f && !pVar.P) {
@@ -171,10 +319,10 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 pVar.F.setFocusableInTouchMode(false);
             }
         }
-        ls.e().k(ls.k1, 512);
+        ks.e().k(ks.k1, 512);
     }
 
-    public synchronized void E() {
+    public synchronized void H() {
         synchronized (this) {
             try {
                 b bVar = (b) this.b;
@@ -191,20 +339,19 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.qt0
-    public void G(boolean z10) {
-        te.a aVar = ((t) this.b).s;
-        if (aVar != null) {
-            aVar.a(z10, true);
-        }
-    }
-
     @Override // te.b
-    public void H(int i7, float f10, float f11, te.c cVar) {
+    public void K(int i7, float f10, float f11, te.c cVar) {
         ((p) this.b).j0(f10);
     }
 
-    public void I() {
+    @Override // org.telegram.ui.Components.pt0
+    public float K0() {
+        i0.b bVar;
+        bVar = ((g2) ((t) this.b)).mSystemInsets;
+        return i5.c.d(9.66f, ri.a.d(bVar.b), 0);
+    }
+
+    public void L() {
         h6.h hVar = (h6.h) this.b;
         Iterator it = hVar.h.iterator();
         if (it.hasNext()) {
@@ -217,11 +364,43 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.qt0
-    public float U0() {
+    public void M(IBinder iBinder) {
+        synchronized (((HashMap) this.b)) {
+            if (iBinder != null) {
+                try {
+                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            new w0();
+            for (Map.Entry entry : ((HashMap) this.b).entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pt0
+    public int T0() {
         i0.b bVar;
         bVar = ((g2) ((t) this.b)).mSystemInsets;
-        return i5.c.d(9.66f, ri.a.d(bVar.b), 0);
+        return bVar.d;
+    }
+
+    public void a(f3.j jVar) {
+        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
+        long[] jArr = jVar.e;
+        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
+            return;
+        }
+        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.q
@@ -229,7 +408,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         int i7 = this.a;
         Object obj3 = this.b;
         switch (i7) {
-            case 12:
+            case 13:
                 d8.d dVar = new d8.d(0, (TaskCompletionSource) obj2);
                 d8.c cVar = (d8.c) ((d8.f) obj).n();
                 Parcel obtain = Parcel.obtain();
@@ -261,40 +440,83 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    public void c(f3.j jVar) {
-        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
-        long[] jArr = jVar.e;
-        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
-            return;
-        }
-        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
-    }
-
-    @Override // l.w
-    public void d(l.k kVar, boolean z10) {
-        ((s) this.b).i(kVar);
-    }
-
     @Override // fi.b9
-    public void e(long j3, int i7, e3 e3Var) {
-        cv0 cv0Var = (cv0) this.b;
+    public void d(long j3, int i7, e3 e3Var) {
+        bv0 bv0Var = (bv0) this.b;
         int i10 = ProfileStoriesView.t0;
-        cv0Var.f(true, false);
+        bv0Var.f(true, false);
         e3Var.run();
     }
 
+    public void e(n nVar, androidx.biometric.v vVar) {
+        Object obj = this.b;
+        k0 k0Var = (k0) obj;
+        if (k0Var == null) {
+            Log.e("BiometricPromptCompat", "Unable to start authentication. Client fragment manager was null.");
+            return;
+        }
+        if (k0Var.P()) {
+            Log.e("BiometricPromptCompat", "Unable to start authentication. Called after onSaveInstanceState().");
+            return;
+        }
+        k0 k0Var2 = (k0) obj;
+        androidx.biometric.q qVar = (androidx.biometric.q) k0Var2.D("androidx.biometric.BiometricFragment");
+        if (qVar == null) {
+            qVar = new androidx.biometric.q();
+            androidx.fragment.app.a aVar = new androidx.fragment.app.a(k0Var2);
+            aVar.f(0, qVar, "androidx.biometric.BiometricFragment");
+            aVar.e(true, true);
+            k0Var2.A(true);
+            k0Var2.E();
+        }
+        androidx.fragment.app.v k10 = qVar.k();
+        if (k10 == null) {
+            Log.e("BiometricFragment", "Not launching prompt. Client activity was null.");
+            return;
+        }
+        z zVar = qVar.m0;
+        zVar.f = nVar;
+        int i7 = nVar.a;
+        if (i7 == 0) {
+            i7 = vVar != null ? 15 : 255;
+        }
+        if (Build.VERSION.SDK_INT < 30 && i7 == 15 && vVar == null) {
+            zVar.g = o1.a();
+        } else {
+            zVar.g = vVar;
+        }
+        if (qVar.Q()) {
+            qVar.m0.k = qVar.q(R.string.confirm_device_credential_password);
+        } else {
+            qVar.m0.k = null;
+        }
+        if (qVar.Q() && new a0(new androidx.biometric.t(k10, 0)).d(ks.e4) != 0) {
+            qVar.m0.n = true;
+            qVar.S();
+        } else if (qVar.m0.p) {
+            qVar.l0.postDelayed(new androidx.biometric.p(qVar), 600L);
+        } else {
+            qVar.X();
+        }
+    }
+
+    @Override // l.w
+    public void f(l.k kVar, boolean z10) {
+        ((s) this.b).g(kVar);
+    }
+
     @Override // androidx.activity.result.b
-    public void f(Object obj) {
+    public void g(Object obj) {
         switch (this.a) {
             case 3:
                 Map map = (Map) obj;
-                j0 j0Var = (j0) this.b;
+                androidx.fragment.app.j0 j0Var = (androidx.fragment.app.j0) this.b;
                 ArrayList arrayList = new ArrayList(map.values());
                 int[] iArr = new int[arrayList.size()];
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
                     iArr[i7] = ((Boolean) arrayList.get(i7)).booleanValue() ? 0 : -1;
                 }
-                androidx.fragment.app.f0 f0Var = (androidx.fragment.app.f0) j0Var.F.pollFirst();
+                f0 f0Var = (f0) j0Var.F.pollFirst();
                 if (f0Var == null) {
                     Log.w("FragmentManager", "No permissions were requested for " + this);
                     break;
@@ -336,108 +558,48 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    public void g(n nVar, androidx.biometric.v vVar) {
-        Object obj = this.b;
-        k0 k0Var = (k0) obj;
-        if (k0Var == null) {
-            Log.e("BiometricPromptCompat", "Unable to start authentication. Client fragment manager was null.");
-            return;
-        }
-        if (k0Var.P()) {
-            Log.e("BiometricPromptCompat", "Unable to start authentication. Called after onSaveInstanceState().");
-            return;
-        }
-        k0 k0Var2 = (k0) obj;
-        androidx.biometric.q qVar = (androidx.biometric.q) k0Var2.D("androidx.biometric.BiometricFragment");
-        if (qVar == null) {
-            qVar = new androidx.biometric.q();
-            androidx.fragment.app.a aVar = new androidx.fragment.app.a(k0Var2);
-            aVar.f(0, qVar, "androidx.biometric.BiometricFragment");
-            aVar.e(true, true);
-            k0Var2.A(true);
-            k0Var2.E();
-        }
-        androidx.fragment.app.v k10 = qVar.k();
-        if (k10 == null) {
-            Log.e("BiometricFragment", "Not launching prompt. Client activity was null.");
-            return;
-        }
-        z zVar = qVar.m0;
-        zVar.f = nVar;
-        int i7 = nVar.a;
-        if (i7 == 0) {
-            i7 = vVar != null ? 15 : 255;
-        }
-        if (Build.VERSION.SDK_INT < 30 && i7 == 15 && vVar == null) {
-            zVar.g = n1.a();
-        } else {
-            zVar.g = vVar;
-        }
-        if (qVar.Q()) {
-            qVar.m0.k = qVar.q(R.string.confirm_device_credential_password);
-        } else {
-            qVar.m0.k = null;
-        }
-        if (qVar.Q() && new a0(new androidx.biometric.t(k10, 0)).c(ls.e4) != 0) {
-            qVar.m0.n = true;
-            qVar.S();
-        } else if (qVar.m0.p) {
-            qVar.l0.postDelayed(new androidx.biometric.p(qVar), 600L);
-        } else {
-            qVar.X();
-        }
-    }
-
-    @Override // fd.a
-    public Object get() {
-        o9.g firebaseApp = (o9.g) ((d9.o) this.b).a;
-        kotlin.jvm.internal.j.e(firebaseApp, "firebaseApp");
-        p0 p0Var = p0.a;
-        return p0.a(firebaseApp);
-    }
-
     @Override // org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface
     public String[] getSupportedFeatures() {
         return new String[]{"WEB_MESSAGE_LISTENER", "WEB_MESSAGE_ARRAY_BUFFER"};
     }
 
-    public float h(hc.c cVar, hc.c cVar2) {
+    @Override // com.google.android.gms.common.api.internal.p0
+    public void h(n6.a aVar) {
+        g1 g1Var = (g1) this.b;
+        g1Var.o.lock();
+        try {
+            g1Var.m = aVar;
+            g1Var.j();
+        } finally {
+            g1Var.o.unlock();
+        }
+    }
+
+    public float i(hc.c cVar, hc.c cVar2) {
         int i7 = (int) cVar.a;
         int i10 = (int) cVar.b;
         int i11 = (int) cVar2.a;
         int i12 = (int) cVar2.b;
-        float y10 = y(i7, i10, i11, i12);
-        float y11 = y((int) cVar2.a, i12, (int) cVar.a, i10);
-        return Float.isNaN(y10) ? y11 / 7.0f : Float.isNaN(y11) ? y10 / 7.0f : (y10 + y11) / 14.0f;
+        float C = C(i7, i10, i11, i12);
+        float C2 = C((int) cVar2.a, i12, (int) cVar.a, i10);
+        return Float.isNaN(C) ? C2 / 7.0f : Float.isNaN(C2) ? C / 7.0f : (C + C2) / 14.0f;
     }
 
-    @Override // com.google.android.gms.common.api.internal.q0
-    public void i(n6.a aVar) {
-        h1 h1Var = (h1) this.b;
-        h1Var.o.lock();
-        try {
-            h1Var.m = aVar;
-            h1Var.j();
-        } finally {
-            h1Var.o.unlock();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.q0
+    @Override // com.google.android.gms.common.api.internal.p0
     public void j(int i7) {
-        h1 h1Var = (h1) this.b;
-        Lock lock = h1Var.o;
-        Lock lock2 = h1Var.o;
+        g1 g1Var = (g1) this.b;
+        Lock lock = g1Var.o;
+        Lock lock2 = g1Var.o;
         lock.lock();
         try {
-            if (h1Var.n) {
-                h1Var.n = false;
-                h1Var.b.j(i7);
-                h1Var.m = null;
-                h1Var.l = null;
+            if (g1Var.n) {
+                g1Var.n = false;
+                g1Var.b.j(i7);
+                g1Var.m = null;
+                g1Var.l = null;
             } else {
-                h1Var.n = true;
-                h1Var.d.onConnectionSuspended(i7);
+                g1Var.n = true;
+                g1Var.d.onConnectionSuspended(i7);
             }
             lock2.unlock();
         } catch (Throwable th2) {
@@ -446,31 +608,35 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.qt0
-    public int j1() {
-        i0.b bVar;
-        bVar = ((g2) ((t) this.b)).mSystemInsets;
-        return bVar.d;
+    @Override // org.telegram.ui.Components.p90
+    public Paint.FontMetricsInt j1() {
+        return ((hi.n) this.b).f.getEditText().getPaint().getFontMetricsInt();
+    }
+
+    @Override // b3.k
+    public b3.i k(b3.m mVar, long j3, long j10, IOException iOException, int i7) {
+        ((o2.d) this.b).a.y(iOException);
+        return b3.p.e;
     }
 
     @Override // fi.b9
-    public boolean k(long j3, int i7, int i10, int i11, c9 c9Var) {
+    public boolean l(long j3, int i7, int i10, int i11, c9 c9Var) {
         ImageReceiver imageReceiver;
         b4 b4Var;
         b4 b4Var2;
         c9Var.b = null;
         c9Var.c = null;
-        cv0 cv0Var = (cv0) this.b;
-        wv0 wv0Var = cv0Var.h;
-        ArrayList arrayList = cv0Var.x;
-        if (cv0Var.O < 0.2f) {
-            c9Var.b = wv0Var.getImageReceiver();
+        bv0 bv0Var = (bv0) this.b;
+        vv0 vv0Var = bv0Var.h;
+        ArrayList arrayList = bv0Var.x;
+        if (bv0Var.O < 0.2f) {
+            c9Var.b = vv0Var.getImageReceiver();
             c9Var.c = null;
-            c9Var.a = wv0Var;
+            c9Var.a = vv0Var;
             c9Var.h = 0.0f;
             c9Var.i = g0.q.y;
-            c9Var.g = (View) cv0Var.getParent();
-            c9Var.d = cv0Var.E;
+            c9Var.g = (View) bv0Var.getParent();
+            c9Var.d = bv0Var.E;
             c9Var.n = true;
             return true;
         }
@@ -499,10 +665,10 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
         c9Var.c = imageReceiver;
         c9Var.b = null;
-        c9Var.a = cv0Var;
+        c9Var.a = bv0Var;
         c9Var.h = 0.0f;
         c9Var.i = g0.q.y;
-        c9Var.g = (View) cv0Var.getParent();
+        c9Var.g = (View) bv0Var.getParent();
         if (b4Var == null || b4Var2 == null) {
             c9Var.f = null;
             return true;
@@ -511,41 +677,23 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         return true;
     }
 
-    @Override // b3.k
-    public b3.i l(b3.m mVar, long j3, long j10, IOException iOException, int i7) {
-        ((o2.d) this.b).a.y(iOException);
-        return b3.p.e;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.q0
-    public void m(Bundle bundle) {
-        h1 h1Var = (h1) this.b;
-        h1Var.o.lock();
-        try {
-            h1Var.m = n6.a.f;
-            h1Var.j();
-        } finally {
-            h1Var.o.unlock();
-        }
-    }
-
-    @Override // org.telegram.messenger.kc
-    public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        oh0 B;
-        boolean[] zArr = (boolean[]) this.b;
-        if (!z10 || (B = imageReceiver.B()) == null || zArr[0]) {
-            return;
-        }
-        B.N(0, false, false);
-        g0.g3(new org.telegram.ui.Cells.p0(B, 0));
-        zArr[0] = true;
-    }
-
     @Override // d3.i0
     public void n() {
         d3.l lVar = (d3.l) this.b;
         if (lVar.s1 != null) {
             lVar.R0(0, 1);
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.p0
+    public void o(Bundle bundle) {
+        g1 g1Var = (g1) this.b;
+        g1Var.o.lock();
+        try {
+            g1Var.m = n6.a.f;
+            g1Var.j();
+        } finally {
+            g1Var.o.unlock();
         }
     }
 
@@ -573,17 +721,17 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
     public void onPostMessage(WebView webView, InvocationHandler invocationHandler, Uri uri, boolean z10, InvocationHandler invocationHandler2) {
         xa xaVar;
         xa xaVar2;
-        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) af.b.b(WebMessageBoundaryInterface.class, invocationHandler);
+        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) af.b.a(WebMessageBoundaryInterface.class, invocationHandler);
         InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
         ob.c[] cVarArr = new ob.c[ports.length];
         for (int i7 = 0; i7 < ports.length; i7++) {
             InvocationHandler invocationHandler3 = ports[i7];
             ob.c cVar = new ob.c(17);
-            cVar.b = (WebMessagePortBoundaryInterface) af.b.b(WebMessagePortBoundaryInterface.class, invocationHandler3);
+            cVar.b = (WebMessagePortBoundaryInterface) af.b.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
             cVarArr[i7] = cVar;
         }
         if (e5.k.a.b()) {
-            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) af.b.b(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
+            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) af.b.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
             int type = webMessagePayloadBoundaryInterface.getType();
             if (type == 0) {
                 xaVar = new xa(webMessagePayloadBoundaryInterface.getAsString());
@@ -591,8 +739,8 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 if (type != 1) {
                     xaVar2 = null;
                     if (xaVar2 == null) {
-                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) af.b.b(JsReplyProxyBoundaryInterface.class, invocationHandler2);
-                        ((d5.a) this.b).i(webView, xaVar2, uri, z10, (e5.f) jsReplyProxyBoundaryInterface.getOrCreatePeer(new aa.s(jsReplyProxyBoundaryInterface, 1)));
+                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) af.b.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
+                        ((d5.a) this.b).f(webView, xaVar2, uri, z10, (e5.f) jsReplyProxyBoundaryInterface.getOrCreatePeer(new aa.s(jsReplyProxyBoundaryInterface, 1)));
                         return;
                     }
                     return;
@@ -615,8 +763,8 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         Bundle bundle = (Bundle) obj;
         if (m0.j) {
             Context context = aVar.a;
-            j6.s sVar = aVar.f;
-            m0 m0Var = new m0(context, sVar, aVar.c, aVar.j, aVar.g);
+            j6.t tVar = aVar.f;
+            m0 m0Var = new m0(context, tVar, aVar.c, aVar.j, aVar.g);
             int i7 = bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE") ? bundle.getInt("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", 0) : (bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED") && bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", false)) ? 1 : 0;
             boolean z10 = bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED", false);
             if (i7 == 0) {
@@ -630,19 +778,19 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             Locale locale = Locale.ROOT;
             String v = p5.c.v(packageName, ".client_cast_analytics_data");
             m0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
-            o5.s.b(context);
-            m0Var.g = o5.s.a().c(m5.a.e).a("CAST_SENDER_SDK", new l5.c("proto"), x.a);
+            o5.t.b(context);
+            m0Var.g = o5.t.a().c(m5.a.e).a("CAST_SENDER_SDK", new l5.c("proto"), x.a);
             if (bundle.containsKey("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE")) {
                 m0Var.e = Long.valueOf(bundle.getLong("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE"));
             }
             SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(v, 0);
             if (i7 != 0) {
                 com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
-                b11.c = new t5(sVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, 4);
+                b11.c = new u0(tVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, 6);
                 b11.d = new n6.c[]{y.c};
                 b11.b = false;
                 b11.a = 8426;
-                Task e10 = sVar.e(0, b11.a());
+                Task e10 = tVar.e(0, b11.a());
                 n nVar = new n();
                 nVar.b = m0Var;
                 nVar.c = packageName;
@@ -983,50 +1131,50 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         cVarArr[0] = cVar2;
         cVarArr[1] = cVar;
         cVarArr[2] = cVar3;
-        float h = iVar2.h(cVar, cVar3);
+        float i35 = iVar2.i(cVar, cVar3);
         float f18 = cVar.a;
         float f19 = cVar3.b;
         float f20 = cVar3.a;
-        float h7 = iVar2.h(cVar, cVar2);
+        float i36 = iVar2.i(cVar, cVar2);
         float f21 = cVar2.b;
         float f22 = cVar2.a;
-        float f23 = (h7 + h) / 2.0f;
+        float f23 = (i36 + i35) / 2.0f;
         if (f23 < 1.0f) {
             throw bc.e.a();
         }
         float a13 = bc.j.a(cVar, cVar3) / f23;
-        int i35 = (int) (a13 + (a13 < 0.0f ? -0.5f : 0.5f));
+        int i37 = (int) (a13 + (a13 < 0.0f ? -0.5f : 0.5f));
         float a14 = bc.j.a(cVar, cVar2) / f23;
-        int i36 = (((int) (a14 + (a14 >= 0.0f ? 0.5f : -0.5f))) + i35) / 2;
-        int i37 = i36 + 7;
-        int i38 = i37 & 3;
-        if (i38 == 0) {
-            i37 = i36 + 8;
-        } else if (i38 == 2) {
-            i37 = i36 + 6;
-        } else if (i38 == 3) {
-            i37 = i36 + 5;
+        int i38 = (((int) (a14 + (a14 >= 0.0f ? 0.5f : -0.5f))) + i37) / 2;
+        int i39 = i38 + 7;
+        int i40 = i39 & 3;
+        if (i40 == 0) {
+            i39 = i38 + 8;
+        } else if (i40 == 2) {
+            i39 = i38 + 6;
+        } else if (i40 == 3) {
+            i39 = i38 + 5;
         }
-        int i39 = i37;
+        int i41 = i39;
         int[] iArr2 = gc.e.e;
-        if (i39 % 4 != 1) {
+        if (i41 % 4 != 1) {
             throw bc.c.a();
         }
         try {
-            gc.e c12 = gc.e.c((i39 - 17) / 4);
-            int i40 = 10;
-            int i41 = (c12.a * 4) + 10;
+            gc.e c12 = gc.e.c((i41 - 17) / 4);
+            int i42 = 10;
+            int i43 = (c12.a * 4) + 10;
             if (c12.b.length > 0) {
                 float f24 = (f20 - f18) + f22;
                 f11 = f20;
                 float f25 = (f19 - f17) + f21;
-                float f26 = 1.0f - (3.0f / i41);
+                float f26 = 1.0f - (3.0f / i43);
                 int z12 = (int) e2.z(f24, f18, f26, f18);
                 int z13 = (int) e2.z(f25, f17, f26, f17);
                 f10 = f18;
-                for (int i42 = 4; i42 <= 16; i42 <<= 1) {
+                for (int i44 = 4; i44 <= 16; i44 <<= 1) {
                     try {
-                        aVar = iVar2.u(f23, i42, z12, z13);
+                        aVar = iVar2.w(f23, i44, z12, z13);
                         break;
                     } catch (bc.e unused) {
                     }
@@ -1036,7 +1184,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 f11 = f20;
             }
             aVar = null;
-            float f27 = i39 - 3.5f;
+            float f27 = i41 - 3.5f;
             if (aVar != null) {
                 f12 = aVar.a;
                 f13 = aVar.b;
@@ -1095,122 +1243,122 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             float f71 = (f53 * f70) + (f49 * f69) + (f40 * f68);
             float f72 = (f54 * f70) + (f51 * f69) + (f44 * f68);
             float f73 = (f70 * f55) + (f69 * f52) + (f68 * f45);
-            if (i39 <= 0 || i39 <= 0) {
+            if (i41 <= 0 || i41 <= 0) {
                 throw bc.e.a();
             }
-            cc.b bVar4 = new cc.b(i39, i39);
-            int i43 = i39 * 2;
+            cc.b bVar4 = new cc.b(i41, i41);
+            int i45 = i41 * 2;
             hc.c cVar10 = cVar;
-            float[] fArr = new float[i43];
-            int i44 = 0;
-            while (i44 < i39) {
-                int i45 = i39;
-                float f74 = i44 + 0.5f;
-                int i46 = 0;
-                while (i46 < i43) {
-                    int i47 = i46;
-                    fArr[i47] = (i47 / 2) + 0.5f;
-                    fArr[i47 + 1] = f74;
-                    i46 = i47 + 2;
+            float[] fArr = new float[i45];
+            int i46 = 0;
+            while (i46 < i41) {
+                int i47 = i41;
+                float f74 = i46 + 0.5f;
+                int i48 = 0;
+                while (i48 < i45) {
+                    int i49 = i48;
+                    fArr[i49] = (i49 / 2) + 0.5f;
+                    fArr[i49 + 1] = f74;
+                    i48 = i49 + 2;
                 }
-                int i48 = i43 - 1;
+                int i50 = i45 - 1;
                 hc.c cVar11 = cVar2;
-                int i49 = 0;
-                while (i49 < i48) {
-                    float f75 = fArr[i49];
-                    int i50 = i49 + 1;
-                    int i51 = i49;
-                    float f76 = fArr[i50];
+                int i51 = 0;
+                while (i51 < i50) {
+                    float f75 = fArr[i51];
+                    int i52 = i51 + 1;
+                    int i53 = i51;
+                    float f76 = fArr[i52];
                     hc.c cVar12 = cVar3;
                     float e13 = p5.c.e(f72, f76, f71 * f75, f73);
-                    fArr[i51] = (((f60 * f76) + (f59 * f75)) + f61) / e13;
-                    fArr[i50] = (((f76 * f66) + (f75 * f65)) + f67) / e13;
-                    i49 = i51 + 2;
+                    fArr[i53] = (((f60 * f76) + (f59 * f75)) + f61) / e13;
+                    fArr[i52] = (((f76 * f66) + (f75 * f65)) + f67) / e13;
+                    i51 = i53 + 2;
                     cVar3 = cVar12;
                 }
                 hc.c cVar13 = cVar3;
-                int i52 = bVar3.b;
+                int i54 = bVar3.b;
                 float f77 = f72;
-                int i53 = 0;
+                int i55 = 0;
                 boolean z14 = true;
-                while (i53 < i48 && z14) {
-                    int i54 = (int) fArr[i53];
-                    int i55 = i53 + 1;
-                    int i56 = i48;
-                    int i57 = (int) fArr[i55];
-                    int i58 = i53;
-                    if (i54 < -1 || i54 > i19 || i57 < -1 || i57 > i52) {
+                while (i55 < i50 && z14) {
+                    int i56 = (int) fArr[i55];
+                    int i57 = i55 + 1;
+                    int i58 = i50;
+                    int i59 = (int) fArr[i57];
+                    int i60 = i55;
+                    if (i56 < -1 || i56 > i19 || i59 < -1 || i59 > i54) {
                         throw bc.e.a();
                     }
-                    if (i54 == -1) {
-                        fArr[i58] = 0.0f;
-                    } else if (i54 == i19) {
-                        fArr[i58] = i19 - 1;
+                    if (i56 == -1) {
+                        fArr[i60] = 0.0f;
+                    } else if (i56 == i19) {
+                        fArr[i60] = i19 - 1;
                     } else {
                         z10 = false;
-                        if (i57 != -1) {
-                            fArr[i55] = 0.0f;
-                        } else if (i57 == i52) {
-                            fArr[i55] = i52 - 1;
+                        if (i59 != -1) {
+                            fArr[i57] = 0.0f;
+                        } else if (i59 == i54) {
+                            fArr[i57] = i54 - 1;
                         } else {
                             z14 = z10;
-                            i53 = i58 + 2;
-                            i48 = i56;
+                            i55 = i60 + 2;
+                            i50 = i58;
                         }
                         z14 = true;
-                        i53 = i58 + 2;
-                        i48 = i56;
+                        i55 = i60 + 2;
+                        i50 = i58;
                     }
                     z10 = true;
-                    if (i57 != -1) {
+                    if (i59 != -1) {
                     }
                     z14 = true;
-                    i53 = i58 + 2;
-                    i48 = i56;
+                    i55 = i60 + 2;
+                    i50 = i58;
                 }
-                int i59 = i43 - 2;
+                int i61 = i45 - 2;
                 boolean z15 = true;
-                while (i59 >= 0 && z15) {
-                    int i60 = (int) fArr[i59];
-                    int i61 = i59 + 1;
-                    int i62 = i59;
-                    int i63 = (int) fArr[i61];
-                    if (i60 < -1 || i60 > i19 || i63 < -1 || i63 > i52) {
+                while (i61 >= 0 && z15) {
+                    int i62 = (int) fArr[i61];
+                    int i63 = i61 + 1;
+                    int i64 = i61;
+                    int i65 = (int) fArr[i63];
+                    if (i62 < -1 || i62 > i19 || i65 < -1 || i65 > i54) {
                         throw bc.e.a();
                     }
-                    if (i60 == -1) {
-                        fArr[i62] = 0.0f;
-                    } else if (i60 == i19) {
-                        fArr[i62] = i19 - 1;
+                    if (i62 == -1) {
+                        fArr[i64] = 0.0f;
+                    } else if (i62 == i19) {
+                        fArr[i64] = i19 - 1;
                     } else {
                         z15 = false;
-                        if (i63 != -1) {
-                            fArr[i61] = 0.0f;
-                        } else if (i63 == i52) {
-                            fArr[i61] = i52 - 1;
+                        if (i65 != -1) {
+                            fArr[i63] = 0.0f;
+                        } else if (i65 == i54) {
+                            fArr[i63] = i54 - 1;
                         } else {
-                            i59 = i62 - 2;
+                            i61 = i64 - 2;
                         }
                         z15 = true;
-                        i59 = i62 - 2;
+                        i61 = i64 - 2;
                     }
                     z15 = true;
-                    if (i63 != -1) {
+                    if (i65 != -1) {
                     }
                     z15 = true;
-                    i59 = i62 - 2;
+                    i61 = i64 - 2;
                 }
-                for (int i64 = 0; i64 < i43; i64 += 2) {
+                for (int i66 = 0; i66 < i45; i66 += 2) {
                     try {
-                        if (bVar3.b((int) fArr[i64], (int) fArr[i64 + 1])) {
-                            bVar4.c(i64 / 2, i44);
+                        if (bVar3.b((int) fArr[i66], (int) fArr[i66 + 1])) {
+                            bVar4.c(i66 / 2, i46);
                         }
                     } catch (ArrayIndexOutOfBoundsException unused2) {
                         throw bc.e.a();
                     }
                 }
-                i44++;
-                i39 = i45;
+                i46++;
+                i41 = i47;
                 cVar2 = cVar11;
                 f72 = f77;
                 cVar3 = cVar13;
@@ -1229,38 +1377,38 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             bc.j[] jVarArr2 = jVarArr;
             iVar.getClass();
             ab.q qVar = new ab.q();
-            int i65 = bVar4.b;
-            if (i65 < 21 || (i65 & i11) != i10) {
+            int i67 = bVar4.b;
+            if (i67 < 21 || (i67 & i11) != i10) {
                 throw bc.c.a();
             }
             qVar.b = bVar4;
             try {
-                eVar = iVar.t(qVar);
+                eVar = iVar.s(qVar);
             } catch (bc.a e14) {
                 aVar2 = e14;
                 e = null;
                 try {
-                    qVar.x();
+                    qVar.y();
                     qVar.c = null;
                     qVar.d = null;
                     qVar.a = true;
+                    qVar.x();
                     qVar.w();
-                    qVar.v();
                     bVar2 = (cc.b) qVar.b;
                     i12 = 0;
                     while (i12 < bVar2.a) {
-                        int i66 = i12 + 1;
-                        for (int i67 = i66; i67 < bVar2.b; i67++) {
-                            if (bVar2.b(i12, i67) != bVar2.b(i67, i12)) {
-                                bVar2.a(i67, i12);
-                                bVar2.a(i12, i67);
+                        int i68 = i12 + 1;
+                        for (int i69 = i68; i69 < bVar2.b; i69++) {
+                            if (bVar2.b(i12, i69) != bVar2.b(i69, i12)) {
+                                bVar2.a(i69, i12);
+                                bVar2.a(i12, i69);
                             }
                         }
-                        i12 = i66;
+                        i12 = i68;
                     }
-                    cc.e t6 = iVar.t(qVar);
-                    t6.h = new qb.a(i40);
-                    eVar = t6;
+                    cc.e s5 = iVar.s(qVar);
+                    s5.h = new qb.a(i42);
+                    eVar = s5;
                     i13 = eVar.a;
                     if (e2.s((qb.a) eVar.h)) {
                         bc.j jVar = jVarArr2[0];
@@ -1275,11 +1423,11 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                     if (str != null) {
                     }
                     if (i13 >= 0) {
-                        a0Var.q(bc.i.d, Integer.valueOf(i14));
-                        a0Var.q(bc.i.e, Integer.valueOf(i13));
+                        a0Var.p(bc.i.d, Integer.valueOf(i14));
+                        a0Var.p(bc.i.e, Integer.valueOf(i13));
                     }
-                    a0Var.q(bc.i.c, (Integer) eVar.g);
-                    a0Var.q(bc.i.f, "]Q" + eVar.c);
+                    a0Var.p(bc.i.c, (Integer) eVar.g);
+                    a0Var.p(bc.i.f, "]Q" + eVar.c);
                     return a0Var;
                 } catch (bc.a | bc.c unused3) {
                     if (e != null) {
@@ -1290,19 +1438,19 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             } catch (bc.c e15) {
                 e = e15;
                 aVar2 = null;
-                qVar.x();
+                qVar.y();
                 qVar.c = null;
                 qVar.d = null;
                 qVar.a = true;
+                qVar.x();
                 qVar.w();
-                qVar.v();
                 bVar2 = (cc.b) qVar.b;
                 i12 = 0;
                 while (i12 < bVar2.a) {
                 }
-                cc.e t62 = iVar.t(qVar);
-                t62.h = new qb.a(i40);
-                eVar = t62;
+                cc.e s52 = iVar.s(qVar);
+                s52.h = new qb.a(i42);
+                eVar = s52;
                 i13 = eVar.a;
                 if (e2.s((qb.a) eVar.h)) {
                 }
@@ -1315,8 +1463,8 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 }
                 if (i13 >= 0) {
                 }
-                a0Var.q(bc.i.c, (Integer) eVar.g);
-                a0Var.q(bc.i.f, "]Q" + eVar.c);
+                a0Var.p(bc.i.c, (Integer) eVar.g);
+                a0Var.p(bc.i.f, "]Q" + eVar.c);
                 return a0Var;
             }
             i13 = eVar.a;
@@ -1328,29 +1476,21 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             a0Var = new a0((String) eVar.d, jVarArr2);
             list = (List) eVar.f;
             if (list != null) {
-                a0Var.q(bc.i.a, list);
+                a0Var.p(bc.i.a, list);
             }
             str = (String) eVar.e;
             if (str != null) {
-                a0Var.q(bc.i.b, str);
+                a0Var.p(bc.i.b, str);
             }
             if (i13 >= 0 && (i14 = eVar.b) >= 0) {
-                a0Var.q(bc.i.d, Integer.valueOf(i14));
-                a0Var.q(bc.i.e, Integer.valueOf(i13));
+                a0Var.p(bc.i.d, Integer.valueOf(i14));
+                a0Var.p(bc.i.e, Integer.valueOf(i13));
             }
-            a0Var.q(bc.i.c, (Integer) eVar.g);
-            a0Var.q(bc.i.f, "]Q" + eVar.c);
+            a0Var.p(bc.i.c, (Integer) eVar.g);
+            a0Var.p(bc.i.f, "]Q" + eVar.c);
             return a0Var;
         } catch (IllegalArgumentException unused4) {
             throw bc.c.a();
-        }
-    }
-
-    @Override // d3.i0
-    public void r() {
-        l2.i0 i0Var = ((d3.l) this.b).Z;
-        if (i0Var != null) {
-            i0Var.a();
         }
     }
 
@@ -1363,17 +1503,17 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public cc.e t(ab.q qVar) {
+    public cc.e s(ab.q qVar) {
         int f10;
         gc.d dVar;
         gc.b bVar;
         int i7;
         int f11;
-        gc.e w10 = qVar.w();
-        gc.b bVar2 = qVar.v().a;
-        gc.c v = qVar.v();
-        gc.e w11 = qVar.w();
-        int i10 = p1.g.d(8)[v.b];
+        gc.e x10 = qVar.x();
+        gc.b bVar2 = qVar.w().a;
+        gc.c w10 = qVar.w();
+        gc.e x11 = qVar.x();
+        int i10 = p1.g.d(8)[w10.b];
         cc.b bVar3 = (cc.b) qVar.b;
         int i11 = bVar3.b;
         int i12 = 0;
@@ -1384,15 +1524,15 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 }
             }
         }
-        int i15 = w11.a * 4;
+        int i15 = x11.a * 4;
         int i16 = i15 + 17;
-        int i17 = w11.d;
+        int i17 = x11.d;
         cc.b bVar4 = new cc.b(i16, i16);
         bVar4.d(0, 0, 9, 9);
         int i18 = i15 + 9;
         bVar4.d(i18, 0, 8, 9);
         bVar4.d(0, i18, 9, 8);
-        int[] iArr = w11.b;
+        int[] iArr = x11.b;
         int length = iArr.length;
         int i19 = 0;
         while (i19 < length) {
@@ -1410,7 +1550,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         int i24 = 1;
         bVar4.d(6, 9, 1, i15);
         bVar4.d(9, 6, i15, 1);
-        if (w11.a > 6) {
+        if (x11.a > 6) {
             int i25 = i15 + 6;
             bVar4.d(i25, 0, 3, 6);
             bVar4.d(0, i25, 6, 3);
@@ -1461,10 +1601,10 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         if (i28 != i17) {
             throw bc.c.a();
         }
-        if (i17 != w10.d) {
+        if (i17 != x10.d) {
             throw new IllegalArgumentException();
         }
-        b3.j jVar = w10.c[bVar2.ordinal()];
+        b3.j jVar = x10.c[bVar2.ordinal()];
         r0[] r0VarArr = (r0[]) jVar.c;
         int i38 = jVar.b;
         int i39 = 0;
@@ -1539,11 +1679,11 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 iArr2[i59] = bArr3[i59] & 255;
             }
             try {
-                int F = ((ob.c) this.b).F(iArr2, bArr3.length - i58);
+                int w11 = ((ob.c) this.b).w(iArr2, bArr3.length - i58);
                 for (int i60 = 0; i60 < i58; i60++) {
                     bArr3[i60] = (byte) iArr2[i60];
                 }
-                i56 += F;
+                i56 += w11;
                 int i61 = i57;
                 int i62 = 0;
                 while (i62 < i58) {
@@ -1614,11 +1754,11 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                         i7 = 1;
                         int f13 = cVar.f(8);
                         if ((f13 & 128) == 0) {
-                            f11 = f13 & ls.L1;
-                        } else if ((f13 & ls.W2) == 128) {
+                            f11 = f13 & ks.L1;
+                        } else if ((f13 & ks.W2) == 128) {
                             f11 = ((f13 & 63) << 8) | cVar.f(8);
                         } else {
-                            if ((f13 & ls.B3) != 192) {
+                            if ((f13 & ks.B3) != 192) {
                                 throw bc.c.a();
                             }
                             f11 = ((f13 & 31) << 16) | cVar.f(16);
@@ -1642,7 +1782,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                         z12 = true;
                         z13 = true;
                     } else if (ordinal != 9) {
-                        int f14 = cVar.f(dVar.a(w10));
+                        int f14 = cVar.f(dVar.a(x10));
                         int ordinal2 = dVar.ordinal();
                         bVar = bVar2;
                         if (ordinal2 == 1) {
@@ -1660,7 +1800,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                     } else {
                         bVar = bVar2;
                         int f15 = cVar.f(4);
-                        int f16 = cVar.f(dVar.a(w10));
+                        int f16 = cVar.f(dVar.a(x10));
                         i7 = 1;
                         if (f15 == 1) {
                             gc.a.c(cVar, sb2, f16);
@@ -1718,7 +1858,25 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         return Tasks.forResult(null);
     }
 
-    public hc.a u(float f10, float f11, int i7, int i10) {
+    @Override // l.w
+    public boolean u(l.k kVar) {
+        Window.Callback callback = ((s) this.b).f.getCallback();
+        if (callback == null) {
+            return true;
+        }
+        callback.onMenuOpened(ks.t1, kVar);
+        return true;
+    }
+
+    @Override // d3.i0
+    public void v() {
+        l2.j0 j0Var = ((d3.l) this.b).Z;
+        if (j0Var != null) {
+            j0Var.a();
+        }
+    }
+
+    public hc.a w(float f10, float f11, int i7, int i10) {
         hc.a b10;
         hc.a b11;
         int i11 = (int) (f11 * f10);
@@ -1785,7 +1943,52 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         return (hc.a) arrayList.get(0);
     }
 
-    public f3.j v() {
+    @Override // b3.k
+    public void x(b3.m mVar, long j3, long j10) {
+        boolean z10;
+        o2.d dVar = (o2.d) this.b;
+        synchronized (c3.b.b) {
+            z10 = c3.b.c;
+        }
+        if (z10) {
+            dVar.b();
+        } else {
+            dVar.a.y(new IOException(new ConcurrentModificationException()));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public void x2(int i7, int i10, CharSequence charSequence, boolean z10) {
+        hi.h hVar = ((hi.n) this.b).f;
+        if (hVar == null) {
+            return;
+        }
+        try {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hVar.getText());
+            spannableStringBuilder.replace(i7, i10 + i7, charSequence);
+            if (z10) {
+                j6.l(spannableStringBuilder, hVar.getEditText().getPaint().getFontMetricsInt(), false);
+            }
+            hVar.setText(spannableStringBuilder);
+            hVar.setSelection(i7 + charSequence.length());
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.jc
+    public void y(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        nh0 C;
+        boolean[] zArr = (boolean[]) this.b;
+        if (!z10 || (C = imageReceiver.C()) == null || zArr[0]) {
+            return;
+        }
+        C.N(0, false, false);
+        g0.g3(new org.telegram.ui.Cells.p0(C, 0));
+        zArr[0] = true;
+    }
+
+    public f3.j z() {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -1802,178 +2005,23 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             j3 += iArr2.length;
         }
         int i7 = (int) j3;
-        la.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i7));
+        ma.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i7));
         int[] iArr3 = new int[i7];
         int i10 = 0;
         for (int[] iArr4 : iArr) {
             System.arraycopy(iArr4, 0, iArr3, i10, iArr4.length);
             i10 += iArr4.length;
         }
-        return new f3.j(iArr3, c8.l1.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), c8.l1.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), c8.l1.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][])));
+        return new f3.j(iArr3, c8.m1.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), c8.m1.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), c8.m1.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][])));
     }
 
-    public void w(int i7) {
-        TLRPC.TL_exportedNoPaidMessagesToken c10;
-        o0 o0Var = ((ci.j0) this.b).e;
-        if (o0Var == null || o0Var.d == i7) {
-            return;
-        }
-        if (o0Var.c.d && i7 == 2) {
-            i7 = 1;
-        }
-        o0Var.d = i7;
-        o0Var.f().edit().putBoolean("qrNoPaidPermanent", o0Var.d == 2).apply();
-        int i10 = o0Var.d;
-        if (i10 == 0) {
-            if (o0Var.n != 0) {
-                ConnectionsManager.getInstance(o0Var.a).cancelRequest(o0Var.n, true);
-                o0Var.n = 0;
-                return;
-            }
-            return;
-        }
-        if (i10 == 2 && (c10 = o0Var.c()) != null) {
-            o0Var.f = c10;
-            o0Var.b.setFreeLink(o0Var.d(c10));
-        }
-        o0Var.n(false, o0Var.d == 1);
-    }
-
-    public float x(int i7, int i10, int i11, int i12) {
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        i iVar;
-        int i19;
-        int i20 = 1;
-        boolean z10 = Math.abs(i12 - i10) > Math.abs(i11 - i7);
-        if (z10) {
-            i14 = i7;
-            i13 = i10;
-            i16 = i11;
-            i15 = i12;
-        } else {
-            i13 = i7;
-            i14 = i10;
-            i15 = i11;
-            i16 = i12;
-        }
-        int abs = Math.abs(i15 - i13);
-        int abs2 = Math.abs(i16 - i14);
-        int i21 = 2;
-        int i22 = (-abs) / 2;
-        int i23 = i13 < i15 ? 1 : -1;
-        int i24 = i14 < i16 ? 1 : -1;
-        int i25 = i15 + i23;
-        int i26 = i13;
-        int i27 = i14;
-        int i28 = 0;
-        while (true) {
-            if (i26 == i25) {
-                i17 = i21;
-                break;
-            }
-            int i29 = z10 ? i27 : i26;
-            int i30 = z10 ? i26 : i27;
-            boolean z11 = z10;
-            if (i28 == i20) {
-                i18 = i20;
-                i19 = abs;
-                iVar = this;
-            } else {
-                i18 = 0;
-                iVar = this;
-                i19 = abs;
-            }
-            if (i18 == ((cc.b) iVar.b).b(i29, i30)) {
-                if (i28 == 2) {
-                    return w9.b(i26, i27, i13, i14);
-                }
-                i28++;
-            }
-            i22 += abs2;
-            if (i22 > 0) {
-                if (i27 == i16) {
-                    i17 = 2;
-                    break;
-                }
-                i27 += i24;
-                i22 -= i19;
-            }
-            i26 += i23;
-            abs = i19;
-            z10 = z11;
-            i20 = 1;
-            i21 = 2;
-        }
-        if (i28 == i17) {
-            return w9.b(i25, i16, i13, i14);
-        }
-        return Float.NaN;
-    }
-
-    public float y(int i7, int i10, int i11, int i12) {
-        float f10;
-        float f11;
-        cc.b bVar = (cc.b) this.b;
-        float x10 = x(i7, i10, i11, i12);
-        int i13 = i7 - (i11 - i7);
-        int i14 = 0;
-        if (i13 < 0) {
-            f10 = i7 / (i7 - i13);
-            i13 = 0;
-        } else {
-            int i15 = bVar.a;
-            if (i13 >= i15) {
-                float f12 = ((i15 - 1) - i7) / (i13 - i7);
-                int i16 = i15 - 1;
-                f10 = f12;
-                i13 = i16;
-            } else {
-                f10 = 1.0f;
-            }
-        }
-        float f13 = i10;
-        int i17 = (int) (f13 - ((i12 - i10) * f10));
-        if (i17 < 0) {
-            f11 = f13 / (i10 - i17);
-        } else {
-            int i18 = bVar.b;
-            if (i17 >= i18) {
-                f11 = ((i18 - 1) - i10) / (i17 - i10);
-                i14 = i18 - 1;
-            } else {
-                i14 = i17;
-                f11 = 1.0f;
-            }
-        }
-        return (x(i7, i10, (int) (((i13 - i7) * f11) + i7), i14) + x10) - 1.0f;
-    }
-
-    @Override // b3.k
-    public void z(b3.m mVar, long j3, long j10) {
-        boolean z10;
-        o2.d dVar = (o2.d) this.b;
-        synchronized (c3.b.b) {
-            z10 = c3.b.c;
-        }
-        if (z10) {
-            dVar.b();
-        } else {
-            dVar.a.y(new IOException(new ConcurrentModificationException()));
-        }
-    }
-
-    public i(f0 f0Var) {
-        this.a = 9;
-        this.b = new WeakReference(f0Var);
+    public i(e0 e0Var) {
+        this.a = 10;
+        this.b = new WeakReference(e0Var);
     }
 
     public /* synthetic */ i(e7.a aVar, v vVar) {
-        this.a = 16;
+        this.a = 17;
         this.b = vVar;
     }
 
@@ -1985,17 +2033,20 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
     public i(int i7) {
         this.a = i7;
         switch (i7) {
-            case 17:
+            case 9:
+                this.b = Collections.newSetFromMap(new WeakHashMap());
+                break;
+            case 18:
                 this.b = new LinkedHashMap();
                 break;
-            case 20:
+            case 21:
                 this.b = new i(26);
                 break;
             case 26:
                 this.b = new ob.c(ec.a.h, 18);
                 break;
             default:
-                this.b = Collections.newSetFromMap(new WeakHashMap());
+                this.b = new HashMap();
                 break;
         }
     }
@@ -2016,7 +2067,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    public i(LaunchActivity launchActivity, Executor executor, a8.m1 m1Var) {
+    public i(LaunchActivity launchActivity, Executor executor, n1 n1Var) {
         this.a = 2;
         if (launchActivity == null) {
             throw new IllegalArgumentException("FragmentActivity must not be null.");
@@ -2026,33 +2077,45 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             z zVar = (z) new a0(launchActivity).j(z.class);
             this.b = s5;
             zVar.d = executor;
-            zVar.e = m1Var;
+            zVar.e = n1Var;
             return;
         }
         throw new IllegalArgumentException("Executor must not be null.");
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void V(ImageReceiver imageReceiver) {
+    @Override // org.telegram.ui.Components.p90
+    public /* synthetic */ void E2(String str) {
     }
 
     @Override // d3.i0
-    public void a(x1 x1Var) {
+    public void b(x1 x1Var) {
     }
 
     @Override // fi.b9
-    public /* synthetic */ void b(boolean z10) {
+    public /* synthetic */ void c(boolean z10) {
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void G0(int i7, Drawable drawable) {
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void r(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void J(int i7, Drawable drawable) {
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public /* synthetic */ void G1(TLRPC.TL_document tL_document, String str, Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public /* synthetic */ void a0(TLRPC.BotInlineResult botInlineResult, boolean z10, int i7) {
     }
 
     @Override // b3.k
-    public void p(b3.m mVar, long j3, long j10, boolean z10) {
+    public void m(b3.m mVar, long j3, long j10, boolean z10) {
     }
 
     @Override // b3.k
-    public /* synthetic */ void s(b3.m mVar, long j3, long j10, int i7) {
+    public /* synthetic */ void t(b3.m mVar, long j3, long j10, int i7) {
     }
 }

@@ -3,20 +3,20 @@ package f7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import c8.bc;
+import c8.cc;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 import q7.a1;
 import q7.b1;
 import q7.c1;
 import q7.e1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new t0(5);
@@ -192,25 +192,25 @@ public final class j extends l {
     }
 
     public final String toString() {
-        md0 md0Var = new md0(getClass().getSimpleName(), 10);
+        i61 i61Var = new i61(getClass().getSimpleName());
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        md0Var.L(k0Var.c(p10.length, p10), "keyHandle");
+        i61Var.R(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        md0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
+        i61Var.R(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        md0Var.L(k0Var.c(p12.length, p12), "attestationObject");
-        md0Var.L(Arrays.toString(this.d), "transports");
-        return md0Var.toString();
+        i61Var.R(k0Var.c(p12.length, p12), "attestationObject");
+        i61Var.R(Arrays.toString(this.d), "transports");
+        return i61Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.c(parcel, 2, this.a.p());
-        bc.c(parcel, 3, this.b.p());
-        bc.c(parcel, 4, this.c.p());
-        bc.m(parcel, 5, this.d);
-        bc.s(parcel, r10);
+        int r10 = cc.r(parcel, 20293);
+        cc.c(parcel, 2, this.a.p());
+        cc.c(parcel, 3, this.b.p());
+        cc.c(parcel, 4, this.c.p());
+        cc.m(parcel, 5, this.d);
+        cc.s(parcel, r10);
     }
 }

@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class c1 extends v4.u {
     public final /* synthetic */ h1 S;
@@ -20,15 +20,15 @@ public final class c1 extends v4.u {
         byte b10;
         h1 h1Var = this.S;
         ArrayList<TL_iv.PageBlock> arrayList = h1Var.s.items;
-        org.telegram.messenger.yi yiVar = (org.telegram.messenger.yi) h1Var.w.b.get(arrayList.get((arrayList.size() - i7) - 1));
-        if (yiVar.a != yiVar.b && (b10 = yiVar.c) == yiVar.d && b10 != 0) {
+        org.telegram.messenger.xi xiVar = (org.telegram.messenger.xi) h1Var.w.b.get(arrayList.get((arrayList.size() - i7) - 1));
+        if (xiVar.a != xiVar.b && (b10 = xiVar.c) == xiVar.d && b10 != 0) {
             int size = h1Var.w.a.size();
             for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.yi yiVar2 = (org.telegram.messenger.yi) h1Var.w.a.get(i10);
-                if (yiVar2 != yiVar) {
-                    byte b11 = yiVar2.c;
-                    byte b12 = yiVar.c;
-                    if (b11 <= b12 && yiVar2.d >= b12) {
+                org.telegram.messenger.xi xiVar2 = (org.telegram.messenger.xi) h1Var.w.a.get(i10);
+                if (xiVar2 != xiVar) {
+                    byte b11 = xiVar2.c;
+                    byte b12 = xiVar.c;
+                    if (b11 <= b12 && xiVar2.d >= b12) {
                         return true;
                     }
                 }

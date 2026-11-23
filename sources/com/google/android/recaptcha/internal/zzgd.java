@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import gd.k;
 import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzgd extends j implements p {
     Object zza;
@@ -64,7 +64,7 @@ final class zzgd extends j implements p {
         k kVar = k.a;
         try {
             if (i7 == 0) {
-                h.b(obj);
+                z.b(obj);
                 zzhkVar = (zzhk) this.zzf;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
@@ -97,18 +97,18 @@ final class zzgd extends j implements p {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhkVar2 = (zzhk) this.zzf;
-                h.b(obj);
+                z.b(obj);
             } else {
                 if (i7 != 2) {
                     if (i7 != 3) {
-                        h.b(obj);
+                        z.b(obj);
                         zzge zzgeVar2 = this.zzd;
                         zzdsVar2 = zzdv.zzb;
                         zzgeVar2.zzb = zzdsVar2;
                         return kVar;
                     }
                     zzhkVar3 = (zzhk) this.zzf;
-                    h.b(obj);
+                    z.b(obj);
                     this.zzf = null;
                     this.zzc = 4;
                     if (((zzhg) obj).zza(zzhkVar3, this) == aVar) {
@@ -121,7 +121,7 @@ final class zzgd extends j implements p {
                 }
                 d2 = this.zzb;
                 zzhkVar3 = (zzhk) this.zzf;
-                h.b(obj);
+                z.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzge zzgeVar3 = this.zzd;
                 zzgeVar3.zzc = zzxnVar;

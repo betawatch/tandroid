@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.j1;
 import org.telegram.messenger.q1;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements q0.a {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class u implements q0.a {
                 if (fVar == null) {
                     fVar = new o0.f(-3);
                 }
-                ((k8.a) this.b).P0(fVar);
+                ((jb.m) this.b).E0(fVar);
                 return;
             default:
                 o0.f fVar2 = (o0.f) obj;

@@ -9,9 +9,9 @@ import android.text.TextPaint;
 import com.google.android.gms.internal.vision.e2;
 import fi.d4;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // lg.g
@@ -442,7 +442,7 @@ public final class k extends g {
                     } else {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i13 = i19;
-                            textPaint2.setColor(m6.w0(m6.Pj, this.X0));
+                            textPaint2.setColor(n6.w0(n6.Pj, this.X0));
                             textPaint2.setAlpha((int) e2.D(dVar2.f, this.f, f13, f10));
                         } else {
                             i13 = i19;
@@ -500,9 +500,9 @@ public final class k extends g {
         int size = arrayList.size();
         long j3 = 0;
         for (int i11 = 0; i11 < size; i11++) {
-            long U0 = ((ng.f) arrayList.get(i11)).n ? (long) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.U0(i7, i10) * ((mg.c) this.i0).l[i11]) : 0L;
-            if (U0 > j3) {
-                j3 = U0;
+            long P0 = ((ng.f) arrayList.get(i11)).n ? (long) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.P0(i7, i10) * ((mg.c) this.i0).l[i11]) : 0L;
+            if (P0 > j3) {
+                j3 = P0;
             }
         }
         return j3;
@@ -517,9 +517,9 @@ public final class k extends g {
         int size = arrayList.size();
         long j3 = Long.MAX_VALUE;
         for (int i11 = 0; i11 < size; i11++) {
-            long Z0 = ((ng.f) arrayList.get(i11)).n ? (int) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.Z0(i7, i10) * ((mg.c) this.i0).l[i11]) : 2147483647L;
-            if (Z0 < j3) {
-                j3 = Z0;
+            long T0 = ((ng.f) arrayList.get(i11)).n ? (int) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.T0(i7, i10) * ((mg.c) this.i0).l[i11]) : 2147483647L;
+            if (T0 < j3) {
+                j3 = T0;
             }
         }
         return j3;

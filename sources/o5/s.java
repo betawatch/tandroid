@@ -1,76 +1,46 @@
 package o5;
 
-import ab.c0;
-import android.content.Context;
-import androidx.biometric.t;
-import com.google.android.gms.internal.vision.e2;
-import j$.util.DesugarCollections;
-import java.nio.charset.Charset;
-import java.util.Collections;
-import java.util.Set;
-import java.util.concurrent.Executor;
-import org.telegram.ui.web.z0;
+import h2.e0;
+import java.util.HashMap;
+import p4.l0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s {
-    public static volatile j e;
-    public final x5.a a;
-    public final x5.a b;
-    public final t5.b c;
-    public final ia.c d;
+    public final i a;
+    public final String b;
+    public final l5.c c;
+    public final l5.e d;
+    public final t e;
 
-    public s(x5.a aVar, x5.a aVar2, t5.b bVar, ia.c cVar, c0 c0Var) {
-        this.a = aVar;
-        this.b = aVar2;
-        this.c = bVar;
-        this.d = cVar;
-        ((Executor) c0Var.b).execute(new z0(c0Var, 23));
+    public s(i iVar, String str, l5.c cVar, l5.e eVar, t tVar) {
+        this.a = iVar;
+        this.b = str;
+        this.c = cVar;
+        this.d = eVar;
+        this.e = tVar;
     }
 
-    public static s a() {
-        j jVar = e;
-        if (jVar != null) {
-            return (s) jVar.f.get();
+    public final void a(l5.a aVar, l5.g gVar) {
+        l5.e eVar = this.d;
+        if (eVar == null) {
+            throw new NullPointerException("Null transformer");
         }
-        throw new IllegalStateException("Not initialized!");
-    }
-
-    public static void b(Context context) {
-        if (e == null) {
-            synchronized (s.class) {
-                try {
-                    if (e == null) {
-                        t tVar = new t();
-                        context.getClass();
-                        tVar.a = context;
-                        e = tVar.a();
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
+        t tVar = this.e;
+        t5.b bVar = tVar.c;
+        i b10 = this.a.b(aVar.c);
+        e0 e0Var = new e0();
+        e0Var.f = new HashMap();
+        e0Var.d = Long.valueOf(tVar.a.o());
+        e0Var.e = Long.valueOf(tVar.b.o());
+        e0Var.a = this.b;
+        e0Var.c = new m(this.c, (byte[]) eVar.apply(aVar.b));
+        e0Var.b = aVar.a;
+        l5.b bVar2 = aVar.d;
+        if (bVar2 != null) {
+            e0Var.g = bVar2.a;
         }
-    }
-
-    public final q c(k kVar) {
-        byte[] bytes;
-        Set unmodifiableSet = kVar != null ? DesugarCollections.unmodifiableSet(m5.a.d) : Collections.singleton(new l5.c("proto"));
-        h6.m a10 = i.a();
-        kVar.getClass();
-        a10.b = "cct";
-        m5.a aVar = (m5.a) kVar;
-        String str = aVar.a;
-        String str2 = aVar.b;
-        if (str2 == null && str == null) {
-            bytes = null;
-        } else {
-            if (str2 == null) {
-                str2 = "";
-            }
-            bytes = e2.l("1$", str, "\\", str2).getBytes(Charset.forName("UTF-8"));
-        }
-        a10.c = bytes;
-        return new q(unmodifiableSet, a10.j(), this);
+        t5.a aVar2 = (t5.a) bVar;
+        aVar2.b.execute(new l0(aVar2, b10, gVar, e0Var.b(), 4));
     }
 }

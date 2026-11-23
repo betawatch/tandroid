@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class mk0 extends Drawable implements Animator.AnimatorListener {
     public final Context a;
@@ -68,7 +68,7 @@ public final class mk0 extends Drawable implements Animator.AnimatorListener {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.f = ofFloat;
-        ofFloat.addUpdateListener(new h60(this, 11));
+        ofFloat.addUpdateListener(new e60(this, 11));
         this.f.addListener(this);
         this.f.setDuration(150L);
         this.f.start();
@@ -110,7 +110,7 @@ public final class mk0 extends Drawable implements Animator.AnimatorListener {
         if (this.h == 1.0f || this.d == null) {
             Drawable drawable = this.d;
             if (drawable != null) {
-                drawable.setAlpha(org.telegram.messenger.ls.e4);
+                drawable.setAlpha(org.telegram.messenger.ks.e4);
                 this.d.draw(canvas);
             }
         } else {
@@ -125,7 +125,7 @@ public final class mk0 extends Drawable implements Animator.AnimatorListener {
         if (f11 == 1.0f || this.e == null) {
             Drawable drawable2 = this.e;
             if (drawable2 != null) {
-                drawable2.setAlpha(org.telegram.messenger.ls.e4);
+                drawable2.setAlpha(org.telegram.messenger.ks.e4);
                 this.e.draw(canvas);
                 return;
             }

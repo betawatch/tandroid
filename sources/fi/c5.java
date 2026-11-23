@@ -6,9 +6,9 @@ import android.view.GestureDetector;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Scroller;
 import java.util.ArrayList;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class c5 extends f4 {
     public final /* synthetic */ f9 O;
@@ -25,7 +25,7 @@ public final class c5 extends f4 {
         this.H = new ArrayList();
         this.J = new GestureDetector(new c4(this));
         this.d = new Scroller(context, new OvershootInterpolator());
-        this.I = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.o(-16777216, ls.q2)});
+        this.I = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.o(-16777216, ks.q2)});
     }
 
     @Override // fi.f4
@@ -50,9 +50,9 @@ public final class c5 extends f4 {
             return;
         }
         if (i7 < 10) {
-            b9Var.b(false);
+            b9Var.c(false);
         } else if (i7 >= this.F.size() - 10) {
-            f9Var.u0.b(true);
+            f9Var.u0.c(true);
         }
     }
 }

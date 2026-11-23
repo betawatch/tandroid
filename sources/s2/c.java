@@ -1,35 +1,35 @@
 package s2;
 
-import a8.la;
+import a8.ma;
 import android.net.Uri;
 import android.os.SystemClock;
-import h9.h2;
+import h9.g2;
 import h9.i0;
 import h9.t0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c {
-    public final w a;
+    public final x a;
     public final HashMap b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, w wVar) {
+    public c(d dVar, x xVar) {
         this.c = dVar;
-        this.a = wVar;
+        this.a = xVar;
         HashMap hashMap = new HashMap();
-        h2 it = t0.q(wVar.b.keySet()).iterator();
+        g2 it = t0.q(xVar.b.keySet()).iterator();
         while (it.hasNext()) {
             String str = (String) it.next();
-            Uri uri = (Uri) wVar.b.get(str);
+            Uri uri = (Uri) xVar.b.get(str);
             uri.getClass();
             hashMap.put(uri, new b(this.c, uri, str));
         }
         this.b = hashMap;
     }
 
-    public static m a(c cVar, Uri uri) {
+    public static n a(c cVar, Uri uri) {
         b bVar = (b) p5.c.i(cVar.b, uri, uri);
         bVar.getClass();
         return bVar.e;
@@ -47,14 +47,14 @@ public final class c {
         bVar.getClass();
         bVar.r = SystemClock.elapsedRealtime() + j3;
         d dVar = cVar.c;
-        w wVar = cVar.a;
+        x xVar = cVar.a;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         for (b bVar2 : hashMap.values()) {
-            if (!bVar2.b.equals(wVar.d) && elapsedRealtime > bVar2.r) {
-                Uri c10 = wVar.c();
+            if (!bVar2.b.equals(xVar.d) && elapsedRealtime > bVar2.r) {
+                Uri c10 = xVar.c();
                 String str = bVar2.b;
-                la.p(wVar.b.containsKey(str));
-                wVar.d = str;
+                ma.p(xVar.b.containsKey(str));
+                xVar.d = str;
                 if (c10.equals(dVar.G)) {
                     dVar.g(bVar2.a);
                 }
@@ -75,7 +75,7 @@ public final class c {
                 if (i7 >= i0Var.size()) {
                     break;
                 }
-                Uri c11 = ((w) i0Var.get(i7)).c();
+                Uri c11 = ((x) i0Var.get(i7)).c();
                 c cVar2 = (c) dVar.d.get(c11);
                 cVar2.getClass();
                 HashMap hashMap2 = cVar2.b;

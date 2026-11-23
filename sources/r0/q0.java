@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -61,7 +61,7 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void h(View view, v0 v0Var, k8.a aVar) {
+    public static void h(View view, v0 v0Var, jb.m mVar) {
         com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
             rh.d dVar = (rh.d) i7;
@@ -77,7 +77,7 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                h(viewGroup.getChildAt(i10), v0Var, aVar);
+                h(viewGroup.getChildAt(i10), v0Var, mVar);
             }
         }
     }

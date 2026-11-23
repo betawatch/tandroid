@@ -1,77 +1,75 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class fw extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ cx c;
+public final class fw extends UndoView {
+    public final /* synthetic */ bx k0;
 
-    public /* synthetic */ fw(cx cxVar, float f10, int i7) {
-        this.a = i7;
-        this.c = cxVar;
-        this.b = f10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fw(bx bxVar, Activity activity) {
+        super(activity);
+        this.k0 = bxVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                cx cxVar = this.c;
-                cxVar.x3 = null;
-                int i7 = 0;
-                cxVar.P = false;
-                cxVar.R = true;
-                cxVar.S = true;
-                cxVar.fragmentView.invalidate();
-                cxVar.A3 = -(org.telegram.messenger.g0.L((cxVar.L ? 81 : 0) + 48) - this.b);
-                cxVar.f0[0].setTranslationY(0.0f);
-                while (true) {
-                    bx[] bxVarArr = cxVar.f0;
-                    if (i7 >= bxVarArr.length) {
-                        cxVar.fragmentView.requestLayout();
-                        qw qwVar = cxVar.Y;
-                        if (qwVar != null && cxVar.b.f) {
-                            qwVar.r.requestFocus();
-                            org.telegram.messenger.g0.I3(cxVar.Y.r);
-                            break;
-                        }
-                    } else {
-                        bx bxVar = bxVarArr[i7];
-                        if (bxVar != null) {
-                            bxVar.a.requestLayout();
-                        }
-                        i7++;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                cx cxVar2 = this.c;
-                cxVar2.x3 = null;
-                cxVar2.Q = 0;
-                cxVar2.P = true;
-                cxVar2.A3 = org.telegram.messenger.g0.L((cxVar2.L ? 81 : 0) + 48) - this.b;
-                cxVar2.f0[0].setTranslationY(0.0f);
+    @Override // org.telegram.ui.Components.UndoView
+    public final boolean a() {
+        int i7 = 0;
+        while (true) {
+            ax[] axVarArr = this.k0.f0;
+            if (i7 >= axVarArr.length) {
+                return true;
+            }
+            if (axVarArr[i7].y.k()) {
+                return false;
+            }
+            i7++;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.UndoView
+    public final void g(int i7, long j3) {
+        if (i7 == 1 || i7 == 27) {
+            bx bxVar = this.k0;
+            bxVar.U4(true, true);
+            if (bxVar.T1 != null) {
                 int i10 = 0;
                 while (true) {
-                    bx[] bxVarArr2 = cxVar2.f0;
-                    if (i10 >= bxVarArr2.length) {
-                        cxVar2.F0.l(false, 1.0f);
-                        cxVar2.fragmentView.requestLayout();
+                    if (i10 >= bxVar.T1.size()) {
+                        i10 = -1;
+                        break;
+                    } else if (((TLRPC.Dialog) bxVar.T1.get(i10)).id == j3) {
                         break;
                     } else {
-                        bx bxVar2 = bxVarArr2[i10];
-                        if (bxVar2 != null) {
-                            bxVar2.a.requestLayout();
-                        }
                         i10++;
                     }
                 }
+                if (i10 >= 0) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) bxVar.T1.remove(i10);
+                    bxVar.f0[0].d.f();
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.e21(this, i10, dialog, 1));
+                } else {
+                    bxVar.U4(false, true);
+                }
+            }
+            bxVar.z3();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        bx bxVar = this.k0;
+        UndoView[] undoViewArr = bxVar.z0;
+        if (this == undoViewArr[0]) {
+            UndoView undoView = undoViewArr[1];
+            if (undoView == null || undoView.getVisibility() != 0) {
+                bxVar.w1 = Math.max(0.0f, (org.telegram.messenger.g0.L(8.0f) + getMeasuredHeight()) - f10);
+                bxVar.s5();
+            }
         }
     }
 }

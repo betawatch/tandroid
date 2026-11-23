@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class tj extends org.telegram.ui.Components.bd {
     public org.telegram.ui.Cells.y e;
@@ -24,13 +24,13 @@ public final class tj extends org.telegram.ui.Components.bd {
     @Override // org.telegram.ui.Components.bd
     public final void d() {
         try {
-            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.m6.nf);
+            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.n6.nf);
             if (this.e != null) {
                 Drawable background = getBackground();
                 Drawable drawable = this.e;
                 if (background == drawable) {
                     if (themedColor != this.f) {
-                        org.telegram.ui.ActionBar.m6.H1(drawable, themedColor & 436207615, true);
+                        org.telegram.ui.ActionBar.n6.H1(drawable, themedColor & 436207615, true);
                     }
                     if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
                         getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
@@ -42,7 +42,7 @@ public final class tj extends org.telegram.ui.Components.bd {
                     return;
                 }
             }
-            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.m6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
+            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.n6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
             this.e = Y;
             setBackground(Y);
             if (getImageView() != null) {

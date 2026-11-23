@@ -8,17 +8,17 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
-import org.telegram.ui.wc1;
+import org.telegram.ui.uc1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class x {
     public final File a;
     public final int b;
     public final boolean c;
     public final o d;
-    public final wc1 e;
+    public final uc1 e;
     public MP4Builder i;
     public MediaFormat j;
     public MediaFormat k;
@@ -39,12 +39,12 @@ public final class x {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo u = new MediaCodec.BufferInfo();
 
-    public x(File file, int i7, boolean z10, o oVar, wc1 wc1Var) {
+    public x(File file, int i7, boolean z10, o oVar, uc1 uc1Var) {
         this.a = file;
         this.b = i7;
         this.c = z10;
         this.d = oVar;
-        this.e = wc1Var;
+        this.e = uc1Var;
     }
 
     public static int a(ByteBuffer byteBuffer) {
@@ -347,16 +347,16 @@ public final class x {
         if (this.w) {
             return;
         }
-        wc1 wc1Var = this.e;
-        u0 u0Var = (u0) wc1Var.b;
-        q0 q0Var = (q0) wc1Var.c;
+        uc1 uc1Var = this.e;
+        u0 u0Var = (u0) uc1Var.b;
+        q0 q0Var = (q0) uc1Var.c;
         synchronized (u0Var.g) {
             try {
                 long j10 = q0Var.c;
                 long j11 = j3 - j10;
                 if (j11 > 0 && !q0Var.d) {
                     q0Var.c = j3;
-                    u0Var.k.execute(new d3.e0(u0Var, q0Var, j10, j11, 8));
+                    u0Var.k.execute(new d3.e0(u0Var, q0Var, j10, j11, 9));
                 }
             } finally {
             }

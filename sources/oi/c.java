@@ -8,33 +8,33 @@ import android.view.KeyEvent;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.lc;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.kc;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements r10 {
+public final /* synthetic */ class c implements p10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ hi.e c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ h6 e;
+    public final /* synthetic */ i6 e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
     public final /* synthetic */ KeyEvent.Callback j;
 
-    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, h6 h6Var, boolean z10, int[] iArr, hi.e eVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
+    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, i6 i6Var, boolean z10, int[] iArr, hi.e eVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
         this.f = str;
         this.g = strArr;
         this.h = imageView;
-        this.e = h6Var;
+        this.e = i6Var;
         this.d = z10;
         this.i = iArr;
         this.c = eVar;
@@ -42,10 +42,10 @@ public final /* synthetic */ class c implements r10 {
         this.b = zArr;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.p10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
-        h6 h6Var = this.e;
+        i6 i6Var = this.e;
         KeyEvent.Callback callback = this.j;
         Object obj3 = this.i;
         Object obj4 = this.h;
@@ -63,14 +63,14 @@ public final /* synthetic */ class c implements r10 {
                 Boolean bool = (Boolean) obj2;
                 if (TextUtils.equals((String) obj6, ((String[]) obj5)[0])) {
                     if (bool.booleanValue()) {
-                        t6.s(imageView, m6.q7, h6Var, PorterDuff.Mode.SRC_IN);
+                        u6.s(imageView, n6.q7, i6Var, PorterDuff.Mode.SRC_IN);
                         if (!z10) {
                             int i10 = -iArr[0];
                             iArr[0] = i10;
                             org.telegram.messenger.g0.E3(i10, imageView, null);
                         }
                     } else {
-                        t6.s(imageView, m6.G6, h6Var, PorterDuff.Mode.SRC_IN);
+                        u6.s(imageView, n6.G6, i6Var, PorterDuff.Mode.SRC_IN);
                     }
                     if (bitmap != null) {
                         imageView.setImageBitmap(bitmap);
@@ -82,29 +82,29 @@ public final /* synthetic */ class c implements r10 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.h2 h2Var = (org.telegram.ui.Wallet.h2) obj6;
+                org.telegram.ui.Wallet.i2 i2Var = (org.telegram.ui.Wallet.i2) obj6;
                 boolean[] zArr2 = (boolean[]) obj5;
-                org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) obj4;
+                org.telegram.ui.Wallet.v0 v0Var = (org.telegram.ui.Wallet.v0) obj4;
                 TextView textView = (TextView) obj3;
-                org.telegram.ui.Wallet.d3 d3Var = (org.telegram.ui.Wallet.d3) callback;
+                org.telegram.ui.Wallet.e3 e3Var = (org.telegram.ui.Wallet.e3) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
-                if (!zArr[0] && !h2Var.m && !h2Var.n) {
-                    boolean z11 = h2Var.p;
+                if (!zArr[0] && !i2Var.m && !i2Var.n) {
+                    boolean z11 = i2Var.p;
                     zArr2[0] = z11;
                     eVar.setEnabled(z11);
                     boolean z12 = zArr2[0];
                     if (z12 && !z10) {
-                        SpannableStringBuilder s5 = org.telegram.ui.Wallet.u0.s(wallettransaction.fee, true);
-                        CharSequence r10 = u0Var.r(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(r10) ? hd.V(null, null, 2131742873, s5) : hd.V(null, null, 2131742872, s5, r10));
+                        SpannableStringBuilder s5 = org.telegram.ui.Wallet.v0.s(wallettransaction.fee, true);
+                        CharSequence r10 = v0Var.r(wallettransaction.fee, true);
+                        textView.setText(TextUtils.isEmpty(r10) ? gd.V(null, null, 2131742868, s5) : gd.V(null, null, 2131742867, s5, r10));
                         break;
                     } else if (!z12) {
-                        String N0 = str != null ? str : hd.N0(2131742720, null);
+                        String N0 = str != null ? str : gd.N0(2131742715, null);
                         if (str == null) {
-                            org.telegram.ui.Wallet.l2.m("preview", N0);
+                            org.telegram.ui.Wallet.m2.m("preview", N0);
                         }
-                        lc.d0(N0, d3Var.F, h6Var);
+                        kc.d0(N0, e3Var.F, i6Var);
                         break;
                     }
                 }
@@ -112,15 +112,15 @@ public final /* synthetic */ class c implements r10 {
         }
     }
 
-    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.h2 h2Var, boolean[] zArr2, hi.e eVar, boolean z10, org.telegram.ui.Wallet.u0 u0Var, TextView textView, org.telegram.ui.Wallet.d3 d3Var, h6 h6Var) {
+    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.i2 i2Var, boolean[] zArr2, hi.e eVar, boolean z10, org.telegram.ui.Wallet.v0 v0Var, TextView textView, org.telegram.ui.Wallet.e3 e3Var, i6 i6Var) {
         this.b = zArr;
-        this.f = h2Var;
+        this.f = i2Var;
         this.g = zArr2;
         this.c = eVar;
         this.d = z10;
-        this.h = u0Var;
+        this.h = v0Var;
         this.i = textView;
-        this.j = d3Var;
-        this.e = h6Var;
+        this.j = e3Var;
+        this.e = i6Var;
     }
 }

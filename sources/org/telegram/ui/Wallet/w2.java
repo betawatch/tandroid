@@ -1,55 +1,23 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class w2 implements x2 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.utils.twidget.i0 b;
+public final class w2 extends ScrollView {
+    public final /* synthetic */ int a;
 
-    public w2(boolean[] zArr, org.telegram.utils.twidget.i0 i0Var) {
-        this.a = zArr;
-        this.b = i0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w2(Context context, int i7) {
+        super(context);
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.Wallet.x2
-    public final void a() {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        this.b.a();
-    }
-
-    @Override // org.telegram.ui.Wallet.x2
-    public final void b() {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        this.b.b();
-    }
-
-    public final void c() {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        org.telegram.utils.twidget.i0 i0Var = this.b;
-        i0Var.b.b(4, null, i0Var.c);
-    }
-
-    public final void d(TLRPC.WidgetQueryType widgetQueryType) {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        org.telegram.utils.twidget.i0 i0Var = this.b;
-        org.telegram.utils.twidget.n0.w(i0Var.a, i0Var.b, i0Var.c, widgetQueryType, i0Var.d);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(this.a)), TLObject.FLAG_31));
     }
 }

@@ -1,6 +1,7 @@
 package ca;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.opengl.Matrix;
 import ch.s;
 import ch.x;
@@ -24,6 +25,7 @@ import di.t4;
 import di.u0;
 import di.u4;
 import di.v4;
+import di.v5;
 import di.w4;
 import di.y5;
 import di.z5;
@@ -33,24 +35,24 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import m.o3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.tu0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.su0;
+import org.telegram.ui.Components.x20;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.r8;
-import org.telegram.ui.Wallet.v5;
+import org.telegram.ui.Wallet.s8;
 import org.telegram.ui.Wallet.w5;
+import org.telegram.ui.Wallet.x5;
 import org.telegram.ui.bn;
 import ug.y0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -61,68 +63,43 @@ public final /* synthetic */ class r implements Runnable {
         this.b = obj;
     }
 
-    private final void a() {
-        ab.q qVar = (ab.q) this.b;
-        Map map = null;
-        ((AtomicReference) qVar.c).set(null);
-        synchronized (qVar) {
-            try {
-                if (((AtomicMarkableReference) qVar.b).isMarked()) {
-                    map = ((e) ((AtomicMarkableReference) qVar.b).getReference()).a();
-                    AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) qVar.b;
-                    atomicMarkableReference.set((e) atomicMarkableReference.getReference(), false);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        if (map != null) {
-            o3 o3Var = (o3) qVar.d;
-            ((h) o3Var.a).h((String) o3Var.c, map, qVar.a);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0292  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0298  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x02c7  */
-    /* JADX WARN: Removed duplicated region for block: B:88:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x02a2  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:90:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x02a5  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        boolean z10;
         char c10;
         char c11;
         char c12;
         int i7;
-        String str = null;
+        Map map = null;
         switch (this.a) {
             case 0:
-                o3 o3Var = (o3) this.b;
-                synchronized (((AtomicMarkableReference) o3Var.g)) {
+                ab.q qVar = (ab.q) this.b;
+                ((AtomicReference) qVar.c).set(null);
+                synchronized (qVar) {
                     try {
-                        if (((AtomicMarkableReference) o3Var.g).isMarked()) {
-                            str = (String) ((AtomicMarkableReference) o3Var.g).getReference();
-                            ((AtomicMarkableReference) o3Var.g).set(str, false);
-                            z10 = true;
-                        } else {
-                            z10 = false;
+                        if (((AtomicMarkableReference) qVar.b).isMarked()) {
+                            map = ((e) ((AtomicMarkableReference) qVar.b).getReference()).a();
+                            AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) qVar.b;
+                            atomicMarkableReference.set((e) atomicMarkableReference.getReference(), false);
                         }
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                if (z10) {
-                    ((h) o3Var.a).i((String) o3Var.c, str);
+                if (map != null) {
+                    o3 o3Var = (o3) qVar.d;
+                    ((h) o3Var.a).h((String) o3Var.c, map, qVar.a);
                     return;
                 }
                 return;
             case 1:
-                a();
-                return;
-            case 2:
                 s sVar = (s) ((ob.c) this.b).b;
                 ch.r rVar = sVar.b;
                 if (rVar != null) {
@@ -130,10 +107,10 @@ public final /* synthetic */ class r implements Runnable {
                 }
                 sVar.a.O7(true);
                 return;
-            case 3:
+            case 2:
                 ((ValueAnimator) this.b).start();
                 return;
-            case 4:
+            case 3:
                 g2 g2Var = ((x) this.b).h2.r;
                 if (g2Var instanceof bn) {
                     g2Var.showDialog(new y0(g2Var, 11, false));
@@ -145,77 +122,77 @@ public final /* synthetic */ class r implements Runnable {
                     return;
                 }
                 return;
-            case 5:
+            case 4:
                 ((ci.s) this.b).e();
                 return;
-            case 6:
-                ((d3.e) this.b).h.r();
+            case 5:
+                ((d3.e) this.b).h.v();
                 return;
-            case 7:
+            case 6:
                 ((t) this.b).m--;
                 return;
-            case 8:
+            case 7:
                 r0.a.postVsyncCallback((b0) this.b);
                 return;
-            case 9:
+            case 8:
                 di.b bVar = (di.b) this.b;
                 bVar.getClass();
                 new gb(bVar.getContext(), bVar.b).show();
                 return;
-            case 10:
+            case 9:
                 di.s sVar2 = (di.s) this.b;
                 if (!sVar2.isAttachedToWindow() || sVar2.c.canScrollVertically(1)) {
                     return;
                 }
                 sVar2.a();
                 return;
-            case 11:
-                new tu0(((a30) this.b).getContext()).show();
+            case 10:
+                new su0(((x20) this.b).getContext()).show();
                 return;
-            case 12:
+            case 11:
                 EditTextBoldCursor editTextBoldCursor = ((o0) this.b).s1;
                 editTextBoldCursor.requestFocus();
                 g0.I3(editTextBoldCursor);
                 return;
-            case 13:
+            case 12:
                 g0.I3(((r0) this.b).r1);
                 return;
-            case 14:
+            case 13:
                 g0.I3(((u0) this.b).n1);
                 return;
-            case 15:
+            case 14:
                 ((h1) this.b).onBackPressed();
                 return;
-            case 16:
-                v5 v5Var = (v5) ((e6) this.b);
-                r8 r8Var = v5Var.c.k0;
-                if (r8Var != null) {
-                    TL_wallet.nftItem nftitem = v5Var.b;
-                    if (r8Var.A()) {
-                        r8Var.c0(r8Var.v(nftitem));
+            case 15:
+                w5 w5Var = (w5) ((e6) this.b);
+                s8 s8Var = w5Var.c.k0;
+                if (s8Var != null) {
+                    TL_wallet.nftItem nftitem = w5Var.b;
+                    if (s8Var.A()) {
+                        s8Var.c0(s8Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
-            case 17:
-                w5 w5Var = (w5) ((d6) this.b);
-                r8 r8Var2 = w5Var.b.k0;
-                if (r8Var2 != null) {
-                    r8Var2.b0(w5Var.a);
+            case 16:
+                x5 x5Var = (x5) ((d6) this.b);
+                s8 s8Var2 = x5Var.b.k0;
+                if (s8Var2 != null) {
+                    s8Var2.b0(x5Var.a);
                     return;
                 }
                 return;
-            case 18:
+            case 17:
                 b5 b5Var = (b5) this.b;
                 b5Var.i0 = false;
                 b5Var.k0 = false;
                 b5Var.a(b5Var.a0, b5Var.b0, b5Var.c0, b5Var.d0);
                 return;
-            case 19:
+            case 18:
                 ((r4) this.b).invalidateSelf();
                 return;
-            case 20:
+            case 19:
                 v4 v4Var = (v4) this.b;
                 u4 u4Var = v4Var.I;
                 if (u4Var != null) {
@@ -332,17 +309,17 @@ public final /* synthetic */ class r implements Runnable {
                 if (v4Var.isAttachedToWindow()) {
                 }
                 break;
-            case 21:
+            case 20:
                 ((w4) this.b).invalidate();
                 return;
-            case 22:
+            case 21:
                 ((a5) this.b).invalidateSelf();
                 return;
-            case 23:
+            case 22:
                 z5 z5Var = (z5) this.b;
                 r rVar2 = z5Var.p0;
-                q9[] q9VarArr = z5Var.d;
-                if (!q9VarArr[2 - z5Var.y0].getImageReceiver().J()) {
+                p9[] p9VarArr = z5Var.d;
+                if (!p9VarArr[2 - z5Var.y0].getImageReceiver().K()) {
                     g0.r(rVar2);
                     g0.h3(rVar2, 150L);
                     return;
@@ -357,10 +334,10 @@ public final /* synthetic */ class r implements Runnable {
                     }
                     int i14 = 1 - z5Var.y0;
                     z5Var.y0 = i14;
-                    oh0 B = q9VarArr[2 - i14].getImageReceiver().B();
-                    oh0 B2 = q9VarArr[z5Var.y0 + 1].getImageReceiver().B();
-                    if (B2 != null && B != null) {
-                        B2.T(false, B.t());
+                    nh0 C = p9VarArr[2 - i14].getImageReceiver().C();
+                    nh0 C2 = p9VarArr[z5Var.y0 + 1].getImageReceiver().C();
+                    if (C2 != null && C != null) {
+                        C2.T(false, C.t());
                     }
                     z5Var.d0.c();
                     int i15 = z5Var.y0 + 1;
@@ -373,15 +350,15 @@ public final /* synthetic */ class r implements Runnable {
                     float f20 = z5Var.y0;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f20, f20);
                     z5Var.o0 = ofFloat;
-                    ofFloat.addUpdateListener(new di.v5(z5Var, 2));
+                    ofFloat.addUpdateListener(new v5(z5Var, 2));
                     z5Var.o0.addListener(new y5(z5Var));
                     z5Var.o0.setDuration(320L);
-                    z5Var.o0.setInterpolator(nr.h);
+                    z5Var.o0.setInterpolator(kr.h);
                     z5Var.o0.start();
                     return;
                 }
                 return;
-            case 24:
+            case 23:
                 pb pbVar = (pb) this.b;
                 if (pbVar.V == null || pbVar.b0 == -1) {
                     return;
@@ -389,20 +366,24 @@ public final /* synthetic */ class r implements Runnable {
                 pbVar.o1("POSTED_ALIGN");
                 pbVar.V.a();
                 return;
-            case 25:
+            case 24:
                 ((vg.m) this.b).setPaused(true);
                 return;
-            case 26:
+            case 25:
                 g0.I3((EditTextBoldCursor) this.b);
                 return;
-            case 27:
+            case 26:
                 ((u0[]) this.b)[0].dismiss();
                 return;
+            case 27:
+                vf.c.t(((fb) this.b).getContext(), gd.N0(2131744725, null));
+                return;
             case 28:
-                vf.c.t(((fb) this.b).getContext(), hd.N0(2131744723, null));
+                vf.c.t(((gb) this.b).getContext(), gd.N0(2131744725, null));
                 return;
             default:
-                vf.c.t(((gb) this.b).getContext(), hd.N0(2131744723, null));
+                ab.q qVar2 = (ab.q) this.b;
+                ((Context) qVar2.b).unregisterReceiver((f2.b) qVar2.c);
                 return;
         }
     }

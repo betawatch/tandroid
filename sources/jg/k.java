@@ -2,13 +2,13 @@ package jg;
 
 import j$.util.Objects;
 import java.util.HashMap;
-import org.telegram.messenger.np;
-import org.telegram.messenger.so;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ro;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class k extends rg.a {
     public final TLRPC.Dialog c;
@@ -111,11 +111,11 @@ public final class k extends rg.a {
             if (i13 != 7 && i13 != 8) {
                 this.g = dialog.pinned;
             } else {
-                so soVar = np.u1(i14).N[mVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = soVar != null && soVar.j.indexOfKey(dialog.id) >= 0;
+                ro roVar = mp.u1(i14).N[mVar.h == 8 ? (char) 1 : (char) 0];
+                this.g = roVar != null && roVar.j.indexOfKey(dialog.id) >= 0;
             }
             this.h = dialog.isFolder;
-            this.f = np.u1(i14).y2(dialog.id);
+            this.f = mp.u1(i14).y2(dialog.id);
         }
     }
 

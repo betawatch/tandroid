@@ -9,10 +9,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.h60;
-import org.telegram.ui.j70;
+import org.telegram.ui.i50;
+import org.telegram.ui.i70;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -105,7 +105,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                         i12++;
                         i5Var = i5Var;
                     }
-                    g0.g3(new eg(i5Var, tL_contacts_importedContacts.users, 2, arrayList2, 3));
+                    g0.g3(new dg(i5Var, tL_contacts_importedContacts.users, 2, arrayList2, 3));
                 } else {
                     boolean z15 = false;
                     int i13 = 0;
@@ -125,13 +125,13 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                         boolean z16 = z10;
                         i5Var.getMessagesStorage().Z0(hashMap, z16, z16);
                     }
-                    Utilities.d.c(new bh(i5Var, hashMap3, hashMap2, z12, hashMap4, arrayList, hashMap5, zArr));
+                    Utilities.d.c(new ah(i5Var, hashMap3, hashMap2, z12, hashMap4, arrayList, hashMap5, zArr));
                     break;
                 }
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
-                h60 h60Var = (h60) this.e;
+                i50 i50Var = (i50) this.e;
                 boolean z17 = this.b;
                 Long l10 = (Long) this.f;
                 vf.b bVar = (vf.b) this.g;
@@ -143,14 +143,14 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                 int i14 = this.c;
                 Bundle bundle = (Bundle) this.m;
                 String str = LaunchActivity.C1;
-                g0.g3(new j70(launchActivity, h60Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, g2Var, i14, bundle));
+                g0.g3(new i70(launchActivity, i50Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, g2Var, i14, bundle));
                 break;
         }
     }
 
-    public /* synthetic */ q4(LaunchActivity launchActivity, h60 h60Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.g2 g2Var, int i7, Bundle bundle) {
+    public /* synthetic */ q4(LaunchActivity launchActivity, i50 i50Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.g2 g2Var, int i7, Bundle bundle) {
         this.d = launchActivity;
-        this.e = h60Var;
+        this.e = i50Var;
         this.b = z10;
         this.f = l10;
         this.g = bVar;

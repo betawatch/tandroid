@@ -1,66 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pz0 implements Runnable {
+public final /* synthetic */ class pz0 implements r0.m, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uz0 b;
+    public final /* synthetic */ sz0 b;
 
-    public /* synthetic */ pz0(uz0 uz0Var, int i7) {
+    public /* synthetic */ pz0(sz0 sz0Var, int i7) {
         this.a = i7;
-        this.b = uz0Var;
+        this.b = sz0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
-            case 0:
-                uz0 uz0Var = this.b;
-                pz0 pz0Var = uz0Var.a0;
-                if (uz0Var.x != null) {
-                    uz0Var.b0 = r2.S() / uz0Var.x.U();
-                    sz0 sz0Var = uz0Var.O;
-                    if (sz0Var != null) {
-                        sz0Var.pc = (uz0Var.x.U() - uz0Var.x.S()) / 1000;
-                        uz0Var.O.U3();
-                        org.telegram.ui.Components.en0 seekBarWaveform = uz0Var.O.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f10 = uz0Var.b0;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.r1 r1Var = seekBarWaveform.n;
-                            if (r1Var != null) {
-                                r1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (uz0Var.x.d0()) {
-                        org.telegram.messenger.g0.r(pz0Var);
-                        org.telegram.messenger.g0.h3(pz0Var, 16L);
-                        break;
-                    }
-                }
-                break;
             case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 2:
-                super/*android.app.Dialog*/.dismiss();
+                org.telegram.ui.ActionBar.t1 t1Var2 = this.b.d0;
+                if (t1Var2 != null) {
+                    t1Var2.dismiss();
+                    break;
+                }
                 break;
             default:
-                uz0 uz0Var2 = this.b;
-                if (uz0Var2.d == null) {
-                    org.telegram.messenger.g0.g3(new pz0(uz0Var2, 2));
-                    org.telegram.ui.Cells.r1 r1Var2 = uz0Var2.P;
-                    if (r1Var2 != null) {
-                        r1Var2.setVisibility(0);
-                        uz0Var2.P.invalidate();
-                    }
+                sz0 sz0Var = this.b;
+                org.telegram.ui.ActionBar.t1 t1Var3 = sz0Var.d0;
+                if (t1Var3 != null) {
+                    t1Var3.dismiss();
+                    sz0Var.d0 = null;
                 }
-                MediaController.B().F0();
+                sz0Var.dismiss();
                 break;
         }
+    }
+
+    @Override // r0.m
+    public r0.l1 l1(View view, r0.l1 l1Var) {
+        i0.b I0 = org.telegram.messenger.g0.I0(l1Var, false);
+        sz0 sz0Var = this.b;
+        sz0Var.e = I0;
+        sz0Var.c.setPadding(I0.a, I0.b, I0.c, I0.d);
+        sz0Var.b.requestLayout();
+        return r0.l1.b;
     }
 }

@@ -1,8 +1,8 @@
 package androidx.biometric;
 
-import a8.l1;
-import a8.n1;
+import a8.m1;
 import a8.o1;
+import a8.p1;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +23,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class q extends androidx.fragment.app.s {
     public final Handler l0 = new Handler(Looper.getMainLooper());
@@ -32,7 +32,7 @@ public class q extends androidx.fragment.app.s {
     @Override // androidx.fragment.app.s
     public final void H() {
         this.V = true;
-        if (Build.VERSION.SDK_INT == 29 && l1.a(this.m0.c())) {
+        if (Build.VERSION.SDK_INT == 29 && m1.a(this.m0.c())) {
             z zVar = this.m0;
             zVar.q = true;
             this.l0.postDelayed(new p(zVar, 2), 250L);
@@ -56,7 +56,7 @@ public class q extends androidx.fragment.app.s {
             if (R()) {
                 this.m0.l = i7;
                 if (i7 == 1) {
-                    U(10, o1.a(n(), 10));
+                    U(10, p1.a(n(), 10));
                 }
             }
             z zVar = this.m0;
@@ -127,7 +127,7 @@ public class q extends androidx.fragment.app.s {
     }
 
     public final boolean Q() {
-        return Build.VERSION.SDK_INT <= 28 && l1.a(this.m0.c());
+        return Build.VERSION.SDK_INT <= 28 && m1.a(this.m0.c());
     }
 
     public final boolean R() {
@@ -315,11 +315,11 @@ public class q extends androidx.fragment.app.s {
             if (i11 >= 30) {
                 n.a(d, c10);
             } else if (i11 >= 29) {
-                m.b(d, l1.a(c10));
+                m.b(d, m1.a(c10));
             }
             BiometricPrompt c11 = l.c(d);
             Context n10 = n();
-            BiometricPrompt.CryptoObject b10 = n1.b(this.m0.g);
+            BiometricPrompt.CryptoObject b10 = o1.b(this.m0.g);
             z zVar5 = this.m0;
             if (zVar5.i == null) {
                 zVar5.i = new q4.q(i10, z10);
@@ -353,16 +353,16 @@ public class q extends androidx.fragment.app.s {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        androidx.emoji2.text.n nVar5 = new androidx.emoji2.text.n(applicationContext, (char) 0);
-        FingerprintManager e11 = androidx.emoji2.text.n.e(applicationContext);
-        if (e11 == null || !e11.isHardwareDetected()) {
+        t tVar = new t(applicationContext, (byte) 0);
+        FingerprintManager b11 = t.b(applicationContext);
+        if (b11 == null || !b11.isHardwareDetected()) {
             i7 = 12;
         } else {
-            FingerprintManager e12 = androidx.emoji2.text.n.e(applicationContext);
-            i7 = (e12 == null || !e12.hasEnrolledFingerprints()) ? 11 : 0;
+            FingerprintManager b12 = t.b(applicationContext);
+            i7 = (b12 == null || !b12.hasEnrolledFingerprints()) ? 11 : 0;
         }
         if (i7 != 0) {
-            T(i7, o1.a(applicationContext, i7));
+            T(i7, p1.a(applicationContext, i7));
             return;
         }
         if (t()) {
@@ -423,10 +423,10 @@ public class q extends androidx.fragment.app.s {
                 a0Var2.c = new ob.c(a0Var2, 3);
             }
             try {
-                nVar5.b(mVar, iVar, (ob.c) a0Var2.c);
-            } catch (NullPointerException e13) {
-                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e13);
-                T(1, o1.a(applicationContext, 1));
+                tVar.a(mVar, iVar, (ob.c) a0Var2.c);
+            } catch (NullPointerException e11) {
+                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e11);
+                T(1, p1.a(applicationContext, 1));
             }
         }
     }

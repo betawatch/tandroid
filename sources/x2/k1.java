@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k1 implements d1 {
     public int a;
@@ -20,33 +20,9 @@ public final class k1 implements d1 {
         m1Var.r.a();
     }
 
-    public final void b() {
-        if (this.b) {
-            return;
-        }
-        m1 m1Var = this.c;
-        m1Var.e.j(e2.s0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
-        this.b = true;
-    }
-
     @Override // x2.d1
-    public final boolean h() {
-        return this.c.x;
-    }
-
-    @Override // x2.d1
-    public final int j(long j3) {
-        b();
-        if (j3 <= 0 || this.a == 2) {
-            return 0;
-        }
-        this.a = 2;
-        return 1;
-    }
-
-    @Override // x2.d1
-    public final int m(k8.a aVar, k2.h hVar, int i7) {
-        b();
+    public final int b(jb.m mVar, k2.h hVar, int i7) {
+        c();
         m1 m1Var = this.c;
         boolean z10 = m1Var.x;
         if (z10 && m1Var.y == null) {
@@ -58,7 +34,7 @@ public final class k1 implements d1 {
             return -4;
         }
         if ((i7 & 2) != 0 || i10 == 0) {
-            aVar.c = m1Var.s;
+            mVar.c = m1Var.s;
             this.a = 1;
             return -5;
         }
@@ -76,5 +52,29 @@ public final class k1 implements d1 {
             this.a = 2;
         }
         return -4;
+    }
+
+    public final void c() {
+        if (this.b) {
+            return;
+        }
+        m1 m1Var = this.c;
+        m1Var.e.i(e2.s0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
+        this.b = true;
+    }
+
+    @Override // x2.d1
+    public final boolean h() {
+        return this.c.x;
+    }
+
+    @Override // x2.d1
+    public final int o(long j3) {
+        c();
+        if (j3 <= 0 || this.a == 2) {
+            return 0;
+        }
+        this.a = 2;
+        return 1;
     }
 }

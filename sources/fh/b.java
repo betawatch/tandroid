@@ -1,6 +1,6 @@
 package fh;
 
-import a8.ea;
+import a8.fa;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -9,11 +9,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import java.lang.ref.WeakReference;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class b extends ea {
+public final class b extends fa {
     public final Paint a;
     public final Paint b;
     public final Matrix c;
@@ -31,7 +31,7 @@ public final class b extends ea {
         paint.setFilterBitmap(true);
     }
 
-    @Override // a8.ea
+    @Override // a8.fa
     public final void b(Canvas canvas, ui.a aVar) {
         ui.b bVar = (ui.b) g.v(aVar);
         g gVar = this.f;
@@ -63,7 +63,7 @@ public final class b extends ea {
             paint.setAlpha(i7);
             gVar.R.c(canvas, paint);
         }
-        int r12 = m6.r1(i7 / 255.0f, gVar.y);
+        int r12 = n6.r1(i7 / 255.0f, gVar.y);
         if (Color.alpha(r12) > 0) {
             Paint paint2 = this.b;
             paint2.setColor(r12);

@@ -1,173 +1,59 @@
 package bi;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import hi.nb;
 import org.telegram.ui.Components.fq0;
-import org.telegram.ui.Components.gq0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.iq0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.jq0;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Components.it0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class p5 extends j71 {
-    public final /* synthetic */ int W;
-    public Object a0;
-    public final /* synthetic */ FrameLayout b0;
+public final /* synthetic */ class p5 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p5(FrameLayout frameLayout, Context context, Object obj, int i7) {
-        super(context, null);
-        this.W = i7;
-        this.b0 = frameLayout;
-        this.a0 = obj;
+    public /* synthetic */ p5(FrameLayout frameLayout, boolean z10, int i7, int i10) {
+        this.a = i10;
+        this.d = frameLayout;
+        this.b = z10;
+        this.c = i7;
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public void a() {
-        switch (this.W) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                gq0 gq0Var = (gq0) this.b0;
-                i71 i71Var = gq0Var.n;
-                if (gq0Var.b() && i71Var != null) {
-                    if (gq0Var.K == null) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(i5.c.k(2131750081, null, new StringBuilder("+ ")));
-                        nq nqVar = new nq(R.drawable.poll_add_plus, 0);
-                        nqVar.H = 0.8f;
-                        spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-                        gq0Var.K = spannableStringBuilder;
-                    }
-                    i71Var.a(-1, gq0Var.K);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public boolean b(MotionEvent motionEvent) {
-        boolean g10;
-        switch (this.W) {
-            case 0:
-                g10 = ((gq0) this.b0).g();
-                break;
-            case 1:
-                g10 = ((fq0) this.b0).H.F1;
-                break;
-            default:
-                return super.b(motionEvent);
-        }
-        return !g10;
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void s(boolean z10) {
-        switch (this.W) {
-            case 0:
-                gq0 gq0Var = (gq0) this.b0;
-                gq0Var.l();
-                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.a0;
-                if (g2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) g2Var).W();
-                    View fragmentView = g2Var.getFragmentView();
-                    if (fragmentView != null) {
-                        fragmentView.invalidate();
-                    }
-                }
-                gq0Var.p();
-                break;
-            case 1:
-                fq0 fq0Var = (fq0) this.b0;
-                String currentLang = fq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    fq0Var.H.Y0();
-                    break;
-                }
-                break;
-            default:
-                iq0 iq0Var = (iq0) this.a0;
-                iq0Var.d.V0(((jq0) this.b0).b.getAnimatingIndicatorProgress());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void u(int i7) {
-        switch (this.W) {
-            case 1:
-                fq0 fq0Var = (fq0) this.b0;
-                String currentLang = fq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    fq0Var.H.Y0();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void v(int i7, boolean z10) {
-        switch (this.W) {
-            case 2:
-                iq0 iq0Var = (iq0) this.a0;
-                int i10 = ((jq0) this.b0).b.c0.get(i7, -1);
-                jt0 jt0Var = iq0Var.d;
-                if (i10 > 0) {
-                    jt0.t(jt0Var, jt0Var.x1(i10).a, z10);
+                fq0 fq0Var = (fq0) this.d;
+                if (fq0Var.e.h() && fq0Var.h.getCurrentPosition() != 0) {
+                    fq0Var.a();
                     break;
                 } else {
-                    jt0.t(jt0Var, 8, z10);
-                    break;
-                }
-            default:
-                super.v(i7, z10);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public final void w(int i7) {
-        switch (this.W) {
-            case 0:
-                ((gq0) this.b0).l();
-                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.a0;
-                if (g2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) g2Var).W();
-                    break;
-                }
-                break;
-            case 1:
-                fq0 fq0Var = (fq0) this.b0;
-                String currentLang = fq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    fq0Var.H.Y0();
-                    break;
+                    boolean z10 = this.b;
+                    int i7 = this.c;
+                    if (!z10) {
+                        f2.l1(false, org.telegram.messenger.v1.a(i7).b());
+                        break;
+                    } else {
+                        p3 p3Var = new p3(fq0Var.getContext(), i7, fq0Var.c, null, null);
+                        p3Var.g1(org.telegram.messenger.v1.a(i7).c(fq0Var.c));
+                        p3Var.show();
+                        break;
+                    }
                 }
                 break;
             default:
-                iq0 iq0Var = (iq0) this.a0;
-                ((jq0) this.b0).b.c0.get(i7, -1);
-                iq0Var.d.V0(1.0f);
-                break;
+                it0 it0Var = (it0) this.d;
+                org.telegram.ui.ActionBar.g2 g2Var = it0Var.y1;
+                if (!this.b) {
+                    g2Var.getMessagesController().h7.edit().putBoolean("story_keep", true).apply();
+                    nb.D(g2Var.getParentActivity(), g2Var.getCurrentAccount()).Q(null);
+                    break;
+                } else {
+                    it0Var.a1(this.c, it0Var.m1, g2Var);
+                    break;
+                }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(fq0 fq0Var, Context context) {
-        super(context, null);
-        this.W = 1;
-        this.b0 = fq0Var;
     }
 }

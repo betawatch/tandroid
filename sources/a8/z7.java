@@ -1,8 +1,8 @@
 package a8;
 
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public enum z7 implements l0 {
     b(0),
@@ -28,59 +28,59 @@ public enum z7 implements l0 {
     /* JADX INFO: Fake field, exist only in values array */
     EF8(101),
     /* JADX INFO: Fake field, exist only in values array */
-    EF10(ls.n1),
+    EF10(ks.n1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF12(ls.o1),
+    EF12(ks.o1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF13(ls.p1),
+    EF13(ks.p1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.q1),
+    EF0(ks.q1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.r1),
+    EF1(ks.r1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF2(ls.s1),
+    EF2(ks.s1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.t1),
+    EF0(ks.t1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.u1),
+    EF1(ks.u1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF2(ls.v1),
+    EF2(ks.v1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.w1),
+    EF0(ks.w1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.x1),
+    EF1(ks.x1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.y1),
+    EF0(ks.y1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.z1),
+    EF1(ks.z1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.A1),
+    EF0(ks.A1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.B1),
+    EF1(ks.B1),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.f3),
+    EF0(ks.f3),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.g3),
+    EF1(ks.g3),
     /* JADX INFO: Fake field, exist only in values array */
     EF0(203),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.i3),
+    EF1(ks.i3),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.j3),
+    EF0(ks.j3),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.k3),
+    EF1(ks.k3),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.l3),
+    EF0(ks.l3),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.Y4),
+    EF1(ks.Y4),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.Z4),
+    EF0(ks.Z4),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.a5),
+    EF1(ks.a5),
     /* JADX INFO: Fake field, exist only in values array */
-    EF0(ls.b5),
+    EF0(ks.b5),
     /* JADX INFO: Fake field, exist only in values array */
-    EF1(ls.c5),
+    EF1(ks.c5),
     /* JADX INFO: Fake field, exist only in values array */
     EF0(400),
     /* JADX INFO: Fake field, exist only in values array */

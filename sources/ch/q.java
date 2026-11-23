@@ -1,10 +1,10 @@
 package ch;
 
-import c8.ma;
-import org.telegram.messenger.hd;
+import c8.na;
+import org.telegram.messenger.gd;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -32,17 +32,17 @@ public final /* synthetic */ class q implements Runnable {
                     rVar.n1 = 1.0f;
                     rVar.setWillNotDraw(false);
                     sVar.b = rVar;
-                    int L = org.telegram.messenger.g0.L(4.0f) + (hd.a0 ? 0 : i10);
+                    int L = org.telegram.messenger.g0.L(4.0f) + (gd.a0 ? 0 : i10);
                     int L2 = org.telegram.messenger.g0.L(4.0f);
                     int L3 = org.telegram.messenger.g0.L(4.0f);
-                    if (!hd.a0) {
+                    if (!gd.a0) {
                         i10 = 0;
                     }
                     rVar.setPadding(L, L2, L3 + i10, org.telegram.messenger.g0.L(i7));
                     sVar.b.setDelegate(new ob.c(sVar, 10));
                     sVar.b.setClipChildren(false);
                     sVar.b.setClipToPadding(false);
-                    sVar.addView(sVar.b, ma.e(-2, i7 + 70, 5));
+                    sVar.addView(sVar.b, na.e(-2, i7 + 70, 5));
                 }
                 sVar.c(false);
                 if (!sVar.b.isEnabled()) {

@@ -5,15 +5,15 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.os.Trace;
 import android.view.View;
-import c8.dd;
+import c8.ed;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class h {
     public final /* synthetic */ q a;
@@ -36,7 +36,7 @@ public final class h {
         } else {
             i7 = 0;
         }
-        long j11 = m6.Dm + t6.b;
+        long j11 = n6.Dm + u6.b;
         if (qVar.s != j11) {
             qVar.s = j11;
             i7 |= 16;
@@ -50,17 +50,17 @@ public final class h {
         if (i7 == 0) {
             return;
         }
-        if (dd.a(i7, 16)) {
+        if (ed.a(i7, 16)) {
             int size = arrayList2.size();
             for (int i10 = 0; i10 < size; i10++) {
                 o oVar = (o) arrayList2.get(i10);
-                oVar.a.a(oVar.b.e());
+                oVar.a.a(oVar.b.j());
             }
         }
         int size2 = arrayList.size();
         for (int i11 = 0; i11 < size2; i11++) {
             p pVar = (p) arrayList.get(i11);
-            if (dd.a(i7, 32)) {
+            if (ed.a(i7, 32)) {
                 e eVar = pVar.b;
                 r rVar = q.F;
                 if (!Objects.equals(eVar.b, rVar)) {
@@ -68,7 +68,7 @@ public final class h {
                     eVar.g(rVar);
                 }
             }
-            if (dd.a(i7, 16)) {
+            if (ed.a(i7, 16)) {
                 pVar.b.updateColors();
             }
             pVar.b.invalidateSelf();
@@ -384,12 +384,12 @@ public final class h {
                 Trace.beginSection("G.Listeners");
                 m mVar = qVar.a;
                 if (mVar != null) {
-                    mVar.l(i20);
+                    mVar.k(i20);
                 }
                 Trace.endSection();
             }
-            boolean a10 = dd.a(i20, 4);
-            boolean z17 = dd.a(i20, 1) || dd.a(i20, 2);
+            boolean a10 = ed.a(i20, 4);
+            boolean z17 = ed.a(i20, 1) || ed.a(i20, 2);
             Trace.beginSection("G.UpdateDisplayLists");
             int size4 = arrayList.size();
             for (int i22 = 0; i22 < size4; i22++) {

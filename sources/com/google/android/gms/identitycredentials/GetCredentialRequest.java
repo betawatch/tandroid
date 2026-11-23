@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.ResultReceiver;
-import c8.bc;
+import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import j7.b;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.jvm.internal.j;
 import r6.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class GetCredentialRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new b(10);
@@ -34,11 +34,11 @@ public final class GetCredentialRequest extends a implements ReflectedParcelable
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i7) {
         j.e(dest, "dest");
-        int r10 = bc.r(dest, 20293);
-        bc.p(dest, 1, this.a);
-        bc.b(dest, 2, this.b);
-        bc.l(dest, 3, this.c);
-        bc.k(dest, 4, this.d, i7);
-        bc.s(dest, r10);
+        int r10 = cc.r(dest, 20293);
+        cc.p(dest, 1, this.a);
+        cc.b(dest, 2, this.b);
+        cc.l(dest, 3, this.c);
+        cc.k(dest, 4, this.d, i7);
+        cc.s(dest, r10);
     }
 }

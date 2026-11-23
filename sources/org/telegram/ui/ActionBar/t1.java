@@ -27,32 +27,32 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ma;
-import c8.ra;
+import c8.na;
+import c8.sa;
 import di.gb;
 import di.u9;
+import hi.c7;
 import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.w10;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.oh0;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.w6;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.Components.zt;
-import org.telegram.ui.p60;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.u70;
+import org.telegram.ui.Components.xt;
+import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class t1 extends Dialog implements Drawable.Callback, gs {
+public class t1 extends Dialog implements Drawable.Callback, fs {
     public static final /* synthetic */ int k1 = 0;
     public final Drawable A0;
     public final Rect B0;
@@ -80,14 +80,14 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public final di.u3 N0;
     public DialogInterface.OnDismissListener O;
     public final ArrayList O0;
-    public y10 P;
+    public w10 P;
     public float P0;
     public CharSequence[] Q;
     public boolean Q0;
     public int[] R;
     public float R0;
     public CharSequence S;
-    public final h6 S0;
+    public final i6 S0;
     public String T;
     public boolean T0;
     public CharSequence U;
@@ -111,14 +111,14 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public TextView c;
     public Drawable c0;
     public int c1;
-    public zt d;
+    public xt d;
     public int d0;
     public int d1;
     public int e;
     public int e0;
     public int e1;
     public xh.l f;
-    public h6 f0;
+    public i6 f0;
     public int f1;
     public final int g0;
     public int g1;
@@ -130,9 +130,9 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public boolean j0;
     public final r1 j1;
     public boolean k0;
-    public rh0 l0;
+    public qh0 l0;
     public CharSequence m0;
-    public zt n;
+    public xt n;
     public q1 n0;
     public CharSequence o0;
     public q1 p0;
@@ -143,11 +143,11 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public CharSequence s0;
     public q1 t0;
     public ViewGroup u0;
-    public x70 v0;
+    public u70 v0;
     public l1 w;
     public TextView w0;
     public LinearLayout x;
-    public p60 x0;
+    public o60 x0;
     public o1 y;
     public final int[] y0;
     public boolean z0;
@@ -171,7 +171,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         animatorSetArr[i7] = animatorSet2;
         BitmapDrawable bitmapDrawable = t1Var.E[i7];
         if (bitmapDrawable != null) {
-            animatorSet2.playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z10 ? ls.e4 : 0));
+            animatorSet2.playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z10 ? ks.e4 : 0));
         }
         animatorSetArr[i7].setDuration(150L);
         animatorSetArr[i7].addListener(new ki.e2(t1Var, i7, 4));
@@ -217,29 +217,29 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         return null;
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        zt ztVar;
-        if (i7 != ls.l4 || (ztVar = this.n) == null) {
+        xt xtVar;
+        if (i7 != ks.l4 || (xtVar = this.n) == null) {
             return;
         }
-        ztVar.invalidate();
+        xtVar.invalidate();
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         Bitmap bitmap;
-        y10 y10Var = this.P;
-        if (y10Var != null) {
+        w10 w10Var = this.P;
+        if (w10Var != null) {
             this.P = null;
-            y10Var.a(new di.u3(this, 2));
+            w10Var.a(new di.u3(this, 2));
             return;
         }
         if (this.i1) {
             return;
         }
         this.i1 = true;
-        ls.e().n(this, ls.l4);
+        ks.e().n(this, ks.l4);
         DialogInterface.OnDismissListener onDismissListener = this.O;
         if (onDismissListener != null) {
             onDismissListener.onDismiss(this);
@@ -269,7 +269,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     }
 
     public int f(int i7) {
-        return m6.w0(i7, this.S0);
+        return n6.w0(i7, this.S0);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -305,7 +305,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         }
         ViewGroup viewGroup = this.b1;
         boolean z12 = this.Y0;
-        h6 h6Var = this.S0;
+        i6 i6Var = this.S0;
         if (z12) {
             if (this.Z0 == null) {
                 FrameLayout frameLayout = new FrameLayout(getContext());
@@ -340,9 +340,9 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 });
             }
             if (this.a1 == null) {
-                di.b bVar = new di.b(k10.t0, getContext(), h6Var);
+                di.b bVar = new di.b(i10.t0, getContext(), i6Var);
                 this.a1 = bVar;
-                ra.a(bVar);
+                sa.a(bVar);
                 this.a1.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ActionBar.k1
                     public final /* synthetic */ t1 b;
 
@@ -374,14 +374,14 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             }
             org.telegram.messenger.g0.E2(this.b1);
             org.telegram.messenger.g0.E2(this.a1);
-            this.Z0.addView(this.b1, ma.e(-2, -2, 17));
-            this.Z0.addView(this.a1, ma.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
+            this.Z0.addView(this.b1, na.e(-2, -2, 17));
+            this.Z0.addView(this.a1, na.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
             viewGroup = this.Z0;
         }
         if (z10) {
             if (this.Y0) {
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-                layoutParams.gravity = ls.E1;
+                layoutParams.gravity = ks.E1;
                 setContentView(viewGroup, layoutParams);
             } else if (this.a > 0) {
                 FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-2, -2);
@@ -397,35 +397,35 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             if (view != null) {
                 view.setPadding(0, 0, 0, 0);
                 f10 = 16.0f;
-                this.b1.addView(this.W, ma.t(-1, this.b0, 51, 0, 0, 0, 0));
+                this.b1.addView(this.W, na.t(-1, this.b0, 51, 0, 0, 0, 0));
             } else {
                 f10 = 16.0f;
             }
         } else {
             f10 = 16.0f;
-            rh0 rh0Var = new rh0(getContext());
-            this.l0 = rh0Var;
+            qh0 qh0Var = new qh0(getContext());
+            this.l0 = qh0Var;
             Drawable drawable = this.c0;
             if (drawable != null) {
-                rh0Var.setImageDrawable(drawable);
+                qh0Var.setImageDrawable(drawable);
                 Drawable drawable2 = this.c0;
-                if (drawable2 instanceof w6) {
-                    w6 w6Var = (w6) drawable2;
-                    this.l0.addOnAttachStateChangeListener(new bi.v2(w6Var, 9));
-                    w6Var.a(this.l0);
+                if (drawable2 instanceof org.telegram.ui.Components.v6) {
+                    org.telegram.ui.Components.v6 v6Var = (org.telegram.ui.Components.v6) drawable2;
+                    this.l0.addOnAttachStateChangeListener(new bi.x2(v6Var, 9));
+                    v6Var.a(this.l0);
                 }
             } else {
                 int i13 = this.V;
                 if (i13 != 0) {
-                    rh0Var.setImageResource(i13);
+                    qh0Var.setImageResource(i13);
                 } else {
-                    rh0Var.setAutoRepeat(this.T0);
-                    rh0 rh0Var2 = this.l0;
+                    qh0Var.setAutoRepeat(this.T0);
+                    qh0 qh0Var2 = this.l0;
                     int i14 = this.Y;
                     int i15 = this.Z;
-                    rh0Var2.f(i14, i15, i15, null);
+                    qh0Var2.f(i14, i15, i15, null);
                     if (this.a0 != null) {
-                        oh0 animatedDrawable = this.l0.getAnimatedDrawable();
+                        nh0 animatedDrawable = this.l0.getAnimatedDrawable();
                         for (Map.Entry entry : this.a0.entrySet()) {
                             String str = (String) entry.getKey();
                             Integer num = (Integer) entry.getValue();
@@ -443,9 +443,9 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 this.l0.setBackground(new s1(this.l0, this.d0, org.telegram.messenger.g0.L(52.0f) + this.Z, this.e0, this.f0));
                 this.b0 = 92;
             } else if (this.e0 >= 0) {
-                t6.B(this.l0, m6.e0(org.telegram.messenger.g0.L(10.0f), 0, this.d0), t6.M(this.e0), this.f0);
+                u6.B(this.l0, n6.e0(org.telegram.messenger.g0.L(10.0f), 0, this.d0), u6.M(this.e0), this.f0);
             } else {
-                this.l0.setBackground(m6.e0(org.telegram.messenger.g0.L(10.0f), 0, this.d0));
+                this.l0.setBackground(n6.e0(org.telegram.messenger.g0.L(10.0f), 0, this.d0));
             }
             if (this.X) {
                 this.l0.setTranslationY(org.telegram.messenger.g0.L(16.0f));
@@ -453,31 +453,31 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 this.l0.setTranslationY(0.0f);
             }
             this.l0.setPadding(0, 0, 0, 0);
-            this.b1.addView(this.l0, ma.t(-1, this.b0, 51, 0, 0, 0, 0));
+            this.b1.addView(this.l0, na.t(-1, this.b0, 51, 0, 0, 0, 0));
         }
         int i16 = 10;
         if (this.S != null) {
             FrameLayout frameLayout2 = new FrameLayout(getContext());
             this.s = frameLayout2;
             f11 = 4.0f;
-            this.b1.addView(frameLayout2, ma.t(-2, -2, this.X ? 1 : 0, 24, 0, 24, 0));
+            this.b1.addView(frameLayout2, na.t(-2, -2, this.X ? 1 : 0, 24, 0, 24, 0));
             xh.l lVar = new xh.l(getContext(), null, false);
             this.f = lVar;
-            ls.i(lVar);
+            ks.i(lVar);
             xh.l lVar2 = this.f;
             lVar2.s = 3;
             lVar2.setText(this.S);
             xh.l lVar3 = this.f;
-            int f14 = f(m6.j5);
+            int f14 = f(n6.j5);
             this.f1 = f14;
             lVar3.setTextColor(f14);
             this.f.setTextSize(1, 20.0f);
             this.f.setTypeface(org.telegram.messenger.g0.o());
-            this.f.setGravity((this.X ? 1 : hd.a0 ? 5 : 3) | 48);
+            this.f.setGravity((this.X ? 1 : gd.a0 ? 5 : 3) | 48);
             FrameLayout frameLayout3 = this.s;
             xh.l lVar4 = this.f;
             boolean z13 = this.X;
-            frameLayout3.addView(lVar4, ma.d(-2, -2.0f, (z13 ? 1 : hd.a0 ? 5 : 3) | 48, 0.0f, 19.0f, 0.0f, z13 ? 4.0f : this.T != null ? 2 : this.Q != null ? 14 : 10));
+            frameLayout3.addView(lVar4, na.d(-2, -2.0f, (z13 ? 1 : gd.a0 ? 5 : 3) | 48, 0.0f, 19.0f, 0.0f, z13 ? 4.0f : this.T != null ? 2 : this.Q != null ? 14 : 10));
         } else {
             f11 = 4.0f;
         }
@@ -487,11 +487,11 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             TextView textView = new TextView(getContext());
             this.h = textView;
             textView.setText(this.T);
-            t6.U(this.h, m6.J5, r1Var);
+            u6.U(this.h, n6.J5, r1Var);
             this.h.setTextSize(1, 14.0f);
-            this.h.setGravity((hd.a0 ? 5 : 3) | 48);
+            this.h.setGravity((gd.a0 ? 5 : 3) | 48);
             f12 = 20.0f;
-            this.b1.addView(this.h, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 24, 0, 24, this.Q != null ? 14 : 10));
+            this.b1.addView(this.h, na.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 24, 0, 24, this.Q != null ? 14 : 10));
         } else {
             f12 = 20.0f;
         }
@@ -507,68 +507,68 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             l1 l1Var = new l1(this, getContext(), null == true ? 1 : 0);
             this.w = l1Var;
             l1Var.setVerticalScrollBarEnabled(false);
-            org.telegram.messenger.g0.x3(this.w, f(m6.A5));
-            this.b1.addView(this.w, ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+            org.telegram.messenger.g0.x3(this.w, f(n6.A5));
+            this.b1.addView(this.w, na.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
             LinearLayout linearLayout = new LinearLayout(getContext());
             this.x = linearLayout;
             linearLayout.setOrientation(1);
             this.w.addView(this.x, new FrameLayout.LayoutParams(-1, -2));
         }
-        zt ztVar = new zt(getContext());
-        this.n = ztVar;
-        ls.i(ztVar);
-        zt ztVar2 = this.n;
-        int f15 = f(this.X ? m6.y6 : m6.j5);
+        xt xtVar = new xt(getContext());
+        this.n = xtVar;
+        ks.i(xtVar);
+        xt xtVar2 = this.n;
+        int f15 = f(this.X ? n6.y6 : n6.j5);
         this.g1 = f15;
-        ztVar2.setTextColor(f15);
+        xtVar2.setTextColor(f15);
         this.n.setTextSize(1, f10);
         this.n.setMovementMethod(new org.telegram.messenger.c0((boolean) (null == true ? 1 : 0)));
-        t6.G(this.n, m6.k5, r1Var);
+        u6.G(this.n, n6.k5, r1Var);
         if (!this.i0) {
             this.n.setClickable(false);
             this.n.setEnabled(false);
         }
-        this.n.setGravity((this.X ? 1 : hd.a0 ? 5 : 3) | 48);
+        this.n.setGravity((this.X ? 1 : gd.a0 ? 5 : 3) | 48);
         if (i10 == 2) {
-            this.b1.addView(this.n, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 24, this.S == null ? 19 : 0, 24, 20));
-            x70 x70Var = new x70(getContext());
-            this.v0 = x70Var;
-            x70Var.a(false, this.h0 / 100.0f);
-            this.v0.setProgressColor(f(m6.F5));
-            this.v0.setBackColor(f(m6.G5));
-            this.b1.addView(this.v0, ma.t(-1, 4, 19, 24, 0, 24, 0));
+            this.b1.addView(this.n, na.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 24, this.S == null ? 19 : 0, 24, 20));
+            u70 u70Var = new u70(getContext());
+            this.v0 = u70Var;
+            u70Var.a(false, this.h0 / 100.0f);
+            this.v0.setProgressColor(f(n6.F5));
+            this.v0.setBackColor(f(n6.G5));
+            this.b1.addView(this.v0, na.t(-1, 4, 19, 24, 0, 24, 0));
             TextView textView2 = new TextView(getContext());
             this.w0 = textView2;
             textView2.setTypeface(org.telegram.messenger.g0.o());
-            this.w0.setGravity((hd.a0 ? 5 : 3) | 48);
-            t6.U(this.w0, m6.q5, r1Var);
+            this.w0.setGravity((gd.a0 ? 5 : 3) | 48);
+            u6.U(this.w0, n6.q5, r1Var);
             this.w0.setTextSize(1, 14.0f);
-            this.b1.addView(this.w0, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 23, 4, 23, 24));
+            this.b1.addView(this.w0, na.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 23, 4, 23, 24));
             this.w0.setText(String.format("%d%%", Integer.valueOf(this.h0)));
         } else if (i10 == 3) {
             super.setCanceledOnTouchOutside(false);
             setCancelable(false);
             this.r = new FrameLayout(getContext());
-            int i17 = m6.M5;
+            int i17 = n6.M5;
             this.c1 = i17;
             this.V0 = f(i17);
             if (!this.U0) {
-                this.r.setBackgroundDrawable(m6.d0(org.telegram.messenger.g0.L(18.0f), this.V0));
+                this.r.setBackgroundDrawable(n6.d0(org.telegram.messenger.g0.L(18.0f), this.V0));
             }
-            this.b1.addView(this.r, ma.r(86, 86, 17));
-            RadialProgressView radialProgressView = new RadialProgressView(getContext(), h6Var);
+            this.b1.addView(this.r, na.r(86, 86, 17));
+            RadialProgressView radialProgressView = new RadialProgressView(getContext(), i6Var);
             radialProgressView.setSize(org.telegram.messenger.g0.L(32.0f));
-            radialProgressView.setProgressColor(f(m6.N5));
-            this.r.addView(radialProgressView, ma.e(86, 86, 17));
+            radialProgressView.setProgressColor(f(n6.N5));
+            this.r.addView(radialProgressView, na.e(86, 86, 17));
         } else {
-            zt ztVar3 = this.d;
-            if (ztVar3 != null) {
-                this.x.addView(ztVar3, ma.k(22.0f, 4.0f, 22.0f, 12.0f, -1, -2));
+            xt xtVar3 = this.d;
+            if (xtVar3 != null) {
+                this.x.addView(xtVar3, na.k(22.0f, 4.0f, 22.0f, 12.0f, -1, -2));
             }
-            this.x.addView(this.n, ma.t(-2, -2, (this.X ? 1 : hd.a0 ? 5 : 3) | 48, 24, 0, 24, (this.b == null && this.Q == null) ? 0 : this.H));
+            this.x.addView(this.n, na.t(-2, -2, (this.X ? 1 : gd.a0 ? 5 : 3) | 48, 24, 0, 24, (this.b == null && this.Q == null) ? 0 : this.H));
             TextView textView3 = this.c;
             if (textView3 != null) {
-                this.x.addView(textView3, ma.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                this.x.addView(textView3, na.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
             }
         }
         if (TextUtils.isEmpty(this.U)) {
@@ -585,13 +585,13 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                     break;
                 }
                 if (charSequenceArr[i18] != null) {
-                    n1 n1Var = new n1(getContext(), h6Var);
+                    n1 n1Var = new n1(getContext(), i6Var);
                     CharSequence charSequence = this.Q[i18];
                     int[] iArr = this.R;
                     n1Var.a(iArr != null ? iArr[i18] : 0, charSequence);
                     n1Var.setTag(Integer.valueOf(i18));
                     this.O0.add(n1Var);
-                    this.x.addView(n1Var, ma.o(-1, 50));
+                    this.x.addView(n1Var, na.o(-1, 50));
                     final int i19 = 2;
                     n1Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ActionBar.k1
                         public final /* synthetic */ t1 b;
@@ -630,7 +630,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             if (view2.getParent() != null) {
                 ((ViewGroup) this.b.getParent()).removeView(this.b);
             }
-            this.x.addView(this.b, ma.o(-1, this.e));
+            this.x.addView(this.b, na.o(-1, this.e));
         }
         if (objArr != false) {
             if (!this.J0) {
@@ -673,7 +673,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 linearLayout2.setOrientation(1);
                 this.u0 = linearLayout2;
             } else {
-                this.u0 = new bi.e3(i16, getContext(), this);
+                this.u0 = new bi.g3(i16, getContext(), this);
             }
             if (this.c != null) {
                 this.u0.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(f11));
@@ -681,7 +681,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             } else {
                 this.u0.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
             }
-            this.b1.addView(this.u0, ma.o(-1, this.L0 ? 96 : 52));
+            this.b1.addView(this.u0, na.o(-1, this.L0 ? 96 : 52));
             if (this.X) {
                 this.u0.setTranslationY(-org.telegram.messenger.g0.L(8.0f));
             }
@@ -690,18 +690,18 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 m1Var.setMinWidth(org.telegram.messenger.g0.L(64.0f));
                 m1Var.setTag(-1);
                 m1Var.setTextSize(1, 16.0f);
-                t6.U(m1Var, this.J, r1Var);
+                u6.U(m1Var, this.J, r1Var);
                 m1Var.setGravity(17);
                 m1Var.setTypeface(org.telegram.messenger.g0.o());
                 m1Var.setText(this.m0);
-                m1Var.setBackground(m6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
+                m1Var.setBackground(n6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
                 m1Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
                 if (this.J0) {
                     f13 = 64.0f;
-                    this.u0.addView(m1Var, ma.r(-1, 40, 7));
+                    this.u0.addView(m1Var, na.r(-1, 40, 7));
                 } else {
                     f13 = 64.0f;
-                    this.u0.addView(m1Var, ma.e(-2, 40, 53));
+                    this.u0.addView(m1Var, na.e(-2, 40, 53));
                 }
                 m1Var.setOnClickListener(new c0(this, m1Var, 2));
             } else {
@@ -712,18 +712,18 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 m1Var2.setMinWidth(org.telegram.messenger.g0.L(f13));
                 m1Var2.setTag(-2);
                 m1Var2.setTextSize(1, 16.0f);
-                t6.U(m1Var2, this.J, r1Var);
+                u6.U(m1Var2, this.J, r1Var);
                 m1Var2.setGravity(17);
                 m1Var2.setTypeface(org.telegram.messenger.g0.o());
                 m1Var2.setEllipsize(TextUtils.TruncateAt.END);
                 m1Var2.setSingleLine(true);
                 m1Var2.setText(this.o0.toString());
-                m1Var2.setBackground(m6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
+                m1Var2.setBackground(n6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
                 m1Var2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
                 if (this.J0) {
-                    this.u0.addView(m1Var2, 0, ma.r(-1, 40, 7));
+                    this.u0.addView(m1Var2, 0, na.r(-1, 40, 7));
                 } else {
-                    this.u0.addView(m1Var2, ma.e(-2, 40, 53));
+                    this.u0.addView(m1Var2, na.e(-2, 40, 53));
                 }
                 m1Var2.setOnClickListener(new c0(this, m1Var2, i11));
             }
@@ -732,18 +732,18 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 m1Var3.setMinWidth(org.telegram.messenger.g0.L(f13));
                 m1Var3.setTag(-3);
                 m1Var3.setTextSize(1, 16.0f);
-                t6.U(m1Var3, this.J, r1Var);
+                u6.U(m1Var3, this.J, r1Var);
                 m1Var3.setGravity(17);
                 m1Var3.setTypeface(org.telegram.messenger.g0.o());
                 m1Var3.setEllipsize(TextUtils.TruncateAt.END);
                 m1Var3.setSingleLine(true);
                 m1Var3.setText(this.s0.toString());
-                m1Var3.setBackground(m6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
+                m1Var3.setBackground(n6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
                 m1Var3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
                 if (this.J0) {
-                    this.u0.addView(m1Var3, 1, ma.r(-1, 40, 7));
+                    this.u0.addView(m1Var3, 1, na.r(-1, 40, 7));
                 } else {
-                    this.u0.addView(m1Var3, ma.e(-2, 40, 51));
+                    this.u0.addView(m1Var3, na.e(-2, 40, 51));
                 }
                 m1Var3.setOnClickListener(new c0(this, m1Var3, 4));
             }
@@ -752,18 +752,18 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
                 m1Var4.setMinWidth(org.telegram.messenger.g0.L(f13));
                 m1Var4.setTag(-4);
                 m1Var4.setTextSize(1, 16.0f);
-                t6.U(m1Var4, this.J, r1Var);
+                u6.U(m1Var4, this.J, r1Var);
                 m1Var4.setGravity(17);
                 m1Var4.setTypeface(org.telegram.messenger.g0.o());
                 m1Var4.setEllipsize(TextUtils.TruncateAt.END);
                 m1Var4.setSingleLine(true);
                 m1Var4.setText(this.q0.toString());
-                m1Var4.setBackground(m6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
+                m1Var4.setBackground(n6.J0(org.telegram.messenger.g0.L(f12), f(this.J)));
                 m1Var4.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
                 if (this.J0) {
-                    this.u0.addView(m1Var4, 0, ma.r(-1, 40, 7));
+                    this.u0.addView(m1Var4, 0, na.r(-1, 40, 7));
                 } else {
-                    this.u0.addView(m1Var4, ma.e(-2, 40, 53));
+                    this.u0.addView(m1Var4, na.e(-2, 40, 53));
                 }
                 m1Var4.setOnClickListener(new c0(this, m1Var4, 5));
             }
@@ -808,7 +808,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
             layoutParams3.layoutInDisplayCutoutMode = 0;
         }
         if (this.U0) {
-            org.telegram.messenger.g0.l2(new hi.s6(this, 20), 8.0f);
+            org.telegram.messenger.g0.l2(new c7(this, 20), 8.0f);
         }
         window.setAttributes(layoutParams3);
         return viewGroup;
@@ -825,7 +825,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public final void i() {
         TextView textView = (TextView) d(-1);
         if (textView != null) {
-            t6.U(textView, m6.q7, this.j1);
+            u6.U(textView, n6.q7, this.j1);
         }
     }
 
@@ -891,9 +891,9 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
 
     public final void o(int i7) {
         this.h0 = i7;
-        x70 x70Var = this.v0;
-        if (x70Var != null) {
-            x70Var.a(true, i7 / 100.0f);
+        u70 u70Var = this.v0;
+        if (u70Var != null) {
+            u70Var.a(true, i7 / 100.0f);
             this.w0.setText(String.format("%d%%", Integer.valueOf(this.h0)));
         }
     }
@@ -901,9 +901,9 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     @Override // android.app.Dialog
     public final void onBackPressed() {
         super.onBackPressed();
-        p60 p60Var = this.x0;
-        if (p60Var != null) {
-            p60Var.h(this, -2);
+        o60 o60Var = this.x0;
+        if (o60Var != null) {
+            o60Var.i(this, -2);
         }
     }
 
@@ -911,7 +911,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         g(true);
-        ls.e().c(this, ls.l4);
+        ks.e().c(this, ks.l4);
     }
 
     public final void p(int i7) {
@@ -920,21 +920,21 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         if (lVar != null) {
             lVar.setTextColor(i7);
         }
-        zt ztVar = this.n;
-        if (ztVar != null) {
-            ztVar.setTextColor(i7);
+        xt xtVar = this.n;
+        if (xtVar != null) {
+            xtVar.setTextColor(i7);
         }
     }
 
     public final void q() {
         if (this.j0 && this.L == null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.S0);
-            String N0 = hd.N0(2131744589, null);
+            String N0 = gd.N0(2131744591, null);
             t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = hd.N0(2131744590, null);
-            alertDialog$Builder.k(hd.N0(2131742968, null), null);
-            alertDialog$Builder.h(hd.N0(2131744598, null), new org.telegram.tgnet.u(this, 3));
+            t1Var.U = gd.N0(2131744592, null);
+            alertDialog$Builder.k(gd.N0(2131742963, null), null);
+            alertDialog$Builder.h(gd.N0(2131744600, null), new org.telegram.tgnet.g(this, 5));
             alertDialog$Builder.j(new u9(this, 9));
             try {
                 this.L = alertDialog$Builder.p();
@@ -950,12 +950,12 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
     }
 
     public final void s() {
-        rh0 rh0Var;
+        qh0 qh0Var;
         int w02;
-        if (this.e0 < 0 || this.a0 == null || (rh0Var = this.l0) == null || rh0Var.getAnimatedDrawable() == null || (w02 = m6.w0(this.e0, this.f0)) == this.d1) {
+        if (this.e0 < 0 || this.a0 == null || (qh0Var = this.l0) == null || qh0Var.getAnimatedDrawable() == null || (w02 = n6.w0(this.e0, this.f0)) == this.d1) {
             return;
         }
-        oh0 animatedDrawable = this.l0.getAnimatedDrawable();
+        nh0 animatedDrawable = this.l0.getAnimatedDrawable();
         for (Map.Entry entry : this.a0.entrySet()) {
             if (entry.getValue() != null && ((Integer) entry.getValue()).intValue() == this.d1) {
                 entry.setValue(Integer.valueOf(w02));
@@ -1011,7 +1011,7 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         }
     }
 
-    public t1(int i7, Context context, h6 h6Var) {
+    public t1(int i7, Context context, i6 i6Var) {
         super(context, R.style.TransparentDialog);
         this.a = -1;
         this.e = -2;
@@ -1019,8 +1019,8 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         this.F = new boolean[2];
         this.G = new AnimatorSet[2];
         this.H = 12;
-        this.J = m6.H5;
-        this.b0 = ls.Q1;
+        this.J = n6.H5;
+        this.b0 = ks.Q1;
         this.e0 = -1;
         this.i0 = true;
         this.j0 = true;
@@ -1035,14 +1035,14 @@ public class t1 extends Dialog implements Drawable.Callback, gs {
         this.T0 = true;
         this.c1 = -1;
         this.j1 = new r1(this, 0);
-        this.S0 = h6Var;
+        this.S0 = i6Var;
         this.g0 = i7;
-        int i10 = m6.h5;
+        int i10 = n6.h5;
         this.c1 = i10;
         int f10 = f(i10);
         this.V0 = f10;
         boolean z10 = org.telegram.messenger.g0.B(f10) < 0.721f;
-        this.U0 = cz.o() >= 2 && qc.e(256) && z10;
+        this.U0 = bz.o() >= 2 && pc.e(256) && z10;
         Rect rect = new Rect();
         this.B0 = rect;
         if (i7 != 3 || this.U0) {

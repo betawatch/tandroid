@@ -2,51 +2,30 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class kx0 {
-    public final /* synthetic */ int a;
+public final class kx0 extends ox0 {
+    public int d;
 
-    public /* synthetic */ kx0(int i7) {
-        this.a = i7;
+    @Override // org.telegram.ui.Components.ox0
+    public final int a(xx0 xx0Var, qx0 qx0Var, jx0 jx0Var, int i7, boolean z10) {
+        return Math.max(0, this.a - jx0Var.a(qx0Var, i7));
     }
 
-    public final int a(rx0 rx0Var, int i7) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i7;
-            case 3:
-                return TLObject.FLAG_31;
-            default:
-                return TLObject.FLAG_31;
-        }
+    @Override // org.telegram.ui.Components.ox0
+    public final void b(int i7, int i10) {
+        super.b(i7, i10);
+        this.d = Math.max(this.d, i7 + i10);
     }
 
-    public final int b(rx0 rx0Var, int i7) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i7;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
+    @Override // org.telegram.ui.Components.ox0
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
     }
 
-    public int c(int i7, int i10) {
-        switch (this.a) {
-            case 4:
-                return i10;
-            default:
-                return i7;
-        }
+    @Override // org.telegram.ui.Components.ox0
+    public final int d(boolean z10) {
+        return Math.max(super.d(z10), this.d);
     }
 }

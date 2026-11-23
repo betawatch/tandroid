@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class bl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,25 +44,25 @@ public final class bl0 implements Runnable {
         switch (this.a) {
             case 0:
                 gl0 gl0Var = this.b;
-                org.telegram.ui.d61 d61Var = gl0Var.e;
+                org.telegram.ui.b61 b61Var = gl0Var.e;
                 gl0Var.c0 = false;
                 gl0Var.W = gl0Var.getScrollX() + gl0Var.a0;
                 tabSize = gl0Var.getTabSize();
                 int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
                 gl0Var.V = ceil;
                 gl0Var.U = ceil;
-                if (gl0Var.e(ceil) && ceil >= 0 && ceil < d61Var.getChildCount()) {
+                if (gl0Var.e(ceil) && ceil >= 0 && ceil < b61Var.getChildCount()) {
                     try {
                         gl0Var.performHapticFeedback(0);
                     } catch (Exception unused) {
                     }
                     gl0Var.e0 = 0.0f;
                     gl0Var.w = 0.0f;
-                    View childAt = d61Var.getChildAt(ceil);
+                    View childAt = b61Var.getChildAt(ceil);
                     gl0Var.s = childAt;
                     gl0Var.d0 = childAt.getX() - gl0Var.getScrollX();
                     gl0Var.s.invalidate();
-                    d61Var.invalidate();
+                    b61Var.invalidate();
                     gl0Var.j();
                     gl0Var.invalidate();
                     break;

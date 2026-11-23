@@ -1,14 +1,14 @@
 package de;
 
-import a8.i7;
 import a8.j7;
+import a8.m7;
 import androidx.lifecycle.k0;
 import be.r;
 import be.s;
 import ce.w;
 import ce.x;
-import hi.t5;
-import hi.w4;
+import h6.o;
+import hi.u0;
 import java.io.File;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -19,7 +19,6 @@ import m1.f1;
 import m1.l0;
 import m1.n;
 import m1.n0;
-import m1.u0;
 import m1.v0;
 import m1.w0;
 import q4.q;
@@ -28,7 +27,7 @@ import zd.a0;
 import zd.t;
 import zd.z;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class c extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -123,10 +122,10 @@ public final class c extends kd.j implements p {
                     if (i13 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     return kVar;
                 }
-                b7.h.b(obj);
+                c8.z.b(obj);
                 z zVar = (z) this.c;
                 ce.d dVar2 = (ce.d) this.d;
                 ce.b bVar = (ce.b) this.e;
@@ -138,7 +137,7 @@ public final class c extends kd.j implements p {
                 be.a aVar2 = bVar.c;
                 a0 a0Var = a0.b;
                 p lVar = new be.l(bVar, cVar2, i12);
-                r rVar = new r(zd.b0.r(zVar, hVar), i7.a(i14, aVar2, 4));
+                r rVar = new r(zd.b0.r(zVar, hVar), j7.a(i14, aVar2, 4));
                 rVar.S(a0Var, rVar, lVar);
                 this.b = 1;
                 Object c10 = x.c(dVar2, rVar, true, this);
@@ -150,7 +149,7 @@ public final class c extends kd.j implements p {
                 jd.a aVar3 = jd.a.a;
                 int i15 = this.b;
                 if (i15 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     ce.c data = ((ka.d) this.d).c.a.getData();
                     this.b = 1;
                     obj = x.e(data, this);
@@ -161,7 +160,7 @@ public final class c extends kd.j implements p {
                     if (i15 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 q1.b bVar2 = (q1.b) obj;
                 if (bVar2 != null) {
@@ -186,10 +185,10 @@ public final class c extends kd.j implements p {
                     if (i16 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     return obj;
                 }
-                b7.h.b(obj);
+                c8.z.b(obj);
                 q1.d dVar3 = ((ka.d) this.c).c;
                 ka.c cVar3 = new ka.c((q1.e) this.d, (Long) this.e, null);
                 this.b = 1;
@@ -201,7 +200,7 @@ public final class c extends kd.j implements p {
                 jd.a aVar5 = jd.a.a;
                 int i17 = this.b;
                 if (i17 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     ce.d dVar4 = (ce.d) this.c;
                     this.c = dVar4;
                     this.b = 1;
@@ -217,30 +216,30 @@ public final class c extends kd.j implements p {
                         if (i17 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         return kVar2;
                     }
                     obj2 = (m1.c) this.d;
                     dVar = (ce.d) this.c;
-                    b7.h.b(obj);
-                    ce.h hVar2 = new ce.h(new t5(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), 14), new n(b0Var, (id.c) null));
+                    c8.z.b(obj);
+                    ce.h hVar2 = new ce.h(new u0(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), 15), new n(b0Var, (id.c) null));
                     this.c = null;
                     this.d = null;
                     this.b = 3;
                     if (!(dVar instanceof ce.z)) {
                         throw ((ce.z) dVar).a;
                     }
-                    Object v = hVar2.v(dVar, this);
-                    if (v != aVar5) {
-                        v = kVar2;
+                    Object J = hVar2.J(dVar, this);
+                    if (J != aVar5) {
+                        J = kVar2;
                     }
-                    if (v != aVar5) {
+                    if (J != aVar5) {
                         return kVar2;
                     }
                     return aVar5;
                 }
                 ce.d dVar5 = (ce.d) this.c;
-                b7.h.b(obj);
+                c8.z.b(obj);
                 dVar = dVar5;
                 obj2 = (e1) obj;
                 if (obj2 instanceof m1.c) {
@@ -261,7 +260,7 @@ public final class c extends kd.j implements p {
                         return kVar2;
                     }
                 }
-                ce.h hVar22 = new ce.h(new t5(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), 14), new n(b0Var, (id.c) null));
+                ce.h hVar22 = new ce.h(new u0(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), 15), new n(b0Var, (id.c) null));
                 this.c = null;
                 this.d = null;
                 this.b = 3;
@@ -275,13 +274,13 @@ public final class c extends kd.j implements p {
                     if (i18 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     return obj;
                 }
-                b7.h.b(obj);
+                c8.z.b(obj);
                 z zVar2 = (z) this.c;
                 t a11 = zd.b0.a();
-                n0 n0Var = new n0((kd.j) this.e, a11, b0Var2.h.E(), zVar2.c());
+                n0 n0Var = new n0((kd.j) this.e, a11, b0Var2.h.v(), zVar2.c());
                 xi.e eVar = b0Var2.l;
                 Object b10 = ((be.c) eVar.c).b(n0Var);
                 if (b10 instanceof be.h) {
@@ -294,7 +293,7 @@ public final class c extends kd.j implements p {
                 if (b10 instanceof be.i) {
                     throw new IllegalStateException("Check failed.");
                 }
-                if (((AtomicInteger) ((w4) eVar.d).b).getAndIncrement() == 0) {
+                if (((AtomicInteger) ((o) eVar.d).b).getAndIncrement() == 0) {
                     zd.b0.q((z) eVar.a, new be.l(eVar, cVar2, i7));
                 }
                 this.b = 1;
@@ -304,10 +303,10 @@ public final class c extends kd.j implements p {
                 jd.a aVar7 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     s sVar2 = (s) this.c;
                     File file = (File) this.e;
-                    u0 u0Var = new u0(i10, file, sVar2);
+                    m1.u0 u0Var = new m1.u0(i10, file, sVar2);
                     Object obj6 = v0.b;
                     File parentFile = file.getParentFile();
                     kotlin.jvm.internal.j.b(parentFile);
@@ -347,18 +346,18 @@ public final class c extends kd.j implements p {
                         if (i20 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        b7.h.b(obj);
+                        c8.z.b(obj);
                         return gd.k.a;
                     }
                     cVar = (ae.c) this.d;
                     sVar = (s) this.c;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 k0 k0Var = new k0(cVar, i11);
                 this.c = null;
                 this.d = null;
                 this.b = 2;
-                if (j7.a(sVar, k0Var, this) == aVar7) {
+                if (m7.a(sVar, k0Var, this) == aVar7) {
                     return aVar7;
                 }
                 return gd.k.a;

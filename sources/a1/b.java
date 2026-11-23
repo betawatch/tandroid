@@ -3,7 +3,7 @@ package a1;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import w0.h;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -39,16 +39,16 @@ public final /* synthetic */ class b implements Runnable {
                 this.b.onResult(null);
                 break;
             case 7:
-                this.b.a(new h(2, "No provider data returned."));
+                this.b.T(new h(2, "No provider data returned."));
                 break;
             case 8:
-                this.b.a(new w0.c(2, (CharSequence) null));
+                this.b.T(new w0.c(2, (CharSequence) null));
                 break;
             case 9:
-                this.b.a(new w0.c(2, (CharSequence) null));
+                this.b.T(new w0.c(2, (CharSequence) null));
                 break;
             default:
-                this.b.a(new h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
+                this.b.T(new h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
                 break;
         }
     }

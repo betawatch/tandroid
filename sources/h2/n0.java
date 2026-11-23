@@ -5,19 +5,19 @@ import java.io.File;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.mb;
-import org.telegram.messenger.pb;
+import org.telegram.messenger.lb;
+import org.telegram.messenger.ob;
 import org.telegram.messenger.t7;
+import org.telegram.messenger.w10;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.y10;
-import org.telegram.messenger.y8;
+import org.telegram.messenger.x8;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.f2;
 import org.telegram.ui.Cells.i2;
-import org.telegram.ui.Wallet.u0;
-import org.telegram.ui.Wallet.z0;
+import org.telegram.ui.Wallet.a1;
+import org.telegram.ui.Wallet.v0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class n0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        y8 y8Var;
-        y8 y8Var2;
+        x8 x8Var;
+        x8 x8Var2;
         switch (this.a) {
             case 0:
                 o0 o0Var = (o0) this.d;
@@ -58,26 +58,26 @@ public final /* synthetic */ class n0 implements Runnable {
                 } else {
                     t7Var.d.h.remove(str);
                 }
-                pb pbVar = t7Var.d.F;
-                if (pbVar != null) {
-                    Utilities.d.c(new mb(pbVar, pbVar.a, str, z12));
+                ob obVar = t7Var.d.F;
+                if (obVar != null) {
+                    Utilities.d.c(new lb(obVar, obVar.a, str, z12));
                 }
                 if (!z13) {
                     w7 w7Var = t7Var.d;
                     int i7 = w7Var.r - 1;
                     w7Var.r = i7;
-                    if (i7 < 1 && (y8Var = (y8) w7Var.e.poll()) != null) {
+                    if (i7 < 1 && (x8Var = (x8) w7Var.e.poll()) != null) {
                         t7Var.d.r++;
-                        y8Var.c();
+                        x8Var.c();
                         break;
                     }
                 } else {
                     w7 w7Var2 = t7Var.d;
                     int i10 = w7Var2.s - 1;
                     w7Var2.s = i10;
-                    if (i10 < 1 && (y8Var2 = (y8) w7Var2.f.poll()) != null) {
+                    if (i10 < 1 && (x8Var2 = (x8) w7Var2.f.poll()) != null) {
                         t7Var.d.s++;
-                        y8Var2.c();
+                        x8Var2.c();
                         break;
                     }
                 }
@@ -100,17 +100,17 @@ public final /* synthetic */ class n0 implements Runnable {
                 i2Var.f(z15, true);
                 break;
             default:
-                u0 u0Var = (u0) this.d;
-                y10 y10Var = (y10) this.e;
+                v0 v0Var = (v0) this.d;
+                w10 w10Var = (w10) this.e;
                 boolean z16 = this.b;
                 boolean z17 = this.c;
-                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) u0Var.e;
-                z0 z0Var = u0Var.c;
-                if (z0Var == null || !TextUtils.equals(z0Var.c, tL_walletState.address) || !u0Var.c.f(tL_walletState.public_key)) {
-                    u0Var.F(z16, z17, false, new org.telegram.ui.Wallet.j((Object) u0Var, (Object) y10Var, (Object) tL_walletState, 2));
+                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) v0Var.e;
+                a1 a1Var = v0Var.c;
+                if (a1Var == null || !TextUtils.equals(a1Var.c, tL_walletState.address) || !v0Var.c.f(tL_walletState.public_key)) {
+                    v0Var.F(z16, z17, false, new org.telegram.ui.Wallet.j((Object) v0Var, (Object) w10Var, (Object) tL_walletState, 2));
                     break;
                 } else {
-                    y10Var.a(null);
+                    w10Var.a(null);
                     break;
                 }
                 break;

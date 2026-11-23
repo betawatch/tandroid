@@ -1,53 +1,102 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public abstract class e51 extends org.telegram.ui.ActionBar.g2 {
-    public bi.f6 a;
-    public kg.n1 b;
-    public int c;
-    public int d;
+public final class e51 extends ty {
+    public final /* synthetic */ int X;
+    public final Object Y;
 
-    public e51() {
-        super(null);
-        this.c = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e51(g51 g51Var, int i7, int i10) {
+        super(i7, false);
+        this.X = i10;
+        this.Y = g51Var;
     }
 
-    public abstract void Z(ArrayList arrayList, c51 c51Var);
-
-    public abstract CharSequence a0();
-
-    public abstract void b0(o41 o41Var, View view);
-
-    public abstract boolean c0(o41 o41Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public View createView(Context context) {
-        org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, 21);
-        org.telegram.ui.ActionBar.z4 z4Var = this.simpleActionBar;
-        if (z4Var != null) {
-            z4Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
-            this.simpleActionBar.setTitle(a0());
-            this.simpleActionBar.setActionBarMenuOnItemClick(x7Var);
-        } else {
-            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(a0());
-            this.actionBar.setActionBarMenuOnItemClick(x7Var);
+    @Override // v4.p0
+    public int A() {
+        switch (this.X) {
+            case 2:
+                return 0;
+            default:
+                return super.A();
         }
-        this.b = new kg.n1(context, null, 1);
-        if (!useSimpleActionBar()) {
-            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, this.b, null);
+    }
+
+    @Override // org.telegram.ui.Components.ty
+    public xt0 D1(int i7) {
+        switch (this.X) {
+            case 2:
+                xt0 xt0Var = (xt0) this.Y;
+                xt0Var.b = 100.0f;
+                xt0Var.a = 100.0f;
+                return xt0Var;
+            default:
+                return super.D1(i7);
         }
-        bi.f6 f6Var = new bi.f6(this, this, new d(this, 23), new d51(this), new d51(this));
-        this.a = f6Var;
-        this.b.addView(f6Var, c8.ma.c(-1.0f, -1));
-        kg.n1 n1Var = this.b;
-        this.fragmentView = n1Var;
-        return n1Var;
+    }
+
+    @Override // v4.t, v4.p0
+    public void U(v4.x0 x0Var, v4.c1 c1Var, View view, s0.c cVar) {
+        switch (this.X) {
+            case 2:
+                super.U(x0Var, c1Var, view, cVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+                d9.o oVar = collectionItemInfo != null ? new d9.o(collectionItemInfo) : null;
+                if (oVar != null) {
+                    Object obj = oVar.a;
+                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.U(x0Var, c1Var, view, cVar);
+                break;
+        }
+    }
+
+    @Override // v4.c0
+    public int W0(v4.c1 c1Var) {
+        switch (this.X) {
+            case 0:
+                if (!((g51) this.Y).i3) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!((g51) this.Y).i3) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.W0(c1Var);
+    }
+
+    @Override // v4.c0
+    public void z0(v4.c1 c1Var, int[] iArr) {
+        switch (this.X) {
+            case 2:
+                super.z0(c1Var, iArr);
+                iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.p7.a(1) * 2);
+                break;
+            default:
+                super.z0(c1Var, iArr);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e51() {
+        super(100, false);
+        this.X = 2;
+        this.Y = new xt0();
     }
 }

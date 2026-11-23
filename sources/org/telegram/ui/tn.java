@@ -1,39 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tn implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jo b;
+    public final /* synthetic */ io b;
 
-    public /* synthetic */ tn(jo joVar, int i7) {
+    public /* synthetic */ tn(io ioVar, int i7) {
         this.a = i7;
-        this.b = joVar;
+        this.b = ioVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                jo joVar = this.b;
-                joVar.d0 = true;
-                joVar.h0();
+                io ioVar = this.b;
+                ioVar.d0 = true;
+                ioVar.h0();
                 break;
             case 1:
-                jo joVar2 = this.b;
-                joVar2.Y = joVar2.getMessagesController().O0(Long.valueOf(joVar2.a0));
-                joVar2.e0();
+                io ioVar2 = this.b;
+                ioVar2.Y = ioVar2.getMessagesController().O0(Long.valueOf(ioVar2.a0));
+                ioVar2.e0();
                 break;
             case 2:
                 this.b.g0(false);
                 break;
             case 3:
-                jo joVar3 = this.b;
-                joVar3.d0 = true;
-                if (joVar3.b.length() > 0) {
-                    joVar3.c0(joVar3.b.getText().toString());
+                io ioVar3 = this.b;
+                ioVar3.d0 = true;
+                if (ioVar3.b.length() > 0) {
+                    ioVar3.c0(ioVar3.b.getText().toString());
                 }
-                joVar3.h0();
+                ioVar3.h0();
                 break;
             case 4:
                 this.b.e0();

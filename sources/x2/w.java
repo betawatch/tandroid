@@ -1,9 +1,9 @@
 package x2;
 
-import a8.la;
+import a8.ma;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class w extends l2.a {
     public final e2.l1 h;
@@ -19,7 +19,7 @@ public final class w extends l2.a {
         this.j = l1Var.o();
         this.k = i7;
         if (h > 0) {
-            la.o("LoopingMediaSource contains too many periods", i7 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
+            ma.o("LoopingMediaSource contains too many periods", i7 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
         }
     }
 

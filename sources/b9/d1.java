@@ -1,73 +1,32 @@
 package b9;
 
-import a8.h7;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.bc;
-import com.google.android.gms.internal.vision.e2;
-import java.util.Arrays;
+import c8.cc;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d1 extends r6.a {
-    public static final Parcelable.Creator<d1> CREATOR = new o0(10);
-    public final String a;
-    public final String b;
-    public final b1 c;
-    public final String d;
-    public final String e;
-    public final Float f;
-    public final f1 h;
+    public static final Parcelable.Creator<d1> CREATOR = new n0(11);
+    public final int a;
+    public final List b;
+    public final a1 c;
 
-    public d1(String str, String str2, b1 b1Var, String str3, String str4, Float f10, f1 f1Var) {
-        this.a = str;
-        this.b = str2;
-        this.c = b1Var;
-        this.d = str3;
-        this.e = str4;
-        this.f = f10;
-        this.h = f1Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && d1.class == obj.getClass()) {
-            d1 d1Var = (d1) obj;
-            if (h7.a(this.a, d1Var.a) && h7.a(this.b, d1Var.b) && h7.a(this.c, d1Var.c) && h7.a(this.d, d1Var.d) && h7.a(this.e, d1Var.e) && h7.a(this.f, d1Var.f) && h7.a(this.h, d1Var.h)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f, this.h});
-    }
-
-    public final String toString() {
-        String valueOf = String.valueOf(this.h);
-        String valueOf2 = String.valueOf(this.c);
-        StringBuilder n10 = e2.n("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
-        n10.append(this.e);
-        n10.append("', starRating=");
-        n10.append(this.f);
-        n10.append(", wearDetails=");
-        e2.r(n10, valueOf, ", deepLinkUri='", this.a, "', icon=");
-        return a8.p0.s(n10, valueOf2, "}");
+    public d1(int i7, ArrayList arrayList, a1 a1Var) {
+        this.a = i7;
+        this.b = arrayList;
+        this.c = a1Var;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = bc.r(parcel, 20293);
-        bc.l(parcel, 1, this.a);
-        bc.l(parcel, 2, this.b);
-        bc.k(parcel, 3, this.c, i7);
-        bc.l(parcel, 4, this.d);
-        bc.l(parcel, 5, this.e);
-        bc.e(parcel, 6, this.f);
-        bc.k(parcel, 7, this.h, i7);
-        bc.s(parcel, r10);
+        int r10 = cc.r(parcel, 20293);
+        cc.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        cc.p(parcel, 2, this.b);
+        cc.k(parcel, 3, this.c, i7);
+        cc.s(parcel, r10);
     }
 }

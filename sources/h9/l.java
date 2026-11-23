@@ -5,15 +5,15 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public abstract class l implements j1 {
+public abstract class l implements i1 {
     public transient Collection a;
     public transient Set b;
     public transient Collection c;
     public transient Map d;
 
-    @Override // h9.j1
+    @Override // h9.i1
     public Collection a() {
         Collection collection = this.a;
         if (collection != null) {
@@ -24,7 +24,7 @@ public abstract class l implements j1 {
         return e10;
     }
 
-    @Override // h9.j1
+    @Override // h9.i1
     public Map b() {
         Map map = this.d;
         if (map != null) {
@@ -53,8 +53,8 @@ public abstract class l implements j1 {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof j1) {
-            return b().equals(((j1) obj).b());
+        if (obj instanceof i1) {
+            return b().equals(((i1) obj).b());
         }
         return false;
     }
@@ -67,7 +67,7 @@ public abstract class l implements j1 {
         return b().hashCode();
     }
 
-    @Override // h9.j1
+    @Override // h9.i1
     public Set keySet() {
         Set set = this.b;
         if (set != null) {
@@ -78,7 +78,7 @@ public abstract class l implements j1 {
         return f10;
     }
 
-    @Override // h9.j1
+    @Override // h9.i1
     public boolean remove(Object obj, Object obj2) {
         Collection collection = (Collection) b().get(obj);
         return collection != null && collection.remove(obj2);

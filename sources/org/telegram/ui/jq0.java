@@ -16,7 +16,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class jq0 extends NestedScrollView {
     public final Paint a0;
@@ -54,7 +54,7 @@ public abstract class jq0 extends NestedScrollView {
         this.b0 = gVar;
         gVar.m.b(100.0f);
         gVar.f(1.0f);
-        gVar.b(new bb0(this, 2));
+        gVar.b(new ab0(this, 2));
         gVar.a(new m9(this, 2));
         gVar.m.a(1.0f);
         try {

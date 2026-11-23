@@ -1,29 +1,28 @@
 package bi;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class v7 extends org.telegram.ui.ActionBar.y0 {
     public final int W;
     public long a0;
     public t7 b0;
 
-    public v7(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(0, context, h6Var, false, false);
+    public v7(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(0, context, i6Var, false, false);
         this.W = i7;
         setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        int i10 = org.telegram.ui.ActionBar.m6.E8;
-        int i11 = org.telegram.ui.ActionBar.m6.F8;
-        c(i10, i11);
-        g(org.telegram.ui.ActionBar.m6.w0(i11, h6Var), PorterDuff.Mode.SRC_IN);
+        c(org.telegram.ui.ActionBar.n6.E8, org.telegram.ui.ActionBar.n6.F8);
+        setIconColor(-1);
         this.c.setTranslationX(org.telegram.messenger.g0.L(2.0f));
+        this.c.setScaleX(1.2f);
+        this.c.setScaleY(1.2f);
         a(2);
         setBackground(null);
-        this.c.addOnAttachStateChangeListener(new v2(this, 3));
+        this.c.addOnAttachStateChangeListener(new x2(this, 2));
     }
 
     @Override // org.telegram.ui.ActionBar.y0, android.widget.FrameLayout, android.view.View

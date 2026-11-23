@@ -12,9 +12,9 @@ import android.util.Base64;
 import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
-import org.telegram.ui.md0;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
     public static String a(String str) {
@@ -325,28 +325,28 @@ public class MrzRecognizer {
         return c10 - '0';
     }
 
-    public static void f(String str, vr vrVar) {
+    public static void f(String str, ur urVar) {
         try {
             int parseInt = Integer.parseInt(str.substring(0, 2));
-            vrVar.i = parseInt;
-            vrVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? vrVar.i + 2000 : vrVar.i + 1900;
-            vrVar.j = Integer.parseInt(str.substring(2, 4));
-            vrVar.k = Integer.parseInt(str.substring(4));
+            urVar.i = parseInt;
+            urVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? urVar.i + 2000 : urVar.i + 1900;
+            urVar.j = Integer.parseInt(str.substring(2, 4));
+            urVar.k = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
     private static native int[] findCornerPoints(Bitmap bitmap);
 
-    public static void g(String str, vr vrVar) {
+    public static void g(String str, ur urVar) {
         try {
             if ("<<<<<<".equals(str)) {
-                vrVar.o = true;
+                urVar.o = true;
                 return;
             }
-            vrVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
-            vrVar.g = Integer.parseInt(str.substring(2, 4));
-            vrVar.h = Integer.parseInt(str.substring(4));
+            urVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
+            urVar.g = Integer.parseInt(str.substring(2, 4));
+            urVar.h = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
@@ -358,21 +358,21 @@ public class MrzRecognizer {
         return 2;
     }
 
-    public static vr i(Bitmap bitmap) {
+    public static ur i(Bitmap bitmap) {
         u8.e eVar;
         u8.n nVar = new u8.n(new com.google.android.gms.internal.vision.u2(t0.b, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        md0 md0Var = new md0(18);
+        i61 i61Var = new i61(20);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        md0Var.d = bitmap;
-        b7.d dVar = (b7.d) md0Var.b;
+        i61Var.d = bitmap;
+        b7.d dVar = (b7.d) i61Var.b;
         dVar.a = width;
         dVar.b = height;
-        SparseArray e12 = nVar.e1(md0Var);
+        SparseArray e12 = nVar.e1(i61Var);
         int i7 = 0;
         for (int i10 = 0; i10 < e12.size(); i10++) {
             u8.m mVar = (u8.m) e12.valueAt(i10);
@@ -380,31 +380,31 @@ public class MrzRecognizer {
             int i12 = 6;
             int i13 = 4;
             if (i11 == 12 && (eVar = mVar.E) != null) {
-                vr vrVar = new vr();
-                vrVar.a = "ID".equals(eVar.a) ? 2 : 4;
+                ur urVar = new ur();
+                urVar.a = "ID".equals(eVar.a) ? 2 : 4;
                 String str = mVar.E.E;
                 str.getClass();
                 if (str.equals("CAN")) {
-                    vrVar.l = "CA";
-                    vrVar.m = "CA";
+                    urVar.l = "CA";
+                    urVar.m = "CA";
                 } else if (str.equals("USA")) {
-                    vrVar.l = "US";
-                    vrVar.m = "US";
+                    urVar.l = "US";
+                    urVar.m = "US";
                 }
-                vrVar.b = a(mVar.E.b);
-                vrVar.c = a(mVar.E.d);
-                vrVar.d = a(mVar.E.c);
+                urVar.b = a(mVar.E.b);
+                urVar.c = a(mVar.E.d);
+                urVar.d = a(mVar.E.c);
                 u8.e eVar2 = mVar.E;
-                vrVar.e = eVar2.s;
+                urVar.e = eVar2.s;
                 String str2 = eVar2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
-                        vrVar.n = 1;
+                        urVar.n = 1;
                     } else if (str2.equals("2")) {
-                        vrVar.n = 2;
+                        urVar.n = 2;
                     }
                 }
-                if ("USA".equals(vrVar.l)) {
+                if ("USA".equals(urVar.l)) {
                     i13 = 0;
                     i7 = 4;
                     i12 = 2;
@@ -412,39 +412,39 @@ public class MrzRecognizer {
                 try {
                     String str3 = mVar.E.y;
                     if (str3 != null && str3.length() == 8) {
-                        vrVar.i = Integer.parseInt(mVar.E.y.substring(i7, i7 + 4));
-                        vrVar.j = Integer.parseInt(mVar.E.y.substring(i13, i13 + 2));
-                        vrVar.k = Integer.parseInt(mVar.E.y.substring(i12, i12 + 2));
+                        urVar.i = Integer.parseInt(mVar.E.y.substring(i7, i7 + 4));
+                        urVar.j = Integer.parseInt(mVar.E.y.substring(i13, i13 + 2));
+                        urVar.k = Integer.parseInt(mVar.E.y.substring(i12, i12 + 2));
                     }
                     String str4 = mVar.E.x;
                     if (str4 != null && str4.length() == 8) {
-                        vrVar.f = Integer.parseInt(mVar.E.x.substring(i7, i7 + 4));
-                        vrVar.g = Integer.parseInt(mVar.E.x.substring(i13, i13 + 2));
-                        vrVar.h = Integer.parseInt(mVar.E.x.substring(i12, i12 + 2));
+                        urVar.f = Integer.parseInt(mVar.E.x.substring(i7, i7 + 4));
+                        urVar.g = Integer.parseInt(mVar.E.x.substring(i13, i13 + 2));
+                        urVar.h = Integer.parseInt(mVar.E.x.substring(i12, i12 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
-                return vrVar;
+                return urVar;
             }
             if (i11 == 7 && mVar.a == 2048 && mVar.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
                     String[] split = new String(Base64.decode(mVar.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
-                        vr vrVar2 = new vr();
-                        vrVar2.a = 4;
-                        vrVar2.l = "RU";
-                        vrVar2.m = "RU";
-                        vrVar2.e = split[0];
-                        vrVar2.f = Integer.parseInt(split[2].substring(0, 4));
-                        vrVar2.g = Integer.parseInt(split[2].substring(4, 6));
-                        vrVar2.h = Integer.parseInt(split[2].substring(6));
-                        vrVar2.c = a(c(split[3]));
-                        vrVar2.b = a(c(split[4]));
-                        vrVar2.d = a(c(split[5]));
-                        vrVar2.i = Integer.parseInt(split[6].substring(0, 4));
-                        vrVar2.j = Integer.parseInt(split[6].substring(4, 6));
-                        vrVar2.k = Integer.parseInt(split[6].substring(6));
-                        return vrVar2;
+                        ur urVar2 = new ur();
+                        urVar2.a = 4;
+                        urVar2.l = "RU";
+                        urVar2.m = "RU";
+                        urVar2.e = split[0];
+                        urVar2.f = Integer.parseInt(split[2].substring(0, 4));
+                        urVar2.g = Integer.parseInt(split[2].substring(4, 6));
+                        urVar2.h = Integer.parseInt(split[2].substring(6));
+                        urVar2.c = a(c(split[3]));
+                        urVar2.b = a(c(split[4]));
+                        urVar2.d = a(c(split[5]));
+                        urVar2.i = Integer.parseInt(split[6].substring(0, 4));
+                        urVar2.j = Integer.parseInt(split[6].substring(4, 6));
+                        urVar2.k = Integer.parseInt(split[6].substring(6));
+                        return urVar2;
                     }
                     continue;
                 } catch (Exception unused2) {
@@ -463,7 +463,7 @@ public class MrzRecognizer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static vr j(Bitmap bitmap) {
+    public static ur j(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
         int i7;
@@ -608,27 +608,27 @@ public class MrzRecognizer {
                         return null;
                     }
                     String[] split = TextUtils.split(performRecognition, "\n");
-                    vr vrVar = new vr();
+                    ur urVar = new ur();
                     if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
                         return null;
                     }
-                    vrVar.p = TextUtils.join("\n", split);
+                    urVar.p = TextUtils.join("\n", split);
                     HashMap d12 = d();
                     char charAt = split[0].charAt(0);
                     if (charAt == 'P') {
-                        vrVar.a = 1;
+                        urVar.a = 1;
                         if (split[0].length() == 44) {
                             int i28 = i12;
-                            vrVar.l = split[0].substring(2, i28);
+                            urVar.l = split[0].substring(2, i28);
                             int indexOf = split[0].indexOf("<<", i10);
                             if (indexOf != -1) {
-                                vrVar.c = split[0].substring(i28, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                                urVar.c = split[0].substring(i28, indexOf).replace('<', ' ').replace('0', 'O').trim();
                                 String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                                vrVar.b = trim;
+                                urVar.b = trim;
                                 if (trim.contains("   ")) {
-                                    String str = vrVar.b;
+                                    String str = urVar.b;
                                     i19 = 0;
-                                    vrVar.b = str.substring(0, str.indexOf("   "));
+                                    urVar.b = str.substring(0, str.indexOf("   "));
                                 } else {
                                     i19 = 0;
                                 }
@@ -637,111 +637,111 @@ public class MrzRecognizer {
                             }
                             String trim2 = split[1].substring(i19, 9).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim2) == e(split[1].charAt(9))) {
-                                vrVar.e = trim2;
+                                urVar.e = trim2;
                             }
-                            vrVar.m = split[1].substring(10, 13);
+                            urVar.m = split[1].substring(10, 13);
                             String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                             if (b(replace) == e(split[1].charAt(19))) {
-                                f(replace, vrVar);
+                                f(replace, urVar);
                             }
-                            vrVar.n = h(split[1].charAt(20));
+                            urVar.n = h(split[1].charAt(20));
                             String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                             if (b(replace2) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                g(replace2, vrVar);
+                                g(replace2, urVar);
                             }
-                            if ("RUS".equals(vrVar.l) && split[0].charAt(1) == 'N') {
-                                vrVar.a = 3;
-                                String[] split2 = vrVar.b.split(" ");
-                                vrVar.b = c(k(split2[0]));
+                            if ("RUS".equals(urVar.l) && split[0].charAt(1) == 'N') {
+                                urVar.a = 3;
+                                String[] split2 = urVar.b.split(" ");
+                                urVar.b = c(k(split2[0]));
                                 if (split2.length > 1) {
-                                    vrVar.d = c(k(split2[1]));
+                                    urVar.d = c(k(split2[1]));
                                 }
-                                vrVar.c = c(k(vrVar.c));
-                                if (vrVar.e != null) {
-                                    vrVar.e = vrVar.e.substring(0, 3) + split[1].charAt(28) + vrVar.e.substring(3);
+                                urVar.c = c(k(urVar.c));
+                                if (urVar.e != null) {
+                                    urVar.e = urVar.e.substring(0, 3) + split[1].charAt(28) + urVar.e.substring(3);
                                 }
                             } else {
-                                vrVar.b = vrVar.b.replace('8', 'B');
-                                vrVar.c = vrVar.c.replace('8', 'B');
+                                urVar.b = urVar.b.replace('8', 'B');
+                                urVar.c = urVar.c.replace('8', 'B');
                             }
-                            vrVar.c = a(vrVar.c);
-                            vrVar.b = a(vrVar.b);
-                            vrVar.d = a(vrVar.d);
+                            urVar.c = a(urVar.c);
+                            urVar.b = a(urVar.b);
+                            urVar.d = a(urVar.d);
                         }
                     } else {
                         if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
                             return null;
                         }
-                        vrVar.a = 2;
+                        urVar.a = 2;
                         if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
-                            vrVar.l = split[0].substring(2, 5);
+                            urVar.l = split[0].substring(2, 5);
                             String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim3) == split[0].charAt(14) - '0') {
-                                vrVar.e = trim3;
+                                urVar.e = trim3;
                             }
                             String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
                             if (b(replace3) == e(split[1].charAt(6))) {
-                                f(replace3, vrVar);
+                                f(replace3, urVar);
                             }
-                            vrVar.n = h(split[1].charAt(i14));
+                            urVar.n = h(split[1].charAt(i14));
                             String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
                             if (b(replace4) == e(split[1].charAt(14)) || split[1].charAt(14) == '<') {
-                                g(replace4, vrVar);
+                                g(replace4, urVar);
                             }
-                            vrVar.m = split[1].substring(15, 18);
+                            urVar.m = split[1].substring(15, 18);
                             int indexOf2 = split[2].indexOf("<<");
                             if (indexOf2 != -1) {
-                                vrVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
-                                vrVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
+                                urVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
+                                urVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
                             }
                         } else if (split.length == 2 && split[0].length() == 36) {
                             String substring = split[0].substring(2, 5);
-                            vrVar.l = substring;
+                            urVar.l = substring;
                             if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
-                                vrVar.m = "FRA";
-                                vrVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
-                                vrVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
+                                urVar.m = "FRA";
+                                urVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
+                                urVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
                                 String replace5 = split[1].substring(0, 12).replace('O', '0');
                                 if (b(replace5) == e(split[1].charAt(12))) {
-                                    vrVar.e = replace5;
+                                    urVar.e = replace5;
                                 }
                                 String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
                                 if (b(replace6) == e(split[1].charAt(33))) {
-                                    f(replace6, vrVar);
+                                    f(replace6, urVar);
                                 }
-                                vrVar.n = h(split[1].charAt(34));
-                                vrVar.o = true;
+                                urVar.n = h(split[1].charAt(34));
+                                urVar.o = true;
                             } else {
                                 int indexOf3 = split[0].indexOf("<<");
                                 if (indexOf3 != -1) {
-                                    vrVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
-                                    vrVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
+                                    urVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
+                                    urVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
                                 }
                                 String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
                                 if (b(trim4) == e(split[1].charAt(9))) {
-                                    vrVar.e = trim4;
+                                    urVar.e = trim4;
                                 }
-                                vrVar.m = split[1].substring(10, 13);
+                                urVar.m = split[1].substring(10, 13);
                                 String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                                 if (b(replace7) == e(split[1].charAt(19))) {
-                                    f(replace7, vrVar);
+                                    f(replace7, urVar);
                                 }
-                                vrVar.n = h(split[1].charAt(20));
+                                urVar.n = h(split[1].charAt(20));
                                 String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                                 if (b(replace8) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                    g(replace8, vrVar);
+                                    g(replace8, urVar);
                                 }
                             }
                         }
-                        vrVar.b = a(vrVar.b.replace('0', 'O').replace('8', 'B'));
-                        vrVar.c = a(vrVar.c.replace('0', 'O').replace('8', 'B'));
+                        urVar.b = a(urVar.b.replace('0', 'O').replace('8', 'B'));
+                        urVar.c = a(urVar.c.replace('0', 'O').replace('8', 'B'));
                     }
-                    if (TextUtils.isEmpty(vrVar.b) && TextUtils.isEmpty(vrVar.c)) {
+                    if (TextUtils.isEmpty(urVar.b) && TextUtils.isEmpty(urVar.c)) {
                         return null;
                     }
-                    vrVar.l = (String) d12.get(vrVar.l);
-                    vrVar.m = (String) d12.get(vrVar.m);
-                    return vrVar;
+                    urVar.l = (String) d12.get(urVar.l);
+                    urVar.m = (String) d12.get(urVar.m);
+                    return urVar;
                 }
                 return null;
             }

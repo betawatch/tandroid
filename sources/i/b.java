@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.util.StateSet;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -64,7 +64,7 @@ public final class b extends Drawable.ConstantState {
         int i7 = bVar != null ? bVar.c : 0;
         int i10 = e.K;
         i7 = resources != null ? resources.getDisplayMetrics().densityDpi : i7;
-        i7 = i7 == 0 ? ls.q2 : i7;
+        i7 = i7 == 0 ? ks.q2 : i7;
         this.c = i7;
         if (bVar != null) {
             this.d = bVar.d;

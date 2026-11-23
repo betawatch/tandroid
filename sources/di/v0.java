@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public abstract class v0 {
     public static final float[][] a;
@@ -72,7 +72,7 @@ public abstract class v0 {
         while (true) {
             float[] fArr = a[i7];
             if (i10 >= fArr.length) {
-                ai.d.d(canvas, kVar, fArr.length / 4, paint);
+                g0.a.b(canvas, kVar, fArr.length / 4, paint);
                 return;
             }
             float f13 = fArr[i10];
@@ -93,7 +93,7 @@ public abstract class v0 {
         }
     }
 
-    public static void c(Canvas canvas, org.telegram.ui.Components.n5 n5Var, int i7, float f10, float f11, RectF rectF, float f12) {
+    public static void c(Canvas canvas, org.telegram.ui.Components.m5 m5Var, int i7, float f10, float f11, RectF rectF, float f12) {
         float f13;
         float f14;
         float f15;
@@ -167,13 +167,13 @@ public abstract class v0 {
             }
             float f52 = f27;
             if (i11 == 18 || i11 == 19 || i11 == 6 || i11 == 7) {
-                f14 = nr.i.getInterpolation(f14);
+                f14 = kr.i.getInterpolation(f14);
             }
             float[] fArr3 = fArr2;
             float f53 = f46;
             float t6 = com.google.android.gms.internal.vision.e2.t(f53, f16, org.telegram.messenger.g0.L(12.0f), f48);
             if (f14 < f53) {
-                f47 = org.telegram.messenger.g0.T1(f19, f47, nr.i.getInterpolation(f14));
+                f47 = org.telegram.messenger.g0.T1(f19, f47, kr.i.getInterpolation(f14));
                 t6 = org.telegram.messenger.g0.T1(f20, t6, f14);
                 N7 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(8.0f), N7, f14);
             }
@@ -184,13 +184,13 @@ public abstract class v0 {
                 f46 = 1.0f;
                 f15 = 1.0f;
             }
-            float l12 = (f46 - Utilities.l(a8.w9.a(f22, f24, f47, t6) / (max * 2.0f))) * f12 * 0.5f * f15;
+            float l12 = (f46 - Utilities.l(a8.x9.a(f22, f24, f47, t6) / (max * 2.0f))) * f12 * 0.5f * f15;
             if (f14 < f53) {
                 l12 = org.telegram.messenger.g0.T1(0.0f, l12, f14);
             }
-            n5Var.setBounds((int) (f47 - N7), (int) (t6 - N7), (int) (f47 + N7), (int) (t6 + N7));
-            n5Var.w = (int) (l12 * 255.0f);
-            n5Var.draw(canvas);
+            m5Var.setBounds((int) (f47 - N7), (int) (t6 - N7), (int) (f47 + N7), (int) (t6 + N7));
+            m5Var.w = (int) (l12 * 255.0f);
+            m5Var.draw(canvas);
             i11 += 3;
             i10 += 2;
             f16 = f11;

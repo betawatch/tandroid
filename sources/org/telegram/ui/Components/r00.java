@@ -1,29 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FragmentContextView b;
+public final class r00 implements Runnable {
+    public final /* synthetic */ FragmentContextView a;
 
-    public /* synthetic */ r00(FragmentContextView fragmentContextView, int i7) {
-        this.a = i7;
-        this.b = fragmentContextView;
+    public r00(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        FragmentContextView fragmentContextView = this.b;
-        switch (i7) {
-            case 0:
-                fragmentContextView.P.g = 0.0f;
-                fragmentContextView.N.invalidate();
-                break;
-            default:
-                float[] fArr = FragmentContextView.X0;
-                fragmentContextView.o(true);
-                break;
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.g2 g2Var = fragmentContextView.h;
+        if (fragmentContextView.h0 == null || !(g2Var instanceof org.telegram.ui.bn)) {
+            fragmentContextView.m0 = false;
+            return;
         }
+        org.telegram.messenger.t3 groupCall = fragmentContextView.n.getGroupCall();
+        if (groupCall == null || !groupCall.j()) {
+            fragmentContextView.i0 = false;
+            fragmentContextView.m0 = false;
+            return;
+        }
+        int currentTime = groupCall.b.schedule_date - g2Var.getConnectionsManager().getCurrentTime();
+        String G = currentTime >= 86400 ? org.telegram.messenger.gd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : org.telegram.messenger.g0.j0(currentTime);
+        m6 m6Var = fragmentContextView.k0;
+        if (!fragmentContextView.j0) {
+            G = org.telegram.messenger.gd.N0(2131743190, null);
+        }
+        m6Var.t(G, true, true);
+        org.telegram.messenger.g0.h3(fragmentContextView.n0, 1000L);
+        fragmentContextView.s.invalidate();
     }
 }

@@ -1,9 +1,9 @@
 package fi;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.y61;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q7 implements r1.d {
     public final /* synthetic */ int a;
@@ -23,35 +23,35 @@ public final /* synthetic */ class q7 implements r1.d {
                 x7Var.g0 = f11;
                 break;
             case 1:
-                hi.k5 k5Var = (hi.k5) this.b;
+                hi.v5 v5Var = (hi.v5) this.b;
                 float f12 = f10 / 1000.0f;
-                k5Var.d1 = f12;
-                tg.k1 k1Var = k5Var.W0;
-                k1Var.setAlpha(f12);
-                k1Var.invalidate();
-                k5Var.E0.invalidate();
-                k5Var.V0.getTypefaceCell().setAlpha(1.0f - k5Var.d1);
+                v5Var.d1 = f12;
+                tg.o1 o1Var = v5Var.W0;
+                o1Var.setAlpha(f12);
+                o1Var.invalidate();
+                v5Var.E0.invalidate();
+                v5Var.V0.getTypefaceCell().setAlpha(1.0f - v5Var.d1);
                 break;
             case 2:
                 pg.i iVar = (pg.i) this.b;
                 float f13 = f10 / 1000.0f;
-                y61 y61Var = iVar.a;
-                y61Var.setPivotX(org.telegram.messenger.g0.L(28.0f));
-                y61Var.setPivotY(org.telegram.messenger.g0.L(28.0f));
-                y61Var.setScaleX(f13);
-                y61Var.setScaleY(f13);
-                y61Var.setAlpha(c8.l9.a(f13, 0.0f, 1.0f));
+                w61 w61Var = iVar.a;
+                w61Var.setPivotX(org.telegram.messenger.g0.L(28.0f));
+                w61Var.setPivotY(org.telegram.messenger.g0.L(28.0f));
+                w61Var.setScaleX(f13);
+                w61Var.setScaleY(f13);
+                w61Var.setAlpha(c8.m9.a(f13, 0.0f, 1.0f));
                 iVar.invalidate();
                 break;
             default:
-                tg.h0 h0Var = (tg.h0) this.b;
+                tg.l0 l0Var = (tg.l0) this.b;
                 float f14 = f10 / 1000.0f;
-                h0Var.n1 = f14;
-                tg.k1 k1Var2 = h0Var.f1;
-                k1Var2.setAlpha(f14);
-                k1Var2.invalidate();
-                h0Var.N0.invalidate();
-                h0Var.e1.getTypefaceCell().setAlpha(1.0f - h0Var.n1);
+                l0Var.n1 = f14;
+                tg.o1 o1Var2 = l0Var.f1;
+                o1Var2.setAlpha(f14);
+                o1Var2.invalidate();
+                l0Var.N0.invalidate();
+                l0Var.e1.getTypefaceCell().setAlpha(1.0f - l0Var.n1);
                 break;
         }
     }

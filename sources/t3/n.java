@@ -1,26 +1,26 @@
 package t3;
 
-import a8.la;
-import c8.k1;
+import a8.ma;
+import c8.l1;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import h2.l0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class n extends i {
     public final String b;
     public final i0 c;
 
-    public n(String str, String str2, t1 t1Var) {
+    public n(String str, String str2, s1 s1Var) {
         super(str);
-        la.f(!t1Var.isEmpty());
+        ma.f(!s1Var.isEmpty());
         this.b = str2;
-        i0 q10 = i0.q(t1Var);
+        i0 q10 = i0.q(s1Var);
         this.c = q10;
     }
 
@@ -272,7 +272,7 @@ public final class n extends i {
                     n0Var.t = Integer.valueOf(Integer.parseInt((String) i0Var.get(0)));
                     break;
                 case '\f':
-                    Integer g10 = k1.g((String) i0Var.get(0));
+                    Integer g10 = l1.g((String) i0Var.get(0));
                     if (g10 != null) {
                         String a10 = j.a(g10.intValue());
                         if (a10 != null) {

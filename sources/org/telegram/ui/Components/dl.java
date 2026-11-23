@@ -1,31 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ml b;
-    public final /* synthetic */ org.telegram.messenger.ya c;
+import android.location.Location;
 
-    public /* synthetic */ dl(ml mlVar, org.telegram.messenger.ya yaVar, int i7) {
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class dl implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kl b;
+
+    public /* synthetic */ dl(kl klVar, int i7) {
         this.a = i7;
-        this.b = mlVar;
-        this.c = yaVar;
+        this.b = klVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.ya yaVar = this.c;
-                try {
-                    ((a8.r7) yaVar).y();
-                } catch (Exception unused) {
-                }
-                org.telegram.messenger.g0.g3(new dl(this.b, yaVar, 1));
+                kl.Z(this.b, (org.telegram.messenger.da) obj);
                 break;
             default:
-                ml.S(this.b, this.c);
+                kl.X(this.b, (Location) obj);
                 break;
         }
     }

@@ -7,9 +7,9 @@ import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class s {
     public static final j6.b i = new j6.b("SessionTransController", null);
@@ -70,7 +70,7 @@ public final class s {
                     m10.c();
                     k1.w((k1) m10.b, i7);
                     b10.e((k1) m10.a());
-                    x0Var.a.a((p1) b10.a(), ls.I3);
+                    x0Var.a.a((p1) b10.a(), ks.I3);
                     x0Var.i = false;
                     break;
                 default:

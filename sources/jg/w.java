@@ -3,16 +3,16 @@ package jg;
 import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g7;
-import org.telegram.messenger.gj;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.yi;
+import org.telegram.messenger.xi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Comparator {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class w implements Comparator {
             case 3:
                 return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
             case 4:
-                return ((kg.u1) obj).c - ((kg.u1) obj2).c;
+                return ((kg.v1) obj).c - ((kg.v1) obj2).c;
             case 5:
                 return Integer.compare(((l4.d) obj).a.b, ((l4.d) obj2).a.b);
             case 6:
@@ -127,20 +127,20 @@ public final /* synthetic */ class w implements Comparator {
                 return j13 < j14 ? -1 : 0;
             case 16:
                 String[] strArr = MediaController.W1;
-                long j15 = ((ff) obj).D;
-                long j16 = ((ff) obj2).D;
+                long j15 = ((ef) obj).D;
+                long j16 = ((ef) obj2).D;
                 if (j15 < j16) {
                     return 1;
                 }
                 return j15 > j16 ? -1 : 0;
             case 17:
-                gj gjVar = (gj) obj;
-                gj gjVar2 = (gj) obj2;
+                fj fjVar = (fj) obj;
+                fj fjVar2 = (fj) obj2;
                 String[] strArr2 = MediaController.W1;
-                int e12 = gjVar.e1();
-                int e13 = gjVar2.e1();
-                long j17 = gjVar.k.grouped_id;
-                long j18 = gjVar2.k.grouped_id;
+                int e12 = fjVar.e1();
+                int e13 = fjVar2.e1();
+                long j17 = fjVar.k.grouped_id;
+                long j18 = fjVar2.k.grouped_id;
                 if (e12 >= 0 || e13 >= 0) {
                     if (j17 == 0 || j17 != j18) {
                         return Integer.compare(e12, e13);
@@ -202,22 +202,22 @@ public final /* synthetic */ class w implements Comparator {
                 bitCount2 = ((String) obj).length();
                 break;
             case 26:
-                return ((yi) obj).a - ((yi) obj2).a;
+                return ((xi) obj).a - ((xi) obj2).a;
             case 27:
                 return org.telegram.messenger.g0.A(((TLRPC.Updates) obj).pts, ((TLRPC.Updates) obj2).pts);
             case 28:
-                bitCount = ((gj) obj2).e1();
-                bitCount2 = ((gj) obj).e1();
+                bitCount = ((fj) obj2).e1();
+                bitCount2 = ((fj) obj).e1();
                 break;
             default:
-                gj gjVar3 = (gj) obj;
-                gj gjVar4 = (gj) obj2;
-                if (gjVar3.k.date != gjVar4.k.date || gjVar3.e1() < 0 || gjVar4.e1() < 0) {
-                    i11 = gjVar4.k.date;
-                    i12 = gjVar3.k.date;
+                fj fjVar3 = (fj) obj;
+                fj fjVar4 = (fj) obj2;
+                if (fjVar3.k.date != fjVar4.k.date || fjVar3.e1() < 0 || fjVar4.e1() < 0) {
+                    i11 = fjVar4.k.date;
+                    i12 = fjVar3.k.date;
                 } else {
-                    i11 = gjVar4.e1();
-                    i12 = gjVar3.e1();
+                    i11 = fjVar4.e1();
+                    i12 = fjVar3.e1();
                 }
                 return i11 - i12;
         }

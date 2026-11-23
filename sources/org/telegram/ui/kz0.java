@@ -2,59 +2,54 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class kz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.cl0 b;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ kz0(org.telegram.ui.Components.cl0 cl0Var, int i7) {
+    public /* synthetic */ kz0(SecretMediaViewer secretMediaViewer, int i7) {
         this.a = i7;
-        this.b = cl0Var;
+        this.b = secretMediaViewer;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
-                secretMediaViewer.Y.getNextView().setText((CharSequence) null);
-                wp0 wp0Var = secretMediaViewer.Z;
-                wp0Var.m0 = false;
-                if (wp0Var.n0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) wp0Var.p0.getLayoutParams()).topMargin = wp0Var.n0;
-                    wp0Var.n0 = -1;
-                    wp0Var.requestLayout();
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.n0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.n0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.H;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.G.setVisibility(8);
+                    secretMediaViewer2.H = null;
+                    secretMediaViewer2.Z.scrollTo(0, 0);
+                    break;
+                }
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.n0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.n0 = null;
                     break;
                 }
                 break;
             default:
-                ((SecretMediaViewer) this.b.b).Y.setTranslationY(0.0f);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                wp0 wp0Var = ((SecretMediaViewer) this.b.b).Z;
-                Method method = wp0Var.g0;
-                if (method != null) {
-                    try {
-                        method.invoke(wp0Var, null);
-                        break;
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.J0 = null;
+                secretMediaViewer4.e.invalidate();
                 break;
         }
     }

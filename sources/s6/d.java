@@ -4,10 +4,10 @@ import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.j;
 import com.google.android.gms.tasks.Task;
-import org.telegram.ui.Components.qf;
+import org.telegram.ui.Cells.aa;
 import q6.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d extends j {
     public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("ClientNotification.API", new a9.e(15), new com.google.android.gms.common.api.d());
@@ -17,7 +17,7 @@ public final class d extends j {
         t b10 = u.b();
         b10.d = new n6.c[]{n7.b.a};
         b10.b = false;
-        b10.c = new qf(pVar, 17);
+        b10.c = new aa(pVar, 18);
         return e(2, b10.a());
     }
 }

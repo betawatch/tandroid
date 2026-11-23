@@ -6,11 +6,11 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.FilesMigrationService;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.cz;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class k extends Thread {
     public final /* synthetic */ int a = 0;
@@ -34,14 +34,14 @@ public final class k extends Thread {
             default:
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.b;
                 File externalStorageDirectory = Environment.getExternalStorageDirectory();
-                if (!TextUtils.isEmpty(cz.h0)) {
+                if (!TextUtils.isEmpty(bz.h0)) {
                     ArrayList d12 = g0.d1();
                     int size = d12.size();
                     int i7 = 0;
                     while (true) {
                         if (i7 < size) {
                             File file = (File) d12.get(i7);
-                            if (file.getAbsolutePath().startsWith(cz.h0)) {
+                            if (file.getAbsolutePath().startsWith(bz.h0)) {
                                 externalStorageDirectory = file;
                             } else {
                                 i7++;

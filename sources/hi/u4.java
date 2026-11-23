@@ -1,48 +1,36 @@
 package hi;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+import android.view.KeyEvent;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class u4 implements tg.m1 {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public final float c;
+public final /* synthetic */ class u4 implements org.telegram.ui.ActionBar.e1, s10 {
+    public final /* synthetic */ v5 a;
 
-    public /* synthetic */ u4(Object obj, float f10, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = f10;
+    public /* synthetic */ u4(v5 v5Var) {
+        this.a = v5Var;
     }
 
-    @Override // tg.m1
-    public float get() {
-        float baseFontSize;
-        float f10;
-        switch (this.a) {
-            case 0:
-                baseFontSize = ((tg.n2) this.b).getBaseFontSize();
-                f10 = this.c;
-                break;
-            default:
-                baseFontSize = ((tg.n2) this.b).getBaseFontSize();
-                f10 = this.c;
-                break;
+    @Override // org.telegram.messenger.s10
+    public void l(Object obj, TLRPC.Document document, Boolean bool) {
+        v5 v5Var = this.a;
+        v5Var.Z1 = true;
+        m5 m0 = v5Var.m0(obj, document);
+        if (bool.booleanValue()) {
+            m0.setScale(1.5f);
         }
-        return baseFontSize / f10;
+        v5Var.c0(m0);
     }
 
-    @Override // tg.m1
-    public void y1(float f10) {
-        switch (this.a) {
-            case 0:
-                tg.n2 n2Var = (tg.n2) this.b;
-                n2Var.A0 = true;
-                n2Var.setBaseFontSize((int) (this.c * f10));
-                break;
-            default:
-                tg.n2 n2Var2 = (tg.n2) this.b;
-                n2Var2.A0 = true;
-                n2Var2.setBaseFontSize((int) (this.c * f10));
-                break;
+    @Override // org.telegram.ui.ActionBar.e1
+    public void m(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
+        v5 v5Var = this.a;
+        v5Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = v5Var.r1) != null && g1Var.isShowing()) {
+            v5Var.r1.d(true);
         }
     }
 }

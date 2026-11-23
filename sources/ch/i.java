@@ -1,17 +1,17 @@
 package ch;
 
-import ai.j1;
+import ai.e1;
 import android.text.SpannableStringBuilder;
 import android.view.KeyEvent;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.s8;
-import org.telegram.ui.Components.y5;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Components.x5;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements y10 {
+public final /* synthetic */ class i implements w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ p b;
 
@@ -20,9 +20,9 @@ public final /* synthetic */ class i implements y10 {
         this.b = pVar;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
-        s8 s8Var;
+        r8 r8Var;
         switch (this.a) {
             case 0:
                 p pVar = this.b;
@@ -39,13 +39,13 @@ public final /* synthetic */ class i implements y10 {
                 if (!pVar2.g0()) {
                     int editTextSelectionEnd = pVar2.h.getEditTextSelectionEnd();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(pVar2.h.getText());
-                    for (y5 y5Var : (y5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), y5.class)) {
-                        if (spannableStringBuilder.getSpanEnd(y5Var) == editTextSelectionEnd) {
-                            pVar2.I.remove(Long.valueOf(y5Var.documentId));
-                            pVar2.J.remove(Long.valueOf(y5Var.documentId));
-                            pVar2.b.A(Long.valueOf(y5Var.documentId));
-                            if (y5Var.documentId == -1 && (s8Var = pVar2.r) != null) {
-                                s8Var.setChecked(false);
+                    for (x5 x5Var : (x5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), x5.class)) {
+                        if (spannableStringBuilder.getSpanEnd(x5Var) == editTextSelectionEnd) {
+                            pVar2.I.remove(Long.valueOf(x5Var.documentId));
+                            pVar2.J.remove(Long.valueOf(x5Var.documentId));
+                            pVar2.b.A(Long.valueOf(x5Var.documentId));
+                            if (x5Var.documentId == -1 && (r8Var = pVar2.r) != null) {
+                                r8Var.setChecked(false);
                                 pVar2.h.setMaxLength(pVar2.O);
                             }
                             if (bool.booleanValue()) {
@@ -54,8 +54,8 @@ public final /* synthetic */ class i implements y10 {
                                 org.telegram.messenger.g0.h3(hVar, 350L);
                                 break;
                             } else {
-                                y5Var.setRemoved(new j1(pVar2, y5Var, editTextSelectionEnd, 3));
-                                pVar2.c0(y5Var);
+                                x5Var.setRemoved(new e1(pVar2, x5Var, editTextSelectionEnd, 3));
+                                pVar2.c0(x5Var);
                                 pVar2.e0(false);
                                 break;
                             }

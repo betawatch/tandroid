@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.cast;
 
-import a8.x8;
+import a8.y8;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final class y3 extends x8 {
-    @Override // a8.x8
+public final class y3 extends y8 {
+    @Override // a8.y8
     public final w3 a(c4 c4Var) {
         w3 w3Var;
         w3 w3Var2 = w3.d;
@@ -22,7 +22,7 @@ public final class y3 extends x8 {
         return w3Var;
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final b4 b(c4 c4Var) {
         b4 b4Var;
         b4 b4Var2 = b4.c;
@@ -39,17 +39,17 @@ public final class y3 extends x8 {
         return b4Var;
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final void c(b4 b4Var, b4 b4Var2) {
         b4Var.b = b4Var2;
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final void d(b4 b4Var, Thread thread) {
         b4Var.a = thread;
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final boolean e(c4 c4Var, w3 w3Var, w3 w3Var2) {
         synchronized (c4Var) {
             try {
@@ -64,7 +64,7 @@ public final class y3 extends x8 {
         }
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final boolean f(c4 c4Var, Object obj, Object obj2) {
         synchronized (c4Var) {
             try {
@@ -79,7 +79,7 @@ public final class y3 extends x8 {
         }
     }
 
-    @Override // a8.x8
+    @Override // a8.y8
     public final boolean g(c4 c4Var, b4 b4Var, b4 b4Var2) {
         synchronized (c4Var) {
             try {

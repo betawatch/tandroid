@@ -8,12 +8,12 @@ import h6.m;
 import ia.c;
 import java.util.concurrent.Executor;
 import o5.i;
-import o5.s;
-import org.telegram.ui.Components.lp0;
+import o5.t;
+import org.telegram.ui.Components.kp0;
 import org.telegram.ui.cd0;
 import y5.a;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -24,14 +24,14 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
         int i7 = intent.getExtras().getInt("attemptNumber");
-        s.b(context);
+        t.b(context);
         m a10 = i.a();
         a10.I(queryParameter);
         a10.d = a.b(intValue);
         if (queryParameter2 != null) {
             a10.c = Base64.decode(queryParameter2, 0);
         }
-        c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new lp0(cVar, a10.j(), i7, new cd0(26), 26));
+        c cVar = t.a().d;
+        ((Executor) cVar.e).execute(new kp0(cVar, a10.u(), i7, new cd0(26), 26));
     }
 }

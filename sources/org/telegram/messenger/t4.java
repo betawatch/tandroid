@@ -7,9 +7,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.mt0;
+import org.telegram.ui.lt0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class t4 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 i5 i5Var = (i5) this.b;
-                mt0 mt0Var = (mt0) this.c;
+                lt0 lt0Var = (lt0) this.c;
                 if (tL_error == null) {
                     i5Var.a0.clear();
                     i5Var.Z.clear();
@@ -40,10 +40,10 @@ public final /* synthetic */ class t4 implements RequestDelegate {
                     i5Var.b = false;
                     i5Var.r = false;
                     i5Var.w = "";
-                    g0.g3(new w3(28, i5Var, mt0Var));
+                    g0.g3(new w3(28, i5Var, lt0Var));
                     break;
                 } else {
-                    g0.g3(mt0Var);
+                    g0.g3(lt0Var);
                     break;
                 }
             case 1:
@@ -79,7 +79,7 @@ public final /* synthetic */ class t4 implements RequestDelegate {
                             }
                         }
                     }
-                    g0.g3(new zf(i5Var2, updates, user, 16));
+                    g0.g3(new yf(i5Var2, updates, user, 16));
                     break;
                 }
                 break;
@@ -87,32 +87,32 @@ public final /* synthetic */ class t4 implements RequestDelegate {
                 i5 i5Var3 = (i5) this.b;
                 SharedPreferences.Editor editor = (SharedPreferences.Editor) this.c;
                 if (tLObject instanceof Vector) {
-                    g0.g3(new zf(i5Var3, editor, (Vector) tLObject, 14));
+                    g0.g3(new yf(i5Var3, editor, (Vector) tLObject, 14));
                     break;
                 }
                 break;
             case 3:
-                si siVar = (si) this.b;
+                ri riVar = (ri) this.b;
                 TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) this.c;
-                siVar.getClass();
-                if (tL_error != null && r8.r(tL_error.text)) {
-                    siVar.getFileRefController().u(new Object[]{tL_messages_saveGif}, "gif");
+                riVar.getClass();
+                if (tL_error != null && q8.r(tL_error.text)) {
+                    riVar.getFileRefController().u(new Object[]{tL_messages_saveGif}, "gif");
                     break;
                 }
                 break;
             case 4:
-                g0.g3(new lg((si) this.b, tLObject, (TLRPC.Document) this.c, i7));
+                g0.g3(new kg((ri) this.b, tLObject, (TLRPC.Document) this.c, i7));
                 break;
             case 5:
-                si siVar2 = (si) this.b;
+                ri riVar2 = (ri) this.b;
                 Runnable runnable = (Runnable) this.c;
-                siVar2.getClass();
+                riVar2.getClass();
                 int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                 if (tLObject instanceof TLRPC.TL_attachMenuBotsNotModified) {
-                    siVar2.y1(null, 0L, currentTimeMillis, false);
+                    riVar2.y1(null, 0L, currentTimeMillis, false);
                 } else if (tLObject instanceof TLRPC.TL_attachMenuBots) {
                     TLRPC.TL_attachMenuBots tL_attachMenuBots = (TLRPC.TL_attachMenuBots) tLObject;
-                    siVar2.y1(tL_attachMenuBots, tL_attachMenuBots.hash, currentTimeMillis, false);
+                    riVar2.y1(tL_attachMenuBots, tL_attachMenuBots.hash, currentTimeMillis, false);
                 }
                 if (runnable != null) {
                     g0.g3(runnable);
@@ -120,14 +120,14 @@ public final /* synthetic */ class t4 implements RequestDelegate {
                 }
                 break;
             case 6:
-                g0.g3(new lg((np) this.b, tLObject, (ArrayList) this.c, 8));
+                g0.g3(new kg((mp) this.b, tLObject, (ArrayList) this.c, 8));
                 break;
             case 7:
-                np npVar = (np) this.b;
+                mp mpVar = (mp) this.b;
                 Runnable runnable2 = (Runnable) this.c;
-                npVar.getClass();
+                mpVar.getClass();
                 if (tL_error == null) {
-                    npVar.V3((TLRPC.Updates) tLObject, false);
+                    mpVar.V3((TLRPC.Updates) tLObject, false);
                     if (runnable2 != null) {
                         g0.g3(runnable2);
                         break;
@@ -135,24 +135,24 @@ public final /* synthetic */ class t4 implements RequestDelegate {
                 }
                 break;
             case 8:
-                g0.g3(new ul((qv) this.b, tLObject, (ArrayList) this.c, tL_error, 22));
+                g0.g3(new tl((pv) this.b, tLObject, (ArrayList) this.c, tL_error, 22));
                 break;
             case 9:
-                az azVar = (az) this.b;
+                zy zyVar = (zy) this.b;
                 Runnable runnable3 = (Runnable) this.c;
                 if (tLObject != null) {
-                    azVar.getMessagesController().V3((TLRPC.Updates) tLObject, false);
+                    zyVar.getMessagesController().V3((TLRPC.Updates) tLObject, false);
                     if (runnable3 != null) {
                         g0.g3(runnable3);
                         break;
                     }
                 } else {
-                    azVar.getClass();
+                    zyVar.getClass();
                     break;
                 }
                 break;
             default:
-                g0.h3(new l10((n10) this.b, (String) this.c, tL_error, tLObject, 0), 2L);
+                g0.h3(new j10((l10) this.b, (String) this.c, tL_error, tLObject, 0), 2L);
                 break;
         }
     }

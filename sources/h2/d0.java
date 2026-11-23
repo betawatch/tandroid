@@ -2,7 +2,7 @@ package h2;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class d0 {
     public final int a;
@@ -19,9 +19,9 @@ public final class d0 {
     public final void a() {
         e0 e0Var = this.e;
         i0 i0Var = (i0) e0Var.f;
-        l2.f0 f0Var = (l2.f0) e0Var.a;
-        int w02 = f0Var.w0();
-        if (!f0Var.u() || f0Var.i() == 1 || f0Var.i() == 4 || w02 == 0 || w02 == 1) {
+        l2.g0 g0Var = (l2.g0) e0Var.a;
+        int x02 = g0Var.x0();
+        if (!g0Var.v() || g0Var.i() == 1 || g0Var.i() == 4 || x02 == 0 || x02 == 1) {
             if (this.c) {
                 i0Var.e(4);
             }
@@ -32,16 +32,16 @@ public final class d0 {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         boolean z10 = this.c;
         int i7 = this.a;
-        if (z10 && this.b == w02) {
+        if (z10 && this.b == x02) {
             if (elapsedRealtime - this.d >= i7) {
-                ((l2.z) e0Var.c).a.A1(new l2.l(2, new f0(4, i7), 1003));
+                ((l2.a0) e0Var.c).a.A1(new l2.m(2, new f0(4, i7), 1003));
                 return;
             }
             return;
         }
         this.c = true;
         this.d = elapsedRealtime;
-        this.b = w02;
+        this.b = x02;
         i0Var.e(4);
         i0Var.a.sendEmptyMessageDelayed(4, i7);
     }

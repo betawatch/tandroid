@@ -1,6 +1,6 @@
 package y7;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class p2 implements na.d {
     public static final p2 a = new p2();
@@ -17,11 +17,11 @@ public final class p2 implements na.d {
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {
-        d6 d6Var = (d6) obj;
+        e6 e6Var = (e6) obj;
         na.e eVar = (na.e) obj2;
-        eVar.a(b, d6Var.a);
-        eVar.a(c, d6Var.b);
-        eVar.a(d, d6Var.c);
+        eVar.a(b, e6Var.a);
+        eVar.a(c, e6Var.b);
+        eVar.a(d, e6Var.c);
         eVar.a(e, null);
         eVar.a(f, null);
         eVar.a(g, null);

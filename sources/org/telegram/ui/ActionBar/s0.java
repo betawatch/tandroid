@@ -5,16 +5,16 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import org.telegram.ui.Cells.u7;
+import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.gf;
-import org.telegram.ui.Components.kf0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.s9;
-import org.telegram.ui.Wallet.x6;
+import org.telegram.ui.Components.hf;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.r9;
+import org.telegram.ui.Wallet.y6;
 import org.telegram.ui.rf;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class s0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -50,92 +50,92 @@ public final class s0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                org.telegram.ui.Cells.n6 n6Var = (org.telegram.ui.Cells.n6) obj;
-                n6Var.G = f10;
-                n6Var.invalidate();
+                org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) obj;
+                m6Var.G = f10;
+                m6Var.invalidate();
                 break;
             case 3:
                 ColorMatrix colorMatrix = new ColorMatrix();
-                u7 u7Var = (u7) obj;
-                u7Var.w = f10;
+                t7 t7Var = (t7) obj;
+                t7Var.w = f10;
                 colorMatrix.setSaturation(f10);
-                if (m6.I.q()) {
-                    org.telegram.messenger.g0.h(colorMatrix, (1.0f - u7Var.w) * (-0.3f));
+                if (n6.I.q()) {
+                    org.telegram.messenger.g0.h(colorMatrix, (1.0f - t7Var.w) * (-0.3f));
                 }
-                u7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                t7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 4:
-                s9 s9Var = (s9) obj;
-                s9Var.g = f10;
-                s9Var.invalidateSelf();
+                r9 r9Var = (r9) obj;
+                r9Var.g = f10;
+                r9Var.invalidateSelf();
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
                 chatActivityEnterView.D6 = null;
                 chatActivityEnterView.E6 = false;
                 if (!chatActivityEnterView.O2) {
-                    gf gfVar = chatActivityEnterView.F0;
-                    if (gfVar != null) {
-                        gfVar.setText("");
+                    hf hfVar = chatActivityEnterView.F0;
+                    if (hfVar != null) {
+                        hfVar.setText("");
                         chatActivityEnterView.F0.setAlpha(1.0f);
                     }
-                    ai.p0 p0Var = chatActivityEnterView.j1;
-                    if (p0Var != null) {
-                        p0Var.k();
+                    ai.l0 l0Var = chatActivityEnterView.j1;
+                    if (l0Var != null) {
+                        l0Var.j();
                     }
                     chatActivityEnterView.R0.invalidate();
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     ofFloat.addUpdateListener(new rf(this, f10, 3));
                     ofFloat.setDuration(200L);
-                    ofFloat.setInterpolator(nr.g);
+                    ofFloat.setInterpolator(kr.g);
                     ofFloat.start();
                     break;
                 }
                 break;
             case 6:
-                kf0 kf0Var = (kf0) obj;
-                kf0Var.I.e();
-                kf0Var.b = f10;
+                jf0 jf0Var = (jf0) obj;
+                jf0Var.I.e();
+                jf0Var.b = f10;
                 if (f10 <= 0.0f) {
-                    kf0Var.H = -1;
+                    jf0Var.H = -1;
                 }
-                kf0Var.c(true);
-                kf0Var.f = false;
-                if (kf0Var.Q != null && Math.abs(f10 - 1.0f) < 0.01f) {
-                    kf0Var.Q.run();
+                jf0Var.c(true);
+                jf0Var.f = false;
+                if (jf0Var.Q != null && Math.abs(f10 - 1.0f) < 0.01f) {
+                    jf0Var.Q.run();
                     break;
                 }
                 break;
             case 7:
-                org.telegram.ui.Wallet.w3 w3Var = (org.telegram.ui.Wallet.w3) obj;
-                x6 x6Var = w3Var.r;
-                x6Var.getClass();
-                x6Var.setLayerType(0, null);
+                org.telegram.ui.Wallet.x3 x3Var = (org.telegram.ui.Wallet.x3) obj;
+                y6 y6Var = x3Var.r;
+                y6Var.getClass();
+                y6Var.setLayerType(0, null);
                 if (f10 != 0.0f) {
-                    if (!w3Var.S) {
-                        ValueAnimator valueAnimator = w3Var.Q;
+                    if (!x3Var.S) {
+                        ValueAnimator valueAnimator = x3Var.Q;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
                         }
-                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(w3Var.R, 1.0f);
-                        w3Var.Q = ofFloat2;
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(x3Var.R, 1.0f);
+                        x3Var.Q = ofFloat2;
                         ofFloat2.setDuration(320L);
-                        w3Var.Q.setInterpolator(nr.g);
-                        w3Var.Q.addUpdateListener(new org.telegram.ui.Wallet.p3(w3Var, i10));
-                        w3Var.Q.start();
+                        x3Var.Q.setInterpolator(kr.g);
+                        x3Var.Q.addUpdateListener(new org.telegram.ui.Wallet.q3(x3Var, i10));
+                        x3Var.Q.start();
                         break;
                     }
                 } else {
-                    w3Var.b();
+                    x3Var.b();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.n6 n6Var2 = (org.telegram.ui.Wallet.n6) obj;
-                if (n6Var2.n0 == animator) {
-                    n6Var2.n0 = null;
-                    n6Var2.R0(f10);
-                    n6Var2.s0.j(false);
+                org.telegram.ui.Wallet.o6 o6Var = (org.telegram.ui.Wallet.o6) obj;
+                if (o6Var.n0 == animator) {
+                    o6Var.n0 = null;
+                    o6Var.R0(f10);
+                    o6Var.s0.l(false);
                     break;
                 }
                 break;
@@ -146,9 +146,9 @@ public final class s0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 6:
-                kf0 kf0Var = (kf0) this.c;
-                kf0Var.f = true;
-                kf0Var.c = this.b;
+                jf0 jf0Var = (jf0) this.c;
+                jf0Var.f = true;
+                jf0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

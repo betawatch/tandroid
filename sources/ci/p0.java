@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 z0.s(iArr, bArr, i7);
                 createBitmap2.setPixels(iArr, 0, i12, 0, 0, i12, i12);
                 createBitmap2.prepareToDraw();
-                org.telegram.messenger.g0.g3(new ai.b1(z0Var, createBitmap2, iArr, i7, 3));
+                org.telegram.messenger.g0.g3(new ai.x0(z0Var, createBitmap2, iArr, i7, 3));
                 return;
             case 1:
                 this.b.F0(this.c);

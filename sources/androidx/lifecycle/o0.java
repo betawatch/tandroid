@@ -6,11 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public static final List a = hd.g.c(Application.class, i0.class);
-    public static final List b = c8.f0.a(i0.class);
+    public static final List b = c8.g0.a(i0.class);
 
     public static final Constructor a(Class cls, List signature) {
         kotlin.jvm.internal.j.e(signature, "signature");

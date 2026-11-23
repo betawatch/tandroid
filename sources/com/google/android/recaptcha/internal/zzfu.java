@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
+import c8.z;
 import gd.k;
 import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -58,7 +58,7 @@ final class zzfu extends j implements p {
         int i7 = this.zza;
         try {
             if (i7 == 0) {
-                h.b(obj);
+                z.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j3 = this.zzc;
@@ -67,17 +67,17 @@ final class zzfu extends j implements p {
                 obj = zzgbVar.zzq(j3, this);
             } else if (i7 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                h.b(obj);
+                z.b(obj);
             } else {
                 if (i7 != 2) {
-                    h.b(obj);
+                    z.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                h.b(obj);
+                z.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;

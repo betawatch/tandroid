@@ -1,6 +1,6 @@
 package zd;
 
-import a8.da;
+import a8.ea;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
@@ -8,19 +8,31 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static final ee.t a = new ee.t("RESUME_TOKEN", 0);
-    public static final ee.t b = new ee.t("REMOVED_TASK", 0);
-    public static final ee.t c = new ee.t("CLOSED_EMPTY", 0);
-    public static final ee.t d = new ee.t("COMPLETING_ALREADY", 0);
-    public static final ee.t e = new ee.t("COMPLETING_WAITING_CHILDREN", 0);
-    public static final ee.t f = new ee.t("COMPLETING_RETRY", 0);
-    public static final ee.t g = new ee.t("TOO_LATE_TO_CANCEL", 0);
-    public static final ee.t h = new ee.t("SEALED", 0);
+    public static final ee.t a;
+    public static final ee.t b;
+    public static final ee.t c;
+    public static final ee.t d;
+    public static final ee.t e;
+    public static final ee.t f;
+    public static final ee.t g;
+    public static final ee.t h;
     public static final n0 i = new n0(false);
     public static final n0 j = new n0(true);
+
+    static {
+        int i7 = 0;
+        a = new ee.t("RESUME_TOKEN", i7);
+        b = new ee.t("REMOVED_TASK", i7);
+        c = new ee.t("CLOSED_EMPTY", i7);
+        d = new ee.t("COMPLETING_ALREADY", i7);
+        e = new ee.t("COMPLETING_WAITING_CHILDREN", i7);
+        f = new ee.t("COMPLETING_RETRY", i7);
+        g = new ee.t("TOO_LATE_TO_CANCEL", i7);
+        h = new ee.t("SEALED", i7);
+    }
 
     public static t a() {
         t tVar = new t(true);
@@ -49,7 +61,7 @@ public abstract class b0 {
             return hd.n.a;
         }
         e eVar = new e(e0VarArr);
-        m mVar = new m(1, c8.x0.b(jVar));
+        m mVar = new m(1, c8.y0.b(jVar));
         mVar.s();
         int length = e0VarArr.length;
         c[] cVarArr = new c[length];
@@ -78,14 +90,14 @@ public abstract class b0 {
 
     public static final Object e(rd.p pVar, id.c cVar) {
         ee.q qVar = new ee.q(cVar, cVar.getContext());
-        Object a10 = da.a(qVar, qVar, pVar);
+        Object a10 = ea.a(qVar, qVar, pVar);
         jd.a aVar = jd.a.a;
         return a10;
     }
 
     public static final Object f(long j3, kd.c cVar) {
         if (j3 > 0) {
-            m mVar = new m(1, c8.x0.b(cVar));
+            m mVar = new m(1, c8.y0.b(cVar));
             mVar.s();
             if (j3 < Long.MAX_VALUE) {
                 i(mVar.e).b(j3, mVar);
@@ -198,7 +210,7 @@ public abstract class b0 {
         } catch (Throwable th3) {
             if (th2 != th3) {
                 RuntimeException runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                af.b.a(runtimeException, th2);
+                b5.a.a(runtimeException, th2);
                 th2 = runtimeException;
             }
             ee.a.d(hVar, th2);
@@ -228,14 +240,14 @@ public abstract class b0 {
                 jd.a aVar = jd.a.a;
                 i7 = gVar.c;
                 if (i7 != 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     it = collection.iterator();
                 } else {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     it = gVar.a;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                 }
                 while (it.hasNext()) {
                     a1 a1Var = (a1) it.next();
@@ -282,7 +294,7 @@ public abstract class b0 {
                 jd.a aVar = jd.a.a;
                 i7 = fVar.e;
                 if (i7 != 0) {
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     i10 = 0;
                     a1VarArr2 = a1VarArr;
                     length = a1VarArr.length;
@@ -295,7 +307,7 @@ public abstract class b0 {
                     length = fVar.c;
                     i10 = fVar.b;
                     a1[] a1VarArr3 = (a1[]) fVar.a;
-                    b7.h.b(obj);
+                    c8.z.b(obj);
                     a1VarArr2 = a1VarArr3;
                     i10++;
                     if (i10 < length) {
@@ -339,13 +351,13 @@ public abstract class b0 {
     }
 
     public static final Object s(Object obj) {
-        return obj instanceof v ? b7.h.a(((v) obj).a) : obj;
+        return obj instanceof v ? c8.z.a(((v) obj).a) : obj;
     }
 
     public static final void t(m mVar, id.c cVar, boolean z10) {
         Object obj = m.h.get(mVar);
         Throwable g10 = mVar.g(obj);
-        Object a10 = g10 != null ? b7.h.a(g10) : mVar.h(obj);
+        Object a10 = g10 != null ? c8.z.a(g10) : mVar.h(obj);
         if (!z10) {
             cVar.resumeWith(a10);
             return;
@@ -422,7 +434,7 @@ public abstract class b0 {
         try {
             a10 = cVar + '@' + j(cVar);
         } catch (Throwable th2) {
-            a10 = b7.h.a(th2);
+            a10 = c8.z.a(th2);
         }
         if (gd.g.a(a10) != null) {
             a10 = cVar.getClass().getName() + '@' + j(cVar);
@@ -463,7 +475,7 @@ public abstract class b0 {
         g(plus);
         if (plus == context) {
             ee.q qVar = new ee.q(cVar, plus);
-            w10 = da.a(qVar, qVar, pVar);
+            w10 = ea.a(qVar, qVar, pVar);
         } else {
             id.d dVar = id.d.a;
             if (kotlin.jvm.internal.j.a(plus.get(dVar), context.get(dVar))) {
@@ -471,7 +483,7 @@ public abstract class b0 {
                 id.h hVar2 = a2Var.c;
                 Object l10 = ee.a.l(hVar2, null);
                 try {
-                    Object a10 = da.a(a2Var, a2Var, pVar);
+                    Object a10 = ea.a(a2Var, a2Var, pVar);
                     ee.a.g(hVar2, l10);
                     w10 = a10;
                 } catch (Throwable th2) {
@@ -481,7 +493,7 @@ public abstract class b0 {
             } else {
                 h0 h0Var = new h0(cVar, plus);
                 try {
-                    ee.a.h(c8.x0.b(c8.x0.a(h0Var, h0Var, pVar)), gd.k.a);
+                    ee.a.h(c8.y0.b(c8.y0.a(h0Var, h0Var, pVar)), gd.k.a);
                     AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = h0.e;
                     while (true) {
                         int i7 = atomicIntegerFieldUpdater.get(h0Var);
@@ -499,7 +511,7 @@ public abstract class b0 {
                         }
                     }
                 } catch (Throwable th3) {
-                    h0Var.resumeWith(b7.h.a(th3));
+                    h0Var.resumeWith(c8.z.a(th3));
                     throw th3;
                 }
             }

@@ -5,15 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.hd;
+import c8.id;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-import tg.y;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final n6.c[] a = new n6.c[0];
@@ -35,16 +34,16 @@ public abstract class j {
         n6.c cVar10 = new n6.c("mlkit.smartreply", 1L);
         c = new n6.c("mlkit.segmentation.subject", 1L);
         xa xaVar = new xa(24, (byte) 0);
-        xaVar.C("barcode", cVar);
-        xaVar.C("custom_ica", cVar2);
-        xaVar.C("face", cVar3);
-        xaVar.C("ica", cVar4);
-        xaVar.C("ocr", cVar5);
-        xaVar.C("langid", cVar6);
-        xaVar.C("nlclassifier", cVar7);
-        xaVar.C("tflite_dynamite", cVar8);
-        xaVar.C("barcode_ui", cVar9);
-        xaVar.C("smart_reply", cVar10);
+        xaVar.B("barcode", cVar);
+        xaVar.B("custom_ica", cVar2);
+        xaVar.B("face", cVar3);
+        xaVar.B("ica", cVar4);
+        xaVar.B("ocr", cVar5);
+        xaVar.B("langid", cVar6);
+        xaVar.B("nlclassifier", cVar7);
+        xaVar.B("tflite_dynamite", cVar8);
+        xaVar.B("barcode_ui", cVar9);
+        xaVar.B("smart_reply", cVar10);
         w7.e eVar = (w7.e) xaVar.d;
         if (eVar != null) {
             throw eVar.a();
@@ -56,15 +55,15 @@ public abstract class j {
         }
         d = c10;
         xa xaVar2 = new xa(24, (byte) 0);
-        xaVar2.C("com.google.android.gms.vision.barcode", cVar);
-        xaVar2.C("com.google.android.gms.vision.custom.ica", cVar2);
-        xaVar2.C("com.google.android.gms.vision.face", cVar3);
-        xaVar2.C("com.google.android.gms.vision.ica", cVar4);
-        xaVar2.C("com.google.android.gms.vision.ocr", cVar5);
-        xaVar2.C("com.google.android.gms.mlkit.langid", cVar6);
-        xaVar2.C("com.google.android.gms.mlkit.nlclassifier", cVar7);
-        xaVar2.C("com.google.android.gms.tflite_dynamite", cVar8);
-        xaVar2.C("com.google.android.gms.mlkit_smartreply", cVar10);
+        xaVar2.B("com.google.android.gms.vision.barcode", cVar);
+        xaVar2.B("com.google.android.gms.vision.custom.ica", cVar2);
+        xaVar2.B("com.google.android.gms.vision.face", cVar3);
+        xaVar2.B("com.google.android.gms.vision.ica", cVar4);
+        xaVar2.B("com.google.android.gms.vision.ocr", cVar5);
+        xaVar2.B("com.google.android.gms.mlkit.langid", cVar6);
+        xaVar2.B("com.google.android.gms.mlkit.nlclassifier", cVar7);
+        xaVar2.B("com.google.android.gms.tflite_dynamite", cVar8);
+        xaVar2.B("com.google.android.gms.mlkit_smartreply", cVar10);
         w7.e eVar3 = (w7.e) xaVar2.d;
         if (eVar3 != null) {
             throw eVar3.a();
@@ -88,7 +87,7 @@ public abstract class j {
     public static void b(Context context) {
         w7.b bVar = w7.d.b;
         Object[] objArr = {"ica"};
-        hd.a(1, objArr);
+        id.a(1, objArr);
         w7.g gVar = new w7.g(1, objArr);
         n6.e.b.getClass();
         if (n6.e.a(context) < 221500000) {
@@ -124,7 +123,7 @@ public abstract class j {
             b11.d = new n6.c[]{n7.b.d};
             b11.b = true;
             b11.a = 27304;
-            b11.c = new y(4, eVar, b10);
+            b11.c = new t1.a(5, eVar, b10);
             e10 = eVar.e(0, b11.a());
         }
         e10.addOnFailureListener(new nb.a(21));

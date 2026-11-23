@@ -9,15 +9,16 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final class r5 extends View {
     public float E;
     public float F;
     public final Camera G;
-    public final h6.m H;
+    public final i61 H;
     public final RectF I;
     public m5 a;
     public m5 b;
@@ -36,7 +37,7 @@ public final class r5 extends View {
     public r5(Context context) {
         super(context);
         this.G = new Camera();
-        this.H = new h6.m(29);
+        this.H = new i61(1);
         this.I = new RectF();
     }
 
@@ -54,7 +55,7 @@ public final class r5 extends View {
             float min = Math.min(org.telegram.messenger.g0.L(176.0f), f12) / 2.0f;
             float f14 = z10 - max;
             float f15 = z10 + max;
-            canvas.saveLayerAlpha(f14, 0.0f, f15, f12, ls.e4, 31);
+            canvas.saveLayerAlpha(f14, 0.0f, f15, f12, ks.e4, 31);
             matrix.reset();
             matrix.postTranslate(z10, min);
             l5Var.e.setLocalMatrix(matrix);
@@ -64,23 +65,23 @@ public final class r5 extends View {
             float L = org.telegram.messenger.g0.L(90.0f);
             RectF rectF = this.I;
             rectF.set(f14, 0.0f, f14 + L, f12);
-            h6.m mVar = this.H;
-            mVar.n(canvas, rectF, 0, 1.0f);
+            i61 i61Var = this.H;
+            i61Var.u(canvas, rectF, 0, 1.0f);
             rectF.set(f15 - L, 0.0f, f15, f12);
-            mVar.n(canvas, rectF, 2, 1.0f);
+            i61Var.u(canvas, rectF, 2, 1.0f);
             canvas.restore();
             canvas.restore();
             for (int i7 = 0; i7 < iArr.length; i7++) {
                 float width = (getWidth() / (iArr.length - 1)) * i7;
-                iArr[i7] = org.telegram.ui.ActionBar.m6.w(iArr[i7], org.telegram.ui.ActionBar.m6.r1(l10 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.l((width - f14) / max), Utilities.l(1.0f - ((width - (f15 - max)) / max)))), l5Var.g));
+                iArr[i7] = org.telegram.ui.ActionBar.n6.w(iArr[i7], org.telegram.ui.ActionBar.n6.r1(l10 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.l((width - f14) / max), Utilities.l(1.0f - ((width - (f15 - max)) / max)))), l5Var.g));
             }
             for (int i10 = 0; i10 < iArr2.length; i10++) {
                 float width2 = (getWidth() / (iArr2.length - 1)) * i10;
-                iArr2[i10] = org.telegram.ui.ActionBar.m6.w(iArr2[i10], org.telegram.ui.ActionBar.m6.r1(l10 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.l((width2 - f14) / max), Utilities.l(1.0f - ((width2 - (f15 - max)) / max)))), l5Var.f));
+                iArr2[i10] = org.telegram.ui.ActionBar.n6.w(iArr2[i10], org.telegram.ui.ActionBar.n6.r1(l10 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.l((width2 - f14) / max), Utilities.l(1.0f - ((width2 - (f15 - max)) / max)))), l5Var.f));
             }
             for (int i11 = 0; i11 < iArr3.length; i11++) {
                 float width3 = (getWidth() / (iArr2.length - 1)) * i11;
-                iArr3[i11] = org.telegram.ui.ActionBar.m6.w(iArr3[i11], org.telegram.ui.ActionBar.m6.r1(l10 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.l((width3 - f14) / max), Utilities.l(1.0f - ((width3 - (f15 - max)) / max)))), l5Var.h));
+                iArr3[i11] = org.telegram.ui.ActionBar.n6.w(iArr3[i11], org.telegram.ui.ActionBar.n6.r1(l10 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.l((width3 - f14) / max), Utilities.l(1.0f - ((width3 - (f15 - max)) / max)))), l5Var.h));
             }
         }
     }
@@ -116,10 +117,10 @@ public final class r5 extends View {
         canvas.translate(-f17, -L);
         float f18 = L2 * T1;
         float f19 = f18 / 2.0f;
-        imageReceiver.y0(width - f19, L - f19, f18, f18);
+        imageReceiver.z0(width - f19, L - f19, f18, f18);
         imageReceiver.setAlpha(l10);
         imageReceiver.h(canvas, null);
-        imageReceiver.y0(f12, f13, f14, f15);
+        imageReceiver.z0(f12, f13, f14, f15);
         imageReceiver.setAlpha(alpha);
         canvas.restore();
     }

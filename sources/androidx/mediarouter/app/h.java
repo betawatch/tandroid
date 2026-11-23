@@ -1,13 +1,13 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class h extends androidx.fragment.app.p {
     public boolean B0 = false;
@@ -59,11 +59,11 @@ public class h extends androidx.fragment.app.p {
         }
         if (!this.B0) {
             g gVar = (g) uVar;
-            gVar.getWindow().setLayout(b7.a(gVar.getContext()), -2);
+            gVar.getWindow().setLayout(c7.a(gVar.getContext()), -2);
         } else {
             b0 b0Var = (b0) uVar;
             Context context = b0Var.n;
-            b0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : b7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+            b0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : c7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         }
     }
 }

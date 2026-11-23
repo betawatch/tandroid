@@ -1,28 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sm implements org.telegram.messenger.y10 {
+public final /* synthetic */ class sm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+    public final /* synthetic */ qn b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ sm(tn tnVar, int i7, int i10) {
+    public /* synthetic */ sm(qn qnVar, int i7, int i10) {
         this.a = i10;
-        this.b = tnVar;
+        this.b = qnVar;
         this.c = i7;
     }
 
-    @Override // org.telegram.messenger.y10
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.j0(this.c, (sh.c) obj);
+                this.b.j0(this.c, null);
+                break;
+            case 1:
+                this.b.g0(this.c);
                 break;
             default:
-                tn tnVar = this.b;
-                tnVar.getClass();
-                tnVar.j0(this.c, new th.e((String) obj));
+                this.b.j0(this.c, null);
                 break;
         }
     }

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ls;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class t2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final class t2 extends FrameLayout {
                     canvas.translate((getMeasuredWidth() - z3Var2.B0.c()) - org.telegram.messenger.g0.L(6.0f), 0.0f);
                     float e10 = z3Var2.D0.e(false, z3Var2.F0 ? 1.0f : 0.0f);
                     canvas.scale(e10, e10, z3Var2.B0.c() / 2.0f, org.telegram.messenger.g0.L(20.0f));
-                    org.telegram.ui.Components.n6 n6Var = z3Var2.B0;
-                    n6Var.C = ls.e4;
-                    n6Var.draw(canvas);
+                    org.telegram.ui.Components.m6 m6Var = z3Var2.B0;
+                    m6Var.C = ks.e4;
+                    m6Var.draw(canvas);
                     canvas.restore();
                     break;
                 }
@@ -55,9 +55,9 @@ public final class t2 extends FrameLayout {
                     canvas.translate((getMeasuredWidth() - z3Var3.A0.c()) - org.telegram.messenger.g0.L(6.0f), 0.0f);
                     float e11 = z3Var3.C0.e(false, z3Var3.E0 ? 1.0f : 0.0f);
                     canvas.scale(e11, e11, z3Var3.A0.c() / 2.0f, org.telegram.messenger.g0.L(20.0f));
-                    org.telegram.ui.Components.n6 n6Var2 = z3Var3.A0;
-                    n6Var2.C = ls.e4;
-                    n6Var2.draw(canvas);
+                    org.telegram.ui.Components.m6 m6Var2 = z3Var3.A0;
+                    m6Var2.C = ks.e4;
+                    m6Var2.draw(canvas);
                     canvas.restore();
                     break;
                 }

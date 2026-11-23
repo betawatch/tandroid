@@ -1,178 +1,178 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public class wy extends v4.t {
-    public final boolean Q;
-    public final SparseIntArray R;
-    public final SparseIntArray S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
+public final class wy extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public int e;
+    public wy0[] f;
+    public RectF[] h;
+    public float n;
+    public org.telegram.ui.ll0 r;
+    public int s;
 
-    public wy(int i7, boolean z10) {
-        super(i7);
-        this.R = new SparseIntArray();
-        this.S = new SparseIntArray();
-        this.Q = z10;
+    public wy(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new Paint(1);
+        this.c = new Path();
+        this.d = -1;
+        this.e = -1;
+        this.s = -1;
     }
 
-    public static yt0 C1(yt0 yt0Var) {
-        if (yt0Var == null) {
-            return null;
+    public final void a(float f10, int i7, int i10, Canvas canvas) {
+        wy0[] wy0VarArr = this.f;
+        int length = wy0VarArr.length;
+        int i11 = 0;
+        float f11 = f10;
+        while (i11 < length) {
+            wy0 wy0Var = wy0VarArr[i11];
+            int i12 = i10;
+            wy0Var.c(f11, i7 / 2.0f, 1.0f, i12, canvas);
+            f11 += wy0Var.k() + org.telegram.messenger.g0.L(24.0f);
+            i11++;
+            i10 = i12;
         }
-        if (yt0Var.a == 0.0f) {
-            yt0Var.a = 100.0f;
-        }
-        if (yt0Var.b == 0.0f) {
-            yt0Var.b = 100.0f;
-        }
-        float f10 = yt0Var.a;
-        float f11 = yt0Var.b;
-        float f12 = f10 / f11;
-        if (f12 <= 4.0f && f12 >= 0.2f) {
-            return yt0Var;
-        }
-        float max = Math.max(f10, f11);
-        yt0Var.a = max;
-        yt0Var.b = max;
-        return yt0Var;
     }
 
-    public final void B1() {
-        int i7;
-        int min;
-        boolean z10;
-        float f10;
-        SparseIntArray sparseIntArray = this.R;
-        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.f == null) {
             return;
         }
-        int i10 = this.m;
-        this.W = i10;
-        float f11 = i10;
-        if (f11 == 0.0f) {
-            f11 = 100.0f;
+        int width = getWidth();
+        int height = getHeight();
+        float f10 = 4.0f;
+        int L = org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.f3.D(24.0f, this.f.length, org.telegram.messenger.g0.L(4.0f));
+        int i7 = 0;
+        while (true) {
+            wy0[] wy0VarArr = this.f;
+            if (i7 >= wy0VarArr.length) {
+                break;
+            }
+            L = (int) (wy0VarArr[i7].k() + L);
+            i7++;
         }
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.S;
-        sparseIntArray2.clear();
-        boolean z11 = false;
-        this.V = 0;
-        this.U = 0;
-        int A = A();
-        this.T = A;
-        if (A == 0) {
-            return;
+        float L2 = (height - org.telegram.messenger.g0.L(36.0f)) / 2.0f;
+        float L3 = (org.telegram.messenger.g0.L(36.0f) + height) / 2.0f;
+        float f11 = (width - L) / 2.0f;
+        float L4 = org.telegram.messenger.g0.L(16.0f) + f11;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(f11, L2, L + f11, L3);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), this.a);
+        float L5 = f11 + org.telegram.messenger.g0.L(16.0f);
+        int i10 = 0;
+        while (i10 < this.f.length) {
+            this.h[i10].set(L5 - org.telegram.messenger.g0.L(16.0f), L2, this.f[i10].k() + L5 + org.telegram.messenger.g0.L(16.0f), L3);
+            L5 += this.f[i10].k() + org.telegram.messenger.g0.L(24.0f);
+            i10++;
+            f10 = f10;
         }
-        int L = org.telegram.messenger.g0.L(100.0f);
-        int i11 = this.J;
-        boolean z12 = this.Q;
-        int i12 = A + (z12 ? 1 : 0);
-        int i13 = 0;
-        int i14 = 0;
-        int i15 = i11;
-        while (i13 < i12) {
-            yt0 C1 = i13 < A ? C1(D1(i13)) : null;
-            if (C1 == null) {
-                z10 = i14 != 0 ? true : z11;
-                i7 = L;
-                min = i11;
-            } else {
-                i7 = L;
-                min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * L) / f11) * i11));
-                boolean z13 = i15 < min || (min > 33 && i15 < min + (-15));
-                if (C1.c) {
-                    sparseIntArray.put(i13, i15);
-                    this.V++;
-                    f10 = f11;
-                    i15 = i11;
-                    i14 = 0;
-                    i13++;
-                    L = i7;
-                    f11 = f10;
-                    z11 = false;
-                } else {
-                    z10 = z13;
-                }
-            }
-            if (z10) {
-                if (i15 == 0 || i14 == 0) {
-                    f10 = f11;
-                } else {
-                    int i16 = i15 / i14;
-                    int i17 = i13 - i14;
-                    f10 = f11;
-                    int i18 = i17;
-                    while (true) {
-                        int i19 = i17 + i14;
-                        if (i18 >= i19) {
-                            break;
-                        }
-                        if (i18 == i19 - 1) {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i15);
-                        } else {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i16);
-                        }
-                        i15 -= i16;
-                        i18++;
-                    }
-                    sparseIntArray2.put(i13 - 1, this.V);
-                }
-                if (i13 == A) {
-                    break;
-                }
-                this.V++;
-                i15 = i11;
-                i14 = 0;
-            } else {
-                f10 = f11;
-                if (i15 < min) {
-                    min = i15;
-                }
-            }
-            if (this.V == 0) {
-                this.U = Math.max(this.U, i13);
-            }
-            if (i13 == A - 1 && !z12) {
-                sparseIntArray2.put(i13, this.V);
-            }
-            i14++;
-            i15 -= min;
-            sparseIntArray.put(i13, min);
-            i13++;
-            L = i7;
-            f11 = f10;
-            z11 = false;
+        org.telegram.messenger.g0.L(f10);
+        int j3 = Utilities.j((int) Math.floor(this.n), this.f.length - 1, 0);
+        int j10 = Utilities.j((int) Math.ceil(this.n), this.f.length - 1, 0);
+        float L6 = this.h[j3].left + org.telegram.messenger.g0.L(r16);
+        float L7 = this.h[j10].left + org.telegram.messenger.g0.L(r16);
+        float f12 = this.n;
+        float T1 = org.telegram.messenger.g0.T1(L6, L7, (float) (f12 - Math.floor(f12)));
+        float L8 = this.h[j3].right - org.telegram.messenger.g0.L(r16);
+        float L9 = this.h[j10].right - org.telegram.messenger.g0.L(r16);
+        float f13 = this.n;
+        float T12 = org.telegram.messenger.g0.T1(L8, L9, (float) (f13 - Math.floor(f13)));
+        RectF rectF2 = org.telegram.messenger.g0.P;
+        rectF2.set(T1, (height - org.telegram.messenger.g0.L(28.0f)) / 2.0f, T12, (org.telegram.messenger.g0.L(28.0f) + height) / 2.0f);
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF2, org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(15.0f), Path.Direction.CW);
+        canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(15.0f), this.b);
+        a(L4, height, this.d, canvas);
+        canvas.save();
+        canvas.clipPath(path);
+        a(L4, height, this.e, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i7 = 0;
+        if (this.f == null || this.h == null) {
+            return false;
         }
-        this.V++;
+        while (true) {
+            RectF[] rectFArr = this.h;
+            if (i7 >= rectFArr.length) {
+                i7 = -1;
+                break;
+            }
+            if (rectFArr[i7].contains(motionEvent.getX(), motionEvent.getY())) {
+                break;
+            }
+            i7++;
+        }
+        if (i7 >= 0 && i7 != this.s) {
+            this.s = i7;
+            org.telegram.ui.ll0 ll0Var = this.r;
+            if (ll0Var != null) {
+                ll0Var.a(Integer.valueOf(i7));
+            }
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            this.s = -1;
+        }
+        if (motionEvent.getAction() != 0 || i7 < 0) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return true;
     }
 
-    public yt0 D1(int i7) {
-        return new yt0(100.0f, 100.0f);
+    @Override // android.view.View
+    public void setBackgroundColor(int i7) {
+        this.a.setColor(i7);
+        invalidate();
     }
 
-    public final boolean E1(int i7) {
-        B1();
-        return this.S.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
+    public void setSelected(float f10) {
+        if (Math.abs(f10 - this.n) > 0.001f) {
+            invalidate();
+        }
+        this.n = f10;
     }
 
-    @Override // v4.t, v4.p0
-    public final int I(v4.x0 x0Var, v4.c1 c1Var) {
-        return c1Var.b();
+    public void setSelectedColor(int i7) {
+        this.b.setColor(i7);
+        invalidate();
     }
 
-    @Override // v4.t, v4.p0
-    public final int u(v4.x0 x0Var, v4.c1 c1Var) {
-        return 1;
+    public void setSelectedTextColor(int i7) {
+        this.e = i7;
+        invalidate();
     }
 
-    @Override // v4.t, v4.c0, v4.p0
-    public boolean y0() {
-        return false;
+    public void setTabs(CharSequence... charSequenceArr) {
+        this.f = new wy0[charSequenceArr.length];
+        this.h = new RectF[charSequenceArr.length];
+        for (int i7 = 0; i7 < charSequenceArr.length; i7++) {
+            this.f[i7] = new wy0(charSequenceArr[i7], 14.0f, org.telegram.messenger.g0.o());
+            this.h[i7] = new RectF();
+        }
+        invalidate();
+    }
+
+    public void setTextColor(int i7) {
+        this.d = i7;
+        invalidate();
     }
 }

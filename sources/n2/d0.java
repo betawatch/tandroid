@@ -1,28 +1,51 @@
 package n2;
 
-import p4.i1;
+import android.media.AudioDeviceInfo;
+import android.media.AudioRouting;
+import android.media.AudioTrack;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements h2.o, h2.j {
-    public final /* synthetic */ long a;
+public final class d0 {
+    public final AudioTrack a;
+    public final hi.u0 b;
+    public final Handler c;
+    public b0 d;
 
-    public /* synthetic */ d0(long j3) {
-        this.a = j3;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [android.media.AudioRouting$OnRoutingChangedListener, n2.b0] */
+    public d0(AudioTrack audioTrack, hi.u0 u0Var) {
+        this.a = audioTrack;
+        this.b = u0Var;
+        Handler q10 = h2.l0.q(null);
+        this.c = q10;
+        ?? r02 = new AudioRouting.OnRoutingChangedListener() { // from class: n2.b0
+            @Override // android.media.AudioRouting.OnRoutingChangedListener
+            public final void onRoutingChanged(AudioRouting audioRouting) {
+                d0 d0Var = d0.this;
+                if (d0Var.d == null) {
+                    return;
+                }
+                h2.a.e().execute(new ji.f(29, d0Var, audioRouting));
+            }
+        };
+        this.d = r02;
+        audioTrack.addOnRoutingChangedListener((AudioRouting.OnRoutingChangedListener) r02, q10);
     }
 
-    @Override // h2.j
-    public void accept(Object obj) {
-        ((i1) obj).c(this.a);
-    }
-
-    @Override // h2.o
-    public void invoke(Object obj) {
-        v vVar;
-        n0 n0Var = (n0) obj;
-        r0 r0Var = n0Var.b;
-        if (n0Var.equals(r0Var.j) && (vVar = r0Var.n) != null) {
-            vVar.j(this.a);
+    public static /* synthetic */ void a(d0 d0Var, AudioRouting audioRouting) {
+        AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
+        if (routedDevice != null) {
+            d0Var.c.post(new c0(0, d0Var, routedDevice));
         }
+    }
+
+    public static void b(d0 d0Var) {
+        AudioTrack audioTrack = d0Var.a;
+        b0 b0Var = d0Var.d;
+        b0Var.getClass();
+        audioTrack.removeOnRoutingChangedListener(b0Var);
+        d0Var.d = null;
     }
 }

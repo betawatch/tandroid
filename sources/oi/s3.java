@@ -4,9 +4,9 @@ import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.kt;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class s3 {
     public final f1 a;
@@ -72,9 +72,9 @@ public final class s3 {
             f1Var.setSelection(Math.min(i10, f1Var.length()));
             t3Var.Q3 = true;
             try {
-                mt mtVar = f1Var.T1;
-                if (mtVar != null) {
-                    mtVar.g();
+                kt ktVar = f1Var.T1;
+                if (ktVar != null) {
+                    ktVar.u();
                 }
                 f1Var.v2 = true;
                 f1Var.invalidate();

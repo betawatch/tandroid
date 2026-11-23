@@ -5,21 +5,21 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.k10;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.i10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class u6 extends View {
     public final w3 a;
     public boolean b;
-    public final org.telegram.ui.Components.d6 c;
+    public final org.telegram.ui.Components.c6 c;
     public final ImageReceiver d;
     public final ImageReceiver e;
-    public org.telegram.ui.Components.p5 f;
+    public org.telegram.ui.Components.o5 f;
     public boolean h;
     public boolean n;
     public boolean r;
@@ -27,7 +27,7 @@ public final class u6 extends View {
 
     public u6(Context context, w3 w3Var) {
         super(context);
-        this.c = new org.telegram.ui.Components.d6(this);
+        this.c = new org.telegram.ui.Components.c6(this);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.d = imageReceiver;
         this.e = new ImageReceiver(this);
@@ -40,24 +40,24 @@ public final class u6 extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.d.P();
-        this.e.P();
+        this.d.Q();
+        this.e.Q();
         this.s = true;
-        org.telegram.ui.Components.p5 p5Var = this.f;
-        if (p5Var != null) {
-            p5Var.a(this);
+        org.telegram.ui.Components.o5 o5Var = this.f;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.d.R();
-        this.e.R();
+        this.d.S();
+        this.e.S();
         this.s = false;
-        org.telegram.ui.Components.p5 p5Var = this.f;
-        if (p5Var != null) {
-            p5Var.n(this);
+        org.telegram.ui.Components.o5 o5Var = this.f;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
     }
 
@@ -75,7 +75,7 @@ public final class u6 extends View {
                 Drawable drawable = w3Var.o;
                 Drawable drawable2 = w3Var.o;
                 drawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-                drawable2.setAlpha(ls.e4);
+                drawable2.setAlpha(ks.e4);
                 drawable2.draw(canvas);
             }
             if (e10 > 0.0f) {
@@ -91,17 +91,17 @@ public final class u6 extends View {
         if (!this.h) {
             return;
         }
-        org.telegram.ui.Components.p5 p5Var = this.f;
+        org.telegram.ui.Components.o5 o5Var = this.f;
         ImageReceiver imageReceiver = this.d;
-        ImageReceiver imageReceiver2 = p5Var != null ? p5Var.k : imageReceiver;
+        ImageReceiver imageReceiver2 = o5Var != null ? o5Var.k : imageReceiver;
         if (this.r) {
             ImageReceiver imageReceiver3 = this.e;
             if (imageReceiver3.n() != null) {
                 int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
                 float f10 = measuredWidth / 2.0f;
                 float f11 = measuredWidth * 2;
-                imageReceiver3.y0(getPaddingLeft() - f10, getPaddingTop() - f10, f11, f11);
-                if (imageReceiver3.B() != null && imageReceiver3.B().A()) {
+                imageReceiver3.z0(getPaddingLeft() - f10, getPaddingTop() - f10, f11, f11);
+                if (imageReceiver3.C() != null && imageReceiver3.C().A()) {
                     this.r = false;
                     imageReceiver.l1 = (byte) 0;
                 }
@@ -114,7 +114,7 @@ public final class u6 extends View {
             }
         }
         if (imageReceiver2 != null) {
-            imageReceiver2.y0(getPaddingLeft(), getPaddingTop(), (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom());
+            imageReceiver2.z0(getPaddingLeft(), getPaddingTop(), (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom());
         }
         if (imageReceiver2 == null) {
         }
@@ -137,22 +137,22 @@ public final class u6 extends View {
         } else {
             this.b = true;
         }
-        org.telegram.ui.Components.p5 p5Var = this.f;
-        if (p5Var != null) {
-            p5Var.n(this);
+        org.telegram.ui.Components.o5 o5Var = this.f;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
         this.f = null;
         if (p0Var != null) {
             if (p0Var.g != 0) {
-                org.telegram.ui.Components.p5 p5Var2 = new org.telegram.ui.Components.p5(3, k10.t0, p0Var.g);
-                this.f = p5Var2;
+                org.telegram.ui.Components.o5 o5Var2 = new org.telegram.ui.Components.o5(3, i10.t0, p0Var.g);
+                this.f = o5Var2;
                 if (this.s) {
-                    p5Var2.a(this);
+                    o5Var2.a(this);
                 }
             } else {
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(p0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i10.t0).r.get(p0Var.f);
                 if (tL_availableReaction != null) {
-                    this.d.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
+                    this.d.r0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.n6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
                 }
             }
         }

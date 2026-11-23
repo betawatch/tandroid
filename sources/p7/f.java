@@ -1,9 +1,9 @@
 package p7;
 
-import c8.mb;
+import c8.nb;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class f extends e {
     public static final f e = new f(0, new Object[0]);
@@ -22,7 +22,7 @@ public final class f extends e {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        mb.a(i7, this.d);
+        nb.a(i7, this.d);
         Object obj = this.c[i7];
         Objects.requireNonNull(obj);
         return obj;

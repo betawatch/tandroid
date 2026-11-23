@@ -1,43 +1,27 @@
 package hi;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final class a3 extends View {
-    public int a;
-    public final /* synthetic */ d3 b;
+public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a3(d3 d3Var, Context context) {
-        super(context);
-        this.b = d3Var;
+    public /* synthetic */ a3(b3 b3Var, int i7) {
+        this.a = i7;
+        this.b = b3Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11;
-        d3 d3Var = this.b;
-        gi.g gVar = d3Var.e;
-        ArrayList arrayList = d3Var.c0;
-        int size = View.MeasureSpec.getSize(i7);
-        int i12 = this.a;
-        if (i12 != -1) {
-            setMeasuredDimension(size, i12);
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ((m3) this.b.c).invalidate();
+                break;
+            default:
+                ((m3) this.b.c).invalidate();
+                break;
         }
-        if (d3Var.f0 == d3.k0) {
-            i11 = arrayList.size();
-        } else {
-            ArrayList arrayList2 = d3Var.g0;
-            if (arrayList2 != null) {
-                i11 = (d3Var.e0 ? arrayList.size() : 0) + arrayList2.size() + (d3Var.d0 ? 1 : 0);
-            } else {
-                i11 = 0;
-            }
-        }
-        setMeasuredDimension(size, Math.max(0, (org.telegram.messenger.g0.q.y - org.telegram.messenger.g0.L(62.0f)) - (((int) (((int) (size / gVar.J)) * d3Var.P)) * ((int) Math.ceil(i11 / gVar.J)))));
     }
 }

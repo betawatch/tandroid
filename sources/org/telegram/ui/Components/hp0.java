@@ -1,140 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import java.util.regex.Pattern;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hp0 implements Runnable {
+public final /* synthetic */ class hp0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jt0 b;
+    public final /* synthetic */ it0 b;
 
-    public /* synthetic */ hp0(jt0 jt0Var, int i7) {
+    public /* synthetic */ hp0(it0 it0Var, int i7) {
         this.a = i7;
-        this.b = jt0Var;
+        this.b = it0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        jt0 jt0Var = this.b;
-        switch (i7) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                jt0Var.w0();
+                it0 it0Var = this.b;
+                int closestTab = it0Var.getClosestTab();
+                x60 I = x60.I(it0Var.y1, view);
+                I.J = false;
+                if (it0Var.b0(closestTab, new org.telegram.ui.ActionBar.i5(I))) {
+                    if (closestTab == 13 || closestTab == 11) {
+                        I.b0(0.0f, -org.telegram.messenger.g0.L(52.0f));
+                    } else {
+                        I.b0 = true;
+                    }
+                    I.s = 0;
+                    I.a0();
+                    break;
+                }
                 break;
             case 1:
-                jt0Var.p2 = (int) jt0Var.S0.d(jt0.v2);
-                jt0Var.G();
-                if (jt0Var.b0 != null) {
-                    jt0Var.H1();
+                it0 it0Var2 = this.b;
+                org.telegram.ui.ActionBar.g5 g5Var = it0Var2.J;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = g5Var.b;
+                if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.d();
                 }
-                ds0[] ds0VarArr = jt0Var.n0;
-                if (ds0VarArr != null) {
-                    for (ds0 ds0Var : ds0VarArr) {
-                        if (ds0Var != null) {
-                            int paddingTop = ds0Var.h.getPaddingTop();
-                            nq0 nq0Var = ds0Var.h;
-                            int paddingLeft = nq0Var.getPaddingLeft();
-                            int j02 = jt0Var.j0(ds0Var.F);
-                            int paddingRight = ds0Var.h.getPaddingRight();
-                            nq0 nq0Var2 = ds0Var.h;
-                            int i02 = jt0Var.i0(jt0Var.I0());
-                            nq0Var2.i3 = i02;
-                            nq0Var.setPadding(paddingLeft, j02, paddingRight, i02);
-                            org.telegram.messenger.g0.J(ds0Var.h, new qp0(ds0Var, paddingTop - ds0Var.h.getPaddingTop(), 0));
-                        }
-                    }
+                if (it0Var2.b0(it0Var2.getClosestTab(), new org.telegram.ui.Cells.aa(it0Var2, 8))) {
+                    g5Var.V(null, null);
                     break;
                 }
                 break;
             case 2:
-                c5.P(jt0Var.getContext(), jt0Var.y1, jt0Var.I1, new jp0(jt0Var));
+                this.b.V(true);
                 break;
             case 3:
-                jt0Var.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                bundle.putLong("dialog_id", -jt0Var.g1.id);
-                k90 k90Var = new k90(bundle, null);
-                k90Var.c = jt0Var.g1;
-                jt0Var.y1.presentFragment(k90Var);
-                break;
-            case 4:
-                org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
-                hi.sa D = hi.sa.D(g2Var.getParentActivity(), g2Var.getCurrentAccount());
-                long j3 = jt0Var.m1;
-                String currentLang = jt0Var.a0.getCurrentLang();
-                D.w0 = j3;
-                D.x0 = currentLang;
-                D.Q(null);
-                D.w0 = j3;
-                D.x0 = currentLang;
-                break;
-            case 5:
-                jt0Var.a0.f();
-                break;
-            case 6:
-                fq0 fq0Var = jt0Var.a0;
-                if (fq0Var.d()) {
-                    fq0Var.h();
-                    break;
-                } else {
-                    fq0Var.f();
-                    break;
-                }
-            case 7:
-                fq0 fq0Var2 = jt0Var.a0;
-                fq0Var2.b(fq0Var2.getCurrentLang());
-                break;
-            case 8:
-                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var.y1;
-                g2Var2.getMessagesController().Z4(false);
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", g2Var2.getUserConfig().e());
-                g2Var2.presentFragment(new org.telegram.ui.bn(bundle2), true);
-                break;
-            case 9:
-                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var.y1;
-                try {
-                    org.telegram.messenger.si mediaDataController = g2Var3.getMediaDataController();
-                    long e10 = g2Var3.getUserConfig().e();
-                    Pattern pattern = org.telegram.messenger.si.U1;
-                    mediaDataController.A0(e10, 0, null);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
-                }
-            case 10:
-                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var.y1;
-                TLRPC.User f10 = g2Var4.getUserConfig().f();
-                c5.r(g2Var4, false, null, f10, false, true, false, true, new h2(20, jt0Var, f10));
-                break;
-            case 11:
-                gq0 gq0Var = jt0Var.b0;
-                gq0Var.getClass();
-                gq0Var.h(null, new bi.k5(gq0Var, 1));
-                break;
-            case 12:
-                jt0Var.b0.setReordering(true);
-                break;
-            case 13:
-                if (!jt0Var.D0()) {
-                    jt0Var.E1();
-                    break;
+                it0 it0Var3 = this.b;
+                iq0 iq0Var = it0Var3.c0;
+                fq0 fq0Var = it0Var3.b0;
+                if (it0Var3.t0.getAlpha() >= 0.1f) {
+                    if (fq0Var != null && fq0Var.g()) {
+                        fq0Var.i();
+                    }
+                    if (iq0Var != null && iq0Var.f) {
+                        ht0 x12 = it0Var3.x1(it0Var3.w1(it0Var3.getClosestTab()));
+                        ds0 g02 = it0Var3.g0(x12.a);
+                        if (g02 != null) {
+                            iq0Var.setReorderingAlbums(false);
+                            mq0 mq0Var = g02.h;
+                            for (int i7 = 0; i7 < mq0Var.getChildCount(); i7++) {
+                                View childAt = mq0Var.getChildAt(i7);
+                                if (childAt instanceof org.telegram.ui.Cells.o7) {
+                                    ((org.telegram.ui.Cells.o7) childAt).l(false, true);
+                                }
+                            }
+                            gt0 gt0Var = x12.c;
+                            if (gt0Var != null && gt0Var.y) {
+                                gt0Var.y = false;
+                                break;
+                            }
+                        }
+                    }
                 }
                 break;
             default:
-                jt0Var.q1(false);
-                org.telegram.ui.ActionBar.z4 z4Var = jt0Var.I;
-                if (z4Var != null) {
-                    z4Var.o(true);
-                } else {
-                    jt0Var.H.n(true);
-                }
-                jt0Var.d1 = 0;
+                org.telegram.ui.ActionBar.g2 g2Var = this.b.y1;
+                g2Var.getMessagesController().h7.edit().putBoolean("story_keep", true).apply();
+                hi.nb.D(g2Var.getParentActivity(), g2Var.getCurrentAccount()).Q(null);
                 break;
         }
     }

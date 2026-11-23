@@ -13,16 +13,16 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.s2;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class q1 extends WebViewClient {
     public boolean a = true;
     public boolean b;
     public final /* synthetic */ InputStream c;
-    public final /* synthetic */ v1 d;
+    public final /* synthetic */ w1 d;
 
-    public q1(v1 v1Var, InputStream inputStream) {
-        this.d = v1Var;
+    public q1(w1 w1Var, InputStream inputStream) {
+        this.d = w1Var;
         this.c = inputStream;
     }
 
@@ -36,9 +36,9 @@ public final class q1 extends WebViewClient {
             boolean z10 = s2.a;
             return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(a8.p0.p("<script>\n", y22.replace("$DEBUG$", "true"), "\n</script>").getBytes(StandardCharsets.UTF_8)));
         }
-        v1 v1Var = this.d;
+        w1 w1Var = this.d;
         if (str == null || !str.endsWith("/index.html")) {
-            xi.e eVar = v1Var.b;
+            xi.e eVar = w1Var.b;
             b1 b1Var = eVar != null ? (b1) ((HashMap) eVar.c).get(str) : null;
             if (b1Var == null) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
@@ -58,7 +58,7 @@ public final class q1 extends WebViewClient {
         } else {
             str2 = "application/octet-stream";
             if (this.b) {
-                xi.e eVar2 = v1Var.b;
+                xi.e eVar2 = w1Var.b;
                 b1 b1Var2 = eVar2 != null ? (b1) ((ArrayList) eVar2.b).get(0) : null;
                 if (b1Var2 == null) {
                     return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);

@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.a5 {
+public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.z4 {
     public final /* synthetic */ String a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -25,13 +25,13 @@ public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, o
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.a5
-    public void O(int i7, int i10, boolean z10) {
-        ((org.telegram.ui.Components.ig) this.c).B((View) this.d, this.e, this.a, this.f, z10, i7, i10, (org.telegram.messenger.ff) this.h, this.b);
+    @Override // org.telegram.ui.Components.z4
+    public void I(int i7, int i10, boolean z10) {
+        ((org.telegram.ui.Components.hg) this.c).B((View) this.d, this.e, this.a, this.f, z10, i7, i10, (org.telegram.messenger.ef) this.h, this.b);
     }
 
     @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         rq rqVar = (rq) this.c;
         TLRPC.User user = (TLRPC.User) this.d;
         TLObject tLObject = (TLObject) this.e;
@@ -41,13 +41,13 @@ public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, o
         rqVar.y0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, rqVar.e1 == 1 ? 0 : 1, false);
     }
 
-    public /* synthetic */ sp(org.telegram.ui.Components.ig igVar, View view, Object obj, String str, Object obj2, org.telegram.messenger.ff ffVar, boolean z10) {
-        this.c = igVar;
+    public /* synthetic */ sp(org.telegram.ui.Components.hg hgVar, View view, Object obj, String str, Object obj2, org.telegram.messenger.ef efVar, boolean z10) {
+        this.c = hgVar;
         this.d = view;
         this.e = obj;
         this.a = str;
         this.f = obj2;
-        this.h = ffVar;
+        this.h = efVar;
         this.b = z10;
     }
 }

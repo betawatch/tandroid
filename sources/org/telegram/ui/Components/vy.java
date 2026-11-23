@@ -1,164 +1,159 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class vy extends FrameLayout {
-    public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final TextView b;
-    public final View c;
-    public final rh0 d;
-    public boolean e;
-    public int f;
+public class vy extends v4.c0 {
+    public final SparseArray I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final RecyclerView N;
+    public boolean O;
+    public boolean P;
+    public final boolean Q;
+    public boolean R;
+    public int S;
+    public final boolean T;
 
-    public vy(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.a = h6Var;
-        View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, c8.ma.c(-2.0f, -2));
-        this.c = radialProgressView;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
-        linearLayout.setGravity(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setOrientation(1);
-        rh0 rh0Var = new rh0(context);
-        this.d = rh0Var;
-        rh0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        rh0Var.setImportantForAccessibility(2);
-        rh0Var.setVisibility(8);
-        linearLayout.addView(rh0Var, c8.ma.t(org.telegram.messenger.ls.g2, org.telegram.messenger.ls.g2, 17, 0, 0, 0, 20));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.c7, h6Var);
-        org.telegram.messenger.f3.k(textView, 1, null, 2131747974);
-        linearLayout.addView(textView, c8.ma.r(-2, -2, 17));
-        addView(linearLayout, c8.ma.c(-2.0f, -2));
-        org.telegram.messenger.g0.X3(textView, false, 2.0f, true, false);
-        org.telegram.messenger.g0.X3(radialProgressView, false, 1.0f, true, false);
-        setOnTouchListener(new gi.a(19));
+    public vy(int i7, ek0 ek0Var) {
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = ek0Var;
+        this.M = i7;
     }
 
-    public final void a(int i7, int i10, int i11) {
-        int i12 = i7 != 0 ? 0 : 8;
-        rh0 rh0Var = this.d;
-        rh0Var.setVisibility(i12);
-        if (i7 != 0) {
-            rh0Var.f(i7, i10, i11, null);
-            rh0Var.d();
-        }
-    }
-
-    public final void b() {
-        org.telegram.messenger.g0.X3(this.b, false, 0.9f, true, true);
-        org.telegram.messenger.g0.X3(this.c, true, 1.0f, true, true);
-    }
-
-    public final void c() {
-        org.telegram.messenger.g0.X3(this.b, true, 0.9f, true, true);
-        org.telegram.messenger.g0.X3(this.c, false, 1.0f, true, true);
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        int measuredHeight;
-        int paddingTop;
-        this.e = true;
-        int i13 = i11 - i7;
-        int i14 = i12 - i10;
-        int childCount = getChildCount();
-        for (int i15 = 0; i15 < childCount; i15++) {
-            View childAt = getChildAt(i15);
-            if (childAt.getVisibility() != 8) {
-                int measuredWidth = (i13 - childAt.getMeasuredWidth()) / 2;
-                View view = this.c;
-                if (childAt == view && (view instanceof yz)) {
-                    measuredHeight = (i14 - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                } else {
-                    int i16 = this.f;
-                    if (i16 == 2) {
-                        measuredHeight = (org.telegram.messenger.g0.L(100.0f) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else if (i16 == 1) {
-                        measuredHeight = ((i14 / 2) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else {
-                        measuredHeight = (i14 - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    }
-                }
-                int i17 = paddingTop + measuredHeight;
-                childAt.layout(measuredWidth, i17, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i17);
+    @Override // v4.p0
+    public final void P(View view) {
+        if (this.T) {
+            RecyclerView recyclerView = this.N;
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+                ((ViewGroup.MarginLayoutParams) ((v4.q0) view.getLayoutParams())).height = Math.max(this.J, 0);
             }
         }
-        this.e = false;
+        super.P(view);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.e) {
-            return;
+    @Override // v4.p0
+    public final void Q() {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void V(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void W(RecyclerView recyclerView) {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void X(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void Y(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void Z() {
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
+        p1();
+        p1();
+    }
+
+    @Override // v4.p0
+    public final void d0(v4.x0 x0Var, v4.c1 c1Var, int i7, int i10) {
+        int i11 = this.K;
+        this.L = View.MeasureSpec.getSize(i7);
+        int size = View.MeasureSpec.getSize(i10);
+        this.K = size;
+        if (i11 != size) {
+            p1();
         }
-        super.requestLayout();
+        super.d0(x0Var, c1Var, i7, i10);
     }
 
-    public void setProgressBarColor(int i7) {
-        View view = this.c;
-        if (view instanceof RadialProgressView) {
-            ((RadialProgressView) view).setProgressColor(i7);
+    @Override // v4.c0, v4.p0
+    public final boolean e() {
+        return this.Q;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void p1() {
+        RecyclerView recyclerView;
+        v4.i0 adapter;
+        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
+            int b10 = adapter.b() - 1;
+            int i7 = 0;
+            int i10 = 0;
+            for (int i11 = this.O; i11 < b10; i11++) {
+                int d = adapter.d(i11);
+                SparseArray sparseArray = this.I;
+                v4.f1 f1Var = (v4.f1) sparseArray.get(d, null);
+                if (f1Var == null) {
+                    f1Var = adapter.a(recyclerView, d);
+                    View view = f1Var.a;
+                    sparseArray.put(d, f1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
+                    }
+                }
+                View view2 = f1Var.a;
+                if (this.P) {
+                    adapter.t(f1Var, i11);
+                }
+                v4.q0 q0Var = (v4.q0) view2.getLayoutParams();
+                view2.measure(v4.p0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) q0Var).leftMargin + ((ViewGroup.MarginLayoutParams) q0Var).rightMargin, ((ViewGroup.MarginLayoutParams) q0Var).width), v4.p0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) q0Var).topMargin + ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) q0Var).height));
+                i7 += view2.getMeasuredHeight();
+                if (i11 == 0) {
+                    i10 = view2.getMeasuredHeight();
+                }
+                if (this.R) {
+                    if (i7 >= this.K + i10) {
+                        break;
+                    }
+                } else {
+                    if (i7 >= this.K) {
+                        break;
+                    }
+                }
+            }
+            if (this.R) {
+                this.J = Math.max(this.S, (((this.K - i7) - this.M) - recyclerView.getPaddingBottom()) + i10);
+            } else {
+                this.J = Math.max(this.S, ((this.K - i7) - this.M) - recyclerView.getPaddingBottom());
+            }
         }
     }
 
-    public void setShowAtCenter(boolean z10) {
-        this.f = z10 ? 1 : 0;
-    }
-
-    public void setShowAtTop(boolean z10) {
-        this.f = z10 ? 2 : 0;
-    }
-
-    public void setText(String str) {
-        this.b.setText(str);
-    }
-
-    public void setTextColor(int i7) {
-        TextView textView = this.b;
-        org.telegram.ui.ActionBar.t6.q(textView);
-        textView.setTextColor(i7);
-    }
-
-    public void setTextSize(int i7) {
-        this.b.setTextSize(1, i7);
-    }
-
-    public void setTopImage(int i7) {
-        TextView textView = this.b;
-        if (i7 == 0) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
-            return;
-        }
-        Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
-        if (mutate != null) {
-            org.telegram.ui.ActionBar.t6.x(this, mutate, org.telegram.ui.ActionBar.m6.c7, this.a, PorterDuff.Mode.MULTIPLY);
-        }
-        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(org.telegram.messenger.g0.L(1.0f));
+    public vy(int i7, int i10, ek0 ek0Var) {
+        super(1, false);
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = ek0Var;
+        this.M = i7;
     }
 }

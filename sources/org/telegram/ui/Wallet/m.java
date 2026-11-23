@@ -1,9 +1,9 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.g51;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -15,16 +15,16 @@ public final /* synthetic */ class m implements Runnable {
     }
 
     private final void a() {
-        i0 i0Var = (i0) this.b;
-        synchronized (i0Var) {
-            if (i0Var.a) {
+        j0 j0Var = (j0) this.b;
+        synchronized (j0Var) {
+            if (j0Var.a) {
                 return;
             }
-            i0Var.a = true;
-            Runnable runnable = i0Var.b;
+            j0Var.a = true;
+            Runnable runnable = j0Var.b;
             if (runnable != null) {
                 runnable.run();
-                i0Var.b = null;
+                j0Var.b = null;
             }
         }
     }
@@ -34,59 +34,59 @@ public final /* synthetic */ class m implements Runnable {
         View d;
         switch (this.a) {
             case 0:
-                g0 g0Var = (g0) this.b;
-                synchronized (g0Var) {
-                    if (g0Var.a) {
+                h0 h0Var = (h0) this.b;
+                synchronized (h0Var) {
+                    if (h0Var.a) {
                         return;
                     }
-                    g0Var.a = true;
-                    Runnable runnable = g0Var.b;
+                    h0Var.a = true;
+                    Runnable runnable = h0Var.b;
                     if (runnable != null) {
                         runnable.run();
-                        g0Var.b = null;
+                        h0Var.b = null;
                     }
                     return;
                 }
             case 1:
-                ((r0) this.b).close();
+                ((s0) this.b).close();
                 return;
             case 2:
                 a();
                 return;
             case 3:
-                e1 e1Var = (e1) this.b;
-                e1Var.c("AUTH_CANCELED");
-                e1Var.e();
-                if (c8.za.b == e1Var) {
-                    c8.za.b = null;
+                f1 f1Var = (f1) this.b;
+                f1Var.c("AUTH_CANCELED");
+                f1Var.e();
+                if (c8.ab.b == f1Var) {
+                    c8.ab.b = null;
                     return;
                 }
                 return;
             case 4:
-                ((d3) this.b).dismiss();
+                ((e3) this.b).dismiss();
                 return;
             case 5:
                 ((org.telegram.ui.Cells.v0) this.b).invalidate();
                 return;
             case 6:
-                ((org.telegram.ui.ActionBar.j5) this.b).a(true);
+                ((org.telegram.ui.ActionBar.k5) this.b).a(true);
                 return;
             case 7:
-                org.telegram.messenger.g0.E2((hi.l3) this.b);
+                org.telegram.messenger.g0.E2((hi.u3) this.b);
                 return;
             case 8:
-                j6 j6Var = (j6) this.b;
-                bi.f6 f6Var = j6Var.c;
-                if (f6Var == null || f6Var.getScrollState() != 0) {
+                k6 k6Var = (k6) this.b;
+                bi.i6 i6Var = k6Var.c;
+                if (i6Var == null || i6Var.getScrollState() != 0) {
                     return;
                 }
-                h51 B0 = j6Var.j.B0();
-                if ((B0 == null || B0.getScrollState() == 0) && (d = j6Var.d(j6Var.c.f3)) != null) {
-                    v4.c0 c0Var = j6Var.c.f3;
+                g51 B0 = k6Var.j.B0();
+                if ((B0 == null || B0.getScrollState() == 0) && (d = k6Var.d(k6Var.c.f3)) != null) {
+                    v4.c0 c0Var = k6Var.c.f3;
                     c0Var.getClass();
                     int i7 = new int[]{0, v4.p0.z(d) - c0Var.F()}[1];
                     if (i7 != 0) {
-                        j6Var.c.w0(0, i7, null);
+                        k6Var.c.w0(0, i7, null);
                         return;
                     }
                     return;
@@ -108,25 +108,25 @@ public final /* synthetic */ class m implements Runnable {
                 ((WalletEngine2) this.b).lambda$close$56();
                 return;
             case 11:
-                e9 e9Var = (e9) this.b;
-                boolean z10 = e9Var.h != -1;
-                if (!z10 && !e9Var.s) {
-                    e9Var.c = e9Var.c();
-                    e9Var.d = 0.0f;
+                f9 f9Var = (f9) this.b;
+                boolean z10 = f9Var.h != -1;
+                if (!z10 && !f9Var.s) {
+                    f9Var.c = f9Var.c();
+                    f9Var.d = 0.0f;
                 }
-                boolean z11 = z10 || e9Var.s || e9Var.e > 1.001f;
-                l4 l4Var = e9Var.b;
-                float f10 = e9Var.c;
-                float f11 = e9Var.d;
-                l4Var.r = f10;
-                l4Var.s = f11;
-                l4Var.w = z11;
-                l4Var.x = z11;
+                boolean z11 = z10 || f9Var.s || f9Var.e > 1.001f;
+                m4 m4Var = f9Var.b;
+                float f10 = f9Var.c;
+                float f11 = f9Var.d;
+                m4Var.r = f10;
+                m4Var.s = f11;
+                m4Var.w = z11;
+                m4Var.x = z11;
                 return;
             case 12:
-                l9 l9Var = (l9) this.b;
-                l9Var.removeSelfFromStack();
-                Runnable runnable2 = l9Var.f;
+                m9 m9Var = (m9) this.b;
+                m9Var.removeSelfFromStack();
+                Runnable runnable2 = m9Var.f;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
@@ -136,7 +136,7 @@ public final /* synthetic */ class m implements Runnable {
                 ((org.telegram.ui.Cells.x3) this.b).requestLayout();
                 return;
             default:
-                ((va) this.b).Z();
+                ((wa) this.b).Z();
                 return;
         }
     }

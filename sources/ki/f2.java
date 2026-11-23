@@ -2,7 +2,7 @@ package ki;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
 public final class f2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ boolean a;
@@ -10,10 +10,10 @@ public final class f2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ float c;
     public final /* synthetic */ float d;
     public final /* synthetic */ float e;
-    public final /* synthetic */ s2 f;
+    public final /* synthetic */ t2 f;
 
-    public f2(s2 s2Var, boolean z10, float f10, float f11, float f12, float f13) {
-        this.f = s2Var;
+    public f2(t2 t2Var, boolean z10, float f10, float f11, float f12, float f13) {
+        this.f = t2Var;
         this.a = z10;
         this.b = f10;
         this.c = f11;
@@ -23,28 +23,28 @@ public final class f2 implements ValueAnimator.AnimatorUpdateListener {
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        s2 s2Var = this.f;
-        k2 k2Var = s2Var.E;
-        p2 p2Var = s2Var.Y;
-        j2 j2Var = s2Var.x;
+        t2 t2Var = this.f;
+        k2 k2Var = t2Var.E;
+        q2 q2Var = t2Var.Y;
+        j2 j2Var = t2Var.x;
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        s2Var.i0 = floatValue;
+        t2Var.i0 = floatValue;
         if (!this.a) {
             floatValue = 1.0f - floatValue;
         }
-        s2Var.h0 = floatValue;
-        p2Var.setAlpha(1.0f - floatValue);
-        p2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * s2Var.h0);
+        t2Var.h0 = floatValue;
+        q2Var.setAlpha(1.0f - floatValue);
+        q2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * t2Var.h0);
         float f10 = this.b;
-        float f11 = s2Var.i0;
+        float f11 = t2Var.i0;
         float f12 = this.c;
         j2Var.setTranslationY(org.telegram.messenger.g0.T1(f10, f12, f11));
-        j2Var.setTranslationX(org.telegram.messenger.g0.T1(this.d, 0.0f, s2Var.i0));
-        s2Var.n0.setTranslationX(org.telegram.messenger.g0.T1(this.e, 0.0f, s2Var.i0));
-        s2Var.o0.setAlpha(s2Var.h0);
-        s2Var.f.invalidate();
+        j2Var.setTranslationX(org.telegram.messenger.g0.T1(this.d, 0.0f, t2Var.i0));
+        t2Var.n0.setTranslationX(org.telegram.messenger.g0.T1(this.e, 0.0f, t2Var.i0));
+        t2Var.o0.setAlpha(t2Var.h0);
+        t2Var.f.invalidate();
         k2Var.setViewPortHeightOffset(j2Var.getTranslationY() - f12);
         k2Var.n(false, false);
-        s2Var.H();
+        t2Var.H();
     }
 }

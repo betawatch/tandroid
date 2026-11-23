@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.g9;
+import a8.h9;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                g9 g9Var = l0.h;
-                g9Var.c(k0Var3, k0Var2);
-                if (g9Var.g(this, k0Var2, k0Var3)) {
+                h9 h9Var = l0.h;
+                h9Var.c(k0Var3, k0Var2);
+                if (h9Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        g9 g9Var = l0.h;
-                        g9Var.c(k0Var3, k0Var2);
-                        if (g9Var.g(this, k0Var2, k0Var3)) {
+                        h9 h9Var = l0.h;
+                        h9Var.c(k0Var3, k0Var2);
+                        if (h9Var.g(this, k0Var2, k0Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

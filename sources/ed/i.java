@@ -1,6 +1,6 @@
 package ed;
 
-import a8.aa;
+import a8.ba;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import kf.p;
 import kf.s;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public final class i implements lf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -234,7 +234,7 @@ public final class i implements lf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        aa.b(pVar3, pVar4);
+        ba.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -307,7 +307,7 @@ public final class i implements lf.a {
                         eVar5 = eVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        aa.b(pVar, (p) sVar.e);
+                        ba.b(pVar, (p) sVar.e);
                     }
                     aVar.a(sVar2, sVar, i7);
                     if (eVar4.g == 0) {

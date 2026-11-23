@@ -1,154 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.view.animation.DecelerateInterpolator;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.view.View;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
-public final class m41 extends bv0 {
-    public final int a = org.telegram.messenger.k10.t0;
-    public boolean b = false;
-    public final float[] c = new float[3];
-    public final float[] d = {0.0f, 150.0f, 300.0f};
-    public final float[] e = {0.0f, 0.0f, 0.0f};
-    public long f = 0;
-    public boolean g = false;
-    public final DecelerateInterpolator h = new DecelerateInterpolator();
-    public boolean i;
-    public final Paint j;
+public abstract class m41 {
+    public final int a;
 
-    public m41(boolean z10) {
-        if (z10) {
-            this.j = new Paint(1);
+    public m41() {
+        int i7 = n41.K;
+        n41.K = i7 + 1;
+        this.a = i7;
+    }
+
+    public static void h(m41 m41Var) {
+        if (n41.M == null) {
+            n41.M = new HashMap();
         }
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void b(int i7) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColor(i7);
+        if (n41.L == null) {
+            n41.L = new LongSparseArray();
         }
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void c(boolean z10) {
-        this.b = z10;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void d() {
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int L;
-        int i7;
-        int i10 = getBounds().left;
-        if (this.b) {
-            L = org.telegram.messenger.g0.L(8.5f);
-            i7 = getBounds().top;
-        } else {
-            L = org.telegram.messenger.g0.L(9.3f);
-            i7 = getBounds().top;
+        Class<?> cls = m41Var.getClass();
+        if (n41.M.containsKey(cls)) {
+            return;
         }
-        int i11 = L + i7;
-        Paint paint = this.j;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.m6.c2;
-            paint.setAlpha(org.telegram.messenger.ls.e4);
-        }
-        float L2 = org.telegram.messenger.g0.L(3.0f) + i10;
-        float f10 = i11;
-        float[] fArr = this.c;
-        canvas.drawCircle(L2, f10, fArr[0] * org.telegram.messenger.g0.p, paint);
-        canvas.drawCircle(org.telegram.messenger.g0.L(9.0f) + i10, f10, fArr[1] * org.telegram.messenger.g0.p, paint);
-        canvas.drawCircle(org.telegram.messenger.g0.L(15.0f) + i10, f10, fArr[2] * org.telegram.messenger.g0.p, paint);
-        f();
+        n41.M.put(cls, m41Var);
+        n41.L.put(m41Var.a, m41Var);
     }
 
-    @Override // org.telegram.ui.Components.bv0
-    public final void e() {
-        for (int i7 = 0; i7 < 3; i7++) {
-            this.e[i7] = 0.0f;
-            this.c[i7] = 1.33f;
-        }
-        float[] fArr = this.d;
-        fArr[0] = 0.0f;
-        fArr[1] = 150.0f;
-        fArr[2] = 300.0f;
-        this.g = false;
+    public boolean c(n41 n41Var, n41 n41Var2) {
+        return n41Var.I(n41Var2);
     }
 
-    public final void f() {
-        if (this.g) {
-            if (org.telegram.messenger.ls.f(this.a).g() && !this.i) {
-                org.telegram.messenger.g0.h3(new cp0(this, 27), 100L);
-                return;
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = currentTimeMillis - this.f;
-            this.f = currentTimeMillis;
-            if (j3 > 50) {
-                j3 = 50;
-            }
-            for (int i7 = 0; i7 < 3; i7++) {
-                float[] fArr = this.e;
-                float f10 = fArr[i7] + j3;
-                fArr[i7] = f10;
-                float[] fArr2 = this.d;
-                float f11 = f10 - fArr2[i7];
-                float[] fArr3 = this.c;
-                if (f11 > 0.0f) {
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f11 <= 320.0f) {
-                        fArr3[i7] = decelerateInterpolator.getInterpolation(f11 / 320.0f) + 1.33f;
-                    } else if (f11 <= 640.0f) {
-                        fArr3[i7] = (1.0f - decelerateInterpolator.getInterpolation((f11 - 320.0f) / 320.0f)) + 1.33f;
-                    } else if (f11 >= 800.0f) {
-                        fArr[i7] = 0.0f;
-                        fArr2[i7] = 0.0f;
-                        fArr3[i7] = 1.33f;
-                    } else {
-                        fArr3[i7] = 1.33f;
-                    }
-                } else {
-                    fArr3[i7] = 1.33f;
-                }
-            }
-            a();
-        }
+    public abstract View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var);
+
+    public boolean e(n41 n41Var, n41 n41Var2) {
+        return n41Var.J(n41Var2);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(18.0f);
+    public boolean f() {
+        return !(this instanceof org.telegram.messenger.tt);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(18.0f);
+    public boolean g() {
+        return this instanceof bj;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public void a(ek0 ek0Var, View view, n41 n41Var) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColorFilter(colorFilter);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
+    public void b(View view, n41 n41Var, boolean z10, b51 b51Var, g51 g51Var) {
     }
 }

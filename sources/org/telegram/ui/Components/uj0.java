@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final /* synthetic */ class uj0 implements Runnable {
                     mVar.e0 = new AnimatorSet();
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.b.d, f11);
                     ofFloat.addUpdateListener(gVar2);
-                    long j3 = org.telegram.messenger.ls.x3;
+                    long j3 = org.telegram.messenger.ks.x3;
                     ofFloat.setDuration(j3);
-                    nr nrVar = nr.h;
-                    ofFloat.setInterpolator(nrVar);
+                    kr krVar = kr.h;
+                    ofFloat.setInterpolator(krVar);
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 0.0f);
                     ofFloat2.addUpdateListener(gVar2);
                     ofFloat2.setStartDelay(j3);
@@ -71,14 +71,14 @@ public final /* synthetic */ class uj0 implements Runnable {
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(mVar.b.i, f10);
                     ofFloat3.addUpdateListener(gVar);
                     ofFloat3.setDuration(j3);
-                    ofFloat3.setInterpolator(nrVar);
+                    ofFloat3.setInterpolator(krVar);
                     ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f10, 0.0f);
                     ofFloat4.addUpdateListener(gVar);
                     ofFloat4.setStartDelay(j3);
                     ofFloat4.setDuration(600L);
                     ofFloat4.setInterpolator(overshootInterpolator);
                     mVar.e0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    mVar.e0.addListener(new org.telegram.ui.k71(hVar, 23));
+                    mVar.e0.addListener(new org.telegram.ui.i71(hVar, 23));
                     mVar.e0.start();
                     break;
                 } else {

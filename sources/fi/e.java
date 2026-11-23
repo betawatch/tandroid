@@ -8,34 +8,34 @@ import android.text.TextUtils;
 import android.view.View;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.az;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.y10;
-import org.telegram.ui.Cells.oa;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.iu;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.zy;
+import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.gu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cd0;
 import org.telegram.ui.qc;
-import org.telegram.ui.sy0;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements y10 {
+public final /* synthetic */ class e implements w10 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.w10
     public final void a(Object obj) {
-        gj messageObject;
-        gj messageObject2;
+        fj messageObject;
+        fj messageObject2;
         int i7 = 2;
         switch (this.a) {
             case 0:
@@ -52,20 +52,20 @@ public final /* synthetic */ class e implements y10 {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof kg.r1) {
-                    ((kg.r1) view2).c.invalidate();
+                if (view2 instanceof kg.s1) {
+                    ((kg.s1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof kg.r1) {
-                    ((kg.r1) view3).d.a(false, true);
+                if (view3 instanceof kg.s1) {
+                    ((kg.s1) view3).d.a(false, true);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.messenger.q5 q5Var = az.J;
+                org.telegram.messenger.q5 q5Var = zy.J;
                 break;
             case 6:
                 HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
@@ -74,7 +74,7 @@ public final /* synthetic */ class e implements y10 {
                 int i10 = org.telegram.ui.ActionBar.d3.r;
                 break;
             case 8:
-                int i11 = oa.n;
+                int i11 = pa.n;
                 break;
             case 9:
                 qc.f1((View) obj);
@@ -95,7 +95,7 @@ public final /* synthetic */ class e implements y10 {
                 }
                 break;
             case 12:
-                iu iuVar = iu.S1;
+                gu guVar = gu.S1;
                 break;
             case 13:
                 View view6 = (View) obj;
@@ -108,13 +108,13 @@ public final /* synthetic */ class e implements y10 {
                 }
             case 14:
                 View view7 = (View) obj;
-                if (view7 instanceof org.telegram.ui.Cells.h5) {
-                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view7;
-                    h5Var.b.invalidate();
-                    h5Var.c.invalidate();
+                if (view7 instanceof org.telegram.ui.Cells.g5) {
+                    org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view7;
+                    g5Var.b.invalidate();
+                    g5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof kg.r1) {
-                    ((kg.r1) view7).c.invalidate();
+                } else if (view7 instanceof kg.s1) {
+                    ((kg.s1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();
@@ -122,22 +122,22 @@ public final /* synthetic */ class e implements y10 {
                 }
             case 15:
                 View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.a8) {
-                    ((org.telegram.ui.Cells.a8) view8).a(true);
+                if (view8 instanceof org.telegram.ui.Cells.z7) {
+                    ((org.telegram.ui.Cells.z7) view8).a(true);
                     break;
                 }
                 break;
             case 16:
                 View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.a8) {
-                    ((org.telegram.ui.Cells.a8) view9).c(true);
+                if (view9 instanceof org.telegram.ui.Cells.z7) {
+                    ((org.telegram.ui.Cells.z7) view9).c(true);
                     break;
                 }
                 break;
             case 17:
                 View view10 = (View) obj;
-                if (view10 instanceof e11) {
-                    ((e11) view10).a(true);
+                if (view10 instanceof d11) {
+                    ((d11) view10).a(true);
                     break;
                 }
                 break;
@@ -161,33 +161,33 @@ public final /* synthetic */ class e implements y10 {
                 break;
             case 21:
                 SurfaceTexture surfaceTexture = (SurfaceTexture) obj;
-                Drawable[] drawableArr = PhotoViewer.Z8;
+                Drawable[] drawableArr = PhotoViewer.f9;
                 if (surfaceTexture != null) {
                     surfaceTexture.release();
                     break;
                 }
                 break;
             case 22:
-                Drawable[] drawableArr2 = PhotoViewer.Z8;
+                Drawable[] drawableArr2 = PhotoViewer.f9;
                 break;
             case 23:
                 RectF rectF = ProfileActivity.Z6;
                 break;
             case 24:
                 HashSet hashSet = (HashSet) obj;
-                String str = hd.E0().B.f;
-                hashSet.addAll(sy0.d0());
-                SharedPreferences.Editor edit = np.g1().edit();
+                String str = gd.E0().B.f;
+                hashSet.addAll(ry0.d0());
+                SharedPreferences.Editor edit = mp.g1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
                 } else {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                sy0.s = false;
+                ry0.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
-                        np.u1(i12).v7.g();
+                        mp.u1(i12).v7.g();
                     } catch (Exception unused) {
                     }
                 }
@@ -198,10 +198,10 @@ public final /* synthetic */ class e implements y10 {
                 view11.setScaleY(1.0f);
                 break;
             case 26:
-                ((org.telegram.ui.Wallet.x2) obj).a();
+                ((org.telegram.ui.Wallet.y2) obj).a();
                 break;
             case 27:
-                ((org.telegram.ui.Wallet.x2) obj).b();
+                ((org.telegram.ui.Wallet.y2) obj).b();
                 break;
             case 28:
                 View view12 = (View) obj;

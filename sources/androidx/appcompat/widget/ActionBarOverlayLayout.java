@@ -17,11 +17,10 @@ import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.widget.OverScroller;
-import c8.z;
 import e2.r0;
 import g.b0;
 import java.util.WeakHashMap;
-import ki.m3;
+import ki.n3;
 import l.w;
 import m.f3;
 import m.h;
@@ -44,7 +43,7 @@ import r0.y;
 import r0.y0;
 import r0.z0;
 
-/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
+/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
     public static final int[] S = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
@@ -58,7 +57,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
     public m.b L;
     public OverScroller M;
     public ViewPropertyAnimator N;
-    public final m3 O;
+    public final n3 O;
     public final m.a P;
     public final m.a Q;
     public final r0 R;
@@ -221,8 +220,8 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
         } else {
             hVar.i(toolbar.s, null);
             toolbar.f0.i(toolbar.s, null);
-            hVar.e();
-            toolbar.f0.e();
+            hVar.d();
+            toolbar.f0.d();
         }
         toolbar.a.setPopupTheme(toolbar.w);
         toolbar.a.setPresenter(hVar);
@@ -549,14 +548,14 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
     public void setIcon(int i7) {
         e();
         k3 k3Var = (k3) this.e;
-        k3Var.d = i7 != 0 ? z.b(k3Var.a.getContext(), i7) : null;
+        k3Var.d = i7 != 0 ? c8.a0.b(k3Var.a.getContext(), i7) : null;
         k3Var.c();
     }
 
     public void setLogo(int i7) {
         e();
         k3 k3Var = (k3) this.e;
-        k3Var.e = i7 != 0 ? z.b(k3Var.a.getContext(), i7) : null;
+        k3Var.e = i7 != 0 ? c8.a0.b(k3Var.a.getContext(), i7) : null;
         k3Var.c();
     }
 
@@ -608,7 +607,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
         this.I = l1Var;
         this.J = l1Var;
         this.K = l1Var;
-        this.O = new m3(this, 2);
+        this.O = new n3(this, 2);
         this.P = new m.a(this, 0);
         this.Q = new m.a(this, 1);
         c(context);
