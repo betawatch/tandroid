@@ -3620,7 +3620,7 @@ public class LaunchActivity extends g5 implements org.telegram.ui.ActionBar.o4, 
     }
 
     /*  JADX ERROR: Types fix failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r12v38 ??), method size: 16206
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r34v45 ??), method size: 16206
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
